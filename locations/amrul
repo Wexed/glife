@@ -1,0 +1,36 @@
+# amrul
+*PL 'You leaned over the table.'
+*P '<center><img src="images\casino\amrul.jpg"></center>'
+ACT 'IPod':
+	st_1 = input 'Enter the amount'
+	if money < st_1:
+		msg 'You have enough money'
+		gt 'roulette'
+	end
+	if st_1 < 0:
+		msg 'Wrong, try again'
+		gt 'amrul'
+	end
+	if st_1 > 1000:
+		msg 'The maximum rate of 1000 rubles'
+		gt 'amrul'
+	end
+	set money -= st_1
+	gt 'rate'
+END
+ACT 'move away from the table':
+	gt 'roulette'
+END
+кч = 0
+чнч = 0
+мб = 0
+дю = 0
+ряд = 0
+чи = 100
+x_rul = 100
+
+clr
+gs 'stat'
+set minut += 5
+--- amrul ---------------------------------
+

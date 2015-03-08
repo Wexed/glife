@@ -1,0 +1,41 @@
+# avt3
+*PL 'Game rules are very simple: toss a coin 1,000 rubles and you pull the lever. Jackpot of 10 million rubles.'
+*P '<center><img src="images\casino\avt.jpg"></center>'
+ACT 'Pull the lever':
+		if money >= 1000:
+			x_10 = rand(1,1000)
+			money = money - 1000
+			if x_10 = 1000:
+				set money += 10000000
+				msg 'You won the jackpot! Congratulations!'
+			end
+			if x_10 < 1000 and x_10 >= 990:
+				set money += 2000
+				msg 'Congratulations, you won 2000 rubles'
+			end
+			if x_10 >= 850 and x_10 < 990:
+				set money += 1000
+				msg 'Congratulations, you won 1000 rubles'
+			end
+			if x_10 < 850:
+				msg 'Alas, you lost, try again'
+			end
+
+
+
+			clr
+			gt 'avt3'
+		else
+			msg 'And how are you going to play without money? Come back when you find the necessary amount'
+				gt 'avt3'
+		end
+
+END
+ACT 'Back to the Hall':
+	gt 'igravt'
+END
+clr
+gs 'stat'
+set minut += 10
+--- avt3 ---------------------------------
+

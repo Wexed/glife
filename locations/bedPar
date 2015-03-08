@@ -1,0 +1,22 @@
+# bedPar
+gs 'stat'
+
+if nude = 0: '<center><img src="images\pics\bed.jpg"></center>'
+if nude = 1: '<center><img src="images\pics\son.jpg"></center>'
+
+'You lie on the bed. Clock wound <<timer>> hours <<timerM>> minutes.'
+
+act 'Set Alarm Clock': gt 'budilnik','start'
+
+act 'Undress and go to bed':
+	SAVEGAME 'altavtosave.sav'
+	cls
+	gs 'bed2'
+end
+
+act 'Get out of bed':
+	cla
+	gt $locM, $metkaM
+end
+--- bedPar ---------------------------------
+

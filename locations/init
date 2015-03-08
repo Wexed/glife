@@ -1,0 +1,133 @@
+# init
+!Расчет инициативы
+!Обязательно проверять наличие станов
+!hod переменная отвечающая за то кто будет атаковать
+!hod = 0 игрок атакует hod = 1 противник атакует
+!<font color = red><<$name>></font>
+
+if GedoMazo = 1 and stunV > 0: set stunV = 0 & set mannaV -= 1000 & '<font color = red><<$nameV>> with a deafening roar, emits large amounts of energy allowing you to attack him again.</font>'
+
+set initi = react * 20/100
+set initi -= dospehVes
+if initi < 0: set initi = 0
+set init = RAND(react - initi, react + initi) + initBonus
+set initiV = reactV * 20/100
+set initiV -= dospehVesV
+if initiV < 0: set initiV = 0
+set initV = RAND(reactV - initiV, reactV + initiV) + initBonusV
+
+if hodtime >= 3 and stun = 0 and stunV = 0 and initBonus = 0:
+!игрок уже трижды атаковал
+'<font color = red><<$nameV>> took the initiative</font>'
+set hod = 1
+set hodtime = 0
+exit
+end
+if hodtimeV >= 3 and stun = 0 and stunV = 0 and initBonusV = 0:
+!противник уже трижды атаковал
+'<font color = green>You took the lead</font>'
+set hod = 0
+set hodtimeV = 0
+exit
+end
+
+
+if stun = 0 and stunV = 0 and hodtime < 3 and hodtimeV < 3 or stun = 0 and stunV = 0 and initBonus > 0 or stun = 0 and stunV = 0 and initBonusV > 0:
+!оба не в стане
+	if tuman = 0 and tumanV = 0:
+	!нет тумана
+		if init > initV:
+		!инициативу захватил игрок
+		'<font color = green>You took the initiative</font>'
+		set hod = 0
+		set hodtime += 1
+		exit
+		end
+		if init < initV:
+		!инициативу захватил противник
+		'<font color = red><<$nameV>> took the initiative</font>'
+		set hod = 1
+		set hodtimeV += 1
+		exit
+		end
+		if init = initV:
+		set hod = RAND(0,1)
+		if hod = 0: '<font color = green>You hardly seized the initiative</font>'
+		if hod = 1: '<font color = red><<$nameV>> hardly took the initiative</font>'
+		exit
+		end
+	end
+	if tuman > 0:
+	!туман игрока
+	set tuman -= 1
+	set initV = reactV - initiV
+		if init > initV:
+		!инициативу захватил игрок
+		'<font color = green>In your fog <<$nameV>> does not have time for you and you took the initiative</font>'
+		set hod = 0
+		set hodtime += 1
+		exit
+		end
+		if init < initV:
+		!инициативу захватил противник
+		'<font color = red>In spite of your fog <<$nameV>> took the initiative</font>'
+		set hod = 1
+		set hodtimeV += 1
+		exit
+		end
+		if init = initV:
+		set hod = RAND(0,1)
+		if hod = 0: '<font color = green>You hardly seized the initiative in spite of your fog</font>'
+		if hod = 1: '<font color = red><<$nameV>> in spite of your fog still took the initiative</font>'
+		exit
+		end
+	end
+	if tumanV > 0:
+	!туман противника
+	set tumanV -= 1
+	set init = react - initi
+		if init > initV:
+		!инициативу захватил игрок
+		'<font color = green>In spite of the fog, you took the initiative</font>'
+		set hod = 0
+		set hodtime += 1
+		exit
+		end
+		if init < initV:
+		!инициативу захватил противник
+		'<font color = red><<$nameV>> use your fog easily captures initiative</font>'
+		set hod = 1
+		set hodtimeV += 1
+		exit
+		end
+		if init = initV:
+		set hod = RAND(0,1)
+		if hod = 0: '<font color = green>You hardly seized the initiative in spite of the fog</font>'
+		if hod = 1: '<font color = red><<$nameV>> use your fog took the initiative</font>'
+		exit
+		end
+	end
+end
+
+if stun > 0:
+!игрок в стане
+set stun -= 1
+set hod = 1
+if tuman > 0: set tuman -= 1
+if tumanV > 0: set tumanV -= 1
+'<font color = red>You can not move, and <<$nameV>> easily captures initiative</font>'
+exit
+end
+
+if stunV > 0:
+!противник в стане
+set stunV -= 1
+set hod = 0
+if tuman > 0: set tuman -= 1
+if tumanV > 0: set tumanV -= 1
+'<font color = green><<$nameV>> can not move and you can easily grab the initiative</font>'
+exit
+end
+
+--- init ---------------------------------
+

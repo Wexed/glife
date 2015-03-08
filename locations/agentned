@@ -1,0 +1,105 @@
+# agentned
+gs 'stat'
+'<center><B><font color = maroon>Real Estate Agency</font></B></center>'
+
+act 'Exit': gt 'down'
+
+if BuyHous['Street'] ! 1 or BuyHous['Down'] ! 1 or BuyHous['Nord'] ! 1:
+	'You can buy an apartment in a residential area, Downtown or Northern region.'
+	'Renting an apartment costs 200 rubles per day, minimum rental is for a period of 30 days.'
+
+	if money >= 2000000:
+		if BuyHous['Street'] ! 1:
+			act 'Buy an apartment is residental dirstrict':
+				cls
+				money -= 2000000
+				housr = 1
+				BuyHous = 1
+				housr['Street'] = 1
+				BuyHous['Street'] = 1
+				gs 'stat'
+				'You bought an apartment in the residential area.'
+				act 'Exit': gt 'down'
+			end
+		end
+		if BuyHous['Down'] ! 1:
+			act 'Buy an apartment is downtown':
+				cls
+				money -= 2000000
+				housr = 1
+				BuyHous = 1
+				housr['Down'] = 1
+				BuyHous['Down'] = 1
+				gs 'stat'
+				'You bought an apartment in the downtown.'
+				act 'Exit': gt 'down'
+			end
+		end
+		if BuyHous['Nord'] ! 1:
+			act 'Buy an apartment is northern region':
+				cls
+				money -= 2000000
+				housr = 1
+				BuyHous = 1
+				housr['Nord'] = 1
+				BuyHous['Nord'] = 1
+				gs 'stat'
+				'You bought an apartment in the northern region.'
+				act 'Exit': gt 'down'
+			end
+		end
+	end
+end
+
+if BuyHous['Street']!1 or BuyHous['Down']!1 or BuyHous['Nord']!1:
+	if money >= 6000:
+		if BuyHous['Street'] ! 1:
+			act 'Rent an apartment in residental district':
+				cls
+				money -= 6000
+				housr = 1
+				BuyHous = 2
+				housr['Street'] = 1
+				BuyHous['Street'] = 2
+				ArendHouseSL['Street'] += 30
+				gs 'stat'
+				'You rented a flat in a residential area. Now you <<ArendHouseSL[''Street'']>> rental days.'
+				act 'Exit': gt 'down'
+			end
+		end
+		if BuyHous['Down'] ! 1:
+			act 'Rent an apartment in downtown':
+				cls
+				money -= 6000
+				housr = 1
+				BuyHous = 2
+				housr['Down'] = 1
+				BuyHous['Down'] = 2
+				ArendHouseSL['Down'] += 30
+				gs 'stat'
+				'You rented a flat in a downtown. Now you <<ArendHouseSL[''Down'']>> rental days.'
+				act 'Exit': gt 'down'
+			end
+		end
+		if BuyHous['Nord'] ! 1:
+			act 'Rent an apartment in northern region':
+				cls
+				money -= 6000
+				housr = 1
+				BuyHous = 2
+				housr['Nord'] = 1
+				BuyHous['Nord'] = 2
+				ArendHouseSL['Nord'] += 30
+				gs 'stat'
+				'You rented a flat in a northern region. Now you <<ArendHouseSL[''Nord'']>> rental days.'
+				act 'Exit': gt 'down'
+			end
+		end
+	end
+end
+
+if ArendHouseSL['Street']>0: 'Your residential house has <<ArendHouseSL[''Street'']>> rental days left.'
+if ArendHouseSL['Down']>0: 'Your Downtown house has <<ArendHouseSL[''Down'']>> rental days left.'
+if ArendHouseSL['Nord']>0: 'Your northern district house has <<ArendHouseSL[''Nord'']>> rental days left.'
+--- agentned ---------------------------------
+

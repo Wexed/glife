@@ -1,0 +1,42 @@
+# husb
+if $ARGS[0] = 'start':
+clr
+gs 'stat'
+	if week < 6:
+		if hour > 22 or hour < 7:
+		'Your husband <<$husName>> lying in bed opens his eyes. "What do you want? Night already, go to sleep."'
+		end
+		if hour = 7:
+		'<<$husName>> sitting at the kitchen table.'
+		end
+		if hour = 17:
+		'<<$husName>> sitting at the kitchen table.'
+		end
+		if hour > 17 and hour <= 22:
+		'<<$husName>> sitting on a couch and watching television.'
+		end
+	else
+		if hour > 22 or hour < 7:
+		'Your husband <<$husName>> lying in bed opens his eyes. "What do you want? Night already, go to sleep."'
+		end
+		if hour = 7:
+		'<<$husName>> sitting at the kitchen table.'
+		end
+		if hour > 7 and hour < 17:
+		'<<$husName>> sitting on a couch and watching television.'
+		end
+		if hour = 17:
+		'<<$husName>> sitting at the kitchen table.'
+		end
+		if hour > 17 and hour <= 22:
+		'<<$husName>> sitting on a couch and watching television.'
+		end
+	end
+
+act 'Leave': GOTO $loc, $metka
+if husbandsexday < 4:
+	act 'Sex with my husband.': gt 'husbsex','room'
+	end
+end
+--- husb ---------------------------------
+

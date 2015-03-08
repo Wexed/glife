@@ -1,0 +1,25 @@
+# croupier
+*PL '- How can I help you?'
+*P '<right><img src="images\casino\crup.jpg"></right>'
+ACT 'Ask rules':
+	msg 'The rules are very simple.
+	First you choose the amount you want to bet.
+	But note that in our casino maximum rate is 1000 rubles.
+	Then you choose what to put their money. There are 5 types of bets:
+	Color  -   1 to 1
+	Chet/Odd -   1 to 1
+	Small/Large-   1 to 1
+	Dozen   -   1 to 2
+	Series    -   1 to 2
+	Number   -   1 to 36
+	Well, then it all depends on your luck.'
+	gt 'croupier'
+END
+ACT 'Move away from the dealer':
+	gt 'roulette'
+END
+clr
+gs 'stat'
+set minut += 5
+--- croupier ---------------------------------
+

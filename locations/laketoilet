@@ -1,0 +1,107 @@
+# laketoilet
+set LCtoiletiventrand = RAND(1,100)
+
+if $ARGS[0] = 'main':
+cla
+*clr
+if hour < 4 and LCtoiletiventrand >= 83 and LCtoiletivent = 0:
+'<center><img src="images\LakeCafe\ToiletSexStart.jpg"></center>'
+'You went to the bathroom and saw a man in the corner drochaschego. It seems he did not see you.'
+
+act 'Be company':
+set LCtoiletivent = 1
+gt 'LCporn','toiletsex'
+end
+
+act 'Off the toilet': gt 'lakecafe','main'
+
+else
+'<center><img src="images\LakeCafe\Toilet.jpg"></center>'
+'Dirty and smelly toilet that seems to have never been cleaned'
+clr
+gs 'stat'
+
+	if tanga = 1:
+	act 'Remove Underwear':
+	cla
+	set tanga = 0
+	gt 'laketoilet','main'
+	end
+	end
+
+	act 'Look in the mirror':
+		cla
+		gs 'portmirror'
+		set $goto1 = 'laketoilet'
+		set $goto2 = 'main'
+		dynamic $portmirror
+		act 'Move away from the mirror':
+			cla
+			gt 'laketoilet','main'
+		end
+	end
+
+
+if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus > 0:
+	act 'Wash up (0:15)':
+	cla
+	*clr
+	set cumpussy = 0
+	set cumbelly = 0
+	set cumass = 0
+	set cumanus =0
+	set cumlip = 0
+	set cumface = 0
+	set sweat -= 1
+	set minut += 15
+	'<center><img src="images\pics\wash5.jpg"></center>'
+	'You carefully washed sperm with yourself.'
+	act 'Exit': gt 'laketoilet','main'
+	end
+end
+
+if cumlip > 0 or cumface > 0:
+	act 'Wash cum off face (0:15)':
+	cla
+	*clr
+	set cumlip = 0
+	set cumface = 0
+	set sweat -= 1
+	set minut += 15
+	'<center><img src="images\etogame\facesp.jpg"></center>'
+	'You carefully washed sperm from her face.'
+	act 'Exit': gt 'laketoilet','main'
+	end
+end
+
+if cumfrot > 0:
+	act 'Wipe the cum from clothing  (0:15)':
+	cla
+	*clr
+	set cumfrot = 0
+	set sweat -= 1
+	set minut += 15
+	!'<center><img src="images\etogame\facesp.jpg"></center>'
+	'You erase traces of semen from the clothes.'
+	act 'Exit': gt 'laketoilet','main'
+	end
+end
+if tampon > 0 and mesec > 0 and isprok = 0:
+	act 'Change a tampon':
+		cla
+		*clr
+		set tampon -= 1
+		set isprok = 1
+		set minut += 5
+		set manna -= 5
+		'<center><img src="images\pics\wash3.jpg"></center>'
+		'You change a tampon.'
+		act 'Finish': gt 'laketoilet','main'
+		end
+	end
+
+act 'Off the toilet': gt 'lakecafe','main'
+end
+end
+--- laketoilet ---------------------------------
+

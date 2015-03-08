@@ -1,0 +1,70 @@
+# narkopriton
+'<center><B>drug houses</B></center>'
+'<center><img src="images\etogame\narkopriton.jpg"></center>'
+'Crappy apartment where addicts come to inject and buy heroin.'
+clr
+gs 'stat'
+fcolor = rgb(0,0,0)
+bcolor = rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+'Door is opened by a skinny guy with a crazy look. After examining you, he said, "This product is worth apiece."'
+
+
+
+act 'Leave': minut += 15 & gt 'street'
+
+if money >= 1000:
+	act 'Buy heroin.':
+		cls
+		money -= 1000
+		if SLomka > 0:
+			minut += 5
+			StrongNarkota += 25
+			SNarkTimes += 1
+			gs 'stat'
+			$tempval = ''
+			if narkoman ! 0: $tempval = ' with trembling hands'
+			gt 'narkopriton'
+			'You bought some heroin and injected yourself<<$tempval>>'
+		else
+			heroin += 1
+			gt 'narkopriton'
+		end
+	end
+end
+
+if SLomka > 0 and money < 1000:
+	act 'Persuade to sell you on credit.':
+		$tempname = 'he'
+		if HaveMetBobka = 1: $tempname = 'Bobka'
+		cls
+		minut += 5
+		gs 'stat'
+		$tempval = 'You'
+		if SNarkTimes > 0: $tempval = 'You are experiencing withdrawal and'
+		'<<$tempval>> start to persuade <<$tempname>> to give you a dose on credit, promising to pay back later.'
+		'But <<$tempname>> only grinned wickedly "Yeah, Do you know how many times a day I hear that? I won´t give anything on credit."'
+		act 'Leave': gt $curloc
+		act 'Beg and promise to do anything for it.':
+			cls
+			minut += 5
+			gs 'stat'
+			'You started begging to give you drugs on credit, and promise to do anything for it. He thought a little and then took you by the hand to the next room'
+			act 'Escape': gt $curloc
+			act 'Go to the next room.':
+				cls
+				minut += 5
+				gs 'stat'
+				bobrand = RAND(0,3)
+				$tempval = ''
+				if bobrand < 3: $tempval = ' and start sucking'
+				'"Get on your knees<<$tempval>>."'
+				act 'Run away': gt $curloc
+				act 'Do as he says': gt 'bobka'
+			end
+		end
+	end
+end
+--- narkopriton ---------------------------------
+

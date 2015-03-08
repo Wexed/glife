@@ -1,0 +1,178 @@
+# Market
+'<center><B>Market</B></center>'
+'<center><img src="images\etogame\rinok2.jpg"></center>'
+Set час += 1
+Set horny += 1
+if car = 0: Set money -= 20 & 'You get on the shuttle bus and pay the fare of 20 rubles.'
+if car > 0 and benzin > 0: Set benzin -= 1 & 'You reached into your <<$marka>>.'
+if car > 0 and benzin <= 0: Set money -= 20 & 'You ran out of gas and you had to go on the bus, paying the fare of 20 rubles.'
+'Bustling market, you can buy in the market place to buy clothes or for 30,000 rubles and receive income from the outlet, but for the purchase and delivery of course need to have a car. You can trade yourself or hire a saleswoman.'
+clr
+gs 'stat'
+act 'Buy': gt 'RynokP','choice'
+act 'Go home': gt 'street'
+if rinwork > 0 and час < 9:
+	act 'Salesmen':
+	cla
+	*clr
+	Set час = 17
+	Set fat += 5
+	Set monrand = RAND(500,2000)
+	Set money += monrand
+	clr
+	gs 'stat'
+
+	'You all day selling things in the market and earned <<monrand>> rubles'
+	Set rinrand = RAND(1,100)
+		if rinrand < 70 and palevorin = 0 and rinhoz = 0:
+		act 'Go home': gt 'street'
+		end
+
+		if rinrand >= 70 and palevorin = 0 and rinhoz = 0:
+		'To you approached the owner of the tent and began to pester you, promising to write premium'
+			act 'Refuse':
+			cla
+			Set money -= 2000
+			'The owner imposes on you a fine of 2,000 rubles'
+			act 'Go home': gt 'street'
+			end
+		act 'Ogle': gt 'RynokHoz','start'
+		end
+
+		if rinrand < 60 and palevorin = 0 and rinhoz = 1:
+		act 'Go home': gt 'street'
+		end
+		if rinrand >= 60 and palevorin = 0 and rinhoz = 1:
+		'To you approached the owner of the tent and began to pester you, promising to write premium'
+			act 'Refuse':
+			cla
+			Set money -= 2000
+			'The owner imposes on you a fine of 2,000 rubles'
+			act 'Go home': gt 'street'
+			end
+		act 'Ogle': gt 'RynokHoz','start'
+		end
+
+		if rinrand < 60 and palevorin = 1:
+		'On the market there is a rumor among the sellers that you fucks boss tray'
+		act 'Go home': gt 'street'
+		end
+
+		if rinrand >= 60 and palevorin = 1:
+		'To you approached the owner of the tent and began to pester you, promising to write premium'
+			act 'Refuse':
+			cla
+			Set money -= 2000
+			'The owner imposes on you a fine of 2,000 rubles'
+			act 'Go home': gt 'street'
+			end
+		act 'Ogle': gt 'RynokHoz','start'
+		end
+
+		if rinrand < 40 and palevorin = 2:
+		'On the market there is a rumor among the sellers that you fucks boss tray with buddies'
+		Set slutrand = RAND(1,100)
+			if slutrand >= 70:
+			'After work, you came to the Armenian and tried to persuade you a blowjob.'
+			act 'Agree': gt 'RynokHoz','opusteha2'
+			end
+		act 'Go home': gt 'street'
+		end
+
+		if rinrand >= 40 and rinrand < 70 and palevorin = 2:
+		'To you approached the owner of the tent and began to pester you, promising to write premium'
+			act 'Refuse':
+			cla
+			Set money -= 2000
+			'The owner imposes on you a fine of 2,000 rubles'
+			act 'Go home': gt 'street'
+			end
+		act 'Ogle': gt 'RynokHoz','start'
+		end
+
+		if rinrand >= 70 and palevorin = 2:
+		'To you approached the owner of the tent c already familiar to you guys and they began to entice you to perform oral sex, promising to write premium'
+			act 'Refuse':
+			cla
+			Set money -= 2000
+			'The owner imposes on you a fine of 2,000 rubles'
+			act 'Go home': gt 'street'
+			end
+		act 'Ogle': gt 'RynokHoz','opusteha'
+		end
+	end
+
+	act 'Resign':
+	cla
+	Set work = 0
+	Set rinwork = 0
+	'You are fired.'
+	act 'Go home': gt 'street'
+	end
+
+end
+
+if busRinok = 0 and money >= 30000 and car > 0:
+	act 'Buy a place in the market for a month 30000 rub':
+	cla
+	Set busRinok = 30
+	Set money -= 30000
+	'You bought a place in the market for 30,000 rubles. You need the goods'
+	act 'Go home': gt 'street'
+	end
+end
+!с 7 до 16, 9 часов
+if busRinok > 0 and tovarR > 0 and rinhour ! число:
+	act 'Trade independently':
+	cla
+	Set fat -= 2
+	Set rinhour = число
+	Set torghour = 16 - rinhour
+	Set torgrand = RAND(1,50)
+	if tovarR >= torgrand: Set tovarR -= torgrand
+	if tovarR < torgrand: Set torgrand = tovarR & Set tovarR = 0
+	Set torgmoney = torgrand * 200
+	Set money += torgmoney
+	'You´ve earned a day <<torgmoney>> rubles, sold out <<torgrand>> pieces of the item, you have <<tovarR>> units of goods.'
+	Set час = 17
+	Set torgmoney = 0
+	clr
+	gs 'stat'
+	act 'Go home': gt 'street'
+	end
+
+	if rinokTorg = 0 and rinhour ! число:
+		act 'Hire a saleswoman':
+		cla
+
+		Set rinokTorg = 1
+		'You hired saleswoman 1000 rubles per day'
+		act 'Go home': gt 'street'
+		end
+	end
+	if rinokTorg = 1 and rinhour ! число and tovarR > 0:
+		act 'Release the goods saleswoman.':
+		cla
+		Set rinokTorgW = 1
+		Set rinhour = число
+		Set torghour = 16 - rinhour
+		Set torgrand = RAND(1,50)
+		if tovarR >= torgrand: Set tovarR -= torgrand
+		if tovarR < torgrand: Set torgrand = tovarR & Set tovarR = 0
+		Set torgmoney = torgrand * 200
+		'You have given goods saleswoman, she can trade on their own.'
+		act 'Go home': gt 'street'
+		end
+	end
+end
+
+if rinokTorg = 1 and rinhour ! число:
+	act 'Dismiss saleswoman':
+	cla
+	Set rinokTorg = 0
+	'You hired fired saleswoman'
+	act 'Go home': gt 'street'
+	end
+end
+--- Market ---------------------------------
+

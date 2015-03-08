@@ -1,0 +1,135 @@
+# stol
+if $ARGS[0] = 'start':
+	cla
+	clr
+	gs 'stat'
+	'Oddments drawer.'
+	if Stolprezik > 0: 'In the drawer are <<Stolprezik>> condoms'
+	if Stoltabletki > 0: 'In the drawer are <<Stoltabletki>> birth control pills'
+	if Stollubri > 0: 'In the drawer is lubricant, enough for <<Stollubri>> uses.'
+	!if prezik > 0: 'Packing condoms, it <<prezik>> pc.'
+	!if tabletki > 0: 'Birth control pills <<tabletki>> pc.'
+	!if lubri > 0: 'Lubricant, enough for <<lubri>> time.'
+	if krem > 0: 'Sunblock <<krem>>'
+	if abonement > 0: 'Subscription is valid for <<abonement>> Occupation'
+
+	if dildo > 0: 'Realistic Dildo'
+
+	act 'Close the drawer':
+		cla
+		gt 'stol','fin'
+	end
+
+	if prezik > 0:
+		act 'Remove condoms from purse':
+		stolIN = input ("How many condoms to put in desk drawer? (Your purse contains <<prezik>> condoms.)")
+			if stolIN <= 0 or stolIN > prezik:
+			else
+			set stolprezik += stolIN
+			set prezik -= stolIN
+			end
+		gt 'stol','start'
+		end
+	end
+
+	if Stolprezik > 0:
+		act 'Get condoms from desk':
+		stolOUT = input ("How many condoms to place in purse? (Desk has <<stolprezik>> condoms.)")
+			if stolOUT <= 0 or stolOUT > stolprezik:
+			else
+			set stolprezik -= stolOUT
+			set prezik += stolOUT
+			end
+		gt 'stol','start'
+		end
+	end
+
+	if tabletki > 0:
+		act 'Remove pills from purse':
+		stolIN = input ("How many birth control pills to put in desk drawer? (Your purse contains <<tabletki>> pills.)")
+			if stolIN <= 0 or stolIN > tabletki:
+			else
+			set Stoltabletki += stolIN
+			set tabletki -= stolIN
+			end
+		gt 'stol','start'
+		end
+	end
+
+	if Stoltabletki > 0:
+		act 'Get pills from desk':
+		stolOUT = input ("How many birth control pills to place in purse? (Desk has <<Stoltabletki>> pills.)")
+			if stolOUT <= 0 or stolOUT > Stoltabletki:
+			else
+			set Stoltabletki -= stolOUT
+			set tabletki += stolOUT
+			end
+		gt 'stol','start'
+		end
+	end
+
+	if lubri > 0:
+		act 'Remove lubricant from purse':
+		stolIN = input ("How many uses lubricant to put in desk drawer? (Your purse contains <<lubri/5>> uses.)")
+			if stolIN <= 0 or stolIN > lubri/5:
+			else
+			set Stollubri += stolIN * 5
+			set lubri -= stolIN * 5
+			end
+		gt 'stol','start'
+		end
+	end
+
+	if Stollubri > 0:
+		act 'Get lubricant from desk':
+		stolOUT = input ("How many uses of lubricant to place in purse? (Desk contains <<Stollubri/5>> uses.)")
+			if stolOUT <= 0 or stolOUT > Stollubri/5:
+			else
+			set Stollubri -= stolOUT * 5
+			set lubri += stolOUT * 5
+			end
+		gt 'stol','start'
+		end
+	end
+
+	if money > 0:
+		act 'Put your money in the drawer':
+		cla
+		stolIN = input ("How much money you want to put in the desk drawer? (Your purse contains <<money>> rubles.)")
+			if stolIN <= 0 or stolIN > money:
+			!'Not correct operation.'
+			else
+			set stolmoney += stolIN
+			set money -= stolIN
+			end
+		gt 'stol','start'
+		end
+	end
+
+	if stolmoney > 0:
+		act 'Take money from the desk.':
+		cla
+		stolOUT = input ("How much money do you want place in your purse? (There is <<stolmoney>> rubles here.)")
+			if stolOUT <= 0 or stolOUT > stolmoney:
+			!'Not correct operation.'
+			else
+			set stolmoney -= stolOUT
+			set money += stolOUT
+			!'You debited <<kartaOUT>> rubles, now on your account <<karta>> rubles.'
+			end
+		gt 'stol','start'
+		end
+	end
+end
+
+
+if $ARGS[0] = 'fin':
+	cla
+	gt $locM, $metkaM
+	!'if housr = 1 and housrA = 1:
+	set housrA = 0
+	gt 'sitr'
+	end'
+end
+--- stol ---------------------------------
+

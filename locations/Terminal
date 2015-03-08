@@ -1,0 +1,35 @@
+# Terminal
+set minut += 5
+'<center><B><font color = maroon>Storage terminal</font></B></center>'
+'<center><img src="images\etogame\terminal.jpg"></center>'
+clr
+gs 'stat'
+!fcolor = rgb(0,0,0)
+!bcolor = rgb(255,255,255)
+!LCOLOR = rgb(106,90,205)
+'A plurality of storage buildings to which drive up truck for loading and unloading.'
+
+
+	act 'Leave':
+	cla
+	set minut += 5
+	gt 'nord'
+	end
+
+	if TerminalPapper = 1 and DayTerminalPapper = day:
+		act 'Classified documents':
+		cls
+		set minut += 15
+		TerminalPapper = 2
+		fcolor = rgb(0,0,0)
+		bcolor = rgb(255,255,255)
+		LCOLOR = rgb(106,90,205)
+		gs 'stat'
+		'You went to the office and gave the documents to the manager.'
+		act 'Leave': minut += 5 & gt 'nord'
+		end
+
+	end
+
+--- Terminal ---------------------------------
+

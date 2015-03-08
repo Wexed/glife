@@ -1,0 +1,102 @@
+# bed2
+if $ARGS[0] = 'dosip':
+	dosip = 1
+else
+	dosip = 0
+end
+
+$wokeup = {
+	if daystart < 10 and StoryLine = 0: 'My first thought was how you woke up, "Damn. This is not a dream, I do now baba."'
+	if daystart >= 10 and daystart < 30 and StoryLine = 0: 'You sleepy little surprised popyalitsya its female body.'
+
+	act 'Get out of bed and get dressed (0:15)':
+		cla
+		set InSleep = 0
+		set numdress = odedosna
+		set minut += 15
+		set tanga = 1
+		set nude = 0
+		gt 'bed','fin'
+	end
+
+	act 'Get out of bed':
+		cla
+		InSleep = 0
+		gt 'bed','fin'
+	end
+
+	act 'Try to sleep': gt 'bed2','dosip'
+}
+
+if numdress ! 0: set odedosna = numdress
+set nude = 1
+set numdress = 0
+
+'<center><img src="images\pics\son.jpg"></center>'
+
+if mop ! 1 and AutoMakeup = 1: set mop = 1 & 'Before going to bed you washed away your makeup.'
+if analplugIN = 1: set analplugIN = 0 & 'Before going to bed you took the butt plug off.'
+if vibratorIN = 1: set vibratorIN = 0 & 'Before going to bed you remove the vibrator.'
+!if vibratorIN = 1: set vibratorIN = 0 & 'Before going to bed you washed away your makeup.'
+
+if mop > 1: set mop = 0 & set vidageday -= 1 & 'Cosmetics smeared face, you think that looks bad for sleeping with makeup, skin ages faster from it.'
+
+!WD: moved health to sleep loop
+!set health += RAND(5,10)
+set hapri = 0
+InSleep = 1
+AEnema = 1
+HasWashed = 1
+
+set slep = RAND(0,3)
+if StoryLine = 1: slep = 0
+
+if slep = 0: set $slep = 'not dreaming'
+if slep = 1: set $slep = 'dream about what it is not clear images from the past'
+if slep = 2: set $slep = 'dreaming moon gazing at the world with his one bloody eye'
+if slep = 3: set $slep = 'dreaming that you are a man again'
+
+'You sleep and you <<$slep>>.'
+
+:loop_sleep
+
+set minut += 5
+set stime += 5
+
+if stime > 20:
+	set stime -= 20
+	set son   += 1
+	!WD: health gain from sleep now dependent on length of sleep
+	health    += RAND(0,1)
+end
+
+
+gs 'stat'
+
+if hour = timer and minut >= timerM:
+	set manna -= 10
+
+	'You slept. The alarm clock goes off.'
+
+	dynamic $wokeup
+
+elseif son > 23 and dosip = 0:
+	set manna -= 10
+
+	'You slept.'
+
+	dynamic $wokeup
+
+elseif son > 47 and dosip = 1:
+	set manna -= 10
+	set dosip = 0
+	set son -= 24
+
+	'You slept.'
+
+	dynamic $wokeup
+else
+	jump 'loop_sleep'
+end
+--- bed2 ---------------------------------
+

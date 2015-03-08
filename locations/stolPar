@@ -1,0 +1,152 @@
+# stolPar
+if BakaGHomework = 0:
+	gs 'stat'
+	!'<center><img src="images\pics\telek.jpg"></center>'
+	'Old desk, your parents bought back in the distant 90´s. Two side drawer with locks: your and your sister.'
+	if Stolprezik > 0: 'In the drawer are <<Stolprezik>> condoms'
+	if Stoltabletki > 0: 'In the drawer are <<Stoltabletki>> birth control pills.'
+	if Stollubri> 0: 'In the drawer is anal lubricant, enough for <<Stollubri>> uses.'
+	if krem> 0: 'There are <<krem>> uses of suntan lotion.'
+	if abonement> 0: 'subscription is valid for <<abonement>> Occupation'
+	if dildo> 0: 'Realistic dildo'
+
+
+	act 'Get up from the table': gt $locM, $metkaM
+	if prezik > 0:
+		act 'Remove condoms from purse':
+		stolIN = input ("How many condoms to put in desk drawer? (Your purse contains <<prezik>> condoms.)")
+			if stolIN <= 0 or stolIN > prezik:
+			else
+				set stolprezik += stolIN
+				set prezik -= stolIN
+			end
+		gt 'stolPar'
+		end
+	end
+
+	if Stolprezik > 0:
+		act 'Get condoms from desk':
+		stolOUT = input ("How many condoms to place in purse? (Desk has <<stolprezik>> condoms.)")
+			if stolOUT <= 0 or stolOUT > stolprezik:
+			else
+				set stolprezik -= stolOUT
+				set prezik += stolOUT
+			end
+		gt 'stolPar'
+		end
+	end
+
+	if tabletki > 0:
+		act 'Remove pills from purse':
+		stolIN = input ("How many birth control pills to put in desk drawer? (Your purse contains <<tabletki>> pills.)")
+			if stolIN <= 0 or stolIN > tabletki:
+			else
+				set Stoltabletki += stolIN
+				set tabletki -= stolIN
+			end
+		gt 'stolPar'
+		end
+	end
+
+	if Stoltabletki > 0:
+		act 'Get pills from desk':
+		stolOUT = input ("How many birth control pills to place in purse? (Desk has <<Stoltabletki>> pills.)")
+			if stolOUT <= 0 or stolOUT > Stoltabletki:
+			else
+				set Stoltabletki -= stolOUT
+				set tabletki += stolOUT
+			end
+		gt 'stolPar'
+		end
+	end
+
+	if lubri > 0:
+		act 'Remove lubricant from purse':
+		stolIN = input ("How many uses lubricant to put in desk drawer? (Your purse contains <<lubri/5>> uses.)")
+			if stolIN <= 0 or stolIN > lubri/5:
+			else
+				set Stollubri += stolIN * 5
+				set lubri -= stolIN * 5
+			end
+		gt 'stolPar'
+		end
+	end
+
+	if Stollubri > 0:
+		act 'Get lubricant from desk':
+		stolOUT = input ("How many uses of lubricant to place in purse? (Desk contains <<Stollubri/5>> uses.)")
+			if stolOUT <= 0 or stolOUT > Stollubri/5:
+			else
+				set Stollubri -= stolOUT * 5
+				set lubri += stolOUT * 5
+			end
+		gt 'stolPar'
+		end
+	end
+
+
+	if lernHome > 0:
+		act 'Learning lessons':
+			cls
+			if lernHome <= 2:
+				minut += 60 * lernHome
+				lernHome = 0
+				lern += 1
+			end
+			if lernHome > 2:
+				minut += 60 * 2
+				lernHome = 0
+			end
+			gs 'stat'
+			'Sitting for a long time you learned yet they were able to learn.'
+			act 'Get up from the table': gt $locM, $metkaM
+		end
+	end
+end
+
+$homework = {
+	'You have <<lernHome>> sheets of homework left to complete.'
+	act 'Do homework':
+		cls
+		:loopHomework
+		set lernHome -= 1
+		set lern += rand(1,3)
+		set lernSkill += rand(0,1)
+		set lernTime = (20 + rand(10,20)) - lernSpeed
+		set minut += lernTime
+		if lernHome > 0:
+			jump 'loopHomework'
+		else
+			gs 'stat'
+			'You have finished all your homework.'
+			act 'Stretch and relax': gt 'stolPar'
+		end
+	end
+}
+$study = {
+	'You have no more homework left to complete. You can study in the meanwhile.'
+	act 'Study':
+		cls
+		set lern += rand(1,3)
+		set lernSkill += rand(1,2)
+		set lernTime = (20 + rand(10,20)) - lernSpeed
+		set minut += lernTime
+		gs 'stat'
+		'You spent some time studying.'
+		act 'Stretch and relax': gt 'stolPar'
+	end
+}
+if BakaGHomework = 1:
+	cla
+	*clr
+	gs 'stat'
+	!'<center><img src="images\pics\telek.jpg"></center>'
+	'You are sitting down at the desk.'
+	set lernSpeed = (intel/5) * 1
+
+	act 'Get up': gt $locM, $metkaM
+	if lernHome > 0: dynamic $homework
+	if lernHome < 1: dynamic $study
+end
+--- stolPar ---------------------------------
+

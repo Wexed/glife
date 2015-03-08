@@ -1,0 +1,1409 @@
+# stat
+clr
+
+view
+
+if newclo[131] = 1 and SchoolAtestat = 1 or newclo[131] = 1 and SchoolBlock = 1: newclo[131] = 0
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Automatic Stuff
+if AutoMakeupType < 2: AutoMakeupType = 2
+if AutoHapri = 1 and greben > 0 and hapri = 0 and InSleep = 0:
+	set hapri = 1
+	'You brush your hair.'
+end
+
+if $HouseLocation = '':$HouseLocation = 'street'
+if housr = 1: housr['Street'] = 1
+if AutoMakeup = 1 and kosmetitka > 0 and mop = 1 and InSleep = 0 and (AutoMakeupSleep = 1 or (AutoMakeupSleep = 0 and HasWashed = 0)):
+	set mop = AutoMakeupType
+	if $CurLoc = vanr or $CurLoc = vanrPar or bag > 0:
+		if kosmetica < 3 and mop = 4: set mop = 3
+		if kosmetica < 2 and mop = 3: set mop = 2
+		if kosmetica < 1 and mop ! 1:
+			set mop = 1
+			'You have no make-up left.'
+		else
+			if mop = 2:
+				'You apply just enough make-up to touch up a few spots.'
+				set kosmetica -= 1
+			end
+			if mop = 3:
+				'You apply an amount of make-up, that should pass as an everyday-like setup.'
+				set kosmetica -= 2
+			end
+			if mop = 4:
+				'You apply an amount of make-up, that others usually wear, when they go out.'
+				set vidageday -= 1
+				set kosmetica -= 3
+			end
+		end
+	else
+		if kosmetitka < 3 and mop = 4: set mop = 3
+		if kosmetitka < 2 and mop = 3: set mop = 2
+		if kosmetitka < 1 and mop ! 1:
+			set mop = 1
+			'You have no make-up left.'
+		else
+			if mop = 2:
+				'You apply just enough make-up to touch up a few spots.'
+				set kosmetitka -= 1
+			end
+			if mop = 3:
+				'You apply an amount of make-up, that should pass as an everyday-like setup.'
+				set kosmetitka -= 2
+			end
+			if mop = 4:
+				'You apply an amount of make-up, that others usually wear, when they go out.'
+				set vidageday -= 1
+				set kosmetitka -= 3
+			end
+		end
+	end
+end
+
+if AutoVibrator = 1 and vibrator = 1 and vibratorIN=0:
+	if $CurLoc = vanr or $CurLoc = vanrPar:
+		set vibratorIN = 1
+		if vagina < 30:
+			set vagina = vagina + 2
+		end
+	end
+end
+
+if AutoButtPlug = 1 and analplug = 1 and analplugIN = 0:
+	if $CurLoc = vanr or $CurLoc = vanrPar:
+		set analplugIN = 1
+		if anus < 30:
+			set anus = anus + 5
+		end
+	end
+end
+
+if AutoEnema = 1 and klismaday ! day:
+	if $CurLoc = vanr or $CurLoc = vanrPar:
+		!set minut = minut + 5
+		set klismaday = day
+		set klismaday1= 1
+		set AEnema = 0
+		!'You put yourself an enema and clean intestines, now your ass ready for anal sex.'
+	end
+end
+
+if lipbalm > 0 and lipbalmstat <= 0 and AutoLipBalm = 1:
+	set minut -= 10
+	set lipbalm -= 1
+	set lipkoef += RAND(5,15)
+	if lipkoef > 50:
+		set lipkoef = 0
+		set lip += 1
+	end
+	set lipbalmstat += 8
+	'You apply a lip balm, to moisterize them.'
+end
+
+if AutoVitamins=1:
+	if vitamin>0 and vitaminday!day:
+		vitaminday=day
+		vitamin-=1
+		frost=0
+		if KandidozOnce=1:Kandidoz-=2
+		if GerpesOnce=1:Gerpes-=2
+		if SifacOnce=1 and Sifilis>=10:Sifilis-=RAND(0,1)
+		set skinvan = skinvan + 1
+		if skinvan = 20:set skinvan = 0&set skin = skin + 1
+	end
+end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DeX Cheats
+if cheatNewMovieDay = 1:
+	if pffilmday ! -1: pffilmday = -1
+end
+if cheatNewPhotoDay = 1:
+	if modelmon = month: modelmon = month - 1
+end
+if cheatYoungForever = 1:
+	if vidageday ! 300: vidageday = 300
+end
+if cheatHealthMaxed = 1:
+	set tempval = vital * 10 + stren * 5 + 1000
+	if health ! tempval: health = tempval
+end
+if cheatWillMaxed = 1:
+	set tempval = intel * 5 + will * 5 + 1000
+	if willpower ! tempval: willpower = tempval
+end
+if cheatManaMaxed = 1:
+	set tempval = (intel * magik) + magik * 100 + vital * 10 + rikudo
+	if manna ! tempval: manna = tempval
+end
+if cheatNeverHorny = 1:
+	if horny ! 0: horny = 0
+end
+if cheatModelStudent = 1:
+	if suspeh ! 100: suspeh = 100
+end
+if freezetime = 1:
+	if hour ! dctth: hour = dctth
+	if minut ! dcttm: minut = dctth
+end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Author Cheats
+if cheatHapri = 1: hapri = 1
+if cheatNomakeup = 1:
+if mop = 0: mop = 1
+end
+
+if cheatNosweat = 1 and sweat > -3: set sweat = -3
+if cheatNoEat = 1:
+if energy ! 19: energy = 19
+if water ! 19: water = 19
+end
+
+if cheatAlwaysHorny=1:
+	if horny ! 100: horny = 100
+end
+
+if cheatNoLegHair=1:
+	if leghair ! 0: leghair = 0
+end
+
+if cheatNoPussyHair=1:
+	if lobok ! 0: lobok = 0
+end
+
+if cheatNeverTired=1:
+	if son < 25: son = 25
+end
+
+if cheatNeverThirsty=1:
+	if water < 25: water = 25
+end
+
+if cheatNeverHungry=1:
+	if energy < 25: energy = 25
+end
+
+if cheatAlwaysVirgin=1:
+	if vagina ! 0: vagina = 0
+end
+
+if cheatVaginaHealth=1:
+	if mosol ! 0: mosol = 0
+end
+
+if cheatAlwaysMarried=1:
+	if husband ! 100: husband = 100
+end
+
+if cheatNoSTDs=1:
+	if venera ! 0: venera = 0
+	if GerpesOnce ! 0: GerpesOnce = 0
+	if Gerpes ! 0: Gerpes = 0
+	if SifacOnce ! 0: SifacOnce = 0
+	if Sifilis ! 0: Sifilis = 0
+	if KandidozOnce ! 0: KandidozOnce = 0
+	if Kandidoz ! 0: Kandidoz = 0
+	if TriperOnce ! 0: TriperOnce = 0
+	if Triper ! 0: Triper = 0
+end
+
+if cheatNoSweat=1:
+	if sweat ! -3: sweat = -3
+end
+
+if cheatNoPeriods=1:
+	if mesec ! 0: mesec = 0
+end
+
+if cheatBrushedHair=1:
+	if hapri ! 1: hapri = 1
+end
+
+if cheatAlwaysMakeup=1:
+	if kosmetica=0:kosmetica+=50
+	if cheatMakeupSelect=1:set mop=1
+	if cheatMakeupSelect=2:set mop=2
+	if cheatMakeupSelect=3:set mop=3
+	if cheatMakeupSelect=4:set mop=4
+end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!TRACKER
+if $DBCurLoc ! $CURLOC:
+	i = arrsize ('$DBPrevLoc')
+	if i = 20:
+		killvar '$DBPrevLoc', 0
+	end
+	$DBPrevLoc[i] = $DBCurLoc
+	$DBCurLoc = $CURLOC
+end
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+if alko > 0 and frost > 0: frost = 0
+
+if lernSkill >= 8: intel += 1 & lernSkill = 0
+
+if numdress ! 131 and Sforma > 0: set Sforma = 0
+if numdress = 131 and Sforma = 0: set Sforma = 1
+
+if lern >= 10: intel += 1 & lern = 0
+
+if GorSlut = 1:$gnikname = 'flirt'
+if GorSlut = 2:$gnikname = 'easy A'
+if GorSlut = 3:$gnikname = 'cocksucker'
+if GorSlut = 4:$gnikname = 'sex addict'
+if GorSlut = 5:$gnikname = 'slut'
+if GorSlut = 6:$gnikname = 'talking pussy'
+
+	if film > 0 and kompromatLife < 10:
+	!порноактрисса
+	if kompromatLife < 10: kompromatLife = 10
+	$kompromatFoto = 'This photo is a screenshot from one of the porn movies you were part of.'
+	end
+	if fotoyousuck = 1 and kompromatLife < 9:
+	!сосала в паре у парней и была сфотографированна
+	if kompromatLife < 9: kompromatLife = 9
+	$kompromatFoto = 'These pictures show you sucking two cocks at the same time.'
+	end
+	if fotoCFNMsex > 0 and kompromatLife < 8:
+	kompromatLife = 8
+	$kompromatFoto = 'In this photo you see yourself getting fucked from behind by a random guy. This must have been taken in the stripclup.'
+	end
+	if fotoCFNMblowjobCum > 0 and kompromatLife < 7:
+	!кончили на лицо в стрипклубе
+	kompromatLife = 7
+	$kompromatFoto = 'In this photo you are sitting infront of a guy, kissing his cock. There seems to be cum in your face. This photo must have been taken in the stripclub.'
+	end
+	if fotoCFNMblowjob > 0 and kompromatLife < 6:
+	!сосала на глазах у всех
+	kompromatLife = 6
+	$kompromatFoto = 'In this photo you are giving a guy a blowjob. You can spot a group of women in the background and it seems like this photo was taken in the stripclub.'
+	end
+
+	if stripdancesum > 0 and kompromatLife < 2:
+	!стриптизерша
+	if kompromatLife < 2: kompromatLife = 2
+	$kompromatFoto = 'In this photo you are dancing on a pole, obviously someone photographed you, while you were on stage at the stripclub.'
+	end
+	if modelfoto > 0 and kompromatLife < 1:
+	!фото модель
+	if kompromatLife < 1: kompromatLife = 1
+	$kompromatFoto = 'These are photos of you being naked, when you were taking pictures at the model agence.'
+	end
+
+
+shameless = guy + bj + anal + hj+(slutty * 2)+(gang * 2)
+moneySUM = money + karta + stolmoney
+cumSUM = cumbelly + cumpussy + cumass + cumlip + cumface + cumfrot + cumanus
+
+gs 'dina'
+gs 'din2'
+
+if husbizvradd > 5: izvratH = 1
+if husbharmin > 10: harakHusb = 0
+if clrbelo <= 0: clrbelo = 0 & tanga = 0
+
+if husband = 0:
+	set husbizvradd = 0
+	set husbharmin = 0
+	set husbandMark = 0
+	set houseslut = 0
+end
+
+if SNarkvnesh = 0: SNarkvnesh = 1
+if SNarkTimes >= SNarkvnesh * 25:
+	SNarkvnesh += 1
+	vidage += 1
+end
+
+if gopota >= 20 and gnewQW = 1: set gnewQW = 2
+
+if horny > hornyStat:
+	hornyStat = horny
+	if pirsA > 0:
+		horny += 1
+	end
+	if pirsB > 0:
+		horny += 1
+	end
+	if pirsC > 0:
+		horny += 1
+	end
+	if pirsD > 0:
+		horny += 1
+	end
+	if pirsE > 0:
+		horny += 1
+	end
+	if pirsF > 0:
+		horny += 5
+	end
+	if pirsG > 0:
+		horny += 5
+	end
+	if pirsN > 0:
+		horny += 1
+	end
+end
+
+if horny < hornyStat:
+	hornyStat = horny
+end
+
+if workDisk = 4 and week > 5: workDisk = 1
+if workDisk = 3 and week > 5: workDiskAtkPlayer = 1
+
+
+VeneraN = 0
+if VeneraOnce > 0: VeneraOnce = 0
+if SifacOnce = 1: VeneraN += 1
+if GerpesOnce = 1: VeneraN += 1
+if TriperOnce = 1: VeneraN += 1
+Venera = VeneraN
+
+if fat < 0: fat = 0
+if vokal < 0: vokal = 0
+if vokal > 100: vokal = 100
+if dance > 100: dance = 100
+if stripdance > 100: stripdance = 100
+if poledance > 100: poledance = 100
+if dancePRO > 100: dancePRO = 100
+if bfa < 0: bfa = 0
+
+if painQW = 0: set painweather = 6
+
+if beg < 0: set beg = 0
+if beg > 2000: set beg = 2000
+
+if oficiant > 100: set oficiant = 100
+if vagina > 30: set vagina = 30
+if throat > 30: set throat = 30
+if anus > 30: set anus = 30
+
+if Jab > 120: set Jab = 120
+if Punch > 120: set Punch = 120
+if Kik > 120: set Kik = 120
+if KikDef > 120: set KikDef = 120
+
+
+if nark >= 30 and narkoman = 0:
+	set narkoman = 1
+end
+if nark = 0 and narkoman = 0:
+	set narkoman = 0
+end
+
+set boxing = Jab + Punch + Kik + KikDef
+if boxing > 100: set boxing = 100
+
+if stren > 100 and mutagenP = 0: set stren = 100
+if speed > 100 and mutagenS = 0: set speed = 100
+if agil > 100 and mutagenA = 0: set agil = 100
+if react > 100 and mutagenR = 0: set react = 100
+if vital > 100 and mutagenV = 0: set vital = 100
+if will > 100 and mutagenW = 0: set will = 100
+if intel > 100 and mutagenI = 0 and student = 0 and diplom = 0: set intel = 100
+
+if stren > 150 and mutagenP = 1: set stren = 150
+if speed > 150 and mutagenS = 1: set speed = 150
+if agil > 150 and mutagenA = 1: set agil = 150
+if react > 150 and mutagenR = 1: set react = 150
+if vital > 150 and mutagenV = 1: set vital = 150
+if will > 150 and mutagenW = 1: set will = 150
+if intel > 150 and mutagenI = 1 and student = 0 and diplom = 0: set intel = 150
+
+if stren > 200 and mutagenP = 2: set stren = 200
+if speed > 200 and mutagenS = 2: set speed = 200
+if agil > 200 and mutagenA = 2: set agil = 200
+if react > 200 and mutagenR = 2: set react = 200
+if vital > 200 and mutagenV = 2: set vital = 200
+if will > 200 and mutagenW = 2: set will = 200
+if intel > 200 and mutagenI = 2 and student = 0 and diplom = 0: set intel = 200
+
+if stren > 250 and mutagenP = 3: set stren = 250
+if speed > 250 and mutagenS = 3: set speed = 250
+if agil > 250 and mutagenA = 3: set agil = 250
+if react > 250 and mutagenR = 3: set react = 250
+if vital > 250 and mutagenV = 3: set vital = 250
+if will > 250 and mutagenW = 3: set will = 250
+if intel > 250 and mutagenI = 3 and student = 0 and diplom = 0: set intel = 250
+if intel > 250: set intel = 250
+
+if MagikDostup = 0:
+	$levelUpString = '<B>Do you feel like that might be revealed within you and you gushed magic, lifting you to a new energy level.</B>'
+	if orgasm >= 1 and magik < 1: set magik = 1 & set glaraz += 1 & set rikudo += 500 & pl $levelUpString
+	if orgasm >= 2 and magik < 2: set magik = 2 & set resnic += 1 & set rikudo += 500 & pl $levelUpString
+	if orgasm >= 4 and magik < 3: set magik = 3 & set glaraz += 1 & set rikudo += 500 & pl $levelUpString
+	if orgasm >= 8 and magik < 4: set magik = 4 & set resnic += 1 & set rikudo += 500 & pl $levelUpString
+	if orgasm >= 16 and magik < 5: set magik = 5 & set glaraz += 1 & set rikudo += 500 & pl $levelUpString
+	if orgasm >= 32 and magik < 6: set magik = 6 & set resnic += 1 & set rikudo += 1000 & pl $levelUpString
+	if orgasm >= 64 and magik < 7: set magik = 7 & set glaraz += 1 & set rikudo += 1000 & pl $levelUpString
+	if orgasm >= 100 and magik < 8: set magik = 8 & set rikudo += 1000 & pl $levelUpString
+	if orgasm >= 200 and magik < 9: set magik = 9 & set rikudo += 1000 & pl $levelUpString
+	if orgasm >= 300 and magik < 10: set magik = 10 & set rikudo += 2000 & pl $levelUpString
+	if orgasm >= 400 and magik < 11: set magik = 11 & set rikudo += 4000 & pl $levelUpString
+	if orgasm >= 500 and magik < 12: set magik = 12 & set rikudo += 4000 & pl $levelUpString
+	if orgasm >= 600 and magik < 13: set magik = 13 & set rikudo += 4000 & pl $levelUpString
+	if orgasm >= 700 and magik < 14: set magik = 14 & set rikudo += 4000 & pl $levelUpString
+	if orgasm >= 800 and magik < 15: set magik = 15 & set rikudo += 8000 & pl $levelUpString
+	if orgasm >= 900 and magik < 16: set magik = 16 & set rikudo += 8000 & pl $levelUpString
+	if orgasm >= 1000 and magik < 17: set magik = 17 & set rikudo += 8000 & pl $levelUpString
+	if orgasm >= 1100 and magik < 18: set magik = 18 & set rikudo += 8000 & pl $levelUpString
+	if orgasm >= 1200 and magik < 19: set magik = 19 & set rikudo += 8000 & pl $levelUpString
+	if orgasm >= 1300 and magik < 20: set magik = 20 & set rikudo += 16000 & pl $levelUpString
+	if orgasm >= 1400 and magik < 20: set magik = 21 & set rikudo += 21000 & pl $levelUpString
+end
+
+if exhibi >= 4: pl '<B>You opened a new outfit ready</B>'
+
+if SUB >= DOM and DOM > 0: set SUB -= DOM & set DOM = 0
+if DOM >= SUB and SUB > 0: set DOM -= SUB & set SUB = 0
+
+
+if horny < 0: set horny = 0
+if health > vital*10 + stren*5: set health = vital * 10 + stren * 5
+if willpower > intel*5 + will*5: set willpower = intel * 5 + will * 5
+if manna > (intel*magik) + magik*100 + vital*10 + rikudo: set manna = (intel * magik) + magik * 100 + vital * 10 + rikudo
+set mannamax = (intel * magik) + magik * 100 + vital * 10 + rikudo
+!set musle = strenbuf + vitalbuf
+if vidageday <= 0:
+	set vidageday = 360
+	set vidage += 1
+end
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!ВРЕМЯ
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+if nminut ! minut:
+	!totminut время игры в минутах
+	totminut += minut
+	nminut = minut
+end
+
+if vgape > 0:
+	if vgape = 3:
+	if manna>(mannamax/4):manna = mannamax/4
+	end
+	if vgape = 2:
+	if manna>(mannamax/2):manna = mannamax/2
+	end
+end
+
+if agape > 0:
+	if agape = 3:
+	if manna>(mannamax/6):manna = mannamax/6
+	end
+	if agape = 2:
+	if manna>(mannamax/3):manna = mannamax/3
+	end
+end
+
+if vgape > 0:
+	if vgapetime+1500 <= totminut:
+	if vgape = 1: vgape = 0
+	if vgape = 2: vgape = 1 & vgapetime = totminut
+	if vgape = 3: vgape = 2 & vgapetime = totminut
+	end
+end
+
+if agape > 0:
+	if agapetime+2500 <= totminut:
+	if agape = 1: agape = 0
+	if agape = 2: agape = 1 & agapetime = totminut
+	if agape = 3: agape = 2 & agapetime = totminut
+	end
+end
+
+:loopsec
+if sec >= 60:
+	minut+= 1
+	sec -= 60
+	jump 'loopsec'
+end
+
+:loopmin
+if minut >= 60:
+	if CompCheckedResponses = 1:
+		CompCheckedResponses = 0
+		if obkvsdam['Street']>0: set obkvsdam['Street'] = RAND(2,5)
+		if obkvsdam['Down']>0: set obkvsdam['Down'] = RAND(2,5)
+		if obkvsdam['Nord']>0: set obkvsdam['Nord'] = RAND(2,5)
+	end
+
+	set hour += 1
+	set energy -= 1
+	set water -= 1
+	set son -= 1
+	set minut -= 60
+
+	if alko > 0:
+		if alko >= 4:
+		if beg > 0: beg -= 1
+		if volleyboll > 0: volleyboll -= 1
+			if alko >= 6:
+			if stren > 10: stren -= 1 & salo += 3
+			if vital > 10: vital -= 1 & salo += 3
+			if intel > 10: intel -= 1
+			end
+		end
+		alko -= 1
+	end
+
+	if shame > 0: shame -= 1 & manna -= 5
+	if smoker >= 20: smokerNeed += 1
+	if smokerNeed > 10 and InSleep = 0: manna -= manna * 10/100
+	if smokerNeed > 300: smokerNeed = 0 & smoker = 0
+	if StrongNarkota > 0: StrongNarkota -= 1
+	if SLomka > 0: SLomka += 1 & manna -= 500
+	if SLomka > 100 and StrongNarkota <= 0: SLomka = 0 & SNarkTimes = 0
+	set LCWorkRand = RAND(1,6)
+
+	if narkoman = 1 and narkday ! day:
+		set health -= 5
+		set willpower -= 5
+		set manna -= 10
+	end
+
+	if tanga = 0 and ski =0 or glamur = 0 and tanga = 0:
+		if nude = 0: mosolpred += 1
+	end
+
+	if mosolpred >= 10:
+		set mosol += 1
+		set mosolpred -= 10
+	end
+
+	if mosol >= 50:
+		manna -= 5
+	end
+
+	if energy >= 25: energy -= 5 & fat += 1
+
+	if tanga = 1 and mosol > 0: mosol -= 1
+	if lipbalmstat > 0: lipbalmstat -= 1
+	if sickstage = 1: sick += 1 & sicktimer += 1
+	if sickstage = 1 and sicktimer >= 80: sicktimer = 0 & sickstage = 2
+	if sickstage = 2 and sick > 0: sick -= 1
+	if sickstage = 2 and sick <= 0: sick = 0 & sickstage = 0
+	if perkice > 0: perkice -= 1
+	if frost > 0: frost -= 1
+
+	if KGOLpers > 0:
+		if KGHP < KGHPMAX: KGHP += 10
+		if KGManna < KGMannaMax: KGManna += 10
+	end
+
+	jump 'loopmin'
+end
+
+if hour >= 24:
+	if KatjaOTN > 0:
+		if KatjaHorny > 0: KatjaHorny -= rand(1,3)
+		if KatjaHorny < 0: KatjaHorny = 0
+		if KatjaHorny >= 100: KatjaHorny = 0 & KatjaMastr += 1 & KatjaLust += 1
+	end
+
+	if volleysostav > 0: trenerepa -= 1
+
+	if birthday = day and birthmonth = month:
+		!день рождения
+		set age += 1
+		set vidage += 1
+	end
+
+	if kanikuli = 0: Suspeh -= 1
+	set dmishaevent = 0
+
+	if BuyHous['Street'] = 2 and ArendHouseSL['Street'] <= 0: ArendHouseSL['Street'] = 0 & BuyHous['Street'] = 0 & housr['Street'] = 0
+	if BuyHous['Street'] = 2 and ArendHouseSL['Street']>0: ArendHouseSL['Street'] -= 1
+	if BuyHous['Down'] = 2 and ArendHouseSL['Down'] <= 0: ArendHouseSL['Down'] = 0 & BuyHous['Down'] = 0 & housr['Down'] = 0
+	if BuyHous['Down'] = 2 and ArendHouseSL['Down']>0: ArendHouseSL['Down'] -= 1
+	if BuyHous['Nord'] = 2 and ArendHouseSL['Nord'] <= 0: ArendHouseSL['Nord'] = 0 & BuyHous['Nord'] = 0 & housr['Nord'] = 0
+	if BuyHous['Nord'] = 2 and ArendHouseSL['Nord']>0: ArendHouseSL['Nord'] -= 1
+
+	if Gspravka <= 0 and GspravkaT > 0: GspravkaT = 0 & Gspravka = 0
+	if GspravkaT > 0: Gspravka -= 1
+	if IvanPodstavaQW = 2 and PodpiskaNeviezd = 30: IvanPodstavaQW = 3
+	if IvanPodstavaQW = 2 and PodpiskaNeviezd > 0 and PodpiskaNeviezd < 30: PodpiskaNeviezd += 1
+
+	if salo > fat:
+		salo -= 1
+		fat += 1
+	end
+
+	if salo < fat:
+		salo += 1
+		fat -= 1
+	end
+
+	if strenbuf > stren: set strenbuf -= 1
+	if strenbuf < stren: set strenbuf += 1
+	if vitalbuf > vital: set vitalbuf -= 1
+	if vitalbuf < vital: set vitalbuf += 1
+	if agilbuf > agil: set agilbuf -= 1
+	if agilbuf < agil: set agilbuf += 1
+	if husband > 0 and husbandrink ! 11: set husbandrink = rand(0,10)
+	set inWorkYoungShop = 0
+	set husbandsexday = 0
+	set borsexkol = 0
+	set givisexday = 0
+
+	if shantsr > 0:
+		set pay = shantsr * 5000
+		set karta += pay
+		set shantsr = 0
+	end
+
+	if shantbog > 0:
+		:shantftb
+		set shantftbgrand = rand(0,10)
+		if shantftbgrand > 2:
+			set shantpopala += 1
+			set shantbog -= 1
+			if shantbog > 0: jump 'shantftb'
+		end
+		if shantftbgrand <= 2:
+			set karta += 30000
+			set shantbog -= 1
+			if shantbog > 0: jump 'shantftb'
+		end
+	end
+
+	set petersexday = 0
+	set klismaday1= 0
+	set opusksexday = 0
+
+	:loop
+	set day += 1
+	set daystart += 1
+	set week += 1
+	set hour -= 24
+	!ЗПП
+	if SifacOnce = 1: Sifilis += 1
+	if GerpesOnce = 1: Gerpes += 1
+	if TriperOnce = 1: Triper += 1
+	if KandidozOnce = 1: Kandidoz += 1
+	if beg >= 100 and beg < 1000: beg -= 1
+	if beg >= 1000 and beg < 1500: beg -= 2
+	if beg >= 1500 and beg < 2000: beg -= 3
+	if beg >= 2000: beg -= 4
+
+	set vidageday -= 1
+	if workDolgDay > 0: workDolgDay -= 1
+	if QWdogreiqTimer > 0: QWdogreiqTimer -= 1
+	if husband > 0: husbanday += 1
+	!if kid > 0:kid += 1
+	if husband > 10 and husbanday > 0: husband -= 15
+	if fingal > 0: fingal -= 1
+
+	if husbandMark = 1 and husband <= 10:
+		set husbizvradd = 0
+		set husbharmin = 0
+		set husbandMark = 0
+		set husband = 0
+		set divorced += 1
+		if KFOnLineReaga > 0: KFOnLineReaga -= 1
+		'<B><font color = red>Your husband has filed for a divorce.</font></B>'
+	end
+
+	gs 'cikl'
+
+	if nark > 0:
+		set nark -= 1
+	end
+
+	if pregtime > 10: fat += 1
+
+	if hour >= 24:
+		jump 'loop'
+	end
+end
+
+:loopday
+if month > 12:
+	month -= 12
+	year += 1
+	jump 'loopday'
+end
+
+if day > month_end[month]:
+	day -= month_end[month]
+	month += 1
+	jump 'loopday'
+end
+$month = $month_name[month]
+
+:loopweek
+if week > 7:
+	set week -= 7
+	set husbandrink = 0
+	if military = 1: set military = 0
+	jump 'loopweek'
+end
+$week = $week_name[week]
+
+!Выплаты
+if day = 25:
+	interest = (karta/100)
+	if (interest>0) and (interestPay=0):
+		karta += interest
+		interestPay = 1
+		'<B><font color=green>You have received <<interest>> rubles as interest on your bank account deposit.</font></B>'
+	end
+
+	if PersSecWork = 1 and PersSecWorkTimes > 0 and paydaybistrosec = 0:
+	Pay = PersSecWorkTimes * 2500
+	PersSecWorkTimes = 0
+	karta += Pay
+	paydaybistrosec = 1
+	'<B><font color = green>You have received <<pay>> rubles salary for your job as a secretary on your bank account.</font></B>'
+	end
+
+	if workKafe = 1 and paydayKafe = 0:
+	set paydayKafe = 1
+	set pay = smenaKafe * 600
+	set karta += pay
+	set smenaKafe = 0
+	'<B><font color = green>You have received <<pay>> rubles salary for your job as a waitress in a cafe on your bank account.</font></B>'
+	end
+
+	if workhosp = 1 and nopaypoly = 0:
+	set pay = smena * 1000
+	set karta += pay
+	set smena = 0
+	nopaypoly = 1
+	'<B><font color = green>You have received <<pay>> rubles salary for your work in the clinic on your bank account.</font></B>'
+	end
+
+	if worksalon = 1 and nopaysalon = 0:
+	set pay = smena * 800
+	set karta += pay
+	set smena = 0
+	nopaysalon = 1
+	'<B><font color = green>You have received <<pay>> rubles salary for your work in a beauty salon on your bank account.</font></B>'
+	end
+
+	if tanwork = 1 and nopaytanwork = 0:
+	nopaytanwork = 1
+	set karta += 25000
+	'<B><font color = green>You have received a salary of 25,000 rubles for your work as a house maid on your bank account.</font></B>'
+	end
+
+	if workSec = 1 and paydaySec = 0:
+	set paydaySec = 1
+	set pay = sekDay * 800
+	if officebestslut >= 3: set pay += 20000
+	set karta += pay
+	set sekDay = 0
+	'<B><font color = green>You have received <<pay>> rubles salary for your job as a secretary on your bank account.</font></B>'
+	end
+
+	if selfPornVidMoney>0 and paydaySelfPorn=0:
+		set paydaySelfPorn=1
+		set karta += selfPornVidMoney
+		'<B><font color = green>You have received <<selfPornVidMoney>> rubles on your bank account for your self-made porn videos.</font></B>'
+		set selfPornVidMoney=0
+	end
+
+	if husband > 0 and paydayHusb = 0:
+	paydayHusb = 1
+		if husbFin = 0: huspay = 30000
+		if husbFin = 1: huspay = 60000
+		if husbFin = 2: huspay = 90000
+		karta += huspay
+		'<B><font color = green>Your husband has sent you <<huspay>> rubles to your bank account.</font></B>'
+	end
+
+	if stipuha = 1 and stipuhaday = 0: set stipuhaday = 1 & set karta += 1200 & '<B><font color = green>You have received 1,200 rubles scholarship on your bank account.</font></B>'
+	if housr = 1 and haday = 0 and ArendHouseSL = 0: set haday = 1 & set karta -= 3000 & '<B><font color = red>You paid 3000 rubles for your apartment.</font></B>'
+	if housr = 1 and electroday = 0:
+		set electroday = 1
+		if elektro >= 800: set elektro = 800 + RAND(0,100)
+		set karta -= elektro
+
+		'<B><font color = red>You paid <<elektro>> for electricity.</font></B>'
+
+		set elektro = 0
+	end
+
+	if housr = 1 and kabel > 0 and kabelday = 0:
+		set kabelday = 1
+		set karta -= 300
+		'<B><font color = red>You have paid 300 rubles for cable TV.</font></B>'
+	end
+else
+	if interestPay = 1: interestPay = 0
+	if paydayHusb = 1: paydayHusb = 0
+	if workKafe = 1 and paydayKafe = 1: set paydayKafe = 0
+	if workSec = 1 and paydaySec = 1: set paydaySec = 0
+	if housr = 1 and haday = 1: set haday = 0
+	if housr = 1 and electroday = 1: set electroday = 0
+	if housr = 1 and kabel > 0 and kabelday = 1: set kabelday = 0
+	if stipuhaday = 1: set stipuhaday = 0
+	if nopaytanwork = 1: nopaytanwork = 0
+	if nopaypoly = 1: nopaypoly = 0
+	if nopaysalon = 1: nopaysalon = 0
+	if paydaybistrosec = 1: paydaybistrosec = 0
+end
+
+if sdaday['Street'] = day and sdamonth['Street'] = month and houserent['Street'] = 1:
+	set houserent['Street'] = 0
+	'<B><font color = red>The term of your residental apartment lease expired.</font></B>'
+end
+if sdaday['Down'] = day and sdamonth['Down'] = month and houserent['Down'] = 1:
+	set houserent['Down'] = 0
+	'<B><font color = red>The term of your downtown apartment lease expired.</font></B>'
+end
+if sdaday['Nord'] = day and sdamonth['Nord'] = month and houserent['Nord'] = 1:
+	set houserent['Nord'] = 0
+	'<B><font color = red>The term of your northern apartment lease expired.</font></B>'
+end
+
+!{
+if kid > 0:
+	if year > yearkid[1] and markyear[1]!year:
+		if monthkid[1] = month and daykid[1] = day:
+		markyear[1] = year
+		kidage[1] += 1
+		end
+	end
+}
+
+if kid > 0:
+	set kI = 1
+	:kidBirthday
+	if year > yearkid[kI] and markyear[kI]!year:
+		if monthkid[kI] = month and daykid[kI] = day:
+			markyear[kI] = year
+			kidage[kI] += 1
+		end
+	end
+	set kI += 1
+	if kI <= numkid:
+		jump 'kidBirthday'
+	end
+end
+
+if numkids > 0:
+	i = 0
+	:agethekids
+	if (kidbornyear2[i] + kidage2[i] + 1) < year: kidage2[i] += 1
+	if (kidbornyear2[i] + kidage2[i]) < year:
+		if kidbornmonth2[i] < month: kidage2[i] += 1
+		if kidbornmonth2[i] = month and kidbornday2[i] <= day: kidage2[i] += 1
+	end
+	i += 1
+	if i < numkids: jump 'agethekids'
+end
+
+if Mud >= totminut:
+	manna = mannamax
+	$mud = 'You feel buoyed.'
+else
+	$mud = ''
+end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!КОНЕЦ ВРЕМЕНИ
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+subage = 0
+:metakasubage
+subage += 10
+if subage + 10 < age:
+	JUMP 'metakasubage'
+else
+	subage = age - subage
+end
+
+if subage = 0 or subage >= 5:
+	$letgoda = 'years'
+elseif subage = 1:
+	$letgoda = 'year'
+else
+	$letgoda = 'year'
+end
+
+subagevne = 0
+:metakasubagevne
+subagevne += 10
+if subagevne + 10 < vidage:
+	JUMP 'metakasubagevne'
+else
+	subagevne = vidage - subagevne
+end
+
+if subagevne ! 1:
+	$letgoda2 = 'years'
+else
+	$letgoda2 = 'year'
+end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!ЭНЕРГИЯ
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if son < 0:
+	set son = 0
+	set manna -= 5
+end
+
+if energy < 0:
+	set energy = 0
+	set health -= 1
+
+	if fat = 0 and stren + vital > 0:
+		set stren -= 1
+		set vital -= 1
+		set energy += 2
+	end
+
+	if fat = 0 and stren + vital <= 0:
+		set over = 3
+		gt 'gameover'
+		exit
+	end
+
+	if fat > 0:
+		set fat -= 1
+		set energy += 2
+	end
+end
+
+if water < 0:
+	set water = 1
+	set health -= 5
+	set willpower -= 1
+end
+
+if manna <= 0:
+	set manna = 1
+	set health -= 5
+	set willpower -= 5
+	!set fat += 1
+end
+
+if health < 0:
+	set over = 1
+	gt 'gameover'
+	exit
+end
+
+if willpower < 0 and StoryLine = 0:
+	set over = 2
+	gt 'gameover'
+	exit
+end
+
+if saloonce = 0 and opPRE = 0:
+	set saloonce = 1
+	set salo = fat
+	set strenbuf = stren
+	set vitalbuf = vital
+	set agilbuf = agil
+end
+
+gs 'body'
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if health = vital * 10 + stren * 5: set $health = '<font color = green>You are very healthy.</font>'
+if willpower = intel * 5 + will * 5: set $willpower = '<font color = green>Your mind is clear.</font>'
+if manna = (intel * magik) + magik * 100 + vital * 10 + rikudo: set $manna = '<font color = green>You are in a good mood.</font>'
+
+if health < vital*10 + stren*5 and health >= (vital * 10 + stren * 5)*75/100: set $health = '<font color = blue>You are healthy.</font>'
+if health < (vital*10 + stren*5)*75/100 and health >= (vital * 10 + stren * 5)*50/100: set $health = '<font color = brown>you are not healthy.</font>'
+if health < (vital*10 + stren*5)*50/100 and health >= (vital * 10 + stren * 5)*25/100: set $health = '<font color = red>You are sick.</font>'
+if health < (vital*10 + stren*5)*25/100: set $health = '<font color = red>You are on the verge of death.'
+
+if willpower < intel*5 + will*5 and willpower >= (intel * 5 + will * 5)*75/100: set $willpower = '<font color = blue>You are mostly in thought.</font>'
+if willpower < (intel*5 + will*5)*75/100 and willpower >= (intel * 5 + will * 5)*50/100: set $willpower = '<font color = brown>You are depressed.</font>'
+if willpower < (intel*5 + will*5)*50/100 and willpower >= (intel * 5 + will * 5)*25/100: set $willpower = '<font color = red>You are in depression.</font>'
+if willpower < (intel*5 + will*5)*25/100: set $willpower = '<font color = red>You are on the verge of madness.</font>'
+
+if manna < (intel*magik) + magik*100 + vital*10 + rikudo and manna >= ((intel * magik) + magik * 100 + vital * 10 + rikudo)*75/100: set $manna = '<font color = blue>You have a normal mood.</font>'
+if manna < ((intel*magik) + magik*100 + vital*10 + rikudo)*75/100 and manna >= ((intel * magik) + magik * 100 + vital * 10 + rikudo)*50/100: set $manna = '<font color = brown>You are in a bad mood.</font>'
+if manna < ((intel*magik) + magik*100 + vital*10 + rikudo)*50/100 and manna >= ((intel * magik) + magik * 100 + vital * 10 + rikudo)*25/100: set $manna = '<font color = red>You are in a terrible mood.</font>'
+if manna < ((intel*magik) + magik*100 + vital*10 + rikudo)*25/100: set $manna = '<font color = red>Your mood is below any skirting and urban sanitation.</font>'
+
+
+if energy >= 20: set $energy = '<font color = green>You couldn''t eat one more bite.</font>'
+if energy < 20 and energy >= 10: set $energy = '<font color = blue>You''re not really hungry, but a small snack would be very welcome.</font>'
+if energy < 10 and energy >= 2: set $energy = '<font color = brown>You are hungry.</font>'
+if energy < 2: set $energy = '<font color = red>You are very hungry.</font>'
+
+if water >= 20: set $water = '<font color = green>You are not thirtsy at all.</font>'
+if water < 20 and water >= 10: set $water = '<font color = blue>You are slightly thirsty.</font>'
+if water < 10 and water >= 2: set $water = '<font color = brown>You are thirsty.</font>'
+if water < 2: set $water = '<font color = red>You are very thirsty.</font>'
+
+if son >= 20: set $son = '<font color = green>You are well rested.</font>'
+if son < 20 and son >= 10: set $son = '<font color = blue>You are slightly tired.</font>'
+if son < 10 and son >= 2: set $son = '<font color = brown>You are tired.</font>'
+if son < 2: set $son = '<font color = red>You are very tired.</font>'
+
+$din_shame = {
+!dynamic din_shame
+!shame += 1
+!if shame >= 5:shame = 4 & shameless += 1
+!if shame >= 4:set $shame = '<font color = red><b>of your cheeks blaze zalivshego them blush with shame.</b></font>'
+!if shame = 3:set $shame = '<font color = red>Your cheeks are red from the blush of shame.</font>'
+!if shame = 2:set $shame = '<font color = brown>You nemnog opokrasneli shame.</font>'
+!if shame = 1:set $shame = '<font color = green>You´re a little confused.</font>'
+!if shame <= 0:set $shame = '<font color = green>You´re a little confused.</font>'
+!gs 'stat'
+}
+
+!if shame >= 5:shame = 4 & shameless += 1
+!if shame >= 4:set $shame = '<font color = red><b>of your cheeks blaze zalivshego them blush with shame.</b></font>'
+!if shame = 3:set $shame = '<font color = red>Your cheeks are red from the blush of shame.</font>'
+!if shame = 2:set $shame = '<font color = brown>You nemnog opokrasneli shame.</font>'
+!if shame = 1:set $shame = '<font color = green>You´re a little confused.</font>'
+!if shame <= 0:set $shame = '<font color = green>You´re a little confused.</font>'
+
+set $holyday = ''
+kanikuli = 0
+if (month = 10 and day >= 27) or (month = 11 and day <= 4): set $holyday = '<b>Autumn holidays.</b>'&kanikuli = 1
+if (month = 12 and day >= 29) or (month = 1 and day <= 13): set $holyday = '<b>Winter Break.</b>'&kanikuli = 2
+if (month = 3 and day >= 25): set $holyday = '<b>Spring Break.</b>'&kanikuli = 3
+if (month = 5 and day >= 25) or month = 6 or month = 7 or month = 8: set $holyday = '<b>Summer holidays.</b>'&kanikuli = 4
+if month = 1 and day = 1: set $holyday = '<b>New Year</b>'&kanikuli = 5
+
+
+if hour >= 8 and hour < 16 and week < 6 and StoryLine > 0 and SchoolAtestat = 0 and kanikuli = 0 and schoolProgulDay ! day:
+	!прогул школы
+	schoolprogul += 1
+	schoolProgulDay = day
+end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!НАЧАЛО ОПИСАНИЯ
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+if hour > 9 :
+	if minut > 9 :
+		pl '<B><<hour>>:<<minut>></B>  <<$week>> <<day>> <<$month>> <<year>>'
+	else
+		pl '<B><<hour>>:0<<minut>></B>  <<$week>> <<day>> <<$month>> <<year>>'
+	end
+else
+	if minut > 9 :
+		pl '<B>0<<hour>>:<<minut>></B>  <<$week>> <<day>> <<$month>> <<year>>'
+	else
+		pl '<B>0<<hour>>:0<<minut>></B>  <<$week>> <<day>> <<$month>> <<year>>'
+	end
+end
+
+pl '<b><<money>></b> rubles in your wallet.'
+if karta > 0: pl '<b><<karta>></b> rubles in your bank account.'
+if stolmoney > 0: pl '<b><<stolmoney>></b> rubles in the table in your hall.'
+
+if StoryLine > 0 and SchoolAtestat = 0: pl '<<$holyday>>'
+if birthday = day and birthmonth = month: pl '<b>Today is your birthday.</b>'
+!if shame > 0:pl '<<$shame>>'
+
+if ETOmenu = 1:
+pl '<B><<$manna>></B>'
+if horny >= 90: pl '<font color=#FF1493>It takes an incredible amount of willpower not to touch yourself all the time.</font>'
+if horny >= 50 and horny < 90: pl '<font color=#DB7093>You have trouble focusing at times, as your mind drifts to sex.</font>'
+pl '<B><<$health>></B>'
+pl '<B><<$willpower>></B>'
+pl '<B><<$energy>></B>'
+pl '<B><<$water>></B>'
+pl '<B><<$son>></B>'
+end
+if ETOmenu = 0:
+if ShowStatsAs = 0:
+	pl '<B><<$manna>></B>'
+	if horny >= 90: pl '<font color=#FF1493>It takes an incredible amount of willpower not to touch yourself all the time.</font>'
+	if horny >= 50 and horny < 90: pl '<font color=#DB7093>You have trouble focusing at times, as your mind drifts to sex.</font>'
+end
+set a = horny
+!set a1 = horny
+if ShowStatsAs ! 2:
+	gs 'indik','2'
+	pl '<<$ind>> Arousal'
+end
+if ShowStatsAs ! 1 and ShowStatsAs ! 0:
+	if horny >= 90: pl '<font color=#FF1493>It takes an incredible amount of willpower not to touch yourself all the time.</font>'
+	if horny >= 50 and horny < 90: pl '<font color=#DB7093>You have trouble focusing at times, as your mind drifts to sex.</font>'
+end
+
+healthmax=(vital * 10 + stren * 5)
+set a = ( health * 100 /healthmax )
+set a1 = health
+if ShowStatsAs ! 2:
+	gs 'indik','1'
+	pl '<<$ind>> Health'
+end
+if ShowStatsAs ! 1 and ShowStatsAs ! 0: pl '<B><<$health>></B>'
+
+willpowermax =(intel * 5 + will * 5)
+set a = ( willpower * 100 / willpowermax )
+set a1 = willpower
+if ShowStatsAs ! 2:
+	gs 'indik','1'
+	pl '<<$ind>> Willpower'
+end
+if ShowStatsAs ! 1 and ShowStatsAs ! 0: pl '<B><<$willpower>></B>'
+
+set a = ( manna *100 / mannamax )
+set a1 = manna
+if ShowStatsAs ! 2:
+	gs 'indik','1'
+	pl '<<$ind>> Mood'
+end
+if ShowStatsAs ! 1 and ShowStatsAs ! 0: pl '<B><<$manna>></B>'
+
+set a = energy * 4
+set a1 = energy
+if ShowStatsAs ! 2:
+	gs 'indik','1'
+	pl '<<$ind>> Hunger'
+end
+if ShowStatsAs ! 1 and ShowStatsAs ! 0: pl '<B><<$energy>></B>'
+
+set a = water * 5
+set a1 = water
+if ShowStatsAs ! 2:
+	gs 'indik','1'
+	pl '<<$ind>> Thirst'
+end
+if ShowStatsAs ! 1 and ShowStatsAs ! 0: pl '<B><<$water>></B>'
+
+set a = son * 4
+set a1 = son
+if ShowStatsAs ! 2:
+	gs 'indik','1'
+	pl '<<$ind>> Sleep'
+end
+if ShowStatsAs ! 1 and ShowStatsAs ! 0: pl '<B><<$son>></B>'
+end
+
+
+$strip_dress={
+	if stripdress=0:
+		stripdress=1
+		nude=1
+		odedosna=numdress
+		numdress=0
+		gs'stat'
+		'You remove your clothes.'
+		exit
+	end
+	if stripdress=1:
+		stripdress=0
+		numdress=odedosna
+		nude=0
+		gs'stat'
+		'You get dressed.'
+		exit
+	end
+}
+
+
+nl
+if nude=1:stripdress=1
+if nude=0:stripdress=0
+if stripdress=0:$stripDress='Strip'
+if stripdress=1:$stripDress='Dress'
+pl'<a href="exec:dynamic $strip_dress"><B><<$stripDress>></B></a>'
+
+
+$smoker = {
+	siga -= 1
+	smoker += 1
+	smokeHour = hour
+	smokeDay = day
+	smokeminut = minut + 5
+	smokerNeed = 0
+	manna += 100
+	wipo += 100
+	if energy < 20: energy += 3
+	gs 'stat'
+}
+
+if $mud ! '': pl '<font color = green><b><<$mud>></b></font>'
+if siga <= 0 and smoker >= 20: pl '<font color = red><b>You have run out of cigarettes.</b></font>'
+if smokerNeed > 0 and siga > 0 and smoker >= 20:
+	pl '<a href="exec:dynamic $smoker"><font color = red><b>You want to smoke. You have <<siga>> cigarettes left</b></font></a>'
+elseif siga > 0 and smoker >= 20:
+	pl '<a href="exec:dynamic $smoker"><font color = blue><b>You have <<siga>> cigarettes left</b></font></a>'
+end
+
+if siga > 0 and smoker < 20:
+	if smokeHour = hour and smokeday = day and smokeminut >= minut:
+	else
+		pl '<a href="exec:dynamic $smoker"><font color = blue><b>You have <<siga>> cigarettes left</b></font></a>'
+	end
+end
+
+if smokeHour = hour and smokeday = day and smokeminut >= minut: pl '<font color = green>You are smoking a cigarette</font>'
+if ReminderSystem = 1:
+	if tampon < ReminderNumber: pl '<font color = red>I should go buy some tampons</font>'
+	if stanok < ReminderNumber: pl '<font color = red>I should go buy some razors</font>'
+	if poroshok < ReminderNumber: pl '<font color = red>I should go buy some washing powder</font>'
+	if clrbelo < ReminderNumber: pl '<font color = red>I should go buy some clean underwear</font>'
+	if shampoo < ReminderNumber: pl '<font color = red>I should go buy some shampoo</font>'
+	if fairy < ReminderNumber: pl '<font color = red>I should go buy some dishwashing detergent</font>'
+	if (eda + edaD) < ReminderNumber: pl '<font color = red>I should go buy some food</font>'
+end
+
+if opPRE = 0: pl '<<$mop>> and your hair is <<$hapri>>.'
+!!!!!!!!!!!!!!!!!!!
+if sweat = 1: pl '<font color = brown>You´re sweating.</font>'
+if sweat = 2: pl '<font color = red>You are a little smelly.</font>'
+if sweat = 3: pl '<font color = red>You stink.</font>'
+if sweat > 3: pl '<B><font color = red>You stink.</font></B>'
+if isprok = 0 and mesec > 0 and preg = 0: pl '<B><font color = red>You are bleeding between your legs, urgently need a tampon.</font></B>'
+if isprok = 1 and mesec > 0 and preg = 0: pl 'You are having your period.'
+if preg = 1 and pregtime = 280: pl '<B><font color = red>You urgently need to go to the hospital</font></B>'
+if preg = 1: Set rodtime = 280 - pregtime
+if preg = 1 and pregtime < 280 and pregtime > 6: pl '<B><font color = blue>You have been pregnant for <<pregtime>> days. Days until delivery <<rodtime>></font></B>'
+if hour >= 11 and hour < 12 and week > 1 and week < 5 and workKafe = 1: pl '<B><font color = red>You have a work shift as a waitress in a cafe</font></B>'
+if hour >= 8 and hour < 9 and week < 5 and workSec >= 1: pl '<B><font color = red>You have a work shift as a secretary</font></B>'
+if PersSecWork = 1 and week < 6 and hour < 10 and hour >= 5: pl '<B><font color = red>You have a work shift as a secretary</font></B>'
+
+$cumeater = {
+cumlip += 1
+vaf += 1
+cumbelly = 0
+gs 'stat'
+'You have collected sperm from fingers and licked their stomach felt tart taste of semen.'
+}
+$cumeater2 = {
+cumlip += 1
+vaf += 1
+cumpussy = 0
+gs 'stat'
+'You have collected sperm from fingers pussy and licked them feeling tart taste of semen.'
+}
+$cumeater3 = {
+cumlip += 1
+vaf += 1
+cumass = 0
+gs 'stat'
+'You have collected sperm from fingers and licked their priests felt tart taste of semen.'
+}
+$cumeater4 = {
+cumlip += 1
+vaf += 1
+cumface = 0
+gs 'stat'
+'You have collected fingers semen from her face and licked them feeling tart taste of semen.'
+}
+$cumeater5 = {
+cumlip += 1
+vaf += 1
+cumfrot = 0
+gs 'stat'
+'You have collected sperm from fingers and licked their clothes felt tart taste of semen.'
+}
+$cumeater6 = {
+cumlip += 1
+vaf += 1
+cumanus = 0
+gs 'stat'
+'You have collected fingers semen out of the anus and lick their feeling tart taste of semen.'
+}
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!'<a href="exec:view''images\body\cumface.jpg''">лицо</a>'
+!'<a href="exec:view''images\body\cumface.jpg''"><B><font color = red>Ваше лицо</font></B></a>'
+!'<a href="exec:view''images\body\cumass.jpg''"><B><font color = red>Ваша попа</font></B></a>'
+
+
+if cumbelly > 0 and swallow < 10: pl '<B><font color = red>Your <a href="exec:view''images\body\cumbelly.jpg''">stomach</a> is smeared with sperm.</font></B>'
+if cumbelly > 0 and swallow >= 10: pl '<a href="exec:view''images\body\cumbelly.jpg''"><B><font color = red>Your stomach</font></B></a> <a href="exec:dynamic $cumeater"><B><font color = red>is smeared with sperm.</font></B></a>'
+
+if cumpussy > 0 and swallow < 10: pl '<B><font color = red>Sperm slowly flows from your <a href="exec:view''images\body\cumpussy.jpg''">pussy</a>.</font></B>'
+if cumpussy > 0 and swallow >= 10: pl '<a href="exec:view''images\body\cumpussy.jpg''"><B><font color = red><a href="exec:dynamic $cumeater2">Sperm slowly flows</a> from your pussy</font></B></a>.'
+
+if cumass > 0 and swallow < 10: pl '<B><font color = red>Your <a href="exec:view''images\body\cumass.jpg''">ass</a> is smeared with semen.</font></B>'
+if cumass > 0 and swallow >= 10: pl '<a href="exec:view''images\body\cumass.jpg''"><B><font color = red>Your ass</font></B></a> <a href="exec:dynamic $cumeater3"><B><font color = red>is smeared with semen.</font></B></a>'
+
+if cumlip > 0: pl '<B><font color = red>Your mouth smells like sperm.</font></B>'
+if cumface > 0 and swallow < 10: pl '<B><font color = red>Your <a href="exec:view''images\body\cumface.jpg''">face</a> and hair are smeared with sperm.</font></B>'
+if cumface > 0 and swallow >= 10: pl '<a href="exec:view''images\body\cumface.jpg''"><B><font color = red>Your face</font></B></a> <a href="exec:dynamic $cumeater4"><B><font color = red>and hair are smeared with sperm.</font></B></a>'
+if cumfrot > 0 and swallow < 10: pl '<B><font color = red>You have semen stains on your <a href="exec:view''images\body\cumfrot.jpg''">clothes</a>.</font></B>'
+if cumfrot > 0 and swallow >= 10: pl '<a href="exec:view''images\body\cumfrot.jpg''"><B><font color = redYou have <a href="exec:dynamic $cumeater5"><B><font color = red>semen stains</font></B></a> on your clothes</font></B></a>.'
+if cumanus > 0 and swallow < 10: pl '<B><font color = red>Sperm slowly flows from your <a href="exec:view''images\body\cumanal.jpg''">ass</a>.</font></B>'
+if cumanus > 0 and swallow >= 10: pl '<a href="exec:view''images\body\cumanal.jpg''"><B><font color = red><a href="exec:dynamic $cumeater6">Sperm slowly flows</a> from your ass</font></B></a>.'
+if vgape = 3: pl '<B><font color = red>You have very sore vagina, you can hardly even walk, while trying to keep your feet apart.</font></B>'
+if vgape = 2: pl '<B><font color = red>You have a sore vagina and you can hardly keep your feet together.</font></B>'
+if vgape = 1: pl '<B><font color = red>You have a slightly sore vagina.</font></B>'
+if agape = 3: pl '<B><font color = red>You have very sore anus and it emits blood.</font></B>'
+if agape = 2: pl '<B><font color = red>You have a sore anus.</font></B>'
+if agape = 1: pl '<B><font color = red>You have a slightly sore and itchy anus.</font></B>'
+
+if Gerpes >= 3: pl '<B><font color = red>On your lips sores. All signs of genital herpes.</font></B>'
+if Gerpes < 10 and Gerpes >= 5: pl '<B><font color = red>Your pussy flushed and highly itchy. This genital herpes.</font></B>'
+if Gerpes >= 10: pl '<B><font color = red>On your pussy sores appeared. This genital herpes.</font></B>'
+if Gerpes >= 20: pl '<B><font color = red>cover your ass sores of genital herpes.</font></B>'
+if Sifilis >= 21 and Sifilis < 50: pl '<B><font color = red>You have jumped big, hard sore on the lip.</font></B>'
+if Sifilis >= 50: pl '<B><font color = red>syphilitic rash covers your whole body.</font></B>'
+if Triper > 2: pl '<B><font color = red>From the vaginal white discharge come out strong and stinging when urinating. Just out of the vagina hard and nasty smells.</font></B>'
+if Kandidoz > 30: pl '<B><font color = red>Do you thrush.</font></B>'
+if SLomka > 0: pl '<B><font color = red>You are very bad and hurt all the bones. Do you break-up</font></B>'
+if narkday ! day and narkoman = 1: pl '<B><font color = red>You are very bad and hurt all the bones. Urgently need pale lady</font></B>'
+if fingal > 0: pl '<B><font color = red>You have a black eye on the face.</font></B>'
+if tanga = 0 and ski = 1 or tanga = 0 and glamur = 1:
+pl '<B><font color = red>blush of shame fills your face, you do not put her panties and now from under your short skirt sparkles sometimes naked ass.</font></B>'
+end
+if tanga = 0 and ski = 0 and glamur = 0 and opPRE = 0 and nude = 0:
+pl '<B><font color = red>you do not put panties.</font></B>'
+end
+if mosol >= 30 and mosol < 50: pl '<B><font color = red>Pisya flushed and itchy, it seems you are rubbed by clothing.</font></B>'
+if mosol >= 50: pl '<B><font color = red>Pisya hurts and each step is given through the pain, she Crimson and visible scuffs from walking without underwear.</font></B>'
+if analplugIN = 1: pl '<B><font color = red>Do you in the ass anal plug is inserted.</font></B>'
+if vibratorin = 1: pl '<B><font color = red>Do you work in the vagina vibrator.</font></B>'
+
+if young_shop_work = 1 and hour = 14 and week < 6: pl '<B><font color = red>Within 15 hours you have to be at work in the shop Keys Puss.</font></B>'
+if young_shop_work = 1 and hour = 16 and week < 6 and inWorkYoungShop = 0: young_shop_miss += 1 & pl '<B><font color = red>You squandered work.</font></B>'
+
+if workrin = 1:
+	if week = 2 or week = 4 or week = 6:
+		if hour = 7: pl '<B><font color = red > 8m hours you work on the market.</font></B>'
+		if hour = 8: pl '<B><font color = red>You need to work on the market.</font></B>'
+	end
+end
+
+if frost > 0 and frost <= 5: pl '<B><font>You have a little chilly.</font></B>'
+if frost > 5 and frost < 11: pl '<B><font color = red>Are you cold.</font></B>'
+if frost >= 11: pl '<B><font color = red>You are very cold.</font></B>'
+if sick = 1: pl '<B><font color = red>you that is not good, tickle in the throat and a little runny nose.</font></B>'
+if sick > 1 and sick < 24: pl '<B><font color = red>you chills. You flowing from the nose and throat was raw, you cough and sneeze - it looks like you got cold.</font></B>'
+if sick >= 24 and sick < 48: pl '<B><font color = red>You have a fever. You clogged nose, it hurts to swallow - throat aches. You continually cough and sneeze - it looks like you prosudilis.</font></B>'
+if sick >= 48 and sick < 72: pl '<B><font color = red>You have a high fever. You have a stuffy nose, sore head and throat, coughing badly you - it sounds like you got a strong cold. Maybe it´s the flu.</font></B>'
+if sick >= 72: pl '<B><font color = red>you toss in the heat. You have a stuffy nose, headache and aching all the bones. Your throat is inflamed and very sore. You heavily with anguish cough - it sounds like you are seriously ill. Maybe it´s a sore throat.</font></B>'
+
+if $meetloc = 'street': $meetlocation = 'residential'
+if $meetloc = 'down': $meetlocation = 'downtown'
+if $meetloc = 'Nord': $meetlocation = 'northern'
+if hour < meethour and svidanieA = 1: pl '<<$boyA>> will be waiting for you near your home in <<$meetlocation>> at <<meethour>> hours'
+if hour = meethour and svidanieA = 1: pl '<B><font color = red><<$boyA>> is waiting for you around the house in <<$meetlocation>>.</font></B>'
+
+if meetday < daystart and svidanieA = 1: bfA -= 10 & svidanieA = 0
+if StrongNarkota > 20: pl '<B><font color = red>You are stoned.</font></B>'
+
+if alko > 0:
+	if alko < 3: pl '<B><font color = red>You´re a little dizzy.</font></B>'
+	if alko >= 3 and alko < 6: pl '<B><font color = red>You´re drunk.</font></B>'
+	if alko >= 6: pl '<B><font color = red>You´re wasted.</font></B>'
+end
+
+gs 'din_bad'
+
+if bag > 0:
+	pl '<a href="exec:dynamic $d_bag"><B>Handbag</B></a>'
+end
+
+!обнуление проверок на замужество
+set proverka1 = 0
+set proverka2 = 0
+set proverka3 = 0
+set proverka4 = 0
+set proverka5 = 0
+
+!!!!!!!!!!!!!!!!!!!!
+
+
+
+--- stat ---------------------------------
+

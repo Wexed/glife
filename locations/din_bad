@@ -1,0 +1,49 @@
+# din_bad
+$d_salf = {
+clr
+salfetka -= 1
+pl '<a href="exec:gs ''stat''"><B>Throw out tissue</B></a>'
+if cumface > 0: pl '<a href="exec:cumface = 0 & gs ''stat''"><B>Wipe your face</B></a>'
+if cumfrot > 0: pl '<a href="exec:cumfrot = 0 & gs ''stat''"><B>Wipe clothing</B></a>'
+if mop ! 1: pl '<a href="exec:mop = 1 & gs ''stat''"><B>Wipe cosmetics</B></a>'
+}
+
+$d_kosmetitka = {
+clr
+pl '<a href="exec:gs ''stat''"><B>Close makeup bag</B></a>'
+if kosmetitka >= 1: pl '<a href="exec:mop = 2 & kosmetitka -= 1 & gs ''stat''"><B>Light make-up</B></a>'
+if kosmetitka >= 2: pl '<a href="exec:mop = 3 & kosmetitka -= 2 & gs ''stat''"><B>Natural make-up</B></a>'
+if kosmetitka >= 3: pl '<a href="exec:mop = 4 & kosmetitka -= 3 & gs ''stat''"><B>Heavy make-up</B></a>'
+}
+
+$d_bag_heroin = {
+clr
+heroin -= 1
+minut += 5
+StrongNarkota += 25
+SNarkTimes += 1
+gs 'stat'
+$tempval = ''
+if narkoman ! 0: $tempval = ' with trembling hands'
+'You injected yourself<<$tempval>>'
+}
+
+$d_bag = {
+clr
+pl '<a href="exec:gs ''stat''"><B>Close bag</B></a>'
+
+if salfetka > 0: pl 'You have <<salfetka>> wet wipes. <a href="exec:dynamic $d_salf"><B>Take tissue</B></a>'
+if kosmetitka > 0 and mop = 1: pl 'You have portable makeup bag. Cometic applications left <<kosmetitka>>. <a href="exec:dynamic $d_kosmetitka"><B>Put on makeup</B></a>'
+if kosmetitka > 0 and mop ! 1: pl 'You have portable makeup bag. Cometic applications left <<kosmetitka>>.'
+if greben > 0 and hapri = 0: pl 'You have a hairbrush. <a href="exec:hapri = 1 & gs ''stat''"><B>Brush your hair</B></a>'
+if greben > 0 and hapri = 1: pl 'You have a hairbrush.'
+if prezik > 0: pl 'You have <<prezik>> condoms. <a href="exec:prezik = 0& gs ''stat''"><B>Throw away</B></a>'
+if tabletki > 0: pl 'You have <<tabletki>> birth control pills. <a href="exec:tabletki = 0 & gs ''stat''"><B>Throw away</B></a>'
+if lubri > 0: pl 'Lubricant enough for <<lubri>> applications.'
+if bottle > 0: pl 'You have a bottle of water. <a href="exec:bottle = 0 & water = 20 & cumlip = 0 & gs ''stat''"><B>Drink</B></a>'
+if buterbrod > 0: pl 'You have a sandwich. <a href="exec:buterbrod = 0 & energy+= 20 & cumlip = 0 & salo += 1 & gs ''stat''"><B>Eat</B></a>'
+if heroin > 0: pl 'You have <<heroin>> doses of heroin. <a href="exec:dynamic $d_bag_heroin"><B>Inject</B></a>'
+if selfPornvidDVDCarry > 0: pl 'You are carrying <<selfPornvidDVDCarry>> of your amateur porn DVDs.'
+}
+--- din_bad ---------------------------------
+
