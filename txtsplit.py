@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # usage: txtsplit.py <input_file_name> <output_dir>
+# splits a txt2gam file into individual location files
+# encoded in utf-8, for git to better handle
 
 import os
 import sys
@@ -10,7 +12,7 @@ assert len(sys.argv) == 3, "usage:\ntxtsplit.py <input_file_name> <output_dir>"
 iname = str(sys.argv[1])
 odir = str(sys.argv[2])
 
-ifile = io.open(iname, 'rt', encoding='utf-8')
+ifile = io.open(iname, 'rt', encoding='utf-16')
 
 
 oname = None

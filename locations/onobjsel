@@ -1,5 +1,5 @@
 # onobjsel
-!!!Dynamics!!!
+!!!Динамики!!!
 $din_show_tits = {
 	view
 	VIEW 'images\body\t<<tits>>.jpg'
@@ -27,7 +27,7 @@ nl
 if salo = 0 and musle > 0 and dounspell = 0: pl '<B><font color = red>You start to show signs undernourishment. You should probably eat more from time to time.</font></B>'
 if salo = 0 and musle = 0 and dounspell = 0: pl '<B><font color = red>You have a serius eating disorder combined with a lack of muscles. Your health in serious danger!</font></B>'
 if curly > 0: pl 'Your curls are good for another <<curly>> days.'
-if zub = 1:$zuba = ' tooth'
+if zub = 1:$zuba = ' tooth'
 if zub >= 2:$zuba = ' teeth'
 if zub > 0: pl 'You have <<zub>><<$zuba>>.'
 !pl 'vnesh <<vnesh>>'
@@ -48,11 +48,11 @@ if zub > 0: pl 'You have <<zub>><<$zuba>>.'
 
 !!!!!!!! Maruda Hair Mod
 if hairlength > 41 and hscrunch >= 1:
-	if hscrunchw = 0 and hpingripw = 0: pl 'You have a scrunchy and you can arrange your hair into a <a href="exec: set hscrunchw = 1 & dynamic $objdescrip">ponytail</a>. You have <<hscrunch>> scrunchies left.'
+	if hscrunchw = 0 and hpingripw = 0: pl 'As you have a scrunchy, you can arrange your hair into a <a href="exec: set hscrunchw = 1 & dynamic $objdescrip">ponytail</a>. You have <<hscrunch>> scrunchies left.'
 	if hscrunchw = 1: pl 'Remove the <a href="exec: set hscrunchw = 0 & dynamic $objdescrip">scrunchie</a> to get rid of the ponytail.'
 end
 if hairlength > 41 and hpingrip >= 1:
-	if hscrunchw = 0 and hpingripw = 0: pl 'You have several clips, pins and grips for you hair. You can <a href="exec: set hpingripw = 1 & dynamic $objdescrip">updo your hair</a>. You have <<hpingrip>> hair accessories at your disposal.'
+	if hscrunchw = 0 and hpingripw = 0: pl 'You have several clips, pins and grips for you hair. Hence, you can <a href="exec: set hpingripw = 1 & dynamic $objdescrip">updo your hair</a>. You have <<hpingrip>> hair accessories at your disposal.'
 	if hpingripw = 1: pl 'Let your hair <a href="exec: set hpingripw = 0 & dynamic $objdescrip">flow free</a>.'
 end
 if hairlength > 80 and hscrunch >= 2:
@@ -68,16 +68,16 @@ if hscrunch < 2: set hpigtail = 0
 
 $objskills = {
 clr
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1remake
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1Переделать
 !if salo > musle*4: set $fat = 'Do you loose fat body'
 !if salo <= musle * 4 and fat > musle*2: set $fat = 'Your body is soft, but still elastic.'
-!if salo <= musle * 2 and fat > musle: set $fat = 'You are neither fat not slim.'
-!if salo <= musle and fat >= musle/2: set $fat = 'You are slim and trim.'
+!if salo <= musle * 2 and fat > musle: set $fat = 'You are a normal build.'
+!if salo <= musle and fat >= musle/2: set $fat = 'You slim and trim.'
 !if salo < musle/2: set $fat = 'You are very thin and the muscles strong stand on the body.'
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 pl 'Attractiveness <<vnesh>>'
 pl 'Power <<stren>>'
-pl 'Speed <<speed>>'
+pl 'Speed ​​<<speed>>'
 pl 'Agility <<agil>>'
 pl 'Endurance <<vital>>'
 pl 'Intelligence <<intel>>'
@@ -88,20 +88,20 @@ pl '<<$fat>>'
 if SUB > 0: pl 'Subordination <<SUB>>'
 if DOM > 0: pl 'Dominance <<DOM>>'
 !pl 'Muscles <<$musle>>'
-if magik > 0: pl 'Magic <<magik>>'
-if Jab > 0: pl 'Jab <<Jab>>'
-if Punch > 0: pl 'Power Strikes <<Punch>>'
-if Kik > 0: pl 'Kicks <<Kik>>'
-if KikDef > 0: pl 'Defense <<KikDef>>'
-if beg > 0: pl 'Run skill <<beg>>'
-if volleyboll > 0: pl 'Volleyball skill <<volleyboll>>'
-if oficiant > 0: pl 'Waitress skill <<oficiant>>'
+if magik > 0: pl 'Magery <<magik>>'
+if Jab > 0: pl 'Jab - <<Jab>>'
+if Punch > 0: pl 'Power Strikes - <<Punch>>'
+if Kik > 0: pl 'Kicks - <<Kik>>'
+if KikDef > 0: pl 'Protection against - <<KikDef>>'
+if beg > 0: pl 'Skill Run - <<beg>>'
+if volleyboll > 0: pl 'Skill volleyball - <<volleyboll>>'
+if oficiant > 0: pl 'Skills waitresses - <<oficiant>>'
 if vokal > 0: pl 'Vocal skills <<vokal>>'
-if dance > 0: pl 'Dance skills <<dance>>'
-if dancePRO > 0: pl 'Regular dancing skil <<dancePRO>>'
-if stripdance > 0: pl 'Striptease skill <<stripdance>>'
-if poledance > 0: pl 'Poledancing skill <<poledance>>'
-if shoot > 0: pl 'Shooting skill <<shoot>>'
+if dance > 0: pl 'Skill Dance - <<dance>>'
+if dancePRO > 0: pl 'Regular dancing skilllevel - <<dancePRO>>'
+if stripdance > 0: pl 'Striptease skilllevel - <<stripdance>>'
+if poledance > 0: pl 'Poledancing skilllevel- <<poledance>>'
+if shoot > 0: pl 'Shooting Accuracy - <<shoot>>'
 if kid = 1: pl 'You have a child, <<$polreb[1]>> name <<$kidname[1]>>. Born <<daykid[1]>>.<<monthkid[1]>>.<<yearkid[1]>>y. Age <<kidage[1]>>'
 
 if SchoolAtestat = 0 and StoryLine > 0:
@@ -119,7 +119,7 @@ end
 
 $objstatistika = {
 clr
-if opPRE = 0: pl '<<daystart>> days since the beginning of the game.'
+if opPRE = 0: pl 'Passed <<daystart>> days from the beginning of the game.'
 nl
 
 if BuyHous['Street'] = 2 and ArendHouseSL['Street']>0: pl 'Apartment in a residential area is rented <<ArendHouseSL[''Street'']>> days.'
@@ -174,7 +174,7 @@ if razradKik = 3: set $razradKik = 'You I rank amateur kickboxing'
 if razradKik = 4: set $razradKik = 'You have the title of Candidate Master of Sports Kickboxing'
 if razradKik = 5: set $razradKik = 'You have the title of Master of Sport Kickboxing'
 if SchoolAtestat = 1: pl 'You have finished school.'
-if diplom = 1: pl 'You graduated.'
+if diplom = 1: pl 'You graduate.'
 if teachlevel > 0: pl 'Your credibility as a teacher <<teachlevel>>'
 if kolsorev > 0: pl '<<kolsorev>> once participated in a running race'
 if bronzebeg > 0: pl '<<bronzebeg>> - bronze medals on the run'
@@ -215,14 +215,14 @@ if suprdolg > 0: pl 'Performed conjugal duty to her husband <<suprdolg>> time'
 if gang > 0: pl 'Group sex <<gang>> times'
 if sex > 0 and sexa = 0: pl 'Vaginal sex <<sex>> times.'
 if sex > 0 and sexa > 0: pl 'Vaginal sex <<sex>> times from them <<sexa>> times with her boyfriend.'
-if bj > 0 and gloryhole = 0 and balls = 0 and bja = 0: pl 'Blowjob done <<bj>> times.'
-if bj > 0 and gloryhole = 0 and balls = 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which <<bja>> times her boyfriend'
-if bj > 0 and gloryhole > 0 and balls = 0 and bja = 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall.'
-if bj > 0 and gloryhole > 0 and balls = 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Just one <<bja>> times her boyfriend'
-if bj > 0 and gloryhole = 0 and balls > 0 and bja = 0: pl 'Blowjob done <<bj>> times, sucked balls <<balls>> times.'
-if bj > 0 and gloryhole = 0 and balls > 0 and bja > 0: pl 'Blowjob done <<bj>> times, sucked balls <<balls>> times. Just one <<bja>> times her boyfriend'
-if bj > 0 and gloryhole > 0 and balls > 0 and bja = 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Sucked balls <<balls>> times.'
-if bj > 0 and gloryhole > 0 and balls > 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Sucked balls <<balls>> times. Just one <<bja>> times her boyfriend'
+if bj > 0 and gloryhole = 0 and eggs = 0 and bja = 0: pl 'Blowjob done <<bj>> times.'
+if bj > 0 and gloryhole = 0 and eggs = 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which <<bja>> times her boyfriend'
+if bj > 0 and gloryhole > 0 and eggs = 0 and bja = 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall.'
+if bj > 0 and gloryhole > 0 and eggs = 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Just one <<bja>> times her boyfriend'
+if bj > 0 and gloryhole = 0 and eggs > 0 and bja = 0: pl 'Blowjob done <<bj>> times, sucked eggs <<eggs>> times.'
+if bj > 0 and gloryhole = 0 and eggs > 0 and bja > 0: pl 'Blowjob done <<bj>> times, sucked eggs <<eggs>> times. Just one <<bja>> times her boyfriend'
+if bj > 0 and gloryhole > 0 and eggs > 0 and bja = 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Sucked eggs <<eggs>> times.'
+if bj > 0 and gloryhole > 0 and eggs > 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Sucked eggs <<eggs>> times. Just one <<bja>> times her boyfriend'
 if hj > 0 and hja = 0: pl 'Guys jerking off <<hj>> times'
 if hj > 0 and hja > 0: pl 'Guys jerking off <<hj>> times from them <<hja>> times masturbate her boyfriend'
 if hump > 0: pl 'About you wanker member <<hump>> times'
@@ -344,7 +344,7 @@ gs 'stat'
 clr
 pl '<a href="exec:gs ''stat''"><B>Close Cheat menu</B></a>'
 nl
-pl "<b>If you use cheats, remember, it's your decision and respond to the consequences of YOU.</b>"
+pl '<b>If you use cheats, remember, it´s your decision and respond to the consequences of YOU.</b>'
 nl
 pl '<a href="exec:health = vital * 10 + stren * 5 + 1000 & willpower = intel * 5 + will * 5 + 1000 & manna = (intel * magik) + magik * 100 + vital * 10 + rikudo & dynamic $din_cheat">Full restoration of health, mana mind.</a>'
 if leghair >= 1 or lobok >= 1: pl '<a href="exec:leghair=-50 & lobok=-50 & dynamic $din_cheat">Shave all body hair.</a>'
@@ -618,7 +618,7 @@ end
 
 if magik > 0:
 pl 'Available to you <<manna>> units of manna.'
-!'Rikudo forces available to you <<rikudo>> units'
+!' Rikudo forces available to you <<rikudo>> units'
 nl
 	pl 'BASIC SPELL:'
 	nl
@@ -1005,7 +1005,7 @@ end
 
 $objbody = {
 	if musle >= salo:
-	!muscular type
+	!мускулистый тип
 		if bedra < 60:
 		VIEW 'images\body\fit.jpg'
 		end
@@ -1032,7 +1032,7 @@ $objbody = {
 		end
 	end
 	if musle < salo:
-	!bold type
+	!жирный тип
 		if bedra < 60:
 		VIEW 'images\body\fat.jpg'
 		end
@@ -1115,7 +1115,7 @@ if nude = 0:
 	if odetero > 0: VIEW 'images\img\dress\ero<<numdress>>.jpg'
 	end
 if nude = 1:
-	pl "You're not dressed."
+	pl 'You´re not dressed.'
 	VIEW 'images\clothes\nude.jpg'
 	end
 }
@@ -1148,7 +1148,7 @@ if tatupb > 0: pl '<a href="exec: dynamic $tatupbdi">tattoo on the lower back</a
 if tatvag > 0: pl '<a href="exec: dynamic $tatvagdi">Tattoos in the groin</a>'
 if tatleg > 0: pl '<a href="exec: dynamic $tatlegdi">tattoo on the legs</a>'
 if tatvag = 0 and tatlip = 0 and tatplech = 0 and tatback = 0 and tatupb = 0 and tatleg = 0:
-pl 'You body is pristine. Not in terms of corruption, but in terms of tattoos.'
+pl 'You pristine pure body. Not in terms of corruption, but in terms of tattoos.'
 end
 }
 
@@ -1178,14 +1178,14 @@ $dipirsN = {
 VIEW 'images\body\pirsN.jpg'
 }
 clr
-if pirsA = 1: pl 'You have a tongue piercing. <a href="exec:dynamic $dipirsA">View</a>'
-if pirsB = 1: pl 'Your lower lip is pierced with a ring. <a href="exec:dynamic $dipirsB">View</a>'
+if pirsA = 1: pl 'Your tongue pierced and there is inserted a small bar that is constantly felt in the mouth. <a href="exec:dynamic $dipirsA">View</a>'
+if pirsB = 1: pl 'You pierced lower lip and there vdet ring. <a href="exec:dynamic $dipirsB">View</a>'
 if pirsC = 1: pl 'On your ears hang earrings. <a href="exec:dynamic $dipirsC">View</a>'
 if pirsD = 1: pl 'You have a small ring in the nose. <a href="exec:dynamic $dipirsD">View</a>'
-if pirsE = 1: pl 'You have a barbell in your eyebrow. <a href="exec:dynamic $dipirsE">View</a>'
-if pirsF = 1: pl 'You have pierced nipples displaying small metal rods. <a href="exec:dynamic $dipirsF">View</a>'
-if pirsG = 1: pl 'You labia are pierced with several small rings. <a href="exec:dynamic $dipirsG">View</a>'
-if pirsN = 1: pl 'You navel is pierced with a rod. <a href="exec:dynamic $dipirsN">View</a>'
+if pirsE = 1: pl 'In your eyebrow barbell inserted. <a href="exec:dynamic $dipirsE">View</a>'
+if pirsF = 1: pl 'You have pierced nipples and inserted them in small metal rod. <a href="exec:dynamic $dipirsF">View</a>'
+if pirsG = 1: pl 'You pierced lips on the vagina and there inserted rings. <a href="exec:dynamic $dipirsG">View</a>'
+if pirsN = 1: pl 'You pierced navel, and there is inserted rod. <a href="exec:dynamic $dipirsN">View</a>'
 }
 
 $objobnovit = {
@@ -1207,8 +1207,8 @@ if work > 0 and workhosp > 0:pl'I work as a secretary in the office. Need to com
 if work > 0 and tanwork > 0:pl'I work as a governess at Tani. Salary is automatically transferred to the 25th number.'&nl
 if work > 0 and young_shop_work = 1:pl'I work in a store saleswoman Keys Pussy. Need to come to work in 15 workdays all except Saturday and Sunday. Salary is issued once a week on Fridays.'&nl
 
-if workrin = 1: pl "I work in a tent on the market Arthur clothing saleswoman. Work on Tuesdays, Thursdays and Saturdays, come at 8 o'clock. Salary depends on the sales."&nl
-if stripwork >= 1: pl 'I work as a stripper, schedule a free, on any day from 15 up to 2 nights. No salary, only tips.'&nl
+if workrin = 1: pl 'I work in a tent on the market Arthur clothing saleswoman. Work on Tuesdays, Thursdays and Saturdays, come at 8 o´clock. Salary depends on the sales.'&nl
+if stripwork >= 1: pl 'I work as a stripper, schedule a free, on any day from 15 up to 2 nights. Salary only tip.'&nl
 
 if bumtolik = 4: pl 'Service for homeless located in the northern area.'&nl
 if bumtolik = 5: pl 'I volunteer to help the homeless service. Rab.chasy from 9 to 17, Weekend Sat. and Sun.'&nl
@@ -1346,7 +1346,7 @@ $menu_other[6] = 'Testing: $menu_test'
 
 if mobila > 0:$menu_other[7] = 'Phone: $menu_mobila'
 
-!Old menu: start
+!Старое меню: начало
 if $selobj = '<font color=green>Character</font>': dynamic $objdescrip
 if $selobj = 'Skills': dynamic $objskills
 if $selobj = 'Statistics': dynamic $objstatistika
@@ -1361,13 +1361,13 @@ if $selobj = 'Emergency exit': dynamic $objavariya
 if $selobj = 'Update': gs 'stat'
 if $selobj = 'New Menu': dynamic $objnewmenu
 if $selobj = 'Automatic': dynamic $automatica
-!Old menu: end
+!Старое меню: конец
 
-!New menu: start
+!Новое меню: начало
 if $selobj = 'Character': menu '$menu_character'
 if $selobj = 'See': menu '$menu_lookon'
 if $selobj = 'Others': menu '$menu_other'
-!New menu: end
+!Новое меню: конец
 
 if $selobj = 'Player':
 	clr
@@ -1390,7 +1390,7 @@ unselect
 # scale.table
 !{
 "
-Scale drawing with the table:
+Отрисовка шкалы с помощью таблицы:
 "
 
 $func ('scale.table',275,420)+' 275/420'
