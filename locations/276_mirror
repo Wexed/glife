@@ -1,0 +1,182 @@
+# mirror
+if $ARGS[0]='start':
+cla
+clr
+gs'stat'
+if glass<=0:
+	if shorthair=0:
+	if hcol = 0 and curly <= 0:'<center><img src="picb/hcol.jpg" ></center>'
+	if hcol = 1 and curly <= 0:'<center><img src="picb/hcol1.jpg" ></center>'
+	if hcol = 2 and curly <= 0:'<center><img src="picb/hcol2.jpg" ></center>'
+	if hcol = 3 and curly <= 0:'<center><img src="picb/hcol3.jpg" ></center>'
+	if hcol = 0 and curly > 0:'<center><img src="picb/hcolcurly.jpg" ></center>'
+	if hcol = 1 and curly > 0:'<center><img src="picb/hcolcurly1.jpg" ></center>'
+	if hcol = 2 and curly > 0:'<center><img src="picb/hcolcurly2.jpg" ></center>'
+	if hcol = 3 and curly > 0:'<center><img src="picb/hcolcurly3.jpg" ></center>'
+	end
+	if shorthair=1:
+	if hcol = 0:'<center><img src="picb/SHhcol.jpg" ></center>'
+	if hcol = 1:'<center><img src="picb/SHhcol1.jpg" ></center>'
+	if hcol = 2:'<center><img src="picb/SHhcol2.jpg" ></center>'
+	if hcol = 3:'<center><img src="picb/SHhcol3.jpg" ></center>'
+	end
+end
+if glass>0:
+     if glass=1:
+     '<center><img src="picb/nerd.jpg" ></center>'
+     end
+     if glass=2:
+     if hcol = 0:'<center><img src="picb/hcolglass.jpg" ></center>'
+	 if hcol = 1:'<center><img src="picb/hcolglass1.jpg" ></center>'
+	 if hcol = 2:'<center><img src="picb/hcolglass2.jpg" ></center>'
+	 if hcol = 3:'<center><img src="picb/hcolglass3.jpg" ></center>'
+     end
+end
+'<<$hair>> <<$mop>> <<$skin>> <<$vnesh>> <<$lip>> <<$glaza>>'
+
+if daystart<10 and StoryLine=0:'In the mirror. You hardly get to accept the idea, it now is you.'
+if daystart>=10 and daystart<30 and StoryLine=0:'From the mirror looks at you female face, to which you have become accustomed, but sometimes, no, no yes and flash idea, that the person is not your.'
+if kosmetica > 0:'cosmetics <<kosmetica>>'
+if kosmetica = 0:'You have no makeup.'
+     if hapri = 0:
+         act 'coiffured':
+         cla
+         set minut = minut + 3
+         set hapri = 1
+         gs'stat'
+         'You comb your hair in the mirror'
+         act 'View results':gt'mirror','start'
+         end
+     end
+     
+     if mop = 1 and kosmetica > 0:
+         act 'apply Makeup':
+         cla
+         *clr
+         '<center><img src="pic/mop.jpg" ></center>'
+             act 'light makeup':
+             cla
+             set minut = minut + 3
+             set kosmetica = kosmetica - 1
+             set mop = 2 
+             gs'stat'
+             'You lightly summed eyes and a little lipstick.'
+             act 'View results':gt'mirror','start'
+             end
+             
+             if kosmetica >= 2:
+				 act 'normal makeup':
+				 cla
+				 set minut = minut + 5
+				 set kosmetica = kosmetica - 2
+				 set mop = 3
+				 gs'stat'
+				 'You lipstick, summed up the eyes and eyelids.'
+				 act 'View results':gt'mirror','start'
+				 end
+             end
+             
+             if kosmetica >= 3:
+				 act 'The caller makeup':
+				 cla
+				 set minut = minut + 10
+				 set kosmetica = kosmetica - 3
+				 set vidageday = vidageday - 1
+				 set mop = 4
+				 gs'stat'
+				 'You densely nakrasili eyes, imposed shadows and mascara , nakrasili lip contour pencil and lipstick.'
+				 act 'View results':gt'mirror','start'
+				 end
+             end
+         end
+     end
+     
+     if brow<10 and browper=0:
+		 act 'tweeze eyebrows':
+		 cla
+		 set minut = minut + 10
+		 brow=10
+		 manna=manna/2
+		 gs'stat'
+		 'You plucked eyebrows unwanted hairs on giving them a nice circuit. The truth is quite painful.'
+		 act 'View results':gt'mirror','start'
+		 end
+     end
+     
+     if lipbalm>0 and lipbalmstat<=0:
+		 act 'Spread moisturizing lip balm':
+		 cla
+		 set minut = minut + 10
+		 lipbalm-=1
+         set lipkoef = lipkoef + RAND(5,15)
+			 if lipkoef > 50:
+			 set lipkoef = 0
+			 set lip = lip + 1
+			 end
+		 lipbalmstat+=8
+		 gs'stat'
+		 'You smeared moisturizing lip balm.'
+         act 'View results':gt'mirror','start'
+         end
+     end
+     
+     act 'Move away from the mirror':
+     cla
+     gt'mirror','fin'
+     end
+end
+
+if $ARGS[0]='fin':
+cla
+
+gt $locM, $metkaM
+
+     !'if housr = 1 and housrA = 1 and housrMir = 0 and fitMir = 0 and saunaYouRoom=0:
+     set housrA = 0
+     gt'korr'
+     end
+     
+     if housr = 1 and housrA = 1 and housrMir = 1 and fitMir = 0 and saunaYouRoom=0:
+     set housrA = 0
+     set housrMir = 0
+     gt'bedr'
+     end
+     
+     if housrA = 0 and fitMir = 1 and saunaYouRoom=0:
+     set fitMir = 0
+     gt'fit','razd'
+     end
+     
+     if housrA = 0 and stripMir = 1 and saunaYouRoom=0:
+     set stripMir = 0
+     gt'stwork','start'
+     end
+     
+     if housrA = 0 and palMir = 1 and saunaYouRoom=0:
+     set palMir = 0
+     gt'palatka','start'
+     end
+     
+     if saunaYouRoom=1:
+     saunaYouRoom=0
+     gt $locBroom, $metkaBroom
+     end
+     
+	 if housrA = 0 and obMir = 1:
+	 set obMir = 0
+	 gt'obroom','start'
+	 end
+
+	 if housrA = 0 and borMir = 1:
+     set borMir = 0
+     gt'bordel','start'
+     end
+     
+     if housrA = 0 and tanhouse1=1:
+	 set tanhouse1=0
+	 gt'spalnya'
+	 end'
+
+end
+--- mirror ---------------------------------
+

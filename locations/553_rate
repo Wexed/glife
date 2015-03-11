@@ -1,0 +1,98 @@
+# rate
+*PL '<right><img src="casino/stavkaru.jpg" ></right>'
+*NL
+*P 'What will bet?'
+ACT 'red / black':
+	cla
+	act 'red':
+		kh=1
+		gt 'result'
+	end
+	act 'Black':
+		kh=2
+		gt 'result'
+	end
+	
+END
+ACT 'even / odd':
+	cla
+	act 'even':
+		chnch=1
+		gt 'result'
+	end
+	act 'odd':
+		chnch=2
+		gt 'result'
+	end
+	
+END
+ACT 'small / big':
+	cla
+	act 'small: 1-18':
+		mb=1
+		gt 'result'
+	end
+	act 'big: 19-36':
+		mb=2
+		gt 'result'
+	end
+	
+END
+ACT 'dozen':
+	cla
+	act 'first dozen: 1-12':
+		du=1
+		gt 'result'
+	end
+	act 'the second dozen: 13-24':
+		du=2
+		gt 'result'
+	end
+	act 'third dozen: 25-36':
+		du=3
+		gt 'result'
+	end
+	
+	
+END
+ACT 'series':
+	cla
+	act 'first row: 1,4,7,10,13,16,19,22,25,28,31,34':
+		series=1
+		gt 'result'
+	end
+	act 'second row: 2,5,8,11,14,17,20,23,26,29,32,35':
+		series=2
+		gt 'result'
+	end
+	act 'third row: 3,6,9,12,15,18,21,24,27,30,33,36':
+		series=3
+		gt 'result'
+	end
+	
+	
+END
+ACT 'number':
+	chi = input 'Enter a number from 0-36'
+	if chi<0 and chi>36:
+		msg 'It was said that only by 0 prior_to 36'
+		gt 'rate'
+	end
+	gt 'result'
+	
+END
+ACT 'It`S_Nothing':
+	gt 'amrul'
+END
+kh=0
+chnch=0
+mb=0
+du=0
+series=0
+chi=100
+
+clr
+gs'stat'
+set minut=minut + 5
+--- rate ---------------------------------
+

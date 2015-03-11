@@ -1,0 +1,378 @@
+# toilet
+if $ARGS[0]='start':
+cla
+$metka = $ARGS[0]
+$loc = $CURLOC
+*clr
+set minut = minut + 5
+'<center><img src="toilet/cabin.jpg" ></center>'
+'You hear what-rustle at some of the booths ...'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+	 act 'Exit the toilet':
+	 cla
+	 set minut = minut + 5
+	 gt'sexshop','podval'
+	 end
+
+	 act 'Look at each booth':
+	 cla
+	 *clr 
+	 clr
+	 gs'stat'
+	 toisexrand = RAND (0,100)
+	 '<center><img src="toilet/pry_1.jpg" ></center>'
+	 'You looked in all cabins and ....'
+		 if toisexrand < 66 :
+			 act 'And anyone not found ...':
+			 set minut = minut + 10
+			 cla
+			 *clr 
+			 clr
+			 gs'stat'
+			 '<center><img src="toilet/cabin_0.jpg" ></center>'
+			 'And all the booths were empty'
+				 act 'Exit the toilet': gt'sexshop','podval'
+		     end
+	     end
+	     
+		 if toisexrand >= 66 :
+		     act 'Saw a naked girl masturbating ....':
+		     set toigirlrand = RAND (1,2)
+			     if toigirlrand = 1:
+				 set minut = minut + 10
+				 cla
+				 *clr 
+				 clr
+				 gs'stat'
+				 '<center><img src="toilet/toisex_1_1.jpg" ></center>'
+				 'You know it -this girl watched porn in the next stall ....'
+				 'You have included a mobile phone and started filming as she caresses herself ...'
+					 act 'Enter into the booth and show this bitch ....': gt'toilet','1'
+					 act 'You filmed on a mobile phone and left a good movie ...': gt'toilet','0'
+					 
+				 end
+				 
+			     if toigirlrand = 2:
+				 set minut = minut + 10
+				 cla
+				 *clr 
+				 clr
+				 gs'stat'
+				 '<center><img src="toilet/toisex_2_1.jpg" ></center>'
+				 'You know it - this girl watched porn in the next stall ....'
+				 'You have included a mobile phone and started filming as she caresses herself ...'
+					 act 'Enter into the booth and show this bitch ....': gt'toilet','2'
+					 act 'You filmed on a mobile phone and left a good movie...': gt'toilet','0'
+				 end
+			 end
+		 end                 
+	 end
+end        
+
+
+if $ARGS[0]='0':
+$metka = $ARGS[0]
+$loc = $CURLOC
+cla
+*clr
+set minut = minut + 10
+horny=horny+50
+'<center><img src="toilet/pornjrolik.jpg" ></center>'
+'After you locate and view video on the phone you are very excited ...' 
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+
+	 act 'Delete video and get out of the basement ...': gt'sexshop','start'
+	 act 'Sell вЂ‹вЂ‹video on one of the porn sites ...!':
+	 cla
+	 *clr
+	 bankfond=bankfond+1000
+	 '<center><img src="toilet/pornjrolik.jpg" ></center>'
+     'Uploading video to the Internet, You sold it to a porn site for 1000 rubles!'
+	 'The money you transferred to the bank account ...'
+         act 'Get out of the basement ...': gt'sexshop','start'  
+     end
+end     
+
+if $ARGS[0]='1':
+$metka = $ARGS[0]
+$loc = $CURLOC
+cla
+*clr
+clr
+gs'stat'
+gs'time'
+'<center><img src="toilet/toisex_1_2.jpg" ></center>'
+'You knocked on the booth and she opened the door a little delay'
+'She managed to get dressed, but her cheeks were burning eyes and ran - she realized that he had slept ... '
+'Do_You: - Well? I wrote down all your antics on mobile ... ' 
+'she: - why?! What you want?'
+'Do_You: - you rested? And I want to relax ... So again ...'
+'Otherwise! gee-gee-gee ...' 
+
+     act 'She agreed and took off her bra ...':
+     cla
+     *clr
+     '<center><img src="toilet/toisex_1_3.jpg" ></center>'
+     'Papillae on her small breasts sticking out excitedly ...'
+     'Looking at it you excited and your dick swollen ...' 
+     'She was staring at you  ....'
+     'Do_You: - Take off your panties and kiss my dick ...'
+		 act '...':
+		 cla
+		 *clr
+		 '<center><img src="toilet/toisex_1_4.jpg" ></center>'
+		 'Removing the panties she knelt down and began to kiss you dick ...'
+		 'Kissing is certainly nice, but would like a good suction ...' 
+			 act 'Let ka darling poaktivnee ....':
+			 cla
+			 *clr
+			 '<center><img src="toilet/toisex_1_5.jpg" ></center>'
+			 'She has been actively otsayvat you ...'
+			 'You are excited and wanted to shove her cock in her mouth deeper ....' 
+				 act 'Put in your mouth most tomatoes ...':
+				 cla
+				 *clr
+				 '<center><img src="toilet/toisex_1_6.jpg" ></center>'
+				 'You are rude and started to fuck her deep in her mouth ...'
+				 'We must certainly try it pogrubee ...' 
+					 act 'Swat by the hair and bend to the toilet ...':
+					 cla
+					 *clr
+					 '<center><img src="toilet/toisex_1_7.jpg" ></center>'
+					 'Bent his head to the toilet you started insulting her ...' 
+					 'You called her a dirty whore and her slave...'
+					 'Bitch was excited and kept saying: - Yes!' 
+						 act 'Dunk his head in the toilet and wash ...':
+						 cla
+						 *clr
+						 '<center><img src="toilet/toisex_1_8.jpg" ></center>'
+						 'You okunli her head in the ass ...' 
+						 'She was trembling with excitement and asked cum in her mouth ...'
+							 act 'Give her suck ...':
+							 cla
+							 *clr
+							 '<center><img src="toilet/toisex_1_9.jpg" ></center>'
+							 'She began to masturbate you substituting your sexy mouth ...' 
+							 'After reaching a peak excitation you removed it aside ... '
+							 'Do_You: - Get on your knees bitch! Open your mouth and wait!'
+								 act '...':
+								 cla
+								 *clr
+								 '<center><img src="toilet/toisex_1_10.jpg" ></center>'
+								 'He dutifully got up and looking into your eyes waiting, when it`s apogee ...' 
+								 'You run out sperm in her mouth, a few drops fell on the rim of the toilet bowl ...'
+								 'Continuing to play the role of the Master  ...'
+									 act '- Swallow all the sperm and lick the toilet bowl ...':
+									 set horny = 0
+									 set girl = girl + 1
+									 set minut = minut + 30
+									 sexm=sexm+1
+									 manna=manna+25
+									 cla
+									 *clr 
+									 clr
+									 gs'stat'
+									 '<center><img src="toilet/toisex_1_11.jpg" ></center>'
+									 'Meekly she began to lick the toilet clean ...' 
+									 'And you have a thought: "Do not offer if she participated in the filming" ...'
+									 'Judging by her inclination to obey - it could play in the genre BDSM' 
+									 'These films are more expensive than conventional, and actresses of this genre is not enough ...'
+									 'Do_You: - Listen sweetheart! you`re gorgeous! I offer to you ... '
+										 act 'I needed an actress in the genre BDSM':
+										 set BDSMactressrand = RAND (1,2)
+											 if BDSMactressrand = 1:
+											 cla
+											 *clr
+											 BDSMactress=BDSMactress+1
+											 '<center><img src="toilet/toisex_1_1.jpg" ></center>'
+											 'she: - This is an interesting aredlozhenie. Where and when?' 
+											 'Do_You: - Come to the casting on Saturday! Shooting on Sunday!'
+											 'she: - I agree!' 
+											 'Do_You: - I am very happy'
+												 act 'Here! And before the meeting ...': gt'sexshop','start'
+											 end
+											 
+											 if BDSMactressrand=2:
+											 cla
+											 *clr
+											 '<center><img src="toilet/oblom_1.jpg" ></center>'
+											 'she: - Fuck you on the dick!!! goaty!!!' 
+											 'Do_You: -Honey you so? I thought you might like submission!!!'
+											 'she: - Yes - thought you were a maniac-then!' 
+											 'Do_You: - Well excuse neponyatochka left! Video phone I remove as dogovorivatsya!'
+												 act 'Get_Away ...':
+												 cla
+												 *clr
+												 bankfond=bankfond+1000
+												 '<center><img src="toilet/pornjrolik.jpg" ></center>'
+												 '- That`s because of a bitch! - You thought ....' 
+												 'You have me still become a star!!! Though on the Internet!'
+												 'And finding a video on your phone, sold it to one of the sites for porn 1000 rubles!'
+												 'The money you transferred to the bank account ...'  
+													 act 'Get out of the basement':gt'sexshop','start'
+												 end
+											 end
+										 end
+									 end
+                                 end
+                             end
+                         end
+		             end
+                 end
+		     end
+         end
+     end
+end
+
+
+
+
+
+
+if $ARGS[0]='2':
+$metka = $ARGS[0]
+$loc = $CURLOC
+cla
+*clr
+clr
+gs'stat'
+gs'time'
+'<center><img src="toilet/toisex_2_2.jpg" ></center>'
+'You knocked on the booth and she opened the door a little delay'
+'She managed to get dressed, but her cheeks were burning eyes and ran - she realized that he had slept ... '
+'Do_You: - Well? I wrote down all your antics on mobile ... ' 
+'she: - why?! What you want?'
+'Do_You: - you rested? And I want to relax ... So again ...'
+'Otherwise! gee-gee-gee ...' 
+
+     act 'She agreed and removed the blouse ...':
+     cla
+     *clr
+     '<center><img src="toilet/toisex_2_3.jpg" ></center>'
+     'Papillae on her small breasts sticking out excitedly ...'
+     'Looking at it you excited and your dick swollen ...' 
+     'She was staring at you  ....'
+     'Do_You: - Take off your pants and suck my dick ...'
+		 act '...':
+		 cla
+		 *clr
+		 '<center><img src="toilet/toisex_2_4.jpg" ></center>'
+		 'Removing the panties she sank to her knees and began to suck your dick ...'
+		 'It`s certainly nice, but would like a good suction ...' 
+			 act 'Let ka darling poaktivnee ....':
+			 cla
+			 *clr
+			 '<center><img src="toilet/toisex_2_5.jpg" ></center>'
+			 'She has been actively otsayvat you ...'
+			 'You are excited and wanted to shove her cock in her mouth deeper ....' 
+				 act 'Put in your mouth most tomatoes ...':
+				 cla
+				 *clr
+				 '<center><img src="toilet/toisex_2_6.jpg" ></center>'
+				 'You are rude and started to fuck her deep in her mouth ...'
+				 'We must certainly try it pogrubee ...' 
+					 act 'Swat by the hair and bend to the toilet ...':
+					 cla
+					 *clr
+					 '<center><img src="toilet/toisex_2_7.jpg" ></center>'
+					 'Bent his head to the toilet you started insulting her ...' 
+					 'You called her a dirty whore and her slave...'
+					 'Do_You: - Bitch lick the toilet bowl!!!' 
+					 'she: - Yes!' 
+						 act 'Dunk his head in the toilet and wash ...':
+						 cla
+						 *clr
+						 '<center><img src="toilet/toisex_2_8.jpg" ></center>'
+						 'You okunli her head in the ass ...' 
+						 'She was trembling with excitement and asked cum in her mouth ...'
+							 act 'Give her a lick dick ...':
+							 cla
+							 *clr
+							 '<center><img src="toilet/toisex_2_9.jpg" ></center>'
+							 'She began to lick you a member of their sexual tab ...' 
+							 'Reaching a peak of excitement you had finished her mouth ... '
+							 'Do_You: - Swallow cum bitch! Open your mouth and show me how you did it!'
+								 act '...':
+								 cla
+								 *clr
+								 '<center><img src="toilet/toisex_2_10.jpg" ></center>'
+								 'He obediently swallowed and opened her mouth ...' 
+								 'Have you checked - she really swallowed everything up posleedney drops ...'
+								 'Do_You: - Well ka bitch conducted in hand between your legs and show me ...'
+									 act '....':
+									 set horny = 0
+									 set girl = girl + 1
+									 set minut = minut + 30
+									 sexm=sexm+1
+									 manna=manna+25
+									 cla
+									 *clr 
+									 clr
+									 gs'stat'
+									 '<center><img src="toilet/toisex_2_11.jpg" ></center>'
+									 'Groaning she held her fingers on her pussy ...' 
+									 'It was full of grease vlagalishe - you can see that it is excited ...'
+									 'And you have a thought: "Do not offer if she participated in the filming" ...'
+									 'Judging by her inclination to obey - it could play in the genre BDSM' 
+									 'These films are more expensive than conventional, and actresses of this genre is not enough ...'
+									 'Do_You: - Listen sweetheart! you`re gorgeous! I offer to you ... '
+										 act 'I needed an actress in the genre BDSM':
+										 set BDSMactressrand = RAND (1,2)
+											 if BDSMactressrand = 1:
+											 cla
+											 *clr
+											 BDSMactress=BDSMactress+1
+											 '<center><img src="toilet/toisex_2_3.jpg" ></center>'
+											 'she: - This is an interesting aredlozhenie. Where and when?' 
+											 'Do_You: - Come to the casting on Saturday! Shooting on Sunday!'
+											 'she: - I agree!' 
+											 'Do_You: - I am very happy'
+												 act 'Here! And before the meeting ...': gt'sexshop','start'
+											 end
+											 
+											 if BDSMactressrand=2:
+											 cla
+											 *clr
+											 '<center><img src="toilet/oblom_1.jpg" ></center>'
+											 'she: - Fuck you on the dick!!! goaty!!!' 
+											 'Do_You: -Honey you so? I thought you might like submission!!!'
+											 'she: - Yes - thought you were a maniac-then!' 
+											 'Do_You: - Well excuse neponyatochka left! Video phone I remove as dogovorivatsya!'
+												 act 'Get_Away ...':
+												 cla
+												 *clr
+												 bankfond=bankfond+1000
+												 '<center><img src="toilet/pornjrolik.jpg" ></center>'
+												 '- That`s because of a bitch! - You thought ....' 
+												 'You have me still become a star!!! Though on the Internet!'
+												 'And finding a video on your phone, sold it to one of the sites for porn 1000 rubles!'
+												 'The money you transferred to the bank account ...'  
+													 act 'Get out of the basement':gt'sexshop','start'
+												 end
+											 end
+										 end
+									 end
+                                 end
+                             end
+                         end
+		             end
+                 end
+		     end
+         end
+     end
+end
+
+
+
+--- toilet ---------------------------------
+

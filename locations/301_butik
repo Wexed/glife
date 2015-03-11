@@ -1,0 +1,131 @@
+# butik
+if $ARGS[0]='start':
+cla
+*clr
+set mag=1
+$metka = $ARGS[0]
+$loc = $CURLOC
+$metkaM = $ARGS[0]
+$locM = $CURLOC
+set minut = minut + 5
+'<center><B><font color=maroon>boutique</font></B></center>'
+'<center><img src="pic/butik.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'7NIL kinds of dresses, all by 25000 RUB'
+set evrand = RAND (0,100)
+     if evrand >= 80 and skin > 0 and lesbiQW = 0:
+     'The boutique you see a stylish and slim woman forty years.'
+         act 'Stare at a woman.':gt'event','lesbi'
+     end
+     
+     if QWdogreiqTimer=0 and QWdogReiq=1 and week=7 and qwdogiventday!day:
+     qwdogiventday=day
+	 'Going into the boutique you start rassmatrevat hanging on veshlkah dress.Taking one you try on in passing it back and hang with mild disgust grimassy.Suddenly,began to study it more closely you feel kakoeto strange feeling as if you are looking for:'
+	 act 'Disregard':gt'butik','start'
+	 act 'look_around':dynamic $butikreiqdi
+	 exit
+	 end
+	 
+	 if RimmaSex>0:
+         if rimmaday!day:
+         'apartment <a href="exec:GT ''RimmaSexQW''">Rimma</a> you smiled and bit his lip began firing eyes in your direction.'
+         else
+         'Rima smiled at you and do business.'
+         end
+     end
+     
+     if palto<3:
+     'The boutique sells fur coat for winter. 50000 RUB'
+         if money>=50000:
+             act 'Buy a fur coat':
+             cla
+             set money-=50000
+             set palto=3
+             $palto='fur_coat'
+             'You bought a fur coat.'
+             act 'GO_OUT':gt'butik','start'
+             end
+         
+         end
+     end
+
+     if money >= 25000:
+         if dress[1] = 0:
+			 act 'inspect 1e dress.':set numdres=1&payclo=25000&gt'loker','dress'
+			 end
+         if dress[2] = 0:
+			 act 'inspect 2e dress.':set numdres=2&payclo=25000&gt'loker','dress'
+			 end
+         if dress[3] = 0:
+			 act 'inspect 3e dress.':set numdres=3&payclo=25000&gt'loker','dress'
+			 end
+         if dress[5] = 0:
+			 act 'inspect 5e dress.':set numdres=5&payclo=25000&gt'loker','dress'
+			 end
+         if dress[6] = 0:
+			 act 'inspect 6e dress.':set numdres=6&payclo=25000&gt'loker','dress'
+			 end
+         if dress[7] = 0:
+			 act 'inspect 7e dress.':set numdres=7&payclo=25000&gt'loker','dress'
+			 end
+         if dress[8] = 0:
+			 act 'inspect 8e dress.':set numdres=8&payclo=25000&gt'loker','dress'
+			 end
+         if dress[9] = 0:
+			 act 'inspect 9e dress.':set numdres=9&payclo=25000&gt'loker','dress'
+			 end
+         if dress[10] = 0:
+			 act 'inspect 10e dress.':set numdres=10&payclo=25000&gt'loker','dress'
+			 end
+         if dress[11] = 0:
+			 act 'inspect 11e dress.':set numdres=11&payclo=25000&gt'loker','dress'
+			 end
+         if dress[12] = 0:
+			 act 'inspect 12e dress.':set numdres=12&payclo=25000&gt'loker','dress'
+			 end
+         if dress[13] = 0:
+			 act 'inspect 13e dress.':set numdres=13&payclo=25000&gt'loker','dress'
+			 end
+         if dress[14] = 0:
+			 act 'inspect 14e dress.':set numdres=14&payclo=25000&gt'loker','dress'
+			 end
+         if dress[15] = 0:
+			 act 'inspect 15e dress.':set numdres=15&payclo=25000&gt'loker','dress'
+			 end
+         if dress[16] = 0:
+			 act 'inspect 16e dress.':set numdres=16&payclo=25000&gt'loker','dress'
+			 end
+         if dress[17] = 0:
+			 act 'inspect 17e dress.':set numdres=17&payclo=25000&gt'loker','dress'
+			 end
+         if dress[18] = 0:
+			 act 'inspect 18e dress.':set numdres=18&payclo=25000&gt'loker','dress'
+			 end
+         if dress[19] = 0:
+			 act 'inspect 19e dress.':set numdres=19&payclo=25000&gt'loker','dress'
+			 end
+         if dress[20] = 0:
+			 act 'inspect 20e dress.':set numdres=20&payclo=25000&gt'loker','dress'
+			 end
+         if dress[21] = 0:
+			 act 'inspect 21e dress.':set numdres=21&payclo=25000&gt'loker','dress'
+			 end
+         if dress[22] = 0:
+			 act 'inspect 22e dress.':set numdres=22&payclo=25000&gt'loker','dress'
+			 end
+         if dress[23] = 0:
+			 act 'inspect 23e dress.':set numdres=23&payclo=25000&gt'loker','dress'
+			 end
+         end
+act 'EXIT BOUTIQUE':
+	 cla
+	 set minut = minut + 5
+	 gt'torgcentr'
+	 end
+end
+--- butik ---------------------------------
+

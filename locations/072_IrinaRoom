@@ -1,0 +1,233 @@
+# IrinaRoom
+if $ARGS[0]='start':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>Entrance where your girlfriend lives Ira</font></B></center>'
+'<center><img src="pic/podezdhr.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+     act 'GO_OUT':
+     cla
+     set minut = minut + 5
+     gt'street'
+     end
+     
+     act 'Ring the doorbell Irina':
+     cla
+         if hour >= 16 and hour <=21 and week >= 6 and IrinaQW ! 2:
+         'You`ve reached the door and you opened Ira, She smiled and invited you to enter.'
+             act 'Go to the apartment':gt'IrinaRoom','first'
+         else
+         'You`ve reached the door but no one answers.'
+             act 'GO_OUT':
+			 cla
+			 set minut = minut + 5
+			 gt'street'
+			 end
+         end
+     end
+
+end
+
+if $ARGS[0]='first':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>apartment Ira</font></B></center>'
+'<center><img src="pic/IrinaRoom.jpg" ></center>'
+'Small studio apartment Ira neat and tidy'
+clr
+gs'stat'
+     act 'Drinking in the kitchen':gt'IrinaRoom','first1'
+end
+
+if $ARGS[0]='first1':
+cla
+*clr
+set minut = minut + 60
+set manna = manna + 50
+'<center><img src="picVA/IrinaQW.jpg" ></center>'
+'You Ira settled in the kitchen with a bottle of wine and a snack of fruit, you talked and chatted merrily.'
+'And Ira and you`re a little tipsy .'
+clr
+gs'stat'
+     act 'Get_Away':
+     cla
+     set minut = minut + 60
+     set manna = manna + 50
+     gt'street'
+     end
+     
+     if IrinaQW = 1:
+         act 'Suggest drink brotherhood':gt'IrinaRoom','first2'
+     end
+     if IrinaQW >= 10:
+         act 'tselovatsya':gt'IrinaRoom','kiss'
+     end
+end
+
+if $ARGS[0]='kiss':
+cla
+*clr
+set minut = minut + 10
+set manna = manna + 50
+set horny = horny + 20
+'<center><img src="picVA/IrinaKiss.jpg" ></center>'
+'You are a passionate kiss with Ira, and caressing her firm breasts hands.'
+clr
+gs'stat'
+     act 'sex':gt'IrinaRoom','sex'
+end
+
+if $ARGS[0]='sex':
+cla
+*clr
+set minut = minut + 60
+set manna = manna + 50
+set lesbian = lesbian + 1
+set manna = manna + 100
+set willpower = willpower + 100 
+'<center><img src="picVA/IrinaSex.jpg" ></center>'
+     if horny<50:
+     horny-=10
+     'Once in bed you caress each other passionately and lick wet pussies each other. But the excitement gradually disappears and you feel, that orgasm you will not be.'
+     end
+     if horny>=50:
+     horny = 0
+     set orgasm = orgasm + 1
+     'Once in bed you caress each other passionately and lick wet pussies each other. Finally you both satisfied.'
+     end
+clr
+gs'stat'
+     act 'GO_OUT':
+	 cla
+	 set minut = minut + 5
+	 gt'street'
+	 end
+end
+
+
+if $ARGS[0]='first2':
+cla
+*clr
+set minut = minut + 60
+set manna = manna + 50
+'<center><img src="picVA/IrinaQW1.jpg" ></center>'
+'You offered Ira drink brotherhood, in honor of dating.'
+clr
+gs'stat'
+     act 'kiss':gt'IrinaRoom','first3'
+end
+
+if $ARGS[0]='first3':
+cla
+*clr
+set manna = manna + 50
+set horny = horny + 20
+'<center><img src="picVA/IrinaQW2.jpg" ></center>'
+'You kissed her warm -il, soft, smelling wine lips. Irina flushed after the kiss and looks at you confused and a little frightened.'
+clr
+gs'stat'
+     act 'undress Ira':gt'IrinaRoom','first4'
+     act 'Ira drink more':gt'IrinaRoom','first5'
+end
+
+if $ARGS[0]='first4':
+cla
+*clr
+set IrinaQW = 2
+'You have started to remove her blouse with Ira, she jumped up and jumped up from his chair with a yell "What are you doing? I`m not a lesbian!"'
+'She was scared of your attack and point you to the door.'
+clr
+gs'stat'
+     act 'GO_OUT':
+	 cla
+	 set minut = minut + 5
+	 gt'street'
+	 end
+end
+
+if $ARGS[0]='first5':
+cla
+*clr
+set IrinaQW = 10
+set horny = horny + 20
+'<center><img src="picVA/IrinaQW3.jpg" ></center>'
+'You pumped Er wine, she was very drunk and spilled wine on herself. She went into the bathroom to change. You.'
+'She undressed and you have decided to follow suit and also undressed climbed into the shower. You started lathering body Ira and saw how she stood erect nipples.'
+clr
+gs'stat'
+     act 'kiss':gt'IrinaRoom','first6'
+end
+
+if $ARGS[0]='first6':
+cla
+*clr
+set horny = horny + 20
+'<center><img src="picVA/IrinaQW4.jpg" ></center>'
+'You eagerly dug into his lips luscious lips Ira, she suddenly responded to your kiss very passionately.'
+clr
+gs'stat'
+     act 'fondle breasts':gt'IrinaRoom','first7'
+end
+
+if $ARGS[0]='first7':
+cla
+*clr
+set horny = horny + 20
+'<center><img src="picVA/IrinaQW5.jpg" ></center>'
+'You lowered his head to his chest and started Ira suck and lick her hard nipples Ira zastonalya pleasure.'
+clr
+gs'stat'
+     act 'licking pussy':gt'IrinaRoom','first8'
+end
+
+if $ARGS[0]='first8':
+cla
+*clr
+set horny = horny + 20
+set girl = girl + 1
+set lesbian = lesbian + 1
+'<center><img src="picVA/IrinaQW6.jpg" ></center>'
+'You kissed lower and lower until they fell to the level of moisture seeping pussy Ira. Your reed began to caress her clit and soon she shuddered and began to moan orgasm.'
+'Ira decided to repay you in kind and not speak a word not put you on the edge of the tub and her lips stuck into your pussy.'
+clr
+gs'stat'
+     act 'licking pussy':gt'IrinaRoom','first9'
+end
+
+if $ARGS[0]='first9':
+cla
+*clr
+set horny = 0
+set orgasm = orgasm + 1
+set manna = manna + 100
+set willpower = willpower + 100 
+'<center><img src="picVA/IrinaQW7.jpg" ></center>'
+'Lips and tongue Ira quickly vozimeli effect and you finished with passionate moans.'
+clr
+gs'stat'
+     act 'GO_OUT':
+	 cla
+	 set minut = minut + 5
+	 gt'street'
+	 end
+end
+
+
+
+
+
+
+
+
+
+
+
+--- IrinaRoom ---------------------------------
+

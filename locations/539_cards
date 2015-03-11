@@ -1,0 +1,62 @@
+# cards
+*PL '<right><img src="casino/zalcart.jpg" ></right>'
+*P 'In the hall are plenty of free tables for blackjack games and Casino Wars.'
+ACT 'To the table game Blackjack':
+	gt 'bldzh'
+END
+ACT 'For table games Casino War':
+	gt 'kazvar'
+END
+ACT 'Back in the hall':
+	gt 'hall'
+END
+clr
+gs'stat'
+set minut=minut + 10
+
+!SYMBOLS
+! в™Ґ
+! в™ 
+! в™¦
+! в™Ј
+
+!deck of cards
+$suit[1] = 'peak'
+$symbol[1] = 'в™ '
+$suit[2] = 'clubs'
+$symbol[2] = 'в™Ј'
+$suit[3] = 'worms'
+$symbol[3] = 'в™Ґ'
+$suit[4] = 'tambourine'
+$symbol[4] = 'в™¦' 
+
+$number[1] = 'ace '
+points[1] = 11
+$number[2] = 'deuce '
+points[2] = 2
+$number[3] = 'three '
+points[3] = 3
+$number[4] = 'four '
+points[4] = 4
+$number[5] = 'five '
+points[5] = 5
+$number[6] = 'six '
+points[6] = 6
+$number[7] = 'seven '
+points[7] = 7
+$number[8] = 'eight '
+points[8] = 8
+$number[9] = 'nine '
+points[9] = 9
+$number[10] = 'ten '
+points[10] = 10
+$number[11] = 'Jack '
+points[11] = 10
+$number[12] = 'lady '
+points[12] = 10
+$number[13] = 'king '
+points[13] = 10
+$number[14] = 'ace '
+points[14] = 11
+--- cards ---------------------------------
+

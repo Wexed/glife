@@ -1,0 +1,640 @@
+# KGZgame
+minut+=1
+gs'stat'
+gs'KGZdyn'
+
+if KGZHP<=0:
+cla
+*clr
+'<center><B>GAME OVER</B></center>'
+act 'Leave the game':gt'KGZstart'
+exit
+end
+
+if KGZhour>=6 and KGZhour<=21:
+KGZsvet=1
+else
+KGZsvet=0
+end
+
+'<a href="exec:GT ''KGZstart''">Leave the game</a>'
+'health <<KGZHP>>. day <<KGZday>>, h <<KGZhour>>.'
+if KGZsup<=0:'You do not have provisions, you starve!'
+'cold arms: <<$KGZweapon>>'
+if KGZgun>0:'<<$KGZgun>>'
+if KGZgun2>0:'<<$KGZgun2>>'
+if KGZgun3>0:'<<$KGZgun3>>'
+if KGZgenerator>0:
+if KGZbenzin=0:$KGZbenzin='But the generator does not work, since you do not have gasoline.'
+if KGZbenzin=1:$KGZbenzin='You have filled a full tank of petrol.'
+'Do you have a portable generator running on gasoline. <<$KGZbenzin>>' 
+end
+if KGZbolgarka>0:'Do you have a Bulgarian powered by electricity.'
+if KGZratia=1:'Do you have a portable radio.'
+''
+if KGZplace=0:
+'<center><B>apartment</B></center>'
+'Your apartment safe place. The apartment is kept provisions, which will be enough for <<KGZsup>> days'
+     if KGZmedkit>0:
+     'kits <<KGZmedkit>> pcs'
+         if KGZHP<100:
+             act 'treated':
+             cls
+             KGZhour+=1
+             KGZHP=100
+             KGZmedkit-=1
+             minut+=1
+             gs'stat'
+             'You cured with the help of health kits.'
+             act 'further':gt $curloc
+             end
+         end
+     end
+     
+     act 'laze':
+     cls
+	 KGZhour+=1
+	 minut+=1
+	 gs'stat'
+	 'You lounged in the apartment, lounging on the couch and thinking, as you vykruchivatsya of the situation.'
+	 act 'further':gt $curloc
+     end
+     
+     
+     act 'Leave the apartment':
+     cls
+	 KGZhour+=1
+	 minut+=1
+	 gs'stat'
+	 KGZplace=1
+	 KGZbatl=0
+	 'You cautiously left the apartment trying not to run into dead.'
+	 act 'further':gt $curloc
+     end
+     
+end
+
+if KGZplace=1:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>street</B></center>'
+'On the street broken machine, lie the corpses.'
+     if KGZbatl=0:
+     'Roam the streets <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+             act 'srazhatsya':
+                 if KGZsvet=1:KGZdist=RAND(5,30)
+                 if KGZsvet=2:KGZdist=RAND(3,10)
+             gt'KGZfight'
+             end
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod
+     end
+
+end
+
+if KGZplace=2:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>shop</B></center>'
+'The store stale air from spoiled food and dead.'
+     if KGZbatl=0:
+     'Wander around the store <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+             act 'srazhatsya':
+                 if KGZsvet=1:KGZdist=RAND(3,10)
+                 if KGZsvet=2:KGZdist=RAND(2,8)
+             gt'KGZfight'
+             end
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod2
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod2
+     end
+
+end
+
+if KGZplace=3:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>hospital</B></center>'
+'Hospital floor is littered with papers and dead bodies of patients and physicians.'
+     if KGZbatl=0:
+     'Wander around the hospital <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+             act 'srazhatsya':
+                 if KGZsvet=1:KGZdist=RAND(3,10)
+                 if KGZsvet=2:KGZdist=RAND(2,8)
+             gt'KGZfight'
+             end
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod3
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod3
+     end
+
+end
+
+if KGZplace=4:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>boulevard</B></center>'
+'On the boulevard cluster of abandoned and broken machines, corpses everywhere.'
+     if KGZbatl=0:
+     'Wander along the boulevard <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+             act 'srazhatsya':
+                 if KGZsvet=1:KGZdist=RAND(5,30)
+                 if KGZsvet=2:KGZdist=RAND(3,10)
+             gt'KGZfight'
+             end
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod4
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod4
+     end
+
+end
+
+if KGZplace=5:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>hunting store</B></center>'
+'In hunting store all counters are turned, scattered on the floor and some things which are seen decomposing bodies.'
+     if KGZbatl=0:
+     'Wander around the room <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(2,6)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod5
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod5
+     end
+
+end
+
+if KGZplace=6:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>police station</B></center>'
+'At the police station the police corpses scattered on the floor, the tables are turned and the terms of roll paper.'
+     if KGZbatl=0:
+     'Wander around the room <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(2,5)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod6
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod6
+     end
+
+end
+
+if KGZplace=7:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>hardware store</B></center>'
+'The store everything upside down and smells mertvyachinoy.'
+     if KGZbatl=0:
+     'Wander around the room <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(2,5)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod7
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod7
+     end
+
+end
+
+if KGZplace=8:
+KGZdead=RAND(KGZday*2,KGZday*4)
+'<center><B>highway</B></center>'
+'On the highway, where there are some broken machines and the dead bodies.'
+     if KGZbatl=0:
+     'Wandering on the highway <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+             act 'srazhatsya':
+                 if KGZsvet=1:KGZdist=RAND(5,30)
+                 if KGZsvet=2:KGZdist=RAND(3,10)
+             gt'KGZfight'
+             end
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod8
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod8
+     end
+
+end
+
+if KGZplace=9:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>filling</B></center>'
+'At the gas station is a pair of abandoned vehicles. No electricity and columns are only manually.'
+     if KGZbatl=0:
+     'Wander around the room <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(2,5)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod9
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod9
+     end
+
+end
+
+if KGZplace=10:
+KGZdead=RAND(KGZday*5,KGZday*10)
+     if KGZplaceA=20:KGZplace=100&gt $curloc
+     if KGZplaceA=10:KGZplace=11&gt $curloc
+     if KGZplaceA=0:KGZplace=8&gt $curloc
+'<center><B>Highway in Fort Bragg</B></center>'
+'<center><B><<KGZplaceA>>th kilometer</B></center>'
+'On the highway are broken machines are corpses.'
+     if KGZbatl=0:
+     'Wandering on the highway <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+             act 'srazhatsya':
+                 if KGZsvet=1:KGZdist=RAND(5,30)
+                 if KGZsvet=2:KGZdist=RAND(3,10)
+             gt'KGZfight'
+             end
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod10
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod10
+     end
+
+end
+
+if KGZplace=11:
+KGZdead=RAND(KGZday*10,KGZday*20)
+'<center><B>Fort Bragg</B></center>'
+'Fort Bragg is a small building surrounded by a fence.'
+     if KGZbatl=0:
+     'Roam around the fort <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(3,10)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod11
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod11
+     end
+
+end
+
+if KGZplace=12:
+if KGZdost=0:KGZdost=1
+KGZdead=RAND(KGZday*10,KGZday*20)
+'<center><B>Roof Fort Bragg</B></center>'
+'On the roof is full of lying motionless rotting bodies, a lot of spent cartridges.'
+'Provisions enough for <<KGZsup>> days'
+if KGZfortQW>0:'<a href="exec:dynamic $KGZvincent">Tired young man in the form of Ranger</a>, sits leaning on a sniper rifle.'
+     if KGZmedkit>0:
+     'kits <<KGZmedkit>> pcs'
+         if KGZHP<100:
+             act 'treated':
+             cls
+             KGZhour+=1
+             KGZHP=100
+             KGZmedkit-=1
+             minut+=1
+             gs'stat'
+             'You cured with the help of health kits.'
+             act 'further':gt $curloc
+             end
+         end
+     end
+     
+     act 'rest':
+     cls
+	 KGZhour+=1
+	 minut+=1
+	 gs'stat'
+	 'You settled for convenient roof, not taking his eyes off the hatch which can climb dead.'
+	 act 'further':gt $curloc
+     end
+     
+     
+     act 'Go to the fort':
+     cls
+	 KGZhour+=1
+	 minut+=1
+	 gs'stat'
+	 KGZplace=11
+	 KGZbatl=0
+	 'You gently down the hatch, trying not to run into dead.'
+	 act 'further':gt $curloc
+     end
+
+end
+
+if KGZplace=13:
+KGZdead=RAND(KGZday*10,KGZday*20)
+'<center><B>Fort Bragg</B></center>'
+'<center><B>The food warehouse</B></center>'
+'In stock dark and heard noises.'
+     if KGZbatl=0:
+     'The warehouse roam <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(2,3)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod13
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod13
+     end
+
+end
+
+if KGZplace=14:
+KGZdead=RAND(KGZday*10,KGZday*20)
+'<center><B>Fort Bragg</B></center>'
+'<center><B>infirmary</B></center>'
+'In the hospital is dark and heard noises.'
+     if KGZbatl=0:
+     'According to the infirmary roam <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(2,3)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod14
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod14
+     end
+
+end
+
+if KGZplace=15:
+KGZdead=RAND(KGZday*10,KGZday*20)
+'<center><B>Fort Bragg</B></center>'
+'<center><B>Armory</B></center>'
+'In the armory dark and heard noises.'
+     if KGZbatl=0:
+     'On weapons roam <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(2,3)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod15
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod15
+     end
+
+end
+
+if KGZplace=16:
+KGZdead=RAND(KGZday*10,KGZday*20)
+'<center><B>Fort Bragg</B></center>'
+'<center><B>garage</B></center>'
+'The garage is dark and heard noises.'
+     if KGZbatl=0:
+     'Roam the garage <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(2,3)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod16
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod16
+     end
+
+end
+
+
+if KGZplace=100:
+KGZdead=RAND(KGZday*20,KGZday*30)
+'<center><B>city вЂ‹вЂ‹Koldkrik</B></center>'
+'The city was destroyed and could be seen fires.'
+     if KGZbatl=0:
+     'Roam the streets <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(10,30)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod100
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod100
+     end
+end
+
+if KGZplace=101:
+'<center><B>house</B></center>'
+'This house is a safe place. The house is kept provisions, which will be enough for <<KGZsup>> days'
+     if KGZmedkit>0:
+     'kits <<KGZmedkit>> pcs'
+         if KGZHP<100:
+             act 'treated':
+             cls
+             KGZhour+=1
+             KGZHP=100
+             KGZmedkit-=1
+             minut+=1
+             gs'stat'
+             'You cured with the help of health kits.'
+             act 'further':gt $curloc
+             end
+         end
+     end
+     
+     act 'laze':
+     cls
+	 KGZhour+=1
+	 minut+=1
+	 gs'stat'
+	 'You lounged in the apartment, lounging on the couch and thinking, as you vykruchivatsya of the situation.'
+	 act 'further':gt $curloc
+     end
+     
+     
+     act 'Out of the house':
+     cls
+	 KGZhour+=1
+	 minut+=1
+	 gs'stat'
+	 KGZplace=100
+	 KGZbatl=0
+	 'You cautiously left the apartment trying not to run into dead.'
+	 act 'further':gt $curloc
+     end
+     
+end
+
+if KGZplace=102:
+KGZdead=RAND(KGZday*5,KGZday*10)
+'<center><B>supermarket</B></center>'
+'At the supermarket.'
+     if KGZbatl=0:
+     'Roam the halls of the Trade <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(5,10)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod102
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod102
+     end
+end
+
+if KGZplace=200:
+KGZdead=RAND(KGZday,KGZday*2)
+'<center><B>forest</B></center>'
+'In the dark woods and heard noises.'
+     if KGZbatl=0:
+     'Wander through the woods <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(10,30)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod200
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod200
+     end
+end
+
+if KGZplace=201:
+KGZdead=RAND(KGZday,KGZday*3)
+'<center><B>farm</B></center>'
+'Large fenced farm fence.'
+     if KGZbatl=0:
+     'Wander around the neighborhood <<KGZdead>> dead'
+     KGZagr=RAND(0,10)
+         if KGZagr<=8:
+         'sensing you, dead immediately rush to the attack.'
+         act 'srazhatsya':KGZdist=RAND(10,30)&gt'KGZfight'
+         else
+         'for luck, Dead you have not noticed.'
+         dynamic $KGZvihod201
+         end 
+     else
+     'The Walking Dead is not visible.'
+     dynamic $KGZvihod201
+     end
+end
+
+if KGZplace=202:
+'<center><B>house</B></center>'
+'This house is a safe place. The house is kept provisions, which will be enough for <<KGZsup>> days'
+     if KGZmedkit>0:
+     'kits <<KGZmedkit>> pcs'
+         if KGZHP<100:
+             act 'treated':
+             cls
+             KGZhour+=1
+             KGZHP=100
+             KGZmedkit-=1
+             minut+=1
+             gs'stat'
+             'You cured with the help of health kits.'
+             act 'further':gt $curloc
+             end
+         end
+     end
+     
+     act 'laze':
+     cls
+	 KGZhour+=1
+	 minut+=1
+	 gs'stat'
+	 'You lounged in the apartment, lounging on the couch and thinking, as you vykruchivatsya of the situation.'
+	 act 'further':gt $curloc
+     end
+     
+     
+     act 'Out of the house':
+     cls
+	 KGZhour+=1
+	 minut+=1
+	 gs'stat'
+	 KGZplace=201
+	 KGZbatl=0
+	 'You cautiously left the apartment trying not to run into dead.'
+	 act 'further':gt $curloc
+     end
+     
+end
+
+
+
+
+
+--- KGZgame ---------------------------------
+

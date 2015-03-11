@@ -1,0 +1,22 @@
+# popu
+if $ARGS[0]='start':
+cla
+*clr
+set minut = minut + 5
+'<center><img src="zoo/1a640f07cc5c.jpg" ></center>'
+'<center><<$namepopu>> sits in his cage.</center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+act 'Get_Away':gt'korr'
+act 'To release the window':
+	 set popugai=0
+	 set minut+=10
+	 gt'korr'
+	 end
+end
+--- popu ---------------------------------
+

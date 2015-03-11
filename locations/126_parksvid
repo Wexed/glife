@@ -1,0 +1,112 @@
+# parksvid
+set minut+=60
+set manna+=10
+gs 'stat'
+'<center><B>park</B></center>'
+'<center><img src="img/parksvid/0.jpg" ></center>'
+'you and <<$telsob>> met near the park'
+act 'go for a walk':
+	 if $telsob = 'Alla':
+		 set alla+=1
+		 if alla>=20:
+			 set parksvidrand=RAND(0,5)
+			 if parksvidrand>0 and parksvidrand<3:gt 'parksvid','1'
+			 if parksvidrand>=3: gt 'parksvid','3'
+			 end
+		 if alla<20:gt'parksvid','3'
+		 end
+	 if $telsob = 'Masha':
+		 set masha+=1
+		 if masha>=20:
+			 set parksvidrand=RAND(0,10)
+			 if parksvidrand>0 and parksvidrand<3:gt 'parksvid','1'
+			 if parksvidrand>=3: gt 'parksvid','3'
+			 end
+		 if masha<20:gt'parksvid','3'
+		 end
+	 if $telsob = 'katya':
+		 set kat+=1
+		 if kat>=20:
+			 set parksvidrand=RAND(0,10)
+			 if parksvidrand>0 and parksvidrand<3:gt 'parksvid','1'
+			 if parksvidrand>=3: gt 'parksvid','3'
+			 end
+		 if kat<20:gt'parksvid','3'
+		 end
+	 end
+
+if $ARGS[0] = '1':
+cla
+*clr
+'<center><img src="img/parksvid/1.jpg" ></center>'
+'When you walked through the park we noticed a man in a skirt. <<$telsob>> interested in what he is doing and even in a skirt'
+act 'move on':gt 'parksvid','3'
+act 'See what he`s doing':
+	 cla
+	 *clr
+	 '<center><img src="img/parksvid/2.jpg" ></center>'
+	 'Coming closer -something round, It seems that he is engaged in the shot put.
+	 "Girls you have moved a bit and you `ll get it in, sorry to be such beauties" he said, noticing your interest in his studies.
+	 "That`s interesting, and they really do not have anything under her skirt" asked <<$telsob>>.
+	 "And I know where, Come and ask"
+	 "Do_Not, one will not go, went together to ask" said <<$telsob>>, making plaintive eyes.'
+	 act 'Refuse and go for a walk on.':gt 'parksvid','3'
+	 act 'To go with her':
+		 cla
+		 *clr
+		 '<center><img src="img/parksvid/3.jpg" ></center>'
+		 'The two of you come to the guy, and <<$telsob>> begins to push you to the side, whispering in his ear "Well ask."
+		 "And it is true that under the kilt did not put." you ask
+		 "You want to know, Look and check." smiling guy said.
+		 "Well." asked <<$telsob>>
+		 "Here" answer You
+		 "Well look" said <<$telsob>> defiantly pouting and down on his haunches.
+		 When she began to lift the kilt, man quickly threw it on his head.
+		 "Wow" heard her voice from under the kilt, and was still, after a few seconds you sick of it "Well?" and then asked you to blissful face guy and head movements under the kilt you understand, what <<$telsob>> does not consider the presence of underwear.
+		 A few minutes later <<$telsob>> crawled out from under the kilt wiped his mouth.
+		 "Girls and went to me take a closer look." suggested that guy is still standing with a beatific smile'
+		 act 'Refuse and go for a walk on.':gt 'parksvid','3'
+		 act 'Go to guy':
+			 cla
+			 *clr
+			 set orgasm+=1
+			 set lesbian+=1
+			 set minut+=30
+			 '<center><img src="img/parksvid/4.jpg" ></center>'
+			 'When you come to a guy home, the guy at the door lifted kilt, demonstrates his standing dildo, and stated "Well continue acquaintance".
+			 Emboldened <<$telsob>> immediately knelt and clasped his lips began to suck dick. You crouched behind and pushing her panties began to fondle her pussy tongue.'
+			 act 'further':
+				 cla
+				 *clr
+				 '<center><img src="img/parksvid/5.jpg" ></center>'
+				 'He picked it up and put cancer on the bed entered her vagina, you without hesitation lay on the bed putting her pussy right in front of her face. After a moment. After a couple of minutes you left off.'
+				 act 'further':
+					 cla
+					 *clr
+					 '<center><img src="img/parksvid/6.jpg" ></center>'
+					 'Once you ochuhalis orgasm, the guy took her by the shoulders and pulling back knocked on his back and inserting cock in her mouth cumshot.
+					 Came a little you dressed and went back to the park'
+					 act 'Get_Away':gt 'parksvid','3'
+					 end
+				 end
+			 end
+		 end
+	 end
+end
+
+
+if $ARGS[0] = '2':
+cla
+*clr
+end
+
+if $ARGS[0] = '3':
+cla
+set horny = 0
+set minut+=90
+gs 'stat'
+'When you have finished, <<$telsob>> said that she had to flee and left'
+act 'Get_Away':gt'park','start'
+end
+--- parksvid ---------------------------------
+

@@ -1,0 +1,66 @@
+# mitka
+gs'stat'
+'<center><B><font color=maroon>Mitka kingpin</font></B></center>'
+'<center><img src="qwest/alter/npc/mitka.jpg" ></center>'
+'Swain barely older than you, do you know him from childhood and children together while still bathed in the river.'
+
+
+if mitkaday=daystart:
+'Mr. Cho Svetuha, come in at eight o`clock, buhnem brew, popizdim for life.'
+
+end
+
+if mitkaday!daystart:
+mitkaday=daystart
+'Hello Svetuha. How zhituha?'
+     act'normally':
+     cls
+     gs'stat'
+     '<center><B><font color=maroon>Mitka kingpin</font></B></center>'
+     '<center><img src="qwest/alter/npc/mitka.jpg" ></center>'
+     'You said that you are all well and Mitka smiled offered "Mr. Cho Svetuha, come in at eight o`clock, buhnem brew, popizdim for life."'
+         if mitkasextimes>0:
+         'Mitka scratched eggs and added with a grin "Svetuh, Let us go now poebemsya, and that the riser fucking."'
+         	 act'Let`S_Go':
+			 cls
+			 minut+=15
+			 if mitkasex=0:mitkasex=1&guy+=1
+			 $boy='Mitka'
+			 silavag = 0
+			 dick=18
+			 pose=0
+			 mitkasextimes+=1
+			 gs'stat'
+			 '<center><img src="qwest/gadukino/mitka2.jpg" ></center>'
+			 'Mitka took you to his house and led to the veranda, There he laid you on the couch and began to undress beztseremonno.'
+			 dynamic $sexstart
+			 dynamic $sexstart2
+			 dynamic $sexcum
+			 'Mityai, lay down on his side and lit "fucking!"'
+			 act'Get_Away':gt'Gaddvor'
+			 end
+         end
+     act'Get_Away':gt'Gaddvor'
+     end
+     
+     
+end
+
+
+
+
+act'Get_Away':gt'Gaddvor'
+
+
+
+
+
+
+
+
+
+
+
+
+--- mitka ---------------------------------
+

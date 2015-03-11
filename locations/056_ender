@@ -1,0 +1,240 @@
+# ender
+if $ARGS[0]='loss':
+cla
+gs'nill'
+	 
+     if test = 1:
+     set test = 0
+     act 'further':gt'test'
+     exit
+     end
+
+     if jugoFight = 1:
+     set health = 100
+     set jugoFight = 0
+     'You fell on the floor and consciousness began to slip away from you.'
+     act 'further':gt'karinPRE'
+     exit
+     end
+     if jugoFight = 2:
+     set health = vital*10
+     set jugoFight = 0
+     'You fell on the floor is no longer able to fight Juugo.'
+     act 'further':gt'lab','start'
+     exit
+     end
+     if karinFight = 1:
+     set health = vital*10
+     set karinFight = 0
+     'You fell on the floor is no longer able to fight with Karin.'
+     act 'further':gt'lab','start'
+     exit
+     end
+     if prostitutFight = 1:
+     set health = 100
+     set prostitutFight = 0
+     set money = 0
+     set SUB = SUB + 1
+     set Loss = Loss + 1
+     if rikudo > 10:set rikudo = rikudo - 10
+     '<center><img src="pics/spit.jpg" ></center>'
+     'You hit the ground. Prostitute kicked you a couple of times. She searched and you took all the money. After that.'
+     act 'further':gt'park','start'
+     exit
+     end
+     if prostitutFight = 2:
+     set health = 100
+     set prostitutFight = 0
+     set money = 0
+     set SUB = SUB + 1
+     set Loss = Loss + 1
+     set bandfight = bandfight - 1
+     if rikudo > 10:set rikudo = rikudo - 10
+     '<center><img src="picLoss/band.jpg" ></center>'
+     'You hit the ground. Bandit lit and searched you, took all your money, then ordered, "open your mouth slut". You have submitted and opened her mouth. He inhaled and flicked ashes in your mouth. "I hope you learned a lesson slut, The next time I will not be so kind, I will punish the present."'
+     act 'further':gt'park','start'
+     exit
+     end
+     if prostitutFight = 3:
+     set health = 100
+     set prostitutFight = 0
+     set money = 100
+     set SUB = SUB + 2
+     set Loss = Loss + 1
+     set stellfight = stellfight - 1
+     if rikudo > 10:set rikudo = rikudo - 10
+     '<center><img src="picVA/irinaQW7.jpg" ></center>'
+     'You hit the ground. Prostitute kicked you a couple of times. She searched and you took all the money. She that was not enough, He has ordered you to kneel. Pulled off her panties, she sat on your face, forcing to lick, smelling secretions and semen pussy. Fearing new beatings, you carefully polished his tongue her crotch. After a few minutes, remains fairly, she left you come to life.'
+     act 'further':gt'park','start'
+     exit
+     end
+     
+     if KisaFight = 1:
+     set health = 100
+     set KisaFight = 0
+     set SUB = SUB + 1
+     set Loss = Loss + 1
+     if rikudo > 10:set rikudo = rikudo - 10
+     if KisameSex = 0:set KisameSex = 1&Set guy = guy + 1
+     set sex = sex + 1
+     set vagina = vagina + 1
+     set rape = rape + 1
+     set horny = 0
+     '<center><img src="picQW/kisameSex.jpg" ></center>'
+     'Kisame swims around you and laughs, I have great fun baby. He grabbed you for utyanul feet to the bottom of the pool, where you thrust your cock in pussy, you try not to drown in the water until you Kisame fucks, He methylene your insides with his cock like a jackhammer and you feel, that no longer can not breathe, in the eyes darken, Kisame ulybaetsya and leans to you, kiss me, You have stuck her lips to his mouth. Finally he finished and his seed shark was swimming in the water.'
+     act 'Crawl out of the pool':gt'street'
+     exit
+     end
+     
+     if RapistFight = 1:
+     set RapistFight = 0
+     set health = 100
+     set RapistFight = 0
+     set SUB = SUB + 1
+     set Loss = Loss + 1
+     if rikudo > 10:set rikudo = rikudo - 10
+     set sex = sex + 1
+     set vagina = vagina + 1
+     Set guy = guy + 1
+     set cumpussy = cumpussy + 1
+     set manna = 20
+     set willpower = 20
+     set rape = rape + 1
+     set picrand = RAND (1,6)
+         if picrand = 1:'<center><img src="pics/gopslut.jpg" ></center>'
+         if picrand = 2:'<center><img src="pics/gopslut2.jpg" ></center>'
+         if picrand = 3:'<center><img src="pics/gopslut3.jpg" ></center>'
+         if picrand = 4:'<center><img src="pics/gopslut4.jpg" ></center>'
+         if picrand = 5:'<center><img src="pics/gopslut5.jpg" ></center>'
+         if picrand = 6:'<center><img src="pics/gopslut6.jpg" ></center>'
+         Set horand = RAND (1,100)
+     'Swollen lips whispered against shocks: В«do not have to begВ», В«prayВ». It was all in vain, words were absorbed relentless darkness of the night benevolent, known as the most ruthless and lost to the light of day people. you lost, was a pathetic attempt to fight but, alas, seen today you have to look at the starry sky, until your body is an obedient tool to meet the dirtiest fantasies. Since you ripped clothes, leaving the body defenseless, before the cold hands, touch inaccessible to outsiders places, You roared in frustration. Through closed eyelids you have not seen it over you with excite stump hung your Tormentor. Seconds later, toxic cloud enveloped the nostrils, perhaps, was not so disgusting to feel the rhythmic violence between the legs, how to feel the smell of the stench of omnipotence. overcoming aversion, you unstuck swollen from crying eyes, face the beast you are not considered, he was the son of Darkness, and she gave him his protection. time of Silence, diluted dirty insults to your address, replaced by the cries and moans of bliss. Trying his best, you portrayed, that he brought you to the highest peak of passion, although he was only filled with pain your crotch, Damage done to virtually every piece of delicate skin. The trick is brought to you by relief, rapist soon finished, poured over your belly and pubis his searing seed, quickly dressed, he rushed, hiding away as suddenly, as he had appeared. You did not care about pain, abasement, over you cutting fiery trail sky falling stars, giving you the chance to make a wish.'
+     act 'cry':gt'street','start'
+     exit     
+     end
+     if gangrapeFight = 1:
+     set gangrapeFight = 0
+     set health = 100
+     set SUB = SUB + 1
+     set Loss = Loss + 1
+     if rikudo > 10:set rikudo = rikudo - 10
+     'Drunken mug threw you to the spit-covered floor porch and began to tear your clothes, you no longer have the strength to rebel by.'
+     act 'cry':gt'sexm','gangbang'
+     end
+     
+     if ZverevaFight = 1:
+     ZverevaFight = 0
+     zverRageQW=10
+     health = 100
+     Loss = Loss + 1
+     '<center><img src="pics/spit.jpg" ></center>'
+     'Christina Zverev beat you and you fall to the ground crying in front of the whole school. She hissed angrily to you "Now I`ll make your life hell, crud!" She leaned over to your face and said "Open your mouth and asshole Vysun language." You listened to Christina opened her mouth and tongue hanging out. Christina immediately relish spat in your mouth "swallow bitch!" You are in front of the whole school humbly swallowing harchek, Christina then again spat already hitting you in the face. Jeer at you a couple of times Christina kicking you in the ribs turned around and went to the school site.'
+     act 'Get_Away':gt'gschool'
+     end
+end
+
+if $ARGS[0]='win':
+cla
+gs'nill'
+
+     if ZverevaFight = 1:
+     zverSlutQW=1
+     set Win = Win + 1
+     ZverevaFight = 0
+     $npcText[18]='Christina after catching pizdyuley from you, in front of the whole school talked about, how to suck dick at fizruka, after that terrifies the surrounding Christina was broken and humiliated.'
+     grupTipe[18]=-1
+     'Christina Zvereva fell to the ground, you grabbed her by the hair. "Well, say, you suck at fizruka or not?" Christina roaring confessed before the whole school in the, she sucked dick in fizruka.'
+     act 'Get_Away':gt'gschool'
+     end
+
+     if test = 1:
+     set test = 0
+     act 'further':gt'test'
+     exit
+     end
+
+     if jugoFight = 2:
+     set health = vital*10
+     set rikudo = rikudo + 10
+     set jugoFight = 0
+         if winJugo = 0:set winJugo = 1
+     'Juugo fell to the floor and can no longer sparingovat.'
+     act 'further':gt'lab','start'
+     exit
+     end
+     if karinFight = 1:
+     set health = vital*10
+     set karinFight = 0
+     set rikudo = rikudo + 10
+         if winKarin = 0:set winKarin = 1
+     'Karin fell to the floor and can no longer sparingovat.'
+     act 'further':gt'lab','start'
+     exit
+     end
+     if prostitutFight = 1:
+     set prostitutFight = 0
+     set whoreQW = 1
+     set DOM = DOM + 1
+     set Win = Win + 1
+     set rikudo = rikudo + 10
+     'Prostitute fell to the ground and began to plead with you not to beat her again.'
+     act 'further':gt'park','start'
+     exit
+     end
+     if prostitutFight = 2:
+     set prostitutFight = 0
+     set DOM = DOM + 1
+     set Win = Win + 1
+     set bandfight = bandfight + 1
+     set rikudo = rikudo + 10
+     if prostOnce = 0:set prostOnce = 1&set money = money + RAND (500,5000)
+     'Bandit fell to the ground with a groan, you took his wallet and adding a couple of times in the ribs foot away from him.'
+     act 'further':gt'park','start'
+     exit
+     end
+     if prostitutFight = 3:
+     set prostitutFight = 0
+     set DOM = DOM + 1
+     set Win = Win + 1
+     set stellfight = stellfight + 1
+     set rikudo = rikudo + 10
+     set money = money + RAND (300,500)
+     'Beaten prostitute fell to the ground, you crash it again in the ribs and it took all my money and gave it to you, Only you did not beat her anymore.'
+     act 'further':gt'park','start'
+     exit
+     end
+     if KisaFight = 1:
+     set KisameDead = 1
+     KisaFight = 2
+     set DOM = DOM + 1
+     set Win = Win + 1
+     if rikudo > 10:set rikudo = rikudo + 3000
+     set money = money + 5000
+     'You killed Kisame and took away his body 5000 rubles.'
+     act 'further':gt'street'
+     exit
+     end
+     
+     if RapistFight = 1:
+     set RapistFight = 0
+     if rikudo > 10:set rikudo = rikudo + 100
+     set DOM = DOM + 1
+     set Win = Win + 1
+     if rapistOnce = 0:set rapistOnce = 1&set money = money + RAND (500,2000)
+     'You beat a rapist and took his wallet.'
+     act 'Go_Out':gt'park','start'
+     exit     
+     end
+     
+     if gangrapeFight = 1:
+     set gangrapeFight = 0
+     if rikudo > 10:set rikudo = rikudo + 100
+     set DOM = DOM + 1
+     set Win = Win + 1
+     if gangrapeOnce = 0:set gangrapeOnce = 1&set money = money + RAND (500,2000)
+     'Drunken mug stuck in a broken snout spit-covered floor in the entryway, you got his money from his pocket saying this for moral damages. Guys looking at you warily parted.'
+     act 'Go_Out':gt'street'
+     end
+end
+--- ender ---------------------------------
+

@@ -1,0 +1,143 @@
+# obroom
+if $ARGS[0]='start':
+$sexloc = $CURLOC
+$metkaM = $ARGS[0]
+$locM = $CURLOC
+gs'stat'
+cla
+*clr
+set odkomp=1
+'<center><B>Your room</B></center>'
+'<center><img src="img/centr/obroom.jpg" ></center>'
+'This is your room, with you in it lives another girl Vika'
+if hour>14 and hour<20 and vikaend=0:'Lying on his bed your neighbor <a href="exec:gt ''obroom'',''vika''">vetch</a>.'
+if hour>3 and hour<8 and vikaslut=0:'Vick is sleeping in her bed, after a night of being like. I wonder where she lost in the night.'
+if hour>3 and hour<8 and vikaslut=1:'Vick is sleeping in her bed, after working in a brothel.'
+if komp = 1:'<a href="exec:GT ''Komp'',''start''">computer</a>.'
+act 'In the corridor':
+	 if nude=0:
+		 set odkomp=0
+		 set minut+=5
+		 gt'dorm','korr'
+		 end
+	 if nude>0:'You have to get dressed'
+	 end
+act 'do(2 hours)':
+	 cla
+	 set minut+=120
+	 set intel+=1
+	 'You prozanimalsya two o`clock, I think in your head that-then postponed'
+	 act 'End_Up':gt'obroom','start'
+	 end
+if student > 0 and kursovik < 100:
+     act 'write kursovik 1 h':
+		 cla
+		 *clr
+		 set minut = minut + 60
+		 set kursovik = kursovik + RAND (intel/20,intel/10)
+		 if kursovik > 100:set kursovik = 100
+		 set manna = manna - 10
+		 '<center><img src="pic/study.jpg" ></center>'
+		 'You sat on coursework and prepare it for <<kursovik>> percent.'
+		 act 'End_Up':gt'obroom','start'
+		 end
+	 end
+act 'mirror':
+	 set obMir = 1
+	 gt'mirror','start'
+	 end
+act 'cupboard':
+	 set obLoker = 1
+	 gt'loker','start'
+	 end
+act 'In bed':
+	 set houseob = 1
+	 gt'bed','start'
+	 end
+if tanga=0 and clrbelo>0:
+	 act 'Dress Underwear':
+		 cla
+		 set tanga = 1
+		 gt'obroom','start'
+		 end
+	 else
+	 act 'Remove underwear':
+		 cla
+		 set tanga = 0
+		 gt'obroom','start'
+		 end
+	 end
+end
+
+if $ARGS[0]='vika':
+cla
+gs'stat'
+'<center><img src="img/centr/kat.jpg" ></center>'
+act 'Get_Away':gt'obroom','start'
+     if hour<20:
+		 act 'Chat with Vika (1 h)':
+		 cla
+		 set minut+=60
+		 set vika+=1
+		 set talkrand = RAND (0,10)
+		 if talkrand = 0:'You started talking with Vika, It tells you about the boys she met, about parties, about cosmetics.'
+		 if talkrand = 1:'Vic says she was in the cafe and she was invited to dance with a guy who then even paid her bill.'
+		 if talkrand = 2:'Vick says that working in a strip club dancer, rather profitable job for students, Although clients are very pristavuchie.'
+		 if talkrand = 3:'Vic tells you that some of the sections devchenok run at the university entered the European level sports competitions and earn big money, though of course Vic priznaetsya that her laziness so they plow.'
+		 if talkrand = 4:'Vick says that one of her friends flew from a guy who does not have time to get out of it. But Vick smarter, she buys at the pharmacy birth control, 100% guarantee.'
+		 if talkrand = 5:'Vick says in the park .'
+		 if talkrand = 6:'Vic tells how she acted naked in studio, not dusty work, but the reputation suffers.'
+		 if talkrand = 7:'Vic tells a horror story about how a nice girl not washed or shaved legs, then began to so many terrible, its per kilometer all obbegat.'
+		 if talkrand = 8:'Vick says that she buys tampons always reserve, and then if they go without a monthly then quickly prevratishsya a slut.'
+		 if talkrand = 9:'Vic tells how one of her guys like anal sex, but she was not in possession of Vaseline.'
+		 if talkrand = 10:'Vick says as she sunbathed in the summer on the beach, however for this she had to buy a swimsuit, but it is useful in winter and go to the pool. The pool is not a bad tool to keep yourself in good shape.'
+		 act 'End_Up':gt'obroom','vika'
+		 end
+		 
+		 act 'Engage with Vika (1 h)':
+		 cla
+		 set minut+=60
+		 set intel+=1
+		 set vika+=1
+		 'You overlaid textbooks and become engaged with Vika, together all digested twice as fast.'
+		 act 'End_Up':gt'obroom','vika'
+		 end
+		 
+	     if vikasex > 0 and vika > 20:
+		     act 'suggest fun':
+			 set minut+=60
+			 gt'lezbsex','start'
+			 end
+		 end
+		 
+	     if vika > 70 and vikaslut=0:
+		     act 'Ask where it is at night':
+			 cla
+			 set minut+=30
+			 set vikaslut=1
+			 'Vic jammed and blushed "I`m just looking."
+			 "Yup, she walks, at night on the street, so I believe you and, kolis friend where have you been." neunimalis you.
+			 "I work in a club" unsure mumbled Wick.
+			 "Many times I was in the club and you were not vidila, Enough already lie." you misbehaved, and a little later added "Do not want to so do not tell, not very much and wanted." and turned away from her.
+			 "Well do not be angry, I`ll show you just promise, then you at least talk to me will"
+			 You were taken aback by these words, than it can deal with, that you stop talking to her, not with the same dogs in public fucking. "Yes_I_Am, Of course I`ll talk to you, what a stupid question."
+			 "Show went well"'
+			 act 'Go with Vika':gt 'bordelv','start'
+			 end
+		 end
+		 
+	     if vika > 70 and vikaslut=1 and bordel=0:
+		     act 'Ask about work':
+			 cla
+			 set vika+=5
+			 set bordel=1
+			 set odkomp=0
+			 '"And I got a job in a brothel to work, I know how much." asked you.
+			 "Well I `ll tell the administrator, but I can not guarantee it can not take."'
+			 act 'End_Up':gt'obroom','vika'
+			 end
+		 end
+	 end
+end
+--- obroom ---------------------------------
+

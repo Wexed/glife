@@ -1,0 +1,119 @@
+# enderKik
+if $ARGS[0]='win':
+!set KikWin = KikWin + 1
+set pointKik = 0
+set pointKikV = 0
+set round = 0
+set minround = 0
+if health < 10:set health = 10
+     if profi = 1:
+     set KikWinPro = KikWinPro + 1
+     set profi = 0
+     set rikudo = rikudo + 5
+     act 'Get_Away':gt'fit','start'
+     exit
+     end
+     if amature = 1:
+     set KikWinAm = KikWinAm + 1
+     set amature = 0
+     set amatReit = amatReit + 1
+     set money = money + 500 + kikmoney
+     set rikudo = rikudo + 5
+     'You handed the prize 500 rubles.'
+     gs'razrKik'
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+     if sparing = 1:
+     set sparing = 0
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+end
+
+if $ARGS[0]='winKO':
+!set KikWin = KikWin + 1
+set pointKik = 0
+set pointKikV = 0
+set round = 0
+set minround = 0
+if health < 10:set health = 10
+     if profi = 1:
+     set KikWinPro = KikWinPro + 1
+     set KikKOPro = KikKOPro + 1
+     set profi = 0
+     set rikudo = rikudo + 10
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+     if amature = 1:
+     set KikWinAm = KikWinAm + 1
+     set amatReit = amatReit + 1
+     set amature = 0
+     set money = money + 500
+     set rikudo = rikudo + 10
+     'You handed the prize 500 rubles.'
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+     if sparing = 1:
+     set sparing = 0
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+end
+
+if $ARGS[0]='loss':
+!set KikLoss = KikLoss + 1
+set pointKik = 0
+set pointKikV = 0
+set round = 0
+set minround = 0
+if health < 10:set health = 10
+     if profi = 1:
+     set KikLossPro = KikLossPro + 1
+     set profi = 0
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+     if amature = 1:
+     set KikLossAm = KikLossAm + 1
+     if amatReit > 0:set amatReit = amatReit - 1
+     set amature = 0
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+     if sparing = 1:
+     set sparing = 0
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+end
+
+if $ARGS[0]='draw':
+!set KikLoss = KikLoss + 1
+set pointKik = 0
+set pointKikV = 0
+set round = 0
+set minround = 0
+if health < 10:set health = 10
+     if profi = 1:
+     set KikDrawPro = KikDrawPro + 1
+     set profi = 0
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+     if amature = 1:
+     set KikDrawAm = KikDrawAm + 1
+     set amature = 0
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+     if sparing = 1:
+     set sparing = 0
+     act 'Get_Away':gt'fit','razd'
+     exit
+     end
+end
+--- enderKik ---------------------------------
+

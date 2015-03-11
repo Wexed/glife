@@ -1,0 +1,624 @@
+# kakuzu
+if $ARGS[0]='start':
+cla
+*clr
+set minut = minut + 5
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'<center><B>mansion Kakuzu</B></center>'
+'<center><img src="pic/mansion.jpg" ></center>'
+'Ancient gloomy mansion, to which local even a cannon shot afraid to approach and sincerely believe, that lives there that something very bad. No need to have some sort of ability, make your system, emanates from this place of death.'
+
+     act 'Sign in mansion':gt 'kakuzu','mansion'
+act 'Get_Away':gt 'nord'
+end
+
+if $ARGS[0]='mansion':
+cla
+*clr
+set minut = minut + 5
+clr
+gs'stat'
+'<center><B>mansion Kakuzu</B></center>'
+'<center><img src="pic/mansion1.jpg" ></center>'
+'The room sits Kakuzu not paying any attention to you'
+
+     act 'Talk to Kakuzu':gt 'kakuzu','mansion1'
+act 'Get_Away':gt 'kakuzu','start'
+end
+
+if $ARGS[0]='mansion1':
+cla
+*clr
+set minut = minut + 5
+clr
+gs'stat'
+'<center><B>Kakuzu</B></center>'
+'<center><img src="picQW/kakuzu.jpg" ></center>'
+if tobiQW = 1:'I know who you are and what you need. pay 100 pieces and then I wiggled, that would teach you how to achieve affinity with the elements.'
+if tobiQW = 2:'you have <<srodpaper>> sheets of paper to determine the affinity of the elements. If you do not have enough paper, you have to buy more at Kakuzu for 10 sput list.'
+
+
+
+     if money >= 100000 and tobiQW = 1:
+		 act 'Here`s the money (100 sput)':
+		 cla
+		 set money = money - 100000
+		 set tobiQW = 2
+		 set srodpaper = 10
+		 'You put money in front of Kakuzu. He threw them in a drawer without looking.'
+		 'you asked "Not even going to count?" What Kakuzu said quietly, "if there is not enough though ruble, I will find and kill you."'
+		 '(Kakuzu) - Listen carefully. There are five pieces of Elements,
+		 fire - this school is the strongest of all the damage and the weakest protection. But there is nothing better school fire, that would beat the enemy with one blow.
+		 lightning - this school each his hit paralyzes the enemy, Done weaker than fire, but if you hooked lightning, then quickly will achieve any.
+		 wind - weak Done, weak protection, but no fog, or clones can not save the wind, any attack spell destroys clones wind and fog, plus spell wind is almost impossible to dodge.
+		 land - protective school, but the attacks are very dangerous ground, if the enemy attacks miss, it will stick in the ground and can not move. Just near the ground is the most powerful protection from all, protect the land regenerate itself and absolute defense to attack the enemy.
+		 water - The damage from this small school, but the spell of water taken from the enemy manna, the same high-level protection of water is very dangerous, she eats manna from the enemy and regenerates, although it is weaker cham similar land protection.
+		 Affinity with the element means, that you can learn exactly this element. You can not examine another verse after selecting affinity, not yet fully izuchish element. I give you 10 sheets of paper magic. Each leaf cost me 5000 rubles. Concentrate the energy in a piece of paper and when you can do it, then you can either start over and look forward to another element, or select the element on which you managed skontsentrirovatsya.'
+		 act 'Take a sheet of paper':gt 'kakuzu','mansion1'
+		 end
+     end
+     
+     if tobiQW = 2 and srodpaper <= 0 and money >= 10000:
+     	 act 'I need another paper (10 sput)':
+		 cla
+		 set money = money - 10000
+		 set srodpaper = srodpaper + 1
+		 'You gave money and Kakuzu handed you a piece of paper.'
+		 act 'Take a sheet of paper':gt 'kakuzu','mansion1'
+		 end
+     end
+     
+     if tobiQW = 2:
+         act 'Tell me again about the elements':
+		 cla
+         '(Kakuzu) - Dumbass, listen and remember. There are five pieces of Elements,
+		 fire - this school is the strongest of all the damage and the weakest protection. But there is nothing better school fire, that would beat the enemy with one blow.
+		 lightning - this school each his hit paralyzes the enemy, Done weaker than fire, but if you hooked lightning, then quickly will achieve any.
+		 wind - weak Done, weak protection, but no fog, or clones can not save the wind, any attack spell destroys clones wind and fog, plus spell wind is almost impossible to dodge.
+		 land - protective school, but the attacks are very dangerous ground, if the enemy attacks miss, it will stick in the ground and can not move. Just near the ground is the most powerful protection from all, protect the land regenerate itself and absolute defense to attack the enemy.
+		 water - The damage from this small school, but the spell of water taken from the enemy manna, the same high-level protection of water is very dangerous, she eats manna from the enemy and regenerates, although it is weaker cham similar land protection.
+		 Affinity with the element means, that you can learn exactly this element. You can not examine another verse after selecting affinity, not yet fully izuchish element. I give you 10 sheets of paper magic. Each leaf cost me 5000 rubles. Concentrate the energy in a piece of paper and when you can do it, then you can either start over and look forward to another element, or select the element on which you managed skontsentrirovatsya.'
+		 act 'move_away':gt 'kakuzu','mansion1'
+		 end
+     end
+     if tobiQW = 2 and srodpaper > 0 and manna < 2000:'You have no strength, that would continue the concentration.'
+     
+     if tobiQW = 2 and srodpaper > 0 and manna >= 2000:
+         act 'To concentrate energy on the sheet of paper (1 h)':
+		 cla
+		 set minut = minut + 60
+		 set manna = manna - 2000
+		 set sweat = sweat + 5
+		 if srodstvo = 0:set srodrand = RAND (1,5)
+		 set srodstvo = srodstvo + RAND (1,10)
+		 'You concentrate energy in the sheet of paper. Do you feel, that spend a huge amount of mana to this action.'
+		     if srodstvo < 100:
+		     'You get tired and sweating like a horse, but your efforts nor lead to anything.'
+             act 'move_away':gt 'kakuzu','mansion1'
+             end
+             if srodstvo >= 100:
+             set srodpaper = srodpaper - 1
+                 if srodrand = 1:'Paper broke in your hands. Kakuzu nodded approvingly, affinity with fire. Will you fix it?'
+                 if srodrand = 2:'Paper electrified in your hands, and from sparks. Kakuzu nodded approvingly, affinity with lightning. Will you fix it?'
+                 if srodrand = 3:'Paper hardened in your hands. Kakuzu nodded approvingly, affinity with the land. Will you fix it?'
+                 if srodrand = 4:'Paper shattered to pieces in your hands. Kakuzu nodded approvingly, affinity with the wind. Will you fix it?'
+                 if srodrand = 5:'Paper soaked in your hands. Kakuzu nodded approvingly, affinity for water. Will you fix it?'
+             
+                 act 'Fix the affinity':
+                 cla
+                 set tobiQW = 3
+                 set stihia = srodrand
+                 set srodstvo = 0
+                 gt 'kakuzu','mansion1'
+                 end
+                 
+                 act 'Unsubscribe from this affinity':
+                 set srodstvo = 0
+                 gt 'kakuzu','mansion1'
+                 end
+             end
+		 end
+     
+     end
+     if tobiQW = 3 and manna < 1000:
+     'Kakuzu tells you "You have almost no energy, you need to rest."'
+     end
+     if tobiQW = 3 and manna >= 1000:
+         if stihia = 1:
+             if magik >= 6 and spellfire1 = 0:
+                 act 'study Flames (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellfireL = spellfireL + RAND (1,10)
+                     if spellfireL < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellfireL >= 100:
+                      set spellfire1 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 7 and spellfire2 = 0:
+                 act 'Study the release of fire (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellfire2L = spellfire2L + RAND (1,10)
+                     if spellfire2L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellfire2L >= 100:
+                      set spellfire2 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 8 and spellfire3 = 0:
+                 act 'Study Fire Barrier (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellfire3L = spellfire3L + RAND (1,10)
+                     if spellfire3L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellfire3L >= 100:
+                      set spellfire3 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 9 and spellfire4 = 0:
+                 act 'Study Firestorm (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellfire4L = spellfire4L + RAND (1,10)
+                     if spellfire4L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellfire4L >= 100:
+                      set spellfire4 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 10 and spellfire5 = 0:
+                 act 'Learn Flame Shield (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellfire5L = spellfire5L + RAND (1,10)
+                     if spellfire5L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellfire5L >= 100:
+                      set spellfire5 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+         
+         end
+         if stihia = 2:
+             if magik >= 6 and spellele1 = 0:
+                 act 'study Rank (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spelleleL = spelleleL + RAND (1,10)
+                     if spelleleL < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spelleleL >= 100:
+                      set spellele1 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 7 and spellele2 = 0:
+                 act 'Lightning study (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellele1L = spellele1L + RAND (1,10)
+                     if spellele1L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellele1L >= 100:
+                      set spellele2 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 8 and spellele3 = 0:
+                 act 'Study Electro barrier (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellele2L = spellele2L + RAND (1,10)
+                     if spellele2L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellele2L >= 100:
+                      set spellele3 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 9 and spellele4 = 0:
+                 act 'Dance study thousands of birds (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellele3L = spellele3L + RAND (1,10)
+                     if spellele3L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellele3L >= 100:
+                      set spellele4 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 10 and spellele5 = 0:
+                 act 'To study the scope Plyaschuschaya (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellele4L = spellele4L + RAND (1,10)
+                     if spellele4L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellele4L >= 100:
+                      set spellele5 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             
+         end
+         if stihia = 3:
+             if magik >= 6 and spellert1 = 0:
+                 act 'Study quicksand (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellertL = spellertL + RAND (1,10)
+                     if spellertL < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellertL >= 100:
+                      set spellert1 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 7 and spellert2 = 0:
+                 act 'Active protection study (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellert2L = spellert2L + RAND (1,10)
+                     if spellert2L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellert2L >= 100:
+                      set spellert2 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 8 and spellert3 = 0:
+                 act 'learn Abyss (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellert3L = spellert3L + RAND (1,10)
+                     if spellert3L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellert3L >= 100:
+                      set spellert3 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 9 and spellert4 = 0:
+                 act 'Absolute protection study (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellert4L = spellert4L + RAND (1,10)
+                     if spellert4L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellert4L >= 100:
+                      set spellert4 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 10 and spellert5 = 0:
+                 act 'study Sando (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellert5L = spellert5L + RAND (1,10)
+                     if spellert5L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellert5L >= 100:
+                      set spellert5 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+         end
+         if stihia = 4:
+             if magik >= 6 and spellwind1 = 0:
+                 act 'A gust of wind study (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwind1L = spellwind1L + RAND (1,10)
+                     if spellwind1L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwind1L >= 100:
+                      set spellwind1 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 7 and spellwind2 = 0:
+                 act 'Study horrific pressure (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwind2L = spellwind2L + RAND (1,10)
+                     if spellwind2L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwind2L >= 100:
+                      set spellwind2 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 8 and spellwind3 = 0:
+                 act 'Vacuum protective sphere (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwind3L = spellwind3L + RAND (1,10)
+                     if spellwind3L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwind3L >= 100:
+                      set spellwind3 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 9 and spellwind4 = 0:
+                 act 'vacuum shells (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwind4L = spellwind4L + RAND (1,10)
+                     if spellwind4L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwind4L >= 100:
+                      set spellwind4 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 10 and spellwind5 = 0:
+                 act 'devouring vacuum (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwind5L = spellwind5L + RAND (1,10)
+                     if spellwind5L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwind5L >= 100:
+                      set spellwind5 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+         end
+         if stihia = 5:
+             if magik >= 6 and spellwater1 = 0:
+                 act 'Study Creek manna (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwaterL = spellwaterL + RAND (1,10)
+                     if spellwaterL < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwaterL >= 100:
+                      set spellwater1 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 7 and spellwater2 = 0:
+                 act 'study Flooding (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwater2L = spellwater2L + RAND (1,10)
+                     if spellwater2L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwater2L >= 100:
+                      set spellwater2 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 8 and spellwater3 = 0:
+                 act 'Study the water bubbles (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwater3L = spellwater3L + RAND (1,10)
+                     if spellwater3L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwater3L >= 100:
+                      set spellwater3 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 9 and spellwater4 = 0:
+                 act 'Water rocket to study shark (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwater4L = spellwater4L + RAND (1,10)
+                     if spellwater4L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwater4L >= 100:
+                      set spellwater4 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+             if magik >= 10 and spellwater5 = 0:
+                 act 'Study the Great Flood (1 h)':
+                 cla
+                 set manna = manna - 1000
+                 set minut = minut + 60
+                 set spellwater5L = spellwater5L + RAND (1,10)
+                     if spellwater5L < 100:
+                     'You diligently spell an hour, but has not been able to comprehend.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                      if spellwater5L >= 100:
+                      set spellwater5 = 1
+                     'Finally you will able to study the spell.'
+                     act 'move_away':gt 'kakuzu','mansion1'
+                     end
+                 end
+             
+             end
+         end
+         
+         
+     
+     end
+     
+act 'Get_Away':gt 'kakuzu','mansion'
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- kakuzu ---------------------------------
+

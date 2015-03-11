@@ -1,0 +1,32 @@
+# qwlocdog
+cls
+minut+=3
+gs'stat'
+'You pick up the phone and a female voice tells you. "Hello world, Margarita is. Today met in a cafe?"'
+
+	 act 'oh, I have a lot to do, Today I can not get.':
+	 cla
+	 qwdogiventday=day
+	 '(Do_You) - oh, I have a lot to do, I just can not segdnya.'
+	 '(Margaret) - Fair_Enough. Then I`ll call in a week.'
+	 act 'hang Up.':gt 'korr'
+	 end
+	 
+	 act 'I do not mind.':
+	 cla
+	 QWdogReiq=3
+	 qwdogiventday=day
+	 '(Do_You) - I do not mind.'
+	 '(Margaret) - That`S_Great. Then wait in a cafe.'
+	 act 'hang Up.':gt 'korr'
+	 end
+
+
+
+
+
+
+
+
+--- qwlocdog ---------------------------------
+

@@ -1,0 +1,140 @@
+# Alphabet
+ACT 'In the corridor':
+	gt 'floor'
+END
+'<center><B>Dorm room</B></center>'
+'<center><img src="pic/obskom.jpg" ></center>'
+clr
+gs 'stat'
+'Narrow room with a single window, wood floors, three <a href="exec:GT ''beds'',''selection''">beds</a>, little <a href="exec:GT ''table''">table</a> and a few chairs. At the entrance stands the old <a href="exec:GT ''cupboard''">wardrobe</a> to which to attach the old <a href="exec:GT ''zerkaloO''">mirror</a>.'
+if palto = 1:'At the entrance hangs a simple Chinese women`s down jacket'
+if palto = 2:'At the entrance hangs a woman`s coat'
+if palto = 3:'At the entrance hangs a dear lady coat'
+
+if daystart = 0:Set daystart = 1
+if house = 1 and student = 0:Set house = 0&'You are being evicted from the hostel, Now if you find yourself through the computer place to stay, you will remain without a roof over his head at the first exit from the hostel.'
+
+act 'roommate Wick':
+cla
+clr
+gs 'stat'
+'Vick sits on his bed .'
+act 'room':gt 'Alphabet'
+     if h < 23:
+         act 'Chat with Vika (1 h)':
+         cla
+         Set h = h + 1
+         Set Vika = Vika + 5
+         Set kosmskill = kosmskill + 1
+         if repa < 30:Set repa = repa + 1
+          set talkrand = RAND (0,18)
+         if talkrand = 0:'You started talking with Vika, It tells you about the boys she met, about parties, about cosmetics.'
+         if talkrand = 1:'Vic says she was in the cafe and she was invited to dance with a guy who then even paid her bill.'
+         if talkrand = 2:'Vick says that she worked as a waitress at a strip bar, rather profitable job for students, Although clients are very pristavuchie.'
+         if talkrand = 3:'Vic tells you that some of the sections devchenok run at college went on a European level sports competitions and earn big money, though of course Vic priznaetsya that her laziness so they plow.'
+         if talkrand = 4:'Vick says that one of her friends flew from a guy who does not have time to get out of it. But Vick smarter, she buys at the pharmacy birth control, 100% guarantee.'
+         if talkrand = 5:'Vick says that to stay, buy an apartment or a car you can only having a PC, via the Internet.'
+         if talkrand = 6:'Vic tells one her friend, bought a car, took place in the market and hired a saleswoman. He can only buy the goods in stock and bring it to market themselves and money flowing to it.'
+         if talkrand = 7:'Vic tells how she once winter came out without a coat and a bad cold.'
+         if talkrand = 8:'Vic tells about one girlfriend that all did not know how to lose weight, then began to go to the sauna and lost weight. True it is costly.'
+         if talkrand = 9:'Vick says that before she was fond of diets, but they deteriorated skin and went pryshi, yes match start, Now Vick for three cracks and become only more beautiful.'
+         if talkrand = 10:'Vick says that she used to go to the dance and the Internet has managed to get into a nightclub tantsorshey, but she quickly tired.'
+         if talkrand = 11:'Vick says in the park , but spoil the reputation of Vic did not want, besides a large number of partners begin to age faster.'
+         if talkrand = 12:'Vic tells how she acted naked in studio, not dusty work, but the reputation suffers.'
+         if talkrand = 13:'Vic told me as one of her friend that all perceived as slut arranged several parties in the cafe at their own expense, then it began to apply for better.'
+         if talkrand = 14:'Vic tells a horror story about how a nice girl not washed or shaved legs, then began to so many terrible, its per kilometer all obbegat.'
+         if talkrand = 15:'Vick says that she buys tampons always reserve, and then if they go without a monthly then quickly prevratishsya a slut.'
+         if talkrand = 16:'Vic tells how one of her guys like anal sex, but she was not in possession of Vaseline.'
+         if talkrand = 17:'Vick says as she sunbathed in the summer on the beach, however for this she had to buy a swimsuit, but it is useful in winter and go to the pool. The pool is not a bad tool to keep yourself in good shape.'
+         if talkrand = 18:'Vic tells an interesting psychological effect, is in stores do not notice things that are not short of money.'
+         act 'room':gt 'Alphabet'
+         end
+         if Vika > 10:
+         cla
+         if vikavecher = 0:Set vikavecher = 1
+         'Vic tells you, that the planned party, as well. You can go there with Vika'
+         act 'Go to a party':gt 'party','beginning'
+         act 'I have a case':gt 'Alphabet'
+         end
+         if Vika > 10 and Vzaem = 0:
+             act 'Borrow from Wiki 1000 rubles':
+             cla
+             Set money = money + 1000
+             Set Vzaem = 1
+             'Vic reached into her purse and gave you 1000 rubles in debt'
+             act 'room':gt 'Alphabet'
+             end
+         end
+         if Vika > 10 and Vzaem = 1 and money >= 1000:
+             act 'Give Vick debt 1000 rubles':
+             cla
+             Set money = money - 1000
+             Set Vzaem = 0
+             Set Vika = Vika + 5
+             'You gave Vick 1000 rubles taken you in debt'
+             act 'room':gt 'Alphabet'
+             end
+         end
+         if vikasex > 0 and Vika > 20:
+             act 'suggest fun':
+             cla
+             Set h = h + 1
+             Set $girl = 'vetch'
+             gt'lesb','beginning'
+             end
+         end
+     end
+end
+
+act 'roommate Galya':
+cla
+clr
+gs 'stat'
+'Galya overlaid textbooks and crams.'
+act 'room':gt 'Alphabet'
+     if h < 23:
+         act 'Engage with Galya (1 h)':
+         cla
+         Set h = h + 1
+         Set intel = intel + 1
+         Set Gala = Gala + 5
+         if repa > 1:Set repa = repa - 1
+         'You overlaid textbooks and began to prepare together with Galya.'
+         act 'room':gt 'Alphabet'
+         end
+         if Gala > 10 and Gzaem = 0:
+             act 'Borrow from Gali 1000 rubles':
+             cla
+             Set money = money + 1000
+             Set Gzaem = 1
+             'Galya rummaged in my purse and gave you 1000 rubles in debt'
+             act 'room':gt 'Alphabet'
+             end
+         end
+         if Gala > 10 and Gzaem = 1 and money >= 1000:
+             act 'Give Gale debt 1000 rubles':
+             cla
+             Set money = money - 1000
+             Set Gzaem = 0
+             Set Gala = Gala + 5
+             'You gave Gale 1000 rubles taken you in debt'
+             act 'room':gt 'Alphabet'
+             end
+         end
+         
+     end
+end
+
+!act 'test':
+!Set newboy = 1
+!gs'boy'
+!gs'boyopred'
+!act 'room':gt 'Alphabet'
+!end
+
+
+
+
+
+--- Alphabet ---------------------------------
+

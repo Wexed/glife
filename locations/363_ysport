@@ -1,0 +1,34 @@
+# ysport
+$metkaM = $ARGS[0]
+$locM = $CURLOC
+$metka = $ARGS[0]
+$loc = $CURLOC
+'<center><B><font color=maroon>mansion</font></B></center>'
+'<center>Gymnasium</center>'
+if ymanrem[11]=0:'<center><img src="pic/ynill.jpg" ></center>'
+if ymanrem[11]=1:'<center><img src="pic/yrem.jpg" ></center>'
+if ymanrem[11]=2:'<center><img src="pic/ysport.jpg" ></center>'
+if ymanrem[11]=2:''
+clr
+gs'stat'
+if obruchday ! day:
+'<a href="exec: dynamic $sitrobrd ">twist hoop</a>'
+end
+if bookYogday ! day:
+'<a href="exec: dynamic $sitryogd ">meditation</a>'
+end
+if skakday ! day:
+'<a href="exec: dynamic $sitrskakd ">jumping rope</a>'
+end
+if pressday ! day:
+'<a href="exec: dynamic $sitrpressd ">abdominal exercises</a>'
+end
+if pushday ! day:
+'<a href="exec: dynamic $sitrpushd ">such as push-ups</a>'
+end
+
+
+
+act 'Exit the room':minut+=1&gt'ymans'
+--- ysport ---------------------------------
+

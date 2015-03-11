@@ -1,0 +1,16 @@
+# ybedr
+$metkaM = $ARGS[0]
+$locM = $CURLOC
+$metka = $ARGS[0]
+$loc = $CURLOC
+'<center><B><font color=maroon>mansion</font></B></center>'
+'<center>bedroom</center>'
+if ymanrem[4]=0:'<center><img src="pic/ynill.jpg" ></center>'
+if ymanrem[4]=1:'<center><img src="pic/yrem.jpg" ></center>'
+if ymanrem[4]=2:'<center><img src="pic/ybedr.jpg" ></center>'
+if ymanrem[4]=2:'<a href="exec:GT ''bed'',''start''">Double</a> <a href="exec:GT ''loker'',''start''">cupboard</a> <a href="exec:GT ''mirror'',''start''">mirror</a>'
+clr
+gs'stat'
+act 'Exit the room':minut+=1&gt'ymans'
+--- ybedr ---------------------------------
+

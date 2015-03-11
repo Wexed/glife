@@ -1,0 +1,82 @@
+# tanhouse
+gs 'stat'
+$sexloc = $CURLOC
+'<center><B>apartment Thani</B></center>'
+'<center><img src="img/centr/house.jpg" ></center>'
+'You Tania opens and quickly to my room.'
+if tanpred=0:
+if tanya<=50:
+	 'Nor giving you say a word '
+	 set tanday=day
+	 set tanya+=3
+	 act'sex':xgt'lezbsex','var'
+	 end
+if tanya>50 and vnesh<=20:
+	 'Nor giving you say a word '
+	 set tanday=day
+	 set tanya+=3
+	 act'sex':xgt'lezbsex','var'
+	 end
+if tanya>50 and vnesh>20:
+	 '"Sveta, I have a very best idea, mother had just fired guvernatku, let me take you suggest stepfather, he pays well 25000 month, and the business is in the morning to cook breakfast, evening dinner and clean up well, and going to live right here with us." Tanya protorotorila.
+	 "And where did you get, that I will take your stepfather, I had in this field did not work" asked you.
+	 "believe, if I say take." Tanya smiled lasciviously'
+	 act'Opt_Out':
+		 cla
+		 '"I OFFER second time will not, you do not want to be with me piss" Tanya furious pushes you out of the apartment.'
+		 set tanya=0
+		 act 'Get_Away':gt'down'
+		 end
+	 act'agree':
+		 cla
+		 if work>0:
+			 cla
+			 '"Ok, Only I first need to quit"
+			 "So what do you expect, already run" joyfully cried Tanya'
+			 set tanya+=5
+			 set tanpred=1
+			 act 'Get_Away':gt'down'
+			 end
+		 if work=0:
+			 cla
+			 '"Ok, I agree."
+			 "Hooray `ll go and tell her stepfather" joyfully cried Tanya'
+			 set tanya+=5
+			 set tanwork=1
+			 set work=1
+			 act 'Get_Away':gt'tanhouse','sex'
+			 end
+		 end
+	 end
+end
+if tanpred=1:
+	 '"Well quit?"'
+	 if work=0:
+		 '"Yes_I_Am, quit"
+		 "Hooray `ll go and tell her stepfather" joyfully cried Tanya'
+		 set tanwork=1
+		 set work=1
+		 act 'Get_Away':gt'tanhouse','sex'
+		 end
+	 if work>0:
+		 '"not yet"
+		 "So what do you expect, already run"'
+		 act 'Get_Away':gt'down'
+		 end
+	 end
+
+if $ARGS[0]='sex':
+cla
+*clr
+'<center><img src="img/centr/tananal.jpg" ></center>'
+'Walking down the hallway you can hear the groans of one room, slightly opening the door you see Tanya standing against the wall apart buttocks hands, while her stepfather fucked in the ass. So here`s how it achieves that by his stepfather wants.'
+act 'Get_Away':gt'down'
+end
+
+if $ARGS[0]='start':
+'<center><B>apartment Thani</B></center>'
+'<center><img src="img/centr/house.jpg" ></center>'
+act 'Get_Away':gt'down'
+end
+--- tanhouse ---------------------------------
+

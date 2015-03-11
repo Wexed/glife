@@ -1,0 +1,134 @@
+# qwmeet2
+$qwmeetkatdy={
+'After the kiss . Near motor yacht talked two men and one woman.'
+'Vladimir brought you to the thin one man is not a certain age, hard, squeamish person. This Nikolai, this is the light.'
+	 act 'very nice':
+	 cls
+	 minut+=5
+	 gs'stat'
+	 '<center><B><font color=maroon>Nicholas</font></B></center>'
+     '<center><img src="qwest/kolan/001.jpg" ></center>'
+	 'Nicholas did not close the flashing eyes looked at you and said politely pointed "very nice".'
+	 'Vladimir brought you to the girl standing next to Nicholas and introduced you to each other. "This Isolde, this is the light."'
+	 	 act 'very nice':
+		 cls
+		 minut+=5
+		 gs'stat'
+		 '<center><B><font color=maroon>Isolde</font></B></center>'
+		 '<center><img src="qwest/kolan/izolda.jpg" ></center>'
+		 'A young blonde smiled graciously and say hello to you.'
+		 'Vladimir brought you to my second friend. "This Vitaly, this is the light."'
+		     act 'very nice':
+			 cls
+			 minut+=5
+			 gs'stat'
+			 '<center><B><font color=maroon>Vitali</font></B></center>'
+			 '<center><img src="qwest/marafet/001.jpg" ></center>'
+			 'The man looked at you and smiled wild eyes. "Hello beauty, Welcome to our warm company"'
+			 'Vladimir looked "Well, let`s go on a boat." Nicholas looked at the driver`s Glory. "Hey Banzai, moorings and lend at the helm." Asian nodded and started fussing around boats.'
+			 	 act 'Vzayti aboard boats':
+				 cls
+				 minut+=5
+				 gs'stat'
+				 '<center><B><font color=maroon>boat</font></B></center>'
+				 '<center><img src="qwest/vladimir/kater.jpg" ></center>'
+				 'You boarded the boat and Asian Glory which Nicholas called Banzai cast off and deftly jumped on the boat. Glory started the boat and raced down the river at full speed.'
+				 'Nicholas sat on a seat on the deck and plopped down beside him Vitaly. Vladimir began hustling on the deck but Nicholas interrupted him "Vovk, Stop running, Let us pamper girls. Sit_down, talk."'
+				 'Isolde after the words of Nicholas ducked into the cabin.'
+				     act 'Go to the cabin after Isolde':
+					 cls
+					 minut+=5
+					 gs'stat'
+					 '<center><B><font color=maroon>cabin</font></B></center>'
+					 '<center><img src="qwest/kolan/izolda.jpg" ></center>'
+					 'The cabin was a box with a variety of provisions and Isolde expertly served on a tray meal. She nodded tomatoes, less often until. You took the knife began to chop the tomatoes.'
+					     act 'Ask about her and Nicholas':
+						 cla
+						 minut+=5
+						 gs'stat'
+						 'You asked that binds her and Nicholas. Isolde immediately replied "We are not married, but there are. Nicholas idle, do not have anyone Nigo, no wife, no children. He is a very influential person in the city, at one of its mention all toe the line begin to walk."'
+						 'Nicholas mediates and solves a variety of disputes and questions. The very same Isolde according to her works in one the desk, almost nothing to make and receive not a bad salary. Nicholas gave her back.'
+						     act 'Ask about Vitali.':
+							 cla
+							 minut+=5
+							 gs'stat'
+							 'You wanted to know who the Vitali. Isolde shrugged, "Do not really know, Nikolay his cop calls. So maybe he is cop."'
+							     act 'Ask about the glory.':
+								 cla
+								 minut+=5
+								 gs'stat'
+								 'You asked whether she knows Glory, she smiled "I do not know, Banzai but all the time around Koli rubs, that it has attached to the driver Vovka. Insolent and crazy type, really excellent driver. It sort of master of sports of skiing."'
+								 act 'Come on deck with a tray.':gt'qwpaluba'
+								 end
+							 end
+						 end
+					 end
+				 end
+			 
+			 end
+		 end
+	 end
+}
+
+
+$qwslavady={
+'Glory is not looking at you said "light, where you met Volodka?"'
+'You`re a little surprised that the driver calls his boss Volodka but told him that you met in the park.'
+'The driver grinned "Yeah I remember. I drove him to the park with his wife and child. You are already aware that he has a wife and child?"'
+'you nodded "Yes_I_Am, he told me." Glory chuckled avoiding another car at full speed "I_Get_It. Cinderella found her prince on a white horse."'
+'Behind a police siren wailed and began to demand that the megaphone to Audi stopped. Slava laughed even harder pressed the gas to the floor. "Not yet been born a man who will be able to catch up with me."'
+'The car flew quite a crazy speed and cars moving in the same direction disappeared behind you not having to appear in front of you. Glory brought the car out of the city and sirens was not audible. he grinned "I told, intestine have thin catch up with me."'
+'Audi will soon flew to the river and stood near the pier on which are so few people. Glory got out and helped you vybratsya.'
+'To you walked Vladimir.'
+	 act 'Kiss on the cheek':
+	 cls
+	 '<center><B><font color=maroon>Vladimir</font></B></center>'
+     '<center><img src="qwest/vladimir/001.jpg" ></center>'
+	 'You cheek and gently kissed you .'
+	 dynamic $qwmeetkatdy
+	 end
+	 
+	 act 'Kiss on the lips':
+	 cls
+	 '<center><B><font color=maroon>Vladimir</font></B></center>'
+     '<center><img src="qwest/vladimir/001.jpg" ></center>'
+	 'You kissed on the lips of Vladimir. His strong and firm lips gently digging into your soft and gentle sponge.'
+	 dynamic $qwmeetkatdy
+	 end
+}
+
+minut+=3
+gs'stat'
+'<center><img src="qwest/kim/001.jpg" ></center>'
+'Glory to you smiled and gestured to sit in the car on the front passenger seat.'
+
+	 act 'Sit next to the driver.':
+	 cls
+	 minut+=3
+	 gs'stat'
+	 '<center><img src="qwest/kim/002.jpg" ></center>'
+	 'You sat on the seat next to the driver. Glory came to the door and slammed it. He walked to his seat and sat behind the wheel drove off. Glory again flew around the city spit on traffic lights, other machinery and marks.'
+	 dynamic $qwslavady
+	 end
+
+	 act 'Sit in the back seat.':
+	 cls
+	 minut+=3
+	 gs'stat'
+	 '<center><img src="qwest/kim/002.jpg" ></center>'
+	 'You defiantly sat in the back seat and Glory hmyknuv shut the door behind you. He walked to his seat and sat behind the wheel drove off. Glory again flew around the city spit on traffic lights, other machinery and marks.'
+	 dynamic $qwslavady
+	 end
+
+
+
+
+
+
+
+
+
+
+
+--- qwmeet2 ---------------------------------
+

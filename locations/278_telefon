@@ -1,0 +1,558 @@
+# telefon
+$objmobilaraz={
+cla
+set telotvet=RAND(0,10)
+'"Yes_I_Am, listen" came a voice from the speaker.'
+act 'Invite to movie':
+	 cla
+	 'DO_YOU: Come with me to the cinema?'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on after an hour in the cinema.'
+	 act 'go':gt 'kinosvid'
+	 end
+	 if telotvet<=3:dynamic $telotkaz
+	 end
+if month>5 and temper>20 and osadki<painweather:
+act 'Invite a walk in the park':
+	 cla
+	 'DO_YOU: Come take a walk in the park.'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on after an hour in the park.'
+	 act 'go':gt 'parksvid'
+	 end
+	 if telotvet<=3:dynamic $telotkaz
+	 end
+	 end
+act 'Invite pool':
+	 cla
+	 'DO_YOU: Come pool.'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on an hour in billiards.'
+	 act 'go':gt 'billsvid'
+	 end
+	 if telotvet<=3:dynamic $telotkaz
+	 end
+act 'Invite a cafe':
+	 cla
+	 'DO_YOU: Let`s go to the cafe.'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on an hour in a cafe.'
+	 act 'go':gt 'kafesvid'
+	 end
+	 if telotvet<=3:dynamic $telotkaz
+	 end
+act 'Invite casino':
+	 cla
+	 'DO_YOU: Let`s go to the casino `s go.'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on in an hour at the casino.'
+	 act 'go':gt 'kazinosvid'
+	 end
+	 if telotvet<=3:dynamic $telotkaz
+	 end
+act 'hang Up': gt'telefon','fin'
+}
+
+$objmobilarazboy={
+cla
+set telotvet=RAND(0,10)
+'"Yes_I_Am, listen" came a voice from the speaker.'
+act 'Invite to movie':
+	 cla
+	 'DO_YOU: Come with me to the cinema?'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on after an hour in the cinema.'
+	 act 'go':gt 'svidboy','kinosvid'
+	 end
+	 if telotvet<=3:dynamic $telotkaz
+	 end
+if month>5 and temper>20 and osadki<painweather:
+act 'Invite a walk in the park':
+	 cla
+	 'DO_YOU: Come take a walk in the park.'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on after an hour in the park.'
+	 act 'go':gt 'svidboy','parksvid'
+	 end
+	 if telotvet<=3:dynamic $telotkazboy
+	 end
+	 end
+act 'Invite pool':
+	 cla
+	 'DO_YOU: Come pool.'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on an hour in billiards.'
+	 act 'go':gt 'svidboy','billsvid'
+	 end
+	 if telotvet<=3:dynamic $telotkazboy
+	 end
+act 'Invite a cafe':
+	 cla
+	 'DO_YOU: Let`s go to the cafe.'
+	 if telotvet>3:
+	 '<<$telsob>>: Well come on an hour in a cafe.'
+	 act 'go':gt 'svidboy','kafesvid'
+	 end
+	 if telotvet<=3:dynamic $telotkazboy
+	 end
+act 'hang Up': gt'telefon','fin'
+}
+
+$telotkaz={
+cla
+set minut+=10
+'<<$telsob>>: I`m sorry I`m busy, Come next time.'
+act 'hang Up': gt'telefon','fin'
+}
+
+$telotkazboy={
+cla
+set minut+=10
+'<<$boyA>>: Sorry , Come next time.'
+act 'hang Up': gt'telefon','fin'
+}
+
+if $ARGS[0]='start':
+cla
+clr
+gs'stat'
+
+if vladimirday!day and vladimirQW=20 and hour = 16:gt 'qwloc2'
+if vladimirday!day and vladimirQW=25 and hour = 16 and week=6:gt 'qwloc3'
+if vladimirday!day and vladimirQW=35 and hour = 16 and week=6:GT 'qwloc4'
+if QWdogreiqTimer=0 and QWdogReiq=2 and week=7 and qwdogiventday!day and hour>=12:GT 'qwlocdog'
+	 if ring = 0:
+	 if number = 6:'<center><B><<num6>><<num5>>-<<num4>><<num3>>-<<num2>><<num1>></B></center>'
+	 if number = 5:'<center><B><<num6>><<num5>>-<<num4>><<num3>>-<<num2>></B><<num1>></center>'
+	 if number = 4:'<center><B><<num6>><<num5>>-<<num4>><<num3>></B>-<<num2>><<num1>></center>'
+	 if number = 3:'<center><B><<num6>><<num5>>-<<num4>></B><<num3>>-<<num2>><<num1>></center>'
+	 if number = 2:'<center><B><<num6>><<num5>></B>-<<num4>><<num3>>-<<num2>><<num1>></center>'
+	 if number = 1:'<center><B><<num6>></B><<num5>>-<<num4>><<num3>>-<<num2>><<num1>></center>'
+	 if number = 0:'<center><<num6>><<num5>>-<<num4>><<num3>>-<<num2>><<num1>></center>'
+	 *nl
+	 '<center><B><a href="exec:GT ''telefon'',''1''">1</a>   <a href="exec:GT ''telefon'',''2''">2</a>   <a href="exec:GT ''telefon'',''3''">3</a></B></center>'
+	 '<center><B><a href="exec:GT ''telefon'',''4''">4</a>   <a href="exec:GT ''telefon'',''5''">5</a>   <a href="exec:GT ''telefon'',''6''">6</a></B></center>'
+	 '<center><B><a href="exec:GT ''telefon'',''7''">7</a>   <a href="exec:GT ''telefon'',''8''">8</a>   <a href="exec:GT ''telefon'',''9''">9</a></B></center>'
+	 '<center><B><a href="exec:GT ''telefon'',''reset''">reset</a>   <a href="exec:GT ''telefon'',''0''">0</a>   <a href="exec:GT ''telefon'',''challenge''">challenge</a></B></center>'
+     
+     !etogame
+if hour>=8 and hour <=19:
+     if telalla>0:
+		 act 'call Allais':
+			 $telsob='Alla'
+			 dynamic $objmobilaraz
+			 end
+		 end
+	 if telmasha>0:
+		 act 'call Masha':
+			 $telsob='Masha'
+			 dynamic $objmobilaraz
+			 end
+		 end
+	 if telkat>0:
+		 act 'call Kate':
+			 $telsob='katya'
+			 dynamic $objmobilaraz
+			 end
+		 end
+	 if bfA>0 and svidanieA=0:
+		 act 'call <<$boyA>>':dynamic $objmobilarazboy
+		 end
+	 end
+		if nastjaqw=1 and week=6 and vnesh>20:act 'call Nastya':gt 'nastja','pos4'
+		if nastjaqw=2 and week!6 and zenit=0 and nastjaday!day:act 'Chat with Nastya':gt 'nastja', 'pos13' 
+		if hour>=8 and hour <=20 and nastjaqw=2 and week=6 and vnesh>20 and nastjaday!day:act 'call Nastya':gt 'nastja','pos12'
+
+		 act 'Hang up':
+		 cla
+		 gt'telefon','fin'
+		 end
+	 end
+	 
+	 if ring = 1:
+	     if ringA = 1:
+	     gt'telefon','boyA'
+	     exit
+	     end 
+	     
+	     if ringB = 1:
+	     gt'telefon','boyB'
+	     exit
+	     end 
+	     
+	     if ringC = 1:
+	     gt'telefon','boyC'
+	     exit
+	     end 
+	 end
+	
+	
+end
+
+if $ARGS[0]='boyA':
+cla
+clr
+gs'stat'
+set ring = 0
+set ringA = 0
+set boydayA = day
+set svetrand = RAND (0,5)
+if svetrand = 0:set $sveta = 'lapulya'
+if svetrand = 1:set $sveta = 'bunny'
+if svetrand = 2:set $sveta = 'pussy'
+if svetrand = 3:set $sveta = 'small_fish'
+if svetrand = 4:set $sveta = 'Svetsik'
+if svetrand = 5:set $sveta = 'Sveta'
+'hello <<$sveta>> these_are <<$boyA>> how`s it going?'
+act 'normally':
+	 cla
+	 '(Do_You) - normally, as you like?'
+	 '(<<$boyA>>) - just great, Here are just miss you, can meet today?'
+	 if pregtime<=dayA and pregtime>=7 and pregtalk=0:
+		 act 'My_Dear, you`ll be a dad.':
+			 cla
+			 pregtalk=1
+			 '(Do_You) - My_Dear, you`ll be a dad.'
+			 if harakBoyA = 0:
+				 if bfA>=90:
+					 '(<<$boyA>>) - It`s wonderful! We will soon be adding.'
+					 set love = 1
+					 'You started talking about cohabitation. what <<$boyA>> told you, In principle it, do not mind, but first he wants to introduce you to my parents.'
+					 'He warns you, Mom is very demanding and strict, <<$boyA>> speaks, that he is very fond of his mother and does not want to upset her. So you have to look chic, only dress boutique, groomed and curled hair, cosmetics in moderation.'
+					 'At the next meetinge, as soon as you `re ready to fully <<$boyA>> will take you to your parents.'
+					 act 'Hang up.':gt'telefon','fin'
+					 act 'Meet tonight':
+						 cla
+						 set svidanieA = 1
+						 '(Do_You) - You can meet in the evening.'
+						 '(<<$boyA>>) - How much to come to your house?'
+						 act 'call time.':
+							 cla
+							 meetday=daystart
+							 meethour = input ("What are the hours in which the guy to come. At_The_Moment <<hour>> h, You can only assign a greater number of")
+							if meethour<=hour or meethour>23:meethour=20
+							 '(Do_You) - Come on in 20 hours.'
+							 '(<<$boyA>>) - Fair_Enough, <<$sveta>> then to <<meethour>> hours.'
+							 act 'Hang up.':gt'telefon','fin'
+							 end
+						 end
+					 end
+				 if bfA<90:
+					 '(<<$boyA>>) - I`m not yet ready to become a dad. I`ll give you money for an abortion. Go and get rid of the child.'
+					 money+=20000
+					 act 'Hang up.':gt'telefon','fin'
+					 end
+				 end 
+			 if harakBoyA = 1:
+				 '(<<$boyA>>) - I`m not yet ready to become a dad. I`ll give you money for an abortion. Go and get rid of the child.'
+				 money+=20000
+				 act 'Hang up.':gt'telefon','fin'
+				 end
+			 if harakBoyA = 2:
+				 '(<<$boyA>>) - what? Yes you ohuel! Somewhere sprained pussy, and now for me to dump. You go on a dick.'
+				 set bfA = 0
+				 pregtalk=0
+				 act 'Hang up.':gt'telefon','fin'
+				 end
+			 end
+		 end
+	 if pregtime>dayA and pregtime>=7 and pregtalk=0:
+		 act 'My_Dear, you`ll be a dad.':
+			 cla
+			 '(Do_You) - My_Dear, you`ll be a dad.'
+			 '(<<$boyA>>) - How the fuck dad? We meet with you less, What are you pregnant. Sprained whore someone, here and go to him. all. I can no longer call. adieu.'
+			 set bfA = 0
+			 act 'Hang up.':gt'telefon','fin'
+			 end
+		 end
+	 if week > 1 and week < 5 and workKafe = 1:
+		 act 'oh, I`m_sorry, I work today.':
+			 cla
+			 '(Do_You) - oh, I`m_sorry, I work today.'
+			 '(<<$boyA>>) - okay, call tomorrow.'
+			 act 'Hang up.':gt'telefon','fin'
+			 end
+		 end
+	 act 'tonight':
+		 cla
+		 set bfA = bfA + 1
+		 set svidanieA = 1
+		 meetday=daystart
+		 '(Do_You) - You can meet in the evening.'
+		 '(<<$boyA>>) - How much to come to your house?'
+		 act 'call time.':
+			 cla
+			 meethour = input ("What are the hours in which the guy to come. At_The_Moment <<hour>> h, You can only assign a greater number of single-digit")
+			 if meethour<=hour or meethour>23:meethour=20
+			 '(Do_You) - Come on in <<meethour>> hours.'
+			 '(<<$boyA>>) - Fair_Enough, <<$sveta>> then to <<meethour>> hours.'
+			 act 'Hang up.':gt'telefon','fin'
+			 end
+		 end
+	 act 'I`m busy today. Call tomorrow.':
+		 cla
+		 set bfA = bfA - 1
+		 '(Do_You) - I`m busy today. Call tomorrow.'
+		 if bfa <= 0:set bfa = 0&'(<<$boyA>>) - whore, you have my Jam, Come on dick.'
+		 if bfa > 0:'(<<$boyA>>) - okay, until then.'
+		 act 'Hang up.':gt'telefon','fin'
+		 end
+	 end
+act 'leave':
+	 cla
+	 set bfA = 0
+	 gt'telefon','fin'
+	 end
+end
+
+if $ARGS[0]='boyB':
+cla
+clr
+gs'stat'
+set ring = 0
+set ringB = 0
+set boydayB = day
+
+'<<$boyB>> offers a walk.'
+	 act 'leave':
+	 cla
+	 set bfB = 0
+	 gt'telefon','fin'
+	 end
+	 
+	 act 'Call tomorrow':
+	 cla
+	 set bfB = bfB - 1
+	 	 if bfB <= 0:set bfB = 0&'<<$boyB>> said, he throws you.'
+	     if bfB > 0:'<<$boyB>> angry and hung up.'
+	 gt'telefon','fin'
+	 end
+	 
+	 act 'tonight':
+	 cla
+	 set bfB = bfB + 1
+	 set svidanieB = 1
+	 '<<$boyB>> asks how much it come to your home.'
+	     act 'Come on in 20 hours.':
+	     cla
+	     'You are warmly said goodbye and ended the conversation on this.'
+	     act 'Hang up.':gt'telefon','fin'
+	     end
+	 end
+end
+
+if $ARGS[0]='boyC':
+cla
+clr
+gs'stat'
+set ring = 0
+set ringC = 0
+set boydayC = day
+
+'<<$boyC>> offers a walk.'
+	 act 'leave':
+	 cla
+	 set bfC = 0
+	 gt'telefon','fin'
+	 end
+	 
+	 act 'Call tomorrow':
+	 cla
+	 set bfC = bfC - 1
+	 	 if bfC <= 0:set bfC = 0&'<<$boyC>> said, he throws you.'
+	     if bfC > 0:'<<$boyC>> angry and hung up.'
+	 gt'telefon','fin'
+	 end
+	 
+	 act 'tonight':
+	 cla
+	 set bfC = bfC + 1
+	 set svidanieC = 1
+	 '<<$boyC>> asks how much it come to your home.'
+	     act 'Come on in 20 hours.':
+	     cla
+	     'You are warmly said goodbye and ended the conversation on this.'
+	     act 'Hang up.':gt'telefon','fin'
+	     end
+	 end
+end
+
+if $ARGS[0]='challenge':
+cla
+     if num6 = 0 and num5 = 0 and num4 = 0 and num3 = 0 and num2 = 0 and num1 = 1:
+     'Hello. This fire station. speak.'
+     elseif num6 = 0 and num5 = 0 and num4 = 0 and num3 = 0 and num2 = 0 and num1 = 2:
+     'Hello. This police. speak.'
+     elseif num6 = 0 and num5 = 0 and num4 = 0 and num3 = 0 and num2 = 0 and num1 = 3:
+     'Hello. This soon. speak.'
+     else
+     'long beep'
+     end
+     
+     act 'Hang up':
+     cla
+     gt'telefon','fin'
+     end
+end
+
+
+if $ARGS[0]='1':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 1&set number = 6
+     if number = 4:set num2 = 1&set number = 5
+     if number = 3:set num3 = 1&set number = 4
+     if number = 2:set num4 = 1&set number = 3
+     if number = 1:set num5 = 1&set number = 2
+     if number = 0:set num6 = 1&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='2':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 2&set number = 6
+     if number = 4:set num2 = 2&set number = 5
+     if number = 3:set num3 = 2&set number = 4
+     if number = 2:set num4 = 2&set number = 3
+     if number = 1:set num5 = 2&set number = 2
+     if number = 0:set num6 = 2&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='3':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 3&set number = 6
+     if number = 4:set num2 = 3&set number = 5
+     if number = 3:set num3 = 3&set number = 4
+     if number = 2:set num4 = 3&set number = 3
+     if number = 1:set num5 = 3&set number = 2
+     if number = 0:set num6 = 3&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='4':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 4&set number = 6
+     if number = 4:set num2 = 4&set number = 5
+     if number = 3:set num3 = 4&set number = 4
+     if number = 2:set num4 = 4&set number = 3
+     if number = 1:set num5 = 4&set number = 2
+     if number = 0:set num6 = 4&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='5':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 5&set number = 6
+     if number = 4:set num2 = 5&set number = 5
+     if number = 3:set num3 = 5&set number = 4
+     if number = 2:set num4 = 5&set number = 3
+     if number = 1:set num5 = 5&set number = 2
+     if number = 0:set num6 = 5&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='6':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 6&set number = 6
+     if number = 4:set num2 = 6&set number = 5
+     if number = 3:set num3 = 6&set number = 4
+     if number = 2:set num4 = 6&set number = 3
+     if number = 1:set num5 = 6&set number = 2
+     if number = 0:set num6 = 6&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='7':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 7&set number = 6
+     if number = 4:set num2 = 7&set number = 5
+     if number = 3:set num3 = 7&set number = 4
+     if number = 2:set num4 = 7&set number = 3
+     if number = 1:set num5 = 7&set number = 2
+     if number = 0:set num6 = 7&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='8':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 8&set number = 6
+     if number = 4:set num2 = 8&set number = 5
+     if number = 3:set num3 = 8&set number = 4
+     if number = 2:set num4 = 8&set number = 3
+     if number = 1:set num5 = 8&set number = 2
+     if number = 0:set num6 = 8&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='9':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 9&set number = 6
+     if number = 4:set num2 = 9&set number = 5
+     if number = 3:set num3 = 9&set number = 4
+     if number = 2:set num4 = 9&set number = 3
+     if number = 1:set num5 = 9&set number = 2
+     if number = 0:set num6 = 9&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='0':
+cla
+     if number = 6:
+     end
+     if number = 5:set num1 = 0&set number = 6
+     if number = 4:set num2 = 0&set number = 5
+     if number = 3:set num3 = 0&set number = 4
+     if number = 2:set num4 = 0&set number = 3
+     if number = 1:set num5 = 0&set number = 2
+     if number = 0:set num6 = 0&set number = 1
+gt'telefon','start'
+end
+
+if $ARGS[0]='reset':
+cla
+set num1 = 0
+set num2 = 0
+set num3 = 0
+set num4 = 0
+set num5 = 0
+set num6 = 0
+set number = 0
+gt'telefon','start'
+end
+
+
+if $ARGS[0]='fin':
+cla
+set num1 = 0
+set num2 = 0
+set num3 = 0
+set num4 = 0
+set num5 = 0
+set num6 = 0
+set number = 0
+gt $locM, $metkaM
+     !'if housr = 1 and housrA = 1:
+     set housrA = 0
+     gt'korr'
+     end'
+end
+--- telefon ---------------------------------
+

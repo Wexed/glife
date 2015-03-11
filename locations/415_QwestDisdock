@@ -1,0 +1,50 @@
+# QwestDisdock
+
+!in location stat at any place
+if qwestonce=0:
+set qwestonce=1
+!ADDQST 'qwest/qwest.qsp'
+end
+
+!reference to a transition
+!located in the location park  array luna
+if vladimirQW=0 and hour >= 9 and hour <= 20 and week>5:'<a href="exec:GT ''qwloc''">Near the fence stands a strong man and looks at you</a>.'
+
+
+!in location korr
+if vladimirday!day and vladimirQW=20 and hour = 16:'<a href="exec:GT ''qwloc2''">The phone rings</a>.'
+
+
+!in location telefon array start 
+if vladimirday!day and vladimirQW=20 and hour = 16:gt 'qwloc2'
+
+
+!in location restoran array start
+
+if vladimirday=day and vladimirQW=21 and hour = 20:gt 'qwmeet'
+
+
+!in location korr
+if vladimirday!day and vladimirQW=25 and hour = 16 and week=6:'<a href="exec:GT ''qwloc3''">The phone rings</a>.'
+
+
+!in location telefon array start 
+if vladimirday!day and vladimirQW=25 and hour = 16 and week=6:gt 'qwloc3'
+
+!street
+if vladimirday=day and vladimirQW=30 and hour >= 16 and week=6:'<a href="exec:GT ''qwmeet2''">Before your entrance stands Audi and around the phlegmatic worth waiting for your driver Glory</a>.'
+
+
+!down
+if izoldaWQ>=1:'<a href="exec:GT ''qwIzoldaApp''">apartment Isolde</a>.'
+
+!nord
+if slavaQW>=1:'<a href="exec:GT ''qwBarPolet''">bar "flight"</a>.'
+
+
+
+
+
+
+--- QwestDisdock ---------------------------------
+

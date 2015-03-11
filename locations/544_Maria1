@@ -1,0 +1,92 @@
+# Maria1
+	'- How can I help you?'
+act 'move_away':gt'rack'	
+if nom_1=0:	
+	 act 'Ask about plans for the evening':
+	 cla
+		'- What are you doing tonight?'
+		'- I walk with my husband. even that-some?'
+	 act 'move_away':gt'rack'	
+	 end
+	 
+	 if tobiQW = 2000:
+	 	 act 'Why in the hotel so crowded?':
+		 cla
+		 tobiQW = 2001
+			'- Why in the hotel so crowded?'
+			'- Here stopped members of Congress rare languages, as they call themselves quack.'
+		 act 'move_away':gt'rack'	
+		 end
+	 end
+end
+if nomer=0:
+	*clear
+	act 'stay':
+		'- I would like to stay'
+		'- Ok, What would you like to?'
+		cla
+		act 'cheapest room':
+			'- cheapest room'
+			nomer=1
+			nom_1=1
+			gt 'Maria1'
+		end
+		act 'Standard Room':
+			'- Standard Room'
+			nomer=2
+			nom_1=1
+			gt 'Maria1'
+		end
+		act 'Suite':
+			'- Suite'
+			nomer=3
+			nom_1=1
+			gt 'Maria1'
+		end
+		act 'Presidential Suite':
+			'- Presidential Suite'
+			nomer=4
+			nom_1=1
+			gt 'Maria1'
+		end
+	end
+end
+if nom_1=1 and flag=0:
+	*clear
+	cla
+	'- You shoot a room for one night.'
+	sto_nom=nom_o[nomer]
+	'- It will cost <<sto_nom>>'
+	cla
+	act 'Checkout':
+		if sto_nom > money:
+			msg 'Not enough money'
+			srokarend=0
+			nomer=0
+			nom_1=0
+			gt 'Maria1'
+		end
+		money=money-sto_nom
+		flag=1
+		nom_1=0
+		nom_nom=rand(1,1000)
+		'Thank you for using our services'
+		'your room number is <<nom_nom>>'
+		cla
+		act 'bye now':
+			gt 'rack'
+		end
+	end
+	act 'change_your_mind':
+		nomer=0
+		nom_1=0
+		gt 'Maria1'
+	end
+end
+if nom_1=0:	
+	act 'move_away':
+		gt 'rack'
+	end
+end	
+--- Maria1 ---------------------------------
+

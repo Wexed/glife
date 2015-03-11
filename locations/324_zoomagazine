@@ -1,0 +1,78 @@
+# zoomagazine
+if $ARGS[0]='start':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>pet-shop "Pet"</font></B></center>'
+'<center><img src="zoo/1277894267_dsc_0544.jpg" width=650 height=450 ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+''
+'dog 3000'
+'rabbit 2000'
+'parrot 3000'
+
+     if money >= 3000 and sobaka = 0:
+     	 act 'buy a dog 3000 RUB':
+		 cla
+		 *clr
+		 '<center><img src="zoo/1277894267_dsc_0544.jpg" width=650 height=450 ></center>'
+			 act 'hello, I would like to buy a dog':
+			 cla
+			 *clr
+			 '<center><img src="zoo/1277894267_dsc_0544.jpg" width=650 height=450 ></center>'
+			 '<center><b>Excuse_Me, but we were only male dog.</center></b>'
+				 act 'Buy a dog':
+				 cla
+				 *clr
+				 set minut = minut + 10
+				 set sobaka = sobaka + 1
+				 set money = money - 3000
+				 '<center><img src="zoo/846660628.jpg" width=600 height=500 ></center>'
+				 '<center><b>You bought a dog-Dalmatians.</center></b>'
+				 $namesob = input ("I will call the dog...")
+				 act 'Move away from the counter':gt'zoomagazine','start'
+				 end
+				 
+				 act 'Get_Away':gt'zoomagazine','start'
+			 end
+			 
+			 
+		 end
+     end
+
+     
+     if money >= 2000 and krolik = 0:
+		 act 'Buy rabbit 2000 RUB':
+		 cla
+		 *clr
+		 '<center><img src="zoo/x_2b1d398b.jpg"></center>'
+		 '<center><b>You bought a rabbit.</center></b>'
+		 $namekrol = input ("I call rabbit...")
+		 set minut = minut + 10
+		 set krolik = krolik + 1
+		 set money = money - 2000
+		 act 'Move away from the counter':gt'zoomagazine','start'
+		 end
+     end
+     
+     if money >= 3000 and popugai = 0:
+		 act 'Buy parrot 3000 RUB':
+		 cla
+		 *clr
+		 '<center><img src="zoo/131998525345003210.png"></center>'
+		 '<center><b>You bought a parrot.</center></b>'
+		 $namepopu = input ("I`ll call a parrot...")
+		 set minut = minut + 10
+		 set popugai = popugai + 1
+		 set money = money - 3000
+		 act 'Move away from the counter':gt'zoomagazine','start'
+		 end
+     end
+act 'Get_Away':gt'torgcentr'
+end
+--- zoomagazine ---------------------------------
+

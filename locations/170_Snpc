@@ -1,0 +1,268 @@
+# Snpc
+!'
+$npcName[numnpc]=''
+$npcSurName[numnpc]=''
+$npcText[numnpc]=''
+grupNPC[numnpc]=
+npcPol[numnpc]
+grupTipe[numnpc]
+'
+gs'dinnpc'
+
+
+gs'stat'
+'<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+'<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+'<<$npcText[numnpc]>>'
+if grupTipe[numnpc]=-1:'<<$npcName[numnpc]>> refers to a group of outcasts.'
+if grupTipe[numnpc]=0:''
+if grupTipe[numnpc]=1:'<<$npcName[numnpc]>> refers to a group of botanists.'
+if grupTipe[numnpc]=2:'<<$npcName[numnpc]>> refers to a group sportikov.'
+if grupTipe[numnpc]=3:'<<$npcName[numnpc]>> refers to the group steep.'
+if grupTipe[numnpc]=4:'<<$npcName[numnpc]>> refers to a group Gopnik.'
+if grupNPC[numnpc]<20:'You have a bad attitude.'
+if grupNPC[numnpc]>=20 and grupNPC[numnpc]<40:'You tensions.'
+if grupNPC[numnpc]>=40 and grupNPC[numnpc]<60:'You have a normal relationship.'
+if grupNPC[numnpc]>=60 and grupNPC[numnpc]<80:'You have a good relationship.'
+if grupNPC[numnpc]>=80:'You have a great relationship.'
+if numnpc=14 and KatjaOTN>0:
+if KatjaHorny<20:'Katya looks calm and indifferent.'
+if KatjaHorny>=20 and KatjaHorny<40:'Katya in the eyes jump merry twinkle.'
+if KatjaHorny>=40 and KatjaHorny<60:'Katya slight blush on her cheeks and she playfully looks at you.'
+if KatjaHorny>=60 and KatjaHorny<80:'Kate blushed and languidly looks at you.'
+if KatjaHorny>=80:'Katya all red as a lobster and her chest heaving from deep breathing.'
+'KatjaLust - <<KatjaLust>>'
+'KatjaSlut - <<KatjaSlut>>'
+'KatjaDom - <<KatjaDom>>'
+'KatjaMastr - <<KatjaMastr>>'
+end
+''
+''
+!act 'move_away':gt $locM, $metkaM
+!reaction to sperm
+gs'cumreaction'
+!bullying
+gs'izdevat'
+!Krutyshi
+gs'krutishi'
+
+if numnpc=23 and albinaQWdance>0 and AlbinaBlokDance=0 and ZvezdEnd=0:
+'Albina easy smiles at you "Sveta, you well in training spravlyaeshsya, Do not forget to come to it."'
+if GorSlut>0:'By_The_Way, about you go disgusting rumors.'
+end
+if AlbFrend=1 and numnpc=23:
+AlbFrend=2
+grupNPC[numnpc]=100
+'Albina smiling at you "Thank Light, correctly say, a friend in need is a friend indeed. You rescued me very warning of Zvezdushkah, unfortunately have to close our team, that would not run into trouble."'
+end
+if AlbFather=2 and numnpc=23 and AlbEnemy=0:
+grupNPC[numnpc]=0
+AlbEnemy=1
+'Albina angrily glared "Oh! Claim to write me taken in head. Well."'
+end
+
+!Shoutbox with Kotov
+if numnpc=9:gs'kotovtalker'
+!!!!!!!!!!!!!!!!!!!!!!!!!gopota!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if grupTipe[numnpc]=4:
+     if $loc='gdkin':
+         if GorSlut<2:
+             if numnpc!9:
+				 if npcPol[numnpc]=0:
+				 '<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something as dumb.' 
+				 else
+				 '<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something as dumb.' 
+				 end
+				 
+				 act 'drink beer':
+				 cls
+				 minut+=5
+				 grupNPC[numnpc]+=5
+				 alko+=1
+				 salo+=1
+				 fat+=2
+				 energy+=10
+				 gs'stat'
+				 'You drank beer in the company of friends.'
+				 act 'move_away':gt $loc, $metka
+				 end
+				 
+				 
+				 act 'Opt_Out':grupNPC[numnpc]-=5&gt $loc, $metka
+			 end
+         end
+         if GorSlut>=2:
+         	 if npcPol[numnpc]=0:
+			 '<<$npcName[numnpc]>> - Cho priperlas, vaflersha. Huytsa want to nap or something?' 
+			 
+			 else
+			 '<<$npcName[numnpc]>> - Hey huesoska, sebi here. Are you standing next to something dumb.' 
+			 end
+			 
+			 act 'Get_Away':grupNPC[numnpc]-=5&gt $loc, $metka
+         end
+     exit
+     end
+     
+end
+
+	 act 'chat':
+	 cls
+	 if $loc='gdkin':minut+=5
+	 gs'stat'
+	 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+	 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+	     if numnpc=1 and grupNPC[numnpc]=0:
+	     'Dima sniffed. "Get off my pimply pig."'
+	     if $loc!'gdkin':dynamic $din_sekondparturok
+         if $loc='gdkin':act 'move_away':gt $loc, $metka
+	     exit
+	     end
+	     !if decent
+	     gs'nogorslut'
+	     !if not respectable
+         gs'yesgorslut'
+	 if $loc!'gdkin':dynamic $din_sekondparturok
+     if $loc='gdkin':act 'move_away':gt $loc, $metka
+	 end
+	 
+	 
+	 !!!!!!!!!!!!!!!!!!!Artem CHEBOTAREV Botha!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 if numnpc=2:
+	     if dom>0 and artomLernQW=0:
+	         act 'You could not pull my little study?':
+			 cls
+			 if $loc='gdkin':minut+=5
+			 grupNPC[numnpc]+=5
+			 sub+=1
+			 if GorSlut<3:artomLernQW=1
+			 gs'stat'
+			 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+			 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			 if GorSlut<3:'You came to Artem and asked him to help you to study. Artem was a little surprised and replied to you "Well. Let`s go after school to my home, work_out."'
+			 if GorSlut>=3:'You came to Artem and asked him to help you to study. Artem outraged "Here are, I `ll spend my time on such as you, No."'
+			 if $loc!'gdkin':dynamic $din_sekondparturok
+			 if $loc='gdkin':act 'move_away':gt $loc, $metka
+			 end
+	     end
+	 end
+	 !!!!!!!!!!!!!!!!!!!JULIA mil bot!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 if numnpc=12:
+	     if dom>0 and JuliaMilLernQW=0 and grupNPC[numnpc]>=80:
+	         act 'You could not pull my little study?':
+			 cls
+			 if $loc='gdkin':minut+=5
+			 grupNPC[numnpc]+=5
+			 sub+=1
+			 JuliaMilLernQW=1
+			 gs'stat'
+			 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+			 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			 if GorSlut<1:'You came to Julia and asked you to pull up a little learning, She thought agreed.'
+			 if GorSlut>=1:'You came to Julia and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
+			 if $loc!'gdkin':dynamic $din_sekondparturok
+			 if $loc='gdkin':act 'move_away':gt $loc, $metka
+			 end
+	     end
+	 end
+	 
+	 !!!!!!!!!!!!!!!Katya MEYNOLD!!!!!!!!!!!!!!!!!!!!!!!
+	 if numnpc=14 and meynoldQW=1:
+	     act 'Thank you for, that you took away from the disco.':
+		 cls
+		 if $loc='gdkin':minut+=5
+		 grupNPC[numnpc]+=5
+		 meynoldQW=2
+		 gs'stat'
+		 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+		 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+		 'You have come to Kate and thanked her for, she stole you from the disco home, when you have touched. Kate smiled at you. "It`s my pleasure, only you do not get drunk. Drunkenness could end badly."'
+		 if $loc!'gdkin':dynamic $din_sekondparturok
+		 if $loc='gdkin':act 'move_away':gt $loc, $metka
+		 end
+	 end
+	 if numnpc=14 and meynoldQW>1 and mop<=1:
+	 'Kate looks at you with a smile "Sveta, I give you at least touched up eyes."'
+	     act 'cosmetics.':
+		 cls
+		 hapri = 1
+		 if $loc='gdkin':minut+=5
+		 gs'stat'
+		 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+		 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+		 'Katya quickly straightened your hair and asked. "you like? a little touch up, usually distribute or shovel?"'
+		     act 'light makeup':
+             cla
+             set mop = 2 
+             'Kate lightly summarized your eyes and a little lipstick.'
+             if KatjaOTN>0:KatjaHorny+=10&'Katya blushes and depart from your eyes.'
+             if $loc!'gdkin':dynamic $din_sekondparturok
+		     if $loc='gdkin':act 'move_away':gt $loc, $metka
+             end
+             
+			 act 'normal makeup':
+			 cla
+			 set mop = 3
+			 'Kate has made up your lips, summed up the eyes and eyelids.'
+			 if KatjaOTN>0:KatjaHorny+=10&'Katya blushes and depart from your eyes.'
+			 if $loc!'gdkin':dynamic $din_sekondparturok
+		     if $loc='gdkin':act 'move_away':gt $loc, $metka
+			 end
+			 
+			 act 'bright makeup':
+			 cla
+			 set mop = 4
+			 'Kate has made up your lips bright lipstick, has made up his eyes and thick eyelashes, summed up his eyebrows and left a thick shade.'
+			 if KatjaOTN>0:KatjaHorny+=10&'Katya blushes and depart from your eyes.'
+			 if $loc!'gdkin':dynamic $din_sekondparturok
+		     if $loc='gdkin':act 'move_away':gt $loc, $metka
+			 end
+		 end
+	 end
+	 if numnpc=14 and meynoldQW>1 and mop>1:
+	     if $loc!'gdkin':
+	     !school
+	         if KatjaHorny>=50:
+	         
+	         end
+	         if KatjaHorny<50:
+	         end
+	     end
+	     if $loc='gdkin':
+	     !at the disco
+	     	 if KatjaHorny>=50:
+	         end
+	         if KatjaHorny<50:
+	         end
+	     end
+	 end
+	 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 !!!!!!!!!!!!!!!!!!!Natasha Belova Botha!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 if numnpc=16:
+	     if dom>0 and NatBelLernQW=0 and grupNPC[numnpc]>=80:
+	         act 'You could not pull my little study?':
+			 cls
+			 if $loc='gdkin':minut+=5
+			 grupNPC[numnpc]+=5
+			 sub+=1
+			 NatBelLernQW=1
+			 gs'stat'
+			 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+			 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			 if GorSlut<1:'You came to Natasha and asked you to pull up a little learning, She thought agreed.'
+			 if GorSlut>=1:'You came to Natasha and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
+			 if $loc!'gdkin':dynamic $din_sekondparturok
+			 if $loc='gdkin':act 'move_away':gt $loc, $metka
+			 end
+	     end
+	 end
+
+
+if $loc!'gdkin':dynamic $din_sekondparturok
+if $loc='gdkin':act 'move_away':gt $loc, $metka
+
+
+
+
+--- Snpc ---------------------------------
+

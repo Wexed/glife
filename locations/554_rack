@@ -1,0 +1,24 @@
+# rack
+ACT 'See the description of rooms':
+	cla
+	*clear
+	'The choice available 4 types of rooms:'
+	'1. budget accommodation'
+	
+	'2. standard rooms'
+	
+	'3. suite'
+	
+	'4. Presidential Suite'
+	act 'finish reading': gt 'rack'
+	
+END
+ACT 'Talk to a girl at the reception':
+	gt 'Maria1'
+END
+ACT 'Move away from the rack':
+	gt 'inn'
+END
+'You stand at the reception desk and you smiling young girl behind the counter'
+--- rack ---------------------------------
+

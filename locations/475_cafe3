@@ -1,0 +1,405 @@
+# cafe3
+if $ARGS[0]='house':
+cla
+*clr
+money+=100
+minut+=15
+gs'stat'
+'<<$boy>> pay your bill and caught a taxi.'
+'You sat down with him in the back seat of the car. <<$boy>> put his hand on your knee and began stroking it getting higher your pussy.'
+
+     act 'enjoy caresses':
+     cla
+     minut+=15
+     horny+=15
+     gs'stat'
+     dynamic $venerasiak
+     '<<$boy>> reached your pussy and began to caress her fingers. '
+     
+         act 'Try to remove his hands':
+		 cla
+		 minut+=15
+		 horny+=10
+		 gs'stat'
+		 'You have tried to remove his hands from the crotch Man, but <<$boy>> Turning to you began to fondle your breasts hands through clothing.'
+		 act 'come':gt'BDsex','start'
+		 end
+		 
+		 act 'Hands caress his cock':
+		 cla
+		 minut+=15
+		 horny+=10
+		 gs'stat'
+		 'You got into the pants to the guy and get him <<dick>> inch cock began to caress his hands.'
+		 derand=RAND(0,100)
+		     if derand>=95:
+		     '<<$boy>> groaned and took you by the neck began to approach your face to its members.'
+				 act 'Take by mouth':
+				 cla
+				 *clr
+				 minut+=15
+				 horny+=10
+				 guy+=1
+				 bj+=1
+				 gs'stat'
+				 '<center><img src="studiand/car.gif" ></center>'
+				 'You leaned his face closer to the groin Man and girth of his cock with his lips began to suck it.'
+				 gs'oral','0'
+				 'Finally the guy will fill your mouth with his hot sperm that you had nowhere to go and you swallow it. The taxi stopped. And <<$boy>> you put him out on the street.'
+				 swallow+=1
+				 cumlip+=1
+				 act 'Get_Away':gt 'street'
+				 end
+				 
+				 act 'Try to remove his hands':
+				 cla
+				 minut+=15
+				 horny+=10
+				 gs'stat'
+				 'You have tried to remove his hands from his head Man, but <<$boy>> Turning to you began to fondle your breasts hands through clothing.'
+				 act 'come':gt'BDsex','start'
+				 end
+			 else
+			 act 'come':gt'BDsex','start'
+			 end
+		 end
+     end
+     
+     act 'Try to remove his hands':
+     cla
+     minut+=15
+     horny+=10
+     gs'stat'
+     'You have tried to remove his hands from the crotch Man, but <<$boy>> Turning to you began to fondle your breasts hands through clothing.'
+     act 'come':gt'BDsex','start'
+     end
+
+end
+
+if $ARGS[0]='0':
+cla
+*clr
+$nameV=$boy
+
+
+
+minut+=15
+gs'stat'
+Set deyst = RAND (1,100)
+     if deyst < 70:
+     :vag
+     '<<$boy>> puts you on the bed and strips.'
+     Set deysts = RAND (1,3)
+         if deysts = 1:
+         Set guy = guy + 1
+         Set sex = sex + 1
+         vagina+=1
+         '<<$boy>> pushes your legs and enters into you.'
+         set picrand = RAND (1,5)
+              if picrand = 1:'<center><img src="pics/vagmis.jpg" ></center>'
+              if picrand = 2:'<center><img src="pics/vagmis2.jpg" ></center>'
+              if picrand = 3:'<center><img src="pics/vagmis3.jpg" ></center>'
+              if picrand = 4:'<center><img src="pics/vagmis4.jpg" ></center>'
+              if picrand = 5:'<center><img src="pics/vagmis5.jpg" ></center>'
+         pose = 0
+         gs'orgasm','start'
+         !'As a member of the hammer hammer inside you, you are very nice and you are ready to finish.'
+          act 'Get_Away':gt 'street'
+         end
+         if deysts = 2:
+         '<<$boy>> puts you cancer and is in you'
+         Set guy = guy + 1
+         Set sex = sex + 1
+         vagina+=1
+         
+         Set cumass = cumass + 1
+         !'<<$boy>> pushes your legs and enters into you.'
+         set picrand = RAND (1,5)
+              if picrand = 1:'<center><img src="pics/vagdog.jpg" ></center>'
+              if picrand = 2:'<center><img src="pics/vagdog2.jpg" ></center>'
+              if picrand = 3:'<center><img src="pics/vagdog3.jpg" ></center>'
+              if picrand = 4:'<center><img src="pics/vagdog4.jpg" ></center>'
+              if picrand = 5:'<center><img src="pics/vagdog5.jpg" ></center>'
+         pose = 1
+         gs'orgasm','start'
+         act 'Get_Away':gt 'street'
+         end
+         
+         if deysts = 3:
+         '<<$boy>> lays down on the bed and puts you on top, you feel his cock enters you'
+         Set guy = guy + 1
+         Set sex = sex + 1
+         
+         Set cumass = cumass + 1
+         'His cock came into you and you started to jump on his elde.'
+         set picrand = RAND (1,5)
+              if picrand = 1:'<center><img src="pics/vagcow.jpg" ></center>'
+              if picrand = 2:'<center><img src="pics/vagcow2.jpg" ></center>'
+              if picrand = 3:'<center><img src="pics/vagcow3.jpg" ></center>'
+              if picrand = 4:'<center><img src="pics/vagcow4.jpg" ></center>'
+              if picrand = 5:'<center><img src="pics/vagcow5.jpg" ></center>'
+         pose = 0
+         gs'orgasm','start'
+         act 'Get_Away':gt 'street'
+         end
+     end
+     if deyst >= 70 and deyst < 85:
+     '<<$boy>> tells you that he wants what would you have him suck'
+         act 'Opt_Out':gt 'cafe3','0'
+         
+         act 'Take by mouth':
+         '<<$boy>> pulled out his penis'
+         Set guy = guy + 1
+         Set bj+=1
+         
+         Set throat= throat + 1
+         Set vaf=vaf+1
+         'You took his cock in her mouth and began to suck.'
+         set picrand = RAND (1,10)
+              if picrand = 1:'<center><img src="pics/bj.jpg" ></center>'
+              if picrand = 2:'<center><img src="pics/bj2.jpg" ></center>'
+              if picrand = 3:'<center><img src="pics/bj3.jpg" ></center>'
+              if picrand = 4:'<center><img src="pics/bj4.jpg" ></center>'
+              if picrand = 5:'<center><img src="pics/bj5.jpg" ></center>'
+             if picrand = 6:'<center><img src="pics/bj6.jpg" ></center>'
+             if picrand = 7:'<center><img src="pics/bj7.jpg" ></center>'
+             if picrand = 8:'<center><img src="pics/bj8.jpg" ></center>'
+             if picrand = 9:'<center><img src="pics/bj9.jpg" ></center>'
+             if picrand = 10:'<center><img src="pics/bj10.jpg" ></center>'     
+         '<<$boy>> groans and is about to finish.'
+         *clr
+             act 'Remove the member from the mouth':
+             cla
+             Set bjrand = RAND (1,100)
+             if bjrand < 50 and vaf>100:'You have time to remove the member from his mouth and <<$boy>> ends by you.'
+             if bjrand >= 50 or vaf<=100:Set cumface = cumface + 1&'<<$boy>> cums on your face.'
+             set picrand = RAND (1,5)
+                 if picrand = 1 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial.jpg" ></center>'
+                 if picrand = 2 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial2.jpg" ></center>'
+                 if picrand = 3 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial3.jpg" ></center>'
+                 if picrand = 4 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial4.jpg" ></center>'
+                 if picrand = 5 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial5.jpg" ></center>'
+             'You try to wipe from the face of sperm, but poorly washed sperm.'
+             act 'Get_Away':gt 'street'
+             end
+             
+             act 'suck on':
+             cla
+             Set vaf=vaf+1
+             'You feel like a hot jet of sperm hit you in the throat. You have a mouth full of sperm.'
+              set picrand = RAND (1,10)
+             if picrand = 1:'<center><img src="pics/cum.jpg" ></center>'
+             if picrand = 2:'<center><img src="pics/cum2.jpg" ></center>'
+             if picrand = 3:'<center><img src="pics/cum3.jpg" ></center>'
+             if picrand = 4:'<center><img src="pics/cum4.jpg" ></center>'
+             if picrand = 5:'<center><img src="pics/cum5.jpg" ></center>'
+             if picrand = 6:'<center><img src="pics/cum6.jpg" ></center>'
+             if picrand = 7:'<center><img src="pics/cum7.jpg" ></center>'
+             if picrand = 8:'<center><img src="pics/cum8.png" ></center>'
+             if picrand = 9:'<center><img src="pics/cum9.jpg" ></center>'
+             if picrand = 10:'<center><img src="pics/cum10.jpg" ></center>'
+                 act 'swallow':
+                 cla
+                 Set vaf=vaf+2
+                 Set cumlip = cumlip + 1
+                 '<<$boy>> looks like you swallow sperm.'
+                 act 'Get_Away':gt 'street'
+                 end
+                 
+                 act 'spit_out':
+                 cla
+                 'You go into the bathroom and there spits cum'
+                 act 'Get_Away':gt 'street'
+                 end
+             end
+             
+         
+         !act 'Get_Away':gt 'street'
+         end
+     end
+     if deyst >= 85:
+     '<<$boy>> tells you that he wants you in the ass otimet'
+         act 'Opt_Out':gt 'cafe3','0'
+         
+         act 'agree':
+         cla
+         '<<$boy>> puts you cancer and lubricates your ass somehow cream. You feel like something tight Bound to you in the anus.'
+         'Sharp pain in the anus smenyaetsya a light fun. <<$boy>> You fucked in the ass smoothly, that would not break anything.'
+         Set guy = guy + 1
+         Set anal = anal + 1
+         anus+=1
+         if lubri>0:Set lubri  = lubri  - 1
+         Set cumass = cumass + 1
+          set picrand = RAND (1,10)
+             if picrand = 1:'<center><img src="pics/anal.jpg" ></center>'
+             if picrand = 2:'<center><img src="pics/anal2.jpg" ></center>'
+             if picrand = 3:'<center><img src="pics/anal3.bmp" ></center>'
+             if picrand = 4:'<center><img src="pics/anal4.jpg" ></center>'
+             if picrand = 5:'<center><img src="pics/anal5.jpg" ></center>'
+             if picrand = 6:'<center><img src="pics/anal6.jpg" ></center>'
+             if picrand = 7:'<center><img src="pics/anal7.jpg" ></center>'
+             if picrand = 8:'<center><img src="pics/anal8.jpg" ></center>'
+             if picrand = 9:'<center><img src="pics/anal9.jpg" ></center>'
+             if picrand = 10:'<center><img src="pics/anal10.jpg" ></center>'
+             'You feel like your anus is filled with a liquid that warm. You bring myself up in the bathroom and dress.'
+             act 'Get_Away':gt 'street'
+         end
+     end
+end
+
+if $ARGS[0]='wc':
+cla
+$nameV=$boy
+dynamic $venerasiak
+'You went to the toilet with a guy. <<$boy>> began to kiss and caress you. Then he offered you suck at it.'
+	 act 'Opt_Out':
+     cla
+     'You abandoned your hot lover but it did not bother, he turned you back to him and bent.'
+     'you feel, what <<$boy>> laid bare your ass and that something solid upiraetsya your vagina'
+     Set guy = guy + 1
+     Set sex = sex + 1
+     Set cumass = cumass + 1
+     vagina+=1
+     'Fuck you cancer in the toilet.'
+     '<center><img src="pics/vagtualet.jpg" ></center>'
+     pose = 1
+     gs'orgazm','start'
+     act 'Get_Away':gt 'street'
+     end
+  
+     act 'Take by mouth':
+     cla
+     Set vaf=vaf+1
+     '<<$boy>> pulled out his penis'
+     Set guy = guy + 1
+     Set bj+= 1
+     
+     Set throat= throat + 1
+     'You took his cock in her mouth and began to suck.'
+     set picrand = RAND (1,10)
+         if picrand = 1:'<center><img src="pics/bj.jpg" ></center>'
+         if picrand = 2:'<center><img src="pics/bj2.jpg" ></center>'
+         if picrand = 3:'<center><img src="pics/bj3.jpg" ></center>'
+         if picrand = 4:'<center><img src="pics/bj4.jpg" ></center>'
+         if picrand = 5:'<center><img src="pics/bj5.jpg" ></center>'
+         if picrand = 6:'<center><img src="pics/bj6.jpg" ></center>'
+         if picrand = 7:'<center><img src="pics/bj7.jpg" ></center>'
+         if picrand = 8:'<center><img src="pics/bj8.jpg" ></center>'
+         if picrand = 9:'<center><img src="pics/bj9.jpg" ></center>'
+         if picrand = 10:'<center><img src="pics/bj10.jpg" ></center>'
+     '<<$boy>> groans and is about to finish.'
+     
+         act 'Remove the member from the mouth':
+         cla
+         *clr
+         Set bjrand = RAND (1,100)
+             if bjrand < 50 and vaf<100:'You have time to remove the member from his mouth and <<$boy>> ends by you.'
+             if bjrand >= 50 or vaf>=100:Set cumface = cumface + 1&'<<$boy>> cums on your face.'
+             set picrand = RAND (1,5)
+                 if picrand = 1 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial.jpg" ></center>'
+                 if picrand = 2 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial2.jpg" ></center>'
+                 if picrand = 3 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial3.jpg" ></center>'
+                 if picrand = 4 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial4.jpg" ></center>'
+                 if picrand = 5 and bjrand >= 50 or repa = 6:'<center><img src="pics/facial5.jpg" ></center>'
+             act 'Get_Away':gt 'street'
+             
+         end
+         
+         act 'suck on':
+         cla
+         *clr
+         Set vaf=vaf+2
+         'You feel like a hot jet of sperm hit you in the throat. You have a mouth full of sperm.'
+         set picrand = RAND (1,10)
+         if picrand = 1:'<center><img src="pics/cum.jpg" ></center>'
+         if picrand = 2:'<center><img src="pics/cum2.jpg" ></center>'
+         if picrand = 3:'<center><img src="pics/cum3.jpg" ></center>'
+         if picrand = 4:'<center><img src="pics/cum4.jpg" ></center>'
+         if picrand = 5:'<center><img src="pics/cum5.jpg" ></center>'
+         if picrand = 6:'<center><img src="pics/cum6.jpg" ></center>'
+         if picrand = 7:'<center><img src="pics/cum7.jpg" ></center>'
+         if picrand = 8:'<center><img src="pics/cum8.png" ></center>'
+         if picrand = 9:'<center><img src="pics/cum9.jpg" ></center>'
+         if picrand = 10:'<center><img src="pics/cum10.jpg" ></center>'
+             act 'swallow':
+             cla
+             Set vaf=vaf+1
+             Set cumlip = cumlip + 1
+             swallow+=1
+             '<<$boy>> looks like you swallow sperm.'
+             act 'Get_Away':gt 'street'
+             end
+               
+             act 'spit_out':
+             cla
+             'You go into the bathroom and there spits cum'
+             act 'Get_Away':gt 'street'
+             end
+         end
+         
+         
+     end
+end
+
+if $ARGS[0]='kampashka':
+cla
+dynamic $venerasiak
+'you unitsethose guys somewhere by car. You`re drunk and you pat on the back seat just two guys. At_Last-the machine stops and you take out of the car.'
+'you undress, and you feel like you are part of a member of, are you trying to say something, at this point you vstavlyaeyut cock in her mouth.'
+set picrand = RAND (1,15)
+if picrand = 1:'<center><img src="pics/gang.jpg" ></center>'
+if picrand = 2:'<center><img src="pics/gang2.jpg" ></center>'
+if picrand = 3:'<center><img src="pics/gang3.jpg" ></center>'
+if picrand = 4:'<center><img src="pics/gang4.jpg" ></center>'
+if picrand = 5:'<center><img src="pics/gang5.jpg" ></center>'
+if picrand = 6:'<center><img src="pics/gang6.jpg" ></center>'
+if picrand = 7:'<center><img src="pics/gang7.jpg" ></center>'
+if picrand = 8:'<center><img src="pics/gang8.jpg" ></center>'
+if picrand = 9:'<center><img src="pics/gang9.jpg" ></center>'
+if picrand = 10:'<center><img src="pics/gang10.jpg" ></center>'
+if picrand = 11:'<center><img src="pics/gang11.jpg" ></center>'
+if picrand = 12:'<center><img src="pics/gang12.jpg" ></center>'
+if picrand = 13:'<center><img src="pics/gang13.jpg" ></center>'
+if picrand = 14:'<center><img src="pics/gang14.jpg" ></center>'
+if picrand = 15:'<center><img src="pics/gang15.jpg" ></center>'
+'You ripped into all the cracks, even more than once. You are very drunk and can not concentrate and remember details. What vague feeling, throughout the body, hands, Member. You will then be able to take and dumped at the entrance.'
+Set guy = guy + 3
+Set sex = sex + 1
+Set bj+= 1
+Set anal = anal + 1
+Set throat= throat + 1
+Set cumlip = cumlip + 1
+Set cumface = cumface + 1
+Set cumbutt = cumbutt + 1
+Set cumass = cumass + 1
+set cumpussy=cumpussy+1
+set rape=rape+1
+set gang=gang+1
+vagina+=1
+anus+=1
+act 'Get_Away':gt 'street'   
+end
+
+if $ARGS[0]='coffee':
+cla
+dynamic $venerasiak
+$nameV=$boy
+minut+=30
+gs'stat'
+'<<$boy>> agreed to your proposal. You brought him home, there long embraced and continued to cuddle on the bed. <<$boy>> you entered with full force.'
+set picrand = RAND (1,5)
+if picrand = 1:'<center><img src="pics/vagmis.jpg" ></center>'
+if picrand = 2:'<center><img src="pics/vagmis2.jpg" ></center>'
+if picrand = 3:'<center><img src="pics/vagmis3.jpg" ></center>'
+if picrand = 4:'<center><img src="pics/vagmis4.jpg" ></center>'
+if picrand = 5:'<center><img src="pics/vagmis5.jpg" ></center>'
+ pose = 0
+ gs'orgasm','start'
+Set guy = guy + 1
+Set sex = sex + 1
+vagina+=1
+act 'wash':gt 'Vanr'     
+end
+
+--- cafe3 ---------------------------------
+

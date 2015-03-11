@@ -1,0 +1,28 @@
+# stolPar
+gs'stat'
+!'<center><img src="pics/telek.jpg" ></center>'
+'You sat down at the desk.'
+
+
+act 'Get up from the table':gt $locM, $metkaM
+
+if lernHome>0:
+     act 'teach lessons':
+     cls
+		 if lernHome<=2:
+		 minut+=60*lernHome
+		 lernHome=0
+		 lern+=1
+		 end
+		 if lernHome>2:
+		 minut+=60*2
+		 lernHome=0
+		 end
+     gs'stat'
+     'Sitting for a long time for the lessons you yet they were able to learn.'
+     act 'Get up from the table':gt $locM, $metkaM
+     end
+
+end
+--- stolPar ---------------------------------
+

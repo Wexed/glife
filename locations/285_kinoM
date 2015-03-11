@@ -1,0 +1,131 @@
+# kinoM
+if $ARGS[0]='start':
+set minut = minut + 30
+'You`ve come to the cinema. <<$boyA>> bought two tickets on the back row.'
+     if dayA > 15 and harakBoyA = 2:gs'boylove','tits'
+	 if dayA > 20 and harakBoyA = 1:gs'boylove','tits'
+	 if dayA > 25 and harakBoyA = 0:gs'boylove','tits'
+	 if dayA > 20 and harakBoyA = 2:gs'boylove','figure'
+	 if dayA > 25 and harakBoyA = 1:gs'boylove','figure'
+	 if dayA > 30 and harakBoyA = 0:gs'boylove','figure'
+	 gs'anekdot'
+	 'While you wait for the session <<$boyA>> anecdote tells you "<<$anek>>".'
+	 
+	 act 'laugh.':
+     cla
+     set SUB = SUB + 1
+     set bfa = bfa + 1
+     xgt'kinoM','a'
+     end
+     
+     act 'smile.':
+     cla
+     xgt'kinoM','a'
+     end
+     
+     act 'not funny.':
+     cla
+     set DOM = DOM + 1
+     set bfa = bfa - 3
+     xgt'kinoM','a'
+     end
+end
+
+if $ARGS[0]='a':
+*clr
+set minut = minut + 90
+set fat = fat + 2
+'<center><img src="pic/kino.jpg" ></center>'
+'Finally started the session. you and <<$boyA>> went into the room, found their seats and sat on comfortable chairs. <<$boyA>> put a large jar of popcorn on his knees and began to eat it .'
+
+     if harakBoyA < 2:
+		 act 'Hug his hand.':
+		 cla
+		 set bfa = bfa + 1
+		 'You hugged his hand and he kissed you, after that and spent the whole session holding hands.'
+		 xgt'kinoM','b'
+		 end
+     end
+     if harakBoyA = 2:
+		 act 'Hug his hand.':
+		 cla
+		 set bfa = bfa + 1
+		 'You hugged his hand and he kissed you, then his hand began obschupyvat your knee, <<$boyA>> whispered to you, Babe, i want you.'
+		 act 'Remove his hand and watch movies.':xgt'kinoM','b'
+		 act 'masturbate.':gt'kinoM','hj'
+		 act 'suck.':gt'kinoM','bj'
+		 act 'Sit down on his cock.':gt'kinoM','sex'
+		 end
+     end
+     
+     act 'watch movies.':
+     cla
+     set bfa = bfa - 1
+     set intel = intel + 1
+     'Movie turned out interesting and you spent the whole session without interrupting the movie.'
+     xgt'kinoM','b'
+     end
+end
+
+if $ARGS[0]='sex':
+*clr
+gs'brosok'
+ set sex = sex + 1
+ sexa+=1
+ set vagina = vagina + 1
+ set horny = horny + SUB
+ set bfa = bfa + 2
+ '<center><img src="picVA/sinema.jpg" ></center>'
+ 'You got his cock out of his pants and masturbate him to start, <<$boyA>> took out a condom and put on the penis, Then you got on <<$dick>> inch of his dick wet pussy and began to move slowly in the dark hall of audience.'
+     if horny >= 90:
+     set horny = 0
+     set manna = manna + 15
+     set willpower = willpower + 15
+     set orgasm = orgasm + 1
+     'You feel like something is growing inside of you and all of your bottom turned into a blazing fire pleasant fire, a minute later smooth movements on the penis you had to plug his mouth by hand, that would not have to scream to the whole room from orgasm.'
+     end
+ 'soon <<$boyA>> broke down and finished in a condom.'
+  
+     act 'further.':gt'kinoM','b'
+end
+
+if $ARGS[0]='bj':
+*clr
+gs'brosok'
+ set bj = bj + 1
+ bja+=1
+set swallow = swallow + 1
+set cumlip = cumlip + 1
+ set horny = horny + SUB
+ set bfa = bfa + 2
+ '<center><img src="picVA/sinema1.jpg" ></center>'
+ 'You got his cock out of his pants and masturbate him to start, Then he leaned over him and clasped his lips began to slowly suck it <<$dick>> inch dick in a dark room viewers.'
+ 'soon <<$boyA>> broke down and finished in your mouth, you tried to swallow all the sperm, as spit still nowhere.'
+  
+     act 'further.':gt'kinoM','b'
+end
+
+if $ARGS[0]='hj':
+*clr
+ gs'brosok'
+ set hj = hj + 1
+ hja+=1
+ set horny = horny + SUB
+ set bfa = bfa + 1
+ '<center><img src="picVA/sinema2.jpg" ></center>'
+ 'You got his cock out of his pants and began to caress his hands in a dark room viewers.'
+ 'Soon, You wiped them on a handkerchief.'
+	 
+     act 'further.':gt'kinoM','b'
+end
+
+
+if $ARGS[0]='b':
+set minut = minut + 30
+set fat = fat + 1
+'The session ended, in the theater lights came on and the people went to the exit, <<$boyA>> offered to accompany you.'
+
+act 'home.':gt'sexm','start'
+end
+--- kinoM ---------------------------------
+

@@ -1,0 +1,218 @@
+# bedr
+ACT 'In the corridor':
+	!if nude = 0:
+	gt'korr'
+	!end
+	
+	!'if nude = 1:
+	cla
+	'You`re looking at underwear.'
+	     act 'Dress Underwear':
+	     cla
+	     set tanga = 1
+	     gt'loker','start'
+	     end
+	     
+	     act 'Do not wear underwear':
+	     cla
+	     set tanga = 0
+	     gt'loker','start'
+	     end
+	end'
+END
+$metkaM = $ARGS[0]
+$locM = $CURLOC
+
+!The new menu: end
+
+
+if magik >= 6 and spellbefshild = 1 and tobiQW = 0:gt'tobiQW','start'
+$metka = $ARGS[0]
+$loc = $CURLOC
+'<center><B><font color=maroon>bedroom</font></B></center>'
+if rembedr = 0:'<center><img src="pic/bedr.jpg" ></center>'
+if rembedr = 1:'<center><img src="pic/bedr2.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+set minut = minut + 1
+set housrA = 1
+set housrMir = 1
+set elektro = elektro + 1
+if nude = 0:set $nude = 'In the corridor'
+if nude = 1:set $nude = 'get_dressed'
+if rembedr = 0:'Tight little room in which the main and almost the only place takes <a href="exec:GT ''bed'',''start''">Double</a>. At the entrance stands a small wooden <a href="exec:GT ''loker'',''start''">cupboard</a> clothes. The window is closed with heavy curtains Fade.'
+if rembedr = 1:'Bright and beautiful room, with modern furniture, is dominated by <a href="exec:GT ''bed'',''start''">Double</a>. At the entrance stands a modern <a href="exec:GT ''loker'',''start''">cupboard</a> clothes. Against the wall and table <a href="exec:GT ''mirror'',''start''">mirror</a>'
+
+if husbandrinkday=day:
+if husbanstrapon=1:'Drunk husband sleeps on the bed with an anal plug in the ass.'
+if husbanstrapon=2:'Drunk husband sleeps on the bed after you have developed his ass dildo.'
+if husbanstrapon=3:'Drunk husband sleeps on the bed after you fucked his threesome.'
+end
+
+if husband>0 and husbandrink!10 and husbandrinkday!day:
+	 if hour>22 or hour<7:
+	 '<a href="exec: gt''husb'',''start'' ">On the bed sleeping husband.</a>'
+	 end
+end
+if husbandrink=11 and husbanstrapon>0 and husbandrinkday!day:
+	 cla
+	 'To you approached my husband and asked "Dear my ass hurts something you do not know maybe I fell yesterday failed"'
+	 act'to_lie':
+		 cla
+		 set husbanstrapon=0
+		 '"No dear " Say you`re making an innocent person. Husband shrugged and walked away'
+		 act'End_Up':gt'bedr'
+		 end
+	 act'confess':
+		 cla
+		 if husbanstrapon=1:'"Dear yesterday you got so drunk, I decided to teach a lesson to you. But I `ll never, please forgive me" Say you.'
+		 if husbanstrapon=2:'"Dear , but you did not finish and then I put you finger in the ass, but again you did not finish and I took the dildo, here you burst, I even made вЂ‹вЂ‹you a blowjob again, forgive me, but you were so good that I could not stop, I just wanted to give you a nice way" Say you invent much of its history.'
+		 if husbanstrapon=3:'Dear , but you did not finish and then I put you finger in the ass, but again you did not finish and I put in a second if you start moving towards my ass Palchikov and much moaning, you were so good that I decided, What did you like and put them strapon. You really were very good, you finished over and over again, but I still continued to, I was tired then licked all, all the sperm from your body and went to bed, I just wanted to give you a pleasant and you were nice though and you do not remember, please forgive me" Say you invent much of its history.'
+		 if harakHusb=2:
+			 set husbizvradd=0
+			 set husbharmin=0
+			 set husbandMark=0
+			 set husband=0
+			 set divorced+=1
+			 set fingal+=1
+			 set minut+=120
+			 'The next thing you feel is a powerful slap in the face. When you came to their senses we realized that neither her husband, nor his things no. He filed for divorce.'
+			 end
+		 if harakHusb=1:
+			 if husbanstrapon=1:'"Look, do not mess it anymore" he said.'
+			 if husbanstrapon=2:set husbizvradd+=1&'"Well, but see no joke so more, I`m still a man " he said.'
+			 if husbanstrapon=3:
+				 if intel>40 or izvratH=1:set husbharmin+=1&'"Are you quite ohrenela, I`m that bitch, what-I would fuck" he shouted, but then you let the tears and began to lament that only wanted to please him, He looked at you and said "Yes_I_Am, I believe , I wanted to make nice, but more so do not do."'
+				 if intel<=40:
+					 set husbizvradd=0
+					 set husbharmin=0
+					 set husbandMark=0
+					 set husband=0
+					 set divorced+=1
+					 set fingal+=1
+					 set minut+=120
+					 'The next thing you feel is a powerful slap in the face. When you came to their senses we realized that neither her husband, nor his things no. He filed for divorce.'
+					 end
+				 end
+			 end
+		 if harakHusb=0:
+			 if husbanstrapon=1:'"I`m sorry I will not be so drunk" he said.'
+			 if husbanstrapon=2:set husbizvradd+=1&'"You`re so thoughtful, Instead of scolding me, you still nice I do, thank you dear" he said.'
+			 if husbanstrapon=3:set husbizvradd+=1&'"I really liked it?" he asked, you nodded affirmatively, "Well then, but the next time you still ask my consent" he said'
+			 end
+		 act'End_Up':set husbanstrapon=0&gt'bedr'
+		 end
+	 end
+if husbandrink=10 and hour>20 and hour<23 and husbanstrapon=0:
+	 '<<$husName>> keeled home very drunk and crashing on the bed fell asleep in clothes.
+	 "That is a pig" swore you and then you head climbed bad thoughts "Can teach him a lesson, that would not get drunk before bezchuvstviya"'
+	 if analplug = 1:
+		 act 'Paste it anal plug':
+			 set husbandrinkday=day
+			 set husbandrink=11
+			 set husbanstrapon=1
+			 set minut+=10
+			 cla
+			 *clr
+			 '<center><img src="img/hasb/h0.jpg" ></center>'
+			 if analplugin=1:'You pull the plug out of his ass and enter it akuratno, husband in the ass.'
+			 if analplugin=0:'You go to take a bath tube and enter it akuratno, his anus.'
+			 '<<$husName>> moved, but did not wake up, see hard plucked'
+			 if dildo>0:
+				 act'insert dildo':
+					 cla
+					 *clr
+					 set minut+=20
+					 set husbanstrapon=2
+					 set swallow = swallow + 1
+					 set cumlip = cumlip + 1
+					 set horny+=30
+					 '<center><img src="img/hasb/h1.jpg" ></center>'
+					 'You pull out the plug and insert in its place dildo, <<$husName>> did not even budge. You began to slowly move the dildo trying not to wake her husband. Shortly before your face began to climb his cock, and <<$husName>> began to softly moan, but never woke up. You already being wielded dildo in his anus, and it started to throb dildo ready to cum. You wrapped around his cock with his lips and tongue to touch you should head in the mouth you hit the jet of sperm, you swallow it and carefully cleared his cock from the remnants of sperm, pulled on his pants.'
+					 act'End_Up':gt'bedr'
+					 end
+				 end
+			 if strapon>0:
+				 act'dress strap':
+					 cla
+					 *clr
+					 set minut+=20
+					 set husbanstrapon=3
+					 set swallow = swallow + 1
+					 set cumlip = cumlip + 1
+					 set horny+=30
+					 '<center><img src="img/hasb/h2.jpg" ></center>'
+					 'You put the strap and pulling out the plug Medley enter it into the anus of her husband, <<$husName>> stirred, but did not wake up. You began to slowly move her hips trying not to wake her husband. Shortly before your face began to climb his cock, and <<$husName>> began to softly moan, but never woke up. Realizing that in this state . His cock stood up and you vskhativ his hand, began to masturbate feeling, that he is about to finish . As soon as you touch the tongue into the mouth of the head as you hit the jet of sperm, you swallow it and carefully cleared his cock from the remnants of sperm, pulled on his pants.'
+					 act'End_Up':gt'bedr'
+					 end
+				 end
+			 act'End_Up':gt'bedr'
+			 end
+		 end
+	 end
+if tanga=0 and clrbelo>0:
+	 act 'Dress Underwear':
+		 cla
+		 set tanga = 1
+		 gt'bedr'
+		 end
+     else
+		 act 'Remove underwear':
+		 cla
+		 set tanga = 0
+		 gt'bedr'
+		 end
+     end
+
+if saveday ! day:
+set saveday = day
+SAVEGAME 'avtosave.sav'
+end
+
+ if sick >= 1:
+	 act 'Go to bed rest (disease)':
+	 cla
+	 *clr
+	 set minut = minut + 240
+	 set sick = sick - 1 
+	 if sick<0:sick=0
+	 set picrand = RAND (0,6)
+	 gs'stat'
+	 if picrand = 0:'<center><img src="inBed/sick17.jpg" ></center>'
+	 if picrand = 1:'<center><img src="inBed/sick11.jpg" ></center>'
+	 if picrand = 2:'<center><img src="inBed/sick12.jpg" ></center>'
+	 if picrand = 3:'<center><img src="inBed/sick13.jpg" ></center>'
+	 if picrand = 4:'<center><img src="inBed/sick14.jpg" ></center>'
+	 if picrand = 5:'<center><img src="inBed/sick15.jpg" ></center>'
+	 if picrand = 6:'<center><img src="inBed/sick16.jpg" ></center>'
+	 'You lie in bed, coughing, sneezing and blowing her nose'
+	 act 'Pomeroy temperature':gt'bedr'
+	 end
+ end
+
+if dur > 0:
+'You have hidden <<dur>> doses pale lady'
+end
+if dur > 0 and narkday ! day:
+     act 'Nyuhnut pale lady 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set narkday = day
+     set health = vital*10 + stren*5
+	 set willpower = intel*5 + will*5
+	 set manna = (intel*magik) + magik*100 + vital*10 + rikudo 
+	 set horny = 100
+	 set nark = nark + 10
+	 set dur = dur - 1
+     '<center><img src="pic/dur.jpg" ></center>'
+     'You otsypali dose of powder and its nyuhnuli, then you feel just fine.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+--- bedr ---------------------------------
+

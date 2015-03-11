@@ -1,0 +1,128 @@
+# sleepPRE
+'<center><img src="picPRE/karinPRE.jpg" ></center>'
+set minut = minut + 120
+set day = day + 1
+set week = week + 1
+
+!clr
+!gs'stat'
+killobj
+
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+set $name = 'Svetlana'
+set $surname = 'Lebedev'
+set age = 18
+set vidage = 16
+set year = 2010
+!set month = 6
+!set week = 5
+!set hour = 8
+!body
+set rost = 170
+set fat = 60
+set salo=60
+set dick = 0
+set energy = 15
+set water = 15
+set son = 16
+!stats
+set stren = 10
+set strenbuf=10
+set speed = 10
+set agil = 10
+set agilbuf=10
+set vital = 10
+set vitalbuf=10
+set intel = 10
+set will = 10
+set react = 10
+set magik = 0
+set health = vital*10 + stren*5
+set willpower = intel*5 + will*5
+set manna = (intel*magik) + magik*100 + vital*10 + rikudo
+!etogame
+set nastjaqw = 0
+!etogame
+
+set vidageday = 300
+set housrA = 1
+set sarafan[1] = 1
+set nude = 0
+set sarafanH[1] = 30
+set odevnesh = 0
+set lobok = 3
+set leghair = 3
+set mop = 1
+set housr = 1
+set tanga = 1
+clr
+gs'stat'
+set numdres=1
+set odetjeans=1
+set numdress=1
+set jeans[1] = 1
+set jeansH[1] = 100
+set jeansB[1] = 70
+
+set cltarelka = 1
+set fairy = 10
+set eda = 5
+set clrbelo = 2
+set poroshok = 5
+set shampoo=5
+set nude = 0
+set $nude = 'In the corridor'
+clr
+gs'stat'
+
+'"You`re already awake? rather awake." Karin said looking into your eyes.'
+
+act 'Look at yourself':
+cla
+*clr
+set minut = minut + 5
+clr
+gs'stat'
+'<center><img src="picPRE/povPRE.jpg" ></center>'
+'"your mother" you said and shut the mouth. Voice . Karin giggled. "The first time I changed the gender of the person. Therefore waited with curiosity as you`d react to his new body. masterpiece. Of course in some ways I miscalculated, for example. Failed to change the eyes and lips, but your body will be much easier to change, than the body of an ordinary woman, you will be easier to gain weight, lose weight, can change facial features. It`S_Nothing, Now you live in the women`s skin. Yes_I_Am, you are quite normal woman, you can fly."'
+'You angrily looked at Karin "you think, I am here and so became a woman and immediately ran to find eldu on which you can jump? I`m still the same old guy tridtsatipyati."'
+'"Well yes. Do not argue." agreed Karin. "In general, what to do. Yes_I_Am, I`ve already taken care of alibi. Today you`re in his car fell into a pit and killed, now just on TV." With these words Karin pressed the button on the remote and the TV has earned.'
+	 act 'watching TV':
+	 cla
+	 *clr
+	 set minut = minut + 5
+	 clr
+	 gs'stat'
+	 '<center><img src="picPRE/car2.jpg" ></center>'
+	 'On the TV is reporting that as a businessman who arrived on a business trip, yesterday afternoon. Businessman died in hospital without regaining consciousness.'
+	 'You dumbfounded looked at Karin. She smiled enigmatically "Well. Now even Toby trace lost forever. Those who died in the BMW, at the time of death was a perfect copy of your, from energy and to seal in the teeth. Yes_I_Am, here`s documents, at the apartment, passport, certificate. Now you Svetlana Lebedeva, girl 18 year_old, in nobody knows you, but you at least have an apartment in the property. This is a gift for you from Juugo. now get up, time for you to go to their new home and to equip their new life."'
+	 'Entered the room Juugo redhead with a tattoo on his face. He looked at you and said, "I`ll take you."'
+	 	 act 'Go with Juugo':
+		 cla
+		 *clr
+		 set minut = minut + 5
+		 clr
+		 gs'stat'
+		 '<center><img src="picPRE/jugoPRE.jpg" ></center>'
+		 'Juugo silently accompany you to the garage and there you sat in a huge black jeep. Juugo got behind the wheel and sped around the track. You silently wondering what do you do now.'
+		 'Juugo not looking at you said. "Sorry, I beat you so much. I can not control myself during a fight. You were a little grow larger and for a moment it seemed to me, that you can be dangerous to me, so I hit with full force." You looked at him. "Fair_Enough, passed, listen Juugo, I do now?" Juugo nodded and said "Well, all kinds of washing powder, detergents, dishes and linens. The apartment is something that is certainly, but little. There`s even no TV. Then get a job. Not podaleku from your house there is a restaurant, it works with 12, every day, except Monday. Go up to the owner, he vozmet you a job, it just requires a waitress. Do not forget to monitor the health status, mood and mind. Now your mind is very weak, you can not stand and go crazy. You need to eat well, regular sleep, have_a_good_time, in general, and then ended his days in a madhouse. We do not seek to Karin, Firstly you will not find, and secondly, we ourselves will find you."'
+		 'You came to the five-story building house the Khrushchev. Juugo stopped the car and pointed to the entrance. "Your apartment number 69, are the keys. Go. important thing to remember, you it`s not habitually, but not to give up, monitor the health status and life will improve. As ever ."'
+		     act 'Out of the car':
+		     cla
+		     set opPRE = 0
+		     set daystart = 0
+		     addobj 'character'
+             addobj 'see'
+             addobj 'Others'
+		     gt'street'
+		     end
+		 end
+     end
+end
+
+
+
+--- sleepPRE ---------------------------------
+

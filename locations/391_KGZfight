@@ -1,0 +1,159 @@
+# KGZfight
+minut+=1
+gs'stat'
+gs'KGZdyn'
+
+if KGZHP<=0:
+cla
+*clr
+manna-=100
+'<center><B>GAME OVER</B></center>'
+act 'Leave the game':gt'KGZstart'
+exit
+end
+
+if KGZdead<=0:
+cls
+KGZbatl=1
+manna+=100
+'All the dead were silent on the ground.'
+act 'Get_Away':gt'KGZgame'
+exit
+end
+if GZdist<0:GZdist=0
+
+!'<a href="exec:GT ''KGZstart''">Leave the game</a>'
+'health <<KGZHP>>. day <<KGZday>>, h <<KGZhour>>.'
+'cold arms: <<$KGZweapon>>'
+if KGZgun>0:'<<$KGZgun>>'
+if KGZgun2>0:'<<$KGZgun2>>'
+if KGZgun3>0:'<<$KGZgun3>>'
+'To you run <<KGZdead>> dead. They distance <<KGZdist>> meters.'
+
+if KGZdost=1:
+'Vincent shoots a rifle.'
+KGZdead-=1
+'One of the dead drops with prostrelyanny head.'
+     if KGZdead<=0:gt $curloc
+end
+
+if KGZgun>0 and bullet>0:
+     act 'Pistol shot':
+     cls
+     bullet-=1
+     dynamic $KGZgunatk
+     dynamic $KGZdeadmanatk
+     act 'further':gt $curloc
+     end
+end
+
+if KGZgun2>0 and bullet2>0:
+     act 'A shotgun blast':
+     cls
+     bullet2-=1
+     dynamic $KGZgunatk2
+     dynamic $KGZdeadmanatk
+     act 'further':gt $curloc
+     end
+end
+
+if KGZgun3>0 and bullet3>0:
+     act 'Shoot a machine gun (single)':
+     cls
+     bullet3-=1
+     dynamic $KGZgunatk3
+     dynamic $KGZdeadmanatk
+     act 'further':gt $curloc
+     end
+     
+     if bullet3>=3:
+		 act 'Shoot a machine gun (short burst)':
+		 cls
+		 bullet3-=3
+		 KGZbulgun=3
+		 dynamic $KGZgunatk4
+		 dynamic $KGZdeadmanatk
+		 act 'further':gt $curloc
+		 end
+     end
+     
+     if bullet3>=10:
+		 act 'Shoot a machine gun (long queue)':
+		 cls
+		 bullet3-=10
+		 KGZbulgun=10
+		 dynamic $KGZgunatk5
+		 dynamic $KGZdeadmanatk
+		 act 'further':gt $curloc
+		 end
+     end
+end
+
+if KGZgranade>0:
+     act 'throw a grenade':
+     cls
+     dynamic $KGZgranatk
+     act 'further':gt $curloc
+     end
+end
+
+if KGZdist<=2:
+     act 'hit <<$KGZweapona>>':
+     cls
+     dynamic $KGZfizatk
+     act 'further':gt $curloc
+     end
+else
+     act 'wait':
+     cls
+     KGZdist-=1
+     gt $curloc
+     end
+     
+     act 'Go to meet the dead':
+     cls
+     KGZdist-=2
+     gt $curloc
+     end
+     
+     act 'Take_To_One`S_Legs':
+     cls
+         if KGZdead>=10:
+         KGZdist-=5
+         'Dead too much and they surrounded you, You can not escape.'
+         act 'your mother!':gt $curloc
+         else
+         KGZdedrandrun=RAND(0,1)
+             if KGZdedrandrun=0:
+             KGZbatl=1
+             'You managed to escape from the dead.'
+             act 'Get_Away':gt'KGZgame'
+             end
+             if KGZdedrandrun=1:
+             KGZdist-=5
+             KGZdead+=RAND(KGZdead,KGZdead*5)
+             'You stumbled on the other dead and now you have to fight with a lot of dead people.'
+             act 'your mother!':gt $curloc
+             end
+         end
+     end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- KGZfight ---------------------------------
+

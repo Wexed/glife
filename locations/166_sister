@@ -1,0 +1,100 @@
+# sister
+sisterAge=age+3
+!model Megan Vale Valentina Azarov
+
+gs'stat'
+'<center><B><font color=maroon>Anya</font></B></center>'
+'<center><img src="qwest/alter/sister.jpg" ></center>'
+'Your Setra Anya bit older than you. her <<sisterAge>> year_old. She graduated from high school, but was unable to go to university and now works at the store clerk.'
+if sister<20:'You and your sister scandal.'
+if sister>=20 and sister<40:'You and your sister tensions.'
+if sister>=40 and sister<60:'You and your sister a normal relationship.'
+if sister>=60 and sister<80:'You have a good relationship with her sister.'
+if sister>=80:'You have a great relationship with my sister.'
+
+if cumlip>1 or cumface>0 or cumfrot>0:
+'Sister eyeing you "light, and that it?" Suddenly her eyes rounded "light, yes the same sperm! That`s how little sister, phew. Look, If the nurse finds, you do not sdobrovat."'
+end
+
+if SiSonWork=1:
+!at work
+'Light does not bother me, I do not see buyers.'
+act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+exit
+end
+
+if SiSgdk=1:
+!Outside the club with friends
+	 
+     if sister<40:
+     '"What do you want? Wali let!" Anya told you under the laughter of her friends.'
+     else
+     'Anya sits now devchenok and guys drinking beer "Hi sister." Anya told you smile. "want pivasom?"'
+         act 'drink beer':
+         cls
+         minut+=60
+         sister+=5
+         alko+=3
+         salo+=1
+         fat+=2
+         energy+=10
+         gs'stat'
+             if AniaFrends>=1:
+             gt'annafrends'
+             end
+             if AniaFrends=0:
+             AniaFrends=1
+             'You meet with friends Ani. They are all former classmates. Little Lena and mobile, constantly confuses Ira, High athletic guy whose name is Rex and all red-haired skinny guy named Roman. Looking after you sat drinking beer and chatted with friends Ani.'
+             end 
+         act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+         end
+     end
+act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+exit
+end
+
+act 'Ask about the real father':
+cls
+minut+=5
+gs'stat'
+'<center><B><font color=maroon>Anya</font></B></center>'
+'<center><img src="qwest/alter/sister.jpg" ></center>'
+'You asked about the real father Ani. she grinned. "light. I was 4 the year when they parted. I do not remember him ever vidila. Mother does not like to talk details. But it seems like you and I ."'
+act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+end
+
+act 'Ask about the university':
+cls
+minut+=5
+gs'stat'
+'<center><B><font color=maroon>Anya</font></B></center>'
+'<center><img src="qwest/alter/sister.jpg" ></center>'
+'You asked about Anna University. she grinned. "I almost came, gleaning points. Who scored, the fig is it for the whole university. What will I get this piece of paper?"'
+act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+end
+
+act 'Ask about her boyfriend':
+cls
+minut+=5
+gs'stat'
+'<center><B><font color=maroon>Anya</font></B></center>'
+'<center><img src="qwest/alter/sister.jpg" ></center>'
+'You asked Anya about her boyfriend. she smiled. "Well. Although nothing serious. He told me one more."'
+act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+end
+
+act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+
+if SisterKnowMastr>0 and sisterQW=0:
+cls
+sisterQW=1
+gs'stat'
+'<center><B><font color=maroon>Anya</font></B></center>'
+'<center><img src="qwest/alter/sister.jpg" ></center>'
+'Anya looks at you and laughs "Well Sveta, and you give! I come into the room, and she`d play. Man himself Establishments, whether that."'
+act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+end
+
+
+--- sister ---------------------------------
+

@@ -1,0 +1,130 @@
+# krutishi
+if grupTipe[numnpc]=3:
+     if npcPol[numnpc]=0 and hapri=0:
+     grupNPC[numnpc]-=5
+     '<<$npcName[numnpc]>> with a smile looking at your messy hair.'
+     end
+     if npcPol[numnpc]=1 and hapri=0:
+     grupNPC[numnpc]-=5
+     '<<$npcName[numnpc]>> with a smile looking at your messy hair.'
+     end
+     if npcPol[numnpc]=0 and hapri>0 and $loc='gdkin' and grupNPC[numnpc]>=40:
+         if glamur>0 or ski>0:
+         cla
+		 '<<$npcName[numnpc]>> - can Dance?'
+			 act 'dance':
+			 cls
+			 minut+=5
+			 grupNPC[numnpc]+=5
+			 dance+=RAND(1,3)
+			     if numnpc=1:
+			     Mud=totminut+120
+			     end
+			 gs'stat'
+			 'You danced to old Hit the dance floor with a guy.'
+			 act 'move_away':gt $loc, $metka
+			     if numnpc=4 and grupNPC[numnpc]>=80:
+			     !Igor Kruglov
+			     horny+=10
+			     gs'stat'
+			         if IgorLoverQW>0 and IgorDominaQW=0:
+			         'Igor whispers to you "Svetulechka, i love you so. Come to me."'
+			         act 'Go to Igor':gt 'IgorEv'
+			         end
+			         
+			         if IgorLoverQW>0 and IgorDominaQW>0:
+			         'Igor whispers to you "My mistress, I love you. Come to me."'
+			         act 'Go to Igor':gt 'IgorEv'
+			         end
+			         
+			         if IgorLoverQW=0:
+					 'During the dance.'
+						 if DimaRudeQW>0:
+						 'Igor whispers in your ear "Dimka told me what you`re cool huesoska. Come on street, show me your class."'
+							 act 'Go to the street':
+							 cls
+							 gs'stat'
+							 'You together with Igor slipped out of discotheques. Tucked away in a secluded corner of Igor began to kiss and caress you. There was the sound unbuttoned his pants and Igor pushed you on the shoulders.'
+							 dynamic $din_igor_disco_bj
+							 end
+							 
+							 act 'Turn_Down':
+							 cls
+							 gs'stat'
+							 'You refused to go with Igor on street. Dima came to you and asked you what`s going on. Igor shrugged "Your huesoska does not want me to suck." Dimka frowned "Sveta, he is my best friend, because there would be nothing wrong, if you had otsosesh." Guys took you by the hand and led him to the street.'
+							 dynamic $din_igor_dima_disco_bj
+							 end
+						 exit
+						 end
+						 if grupNPC[1]=0:
+						 'Igor whispers in your ear "Dimka told me how you dumped him. Good_For_You, he sometimes behaves like a pig. By_The_Way, Svetsik, go to the street, get some air."'
+						 dynamic $din_igor__disco
+						 exit
+						 end
+						 cla
+						 'Igor whispers in your ear "Come on out Svetsik. Enjoy the fresh air."'
+						 dynamic $din_igor__disco
+						 exit
+                     end
+			     end
+			     
+			     
+			     if numnpc=1 and grupNPC[numnpc]>=80 and DimaRudeQW>0:
+			     'After the dance. "Come on street."'
+			         act 'Opt_Out':grupNPC[numnpc]-=5&gt $loc, $metka
+			         
+			         act 'Go to the street with Dima':
+			         cls
+			         gs'stat'
+			         'You left the club together with Dima on street. "what, pig, take it in your mouth."'
+			         act 'Opt_Out':grupNPC[numnpc]-=5&gt $loc, $metka
+			         dynamic $din_predlog_dima_bj
+			         end
+			     end
+			     if numnpc=1 and grupNPC[numnpc]>=80 and DimaRudeQW=0:
+			     'After the dance. "Come on street, Enjoy the fresh air."'
+			         act 'Go to the street with Dima':
+			         cls
+			         gs'stat'
+			         'You went out with Dima and departed for the club. Dima came up to you and hugged you tight. "Sveta, you do Devchenka. Do you want to meet me?"'
+			             act 'No':
+			             cls
+			             gs'stat'
+			             '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+                         '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			             'You replied in the negative and Dima grinned. "do not be shy, Of course you want. Otherwise."'
+			             	 act 'Well':
+							 cls
+							 gs'stat'
+							 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+							 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+							 'You embarrassed and said, you do not know, but may be. Dima grinned and hugged you. "Of_Course. I knew it from the start. know, I do not need some sort of nun, I need a girl without complexes. In general, we`re going to meet, if you, Now I otsosesh."'
+							 
+							 dynamic $din_dima_predlog
+							 
+							 end
+							 
+							 act 'Get_Away':gt $loc, $metka
+			             end
+			             
+			             act 'Yes_I_Am':
+			             cls
+			             gs'stat'
+			             '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+                         '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			             'You are embarrassed by the question of integrity and confirmed. Dima grinned. "Of_Course. I knew it from the start. know, I do not need some sort of nun, I need a girl without complexes. In general, we`re going to meet, if you, Now I otsosesh."'
+			             dynamic $din_dima_predlog
+			             
+			             end
+			         end
+			     end
+			 end
+			 
+			 
+			 act 'Opt_Out':grupNPC[numnpc]-=5&gt $loc, $metka
+		 exit
+         end
+     end
+end
+--- krutishi ---------------------------------
+

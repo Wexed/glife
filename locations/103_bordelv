@@ -1,0 +1,112 @@
+# bordelv
+cla
+*clr
+set minut+=30
+set horny+=20
+gs'stat'
+'<center><B><font color=maroon>Room with a mirror</font></B></center>'
+'<center><img src="img/centr/bvika1.jpg" ></center>'
+'Vick walks you through what that yards, and entered into an inconspicuous door you find a large room vnitri, here scurrying girls dressed as if they were not at all and clothing, not giving you a look around Vic drags you down the hall, Finally she gets you to a small room where. "Stay here" she says.
+You sit in a chair and look through the glass is a room with a large bed. "This brothel" flashed through your mind, "And I`m in the room for voyeurs".
+While you`re pondering proiskhodyazhee entered the room Wick, dressed in a pink combination, and lay on the bed.
+She looked at you through the glass with one hand and massaged her pussy through her panties. Looking at it you feel like you are covers excitement.'
+act 'View more':
+	 cla
+	 *clr
+	 set horny+=20
+	 set picrand=2
+	 '<center><img src="img/centr/bvika2.jpg" ></center>'
+	 'A few minutes later entered the room , Vic jumped out of bed and stood up on his knees between them to get them members, continuing to look in your direction . You like zavorezhennaya looked in her mouth then disappears then one other member, she continued to diligently meet men not taking GLA from the mirror, from her view your pussy strongly moisturizing and demand attention.'
+	 act 'escape':gt'bordelv','out'
+	 act 'View more':gt'bordelv','sex'
+	 end
+
+if $ARGS[0]='sex':
+cla
+*clr
+set minut+=10
+set picrand=rand(3,7)
+set dviksex+=1
+horny+=20
+gs'stat'
+'<center><img src="img/centr/bvika<<picrand>>.jpg"></center>'
+'You continued to look like men fuck Vick, They twirled it as something like alternately entering her pussy, then hammering her anus, or included in dvoem. Vic moaned and struggled podmahivala them, she always tried to stay as a mirror to see, even though you knew that she can not see you, but it seemed to you that she is watching you.'
+act 'view more':gt'bordelv','sex'
+if dviksex>=3:act 'End_Up':gt'bordelv','end'
+end
+
+if $ARGS[0]='end':
+cla
+*clr
+set minut+=10
+set horny=0
+set orgasm+=1
+gs'stat'
+'<center><img src="img/centr/bvika8.jpg"></center>'
+'When the men were satisfied, Vick again knelt down and sperm spurted in her mouth, on the face and chest, In spite of this you feel as your body begins to tremble potemnolo you in the eyes and nice waves you covered. When you re-opened zlaza, men are already out and Wick and sat on the floor flooded with sperm, Now she tried not to look in your direction. Finally sobravis the forces she got up and left the room.'
+act 'wait':
+	 cla
+	 *clr
+	 '<center><img src="img/centr/bvika9.jpg"></center>'
+	 'A few minutes later the door opened and entered the room Wick, She closed the door and you are left in the dark, you vidili only her silhouette. Vick stood silently waiting for your response.'
+	 if slutty=0:
+		 act 'called a whore':
+			 cla
+			 '"slut" it is perhaps the only more or less censorship word that you said, from the rest of the words you are in shock, How do you know all this. When you have finished swear they heard a quiet vskhlypyvanie, Vic crying.'
+			 act 'Get_Away':
+				 set vika=0
+				 set vikaend=1
+				 gt'street'
+				 end
+			 act'calm her':
+				 cla
+				 set vika+=5
+				 'You started to calm her saying, they did not want to hurt her and that have told all this to you because it was a shock. Wick close to you and you hug her, soon she stopped crying and saying that it should be back to work take you to the exit.'
+				 act 'Get_Away':gt'street'
+				 end
+			 end
+		 end
+	 if slutty>0:
+		 act 'reassure':
+			 cla
+			 set vika+=5
+			 '"Why are you so worried, think it works in a brothel, I also earned a couple of times pushing the legs." calmly told you.
+			 Vick gasped with relief "And I worried that you do not understand, Well I need to work, go take you" saying it, Vick led you to exit.'
+			 act 'Get_Away':gt'street'
+			 end
+		 act 'Ask about work':
+			 cla
+			 set vika+=5
+			 set bordel=1
+			 '"And I arrange to work here, I know how much." asked you.
+			 Vick gasped with relief "And I worried that you do not understand, I say good administrator, but I can not guarantee it can not take. And now I need to work, go take you" saying it, Vick led you to exit.'
+			 act 'Get_Away':gt'street'
+			 end
+		 end
+	 end
+end
+
+if $ARGS[0]='out':
+cla
+*clr
+set minut+=20
+gs'stat'
+'<center><img src="img/centr/bordel.jpg"></center>'
+'You vyskachil out of the room like a scalded and rushed to the door, you thought, but opening the door in another room vidili, which also "worked" girl, slammed the door rushed to the next, and again the room. You were running through the corridors, all doors vygledeli same and you either like it was not possible to find a way, when you `re desperate, who-then put your hand on his shoulder, turned you saw Vic, it just came out of the room and stood naked in front of you, her face and chest were smeared with sperm.
+"light wait, you promised to talk"
+"Where is the fucking output, slut" you cried.
+Vick looked at you, you noticed how her lips and in her eyes zadrazhali navarachivalis tears "Over_There" she said, point you to one of the doors, barely holding back that would not cry.'
+act 'Get_Away':
+	 set vika=0
+	 set vikaend=1
+	 gt'street'
+	 end
+act'calm her':
+	 cla
+	 set vika+=5
+	 'You started to calm her saying, they did not want to hurt her and that have told all this to you because it was a shock. Wick close to you and you hug her, soon she stopped crying and saying that it should be back to work take you to the exit.'
+	 act 'Get_Away':gt'street'
+	 end
+end
+--- bordelv ---------------------------------
+

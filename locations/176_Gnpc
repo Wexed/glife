@@ -1,0 +1,209 @@
+# Gnpc
+!guys
+GvstreBoyAfter[numnpc]=0
+GvstreBoy=0
+boyvstre[numnpc]+=1
+gs'stat'
+'<center><B><font color=maroon><<$nameBoyfrend[numnpc]>></font></B></center>'
+!'<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+'<<$nameBoyfrend[numnpc]>> your boyfriend.'
+if otnBoyFrend[numnpc]<20:'You have a bad attitude.'
+if otnBoyFrend[numnpc]>=20 and otnBoyFrend[numnpc]<40:'You tensions.'
+if otnBoyFrend[numnpc]>=40 and otnBoyFrend[numnpc]<60:'You have a normal relationship.'
+if otnBoyFrend[numnpc]>=60 and otnBoyFrend[numnpc]<80:'You have a good relationship.'
+if otnBoyFrend[numnpc]>=80:'You have a great relationship.'
+''
+''
+
+if preg=1 and pregtime<=80 and pregTalk[numnpc]=0 and gnpcSex[numnpc]=1:
+     act 'tell a guy, you have flown away.':
+     cls
+     gs'stat'
+     'You said the guy, that become pregnant by him. He just did not come out of the eye orbits.'
+         if $father=$nameBoyfrend[numnpc]:
+         'The guy thought. "Listen, I`m not ready to be a father, and even marry you." He handed you 5five thousand. "money, and let us part."'
+             act 'Throw a guy and take the money':
+			 cls
+			 dom+=5
+			 pregTalk[numnpc]=1
+			 otnBoyFrend[numnpc]=0
+			 money+=5000
+			 gs'stat'
+			 'You covered the rage and you sent the guy on the dick. At still snatched the bill from him and left.'
+			 act 'Get_Away':gt $loc, $metka
+			 end
+			 
+			 act 'Throw a guy throwing him the money in the face':
+			 cls
+			 dom+=10
+			 pregTalk[numnpc]=1
+			 otnBoyFrend[numnpc]=0
+			 gs'stat'
+			 'You covered the rage and you sent the guy on the dick and tossed him the money in the face. And then went.'
+			 act 'Get_Away':gt $loc, $metka
+			 end
+			 
+			 
+         else
+         'The guy was troubled "Yes you ohuel slut! Someone held up her pussy, and now will be with me grandmother swing? Fuck you on the dick!"'
+             act 'quit Man':
+			 cls
+			 dom+=10
+			 pregTalk[numnpc]=1
+			 otnBoyFrend[numnpc]=0
+			 gs'stat'
+			 'You covered the rage and you sent the guy on the dick. And then went.'
+			 act 'Get_Away':gt $loc, $metka
+			 end
+         end
+     
+     end
+end
+
+if GboyBalabol[numnpc]=1:
+     act 'Man accused, in, he yap':
+     cls
+     gs'stat'
+     'Man accused you in, he blabbed about your relationships all around and now believe that you <<$gnikname>>'
+     reaktrand=RAND(0,2)
+         if reaktrand=0:
+         '<<$nameBoyfrend[numnpc]>> began to apologize for it , and he blabbed all bitch. <<$nameBoyfrend[numnpc]>> solemnly promises, that more of this does not happen again.'
+         end
+         if reaktrand=1:
+         '<<$nameBoyfrend[numnpc]>> began to soothe you, say nothing terrible happened, chat and forget.'
+         end
+         if reaktrand=2:
+         '<<$nameBoyfrend[numnpc]>> said with a grin. Yes Relax, you are the same and there is a real <<$gnikname>>, is such that?'
+         end
+         
+         act 'quit Man':
+         cls
+         dom+=10
+         GboyBalabol[numnpc]=2
+         otnBoyFrend[numnpc]=0
+         gs'stat'
+         'You covered the rage and you sent the guy on the dick. And then went.'
+         act 'Get_Away':gt $loc, $metka
+         end
+         
+         act 'just a guy':
+         cls
+         sub+=10
+         GboyBalabol[numnpc]=2
+         gs'stat'
+         'You thought a bit and decided to forgive Man.'
+         act 'Get_Away':gt $loc, $metka
+         end
+         
+     end
+end
+
+act 'Walking through the square':
+cls
+if hapri=0:otnBoyFrend[numnpc]-=5
+if hapri=1:otnBoyFrend[numnpc]+=1
+if mop=2:otnBoyFrend[numnpc]+=1
+if mop=3:otnBoyFrend[numnpc]+=2
+if mop=4:otnBoyFrend[numnpc]-=5
+if sweat>0:otnBoyFrend[numnpc]-=5
+if ski>0 or glamur>0:otnBoyFrend[numnpc]+=2
+minut+=15
+!number of meetings
+boytimes[numnpc]+=1
+gs'stat'
+'You walk with a guy on the square .'
+	 if kotovLoveQW>0:
+	 otnBoyFrend[numnpc]=0
+	 'Suddenly you see is what you go to a meeting Vitek Kotov he comes to the guy and silently slap in his face. <<$nameBoyfrend[numnpc]>> falls to the ground. Vitek naklonyaetsya over it "Hey you uebok, this is my Devchenka, Once again I see you with her, bury alive in the woods, got_it?" The guy nods his head and says that he understood.'
+	 act 'Get_Away':gt $loc, $metka
+	 exit
+	 end
+gboyrand=RAND(0,1)
+     if gboyrand=0:
+     '<<$nameBoyfrend[numnpc]>> offered to go to the movies.'
+     act 'Apologize and withdraw':otnBoyFrend[numnpc]-=5&gt $loc, $metka
+         act 'Go to the movies':
+         cls
+         minut+=15
+         gs'stat'
+         'You went with a guy in a movie theater located in the park. <<$nameBoyfrend[numnpc]>> buy movie tickets. You entered together in a small cinema and found their seats.'
+             act 'watch movies':
+			 cls
+			 manna+=100
+			 minut+=100
+			 otnBoyFrend[numnpc]+=5
+			 gs'stat'
+			 'You got a guy on a chair placed in the back row. Soon the lights dimmed and the screen began movies.'
+				 if otnBoyFrend[numnpc]<80:
+				 'You watched the movie a couple of hours sitting in a chair next to a guy.'
+				 act 'Go to the exit':gt'Gnpc2'
+				 end
+				 if otnBoyFrend[numnpc]>=80 and gnpcSex[numnpc]=0:
+				 'You began to look at the film and suddenly felt a hand on my knee Man.'
+				     act 'Remove his hands':
+					 cls
+					 dom+=1
+					 otnBoyFrend[numnpc]-=20
+					 gs'stat'
+					 'You have removed his hand Man with his knees and continued to watch the movie. Movie finally ended. In the hall lights went on and the screen went titles.'
+					 act 'Go to the exit':gt'Gnpc2'
+					 end
+					 
+					 act 'ignore':
+					 cls
+					 otnBoyFrend[numnpc]+=5
+					 gs'stat'
+					 'You pretended, that nothing happens and the guy started still active stroke your leg. Movie finally ended. In the hall lights went on and the screen went titles.'
+					 act 'Go to the exit':gt'Gnpc2'
+					 end
+				 end
+				 if otnBoyFrend[numnpc]>=80 and gnpcSex[numnpc]>0:
+				 'You became watch movies, and <<$nameBoyfrend[numnpc]>> put his hand on your leg and began to stroke your knee. Movie finally ended. In the hall lights went on and the screen went titles.'
+				 act 'Go to the exit':gt'Gnpc2'
+				 end
+			 end
+         end
+     end
+     if gboyrand=1:
+     '<<$nameBoyfrend[numnpc]>> suggested to drink beer in the park.'
+     act 'Apologize and withdraw':otnBoyFrend[numnpc]-=5&gt $loc, $metka
+         act 'Go for a beer':
+         cls
+         manna+=100
+         minut+=15
+         gs'stat'
+         'You went with the guy to the nearest kiosk. <<$nameBoyfrend[numnpc]>> bought beer and snacks. Then you went on a bench at the far corner of the square.'
+             act 'drink':
+			 cls
+			 manna+=100
+			 minut+=30
+			 alko+=2
+			 fat+=2
+			 salo+=1
+			 energy+=10
+			 otnBoyFrend[numnpc]+=5
+			 gs'stat'
+			 '<<$nameBoyfrend[numnpc]>> poured the beer into glasses and you began to drink beer. <<$nameBoyfrend[numnpc]>> telling different stories funny.'
+			 	 if otnBoyFrend[numnpc]<80:
+			 	 'You drank beer with a guy and plenty of fun.'
+			 	 act 'further':gt'Gnpc2'
+				 end
+				 if otnBoyFrend[numnpc]>=80 and gnpcSex[numnpc]=0:
+				 'You drank beer with a guy and plenty of fun.'
+				 act 'further':gt'Gnpc2'
+				 end
+				 if otnBoyFrend[numnpc]>=80 and gnpcSex[numnpc]>0:
+				 'You drank beer with a guy and plenty of fun.'
+				 act 'further':gt'Gnpc2'
+				 end
+			 end
+         end
+     end
+end
+
+act 'Apologize and withdraw':otnBoyFrend[numnpc]-=5&gt $loc, $metka
+
+
+
+--- Gnpc ---------------------------------
+

@@ -1,0 +1,21 @@
+# dachamy
+$metka = $ARGS[0]
+$loc = $CURLOC
+'<center><H4>dacha</H4></center>'
+'<center><img src="etogame/dachamy.jpg" ></center>'
+'Your favorite summer residence.'
+clr
+gs'stat'
+gs'time'
+act 'Go to the house':gt'dachain'
+if hour <23 and hour=>7:
+	 act 'inspect the garden':
+		 cla
+		 minut+=5
+		 if etoexhib<16:gt'dachaogr0'
+		 if etoexhib=16: gt'dachaogr'
+		 end
+	 end
+act 'Get off at the mall':minut+=15&gt'dachi'
+--- dachamy ---------------------------------
+

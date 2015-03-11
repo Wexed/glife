@@ -1,0 +1,181 @@
+# pirsingsalon
+$pirsyaz={
+cls
+minut+=30
+money-=5000
+pirsA = 1
+pirs_pain_ton=7
+gs'stat'
+'<center><img src="pic/pirsing.jpg" ></center>'
+'Sitting on the chair you are stuck out his tongue, Master pierced tongue and put you back post.'
+act 'Get_Away':gt $curloc
+}
+$pirsyazout={
+cls
+minut+=30
+money-=5000
+pirsA = 0
+gs'stat'
+'<center><img src="pic/pirsing.jpg" ></center>'
+'Master took the rod from your language.'
+act 'Get_Away':gt $curloc
+}
+$pirsgub={
+cls
+minut+=30
+money-=6000
+pirsB = 1
+gs'stat'
+'<center><img src="pic/pirsing2.jpg" ></center>'
+'Master pierced lip and you put the ring back.'
+act 'Get_Away':gt $curloc
+}
+$pirsgubout={
+cls
+minut+=30
+money-=6000
+pirsB = 0
+gs'stat'
+'<center><img src="pic/pirsing2.jpg" ></center>'
+'Master took the ring out of your mouth.'
+act 'Get_Away':gt $curloc
+}
+$pirsysh={
+cls
+minut+=30
+money-=3000
+pirsC = 1
+gs'stat'
+'Master pierced your ears and put back earrings.'
+act 'Get_Away':gt $curloc
+}
+$pirsyshout={
+cls
+minut+=30
+money-=3000
+pirsC = 0
+gs'stat'
+'Master took the earrings from your ears.'
+act 'Get_Away':gt $curloc
+}
+$pirsnos={
+cls
+minut+=30
+money-=5000
+pirsD = 1
+gs'stat'
+'Master pierced your nose and put the ring back.'
+act 'Get_Away':gt $curloc
+}
+$pirsnosout={
+cls
+minut+=30
+money-=5000
+pirsD = 0
+gs'stat'
+'Master took the ring out of your nose.'
+act 'Get_Away':gt $curloc
+}
+$pirsbro={
+cls
+minut+=30
+money-=5000
+pirsE = 1
+gs'stat'
+'Master pierced eyebrow and put you back post.'
+act 'Get_Away':gt $curloc
+}
+$pirsbroout={
+cls
+minut+=30
+money-=5000
+pirsE = 0
+gs'stat'
+'Master took the rod from your eyebrows.'
+act 'Get_Away':gt $curloc
+}
+$pirssos={
+cls
+minut+=30
+money-=10000
+pirsF = 1
+nippain=2
+nippainday=daystart
+gs'stat'
+'Master pierced nipples and put you back rings.'
+act 'Get_Away':gt $curloc
+}
+$pirssosout={
+cls
+minut+=30
+money-=10000
+pirsF = 0
+gs'stat'
+'Master took the rings from your nipples.'
+act 'Get_Away':gt $curloc
+}
+$pirsvla={
+cls
+minut+=30
+money-=25000
+pirsG = 1
+painpub=2
+painpubday=daystart
+gs'stat'
+'Master your pierced labia vagina and inserted back post.'
+act 'Get_Away':gt $curloc
+}
+$pirsvlaout={
+cls
+minut+=30
+money-=25000
+pirsG = 0
+gs'stat'
+'Master took the post of your labia.'
+act 'Get_Away':gt $curloc
+}
+$pirspyp={
+cls
+minut+=30
+money-=10000
+pirsN = 1
+gs'stat'
+'Master pierced navel and put you back post.'
+act 'Get_Away':gt $curloc
+}
+$pirspypout={
+cls
+minut+=30
+money-=10000
+pirsN = 0
+gs'stat'
+'Master took the rod from your navel.'
+act 'Get_Away':gt $curloc
+}
+
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'<center><B>piercing parlor</B></center>'
+'<center><img src="pic/pirsingstudia.jpg" ></center>'
+'Small salon where he works a single master.'
+if hour>=12 and hour<20 and pirsA = 0 and money>=5000:'<a href="exec:dynamic $pirsyaz">Make a tongue piercing 5000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsA = 1 and money>=5000:'<a href="exec:dynamic $pirsyazout">Remove tongue piercing 5000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsB = 0 and money>=6000:'<a href="exec:dynamic $pirsgub">Make a lip piercing 6000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsB = 1 and money>=6000:'<a href="exec:dynamic $pirsgubout">Remove lip piercing 6000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsC = 0 and money>=3000:'<a href="exec:dynamic $pirsysh">Get pierced ears 3000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsC = 1 and money>=3000:'<a href="exec:dynamic $pirsyshout">Remove pierced ears 3000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsD = 0 and money>=5000:'<a href="exec:dynamic $pirsnos">Make a nose piercing 5000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsD = 1 and money>=5000:'<a href="exec:dynamic $pirsnosout">Remove nose piercing 5000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsE = 0 and money>=5000:'<a href="exec:dynamic $pirsbro">Make eyebrow piercing 5000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsE = 1 and money>=5000:'<a href="exec:dynamic $pirsbroout">Remove eyebrow piercing 5000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsF = 0 and money>=10000:'<a href="exec:dynamic $pirssos">Get pierced nipples 10000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsF = 1 and money>=10000:'<a href="exec:dynamic $pirssosout">Remove nipple piercings 10000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsG = 0 and money>=25000:'<a href="exec:dynamic $pirsvla">Get pierced vagina 25000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsG = 1 and money>=25000:'<a href="exec:dynamic $pirsvlaout">Remove piercing vagina 25000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsN = 0 and money>=10000:'<a href="exec:dynamic $pirspyp">Make a navel piercing 10000 RUB.</a>.'
+if hour>=12 and hour<20 and pirsN = 1 and money>=10000:'<a href="exec:dynamic $pirspypout">Remove navel piercing 10000 RUB.</a>.'
+act 'Get_Away':gt'nord'
+--- pirsingsalon ---------------------------------
+

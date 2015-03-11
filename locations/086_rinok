@@ -1,0 +1,227 @@
+# rinok
+if $ARGS[0]='start':
+cla
+*clr
+set minut = minut + 5
+
+$rinbuy1={
+cla
+*clr
+portion = input ("How much you want to buy?")
+if portion<=0:portion=1
+if portion*50 > money:'You do not have enough money.'
+if portion*50 <= money:
+	 set fairy += portion
+	 set money = money - portion*50
+	 '<center><img src="pic/kassa2.jpg" ></center>'
+	 'You paid the cashier and bought dishwashing detergent.'
+	 end
+act 'Move away from the counter':gt'rinok','start'
+}
+$rinbuy2={
+cla
+*clr
+portion = input ("How much you want to buy?")
+if portion<=0:portion=1
+if portion*150 > money:'You do not have enough money.'
+if portion*150 <= money:
+	 set poroshok += portion
+	 set money = money - portion*150
+	 '<center><img src="pic/kassa2.jpg" ></center>'
+	 'You paid the cashier and bought laundry detergent.'
+	 end
+act 'Move away from the counter':gt'rinok','start'
+}
+$rinbuy3={
+cla
+*clr
+portion = input ("How much you want to buy?")
+if portion<=0:portion=1
+if portion*150 > money:'You do not have enough money.'
+if portion*150 <= money:
+	 set cltarelka += portion*3
+	 set money = money - portion*150
+	 '<center><img src="pic/kassa2.jpg" ></center>'
+	 'You paid the cashier and bought a plate.'
+	 end
+act 'Move away from the counter':gt'rinok','start'
+}
+$rinbuy4={
+cla
+*clr
+portion = input ("How much you want to buy?")
+if portion<=0:portion=1
+if portion*500 > money:'You do not have enough money.'
+if portion*500 <= money:
+	 set kosmetica += portion*25
+	 set money = money - portion*500
+	 '<center><img src="pic/kassa2.jpg" ></center>'
+	 'You paid the cashier and bought cosmetics.'
+	 end
+act 'Move away from the counter':gt'rinok','start'
+}
+$rinbuy5={
+cla
+*clr
+portion = input ("How much you want to buy?")
+if portion<=0:portion=1
+if portion*200 > money:'You do not have enough money.'
+if portion*200 <= money:
+	 set stanok += portion*10
+	 set money = money - portion*200
+	 '<center><img src="pic/kassa2.jpg" ></center>'
+	 'You paid the cashier and bought a razor.'
+	 end
+act 'Move away from the counter':gt'rinok','start'
+}
+$rinbuy6={
+cla
+*clr
+portion = input ("How much you want to buy?")
+if portion<=0:portion=1
+if portion*150 > money:'You do not have enough money.'
+if portion*150 <= money:
+	 set tampon += portion*20
+	 set money = money - portion*150
+	 '<center><img src="pic/kassa2.jpg" ></center>'
+	 'You paid the cashier and bought tampons.'
+	 end
+act 'Move away from the counter':gt'rinok','start'
+}
+$rinbuy7={
+cla
+*clr
+portion = input ("How much you want to buy?")
+if portion<=0:portion=1
+if portion*200 > money:'You do not have enough money.'
+if portion*200 <= money:
+	 set clrbelo += portion
+	 set money = money - portion*200
+	 '<center><img src="pic/kassa2.jpg" ></center>'
+	 'You paid the cashier and bought underwear.'
+	 end
+act 'Move away from the counter':gt'rinok','start'
+}
+$rinbuy8={
+if money >= 1000 and bikini < 1:
+ cla
+ *clr
+ set money = money - 1000
+ set bikini = 1
+ '<center><img src="pic/kassa2.jpg" ></center>'
+ 'You paid the cashier and bought a swimsuit.'
+ act 'Move away from the counter':gt'rinok','start'
+else
+'You do not have enough money.'
+end
+}
+$rinbuy9={
+if money >= 1000 and umbrella < 1:
+cla
+*clr
+set money = money - 1000
+set umbrella = 1
+'<center><img src="pic/kassa2.jpg" ></center>'
+'You paid the cashier and bought an umbrella.'
+act 'Move away from the counter':gt'rinok','start'
+else
+'You do not have enough money.'
+end
+}
+
+$metka = $ARGS[0]
+$loc = $CURLOC
+$metkaM = $ARGS[0]
+$locM = $CURLOC
+mag=1
+
+'<center><B><font color=maroon>market</font></B></center>'
+'<center><img src="pic/rinok.jpg" ></center>'
+'<a href="exec: dynamic $rinbuy1 ">dishwashing liquid - 50 r</a>  <a href="exec: dynamic $rinbuy2 ">washing powder - 150 r</a>  <a href="exec: dynamic $rinbuy3 ">a set of 3x plates - 150 r</a>   <a href="exec: dynamic $rinbuy4 ">cosmetics - 500 r</a>   <a href="exec: dynamic $rinbuy5 ">razor - 200 r</a>  <a href="exec: dynamic $rinbuy6 ">tampons - 100 r</a>  <a href="exec: dynamic $rinbuy7 ">linen - 200 r</a>'
+if bikini < 1:'<a href="exec: dynamic $rinbuy8 ">swimsuit - 1000r</a>'
+if umbrella < 1:'<a href="exec: dynamic $rinbuy9 ">umbrella - 1000r</a>'
+'On one of the tents hanging Ads <a href="exec:GT ''loker2'',''start''">"Take things for implementation"</a>'
+
+if analplugIN = 1 and tanga = 0 and ski = 1 or analplugIN = 1 and tanga = 0 and glamur = 1:
+	 set nurand = RAND (0,100)
+		 if nurand >= 80:
+		 set manna = manna - 5
+		 set SUB = SUB + 1
+		 set horny = horny + SUB
+		 set nudity = nudity+1
+		 'Do you feel that someone-then gently touched <a href="exec:GT ''etoexhib'',''pos15''">your priests hand!</a>'
+		 *nl
+		 end
+	 end
+
+'<a href="exec:numdres=1&payclo=1500 & GT ''loker'',''jeans''">Inspect jeans number1</a>  <a href="exec:numdres=2&payclo=1500 & GT ''loker'',''jeans''">inspect jeans. number2</a>  <a href="exec:numdres=3&payclo=1500 & GT ''loker'',''jeans''">inspect jeans. number3</a>  <a href="exec:numdres=4&payclo=1500 & GT ''loker'',''jeans''">inspect jeans. number4</a>  <a href="exec:numdres=5&payclo=1500 & GT ''loker'',''jeans''">inspect jeans. number5</a>'
+clr
+gs'stat'
+gs'time'
+act 'GO_OUT':
+	 cla
+	 set minut = minut + 5
+	 gt'street'
+	 end
+if workrin=1:
+	 if week=2 or week=4 or week=6:
+		 if hour<9:
+			 'Arthur item is waiting for you.'
+			 act '<B>take goods.</B>':
+				 cla
+				 *clr
+				 hour=9
+				 minut=0
+				 prodpayum=1200
+				 'Arthur unloaded the stuff from his ushatannoy Shokhi to the tray and gave you. You started to hang clothes on the tent.'
+				 'Before leaving Arthur gives you instructions. "Sell вЂ‹вЂ‹what you like, but that night I would have given to each item sold on 1000. And to gain by selling no less than <<arturplan>> rubles."'
+				 act 'work.':gt'rinwork','start'
+				 end
+			 end
+		 end
+	 end
+if workrin=1:
+	 act 'Dismissed from their jobs':
+		 cla
+		 work=0
+		 workrin=0
+		 'You retired from work and took labor.'
+		 act 'GO_OUT':gt'rinok','start'
+		 end
+	 end
+if work=0:
+	 nl
+	 'On one of the tents hanging Ads "Need females sellers. big salaries."'
+	 act 'Approach to the owner of the tent ad':
+		 cla
+		 *clr
+		 'hello, My name is Arthur. I am the master of the tent, I need a saleswoman. I do not cope. Well? go?'
+		 'Pay a percentage of earned. Work will be on Tuesdays, Thursdays and Saturdays. From 8of up to 14.'
+		 'Work on labor.'
+		 act 'GO_OUT':gt'rinok','start'
+		 act 'To get a job':
+			 cla
+			 work=1
+			 workrin=1
+			 arturplan=5000
+			 'You got a job to Arthur and gave him a career.'
+			 act 'GO_OUT':gt'rinok','start'
+			 end
+		 end
+	 end
+if palto<1:
+	 'On the market sell down jackets for winter. 5000 RUB'
+	 if money>=5000:
+		 act 'buy a down jacket':
+			 cla
+			 money-=5000
+			 palto=1
+			 $palto='Chinese wear'
+			 'You bought a down jacket.'
+			 act 'GO_OUT':gt'rinok','start'
+			 end
+		 end
+	 end
+end
+--- rinok ---------------------------------
+

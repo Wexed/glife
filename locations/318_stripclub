@@ -1,0 +1,408 @@
+# stripclub
+if $ARGS[0]='start':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>Strip club</font></B></center>'
+'<center><img src="pic/stripclub.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+Set scrand = RAND (1,100)
+if scrand <= 40 and stripday ! day:
+set stripday = day
+Set cfnm = 1
+end
+if scrand > 40 and stripday ! day:
+set stripday = day
+Set cfnm = 0
+end
+if cfnm = 1:'Today in the program, The Full Monty, admission ticket 500 RUB.'
+if cfnm = 0:'Today in the program, striptease, admission ticket 500 RUB.'
+act 'GO_OUT':
+	 cla
+	 set minut = minut + 5
+	 gt'down'
+	 end
+
+	 if stripdolg>0 and money>=50000:
+		 act 'pay a fine 50000 RUB':
+			 set stripdolg=0
+			 set money-=50000
+			 gt'stripclub','start'
+			 end
+		 end
+     
+     
+     if stripdolg=0:
+     
+     if cfnm = 1 and money >= 500 and hour < 23:
+         act 'pay 500 rubles and enter':
+		 cla
+		 set money = money - 500
+		 set minut = minut + 5
+		 frost=0
+		 gt'stripclub','forwoman'
+		 end
+     end
+     if cfnm = 0 and money >= 500 and hour < 23:
+         act 'pay 500 rubles and enter':
+		 cla
+		 set money = money - 500
+		 set minut = minut + 5
+		 frost=0
+		 gt'stripclub','forman'
+		 end
+     end
+     if stripdance>0 and stripwork=0:
+         act 'Talk to the manager of the stripper':
+		 cla
+		 set minut = minut + 15
+		 gs'stat'
+		 'You performed in the manager`s office. In the office, the young man asked you to sit down and began to question. "We work every day with 15 prior_to 2x night. Sometimes there are days male striptease. Strippers we do not pay, only provide costumes. This is to ensure that there was an incentive to earn a tip. Just stripper can dance lap dance for a fee the client, but it should be of interest to the client, with each lap dance stripper gets 800 rubles, 200 is the club, can not otkazyvatsya from private dance. And if a lap dance is a solid stripdens, then dance on stage involves a lot of work on the pole. If you can not dance on a pole, it is better not pozortes. With the change of I do not hurry, strippers come themselves when they want to work. Schedule absolutely free, I just do not need your work, therefore work as a stripper can be combined with other types of work. Well? satisfied?"'
+		 act 'No':gt'stripclub','start'
+		     act 'Yes_I_Am':
+		     cls
+		     stripwork=1
+		     'Yes_I_Am, I was happy with everything you nodded. The manager will take you to the fitting room and showed a woman who is responsible for the costumes. He introduced you to the chief of protection, who prescribed you the Propus and left leaving you.'
+		     if cfnm = 0:act 'Osmatrivatsya':gt'stwork','start'
+		         if cfnm = 1:
+		         'Today in the program male striptease, so some guys behind the scenes.'
+		         act 'Go_Out':gt'stripclub','start'
+		         end
+		     end
+		 end
+     end
+     
+     if cfnm = 0 and stripwork>0:
+     act 'Go to the locker room':frost=0&gt'stwork','start'
+     elseif cfnm>0 and stripwork>0:
+     'Today there is no work, The Full Monty.'
+     end
+     
+     end
+     
+
+end
+
+if $ARGS[0]='forman':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>Strip club</font></B></center>'
+'<center><img src="pic/stripclub1.jpg" ></center>'
+clr
+gs'stat'
+'On the stage in the main hall are the girls undress to the music, there is a service privat dance, cost 1000 rubles for dance.'
+
+     act 'GO_OUT':
+     cla
+     set minut = minut + 5
+     gt'stripclub','start'
+     end
+     
+     if hour < 23:
+         act 'Sit down at a table near the stage and watch striptease':gt'stripclub','stol'
+         if money >= 1000:
+         act 'Order a lap dance (1000 RUB)':gt'stripclub','privat'
+         end
+       	 if money>=5000:
+		 act 'Request special shows':
+			 set stprrand=rand(0,1)
+			 if stprrand=0:gt 'stripclub','stpr1'
+			 if stprrand=1:gt 'stripclub','stpr2'
+			 end
+		 end
+     end
+end
+
+if $ARGS[0]='privat':
+cla
+*clr
+set money = money - 1000
+set minut = minut + 60
+set horny = horny + 25
+set DOM = DOM + 1
+clr
+gs'stat'
+set privrand=RAND(0,4)
+if privrand=0:
+	 '<center><img src="img/centr/priv2.jpg" ></center>'
+	 'During girl keen on and begin frankly you caress.'
+	 act 'End_Up':gt'stripclub','forman'
+	 act 'let them':gt'stripclub','privsex'
+	 end
+if privrand>0:
+	 '<center><img src="pic/privat.jpg" ></center>'
+	 'The girls are very hot dance around you, you feel as an aphrodisiac.'
+     if money >= 1000:
+     act 'Another lap dance (1000 RUB)':gt'stripclub','privat'
+     end
+     act 'Leave the scene':gt'stripclub','forman'
+     end
+end
+
+if $ARGS[0]='stol':
+cla
+*clr
+clr
+gs'stat'
+'<center><img src="pic/stripclub2.jpg" ></center>'
+'On the stage lit girl dancing and undressing smartly before intense male audience.'
+
+     act 'See striptease':
+     cla
+     *clr
+	 clr
+	 gs'stat'
+	 set minut = minut + 15
+     '<center><img src="pic/stripclub4.jpg" ></center>'
+     'About you girl dancing on the tip clearly raschityvaya.'
+         if money >= 50:
+             act 'shove it 50 rubles':
+			 cla
+			 *clr
+			 set horny = horny + 5
+			 set minut = minut + 15
+			 set money = money - 50
+			 '<center><img src="pic/stripclub6.jpg" ></center>'
+			 'you stuck 50 rubles stripper panties and she invitingly start wagging her hips and shake tits in front of you, you feel like you slowly start to get excited.'
+			 act 'further':gt'stripclub','stol'
+			 end
+         end
+         
+         act 'downcast eyes':
+         cla
+         set horny = horny - 5
+         set minut = minut + 15
+         'You decided not to give money to a stripper and took from her eyes, you a bit of a shame and excitement decreases.'
+         act 'further':gt'stripclub','stol'
+         end
+     end
+     
+     act 'Move away from the scene':gt'stripclub','forman'
+end
+
+
+if $ARGS[0]='forwoman':
+cla
+*clr
+stripguy=0
+set minut = minut + 5
+'<center><B><font color=maroon>Strip club</font></B></center>'
+'<center><img src="pic/stripclub1.jpg" ></center>'
+clr
+gs'stat'
+
+     act 'GO_OUT':
+     cla
+     set minut = minut + 5
+     gt'stripclub','start'
+     end
+     
+     if hour < 23 and zenit>0 and minifoto=0:
+		 act 'photograph':
+			 set minut+=10
+			 'As soon as you get the camera as you immediately approached security guard, and said that there can not be removed, you apologize and hiding camera in her purse.'
+			 end
+		 end
+	 
+	 if hour < 23 and minifoto>0:
+		 act 'photograph':
+			 cla
+			 set minut+=60
+			 'Did you get a mini camera and start shooting carefully walking through the hall.'
+			 set stripfotorand=rand(0,10)
+			 if stripfotorand<2:
+				 set minifoto=0
+				 set stripdolg=1
+				 'For you fit and strong security guard took you by the hand leads to the exit, output is waiting for administrator, it takes you a camera, and says that you are fine 50000 RUB. and as long as you do not pay to join the club will not be able.'
+				 act'Go_Out':gt'stripclub','start'
+				 end
+			 if stripfotorand>=2 and stripfotorand<6:
+				 set shantfoto+=1
+				 'You can not do it normally take a picture, then surrounding the girl overshadow review, then the guard comes very close, but in the end you still manage to make a normal picture.'
+				 act'Go_Out':gt'stripclub','start'
+				 end
+			 if stripfotorand>=6:
+				 'You can not do it normally take a picture, then surrounding the girl overshadow review, then the guard comes very close.'
+				 act'Go_Out':gt'stripclub','start'
+				 end
+			 end
+		 end
+     
+     if hour < 23:
+         act 'Sit down at a table near the stage and watch striptease':gt'stripclub','stolW'
+     end
+end
+
+if $ARGS[0]='stolW':
+cla
+*clr
+clr
+gs'stat'
+stripguy=0
+'<center><img src="picVA/stripW.jpg" ></center>'
+'Appeared on the scene and athletic guys inflated, girls squeal and pop them money in the melting.'
+     if hour < 23:
+		 act 'See striptease':
+		 cla
+		 *clr
+		 clr
+		 gs'stat'
+		 set minut = minut + 15
+		 '<center><img src="picVA/stripW1.jpg" ></center>'
+		 'To you came stripper and hug you.'
+			 if money >= 50:
+				 act 'shove it 50 rubles':
+				 cla
+				 *clr
+				 set horny = horny + 5
+				 set minut = minut + 15
+				 set money = money - 50
+				 '<center><img src="picVA/stripW2.jpg" ></center>'
+				 'you stuck 50 rubles strippers and He sat on a chair you began to dance in front of you, He pulled off the melting and you will see him risen member. Stripper took you for your chest and tries to get her out from under the blouse.'
+				 act 'terminate':gt'stripclub','stolW'
+				 !act 'Hand touch dick':gt'cfnm','start'
+				 act 'Let him expose your breasts':gt'cfnm','start'
+				 end
+			 end
+			 
+			 act 'downcast eyes':
+			 cla
+			 set horny = horny - 5
+			 set minut = minut + 15
+			 'You decided not to give money to a stripper and looked away from him, you a bit of a shame and excitement decreases.'
+			 act 'further':gt'stripclub','stolW'
+			 end
+		 end
+     end
+     
+     act 'Move away from the scene':gt'stripclub','forwoman'
+end
+
+if $ARGS[0]='privsex':
+cla
+*clr
+set horny=0
+set orgasm+=1
+'<center><img src="img/centr/priv3.jpg" ></center>'
+'You widely spreads her legs and now one lick your pussy, bringing you to orgasm, and the other continues to caress the body.'
+act 'End_Up':gt'stripclub','forman'
+act 'yet':gt'stripclub','privsex1'
+end
+
+if $ARGS[0]='privsex1':
+cla
+*clr
+set girl+=2
+set lesbian+=1
+set privpicrand=RAND(4,7)
+'<center><img src="img/centr/priv<<privpicrand>>.jpg" ></center>'
+'You caress each other.'
+act 'End_Up':gt'stripclub','forman'
+if hour >23:
+act 'yet':gt'stripclub','privsex1'
+end
+end
+
+if $ARGS[0]='stpr1':
+cla
+*clr
+set horny+=30
+'<center><img src="img/centr/prsex1.jpg" ></center>'
+'In the room consists of two girls with strapon, and start fucking each other.'
+act 'End_Up':gt'stripclub','forman'
+act 'join':
+	 cla
+	 *clr
+	 set SUB+=3
+	 set girl+=2
+	 set lesbian+=1
+	 set sex+=1
+	 set anal+=1
+	 '<center><img src="img/centr/prsex2.jpg" ></center>'
+	 'You undress and kneels in front of girls, they surround you and con Strap to your face, Strap vskhvativ you start them greedily suck, licking the remnants of their juices.'
+	 act 'get cancer':
+		 cla
+		 *clr
+		 '<center><img src="img/centr/prsex3.jpg" ></center>'
+		 'You get up with cancer and one of the girls comes to you in the pussy while you continue to suck the second.'
+		 act'In Two Smoking Barrels':
+			 cla
+			 *clr
+			 set horny=0
+			 set orgasm+=1
+			 '<center><img src="img/centr/prsex4.jpg" ></center>'
+			 'You sodites one of the threesome and the second girl comes to you in the ass, They fuck you in both holes leading up to orgam.'
+			 act'further':
+				 cla
+				 *clr
+				 set cumlip+=1
+				 set cumface+=1
+				 set cumbrest+=1
+				 '<center><img src="img/centr/prsex5.jpg" ></center>'
+				 'When you are finished, girls get up above you and from their threesome poured liquid, the taste is very similar to sperm, it is poured into your mouth, on the face and chest.'
+				 act 'End_Up':gt'stripclub','forman'
+				 end
+			 end
+		 end
+	 end
+end
+
+if $ARGS[0]='stpr2':
+cla
+*clr
+set girl+=2
+set lesbian+=1
+'<center><img src="img/centr/prsex6.jpg" ></center>'
+'In the room consists of two girls with a strap-on in his hands, they strip you and freeze in anticipation of your wishes.'
+act 'fuck them':
+	 cla
+	 *clr
+	 set DOM+=3
+	 '<center><img src="img/centr/prsex7.jpg" ></center>'
+	 'You wear the strap, and the girls kneel and begin to suck it.'
+	 act 'fuck them':gt'stripclub','stpr3'
+	 end
+act 'surrender':
+	 cla
+	 *clr
+	 set SUB+=3
+	 '<center><img src="img/centr/prsex8.jpg" ></center>'
+	 'You get up on his knees, and girls dress Strap and give you their sucking, you with joy and do.'
+	 act 'surrender':gt'stripclub','stpr4'
+	 end
+end
+
+if $ARGS[0]='stpr3':
+cla
+*clr
+set horny=0
+set orgasm+=1
+set prsexrand=rand(9,13)
+'<center><img src="img/centr/prsex<<prsexrand>>.jpg" ></center>'
+'You`re fucking them as your soul wants, eventually ends themselves.'
+if hour >23:
+act 'yet':gt'stripclub','stpr3'
+end
+act 'End_Up':gt'stripclub','forman'
+end
+
+if $ARGS[0]='stpr4':
+cla
+*clr
+set horny=0
+set orgasm+=1
+set prsexrand=rand(14,19)
+'<center><img src="img/centr/prsex<<prsexrand>>.jpg" ></center>'
+'They twirl as you want, fucking something together that one, in the end you end.'
+if hour >23:
+act 'yet':gt'stripclub','stpr4'
+end
+act 'End_Up':gt'stripclub','forman'
+end
+--- stripclub ---------------------------------
+

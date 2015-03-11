@@ -1,0 +1,79 @@
+# danceclass
+set minut = minut + 5
+'<center><B><font color=maroon>Dance Class</font></B></center>'
+'<center><img src="pic/danceclass.jpg" ></center>'
+'Modern room with good lighting and mirrors for the development of dance skills.'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+set razdtumbler = 0
+
+
+     act 'Modern club dances':
+     cla
+     *clr
+     set minut = minut + 120
+     set fat = fat - 5
+     speed+= RAND (1,3)
+     set manna = manna - 5
+     set sweat = sweat + 3
+     dance+=RAND(5,15)
+     '<center><img src="pic/fit1.jpg" ></center>'
+     if dance<100:'You were taught modern dance club, which are very popular in discos.'
+     if dance>=100:'You tried podcherpnut something new in modern club dances, but you already know very well.'
+     act 'Get_Away':gt'fit','razd'
+     end
+
+     act 'Stritiz':
+     cla
+     *clr
+     set minut = minut + 120
+     set fat = fat - 5
+     set agil+= RAND (1,3)
+     set manna = manna - 8
+     set sweat = sweat + 3
+     !stripdance+=1
+     '<center><img src="pic/stripdance.jpg" ></center>'
+		 if dance>=100:
+		 stripdance+=RAND(2,10)
+		 'You trained passionately razdevatsya dance music.'
+		 if stripdance>=100:'But you could not learn anything new, all that you already know how great and you know.'
+		 end
+		 if dance<100:
+		 dance+=RAND(5,15)
+		 'Striptease for you too complex, you can not perform the dance moves combining them with strip. The teacher encourages you to learn how to start an ordinary club dances.'
+		 end
+     act 'Get_Away':gt'fit','razd'
+     end
+
+     act 'Dancing on a pole':
+     cla
+     *clr
+     set minut = minut + 120
+     set fat = fat - 10
+     set stren+= RAND (1,3)
+     vital+=RAND (1,3)
+     set manna = manna - 5
+     set sweat = sweat + 3
+     !poledance+=1
+     '<center><img src="pic/poledance.jpg" ></center>'
+     	 if dance>=100 and stripdance>=100 and stren>=80:
+		 poledance+=RAND(2,5)
+		 'You were taught various acrobatics on the pole.'
+		 if poledance>=100:'But you could not learn anything new, all that you already know how great and you know.'
+		 end
+		 if dance<100 or stripdance<100 or stren<80:
+		 'Already in the first exercise. It looks like this kind of dance you until the teeth'
+		 if stren<80:'The teacher explained that you dance on a pole, than the ability to dance, require more physical strength.'
+		 end
+     act 'Get_Away':gt'fit','razd'
+     end
+
+
+
+
+--- danceclass ---------------------------------
+

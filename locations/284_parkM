@@ -1,0 +1,177 @@
+# parkM
+if $ARGS[0]='start':
+set minut = minut + 30
+'You leisurely stroll in the park.'
+     if dayA > 15 and harakBoyA = 2:gs'boylove','tits'
+	 if dayA > 20 and harakBoyA = 1:gs'boylove','tits'
+	 if dayA > 25 and harakBoyA = 0:gs'boylove','tits'
+	 if dayA > 20 and harakBoyA = 2:gs'boylove','figure'
+	 if dayA > 25 and harakBoyA = 1:gs'boylove','figure'
+	 if dayA > 30 and harakBoyA = 0:gs'boylove','figure'
+	 gs'anekdot'
+	 '<<$boyA>> anecdote tells you "<<$anek>>".'
+	 
+	 act 'laugh.':
+     cla
+     set SUB = SUB + 1
+     set bfa = bfa + 1
+     xgt'parkM','a'
+     end
+     
+     act 'smile.':
+     cla
+     xgt'parkM','a'
+     end
+     
+     act 'not funny.':
+     cla
+     set DOM = DOM + 1
+     set bfa = bfa - 1
+     xgt'parkM','a'
+     end
+end
+
+if $ARGS[0]='a':
+
+     if harakBoyA = 0:
+     gs'stihi'
+     '<<$boyA>> read your poems <<$stihi>>.'
+     act 'further.':gt'parkM','aa'
+     end
+     if harakBoyA = 1:
+     '<<$boyA>> took you by the hand and you are walking through the deserted dimensional paths of the park.'
+     act 'further.':gt'parkM','aa'
+     end
+     if harakBoyA = 2:
+     '<<$boyA>> stopped and took you by the waist hugged. "You cool Devchenka." he said.'
+     act 'kiss.':gt'parkM','kiss'
+		 act 'Step_back.':
+		 cla
+		 set DOM = DOM + 1
+         set bfa = bfa - 1
+		 'You have removed a person from a kiss, <<$boyA>> does not look happy "Fair_Enough, Svetsik, went on a walk as pioneers."'
+		 act 'further.':gt'parkM','aa'
+		 end
+     end
+end
+
+if $ARGS[0]='kiss':
+set minut = minut + 15
+set bfa = bfa + 1
+set horny = horny + 5
+'<<$boyA>> kisses you and you feel, his hand grabs your ass and begins to knead her. You a little excite him touch, <<$boyA>> takes you by the hand and dragged into the bushes.'
+	 act 'Stop.':
+	 cla
+	 set DOM = DOM + 1
+     set bfa = bfa - 1
+	 'You pulled his hand out of his hands, <<$boyA>> does not look happy "Fair_Enough, Svetsik, went on a walk as pioneers."'
+	 act 'further.':gt'parkM','aa'
+	 end
+	 
+     act 'Go to guy.':gt'parkM','sexrand'
+end
+
+if $ARGS[0]='sexrand':
+clr
+*clr
+set minut = minut + 15
+set bfa = bfa + 1
+set horny = horny + 15
+clr
+gs'stat'
+'<center><img src="picVA/park.jpg" ></center>'
+'<<$boyA>> you dragged into the bushes and exposing your breasts started to lick her. It is very nice and you eyes closed immersed in what is bliss. <<$boyA>> stands in front of you on the knee and stretches your pussy.'
+	 act 'Stop.':
+	 cla
+	 set DOM = DOM + 1
+     set bfa = bfa - 1
+	 'You jumped aside and covered breasts, <<$boyA>> does not look happy "Fair_Enough, Svetsik, went on a walk as pioneers."'
+	 act 'further.':gt'parkM','aa'
+	 end
+	 
+     act 'allow.':gt'parkM','sexrand1'
+end
+
+if $ARGS[0]='sexrand1':
+clr
+*clr
+set minut = minut + 15
+set bfa = bfa + 1
+set horny = horny + 20
+clr
+gs'stat'
+'<center><img src="picVA/park1.jpg" ></center>'
+'<<$boyA>> bared your pussy and began to caress her hand, then gently, then increasing the tempo, you are very very exciting, your pussy wet and aching requiring fill yourself. <<$boyA>> whispers to you "Suck me!"'
+	 act 'We can not do it here.':
+	 cla
+	 set DOM = DOM + 1
+     set bfa = bfa - 1
+	 'You recoiled from the guy and began to dress, <<$boyA>> does not look happy "Fair_Enough, Svetsik, went on a walk as pioneers."'
+	 act 'further.':gt'parkM','aa'
+	 end
+	 
+     act 'Kneel.':gt'parkM','sexrand2'
+end
+
+if $ARGS[0]='sexrand2':
+clr
+*clr
+set minut = minut + 15
+set bfa = bfa + 1
+set horny = horny + 5
+set bj = bj + 1
+bja+=1
+gs'brosok'
+clr
+gs'stat'
+'<center><img src="picVA/park2.jpg" ></center>'
+'You knelt in front of a guy and <<$boyA>> buried his in your face sticking its <<dickA>> inch dick. You wrapped around his lips and began to suck.'
+'A few minutes later <<$boyA>> told you, "Babe, if you so will continue, I finish. Let`s have sex!"'
+
+     act 'continue to suck.':gt'parkM','sexrand3'
+     act 'sex.':gt'parkM','sexrand4'
+end
+
+if $ARGS[0]='sexrand3':
+clr
+*clr
+set minut = minut + 15
+set bfa = bfa + 1
+set horny = horny + 5
+set cumlip = cumlip + 1
+set swallow = swallow + 1
+clr
+gs'stat'
+'<center><img src="picVA/park3.jpg" ></center>'
+'You continued enthusiastically sucking dick and <<$boyA>> uttering a groan zdavlenny pulled you into his mouth a flood of vigorous and burning semen.'
+'You choking swallow it, but she did not want to umeschatsya in your mouths and poured out of him spreading his chin.'
+'<<$boyA>> got stuffed with cock from your mouth and ending with his trousers tucked, helped you climb and then said goodbye and left promising to call you.'
+     act 'Get_Away.':gt'park','start'
+end
+
+if $ARGS[0]='sexrand4':
+clr
+*clr
+set minut = minut + 15
+set sex = sex + 1
+sexa+=1
+clr
+gs'stat'
+'<center><img src="picVA/park4.jpg" ></center>'
+set pose = 1
+set $nameV = $boyA
+set dick = dickA
+set silavag = silavagA
+'<<$boyA>> oncTawil you on your feet and bowed you put his hands on the ground.'
+gs'orgazm','start' 
+act 'Get_Away.':gt'park','start'
+end
+
+if $ARGS[0]='aa':
+set minut = minut + 30
+'After strolling for an hour <<$boyA>> offered to accompany you.'
+
+act 'home.':gt'sexm','start'
+end
+--- parkM ---------------------------------
+

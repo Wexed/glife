@@ -1,0 +1,348 @@
+# lab
+if $ARGS[0]='start':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>Laboratory Karina</font></B></center>'
+'<center><img src="picQW/lab.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+     act 'GO_OUT':
+     cla
+     set minut = minut + 5
+     gt'down'
+     end
+     
+     act 'Train with Juugo':
+     cla
+     gt'lab','jugo'
+     end
+     
+     act 'Train with Karin':
+     cla
+     gt'lab','karin'
+     end
+     
+     if judosparday ! day:
+         act 'sparring (Juugo, mutant, power 600)':
+		 cla
+		 set judosparday = day
+		 set $nameV = 'Juugo'
+		 !stats
+		 set strenV = 600
+		 set speedV = 60
+		 set agilV = 60
+		 set reactV = 50
+		 set vitalV = 200
+		 set intelV = 50
+		 set willV = 50
+		 !skills
+		 set magikV = 100
+		 set boxingV = 100
+		 set shootV = 100
+		 !parameters
+		 set healthV = vitalV*10 + strenV*5
+		 set mannaV = intelV*10 + magikV*10
+		 set willpowerV = willV*10
+		 set BonusAtakV = 0
+		 set BonusDefV = 0
+		 !Programme of Action
+		 set program = 0
+		 set jugoFight = 2
+		 gt'fight','start'
+		 end
+     end
+     
+     if karinsparday ! day:
+         act 'sparring (Karin, magician6)':
+		 cla
+		 set karinsparday = day
+		 set $nameV = 'Karin'
+		 !stats
+		 set strenV = 60
+		 set speedV = 100
+		 set agilV = 100
+		 set reactV = 60
+		 set vitalV = 100
+		 set intelV = 100
+		 set willV = 100
+		 !skills
+		 set magikV = 100
+		 set boxingV = 100
+		 set shootV = 100
+		 !parameters
+		 set healthV = vitalV*10 + strenV*5
+		 set mannaV = intelV*6 + magikV*10
+		 set willpowerV = willV*10
+		 set BonusAtakV = 0
+		 set BonusDefV = 0
+		 !Programme of Action
+		 set program = 4
+		 set karinFight = 1
+		 gt'fight','start'
+		 end
+     end
+end
+
+if $ARGS[0]='jugo':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>Juugo</font></B></center>'
+'<center><img src="picPRE/jugoPRE.jpg" ></center>'
+'Juugo sitting on the floor and looking absently into space kudato.'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+act 'GO_OUT':gt'lab','start'
+     
+     if jugoday ! day:
+         act 'develop strength 1 h':
+         cla
+         set stren = stren + RAND (3,6)
+         set minut = minut + 60
+         set jugoday = day
+         'You do physical exercises under the supervision of Juugo.'
+         act 'GO_OUT':gt'lab','jugo'
+         end
+         
+         act 'reach speeds 1 h':
+         cla
+         set speed = speed + RAND (3,6)
+         set minut = minut + 60
+         set jugoday = day
+         'You do physical exercises under the supervision of Juugo.'
+         act 'GO_OUT':gt'lab','jugo'
+         end
+         
+         act 'develop agility 1 h':
+         cla
+         set agil = agil + RAND (3,6)
+         set minut = minut + 60
+         set jugoday = day
+         'You do physical exercises under the supervision of Juugo.'
+         act 'GO_OUT':gt'lab','jugo'
+         end
+         
+         act 'develop a reaction 1 h':
+         cla
+         set react = react + RAND (3,6)
+         set minut = minut + 60
+         set jugoday = day
+         'You do physical exercises under the supervision of Juugo.'
+         act 'GO_OUT':gt'lab','jugo'
+         end
+         
+         act 'develop endurance 1 h':
+         cla
+         set vital = vital + RAND (3,6)
+         set minut = minut + 60
+         set jugoday = day
+         'You do physical exercises under the supervision of Juugo.'
+         act 'GO_OUT':gt'lab','jugo'
+         end
+     
+     end
+
+end
+
+if $ARGS[0]='karin':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>Karina</font></B></center>'
+'<center><img src="picPRE/karinPRE.jpg" ></center>'
+'Karin as always studying something.'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+act 'GO_OUT':gt'lab','start'
+     act 'I`m too fat and not want to get fat.':
+     cla
+     '(Do_You) - Karin, I have oily dibilka unable to monitor their weight, wave your magic wand, that I had not grown fat.'
+     '(Karin) - ugh, that`s the same ponavylazyat of pussy downs, and I then vozis with them. Dick with you, Get. just remember, This spell forever, Only you will be able to come and change the waist to hips, and as fat consist of tits, I am only the highest mercy to you 1th size do, little, shoved silicone. And the decision has no reverse, or whether silicone doll, or live as a man, disenchants I`m not going to. Since you have more fat will not be absorbed by the body and parameters are kept magically, marvel not at the post of dystrophy and Marvel, that force will fall from malnutrition faster, you will no longer be internal reserves.'
+         act 'No no no . I will continue smarter.':gt'lab','karin'
+         act 'I would want that waist was...':
+         cla
+         set dounspell = 1
+         set TaliaDoun = input ("Waist in cm?")
+             if TaliaDoun <= 0:set TaliaDoun = 20
+             act 'I would want that your thighs are...':
+             cla
+             set bedraDoun = input ("Hips in cm?")
+                 if bedraDoun <= 0:set bedraDoun = 40
+                 act 'Enjoy your stupidity.':gt'lab','karin'
+             end
+         end
+     end
+     
+     if IvanPodstavaQW=2 and poverKAR=0 and softKAR=0:
+         act 'Ask for help with Ivan Karin':
+         cla
+         gs'stat'
+         'You explained the situation and asked her to Karin aid. Karin said thoughtfully. "I do not think, that there are some physical evidence of guilt Ivan. Need is achieved its recognition. I think it can be to capture and interrogate. Or drink his cunning truth serum and question. In any case."'
+             act 'military solution':
+			 cls
+			 poverKAR=1
+			 gs'stat'
+			 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+			 'You have decided to achieve recognition of the power of Ivan. Karin told you. You go to the apartment of Ivan. There vstretish with Juugo. It will help to solve the problem. only look, if he goes to the second level printing, he distraught. At the second level.'
+			 act 'GO_OUT':gt'lab','karin'
+			 end
+			 
+			 act 'tricky decision':
+			 cls
+			 softKAR=1
+			 gs'stat'
+			 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+			 'You have decided to achieve recognition Ivan cunning. Karin told you. You go to the apartment of Ivan. There we met a small business and obtyapaem.'
+			 act 'GO_OUT':gt'lab','karin'
+			 end
+			 
+         end
+     
+     end
+     
+     if poverKAR=2:
+         act 'Approach to Karin about the attack apartments Ivan':
+         cla
+         poverKAR=3
+         'You came to Karin and she sighed. "Yes_I_Am, failed. Juugo caught a bullet in his head and his strength went up to the next level, cure it, made almost invulnerable, but finally deprived of his mind. Juugo not only gained recognition Ivan, and not just kill him, He blew his attack of the entrance. But there are pluses. Cops think it was a gas explosion. But now you have to either pay the debt, or goes to prison."'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     
+     
+     if karinday ! day:
+         act 'develop intelligence 1 h':
+         cla
+         set intel = intel + RAND (3,6)
+         set minut = minut + 60
+         set karinday = day
+         'Did you do with Karin developing their intelligence.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+         
+         act 'will develop 1 h':
+         cla
+         set will = will + RAND (3,6)
+         set minut = minut + 60
+         set karinday = day
+         'Did you do with Karin developing their intelligence.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     
+     end
+     
+     if spelltuman = 0 and magik >= 1:
+         act 'Learn the techniques of fog 1 h':
+         cla
+         set minut = minut + 60
+         set spelltuman = 1
+         'You learned the technique call fog in battle.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     
+     if spellklon = 0 and magik >= 1:
+         act 'Learn the technique of cloning protection 1 h':
+         cla
+         set minut = minut + 60
+         set spellklon = 1
+         'You learned the technique of substitution clone themselves in battle.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     
+     if spellstun = 0 and magik >= 2:
+         act 'Learn techniques paralysis 1 h':
+         cla
+         set minut = minut + 60
+         set spellstun = 1
+         'You learned the technique of paralyzing the enemy.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     
+     if spellwind = 0 and magik >= 2:
+         act 'Learn blowing mist 1 h':
+         cla
+         set minut = minut + 60
+         set spellwind = 1
+         'You learned the technique of blowing mist.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     
+     if spellklon2 = 0 and magik >= 2:
+         act 'Learn triple cloning 1 h':
+         cla
+         set minut = minut + 60
+         set spellklon2 = 1
+         'You learned the technique of cloning Troynova.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     
+     if spellenergo = 0 and magik >= 3:
+         act 'learn energoschit 1 h':
+         cla
+         set minut = minut + 60
+         set spellenergo = 1
+         'You learned the technique Shield power.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     
+     if spellinit = 0 and magik >= 3:
+         act 'Learn the technique of time dilation 1 h':
+         cla
+         set minut = minut + 60
+         set spellinit = 1
+         'You learned the technique of time dilation.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     if magik >= 4 and spellhel = 0:
+     !'With this level of magic .'
+         act 'Learn the technique of treatment 1 h':
+         cla
+         set minut = minut + 60
+         set spellhel = 1
+         'You learned the technique of treatment.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     if magik >= 5 and spellavtoklon = 0:
+         act 'Learn techniques avtoklonirovaniya 1 h':
+         cla
+         set minut = minut + 60
+         set spellavtoklon = 1
+         'You learned the technique avtoklonirovaniya. This technique allows you to enter into battle with the already created three clones.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     if magik >= 6 and spellbefshild = 0:
+         act 'Learn the technique of pre- shield 1 h':
+         cla
+         set minut = minut + 60
+         set spellbefshild = 1
+         'You learned the technique of pre- shield. This technique allows you to enter into combat with a ready shield against the effects of nat.'
+         act 'GO_OUT':gt'lab','karin'
+         end
+     end
+     
+
+end
+--- lab ---------------------------------
+

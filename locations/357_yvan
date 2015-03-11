@@ -1,0 +1,194 @@
+# yvan
+$metkaM = $ARGS[0]
+$locM = $CURLOC
+$metka = $ARGS[0]
+$loc = $CURLOC
+'<center><B><font color=maroon>mansion</font></B></center>'
+'<center>bathroom</center>'
+if ymanrem[5]=0:'<center><img src="pic/ynill.jpg" ></center>'
+if ymanrem[5]=1:'<center><img src="pic/yrem.jpg" ></center>'
+if ymanrem[5]=2:'<center><img src="pic/yvan.jpg" ></center>'
+if ymanrem[5]=2:'<a href="exec:GT ''mirror'',''start''">mirror</a> <a href="exec: gt''vann'',''start'' ">have_a_wash</a>'
+clr
+gs'stat'
+if tampon > 0:
+'On a shelf is packing tampons. It will suffice for <B><<tampon>></B> time'
+else
+'<B><font color=red>You do not have tampons.</font></B>'
+end
+if stanok > 0:'On a shelf is a machine for shaving, it will have the blades out, that would shave <B><<stanok>></B> time.'
+if dirtbelo>0:'Your cart is <font color=red><B><<dirtbelo>></B></font> Power. dirty laundry.'
+if poroshok>0:
+'Under the bath worth can for washing powder, which is enough for <B><<poroshok>></B> washings.'
+else
+'<B><font color=red>You do not have washing powder and nothing to wash clothes.</font></B>'
+end
+if clrbelo > 0:
+'In the locker is <font color=blue><B><<clrbelo>></B></font>Power. clean linen. you can <a href="exec: gt''vann'',''start'' ">have_a_wash</a> change clothes.'
+else
+'<B><font color=red>You can not wash, because you do not what to change.</font></B>'
+end
+     if husband>0 and husbanday>0 and husporday!day and poroshok>=2:
+	 husband+=5
+	 set poroshok = poroshok - 2
+	 husporday=day
+	 'Washing machine washed smelly socks husband and his prossannye and properdannye truselya.'
+	 end
+     if dirtbelo>0 and poroshok>=dirtbelo:
+     clrbelo+=dirtbelo
+     poroshok-=dirtbelo
+     dirtbelo=0
+     'Washer washed the your laundry'
+     elseif poroshok<dirtbelo:
+     'You run out of powder for washing machine.'
+     end
+
+
+
+act 'Exit the room':minut+=1&gt'ymans'
+
+     if tanga=0:
+		 act 'Dress Underwear':
+		 cla
+		 set tanga = 1
+		 gt $curloc
+		 end
+     end
+     if tanga=1:
+		 act 'Do not wear underwear':
+		 cla
+		 set tanga = 0
+		 gt $curloc
+		 end
+     end
+
+if tampon > 0 and mesec > 0 and isprok = 0:
+     act 'change swab':
+     cla
+     *clr
+     set tampon = tampon - 1
+     set isprok = 1
+     set minut = minut + 5
+     set manna = manna - 5
+     '<center><img src="pics/wash3.jpg" ></center>'
+     'You change a tampon.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+
+if cumpussy > 0 and clrbelo > 0 or cumbelly > 0 and clrbelo > 0 or cumass > 0 and clrbelo > 0:
+     act 'substitution 5 min':
+     cla
+     *clr
+     set cumpussy = 0
+     set cumbelly = 0
+     set cumass = 0
+     set cumlip = 0
+     set cumface = 0
+     set cumanus = 0
+     set cumfrot = 0
+     set sweat = sweat - 1
+     set minut = minut + 5
+     set clrbelo = clrbelo - 1
+     set dirtbelo = dirtbelo + 1
+     '<center><img src="pics/wash5.jpg" ></center>'
+     'You carefully washed sperm in the bathroom.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+if cumlip > 0 or cumface > 0:
+     act 'Wash off with facial cum 5 min':
+     cla
+     *clr
+     set cumlip = 0
+     set cumface = 0
+     set sweat = sweat - 1
+     set minut = minut + 5
+     '<center><img src="pic/facesp.jpg" ></center>'
+     'You carefully washed sperm from the face.'
+     act 'Go_Out':gt $curloc
+     end
+
+end
+
+if mop ! 1:
+     act 'wash off cosmetics':
+     cla
+     set mop = 1
+     set minut = minut + 15
+     'You have washed off cosmetics.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+
+if klisma = 1 and klismaday ! day:
+     act 'Make yourself an enema 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set klismaday = day
+     set klismaday1= 1
+     '<center><img src="picV/klisma.jpg" ></center>'
+     'You have set yourself an enema and clean the intestines, now your ass ready for anal sex.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+if vibrator = 1 and vibratorIN=0:
+     act 'insert the vibrator 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set vibratorIN = 1
+     if vagina < 30:set vagina = vagina + 2
+     '<center><img src="pic/vibrator.jpg" ></center>'
+     'You leaned over and put in a phallic object currently in the pussy.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+if vibrator = 1 and vibratorIN=1:
+     act 'Remove the vibrator 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set vibratorIN = 0
+     if vagina < 30:set vagina = vagina + 1
+     '<center><img src="pic/vibrator.jpg" ></center>'
+     'You bent down and took out a vibrator from the vagina.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+
+if analplug = 1 and analplugin=0 and klismaday1= 1:
+     act 'Insert a butt plug 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set analplugIN = 1
+     if anus < 30:set anus = anus + 5
+     '<center><img src="pic/analplug.jpg" ></center>'
+     if butpluguse > 0:'You tilt and habitual movement inserted itself anal plug.'
+     if butpluguse = 0:set butpluguse = 1&'"I do this not even touch,and why I bought!" think you. Then they all decided to take a closer look. feel, sniffed, in general. "Oh," think you "It is necessary to develop the ass ever, It will have great adventures, one might even say a huge and thick adventures with crimson heads, uh, I was fascinated by that." Scratched you thin fingers unusually hairy head. Then you sent gag myself in the ass, felt a little hurt when rastyagivatsya anus began taking a foreign object, but as soon as the widest part plunged into the murky depths of anal, become easier, and gag herself practically flew to the end, and stood on the situation of producers place.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+if analplug = 1 and analplugin=1:
+     act 'Remove the butt plug 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set analplugIN = 0
+     if anus < 30:set anus = anus + 1
+     '<center><img src="pic/analplug.jpg" ></center>'
+     if butpluguse > 0:'You bent down and removed from the habitual movement itself anal plug.'
+     act 'Go_Out':gt $curloc
+     end
+end
+--- yvan ---------------------------------
+

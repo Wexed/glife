@@ -1,0 +1,42 @@
+# gdk
+$metka = $ARGS[0]
+$loc = $CURLOC
+music_on=0
+gs'stat'
+gs'time'
+'<center><B><font color=maroon>The House of Culture</font></B></center>'
+     if hour>=9 and hour<20:
+	 '<center><img src="etogame/dk.jpg"></center>'
+	 'In the evenings 20.00 prior_to 23.00 dancing. entrance 25 rubles.'
+	 end
+     if hour>=20 and hour<=23:
+	 '<center><img src="etogame/dk_night.jpg"></center>'
+	 'At the entrance to the recreation center is full of youth, guys just stand and smoke, joke and who-then look out for. Girls in groups on 2-3 man, what-then discuss, who-then just thumps in the bushes.'
+	 if money>=25:act'Join the club':money-=25&minut+=15&gt'gdkin'
+	 end	
+act 'Go_Out':gt'gorodok'
+
+     if hour>=16 and hour<=20:
+     'Now the house of culture sports sections.'
+     act'Go to section':gt'gdksport'
+     end
+     if hour>=8 and hour<=18:
+     'Now the house of culture rabotet library.'
+     act'Go to the library':gt'gdkbibl'
+     end
+     if hour<9:'<center><img src="etogame/dk_night.jpg"></center>'
+
+
+
+ if week<6:
+	 if hour>=16 and hour<18:
+	 'Your sister <a href="exec:SiSgdk=1&GT ''sister''">Anya</a> sitting in the company of boys and devchenok and drinks beer.'
+	 end
+ end
+ if week>=6:
+	 if hour>=11 and hour<18:
+	 'Your sister <a href="exec:SiSgdk=1&GT ''sister''">Anya</a> sitting in the company of boys and devchenok and drinks beer.'
+	 end
+ end
+--- gdk ---------------------------------
+

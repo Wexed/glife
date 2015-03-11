@@ -1,0 +1,652 @@
+# rinwork
+if $ARGS[0]='start':
+
+$answerrin={
+if tipred=pokti:
+	 if pokvnirand=0:
+	 pokpay=RAND(1000,1200)
+	 end
+	 if pokvnirand=1:
+	 pokpay=RAND(1200,1500)
+	 end
+	 if pokvnirand=2:
+	 pokpay=RAND(1500,2000)
+	 end
+else
+$rinitog='<<$poktip>> puts thing into place and leaves'
+pokupatel=0
+end
+}
+$answerrin2={
+act 'call price':
+cla
+prodpay = input ("Enter the price of things")
+     if prodpay<1000:prodpay=prodpayum
+'You set a price in <<prodpay>> rubles'
+
+     if prodpay<=pokpay:
+     poknorand=RAND(1,100+vnesh)
+         if poknorand>=10:
+		 rinmon+=prodpay
+		 rinvesh+=1
+		 'The buyer took the thing and paid <<prodpay>> rubles'
+		 act 'trading on':gt'rinwork','start'
+		 else
+		 'The buyer turns the thing in his hands, <<prodpay>> rubles is too expensive'
+		 dynamic $answerrin3
+		 act 'I can not less, (pick up a thing)':gt'rinwork','start'
+		 end
+     end
+     if prodpay>pokpay and prodpay<=pokpay+100:
+     poknorand=RAND(1,100+vnesh)
+         if poknorand>=10:
+         'The buyer turns the thing in his hands, <<prodpay>> rubles is too expensive'
+         dynamic $answerrin3
+         act 'I can not less, (pick up a thing)':gt'rinwork','start'
+         else
+         'The buyer puts thing into place and leaves'
+         act 'trading on':gt'rinwork','start'
+         end
+     end
+     if prodpay>pokpay+100:
+     'The buyer puts thing into place and leaves'
+     act 'trading on':gt'rinwork','start'
+     end
+end
+}
+$answerrin3={
+
+if prodpay>=1100:
+	 act 'Reduce the price 100 RUB':
+	 cla
+     'You have reduced the price to 100 rubles.'
+     poknorand=RAND(1,100+vnesh)
+         if poknorand>=10:
+         rinmon+=prodpay-100
+		 rinvesh+=1
+		 'The buyer took the thing and paid <<prodpay-100>> rubles'
+		 act 'trading on':gt'rinwork','start'
+         else
+         'The buyer puts thing into place and leaves'
+         act 'trading on':gt'rinwork','start'
+         end
+	 end
+end
+
+if prodpay>=1050:
+	 act 'Reduce the price 50 RUB':
+	 cla
+	 'You have reduced the price to 50 rubles.'
+     poknorand=RAND(1,100+vnesh)
+         if poknorand>=30:
+         rinmon+=prodpay-50
+		 rinvesh+=1
+		 'The buyer took the thing and paid <<prodpay-50>> rubles'
+		 act 'trading on':gt'rinwork','start'
+         else
+         'The buyer puts thing into place and leaves'
+         act 'trading on':gt'rinwork','start'
+         end
+	 end
+end
+}
+
+cla
+*clr
+gs'stat'
+'<center><B><font color=maroon>market</font></B></center>'
+'<center><img src="pic/rinok.jpg" ></center>'
+'You stand for the tray with clothes in anticipation of buyers.'
+'At the checkout <<rinmon>> rubles, sold_out <<rinvesh>> things.'
+'The average price in the market <<prodpayum>>'
+
+     if hour=14:
+     'Arthur came to you and you have started to calculate how much you should give Arthur.'
+         act 'Give Arthur money':
+         cla
+         *clr
+         rinart=rinvesh*1000
+         rinmon=rinmon-rinart
+         money+=rinmon
+         'You gave Arthur <<rinart>> rubles sold <<rinvesh>> things.'
+         'Today you have earned <<rinmon>> rubles'
+         gs'stat'
+			 if rinart<arturplan:
+			 arturnoo+=1
+			 'uh, Svetka, bad work, not enough money. You`re so razorish me at all.'
+			 else
+			 arturyes+=1
+			 'Maladets Svetik, good job.'
+			 end
+		 if arturnoo>arturyes:arturnoo=arturnoo-arturyes&arturyes=0
+		 if arturyes>arturnoo:arturyes=arturyes-arturnoo&arturnoo=0
+		 if arturnoo=arturyes:arturnoo=0&arturyes=0
+         rinmon=0
+         rinvesh=0
+             if arturnoo>10:
+             arturnoo=0
+             work=0
+             workrin=0
+             'uh, Jam you already savsem. Here`s your work. get_out, that I did not see you anymore!'
+             act 'Get_Away':gt'street'
+             exit
+             end
+         Set rinrand = RAND (1,100)
+             if rinrand < vnesh and palevorin = 0 and rinhoz = 0:
+			 '(Arthur) - Wai, Svetik, you and I have not even met good. Come into the container, encroach barbecue, drink, get_acquainted.'
+				 act 'Opt_Out':
+				 cla
+				 'You became otnekivatsya, Arthur told you. Wai, why insult, Here you have the tray removed, dust, dirt, I`m fine and I can take you.'
+				 act 'Fair_Enough, let`s go have a drink':gt 'RynokHoz','beginning'
+				     act 'No.':
+				     cla
+				     arturplan+=1000
+				         if money>=1000:
+				         money-=1000
+				         'Wai, you dirty things, lend a thousand rubles, it is fine. You gave Arthur money.'
+				         else
+				         'Fair_Enough, go already.'
+				         end
+                     act 'Get_Away.':gt 'street'
+                     end
+				 end
+			 act 'Let`S_Go':gt 'RynokHoz','beginning'
+			 exit
+			 end
+			 
+			 if rinrand < vnesh and palevorin = 0 and rinhoz = 1:
+			 '(Arthur) - Wai, Svetik. Come into the container, encroach barbecue, drink, rest. He walked right up to you and slapped his hand on the pope.'
+				 act 'Opt_Out':
+				 cla
+				 'You became otnekivatsya, Arthur told you. Wai, why insult, Here you have the tray removed, dust, dirt, I`m fine and I can take you.'
+				 act 'Fair_Enough, let`s go have a drink':gt 'RynokHoz','beginning'
+				     act 'No.':
+				     cla
+				     arturplan+=1000
+				         if money>=1000:
+				         money-=1000
+				         'Wai, you dirty things, lend a thousand rubles, it is fine. You gave Arthur money.'
+				         else
+				         'Fair_Enough, go already.'
+				         end
+                     act 'Get_Away.':gt 'street'
+                     end
+				 end
+			 act 'Let`S_Go':gt 'RynokHoz','beginning'
+			 exit
+			 end
+			 
+			 
+			 
+         act 'Leave work':gt'street'
+         end 
+     exit
+     end
+     
+     if hour<14:
+     pokrand=RAND(0,1)
+		 if pokrand=0:
+		 $pokup='Buyers can not see.'
+		 pokupatel=0
+		 ''
+		 'Market is Aunt Kate with a trolley in which it carries cakes and coffee.'
+		 end
+     
+		 if pokrand=1:
+		 poktiprand=RAND(0,7)
+		 pokupatel=1
+		 if poktiprand=0:$pokup='By tray approached middle-aged man.'&$poktip='The_Man'&pokti=1
+		 if poktiprand=1:$pokup='By tray approached by a young man.'&$poktip='guy'&pokti=2
+		 if poktiprand=2:$pokup='By tray guy came up teenager.'&$poktip='boy'&pokti=3
+		 if poktiprand=3:$pokup='By tray woman came.'&$poktip='woman'&pokti=1
+		 if poktiprand=4:$pokup='To the girl came trough.'&$poktip='girl'&pokti=2
+		 if poktiprand=5:$pokup='By tray approached teen girl.'&$poktip='Devchenka'&pokti=3
+		 if poktiprand=6:$pokup='By tray approached the old man.'&$poktip='old_man'&pokti=0
+		 if poktiprand=7:$pokup='Grandma went to the tray.'&$poktip='granny'&pokti=0
+		 end
+		 '<b><<$pokup>></B>'
+			 if pokupatel=1:
+				 act 'what would you like?':
+				 cla
+				 minut+=15
+				 pokvnirand=RAND(0,2)
+					 if pokvnirand=0:
+					 '<<$poktip>> without interest examines Sell items.'
+					 
+					 end
+					 if pokvnirand=1:
+					 '<<$poktip>> with interest examines Sell items.'
+					 
+					 end
+					 if pokvnirand=2:
+					 '<<$poktip>> picks up a thing.'
+					 
+					 end
+					 
+					 
+					 !dynamic $answerrin
+					 
+					 act 'Now it is very fashionable':
+					 cla
+					 tipred=3
+					 dynamic $answerrin
+					 '<<$rinitog>>'
+						 if pokupatel=0:act 'further':gt'rinwork','start'
+						 if pokupatel=1:
+						 '<<$poktip>> asks you for a price'
+						 dynamic $answerrin2
+						 end
+					 end
+					 
+					 act 'Thing is very high-quality and reliable':
+					 cla
+					 tipred=1
+					 dynamic $answerrin
+					 '<<$rinitog>>'
+						 if pokupatel=0:act 'further':gt'rinwork','start'
+						 if pokupatel=1:
+						 '<<$poktip>> asks you for a price'
+						 dynamic $answerrin2
+						 end
+					 end
+					 
+					 act 'Give not expensive':
+					 cla
+					 tipred=0
+					 dynamic $answerrin
+					 '<<$rinitog>>'
+						 if pokupatel=0:act 'further':gt'rinwork','start'
+						 if pokupatel=1:
+						 '<<$poktip>> asks you for a price'
+						 dynamic $answerrin2
+						 end
+					 end
+					 
+					 act 'You really are':
+					 cla
+					 tipred=2
+					 dynamic $answerrin
+					 '<<$rinitog>>'
+						 if pokupatel=0:act 'further':gt'rinwork','start'
+						 if pokupatel=1:
+						 '<<$poktip>> asks you for a price'
+						 dynamic $answerrin2
+						 end
+					 end
+				 end
+			 end
+			 
+			 act 'laze 15 minutes':
+			 minut+=15
+			 gt'rinwork','start'
+			 end
+			 
+			 if hour=9:
+			 rintakrand=RAND(0,5)
+				 if rintakrand=0:
+				 $rintak='The tray in front of Hassan unload clothes saleswoman Nadia.'
+					 act 'See Hassan and Nadia':
+					 cla
+					 minut+=15
+					 talkrand=RAND(0,2)
+						 if talkrand=0:'Nadia Hassan pronounces. "Today, and then the fine ladies, I need money."'
+						 if talkrand=1:'Hassan opens trunks and puts clothes on the counter.'
+						 if talkrand=2:'Hassan drags trunks to its tray.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=1:
+				 $rintak='In the next tray Abdul talking loudly gives clothes saleswoman Anna.'
+					 act 'Look at Abdul and Anna':
+					 cla
+					 minut+=15
+					 talkrand=RAND(0,2)
+						 if talkrand=0:'Abdul swears. "You already Jam, can not sell anything!" Anna parries, "so you tell me rotten crap for sale give, take it no one wants."'
+						 if talkrand=1:'Abdul slapped ass Anna, she pretended that nothing had happened.'
+						 if talkrand=2:'Abdul drags trunks to its tray.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=2:
+				 $rintak='Abdul Hassan and stand next to your tray and guttural than talking.'
+					 act 'Look at Caucasians':
+					 cla
+					 minut+=15
+					 talkrand=RAND(0,2)
+						 if talkrand=0:'Abdul Hassan and continue to talk about something, language and you do not know what they say can not understand.'
+						 if talkrand=1:'Abdul Hassan pyalyatsya you and discussing something gogochut.'
+						 if talkrand=2:'Abdul looks at you and says Hasan, "Look what a girl, sponge persik, Islands."'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=3:
+				 $rintak='Anna hanging clothes in the tray and shouting with Nadia.'
+					 act 'Chat with sex!':
+					 cla
+					 annaQW+=1
+					 NadiaQW+=1
+					 minut+=15
+					 talkrand=RAND(0,2)
+						 if talkrand=0:
+						 'Anya raskazyvaet, that her skirt had to alter, so here is a Jew excellent tailor, He works in an office building.'
+						 if clener=0:clener=1
+						 end
+						 if talkrand=1:'Nadia tells how her subway molested a pervert, rubbed on the back member.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=4:
+				 $rintak='Arthur talking about something with Abdullah.'
+					 act 'Look at Caucasians':
+					 cla
+					 minut+=15
+					 talkrand=RAND(0,2)
+						 if talkrand=0:'Abdul and Arthur continue to talk about something, language and you do not know what they say can not understand.'
+						 if talkrand=1:'Abdul and Arthur pyalyatsya you and discussing something gogochut.'
+						 if talkrand=2:'Abdul looks at you and says Arthur, "Look what a girl, sponge persik, Islands."'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=5:
+				 $rintak='Arthur, Abdul Hassan and neighing loudly and what you do not speak the language they understand.'
+					 act 'Look at Caucasians':
+					 cla
+					 minut+=15
+					 talkrand=RAND(0,2)
+						 if talkrand=0:'Caucasians continue to talk about something, language and you do not know what they say can not understand.'
+						 if talkrand=1:'Caucasians pyalyatsya you and discussing something gogochut.'
+						 if talkrand=2:'Abdul looks at you and says other Caucasians, "Look what a girl, sponge persik, Islands."'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+			 '<<$rintak>>'
+			 end
+			 if hour=10:
+			  rintakrand=RAND(0,5)
+				 if rintakrand=0:
+				 $rintak='Hassan sitting on a chair dejectedly cheburek chews and talks with his mouth full with a saleswoman Nadia.'
+					 act 'See Hasan':
+					 cla
+					 minut+=15
+					 'Hassan said Nadia "Nadia, zachem minute refuse? encroach Shlikov, drink wine".'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=1:
+				 $rintak='The tray sitting in front of Nadia and crossword puzzles.'
+					 act 'Chat with Nadia':
+					 cla
+					 !annaQW+=1
+					 NadiaQW+=1
+					 minut+=15
+					 'Nadia leaves the crossword and willingly support the conversation about any nonsense.'
+						 if clener=0:
+						 clener=1
+						 'Nadia tells the story of a Jew tailor working in an office building.'
+						 end
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=2:
+				 $rintak='The tray in front of buyers came to Nadia and she fusses before laying them goods.'
+					 act 'Chat with Nadia':
+					 cla
+					 !annaQW+=1
+					 NadiaQW-=1
+					 minut+=15
+					 'Nadia is not happy, light, do not distract, I have buyers.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=3:
+				 $rintak='In the next tray Anna drinks coffee.'
+					 act 'Chat with Anna':
+					 cla
+					 annaQW+=1
+					 !NadiaQW-=1
+					 minut+=15
+					 'Anya support a conversation with you and tells you what nonsense.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=4:
+				 $rintak='In the next tray Anna tries vtyuhat buyers stale goods.'
+					 act 'Chat with Anna':
+					 cla
+					 annaQW-=1
+					 !NadiaQW-=1
+					 minut+=15
+					 'Anya is not happy, light, do not distract, I have buyers.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=5:
+				 $rintak='Anna talks about trifles with Aunt Katya.'
+					 act 'Chat with Anna and Aunt Katya':
+					 cla
+					 annaQW+=1
+					 !NadiaQW+=1
+					 tetaKataQW+=1
+					 minut+=15
+					 'Aunt Kate praises cakes, and Anya complains, it currently has on these pies ass Naela twice more than was..'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+			 '<<$rintak>>'
+			 end
+			 if hour=11:
+			 rintakrand=RAND(0,5)
+				 if rintakrand=0:
+				 $rintak='By Nadia came three Caucasian, Aslan, Camille and Mukhtar and began to molest her, and she swore at them and tried to dodge.'
+					 act 'Look at Nadia and Caucasians.':
+					 cla
+					 !annaQW+=1
+					 !NadiaQW+=1
+					 !tetaKataQW+=1
+					 minut+=15
+					 'Caucasians seem to be leaning towards sex Nadia.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=1:
+				 $rintak='The tray in front of Nadia sits and eats pie.'
+					 act 'Chat with Nadia':
+					 cla
+					 !annaQW+=1
+					 NadiaQW+=1
+					 minut+=15
+					 'Nadia leaves the crossword and willingly support the conversation about any nonsense.'
+						 if clener=0:
+						 clener=1
+						 'Nadia tells the story of a Jew tailor working in an office building.'
+						 end
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=2:
+				 $rintak='The tray in front of buyers came to Nadia and she fusses before laying them goods.'
+					  act 'Chat with Nadia':
+					 cla
+					 !annaQW+=1
+					 NadiaQW-=1
+					 minut+=15
+					 'Nadia is not happy, light, do not distract, I have buyers.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=3:
+				 $rintak='In the next tray Anna reads the newspaper.'
+					 act 'Chat with Anna':
+					 cla
+					 annaQW+=1
+					 !NadiaQW-=1
+					 minut+=15
+					 'Anya support a conversation with you and tells you what nonsense.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=4:
+				 $rintak='By Anya from a nearby tray came buyers.'
+					 act 'Chat with Anna':
+					 cla
+					 annaQW-=1
+					 !NadiaQW-=1
+					 minut+=15
+					 'Anya is not happy, light, do not distract, I have buyers.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=5:
+				 $rintak='By Anya came three Caucasian, Aslan, Camille and Mukhtar and began to molest her, she excuses and mostly silent fright.'
+					  act 'Look at Anya and Caucasians.':
+					 cla
+					 !annaQW+=1
+					 !NadiaQW+=1
+					 !tetaKataQW+=1
+					 minut+=15
+					 'Caucasians seem to be leaning towards sex Anya.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+			 '<<$rintak>>'
+			 end
+			 if hour=12:
+			 rintakrand=RAND(0,5)
+				 if rintakrand=0:
+				 $rintak='Hasan bought cheburek and eat it sitting behind Nadia tray.'
+					 act 'Chat with Nadia':
+					 cla
+					 !annaQW+=1
+					 NadiaQW-=1
+					 minut+=15
+					 'Nadia shy to talk with Hassan.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=1:
+				 $rintak='Nadia Thorog with customers.'
+					  act 'Chat with Nadia':
+					 cla
+					 !annaQW+=1
+					 NadiaQW-=1
+					 minut+=15
+					 'Nadia is not happy, light, do not distract, I have buyers.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=2:
+				 $rintak='Nadia talks with Anna.'
+					 act 'Chat with sex!':
+					 cla
+					 annaQW+=1
+					 NadiaQW+=1
+					 minut+=15
+					 talkrand=RAND(0,2)
+						 if talkrand=0:
+						 'Anya raskazyvaet, that her skirt had to alter, so here is a Jew excellent tailor, He works in an office building.'
+						 if clener=0:clener=1
+						 end
+						 if talkrand=1:'Nadia tells how her subway molested a pervert, rubbed on the back member.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=3:
+				 $rintak='Anya sells clothing buyers.'
+					 act 'Chat with Anna':
+					 cla
+					 annaQW-=1
+					 !NadiaQW-=1
+					 minut+=15
+					 'Anya is not happy, light, do not distract, I have buyers.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=4:
+				 $rintak='Anya drinking coffee sitting at his tray.'
+					 act 'Chat with Anna':
+					 cla
+					 annaQW+=1
+					 !NadiaQW-=1
+					 minut+=15
+					 'Anya support a conversation with you and tells you what nonsense.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+				 if rintakrand=5:
+				 $rintak='Nagy from idleness catches flies.'
+					 act 'Chat with Nadia':
+					 cla
+					 !annaQW+=1
+					 NadiaQW+=2
+					 minut+=15
+					 'Nadia was glad that at least some entertainment and fun to hang out with you.'
+					 act 'further':gt'rinwork','start'
+					 end
+				 end
+			 '<<$rintak>>'
+			 end
+			 if hour=13:
+			 rintakrand=RAND(0,5)
+				 if rintakrand=0:
+				 $rintak='Hassan began to slowly collect the goods from Nadi.'
+				 end
+				 if rintakrand=1:
+				 $rintak='Anya sits and counts the profit per day.'
+				 end
+				 if rintakrand=2:
+				 $rintak='Nadia calculates profit per day.'
+				 end
+				 if rintakrand=3:
+				 $rintak='Abdul began to collect the goods from Ani.'
+				 end
+				 if rintakrand=4:
+				 $rintak='Past your tray was Arthur.'
+				 end
+				 if rintakrand=5:
+				 $rintak='Aunt Katya finishes trade pies and seems about to leave.'
+				 end
+			 '<<$rintak>>'
+			 end
+			 
+			 
+			 if money>=200:
+				 act 'have_a_bite 15 minutes (200 RUB)':
+				 cla
+				 *clr
+				 gs'stat'
+				 tetaKataQW+=1
+				 '<center><img src="pics/food.jpg" ></center>'
+				 set minut = minut + 15
+				 set health = health + 10
+				 set manna = manna + 20
+				 money-=200
+					 if energy >= 30:
+					  set fat = fat + 5
+					 'You can no longer have.'
+					 end
+					 if energy >= 20 and energy < 30:
+					 set fat = fat + 3
+					 set energy = energy + 10
+					 'You pushed through the power of a meal.'
+					 end
+					 if energy < 20:
+					 set energy = energy +20
+					 !set fat = fat + 1
+					 'You gladly ate cooked food.'
+					 end
+					 if water >= 20:
+					 'Coffee you no longer climbs.'
+					 end
+					 if water < 20:
+					 'You gladly drank a mug of coffee.'
+					 set water = water +20
+					 end
+				 act 'throw leftovers':gt'rinwork','start'
+			 end
+		 end
+	 end
+
+
+end
+--- rinwork ---------------------------------
+

@@ -1,0 +1,36 @@
+# amrul
+*PL 'You bent over the desk.'
+*P '<center><img src="casino/amrul.gif" ></center>'
+ACT 'make a bet':
+	st_1 = input 'enter the amount'
+	if money<st_1:
+		msg 'You do not have enough money'
+		gt 'roulette'
+	end
+	if st_1<0:
+		msg 'wrong, try again'
+		gt 'amrul'
+	end
+	if st_1>1000:
+		msg 'maximum rate 1000 rubles'
+		gt 'amrul'
+	end
+	set money=money-st_1
+	gt 'rate'
+END
+ACT 'away from the table':
+	gt 'roulette'
+END
+kh=0
+chnch=0
+mb=0
+du=0
+series=0
+chi=100
+x_rul=100
+
+clr
+gs'stat'
+set minut=minut + 5
+--- amrul ---------------------------------
+

@@ -1,0 +1,46 @@
+# dachaogr0
+clr
+gs'stat'
+gs'time'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+'<center><B><font color=maroon>garden</font></B></center>'
+'<center><img src="etogame/burjan.jpg" ></center>'
+if etoexhib<11:'Vegetable garden all overgrown with weeds and weeds. Any crop are outgrowths impossible. It looks like former owners did not care about him. We must figure out how to dig the garden.'
+if etoexhib=11:'Workers lazy and smoke breaks dig in the ground, pull weeds.'
+if etoexhib=>12 and etoexhib<14:'Workers digging the ground. Stow stumps.'
+if etoexhib=14 and temp!day:
+	cls
+	gs'stat'
+	'<center><B><font color=maroon>garden</font></B></center>'
+	'<center><img src="etogame/vspah.jpg" ></center>'
+	'Your kitchen garden plowed. Beds neatly razchercheny. planted with apple trees.'
+	'Satisfied drunken workers take a break in the shade. I_Get_It, on the money they took a drink. And, apparently under doping, quickly finished.'
+	act 'square': gt'etoexhib', 'pos14'
+	end
+
+if etoexhib=15 and temp!day:
+	cls
+	gs'stat'
+	'<center><B><font color=maroon>garden</font></B></center>'
+	'<center><img src="etogame/vspah.jpg" ></center>'
+	'Your kitchen garden plowed. Beds neatly razchercheny. planted with apple trees.'
+	'Tired workers are resting in the shade.'
+	act 'pay money':
+		cla
+		*clr
+		'You paid workers 3000 rubles.'
+		money-=3000
+		etoexhib=16
+		gs'stat'
+		act 'to the house':minut+=15&gt'dachamy'
+		end
+	if etoexhib=15 and horny>30:
+		act 'pay body':gt 'etoexhib','pos13'
+		end
+	end	
+act 'to the house':minut+=15&gt'dachamy'
+--- dachaogr0 ---------------------------------
+

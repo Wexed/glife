@@ -1,0 +1,35 @@
+# ymans
+$metkaM = $ARGS[0]
+$locM = $CURLOC
+$metka = $ARGS[0]
+$loc = $CURLOC
+'<center><B><font color=maroon>mansion</font></B></center>'
+'<center>hall</center>'
+if ymanrem[3]=0:'<center><img src="pic/ynill.jpg" ></center>'
+if ymanrem[3]=1:'<center><img src="pic/ynill.jpg" ></center>'
+if ymanrem[3]=2:'<center><img src="pic/yrem.jpg" ></center>'
+if ymanrem[3]=3:'<center><img src="pic/ymans.jpg" ></center>'
+if ymanrem[3]=3:'<a href="exec:GT ''mirror'',''start''">mirror</a>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+
+
+if ymanrem[3]>=1:act 'bedroom':minut+=1&gt'ybedr'
+if ymanrem[3]>=1:act 'bathroom':minut+=1&gt'yvan'
+if ymanrem[3]>=1:act 'kitchen':minut+=1&gt'ykuh'
+if ymanrem[3]>=1:act 'hall':minut+=1&gt'yzal'
+if ymanrem[3]>=1:act 'fireplace room':minut+=1&gt'ykamin'
+if ymanrem[3]>=1:act 'nursery':minut+=1&gt'ydet'
+if ymanrem[3]>=1:act 'library':minut+=1&gt'ybib'
+if ymanrem[3]>=1:act 'gym':minut+=1&gt'ysport'
+if ymanrem[3]>=1:act 'cabinet':minut+=1&gt'ykabinet'
+if nude = 0:act 'Enter the site':minut+=5&gt'youplace'
+
+
+
+--- ymans ---------------------------------
+

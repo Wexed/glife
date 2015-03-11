@@ -1,0 +1,210 @@
+# artemEv
+$din_artom_bj={
+	 act 'suck':
+	 cls
+	 minut+=5
+	 horny+=10
+	 bj+=1
+	 if npcSex[2]=0:npcSex[2]=1&guy+=1
+	 if artomBJQW=0:artomBJQW=1
+	 sub+=1
+	 swallow+=1
+	 cumlip+=1
+	 dick=16
+	 artompower-=1
+	 gs'stat'
+	 '<center><img src="qwest/alter/Ev/artomBJ.jpg" ></center>'
+	 dynamic $dinrandbj
+	 dynamic $dinrandswallow
+	 act 'go home':gt'gorodok'
+	 end
+
+}
+$din_artom_leghump={
+	 act 'Let Artem caress your ass.':
+	 cls
+	 minut+=5
+	 horny+=10
+	 hump+=1
+	 if npcSex[2]=0:npcSex[2]=1&guy+=1
+	 leghumpArtom+=1
+	 dom+=1
+	 dick=16
+	 cumfrot+=1
+	 artompower-=1
+	 gs'stat'
+	 '<center><img src="qwest/alter/Ev/artomHump.jpg" ></center>'
+	 'You do not undressing got on all fours in front of Artem and offered him my ass. Artem began to stroke your ass handed, for a while he hesitated and turned to you. Artem took penis and began to rub them on your ass. You felt through clothes between your buns moving solid barrel member. Artem moaned and jet of sperm flew out to you on the ass. You turned around and you will see, that Artem pytaetsya cum in hand, but the sperm of his overexcited member still scatters on your clothes. After he had finished Artem fidgeted "Sorry Svetulechka, I did not want to stain you, I`ll erase all." He began to wash semen stains on your clothes. After some time on the clothes were only wet spots.'
+	 act 'go home':cumfrot=0&gt'gorodok'
+	 end
+}
+$din_artom_leghump2={
+     if dom>0:
+		 act 'Take off your clothes and let Artem rub on you.':
+		 cls
+		 minut+=5
+		 horny+=10
+		 hump+=1
+		 if npcSex[2]=0:npcSex[2]=1&guy+=1
+		 leghumpArtom+=1
+		 dom+=1
+		 dick=16
+		 cumass+=1
+		 artompower-=1
+		 gs'stat'
+		 '<center><img src="qwest/alter/Ev/artomHump2.jpg" ></center>'
+		 'You undressed and lay on his stomach on the bed. Artem sat on top of your legs and pulls cock was rubbing against your soft ass and masturbate to it. Soon you Artem finished panties.'
+		 act 'go home':gt'gorodok'
+		 end
+	 end
+}
+$din_artom_lern={
+	 act 'Engage with Artem':
+	 cls
+	 minut+=60
+	 grupNPC[2]+=10
+	 lernHome=0
+	 lern+=RAND(3,6)
+	 intel+=RAND(1,2)
+	 gs'stat'
+	 '<center><img src="qwest/alter/npc/<<2>>.jpg" ></center>'
+	 'Did you do with Artem in under an hour, During this time he helped you with homework and explained something of the studied material.'
+	     if grupNPC[2]>=90:
+	     artomLernQW+=1
+	     'As long as you do with Artem you catch his eye on himself. He glances furtively to you on foot and on chest.'
+	         if artomQW>0:
+	             if GorSlut<2:
+				 'After training with Artem , that would kiss you.'
+					 act 'kiss Artem':
+					 cls
+					 horny+=10
+					 !artomQW=1
+					 gs'stat'
+					 '<center><img src="qwest/alter/Ev/kiss.jpg" ></center>'
+					 'You smiled Artem and his face a little closer to him. Artem approached you and kissed you. You started kissing. Finally ending the kiss shyly said Artem. "Sveta, I like you very nravishsya."'
+					     if artomLernQW>=20 and leghumpArtom=0:
+					     'Artem muttered sheepishly. "Svetulya. I really want you, maybe we could... well... You can touch your ass?"'
+					     dynamic $din_artom_leghump
+					     end
+					     if leghumpArtom>=1:
+					     'Artem said shyly. "Svetulya, you are such a wonderful. I enjoyed it so much last time. Can we play one more time?"'
+					     dynamic $din_artom_leghump
+					     dynamic $din_artom_leghump2
+					     end
+					     
+					 act 'go home':gt'gorodok'
+					 end
+	             end
+	             if GorSlut>=2:
+	                 if artomBJQW=0:
+	                 'After classes, "Sveta, everyone in the school is talking about, you huesoska. I think it would be fair if you have me for otsosesh, I will help thee."'
+	                     dynamic $din_artom_bj
+	                     
+	                     
+	                 	 act 'No':
+						 cls
+						 dom+=1
+						 artomLernQW=-1
+						 grupNPC[2]=0
+						 gs'stat'
+						 'You were denied Artem, he frankly offended "Listen, I am with you as much time and effort spent, and you... you suck all the Streak, and I do not want... More to me you can not approach."'
+						 act 'go home':gt'gorodok'
+						 end
+	                 end
+	                 if artomBJQW>0:
+	                 'Artem unbuttoned his pants and pulled out a member of his pants. "on Svetsik, suck."'
+	                 dynamic $din_artom_bj
+	                 end
+	             end
+	         exit
+	         end
+	         
+	         if artomLernQW>=10 and artomQW=0:
+	         'Artem stumbles, as if he wants you, say something, but not solved. But then mustered determined asks. "Sveta, I like you. Can I kiss you?"'
+	             act 'kiss Artem':
+	             cls
+	             horny+=10
+	             artomQW=1
+	             gs'stat'
+	             '<center><img src="qwest/alter/Ev/kiss.jpg" ></center>'
+	             'You smiled Artem and his face a little closer to him. Artem approached you and kissed you. You started kissing. Finally ending the kiss shyly said Artem. "It was great, Sveta, I like you very nravishsya."'
+	             act 'go home':gt'gorodok'
+	             end
+	             
+	             act 'No':
+	             cls
+	             dom+=1
+	             artomLernQW=-1
+	             grupNPC[2]=0
+	             gs'stat'
+	             'You were denied Artem, he frankly offended "Listen, I am with you as much time and effort spent, and you... you are using just me. all. You can no longer come to me!"'
+	             act 'go home':gt'gorodok'
+	             end
+	         exit
+	         end
+	     end
+	 act 'Say goodbye and go home':gt'gorodok'
+	 end
+
+}
+
+
+gs'stat'
+'<center><B><font color=maroon><<$npcName[2]>> <<$npcSurName[2]>></font></B></center>'
+'<center><img src="qwest/alter/npc/2.jpg" ></center>'
+
+if kotovLoveQW>0 and artomVitokQW=0:
+'You are out of school and went to Artem. Artem asked "what, let`s_go?" You nodded. Once you have gathered with Artem leave the school yard when suddenly came up to meet you Vitek Cats. He came up to you and smeryav contemptuous look said Artyom "You where it went with the four eyes jerk?" You answered Vit`ka, that you went to teach lessons, Artem helps you pull up study. Vitek frowned "I do not trust this freak. He has written on the face, he laid eyes on you." Artem visibly frightened and began to mumble. "Vitek, What do you mean? I would never. We just teach lessons." Have you noticed how tense nodules in Vic.'
+     if dom>=10:
+         act 'Vitek. Get off him!':
+         cls
+         sub+=10
+         artomVitokQW=1
+         gs'stat'
+         'You said Vit`ka fork from Artem. And Vitek slightly wilted, but went to Artem and lightly punched him in the shoulder with his fist "Slysh uebok. If I even suspect that some, will be at least some hint, I love you so otpizzhu, that you will not recognize my own mother. You have me in a wheelchair will sit rest of his life and piss blood. Do you understand?" Artem nodded repulsed rubbing shoulder "Yes_I_Am, yes_they_are. all clear." After that Vitek turned around and went the other way. You scared Artem went to his home.'
+         dynamic $din_artom_lern
+         end
+     end
+     
+	 act 'to_be_silent':
+	 cls
+	 artomVitokQW=2
+	 gs'stat'
+	 'You said nothing thinking, What to do. And then there was cotton and Artem fell to the ground. You do not understand, what happened but obviously Vitek punched Artem. Artem closed his hands and screamed like a little girl "Vitek, Well!" Vitek bent over Artem "Once again I see you together, teeth `ll beat. understood?" Artem wailed "Got it figured." Vitek gave a kick in the ass rises from the ground Artem. "Now sebis in horror, pimple!" Artem grabbed a bunch of their stuff drapanul run by Vic. Vitek spat on the ground and turned around went somewhere.'
+	 act 'Get_Away':gt'gschool'
+	 end
+     
+exit
+end
+if fedorKozlovQW>=10 and FedorArtomTalk=0:
+FedorArtomTalk=1
+'To you and Artem suitable Fedor. "Artem, Would you go... library, Light my girl." Artem blushed "Fed, yes nothing, we just teach lessons together, I am the light pull-up on study. She has come to the institute, by the way!" You also inserted mot, Artem for you that only one and you only learn lessons together, nothing, between you no. Theodore sighed and said "Well, I do not like it all, yes figs with him. I believe you Light." After that Fedor oteshel from you.'
+dynamic $din_artom_lern
+exit
+end
+'You are out of school and went to Artem. Artem asked "what, let`s_go?" You nodded. All the way to his house you walked in silence.'
+
+act'Go to Artem':gt'artemhome'
+!dynamic $din_artom_lern
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- artemEv ---------------------------------
+

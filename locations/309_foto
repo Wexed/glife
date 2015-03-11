@@ -1,0 +1,310 @@
+# foto
+if $ARGS[0]='start':
+cla
+*clr
+set minut = minut + 5
+'<center><B><font color=maroon>Photo_Studio</font></B></center>'
+'<center><img src="pic/foto.jpg" ></center>'
+'In the deserted studio, only photographer sitting under the light of a desk lamp .'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+
+if pfilmNO=1:
+'You`re in the black list, with you no decent studio Affairs will not have, adieu.'
+act 'Get_Away':gt'down'
+exit
+end
+     if model > 0 and modelmon = month:
+     'This month.'
+     if pornstudio=0:
+         Set pornstudio=2&'Here. casting pornoaktriss.'
+         end
+     end
+
+     act 'GO_OUT':
+     cla
+     set minut = minut + 5
+     gt'down'
+     end
+     
+     if parkblackmail = 2:
+     act 'Search through the eyes of a blackmailer':gt'foto','blackm'
+     end
+     
+     if model = 0 and parkblackmail<>2:
+		 act 'Ask on Model':
+		 cla
+		 set minut = minut + 5
+		     if vidage<20:
+				 if skin < 2:
+				 'girl, with your acne on your face fashion model has nothing to do.'
+				 else
+				 'Hmm, Undress, I look at you.'
+				 act 'undress':gt'foto','model'
+				 end
+			 end
+			 if vidage>=20:
+			 'You asked about the work of a model, but you said photographer "I`m so sorry, but you look like a pretty mature woman, What we need young girls." That`s how you have made it clear, you look too old for this business.'
+			 end
+		 act 'Get_Away':gt'foto','start'
+		 end
+     end
+     
+     if model > 0 and modelmon ! month and  venera < 3:
+     act 'Ask about work':gt'foto','model'
+     end
+end
+
+if $ARGS[0]='model':
+cla
+*clr
+	if vnesh>=20:
+			 '(photographer) - ok, we just need the model. so_Much, just_a_moment, I`ll see exactly what we need.'
+	 set minut = minut + 5
+	 '<center><B><font color=maroon>photographer</font></B></center>'
+	'<center><img src="pic/fotograph.jpg" ></center>'
+	 clr
+	 gs'stat'
+	 if model = 0:set model = 1
+	 set modelpay = vnesh*100
+	 cla
+	 *clr
+	 set modelmon = month
+	 Set forand = RAND (1,7)
+		 if forand = 1:
+		 'so_Much, we need a model dressed in stockings and sexy body. payment <<3*modelpay/2>> hour.'
+		 act 'I do not fit':gt 'foto','start'
+			 act 'agree':
+			 cla
+			 Set slava = slava + 1
+			 set minut = minut + 180
+			 set modelpayfin = 9*modelpay/2
+			 set money = money + modelpayfin
+			 Set modelfoto = modelfoto + 1
+			 modelfotoTipe[1]+=1
+			 *clr
+			 '<center><img src="pic/model1.jpg" ></center>'
+			 'You are dressed in sexy clothes three hours spent taking various poses for a photographer.'
+			 
+			 clr
+			 gs 'stat'
+			 'After three hours of shooting photographer gave you <<modelpayfin>> rubles.'
+			 act 'Change into his clothes':gt 'foto','start'
+			 end
+		 end
+		 if forand = 2:
+		 'so_Much, we need a model dressed in some stockings. Photos breast and genital close-ups and general pictures. payment <<2*modelpay>> hour.'
+		 act 'I do not fit':gt 'foto','start'
+			 act 'agree':
+			 cla
+			 Set slava = slava + 1
+			 set minut = minut + 180
+			 set modelpayfin = 6*modelpay
+			 set money = money + modelpayfin
+			 Set modelfoto = modelfoto + 1
+			 modelfotoTipe[2]+=1
+			 *clr
+			 '<center><img src="pic/model2.jpg" ></center>'
+			 'You are dressed in sexy clothes three hours spent taking various poses for a photographer.'
+			 
+			 clr
+			 gs 'stat'
+			 'After three hours of shooting photographer gave you <<modelpayfin>> rubles.'
+			 act 'Change into his clothes':gt 'foto','start'
+			 end
+		 end
+		 if forand = 3:
+		 'so_Much, we need a model dressed in sexy clothes with open chest. payment <<3*modelpay/2>> hour.'
+		 act 'I do not fit':gt 'foto','start'
+			 act 'agree':
+			 cla
+			 Set slava = slava + 1
+			 set minut = minut + 180
+			 set modelpayfin = 9*modelpay/2
+			 set money = money + modelpayfin
+			 Set modelfoto = modelfoto + 1
+			 modelfotoTipe[3]+=1
+			 *clr
+			 '<center><img src="pic/model3.jpg" ></center>'
+			 'You are dressed in sexy clothes three hours spent taking various poses for a photographer.'
+			 clr
+			 gs 'stat'
+			 'After three hours of shooting photographer gave you <<modelpayfin>> rubles.'
+			 act 'Change into his clothes':gt 'foto','start'
+			 end
+		 end
+		 if forand = 4:
+		 'so_Much, we need a model completely naked. Photos chest and genitals, priests, all close-up and general pictures. payment <<2*modelpay>> hour.'
+		 act 'I do not fit':gt 'foto','start'
+			 act 'agree':
+			 cla
+			 Set slava = slava + 1
+			 set minut = minut + 180
+			 set modelpayfin = 6*modelpay
+			 set money = money + modelpayfin
+			 Set modelfoto = modelfoto + 1
+			 modelfotoTipe[4]+=1
+			 *clr
+			 '<center><img src="pic/model4.jpg" ></center>'
+			 'You are dressed in sexy clothes three hours spent taking various poses for a photographer.'
+			 clr
+			 gs 'stat'
+			 'After three hours of shooting photographer gave you <<modelpayfin>> rubles.'
+			 act 'Change into his clothes':gt 'foto','start'
+			 end
+		 end
+		 if forand = 5:
+		 'so_Much, we need a model completely naked, masturbating using a dildo. payment <<5*modelpay/2>> hour.'
+		 act 'I do not fit':gt 'foto','start'
+			 act 'agree':
+			 cla
+			 Set slava = slava + 1
+			 set mastr=mastr+1
+			 set minut = minut + 180
+			 set modelpayfin = 5*3*modelpay/2
+			 set money = money + modelpayfin
+			  set modelfoto = modelfoto + 1
+			  modelfotoTipe[5]+=1
+			 *clr
+			 '<center><img src="pic/model5.jpg" ></center>'
+			 'You split three hours spent taking various poses in front of the photographer and poking holes in different dildos.'
+			 
+			 clr
+			 gs 'stat'
+			 'After three hours of shooting photographer gave you <<modelpayfin>> rubles.'
+			 act 'Change into his clothes':gt 'foto','start'
+			 end
+		 end
+		 if forand = 6:
+		 'so_Much, we need a model engaged in lesbian sex with another girl. payment <<3*modelpay>> hour.'
+		 act 'I do not fit':gt 'foto','start'
+			 act 'agree':
+			 cla
+			 *clr
+			 Set slava = slava + 1
+			 set lesbian = lesbian + 1
+			 Set minut = minut + 180
+			 set modelpayfin = 9*modelpay
+			 set money = money + modelpayfin
+			 Set modelfoto = modelfoto + 1
+			 set girl=girl+1
+			 modelfotoTipe[6]+=1
+			 *clr
+			 '<center><img src="pic/model6.jpg" ></center>'
+			 'You split three hours spent taking various poses with another girl before photo shows affection, orgasms and lust.'
+			 clr
+			 gs 'stat'
+			 'After three hours of shooting photographer gave you <<modelpayfin>> rubles.'
+			 act 'Change into his clothes':gt 'foto','start'
+			 end
+		 end
+		 if forand = 7:
+		 'You stripped naked and photographer with a businesslike air began to inspect your naked body.'
+		 'Photographer examined you and offered you <<modelpay>> rubles per hour filming nude.'
+		 act 'Get_Away':gt'foto','start'
+			 act 'agree':
+			 cla
+			 *clr
+			 set minut = minut + 180
+			 set modelpayfin = 3*modelpay
+			 set money = money + modelpayfin
+			 set modelfoto = modelfoto + 1
+			 modelfotoTipe[7]+=1
+			 '<center><img src="pic/fotograph.jpg" ></center>'
+			 'Pictures say what poses you should take, you tried to implement fully its instructions and take the most candid pose lascivious female.'
+			 'You filmed nude 3 hours and earned <<modelpayfin>> rubles.'
+			 act 'Get_Away':gt'foto','start'
+			 end
+		 end 
+	 else
+     'Photographer examined you. "I`m afraid you do not come to us."'
+     act 'Get_Away':gt'foto','start'
+	 end
+end
+
+if $ARGS[0]='blackm':
+*clr
+gs 'stat'
+if parkblackmail = 2:
+'My name is Victor appears not familiar to you man. I pay good money to students that I have supplied new actresses. So you have to work out the money you invested in.'
+     act 'What you want?':
+     cla
+     'nothing special, <<$first_name>>. Just that you do what, that you like - he nodded at the pictures.'
+         act 'Fucked in front of camera?':
+         cla
+         'Victor smiled. -Well yes. It`s not difficult. You continued to sit dumbfounded. -Today a lot of time is not required. Go, I have everything ready and waiting for you already. -Today? - You are quite confused, but Victor nodded, and his face became hard. You looked at the pictures and rose. Legs became cotton.'
+             act 'Go into the room':
+             cla
+             'On the back of a chair hung candid lingerie and white shirt. apparently, all this meant to you. You changed clothes and sat on the edge of the bed. At this time. -so_Much, Well. - Ordered Victor, coming with my camera in the room. The girl undresses. Poraskovanney and do not delay. And then you know all the boys. And for the girls will surprise - and he winked ugly guys. You put on the bed and ordered to undress. Hands did not obey, but after a couple poking blond, you decide not to resist. threw off his shirt, undid the bra, and then the guys have already taken matters into their own hands. He literally tore off her bra and you, and panties and fell on the bed. No fondling in was not in sight. Blonde put you on all fours and abruptly entered, You have not even had time to be excited. It hurt, but he fucked sharply, sweeping and painful squeezing chest. Second . Slender brunette gave you a good slap in the face, Tears streamed from his eyes themselves.' 
+                 act 'open your mouth':
+                 cla
+                 clr
+                 Set throat= throat + 1
+                 Set guy = guy + 2
+                 Set sex = sex + 1
+                 Set bj+=1
+                 Set gang+=1
+                 Set cumlip = cumlip + 1
+                 set swallow=swallow+1
+                 $nameV='blond'
+                 pose = 1
+                 dick=18
+                 '<center><img src="pics2/studia.jpg" ></center>'
+                 'You opened your mouth, and he shoved his dick, long and thick. You have become a choke, but it literally sit down you, holding his head. They fuck you two, and next went to Victor, already openly, and filmed, shooting, shooting. In his hand was a lovely big camcorder.'
+                 gs'orgazm','start'
+                 ' They finished together. Blonde merged all you in the womb. Black forced to swallow all. You fell to the bed.'
+                     act 'begin_to_cry':
+                     cla
+                     *clr
+                     'You fell onto the bed and wept. not bad, Tears are always very cool look, - said Victor, pressing the pause. so_Much, <<$first_name>> undermine, and boys can drink.'
+                         act 'In the shower':
+                         cla
+                         'You went to the shower and went to the set. There you were waiting for. suck let, grab you by the hand, blonde dragged to him and entered the mouth. Black . Why such a weasel, - think you, nasazhivayas on member blond. And then he realized how. Harry`s finger began to enter into the hole and before you came, what he wants.'
+                             act 'No!':
+                             cla
+                             Set sex = sex + 1
+                             Set bj = bj + 1
+                             Set throat= throat + 1
+                             Set anal = anal + 1
+                             Set cumass = cumass + 1
+                             Set cumlip = cumlip + 1
+                             set cumface=cumface+1
+                             '<center><img src="pics2/studia2.jpg" ></center>'
+                             'You shouted No! Do not yell, here is a good sound insulation. And your ass is still fuck, so do not twitch and relax. - Already had two fingers brunette in you. Do_You, sobbing, blonde sucking again. three fingers. At that time, when giving your mouth quickened and was ready to cum, brunette perched member of your rings and abruptly entered. You yelled again, but the blonde quickly plugged your mouth bryzhzhuschim member and sperm, roaring В«swallow, swallow, bitchВ» - planted themselves. When he finally finished, brunette pinned you to the bed and the whole body began to fuck in the ass. It was just crazy sick - without lubrication, but he did not finish, then pulling out entirely, sharply entering again, just ripping you. At_Last, you feel, as it speeds up, and sperm pours you into the rectum. Nothing worse and you could not imagine.'
+                                 act 'substitution':
+                                 cla
+                                 *clr
+                                 Set sex = sex + 1
+                                 Set anal = anal + 1
+                                 Set sex = sex + 1
+                                 Set cumbelly = cumbelly + 1
+                                 Set cumass = cumass + 1
+                                 '<center><img src="pics2/studia3.jpg" ></center>'
+                                 'After the shower , turned, Victor has not yet finished. You guys again Fingered, a little thin dildo fuck. It already seemed just a trifle compared with anal sex. And then the brunette put you on his penis and began to fuck, slightly lifting and lowering, Rear went blond and bent you, pressed to his chest brunette. You feel his cock on her ass and realized, that they will fuck you in both holes. The second term is slowly coming into you, and you feel, as they rub through the thin partition, have you, simply use as a whore. They fuck you alone for half an hour.'
+                                 $nameV='brunet'
+								 pose = 1
+								 dick=18
+								 gs'orgazm','start'
+                                 Set parkblackmail = 4
+                                 Set studiaday = 7
+                                 'I`ll call you, when you still need you .'
+                                 act 'Get_Away':gt 'Down'
+                                 end
+                             end
+                         end
+                     end
+                 end 
+             end
+         end
+     end
+end
+end
+
+
+
+
+--- foto ---------------------------------
+

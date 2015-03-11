@@ -1,0 +1,773 @@
+# spell
+if $ARGS[0]='reset':
+cla
+!Creating fog
+'accumulated manna <<mannaReset>> units.'
+	 act 'Absorb accumulated manna':
+	 cla
+	 *clr
+	 set manna = manna + mannaReset
+	 set mannaReset = 0
+	 xgt'fight','sta'
+	 end
+     
+act 'physical attacks':gt'boxing'
+
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='unmat':
+cla
+!Creating fog
+'You can become incorporeal at 30 moves, in exchange for 3000 forces units Rikudo. This part of the force will be lost to you forever when you cast.'
+'Not material allows you to skip through your body without receiving any impact damage, while slightly reduced longevity spells.'
+     if rikudo >= 3000:
+         act 'become a disembodied':
+         cla
+         *clr
+         set unmaterial = 31
+         set rikudo = rikudo + 3000
+         set mannaReset = 0
+         xgt'fight','sta'
+         end
+     end
+     if rikudo < 3000:
+     'You have too little power Rikudo for this spell.'
+     end
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+
+
+if $ARGS[0]='tuman':
+cla
+!Creating fog
+     if tumanV > 0:
+     'It is not possible to impose your fog on an existing fog enemy.'
+     
+     end
+     if tumanV <= 0:
+     'Create a fog on the battlefield, obstruct the enemy. cost 10 manna.'
+         act 'Create mist (10 manna)':
+         cla
+         *clr
+         set manna = manna - 10
+         set tuman = tuman + 10
+         gt'fight','sta'
+         end
+     
+     end
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='klon':
+cla
+'You can create a clone just copying you, and themselves to slip out of sight of the enemy. cost 15 manna 1 clone.'
+     act 'Create a clone':
+     cla
+     *clr
+     set manna = manna - 15
+     set klon = klon + 1
+     gt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='stun':
+cla
+'You have to touch the enemy, then he will be paralyzed. cost 20 manna.'
+     act 'paralytic stroke':
+     cla
+     *clr
+     set manna = manna - 20
+     set stunner = 1
+     xgt'atak','player'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+
+if $ARGS[0]='weap':
+cla
+'You can put the magical power of a weapon increasing its damage. cost 20 manna.'
+     act 'invest energy':
+     cla
+     *clr
+     set manna = manna - 20
+     set magweapbonus = weapbonus*4
+     xgt'atak','player'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='wind':
+cla
+'Corrupts the wind, that would blow away the fog. cost 40 manna.'
+     act 'apply':
+     cla
+     *clr
+     set manna = manna - 40
+     set tumanV = 0
+     set tuman = 0
+     '<B><font color=green>You sent against the wind on the battlefield and destroy the fog.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='klon2':
+cla
+'You can create three clones accurately copies you, and themselves to slip out of sight of the enemy. cost 45 manna 3 clone.'
+     act 'Create clones':
+     cla
+     *clr
+     set manna = manna - 45
+     set klon = klon + 3
+     gt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='energo':
+cla
+'You can create an energy shield to protect against attacks on health. 100 protection units worth 50 manna.'
+     act 'Create energy shield':
+     cla
+     *clr
+     set manna = manna - 50
+     set defence = defence + 100
+     '<B><font color=green>You have imposed energy shield, now you <<defence>> protection units.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='init':
+cla
+'You can create a slight deceleration time, that would gain an advantage in the reaction rate and to seize the initiative. costs 60 manna.'
+     act 'Create a slowdown':
+     cla
+     *clr
+     set manna = manna - 60
+     set initBonus = 120
+     '<B><font color=green>You put the manna in the amplification reaction.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='hel':
+cla
+!Creating fog
+'Cure or add yourself 400 health units. cost 400 manna.'
+     act 'treated (400 manna)':
+     cla
+     *clr
+     set manna = manna - 400
+     set health = health + 400
+     '<B><font color=green>You put the manna in the acceleration of regenerative processes in the body.</font></B>'
+     gt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='hand':
+cla
+!Creating fog
+'Striking hand increases the damage in 10 just one attack. cost 100 manna.'
+     act 'Striking hand (100 manna)':
+     cla
+     *clr
+     set manna = manna - 100
+     set strenK = stren*20/100
+     set magweapbonus = RAND (stren*10 - strenK,stren*10 + strenK)
+     '<B><font color=green>You put the manna in the hand to apply the devastating blows.</font></B>'
+     xgt'atak','player'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='fire1':
+cla
+!Creating fog
+'flame. cost 10 manna.'
+     act 'flame (10 manna)':
+     cla
+     *clr
+     set manna = manna - 10
+     set damTip = 250
+     '<B><font color=green>You have created a torrent of flame escaping from your hands.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='fire2':
+cla
+!Creating fog
+'The release of fire. cost 100 manna.'
+     act 'The release of fire (100 manna)':
+     cla
+     *clr
+     set manna = manna - 100
+     set damTip = 2500
+     '<B><font color=green>You have created a huge stream of flames pouring out of your hand.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='fire3':
+cla
+!Creating fog
+'fire barrier, creates a shield 750 units. cost 150 manna.'
+     act 'fire barrier (150 manna)':
+     cla
+     *clr
+     set manna = manna - 150
+     set defence = defence + 750
+     '<B><font color=green>You have created around him fire barrier, now you <<defence>> protection units.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='fire4':
+cla
+!Creating fog
+'firestorm. cost 250 manna.'
+     act 'firestorm (250 manna)':
+     cla
+     *clr
+     set manna = manna - 250
+     set damTip = 6250
+     set bonusSh = 100
+     '<B><font color=green>The air around you overheat and catch fire, a sea of вЂ‹вЂ‹fire struck the enemy.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='fire5':
+cla
+!Creating fog
+'Flame Shield, creates a shield 2500 units. cost 500 manna.'
+     act 'Flame Shield (500 manna)':
+     cla
+     *clr
+     set manna = manna - 500
+     set defence = defence + 2500
+     '<B><font color=green>You`ve created a wall of fire around it absorbs damage, now you <<defence>> protection units.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ele1':
+cla
+
+!Creating fog
+'discharge. cost 10 manna.'
+     act 'discharge (10 manna)':
+     cla
+     *clr
+     set manna = manna - 10
+     set damTip = 150
+     set eleSh = 1
+     '<B><font color=green>You have created an electric discharge escaping from your hands.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ele2':
+cla
+!Creating fog
+'lightning. cost 100 manna.'
+     act 'lightning (100 manna)':
+     cla
+     *clr
+     set manna = manna - 100
+     set damTip = 1500
+     set eleSh = 1
+     '<B><font color=green>You have created a zipper with a crash vystrelevshuyu from your hand.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ele3':
+cla
+!Creating fog
+'electric barrier, creates a shield 1500 units. cost 150 manna.'
+     act 'electric barrier (150 manna)':
+     cla
+     *clr
+     set manna = manna - 150
+     set defence = defence + 1500
+     '<B><font color=green>You`ve created a wall around themselves dancing lightning, now you <<defence>> protection units.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ele4':
+cla
+!Creating fog
+'Dance of thousands of birds. cost 250 manna.'
+     act 'Dance of thousands of birds (250 manna)':
+     cla
+     *clr
+     set manna = manna - 250
+     set damTip = 3750
+     set bonusSh = 30
+     set eleSh = 1
+     '<B><font color=green>You have collected the manna in the hand and danced around the palm of your hand lightning leaping through the air with shrieks.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ele5':
+cla
+!Creating fog
+'Plyaschuschaya sphere, creates a shield 5000 units. cost 500 manna.'
+     act 'Plyaschuschaya sphere (500 manna)':
+     cla
+     *clr
+     set manna = manna - 500
+     set defence = defence + 5000
+     '<B><font color=green>You have created around him a large sphere of lightning dancing, now you <<defence>> protection units.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ert1':
+cla
+!Creating fog
+'quicksand, catches the opponent in quicksand trap and inflicts 100 units. cost 10 manna.'
+     act 'quicksand (10 manna)':
+     cla
+     *clr
+     set manna = manna - 10
+     set damTip = 100
+     set eleSh = 5
+     '<B><font color=green>You have created under enemy addictive quicksand.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ert2':
+cla
+!Creating fog
+'active protection, creates a protective sphere of the earth, stone and sand 2500 protection units mana and health, this protection during samovostanavlivaetsya 10 moves absorbing 20 units of manna in the course of. cost 100 manna.'
+     act 'active protection (100 manna)':
+     cla
+     *clr
+     set manna = manna - 100
+     set defence = defence + 2500
+     set defenceM = defenceM + 2500
+     set defenceActPar = 1000
+     set defenceActParM = 1000
+     set defenceAct = 10
+     set defenceActM = 10
+     '<B><font color=green>Earth is surrounded by you, giving you protection.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ert3':
+cla
+!Creating fog
+'abyss, earth asunder under their feet enemy inflicting damage in 1500 units and depriving him of the ability to move. cost 150 manna.'
+     act 'quicksand (150 manna)':
+     cla
+     *clr
+     set manna = manna - 150
+     set damTip = 1500
+     set eleSh = 5
+     '<B><font color=green>You are the earth beneath their feet enemy.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ert4':
+cla
+!Creating fog
+'absolute protection, creates a huge protective sphere of the earth, which regenerates itself every turn and attack the enemy. cost 250 manna.'
+     act 'absolute protection (250 manna)':
+     cla
+     *clr
+     set manna = manna - 250
+     set defence = defence + 6250
+     set defenceM = defenceM + 6250
+     set defenceW = defenceW + 6250
+     set defenceActPar = 1000
+     set defenceActParM = 1000
+     set defenceActParW = 1000
+     set defenceAct = 15
+     set defenceActM = 15
+     set defenceActW = 15
+     set defAtk = 15
+     '<B><font color=green>Earth is surrounded by you, giving you protection.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='ert5':
+cla
+!Creating fog
+'Sando, two huge slabs emerge from the ground and crushing collapse of the enemy inflicting damage in 5000 units and depriving him of the ability to move. cost 500 manna.'
+     act 'Sando (500 manna)':
+     cla
+     *clr
+     set manna = manna - 500
+     set damTip = 5000
+     set bonusSh = 50
+     set eleSh = 5
+     '<B><font color=green>Two huge plates with a roar came from the earth and imploded.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='wind1':
+cla
+!Creating fog
+'gust, inflicts 100 units and destroy the clones fog, very difficult to dodge. cost 10 manna.'
+     act 'gust (10 manna)':
+     cla
+     *clr
+     set manna = manna - 10
+     set damTip = 100
+     set bonusSh = 50
+     '<B><font color=green>You have created a gust of wind.</font></B>'
+     if klonV > 0:set klonV = 0&'<B><font color=green>Clone enemy turned into steam.</font></B>'
+     if tumanV > 0:set tumanV = 0&'<B><font color=green>Fog enemy torn to shreds by the wind.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='wind2':
+cla
+!Creating fog
+'terrifying pressure, inflicts 1000 units and destroy the clones fog, very difficult to dodge. cost 100 manna.'
+     act 'terrifying pressure (100 manna)':
+     cla
+     *clr
+     set manna = manna - 100
+     set damTip = 1000
+     set bonusSh = 100
+     '<B><font color=green>You sharply raised the air pressure.</font></B>'
+     if klonV > 0:set klonV = 0&'<B><font color=green>Clone the enemy broke and turned into steam.</font></B>'
+     if tumanV > 0:set tumanV = 0&'<B><font color=green>Fog enemy torn apart pressure.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='wind3':
+cla
+!Creating fog
+'vacuum sphere, creates a shield 1500 units. cost 150 manna.'
+     act 'vacuum sphere (150 manna)':
+     cla
+     *clr
+     set manna = manna - 150
+     set defence = defence + 1500
+     '<B><font color=green>You have created around themselves the vacuum, now you <<defence>> protection units.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='wind4':
+cla
+!Creating fog
+'vacuum shells, cause damage to the 2500 units and destroy the clones fog, very difficult to dodge. cost 250 manna.'
+     act 'vacuum shells (250 manna)':
+     cla
+     *clr
+     set manna = manna - 250
+     set damTip = 2500
+     set bonusSh = 100
+     '<B><font color=green>You have created around themselves many areas and they vacuum at high speed with a whistle flew over the battlefield.</font></B>'
+     if klonV > 0:set klonV = 0&'<B><font color=green>Clone the enemy broke and turned into steam.</font></B>'
+     if tumanV > 0:set tumanV = 0&'<B><font color=green>Fog enemy torn apart pressure.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='wind5':
+cla
+!Creating fog
+'devouring vacuum, sucks shield enemy destroying it whatever strength he was not. cost 500 manna.'
+     if defenceV > 0:
+		 act 'devouring vacuum (500 manna)':
+		 cla
+		 *clr
+		 set manna = manna - 500
+		 set defenceV = 0
+		 set defenceMV = 0
+		 set defenceWV = 0
+		 set defenceActParV = 0
+		 set defenceActParMV = 0
+		 set defenceActV = 0
+		 set defenceActMV = 0
+		 set defAtkMV = 0
+		 '<B><font color=green>You have created around themselves the vacuum that sucked in the defense of the enemy to destroy it.</font></B>'
+		 xgt'fight','sta'
+		 end
+     end
+     if defenceV <= 0:
+     'The enemy is no shield that can destroy this spell.'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='water1':
+cla
+!Creating fog
+'creek manna, inflicts 100 Absorbs units 1000 units of manna. cost 10 manna.'
+     act 'creek manna (10 manna)':
+     cla
+     *clr
+     set manna = manna - 10
+     set damTip = 100
+     set damTipM = 1000 
+     '<B><font color=green>You have created a small hand in the water jet which was shot at the enemy.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='water2':
+cla
+!Creating fog
+'flooding, inflicts 1000 Absorbs units 500 units of manna. cost 100 manna.'
+     act 'flooding (100 manna)':
+     cla
+     *clr
+     set manna = manna - 100
+     set damTip = 1000
+     set damTipM = 500
+     '<B><font color=green>From your mouth a flood of water flooded the countryside.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='water3':
+cla
+!Creating fog
+'blister, creates a protective sphere of water 1500 units of protection against all impacts, this protection during samovostanavlivaetsya 10 moves absorbing 20 units of manna in the course of. cost 150 manna.'
+     act 'blister (150 manna)':
+     cla
+     *clr
+     set manna = manna - 150
+     set defence = defence + 1500
+     set defenceM = defenceM + 1500
+     set defenceW = defenceW + 1500
+     set defenceActPar = 500
+     set defenceActParM = 500
+     set defenceAct = 10
+     set defenceActM = 10
+     '<B><font color=green>Water creates the scope of protection around you.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='water4':
+cla
+!Creating fog
+'Water shark missile, inflicts 1500 Absorbs units 2500 units of manna. cost 250 manna.'
+     act 'Water shark missile (250 manna)':
+     cla
+     *clr
+     set manna = manna - 250
+     set damTip = 1500
+     set damTipM = 2500
+     set bonusSh = 50
+     '<B><font color=green>You released a pack of sharks consisting of water flying towards the enemy as torpedoes.</font></B>'
+     if klonV > 0:set klonV = 0&'<B><font color=green>Clones enemy disappeared.</font></B>'
+     xgt'atakA','atak'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+
+if $ARGS[0]='water5':
+cla
+!Creating fog
+'The Great Flood, creates a huge field that absorbs water and deflating the enemy manna from it and passing it to strengthen protection. cost 500 manna.'
+     act 'The Great Flood (500 manna)':
+     cla
+     *clr
+     set manna = manna - 500
+     set defence = defence + 5000
+     set defenceM = defenceM + 5000
+     set defenceW = defenceW + 5000
+     set defenceActPar = 500
+     set defenceActParM = 500
+     set defenceAct = 10
+     set defenceActM = 10
+     set defAtkM = 10
+     '<B><font color=green>You have filled the whole neighborhood with water that protects you and devour enemy mana.</font></B>'
+     if klonV > 0:set klonV = 0&'<B><font color=green>Clones enemy disappeared.</font></B>'
+     xgt'fight','sta'
+     end
+
+act 'physical attacks':gt'boxing'
+     if magik > 0:
+     act 'magic attack':gt'magik'
+     end
+end
+--- spell ---------------------------------
+

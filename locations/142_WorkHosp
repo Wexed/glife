@@ -1,0 +1,189 @@
+# WorkHosp
+if $ARGS[0]='start':
+$sexloc = $CURLOC
+gs'stat'
+set jobhosprand=rand(0,9)
+
+'<center><B><font color=maroon>clinic</font></B></center>'
+'<center><img src="img/spaln/hospital.jpg" ></center>'
+'In the clinic are hard at work, Patients sit in queues, doctors are receiving, nurses rush from office to office.'
+
+act'Work in the procedural':
+set minut+=60
+if jobhosprand=0:gt 'WorkHosp','2'
+'You worked in the procedural.'
+cla
+act 'move_away':gt'WorkHosp','start'
+end
+
+act'Helps doctors at the reception':
+set minut+=60
+if jobhosprand=0:gt 'WorkHosp','3'
+'You helped a doctor at the reception.'
+cla
+act 'move_away':gt'WorkHosp','start'
+end
+
+act'Relax in nursing':
+set minut+=30
+'you relax.'
+cla
+act 'masturbate 15 min':
+	 set minut+=15
+	 set mastrrand=rand(0,2)
+	 if mastrrand=0:
+		 gt 'WorkHosp','1'
+	 else:
+		 set picrand=11
+		 cla
+		 *clr
+		 set mastr += 1
+		 '<center><img src="img/mastr/mastr<<picrand>>.jpg" ></center>'
+		 'you matrubiruete.'
+		 set horny = 0
+		 set orgasm+=1
+		 'Gradually pritno warm and throbbing grow in the lower abdomen, then feeling descend on you and your entire body covered hot waves of orgasm'
+		 end
+	 act 'Go_Out':gt'WorkHosp','start'
+	 end
+act 'move_away':gt'WorkHosp','start'
+end
+
+act'There is a cafeteria':
+	 set minut = minut + 30
+	 set health = health + 10
+	 set manna = manna + 5
+	 set willpower = willpower + 5
+	 if energy >= 30:
+		  set fat = fat + 5
+		 'You can no longer have.'
+		 end
+	 if energy >= 20 and energy < 30:
+		 set fat = fat + 3
+		 set energy = energy + 10
+		 'You pushed through the power of a meal.'
+		 end
+	 if energy < 20:
+		 set energy = energy +20
+		 set fat = fat + 1
+		 'You gladly ate food.'
+		 end
+	 if water >= 20:
+		 'Tea in you no longer climbs.'
+		 end
+	 if water < 20:
+		 'You gladly drank a cup of tea.'
+		 set water = water +20
+		 end
+	 end
+
+act'Chat with Kate':
+set minut+=30
+kat = kat + 1
+if kat > 60 and military = 0:gt 'WorkHosp','milit'
+'You chatted with Kate.'
+cla
+if kat>50:
+	 act 'suggest uedinitsa':gt 'WorkHosp','0'
+	 end
+act 'move_away':gt'WorkHosp','start'
+end
+
+if hour >= 16:
+cls
+'<center><B><font color=maroon>clinic</font></B></center>'
+'<center><img src="img/spaln/hospital.jpg" ></center>'
+'Your shift ended.'
+act 'go home':gt'street'
+end
+end
+
+if $ARGS[0] = 'milit':
+military = 1
+'"Listen, I then offered to earn weekend, but I have plans. In the general case is close to the city often hold war games, Well. Do not be afraid you will be there with you doctor, so that the maximum that you have to do is stick plasters. In short if you decide on a Saturday bus at clinic, He waits with 6 prior_to 9 hours. Yes 5 thousand."'
+cla
+act 'move_away':gt'WorkHosp','start'
+end
+
+if $ARGS[0] = '0':
+cla
+*clr
+set katprorand=rand(0,2)
+if katprorand=0:
+	 set girl+=1
+	 set lesbian+=1
+	 set picrand=11
+	 xgt'lezbsex','var'
+	 end
+if katprorand=1:
+	 '<center><img src="img/spaln/hospsex7.jpg" ></center>'
+	 'Once you Kat began to fondle each other as to the treatment the patient is entered. You recoiled from it trying to pretend that nothing happened, Kate , proudly showing off her wet pussy on your language, and invitingly looked at the guy, look inviting him prisoedinitsa.'
+	 act 'Go_Out':gt'WorkHosp','start'
+	 act 'amuse':
+		 set girl+=1
+		 set guy+=1
+		 set lesbian+=1
+		 set picrand=12
+		 gt'podrsex','var'
+		 end
+	 end
+if katprorand=2:
+	 '<center><img src="img/spaln/hospsex8.jpg" ></center>'
+	 'When your game has been in full swing in the procedural included two doctors, but you were already so excited that not paying any attention to them continued, and when men began to caress you, you only degradability wider radvinuli feet, inviting them into your vagina.'
+	 act 'have_a_good_time':
+		 set gang+=1
+		 set picrand=11
+		 xgt'sexdvanadva','var'
+		 end
+	 end
+end
+
+if $ARGS[0] = '1':
+cla
+*clr
+set mastrrand=rand(0,1)
+if mastrrand=0:
+	 '<center><img src="img/spaln/hospsex9.jpg" ></center>'
+	 'While you masturbate samozabveno, trying to bring herself to orgasm, enters the room doctor, you are so passionate about a notice that it is only when his hand starts to pull your head to the standing member.'
+	 if horny<50:act 'To escape and run away':gt'WorkHosp','start'
+	 act 'amuse':
+		 set guy+=1
+		 set picrand=12
+		 gt'sex','minet'
+		 end
+	 end
+if mastrrand=1:
+	 '<center><img src="img/spaln/hospsex10.jpg" ></center>'
+	 'While you masturbate samozabveno, trying to bring herself to orgasm, the room included two doctors, you are so passionate that only notice them when they stand in front of you with the members and masturbate shaved.'
+	 if horny<50:act 'escape':gt'WorkHosp','start'
+	 set picrand=rand(12,13)
+	 act 'amuse':set guy+=2&xgt'sexdvoe','var'
+	 end
+end
+
+if $ARGS[0] = '2':
+cla
+*clr
+set picrand=rand(13,15)
+'<center><img src="img/spaln/hospsex11.jpg" ></center>'
+'To you and the patient comes to the threshold of taking his pants showing his flaccid penis and asks you to help him as you see him not worth it. Mind you understand, it`s all just a silly gimmick that would fuck you, but still you feel sorry for him. What if he really is not worth, and you will be able to pick it up, What if he just unlucky with girls and if not lucky today, He jumps out of the window.'
+act 'oust him':gt'WorkHosp','start'
+act 'pick_up':set guy+=1&gt'sex','minet'
+end
+
+if $ARGS[0] = '3':
+cla
+*clr
+'<center><img src="img/spaln/hospsex12.jpg" ></center>'
+'It comes to you pretty patient, until the doctor is trying to explore it, she kept touching his pants member in the area, doctor glances at you with a question in his eyes.'
+act 'Make her a comment':gt'WorkHosp','start'
+act 'amuse':
+	 set guy+=1
+	 set girl+=1
+	 set lesbian+=1
+	 set picrand=13
+	 gt'podrsex','var'
+	 end
+end
+--- WorkHosp ---------------------------------
+

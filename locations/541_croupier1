@@ -1,0 +1,23 @@
+# croupier1
+*PL '<right><img src="casino/crupbd.jpg" ></right>'
+*P '- How can I help you?'
+ACT 'ask rules':
+	msg 'You do not know how to play Blackjack? Well then listen.
+	goal of the game - score more points, than the dealer, but not more than 21.
+	Different cards give a different number of points. 
+	ace = 11
+	Cards with pictures = 10
+	The rest of their face value
+	(t.e. 9=9   8=8 and t.d.)
+	After making a bet the dealer deals the cards. But just remember, that our casino is the maximum rate 1000 rubles. You two and one yourself. Then you can gather additionally map, either say enough, then the dealer will begin to gather additionally map itself. So in the end who has the most points and won the. payment 1 to 1.
+	that`s all. Enjoy the game)'
+	gt 'croupier1'
+END
+ACT 'Move away from the dealer':
+	gt 'bldzh'
+END
+clr
+gs'stat'
+set minut=minut + 5
+--- croupier1 ---------------------------------
+

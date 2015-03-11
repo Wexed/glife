@@ -1,0 +1,47 @@
+# obekt
+'<center><H4>object</H4></center>'
+'<center><img src="pic/obekt.jpg" ></center>'
+'Construction on the facility is stopped and the territory of silence, Only guard walks.'
+clr
+gs'stat'
+gs'time'
+
+if car > 0 and cardrive = 12:
+set cardrive = 12
+'In the parking lot is worth <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
+end
+
+act 'Penetrate to the construction site':
+cls
+minut+=5
+gs'stat'
+	 if ObjektOpen=0:
+	 if ObjektBil=0:ObjektBil=1
+     'Construction guarded very carefully, just not be able to enter.'
+     act 'Get_Away':gt $curloc
+	 else
+	 gt'obekt2'
+	 end
+end
+
+if ObjektBil=1:
+
+end
+
+act 'Take to the road':minut+=15&nroad=16&gt'road'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- obekt ---------------------------------
+

@@ -1,0 +1,70 @@
+# autoservisF
+if $ARGS[0]='start':
+$metka = $ARGS[0]
+$loc = $CURLOC
+cla
+*clr
+gs'stat'
+set minut = minut + 5
+gs'avtonorm'
+'<center><B>Service_and_repair</B></center>'
+'<center><img src="pic/autoservis1.jpg" ></center>'
+if cardrive = 7:
+	 if wrek = 0:
+		 if teh >= tehcar*75/100:'Master looked at your car and said, that it does not need to be repaired, any of those service.'
+		 if teh < tehcar*75/100:
+			 'Master looked at your car and said, that the cost of the work <<normrem>>.'
+			 if money >= normrem:
+				 act 'Pay and repair':
+					 cla
+					 *clr
+					 set money = money - normrem
+					 set minut = minut + 60
+					 set teh = tehcar
+					 wrek=0
+					 '<center><img src="pic/autoservis2.jpg" ></center>'
+					 'You sat for an hour in the lounge pretending that watching TV, Finally the car repaired and you paid in cash <<normrem>> rubles'
+					 act 'Get_Away':gt'Nord'
+					 end
+				 end
+			 end
+		 end
+	 if wrek = 1:
+		 'Master prisvisnul looking at your unit and said, that the cost of the work <<normrem>>.'
+		 if money >= normrem:
+			 act 'Pay and repair':
+				 cla
+				 *clr
+				 set money = money - normrem
+				 set minut = minut + 60
+				 set tehcar = tehcar/2
+				 set teh = tehcar
+				 wrek=0
+				 '<center><img src="pic/autoservis2.jpg" ></center>'
+				 'You sat for an hour in the lounge pretending that watching TV, Finally the car repaired and you paid in cash <<normrem>> rubles'
+				 'Master before you hand over the keys you said, what would you have tried not to bring the car to a state.'
+				 act 'Get_Away':gt'Nord'
+				 end
+			 end
+		 end
+	 end
+if cardrive ! 7:'Master smiled and said "girl, I need a car to see, that would at least, what you say. -Fit it to the car service, we`ll_see."'
+if wrek = 1 and cardrive ! 7 and car > 0:
+	 'In the service station operates service to evacuate damaged cars Car, cost 2500'
+	 if money >= 2500:
+		 act 'Pay shipping cars 2500RUB (1 h)':
+			 cla
+			 *clr
+			 set money = money - 2500
+			 set cardrive = 7
+			 set minut = minut + 60
+			 '<center><img src="pic/autoservis2.jpg" ></center>'
+			 'You sat for an hour in the service station, waiting when will bring your car. Finally the time has passed and your car was taken to the gate Car.'
+			 act 'To master':gt'autoservisF','start'
+			 end
+		 end
+	 end
+act 'Get_Away':gt'Nord'
+end
+--- autoservisF ---------------------------------
+

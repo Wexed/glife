@@ -1,0 +1,13 @@
+# dimaGoHome2
+gs'stat'
+
+if dimaGohomeday=day:
+'You come to a beautiful private home and rang the bell. You opened the door to a pretty blonde of about forty years, apparently the mother of Dima. She looked at you and smiled "Dima is not at home."'
+act 'Get_Away':gt 'gorodok'
+end
+if dimaGohomeday!day:
+'You come to a beautiful private home and rang the bell. You opened the door to a pretty blonde of about forty years, apparently the mother of Dima. She looked at you and smiled "You Dima?" You nodded and mother of Dima let you in the house.'
+act 'Go into the room Dima':dimaGohomeday=day&gt 'dimaHome'
+end
+--- dimaGoHome2 ---------------------------------
+
