@@ -1,243 +1,243 @@
 # beg1
-if $ARGS[0] = 'start':
+if $ARGS[0]='start':
 cla
 *clr
 clr
 gs 'stat'
-set minut += 60
-Set kolsorev += 1
+set minut = minut + 60
+Set kolsorev = kolsorev + 1
 Set begmon = month
-	if razradbeg = 0:
-	'You write in a group beginners.'
-	act 'Exit on the treadmill': xgt 'beg1','br'
-	end
-	if razradbeg = 1:
-	'You write in a group treterazryadnikov.'
-	act 'Exit on the treadmill': xgt 'beg1','3'
-	end
-	if razradbeg = 2:
-	'You recorded in the second group of bits. City Championship.'
-	act 'Exit on the treadmill': xgt 'beg1','2'
-	end
-	if razradbeg = 3:
-	'You recorded in the first group of bits. Championship field.'
-	act 'Exit on the treadmill': xgt 'beg1','1'
-	end
-	if razradbeg = 4:
-	'You write in the CCM group. Championship region.'
-	act 'Exit on the treadmill': xgt 'beg1','kms'
-	end
-	if razradbeg = 5:
-	'You write in the group Masters of Sports. Russian Championship.'
-	act 'Exit on the treadmill': xgt 'beg1','ross'
-	end
-	if razradbeg >= 6 and razradbeg < 16:
-	'You write in the group International Master of Sports. Qualifying competition for access to the European Championship.'
-
-	act 'Exit on the treadmill': xgt 'beg1','kval'
-	end
-	if razradbeg = 16:
-		if razradbegK < 8:
-		cla
-		Set razradbegK = 0
-		Set razradbeg = 6
-		'You have not been qualified for the European Championship.'
-		act 'Leave': gt 'fit','razd'
-		end
-		if razradbegK >= 8:
-		cla
-		Set razradbegK = 0
-		Set razradbeg = 6
-		'You write for the European Championship.'
-		act 'Exit on the treadmill': xgt 'beg1','evro'
-		end
-	end
+     if razradbeg = 0:
+     'You write to the group newbies.'
+     act 'Exit to the track':xgt 'beg1','br'
+     end
+     if razradbeg = 1:
+     'You write to the group treterazryadnikov.'
+     act 'Exit to the track':xgt 'beg1','3'
+     end
+     if razradbeg = 2:
+     'You write in the second group of digits. The city championship.'
+     act 'Exit to the track':xgt 'beg1','2'
+     end
+     if razradbeg = 3:
+     'You write in the first group of digits. Championship field.'
+     act 'Exit to the track':xgt 'beg1','1'
+     end
+     if razradbeg = 4:
+     'You write in the CCM group. region Championship.'
+     act 'Exit to the track':xgt 'beg1','kms'
+     end
+     if razradbeg = 5:
+     'You write to the group Masters of Sports. Russian Championship.'
+     act 'Exit to the track':xgt 'beg1','ross'
+     end
+     if razradbeg >= 6 and razradbeg < 16:
+     'You write in the group world-class athlete. Qualifying competition for access to the European Championship.'
+     
+     act 'Exit to the track':xgt 'beg1','kval'
+     end
+     if razradbeg = 16:
+         if razradbegK < 8:
+         cla
+         Set razradbegK = 0
+         Set razradbeg = 6
+         'You are not logged qualification for the European Championship.'
+         act 'Get_Away':gt 'fit','razd'
+         end
+         if razradbegK >= 8:
+         cla
+         Set razradbegK = 0
+         Set razradbeg = 6
+         'You write to the European Championship.'
+          act 'Exit to the track':xgt 'beg1','evro'
+         end
+     end
 
 
 
 end
 
-if $ARGS[0] = 'br':
+if $ARGS[0]='br':
 cla
-'<center><img src="images\etogame\begsor.jpg"></center>'
-'Women´s 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
+'<center><img src="pic/begsor.jpg" ></center>'
+'women, running on 400 meters. You change clothes and go out on the treadmill. Get up to the start. Hear the starting shot.'
 
-Set begplus = beg + speed + vital + RAND(1,20)
-Set begminus = salo + RAND(1,20)
+Set begplus = beg + speed + vital + RAND (1,20)
+Set begminus = salo + RAND (1,20)
 Set begresult = begplus - begminus
-if begresult <= 0: 'You barely managed to reach the finish line, what place is really there, of course you are the last.'
-if begresult > 0 and begresult < 10: 'You are not bad ran for dilettante course, as ranked last 8th place.'
-if begresult >= 10 and begresult < 20: 'You fought hard, but managed to take only 7 penultimate place.'
-if begresult >= 20 and begresult < 30: 'You fought hard, but only managed to take 6th place.'
-if begresult >= 30 and begresult < 40: 'You fought hard, but only managed to take 5th place.'
-if begresult >= 40 and begresult < 50: 'You fought hard, but only managed to take 4th place.'
-if begresult >= 50 and begresult < 60: Set bronzebeg += 1 & Set money += 100 & 'You fought hard and managed to take 3rd place prize. You get a bronze medal and a prize of 100 rubles'
-if begresult >= 60 and begresult < 70: Set silverbeg += 1 & Set money += 500 & 'You fought hard and managed to take the 2nd place prize. You get a silver medal and a prize of 500 rubles'
-if begresult >= 70: Set razradbeg = 1 & Set goldbeg += 1 & Set money += 1000 & 'You fought hard and managed to take 1st place. You get a gold medal, a prize of 1,000 rubles and third sports category on the run.'
-Set beg += 1
-Set fat -= 10
-act 'Leave': gt 'down'
+if begresult <= 0:'You barely managed to reach the finish line, what is really there place, Of course you are the last.'
+if begresult > 0 and begresult < 10:'You are not a bad thing ran, for dilettante course, as ranked last 8 place.'
+if begresult >= 10 and begresult < 20:'You fought hard, but only managed to take the penultimate 7 place.'
+if begresult >= 20 and begresult < 30:'You fought hard, but only managed to take 6 place.'
+if begresult >= 30 and begresult < 40:'You fought hard, but only managed to take 5 place.'
+if begresult >= 40 and begresult < 50:'You fought hard, but only managed to take 4 place.'
+if begresult >= 50 and begresult < 60:Set bronzebeg = bronzebeg + 1&Set money = money + 100&'You fought hard, and managed to take the prize 3 place. You get a bronze medal and a prize 100 rubles'
+if begresult >= 60 and begresult < 70:Set silverbeg = silverbeg + 1&Set money = money + 500&'You fought hard, and managed to take the prize 2 place. You get a silver medal and a prize 500 rubles'
+if begresult >= 70:Set razradbeg = 1&Set goldbeg = goldbeg + 1&Set money = money + 1000&'You fought hard, and managed to take 1 place. You get a gold medal, prize 1000 rubles 3First sports category on the run.'
+Set beg = beg + 1
+Set fat = fat - 10
+act 'Get_Away':gt 'down'
 end
 
-if $ARGS[0] = '3':
+if $ARGS[0]='3':
 cla
-'<center><img src="images\etogame\begsor.jpg"></center>'
-'You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
+'<center><img src="pic/begsor.jpg" ></center>'
+'You change clothes and go out on the treadmill. Get up to the start. Hear the starting shot.'
 
-Set begplus = beg + speed + vital + RAND(1,20)
-Set begminus = salo + RAND(1,20)
+Set begplus = beg + speed + vital + RAND (1,20)
+Set begminus = salo + RAND (1,20)
 Set begresult = begplus - begminus
-if begresult <= 0: 'You barely managed to reach the finish line, what place is really there, of course you are the last.'
-if begresult > 0 and begresult < 70: 'You are not bad ran for dilettante course, as ranked last 8th place.'
-if begresult >= 70 and begresult < 80: 'You fought hard, but managed to take only 7 penultimate place.'
-if begresult >= 80 and begresult < 90: 'You fought hard, but only managed to take 6th place.'
-if begresult >= 90 and begresult < 100: 'You fought hard, but only managed to take 5th place.'
-if begresult >= 100 and begresult < 110: 'You fought hard, but only managed to take 4th place.'
-if begresult >= 110 and begresult < 120: Set bronzebeg += 1 & Set money += 500 & 'You fought hard and managed to take 3rd place prize. You get a bronze medal and a prize of 500 rubles'
-if begresult >= 120 and begresult < 130: Set silverbeg += 1 & Set money += 1000 & 'You fought hard and managed to take the 2nd place prize. You get a silver medal and a prize of 1,000 rubles'
-if begresult >= 130: Set razradbeg = 2 & Set goldbeg += 1 & Set money += 2000 & 'You fought hard and managed to take 1st place. You get a gold medal, a prize of 2,000 rubles and 2nd sports category on the run.'
-Set beg += 1
-Set fat -= 10
-act 'Leave': gt 'down'
-end
-
-
-if $ARGS[0] = '2':
-cla
-'<center><img src="images\etogame\begsor.jpg"></center>'
-'Women´s 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
-
-Set begplus = beg + speed + vital + RAND(1,20)
-Set begminus = salo + RAND(1,20)
-Set begresult = begplus - begminus
-if begresult <= 0: 'You barely managed to reach the finish line, what place is really there, of course you are the last.'
-if begresult > 0 and begresult < 130: 'You are not bad ran for dilettante course, as ranked last 8th place.'
-if begresult >= 130 and begresult < 140: 'You fought hard, but managed to take only 7 penultimate place.'
-if begresult >= 140 and begresult < 150: 'You fought hard, but only managed to take 6th place.'
-if begresult >= 150 and begresult < 160: 'You fought hard, but only managed to take 5th place.'
-if begresult >= 160 and begresult < 170: 'You fought hard, but only managed to take 4th place.'
-if begresult >= 170 and begresult < 180: Set bronzebeg += 1 & Set money += 1000 & 'You fought hard and managed to take 3rd place prize. You get a bronze medal and a prize of 1,000 rubles'
-if begresult >= 180 and begresult < 190: Set silverbeg += 1 & Set money += 2000 & 'You fought hard and managed to take the 2nd place prize. You get a silver medal and a prize of 2,000 rubles'
-if begresult >= 200: Set razradbeg = 3 & Set goldbeg += 1 & Set money += 3000 & 'You fought hard and managed to take 1st place. You get a gold medal, a prize of 3000 rubles and 1st sports category on the run. You become the champion of the city on the run.'
-Set beg += 1
-Set fat -= 10
-act 'Leave': gt 'down'
+if begresult <= 0:'You barely managed to reach the finish line, what is really there place, Of course you are the last.'
+if begresult > 0 and begresult < 70:'You are not a bad thing ran, for dilettante course, as ranked last 8 place.'
+if begresult >= 70 and begresult < 80:'You fought hard, but only managed to take the penultimate 7 place.'
+if begresult >= 80 and begresult < 90:'You fought hard, but only managed to take 6 place.'
+if begresult >= 90 and begresult < 100:'You fought hard, but only managed to take 5 place.'
+if begresult >= 100 and begresult < 110:'You fought hard, but only managed to take 4 place.'
+if begresult >= 110 and begresult < 120:Set bronzebeg = bronzebeg + 1&Set money = money + 500&'You fought hard, and managed to take the prize 3 place. You get a bronze medal and a prize 500 rubles'
+if begresult >= 120 and begresult < 130:Set silverbeg = silverbeg + 1&Set money = money + 1000&'You fought hard, and managed to take the prize 2 place. You get a silver medal and a prize 1000 rubles'
+if begresult >= 130:Set razradbeg = 2&Set goldbeg = goldbeg + 1&Set money = money + 2000&'You fought hard, and managed to take 1 place. You get a gold medal, prize 2000 rubles 2First sports category on the run.'
+Set beg = beg + 1
+Set fat = fat - 10
+act 'Get_Away':gt 'down'
 end
 
 
-if $ARGS[0] = '1':
+if $ARGS[0]='2':
 cla
-'<center><img src="images\etogame\begsor.jpg"></center>'
-'Women´s 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
+'<center><img src="pic/begsor.jpg" ></center>'
+'women, running on 400 meters. You change clothes and go out on the treadmill. Get up to the start. Hear the starting shot.'
 
-Set begplus = beg + speed + vital + RAND(1,20)
-Set begminus = salo + RAND(1,20)
+Set begplus = beg + speed + vital + RAND (1,20)
+Set begminus = salo + RAND (1,20)
 Set begresult = begplus - begminus
-if begresult <= 0: 'You barely managed to reach the finish line, what place is really there, of course you are the last.'
-if begresult > 0 and begresult < 200: 'You are not bad ran for dilettante course, as ranked last 8th place.'
-if begresult >= 200 and begresult < 210: 'You fought hard, but managed to take only 7 penultimate place.'
-if begresult >= 210 and begresult < 220: 'You fought hard, but only managed to take 6th place.'
-if begresult >= 230 and begresult < 240: 'You fought hard, but only managed to take 5th place.'
-if begresult >= 240 and begresult < 250: 'You fought hard, but only managed to take 4th place.'
-if begresult >= 250 and begresult < 260: Set bronzebeg += 1 & Set money += 2000 & 'You fought hard and managed to take 3rd place prize. You get a bronze medal and a prize of 2,000 rubles'
-if begresult >= 260 and begresult < 270: Set silverbeg += 1 & Set money += 3000 & 'You fought hard and managed to take the 2nd place prize. You get a silver medal and a prize of 3,000 rubles'
-if begresult >= 270: Set razradbeg = 4 & Set goldbeg += 1 & Set money += 4000 & 'You fought hard and managed to take 1st place. You get a gold medal, a prize of 4000 rubles and the title of the CCM on the run. You become a champion of the region.'
-Set beg += 1
-Set fat -= 10
-act 'Leave': gt 'down'
+if begresult <= 0:'You barely managed to reach the finish line, what is really there place, Of course you are the last.'
+if begresult > 0 and begresult < 130:'You are not a bad thing ran, for dilettante course, as ranked last 8 place.'
+if begresult >= 130 and begresult < 140:'You fought hard, but only managed to take the penultimate 7 place.'
+if begresult >= 140 and begresult < 150:'You fought hard, but only managed to take 6 place.'
+if begresult >= 150 and begresult < 160:'You fought hard, but only managed to take 5 place.'
+if begresult >= 160 and begresult < 170:'You fought hard, but only managed to take 4 place.'
+if begresult >= 170 and begresult < 180:Set bronzebeg = bronzebeg + 1&Set money = money + 1000&'You fought hard, and managed to take the prize 3 place. You get a bronze medal and a prize 1000 rubles'
+if begresult >= 180 and begresult < 190:Set silverbeg = silverbeg + 1&Set money = money + 2000&'You fought hard, and managed to take the prize 2 place. You get a silver medal and a prize 2000 rubles'
+if begresult >= 200:Set razradbeg = 3&Set goldbeg = goldbeg + 1&Set money = money + 3000&'You fought hard, and managed to take 1 place. You get a gold medal, prize 3000 rubles 1First sports category on the run. You become a champion of the city on the run.'
+Set beg = beg + 1
+Set fat = fat - 10
+act 'Get_Away':gt 'down'
 end
 
 
-if $ARGS[0] = 'kms':
+if $ARGS[0]='1':
 cla
-'<center><img src="images\etogame\begsor.jpg"></center>'
-'Women´s 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
+'<center><img src="pic/begsor.jpg" ></center>'
+'women, running on 400 meters. You change clothes and go out on the treadmill. Get up to the start. Hear the starting shot.'
 
-Set begplus = beg + speed + vital + RAND(1,20)
-Set begminus = salo + RAND(1,20)
+Set begplus = beg + speed + vital + RAND (1,20)
+Set begminus = salo + RAND (1,20)
 Set begresult = begplus - begminus
-if begresult <= 0: 'You barely managed to reach the finish line, what place is really there, of course you are the last.'
-if begresult > 0 and begresult < 270: 'You are not bad ran for dilettante course, as ranked last 8th place.'
-if begresult >= 270 and begresult < 280: 'You fought hard, but managed to take only 7 penultimate place.'
-if begresult >= 280 and begresult < 290: 'You fought hard, but only managed to take 6th place.'
-if begresult >= 290 and begresult < 300: 'You fought hard, but only managed to take 5th place.'
-if begresult >= 300 and begresult < 310: 'You fought hard, but only managed to take 4th place.'
-if begresult >= 310 and begresult < 320: Set bronzebeg += 1 & Set money += 3000 & 'You fought hard and managed to take 3rd place prize. You get a bronze medal and a prize of 3,000 rubles'
-if begresult >= 320 and begresult < 330: Set silverbeg += 1 & Set money += 4000 & 'You fought hard and managed to take the 2nd place prize. You get a silver medal and a prize of 4,000 rubles'
-if begresult >= 330: Set razradbeg = 5 & Set goldbeg += 1 & Set money += 5000 & 'You fought hard and managed to take 1st place. You get a gold medal, a prize of 5000 rubles and the title of Master of Sports in the run. You become a champion of the region.'
-Set beg += 1
-Set fat -= 10
-act 'Leave': gt 'down'
+if begresult <= 0:'You barely managed to reach the finish line, what is really there place, Of course you are the last.'
+if begresult > 0 and begresult < 200:'You are not a bad thing ran, for dilettante course, as ranked last 8 place.'
+if begresult >= 200 and begresult < 210:'You fought hard, but only managed to take the penultimate 7 place.'
+if begresult >= 210 and begresult < 220:'You fought hard, but only managed to take 6 place.'
+if begresult >= 230 and begresult < 240:'You fought hard, but only managed to take 5 place.'
+if begresult >= 240 and begresult < 250:'You fought hard, but only managed to take 4 place.'
+if begresult >= 250 and begresult < 260:Set bronzebeg = bronzebeg + 1&Set money = money + 2000&'You fought hard, and managed to take the prize 3 place. You get a bronze medal and a prize 2000 rubles'
+if begresult >= 260 and begresult < 270:Set silverbeg = silverbeg + 1&Set money = money + 3000&'You fought hard, and managed to take the prize 2 place. You get a silver medal and a prize 3000 rubles'
+if begresult >= 270:Set razradbeg = 4&Set goldbeg = goldbeg + 1&Set money = money + 4000&'You fought hard, and managed to take 1 place. You get a gold medal, prize 4000 rubles and the title of the CCM on the run. You become a champion of the field.'
+Set beg = beg + 1
+Set fat = fat - 10
+act 'Get_Away':gt 'down'
+end
+
+
+if $ARGS[0]='kms':
+cla
+'<center><img src="pic/begsor.jpg" ></center>'
+'women, running on 400 meters. You change clothes and go out on the treadmill. Get up to the start. Hear the starting shot.'
+
+Set begplus = beg + speed + vital + RAND (1,20)
+Set begminus = salo + RAND (1,20)
+Set begresult = begplus - begminus
+if begresult <= 0:'You barely managed to reach the finish line, what is really there place, Of course you are the last.'
+if begresult > 0 and begresult < 270:'You are not a bad thing ran, for dilettante course, as ranked last 8 place.'
+if begresult >= 270 and begresult < 280:'You fought hard, but only managed to take the penultimate 7 place.'
+if begresult >= 280 and begresult < 290:'You fought hard, but only managed to take 6 place.'
+if begresult >= 290 and begresult < 300:'You fought hard, but only managed to take 5 place.'
+if begresult >= 300 and begresult < 310:'You fought hard, but only managed to take 4 place.'
+if begresult >= 310 and begresult < 320:Set bronzebeg = bronzebeg + 1&Set money = money + 3000&'You fought hard, and managed to take the prize 3 place. You get a bronze medal and a prize 3000 rubles'
+if begresult >= 320 and begresult < 330:Set silverbeg = silverbeg + 1&Set money = money + 4000&'You fought hard, and managed to take the prize 2 place. You get a silver medal and a prize 4000 rubles'
+if begresult >= 330:Set razradbeg = 5&Set goldbeg = goldbeg + 1&Set money = money + 5000&'You fought hard, and managed to take 1 place. You get a gold medal, prize 5000 rubles and the title of Master of Sports in the run. You become a champion of the region.'
+Set beg = beg + 1
+Set fat = fat - 10
+act 'Get_Away':gt 'down'
 end
 
 
 
-if $ARGS[0] = 'ross':
+if $ARGS[0]='ross':
 cla
-'<center><img src="images\etogame\begsor.jpg"></center>'
-'Women´s 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
+'<center><img src="pic/begsor.jpg" ></center>'
+'women, running on 400 meters. You change clothes and go out on the treadmill. Get up to the start. Hear the starting shot.'
 
-Set begplus = beg + speed + vital + RAND(1,20)
-Set begminus = (salo * 2) + RAND(1,20)
+Set begplus = beg + speed + vital + RAND (1,20)
+Set begminus = (salo*2) + RAND (1,20)
 Set begresult = begplus - begminus
-if begresult <= 0: 'You barely managed to reach the finish line, what place is really there, of course you are the last.'
-if begresult > 0 and begresult < 330: 'You are not bad ran for dilettante course, as ranked last 8th place.'
-if begresult >= 330 and begresult < 340: 'You fought hard, but managed to take only 7 penultimate place.'
-if begresult >= 340 and begresult < 350: 'You fought hard, but only managed to take 6th place.'
-if begresult >= 350 and begresult < 360: 'You fought hard, but only managed to take 5th place.'
-if begresult >= 360 and begresult < 370: 'You fought hard, but only managed to take 4th place.'
-if begresult >= 370 and begresult < 380: Set bronzebeg += 1 & Set money += 4000 & 'You fought hard and managed to take 3rd place prize. You get a bronze medal and a prize of 4,000 rubles'
-if begresult >= 380 and begresult < 390: Set silverbeg += 1 & Set money += 5000 & 'You fought hard and managed to take the 2nd place prize. You get a silver medal and a prize of 5,000 rubles'
-if begresult >= 390: Set razradbeg = 6 & Set goldbeg += 1 & Set money += 6000 & 'You fought hard and managed to take 1st place. You get a gold medal, a prize of 6000 rubles and the title of International Master of Sports on the run. You become the champion of Russia.'
-Set beg += 1
-Set fat -= 10
-act 'Leave': gt 'down'
+if begresult <= 0:'You barely managed to reach the finish line, what is really there place, Of course you are the last.'
+if begresult > 0 and begresult < 330:'You are not a bad thing ran, for dilettante course, as ranked last 8 place.'
+if begresult >= 330 and begresult < 340:'You fought hard, but only managed to take the penultimate 7 place.'
+if begresult >= 340 and begresult < 350:'You fought hard, but only managed to take 6 place.'
+if begresult >= 350 and begresult < 360:'You fought hard, but only managed to take 5 place.'
+if begresult >= 360 and begresult < 370:'You fought hard, but only managed to take 4 place.'
+if begresult >= 370 and begresult < 380:Set bronzebeg = bronzebeg + 1&Set money = money + 4000&'You fought hard, and managed to take the prize 3 place. You get a bronze medal and a prize 4000 rubles'
+if begresult >= 380 and begresult < 390:Set silverbeg = silverbeg + 1&Set money = money + 5000&'You fought hard, and managed to take the prize 2 place. You get a silver medal and a prize 5000 rubles'
+if begresult >= 390:Set razradbeg = 6&Set goldbeg = goldbeg + 1&Set money = money + 6000&'You fought hard, and managed to take 1 place. You get a gold medal, prize 6000 rubles and the title of International Master of Sports on the run. You become a champion of Russia.'
+Set beg = beg + 1
+Set fat = fat - 10
+act 'Get_Away':gt 'down'
 end
 
 
-if $ARGS[0] = 'kval':
+if $ARGS[0]='kval':
 cla
-'<center><img src="images\etogame\begsor.jpg"></center>'
-'Women´s 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
-Set razradbeg += 1
-Set begplus = beg + speed + vital + RAND(1,20)
-Set begminus = (salo * 3) + RAND(1,20)
+'<center><img src="pic/begsor.jpg" ></center>'
+'women, running on 400 meters. You change clothes and go out on the treadmill. Get up to the start. Hear the starting shot.'
+Set razradbeg = razradbeg + 1
+Set begplus = beg + speed + vital + RAND (1,20)
+Set begminus = (salo*3) + RAND (1,20)
 Set begresult = begplus - begminus
-if begresult <= 0: 'You barely managed to reach the finish line, what place is really there, of course you are the last.'
-if begresult > 0 and begresult < 450: 'You are not bad ran for dilettante course, as ranked last 8th place.'
-if begresult >= 450 and begresult < 500: 'You fought hard, but managed to take only 7 penultimate place.'
-if begresult >= 500 and begresult < 550: 'You fought hard, but only managed to take 6th place.'
-if begresult >= 550 and begresult < 600: 'You fought hard, but only managed to take 5th place.'
-if begresult >= 600 and begresult < 650: 'You fought hard, but only managed to take 4th place.'
-if begresult >= 650 and begresult < 700: Set razradbegK += 1 & Set bronzebeg += 1 & Set money += 5000 & 'You fought hard and managed to take 3rd place prize. You get a bronze medal and a prize of 5,000 rubles'
-if begresult >= 700 and begresult < 800: Set razradbegK += 1 & Set silverbeg += 1 & Set money += 10000 & 'You fought hard and managed to take the 2nd place prize. You get a silver medal and a prize of 10,000 rubles'
-if begresult >= 800: Set razradbegK += 1 & Set goldbeg += 1 & Set money += 15000 & 'You fought hard and managed to take 1st place. You get a gold medal, a prize of 15 thousand rubles.'
-Set beg += 1
-Set fat -= 10
-act 'Leave': gt 'down'
+if begresult <= 0:'You barely managed to reach the finish line, what is really there place, Of course you are the last.'
+if begresult > 0 and begresult < 450:'You are not a bad thing ran, for dilettante course, as ranked last 8 place.'
+if begresult >= 450 and begresult < 500:'You fought hard, but only managed to take the penultimate 7 place.'
+if begresult >= 500 and begresult < 550:'You fought hard, but only managed to take 6 place.'
+if begresult >= 550 and begresult < 600:'You fought hard, but only managed to take 5 place.'
+if begresult >= 600 and begresult < 650:'You fought hard, but only managed to take 4 place.'
+if begresult >= 650 and begresult < 700:Set razradbegK = razradbegK + 1&Set bronzebeg = bronzebeg + 1&Set money = money + 5000&'You fought hard, and managed to take the prize 3 place. You get a bronze medal and a prize 5000 rubles'
+if begresult >= 700 and begresult < 800:Set razradbegK = razradbegK + 1&Set silverbeg = silverbeg + 1&Set money = money + 10000&'You fought hard, and managed to take the prize 2 place. You get a silver medal and a prize 10 thousand rubles'
+if begresult >= 800:Set razradbegK = razradbegK + 1&Set goldbeg = goldbeg + 1&Set money = money + 15000&'You fought hard, and managed to take 1 place. You get a gold medal, prize 15 thousand rubles.'
+Set beg = beg + 1
+Set fat = fat - 10
+act 'Get_Away':gt 'down'
 end
 
 
-if $ARGS[0] = 'evro':
+if $ARGS[0]='evro':
 cla
-'<center><img src="images\etogame\begsor.jpg"></center>'
-'Women´s 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
-Set razradbeg += 1
-Set begplus = beg + speed + vital + RAND(1,20)
-Set begminus = (salo * 4) + RAND(1,20)
+'<center><img src="pic/begsor.jpg" ></center>'
+'women, running on 400 meters. You change clothes and go out on the treadmill. Get up to the start. Hear the starting shot.'
+Set razradbeg = razradbeg + 1
+Set begplus = beg + speed + vital + RAND (1,20)
+Set begminus = (salo*4) + RAND (1,20)
 Set begresult = begplus - begminus
-if begresult <= 0: 'You barely managed to reach the finish line, what place is really there, of course you are the last.'
-if begresult > 0 and begresult < 450: 'You are not bad ran for dilettante course, as ranked last 8th place.'
-if begresult >= 450 and begresult < 550: 'You fought hard, but managed to take only 7 penultimate place.'
-if begresult >= 700 and begresult < 800: 'You fought hard, but only managed to take 6th place.'
-if begresult >= 800 and begresult < 1000: 'You fought hard, but only managed to take 5th place.'
-if begresult >= 1000 and begresult < 1300: 'You fought hard, but only managed to take 4th place.'
-if begresult >= 1300 and begresult < 1800: Set razradbegEB += 1 & Set money += 10000 & 'You fought hard and managed to take 3rd place prize. You get a bronze medal and a prize of 10 thousand rubles'
-if begresult >= 1800 and begresult < 2500: Set razradbegES += 1 & Set money += 15000 & 'You fought hard and managed to take the 2nd place prize. You get a silver medal and a prize of 15,000 rubles'
-if begresult >= 2500: Set razradbegEG += 1 & Set money += 20000 & 'You fought hard and managed to take 1st place. You get a gold medal, a prize of 20 thousand rubles. You are the champion of Europe.'
-Set beg += 1
-Set fat -= 10
-act 'Leave': gt 'down'
+if begresult <= 0:'You barely managed to reach the finish line, what is really there place, Of course you are the last.'
+if begresult > 0 and begresult < 450:'You are not a bad thing ran, for dilettante course, as ranked last 8 place.'
+if begresult >= 450 and begresult < 550:'You fought hard, but only managed to take the penultimate 7 place.'
+if begresult >= 700 and begresult < 800:'You fought hard, but only managed to take 6 place.'
+if begresult >= 800 and begresult < 1000:'You fought hard, but only managed to take 5 place.'
+if begresult >= 1000 and begresult < 1300:'You fought hard, but only managed to take 4 place.'
+if begresult >= 1300 and begresult < 1800:Set razradbegEB = razradbegEB + 1&Set money = money + 10000&'You fought hard, and managed to take the prize 3 place. You get a bronze medal and a prize 10 thousand rubles'
+if begresult >= 1800 and begresult < 2500:Set razradbegES = razradbegES + 1&Set money = money + 15000&'You fought hard, and managed to take the prize 2 place. You get a silver medal and a prize 15 thousand rubles'
+if begresult >= 2500:Set razradbegEG = razradbegEG + 1&Set money = money + 20000&'You fought hard, and managed to take 1 place. You get a gold medal, prize 20 thousand rubles. You champion of Europe.'
+Set beg = beg + 1
+Set fat = fat - 10
+act 'Get_Away':gt'down'
 end
 --- beg1 ---------------------------------
 

@@ -1,476 +1,479 @@
 # klofdomhouse1
-if $ARGS[0] = 'start':
+if $ARGS[0]='start':
 cla
 *clr
-set minut += 5
-	act 'Ring the doorbell':
-	cla
-		if klofQW = 2 and hour >= 16 and klofday ! day:
-		gt 'klofdomhouse','ev1'
-		elseif klofQW > 2 and hour >= 16 and klofday ! day:
-		gt 'klofdomhouse','start1'
-		else
-		'No one home'
-		act 'Go home': gt 'street'
-		end
-	end
+set minut = minut + 5
+	 act 'Ring the doorbell':
+	 cla 
+	     if klofQW = 2 and hour>=16 and klofday!day:
+         gt 'klofdomhouse','ev1'
+         elseif klofQW > 2 and hour>=16 and klofday!day:
+         gt 'klofdomhouse','start1'
+         else
+         'No one is home'
+         act 'go home':gt 'street'
+         end
+	 end
 
-act 'Go home': gt 'street'
+act 'go home':gt 'street'
 end
 
-if $args[0] = 'ev1':
+if $args[0]='ev1':
 cla
 *clr
-set klofday = day
-set minut += 5
-'<center><img src="images\klof\klof.jpg"></center>'
-'You rang the doorbell.'
-'You do not open and you want to leave, but then the door opened.'
-'Hi-<<$name>> said'
-'-And that you said (smiling) male-through.'
-act 'Stop by': gt 'klofdomhouse','ev2'
+set klofday=day
+set minut=minut+5 
+'<center><img src="klof/klof.jpg" ></center>'
+'You`ve reached the door.
+You do not open and you want to leave, but then the door opened.
+-hello- said Light
+-And it`s you- said (smiling) guy- Come.'
+act'go':gt 'klofdomhouse','ev2'
 end
 
-if $args[0] = 'ev2':
+if $args[0]='ev2':
 cla
 *clr
-set minut += 5
-'<center><img src="images\klof\klof 1.JPG"></center>'
-'You looked around the apartment was a pigsty, the walls papered with peeled everywhere strewn socks.'
-'How pathetic something you guys here rebya - you said and smiled, eyes met the guy.'
-'Nothing, we just arrived in this city soon obzhivaya said grinning guy.'
-'- Clear. We are never met.'
-'- Call me Zhora, and my sidekick Senya, and now just quickly clean this up in the apartment.'
-act 'Clean up': gt 'klofdomhouse','ev4'
-	if sub < 30 and horny < 75:
-	act 'Leave': gt 'klofdomhouse','ev3'
-	end
+set minut=minut+5
+'<center><img src="klof/klof 1.JPG" ></center>'
+'you looked around, the apartment was a pigsty ,wall with peeled wallpaper, littered everywhere socks. 
+-how-is pathetic you guys here rebya - you said and smiled,eye contact with a guy. 
+-It`S_Nothing, we just arrived in this city obzhivaya soon- said grinning guy. 
+- It_Is_Clear. We are never met.
+- Call me Zhora, and my sidekick Senya,and now quickly tidy apartment.'
+act 'clean_up':gt 'klofdomhouse','ev4'
+	 if sub<30 and horny<75:
+	 act 'Get_Away':gt 'klofdomhouse','ev3'
+	 end
 end
 
-if $args[0] = 'ev3':
+if $args[0]='ev3':
 cla
 *clr
-set minut += 5
-set klofQW -= 1
-if dom > 0: set dom += 5
-if sub > 0: set sub -= 5
-'<center><img src="images\qwest\pnx.jpg"></center>'
-'You decided that the guy above you just izdevaetsya and left.'
-act 'Leave': gt 'street'
+set minut=minut+5
+set klofQW=klofQW-1
+if dom>0:set dom=dom+5
+if sub>0:set sub=sub-5
+'<center><img src="picQW/pnx.jpg" ></center>'
+'You have decided that the guy above you just izdevaetsya and left.'
+act 'Get_Away':gt 'street'
 end
 
-if $args[0] = 'ev4':
+if $args[0]='ev4':
 cla
 *clr
-set minut += 5
-'<center><img src="images\klof\klof 3.JPG"></center>'
-'Remove ZHore you approached and asked.'
-'Jora-you promised money and entertainment, but so far I have not seen what this'
-'Well-look, as I said we are not in a long time, until now we need a girl for home services'
-'- When will become closer acquainted, talk about business.'
-'- Now be a good girl and I discussed'
-act 'Open your legs ZHore': gt 'klofdomhouse','ev5'
+set minut=minut+5
+'<center><img src="klof/klof 3.JPG" ></center>'
+'Remove you approached and asked Zhora:.
+-Jora you promised money and entertainment, but so far I have not seen what this
+-well listen, As I said we are not in a long time, until now we need a girl for services at home
+- When will become closer acquainted, to talk business.
+- Now be obedient girl and I discussed '
+act 'Open your legs Zhora':gt 'klofdomhouse','ev5'
 end
 
-if $args[0] = 'ev5':
+if $args[0]='ev5':
 cla
 *clr
-set minut += 5
-sex += 1
-vagina += 1
-'<center><img src="images\klof\klof 4.jpg"></center>'
-'Jora began to fuck you in the pussy, suddenly the door opened.'
-'Into the room came Senya and said, "Suck my cock baby ka"'
-act 'Get a mouth Cenis': gt 'klofdomhouse','ev6'
+set minut=minut+5
+sex+=1
+vagina+=1
+'<center><img src="klof/klof 4.jpg" ></center>'
+'Jora began to fuck you in the pussy, Suddenly the door opened.
+Entered the room and said: "Suck my cock baby ka"'
+act 'To take by mouth in Seney':gt 'klofdomhouse','ev6'
 end
 
-if $args[0] = 'ev6':
+if $args[0]='ev6':
 cla
 *clr
-set hour += 23
-set minut += 5
-set klofQW += 1
+set hour=hour+23
+set minut=minut+5
+set klofQW=klofQW+1
 cla
-*clr
-set money += 200
-Set bj += 1
-Set cumface += 1
-set cumpussy += 1
-'<center><img src="images\klof\klof 5.jpg"></center>'
-'Jora zhetko pecked in your pussy, Xian fucked you in the mouth.'
-Set horand = RAND(1,100)
-if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-if horand > sex: Set horny += 10 & 'You were not satisfied'
-'You are dressed and ready to go home.'
-'To you approached and handed the money Jora: "Earned crumb"'
-	if bj >= anal and bj >= sex:
-	set callnm = 1
-	end
-	if anal >= oral and anal >= sex:
-	set callnm = 2
-	end
-	if Sex >= bj and Sex >= anal:
-	set callnm = 3
-	end
-	if vaf >= 100:
-	set callnm = 4
-	end
-act 'Go home': gt 'street'
+ *clr
+ set money = money + 200
+ Set bj = bj + 1
+ Set cumface = cumface + 1
+ set cumpussy = cumpussy + 1
+'<center><img src="klof/klof 5.jpg" ></center>'
+'Jora zhetko pecked in your pussy, Xian fuck you in the mouth.'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+'You are dressed and ready to go home.
+To you came up and handed the money Jora: "earned crumb" '
+	 if bj>=anal and bj>=sex:
+	 set callnm=1
+	 end
+	 if anal>=oral and anal>=sex:
+	 set callnm=2
+	 end
+	 if Sex>=bj and Sex>=anal:
+	 set callnm=3
+	 end
+	 if vaf>=100:
+	 set callnm=4
+	 end
+act 'go home':gt 'street'
 end
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-if $ARGS[0] = 'start1':
+if $ARGS[0]='start1':
 cla
 *clr
-set klofday = day
-set minut += 5
+set klofday=day
+set minut = minut + 5
 gt 'klofdomhouse','ev7'
 end
 
-if $args[0] = 'ev7':
+if $args[0]='ev7':
 cla
 *clr
-set minut += 5
-'<center><img src="images\klof\klof 1.JPG"></center>'
+set minut=minut+5
+'<center><img src="klof/klof 1.JPG" ></center>'
 'You went to the apartment'
-act 'Say hello to the guys': gt 'klofdomhouse','ev8'
+act 'Hello guys':gt 'klofdomhouse','ev8'
 end
 
-if $args[0] = 'ev8':
+if $args[0]='ev8':
 cla
 *clr
-set minut += 5
-'<center><img src="images\klof\klof 6.jpg"></center>'
-'Hey baby, guys said, you ogolid breasts and began to fondle you.'
-'- Hello boys miss me? - You said and blushed'
-act 'Entertain ZHoru': gt 'klofdomhouse','ev9'
-act 'entertain Senya': gt 'klofdomhouse','ev10'
-act 'Entertain both': gt 'klofdomhouse','ev19'
-act 'Ask Zhora about affairs': gt 'klofdomhouse', 'ev20'
+set minut=minut+5
+'<center><img src="klof/klof 6.jpg" ></center>'
+'-Hi Babe- told the guys, Exposed you chest and began to caress you.
+- Hello boys missed me?- you said and blushed'
+act 'entertain Zhora':gt 'klofdomhouse','ev9'
+act 'entertain Senya':gt 'klofdomhouse','ev10'
+act 'entertain both':gt 'klofdomhouse','ev19'
+act 'Pogovrit with Zhora on cases':gt 'klofdomhouse', 'ev20'
 end
 
 
 
 
-if $args[0] = 'ev9':
+if $args[0]='ev9':
 cla
 *clr
 
-act 'Writing in the pussy ZHore.': gt 'klofdomhouse','ev13'
-act 'Writing in the ass ZHore.': gt 'klofdomhouse','ev14'
-act 'ZHore suck.': gt 'klofdomhouse','ev19'
+act 'Post a pussy Zhora.':gt 'klofdomhouse','ev13'
+act 'Writing in the ass Zhora.':gt 'klofdomhouse','ev14'
+act 'suck Zhora.':gt 'klofdomhouse','ev19'
 end
 
-if $args[0] = 'ev13':
+if $args[0]='ev13':  
 cla
 *clr
-set minut += 30
-set klofQW += 1
-set money += 100
-set vagina += 1
-Set sex += 1
-set cumpussy += 1
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ set vagina = vagina + 1                      
+ Set sex = sex + 1
+ set cumpussy = cumpussy + 1
 'Jora zhetko pecked in your pussy.'
-set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 7.jpg"></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 8.jpg"></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 9.jpg"></center>'
-Set horand = RAND(1,100)
-if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-if horand > sex: Set horny += 10 & 'You were not satisfied'
-'You feel that Jora razryazhaetsya you.'
-'<center><img src="images\klof\klof 10.jpg"></center>'
-'You are dressed and ready to go home.'
-'Jora handed you the money, "Earned crumb"'
-act 'Go home': gt 'street'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 7.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 8.jpg" ></center>'
+         if picrand = 3:'<center><img src="klof/klof 9.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+'you chustvuete, Jora razryazhaetsya that into you.'
+'<center><img src="klof/klof 10.jpg" ></center>'
+ 'You are dressed and ready to go home.
+ Jora handed you money: "earned crumb" '
+act 'go home':gt 'street'
 end
 
-if $args[0] = 'ev14':
+if $args[0]='ev14':  
 cla
 *clr
-set minut += 30
-set klofQW += 1
-set money += 100
-Set anal += 1
-set anus += 1
-Set cumass += 1
-
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ Set anal = anal + 1
+ set anus = anus + 1
+ Set cumass = cumass + 1
+ 
 'Jora with full force hammer you in the ass.'
-set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 11.jpg"></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 12.jpg"></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 13.jpg"></center>'
-Set horand = RAND(1,100)
-if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-if horand > sex: Set horny += 10 & 'You were not satisfied'
-	act '....':
-	cla
-	*clr
-	'Jora discharge you in the ass, in the ass and inserts gag'
-	'<center><img src="images\klof\klof 14.jpg"></center>'
-	'You are dressed and ready to go home.'
-	'Jora handed you the money, "Earned crumb"'
-	act 'Go home': gt 'street'
-	end
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 11.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 12.jpg" ></center>'
+         if picrand = 3:'<center><img src="klof/klof 13.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+     act '....':
+     cla
+     *clr
+	 'Jora discharge point you in, and inserts it in the ass gag'
+	 '<center><img src="klof/klof 14.jpg" ></center>'
+	 'You are dressed and ready to go home.
+	 Jora handed you money: "earned crumb" '
+	 act 'go home':gt 'street'
+	 end
 end
 
 
-if $args[0] = 'ev15':
+if $args[0]='ev15':  
 cla
 *clr
-set minut += 30
-set klofQW += 1
-set money += 100
-set bj += 1
-Set cumface += 1
-'You passionately clasped Zhorin member lips.'
-set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 15.jpg"></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 16.jpg."></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 17.jpg."></center>'
-Set horand = RAND(1,100)
-if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-if horand > sex: Set horny += 10 & 'You were not satisfied'
-	act '....':
-	cla
-	*clr
-	'Jora discharged in your face'
-	set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 18.jpg"></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 19.jpg."></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 20.jpg."></center>'
-	'You are dressed and ready to go home.'
-	'Jora handed you the money, "Earned crumb"'
-	act 'Go home': gt 'street'
-	end
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ set bj = bj + 1 
+ Set cumface = cumface + 1
+'You are gripped with passion Zhorin member lips.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 15.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 16.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 17.jpg." ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+     act '....':
+     cla
+     *clr
+     'Jora discharged in your face'
+     set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 18.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 19.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 20.jpg." ></center>'
+     'You are dressed and ready to go home.
+     Jora handed you money: "earned crumb" '
+     act 'go home':gt 'street'
+     end
 end
 
 
 
 
-if $args[0] = 'ev10':
+if $args[0]='ev10':
 cla
 *clr
 
-act 'Writing in the pussy Seine.': gt 'klofdomhouse','ev 16'
-act 'Writing in the ass Seine.': gt 'klofdomhouse','ev 17'
-act 'Suck Seine.': gt 'klofdomhouse','ev 18'
+act 'Post a pussy Seine.':gt 'klofdomhouse','ev 16'
+act 'Writing in the ass Seine.':gt 'klofdomhouse','ev 17'
+act 'suck Seine.':gt 'klofdomhouse','ev 18'
 end
 
-if $args[0] = 'ev 16':
+if $args[0]='ev 16':  
 cla
 *clr
-set minut += 30
-set klofQW += 1
-set money += 100
-set vagina += 1
-Set sex += 1
-'Hsien zhetko pecked in your pussy.'
-set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 7.jpg"></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 8.jpg"></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 9.jpg"></center>'
-Set horand = RAND(1,100)
-if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-if horand > sex: Set horny += 10 & 'You were not satisfied'
-	act '....':
-	cla
-	*clr
-	'You feel that Jora razryazhaetsya you.'
-	'<center><img src="images\klof\klof 10.jpg"></center>'
-	'You are dressed and ready to go home.'
-	'Hsien handed you the money, "Earned crumb"'
-	act 'Go home': gt 'street'
-	end
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ set vagina = vagina + 1                      
+ Set sex = sex + 1
+'Senya zhetko pecked in your pussy.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 7.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 8.jpg" ></center>'
+         if picrand = 3:'<center><img src="klof/klof 9.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+     act '....':
+     cla
+     *clr
+	 'you chustvuete, Jora razryazhaetsya that into you.'
+	 '<center><img src="klof/klof 10.jpg" ></center>'
+	 'You are dressed and ready to go home.
+	 Senya handed you money: "earned crumb" '
+	 act 'go home':gt 'street'
+	 end
 end
 
-if $args[0] = 'ev 17':
+if $args[0]='ev 17':  
 cla
 *clr
-set minut += 30
-set klofQW += 1
-set money += 100
-Set cumass += 1
-anal += 1
-anus += 1
-'Hsien with full force hammer you in the ass.'
-set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 11.jpg"></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 12.jpg"></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 13.jpg"></center>'
-Set horand = RAND(1,100)
-if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-if horand > sex: Set horny += 10 & 'You were not satisfied'
-
-	act '....':
-	cla
-	*clr
-	'Hsien discharge you in the ass, in the ass and inserts gag'
-	'<center><img src="images\klof\klof 14.jpg"></center>'
-	'You are dressed and ready to go home.'
-	'Hsien handed you the money, "Earned crumb"'
-	act 'Go home': gt 'street'
-	end
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ Set cumass = cumass + 1
+ anal+=1
+ anus+=1
+'Senja with all his might hammer you in the ass.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 11.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 12.jpg" ></center>'
+         if picrand = 3:'<center><img src="klof/klof 13.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+ 
+     act '....':
+     cla
+     *clr
+	 'Senya discharge point you in, and inserts it in the ass gag'
+	 '<center><img src="klof/klof 14.jpg" ></center>'
+	 'You are dressed and ready to go home.
+	 Senya handed you money: "earned crumb" '
+	 act 'go home':gt 'street'
+	 end
 end
 
-if $args[0] = 'ev 18':
+if $args[0]='ev 18':  
 cla
 *clr
-set minut += 30
-set klofQW += 1
-set money += 100
-bj += 1
-Set guy += 1
-Set cumlip += 1
-'You passionately clasped Senenin member lips.'
-set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 15.jpg"></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 16.jpg."></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 17.jpg."></center>'
-Set horand = RAND(1,100)
-if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-if horand > sex: Set horny += 10 & 'You were not satisfied'
-	act '....':
-	cla
-	*clr
-	facial += 1
-	'Hsien discharged in your face'
-	set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 18.jpg"></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 19.jpg."></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 20.jpg."></center>'
-	'You are dressed and ready to go home.'
-	'Hsien handed you the money, "Earned crumb"'
-	act 'Go home': gt 'street'
-	end
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ bj+=1                 
+ Set guy = guy + 1
+ Set cumlip = cumlip + 1
+'You are gripped with passion Senenin member lips.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 15.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 16.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 17.jpg." ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+     act '....':
+     cla
+     *clr
+     facial+=1
+     'Senya discharged in your face'
+     set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 18.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 19.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 20.jpg." ></center>'
+     'You are dressed and ready to go home.
+     Senya handed you money: "earned crumb" '
+     act 'go home':gt 'street'
+     end
 end
 
 
-if $args[0] = 'ev19':
+if $args[0]='ev19':  
 cla
 *clr
-set minut += 30
-set klofQW += 2
-set money += 200
-sex += 1
-Set bj += 1
-Set cumface += 1
-facial += 1
-set cumpussy += 1
-set vagina += 1
-set picrand = RAND(1,3)
-		if picrand = 1: '<center><img src="images\klof\klof 21.jpg."></center>'
-		if picrand = 2: '<center><img src="images\klof\klof 22.jpg."></center>'
-		if picrand = 3: '<center><img src="images\klof\klof 23.jpg."></center>'
-'Jora brutally fuck you in the mouth and pussy Cenya dryuchit'
-Set horand = RAND(1,100)
-if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-if horand > sex: Set horny += 10 & 'You were not satisfied'
-'Finally they both finished, one in the pussy, the other on the face.'
-'You are dressed and ready to go home.'
-'Boys stretched you money, "Earned crumb"'
-act 'Go home': gt 'street'
+set minut=minut+30
+set klofQW=klofQW+2
+set money = money + 200
+sex+=1
+ Set bj = bj + 1
+ Set cumface = cumface + 1
+ facial+=1
+ set cumpussy = cumpussy + 1
+ set vagina = vagina + 1    
+ set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 21.jpg." ></center>'
+         if picrand = 2:'<center><img src="klof/klof 22.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 23.jpg." ></center>'
+'Jora brutally fuck you in the mouth, and CEnja dryuchit pussy'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+ 'Finally they both finished, one in the pussy, the other on the face.'
+'You are dressed and ready to go home.
+ Guys stretched you money: "earned crumb" '
+act 'go home':gt 'street'
 end
 
-if $args[0] = 'ev20':
+if $args[0]='ev20':
 cla
 *clr
-set klofday = day
-set minut += 5
-'<center><img src="images\klof\klof.jpg"></center>'
-'If you want to talk serious business with our boss'
-	act 'Talk to the boss':
-	cla
-	if klofQW < 10: gt 'klofdomhouse','ev21'
-	if klofQW >= 10: gt 'klofdomhouse','ev22'
-	end
-end
-
-if $args[0] = 'ev21':
+set klofday=day
+set minut=minut+5 
+'<center><img src="klof/klof.jpg" ></center>'
+'If you want to talk serious business with our boss '
+	 act 'Talk with the boss':
+	 cla 
+	 if klofQW< 10:gt 'klofdomhouse','ev21'
+	 if klofQW >= 10:gt 'klofdomhouse','ev22'
+	 end
+ end
+ 
+if $args[0]='ev21':
 cla
 *clr
-'From the room came an ugly old man'
-'<center><img src="images\klof\klof24.jpg"></center>'
-'"Too early you climb into our business" - he said.'
-act 'Go home': gt 'street'
+'The room came an ugly old man'
+'<center><img src="klof/klof24.jpg" ></center>'
+'"You climb a bit early in our affairs" - he said.'
+act 'go home':gt 'street'
 end
 
-if $args[0] = 'ev22':
+if $args[0]='ev22':
 cla
 *clr
-'From the room came an ugly old man'
-'<center><img src="images\klof\klof24.jpg"></center>'
-'Boss looked closely at you and said, "Come to me, look at what you´re ready for the money"'
-act 'Go to the boss room.': gt 'klofdomhouse','ev23'
-act 'Go home': gt 'street'
+'The room came an ugly old man'
+'<center><img src="klof/klof24.jpg" ></center>'
+'Boss carefully looked at you and said: "Come to me"'
+act 'Go to the boss room.':gt 'klofdomhouse','ev23'
+act 'go home':gt 'street'
 end
 
-if $args[0] = 'ev23':
+if $args[0]='ev23':
 cla
 *clr
-'You went into the room boss surprisingly it was well renovated and furnished'
-'<center><img src="images\klof\klof25.jpg"></center>'
-'Well Well take off your clothes and show yourself - said the boss'
+'You went into the room boss surprisingly it has been well renovated and furnished'
+'<center><img src="klof/klof25.jpg" ></center>'
+'Well Well take off your clothes and show yourself - said boss'
 
-act 'Show yourself': gt 'klofdomhouse','ev24'
-act 'Send it to .....': gt 'street'
+act 'Show yourself':gt 'klofdomhouse','ev24'
+act 'Send it to .....':gt 'street'
 end
 
-if $args[0] = 'ev24':
+if $args[0]='ev24':
 cla
 *clr
 'You sat on the bed'
-'<center><img src="images\klof\klof 26.jpg"></center>'
-act 'Show breast': gt 'klofdomhouse','ev25'
+'<center><img src="klof/klof 26.jpg" ></center>'
+act 'Show chest':gt'klofdomhouse','ev25'
 end
 
-if $args[0] = 'ev25':
+if $args[0]='ev25':
 cla
 *clr
 'You bared her breasts'
-'<center><img src="images\klof\klof 26 (1).jpg"></center>'
-act 'Show ass': gt 'klofdomhouse','ev26'
+'<center><img src="klof/klof 26 (1).jpg" ></center>'
+act 'Show the ass':gt'klofdomhouse','ev26'
 end
 
-if $args[0] = 'ev26':
+if $args[0]='ev26':
 cla
 *clr
 'You pokazli his ass'
-'<center><img src="images\klof\klof 26</center>.jpg"></center>'
-act 'Remove dress': gt 'klofdomhouse','ev27'
+'<center><img src="klof/klof 26 (3).jpg" ></center>'
+act 'remove the dress':gt'klofdomhouse','ev27'
 end
 
-if $args[0] = 'ev27':
+if $args[0]='ev27':
 cla
 *clr
 'You took off her dress'
-'<center><img src="images\klof\klof 26 (4).jpg"></center>'
-act 'Seduce the boss': gt 'klofdomhouse','ev28'
+'<center><img src="klof/klof 26 (4).jpg" ></center>'
+act 'seduce boss':gt'klofdomhouse','ev28'
 end
 
-if $args[0] = 'ev27':
+if $args[0]='ev27':
 cla
 *clr
-'You sat on the bed and pushed the legs'
-'<center><img src="images\klof\klof 26 (6).jpg"></center>'
-act 'Seduce the boss': gt 'klofdomhouse','ev28'
+'You sat on the bed and parted legs'
+'<center><img src="klof/klof 26 (6).jpg" ></center>'
+act 'seduce boss':gt'klofdomhouse','ev28'
 end
 
-if $args[0] = 'ev28':
-cla
-*clr
-'You turned on its side and the boss showed their charms'
-'<center><img src="images\klof\1284364hjl.jpg)"></center>'
-act 'Spin the ass before the boss': gt 'klofdomhouse','ev29'
-end
-
-if $args[0] = 'ev29':
+if $args[0]='ev28':
 cla
 *clr
 'You turned on its side and the boss showed their charms'
-'<center><img src="images\klof\1284365sgp.jpg"></center>'
-act 'Seduce the boss': gt 'klofdomhouse','ev29'
+'<center><img src="klof/1284364hjl.jpg)" ></center>'
+act 'Twist ass in front of the boss':gt'klofdomhouse','ev29'
 end
+
+if $args[0]='ev29':
+cla
+*clr
+'You turned on its side and the boss showed their charms'
+'<center><img src="klof/1284365sgp.jpg" ></center>'
+act 'seduce boss':gt'klofdomhouse','ev29'
+end
+
+
+
 --- klofdomhouse1 ---------------------------------
 
