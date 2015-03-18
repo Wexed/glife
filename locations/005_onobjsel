@@ -25,7 +25,7 @@ pl '<<grudi>> - <<talia>> - <<bedra>>, <a href="exec:dynamic $din_show_tits">the
 pl '<<$anus>>'
 nl
 if salo = 0 and musle > 0 and dounspell = 0: pl '<B><font color = red>You are showing signs undernourishment. You should probably eat more and more often.</font></B>'
-if salo = 0 and musle = 0 and dounspell = 0: pl '<B><font color = red>You are dangerously malnourished, which has led to a loss in muscle mass. You're in a critical condition and likely to pass out!</font></B>'
+if salo = 0 and musle = 0 and dounspell = 0: pl "<B><font color = red>You are dangerously malnourished, which has led to a loss in muscle mass. You're in a critical condition and likely to pass out!</font></B>"
 if curly > 0: pl 'Your curls are good for another <<curly>> days.'
 if zub = 1:$zuba = ' tooth'
 if zub >= 2:$zuba = ' teeth'
@@ -108,10 +108,10 @@ if SchoolAtestat = 0 and StoryLine > 0:
 if Suspeh >= 90: pl 'You are an A+ student.'
 if Suspeh >= 80 and Suspeh < 90: pl 'You are a bright student, just not the top of your class.'
 if Suspeh >= 70 and Suspeh < 80: pl 'You are an above average student, but you have to work hard to keep up.'
-if Suspeh >= 60 and Suspeh < 70: pl 'You are the typical average student. You're good in the fields you like, but can't be bothered with the rest.'
-if Suspeh >= 50 and Suspeh < 60: pl 'You're not very good in school, you wish you could be somewhere else and your grades show it.'
-if Suspeh >= 40 and Suspeh < 50: pl 'You are not cut out for school, you skip out most of the time. You wonder how you're going to manage to get passing grades.'
-if Suspeh < 40: pl 'You are the class nitwit. You're still not sure how you got this far in the first place.'
+if Suspeh >= 60 and Suspeh < 70: pl "You are the typical average student. You're good in the fields you like, but can't be bothered with the rest."
+if Suspeh >= 50 and Suspeh < 60: pl "You're not very good in school, you wish you could be somewhere else and your grades show it."
+if Suspeh >= 40 and Suspeh < 50: pl "You are not cut out for school, you skip out most of the time. You wonder how you're going to manage to get passing grades."
+if Suspeh < 40: pl "You are the class nitwit. You're still not sure how you got this far in the first place."
 if schoolprogul > 1: pl 'Absenteeism in school <<schoolprogul>>'
 end
 
@@ -168,10 +168,10 @@ if stripdancesum > 0: pl '<<stripdancesum>> times dancing in the stripclub'
 if profiDanceTime > 0: pl 'You danced <<profiDanceTime>> professionally.'
 if (modelfoto + exhibi + stripdancesum + profiDanceTime) > 0: nl
 
-if razradKik = 1: set $razradKik = 'You're ranked III in amateur kickboxing'
-if razradKik = 2: set $razradKik = 'You're ranked II in amateur kickboxing'
-if razradKik = 3: set $razradKik = 'You're ranked I in amateur kickboxing'
-if razradKik = 4: set $razradKik = 'You are a candidate for the title of Master in Kickboxing'
+if razradKik = 1: set $razradKik = "You're ranked III in amateur kickboxing"
+if razradKik = 2: set $razradKik = "You're ranked II in amateur kickboxing"
+if razradKik = 3: set $razradKik = "You're ranked I in amateur kickboxing"
+if razradKik = 4: set $razradKik = "You are a candidate for the title of Master in Kickboxing"
 if razradKik = 5: set $razradKik = 'You have the title of Master Kickboxer'
 if SchoolAtestat = 1: pl 'You have finished school.'
 if diplom = 1: pl 'You graduated.'
@@ -1403,7 +1403,7 @@ $func ('scale.table',0,420)+'   0/420'
 }
 
 
-! -----scale.table------
+!-----scale.table------
 args[0] = args[0]   &   ! текущее значение параметра
 args[1] = args[1]   &   ! максимальное значение параметра
 if args[2] = 0: args[2] = 200   &   ! ширина шкалы (таблицы) в пикселях. По умолчанию 350 px
