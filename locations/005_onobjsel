@@ -8,9 +8,9 @@ $din_show_tits = {
 
 $objdescrip = {
 clr
-pl 'Your name <<$name>> <<$surname>>.'
-pl 'Do you <<age>> <<$letgoda>>, to look at you can not give more <<vidage>> <<$letgoda2>>.'
-if birthday > 0 and birthmonth > 0: pl 'Your date of birth <<birthday>>.0<<birthmonth>>.<<birthyear>>, the'
+pl 'Your name is <<$name>> <<$surname>>.'
+pl 'You are <<age>> <<$letgoda>>, but looking at you, people would guess you are <<vidage>> <<$letgoda2>>.'
+if birthday > 0 and birthmonth > 0: pl 'Your date of birth is <<birthday>>.0<<birthmonth>>.<<birthyear>>, the'
 pl '<<$vnesh>>'
 pl '<<$hair>>'
 pl '<<$lip>>'
@@ -19,13 +19,13 @@ pl '<<$glaza>>'
 pl '<<$mop>>'
 pl '<<$leghair>>'
 pl '<<$lobok>>'
-pl 'Growth <<rost>> centimeter, the weight <<ves>> pounds.'
+pl 'You are <<rost>> cm tall, you weigh <<ves>> pounds.'
 pl '<<$body>>'
-pl '<<grudi>> - <<talia>> - <<bedra>>, <a href="exec:dynamic $din_show_tits">the size of the breast <<tits>></a>, the difference between the hips and the waist <<bedra-talia>> cm'
+pl '<<grudi>> - <<talia>> - <<bedra>>, <a href="exec:dynamic $din_show_tits">the size of your breasts are <<tits>></a>, the difference between your hips and your waist is <<bedra-talia>> cm'
 pl '<<$anus>>'
 nl
-if salo = 0 and musle > 0 and dounspell = 0: pl '<B><font color = red>You start to show signs undernourishment. You should probably eat more from time to time.</font></B>'
-if salo = 0 and musle = 0 and dounspell = 0: pl '<B><font color = red>You have a serius eating disorder combined with a lack of muscles. Your health in serious danger!</font></B>'
+if salo = 0 and musle > 0 and dounspell = 0: pl '<B><font color = red>You are showing signs undernourishment. You should probably eat more and more often.</font></B>'
+if salo = 0 and musle = 0 and dounspell = 0: pl '<B><font color = red>You are dangerously malnourished, which has led to a loss in muscle mass. You're in a critical condition and likely to pass out!</font></B>'
 if curly > 0: pl 'Your curls are good for another <<curly>> days.'
 if zub = 1:$zuba = ' tooth'
 if zub >= 2:$zuba = ' teeth'
@@ -69,11 +69,11 @@ if hscrunch < 2: set hpigtail = 0
 $objskills = {
 clr
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!1Переделать
-!if salo > musle*4: set $fat = 'Do you loose fat body'
-!if salo <= musle * 4 and fat > musle*2: set $fat = 'Your body is soft, but still elastic.'
-!if salo <= musle * 2 and fat > musle: set $fat = 'You are a normal build.'
-!if salo <= musle and fat >= musle/2: set $fat = 'You slim and trim.'
-!if salo < musle/2: set $fat = 'You are very thin and the muscles strong stand on the body.'
+!if salo > musle*4: set $fat = 'You have a chubby disposition'
+!if salo <= musle * 4 and fat > musle*2: set $fat = 'You have a soft curvy body that still carries an elastic finesse.'
+!if salo <= musle * 2 and fat > musle: set $fat = 'You have an average body showing signs that you take care of yourself.'
+!if salo <= musle and fat >= musle/2: set $fat = 'Your body is slim and trim. You probably workout often '
+!if salo < musle/2: set $fat = 'Your body is a prayer to the god of fitness! Your skin is taught against your lithe musculature.'
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 pl 'Attractiveness <<vnesh>>'
 pl 'Power <<stren>>'
@@ -105,13 +105,13 @@ if shoot > 0: pl 'Shooting Accuracy - <<shoot>>'
 if kid = 1: pl 'You have a child, <<$polreb[1]>> name <<$kidname[1]>>. Born <<daykid[1]>>.<<monthkid[1]>>.<<yearkid[1]>>y. Age <<kidage[1]>>'
 
 if SchoolAtestat = 0 and StoryLine > 0:
-if Suspeh >= 90: pl 'In school you round excellent student.'
-if Suspeh >= 80 and Suspeh < 90: pl 'In school you learn mainly on fine, but there are four.'
-if Suspeh >= 70 and Suspeh < 80: pl 'In school, you learn a solid four, among which are sometimes encountered and fives.'
-if Suspeh >= 60 and Suspeh < 70: pl 'In school, you learn primarily on fours and threes, fives are very rare in your diary.'
-if Suspeh >= 50 and Suspeh < 60: pl 'In school, you learn three, sometimes skips and fours.'
-if Suspeh >= 40 and Suspeh < 50: pl 'In school you learn bad, you are struggling to fix twos threes.'
-if Suspeh < 40: pl 'In school you learn disgusting, basically go one of two.'
+if Suspeh >= 90: pl 'You are an A+ student.'
+if Suspeh >= 80 and Suspeh < 90: pl 'You are a bright student, just not the top of your class.'
+if Suspeh >= 70 and Suspeh < 80: pl 'You are an above average student, but you have to work hard to keep up.'
+if Suspeh >= 60 and Suspeh < 70: pl 'You are the typical average student. You're good in the fields you like, but can't be bothered with the rest.'
+if Suspeh >= 50 and Suspeh < 60: pl 'You're not very good in school, you wish you could be somewhere else and your grades show it.'
+if Suspeh >= 40 and Suspeh < 50: pl 'You are not cut out for school, you skip out most of the time. You wonder how you're going to manage to get passing grades.'
+if Suspeh < 40: pl 'You are the class nitwit. You're still not sure how you got this far in the first place.'
 if schoolprogul > 1: pl 'Absenteeism in school <<schoolprogul>>'
 end
 
@@ -119,12 +119,12 @@ end
 
 $objstatistika = {
 clr
-if opPRE = 0: pl 'Passed <<daystart>> days from the beginning of the game.'
+if opPRE = 0: pl 'It has been <<daystart>> the game has started.'
 nl
 
-if BuyHous['Street'] = 2 and ArendHouseSL['Street']>0: pl 'Apartment in a residential area is rented <<ArendHouseSL[''Street'']>> days.'
-if BuyHous['Down'] = 2 and ArendHouseSL['Down']>0: pl 'Apartment in a downtown is rented <<ArendHouseSL[''Down'']>> days.'
-if BuyHous['Nord'] = 2 and ArendHouseSL['Nord']>0: pl 'Apartment in a northern region is rented <<ArendHouseSL[''Nord'']>> days.'
+if BuyHous['Street'] = 2 and ArendHouseSL['Street']>0: pl 'You have rented an apartment in the residential area <<ArendHouseSL[''Street'']>> days.'
+if BuyHous['Down'] = 2 and ArendHouseSL['Down']>0: pl 'You have rented an apartment in the downtown area <<ArendHouseSL[''Down'']>> days.'
+if BuyHous['Nord'] = 2 and ArendHouseSL['Nord']>0: pl 'You have rented an apartment in the northern region <<ArendHouseSL[''Nord'']>> days.'
 nl
 
 if Win > 0 or Loss > 0: pl 'Wins in fights <<Win>>, losses in fights <<Loss>>' & nl
