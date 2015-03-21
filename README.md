@@ -29,4 +29,5 @@ you now need to turn `glife.txt` into a `qsp` file. On my system, I use `wine` t
     wine txt2gam.exe glife.txt glife.qsp
 
 ## Where do I get `qgen` and `txt2gam.exe`?
-I lost the links. Someone please help me with this.
+* [qgen](http://qsp.su/index.php?option=com_content&task=view&id=46&Itemid=56)
+* [txt2gam](http://qsp.su/index.php?option=com_content&task=view&id=52&Itemid=56)
