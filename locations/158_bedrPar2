@@ -1,7 +1,7 @@
 # bedrPar2
-ACT 'Leave the room':
+act 'Leave the room':
 	gt 'korrPar'
-END
+end
 
 $metkaM = $ARGS[0]
 $locM = $CURLOC
@@ -9,11 +9,13 @@ $metka = $ARGS[0]
 $loc = $CURLOC
 
 '<center><B><font color = maroon>Master bedroom</font></B></center>'
-'<center><img src="images\qwest\alter\<<$loc>>.jpg "></center>'
+'<center><img src="images/qwest/alter/<<$loc>>.jpg "></center>'
 
 clr
 set minut += 1
+
 gs 'stat'
+
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
 LCOLOR = rgb(106,90,205)
@@ -21,5 +23,9 @@ LCOLOR = rgb(106,90,205)
 'The room in which the parents live. In the center stands a double bed and a large closet wall.'
 
 gs 'family'
+
+if hour = 21 and parsexrand = 5 and parentsexday ! daystart:
+	gt 'seeparentsex'
+end
 --- bedrPar2 ---------------------------------
 
