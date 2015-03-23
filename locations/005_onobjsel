@@ -1,1326 +1,3105 @@
 # onobjsel
-!!!Динамики!!!
+!!!dynamics!!!
+
 $din_show_tits = {
 	view
-	VIEW 'images\body\t<<tits>>.jpg'
+	view 'images/body/t<<tits>>.jpg'
 }
-
 
 $objdescrip = {
-clr
-pl 'Your name is <<$name>> <<$surname>>.'
-pl 'You are <<age>> <<$letgoda>>, but looking at you, people would guess you are <<vidage>> <<$letgoda2>>.'
-if birthday > 0 and birthmonth > 0: pl 'Your date of birth is <<birthday>>.0<<birthmonth>>.<<birthyear>>, the'
-pl '<<$vnesh>>'
-pl '<<$hair>>'
-pl '<<$lip>>'
-pl '<<$skin>>'
-pl '<<$glaza>>'
-pl '<<$mop>>'
-pl '<<$leghair>>'
-pl '<<$lobok>>'
-pl 'You are <<rost>> cm tall, you weigh <<ves>> pounds.'
-pl '<<$body>>'
-pl '<<grudi>> - <<talia>> - <<bedra>>, <a href="exec:dynamic $din_show_tits">the size of your breasts are <<tits>></a>, the difference between your hips and your waist is <<bedra-talia>> cm'
-pl '<<$anus>>'
-nl
-if salo = 0 and musle > 0 and dounspell = 0: pl '<B><font color = red>You are showing signs undernourishment. You should probably eat more and more often.</font></B>'
-if salo = 0 and musle = 0 and dounspell = 0: pl "<B><font color = red>You are dangerously malnourished, which has led to a loss in muscle mass. You're in a critical condition and likely to pass out!</font></B>"
-if curly > 0: pl 'Your curls are good for another <<curly>> days.'
-if zub = 1:$zuba = ' tooth'
-if zub >= 2:$zuba = ' teeth'
-if zub > 0: pl 'You have <<zub>><<$zuba>>.'
-!pl 'vnesh <<vnesh>>'
-!pl 'curlykoef <<curlykoef>> a maximum of 1'
-!pl 'tits <<tits>> A maximum of 6'
-!pl 'lip <<lip>> a maximum of 4'
-!pl 'tanKoef <<tanKoef>> a maximum of 1'
-!pl 'skin <<skin>> a maximum of 4'
-!pl 'mop <<mop>> a maximum of 4'
-!pl 'resnic <<resnic>> a maximum of 2'
-!pl 'glaraz <<glaraz>> a maximum of 3'
-!pl 'bodykoef <<bodykoef>> a maximum of 8'
-!pl 'legkoef <<legkoef>> a maximum of 3'
-!pl 'lobkoef <<lobkoef>> a maximum of 3'
-!pl 'odevnesh <<odevnesh>> a maximum of 15'
-!pl 'sweat <<sweat>> the maximum 0'
-!pl 'hapri <<hapri>> a maximum of 1'
+	clr
+	pl 'Your name is <<$name>> <<$surname>>.'
+	pl 'You are <<age>> <<$letgoda>>, but looking at you, people would guess you are <<vidage>> <<$letgoda2>>.'
 
-!!!!!!!! Maruda Hair Mod
-if hairlength > 41 and hscrunch >= 1:
-	if hscrunchw = 0 and hpingripw = 0: pl 'As you have a scrunchy, you can arrange your hair into a <a href="exec: set hscrunchw = 1 & dynamic $objdescrip">ponytail</a>. You have <<hscrunch>> scrunchies left.'
-	if hscrunchw = 1: pl 'Remove the <a href="exec: set hscrunchw = 0 & dynamic $objdescrip">scrunchie</a> to get rid of the ponytail.'
-end
-if hairlength > 41 and hpingrip >= 1:
-	if hscrunchw = 0 and hpingripw = 0: pl 'You have several clips, pins and grips for you hair. Hence, you can <a href="exec: set hpingripw = 1 & dynamic $objdescrip">updo your hair</a>. You have <<hpingrip>> hair accessories at your disposal.'
-	if hpingripw = 1: pl 'Let your hair <a href="exec: set hpingripw = 0 & dynamic $objdescrip">flow free</a>.'
-end
-if hairlength > 80 and hscrunch >= 2:
-	if hscrunchw = 0 and hpingripw = 0: pl 'You can use two hair ties to make yourself some <a href="exec: hpigtail = 1 & hscrunchw = 2 & dynamic $objdescrip">pigtails</a>.'
-	if hscrunchw = 2: pl '<a href="exec: hpigtail = 0 & hscrunchw = 0 & dynamic $objdescrip">Remove</a> your scrunchies and let your hair flow free again.'
-end
-if hscrunch < 1: set hscrunchw = 0
-if hpingrip < 1: set hpingripw = 0
-if hscrunch < 2: set hpigtail = 0
-!!!!!!!! Maruda Hair Mod
+	if birthday > 0 and birthmonth > 0:
+		pl 'Your date of birth is <<birthday>>.0<<birthmonth>>.<<birthyear>>, the'
+	end
+
+	pl '<<$vnesh>>'
+	pl '<<$hair>>'
+	pl '<<$lip>>'
+	pl '<<$skin>>'
+	pl '<<$glaza>>'
+	pl '<<$mop>>'
+	pl '<<$leghair>>'
+	pl '<<$lobok>>'
+	pl 'You are <<rost>> cm tall, you weigh <<ves>> pounds.'
+	pl '<<$body>>'
+	pl '<<grudi>> - <<talia>> - <<bedra>>, <a href="exec:dynamic $din_show_tits">the size of your breasts are <<tits>></a>, the difference between your hips and your waist is <<bedra-talia>> cm'
+	pl '<<$anus>>'
+	nl
+
+	if salo = 0 and musle > 0 and dounspell = 0:
+		pl '<B><font color = red>You are showing signs undernourishment. You should probably eat more and more often.</font></B>'
+	end
+
+	if salo = 0 and musle = 0 and dounspell = 0:
+		pl "<B><font color = red>You are dangerously malnourished, which has led to a loss in muscle mass. You're in a critical condition and likely to pass out!</font></B>"
+	end
+
+	if curly > 0:
+		pl 'Your curls are good for another <<curly>> days.'
+	end
+
+	if zub = 1:
+		$zuba = ' tooth'
+	end
+
+	if zub >= 2:
+		$zuba = ' teeth'
+	end
+
+	if zub > 0:
+		pl 'You have <<zub>><<$zuba>>.'
+	end
+
+	!pl 'vnesh <<vnesh>>'
+	!pl 'curlykoef <<curlykoef>> a maximum of 1'
+	!pl 'tits <<tits>> A maximum of 6'
+	!pl 'lip <<lip>> a maximum of 4'
+	!pl 'tanKoef <<tanKoef>> a maximum of 1'
+	!pl 'skin <<skin>> a maximum of 4'
+	!pl 'mop <<mop>> a maximum of 4'
+	!pl 'resnic <<resnic>> a maximum of 2'
+	!pl 'glaraz <<glaraz>> a maximum of 3'
+	!pl 'bodykoef <<bodykoef>> a maximum of 8'
+	!pl 'legkoef <<legkoef>> a maximum of 3'
+	!pl 'lobkoef <<lobkoef>> a maximum of 3'
+	!pl 'odevnesh <<odevnesh>> a maximum of 15'
+	!pl 'sweat <<sweat>> the maximum 0'
+	!pl 'hapri <<hapri>> a maximum of 1'
+
+	!!!!!!!! Maruda Hair Mod
+	if hairlength > 41 and hscrunch >= 1:
+		if hscrunchw = 0 and hpingripw = 0:
+			pl 'As you have a scrunchy, you can arrange your hair into a <a href="exec: set hscrunchw = 1 & dynamic $objdescrip">ponytail</a>. You have <<hscrunch>> scrunchies left.'
+		end
+
+		if hscrunchw = 1:
+			pl 'Remove the <a href="exec: set hscrunchw = 0 & dynamic $objdescrip">scrunchie</a> to get rid of the ponytail.'
+		end
+	end
+
+	if hairlength > 41 and hpingrip >= 1:
+		if hscrunchw = 0 and hpingripw = 0:
+			pl 'You have several clips, pins and grips for you hair. Hence, you can <a href="exec: set hpingripw = 1 & dynamic $objdescrip">updo your hair</a>. You have <<hpingrip>> hair accessories at your disposal.'
+		end
+
+		if hpingripw = 1:
+			pl 'Let your hair <a href="exec: set hpingripw = 0 & dynamic $objdescrip">flow free</a>.'
+		end
+	end
+
+	if hairlength > 80 and hscrunch >= 2:
+		if hscrunchw = 0 and hpingripw = 0:
+			pl 'You can use two hair ties to make yourself some <a href="exec: hpigtail = 1 & hscrunchw = 2 & dynamic $objdescrip">pigtails</a>.'
+		end
+
+		if hscrunchw = 2:
+			pl '<a href="exec: hpigtail = 0 & hscrunchw = 0 & dynamic $objdescrip">Remove</a> your scrunchies and let your hair flow free again.'
+		end
+	end
+
+	if hscrunch < 1:
+		set hscrunchw = 0
+	end
+
+	if hpingrip < 1:
+		set hpingripw = 0
+	end
+
+	if hscrunch < 2:
+		set hpigtail = 0
+	end
+
+	!!!!!!!! Maruda Hair Mod
 }
 
-
 $objskills = {
-clr
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1Переделать
-!if salo > musle*4: set $fat = 'You have a chubby disposition'
-!if salo <= musle * 4 and fat > musle*2: set $fat = 'You have a soft curvy body that still carries an elastic finesse.'
-!if salo <= musle * 2 and fat > musle: set $fat = 'You have an average body showing signs that you take care of yourself.'
-!if salo <= musle and fat >= musle/2: set $fat = 'Your body is slim and trim. You probably workout often '
-!if salo < musle/2: set $fat = 'Your body is a prayer to the god of fitness! Your skin is taught against your lithe musculature.'
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-pl 'Attractiveness <<vnesh>>'
-pl 'Power <<stren>>'
-pl 'Speed ​​<<speed>>'
-pl 'Agility <<agil>>'
-pl 'Endurance <<vital>>'
-pl 'Intelligence <<intel>>'
-pl 'Willpower <<will>>'
-pl 'Reaction <<react>>'
-pl '<<$fat>>'
-!pl 'Bezstydstvo <<shameless>>'
-if SUB > 0: pl 'Subordination <<SUB>>'
-if DOM > 0: pl 'Dominance <<DOM>>'
-!pl 'Muscles <<$musle>>'
-if magik > 0: pl 'Magery <<magik>>'
-if Jab > 0: pl 'Jab - <<Jab>>'
-if Punch > 0: pl 'Power Strikes - <<Punch>>'
-if Kik > 0: pl 'Kicks - <<Kik>>'
-if KikDef > 0: pl 'Protection against - <<KikDef>>'
-if beg > 0: pl 'Skill Run - <<beg>>'
-if volleyboll > 0: pl 'Skill volleyball - <<volleyboll>>'
-if oficiant > 0: pl 'Skills waitresses - <<oficiant>>'
-if vokal > 0: pl 'Vocal skills <<vokal>>'
-if dance > 0: pl 'Skill Dance - <<dance>>'
-if dancePRO > 0: pl 'Regular dancing skilllevel - <<dancePRO>>'
-if stripdance > 0: pl 'Striptease skilllevel - <<stripdance>>'
-if poledance > 0: pl 'Poledancing skilllevel- <<poledance>>'
-if shoot > 0: pl 'Shooting Accuracy - <<shoot>>'
-if kid = 1: pl 'You have a child, <<$polreb[1]>> name <<$kidname[1]>>. Born <<daykid[1]>>.<<monthkid[1]>>.<<yearkid[1]>>y. Age <<kidage[1]>>'
+	clr
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1remake
+	!if salo > musle * 4:
+		set $fat = 'You have a chubby disposition'
+	end
 
-if SchoolAtestat = 0 and StoryLine > 0:
-if Suspeh >= 90: pl 'You are an A+ student.'
-if Suspeh >= 80 and Suspeh < 90: pl 'You are a bright student, just not the top of your class.'
-if Suspeh >= 70 and Suspeh < 80: pl 'You are an above average student, but you have to work hard to keep up.'
-if Suspeh >= 60 and Suspeh < 70: pl "You are the typical average student. You're good in the fields you like, but can't be bothered with the rest."
-if Suspeh >= 50 and Suspeh < 60: pl "You're not very good in school, you wish you could be somewhere else and your grades show it."
-if Suspeh >= 40 and Suspeh < 50: pl "You are not cut out for school, you skip out most of the time. You wonder how you're going to manage to get passing grades."
-if Suspeh < 40: pl "You are the class nitwit. You're still not sure how you got this far in the first place."
-if schoolprogul > 1: pl 'Absenteeism in school <<schoolprogul>>'
-end
+	!if salo <= musle * 4 and fat > musle * 2:
+		set $fat = 'You have a soft curvy body that still carries an elastic finesse.'
+	end
 
+	!if salo <= musle * 2 and fat > musle: set $fat = 'You have an average body showing signs that you take care of yourself.'
+	!if salo <= musle and fat >= musle/2: set $fat = 'Your body is slim and trim. You probably workout often '
+	!if salo < musle/2: set $fat = 'Your body is a prayer to the god of fitness! Your skin is taught against your lithe musculature.'
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	pl 'Attractiveness <<vnesh>>'
+	pl 'Power <<stren>>'
+	pl 'Speed ​​<<speed>>'
+	pl 'Agility <<agil>>'
+	pl 'Endurance <<vital>>'
+	pl 'Intelligence <<intel>>'
+	pl 'Willpower <<will>>'
+	pl 'Reaction <<react>>'
+	pl '<<$fat>>'
+	!pl 'Bezstydstvo <<shameless>>'
+
+	if SUB > 0:
+		pl 'Subordination <<SUB>>'
+	end
+
+	if DOM > 0:
+		pl 'Dominance <<DOM>>'
+	end
+
+	!pl 'Muscles <<$musle>>'
+
+	if magik > 0:
+		pl 'Magery <<magik>>'
+	end
+
+	if Jab > 0:
+		pl 'Jab - <<Jab>>'
+	end
+
+	if Punch > 0:
+		pl 'Power Strikes - <<Punch>>'
+	end
+
+	if Kik > 0:
+		pl 'Kicks - <<Kik>>'
+	end
+
+	if KikDef > 0:
+		pl 'Protection against - <<KikDef>>'
+	end
+
+	if beg > 0:
+		pl 'Skill Run - <<beg>>'
+	end
+
+	if volleyboll > 0:
+		pl 'Skill volleyball - <<volleyboll>>'
+	end
+
+	if oficiant > 0:
+		pl 'Skills waitresses - <<oficiant>>'
+	end
+
+	if vokal > 0:
+		pl 'Vocal skills <<vokal>>'
+	end
+
+	if dance > 0:
+		pl 'Skill Dance - <<dance>>'
+	end
+
+	if dancePRO > 0:
+		pl 'Regular dancing skilllevel - <<dancePRO>>'
+	end
+
+	if stripdance > 0:
+		pl 'Striptease skilllevel - <<stripdance>>'
+	end
+
+	if poledance > 0:
+		pl 'Poledancing skilllevel- <<poledance>>'
+	end
+
+	if shoot > 0:
+		pl 'Shooting Accuracy - <<shoot>>'
+	end
+
+	if kid = 1:
+		pl 'You have a child, <<$polreb[1]>> name <<$kidname[1]>>. Born <<daykid[1]>>.<<monthkid[1]>>.<<yearkid[1]>>y. Age <<kidage[1]>>'
+	end
+
+	if SchoolAtestat = 0 and StoryLine > 0:
+		if Suspeh >= 90:
+			pl 'You are an A+ student.'
+		end
+
+		if Suspeh >= 80 and Suspeh < 90:
+			pl 'You are a bright student, just not the top of your class.'
+		end
+
+		if Suspeh >= 70 and Suspeh < 80:
+			pl 'You are an above average student, but you have to work hard to keep up.'
+		end
+
+		if Suspeh >= 60 and Suspeh < 70:
+			pl "You are the typical average student. You're good in the fields you like, but can't be bothered with the rest."
+		end
+
+		if Suspeh >= 50 and Suspeh < 60:
+			pl "You're not very good in school, you wish you could be somewhere else and your grades show it."
+		end
+
+		if Suspeh >= 40 and Suspeh < 50:
+			pl "You are not cut out for school, you skip out most of the time. You wonder how you're going to manage to get passing grades."
+		end
+
+		if Suspeh < 40:
+			pl "You are the class nitwit. You're still not sure how you got this far in the first place."
+		end
+
+		if schoolprogul > 1:
+			pl 'Absenteeism in school <<schoolprogul>>'
+		end
+	end
 }
 
 $objstatistika = {
-clr
-if opPRE = 0: pl 'It has been <<daystart>> the game has started.'
-nl
-
-if BuyHous['Street'] = 2 and ArendHouseSL['Street']>0: pl 'You have rented an apartment in the residential area <<ArendHouseSL[''Street'']>> days.'
-if BuyHous['Down'] = 2 and ArendHouseSL['Down']>0: pl 'You have rented an apartment in the downtown area <<ArendHouseSL[''Down'']>> days.'
-if BuyHous['Nord'] = 2 and ArendHouseSL['Nord']>0: pl 'You have rented an apartment in the northern region <<ArendHouseSL[''Nord'']>> days.'
-nl
-
-if Win > 0 or Loss > 0: pl 'Wins in fights <<Win>>, losses in fights <<Loss>>' & nl
-
-if KikWinPro > 0 or KikLossPro > 0 or KikDrawPro > 0:
-	pl 'Professional Kickboxing Record: Win (Victory KO) - Loss (Defeat KO) - Draw'
-	pl '<<KikWinPro>> (<<KikWinProKO>>KO) - <<KikLossPro>> (<<KikLossProKO>>KO) - <<KikDrawPro>>'
+	clr
+	if opPRE = 0: pl 'It has been <<daystart>> the game has started.'
 	nl
-end
 
-if KikWinPro > 0 or KikLossPro > 0 or KikDrawPro > 0:
-	pl 'Amateur Kickboxing Record: Win (Victory KO) - Loss (Defeat KO) - Draw'
-	pl '<<KikWinAm>> (<<KikWinAmKO>>KO) - <<KikLossAm>> (<<KikLossAmKO>>KO) - <<KikDrawAm>>'
+	if BuyHous['Street'] = 2 and ArendHouseSL['Street']>0:
+		pl 'You have rented an apartment in the residential area <<ArendHouseSL[''Street'']>> days.'
+	end
+
+	if BuyHous['Down'] = 2 and ArendHouseSL['Down']>0:
+		pl 'You have rented an apartment in the downtown area <<ArendHouseSL[''Down'']>> days.'
+	end
+
+	if BuyHous['Nord'] = 2 and ArendHouseSL['Nord']>0:
+		pl 'You have rented an apartment in the northern region <<ArendHouseSL[''Nord'']>> days.'
+	end
+
 	nl
-end
 
-if razradKik > 0: pl '<<$razradKik>>' & nl
+	if Win > 0 or Loss > 0:
+		pl 'Wins in fights <<Win>>, losses in fights <<Loss>>' & nl
+	end
 
-if KisameDead = 1: pl 'You killed Kisame.'& nl
+	if KikWinPro > 0 or KikLossPro > 0 or KikDrawPro > 0:
+		pl 'Professional Kickboxing Record: Win (Victory KO) - Loss (Defeat KO) - Draw'
+		pl '<<KikWinPro>> (<<KikWinProKO>>KO) - <<KikLossPro>> (<<KikLossProKO>>KO) - <<KikDrawPro>>'
+		nl
+	end
 
-if maxdamage > 0: pl 'The impact force on the dynamometer <<maxdamage>> kN' & nl
+	if KikWinPro > 0 or KikLossPro > 0 or KikDrawPro > 0:
+		pl 'Amateur Kickboxing Record: Win (Victory KO) - Loss (Defeat KO) - Draw'
+		pl '<<KikWinAm>> (<<KikWinAmKO>>KO) - <<KikLossAm>> (<<KikLossAmKO>>KO) - <<KikDrawAm>>'
+		nl
+	end
 
-if Irina > 0: pl 'Friendship with Irene <<Irina>>'
-if Givi > 0: pl 'Friendship Givi K. <<Givi>>'
-if Ashot > 0: pl 'Friendship with Ashot <<Ashot>>'
-if Tamara > 0: pl 'Friendship with Tamara <<Tamara>>'
-if Dmitry > 0: pl 'Friendship with Dima <<Dmitry>>'
-if afra > 0: pl 'Friendship with blacks <<afra>>'
-if gosh > 0: pl 'Friendship with Gosha <<gosh>>'
-if vika > 0: pl 'Friendship with Vika <<vika>>'
-if kat > 0: pl 'Friendship with Kate <<kat>>'
-if nastjaqw > 0: pl 'Friendship with Nastya <<nastjaqw>>'
-if tanya > 0: pl 'Friendship with Tanya <<tanya>>'
-if nik > 0: pl 'Friendship with Nikolai <<nik>>'
-if klofQW > 0: pl 'Friendship with sporty guys <<klofQW>>'
-if (Irina + Givi + Ashot + Tamara + Dmitry + afra + gosh + vika + kat + nastjaqw + tanya) > 0: nl
+	if razradKik > 0: pl '<<$razradKik>>' & nl
 
-if modelfoto > 0: pl 'You filmed naked <<modelfoto>> times'
-if exhibi > 0: pl 'Experienced exhibitionism <<exhibi>>'
-if stripdancesum > 0: pl '<<stripdancesum>> times dancing in the stripclub'
-if profiDanceTime > 0: pl 'You danced <<profiDanceTime>> professionally.'
-if (modelfoto + exhibi + stripdancesum + profiDanceTime) > 0: nl
+	if KisameDead = 1: pl 'You killed Kisame.'& nl
 
-if razradKik = 1: set $razradKik = "You're ranked III in amateur kickboxing"
-if razradKik = 2: set $razradKik = "You're ranked II in amateur kickboxing"
-if razradKik = 3: set $razradKik = "You're ranked I in amateur kickboxing"
-if razradKik = 4: set $razradKik = "You are a candidate for the title of Master in Kickboxing"
-if razradKik = 5: set $razradKik = 'You have the title of Master Kickboxer'
-if SchoolAtestat = 1: pl 'You have finished school.'
-if diplom = 1: pl 'You graduated.'
-if teachlevel > 0: pl 'Your credibility as a teacher is <<teachlevel>>'
-if kolsorev > 0: pl 'You have participate <<kolsorev>> in a running race'
-if bronzebeg > 0: pl '<<bronzebeg>> - bronze medals on the run'
-if silverbeg > 0: pl '<<silverbeg>> - silver medals for event'
-if goldbeg > 0: pl '<<goldbeg>> - gold medals in running'
-if razradbegEB > 0: pl '<<razradbegEB>> times bronze medalist of European Championship'
-if razradbegES > 0: pl '<<razradbegES>> fold vice champion of Europe'
-if razradbegEG > 0: pl '<<razradbegEG>> time European champion.'
-if razradbeg = 1: pl 'You have third sports category for event'
-if razradbeg = 2: pl 'You 2nd sports category for event'
-if razradbeg = 3: pl 'You 1st sports category for event'
-if razradbeg = 4: pl 'You have the title of Candidate Master of Sports for event'
-if razradbeg = 5: pl 'You have the title of Master of Sports in the run'
-if razradbeg >= 6: pl 'You have the title of International Master of Sports for event'
+	if maxdamage > 0:
+		pl 'The impact force on the dynamometer <<maxdamage>> kN' & nl
+	end
 
-!WD: FORMATING
-if (razradKik + SchoolAtestat + diplom + teachlevel + kolsorev + bronzebeg + silverbeg + goldbeg + razradbegEG + razradbeg) > 0: nl
+	if Irina > 0:
+		pl 'Friendship with Irene <<Irina>>'
+	end
 
-if mastr > 0: pl 'Masturbated <<mastr>> time'
-if throat > 0: pl 'Capacity of the throat <<throat>>'
-if vagina > 0: pl 'Elasticity of the vagina <<vagina>>'
-if vagina = 0 and sex = 0: pl 'Do you have a hymen.'
-if anus > 0: pl '<<$anus>>'
-nl
-if GorSlut = 1: pl 'In the town you known as a flirt.'
-if GorSlut = 2: pl 'In the town you known to have sucked a few cocks.'
-if GorSlut = 3: pl 'In the town you known great cocksucker.'
-if GorSlut = 4: pl 'In the town you known to have fucked several boys.'
-if GorSlut = 5: pl 'In the town you known the slut that would do anything.'
-if GorSlut = 6: pl 'In the town you known as a prostitute who will take money for most extreme sex acts.'
+	if Givi > 0:
+		pl 'Friendship Givi K. <<Givi>>'
+	end
 
-!WD: FORMATING
-if GorSlut > 0: nl
+	if Ashot > 0:
+		pl 'Friendship with Ashot <<Ashot>>'
+	end
 
-if guy > 0: pl 'You had <<guy>> guys.'
-if divorced > 0: pl 'You have <<divorced>> husbands.'
-if suprdolg > 0: pl 'Performed conjugal duty to her husband <<suprdolg>> time'
-if gang > 0: pl 'Group sex <<gang>> times'
-if sex > 0 and sexa = 0: pl 'Vaginal sex <<sex>> times.'
-if sex > 0 and sexa > 0: pl 'Vaginal sex <<sex>> times from them <<sexa>> times with her boyfriend.'
-if bj > 0 and gloryhole = 0 and balls = 0 and bja = 0: pl 'Blowjob done <<bj>> times.'
-if bj > 0 and gloryhole = 0 and balls = 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which <<bja>> times her boyfriend'
-if bj > 0 and gloryhole > 0 and balls = 0 and bja = 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall.'
-if bj > 0 and gloryhole > 0 and balls = 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Just one <<bja>> times her boyfriend'
-if bj > 0 and gloryhole = 0 and balls > 0 and bja = 0: pl 'Blowjob done <<bj>> times, sucked balls <<balls>> times.'
-if bj > 0 and gloryhole = 0 and balls > 0 and bja > 0: pl 'Blowjob done <<bj>> times, sucked balls <<balls>> times. Just one <<bja>> times her boyfriend'
-if bj > 0 and gloryhole > 0 and balls > 0 and bja = 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Sucked balls <<balls>> times.'
-if bj > 0 and gloryhole > 0 and balls > 0 and bja > 0: pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Sucked balls <<balls>> times. Just one <<bja>> times her boyfriend'
-if hj > 0 and hja = 0: pl 'Guys jerking off <<hj>> times'
-if hj > 0 and hja > 0: pl 'Guys jerking off <<hj>> times from them <<hja>> times masturbate her boyfriend'
-if hump > 0: pl 'About you wanker member <<hump>> times'
-if rape > 0: pl 'You have been raped <<rape>> times'
-if anal > 0 and anala = 0: pl 'Anal <<anal>> times'
-if anal > 0 and anala > 0: pl 'Anal <<anal>> times from them <<anala>> times with her boyfriend'
-if kuni > 0: pl 'You did cunnilingus <<kuni>> times'
-if pegging > 0: pl 'Pegging <<pegging>> times'
-if spank > 0: pl 'You ran your ass <<spank>> times'
+	if Tamara > 0:
+		pl 'Friendship with Tamara <<Tamara>>'
+	end
 
-!WD: FORMATING
-if (guy + divorced + suprdolg + gang + sex + bj + hj + hump + rape + anal + kuni + pegging + spank) > 0: nl
+	if Dmitry > 0:
+		pl 'Friendship with Dima <<Dmitry>>'
+	end
 
-if selfPornvid > 0: pl 'You have made and uploaded <<selfPornvid>> amateur porn videos.'
+	if afra > 0:
+		pl 'Friendship with blacks <<afra>>'
+	end
 
-if slutty > 0 and bordelslutty = 0: pl 'Sold his love <<slutty>> time.'
-if slutty > 0 and bordelslutty > 0: pl 'Sold his love <<slutty>> times, including in a brothel <<bordelslutty>> times.'
-if pfilmSTOP = 1: pl '<<$pfilmstory_new>>'
+	if gosh > 0:
+		pl 'Friendship with Gosha <<gosh>>'
+	end
 
-if film>0:
-	pl 'In the porn industry you know the name of <<$pfname>>. You starred in porn <<film>> times.'
-	pl '<<$pfilmhistory>>'
+	if vika > 0:
+		pl 'Friendship with Vika <<vika>>'
+	end
+
+	if kat > 0:
+		pl 'Friendship with Kate <<kat>>'
+	end
+
+	if nastjaqw > 0:
+		pl 'Friendship with Nastya <<nastjaqw>>'
+	end
+
+	if tanya > 0:
+		pl 'Friendship with Tanya <<tanya>>'
+	end
+
+	if nik > 0:
+		pl 'Friendship with Nikolai <<nik>>'
+	end
+
+	if klofQW > 0:
+		pl 'Friendship with sporty guys <<klofQW>>'
+	end
+
+	if (Irina + Givi + Ashot + Tamara + Dmitry + afra + gosh + vika + kat + nastjaqw + tanya) > 0:
+		nl
+	end
+
+	if modelfoto > 0:
+		pl 'You filmed naked <<modelfoto>> times'
+	end
+
+	if exhibi > 0:
+		pl 'Experienced exhibitionism <<exhibi>>'
+	end
+
+	if stripdancesum > 0:
+		pl '<<stripdancesum>> times dancing in the stripclub'
+	end
+
+	if profiDanceTime > 0:
+		pl 'You danced <<profiDanceTime>> professionally.'
+	end
+
+	if (modelfoto + exhibi + stripdancesum + profiDanceTime) > 0:
+		nl
+	end
+
+	if razradKik = 1:
+		set $razradKik = "You're ranked III in amateur kickboxing"
+	end
+
+	if razradKik = 2:
+		set $razradKik = "You're ranked II in amateur kickboxing"
+	end
+
+	if razradKik = 3:
+		set $razradKik = "You're ranked I in amateur kickboxing"
+	end
+
+	if razradKik = 4:
+		set $razradKik = "You are a candidate for the title of Master in Kickboxing"
+	end
+
+	if razradKik = 5:
+		set $razradKik = 'You have the title of Master Kickboxer'
+	end
+
+	if SchoolAtestat = 1:
+		pl 'You have finished school.'
+	end
+
+	if diplom = 1:
+		pl 'You graduated.'
+	end
+
+	if teachlevel > 0:
+		pl 'Your credibility as a teacher is <<teachlevel>>'
+	end
+
+	if kolsorev > 0:
+		pl 'You have participate <<kolsorev>> in a running race'
+	end
+
+	if bronzebeg > 0:
+		pl '<<bronzebeg>> - bronze medals on the run'
+	end
+
+	if silverbeg > 0:
+		pl '<<silverbeg>> - silver medals for event'
+	end
+
+	if goldbeg > 0:
+		pl '<<goldbeg>> - gold medals in running'
+	end
+
+	if razradbegEB > 0:
+		pl '<<razradbegEB>> times bronze medalist of European Championship'
+	end
+
+	if razradbegES > 0:
+		pl '<<razradbegES>> fold vice champion of Europe'
+	end
+
+	if razradbegEG > 0:
+		pl '<<razradbegEG>> time European champion.'
+	end
+
+	if razradbeg = 1:
+		pl 'You have third sports category for event'
+	end
+
+	if razradbeg = 2:
+		pl 'You 2nd sports category for event'
+	end
+
+	if razradbeg = 3:
+		pl 'You 1st sports category for event'
+	end
+
+	if razradbeg = 4:
+		pl 'You have the title of Candidate Master of Sports for event'
+	end
+
+	if razradbeg = 5:
+		pl 'You have the title of Master of Sports in the run'
+	end
+
+	if razradbeg >= 6:
+		pl 'You have the title of International Master of Sports for event'
+	end
+
+
+	!WD: FORMATING
+	if (razradKik + SchoolAtestat + diplom + teachlevel + kolsorev + bronzebeg + silverbeg + goldbeg + razradbegEG + razradbeg) > 0:
+		nl
+	end
+
+	if mastr > 0:
+		pl 'Masturbated <<mastr>> time'
+	end
+
+	if throat > 0:
+		pl 'Capacity of the throat <<throat>>'
+	end
+
+	if vagina > 0:
+		pl 'Elasticity of the vagina <<vagina>>'
+	end
+
+	if vagina = 0 and sex = 0:
+		pl 'Do you have a hymen.'
+	end
+
+	if anus > 0:
+		pl '<<$anus>>'
+	end
+
 	nl
-end
 
-if orgasm > 0:
-	pl'Experienced orgasm <<orgasm>> times.'
-	if analorgasm > 0 : pl 'One <<analorgasm>> anal orgasms.'
-	if swallow > 0:pl 'Sperm swallowed <<swallow>> times.'
-	if facial > 0:pl 'Cum on face <<facial>> times.'
-	if frot > 0:pl 'Come on you truck <<frot>> times.'
-	if VAF > 0:pl 'Vaflizm <<VAF>>.'
-	if zoo > 0: pl 'Having sex with animals <<zoo>> times.'
-	if pee > 0: pl 'You pissing <<pee>> times.'
-	nl
-end
+	if GorSlut = 1:
+		pl 'In the town you known as a flirt.'
+	end
 
-!WD: FORMATING
-if (slutty + pfilmSTOP + film + orgasm + analorgasm + swallow + facial + frot + VAF + zoo + pee) > 0: nl
+	if GorSlut = 2:
+		pl 'In the town you known to have sucked a few cocks.'
+	end
 
-if girl > 0: pl 'You have <<girl>> girls.'
-if lesbian > 0: pl 'You do lecbiyskim sex <<lesbian>> times.'
-if sexfuta > 0: pl 'You <<sexfuta>> had sex with chlenodevkoy.'
+	if GorSlut = 3:
+		pl 'In the town you known great cocksucker.'
+	end
+
+	if GorSlut = 4:
+		pl 'In the town you known to have fucked several boys.'
+	end
+
+	if GorSlut = 5:
+		pl 'In the town you known the slut that would do anything.'
+	end
+
+	if GorSlut = 6:
+		pl 'In the town you known as a prostitute who will take money for most extreme sex acts.'
+	end
+
+	!WD: FORMATING
+	if GorSlut > 0:
+		nl
+	end
+
+	if guy > 0:
+		pl 'You had <<guy>> guys.'
+	end
+
+	if divorced > 0:
+		pl 'You have <<divorced>> husbands.'
+	end
+
+	if suprdolg > 0:
+		pl 'Performed conjugal duty to her husband <<suprdolg>> time'
+	end
+
+	if gang > 0:
+		pl 'Group sex <<gang>> times'
+	end
+
+	if sex > 0 and sexa = 0:
+		pl 'Vaginal sex <<sex>> times.'
+	end
+
+	if sex > 0 and sexa > 0:
+		pl 'Vaginal sex <<sex>> times from them <<sexa>> times with her boyfriend.'
+	end
+
+	if bj > 0 and gloryhole = 0 and balls = 0 and bja = 0:
+		pl 'Blowjob done <<bj>> times.'
+	end
+
+	if bj > 0 and gloryhole = 0 and balls = 0 and bja > 0:
+		pl 'Blowjob done <<bj>> times, of which <<bja>> times her boyfriend'
+	end
+
+	if bj > 0 and gloryhole > 0 and balls = 0 and bja = 0:
+		pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall.'
+	end
+
+	if bj > 0 and gloryhole > 0 and balls = 0 and bja > 0:
+		pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Just one <<bja>> times her boyfriend'
+	end
+
+	if bj > 0 and gloryhole = 0 and balls > 0 and bja = 0:
+		pl 'Blowjob done <<bj>> times, sucked balls <<balls>> times.'
+	end
+
+	if bj > 0 and gloryhole = 0 and balls > 0 and bja > 0:
+		pl 'Blowjob done <<bj>> times, sucked balls <<balls>> times. Just one <<bja>> times her boyfriend'
+	end
+
+	if bj > 0 and gloryhole > 0 and balls > 0 and bja = 0:
+		pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Sucked balls <<balls>> times.'
+	end
+
+	if bj > 0 and gloryhole > 0 and balls > 0 and bja > 0:
+		pl 'Blowjob done <<bj>> times, of which you <<gloryhole>> time suck strangers through a hole in the wall. Sucked balls <<balls>> times. Just one <<bja>> times her boyfriend'
+	end
+
+	if hj > 0 and hja = 0:
+		pl 'Guys jerking off <<hj>> times'
+	end
+
+	if hj > 0 and hja > 0:
+		pl 'Guys jerking off <<hj>> times from them <<hja>> times masturbate her boyfriend'
+	end
+
+	if hump > 0:
+		pl 'About you wanker member <<hump>> times'
+	end
+
+	if rape > 0:
+		pl 'You have been raped <<rape>> times'
+	end
+
+	if anal > 0 and anala = 0:
+		pl 'Anal <<anal>> times'
+	end
+
+	if anal > 0 and anala > 0:
+		pl 'Anal <<anal>> times from them <<anala>> times with her boyfriend'
+	end
+
+	if kuni > 0:
+		pl 'You did cunnilingus <<kuni>> times'
+	end
+
+	if pegging > 0:
+		pl 'Pegging <<pegging>> times'
+	end
+
+	if spank > 0:
+		pl 'You ran your ass <<spank>> times'
+	end
+
+	!WD: FORMATING
+	if (guy + divorced + suprdolg + gang + sex + bj + hj + hump + rape + anal + kuni + pegging + spank) > 0:
+		nl
+	end
+
+	if selfPornvid > 0:
+		pl 'You have made and uploaded <<selfPornvid>> amateur porn videos.'
+	end
+
+	if slutty > 0 and bordelslutty = 0:
+		pl 'Sold your love <<slutty>> times.'
+	end
+
+	if slutty > 0 and bordelslutty > 0:
+		pl 'Sold your love <<slutty>> times, including in a brothel <<bordelslutty>> times.'
+	end
+
+	if pfilmSTOP = 1:
+		pl '<<$pfilmstory_new>>'
+	end
+
+	if film > 0:
+		pl 'In the porn industry you know the name of <<$pfname>>. You starred in porn <<film>> times.'
+		pl '<<$pfilmhistory>>'
+		nl
+	end
+
+	if orgasm > 0:
+		pl'Experienced orgasm <<orgasm>> times.'
+
+		if analorgasm > 0:
+			pl 'One <<analorgasm>> anal orgasms.'
+		end
+
+		if swallow > 0:
+			pl 'Sperm swallowed <<swallow>> times.'
+		end
+
+		if facial > 0:
+			pl 'Cum on face <<facial>> times.'
+		end
+
+		if frot > 0:
+			pl 'Come on you truck <<frot>> times.'
+		end
+
+		if VAF > 0:
+			pl 'Vaflizm <<VAF>>.'
+		end
+
+		if zoo > 0:
+			pl 'Having sex with animals <<zoo>> times.'
+		end
+
+		if pee > 0:
+			pl 'You pissing <<pee>> times.'
+		end
+
+		nl
+	end
+
+	!WD: FORMATING
+	if (slutty + pfilmSTOP + film + orgasm + analorgasm + swallow + facial + frot + VAF + zoo + pee) > 0:
+		nl
+	end
+
+	if girl > 0:
+		pl 'You have <<girl>> girls.'
+	end
+
+	if lesbian > 0:
+		pl 'You do lecbiyskim sex <<lesbian>> times.'
+	end
+
+	if sexfuta > 0:
+		pl 'You <<sexfuta>> had sex with chlenodevkoy.'
+	end
 }
+
 $din_cheat_hapri = {
-if cheatHapri = 0:
-cheatHapri = 1
-gs 'stat'
-dynamic $d_cheats_menu_Perm
-exit
-end
-if cheatHapri = 1:
-cheatHapri = 0
-gs 'stat'
-dynamic $d_cheats_menu_Perm
-end
+	if cheatHapri = 0:
+		cheatHapri = 1
+
+		gs 'stat'
+
+		dynamic $d_cheats_menu_Perm
+		exit
+	end
+
+	if cheatHapri = 1:
+		cheatHapri = 0
+
+		gs 'stat'
+
+		dynamic $d_cheats_menu_Perm
+	end
 }
+
 $din_cheat_nomakeup = {
-if cheatNomakeup = 0:
-cheatNomakeup = 1
-gs 'stat'
-dynamic $d_cheats_menu_Perm
-exit
-end
-if cheatNomakeup = 1:
-cheatNomakeup = 0
-gs 'stat'
-dynamic $d_cheats_menu_Perm
-end
+	if cheatNomakeup = 0:
+		cheatNomakeup = 1
+
+		gs 'stat'
+
+		dynamic $d_cheats_menu_Perm
+		exit
+	end
+
+	if cheatNomakeup = 1:
+		cheatNomakeup = 0
+
+		gs 'stat'
+		dynamic $d_cheats_menu_Perm
+	end
 }
+
 $din_cheat_Nosweat = {
-if cheatNosweat = 0:
-cheatNosweat = 1
-gs 'stat'
-dynamic $d_cheats_menu_Perm
-exit
-end
-if cheatNosweat = 1:
-cheatNosweat = 0
-gs 'stat'
-dynamic $d_cheats_menu_Perm
-end
+	if cheatNosweat = 0:
+		cheatNosweat = 1
+
+		gs 'stat'
+
+		dynamic $d_cheats_menu_Perm
+		exit
+	end
+
+	if cheatNosweat = 1:
+		cheatNosweat = 0
+
+		gs 'stat'
+
+		dynamic $d_cheats_menu_Perm
+	end
 }
+
 $din_cheat_NoEat = {
-if cheatNoEat = 0:
-cheatNoEat = 1
-gs 'stat'
-dynamic $d_cheats_menu_Perm
-exit
-end
-if cheatNoEat = 1:
-cheatNoEat = 0
-gs 'stat'
-dynamic $d_cheats_menu_Perm
-end
+	if cheatNoEat = 0:
+		cheatNoEat = 1
+
+		gs 'stat'
+
+		dynamic $d_cheats_menu_Perm
+		exit
+	end
+
+	if cheatNoEat = 1:
+		cheatNoEat = 0
+
+		gs 'stat'
+
+		dynamic $d_cheats_menu_Perm
+	end
 }
+
 gs 'dexcheats'
+
 $din_cheat_param = {
-gs 'stat'
-clr
-pl '<a href="exec:dynamic $d_cheats_menu_vnesh">Back to the cheat menu</a>'
-pl '<<strenbuf>> - strenbuf'
-pl '<<vitalbuf>> - vitalbuf'
-pl '<<vmeat>> - vmeat'
-pl '<<vfat>> - vfat'
-pl '<<Kves>> - Kves'
-pl '<<krost>> - krost'
-pl '<<ves>> - ves'
-pl '<<talia>> - talia - Waist measurement in cm'
-pl '<<grudi>> - grudi - Chest measurement in cm'
-pl '<<bedra>> - bedra'
-pl '<<titK>> - Chest - Waist (+ brgrow (which is only editable through cheats)'
-pl '<<silicone>> - silicone'
-pl '<<grudi>> - <<talia>> - <<bedra>>, breast size <<tits>>, the difference between the hips and waist <<bedra-talia>> cm'
-pl 'Indicator muscularity <<musle>> - musle, <<salo>> - salo <<salo*2>> - salo * 2 <<fat>> - fat'
-if salo ! fat: pl 'Option to <a href="exec:fat = salo & dynamic $d_cheats_menu_vnesh">balance the fat</a>'}
-$din_cheat = {
-gs 'stat'
-clr
-pl '<a href="exec:gs ''stat''"><B>Close Cheat menu</B></a>'
-nl
-pl '<b>If you use cheats, remember, it´s your decision and respond to the consequences of YOU.</b>'
-nl
-pl '<a href="exec:health = vital * 10 + stren * 5 + 1000 & willpower = intel * 5 + will * 5 + 1000 & manna = (intel * magik) + magik * 100 + vital * 10 + rikudo & dynamic $din_cheat">Full restoration of health, mana mind.</a>'
-if leghair >= 1 or lobok >= 1: pl '<a href="exec:leghair=-50 & lobok=-50 & dynamic $din_cheat">Shave all body hair.</a>'
-if mesec > 0 and isprok = 0: pl '<a href="exec:mesec = 0 & isprok = 0 & dynamic $din_cheat">Remove monthly</a>'
-if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumface > 0 or cumanus > 0 or cumfrot > 0 or cumlip > 0: pl '<a href="exec:cumpussy = 0 & cumbelly = 0 & cumass = 0 & cumlip = 0 & cumface = 0 & cumanus = 0 & cumfrot = 0 & dynamic $din_cheat">Clean sperm</a>'
-nl
-pl '<a href="exec:dynamic $d_cheats_menu_perm"><B>Permanent Cheat Menu</B></a>'
-pl '<a href="exec:dynamic $d_cheats_menu_vnesh"><B>Appearance Cheat Menu</B></a>'
-pl '<a href="exec:dynamic $d_cheats_menu_stat"><B>Stats Cheat Menu</B></a>'
-pl '<a href="exec:dynamic $d_cheats_menu_nav"><B>Skills Cheat Menu</B></a>'
-pl '<a href="exec:dynamic $d_cheats_menu_rep"><B>Reputation Cheat Menu</B></a>'
-pl '<a href="exec:dynamic $d_cheats_menu_money"><B>Money Cheat Menu</B></a>'
-pl '<a href="exec:dynamic $d_cheats_menu_doc"><B>Documents Cheat Menu</B></a>'
-pl '<a href="exec:dynamic $d_cheats_menu_tel"><B>Teleportation Cheat Menu</B></a>'
-pl '<a href="exec:dynamic $d_cheats_menu_time"><B>Time Cheat Menu</B></a>'
+	gs 'stat'
+	clr
+
+	pl '<a href="exec:dynamic $d_cheats_menu_vnesh">Back to the cheat menu</a>'
+	pl '<<strenbuf>> - strenbuf'
+	pl '<<vitalbuf>> - vitalbuf'
+	pl '<<vmeat>> - vmeat'
+	pl '<<vfat>> - vfat'
+	pl '<<Kves>> - Kves'
+	pl '<<krost>> - krost'
+	pl '<<ves>> - ves'
+	pl '<<talia>> - talia - Waist measurement in cm'
+	pl '<<grudi>> - grudi - Chest measurement in cm'
+	pl '<<bedra>> - bedra'
+	pl '<<titK>> - Chest - Waist (+ brgrow (which is only editable through cheats)'
+	pl '<<silicone>> - silicone'
+	pl '<<grudi>> - <<talia>> - <<bedra>>, breast size <<tits>>, the difference between the hips and waist <<bedra-talia>> cm'
+	pl 'Indicator muscularity <<musle>> - musle, <<salo>> - salo <<salo*2>> - salo * 2 <<fat>> - fat'
+
+	if salo ! fat:
+		pl 'Option to <a href="exec:fat = salo & dynamic $d_cheats_menu_vnesh">balance the fat</a>'
+	end
 }
+
+$din_cheat = {
+	gs 'stat'
+	clr
+
+	pl '<a href="exec:gs ''stat''"><B>Close Cheat menu</B></a>'
+	nl
+	pl '<b>If you use cheats, remember, it´s your decision and respond to the consequences of YOU.</b>'
+	nl
+	pl '<a href="exec:health = vital * 10 + stren * 5 + 1000 & willpower = intel * 5 + will * 5 + 1000 & manna = (intel * magik) + magik * 100 + vital * 10 + rikudo & dynamic $din_cheat">Full restoration of health, mana mind.</a>'
+
+	if leghair >= 1 or lobok >= 1:
+		pl '<a href="exec:leghair=-50 & lobok=-50 & dynamic $din_cheat">Shave all body hair.</a>'
+	end
+
+	if mesec > 0 and isprok = 0:
+		pl '<a href="exec:mesec = 0 & isprok = 0 & dynamic $din_cheat">Remove monthly</a>'
+	end
+
+	if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumface > 0 or cumanus > 0 or cumfrot > 0 or cumlip > 0:
+		pl '<a href="exec:cumpussy = 0 & cumbelly = 0 & cumass = 0 & cumlip = 0 & cumface = 0 & cumanus = 0 & cumfrot = 0 & dynamic $din_cheat">Clean sperm</a>'
+	end
+
+	nl
+	pl '<a href="exec:dynamic $d_cheats_menu_perm"><B>Permanent Cheat Menu</B></a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_vnesh"><B>Appearance Cheat Menu</B></a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_stat"><B>Stats Cheat Menu</B></a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_nav"><B>Skills Cheat Menu</B></a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_rep"><B>Reputation Cheat Menu</B></a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_money"><B>Money Cheat Menu</B></a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_doc"><B>Documents Cheat Menu</B></a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_tel"><B>Teleportation Cheat Menu</B></a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_time"><B>Time Cheat Menu</B></a>'
+}
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_perm = {
-gs 'stat'
-clr
-if cheatHapri = 0:$cheatHapri = 'OFF'
-if cheatHapri = 1:$cheatHapri = 'ON'
-if cheatNomakeup = 0:$cheatNomakeup = 'OFF'
-if cheatNomakeup = 1:$cheatNomakeup = 'ON'
-if cheatNosweat = 0:$cheatNosweat = 'OFF'
-if cheatNosweat = 1:$cheatNosweat = 'ON'
-if cheatNoEat = 0:$cheatNoEat = 'OFF'
-if cheatNoEat = 1:$cheatNoEat = 'ON'
-pl '<a href="exec:dynamic $dex_cheat">DeX cheat menu</a>'
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
-nl
-pl 'Option to <a href="exec:dynamic $din_cheat_hapri">is always groomed</a> <<$cheatHapri>>'
-pl 'Option to <a href="exec:dynamic $din_cheat_nomakeup">never smeared cosmetics</a> <<$cheatNomakeup>>'
-pl 'Option to <a href="exec:dynamic $din_cheat_Nosweat">never sweat</a> <<$cheatNosweat>>'
-pl 'Option to <a href="exec:dynamic $din_cheat_NoEat">never to eat or drink</a> <<$cheatNoEat>>'
+	gs 'stat'
+	clr
+
+	if cheatHapri = 0:
+		$cheatHapri = 'OFF'
+	end
+
+	if cheatHapri = 1:
+		$cheatHapri = 'ON'
+	end
+
+	if cheatNomakeup = 0:
+		$cheatNomakeup = 'OFF'
+	end
+
+	if cheatNomakeup = 1:
+		$cheatNomakeup = 'ON'
+	end
+
+	if cheatNosweat = 0:
+		$cheatNosweat = 'OFF'
+	end
+
+	if cheatNosweat = 1:
+		$cheatNosweat = 'ON'
+	end
+
+	if cheatNoEat = 0:
+		$cheatNoEat = 'OFF'
+	end
+
+	if cheatNoEat = 1:
+		$cheatNoEat = 'ON'
+	end
+
+	pl '<a href="exec:dynamic $dex_cheat">DeX cheat menu</a>'
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
+	nl
+	pl 'Option to <a href="exec:dynamic $din_cheat_hapri">is always groomed</a> <<$cheatHapri>>'
+	pl 'Option to <a href="exec:dynamic $din_cheat_nomakeup">never smeared cosmetics</a> <<$cheatNomakeup>>'
+	pl 'Option to <a href="exec:dynamic $din_cheat_Nosweat">never sweat</a> <<$cheatNosweat>>'
+	pl 'Option to <a href="exec:dynamic $din_cheat_NoEat">never to eat or drink</a> <<$cheatNoEat>>'
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_vnesh = {
-gs 'stat'
-clr
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
-nl
-pl '<a href="exec:dynamic $din_cheat_param">See the design parameters of the body.</a>'
-nl
-pl 'Your <<$lip1>> lips.'
-if lip < 4: pl 'Option to <a href="exec:lip += 1 & dynamic $d_cheats_menu_vnesh">enlarge the lips</a>'
-if lip > 0: pl 'Option to <a href="exec:lip -= 1 & dynamic $d_cheats_menu_vnesh">reduce the lips</a>'
-nl
-pl 'Your <<$skin1>>, <<$tan>> skin.'
-if skin < 4: pl 'Option to <a href="exec:skin += 1 & dynamic $d_cheats_menu_vnesh">improve the skin</a>'
-if skin > 0: pl 'Option to <a href="exec:skin -= 1 & dynamic $d_cheats_menu_vnesh">impair the skin</a>'
-if tan >= 0: pl 'Option to <a href="exec:tan += 10 & dynamic $d_cheats_menu_vnesh">add tan</a>'
-if tan > 0: pl 'Option to <a href="exec:tan = 0 & dynamic $d_cheats_menu_vnesh">remove tan</a>'
-nl
-pl '<<$glaza>>'
-if resnic < 2: pl 'Option to <a href="exec:resnic += 1 & dynamic $d_cheats_menu_vnesh">increase eyelashes</a>'
-if resnic > 0: pl 'Option to <a href="exec:resnic -= 1 & dynamic $d_cheats_menu_vnesh">reduce the eyelashes</a>'
-if glaraz < 3: pl 'Option to <a href="exec:glaraz += 1 & dynamic $d_cheats_menu_vnesh">enlarge the eyes</a>'
-if glaraz > 0: pl 'Option to <a href="exec:glaraz -= 1 & dynamic $d_cheats_menu_vnesh">shrink the eyes</a>'
-nl
-if salo > 0: pl 'Option to <a href="exec:salo -= 5 & fat = salo & dynamic $d_cheats_menu_vnesh">reduce fat</a> <a href="exec:salo = 0 & fat = salo & dynamic $d_cheats_menu_vnesh">Zero fat</a>'
-pl 'Option to increase fat by <a href="exec:salo += 5 & fat = salo & dynamic $d_cheats_menu_vnesh">5</a>, <a href="exec:salo += 10 & fat = salo & dynamic $d_cheats_menu_vnesh">10</a>, <a href="exec:salo += 25 & fat = salo & dynamic $d_cheats_menu_vnesh">25</a>, <a href="exec:salo += 50 & fat = salo & dynamic $d_cheats_menu_vnesh">50</a>, <a href="exec:salo += 100 & fat = salo & dynamic $d_cheats_menu_vnesh">100</a>'
-nl
-pl 'Current age is <<age>>, apparent age is <<vidage>>'
-if age >= 0: pl 'Option to <a href="exec:dynamic $vozr1">change the age</a>'
-if vidage >= 0: pl 'Option to <a href="exec:dynamic $vozr2">change apparent age</a>'
+	gs 'stat'
+	clr
 
-pl 'Option to <a href="exec:dynamic $d_cheats_menu_tatoo">remove tattoo</a>'
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
+	nl
+	pl '<a href="exec:dynamic $din_cheat_param">See the design parameters of the body.</a>'
+	nl
+	pl 'Your <<$lip1>> lips.'
+
+	if lip < 4:
+		pl 'Option to <a href="exec:lip += 1 & dynamic $d_cheats_menu_vnesh">enlarge the lips</a>'
+	end
+
+	if lip > 0:
+		pl 'Option to <a href="exec:lip -= 1 & dynamic $d_cheats_menu_vnesh">reduce the lips</a>'
+	end
+
+	nl
+	pl 'Your <<$skin1>>, <<$tan>> skin.'
+
+	if skin < 4:
+		pl 'Option to <a href="exec:skin += 1 & dynamic $d_cheats_menu_vnesh">improve the skin</a>'
+	end
+
+	if skin > 0:
+		pl 'Option to <a href="exec:skin -= 1 & dynamic $d_cheats_menu_vnesh">impair the skin</a>'
+	end
+
+	if tan >= 0:
+		pl 'Option to <a href="exec:tan += 10 & dynamic $d_cheats_menu_vnesh">add tan</a>'
+	end
+
+	if tan > 0:
+		pl 'Option to <a href="exec:tan = 0 & dynamic $d_cheats_menu_vnesh">remove tan</a>'
+	end
+
+	nl
+	pl '<<$glaza>>'
+
+	if resnic < 2:
+		pl 'Option to <a href="exec:resnic += 1 & dynamic $d_cheats_menu_vnesh">increase eyelashes</a>'
+	end
+
+	if resnic > 0:
+		pl 'Option to <a href="exec:resnic -= 1 & dynamic $d_cheats_menu_vnesh">reduce the eyelashes</a>'
+	end
+
+	if glaraz < 3:
+		pl 'Option to <a href="exec:glaraz += 1 & dynamic $d_cheats_menu_vnesh">enlarge the eyes</a>'
+	end
+
+	if glaraz > 0:
+		pl 'Option to <a href="exec:glaraz -= 1 & dynamic $d_cheats_menu_vnesh">shrink the eyes</a>'
+	end
+
+	nl
+
+	if salo > 0:
+		pl 'Option to <a href="exec:salo -= 5 & fat = salo & dynamic $d_cheats_menu_vnesh">reduce fat</a> <a href="exec:salo = 0 & fat = salo & dynamic $d_cheats_menu_vnesh">Zero fat</a>'
+	end
+
+	pl 'Option to increase fat by <a href="exec:salo += 5 & fat = salo & dynamic $d_cheats_menu_vnesh">5</a>, <a href="exec:salo += 10 & fat = salo & dynamic $d_cheats_menu_vnesh">10</a>, <a href="exec:salo += 25 & fat = salo & dynamic $d_cheats_menu_vnesh">25</a>, <a href="exec:salo += 50 & fat = salo & dynamic $d_cheats_menu_vnesh">50</a>, <a href="exec:salo += 100 & fat = salo & dynamic $d_cheats_menu_vnesh">100</a>'
+	nl
+	pl 'Current age is <<age>>, apparent age is <<vidage>>'
+
+	if age >= 0:
+		pl 'Option to <a href="exec:dynamic $vozr1">change the age</a>'
+	end
+
+	if vidage >= 0:
+		pl 'Option to <a href="exec:dynamic $vozr2">change apparent age</a>'
+	end
+
+	pl 'Option to <a href="exec:dynamic $d_cheats_menu_tatoo">remove tattoo</a>'
 }
+
 $vozr1 = {
-clr
-age = input ("Enter actual age. Minimum is 15 years?")
-if age <= 15: age = 15
-pl '<a href="exec:dynamic $d_cheats_menu_vnesh"><B>Update</B></a>'
+	clr
+
+	age = input ("Enter actual age. Minimum is 15 years?")
+
+	if age <= 15:
+		age = 15
+	end
+
+	pl '<a href="exec:dynamic $d_cheats_menu_vnesh"><B>Update</B></a>'
 }
+
 $vozr2 = {
-clr
-vidage = input ("Enter apparent age. Minimum is 13 years?")
-if vidage <= 13: vidage = 13
-pl '<a href="exec:dynamic $d_cheats_menu_vnesh"><B>Update</B></a>'
+	clr
+
+	vidage = input ("Enter apparent age. Minimum is 13 years?")
+	if vidage <= 13:
+		vidage = 13
+	end
+
+	pl '<a href="exec:dynamic $d_cheats_menu_vnesh"><B>Update</B></a>'
 }
+
 $d_cheats_menu_tatoo = {
-clr
-pl '<a href="exec:dynamic $d_cheats_menu_vnesh"><B>Tattoo Cheat Menu</B></a>'
-nl
-if tatlip >= 1: pl 'Option to <a href="exec:tatlip = 0 & dynamic $d_cheats_menu_tatoo">remove lip tattoo</a>'
-if tatlip = 0: pl 'No tattoo on lip</a>'
-if tatplech >= 1: pl 'Option to <a href="exec:tatplech = 0 & dynamic $d_cheats_menu_tatoo">remove shoulder tattoo</a>'
-if tatplech = 0: pl 'No tattoo on shoulder</a>'
-if tatback >= 1: pl 'Option to <a href="exec:tatback = 0 & dynamic $d_cheats_menu_tatoo">remove back tattoo</a>'
-if tatback = 0: pl 'No tattoo on back</a>'
-if tatupb >= 1: pl 'Option to <a href="exec:tatupb = 0 & dynamic $d_cheats_menu_tatoo">remove lower back tattoo</a>'
-if tatupb = 0: pl 'No tattoo on lower back</a>'
-if tatvag >= 1: pl 'Option to <a href="exec:tatvag = 0 & dynamic $d_cheats_menu_tatoo">remove groin tattoo</a>'
-if tatvag = 0: pl 'No tattoo on groin</a>'
-if tatleg >= 1: pl 'Option to <a href="exec:tatleg = 0 & dynamic $d_cheats_menu_tatoo">remove ankle tattoo</a>'
-if tatleg = 0: pl 'No tattoo on ankle</a>'
+	clr
+
+	pl '<a href="exec:dynamic $d_cheats_menu_vnesh"><B>Tattoo Cheat Menu</B></a>'
+	nl
+	if tatlip >= 1:
+		pl 'Option to <a href="exec:tatlip = 0 & dynamic $d_cheats_menu_tatoo">remove lip tattoo</a>'
+	end
+
+	if tatlip = 0:
+		pl 'No tattoo on lip</a>'
+	end
+
+	if tatplech >= 1:
+		pl 'Option to <a href="exec:tatplech = 0 & dynamic $d_cheats_menu_tatoo">remove shoulder tattoo</a>'
+	end
+
+	if tatplech = 0:
+		pl 'No tattoo on shoulder</a>'
+	end
+
+	if tatback >= 1:
+		pl 'Option to <a href="exec:tatback = 0 & dynamic $d_cheats_menu_tatoo">remove back tattoo</a>'
+	end
+
+	if tatback = 0:
+		pl 'No tattoo on back</a>'
+	end
+
+	if tatupb >= 1:
+		pl 'Option to <a href="exec:tatupb = 0 & dynamic $d_cheats_menu_tatoo">remove lower back tattoo</a>'
+	end
+
+	if tatupb = 0:
+		pl 'No tattoo on lower back</a>'
+	end
+
+	if tatvag >= 1:
+		pl 'Option to <a href="exec:tatvag = 0 & dynamic $d_cheats_menu_tatoo">remove groin tattoo</a>'
+	end
+
+	if tatvag = 0:
+		pl 'No tattoo on groin</a>'
+	end
+
+	if tatleg >= 1:
+		pl 'Option to <a href="exec:tatleg = 0 & dynamic $d_cheats_menu_tatoo">remove ankle tattoo</a>'
+	end
+
+	if tatleg = 0:
+		pl 'No tattoo on ankle</a>'
+	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_stat = {
-clr
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
-nl
-pl 'Increase dominance by <a href="exec:dom += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:dom += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:dom += 10 & dynamic $d_cheats_menu_stat">10</a>'
-pl 'Increase submission by <a href="exec:sub += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:sub += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:sub += 10 & dynamic $d_cheats_menu_stat">10</a>'
-nl
-pl '<a href="exec:horny = val(input(''New Value'')) & dynamic $d_cheats_menu_stat">Arousal: <<horny>></a>'
-nl
-pl 'Increase power by <a href="exec:stren += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:stren += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:stren += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:stren = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
-if stren > 0: pl 'Decrease power by <a href="exec:stren -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:stren -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:stren -= 10 & dynamic $d_cheats_menu_stat">10</a>'
-pl 'Increase speed by <a href="exec:speed += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:speed += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:speed += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:speed = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
-if speed > 0: pl 'Decrease speed by <a href="exec:speed -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:speed -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:speed -= 10 & dynamic $d_cheats_menu_stat">10</a>'
-pl 'Increase agility by <a href="exec:agil += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:agil += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:agil += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:agil = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
-if agil > 0: pl 'Decrease agility by <a href="exec:agil -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:agil -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:agil -= 10 & dynamic $d_cheats_menu_stat">10</a>'
-pl 'Increase reaction by <a href="exec: react += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec: react += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec: react += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec: react = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
-if react > 0: pl 'Decrease reaction by <a href="exec: react -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec: react -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec: react -= 10 & dynamic $d_cheats_menu_stat">10</a>'
-pl 'Increase endurance by <a href="exec:vital += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:vital += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:vital += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:vital = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
-if vital > 0: pl 'Decrease endurance by <a href="exec:vital -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:vital -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:vital -= 10 & dynamic $d_cheats_menu_stat">10</a>'
-pl 'Increase will by <a href="exec:will += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:will += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:will += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:will = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
-if will > 0: pl 'Decrease will by <a href="exec:will -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:will -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:will -= 10 & dynamic $d_cheats_menu_stat">10</a>'
-pl 'Increase intelligence by <a href="exec:intel += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:intel += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:intel += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:intel = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
-if intel > 0: pl 'Decrease intelligence by <a href="exec:intel -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:intel -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:intel -= 10 & dynamic $d_cheats_menu_stat">10</a>'
-nl
-pl '<b>Test options</b> are present in the mechanism of the game, but not involved in the game quests.'
+	clr
+
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
+	nl
+	pl 'Increase dominance by <a href="exec:dom += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:dom += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:dom += 10 & dynamic $d_cheats_menu_stat">10</a>'
+	pl 'Increase submission by <a href="exec:sub += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:sub += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:sub += 10 & dynamic $d_cheats_menu_stat">10</a>'
+	nl
+	pl '<a href="exec:horny = val(input(''New Value'')) & dynamic $d_cheats_menu_stat">Arousal: <<horny>></a>'
+	nl
+	pl 'Increase power by <a href="exec:stren += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:stren += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:stren += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:stren = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
+
+	if stren > 0:
+		pl 'Decrease power by <a href="exec:stren -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:stren -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:stren -= 10 & dynamic $d_cheats_menu_stat">10</a>'
+	end
+
+	pl 'Increase speed by <a href="exec:speed += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:speed += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:speed += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:speed = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
+
+	if speed > 0:
+		pl 'Decrease speed by <a href="exec:speed -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:speed -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:speed -= 10 & dynamic $d_cheats_menu_stat">10</a>'
+	end
+
+	pl 'Increase agility by <a href="exec:agil += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:agil += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:agil += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:agil = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
+	if agil > 0:
+		pl 'Decrease agility by <a href="exec:agil -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:agil -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:agil -= 10 & dynamic $d_cheats_menu_stat">10</a>'
+	end
+
+	pl 'Increase reaction by <a href="exec: react += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec: react += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec: react += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec: react = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
+	if react > 0:
+		pl 'Decrease reaction by <a href="exec: react -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec: react -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec: react -= 10 & dynamic $d_cheats_menu_stat">10</a>'
+	end
+
+	pl 'Increase endurance by <a href="exec:vital += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:vital += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:vital += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:vital = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
+	if vital > 0:
+		pl 'Decrease endurance by <a href="exec:vital -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:vital -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:vital -= 10 & dynamic $d_cheats_menu_stat">10</a>'
+	end
+
+	pl 'Increase will by <a href="exec:will += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:will += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:will += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:will = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
+	if will > 0:
+		pl 'Decrease will by <a href="exec:will -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:will -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:will -= 10 & dynamic $d_cheats_menu_stat">10</a>'
+	end
+
+	pl 'Increase intelligence by <a href="exec:intel += 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:intel += 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:intel += 10 & dynamic $d_cheats_menu_stat">10</a> <a href="exec:intel = 100 & dynamic $d_cheats_menu_stat">set to 100</a>'
+	if intel > 0:
+		pl 'Decrease intelligence by <a href="exec:intel -= 1 & dynamic $d_cheats_menu_stat">1</a> <a href="exec:intel -= 5 & dynamic $d_cheats_menu_stat">5</a> <a href="exec:intel -= 10 & dynamic $d_cheats_menu_stat">10</a>'
+	end
+
+	nl
+	pl '<b>Test options</b> are present in the mechanism of the game, but not involved in the game quests.'
 
 
-if mutagenP = 0: pl 'Mutagen force <a href="exec:mutagenP = 1 & stren = 150 & dynamic $d_cheats_menu_stat">1st Level</a>'
-if mutagenP = 1: pl 'Mutagen force <a href="exec:mutagenP = 2 & stren = 200 & dynamic $d_cheats_menu_stat">level 2</a>'
-if mutagenP = 2: pl 'Mutagen force <a href="exec:mutagenP = 3 & stren = 250 & dynamic $d_cheats_menu_stat">level 3</a>'
-if mutagenP > 0: pl 'Mutagen force <a href="exec:mutagenP = 0 & stren = 100 & dynamic $d_cheats_menu_stat">Zero</a>'
-if mutagenV = 0: pl 'Mutagen endurance <a href="exec:mutagenV = 1 & vital = 150 & dynamic $d_cheats_menu_stat">1st Level</a>'
-if mutagenV = 1: pl 'Mutagen endurance <a href="exec:mutagenV = 2 & vital = 200 & dynamic $d_cheats_menu_stat">level 2</a>'
-if mutagenV = 2: pl 'Mutagen endurance <a href="exec:mutagenV = 3 & vital = 250 & dynamic $d_cheats_menu_stat">level 3</a>'
-if mutagenV > 0: pl 'Mutagen endurance <a href="exec:mutagenV = 0 & vital = 100 & dynamic $d_cheats_menu_stat">Zero</a>'
-if mutagenA = 0: pl 'Mutagen Agility <a href="exec:mutagenA = 1 & agil = 150 & dynamic $d_cheats_menu_stat">1st Level</a>'
-if mutagenA = 1: pl 'Mutagen Agility <a href="exec:mutagenA = 2 & agil = 200 & dynamic $d_cheats_menu_stat">level 2</a>'
-if mutagenA = 2: pl 'Mutagen Agility <a href="exec:mutagenA = 3 & agil = 250 & dynamic $d_cheats_menu_stat">level 3</a>'
-if mutagenA > 0: pl 'Mutagen Agility <a href="exec:mutagenA = 0 & agil = 100 & dynamic $d_cheats_menu_stat">Zero</a>'
+	if mutagenP = 0:
+		pl 'Mutagen force <a href="exec:mutagenP = 1 & stren = 150 & dynamic $d_cheats_menu_stat">1st Level</a>'
+	end
+
+	if mutagenP = 1:
+		pl 'Mutagen force <a href="exec:mutagenP = 2 & stren = 200 & dynamic $d_cheats_menu_stat">level 2</a>'
+	end
+
+	if mutagenP = 2:
+		pl 'Mutagen force <a href="exec:mutagenP = 3 & stren = 250 & dynamic $d_cheats_menu_stat">level 3</a>'
+	end
+
+	if mutagenP > 0:
+		pl 'Mutagen force <a href="exec:mutagenP = 0 & stren = 100 & dynamic $d_cheats_menu_stat">Zero</a>'
+	end
+
+	if mutagenV = 0:
+		pl 'Mutagen endurance <a href="exec:mutagenV = 1 & vital = 150 & dynamic $d_cheats_menu_stat">1st Level</a>'
+	end
+
+	if mutagenV = 1:
+		pl 'Mutagen endurance <a href="exec:mutagenV = 2 & vital = 200 & dynamic $d_cheats_menu_stat">level 2</a>'
+	end
+
+	if mutagenV = 2:
+		pl 'Mutagen endurance <a href="exec:mutagenV = 3 & vital = 250 & dynamic $d_cheats_menu_stat">level 3</a>'
+	end
+
+	if mutagenV > 0:
+		pl 'Mutagen endurance <a href="exec:mutagenV = 0 & vital = 100 & dynamic $d_cheats_menu_stat">Zero</a>'
+	end
+
+	if mutagenA = 0:
+		pl 'Mutagen Agility <a href="exec:mutagenA = 1 & agil = 150 & dynamic $d_cheats_menu_stat">1st Level</a>'
+	end
+
+	if mutagenA = 1:
+		pl 'Mutagen Agility <a href="exec:mutagenA = 2 & agil = 200 & dynamic $d_cheats_menu_stat">level 2</a>'
+	end
+
+	if mutagenA = 2:
+		pl 'Mutagen Agility <a href="exec:mutagenA = 3 & agil = 250 & dynamic $d_cheats_menu_stat">level 3</a>'
+	end
+
+	if mutagenA > 0:
+		pl 'Mutagen Agility <a href="exec:mutagenA = 0 & agil = 100 & dynamic $d_cheats_menu_stat">Zero</a>'
+	end
 }
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_nav = {
-gs 'stat'
-clr
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
-nl
-if beg >= 0: pl '<a href="exec:beg = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Running: <<beg>></a>'
-if volleyboll >= 0: pl '<a href="exec:volleyboll = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Volleyball: <<volleyboll>></a>'
-nl
-if dance >= 0: pl '<a href="exec:dance = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Dancing: <<dance>></a>'
-if dancePRO >= 0: pl '<a href="exec:dancePRO = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Prof. Dancing: <<dancePRO>></a>'
-if stripdance >= 0: pl '<a href="exec:stripdance = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Striptease: <<stripdance>></a>'
-if poledance >= 0: pl '<a href="exec:poledance = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Poledancing: <<poledance>></a>'
-nl
-if jab >= 0: pl '<a href="exec:jab = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Jab: <<jab>></a>'
-if punch >= 0: pl '<a href="exec:punch = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Punch: <<punch>></a>'
-if kik >= 0: pl '<a href="exec:kik = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Kick: <<kik>></a>'
-if kikdef >= 0: pl '<a href="exec:kikdef = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Defence: <<kikdef>></a>'
-nl
-if suspeh >= 0: pl '<a href="exec:suspeh = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Achievement: <<suspeh>></a>'
-if schoolprogul >= 0: pl '<a href="exec:schoolprogul = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Absenteeism: <<schoolprogul>></a>'
+	gs 'stat'
+	clr
+
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
+	nl
+	if beg >= 0:
+		pl '<a href="exec:beg = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Running: <<beg>></a>'
+	end
+
+	if volleyboll >= 0:
+		pl '<a href="exec:volleyboll = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Volleyball: <<volleyboll>></a>'
+	end
+
+	nl
+
+	if dance >= 0:
+		pl '<a href="exec:dance = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Dancing: <<dance>></a>'
+	end
+
+	if dancePRO >= 0:
+		pl '<a href="exec:dancePRO = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Prof. Dancing: <<dancePRO>></a>'
+	end
+
+	if stripdance >= 0:
+		pl '<a href="exec:stripdance = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Striptease: <<stripdance>></a>'
+	end
+
+	if poledance >= 0:
+		pl '<a href="exec:poledance = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Poledancing: <<poledance>></a>'
+	end
+
+	nl
+
+	if jab >= 0:
+		pl '<a href="exec:jab = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Jab: <<jab>></a>'
+	end
+
+	if punch >= 0:
+		pl '<a href="exec:punch = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Punch: <<punch>></a>'
+	end
+
+	if kik >= 0:
+		pl '<a href="exec:kik = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Kick: <<kik>></a>'
+	end
+
+	if kikdef >= 0:
+		pl '<a href="exec:kikdef = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Defence: <<kikdef>></a>'
+	end
+
+	nl
+
+	if suspeh >= 0:
+		pl '<a href="exec:suspeh = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Achievement: <<suspeh>></a>'
+	end
+
+	if schoolprogul >= 0:
+		pl '<a href="exec:schoolprogul = val(input(''New Value'')) & dynamic $d_cheats_menu_nav">Absenteeism: <<schoolprogul>></a>'
+	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_rep = {
-gs 'stat'
-clr
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
-nl
-if gorslut > 0: pl 'In town you are known as <<$gnikname>>'
-if gorslut = 0: pl 'You have a good reputation in the town'
-if gorslut ! 1: pl '<a href="exec:gorslut = 1 & dynamic $d_cheats_menu_rep">Change reputation to "flirt"</a>'
-if gorslut ! 2: pl '<a href="exec:gorslut = 2 & dynamic $d_cheats_menu_rep"> Change reputation to "cocksucker"</a>'
-if gorslut ! 3: pl '<a href="exec:gorslut = 3 & dynamic $d_cheats_menu_rep">Change reputation on to "total cocksucker"</a>'
-if gorslut ! 4: pl '<a href="exec:gorslut = 4 & dynamic $d_cheats_menu_rep">Change reputation to "easy"</a>'
-if gorslut ! 5: pl '<a href="exec: gorslut = 5 & dynamic $d_cheats_menu_rep">Change reputation to "slut"</a>'
-if gorslut ! 6: pl '<a href="exec:gorslut = 6 & dynamic $d_cheats_menu_rep">Change reputation to "prostitute"</a>'
-if gorslut > 0: pl '<a href="exec:gorslut = 0 & dynamic $d_cheats_menu_rep">Clear reputation in town</a>'
-if opusk > 0 or sipovka > 0 or rozetka > 0: pl '<a href="exec:opusk = 0 & sipovka = 0 & rozetka = 0 & dynamic $d_cheats_menu_rep">Clear reputation with Gopnik</a>'
+	gs 'stat'
+	clr
+
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
+	nl
+
+	if gorslut > 0:
+		pl 'In town you are known as <<$gnikname>>'
+	end
+
+	if gorslut = 0:
+		pl 'You have a good reputation in the town'
+	end
+
+	if gorslut ! 1:
+		pl '<a href="exec:gorslut = 1 & dynamic $d_cheats_menu_rep">Change reputation to "flirt"</a>'
+	end
+
+	if gorslut ! 2:
+		pl '<a href="exec:gorslut = 2 & dynamic $d_cheats_menu_rep"> Change reputation to "cocksucker"</a>'
+	end
+
+	if gorslut ! 3:
+		pl '<a href="exec:gorslut = 3 & dynamic $d_cheats_menu_rep">Change reputation on to "total cocksucker"</a>'
+	end
+
+	if gorslut ! 4:
+		pl '<a href="exec:gorslut = 4 & dynamic $d_cheats_menu_rep">Change reputation to "easy"</a>'
+	end
+
+	if gorslut ! 5:
+		pl '<a href="exec: gorslut = 5 & dynamic $d_cheats_menu_rep">Change reputation to "slut"</a>'
+	end
+
+	if gorslut ! 6:
+		pl '<a href="exec:gorslut = 6 & dynamic $d_cheats_menu_rep">Change reputation to "prostitute"</a>'
+	end
+
+	if gorslut > 0:
+		pl '<a href="exec:gorslut = 0 & dynamic $d_cheats_menu_rep">Clear reputation in town</a>'
+	end
+
+	if opusk > 0 or sipovka > 0 or rozetka > 0:
+		pl '<a href="exec:opusk = 0 & sipovka = 0 & rozetka = 0 & dynamic $d_cheats_menu_rep">Clear reputation with Gopnik</a>'
+	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_Money = {
-clr
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
-nl
-pl 'You have <<money>> rubles'
-if vnesh >= 0: pl '<a href="exec:money += 1000 & dynamic $d_cheats_menu_money">+1 thousand rubles.</a>'
-if vnesh >= 0: pl '<a href="exec:money += 10000 & dynamic $d_cheats_menu_money">+10 thousand rubles.</a>'
-if vnesh >= 0: pl '<a href="exec:money += 100000 & dynamic $d_cheats_menu_money">+100 thousand rubles.</a>'
-if vnesh >= 0: pl '<a href="exec:money += 1000000 & dynamic $d_cheats_menu_money">+1 million rubles.</B></a>'
-if vnesh >= 0: pl '<a href="exec:money = 0 & dynamic $d_cheats_menu_money">Zero Money.</a>'
+	clr
+
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
+	nl
+	pl 'You have <<money>> rubles'
+
+	if vnesh >= 0:
+		pl '<a href="exec:money += 1000 & dynamic $d_cheats_menu_money">+1 thousand rubles.</a>'
+		pl '<a href="exec:money += 10000 & dynamic $d_cheats_menu_money">+10 thousand rubles.</a>'
+		pl '<a href="exec:money += 100000 & dynamic $d_cheats_menu_money">+100 thousand rubles.</a>'
+		pl '<a href="exec:money += 1000000 & dynamic $d_cheats_menu_money">+1 million rubles.</B></a>'
+		pl '<a href="exec:money = 0 & dynamic $d_cheats_menu_money">Zero Money.</a>'
+	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_doc = {
-clr
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat menu</B></a>'
-nl
-if diplom = 0: pl '<a href="exec:diplom = 1 & dynamic $d_cheats_menu_doc">Get Diploma</a>'
-if diplom = 1: pl 'You already have a Diploma'
-if secrdiplom = 0: pl '<a href="exec:secrdiplom = 1 & dynamic $d_cheats_menu_doc">Get Secretarial Diploma</a>'
-if secrdiplom = 1: pl 'You already have a Secretarial Diploma'
-if masash < 10: pl '<a href="exec:masash = 10 & dynamic $d_cheats_menu_doc">Get Masseur Certificate</a>'
-if masash >= 10: pl 'You already have a Masseur Certificate'
-if prava = 0: pl '<a href="exec:prava = 1 & dynamic $d_cheats_menu_doc">Get Drivers License</a>'
-if prava = 1: pl 'You already have a Drivers License'
+	clr
+
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat menu</B></a>'
+	nl
+
+	if diplom = 0:
+		pl '<a href="exec:diplom = 1 & dynamic $d_cheats_menu_doc">Get Diploma</a>'
+	end
+
+	if diplom = 1:
+		pl 'You already have a Diploma'
+	end
+
+	if secrdiplom = 0:
+		pl '<a href="exec:secrdiplom = 1 & dynamic $d_cheats_menu_doc">Get Secretarial Diploma</a>'
+	end
+
+	if secrdiplom = 1:
+		pl 'You already have a Secretarial Diploma'
+	end
+
+	if masash < 10:
+		pl '<a href="exec:masash = 10 & dynamic $d_cheats_menu_doc">Get Masseur Certificate</a>'
+	end
+
+	if masash >= 10:
+		pl 'You already have a Masseur Certificate'
+	end
+
+	if prava = 0:
+		pl '<a href="exec:prava = 1 & dynamic $d_cheats_menu_doc">Get Drivers License</a>'
+	end
+
+	if prava = 1:
+		pl 'You already have a Drivers License'
+	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_tel = {
-clr
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
-nl
-if vnesh >= 0: pl '<a href="exec:gt ''street''">Residential District</a>'
-if vnesh >= 0: pl '<a href="exec:gt ''down''">Central District</a>'
-if vnesh >= 0: pl '<a href="exec:gt ''nord''">North District</a>'
-if vnesh >= 0: pl '<a href="exec:gt ''gorodok''">Town</a>'
+	clr
+
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
+	nl
+
+	if vnesh >= 0:
+		pl '<a href="exec:gt ''street''">Residential District</a>'
+		pl '<a href="exec:gt ''down''">Central District</a>'
+		pl '<a href="exec:gt ''nord''">North District</a>'
+		pl '<a href="exec:gt ''gorodok''">Town</a>'
+	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $d_cheats_menu_time = {
-gs 'stat'
-clr
-pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
-nl
-pl 'Time: <<$week>> <<day>> number, <<$month>>, <<year>> year.'
-pl '<a href="exec:dynamic $d_cheats_menu_time_week">Select day of the week.</a>'
-pl '<a href="exec:day += 1 & dynamic $d_cheats_menu_time">+1 Day.</a>'
-pl '<a href="exec:day -= 1 & dynamic $d_cheats_menu_time">-1 Day.</a>'
-pl '<a href="exec:dynamic $d_cheats_menu_time_month">Select Month.</a>'
-pl '<a href="exec:year += 1 & dynamic $d_cheats_menu_time">+1 Year.</a>'
-pl '<a href="exec:year -= 1 & dynamic $d_cheats_menu_time">-1 Year.</a>'
+	gs 'stat'
+	clr
+
+	pl '<a href="exec:dynamic $din_cheat"><B>Cheat Menu</B></a>'
+	nl
+	pl 'Time: <<$week>> <<day>> number, <<$month>>, <<year>> year.'
+	pl '<a href="exec:dynamic $d_cheats_menu_time_week">Select day of the week.</a>'
+	pl '<a href="exec:day += 1 & dynamic $d_cheats_menu_time">+1 Day.</a>'
+	pl '<a href="exec:day -= 1 & dynamic $d_cheats_menu_time">-1 Day.</a>'
+	pl '<a href="exec:dynamic $d_cheats_menu_time_month">Select Month.</a>'
+	pl '<a href="exec:year += 1 & dynamic $d_cheats_menu_time">+1 Year.</a>'
+	pl '<a href="exec:year -= 1 & dynamic $d_cheats_menu_time">-1 Year.</a>'
 }
+
 $d_cheats_menu_time_week = {
-clr
-pl '<a href="exec:dynamic $d_cheats_menu_time"><B>Time Cheat Menu</B></a>'
-nl
-pl 'Time: <<$week>> <<day>> number, <<$month>>, <<year>> year.'
-pl '<a href="exec:week = 1 & dynamic $d_cheats_menu_time">Monday.</a>'
-pl '<a href="exec:week = 2 & dynamic $d_cheats_menu_time">Tuesday.</a>'
-pl '<a href="exec:week = 3 & dynamic $d_cheats_menu_time">Wednesday.</a>'
-pl '<a href="exec:week = 4 & dynamic $d_cheats_menu_time">Thursday.</a>'
-pl '<a href="exec:week = 5 & dynamic $d_cheats_menu_time">Friday.</a>'
-pl '<a href="exec:week = 6 & dynamic $d_cheats_menu_time">Saturday.</a>'
-pl '<a href="exec:week = 7 & dynamic $d_cheats_menu_time">Sunday.</a>'
+	clr
+
+	pl '<a href="exec:dynamic $d_cheats_menu_time"><B>Time Cheat Menu</B></a>'
+	nl
+	pl 'Time: <<$week>> <<day>> number, <<$month>>, <<year>> year.'
+	pl '<a href="exec:week = 1 & dynamic $d_cheats_menu_time">Monday.</a>'
+	pl '<a href="exec:week = 2 & dynamic $d_cheats_menu_time">Tuesday.</a>'
+	pl '<a href="exec:week = 3 & dynamic $d_cheats_menu_time">Wednesday.</a>'
+	pl '<a href="exec:week = 4 & dynamic $d_cheats_menu_time">Thursday.</a>'
+	pl '<a href="exec:week = 5 & dynamic $d_cheats_menu_time">Friday.</a>'
+	pl '<a href="exec:week = 6 & dynamic $d_cheats_menu_time">Saturday.</a>'
+	pl '<a href="exec:week = 7 & dynamic $d_cheats_menu_time">Sunday.</a>'
 }
+
 $d_cheats_menu_time_month = {
-clr
-pl '<a href="exec:dynamic $d_cheats_menu_time"><B>Time Cheat Menu</B></a>'
-nl
-pl 'Time: <<$week>> <<day>> number, <<$month>>, <<year>> year.'
-pl '<a href="exec:month = 1 & dynamic $d_cheats_menu_time">January.</a>'
-pl '<a href="exec:month = 2 & dynamic $d_cheats_menu_time">February.</a>'
-pl '<a href="exec:month = 3 & dynamic $d_cheats_menu_time">March.</a>'
-pl '<a href="exec:month = 4 & dynamic $d_cheats_menu_time">April.</a>'
-pl '<a href="exec:month = 5 & dynamic $d_cheats_menu_time">May.</a>'
-pl '<a href="exec:month = 6 & dynamic $d_cheats_menu_time">June.</a>'
-pl '<a href="exec:month = 7 & dynamic $d_cheats_menu_time">July.</a>'
-pl '<a href="exec:month = 8 & dynamic $d_cheats_menu_time">August.</a>'
-pl '<a href="exec:month = 9 & dynamic $d_cheats_menu_time">September.</a>'
-pl '<a href="exec:month = 10 & dynamic $d_cheats_menu_time">October.</a>'
-pl '<a href="exec:month = 11 & dynamic $d_cheats_menu_time">November.</a>'
-pl '<a href="exec:month = 12 & dynamic $d_cheats_menu_time">December.</a>'
+	clr
+
+	pl '<a href="exec:dynamic $d_cheats_menu_time"><B>Time Cheat Menu</B></a>'
+	nl
+	pl 'Time: <<$week>> <<day>> number, <<$month>>, <<year>> year.'
+	pl '<a href="exec:month = 1 & dynamic $d_cheats_menu_time">January.</a>'
+	pl '<a href="exec:month = 2 & dynamic $d_cheats_menu_time">February.</a>'
+	pl '<a href="exec:month = 3 & dynamic $d_cheats_menu_time">March.</a>'
+	pl '<a href="exec:month = 4 & dynamic $d_cheats_menu_time">April.</a>'
+	pl '<a href="exec:month = 5 & dynamic $d_cheats_menu_time">May.</a>'
+	pl '<a href="exec:month = 6 & dynamic $d_cheats_menu_time">June.</a>'
+	pl '<a href="exec:month = 7 & dynamic $d_cheats_menu_time">July.</a>'
+	pl '<a href="exec:month = 8 & dynamic $d_cheats_menu_time">August.</a>'
+	pl '<a href="exec:month = 9 & dynamic $d_cheats_menu_time">September.</a>'
+	pl '<a href="exec:month = 10 & dynamic $d_cheats_menu_time">October.</a>'
+	pl '<a href="exec:month = 11 & dynamic $d_cheats_menu_time">November.</a>'
+	pl '<a href="exec:month = 12 & dynamic $d_cheats_menu_time">December.</a>'
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 $objmagic = {
-clr
-pl '<a href="exec:dynamic $din_cheat"><b>Cheat menu</b></a>.'
+	clr
 
-if magik = 0:
-pl 'You are unable to use magic.'
-end
+	pl '<a href="exec:dynamic $din_cheat"><b>Cheat menu</b></a>.'
 
-if magik > 0:
-pl 'Available to you <<manna>> units of manna.'
-!' Rikudo forces available to you <<rikudo>> units'
-nl
-	pl 'BASIC SPELL:'
-	nl
-	if spelltuman > 0: pl 'Cover the area fog, a great way to hide their actions from the attacking enemy and not a bad way to increase the chance to dodge enemy attacks, as he can not see you in your fog (mana cost of 10 units)'
-	nl
-	if spellklon > 0: pl 'Substitute itself clone powerful way to avoid enemy attacks substituting itself clone opponent gets to clone and not on you, he just wasted power (mana cost of 15 units)'
-	nl
-	if spellstun > 0: pl 'Paralyze a great way to stop the enemy, he will not be able to defend and attack. (Cost 20 mana units)'
-	nl
-	if spellweap > 0 and weapon > 0: pl 'Invest in energy weapons'
-	if spellwind > 0: pl 'Blow away the fog, mist spell any scattering over the battlefield.'
-	nl
-	if spellklon2 > 0: pl 'Substitute themselves clones (3 pieces), the enemy will not be able to get to you until you destroy all of your clones. (Cost 45 mana units)'
-	nl
-	if spellenergo > 0: pl 'Create weak energy shield spell protects against all attacks of the physical nature, even if the enemy attack exceeds the capabilities of the shield and the shield will be destroyed by the first blow, you can still protect yourself from the damage (cost 50 mana units)'
-	nl
-	if spellinit > 0: pl 'Create weak deceleration time powerful spell allowing you to move faster, you can snatch the initiative with this spell that would strike another spell to increase your chance to hit too, because you will move very quickly (cost 60 mana units)'
-	nl
-	if spellhel > 0: pl 'Martial treatment restores or adds 400 health units in exchange for 400 units of manna.'
-	nl
+	if magik = 0:
+		pl 'You are unable to use magic.'
+	end
 
-	if stihia = 1: pl 'SPELL elements of fire'
-	nl
-	if spellfire1 = 1: pl 'Flame. Inflicts little damage. (Cost 10 mana)'
-	nl
-	if spellfire2 = 1: pl 'Release of fire. A damage. (100 mana cost)'
-	nl
-	if spellfire3 = 1: pl 'Fire barrier, creates a shield of 750 units. (150 mana cost)'
-	nl
-	if spellfire4 = 1: pl 'Firestorm. Causes great damage to an enemy difficult to dodge. (250 mana cost)'
-	nl
-	if spellfire5 = 1: pl 'Flame Shield creates a shield of 2,500 units. (500 mana cost)'
-	nl
+	if magik > 0:
+		pl 'Available to you <<manna>> units of manna.'
+		!' Rikudo forces available to you <<rikudo>> units'
+		nl
+		pl 'BASIC SPELL:'
+		nl
 
-	if stihia = 2: pl 'SPELL element of lightning'
-	nl
-	if spellele1 = 1: pl 'Discharge. Inflicts very little damage. (Cost 10 mana)'
-	nl
-	if spellele2 = 1: pl 'Lightning. Inflicts above average. (100 mana cost)'
-	nl
-	if spellele3 = 1: pl 'Electrical barrier creates a shield of 1,500. (150 mana cost)'
-	nl
-	if spellele4 = 1: pl 'Dance of thousands of birds. Inflicts very high damage. (250 mana cost)'
-	nl
-	if spellele5 = 1: pl 'Plyaschuschaya sphere creates a shield of 5,000 units. (500 mana cost)'
-	nl
+		if spelltuman > 0:
+			pl 'Cover the area fog, a great way to hide their actions from the attacking enemy and not a bad way to increase the chance to dodge enemy attacks, as he can not see you in your fog (mana cost of 10 units)'
+		end
 
-	if stihia = 3: pl 'SPELL Element Earth'
-	nl
-	if spellert1 = 1: pl 'Quicksand trap catches the enemy in quicksand and causes little damage. (Cost 10 mana)'
-	nl
-	if spellert2 = 1: pl 'Active protection, creates a protective sphere of earth, stone and sand 2,500 mana and health protection, this protection is self-healing in 10 moves absorbing units 20 mana per turn. (100 mana cost)'
-	nl
-	if spellert3 = 1: pl 'Abyss earth asunder underfoot enemy inflicting damage above average and depriving him of the ability to move. (150 mana cost)'
-	nl
-	if spellert4 = 1: pl 'Absolute protection, creates a huge protective sphere of the earth, which regenerates itself every move and attack the enemy. (250 mana cost)'
-	nl
-	if spellert5 = 1: pl 'Sando, two huge plates come out of the ground and collapse crushing the enemy inflicting massive damage and depriving him of his ability to move. 500 mana cost.'
-	nl
+		nl
 
-	if stihia = 4: pl 'Spells with wind energy'
-	nl
-	if spellwind1 = 1: pl 'A gust of wind, causing very little damage and destroy clones and fog, it is very difficult to dodge. (Cost 10 mana)'
-	nl
-	if spellwind2 = 1: pl 'Horrendous pressure, causing moderate damage and destroying clones and fog, it is very difficult to dodge. (100 mana cost)'
-	nl
-	if spellwind3 = 1: pl 'Vacuum sphere, creates a shield of 1,500. (150 mana cost)'
-	nl
-	if spellwind4 = 1: pl 'Vacuum shells do more damage and destroy clones and fog, it is very difficult to dodge. (250 mana cost)'
-	nl
-	if spellwind5 = 1: pl 'Devouring vacuum sucks shield enemy destroying it whatever strength he was not. (500 mana cost)'
-	nl
+		if spellklon > 0:
+			pl 'Substitute itself clone powerful way to avoid enemy attacks substituting itself clone opponent gets to clone and not on you, he just wasted power (mana cost of 15 units)'
+		end
 
-	if stihia = 5: pl 'SPELL elements of water'
-	nl
-	if spellwater1 = 1: pl 'Creek manna causes very little damage and absorbs a lot of mana. Cost 10 mana.'
-	nl
-	if spellwater2 = 1: pl 'Flooding, causing moderate damage and absorbs manna above average. 100 mana cost.'
-	nl
-	if spellwater3 = 1: pl 'Water bubble creates a protective sphere of water 1,500 protection from all influences, this protection is self-healing in 10 moves absorbing units 20 mana per turn. (150 mana cost)'
-	nl
-	if spellwater4 = 1: pl 'Water shark missile, causing great damage and absorbs a lot of mana. Cost 250 mana.'
-	nl
-	if spellwater5 = 1: pl 'Great flood, the water creates a huge sphere that absorbs enemy and deflating manna from it and handing it to provide increased protection. 500 mana cost.'
-	nl
+		nl
 
-end
+		if spellstun > 0:
+			pl 'Paralyze a great way to stop the enemy, he will not be able to defend and attack. (Cost 20 mana units)'
+		end
+
+		nl
+
+		if spellweap > 0 and weapon > 0:
+			pl 'Invest in energy weapons'
+		end
+
+		if spellwind > 0:
+			pl 'Blow away the fog, mist spell any scattering over the battlefield.'
+		end
+
+		nl
+
+		if spellklon2 > 0:
+			pl 'Substitute themselves clones (3 pieces), the enemy will not be able to get to you until you destroy all of your clones. (Cost 45 mana units)'
+		end
+
+		nl
+
+		if spellenergo > 0:
+			pl 'Create weak energy shield spell protects against all attacks of the physical nature, even if the enemy attack exceeds the capabilities of the shield and the shield will be destroyed by the first blow, you can still protect yourself from the damage (cost 50 mana units)'
+		end
+
+		nl
+
+		if spellinit > 0:
+			pl 'Create weak deceleration time powerful spell allowing you to move faster, you can snatch the initiative with this spell that would strike another spell to increase your chance to hit too, because you will move very quickly (cost 60 mana units)'
+		end
+
+		nl
+
+		if spellhel > 0:
+			pl 'Martial treatment restores or adds 400 health units in exchange for 400 units of manna.'
+		end
+
+		nl
+
+		if stihia = 1:
+			pl 'SPELL elements of fire'
+		end
+
+		nl
+
+		if spellfire1 = 1:
+			pl 'Flame. Inflicts little damage. (Cost 10 mana)'
+		end
+
+		nl
+
+		if spellfire2 = 1:
+			pl 'Release of fire. A damage. (100 mana cost)'
+		end
+
+		nl
+
+		if spellfire3 = 1:
+			pl 'Fire barrier, creates a shield of 750 units. (150 mana cost)'
+		end
+
+		nl
+
+		if spellfire4 = 1:
+			pl 'Firestorm. Causes great damage to an enemy difficult to dodge. (250 mana cost)'
+		end
+
+		nl
+
+		if spellfire5 = 1:
+			pl 'Flame Shield creates a shield of 2,500 units. (500 mana cost)'
+		end
+
+		nl
+
+		if stihia = 2:
+			pl 'SPELL element of lightning'
+		end
+
+		nl
+		if spellele1 = 1:
+			pl 'Discharge. Inflicts very little damage. (Cost 10 mana)'
+		end
+
+		nl
+
+		if spellele2 = 1:
+			pl 'Lightning. Inflicts above average. (100 mana cost)'
+		end
+
+		nl
+
+		if spellele3 = 1:
+			pl 'Electrical barrier creates a shield of 1,500. (150 mana cost)'
+		end
+
+		nl
+
+		if spellele4 = 1:
+			pl 'Dance of thousands of birds. Inflicts very high damage. (250 mana cost)'
+		end
+
+		nl
+
+		if spellele5 = 1:
+			pl 'Plyaschuschaya sphere creates a shield of 5,000 units. (500 mana cost)'
+		end
+
+		nl
+
+		if stihia = 3:
+			pl 'SPELL Element Earth'
+		end
+
+		nl
+
+		if spellert1 = 1:
+			pl 'Quicksand trap catches the enemy in quicksand and causes little damage. (Cost 10 mana)'
+		end
+
+		nl
+
+		if spellert2 = 1:
+			pl 'Active protection, creates a protective sphere of earth, stone and sand 2,500 mana and health protection, this protection is self-healing in 10 moves absorbing units 20 mana per turn. (100 mana cost)'
+		end
+
+		nl
+
+		if spellert3 = 1:
+			pl 'Abyss earth asunder underfoot enemy inflicting damage above average and depriving him of the ability to move. (150 mana cost)'
+		end
+
+		nl
+
+		if spellert4 = 1:
+			pl 'Absolute protection, creates a huge protective sphere of the earth, which regenerates itself every move and attack the enemy. (250 mana cost)'
+		end
+
+		nl
+
+		if spellert5 = 1:
+			pl 'Sando, two huge plates come out of the ground and collapse crushing the enemy inflicting massive damage and depriving him of his ability to move. 500 mana cost.'
+		end
+
+		nl
+
+		if stihia = 4:
+			pl 'Spells with wind energy'
+		end
+
+		nl
+
+		if spellwind1 = 1:
+			pl 'A gust of wind, causing very little damage and destroy clones and fog, it is very difficult to dodge. (Cost 10 mana)'
+		end
+
+		nl
+
+		if spellwind2 = 1:
+			pl 'Horrendous pressure, causing moderate damage and destroying clones and fog, it is very difficult to dodge. (100 mana cost)'
+		end
+
+		nl
+
+		if spellwind3 = 1:
+			pl 'Vacuum sphere, creates a shield of 1,500. (150 mana cost)'
+		end
+
+		nl
+
+		if spellwind4 = 1:
+			pl 'Vacuum shells do more damage and destroy clones and fog, it is very difficult to dodge. (250 mana cost)'
+		end
+
+		nl
+
+		if spellwind5 = 1:
+			pl 'Devouring vacuum sucks shield enemy destroying it whatever strength he was not. (500 mana cost)'
+		end
+
+		nl
+
+		if stihia = 5:
+			pl 'SPELL elements of water'
+		end
+
+		nl
+
+		if spellwater1 = 1:
+			pl 'Creek manna causes very little damage and absorbs a lot of mana. Cost 10 mana.'
+		end
+
+		nl
+
+		if spellwater2 = 1:
+			pl 'Flooding, causing moderate damage and absorbs manna above average. 100 mana cost.'
+		end
+
+		nl
+
+		if spellwater3 = 1:
+			pl 'Water bubble creates a protective sphere of water 1,500 protection from all influences, this protection is self-healing in 10 moves absorbing units 20 mana per turn. (150 mana cost)'
+		end
+
+		nl
+
+		if spellwater4 = 1:
+			pl 'Water shark missile, causing great damage and absorbs a lot of mana. Cost 250 mana.'
+		end
+
+		nl
+
+		if spellwater5 = 1:
+			pl 'Great flood, the water creates a huge sphere that absorbs enemy and deflating manna from it and handing it to provide increased protection. 500 mana cost.'
+		end
+
+		nl
+	end
 }
 
 !!! Maruda Hair Mod
 $objface = {
-!if hcol = 0 and curly <= 0: VIEW 'images\body\hcol.jpg'
-!if hcol = 1 and curly <= 0: VIEW 'images\body\hcol1.jpg'
-!if hcol = 2 and curly <= 0: VIEW 'images\body\hcol2.jpg'
-!if hcol = 3 and curly <= 0: VIEW 'images\body\hcol3.jpg'
-!if hcol = 0 and curly > 0: VIEW 'images\body\hcolcurly.jpg'
-!if hcol = 1 and curly > 0: VIEW 'images\body\hcolcurly1.jpg'
-!if hcol = 2 and curly > 0: VIEW 'images\body\hcolcurly2.jpg'
-!if hcol = 3 and curly > 0: VIEW 'images\body\hcolcurly3.jpg'
+	!if hcol = 0 and curly <= 0: view 'images/body/hcol.jpg'
+	!if hcol = 1 and curly <= 0: view 'images/body/hcol1.jpg'
+	!if hcol = 2 and curly <= 0: view 'images/body/hcol2.jpg'
+	!if hcol = 3 and curly <= 0: view 'images/body/hcol3.jpg'
+	!if hcol = 0 and curly > 0: view 'images/body/hcolcurly.jpg'
+	!if hcol = 1 and curly > 0: view 'images/body/hcolcurly1.jpg'
+	!if hcol = 2 and curly > 0: view 'images/body/hcolcurly2.jpg'
+	!if hcol = 3 and curly > 0: view 'images/body/hcolcurly3.jpg'
 
-if curly <= 0 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength <= 30: VIEW 'images\body\hairstyles\vshort\normal\hcol0.jpg'
-	if hcol = 1 and hairlength <= 30: VIEW 'images\body\hairstyles\vshort\normal\hcol1.jpg'
-	if hcol = 2 and hairlength <= 30: VIEW 'images\body\hairstyles\vshort\normal\hcol2.jpg'
-	if hcol = 3 and hairlength <= 30: VIEW 'images\body\hairstyles\vshort\normal\hcol3.jpg'
-	if hcol = 0 and hairlength > 30 and hairlength <= 80: VIEW 'images\body\hairstyles\short\normal\hcol0.jpg'
-	if hcol = 1 and hairlength > 30 and hairlength <= 80: VIEW 'images\body\hairstyles\short\normal\hcol1.jpg'
-	if hcol = 2 and hairlength > 30 and hairlength <= 80: VIEW 'images\body\hairstyles\short\normal\hcol2.jpg'
-	if hcol = 3 and hairlength > 30 and hairlength <= 80: VIEW 'images\body\hairstyles\short\normal\hcol3.jpg'
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\normal\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\normal\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\normal\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\normal\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\normal\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\normal\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\normal\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\normal\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\normal\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\normal\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\normal\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\normal\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\normal\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\normal\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\normal\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\normal\hcol3.jpg'
-end
+	if curly <= 0 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength <= 30:
+			view 'images/body/hairstyles/vshort/normal/hcol0.jpg'
+		end
 
-if curly >= 1 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly\hcol3.jpg'
-end
+		if hcol = 1 and hairlength <= 30:
+			view 'images/body/hairstyles/vshort/normal/hcol1.jpg'
+		end
 
-if hbangs >= 1 and curly <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:	
-	if hcol = 0 and hairlength > 30 and hairlength <= 80: VIEW 'images\body\hairstyles\short\bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 30 and hairlength <= 80: VIEW 'images\body\hairstyles\short\bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 30 and hairlength <= 80: VIEW 'images\body\hairstyles\short\bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 30 and hairlength <= 80: VIEW 'images\body\hairstyles\short\bangs\hcol3.jpg'
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\bangs\hcol3.jpg'
-end
-	
-if curly >= 1 and hbangs >= 1 and hpingripw = 0 and hscrunchw <= 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs\hcol3.jpg'
-end
+		if hcol = 2 and hairlength <= 30:
+			view 'images/body/hairstyles/vshort/normal/hcol2.jpg'
+		end
 
-if curly >= 1 and hscrunchw = 1 and hbangs >= 1 and hpingripw <= 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-scrunch\hcol3.jpg'
-end
+		if hcol = 3 and hairlength <= 30:
+			view 'images/body/hairstyles/vshort/normal/hcol3.jpg'
+		end
 
-if curly >= 1 and hpingripw = 1 and hbangs <= 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-buns\hcol3.jpg'
-end
+		if hcol = 0 and hairlength > 30 and hairlength <= 80:
+			view 'images/body/hairstyles/short/normal/hcol0.jpg'
+		end
 
-if curly >= 1 and hpingripw = 1 and hbangs >= 1 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-buns\hcol3.jpg'
-end
+		if hcol = 1 and hairlength > 30 and hairlength <= 80:
+			view 'images/body/hairstyles/short/normal/hcol1.jpg'
+		end
 
-if hpingripw = 1 and hbangs = 0 and curly <= 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\buns\hcol3.jpg'
-end
+		if hcol = 2 and hairlength > 30 and hairlength <= 80:
+			view 'images/body/hairstyles/short/normal/hcol2.jpg'
+		end
 
-if hpingripw >= 1 and hbangs >= 1 and curly <= 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs-buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs-buns\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs-buns\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs-buns\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs-buns\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs-buns\hcol3.jpg'
-end
+		if hcol = 3 and hairlength > 30 and hairlength <= 80:
+			view 'images/body/hairstyles/short/normal/hcol3.jpg'
+		end
 
-if hscrunchw = 1 and hbangs = 0 and curly <= 0 and hpingripw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\scrunch\hcol3.jpg'
-end
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/normal/hcol0.jpg'
+		end
 
-if hscrunchw = 1 and hbangs = 0 and curly >= 1 and hpingripw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-scrunch\hcol3.jpg'
-end
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/normal/hcol1.jpg'
+		end
 
-if hscrunchw = 1 and hbangs >= 1 and curly <= 0 and hpingripw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\bangs-scrunch\hcol3.jpg'
-end
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/normal/hcol2.jpg'
+		end
 
-if hscrunchw = 1 and hbangs >= 1 and curly >= 1 and hpingripw = 0 and hpigtail <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\curly-bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\curly-bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\curly-bangs-scrunch\hcol3.jpg'
-	if hcol = 0 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-scrunch\hcol0.jpg'
-	if hcol = 1 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-scrunch\hcol1.jpg'
-	if hcol = 2 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-scrunch\hcol2.jpg'
-	if hcol = 3 and hairlength > 400: VIEW 'images\body\hairstyles\vlng\curly-bangs-scrunch\hcol3.jpg'
-end
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/normal/hcol3.jpg'
+		end
 
-if hpigtail = 1 and hscrunchw = 2 and hpingripw = 0 and hbraids <= 0 and curly <= 0 and hbraids <= 0:
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\pigtails\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\pigtails\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\pigtails\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\pigtails\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\pigtails\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\pigtails\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\pigtails\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\pigtails\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\pigtails\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\pigtails\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\pigtails\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\pigtails\hcol3.jpg'
-end
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/normal/hcol0.jpg'
+		end
 
-if hbraids >= 1 and curly <= 0 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail = 0: 
-	if hcol = 0 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\braids\hcol0.jpg'
-	if hcol = 1 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\braids\hcol1.jpg'
-	if hcol = 2 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\braids\hcol2.jpg'
-	if hcol = 3 and hairlength > 80 and hairlength <= 160: VIEW 'images\body\hairstyles\med\braids\hcol3.jpg'
-	if hcol = 0 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\braids\hcol0.jpg'
-	if hcol = 1 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\braids\hcol1.jpg'
-	if hcol = 2 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\braids\hcol2.jpg'
-	if hcol = 3 and hairlength > 160 and hairlength <= 260: VIEW 'images\body\hairstyles\medlo\braids\hcol3.jpg'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\braids\hcol0.jpg'
-	if hcol = 1 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\braids\hcol1.jpg'
-	if hcol = 2 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\braids\hcol2.jpg'
-	if hcol = 3 and hairlength > 260 and hairlength <= 400: VIEW 'images\body\hairstyles\lng\braids\hcol3.jpg'
-end
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/normal/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/normal/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/normal/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/normal/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/normal/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/normal/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/normal/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/normal/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/normal/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/normal/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/normal/hcol3.jpg'
+		end
+	end
+
+	if curly >= 1 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol3.jpg'
+		end
+	end
+
+	if hbangs >= 1 and curly <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 30 and hairlength <= 80:
+			view 'images/body/hairstyles/short/bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 30 and hairlength <= 80:
+			view 'images/body/hairstyles/short/bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 30 and hairlength <= 80:
+			view 'images/body/hairstyles/short/bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 30 and hairlength <= 80:
+			view 'images/body/hairstyles/short/bangs/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/bangs/hcol3.jpg'
+		end
+	end
+
+	if curly >= 1 and hbangs >= 1 and hpingripw = 0 and hscrunchw <= 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs/hcol3.jpg'
+		end
+	end
+
+	if curly >= 1 and hscrunchw = 1 and hbangs >= 1 and hpingripw <= 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol3.jpg'
+		end
+	end
+
+	if curly >= 1 and hpingripw = 1 and hbangs <= 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-buns/hcol3.jpg'
+		end
+	end
+
+	if curly >= 1 and hpingripw = 1 and hbangs >= 1 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-buns/hcol3.jpg'
+		end
+	end
+
+	if hpingripw = 1 and hbangs = 0 and curly <= 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/buns/hcol3.jpg'
+		end
+	end
+
+	if hpingripw >= 1 and hbangs >= 1 and curly <= 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs-buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs-buns/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs-buns/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs-buns/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs-buns/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs-buns/hcol3.jpg'
+		end
+	end
+
+	if hscrunchw = 1 and hbangs = 0 and curly <= 0 and hpingripw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/scrunch/hcol3.jpg'
+		end
+	end
+
+	if hscrunchw = 1 and hbangs = 0 and curly >= 1 and hpingripw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-scrunch/hcol3.jpg'
+		end
+	end
+
+	if hscrunchw = 1 and hbangs >= 1 and curly <= 0 and hpingripw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/bangs-scrunch/hcol3.jpg'
+		end
+	end
+
+	if hscrunchw = 1 and hbangs >= 1 and curly >= 1 and hpingripw = 0 and hpigtail <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/curly-bangs-scrunch/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 400:
+			view 'images/body/hairstyles/vlng/curly-bangs-scrunch/hcol3.jpg'
+		end
+	end
+
+	if hpigtail = 1 and hscrunchw = 2 and hpingripw = 0 and hbraids <= 0 and curly <= 0 and hbraids <= 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/pigtails/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/pigtails/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/pigtails/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/pigtails/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/pigtails/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/pigtails/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/pigtails/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/pigtails/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/pigtails/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/pigtails/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/pigtails/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/pigtails/hcol3.jpg'
+		end
+	end
+
+	if hbraids >= 1 and curly <= 0 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail = 0:
+		if hcol = 0 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/braids/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/braids/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/braids/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 80 and hairlength <= 160:
+			view 'images/body/hairstyles/med/braids/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/braids/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/braids/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/braids/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 160 and hairlength <= 260:
+			view 'images/body/hairstyles/medlo/braids/hcol3.jpg'
+		end
+
+		if hcol = 0 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/braids/hcol0.jpg'
+		end
+
+		if hcol = 1 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/braids/hcol1.jpg'
+		end
+
+		if hcol = 2 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/braids/hcol2.jpg'
+		end
+
+		if hcol = 3 and hairlength > 260 and hairlength <= 400:
+			view 'images/body/hairstyles/lng/braids/hcol3.jpg'
+		end
+	end
 }
 !!! Maruda Hair Mod
 
-
 $objbody = {
 	if musle >= salo:
-	!мускулистый тип
+	!muscular type
 		if bedra < 60:
-		VIEW 'images\body\fit.jpg'
+			view 'images/body/fit.jpg'
 		end
+
 		if bedra >= 60 and bedra < 70:
-		VIEW 'images\body\fit1.jpg'
+			view 'images/body/fit1.jpg'
 		end
+
 		if bedra >= 70 and bedra < 80:
-		VIEW 'images\body\fit2.jpg'
+			iew 'images/body/fit2.jpg'
 		end
+
 		if bedra >= 80 and bedra < 90:
-		VIEW 'images\body\fit3.jpg'
+			view 'images/body/fit3.jpg'
 		end
+		
 		if bedra >= 90 and bedra < 100:
-		VIEW 'images\body\fit4.jpg'
+			view 'images/body/fit4.jpg'
 		end
+		
 		if bedra >= 100 and bedra < 110:
-		VIEW 'images\body\fit5.jpg'
+			view 'images/body/fit5.jpg'
 		end
+		
 		if bedra >= 110 and bedra < 120:
-		VIEW 'images\body\fit6.jpg'
+			view 'images/body/fit6.jpg'
 		end
+		
 		if bedra >= 120:
-		VIEW 'images\body\fit7.jpg'
+			view 'images/body/fit7.jpg'
 		end
 	end
+
 	if musle < salo:
-	!жирный тип
+	!bold type
 		if bedra < 60:
-		VIEW 'images\body\fat.jpg'
+			view 'images/picb/body/0.jpg'
 		end
-		if bedra >= 60 and bedra < 70:
-		VIEW 'images\body\fat1.jpg'
+
+		if bedra >= 60 and bedra < 65:
+			view 'images/picb/body/1.jpg'
 		end
-		if bedra >= 70 and bedra < 80:
-		VIEW 'images\body\fat2.jpg'
+
+		if bedra >= 65 and bedra < 70:
+			view 'images/picb/body/2.jpg'
 		end
-		if bedra >= 80 and bedra < 90:
-		VIEW 'images\body\fat3.jpg'
+
+		if bedra >= 70 and bedra < 75:
+			view 'images/picb/body/3.jpg'
 		end
-		if bedra >= 90 and bedra < 100:
-		VIEW 'images\body\fat4.jpg'
+
+		if bedra >= 75 and bedra < 80:
+			view 'images/picb/body/4.jpg'
 		end
-		if bedra >= 100 and bedra < 110:
-		VIEW 'images\body\fat5.jpg'
+
+		if bedra >= 80 and bedra < 85:
+			view 'images/picb/body/5.jpg'
 		end
-		if bedra >= 110 and bedra < 120:
-		VIEW 'images\body\fat6.jpg'
+
+		if bedra >= 85 and bedra < 90:
+			view 'images/picb/body/6.jpg'
 		end
+
+		if bedra >= 90 and bedra < 95:
+			VIEW 'images/picb/body/7.jpg'
+		end
+
+		if bedra >= 95 and bedra < 100:
+			view 'images/picb/body/8.jpg'
+		end
+
+		if bedra >= 100 and bedra < 105:
+			view 'images/picb/body/9.jpg'
+		end
+
+		if bedra >= 105 and bedra < 110:
+			view 'images/picb/body/10.jpg'
+		end
+
+		if bedra >= 110 and bedra < 115:
+			view 'images/picb/body/11.jpg'
+		end
+
+		if bedra >= 115 and bedra < 120:
+			view 'images/picb/body/12.jpg'
+		end
+
 		if bedra >= 120:
-		VIEW 'images\body\fat7.jpg'
+			view 'images/body/13.jpg'
 		end
 	end
 }
 
 $objclothes = {
-clr
-if nude = 0:
-	if vatnik = 2: VIEW 'images\clothes\vatnik.jpg'
-	if odetjeans > 0:
-		VIEW 'images\clothes\jeans<<numdress>>.jpg'
-		pl '(strength <<jeansH[numdress]>>, hip size <<jeansB[numdress]>>)'
+	clr
+
+	if nude = 0:
+		if vatnik = 2:
+			view 'images/clothes/vatnik.jpg'
 		end
-	if odetyoga > 0:
-		VIEW 'images\clothes\yoga<<numdress>>.jpg'
-		pl '(strength <<yogaH[numdress]>>)'
+
+		if odetjeans > 0:
+			view 'images/clothes/jeans<<numdress>>.jpg'
+			pl '(strength <<jeansH[numdress]>>, hip size <<jeansB[numdress]>>)'
 		end
-	if odetsarafan > 0:
-		VIEW 'images\clothes\sarafan<<numdress>>.jpg'
-		pl '(strength <<sarafanH[numdress]>>)'
+
+		if odetyoga > 0:
+			view 'images/clothes/yoga<<numdress>>.jpg'
+			pl '(strength <<yogaH[numdress]>>)'
 		end
-	if odetshort > 0:
-		VIEW 'images\clothes\short<<numdress>>.jpg'
-		pl '(strength <<shortH[numdress]>>, hip size <<shortB[numdress]>>)'
+
+		if odetsarafan > 0:
+			view 'images/clothes/sarafan<<numdress>>.jpg'
+			pl '(strength <<sarafanH[numdress]>>)'
 		end
-	if odetskirt > 0:
-		VIEW 'images\clothes\skirt<<numdress>>.jpg'
-		pl '(strength <<skirtH[numdress]>>, hip size <<skirtB[numdress]>>)'
+
+		if odetshort > 0:
+			view 'images/clothes/short<<numdress>>.jpg'
+			pl '(strength <<shortH[numdress]>>, hip size <<shortB[numdress]>>)'
 		end
-	if odetdress > 0:
-		VIEW 'images\clothes\dress<<numdress>>.jpg'
-		pl '(strength <<dressH[numdress]>>, hip size <<dressB[numdress]>>)'
+
+		if odetskirt > 0:
+			view 'images/clothes/skirt<<numdress>>.jpg'
+			pl '(strength <<skirtH[numdress]>>, hip size <<skirtB[numdress]>>)'
 		end
-	if odetprofi > 0:
-		VIEW 'images\clothes\profi<<numdress>>.jpg'
-		pl '(strength <<profiH[numdress]>>, hip size <<profiB[numdress]>>)'
+
+		if odetdress > 0:
+			view 'images/clothes/dress<<numdress>>.jpg'
+			pl '(strength <<dressH[numdress]>>, hip size <<dressB[numdress]>>)'
 		end
-	if odetpants > 0:
-		VIEW 'images\clothes\pants<<numdress>>.jpg'
-		pl '(strength <<pantsH[numdress]>>, hip size <<pantsB[numdress]>>)'
+
+		if odetprofi > 0:
+			view 'images/clothes/profi<<numdress>>.jpg'
+			pl '(strength <<profiH[numdress]>>, hip size <<profiB[numdress]>>)'
 		end
-	if odetlatex > 0:
-		VIEW 'images\clothes\latex<<numdress>>.jpg'
-		pl '(strength <<latexH[numdress]>>, hip size <<latexB[numdress]>>)'
+
+		if odetpants > 0:
+			view 'images/clothes/pants<<numdress>>.jpg'
+			pl '(strength <<pantsH[numdress]>>, hip size <<pantsB[numdress]>>)'
 		end
-	if odethooker > 0:
-		VIEW 'images\clothes\hooker<<numdress>>.jpg'
-		pl '(strength <<hookerH[numdress]>>, hip size <<hookerB[numdress]>>)'
+
+		if odetlatex > 0:
+			view 'images/clothes/latex<<numdress>>.jpg'
+			pl '(strength <<latexH[numdress]>>, hip size <<latexB[numdress]>>)'
 		end
-	if odetkis > 0:
-		VIEW 'images\clothes\k<<numdress>>.jpg'
-		pl '(strength <<odekisH[numdress]>>, hip size <<odekisB[numdress]>>)'
+
+		if odethooker > 0:
+			view 'images/clothes/hooker<<numdress>>.jpg'
+			pl '(strength <<hookerH[numdress]>>, hip size <<hookerB[numdress]>>)'
 		end
-	if odetnewclo > 0:
-		VIEW 'images\clothes\newclo\<<numdress>>.jpg'
-		pl '(strength <<newcloH[numdress]>>, hip size <<newcloB[numdress]>>)'
+
+		if odetkis > 0:
+			view 'images/clothes/k<<numdress>>.jpg'
+			pl '(strength <<odekisH[numdress]>>, hip size <<odekisB[numdress]>>)'
 		end
-	if odetero > 0: VIEW 'images\img\dress\ero<<numdress>>.jpg'
-	end
-if nude = 1:
-	pl 'You´re not dressed.'
-	VIEW 'images\clothes\nude.jpg'
+
+		if odetnewclo > 0:
+			view 'images/clothes/newclo/<<numdress>>.jpg'
+			pl '(strength <<newcloH[numdress]>>, hip size <<newcloB[numdress]>>)'
+		end
+
+		if odetero > 0: view 'images/img/dress/ero<<numdress>>.jpg'
+		end
+
+	if nude = 1:
+		pl 'You´re not dressed.'
+		view 'images/clothes/nude.jpg'
 	end
 }
 
 $objtattoos = {
-$tatlipdi = {
-VIEW 'images\Body\tatlip<<tatlip>>.jpg'
-}
-$tatpledi = {
-VIEW 'images\body\tatplech<<tatplech>>.jpg'
-}
-$tatbackdi = {
-VIEW 'images\body\tatb<<tatback>>.jpg'
-}
-$tatupbdi = {
-VIEW 'images\body\tatupb<<tatupb>>.jpg'
-}
-$tatvagdi = {
-VIEW 'images\body\tatvag<<tatvag>>.jpg'
-}
-$tatlegdi = {
-VIEW 'images\body\tatleg<<tatleg>>.jpg'
-}
+	$tatlipdi = {
+		view 'images/Body/tatlip<<tatlip>>.jpg'
+	}
 
-clr
-if tatlip > 0: pl '<a href="exec: dynamic $tatlipdi ">tattoo on the lip</a>.'
-if tatplech > 0: pl '<a href="exec: dynamic $tatpledi">tattoo on the shoulders</a>'
-if tatback > 0: pl '<a href="exec: dynamic $tatbackdi">tattoo on the back</a>'
-if tatupb > 0: pl '<a href="exec: dynamic $tatupbdi">tattoo on the lower back</a>'
-if tatvag > 0: pl '<a href="exec: dynamic $tatvagdi">Tattoos in the groin</a>'
-if tatleg > 0: pl '<a href="exec: dynamic $tatlegdi">tattoo on the legs</a>'
-if tatvag = 0 and tatlip = 0 and tatplech = 0 and tatback = 0 and tatupb = 0 and tatleg = 0:
-pl 'You pristine pure body. Not in terms of corruption, but in terms of tattoos.'
-end
+	$tatpledi = {
+		view 'images/body/tatplech<<tatplech>>.jpg'
+	}
+
+	$tatbackdi = {
+		view 'images/body/tatb<<tatback>>.jpg'
+	}
+
+	$tatupbdi = {
+		view 'images/body/tatupb<<tatupb>>.jpg'
+	}
+
+	$tatvagdi = {
+		view 'images/body/tatvag<<tatvag>>.jpg'
+	}
+
+	$tatlegdi = {
+		view 'images/body/tatleg<<tatleg>>.jpg'
+	}
+
+	clr
+
+	if tatlip > 0:
+		pl '<a href="exec: dynamic $tatlipdi ">tattoo on the lip</a>.'
+	end
+
+	if tatplech > 0:
+		pl '<a href="exec: dynamic $tatpledi">tattoo on the shoulders</a>'
+	end
+
+	if tatback > 0:
+		pl '<a href="exec: dynamic $tatbackdi">tattoo on the back</a>'
+	end
+
+	if tatupb > 0:
+		pl '<a href="exec: dynamic $tatupbdi">tattoo on the lower back</a>'
+	end
+
+	if tatvag > 0:
+		pl '<a href="exec: dynamic $tatvagdi">Tattoos in the groin</a>'
+	end
+
+	if tatleg > 0:
+		pl '<a href="exec: dynamic $tatlegdi">tattoo on the legs</a>'
+	end
+
+	if tatvag = 0 and tatlip = 0 and tatplech = 0 and tatback = 0 and tatupb = 0 and tatleg = 0:
+		pl 'You pristine pure body. Not in terms of corruption, but in terms of tattoos.'
+	end
 }
 
 $objpirsing = {
-$dipirsA = {
-VIEW 'images\body\pirsA.jpg'
-}
-$dipirsB = {
-VIEW 'images\body\pirsB.jpg'
-}
-$dipirsC = {
-VIEW 'images\body\pirsC.jpg'
-}
-$dipirsD = {
-VIEW 'images\body\pirsD.jpg'
-}
-$dipirsE = {
-VIEW 'images\body\pirsE.jpg'
-}
-$dipirsF = {
-VIEW 'images\body\pirsF.jpg'
-}
-$dipirsG = {
-VIEW 'images\body\pirsG.jpg'
-}
-$dipirsN = {
-VIEW 'images\body\pirsN.jpg'
-}
-clr
-if pirsA = 1: pl 'Your tongue pierced and there is inserted a small bar that is constantly felt in the mouth. <a href="exec:dynamic $dipirsA">View</a>'
-if pirsB = 1: pl 'You pierced lower lip and there vdet ring. <a href="exec:dynamic $dipirsB">View</a>'
-if pirsC = 1: pl 'On your ears hang earrings. <a href="exec:dynamic $dipirsC">View</a>'
-if pirsD = 1: pl 'You have a small ring in the nose. <a href="exec:dynamic $dipirsD">View</a>'
-if pirsE = 1: pl 'In your eyebrow barbell inserted. <a href="exec:dynamic $dipirsE">View</a>'
-if pirsF = 1: pl 'You have pierced nipples and inserted them in small metal rod. <a href="exec:dynamic $dipirsF">View</a>'
-if pirsG = 1: pl 'You pierced lips on the vagina and there inserted rings. <a href="exec:dynamic $dipirsG">View</a>'
-if pirsN = 1: pl 'You pierced navel, and there is inserted rod. <a href="exec:dynamic $dipirsN">View</a>'
+	$dipirsA = {
+		view 'images/body/pirsA.jpg'
+	}
+
+	$dipirsB = {
+		view 'images/body/pirsB.jpg'
+	}
+
+	$dipirsC = {
+		view 'images/body/pirsC.jpg'
+	}
+
+	$dipirsD = {
+		view 'images/body/pirsD.jpg'
+	}
+
+	$dipirsE = {
+		view 'images/body/pirsE.jpg'
+	}
+
+	$dipirsF = {
+		view 'images/body/pirsF.jpg'
+	}
+
+	$dipirsG = {
+		view 'images/body/pirsG.jpg'
+	}
+
+	$dipirsN = {
+		view 'images/body/pirsN.jpg'
+	}
+
+	clr
+
+	if pirsA = 1:
+		pl 'Your tongue pierced and there is inserted a small bar that is constantly felt in the mouth. <a href="exec:dynamic $dipirsA">view</a>'
+	end
+
+	if pirsB = 1:
+		pl 'You pierced lower lip and there vdet ring. <a href="exec:dynamic $dipirsB">view</a>'
+	end
+
+	if pirsC = 1:
+		pl 'On your ears hang earrings. <a href="exec:dynamic $dipirsC">view</a>'
+	end
+
+	if pirsD = 1:
+		pl 'You have a small ring in the nose. <a href="exec:dynamic $dipirsD">view</a>'
+	end
+
+	if pirsE = 1:
+		pl 'In your eyebrow barbell inserted. <a href="exec:dynamic $dipirsE">view</a>'
+	end
+
+	if pirsF = 1:
+		pl 'You have pierced nipples and inserted them in small metal rod. <a href="exec:dynamic $dipirsF">view</a>'
+	end
+
+	if pirsG = 1:
+		pl 'You pierced lips on the vagina and there inserted rings. <a href="exec:dynamic $dipirsG">view</a>'
+	end
+
+	if pirsN = 1:
+		pl 'You pierced navel, and there is inserted rod. <a href="exec:dynamic $dipirsN">view</a>'
+	end
 }
 
 $objobnovit = {
-gs 'stat'
+	gs 'stat'
 }
 
 $objbloknot = {
-clr
-pl '<center><b><font color = maroon>Diary</font></b></center>'
-if housr > 0:pl'I live in a two-room apartment in a residential area. Payment for the apartment is taken automatically in the amount of 3,000 rubles each 25e number. Plus a light bill.'&nl
+	clr
 
-if work > 0 or stripwork > 0 or workPTU > 2: pl '<center><font color = maroon>-- My Job --</font></center>'
+	pl '<center><b><font color = maroon>Diary</font></b></center>'
 
-if workPTU > 2:pl'I work as a teacher in the Lyceum. Working days Mon-Sat from 14.00 to 16.00. Salary 300r \ day. Dress code - office, strict. The road from the apartment to the Lyceum takes 2 hours and 10 minutes.'&nl
-if work > 0 and workKafe > 0:pl'I work as a waitress in a cafe. Need to come to work with 11 to 12 working days, Tuesday, Wednesday, Thursday. At work every day you get tips from customers and automatically transferred to the 25th salary number.'&nl
-if work > 0 and workhosp > 0:pl'I work as a nurse in the clinic. Need to come to work from 8 to 9 on weekdays. Salary is automatically transferred to the 25th number.'&nl
-if work > 0 and worksalon > 0:pl'I work as a masseuse in the cabin. Need to come to work from 9 to 10 working days, Monday, Wednesday and Friday. Salary is automatically transferred to the 25th number.'&nl
-if work > 0 and workhosp > 0:pl'I work as a secretary in the office. Need to come to work until 9 on weekdays. Salary is automatically transferred to the 25th number.'&nl
-if work > 0 and tanwork > 0:pl'I work as a governess at Tani. Salary is automatically transferred to the 25th number.'&nl
-if work > 0 and young_shop_work = 1:pl'I work in a store saleswoman Keys Pussy. Need to come to work in 15 workdays all except Saturday and Sunday. Salary is issued once a week on Fridays.'&nl
-
-if workrin = 1: pl 'I work in a tent on the market Arthur clothing saleswoman. Work on Tuesdays, Thursdays and Saturdays, come at 8 o´clock. Salary depends on the sales.'&nl
-if stripwork >= 1: pl 'I work as a stripper, schedule a free, on any day from 15 up to 2 nights. Salary only tip.'&nl
-
-if bumtolik = 4: pl 'Service for homeless located in the northern area.'&nl
-if bumtolik = 5: pl 'I volunteer to help the homeless service. Rab.chasy from 9 to 17, Weekend Sat. and Sun.'&nl
-
-if husband > 0 or kid > 0 : '<center><font color = maroon>-- My Family --</font></center>'
-
-if husband > 0: pl 'I ve been married for <<husbanday>> days. My husband <<$husName>> <<$husBody>> <<$husFat>> <<$husHair>>. Member <<husDick>> Relationships <<husband>>'&nl
-if kid > 0:
-	set kidDiary = 1
-	:kidDiaryLoop
-	pl 'I have a child <<$kidname[kidDiary]>>, age <<kid[kidDiary]>> days.'&nl
-	set kidDiary += 1
-	if kidDiary <= numkid:
-		jump 'kidDiaryLoop'
+	if housr > 0:
+		pl'I live in a two-room apartment in a residential area. Payment for the apartment is taken automatically in the amount of 3,000 rubles each 25e number. Plus a light bill.'&nl
 	end
-end
 
+	if work > 0 or stripwork > 0 or workPTU > 2:
+		pl '<center><font color = maroon>-- My Job --</font></center>'
+	end
 
-if $bfsex > 0:
-	pl '<center><font color = maroon>-- My Boyfriends --</font></center>'
-	pl '<<$bfsex>>'
-end
+	if workPTU > 2:
+		pl'I work as a teacher in the Lyceum. Working days Mon-Sat from 14.00 to 16.00. Salary 300r / day. Dress code - office, strict. The road from the apartment to the Lyceum takes 2 hours and 10 minutes.' & nl
+	end
 
-if bfA > 1: pl 'My current boyfriend, <<$boyA>>, is a <<$boybodyA>> <<$boybodA>> <<$boyfaceA>>. He is usually <<$boyCloA>> Our relationship is <<bfA>> and we have met <<dayA>> times.'&nl
-if harakBoyA = 0 and bfA > 1: pl 'He is calm and self-possessed character.'&nl
-if harakBoyA = 1 and bfA > 1: pl 'He is cheerful and sociable nature.'&nl
-if harakBoyA = 2 and bfA > 1: pl 'He is irascible and very rigid.'&nl
+	if work > 0 and workKafe > 0:
+		pl'I work as a waitress in a cafe. Need to come to work with 11 to 12 working days, Tuesday, Wednesday, Thursday. At work every day you get tips from customers and automatically transferred to the 25th salary number.' & nl
+	end
 
-if bfB > 1: pl 'Another boyfriend, <<$boyB>>, is a <<$boybodyB>> <<$boybodB>> <<$boyfaceB>>. He is usually <<$boyCloB>>. Our relationship is <<bfB>> and we have met <<dayB>> times.'&nl
-if harakBoyB = 0 and bfB > 1: pl 'He is calm and self-possessed character.'&nl
-if harakBoyB = 1 and bfB > 1: pl 'He is cheerful and sociable nature.'&nl
-if harakBoyB = 2 and bfB > 1: pl 'He is irascible and very rigid.'&nl
-if bfC > 1: pl 'My third boyfriend, <<$boyC>>, is a <<$boybodyC>> <<$boybodC>> <<$boyfaceC>>. He is usually <<$boyCloC>>. Our relationship is <<bfC>> and we have met <<dayC>> times.'&nl
-if harakBoyC = 0 and bfC > 1: pl 'He is calm and self-possessed character.'&nl
-if harakBoyC = 1 and bfC > 1: pl 'He is cheerful and sociable nature.'&nl
-if harakBoyC = 2 and bfC > 1: pl 'He is irascible and very rigid.'&nl
+	if work > 0 and workhosp > 0:
+		pl'I work as a nurse in the clinic. Need to come to work from 8 to 9 on weekdays. Salary is automatically transferred to the 25th number.' & nl
+	end
 
-GS 'Menu.Create','zapisMenu'
-GS 'Menu.Add','zapisMenu','Record on the line 1yu','','MenuLoc','zapis'
-GS 'Menu.Add','zapisMenu','Record for the 2nd line','','MenuLoc','zapis2'
-GS 'Menu.Add','zapisMenu','Record on the third line','','MenuLoc','zapis3'
-GS 'Menu.Add','zapisMenu','Record on the line 4yu','','MenuLoc','zapis4'
-GS 'Menu.Add','zapisMenu','Record on the line 5yu','','MenuLoc','zapis5'
-GS 'Menu.Add','zapisMenu','6 pcs of record on line','','MenuLoc','zapis6'
-GS 'Menu.Add','zapisMenu','Record on the line 7yu','','MenuLoc','zapis7'
-GS 'Menu.Add','zapisMenu','Record on the line occupies 8','','MenuLoc','zapis8'
-GS 'Menu.Add','zapisMenu','Record on the line 9yu','','MenuLoc','zapis9'
-GS 'Menu.Add','zapisMenu','Record on the line 10yu','','MenuLoc','zapis10'
+	if work > 0 and worksalon > 0:
+		pl'I work as a masseuse in the cabin. Need to come to work from 9 to 10 working days, Monday, Wednesday and Friday. Salary is automatically transferred to the 25th number.' & nl
+	end
 
-GS 'Menu.Create','disMenu'
-GS 'Menu.Add','disMenu','Delete an entry from the 1st row','','MenuLoc','diszapis'
-GS 'Menu.Add','disMenu','Delete Record with 2nd row','','MenuLoc','diszapis2'
-GS 'Menu.Add','disMenu','Delete record with third row','','MenuLoc','diszapis3'
-GS 'Menu.Add','disMenu','Delete an entry from the 4th row','','MenuLoc','diszapis4'
-GS 'Menu.Add','disMenu','Delete an entry from the 5th row','','MenuLoc','diszapis5'
-GS 'Menu.Add','disMenu','Delete an entry from the 6th row','','MenuLoc','diszapis6'
-GS 'Menu.Add','disMenu','Delete an entry from the 7th row','','MenuLoc','diszapis7'
-GS 'Menu.Add','disMenu','Delete an entry from the 8th row','','MenuLoc','diszapis8'
-GS 'Menu.Add','disMenu','Delete an entry from the 9th row','','MenuLoc','diszapis9'
-GS 'Menu.Add','disMenu','Delete record with the 10th row','','MenuLoc','diszapis10'
+	if work > 0 and workhosp > 0:
+		pl'I work as a secretary in the office. Need to come to work until 9 on weekdays. Salary is automatically transferred to the 25th number.' & nl
+	end
 
-pl '<a href="exec: gs ''Menu.Call'',''zapisMenu''">Make an entry</a> or <a href="exec: gs ''Menu.Call'',''disMenu''">delete the record</a>'
+	if work > 0 and tanwork > 0:
+		pl'I work as a governess at Tani. Salary is automatically transferred to the 25th number.' & n1
+	end
 
-pl '<<$zapis>>'
-pl '<<$zapis2>>'
-pl '<<$zapis3>>'
-pl '<<$zapis4>>'
-pl '<<$zapis5>>'
-pl '<<$zapis6>>'
-pl '<<$zapis7>>'
-pl '<<$zapis8>>'
-pl '<<$zapis9>>'
-pl '<<$zapis10>>'
+	if work > 0 and young_shop_work = 1:
+		pl'I work in a store saleswoman Keys Pussy. Need to come to work in 15 workdays all except Saturday and Sunday. Salary is issued once a week on Fridays.' & nl
+	end
+
+	if workrin = 1:
+		pl 'I work in a tent on the market Arthur clothing saleswoman. Work on Tuesdays, Thursdays and Saturdays, come at 8 o´clock. Salary depends on the sales.' & nl
+	end
+
+	if stripwork >= 1:
+		pl 'I work as a stripper, schedule a free, on any day from 15 up to 2 nights. Salary only tip.' & nl
+	end
+
+	if bumtolik = 4:
+		pl 'Service for homeless located in the northern area.' & nl
+	end
+
+	if bumtolik = 5:
+		pl 'I volunteer to help the homeless service. Rab.chasy from 9 to 17, Weekend Sat. and Sun.' & nl
+	end
+
+	if husband > 0 or kid > 0:
+		'<center><font color = maroon>-- My Family --</font></center>'
+	end
+
+	if husband > 0:
+		pl 'I ve been married for <<husbanday>> days. My husband <<$husName>> <<$husBody>> <<$husFat>> <<$husHair>>. Member <<husDick>> Relationships <<husband>>' & nl
+	end
+
+	if kid > 0:
+		set kidDiary = 1
+		:kidDiaryLoop
+		pl 'I have a child <<$kidname[kidDiary]>>, age <<kid[kidDiary]>> days.'&nl
+		set kidDiary += 1
+
+		if kidDiary <= numkid:
+			jump 'kidDiaryLoop'
+		end
+	end
+
+	if $bfsex > 0:
+		pl '<center><font color = maroon>-- My Boyfriends --</font></center>'
+		pl '<<$bfsex>>'
+	end
+
+	if bfA > 1:
+		pl 'My current boyfriend, <<$boyA>>, is a <<$boybodyA>> <<$boybodA>> <<$boyfaceA>>. He is usually <<$boyCloA>> Our relationship is <<bfA>> and we have met <<dayA>> times.' & nl
+	end
+
+	if harakBoyA = 0 and bfA > 1:
+		pl 'He is calm and self-possessed character.' & nl
+	end
+
+	if harakBoyA = 1 and bfA > 1:
+		pl 'He is cheerful and sociable nature.' & nl
+	end
+
+	if harakBoyA = 2 and bfA > 1:
+		pl 'He is irascible and very rigid.' & nl
+	end
+
+	if bfB > 1:
+		pl 'Another boyfriend, <<$boyB>>, is a <<$boybodyB>> <<$boybodB>> <<$boyfaceB>>. He is usually <<$boyCloB>>. Our relationship is <<bfB>> and we have met <<dayB>> times.' & nl
+	end
+
+	if harakBoyB = 0 and bfB > 1:
+		pl 'He is calm and self-possessed character.' & nl
+	end
+
+	if harakBoyB = 1 and bfB > 1:
+		pl 'He is cheerful and sociable nature.' & nl
+	end
+
+	if harakBoyB = 2 and bfB > 1:
+		pl 'He is irascible and very rigid.' & nl
+	end
+
+	if bfC > 1:
+		pl 'My third boyfriend, <<$boyC>>, is a <<$boybodyC>> <<$boybodC>> <<$boyfaceC>>. He is usually <<$boyCloC>>. Our relationship is <<bfC>> and we have met <<dayC>> times.' & nl
+	end
+
+	if harakBoyC = 0 and bfC > 1:
+		pl 'He is calm and self-possessed character.' & nl
+	end
+
+	if harakBoyC = 1 and bfC > 1:
+		pl 'He is cheerful and sociable nature.' & nl
+	end
+
+	if harakBoyC = 2 and bfC > 1:
+		pl 'He is irascible and very rigid.' & nl
+	end
+
+	GS 'Menu.Create','zapisMenu'
+	GS 'Menu.Add','zapisMenu','Recording from avtodatoy','','MenuLoc','zapison'
+	GS 'Menu.Add','zapisMenu','Record on the line 1yu','','MenuLoc','zapis'
+	GS 'Menu.Add','zapisMenu','Record for the 2nd line','','MenuLoc','zapis2'
+	GS 'Menu.Add','zapisMenu','Record on the third line','','MenuLoc','zapis3'
+	GS 'Menu.Add','zapisMenu','Record on the line 4yu','','MenuLoc','zapis4'
+	GS 'Menu.Add','zapisMenu','Record on the line 5yu','','MenuLoc','zapis5'
+	GS 'Menu.Add','zapisMenu','6 pcs of record on line','','MenuLoc','zapis6'
+	GS 'Menu.Add','zapisMenu','Record on the line 7yu','','MenuLoc','zapis7'
+	GS 'Menu.Add','zapisMenu','Record on the line occupies 8','','MenuLoc','zapis8'
+	GS 'Menu.Add','zapisMenu','Record on the line 9yu','','MenuLoc','zapis9'
+	GS 'Menu.Add','zapisMenu','Record on the line 10yu','','MenuLoc','zapis10'
+
+	GS 'Menu.Create','disMenu'
+	GS 'Menu.Add','disMenu','Delete an entry from the 1st row','','MenuLoc','diszapis'
+	GS 'Menu.Add','disMenu','Delete Record with 2nd row','','MenuLoc','diszapis2'
+	GS 'Menu.Add','disMenu','Delete record with third row','','MenuLoc','diszapis3'
+	GS 'Menu.Add','disMenu','Delete an entry from the 4th row','','MenuLoc','diszapis4'
+	GS 'Menu.Add','disMenu','Delete an entry from the 5th row','','MenuLoc','diszapis5'
+	GS 'Menu.Add','disMenu','Delete an entry from the 6th row','','MenuLoc','diszapis6'
+	GS 'Menu.Add','disMenu','Delete an entry from the 7th row','','MenuLoc','diszapis7'
+	GS 'Menu.Add','disMenu','Delete an entry from the 8th row','','MenuLoc','diszapis8'
+	GS 'Menu.Add','disMenu','Delete an entry from the 9th row','','MenuLoc','diszapis9'
+	GS 'Menu.Add','disMenu','Delete record with the 10th row','','MenuLoc','diszapis10'
+
+	pl '<a href="exec: gs ''Menu.Call'',''zapisMenu''">Make an entry</a> or <a href="exec: gs ''Menu.Call'',''disMenu''">delete the record</a>'
+
+	pl '<<$zapis>>'
+	pl '<<$zapis2>>'
+	pl '<<$zapis3>>'
+	pl '<<$zapis4>>'
+	pl '<<$zapis5>>'
+	pl '<<$zapis6>>'
+	pl '<<$zapis7>>'
+	pl '<<$zapis8>>'
+	pl '<<$zapis9>>'
+	pl '<<$zapis10>>'
 }
 
 $objavariya = {
-'<center><B>YOU HAVE JUST BEEN USED EMERGENCY LEAVE BLANK SCREEN Bagan</B></center>'
-*nl
-'<center><B>not use this feature without a good reason, can cause STABLE ERROR THAT WILL RUIN YOUR CONSERVATION</B></center>'
-*nl
+	'<center><B>YOU HAVE JUST BEEN USED EMERGENCY LEAVE BLANK SCREEN Bagan</B></center>'
+	*nl
+	'<center><B>not use this feature without a good reason, can cause STABLE ERROR THAT WILL RUIN YOUR CONSERVATION</B></center>'
+	*nl
 
-if StoryLine = 1: gt 'gorodok'
-gt 'street'
+	if StoryLine = 1:
+		gt 'gorodok'
+	end
+
+	gt 'street'
 }
 
 $objnewmenu = {
-killobj
-set oldobjmenu = 0
-addobj 'Character'
-addobj 'See'
-addobj 'Others'
-addobj 'Menu'
+	killobj
+	set oldobjmenu = 0
+	addobj 'Character'
+	addobj 'See'
+	addobj 'Others'
+	addobj 'Menu'
 }
 
 $objoldmenu = {
-killobj
-set oldobjmenu = 1
-addobj '<font color=green>Character</font>'
-addobj 'Skills'
-addobj 'Statistics'
-addobj 'Magic'
-addobj 'Face'
-addobj 'Body'
-addobj 'Clothing'
-addobj 'Tattoos'
-addobj 'Piercing'
-if mobila > 0: addobj 'Phone'
-addobj 'Diary'
-addobj 'Emergency exit'
-addobj 'Update'
-addobj 'Menu'
-addobj 'New Menu'
+	killobj
+	set oldobjmenu = 1
+	addobj '<font color=green>Character</font>'
+	addobj 'Skills'
+	addobj 'Statistics'
+	addobj 'Magic'
+	addobj 'Face'
+	addobj 'Body'
+	addobj 'Clothing'
+	addobj 'Tattoos'
+	addobj 'Piercing'
+
+	if mobila > 0:
+		addobj 'Phone'
+	end
+
+	addobj 'Diary'
+	addobj 'Emergency exit'
+	addobj 'Update'
+	addobj 'Menu'
+	addobj 'New Menu'
 }
 
 $menu_character[0] = 'Description: $menu_descrip'
@@ -1344,33 +3123,86 @@ $menu_other[4] = 'OPTIONS: $menu_options'
 $menu_other[5] = 'HELPER: $menu_helper'
 $menu_other[6] = 'Testing: $menu_test'
 
-if mobila > 0:$menu_other[7] = 'Phone: $menu_mobila'
+if mobila > 0:
+	$menu_other[7] = 'Phone: $menu_mobila'
+end
 
-!Старое меню: начало
-if $selobj = '<font color=green>Character</font>': dynamic $objdescrip
-if $selobj = 'Skills': dynamic $objskills
-if $selobj = 'Statistics': dynamic $objstatistika
-if $selobj = 'Magic': dynamic $objmagic
-if $selobj = 'Face': dynamic $objface
-if $selobj = 'Body': dynamic $objbody
-if $selobj = 'Clothing': dynamic $objclothes
-if $selobj = 'Tattoos': dynamic $objtattoos
-if $selobj = 'Piercing': dynamic $objpirsing
-if $selobj = 'Diary': dynamic $objbloknot
-if $selobj = 'Emergency exit': dynamic $objavariya
-if $selobj = 'Update': gs 'stat'
-if $selobj = 'New Menu': dynamic $objnewmenu
-if $selobj = 'Automatic': dynamic $automatica
-!Старое меню: конец
+!old menu: beginning
+if $selobj = '<font color=green>Character</font>':
+	dynamic $objdescrip
+end
+
+if $selobj = 'Skills':
+	dynamic $objskills
+end
+
+if $selobj = 'Statistics':
+	dynamic $objstatistika
+end
+
+if $selobj = 'Magic':
+	dynamic $objmagic
+end
+
+if $selobj = 'Face':
+	dynamic $objface
+end
+
+if $selobj = 'Body':
+	dynamic $objbody
+end
+
+if $selobj = 'Clothing':
+	dynamic $objclothes
+end
+
+if $selobj = 'Tattoos':
+	dynamic $objtattoos
+end
+
+if $selobj = 'Piercing':
+	dynamic $objpirsing
+end
+
+if $selobj = 'Diary':
+	dynamic $objbloknot
+end
+
+if $selobj = 'Emergency exit':
+	dynamic $objavariya
+end
+
+if $selobj = 'Update':
+	gs 'stat'
+end
+
+if $selobj = 'New Menu':
+	dynamic $objnewmenu
+end
+
+if $selobj = 'Automatic':
+	dynamic $automatica
+end
+
+!The new menu: beginning
 
 !Новое меню: начало
-if $selobj = 'Character': menu '$menu_character'
-if $selobj = 'See': menu '$menu_lookon'
-if $selobj = 'Others': menu '$menu_other'
-!Новое меню: конец
+if $selobj = 'Character':
+	menu '$menu_character'
+end
+
+if $selobj = 'See':
+	menu '$menu_lookon'
+end
+
+if $selobj = 'Others':
+	menu '$menu_other'
+end
+!The new menu: end
 
 if $selobj = 'Player':
 	clr
+
 	pl 'Your name <<$name>> <<$surname>>. You <<age>> years. <<$vneshPRE>>'
 	pl 'You have short black hair and flashing starting gray, small brown eyes and willed jaw covered by blue Shaved bristle.'
 	pl 'Growth <<rost>> cm, weight 100 kg.'
@@ -1378,6 +3210,7 @@ end
 
 if $selobj = 'Menu':
 	clr
+
 	GS 'Menu.Create','mainMenu'
 	GS 'Menu.Add','mainMenu','status bar','','MenuMainLoc','0'
 	GS 'Menu.Add','mainMenu','text notation','','MenuMainLoc','1'
@@ -1386,45 +3219,3 @@ end
 
 unselect
 --- onobjsel ---------------------------------
-
-# scale.table
-!{
-"
-Отрисовка шкалы с помощью таблицы:
-"
-
-$func ('scale.table',275,420)+' 275/420'
-$func ('scale.table',400,420)+' 400/420'
-$func ('scale.table',420,420)+' 420/420'
-$func ('scale.table',157,420)+' 157/420'
-$func ('scale.table',42,420)+'  42/420'
-$func ('scale.table',0,420)+'   0/420'
-
-}
-
-
-!-----scale.table------
-args[0] = args[0]   &   ! текущее значение параметра
-args[1] = args[1]   &   ! максимальное значение параметра
-if args[2] = 0: args[2] = 200   &   ! ширина шкалы (таблицы) в пикселях. По умолчанию 350 px
-if $args[3] = "": $args[3]="FF0000" &   ! цвет заполненной части шкалы в формате RRGGBB. По умолчанию - красный
-! сначала "создаём" соответствующую таблицу
-$args['table'] = '<TABLE width=<<args[2]>> border = 0 cellspacing = 0 cellpadding = 0><TR>'
-! вычисляем ширину в процентах заполненной части
-args['x'] = (args[0] * 100) / args[1]
-! вычисляем ширину в процентах незаполненной части
-args['empty'] = 100 - args['x']
-! Если ширина заполненной части больше нуля процентов, добавляем в таблицу ячейку с указанным цветом (красный по-умолчанию)
-if args['x']>0:
-	$args['table']+="<TD width=<<args['x']>>% bgcolor=#"+$args[3]+">&nbsp;</TD>"
-end
-! Если ширина незаполненной части шкалы больше нуля процентов, добавляем в таблицу ячейку с другим цветом (серый).
-if args['empty']>0:
-	$args['table']+="<TD width=<<args['empty']>>% bgcolor=#888888>&nbsp;</TD>"
-end
-! "закрываем" таблицу
-$args['table'] += '</TR></TABLE>'
-! результат
-$result = $args['table']
---- scale.table ---------------------------------
-
