@@ -7,8 +7,8 @@ birthday = 5
 birthmonth = 3
 set $name = 'Svetlana'
 set $surname = 'Lebedev'
-set age = 16
-set vidage = 15
+set age = 15
+set vidage = 14
 !set age = 17
 !set vidage = 16
 set year = 2010
@@ -26,12 +26,12 @@ day = 9
 !!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!
 month = 8
-day = 29
-week = 5
+day = 30
+week = 6
 hour = 9
 !!!!!!!!!!!!!!
 birthyear = year - age
-!body
+!тело
 set rost = 170
 set fat = 60
 set salo = 60
@@ -39,7 +39,7 @@ set dick = 0
 set energy = 15
 set water = 15
 set son = 16
-!stats
+!Статы
 set stren = 10
 set strenbuf = 10
 set speed = 10
@@ -66,8 +66,14 @@ set odevnesh = 0
 set lobok = 3
 set leghair -= 5
 set mop = 1
+set recmop = 1
+set usemop = 0
+set usehapri = 0
+set uselipbalm = 0
 set housr = 0
 tanga = 1
+karta = 0
+
 
 clr
 gs 'stat'
@@ -77,6 +83,7 @@ set numdress = 1
 set jeans[1] = 1
 set jeansH[1] = 100
 set jeansB[1] = 70
+
 
 set cltarelka = 0
 set fairy = 0
@@ -328,22 +335,22 @@ SHOWSTAT 0
 SHOWOBJS 0
 
 $din_alter_start_ev = {
-	cls
-	'When you were 13 years old, your period started like most other girls in your class. Your breasts started to grow and your armpit and pubic hair began to sprout. Your skin became covered with acne. When you finished 9th class, you did not drop out of school, and continued to study in the 10th grade.'
+cls
+'When you were 13 years old, your period started like most other girls in your class. Your breasts started to grow and your armpit and pubic hair began to sprout. Your skin became covered with acne. When you finished 9th class, you did not drop out of school, and continued to study in the 10th grade.'
 
-	'The summer holiday ends soon and you will go to your new class to start your first of the two years you''re going to study.'
+'The summer holiday ends soon and you will go to your new class to start your first of the two years you''re going to study.'
 
-	act 'Start the game':
-		SHOWSTAT 1
-		SHOWOBJS 1
-		health = vital * 10 + stren * 5 + 1000
-		willpower = intel * 5 + will * 5 + 1000
-		manna = (intel * magik) + magik * 100 + vital * 10 + rikudo
-		addobj 'Character'
-		addobj 'See'
-		addobj 'Others'
-		gt 'bedrPar'
-	end
+act 'Start the game':
+	SHOWSTAT 1
+	SHOWOBJS 1
+	health = vital * 10 + stren * 5 + 1000
+	willpower = intel * 5 + will * 5 + 1000
+	manna = (intel * magik) + magik * 100 + vital * 10 + rikudo
+	addobj 'Character'
+	addobj 'See'
+	addobj 'Others'
+	gt 'bedrPar'
+end
 }
 
 'You were born in <<birthyear>>.'
@@ -351,52 +358,17 @@ $din_alter_start_ev = {
 'You have a sister, Anne, who is 2 years older than you.'
 'You do not remember your real father because your parents divorced when you were still too young to remember. Your mom found another man and they had your little brother Nick.'
 set $name = input("What is your first name?")
-
 if $name = '':
 	set $name = 'Svetlana'
 end
-
 set $surname = input("What is your last name?")
-
 if $surname = '':
 	set $surname = 'Lebedev'
 end
-
 act 'Further':
 	cls
 
 	'In the kindergarten where you went everything was fine, but you don''t remember it. When you were 7 years old, you finished kindergarten and went to school.'
-	act 'You spent too much time for books':
-		cls
-		stren = 1
-		vital = 5
-		agil = 1
-		fat = 10
-		salo = 10
-		!!!!!!!!!!!!!! Maruda Hair Mod
-		set hairlength = 122
-		set hcol = 1
-		set hpingrip = 10
-		set hpingripw = 1
-		!!!!!!!!!!!!!! Maruda Hair Mod
-
-		gs'stat'
-		clr
-
-		dressB[5] = bedra
-		jeansB[1] = bedra
-		tan = 0
-		blizoruk = 300
-		glass = 1
-		Suspeh = 55
-		nerdism = 100
-		fantasybook = 5
-		'You almost all his free time to spend at home for books. The result is increased but remained frail and sickly girl in poor health. Because of the books you messed up vision and become ill at school.'
-
-		act 'further':
-			dynamic $din_alter_start_ev
-		end
-	end
 
 	act 'You are a good student':
 		cls
@@ -410,20 +382,14 @@ act 'Further':
 		set hpingrip = 10
 		set hpingripw = 1
 		!!!!!!!!!!!!!! Maruda Hair Mod
-
 		gs 'stat'
 		clr
-
 		dressB[5] = bedra
 		jeansB[1] = bedra
 		mother = 100
-		money += 2000
-		tan = 30
 		'In school, you put a lot of effort to be an excellent pupil. You didn''t make any friends because you weren''t engaged in sports, but you have excellent grades and your mom is very proud of you.'
 
-		act 'Further':
-			dynamic $din_alter_start_ev
-		end
+		act 'Further': dynamic $din_alter_start_ev
 	end
 
 	act 'You are actively engaged in volleyball':
@@ -443,17 +409,12 @@ act 'Further':
 		set hscrunch = 10
 		set hscrunchw = 0
 		!!!!!!!!!!!!!! Maruda Hair Mod
-
 		gs 'stat'
 		clr
-
 		dressB[5] = bedra
 		jeansB[1] = bedra
 		'You spent all your free time training your volleyball skills. Because of that you weren''t that good in school and had less friends.'
-
-		act 'Further':
-			dynamic $din_alter_start_ev
-		end
+		act 'Further': dynamic $din_alter_start_ev
 	end
 
 	act 'You spent time outdoors':
@@ -468,19 +429,14 @@ act 'Further':
 		set hairlength = 19
 		set hcol = 2
 		!!!!!!!!!!!!!! Maruda Hair Mod
-
 		gs 'stat'
 		clr
-
 		dressB[5] = bedra
 		jeansB[1] = bedra
-		tan = 30
 		'You spent almost all your free time outdoors playing with other girls and boys. As a result, you know how to get yourself out of trouble. You aren''t interested in School and sports.'
-
-		act 'Further':
-			dynamic $din_alter_start_ev
-		end
+		act 'Further': dynamic $din_alter_start_ev
 	end
+	
 end
 --- alterStart ---------------------------------
 

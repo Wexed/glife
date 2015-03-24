@@ -6,10 +6,10 @@ if $ARGS[0] = 'start':
 	'<center><B><font color = maroon>Office of Engineering companies</font></B></center>'
 	'<center><img src="images\etogame\office.jpg"></center>'
 
-	if workSec = 0: 'Requires the Secretary to work with the young girl passed diploma certifying course.'
-	if workSec = 0: 'Schedule 9 to 17, every day except Saturday and Sunday.'
-	if workSec = 0: 'Salary 25th transferred to the bank account number. Salary of 800 rubles a day.'
-	if workSec = 0: 'Necessarily come to work in office clothes.'
+	if workSec = 0: 'Requirements: diploma proving you passed a secretary certification course.'
+	if workSec = 0: 'Schedule: 9am to 5pm, Monday to Friday.'
+	if workSec = 0: 'Salary: 800 rubles/day, deposited to your bank account on the 25th of the month'
+	if workSec = 0: 'Dress code: ust come to work in office clothes.'
 
 	clr
 	gs 'stat'
@@ -18,14 +18,14 @@ if $ARGS[0] = 'start':
 	LCOLOR = rgb(106,90,205)
 
 	if secrDiplom = 1 and work = 0 and workSec = 0:
-		act 'Pass an interview for a job':
+		act 'Interview for a job':
 			cla
 			set minut += 60
-			'You´ve come to the personnel department, there looked at your diploma and resume and said that they can take you to the job Secretary.'
+			'You''ve come to the personnel department, and after taking a look at your diploma and resume they offered you a job as secretary.'
 
-			act 'Leave': gt 'office','start'
+			act 'Refuse': gt 'office','start'
 
-			act 'Find a job':
+			act 'Take the job':
 				cla
 				set work = 1
 				set workSec = 1
@@ -37,10 +37,10 @@ if $ARGS[0] = 'start':
 		end
 	end
 
-	if hour >= 9 and hour < 17 and workSec >= 1: 'You´re late for work and you were sent home.'
-	if workSec >= 1 and ofclo = 0 and hour >= 9 and hour < 17: 'You are not dressed according to the corporate identity.'
+	if hour >= 9 and hour < 17 and workSec >= 1: 'You''re late for work and you were sent home.'
+	if workSec >= 1 and ofclo = 0 and hour >= 9 and hour < 17: 'You are not dressed according to the corporate dress code.'
 	if hour < 9 and workSec >= 1 and ofclo = 1:
-		act 'Go to the workplace':
+		act 'Go to work':
 			set sekDay += 1
 			set hour = 9
 			set minut = 0
@@ -54,7 +54,7 @@ if $ARGS[0] = 'start':
 			set minut += 30
 			set work = 0
 			set workSec = 0
-			'You quit without getting money in the last month.'
+			'You quit and you don''t get any money for the last month.'
 
 			act 'QUIT': gt 'down'
 		end
@@ -69,23 +69,23 @@ if $ARGS[0] = 'work':
 	*clr
 	'<center><B><font color = maroon>your workplace</font></B></center>'
 	'<center><img src="images\etogame\sekr.jpg"></center>'
-	'You sat down at his desk.'
+	'You sat down at your desk.'
 	if fidayoffice = 0:
 		set fidayoffice = 1
-		'At the next table sat a girl, she smiled at you, "Hi, I am <<$name>>, and what is your name."'
+		'The  girl at the neighboring table smiled at you: "Hi, I am <<$name>>, and what is your name?"'
 		'"<<$name>>," you answered.'
 		'"What, however, it is likely that they would not be confused, all the secretaries name is <<$name>>, to you here she worked also called Saint." she laughed.'
-		'"Yeah, it´s that-be boss new names do not remember." you add.'
+		'"Yeah, it''s that-be boss new names do not remember." you add.'
 		'"Well and good laugh enough, come to work, and now the boss will come and we will arrange for the laugh at work." she said and began to disassemble the paper on the table.'
 	end
 
-	if fidayoffice = 1: '<<$name>> as always was buried up to his ears papers.'
+	if fidayoffice = 1: '<<$name>> as always you were buried up to your nose in papers.'
 
 	if hour < 17:
 		act 'Work':
 			set minut += 60
 			cla
-			'You print documents, email and wear razberaete boss coffee.'
+			'You print documents, email, and bring your boss coffee.'
 			set officerand = RAND(0,15)
 
 			if officerand > 8 and svetslut = 0: gt 'office','<<$name>>'
@@ -101,12 +101,12 @@ if $ARGS[0] = 'work':
 				'<center><img src="images\img\office\m0.jpg"></center>'
 				'You work somewhere zapropastilas <<$name>>, chef left. In the study includes one of the managers, "Hi Svetsik, can you help me?"'
 
-				act 'How to help?':
+				act 'How can I help?':
 					cla
 					*clr
 					'<center><img src="images\img\office\m1.jpg"></center>'
 					'"How can I help?" you ask.'
-					'"Yes, I was told that you know how to shoot great stress." With these words, he went right up to you and removing already standing member of his pants, you vskhvatil his head and began to move up to his penis.'
+					'"I was told you are great at relieving stress." With these words, he went right up to you and removed his already standing member from his pants. You caught his head and began to move up to his penis.'
 
 					act 'Take by mouth':
 						set picrand     = 54
@@ -116,7 +116,7 @@ if $ARGS[0] = 'work':
 					end
 
 					if officeslut < 10:
-						act 'Send it': gt 'office','work'
+						act 'Send him packing': gt 'office','work'
 					end
 				end
 			end
@@ -127,14 +127,14 @@ if $ARGS[0] = 'work':
 				'<center><img src="images\img\office\m2.jpg"></center>'
 				'You work somewhere zapropastilas <<$name>>, chef and left as an evil broke konditseoner. You get too hot and you rastegivat couple top buttons of her blouse, so now your breasts almost falling out of her. In the study includes one of the managers, "Hi Svetsik, chef at home?".'
 				'"No, I left." you answer and dive back into the paper.'
-				'"It´s hot here, you." he says slowly approaching you and neotvodya look on your chest that and tries to jump out of blouses.'
+				'"It''s hot here, you." he says slowly approaching you and neotvodya look on your chest that and tries to jump out of blouses.'
 
 				act 'Yes':
 					cla
 					*clr
 					'<center><img src="images\img\office\m3.jpg"></center>'
 					'"Yes, damn air conditioner broke down again," you reply, without looking up.'
-					'"Oh I see, you´re just weak." he begins, and suddenly cut short, turns you to itself and you jerked her blouse, well at least not the buttons scattered around, and just jumped out of the loop, bites his lips to your breast, and with all the passion starts to fondle her. You cann´t even first understand what is happening, but that is starting to like you opredelleno.'
+					'"Oh I see, you''re just weak." he begins, and suddenly cut short, turns you to itself and you jerked her blouse, well at least not the buttons scattered around, and just jumped out of the loop, bites his lips to your breast, and with all the passion starts to fondle her. You cann''t even first understand what is happening, but that is starting to like you opredelleno.'
 
 					act 'Surrender':
 						set picrand     = 55
@@ -153,7 +153,7 @@ if $ARGS[0] = 'work':
 				cla
 				*clr
 				'<center><img src="images\img\office\m4.jpg"></center>'
-				'You should make copies of the documents, and you went to the archive where there was a huge copier. While you copied, came into the office one of the managers, and began to search among stelozhey with folders, you do not pay any attention to him and continued to do their work. A minute later, you felt his hand on my ass. "She asks, tell the truth that you have the best ass and you´re always ready to prove it?" he said, and without waiting for your answer, he continued, "Now I will test it." With these words, his hands slid under your clothes.'
+				'You should make copies of the documents, and you went to the archive where there was a huge copier. While you copied, came into the office one of the managers, and began to search among stelozhey with folders, you do not pay any attention to him and continued to do their work. A minute later, you felt his hand on my ass. "She asks, tell the truth that you have the best ass and you''re always ready to prove it?" he said, and without waiting for your answer, he continued, "Now I will test it." With these words, his hands slid under your clothes.'
 
 				act 'Let him':
 					cla
@@ -161,7 +161,7 @@ if $ARGS[0] = 'work':
 					set officeslut += 1
 					'<center><img src="images\img\office\m5.jpg"></center>'
 					'You said nothing turned to him and kissed her, he began to undress you, and in a minute you were naked to the waist, and he hugged you with one hand, and the second full massaging your pussy. Your hand automatically reached for his pants and pulled out yet fully risen member and began to masturbate.'
-					'"That´s clever, and now also, but mouth," he said.'
+					'"That''s clever, and now also, but mouth," he said.'
 
 					act 'Squatted':
 						cla
@@ -169,10 +169,10 @@ if $ARGS[0] = 'work':
 						'<center><img src="images\img\office\m6.jpg"></center>'
 						'You squatted down and took his penis in her mouth, he was still sluggish and you easily absorbed it all, moved his mouth taking it in one cheek, then another, soon you will feel as he began to grow in your mouth and is now placed only his third. You selflessly sucked when the office door opened and a girl came marketer, she froze on the threshold of seeing you.'
 						'"Oh, sorry, I just do not think" she said, and turned to the door.'
-						'"C´mon you Masha, it has not prevented from doing what she wanted, and you can even join" he said.'
+						'"C''mon you Masha, it has not prevented from doing what she wanted, and you can even join" he said.'
 						'"No, no thank you, I will not be long." she said and went to the shelves.'
-						'You keep doing blowjob not paying attention to her. A few minutes later she graduated and because vydya shelvings start watching you. Then she took the phone and started to shoot you, commenting on the record. "Here is our secretary <<$name>> sucks dick, she izvesna around the office as faultless davalka look with pleasure how she does it. Svetsik let myself masturbate, something would have been clearly seen that you like it." You´re running a hand between her legs and began to actively play their clitoris. You damn excited that she takes you, and you are beginning to show the camera the entire process, releasing member of his mouth and licking it from the base to the head, then again taking in the mouth and with a contented purr sweetly suck it. She turned to the guy, "She will suck and let´s fuck her already, and I´ll post all gifts, and then send out around the office, let them look at our hos capable, and you try to come on, we´ll make excellent reputation whore that -would you release from the men was not, as you like when you fuck all. " With these words, she went to the corner and stopped, continuing to shoot.'
-						'"Now fuck, let pososet little more, it´s so like that even do not want to interrupt."'
+						'You keep doing blowjob not paying attention to her. A few minutes later she graduated and because vydya shelvings start watching you. Then she took the phone and started to shoot you, commenting on the record. "Here is our secretary <<$name>> sucks dick, she izvesna around the office as faultless davalka look with pleasure how she does it. Svetsik let myself masturbate, something would have been clearly seen that you like it." You''re running a hand between her legs and began to actively play their clitoris. You damn excited that she takes you, and you are beginning to show the camera the entire process, releasing member of his mouth and licking it from the base to the head, then again taking in the mouth and with a contented purr sweetly suck it. She turned to the guy, "She will suck and let''s fuck her already, and I''ll post all gifts, and then send out around the office, let them look at our hos capable, and you try to come on, we''ll make excellent reputation whore that -would you release from the men was not, as you like when you fuck all. " With these words, she went to the corner and stopped, continuing to shoot.'
+						'"Now fuck, let pososet little more, it''s so like that even do not want to interrupt."'
 
 						act 'Continue':
 							set picrand     = 56
@@ -198,7 +198,7 @@ if $ARGS[0] = 'work':
 				'<center><img src="images\img\office\m8.jpg"></center>'
 				'You work somewhere zapropastilas <<$name>>, chef left. In the study includes one of the managers, "Hi Svetsik, chef at home?".'
 				'"No, I left." you answer and dive back into the paper.'
-				'"Why are you so tense, I´ll let massazhik do." he says, and not waiting for an answer comes behind you and starts massaging your shoulders. This really helps you relax in a chair, close your eyes and enjoy, yet strong hands massaging your shoulders.'
+				'"Why are you so tense, I''ll let massazhik do." he says, and not waiting for an answer comes behind you and starts massaging your shoulders. This really helps you relax in a chair, close your eyes and enjoy, yet strong hands massaging your shoulders.'
 				'"Well liked?" His voice brought you back to earth'
 
 				act 'Yes':
@@ -206,7 +206,7 @@ if $ARGS[0] = 'work':
 					*clr
 					'<center><img src="images\img\office\m9.jpg"></center>'
 					'"Yes, very much, thank you," you reply without opening his eyes.'
-					'"Well thank you, it´s too much, but mutual aid will be just right." he says.'
+					'"Well thank you, it''s too much, but mutual aid will be just right." he says.'
 					'"What do you mean?" you started, but opened his eyes immediately realized what he was saying. In front of your eyes was standing member, you yourself do not understand how the hand and pulled him vskhvatila mouth, and the mouth is slightly parted ready to take it dildo. "What am I doing?" flashed through your mind. "Apparently I was so used to be given to this office, it is already at the level of reflexes. So take or not to take, that is the question."'
 
 					act 'Mark':
@@ -227,16 +227,16 @@ if $ARGS[0] = 'work':
 				*clr
 				'<center><img src="images\img\office\m10.jpg"></center>'
 				'You work somewhere zapropastilas <<$name>>, chef left and you re-freezes the computer. Swearing you call your sysadmin and ask him to come. In the study included a sysadmin and looking at computer govoit that he take it now and tomorrow will bring. "What am I going to do tomorrow, come here now and correct." you started.'
-				'"Well, no, it´s long, I have other work for many more, although we can agree and then I will fix it for you now," he says'
+				'"Well, no, it''s long, I have other work for many more, although we can agree and then I will fix it for you now," he says'
 				'"And how do we agree?" you ask.'
-				'"Well, you´re the girl that in itself is not operational, everyone knows how you can negotiate." he says.'
+				'"Well, you''re the girl that in itself is not operational, everyone knows how you can negotiate." he says.'
 
 				act 'And how do':
 					cla
 					*clr
 					'<center><img src="images\img\office\m11.jpg"></center>'
 					'"Yes, very simply," he says, and respond quickly pulls out his cock.'
-					'While you´re standing in a stupor pridamat trying to say, he pushes you in a chair and vskhvativ hair attracts her dildo. Once you open your mouth something to say something, as he immediately volzovalsya this and pushed his penis in your mouth.'
+					'While you''re standing in a stupor pridamat trying to say, he pushes you in a chair and vskhvativ hair attracts her dildo. Once you open your mouth something to say something, as he immediately volzovalsya this and pushed his penis in your mouth.'
 
 					act 'Suck':
 						set picrand     = 58
@@ -264,7 +264,7 @@ if $ARGS[0] = 'work':
 				set gang          += 1
 				set guy           += 4
 				'<center><img src="images\img\office\g3.jpg"></center>'
-				'In office boss runs, and immediately begins to tell you, "Well, then the <<$name>>, in the conference room now sit four of our largest shareholder, I was a little nakosyachil and now I need some time to prepare the documents which your task is now to go to them and make sure that -would be for them this hour goes as well, something they would not even remember me. Well, you´re a smart girl, the whole office is fucked, so fuck four more, and I will appoint you to a position in accordance with your talents. Let´s run Sammy´s ass, let them fuck your ass today, and not mine. All run. " You got up and headed to the conferenc room, on the road thinking about what position he spoke, and what kind of talent you are, but to fuck with everyone. Entering the room you viditechetveryh men, clearly not in the best mood. "Well, I now have the same otebut" flashed in your head, but to be out late, you yourself made the reputation of the office whore. You push the skirt bares his chest and calmly climbs on the table in front of them. "Lord for your contribution to the development naschego business today you are given a present from the company, you can not only watch but also to touch wherever you like and paste it wherever you want and desire." do not believe what you do, you just close your eyes prepare for what is now holes on your living space will not leave.'
+				'In office boss runs, and immediately begins to tell you, "Well, then the <<$name>>, in the conference room now sit four of our largest shareholder, I was a little nakosyachil and now I need some time to prepare the documents which your task is now to go to them and make sure that -would be for them this hour goes as well, something they would not even remember me. Well, you''re a smart girl, the whole office is fucked, so fuck four more, and I will appoint you to a position in accordance with your talents. Let''s run Sammy''s ass, let them fuck your ass today, and not mine. All run. " You got up and headed to the conferenc room, on the road thinking about what position he spoke, and what kind of talent you are, but to fuck with everyone. Entering the room you viditechetveryh men, clearly not in the best mood. "Well, I now have the same otebut" flashed in your head, but to be out late, you yourself made the reputation of the office whore. You push the skirt bares his chest and calmly climbs on the table in front of them. "Lord for your contribution to the development naschego business today you are given a present from the company, you can not only watch but also to touch wherever you like and paste it wherever you want and desire." do not believe what you do, you just close your eyes prepare for what is now holes on your living space will not leave.'
 
 				act 'Start':
 					set picrand = 17
@@ -275,7 +275,7 @@ if $ARGS[0] = 'work':
 			act 'Finish': gt 'office','work'
 		end
 
-		act 'In the principal´s office': gt 'office','boss'
+		act 'In the principal''s office': gt 'office','boss'
 		act 'Corridor': gt 'office','kor'
 
 		act 'Chat with <<$name>>':
@@ -302,11 +302,11 @@ if $ARGS[0] = 'work':
 				'"No, no one spoke, I just opened the door and you are on Kolyanom with by a dick in your mouth." you answered in the same tone.'
 				'"Come on do not be mad, I thought again, dear colleagues tongue to dissolve. And I with my boss so perepihnemsya in office and run away, he underpaid me for it, if you are about it." said <<$name>>'
 				'"No, I was just asking." told you.'
-				'"You I´m sorry that I said, just thinking that they are again forgotten what he once unsatisfied." said <<$name>>.'
+				'"You I''m sorry that I said, just thinking that they are again forgotten what he once unsatisfied." said <<$name>>.'
 				'"And why do it again?" you asked.'
-				'"Yes they are already started poking fingers, and I´m just going to leave, well, took to complete the whole month. So their boss month, all" fuck "without vazilina, when I came back, so they´ll all so kind and gentle Svetochka want it, want it, hypocrisy. " she replied.'
+				'"Yes they are already started poking fingers, and I''m just going to leave, well, took to complete the whole month. So their boss month, all" fuck "without vazilina, when I came back, so they''ll all so kind and gentle Svetochka want it, want it, hypocrisy. " she replied.'
 				'"A wife that he does not?" you asked'
-				'"And who knows, I´ve never seen it, well, probably does not, then when I´m back from vacation, he gave me two days out of the office almost did not issue, I took a day off after a whole day in the bathroom provolyalas not believe this walk almost could not sit down and do not say anything about, I did not close ass week. So here so unsatisfied vyebet boss or secretary, or all. And I like to be a secretary, I´m lonely, healthy, young girl and also want sex, that´s just more than a month on vacation do not go, I remember, so sit the patient becomes. " she laughed.'
+				'"And who knows, I''ve never seen it, well, probably does not, then when I''m back from vacation, he gave me two days out of the office almost did not issue, I took a day off after a whole day in the bathroom provolyalas not believe this walk almost could not sit down and do not say anything about, I did not close ass week. So here so unsatisfied vyebet boss or secretary, or all. And I like to be a secretary, I''m lonely, healthy, young girl and also want sex, that''s just more than a month on vacation do not go, I remember, so sit the patient becomes. " she laughed.'
 				'There came into the office one of the managers with a pile of papers and you have to interrupt your conversation.'
 
 				act 'Finish': gt 'office','work'
@@ -319,8 +319,8 @@ if $ARGS[0] = 'work':
 				set minut   += 30
 				set svetslut = 4
 				'Waiting when the boss is not at home, you have decided to ask Amy about the incident in the office of the chief.'
-				'"Well, it was, as you know, I´ll be back in a minute with the tea?" you asked'
-				'"Well I´m sorry I could not help it when you´re out he started kissing me, and I turned on if I did not stop. I was once in the metro began groping someone, so I´m still trying his hands with clean themselves in the crush was so excited that he gave right there in the car, in front of everyone, I was so ashamed, I still do not go on the subway. Chief really wanted to stop, but I said you were not going to chat and still know the entire office. " said <<$name>>.'
+				'"Well, it was, as you know, I''ll be back in a minute with the tea?" you asked'
+				'"Well I''m sorry I could not help it when you''re out he started kissing me, and I turned on if I did not stop. I was once in the metro began groping someone, so I''m still trying his hands with clean themselves in the crush was so excited that he gave right there in the car, in front of everyone, I was so ashamed, I still do not go on the subway. Chief really wanted to stop, but I said you were not going to chat and still know the entire office. " said <<$name>>.'
 				'"Are you really can not stay?" you asked.'
 				'"Well, not quite so, I have a threshold, but it is very low. I honestly when you see these things with tea very much like what would you now, but if it is absolutely honest, I could not stop but continued especially something to you Seeing and now. " she said.'
 
@@ -372,7 +372,7 @@ if $ARGS[0] = 'work':
 									cla
 									*clr
 									'<center><img src="images\img\office\s7.jpg"></center>'
-									'You stop the light and lay down on the table, waving her tongue between his fingers spread apart. She smiled, realizing what you want and quickly climbed onto the table. You follow her example took her panties and shoved them in her pussy, but your language is not so large and is pushed them into her vagina you did not, then did you do it with your fingers and tongue began treating her clitoris. <<$name>> at this time literally fucked you with his tongue, you create a sense of what´s inside you is not a member of a language, but very nimble and agile. After a couple of minutes you pochuvsvovali as her body began to tremble and she came in a few seconds you have followed suit, and enveloped you orgasm.'
+									'You stop the light and lay down on the table, waving her tongue between his fingers spread apart. She smiled, realizing what you want and quickly climbed onto the table. You follow her example took her panties and shoved them in her pussy, but your language is not so large and is pushed them into her vagina you did not, then did you do it with your fingers and tongue began treating her clitoris. <<$name>> at this time literally fucked you with his tongue, you create a sense of what''s inside you is not a member of a language, but very nimble and agile. After a couple of minutes you pochuvsvovali as her body began to tremble and she came in a few seconds you have followed suit, and enveloped you orgasm.'
 
 									act 'Back to work': gt 'office','work'
 								end
@@ -396,7 +396,7 @@ if $ARGS[0] = 'work':
 									*clr
 									set orgasm += 1
 									'<center><img src="images\img\office\s7.jpg"></center>'
-									'You stopped and spihnuv <<$name>> from the table, went at it yourself, waving her tongue between his fingers spread apart. She smiled, realizing what you want and quickly climbed onto the table. You took the panties and stuffed them in her pussy, her clitoris prodolzhayaaktivno process language. <<$name>> at this time literally fucked you with his tongue, you create a sense of what´s inside you is not a member of a language, but very nimble and agile. After a couple of minutes you pochuvsvovali as her body began to tremble and she came in a few seconds you have followed suit, and enveloped you orgasm.'
+									'You stopped and spihnuv <<$name>> from the table, went at it yourself, waving her tongue between his fingers spread apart. She smiled, realizing what you want and quickly climbed onto the table. You took the panties and stuffed them in her pussy, her clitoris prodolzhayaaktivno process language. <<$name>> at this time literally fucked you with his tongue, you create a sense of what''s inside you is not a member of a language, but very nimble and agile. After a couple of minutes you pochuvsvovali as her body began to tremble and she came in a few seconds you have followed suit, and enveloped you orgasm.'
 
 									act 'Back to work': gt 'office','work'
 								end
@@ -469,7 +469,7 @@ if $ARGS[0] = 'boss':
 		'"And what do I have to do." you ask.'
 		'"Yes soobstvenno nothing new will motivate some employees, and of helping to conclude contracts and delivery of objects." he says.'
 		'"And how to motivate" misunderstanding you ask.'
-		'"Yes, as usual, is that people get tired, naturally performance drops, deadlines are screwed, and we pay a penalty, but if they just promotivirot that work will be completed in time. Here you´ll motivate them, but as I think you yourself dogadyvaeshs, and I tell them that you will kotrolirovat their work. Well when contracting the same distracting them from a careful reading of the contract, his body. That something like this, all right? " he asks.'
+		'"Yes, as usual, is that people get tired, naturally performance drops, deadlines are screwed, and we pay a penalty, but if they just promotivirot that work will be completed in time. Here you''ll motivate them, but as I think you yourself dogadyvaeshs, and I tell them that you will kotrolirovat their work. Well when contracting the same distracting them from a careful reading of the contract, his body. That something like this, all right? " he asks.'
 		'"So you want me to become a full-time whore, and how much extra charge?" asked you do not believe in something that is not sent it immediately, but also interested in the price.'
 		'"20,000 per month plus a basic salary, as well, do you agree?" he says, his face blurred satisfied smile, as if you have already agreed to.'
 
@@ -477,21 +477,21 @@ if $ARGS[0] = 'boss':
 			cla
 			set officebestslut = 3
 			'"Well, I agree." you reply.'
-			'"That´s good, well, then going to the city is just one solid client arrived, he is now in a hotel, go to it together. See how you can do it." he said.'
+			'"That''s good, well, then going to the city is just one solid client arrived, he is now in a hotel, go to it together. See how you can do it." he said.'
 
 			act 'Go': gt 'office','motiv0'
 		end
 
 		act 'Refuse':
 			cla
-			'"No, thanks, I´m not a prostitute, I fuck for fun, not for money," you reply.'
+			'"No, thanks, I''m not a prostitute, I fuck for fun, not for money," you reply.'
 			'"Well, then fuck for fun, day gi count premium for good work. Predlogat Mind you I do I will not. So how exactly otkazyvaeshs soglasishsya or still?" he says.'
 
 			act 'Agree':
 				cla
 				set officebestslut = 3
 				'"Well, I agree." you reply.'
-				'"That´s good, well, then going to the city is just one solid client arrived, he is now in a hotel, go to it together. See how you can do it." he said.'
+				'"That''s good, well, then going to the city is just one solid client arrived, he is now in a hotel, go to it together. See how you can do it." he said.'
 				act 'Go': gt 'office','motiv0'
 			end
 
@@ -509,8 +509,8 @@ if $ARGS[0] = 'boss':
 			set officeslut += 1
 			set picrand = RAND(61,63)
 			'<center><img src="images\img\office\b<<picrand>>.jpg "></center>'
-			'Seeing that in the study besides the chief one, you close the door with a wink to the <<$name>> she did not let her in, she smiled and makes you wagged his finger and whispered "slut." You are going to the boss on the move getting rid of clothes. Going into the dense you kiss him and say, "I´ve got a chef that it came out, you do not see?" and spreads her legs a little.'
-			'"I wonder what happened to my best employee, let´s see," he says.'
+			'Seeing that in the study besides the chief one, you close the door with a wink to the <<$name>> she did not let her in, she smiled and makes you wagged his finger and whispered "slut." You are going to the boss on the move getting rid of clothes. Going into the dense you kiss him and say, "I''ve got a chef that it came out, you do not see?" and spreads her legs a little.'
+			'"I wonder what happened to my best employee, let''s see," he says.'
 
 			act 'Spread her legs': gt 'sex','kuni'
 		end
@@ -556,7 +556,7 @@ if $ARGS[0] = 'kuh':
 			*clr
 			'<center><img src="images\img\office\m13.jpg"></center>'
 			'You have no choice as a drink, you open your mouth and start drinking. His second hand starts to hug your waist. "Well at least not reached under her skirt," you think, but its rather posmetrev smirk realized that rushed to conclusions.'
-			'"That´s good girl all drunk, you´re all over this docile?" he said, and without waiting for an answer continued, "I know that obedient, I already blogged about that you are very diligent girl" with these words, his hand went up your spine and shoulder blades reaching, he began to press forward, so that you start to bend.'
+			'"That''s good girl all drunk, you''re all over this docile?" he said, and without waiting for an answer continued, "I know that obedient, I already blogged about that you are very diligent girl" with these words, his hand went up your spine and shoulder blades reaching, he began to press forward, so that you start to bend.'
 
 			act 'Do not resist':
 				cla
@@ -642,7 +642,7 @@ if $ARGS[0] = 'boss1':
 	*clr
 	set minut += 30
 	'<center><img src="images\img\office\b1.jpg"></center>'
-	'Chief invited to the <<$name>> itself, it was not 30 minutes, you have already decided that they´re having fun again, when he called and you went into the office, you will not see anything, <<$name>> sitting on the sofa with a notebook in hand and write down something .'
+	'Chief invited to the <<$name>> itself, it was not 30 minutes, you have already decided that they''re having fun again, when he called and you went into the office, you will not see anything, <<$name>> sitting on the sofa with a notebook in hand and write down something .'
 	'"Come in, sit down." said the boss.'
 	'You sat down next to the <<$name>> and he began raskazyvat you that you have to do. Ten minutes later, he looked at you and said, "<<$name>>, bring all three of us a cup of tea, and then we sit here for a long time."'
 
@@ -650,7 +650,7 @@ if $ARGS[0] = 'boss1':
 		cla
 		*clr
 		'<center><img src="images\img\office\b2.jpg"></center>'
-		'Returning with tea you froze in the doorway, <<$name>> lay on her side on the couch with her legs spread wide, and the chief lying behind her bored into her pussy with his cock. "This is the room and what it means, because they know that I´ll be right back," you thought.'
+		'Returning with tea you froze in the doorway, <<$name>> lay on her side on the couch with her legs spread wide, and the chief lying behind her bored into her pussy with his cock. "This is the room and what it means, because they know that I''ll be right back," you thought.'
 
 		act 'Join':
 			cla
@@ -804,13 +804,13 @@ if $ARGS[0] = 'komer0':
 			cla
 			*clr
 			'<center><img src="images\img\office\k2.jpg"></center>'
-			'You took her hips and began to kiss the buttocks, with the utmost passion. "That´s clever, I see we work well together, and now finish that start" with these words, she took off her panties and sat on the table.'
+			'You took her hips and began to kiss the buttocks, with the utmost passion. "That''s clever, I see we work well together, and now finish that start" with these words, she took off her panties and sat on the table.'
 
 			act 'Lick':
 				cla
 				*clr
 				'<center><img src="images\img\office\k4.jpg"></center>'
-				'You knelt down and pressed his lips to her pussy, you diligently licking her pussy and clitoris. "Shove inside" she commanded, you immediately put his tongue in her vagina. "Hmm, the tongue is small, but it´s fixable," she said, after these words, you felt something happening to you as something strange, or your tongue began to grow, whether it decreased the vagina, you are actively fucked her tongue and he took out her to the uterus, a few minutes later she finished, removing language and you realize that it does not fit in your mouth. You looked at her with horror on his face, she smiled and began to decrease your tongue back to its normal size.'
+				'You knelt down and pressed his lips to her pussy, you diligently licking her pussy and clitoris. "Shove inside" she commanded, you immediately put his tongue in her vagina. "Hmm, the tongue is small, but it''s fixable," she said, after these words, you felt something happening to you as something strange, or your tongue began to grow, whether it decreased the vagina, you are actively fucked her tongue and he took out her to the uterus, a few minutes later she finished, removing language and you realize that it does not fit in your mouth. You looked at her with horror on his face, she smiled and began to decrease your tongue back to its normal size.'
 				'"All you can go the next time will be a mutual pleasure, I promise." she said. You keep looking at her feeling his tongue, "What udivlyaeshsya Misha, who is really who, and you should not be surprised magic. Okay enough to sit on the floor sheepishly, go to him." With these words, she returned to her desk. You got up and headed for the door, thinking nobody raskazyvat about what happened.'
 
 				act 'Back to work': gt 'office','work'
@@ -821,7 +821,7 @@ if $ARGS[0] = 'komer0':
 			cla
 			*clr
 			'<center><img src="images\img\office\k3.jpg"></center>'
-			'You otolknuli her away and jumped to his feet froze, not knowing what´s going on, you pushed her in front of him, now it was not there, and then you vskhvatili strong hands behind your chest and sat back in his chair, looking up you will see it on a . She stood clutching your chest in his hands, "Do not be so rude to me, Misha, I´m angry and I can not, and then you will not maid and ochkom toilet in the station, and will be with me gentle I can give you a feel like a man again. So what to choose, we will be friends or will swallow shit until the end of the century. "'
+			'You otolknuli her away and jumped to his feet froze, not knowing what''s going on, you pushed her in front of him, now it was not there, and then you vskhvatili strong hands behind your chest and sat back in his chair, looking up you will see it on a . She stood clutching your chest in his hands, "Do not be so rude to me, Misha, I''m angry and I can not, and then you will not maid and ochkom toilet in the station, and will be with me gentle I can give you a feel like a man again. So what to choose, we will be friends or will swallow shit until the end of the century. "'
 
 			act 'Fight':
 				set over = 5
@@ -837,7 +837,7 @@ if $ARGS[0] = 'komer0':
 				'"You really can make me a man?" you asked.'
 				'"I said I can not give you feel like a man again, for a few minutes, and we can have fun." she replied.'
 				'"Well what do you want." you answered.'
-				'"That´s smart, good girl or a boy, but oh well what´s the difference, you´re not alone and you know who you are. Now listen and remember you´ll do whatever I tell you, and that you´d better-remembered and never thought erepenitsa I will punish you now a little bit. " when she say it like you were on her desk obsolyutno naked. You could not move and say the same could not, she podozhla to you from behind and plunged his fingers into her vagina, inside they began to expand and lengthen and that is within you already wielded enormous tentacles, you tried to scream, but from the open mouth does not take off no sound. Soon she finished and you Stroud slipped from the table and began to dress. "And now back to work, I´ll get you yet." she said.'
+				'"That''s smart, good girl or a boy, but oh well what''s the difference, you''re not alone and you know who you are. Now listen and remember you''ll do whatever I tell you, and that you''d better-remembered and never thought erepenitsa I will punish you now a little bit. " when she say it like you were on her desk obsolyutno naked. You could not move and say the same could not, she podozhla to you from behind and plunged his fingers into her vagina, inside they began to expand and lengthen and that is within you already wielded enormous tentacles, you tried to scream, but from the open mouth does not take off no sound. Soon she finished and you Stroud slipped from the table and began to dress. "And now back to work, I''ll get you yet." she said.'
 
 				act 'Back to work': gt 'office','work'
 			end
@@ -864,7 +864,7 @@ if $ARGS[0] = 'komer1':
 			cla
 			*clr
 			'<center><img src="images\img\office\k7.jpg"></center>'
-			'"You want to fuck me, Come here look what I got," she said, "So you make me a man" you started and then stopped short when he heard a man´s voice, looking at yourself you realize that it has already done, "Well, what metering, come to me, let try your creation to the taste. " she said. You podozhli to her and she quickly taking out your cock, took it into his mouth and began to suck, you stood and enjoyed, not believing that the longer you suck someone´s dick while you suck.'
+			'"You want to fuck me, Come here look what I got," she said, "So you make me a man" you started and then stopped short when he heard a man''s voice, looking at yourself you realize that it has already done, "Well, what metering, come to me, let try your creation to the taste. " she said. You podozhli to her and she quickly taking out your cock, took it into his mouth and began to suck, you stood and enjoyed, not believing that the longer you suck someone''s dick while you suck.'
 
 			act 'Fuck her':
 				cla
@@ -892,7 +892,7 @@ if $ARGS[0] = 'dostavka':
 	set minut += 30
 	gs 'stat'
 	'<center><img src="images\img\office\s9.jpg"></center>'
-	'Once you have started to have fun as a knock on the door of the cabinet. You barely managed to stop the <<$name>>, and sat her down on a chair to fix it first, and then himself. However, she and Narov continue brakes seen it already ripped and she had ostanavitsya nemogla. You grief half sat her back in the chair and opened the door. The doorbell went courier "Well, you girls are so long, I´m tired of standing. You sign for the parcel."'
+	'Once you have started to have fun as a knock on the door of the cabinet. You barely managed to stop the <<$name>>, and sat her down on a chair to fix it first, and then himself. However, she and Narov continue brakes seen it already ripped and she had ostanavitsya nemogla. You grief half sat her back in the chair and opened the door. The doorbell went courier "Well, you girls are so long, I''m tired of standing. You sign for the parcel."'
 
 	act 'Sign':
 		cla
@@ -978,8 +978,8 @@ if $ARGS[0] = 'boss2':
 		cla
 		*clr
 		'<center><img src="images\img\office\b12.jpg"></center>'
-		'"With pleasure," you reply and then squatted down to get him and start sucking dildo. Once you´ve got the taste as the office door opened and entered the courier.'
-		'"What the hell, what you need, do not you see I´m busy." the chief said, pointing at you, still sucking his cock.'
+		'"With pleasure," you reply and then squatted down to get him and start sucking dildo. Once you''ve got the taste as the office door opened and entered the courier.'
+		'"What the hell, what you need, do not you see I''m busy." the chief said, pointing at you, still sucking his cock.'
 		'"So let me girl there said that you can" he says, "That bitch she asks, as she knew that I was here," you thought, releasing a member of the mouth. "So you sign for delivery?" Courier continued, his eyes fixed on your bare ass.'
 		'"Prove Svetsik" said chef helping you climb'
 
@@ -990,7 +990,7 @@ if $ARGS[0] = 'boss2':
 			'<center><img src="images\img\office\b13.jpg"></center>'
 			'You quietly take the messenger of paper and turned to the table to paint at this time begins to talk with the chief courier. "How do you like her ass, though very best, but if you only knew that it could be up to her, shake <<$name>> rolls."'
 			'"With pleasure," you reply, and start shake buttocks.'
-			'"You´re not shy Sun her finger in the ass, she did so fuck that cum in my pants. Raskazhite <<$name>> as you like when you´re ass dryuchat." continued supervision'
+			'"You''re not shy Sun her finger in the ass, she did so fuck that cum in my pants. Raskazhite <<$name>> as you like when you''re ass dryuchat." continued supervision'
 			'"Just love it when hot cock fucks my ass, I love milk it ochkom to hot seed to fill my ass." raspolyalis you. In this vryamya courier stuck his finger in your anus and you started actively fucking him.'
 			'"Well, what froze shoot pants now this slut fuck us both. Svetsik truth?" said the boss.'
 
@@ -1018,14 +1018,14 @@ if $ARGS[0] = 'boss3':
 	set officeslut += 1
 
 	'<center><img src="images\img\office\b14.jpg"></center>'
-	'"A <<$name>>, come on you just in time, we´re celebrating with a partner deal." said the boss sees you included in the study.'
+	'"A <<$name>>, come on you just in time, we''re celebrating with a partner deal." said the boss sees you included in the study.'
 	'"I just love to confess about you, saying that the best secretary did not find, and it works well, and fucks superbly, but he does not believe." he said pointing to the other man, "says his secretary better, so you have to Svetsik defend the honor of the company, show him how you are able to use their holes." continued supervision'
 
 	act 'To kneel':
 		cla
 		*clr
 		'<center><img src="images\img\office\b15.jpg"></center>'
-		'"With pleasure," you reply, and immediately squatted pull out dildo and start sucking. You´re struggling.'
+		'"With pleasure," you reply, and immediately squatted pull out dildo and start sucking. You''re struggling.'
 		'"Well, as I said, she asks the best sucks." smiling boss said, seeing contented individual partner.'
 		'"Yeah, sucks perfectly, but as with other holes also skillfully managed?" he replied.'
 		'"Svetsik vstanovis crustaceans, arrange a test drive of your pussy," said the boss helping you climb'
@@ -1034,7 +1034,7 @@ if $ARGS[0] = 'boss3':
 			cla
 			*clr
 			'<center><img src="images\img\office\b16.jpg"></center>'
-			'You bend down over the table, and plant hips, head just spit your labia, you put on the penis so that his balls hit on your hips and start moving wildly twisting hips. "Wow, that´s a nipple." was all he said.'
+			'You bend down over the table, and plant hips, head just spit your labia, you put on the penis so that his balls hit on your hips and start moving wildly twisting hips. "Wow, that''s a nipple." was all he said.'
 			'"And that you still have not tried the ass." grinned the boss. "Well, okay, I probably also to join you, this slut handles two better than one, right Svetsik?" the boss said removing his pants.'
 
 			act '"Yes"':
@@ -1054,7 +1054,7 @@ if $ARGS[0] = 'boss4':
 	set officeslut += 1
 
 	'<center><img src="images\img\office\b17.jpg"></center>'
-	'"A <<$name>>, come on you just in time." said the boss sees you included in the study. He walked up to you and vskhvativ hips lifted and posodil on the table, spreading your legs he knelt and pressed to your pussy, his tongue slid over your lips and clit tickling, bringing you great pleasure. You were so passionate about the process that is not immediately noticed as one entered the office of the company´s managers. When you finally will see him, he was standing a few feet away from you, carefully watching the process.'
+	'"A <<$name>>, come on you just in time." said the boss sees you included in the study. He walked up to you and vskhvativ hips lifted and posodil on the table, spreading your legs he knelt and pressed to your pussy, his tongue slid over your lips and clit tickling, bringing you great pleasure. You were so passionate about the process that is not immediately noticed as one entered the office of the company''s managers. When you finally will see him, he was standing a few feet away from you, carefully watching the process.'
 
 	act 'Beckon':
 		cla
@@ -1062,7 +1062,7 @@ if $ARGS[0] = 'boss4':
 		set orgasm     += 1
 		set officeslut += 1
 		'<center><img src="images\img\office\b18.jpg"></center>'
-		'You beckon him with a gesture, and he immediately suited to you and starts to fondle your breasts. Operations initially did not even notice him, and continues to lick your pussy, but when you are covering an orgasm and you ended up with a cry, he looks up and sees him. "Well, she asks, well, slut, you love when you fuck two members, well, now we´ll fuck what froze take your pants." he said.'
+		'You beckon him with a gesture, and he immediately suited to you and starts to fondle your breasts. Operations initially did not even notice him, and continues to lick your pussy, but when you are covering an orgasm and you ended up with a cry, he looks up and sees him. "Well, she asks, well, slut, you love when you fuck two members, well, now we''ll fuck what froze take your pants." he said.'
 		act 'Start':
 			set picrand = 26
 			set guy += 1
@@ -1100,13 +1100,13 @@ if $ARGS[0] = 'gang':
 		'Nothing to do, you have opened my mouth and began to serve them one by one, first medleno reluctantly moving eventually got the taste and began to go out of their way.'
 		'"You look like razduharilis that like to suck?" said one.'
 		'"Yes" stricter able to answer you with a member in the mouth. You veering from one member to another and did not know what to take for that, would satisfy all.'
-		'"Come on guys, let´s in a row, and then this whore already dizzy from so many members of the" one of them said, and they were lined up in front of you.'
+		'"Come on guys, let''s in a row, and then this whore already dizzy from so many members of the" one of them said, and they were lined up in front of you.'
 
 		act 'Suck':
 			cla
 			*clr
 			'<center><img src="images\img\office\g2.jpg"></center>'
-			'You began to suck one while the other two hands masturbate, and when he had finished, swallowing sperm, and moved to the next, continuing nadrachivat other-that would not have fallen so passed two laps, and you could not stop continuing with pleasure milking their members and swallow cum. "That nanasytnaya, a couple of liters of sperm and swallowed all the little, so it must often feed" laughed one. "Yeah, she asks spermoedka" supported the second. "Okay, we all in her mouth, but in your mouth, let´s have all the holes fuck off." said third'
+			'You began to suck one while the other two hands masturbate, and when he had finished, swallowing sperm, and moved to the next, continuing nadrachivat other-that would not have fallen so passed two laps, and you could not stop continuing with pleasure milking their members and swallow cum. "That nanasytnaya, a couple of liters of sperm and swallowed all the little, so it must often feed" laughed one. "Yeah, she asks spermoedka" supported the second. "Okay, we all in her mouth, but in your mouth, let''s have all the holes fuck off." said third'
 
 			act 'Start':
 				set picrand = 16
@@ -1134,7 +1134,7 @@ if $ARGS[0] = 'boss5':
 		set swallow += 1
 		set bj      += 1
 		'<center><img src="images\img\office\b20.jpg"></center>'
-		'You bend down to his crotch member of freeing from captivity pants, take by mouth fledgling boss dildo and start sucking odnovremmeno Shchekotov yayscha his hand, soon it swells and is hardly fit in your mouth. A few minutes later you feel like it starts to pulsate, the chief lays down on your head and your hand deeper inserts his dildo your mouth so that it rests in your throat and starts to cum. You frantically swallows not to choke when the stream has dried up, you lick the remnants of the seed with his dick and already going to clean it back in your pants, as chief stops you. "Clever, I´ll let podlagodaryu" With these words, he gets up and sits in a chair you and throws your feet.'
+		'You bend down to his crotch member of freeing from captivity pants, take by mouth fledgling boss dildo and start sucking odnovremmeno Shchekotov yayscha his hand, soon it swells and is hardly fit in your mouth. A few minutes later you feel like it starts to pulsate, the chief lays down on your head and your hand deeper inserts his dildo your mouth so that it rests in your throat and starts to cum. You frantically swallows not to choke when the stream has dried up, you lick the remnants of the seed with his dick and already going to clean it back in your pants, as chief stops you. "Clever, I''ll let podlagodaryu" With these words, he gets up and sits in a chair you and throws your feet.'
 
 		act 'Start':
 			set picrand = 60
@@ -1178,7 +1178,7 @@ if $ARGS[0] = 'motiv0':
 	set minut += 180
 
 	'<center><img src="images\img\office\m15.jpg"></center>'
-	'You come with the head to the hotel and go up to the room to the client. While the chef with the client to discuss the contract you park yourself on the bed and pretend that something down. When it comes to controversial issues, chief transplanted to you on the bed and starts stroking you. His hands glide over your body then crept under her skirt then stroking his chest, soon your skirt is Zadran to the waist. Customer looks to you between the legs without taking his eyes, seeing this boss says "can make a little break to relax." and you vskhvativ crotch pulls up, you go and find yourself standing on all fours on the bed with a bare ass. "You´re like Svetsik help us relax?" appeals to you boss.'
+	'You come with the head to the hotel and go up to the room to the client. While the chef with the client to discuss the contract you park yourself on the bed and pretend that something down. When it comes to controversial issues, chief transplanted to you on the bed and starts stroking you. His hands glide over your body then crept under her skirt then stroking his chest, soon your skirt is Zadran to the waist. Customer looks to you between the legs without taking his eyes, seeing this boss says "can make a little break to relax." and you vskhvativ crotch pulls up, you go and find yourself standing on all fours on the bed with a bare ass. "You''re like Svetsik help us relax?" appeals to you boss.'
 
 	act 'Of course':
 		cla
@@ -1227,21 +1227,21 @@ if $ARGS[0] = 'motiv2':
 	'"Well, have a meal." you answer and go to the site.'
 	'Arriving at the object you see a guy who goes from corner to corner and does almost nothing. Seeing you he begins to portray violent activities. "So what do you like polzash sleepy fly" you say.'
 	'"I work, but the timing is just unreal," he says.'
-	'"Or maybe it´s not unrealistic deadlines, and you just do not want to work?" you ask.'
+	'"Or maybe it''s not unrealistic deadlines, and you just do not want to work?" you ask.'
 	'"No I work, I just do not physically have time to do everything." he says.'
 	'"And let so if you three hours this is done, I thank you." you say.'
 	'"How would you not thank me, but I did three hours does not have time, then work for a few days at least," he says.'
 	'"Is that you just do not know how I ever thank you." you say'
-	'"How´s that?" he asks.'
-	'"Well, look, I´ll make you a small down payment and get a finish as the rest" With these words, you go up to him and pulled out his cock. The guy opened his mouth in surprise.'
+	'"How''s that?" he asks.'
+	'"Well, look, I''ll make you a small down payment and get a finish as the rest" With these words, you go up to him and pulled out his cock. The guy opened his mouth in surprise.'
 
 	act 'Take by mouth':
 		cla
 		*clr
 		'<center><img src="images\img\office\m0<<picrand>>.jpg "></center>'
 		'You took the head in her mouth and started sucking slowly. Then you have it swallowed the the most balls, he twitched, but not fired. And you continued to lick the head and trunk, with hand caressed his balls. He lasted about five minutes, and then his cock throbbed in his mouth and you flew a jet of sperm. When you swallow cum, then licked the remnants of his cock and took it back into his pants. "So, you, have time to finish in three hours," you asked.'
-		'He said nothing, and immediately began vskhvativshis tool for work. Two hours later it was all over. Guy standing in front of you with a satisfied smile on his face, "I´m finished," he said at a little breather.'
-		'"Good for you, keep up the good work and we´ll meet again, well, now accept my gratitude. But while I waited for you, it was quite cool, maybe you have a little razogreesh" you said and spread her legs showing him her pussy. The guy did not waste time on words and immediately latched on to your crotch.'
+		'He said nothing, and immediately began vskhvativshis tool for work. Two hours later it was all over. Guy standing in front of you with a satisfied smile on his face, "I''m finished," he said at a little breather.'
+		'"Good for you, keep up the good work and we''ll meet again, well, now accept my gratitude. But while I waited for you, it was quite cool, maybe you have a little razogreesh" you said and spread her legs showing him her pussy. The guy did not waste time on words and immediately latched on to your crotch.'
 
 		act 'Start': gt 'sex','kuni'
 	end
@@ -1264,13 +1264,13 @@ if $ARGS[0] = 'motiv3':
 	'"Well, have a meal." you answer and go to the site.'
 	'Arriving at the object you see two masters who obsolyutno do nothing. Seeing you they did not even try to portray the kind of work. "So what are you seated" you say.'
 	'"We have a break," they replied.'
-	'"And your break did not last, you´re the last three days have not done anything" you started'
-	'"Listen, it´s not so simple, as you need to be here to think, and then if we now do that tomorrow we will have to redo, in general there are three more days." said one'
+	'"And your break did not last, you''re the last three days have not done anything" you started'
+	'"Listen, it''s not so simple, as you need to be here to think, and then if we now do that tomorrow we will have to redo, in general there are three more days." said one'
 	'"And let us so if you three hours as should all think and do, I thank you," you say.'
 	'"How would you thank us, but do it here in three hours did not turn out, then work for three days, at least" meets the second.'
 	'"That you just do not know how I ever thank you." you say'
-	'"How´s that?" asks both in unison.'
-	'"Well, look, I´ll make you a small down payment, and the rest are done now" with these words, you approach them and get them members. They look at each other udevlenno.'
+	'"How''s that?" asks both in unison.'
+	'"Well, look, I''ll make you a small down payment, and the rest are done now" with these words, you approach them and get them members. They look at each other udevlenno.'
 
 	act 'Take by mouth':
 		cla
@@ -1278,7 +1278,7 @@ if $ARGS[0] = 'motiv3':
 		'<center><img src="images\img\office\m0<<picrand>>.jpg "></center>'
 		'Clasping his lips a member of one of them and lowering the tongue on the head, made a few moves up and down. Then took his balls in her palm and began to fondle them, and a second hand at this time caressing another member. Sometimes you let a member of his mouth, giving him the opportunity to look at how you play the tongue with his head. He lasted about two minutes, and then his cock throbbed in his mouth and you flew a jet of sperm. When you swallow sperm, then switched to the second, repeating the whole procedure. "So, you will have time to three hours to finish, something to get the main prize?" asked you when swallowed semen second and rose from his knees.'
 		'"Sure have time" with one voice and said they vskhvativshis for tool started to work. Two hours later it was all over. They come to you and proudly announced, "We have finished."'
-		'"That´s well done, now take your gratitude" you said, throwing off her clothes.'
+		'"That''s well done, now take your gratitude" you said, throwing off her clothes.'
 
 		act 'Start': xgt 'sexdvoe','var'
 	end
@@ -1294,22 +1294,22 @@ if $ARGS[0] = 'motiv4':
 	'<center><img src="images\img\office\m17.jpg"></center>'
 	'It suits you and the boss says, "So <<$name>>, you need to go to the object, there is one of our masters became strongly with late deadlines works promotiviruy it as you are able."'
 	'"Well, have a meal." you answer and go to the site.'
-	'Once you get out of the office as you catches <<$name>>. "I´ll go with you," she said.'
-	'"Well, let´s go." you reply.'
-	'Arriving at the object you see a guy who goes from corner to corner and does almost nothing. Seeing you he begins to portray violent activities. Only are you going to say something like wedged <<$name>> "Well, what we´re barely moving, do not want to sleep with two at once."'
+	'Once you get out of the office as you catches <<$name>>. "I''ll go with you," she said.'
+	'"Well, let''s go." you reply.'
+	'Arriving at the object you see a guy who goes from corner to corner and does almost nothing. Seeing you he begins to portray violent activities. Only are you going to say something like wedged <<$name>> "Well, what we''re barely moving, do not want to sleep with two at once."'
 	'"What?" he said in surprise.'
 	'"Well then, we have been sent, they say there is such a master work, skilled, responsible, go cheer him, to thank for the good work. And we come and see it?" run against it at the guy.'
 	'"What?" still with a surprised look, he says.'
-	'"Lazy gouging, that´s what. And do you think that´s what we reward you" continues to shine.'
-	'"So I put this, that´ll do it now." he says, and adds a little thinking "And you did not breed?".'
-	'"We, you, yes you hurt we need to breed, so see if two hours later all done, get both of us, and something you would not doubt I´ll now make a small down payment." says <<$name>> and falling to her knees and pulling his dick.'
+	'"Lazy gouging, that''s what. And do you think that''s what we reward you" continues to shine.'
+	'"So I put this, that''ll do it now." he says, and adds a little thinking "And you did not breed?".'
+	'"We, you, yes you hurt we need to breed, so see if two hours later all done, get both of us, and something you would not doubt I''ll now make a small down payment." says <<$name>> and falling to her knees and pulling his dick.'
 
 	act 'Watch':
 		cla
 		*clr
 		'<center><img src="images\img\office\m18.jpg"></center>'
 		'You watch as his cock disappears in her mouth <<$name>>, she carefully licked it, caressing the head tongue, then swallow it whole, so that its language Shchekotov balls. The sight you get wet between the legs, and once you decide to join, as it ends with a long groan <<$name>> pouring sperm in her mouth. "So, you, have time to finish in two hours," you ask him while licking the remnants of the seed of <<$name>> with his dildo.'
-		'He said nothing, and immediately began vskhvativshis tool for work. Two hours later it was all over. Guy standing in front of you with a satisfied smile on his face, "I´m finished," he said at a little breather.'
+		'He said nothing, and immediately began vskhvativshis tool for work. Two hours later it was all over. Guy standing in front of you with a satisfied smile on his face, "I''m finished," he said at a little breather.'
 		'"Good girl, now go to us," praised him starting to undress <<$name>>, you have followed'
 
 		act 'Start': gt 'podrsex','var'
@@ -1327,9 +1327,9 @@ if $ARGS[0] = 'motiv5':
 	'It suits you and the boss says, "So <<$name>>, you need to go to the object, there a couple of our artists have become much late with deadlines works promotiviruy them as you are able."'
 	'"Well, have a meal." you answer and go to the site.'
 	'Arriving at the object you see only one of the two masters who had to finish the finish sauna. While he did not see you, you go out in the back find towels and undressed in one turn around. You go back to the master, seeing you he looks dumbfounded look "What are you doing here girl?" Finally he asks.'
-	'"Yes, that´s thought to warm up, and you are still poking around, and can be done just quickly take a steam together?" you reply.'
+	'"Yes, that''s thought to warm up, and you are still poking around, and can be done just quickly take a steam together?" you reply.'
 	'"What?" he said in surprise.'
-	'"That you´re not intelligent, I say that I have time, though small, but a couple of hours, I can wait, and if you follow it all the time to finish then allowed to rub my back, and not just her." you say.'
+	'"That you''re not intelligent, I say that I have time, though small, but a couple of hours, I can wait, and if you follow it all the time to finish then allowed to rub my back, and not just her." you say.'
 	'"And if I finish, and you run away?" still with a surprised look, he says.'
 
 	act 'Undress':
@@ -1349,7 +1349,7 @@ if $ARGS[0] = 'motiv5':
 			'He walks up to you galloping on a limb and did not seem to think of any better then asks "Girl, and you do not want to eat?"'
 			'You quickly grab his pants, "Well, I would taste the sausage" you say.'
 			'He immediately starts to undress. "You said the same sausage, sausage and not skinny." laughs first.'
-			'"So you´re a toothpick from it" meets the second, and extracts from his pants his dignity, which is more like a decent loaf of sausage than a sausage.'
+			'"So you''re a toothpick from it" meets the second, and extracts from his pants his dignity, which is more like a decent loaf of sausage than a sausage.'
 
 			act 'Continue': xgt 'sexdvoe','var'
 		end
