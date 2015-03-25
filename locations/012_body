@@ -1,10 +1,16 @@
 # body
+if analplugIN = 0:
 if anus = 0: anpic = 0 & set $anus = 'You have a virgin <a href="exec:view''images\body\0.jpg''">anus</a>.'
-if anus > 0 and anus <= 5: anpic = 1 & set $anus = 'Your <a href="exec:view''images\body\1.jpg''">anus</a> is barely used, but you wouldn''t really see that.'
-if anus > 5 and anus <= 10: anpic = 2 & set $anus = 'Your <a href="exec:view''images\body\2.jpg''">anus</a> has the shape of an asterisk.'
-if anus > 10 and anus <= 15: anpic = 3 & set $anus = 'Your <a href="exec:view''images\body\3.jpg''">anus</a> is now slightly parted, has it has been used quite often.'
-if anus > 15 and anus <= 20: anpic = 4 & set $anus = 'Your <a href="exec:view''images\body\4.jpg''">anus</a> look like a wide hole, one would definetely think the only thing you were doing was anal sex.'
-if anus > 25: anpic = 5 & set $anus = 'Your <a href="exec:view''images\body\5.jpg''">anus</a> does not close anymore, you could put a fist through it and it wouldn''t stretch at all.'
+if anus > 0 and anus <= 5: anpic = 1 & set $anus = 'Your <a href="exec:view''images\body\1.jpg''">anus</a> is barely used, but you wouldn''t really see that.' & $anustipe = 'tiny'
+if anus > 5 and anus <= 10: anpic = 2 & set $anus = 'Your <a href="exec:view''images\body\2.jpg''">anus</a> has the shape of an asterisk.' & $anus tipe = 'tight'
+if anus > 10 and anus <= 15: anpic = 3 & set $anus = 'Your <a href="exec:view''images\body\3.jpg''">anus</a> is now slightly parted, has it has been used quite often.' & $anustipe = 'slightly stretched'
+if anus > 15 and anus <= 20: anpic = 4 & set $anus = 'Your <a href="exec:view''images\body\4.jpg''">anus</a> look like a wide hole, one would definetely think the only thing you were doing was anal sex.' & $anustipe = 'stretched'
+if anus > 25 and anus <= 35: anpic = 5 & set $anus = 'Your <a href="exec:view''images\body\5.jpg''">anus</a> doesn't fully close on its own anymore. You could put a fist through it and it wouldn''t stretch at all.' & $anustipe = 'gaping'
+if anus > 35: anpic = 6 & set $anus = 'Your <a href="exec:view''images\body\6.jpg''">anus</a> is completely wrecked. Even with conscious effort it's hard to close it.' & $anustipe = 'destroyed'
+end
+if analplugIN = 1:
+$anus = 'Your <a href="exec:view''images\body\plug.jpg''">anus</a> is currently filled by your anal plug.'
+end
 
 !'<a href="exec:view''images\body\1.jpg''">anus</a>'
 
@@ -180,17 +186,25 @@ if resnic > 2: set resnic = 2
 if resnic = 0: set $resnic = 'with short eyelashes'
 if resnic = 1: set $resnic = 'normal eyelashes'
 if resnic = 2: set $resnic = 'with long eyelashes'
+if brow=0 and browper=0:$brow='little neat eyebrows'
+if brow>0 and browper=0:$brow='groomed eyebrows'&brokoef=1
+if browper>0:$brow='permanent tattoo eyebrows'&brokoef=2
+
+if glass<=0:$glass=''&glassvnesh=0
+if glass=1:$glass=' You wear silly glasses in a cheap frame.'&glassvnesh=10
+if glass=2:$glass=' Do you wear glasses.'&glassvnesh=0
+
 if glaraz > 3: set glaraz = 3
-if glaraz = 0: set $glaza = 'You have little <<$glacol>> eyes <<$resnic>>.'
-if glaraz = 1: set $glaza = 'You have a medium-sized <<$glacol>> eyes <<$resnic>>.'
-if glaraz = 2: set $glaza = 'You have large <<$glacol>> eyes <<$resnic>>.'
-if glaraz = 3: set $glaza = 'You have a huge <<$glacol>> eyes <<$resnic>>. They almost look like they''re out of an anime.'
+if glaraz = 0: set $glaza = 'You have little <<$glacol>> eyes <<$resnic>> and <<$brow>>.<<$glass>>'
+if glaraz = 1: set $glaza = 'You have a medium-sized <<$glacol>> eyes <<$resnic>> and <<$brow>>.<<$glass>>'
+if glaraz = 2: set $glaza = 'You have large <<$glacol>> eyes <<$resnic>> and <<$brow>>.<<$glass>>'
+if glaraz = 3: set $glaza = 'You have a huge <<$glacol>> eyes that almost look like they''re out of an anime, <<$resnic>> and <<$brow>>.<<$glass>>'
 
 if mop = 0: set $mop = '<B><font color = red>Your make-up is smeared all over your face</font></B>'
-if mop = 1: set $mop = 'You''re not wearing any kind of makeup'
-if mop = 2: set $mop = 'Your makeup is very light, just a very few touch-up here and there'
+if mop = 1: set $mop = 'You''re not wearing any makeup'
+if mop = 2: set $mop = 'Your makeup is very light, just a very few touch-ups here and there'
 if mop = 3: set $mop = 'You have "everyday"-like makeup applied'
-if mop = 4: set $mop = 'You have thick makeup, which is definitely flashy during the day'
+if mop = 4: set $mop = 'You have thick makeup, possibly a bit too flashy for daytime wear'
 
 if leghair <= 0: set legkoef = 3 & set $leghair = 'You have smooth legs.'
 if leghair > 0 and leghair <= 2: set legkoef = 0 & set $leghair = 'You do not see with our eyes but rough to the touch bristles on his feet.'
@@ -200,9 +214,9 @@ if leghair > 5: set legkoef = 0 & set $leghair = 'Do you have long hair standing
 if pirsG = 1:$pirsG = 'There are several piercings hanging from your vaginas lips.'
 if pirsG = 0:$pirsG = ''
 
-if lobok <= 0: set lobkoef = 3 & set $lobok = 'You have a smoothly shaved pubis. <<$pirsG>>'
-if lobok > 0 and lobok <= 2: set lobkoef = 0 & set $lobok = 'One can see now, that you haven''t shaved yourself in a while now. <<$pirsG>>'
-if lobok > 2: set lobkoef = 0 & set $lobok = 'It''s like a jungle down there! You should definitely shave yourself soon. <<$pirsG>>'
+if lobok <= 0: set lobkoef = 3 & set $lobok = 'You have a smoothly shaved mound. <<$pirsG>>'
+if lobok > 0 and lobok <= 2: set lobkoef = 0 & set $lobok = 'You have a light but visible thatch of hair above your crotch. <<$pirsG>>'
+if lobok > 2: set lobkoef = 0 & set $lobok = 'You have a thick, full delta of pubic hair. <<$pirsG>>'
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 set bodytipe = bedra - talia
 if bodytipe < 20: set bodykoef = 0
@@ -247,7 +261,8 @@ if age < 18: lobok = -5
 set tatKeof = kendra * 5
 if tatvag >= 3: set tatKeof += 5
 if tatleg >= 1: set tatKeof += 5
-set vnesh = (curlykoef + tits + lip + tanKoef + skin + mop + resnic + glaraz + bodykoef + legkoef + lobkoef + odevnesh + hapri + bonusZ + lipbalmKoef) - (sweatKoef + vidagebonus) - (zub * 2) + tatKeof
+set vnesh = (9 + curlykoef + lip + tanKoef + skin + mop + resnic + glaraz + bodykoef + legkoef + odevnesh + hapri + bonusZ + lipbalmKoef) - (sweatKoef + vidagebonus) - (zub * 2) + tatKeof - glassvnesh
+!tits and lobkoef (pubic hair) removed from calc, replaced with flat bonus of 9 (6 tits, 3 hair)
 
 if vnesh < 0: vnesh = 0
 if StrongNarkota <= 0:
