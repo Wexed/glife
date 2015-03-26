@@ -11,27 +11,27 @@ END
 ACT 'The hall':
 	gt 'sitr'
 END
-ACT '<font color = maroon>Porch</font>':
+ACT '<font color = maroon>Apartment hallway</font>':
 	cls
 	if sick <= 72 and nude = 0:
 	xgt 'etoexhib','pos51'
 	elseif nude = 0:
-	'<B><font color = red>YOU TOO MUCH THAT WOULD sick to walk the streets.</font></B>'
+	'<B><font color = red>You''re too sick to walk around in the streets.</font></B>'
 	xgt $curloc
 	else
-	'<B><font color = red>You need to get dressed.</font></B>'
+	'<B><font color = red>You need to get dressed before going out.</font></B>'
 	xgt $curloc
 	end
 END
-ACT '<B><font color = maroon>Outdoor</font></B>':
+ACT '<B><font color = maroon>Go outside</font></B>':
 	cls
 	if sick <= 72 and nude = 0:
 	xgt $HouseLocation
 	elseif nude = 0:
-	'<B><font color = red>YOU TOO MUCH THAT WOULD sick to walk the streets.</font></B>'
+	'<B><font color = red>You''re too sick to walk around in the streets.</font></B>'
 	xgt $curloc
 	else
-	'<B><font color = red>You need to get dressed.</font></B>'
+	'<B><font color = red>You need to get dressed before going out.</font></B>'
 	xgt $curloc
 	end
 END
@@ -56,16 +56,16 @@ set housrA = 1
 set housrMir = 0
 set elektro += 1
 if ring = 1: '<B><font color = red>The phone is ringing</font></B>'
-if remkorr = 0: 'In the hallway wallpaper which where moved away from the walls, and has long faded. At the entrance hangs outerwear and a shelf for shoes, a wall-mounted <a href="exec: GT ''mirror'',''start''">mirror</a> and a <a href="exec:GT ''telefon'',''start''">phone</a>.'
+if remkorr = 0: 'In the hallway wallpaper which where moved away from the walls, and has long faded. A coat rack and a shelf for shoes are near the entrance. A wall-mounted <a href="exec: GT ''mirror'',''start''">mirror</a> and a <a href="exec:GT ''telefon'',''start''">phone</a> hang on the wall.'
 if remkorr = 1: 'Modern hall with stylish furniture, a wall-mounted <a href="exec: GT ''mirror'',''start''">mirror</a>, and a <a href="exec:GT ''telefon'',''start''">phone</a>'
-if suhbelo > 0: 'Drying on the clothesline <<suhbelo>> laundry items.'
-if umbrella > 0: 'Umbrella hangs on a hook.'
+if suhbelo > 0: 'Drying on the clothesline are <<suhbelo>> laundry items.'
+if umbrella > 0: 'An umbrella hangs on a hook.'
 if palto > 0: 'Hanging on the hook <<$palto>>.'
 if sobaka = 1: 'Near the entrance to the bedroom rests your dog <a href="exec: GT ''soba'',''start''"><<$namesob>></a>.'
 if krolik = 1: 'Resting on the floor your rabbit <a href="exec: GT ''krol'',''start''"><<$namekrol>></a>.'
 if popugai = 1: 'In the cage sits your parrot <a href="exec: GT ''popu'',''start''"><<$namepopu>></a>.'
 if parkday ! day and parkblackmail = 1:
-	'Heavy envelope has arrived in the mail, when you open it you can see pictures in it. Damn, it´s pictures of you where you are giving blowjobs to two guys in the park.'
+	'A heavy envelope has arrived in the mail. When you open it you can see pictures in it. Damn, it''s pictures of you where you are giving blowjobs to two guys in the park.'
 	'Small note says:'
 	'If you do not want to have these pictures posted on your porch and sent to your work, come to this address (address listed is a Studio)'
 	'PS, if you do not come today, these pictures will be hanging in your entryway tomorrow.'
@@ -172,7 +172,7 @@ if hour >= 9 and hour <= 20 and santehnikDolg > 0 and money >= santehnikDolg:
 	act 'Go to the door':
 	cls
 	gs 'stat'
-	'You went to the door and looked through the peephole. You see a dark male figure. Apparently the man heard you and said through the door. "It´s me. Plumber Grisha. You´ll need money."'
+	'You went to the door and looked through the peephole. You see a dark male figure. Apparently the man heard you and said through the door. "It''s me. Plumber Grisha. You''ll need money."'
 		act 'Answer the door':
 		cls
 		money -= santehnikDolg
