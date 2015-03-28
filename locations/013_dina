@@ -135,11 +135,11 @@ $sitrpushd = {
 		'<center><img src="images\community\push_naked.jpg"></center>'
 	end
 
-	'You do push-ups for fifteen minutes, developing your strenght.'
+	'You do push-ups for fifteen minutes, developing your strength.'
 
 	pushnum = RAND(stren/10, stren/5)
-	'You''ve managed to do <<pushnum>> push-ups. Your previous record is <<pushrecord>>.'
-	if pushrecord < pushnum: pushrecord = pushnum & 'This is a new record.'
+	'<br>You managed to do <<pushnum>> push-ups. Your previous record is <<pushrecord>>.'
+	if pushrecord < pushnum: pushrecord = pushnum & 'This is a new record!'
 
 	act 'Exit': gt $curloc
 }
@@ -915,10 +915,10 @@ $meet_boyfriend ={
 
 		if vnerand <= vnesh:
 			gs 'boy'
-			'To you came <<$boybody>> <<$boybod>> <<$boyface>>. One <<$boyClo>>'
-			'The guy introduced as <<$boy>> and asked your number.'
+			'<br>A guy walks up to you. He''s a <<$boybody>> <<$boybod>> <<$boyface>>, <<$boyClo>>'
+			'The guy introduces himself as <<$boy>> and asks for your number.'
 
-			act 'Tell him to phone':
+			act 'Give him your phone number':
 				cla
 				gs 'boyfrend','start'
 				set stopboy = 0

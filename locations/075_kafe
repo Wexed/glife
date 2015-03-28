@@ -19,7 +19,7 @@ if QWdogReiq = 3 and week = 7 and hour >= 12:
 	end
 !act 'Agree': gt 'Kafe3','WC'
 if money >= 100:
-	act 'Eat 100 rubles':
+	act 'Eat, 100 rubles':
 		cla
 		*clr
 		frost = 0
@@ -69,8 +69,8 @@ set minut += 5
 gs 'stat'
 '<center><B><font color = maroon>Cafe</font></B></center>'
 '<center><img src="images\etogame\kafe.jpg"></center>'
-if givi = 0: 'At the reception costs not big, but very thick caucasian, he writes something.'
-if givi > 0: 'At the reception worth Givi K., host cafes, he writes something.'
+if givi = 0: 'At the reception costs not big, but very thick caucasian, he''s writing something.'
+if givi > 0: 'At the reception is Givi K., the owner of the cafe, he''s writing something.'
 if workKafe = 0:
 	if GiviSex >= 2 and Givisexday < 1 and Venera < 4:
 		act 'Provoke Givi':
@@ -166,27 +166,27 @@ if givi = 0:
 	'Pryvet! I Givi K.. Hozain cafe. What do you want?'
 	end
 if work = 0:
-	act 'Ask whether he will take the job on you.':
+	act 'Apply for a job at the cafe.':
 		cla
-		'You are asked whether you take Givi work.'
-		if vnesh < 5: 'Wai wai wai, you scare me all the customers. Convergence, whether that priodensya, use the makeup, brush your hair. You look just terrible.'
+		'<br>You ask if Givi has any job openings at the cafe.'
+		if vnesh < 5: 'No no no, you would scare all the customers away. Convergence, whether that priodensya, use makeup, brush your hair. You look just terrible.'
 		if vnesh >= 5:
-			'Givi K. pristolno examines you from head to toe. "Okay, listen working conditions"'
-			'"The cafe is open from 12 to 22 every day except Monday. Your change Tuesday, Wednesday, Thursday. Come to the café from 11 to 12, before opening it, and come out to replace it. Do not come to you this day will not be counted in the salary. Salary listed 25th Numbers for each shift the spent 600 rubles. Plus every day you can get a tip, it depends on you. And more free meals. "'
-			'"Yeah, and I´ll take you work book, you can not be arranged for another job until I was fired. Well? Satisfied."'
-			act 'Find a job':
+			'<br>Givi K. examines you from head to toe. "Okay, listen to the working conditions"'
+			'<br>"The cafe is open from 12 to 22 every day, except Monday. You work on Tuesdays, Wednesdays and Thursdays. Come to the café between 11 to 12, before opening. If you do not come to work, that day will not be counted in your salary. Salary is paid on the 25th of each month and for each shift you earn 600 rubles. Plus whatever you can get as tips, that depends on you. Also you''ll get free meals. "'
+			'<br>"Oh, and I''ll take your work book, you can not apply for another job while working here. Well? Interested?"'
+			act 'Take the job':
 				cla
 				set work = 1
 				set workKafe = 1
 				set smenaKafe = 0
-				'You gave Givi Karapetovich work book. He took it and remind you. "Come any day except Monday from 11 to 12 and work."'
-				act 'Move away': gt 'kafe','start'
+				'<br>You give Givi your work book. He takes it and reminds you. "Come to work every day, except Monday, somewhere between 11 to 12."'
+				act 'Leave': gt 'kafe','start'
 				end
 			end
-		act 'Move away': gt 'kafe','start'
+		act 'Leave': gt 'kafe','start'
 		end
 	end
-act 'Move away': gt 'kafe','start'
+act 'Leave': gt 'kafe','start'
 end
 
 if $ARGS[0] = 'work':
@@ -197,7 +197,7 @@ gs 'stat'
 '<center><B><font color = maroon>Cafe</font></B></center>'
 '<center><img src="images\etogame\kafe.jpg"></center>'
 set smenaKafe += 1
-'You have replaced the cafe, Givi K., wrote in a book that you came on time and stood at the bar. The kitchen is a cook sturdy young, Caucasian Ashot. Another waitress Irina preparing for work. Tamara dishwasher cleans the sink.'
+'You have replaced the cafe, Givi K. writes in a book that you came to work on time and stands behind the bar. The kitchen cook is a sturdy young caucasian, Ashot. Another waitress Irina is preparing for work. Tamara the dishwasher is cleaning the sink.'
 act 'Start work':
 	cla
 	set minut = 0
@@ -212,7 +212,7 @@ act 'Resign':
 	set pay = smenaKafe * 600
 	set money += pay
 	set smenaKafe = 0
-	'Givi K. sadly shook his head, "Okay, here´s your <<pay>> rubles and employment history. Go."'
+	'Givi K. sadly shakes his head, "Okay, here''s your <<pay>> rubles and employment history. Go."'
 	act 'Leave': gt 'kafe','start'
 	end
 end
@@ -224,7 +224,7 @@ gs 'kafedinamic'
 gs 'stat'
 '<center><B><font color = maroon>Cafe</font></B></center>'
 '<center><img src="images\etogame\kafe.jpg"></center>'
-'Café work boils, cook <a href="exec:dynamic $ashotdin">Ashot busy in the kitchen</a>, your workmate <a href="exec:dynamic $iradin">Ira</a> serves tables with visitors. The host <a href="exec:dynamic $gividin">Givi K.</a> stands behind the bar.'
+'Café work boils, the cook <a href="exec:dynamic $ashotdin">Ashot</a> is busy in the kitchen. Your workmate <a href="exec:dynamic $iradin">Ira</a> serves tables with visitors. The owner <a href="exec:dynamic $gividin">Givi K.</a> is standing behind the bar.'
 clr
 gs 'stat'
 if Givi > 100: set Givi = 100
@@ -311,7 +311,7 @@ if IrinaSlut = 1 and hour = 22:
 	exit
 	end
 if hour < 22:
-	act 'Serve table':
+	act 'Serve tables':
 		cls
 		set minut += 30
 		set manna -= 5
@@ -324,7 +324,7 @@ if hour < 22:
 		set manna -= 5
 		gs 'stat'
 		'<center><img src="images\picKav\waitress_client.jpg"></center>'
-		'You served table at which sat visitors and received <<chai>> rubles tip.'
+		'You serve a table at which visitors sat and receive <<chai>> rubles as tip.'
 		act 'Move away': gt 'kafe','workPred'
 		if znarand > vnesh or bfA > 0:
 			set kaferand = RAND(0,100)
@@ -332,7 +332,7 @@ if hour < 22:
 				cls
 				gs 'stat'
 				'<center><img src="images\img\spaln\kafe1.jpg"></center>'
-				'Serving a table at one of the private booths you see two men seduce pretty drunk girl, soon she was on her knees sucking both of them, one of the men looking at you with a clear allusion to join.'
+				'Serving a table at one of the private booths you see two men seduce a pretty drunk girl. Pretty soon she is on her knees sucking on both of their cocks. One of the men is looking at you with a clear invitation to join them.'
 				act 'Leave': gt 'kafe','workPred'
 				if daystart > 10 and sex > 0:
 					act 'Prisoedinitsa to girl':
@@ -349,7 +349,7 @@ if hour < 22:
 				cls
 				gs 'stat'
 				'<center><img src="images\img\spaln\kafe2.jpg"></center>'
-				'You serve a table in the attic, with two men, each time you come they are and strive to pinch or slap you run your hands under her skirt.'
+				'You serve a table in the attic, with two men. Each time you come by they strive to pinch or slap your butt, or run their hands under your skirt.'
 				act 'Leave': gt 'kafe','workPred'
 				if daystart > 10 and sex > 0:
 					act 'Succumb':
@@ -364,11 +364,11 @@ if hour < 22:
 				if kaferand = 2:
 					cls
 					'<center><img src="images\picKav\waitress_client.jpg"></center>'
-					'At the table in a separate room sat a man. He looked appreciatively at you and said, "Girl, do not keep me company?" while you notice how bristling fly of his trousers, he obviously got dick.'
+					'At the table in a separate room sat a man. He looks at you appreciatively and says, "Girl, do not keep me company?" You notice the bulge in his trousers, he''s obviously got dick.'
 					act 'Leave': gt 'kafe','workPred'
 					act 'Sit down next to him':
 						cls
-						'You sat down next to the client. And looked at him waiting for what he would do. Client took your palm and put it on the fly.'
+						'You sit down next to the client. And look at him waiting for what he would do. He takes your hand and puts it on his crotch.'
 						act 'Leave': gt 'kafe','workPred'
 						if horny >= 50 or bj > 0:
 							act 'Unbutton his pants':
@@ -376,7 +376,7 @@ if hour < 22:
 								dick = RAND(12,21)
 								gs 'stat'
 								'<center><img src="images\picKav\waitress_work_2.jpg"></center>'
-								'You undid his pants and got warm and hard cock <<dick>> cm long, covered with veins and a small drop of crimson on the head.'
+								'You undo his pants and got warm and hard cock <<dick>> cm long, covered with veins and a small drop of crimson on the head.'
 								act 'Masturbate member':
 									cls
 									boy += 1
@@ -387,14 +387,14 @@ if hour < 22:
 									'Clasping her fingers member you started to masturbate, a man fairly quickly groaned and discharged you in the palm. Then you wiped his penis tissue and he gave you 500 rubles for your work.'
 									act 'Leave': gt 'kafe','workPred'
 									end
-								act 'Sucking dick':
+								act 'Suck his dick':
 									cls
 									boy += 1
 									bj += 1
 									gs 'stat'
 									'<center><img src="images\picKav\waitress_work_bj.jpg"></center>'
 									dynamic $dinrandbj
-									act 'Take sperm in her mouth':
+									act 'Take the sperm in your mouth':
 										cls
 										cumlip += 1
 										money += 700

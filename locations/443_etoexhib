@@ -1455,34 +1455,34 @@ cla
 minut += 5
 gs 'stat'
 '<center><img src="images\etogame\podezd.jpg"></center>'
-'Entrance 5-storey building in which you live. Lock, closing the door on the technical floor, attic or broken.'
+'Entrance to the 5-storey building in which you live. The lock on the door leading to the attic is broken.'
 	if sosedQW = 0:
-	'Suddenly you are faced in the stairwell with a young guy who almost ran flew up the stairs. He jumped on you and noticeably embarrassed. "Oh sorry, I did not see you. You 69y apartment settled?"'
-		act 'Yes, I live in 69y':
+	'<br>Suddenly you are faced in the stairwell with a young guy who almost flew up the stairs. He runs into you and is noticeably embarrassed. "Oh sorry, I did not see you there. You''ve moved into apartment 69, right?"'
+		act 'Yes, I live in apartment 69':
 		cls
 		sosedQW = 1
 		minut += 5
 		gs 'stat'
-		'You nodded confirming that live in the apartment 69y. The guy was visibly delighted and said. "Wonderful. Lived there before Petrovich, wino rare. Torment whole staircase. Way I´m Timothy, and you?"'
+		'You nod confirming that you live in apartment 69. The guy looks visibly delighted and says, "Wonderful. Lived there before Petrovich, wino rare. Tormented the whole building. Way I´m Timothy, and you?"'
 			act '<<$name>>':
 			cls
 			gs 'stat'
-			'You told the guy that your name is <<$name>>. He nodded his head and began to get a key to open the door 68y apartment. "Very nice. As I see in the neighboring apartment living." The guy opened the door and on the threshold appeared a curious face of an elderly woman. She sent you her sharp nose and became curiously you look. Timothy entered the apartment and said irritably, "Mom, come on already hanging around the front door!" closed the door.'
+			'You told the guy that your name is <<$name>>. He nodded his head and began to get a key to open the door apartment 68. "Very nice. I live in the next apartment." The guy opened the door and on the threshold appeared the curious face of an elderly woman. She sent you her sharp nose and became curiously you look. Timothy entered the apartment and said irritably, "Mom, stop hanging around the front door!" and closed the door.'
 			act '....': gt 'etoexhib','pos51'
 			end
 		end
 	exit
 	end
 
-	if sosedQW > 0 and hour >= 16 and sosedDay ! day:
+if sosedQW > 0 and hour >= 16 and sosedDay ! day:
 	sosedrand = RAND(0,100)
 		if sosedrand >= 70:
-		'On the platform there is your neighbor, a young guy <a href="exec:Gt ''Timofei''">Timothy</a> and smokes a cigarette, flicking the ashes in a jar.'
+		'Your neighbor, <a href="exec:Gt ''Timofei''">Timothy</a>, is in the hallway. He''s smoking a cigarette, flicking the ashes into a jar.'
 		end
 	end
 
 
-	act 'On the street':
+act 'To the street':
 	cls
 	if sick <= 72 and nude = 0:
 		xgt $HouseLocation
@@ -1496,8 +1496,8 @@ gs 'stat'
 	end
 
 
-act 'The loft': gt 'etoexhib','pos52'
-act 'Home': gt 'korr'
+act 'To the attic': gt 'etoexhib','pos52'
+act 'Go home': gt 'korr'
 end
 
 if $args[0] = 'pos52':
@@ -1508,14 +1508,14 @@ gs 'stat'
 '<center><img src="images\etogame\cherdak.jpg"></center>'
 'A flight of stairs leads to the roof through the attic. Dark and scary. There is clearly no place for a decent girl.'
 temp = RAND(1,100)
-if temp > 90: 'In the depths of the attic you hear <a href="exec: GT ''etoexhib'',''pos50''">gogochuschuyu youth</a>. It seems they have not noticed.'
-	act 'On the roof':
+if temp > 90: 'In the depths of the attic you hear a group of <a href="exec: GT ''etoexhib'',''pos50''">gogochuschuyu youth</a>. It seems they have not noticed you.'
+act 'To the roof':
 	cla
 	*clr
 	gs 'stat'
 	gt 'etoexhib','pos53'
 	end
-act 'In locked': gt 'etoexhib','pos51'
+act 'To the hallway': gt 'etoexhib','pos51'
 end
 
 if $args[0] = 'pos53':
@@ -1524,7 +1524,7 @@ cla
 minut += 5
 gs 'stat'
 '<center><img src="images\etogame\roof.jpg"></center>'
-'Roof.'
+'The roof of your apartment building.'
 if temper >= 20 and bikini > 0 and hour >= 6 and hour <= 20:
 	act 'Zagarat (1:00)':
 		cla
@@ -1535,17 +1535,17 @@ if temper >= 20 and bikini > 0 and hour >= 6 and hour <= 20:
 		'<center><img src="images\etogame\zagar1.jpg"></center>'
 		if krem = 0:
 			set tan += 1
-			'You went to sunbathe.'
+			'You lie down to sunbathe.'
 			end
 		if krem > 0:
 			set krem -= 1
 			set tan += 3
-			'You smeared body sunblock and went to sunbathe.'
+			'You smear your body with sunblock and lie down to sunbathe.'
 			end
 		act 'Up': gt 'etoexhib','pos53'
 		end
 	end
-act 'The loft':
+act 'To the attic':
 	cls
 	gt 'etoexhib','pos52'
 	end
@@ -1609,7 +1609,7 @@ end
 if $args[0]='pos91':
 	cla
 	*clr
-	minut+=5
+	minut+=5	
 	gor_dorm=8
 	gs'stat'
 	'<center><img src="images\etogame\ptu_tech.jpg"></center>'

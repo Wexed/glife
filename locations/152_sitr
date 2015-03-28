@@ -21,7 +21,7 @@ set minut += 1
 set housrA = 1
 set elektro += 1
 
-if TV = 0: set $TV = 'a great place for TV, which you don''t have'
+if TV = 0: set $TV = 'a great place for a TV, which you don''t have'
 if TV = 1: set $TV = 'an ancient <a href="exec:GT ''TV'',''start''">TV</a>'
 if TV = 2: set $TV = 'a huge plasma <a href="exec:GT ''TV'',''start''">TV</a>'
 
@@ -40,11 +40,16 @@ if remsitr = 1: set $zal = 'A modern, bright room'&set $zal2 = 'papered walls wi
 if stol = 0: set $stol = 'decrepit <a href="exec:GT ''stol'',''start''">table</a>'
 if stol = 1: set $stol = 'new <a href="exec:GT ''stol'',''start''">table</a>'
 
-if obruch > 0: 'In one corner stands the hoop.'
-if skak > 0: 'On a shelf is a jump rope.'
-if bookYog > 0: 'The cabinet allowance yoga and meditation'
-'<<$zal>>, <<$divan>> stands next to the <<$zal2>>. In front of the sofa is <<$TV>>. In front of the window is a <<$stol>> <<$komp>> <<$selfPornvidDVD>>'
 if mishka > 0: 'On a shelf is <<mishka>> teddy bear'
+'<<$zal>>, <<$divan>> stands next to the <<$zal2>>. In front of the sofa is <<$TV>>. In front of the window is a <<$stol>> <<$komp>> <<$selfPornvidDVD>>'
+
+if obruch > 0: 
+	'<br>A hula hoop stands in corner of the room. ' 
+end
+if skak > 0: 
+	'A jump rope is on a shelf. ' 
+end
+if bookYog > 0: 'A yoga mat is rolled up in a corner. '
 *nl
 
 sports = 0
@@ -105,7 +110,7 @@ end
 
 !set housegostrand = RAND(1,20)
 !if husband > 0 and husbandrink ! 10 and week = 5 and hour > 17 and hour < 21 and housegostrand > 15:gt 'sitr','guest'
-if suhbelo2 > 0: 'Lying on the table <<suhbelo2>> pieces of dried laundry that need <a href="exec: dynamic $gladbelo ">ironing</a>.'
+if suhbelo2 > 0: '<br>Lying on the table are <<suhbelo2>> pieces of dried laundry that need <a href="exec: dynamic $gladbelo ">ironing</a>.'
 
 *nl
 
@@ -142,7 +147,7 @@ if student > 0 and kursovik < 100:
 	end
 end
 
-act 'Exit to the balcony': gt 'balkon','start'
+act 'Go out to the balcony': gt 'balkon','start'
 
 if zoo >= 6:
 	if husband > 0 and husbandrink ! 10:

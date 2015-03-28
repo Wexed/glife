@@ -15,7 +15,7 @@ set poroshok -= 1
 set dirtbelo = 0
 set manna -= 10
 '<center><img src="images\etogame\stir.jpg"></center>'
-'You soaked the dirty linen in a basin and poured the powder on them. You wash the clothes until they''re finally clean.'
+'You soak the dirty linen in a basin and pour the powder on them. You wash the clothes until they are finally clean.'
 act 'Hang the laundry out to dry': gt 'korr'
 }
 
@@ -49,21 +49,21 @@ if stiralka > 0:
 	end
 end
 
-if remvanr = 1:'There is a <a href="exec:GT ''mirror'',''start''">mirror</a> just above the sync.'
+if remvanr = 1:'There is a <a href="exec:GT ''mirror'',''start''">mirror</a> just above the sink.'
 
 if tampon > 0:
-'On a shelf is packing tampons. It will be enough for <B><<tampon>></B> times'
+'A box of tampons is on a shelf. There is enough for <B><<tampon>></B> uses'
 else
 '<B><font color = red>You have no tampons.</font></B>'
 end
-if stanok > 0: 'On a shelf above the sink are razors. You have enough blades for <B><<stanok>></B> shaves.'
+if stanok > 0: 'A package of razors is on a shelf above the sink. You have enough blades for <B><<stanok>></B> shaves.'
 
 if clrbelo > 0:
-	*p'In the cupboard is <font color=blue><B><<clrbelo>></B></font> pairs of clean underwear. '
+	*p'A cupboard contains <font color=blue><B><<clrbelo>></B></font> pairs of clean underwear. '
 else
-	*p'<B><font color=red>You do not have clean underwear.</font></B>'
+	*p'<B><font color=red>You do not have any clean underwear.</font></B> '
 end
-if dirtbelo>0:'In the hamper is <font color=red><B><<dirtbelo>></B></font> pieces of dirty laundry.'
+if dirtbelo>0:'The laundry basket currently has <font color=red><B><<dirtbelo>></B></font> pieces of dirty laundry.'
 if poroshok > 0:
 if dirtbelo = 0:$stirka = ''
 if dirtbelo > 0:$stirka = '<a href="exec: dynamic $stirkad ">You can wash clothes</a>'
@@ -73,7 +73,7 @@ else
 end
 
 if shampoo > 0:
-'Do you have enough shampoo for <b><<shampoo>></b> times. You can <a href="exec: gt ''vann'',''start'' ">wash yourself</a>.'
+'You have enough shampoo for <b><<shampoo>></b> washes. You can <a href="exec: gt ''vann'',''start'' ">wash yourself</a>.'
 else
 'You''ve ran out of shampoo.'
 end
@@ -81,20 +81,20 @@ end
 if mosolmaz>0:'On a shelf is a tube of ointment protivomozolnoy, which will be enough for <B><<mosolmaz>><B> applications.'
 if stiralka > 0: 'In the bathroom is a washing machine.'
 
-	!'if tanga = 0 and clrbelo > 0:
-		act 'Wear underwear':
-		cla
-		set tanga = 1
-		gt 'vanr'
-		end
+!'if tanga = 0 and clrbelo > 0:
+	act 'Wear underwear':
+	cla
+	set tanga = 1
+	gt 'vanr'
 	end
-	if tanga = 1:
-		act 'Do not wear underwear':
-		cla
-		set tanga = 0
-		gt 'vanr'
-		end
-	end'
+end
+if tanga = 1:
+	act 'Do not wear underwear':
+	cla
+	set tanga = 0
+	gt 'vanr'
+	end
+end'
 
 if tampon > 0 and mesec > 0 and isprok = 0:
 	act 'Change a tampon':
@@ -132,7 +132,7 @@ if cumpussy > 0 and clrbelo > 0 or cumbelly > 0 and clrbelo > 0 or cumass > 0 an
 	set clrbelo -= 1
 	set dirtbelo += 1
 	'<center><img src="images\pics\wash5.jpg"></center>'
-	'You carefully washed sperm in the bathroom.'
+	'You carefully wash the sperm off yourself.'
 	act 'Exit': gt 'vanr'
 	end
 end
@@ -147,7 +147,7 @@ if cumlip > 0 or cumface > 0:
 	set sweat -= 1
 	set minut += 5
 	'<center><img src="images\etogame\facesp.jpg"></center>'
-	'You carefully washed the sperm off your face.'
+	'You carefully wash the sperm off your face.'
 	act 'Exit': gt 'vanr'
 	end
 end
@@ -157,7 +157,7 @@ if mop ! 1:
 	cla
 	set mop = 1
 	set minut += 15
-	'You washed the makeup from your face.'
+	'You wash the makeup from your face.'
 	act 'Exit': gt 'vanr'
 	end
 end
@@ -183,7 +183,7 @@ if vibrator = 1 and vibratorIN = 0:
 	set vibratorIN = 1
 	if vagina < 30: set vagina += 2
 	'<center><img src="images\etogame\vibrator.jpg"></center>'
-	'You bent over the sink and inserted the vibrator in your pussy.'
+	'You bend over the sink and insert the vibrator in your pussy.'
 	act 'Exit': gt 'vanr'
 	end
 end
@@ -196,7 +196,7 @@ if vibrator = 1 and vibratorIN = 1:
 	set vibratorIN = 0
 	if vagina < 30: set vagina += 1
 	'<center><img src="images\etogame\vibrator.jpg"></center>'
-	'You bent over the sink and took the vibrator out of your pussy.'
+	'You bend over the sink and take the vibrator out of your pussy.'
 	act 'Exit': gt 'vanr'
 	end
 end
@@ -210,7 +210,7 @@ if analplug = 1 and analplugin = 0 and klismaday1= 1:
 	set analplugIN = 1
 	if anus < 30: set anus += 5
 	'<center><img src="images\etogame\analplug.jpg"></center>'
-	if butpluguse > 0: 'You bent over and habitual movement itself anal plug inserted.'
+	if butpluguse > 0: 'You bend over and easily insert the anal plug.'
 	if butpluguse = 0: set butpluguse = 1 & '"I do this not even touch, and why I bought it!" you thought. Then still decided to take a closer look. Feel, smell, in general, that ordinary gag. "Oh, was not," you think, "Wow priest ever to develop, it will have great adventures, you could even say a huge and thick adventures with crimson heads, uh, that I got carried away." You scratched thin fingers unusually hairy head. Then you sent peg his ass, it was a bit painful when rastyagivatsya anus started taking a foreign object, but as soon as the widest part plunged into the murky depths of anal, it became easier and almost gag herself flew to the end, and got put on the manufacturer place.'
 	act 'Exit': gt 'vanr'
 	end
@@ -224,7 +224,7 @@ if analplug = 1 and analplugin = 1:
 	set analplugIN = 0
 	if anus < 30: set anus += 1
 	'<center><img src="images\etogame\analplug.jpg"></center>'
-	if butpluguse > 0: 'You bent over and took a familiar movement of themselves butt plug.'
+	if butpluguse > 0: 'You bend over and pull the butt plug out.'
 	act 'Exit': gt 'vanr'
 	end
 end
@@ -253,7 +253,7 @@ if husband > 0 and husbanday > 0 and huspolday ! day:
 	huspolday = day
 	manna -= 25
 	!'<center><img src="images\pics\cook.jpg"></center>'
-	'You took a rag and started cleaning the apartment.'
+	'You take a rag and start cleaning the apartment.'
 	act 'Leave': gt 'vanr'
 	end
 end

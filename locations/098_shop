@@ -10,7 +10,7 @@ if $ARGS[0] = 'start':
 	if hour >= 8 and hour <= 20:
 		cls
 		set minut += 3
-		'Ice cream offer for 50 rubles.'
+		'Ice cream, sold for 50 rubles.'
 		act 'Get out of the department': gt 'shop','start'
 
 		if money >= 50:
@@ -88,17 +88,17 @@ if $ARGS[0] = 'start':
 	$sobank = {
 		if hour >= 8 and hour <= 20:
 			if karta > 0:
-				act 'Withdrawing money':
+				act 'Withdraw money from the ATM':
 				cla
 				set minut += 5
 				kartaOUT = input ("How much money you want to withdraw?")
 
 					if kartaOUT <= 0 or kartaOUT > karta:
-						'Invalid operation.'
+						'<br>Invalid operation.'
 					else
 						set karta -= kartaOUT
 						set money += kartaOUT
-						'You debited <<kartaOUT>> rubles, now on your account <<karta>> rubles.'
+						'<br>You withdraw <<kartaOUT>> rubles. You have <<karta>> rubles left in your bank account.'
 					end
 
 					act 'Move away': gt 'shop','start'
@@ -106,7 +106,7 @@ if $ARGS[0] = 'start':
 			else
 				'You do not have a bank card'
 			end
-		else
+		else	
 			'ATM disabled'
 		end
 	}
@@ -115,8 +115,8 @@ if $ARGS[0] = 'start':
 
 	'<center><B><font color = maroon>Supermarket</font></B></center>'
 	'<center><img src="images\etogame\shop.jpg"></center>'
-	'The hall stands <a href="exec: dynamic $sobank ">ATM</a>, from which you can withdraw the money unless you have it in the bank.'
-	'The greatest place in the supermarket takes <a href="exec: dynamic $sofood ">food hall</a>, but the store has more divisions <a href="exec: dynamic $socosm ">cosmetics</a>, <a href="exec: dynamic $sohos ">hardware</a>, <a href="exec: dynamic $soclo ">Clothing</a>, and department <a href="exec: dynamic $soteh ">household appliances</a>. Not far from the entrance stands <a href="exec: dynamic $icecreem ">counter with ice cream</a>'
+	'In the hall stands <a href="exec: dynamic $sobank ">ATM</a>, from which you can withdraw money if you have it in the bank.'
+	'<br>Most of the space in the supermarket is taken by the <a href="exec: dynamic $sofood ">grocery department</a>, but the store has many smaller departments as well. <a href="exec: dynamic $socosm ">Cosmetics</a>, <a href="exec: dynamic $sohos ">hardware</a>, <a href="exec: dynamic $soclo ">clothing</a> and the department of <a href="exec: dynamic $soteh ">household appliances</a>. Not far from the entrance is a <a href="exec: dynamic $icecreem ">counter selling ice cream</a>'
 	clr
 	gs 'stat'
 	fcolor = rgb(0,0,0)
@@ -191,7 +191,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if hour >= 8 and hour <= 20:
-		'In store crowd of buyers.'
+		'<br>In store is crowd of shoppers.'
 
 		if TorgPredZ > 0:
 			if $loc = 'street':
@@ -282,7 +282,7 @@ if $ARGS[0] = 'food':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Deparment closed'
 		end
 	}
 
@@ -310,16 +310,31 @@ if $ARGS[0] = 'food':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Deparment closed'
 		end
 	}
 
+	$buyteabiscuits = {
+		if hour >= 8 and hour <= 20:
+			if money => 300:
+				cls
+				money -= 300
+				pranik += 10
+				'You bought a bag of cookies that will last you for ten times.'
+				act 'Move away from the counter': gt 'shop','food'
+			end
+		else
+			'Deparment closed'
+		end
+	}
+	
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	'<center><B><font color = maroon>Food Division</font></B></center>'
+	'<center><B><font color = maroon>Grocery deparment</font></B></center>'
 	'<center><img src="images\etogame\shop1.jpg"></center>'
 	'<a href="exec: dynamic $buyfood ">One serving of food - 50 rubles</a>'
 	'<a href="exec: dynamic $buyfood2 ">One serving of diet food - 250 rubles</a>'
+	'<a href="exec: dynamic $buyteabiscuits ">Tea biscuits - 300 rubles</a>'
 	clr
 	gs 'stat'
 	fcolor = rgb(0,0,0)
@@ -329,15 +344,15 @@ if $ARGS[0] = 'food':
 
 	act 'Get out of the department': gt 'shop','start'
 
-	if money >= 300:
-		act 'Buy tea biscuits - 300 rubles':
-			cls
-			money  -= 300
-			pranik += 10
-			'You bought a bag of cookies that will last you for ten times.'
-			act 'Get out of the department': gt 'shop','food'
-		end
-	end
+	!if money >= 300:
+	!	act 'Buy tea biscuits - 300 rubles':
+	!		cls
+	!		money  -= 300
+	!		pranik += 10
+	!		'You bought a bag of cookies that will last you for ten times.'
+	!		act 'Leave the department': gt 'shop','food'
+	!	end
+	!end
 
 	if money >= 50 and bottle = 0 and bag > 0:
 		act 'Buy a bottle of water - 50 rubles':
@@ -345,7 +360,7 @@ if $ARGS[0] = 'food':
 			money  -= 50
 			bottle = 1
 			'You bought a bottle of water and put it in her purse.'
-			act 'Get out of the department': gt 'shop','food'
+			act 'Leave the department': gt 'shop','food'
 		end
 	end
 
@@ -355,7 +370,7 @@ if $ARGS[0] = 'food':
 			money    -= 100
 			buterbrod = 1
 			'You bought a sandwich and put it in her purse.'
-			act 'Get out of the department': gt 'shop','food'
+			act 'Leave the department': gt 'shop','food'
 		end
 	end
 end
@@ -525,13 +540,13 @@ if $ARGS[0] = 'cosm':
 	
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	'<center><B><font color = maroon>Department cosmetics</font></B></center>'
+	'<center><B><font color = maroon>Cosmetics Department</font></B></center>'
 	'<center><img src="images\etogame\shop2.jpg"></center>'
 	'<a href="exec: dynamic $buykosm ">Cosmetics - 1,000 rubles</a>'
-	'<a href="exec: dynamic $buystanok ">Razor - 500 rubles</a>'
-	'<a href="exec: dynamic $buykrem ">Sunblock - 500 rubles</a>'
-	'<a href="exec: dynamic $buytampon ">Tampons - 200 rubles</a>'
-	'<a href="exec: dynamic $buyshampoo ">Shampoo - 500 rubles</a>'
+	'<a href="exec: dynamic $buystanok ">A box of razors - 500 rubles</a>'
+	'<a href="exec: dynamic $buykrem ">A bottle of sunblock - 500 rubles</a>'
+	'<a href="exec: dynamic $buytampon ">A box of tampons - 200 rubles</a>'
+	'<a href="exec: dynamic $buyshampoo ">A bottle of shampoo - 500 rubles</a>'
 	!!! Maruda Hair Mod
 	'<a href="exec: dynamic $buyhscrunch ">A Box of 10 Hairscrunchies - 80 rubles</a>'
 	'<a href="exec: dynamic $buyhpingrip ">A Box of 12 Hairpins, -clips and -grips - 100 rubles</a>'
@@ -684,9 +699,9 @@ if $ARGS[0] = 'clo':
 	cla
 	*clr
 	set minut += 5
-	'<center><B><font color = maroon>Department of Women´s Clothing</font></B></center>'
+	'<center><B><font color = maroon>Department of Women''s Clothing</font></B></center>'
 	'<center><img src="images\etogame\shop4.jpg"></center>'
-	'Lingerie - 300 rubles'
+	'Underwear - 300 rubles'
 	'All women´s clothing for 2500 rubles'
 	clr
 	gs 'stat'
@@ -694,13 +709,13 @@ if $ARGS[0] = 'clo':
 	bcolor = rgb(255,255,255)
 	LCOLOR = rgb(106,90,205)
 
-	act 'WITHDRAW FROM THE DIVISION': gt 'shop','start'
+	act 'Leave the department': gt 'shop','start'
 
 	if money >= 300:
-		act 'Buy lingerie 300 rubles.':
+		act 'Buy underwear - 300 rubles.':
 			cla
 			*clr
-			portion = input ("How much you want to buy?")
+			portion = input ("How many you want to buy?")
 			if portion <= 0: portion = 1
 			if portion * 300 > money: 'You do not have enough money.'
 
@@ -726,9 +741,22 @@ if $ARGS[0] = 'clo':
 			act 'Move away from the counter': gt 'shop','clo'
 		end
 	end
-
+	
+	if money >= 1000 and bikini < 1:
+		'Swimsuit - 1000 rubles'
+		act 'Buy swimsuit 1000 rubles.':
+			cla
+			*clr
+			set money -= 1000
+			set bikini = 1
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You pay the cashier and bought a swimsuit.'
+			act 'Move away from the counter': gt 'shop','clo'
+		end
+	end
+	
 	if palto < 2:
-		'The store sells a winter coat. 10000 rubles'
+		'Winter coats - 10000 rubles'
 		if money >= 10000:
 			act 'Buy a winter coat':
 				cla
@@ -740,20 +768,8 @@ if $ARGS[0] = 'clo':
 			end
 		end
 	end
-
-	if money >= 1000 and bikini < 1:
-		act 'Buy swimsuit 1000 rubles.':
-			cla
-			*clr
-			set money -= 1000
-			set bikini = 1
-			'<center><img src="images\etogame\kassa.jpg"></center>'
-			'You pay the cashier and bought a swimsuit.'
-			act 'Move away from the counter': gt 'shop','clo'
-		end
-	end
+	
 	if money >= 2500:
-
 		if profi[1] = 0:
 			act 'Inspect office clothes number 1':
 				cla
@@ -1149,7 +1165,7 @@ if $ARGS[0] = 'teh':
 				set money -= 5000
 				set TV     = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You paid the money to the cashier and bought TV'
+				'You the money to the cashier and bought the TV'
 				act 'Leave': gt 'shop','teh'
 			elseif TV > 0:
 				'Do you already have a TV'
@@ -1157,7 +1173,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1170,7 +1186,7 @@ if $ARGS[0] = 'teh':
 				set money -= 35000
 				set TV     = 2
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You paid the money to the cashier and bought TV'
+				'You the money to the cashier and bought the TV'
 				act 'Leave': gt 'shop','teh'
 			elseif TV > 1:
 				'Do you already have a TV'
@@ -1178,7 +1194,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1191,7 +1207,7 @@ if $ARGS[0] = 'teh':
 				set money -= 25000
 				set komp   = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought a computer'
+				'You paid in cash and bought the computer'
 				act 'Leave': gt 'shop','teh'
 			elseif komp > 0:
 				'Do you already have a computer'
@@ -1199,7 +1215,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1212,7 +1228,7 @@ if $ARGS[0] = 'teh':
 				set money -= 500
 				GameCD     = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought the game'
+				'You paid in cash and bought the game'
 				act 'Leave': gt 'shop','teh'
 			elseif komp = 0:
 				'You do not have computer'
@@ -1222,7 +1238,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1235,7 +1251,7 @@ if $ARGS[0] = 'teh':
 				set money -= 500
 				GameCD2    = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought the game'
+				'You paid in cash and bought the game'
 				act 'Leave': gt 'shop','teh'
 			elseif komp = 0:
 				'You do not have computer'
@@ -1245,7 +1261,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1258,7 +1274,7 @@ if $ARGS[0] = 'teh':
 				set money -= 500
 				GameCD3    = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought the game'
+				'You paid in cash and bought the game'
 				act 'Leave': gt 'shop','teh'
 			elseif komp = 0:
 				'You do not have computer'
@@ -1268,7 +1284,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1281,7 +1297,7 @@ if $ARGS[0] = 'teh':
 				set money    -= 50000
 				posudomashina = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought a dishwasher'
+				'You paid in cash and bought a dishwasher'
 				act 'Leave': gt 'shop','teh'
 			elseif posudomashina > 0:
 				'You already have a dishwasher'
@@ -1289,7 +1305,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1302,7 +1318,7 @@ if $ARGS[0] = 'teh':
 				set money -= 50000
 				stiralka   = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought a washing machine'
+				'You paid in cash and bought a washing machine'
 				act 'Leave': gt 'shop','teh'
 			elseif stiralka > 0:
 				'You already have a washing machine'
@@ -1310,7 +1326,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1323,7 +1339,7 @@ if $ARGS[0] = 'teh':
 				set money -= 10000
 				zenit      = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought a camera'
+				'You paid in cash and bought a camera'
 				act 'Leave': gt 'shop','teh'
 			elseif zenit > 0:
 				'Do you already have a camera'
@@ -1331,7 +1347,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1344,7 +1360,7 @@ if $ARGS[0] = 'teh':
 				set money -= 40000
 				minifoto   = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought a mini camera'
+				'You paid in cash and bought a mini camera'
 				act 'Leave': gt 'shop','teh'
 			elseif minifoto > 0:
 				'You already have a mini camera'
@@ -1352,7 +1368,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1365,7 +1381,7 @@ if $ARGS[0] = 'teh':
 				set money -= 80000
 				webCam     = 1
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought a web-camera'
+				'You paid in cash and bought a web-camera'
 				act 'Leave': gt 'shop','teh'
 			elseif webCam > 0:
 				'You already have a web-camera'
@@ -1373,7 +1389,7 @@ if $ARGS[0] = 'teh':
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
@@ -1386,39 +1402,39 @@ if $ARGS[0] = 'teh':
 				set money   -= 4000
 				set DVDDisk += 20
 				'<center><img src="images\etogame\kassa.jpg"></center>'
-				'You get paid in cash and bought 20 burnable DVD disks.'
+				'You paid in cash and bought 20 burnable DVDs.'
 				act 'Leave': gt 'shop','teh'
 			else
 				'You do not have enough money'
 			end
 		else
-			'Section closed'
+			'Department closed'
 		end
 	}
 
 
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	'<center><B><font color = maroon>Division of household appliances</font></B></center>'
+	'<center><B><font color = maroon>Department of household appliances</font></B></center>'
 	'<center><img src="images\etogame\shop5.jpg"></center>'
 	clr
 	gs 'stat'
 	fcolor = rgb(0,0,0)
 	bcolor = rgb(255,255,255)
 	LCOLOR = rgb(106,90,205)
-	if TV = 0: '<a href="exec: dynamic $buytv ">Not a big TV with a picture tube can be bought for 5,000 rubles</a>'
-	if TV ! 2: '<a href="exec: dynamic $buytv2 ">Large plasma TV can be bought for 35,000 rubles</a>'
-	if komp = 0: '<a href="exec: dynamic $buykomp ">Computer worth 25,000 rubles</a>'
-	!'<a href="exec: dynamic $buycd ">Computer game Disopl 500 rubles</a>'
-	if GameCD2 = 0: '<a href="exec: dynamic $buycd2 ">Computer game Dead Sunset 500 rubles</a>'
-	!'<a href="exec: dynamic $buycd3 ">Computer game Albida 500 rubles</a>'
-	if webCam = 0: '<a href="exec: dynamic $buyWebCam ">Computer webcam 80,000 rubles</a>'
-	if DVDDisk >= 0: '<a href="exec: dynamic $buyDVDDisk ">Burnable DVDs 4,000 rubles</a>'
-	if posudomashina = 0: '<a href="exec: dynamic $buyposudmoi ">The dishwasher can be bought for 50,000 rubles</a>'
-	if stiralka = 0: '<a href="exec: dynamic $buystiralka ">washing machine can be bought for 50,000 rubles</a>'
-	if zenit = 0: '<a href="exec: dynamic $buyzenit ">The camera can be bought for 10,000 rubles</a>'
-	if minifoto = 0: '<a href="exec: dynamic $buyminifoto ">Mini camera disguised as a cigarette pack can be purchased for 40,000 rubles</a>'
-	act 'Get out of the department': gt 'shop','start'
+	if TV = 0: '<a href="exec: dynamic $buytv ">A small TV with a picture tube - 5,000 rubles</a>'
+	if TV ! 2: '<a href="exec: dynamic $buytv2 ">Large plasma TV - 35,000 rubles</a>'
+	if komp = 0: '<a href="exec: dynamic $buykomp ">Computer - 25,000 rubles</a>'
+	!'<a href="exec: dynamic $buycd ">Computer game Disopl - 500 rubles</a>'
+	if GameCD2 = 0: '<a href="exec: dynamic $buycd2 ">Computer game Dead Sunset - 500 rubles</a>'
+	!'<a href="exec: dynamic $buycd3 ">Computer game Albida - 500 rubles</a>'
+	if webCam = 0: '<a href="exec: dynamic $buyWebCam ">Computer webcam - 80,000 rubles</a>'
+	if DVDDisk >= 0: '<a href="exec: dynamic $buyDVDDisk ">Burnable DVDs - 4,000 rubles</a>'
+	if posudomashina = 0: '<a href="exec: dynamic $buyposudmoi ">A dishwasher - 50,000 rubles</a>'
+	if stiralka = 0: '<a href="exec: dynamic $buystiralka ">Washing machine - 50,000 rubles</a>'
+	if zenit = 0: '<a href="exec: dynamic $buyzenit ">Camera can be bought - 10,000 rubles</a>'
+	if minifoto = 0: '<a href="exec: dynamic $buyminifoto ">Mini camera disguised as a cigarette pack - 40,000 rubles</a>'
+	act 'Leave the department': gt 'shop','start'
 end
 --- shop ---------------------------------
 

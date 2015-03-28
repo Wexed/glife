@@ -20,19 +20,19 @@ if $ARGS[0] = 'start':
 	'<center>You went to the balcony.</center>'
 	!Погода!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	if hour >= 0 and hour <= 6:
-		'<center>Dark outside, the street lamp illuminates.</center>'
+		'<center>It''s dark outside. Street lamps illuminate the empty street below.</center>'
 	end
 
 	if hour = 7:
-		'<center>On the street the morning dawn, singing birds.</center>'
+		'<center>Morning is dawning out on the street, birds are singing in the trees.</center>'
 	end
 
 	if hour >= 8 and hour <= 19:
-		'<center>On a clear day the street.</center>'
+		'<center>It''s clear day out on the street. You can see some people walking by. </center>'
 	end
 
 	if hour >= 20 and hour <= 23:
-		'<center>At twilight street.</center>'
+		'<center>It''s twilight and the street below you is dimly lit.</center>'
 	end
 
 	!Если голая!!!!!
@@ -41,19 +41,19 @@ if $ARGS[0] = 'start':
 		if sosedBalDay = day: Set temp = RAND(1,3)
 
 		if temp = 1:
-			'<center>You no one pays attention.</center>'
+			'<center>You no one pays you any attention.</center>'
 		end
 
 		if temp = 2:
-			'<center>You no one pays attention.</center>'
+			'<center>You no one pays you any attention.</center>'
 		end
 
 		if temp = 3:
-			'<center>You no one pays attention.</center>'
+			'<center>You no one pays  you any attention.</center>'
 		end
 
 		if temp = 4:
-			'<center>Neighbor left out on the balcony and looking at you naked.</center>'
+			'<center>A neighbor from the opposite building is out on his balcony and looking at your naked body.</center>'
 			act 'Look at the neighbor': gt 'balkon2','sosed'
 		end
 	end
@@ -61,9 +61,10 @@ if $ARGS[0] = 'start':
 	if horny >= 50:
 		act 'Masturbate': gt 'balkon2','masopt'
 	end
-
+	
+	act 'Leave the balcony': gt 'sitr'
 	act 'Approach the railing': gt 'balkon2','niz'
-	act 'Leave from the balcony': gt 'sitr'
+
 
 end
 
