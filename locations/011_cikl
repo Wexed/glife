@@ -39,9 +39,9 @@ set lipkoef -= 1
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !ВЫБРОС ПРОКЛАДКИ
-if isprok = 1: Set isprok = 0 & 'You threw used tampon.'
+if isprok = 1: Set isprok = 0 & 'You threw away your used tampon.'
 
-!ЦИКЛ 28 дней 4 дней ментсруация
+!CYCLE 28 days 4 days mentsruatsiya
 if preg = 0:
 if mesec > 0: Set mesec -= 1
 if mesec = 0: Set cikl += 1
@@ -49,6 +49,7 @@ if cikl >= 23 and preg ! 1: Set mesec = 4 & Set cikl = 0
 end
 if preg = 1 and pregtime < 280:
 set pregtime += 1
+if pregTimes = 0: pregTimes = 1
 end
 
 if preg = 1 and pregtime = 280 and hourpreg ! hour:
@@ -65,8 +66,63 @@ xgt 'gameover'
 exit
 end
 
-if horny < 100: set horny += vagina
-if horny < 0: set horny = 0
+if StoryLine=0:
+if horny < 100:set horny = horny + vagina
+end
+if StoryLine>0:
+     if vagina=0:
+     razeba=0
+         if horny>0 and horny<=50:horny-=10
+         if horny>50:horny-=25
+     end
+     if vagina>0:
+         if pregTimes=0:
+             if age<18:
+             razeba=1
+             if horny>0 and horny<=50:horny-=5
+             if horny>50 and horny<80:horny-=10
+             if horny>=80:horny-=20
+             end
+             if age>=18 and age<21:
+             razeba=2
+             if horny>0 and horny<=50:horny-=1
+             if horny>50 and horny<80:horny-=5
+             if horny>=80:horny-=10
+             end
+             if age>=21 and age<25:
+             razeba=3
+             if horny>0 and horny<=50:horny+=1
+             if horny>50 and horny<80:horny-=1
+             if horny>=80:horny-=5
+             end
+             if age>=25 and age<30:
+             razeba=4
+             if horny>0 and horny<=50:horny+=5
+             if horny>50 and horny<80:horny+=1
+             if horny>=80:horny-=5
+             end
+             if age>=30:
+             razeba=5
+             if horny>0 and horny<=50:horny+=10
+             if horny>50 and horny<80:horny+=5
+             if horny>=80:horny+=1
+             end
+         end
+         if pregTimes>0:
+             if preg=0:
+             razeba=5
+             if horny>0 and horny<=50:horny+=10
+             if horny>50 and horny<80:horny+=5
+             if horny>=80:horny+=1
+             end
+             if preg>0:
+             razeba=6
+             if horny < 100:set horny = horny + (pregtime/10)
+             end
+         end
+     end
+end
+if horny < 0:set horny = 0
 
 if musle >= salo and stren >= 10 and vital >= 10 and dounspell = 0:
 !Падение мускулистости

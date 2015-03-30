@@ -5,8 +5,14 @@ Set pregrand = RAND(0,100)
 	if pregrand + fertBonus >= 93:
 	$father = $boy
 	set preg = 1
-
 	end
+	if tabletki > 0:
+    Set pregrand = RAND (0,200)
+         if pregrand = 0:
+		 $father=$boy
+		 set preg = 1
+		 end
+     end
 end
 --- preg ---------------------------------
 
