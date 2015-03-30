@@ -1,26 +1,54 @@
 # amrul
+<<<<<<< 534_amrul
 *PL 'You leaned over the table.'
 *P '<center><img src="images\casino\amrul.jpg"></center>'
 ACT 'IPod':
 	st_1 = input 'Enter the amount'
 	if money < st_1:
 		msg 'You have enough money'
+=======
+*PL 'You bent over the desk.'
+*P '<center><img src="casino/amrul.gif" ></center>'
+ACT 'make a bet':
+	st_1 = input 'enter the amount'
+	if money<st_1:
+		msg 'You do not have enough money'
+>>>>>>> 534_amrul
 		gt 'roulette'
 	end
+<<<<<<< 534_amrul
 	if st_1 < 0:
 		msg 'Wrong, try again'
+=======
+	if st_1<0:
+		msg 'wrong, try again'
+>>>>>>> 534_amrul
 		gt 'amrul'
 	end
+<<<<<<< 534_amrul
 	if st_1 > 1000:
 		msg 'The maximum rate of 1000 rubles'
+=======
+	if st_1>1000:
+		msg 'maximum rate 1000 rubles'
+>>>>>>> 534_amrul
 		gt 'amrul'
 	end
+<<<<<<< 534_amrul
 	set money -= st_1
+=======
+	set money=money-st_1
+>>>>>>> 534_amrul
 	gt 'rate'
 END
+<<<<<<< 534_amrul
 ACT 'move away from the table':
+=======
+ACT 'away from the table':
+>>>>>>> 534_amrul
 	gt 'roulette'
 END
+<<<<<<< 534_amrul
 кч = 0
 чнч = 0
 мб = 0
@@ -28,9 +56,23 @@ END
 ряд = 0
 чи = 100
 x_rul = 100
+=======
+kh=0
+chnch=0
+mb=0
+du=0
+series=0
+chi=100
+x_rul=100
+>>>>>>> 534_amrul
 
 clr
+<<<<<<< 534_amrul
 gs 'stat'
 set minut += 5
+=======
+gs'stat'
+set minut=minut + 5
+>>>>>>> 534_amrul
 --- amrul ---------------------------------
 

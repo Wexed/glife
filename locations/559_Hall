@@ -1,6 +1,12 @@
+<<<<<<< 559_Hall
 # Hall
 *PL '<right><img src="images\casino\zdcasino.jpg"></right>'
 *PL 'You entered the foyer of the building of a giant casino.'
+=======
+# hall
+*PL '<right><img src="casino/zdcasino.jpg" ></right>'
+*PL 'You entered the hall of the giant casino building. '
+>>>>>>> 559_hall
 *PL 'You can go:'
 ACT 'Get out of the casino':
 	gt 'casino'
@@ -9,6 +15,7 @@ USEHTML = 1
 *clear
 
 clr
+<<<<<<< 559_Hall
 gs 'stat'
 set minut += 5
 
@@ -93,3 +100,23 @@ gs 'menu_helper'
 dynamic $helper_start
 --- $menu_helper ---------------------------------
 
+=======
+gs'stat'
+set minut=minut + 5
+
+picrand=RAND(0,2)
+if picrand=0:'<right><img src="casino/hcasino1.jpg" ></right>'
+if picrand=1:'<right><img src="casino/hcasino2.jpg" ></right>'
+if picrand=2:'<right><img src="casino/hcasino3.jpg" ></right>'
+
+'K <a href="exec:GT ''headwaiter''">headwaiter</a>'
+'In the room <a href="exec:GT ''igravt''">slot machines</a>'
+'In room games <a href="exec:GT ''roulette''">roulette</a>'
+'In room games <a href="exec:GT ''cards''">cards</a>'
+!'B <a href="exec:GT ''restaurant''">restaurant</a>'
+!'B <a href="exec:GT ''bar''">bar</a>'
+!'B <a href="exec:GT ''theater''">theater</a>'
+'K <a href="exec:GT ''inn''">hotel</a>'
+--- hall ---------------------------------
+
+>>>>>>> 559_hall

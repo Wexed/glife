@@ -1,4 +1,5 @@
 # restoranM
+<<<<<<< 325_restoranM
 if $ARGS[0] = 'start':
 set minut += 30
 'You came to the restaurant and sat at a table. <<$boyA>> ordered the waiter food and good wine. You have to wait when you bring the food.'
@@ -30,8 +31,42 @@ set minut += 30
 	set bfa -= 1
 	xgt 'restoranM','a'
 	end
+=======
+if $ARGS[0]='start':
+set minut = minut + 30
+'You`ve come to the restaurant and sat at a table. <<$boyA>> ordered the waiter food and good wine. You have to wait when you bring food.'
+     if dayA > 15 and harakBoyA = 2:gs'boylove','tits'
+	 if dayA > 20 and harakBoyA = 1:gs'boylove','tits'
+	 if dayA > 25 and harakBoyA = 0:gs'boylove','tits'
+	 if dayA > 20 and harakBoyA = 2:gs'boylove','figure'
+	 if dayA > 25 and harakBoyA = 1:gs'boylove','figure'
+	 if dayA > 30 and harakBoyA = 0:gs'boylove','figure'
+	 gs'anekdot'
+	 '<<$boyA>> anecdote tells you "<<$anek>>".'
+	 
+	 act 'laugh.':
+     cla
+     set SUB = SUB + 1
+     set bfa = bfa + 1
+     xgt'restoranM','a'
+     end
+     
+     act 'smile.':
+     cla
+     !set bfa = bfa - 1
+     xgt'restoranM','a'
+     end
+     
+     act 'not funny.':
+     cla
+     set DOM = DOM + 1
+     set bfa = bfa - 1
+     xgt'restoranM','a'
+     end
+>>>>>>> 325_restoranM
 end
 
+<<<<<<< 325_restoranM
 if $ARGS[0] = 'a':
 set minut += 30
 set fat += 1
@@ -42,8 +77,21 @@ set fat += 1
 	cla
 	xgt 'restoranM','b'
 	end
+=======
+if $ARGS[0]='a':
+set minut = minut + 30
+set fat = fat + 1
+
+'Finally. <<$boyA>> pour you wine and proposed a toast to love.'
+
+     act 'Is_There.':
+     cla
+     xgt'restoranM','b'
+     end
+>>>>>>> 325_restoranM
 end
 
+<<<<<<< 325_restoranM
 if $ARGS[0] = 'b':
 set minut += 30
 set fat += 1
@@ -78,5 +126,54 @@ gs 'stat'
 
 act 'Home.': gt 'sexm','start'
 end
+=======
+if $ARGS[0]='b':
+set minut = minut + 30
+set fat = fat + 1
+	 if energy >= 30:
+	  set fat = fat + 5
+	 'You can no longer have.'
+	 end
+	 
+	 if energy >= 20 and energy < 30:
+	 set fat = fat + 3
+	 set energy = energy + 10
+	 'You pushed through the power of a meal.'
+	 end
+	 
+	 if energy < 20:
+	 set energy = energy +20
+	 set fat = fat + 1
+	 'You gladly ate food.'
+	 end
+	 
+	 if water >= 20:
+	 'Tea in you no longer climbs.'
+	 end
+	 
+	 if water < 20:
+	 'You gladly drank a cup of tea.'
+	 set water = water +20
+	 end
+alko+=2
+gs'stat'
+'After some time <<$boyA>> offered to accompany you.'
+
+act 'home.':gt'sexm','start'
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 325_restoranM
 --- restoranM ---------------------------------
 

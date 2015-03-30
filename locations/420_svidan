@@ -1,4 +1,5 @@
 # svidan
+<<<<<<< 420_svidan
 if $ARGS[0] = 'start':
 	if svidanieA = 1 and svidanieB = 1 and svidanieC = 1:
 	set bfA = 0
@@ -112,15 +113,138 @@ if $ARGS[0] = 'start':
 	act 'Kiss.': gt 'svidan','c'
 	exit
 	end
+=======
+if $ARGS[0]='start':
+     if svidanieA = 1 and svidanieB = 1 and svidanieC = 1:
+     set bfA = 0
+     set bfB = 0
+     set bfC = 0
+     set svidanieA = 0
+     set svidanieB = 0
+     set svidanieC = 0
+     set manna = 0
+     set willpower = willpower - 30
+     '<<$boyA>>, <<$boyB>> and <<$boyC>> suited to you, then look at each other in bewilderment. They all understand and go. <<$boyC>> throws you goodbye "Well!"'
+     act 'Get_Away.':gt'street'
+     exit
+     end
+     
+     if svidanieA = 1 and svidanieB = 1 and svidanieC = 0:
+     set bfA = bfA - 1
+     set bfB = 0
+     !set bfC = 0
+     set svidanieA = 0
+     set svidanieB = 0
+     set svidanieC = 0
+     set manna = manna - 10
+     set willpower = willpower - 20
+     '<<$boyA>> and <<$boyB>> suited to you, then look at each other in bewilderment. <<$boyA>> asks, what kind of bloke you pinned. what <<$boyB>> resents, he`s your guy, rather than the poludurok.'
+         if bfA > 0:'<<$boybodyA>> <<$boybodA>> <<$boyA>> punches in the face of its competitor. <<$boyB>> falls to the ground with a broken face. <<$boyA>> says a defeated opponent, "once you see near my girls generally kill fuck."'
+         if bfA <= 0:'<<$boyA>> spits angrily to the ground and said. "You went on dick, slut." throwing flowers and leaves in the trash. <<$boyB>> looks at what is happening and leaves without saying a word.'
+     act 'Get_Away.':gt'street'
+     exit
+     end
+     
+     if svidanieA = 1 and svidanieB = 0 and svidanieC = 1:
+     set bfA = bfA - 1
+     !set bfB = 0
+     set bfC = 0
+     set svidanieA = 0
+     set svidanieB = 0
+     set svidanieC = 0
+     set manna = manna - 10
+     set willpower = willpower - 20
+     '<<$boyA>> and <<$boyC>> suited to you, then look at each other in bewilderment. <<$boyA>> asks, What is this dick with a mountain to you pinned. what <<$boyC>> resents, he`s your guy, rather than the poludurok.'
+         if bfA > 0:'<<$boybodyA>> <<$boybodA>> <<$boyA>> punches in the face of its competitor. <<$boyC>> falls to the ground with a broken face. <<$boyA>> says a defeated opponent, "once you see near my girls generally kill fuck."'
+         if bfA <= 0:'<<$boyA>> spits angrily to the ground and said. "You went on dick, slut." throwing flowers and leaves in the trash. <<$boyC>> looks at what is happening and leaves without saying a word.'
+     act 'Get_Away.':gt'street'
+     exit
+     end
+     
+     if svidanieA = 0 and svidanieB = 1 and svidanieC = 1:
+     set bfB = bfB - 1
+     !set bfB = 0
+     set bfC = 0
+     set svidanieA = 0
+     set svidanieB = 0
+     set svidanieC = 0
+     set manna = manna - 10
+     set willpower = willpower - 20
+     '<<$boyB>> and <<$boyC>> suited to you, then look at each other in bewilderment. <<$boyB>> asks, What is this dick with a mountain to you pinned. what <<$boyC>> resents, he`s your guy, rather than the poludurok.'
+         if bfb > 0:'<<$boybodyB>> <<$boybodB>> <<$boyB>> punches in the face of its competitor. <<$boyC>> falls to the ground with a broken face. <<$boyB>> says a defeated opponent, "once you see near my girls generally kill fuck."'
+         if bfb <= 0:'<<$boyB>> spits angrily to the ground and said. "You went on dick, slut." throwing flowers and leaves in the trash. <<$boyC>> looks at what is happening and leaves without saying a word.'
+     act 'Get_Away.':gt'street'
+     exit
+     end
+     
+     if svidanieA = 1 and svidanieB = 0 and svidanieC = 0:
+     set dayA = dayA + 1
+     set svidanieA = 0
+     set willpower = willpower + RAND (5,10)
+     set manna = manna + RAND (5,10)
+         if harakBoy = 0:
+             if mop <= 2 and mop > 0:set bfA = bfA + 1
+             if mop = 4:set bfA = bfA - 1
+         end
+         if harakBoy = 1:
+             if mop <= 3 and mop > 0:set bfA = bfA + 1
+             if mop = 4:set bfA = bfA - 1
+         end
+         if harakBoy = 2:
+             if mop = 4:set bfA = bfA + 1
+             if mop <= 2 and mop > 0:set bfA = bfA - 1
+         end
+     '<<$boybodyA>> <<$boybodA>> <<$boyA>> comes to you and kisses you Welcoming.'
+         if dayA >= 30:
+         set giftrand = RAND (0,2)
+             if giftrand <= financeA:
+             set gift = RAND (bfa*10,bfa*50)
+             set money = money + gift
+             '<<$boyA>> did you gift to <<gift>> rubles.'
+             end
+         end
+     act 'kiss.':gt'svidan','a'
+         act 'avoid kissing.':
+         cla
+         set bfA = bfA - 1
+         gt'svidan','a'
+         end
+     exit
+     end
+     
+     if svidanieA = 0 and svidanieB = 1 and svidanieC = 0:
+     set dayB = dayB + 1
+     set svidanieB = 0
+     '<<$boybodyb>> <<$boybodb>> <<$boyb>> comes to you and kisses you Welcoming.'
+     act 'kiss.':gt'svidan','b'
+     exit
+     end
+     
+     if svidanieA = 0 and svidanieB = 0 and svidanieC = 1:
+     set dayc = dayc + 1
+     set svidaniec = 0
+     '<<$boybodyc>> <<$boybodc>> <<$boyc>> comes to you and kisses you Welcoming.'
+     act 'kiss.':gt'svidan','c'
+     exit
+     end
+>>>>>>> 420_svidan
 end
 
+<<<<<<< 420_svidan
 if $ARGS[0] = 'a':
 	if financeA = 0: gt 'svi','poor'
 	if financeA = 1: gt 'svi','norm'
 	if financeA = 2: gt 'svi','reach'
+=======
+if $ARGS[0]='a':
+     if financeA = 0:gt'svi','poor' 
+     if financeA = 1:gt'svi','norm' 
+     if financeA = 2:gt'svi','reach' 
+>>>>>>> 420_svidan
 end
 
 
+<<<<<<< 420_svidan
 if $ARGS[0] = 'kustA':
 *clr
 set minut += 20
@@ -184,8 +308,74 @@ set minut += 20
 			end
 		end
 	end
+=======
+if $ARGS[0]='kustA':
+*clr
+set minut = minut + 20
+'You hid in a corner and ukromnoi <<$boyA>> pulled out his penis.'
+	 act 'Take by mouth':
+	 cla
+	 *clr
+	 set bfA = bfA + 1
+		 if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+	 set bj = bj + 1
+	 set dick = dickA
+	 set harakBoy = harakBoyA
+	 set minut = minut + 30
+	 set $nameV = $boyA
+	 '<center><img src="picV/bj.jpg" ></center>'
+	 'You knelt and <<$nameV>> pulled out his penis and offered it to your face.'
+	 gs'oral','start'
+		 act 'continue to suck.':
+		 cla
+		 *clr
+		 set swallow = swallow + 1
+		 set cumlip = cumlip + 1
+		 '<center><img src="picV/swallow.jpg" ></center>'
+		 'A jet of hot cum hit you in the mouth. You started to swallow cum, and <<$nameV>> continued to cum in your mouth. Finally.'
+			 act 'Get_Away.':
+			 cla
+			 gt'street'
+			 end
+		 end
+		 
+		 act 'Remove the mouth.':
+		 cla
+		 *clr
+			 if harakBoyA = 0:
+			 '<center><img src="picV/hand.jpg" ></center>'
+			 'You remove a member from the mouth and <<$nameV>> finished you in the palm.'
+			 end
+			 if harakBoyA = 1:
+			 set tiprand = RAND (0,3)
+				 if tiprand < 3:
+				 '<center><img src="picV/hand.jpg" ></center>'
+				 'You remove a member from the mouth and <<$nameV>> finished you in the palm.'
+				 end 
+				 if tiprand = 3:
+				 set facial = facial + 1
+				 set cumface = cumface + 1
+				 '<center><img src="picV/facial.jpg" ></center>'
+				 'Have you taken the member and at this point <<$nameV>> discharged directly on your face, covering it with warm and sticky sperm.'
+				 end
+			 end
+			 if harakBoyA = 2:
+			 set facial = facial + 1
+			 set cumface = cumface + 1
+			 '<center><img src="picV/facial.jpg" ></center>'
+			 '<<$nameV>> hold your hair pulled dick out of your mouth and on your face cumshot, covering it with warm and sticky sperm.'
+			 end
+		  
+			 act 'Get_Away.':
+			 cla
+			 gt'street'
+			 end
+	     end
+     end
+>>>>>>> 420_svidan
 end
 
+<<<<<<< 420_svidan
 if $ARGS[0] = 'carA':
 *clr
 set minut += 20
@@ -269,8 +459,94 @@ set minut += 20
 			end
 		end
 	end
+=======
+if $ARGS[0]='carA':
+*clr
+set minut = minut + 20
+'You got in the car and <<$boyA>> hugged you and started kissing.'
+	 act 'sex':
+	 cla
+	 *clr
+	 set bfA = bfA + 1
+		 if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+	 set sex = sex + 1
+	 set minut = minut + 30
+	 set pose = 0
+	 set $nameV = $boyA
+	 set dick = dickA
+	 set silavag = silavagA
+	 '<center><img src="picV/vag.jpg" ></center>'
+	 '<<$nameV>> put you on your back and spread your legs.'
+	 gs'orgazm','start'
+		 act 'Get_Away.':
+		 cla
+		 gt'street'
+		 end
+	 end
+	 
+	 act 'Take by mouth':
+	 cla
+	 *clr
+	 set bfA = bfA + 1
+		 if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+	 set bj = bj + 1
+	 set dick = dickA
+	 set harakBoy = harakBoyA
+	 set minut = minut + 30
+	 set $nameV = $boyA
+	 '<center><img src="picV/bj.jpg" ></center>'
+	 'You knelt and <<$nameV>> pulled out his penis and offered it to your face.'
+	 gs'oral','start'
+		 act 'continue to suck.':
+		 cla
+		 *clr
+		 set swallow = swallow + 1
+		 set cumlip = cumlip + 1
+		 '<center><img src="picV/swallow.jpg" ></center>'
+		 'A jet of hot cum hit you in the mouth. You started to swallow cum, and <<$nameV>> continued to cum in your mouth. Finally.'
+			 act 'Get_Away.':
+			 cla
+			 gt'street'
+			 end
+		 end
+		 
+		 act 'Remove the mouth.':
+		 cla
+		 *clr
+			 if harakBoyA = 0:
+			 '<center><img src="picV/hand.jpg" ></center>'
+			 'You remove a member from the mouth and <<$nameV>> finished you in the palm.'
+			 end
+			 if harakBoyA = 1:
+			 set tiprand = RAND (0,3)
+				 if tiprand < 3:
+				 '<center><img src="picV/hand.jpg" ></center>'
+				 'You remove a member from the mouth and <<$nameV>> finished you in the palm.'
+				 end 
+				 if tiprand = 3:
+				 set facial = facial + 1
+				 set cumface = cumface + 1
+				 '<center><img src="picV/facial.jpg" ></center>'
+				 'Have you taken the member and at this point <<$nameV>> discharged directly on your face, covering it with warm and sticky sperm.'
+				 end
+			 end
+			 if harakBoyA = 2:
+			 set facial = facial + 1
+			 set cumface = cumface + 1
+			 '<center><img src="picV/facial.jpg" ></center>'
+			 '<<$nameV>> hold your hair pulled dick out of your mouth and on your face cumshot, covering it with warm and sticky sperm.'
+			 end
+		  
+			 act 'Get_Away.':
+			 cla
+			 gt'street'
+			 end
+	     end
+     end
+>>>>>>> 420_svidan
 end
 
+<<<<<<< 420_svidan
 if $ARGS[0] = 'hisA':
 *clr
 set minut += 20
@@ -354,8 +630,94 @@ set minut += 20
 			end
 		end
 	end
+=======
+if $ARGS[0]='hisA':
+*clr
+set minut = minut + 20
+'Once you have entered the apartment <<$boyA>> hugged you and started kissing.'
+	 act 'sex':
+	 cla
+	 *clr
+	 set bfA = bfA + 1
+		 if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+	 set sex = sex + 1
+	 set minut = minut + 30
+	 set pose = 0
+	 set $nameV = $boyA
+	 set dick = dickA
+	 set silavag = silavagA
+	 '<center><img src="picV/vag.jpg" ></center>'
+	 '<<$nameV>> put you on your back and spread your legs.'
+	 gs'orgazm','start'
+		 act 'Get_Away.':
+		 cla
+		 gt'street'
+		 end
+	 end
+	 
+	 act 'Take by mouth':
+	 cla
+	 *clr
+	 set bfA = bfA + 1
+		 if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+	 set bj = bj + 1
+	 set dick = dickA
+	 set harakBoy = harakBoyA
+	 set minut = minut + 30
+	 set $nameV = $boyA
+	 '<center><img src="picV/bj.jpg" ></center>'
+	 'You knelt and <<$nameV>> pulled out his penis and offered it to your face.'
+	 gs'oral','start'
+		 act 'continue to suck.':
+		 cla
+		 *clr
+		 set swallow = swallow + 1
+		 set cumlip = cumlip + 1
+		 '<center><img src="picV/swallow.jpg" ></center>'
+		 'A jet of hot cum hit you in the mouth. You started to swallow cum, and <<$nameV>> continued to cum in your mouth. Finally.'
+			 act 'Get_Away.':
+			 cla
+			 gt'street'
+			 end
+		 end
+		 
+		 act 'Remove the mouth.':
+		 cla
+		 *clr
+			 if harakBoyA = 0:
+			 '<center><img src="picV/hand.jpg" ></center>'
+			 'You remove a member from the mouth and <<$nameV>> finished you in the palm.'
+			 end
+			 if harakBoyA = 1:
+			 set tiprand = RAND (0,3)
+				 if tiprand < 3:
+				 '<center><img src="picV/hand.jpg" ></center>'
+				 'You remove a member from the mouth and <<$nameV>> finished you in the palm.'
+				 end 
+				 if tiprand = 3:
+				 set facial = facial + 1
+				 set cumface = cumface + 1
+				 '<center><img src="picV/facial.jpg" ></center>'
+				 'Have you taken the member and at this point <<$nameV>> discharged directly on your face, covering it with warm and sticky sperm.'
+				 end
+			 end
+			 if harakBoyA = 2:
+			 set facial = facial + 1
+			 set cumface = cumface + 1
+			 '<center><img src="picV/facial.jpg" ></center>'
+			 '<<$nameV>> hold your hair pulled dick out of your mouth and on your face cumshot, covering it with warm and sticky sperm.'
+			 end
+		  
+			 act 'Get_Away.':
+			 cla
+			 gt'street'
+			 end
+	     end
+     end
+>>>>>>> 420_svidan
 end
 
+<<<<<<< 420_svidan
 if $ARGS[0] = 'kvartA':
 *clr
 if housr > 0: set housrA = 1 & set housrMir = 0
@@ -499,5 +861,154 @@ set minut += 20
 
 	end
 end
+=======
+if $ARGS[0]='kvartA':
+*clr
+if housr > 0:set housrA = 1&set housrMir = 0
+set minut = minut + 20
+'Once you have entered the apartment <<$boyA>> hugged you and started kissing.'
+     if husband = 0:
+		 act 'sex':
+		 cla
+		 *clr
+		 set bfA = bfA + 1
+			 if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+		 set sex = sex + 1
+		 set minut = minut + 30
+		 set pose = 0
+		 set $nameV = $boyA
+		 set dick = dickA
+		 set silavag = silavagA
+		 '<center><img src="picV/vag.jpg" ></center>'
+		 '<<$nameV>> put you on your back and spread your legs.'
+		 gs'orgazm','start'
+			 act 'Hold up doors.':
+			 cla
+			 gt'mirror','fin'
+			 end
+		 end
+		 
+		 
+		 act 'Take by mouth':
+		 cla
+		 *clr
+		 set bfA = bfA + 1
+			 if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+		 set bj = bj + 1
+		 set dick = dickA
+		 set harakBoy = harakBoyA
+		 set minut = minut + 30
+		 set $nameV = $boyA
+		 '<center><img src="picV/bj.jpg" ></center>'
+		 'You knelt and <<$nameV>> pulled out his penis and offered it to your face.'
+		 gs'oral','start'
+			 act 'continue to suck.':
+			 cla
+			 *clr
+			 set swallow = swallow + 1
+			 set cumlip = cumlip + 1
+			 '<center><img src="picV/swallow.jpg" ></center>'
+			 'A jet of hot cum hit you in the mouth. You started to swallow cum, and <<$nameV>> continued to cum in your mouth. Finally.'
+				 act 'Hold up doors.':
+				 cla
+				 gt'mirror','fin'
+				 end
+			 end
+			 
+			 act 'Remove the mouth.':
+			 cla
+			 *clr
+				 if harakBoyA = 0:
+				 '<center><img src="picV/hand.jpg" ></center>'
+				 'You remove a member from the mouth and <<$nameV>> finished you in the palm.'
+				 end
+				 if harakBoyA = 1:
+				 set tiprand = RAND (0,3)
+					 if tiprand < 3:
+					 '<center><img src="picV/hand.jpg" ></center>'
+					 'You remove a member from the mouth and <<$nameV>> finished you in the palm.'
+					 end 
+					 if tiprand = 3:
+					 set facial = facial + 1
+					 set cumface = cumface + 1
+					 '<center><img src="picV/facial.jpg" ></center>'
+					 'Have you taken the member and at this point <<$nameV>> discharged directly on your face, covering it with warm and sticky sperm.'
+					 end
+				 end
+				 if harakBoyA = 2:
+				 set facial = facial + 1
+				 set cumface = cumface + 1
+				 '<center><img src="picV/facial.jpg" ></center>'
+				 '<<$nameV>> hold your hair pulled dick out of your mouth and on your face cumshot, covering it with warm and sticky sperm.'
+				 end
+			  
+				 act 'Hold up doors.':
+				 cla
+				 gt'mirror','fin'
+				 end
+			 end
+		 end
+		 
+		 act 'masturbate him':
+		 cla
+		 *clr
+		     if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+		 set DOM = DOM + 1
+		 set hj = hj + 1
+		 set minut = minut + 30
+		 set horny = horny + DOM
+		 '<center><img src="picV/hand1.jpg" ></center>'
+		 'You stripped and laid on the bed Man, while they themselves sat down next to him and began to fondle his penis hands.'
+		 'Soon.'
+		 if harakBoyA = 0:set bfA = bfA - 1
+		 if harakBoyA = 1:set bfA = bfA - 5
+		 if harakBoyA = 2:set bfA = bfA - 10
+			 act 'Wipe your hands and hold up to the door.':
+			 cla
+			 gt'mirror','fin'
+			 end
+		 end
+		 
+		 if DOM > 1 and kunday ! day and mesec <= 0:
+		 	 act 'Cooney':
+			 cla
+			 *clr
+			 set kunday = day
+				 if boyonceA = 0:set boyonceA = 1&set guy = guy + 1&set vneshBoyA = vneshBoyA + 10
+			 set DOM = DOM + 1
+			 set kuni = kuni + 1
+			 set minut = minut + 30
+			 set horny = horny + DOM + (silaVag*2 + 5)
+			 '<center><img src="picV/kuni.jpg" ></center>'
+			 'You undressed and lay on the bed, saying that the guy you caressed his tongue.'
+			 '<<$boyA>> lay down between your legs and began to work on your tongue pussy.'
+			 if harakBoyA = 0:set bfA = bfA - 1
+			 if harakBoyA = 1:set bfA = bfA - 5
+			 if harakBoyA = 2:set bfA = bfA - 10
+			     if horny >= 90:
+			     set horny = 0
+				 set manna = manna + 15
+				 set willpower = willpower + 15
+				 set orgasm = orgasm + 1
+			     'Man of skillful actions you covered orgasm.'
+			     else
+			     'Action Man though they were exciting, but they began to bore you.'
+			     end
+			     
+				 act 'further.':
+				 cla
+				 gt'svidan','kvartA'
+				 end
+			 end
+		 
+		 end
+		 
+	 end
+end
+
+
+
+
+>>>>>>> 420_svidan
 --- svidan ---------------------------------
 

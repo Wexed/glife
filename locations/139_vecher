@@ -1,7 +1,12 @@
 # vecher
+<<<<<<< 139_vecher
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 '<center><img src="images\img\centr\vecher.jpg"></center>'
 act 'Leave': gt 'dorm','korr'
 	act 'Dance':
@@ -21,19 +26,55 @@ act 'Leave': gt 'dorm','korr'
 	if itrand = 10: gt 'vecher','end10'
 	if itrand = 11: gt 'vecher','end11'
 	end
+=======
+'<center><img src="img/centr/vecher.jpg" ></center>'
+act 'Get_Away':gt 'dorm','korr'
+     act 'light':
+	 cla
+	 set hour = 23
+	 'you have fun, thumps and dance.'
+	 Set itrand = RAND (1,11)
+	 if itrand = 1:gt'vecher','end'
+	 if itrand = 2:gt'vecher','end2'
+	 if itrand = 3:gt'vecher','end3'
+	 if itrand = 4:gt'vecher','end4'
+	 if itrand = 5:gt'vecher','end5'
+	 if itrand = 6:gt'vecher','end6'
+	 if itrand = 7:gt'vecher','end7'
+	 if itrand = 8:gt'vecher','end8'
+	 if itrand = 9:gt'vecher','end9'
+	 if itrand = 10:gt'vecher','end10'
+	 if itrand = 11:gt'vecher','end11'
+	 end
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end':
+=======
+if $ARGS[0]='end':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 '<center><img src="images\picparty\itog.jpg"></center>'
 'Gradually you distribute alcohol as hell and you start to feel sick, you end vechereniki spent hugging the toilet.'
 act 'Leave': gt 'dorm','korr'
+=======
+'<center><img src="picparty/itog.jpg" ></center>'
+'Gradually you distribute alcohol as hell and you start to feel sick, end vechereniki you spent in the arms of the toilet.'
+act 'Get_Away':gt 'dorm','korr'
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end2':
+=======
+if $ARGS[0]='end2':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 '<center><img src="images\picparty\itog2.jpg"></center>'
 'You danced and hooligans, you had the idea to dance with Vika, ended your dance light lesbian show with savory lingering kisses.'
 act 'Leave': gt 'dorm','korr'
@@ -43,11 +84,27 @@ act 'Go into the room with Vika':
 	set $sexloc = 'obroom'
 	gt 'lezbsex','start'
 	end
+=======
+'<center><img src="picparty/itog2.jpg" ></center>'
+'You danced and hooligans, you got the idea to dance with Vika, ended your dance light lesbian show with savory lingering kiss.'
+act 'Get_Away':gt 'dorm','korr'
+act 'Vika leave the room':
+	 cla
+	 if vikasex = 0:set vikasex = 1
+	 set $sexloc = 'obroom'
+	 gt'lezbsex','start'
+	 end
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end3':
+=======
+if $ARGS[0]='end3':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 if vnesh < 20:
 '<center><img src="images\picparty\itog3.jpg"></center>'
 'You nakiryalis and slept in the next room with a few hardcore sex.'
@@ -68,12 +125,39 @@ act 'Enjoy':
 	'You relax allowing girls to caress your body, they periodically change in your pussy, giving each try yazochok from these endless caresses you covered orgasm.'
 	act 'Continue': gt 'vecher','end12'
 	end
+=======
+if vnesh<20:
+'<center><img src="picparty/itog3.jpg" ></center>'
+'You nakiryalis and slept in the next room with several sex!.'
+act 'Get_Away':gt 'dorm','korr'
+end
+if vnesh>=20:
+'<center><img src="img/centr/vechend1.jpg" ></center>'
+'You nakiryalis and slept in the next room with several sex!. You dream that you have sex with Vika, you literally feel like it pushes your feet, and then hot tongue begins to lick your clit. Opening his eyes you can see how some girls bent over your hands and caress your body, and you have between your legs Vic wielded his tongue, "Here is a prophetic dream" went through your head.'
+act 'Get_Away':gt 'dorm','korr'
+act 'enjoy':
+	 cla
+	 *clr
+	 if vikasex = 0:set vikasex = 1
+	 set orgasm+=1
+	 set girl+=4
+	 set lesbian+=1
+	 '<center><img src="img/centr/vechend2.jpg" ></center>'
+	 'You relax allowing the girls to caress your body, they periodically change in your pussy, try giving each yazochok, of these endless caresses you covered orgasm.'
+	 act 'carry_On':gt'vecher','end12'
+	 end
+>>>>>>> 139_vecher
 end
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end4':
+=======
+if $ARGS[0]='end4':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 '<center><img src="images\picparty\itog4.jpg"></center>'
 'You get opyaneli and began to molest girls, how come you and do not understand, but you have exposed breasts and Vic kiss and lick your nipples in front of everyone.'
 act 'Leave': gt 'dorm','korr'
@@ -83,29 +167,67 @@ act 'Leave': gt 'dorm','korr'
 	set $sexloc = 'obroom'
 	gt 'lezbsex','start'
 	end
+=======
+'<center><img src="picparty/itog4.jpg" ></center>'
+'You get opyaneli and began to molest girls, how come you yourself do not understand, but you have exposed breasts and kiss and lick Vic your nipples in front of everyone.'
+act 'Get_Away':gt 'dorm','korr'
+	 act 'Vika leave an empty room':
+	 cla
+	 if vikasex = 0:set vikasex = 1
+	 set $sexloc = 'obroom'
+	 gt'lezbsex','start'
+	 end
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end5':
+=======
+if $ARGS[0]='end5':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 set guy += 1
 set sex += 1
 '<center><img src="images\img\centr\itog5.jpg"></center>'
 'You woke up on the floor in the hallway, half way to your room. Puffed over you what that pimply young man fucking your vagina carefully. Noticing that you´re awake, he quickly jumped to his feet and ran off, leaving you lying on the dirty floor.'
 act 'Leave': gt 'dorm','korr'
+=======
+set guy+=1
+set sex+=1
+'<center><img src="img/centr/itog5.jpg" ></center>'
+'You woke up on the floor in the hallway, half way to your room. Above you puffed what that pimply youth diligently fucking your vagina. Noticing that you woke up , leaving you lying on the dirty floor.'
+act 'Get_Away':gt 'dorm','korr'
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end6':
+=======
+if $ARGS[0]='end6':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 '<center><img src="images\picparty\itog6.jpg"></center>'
 'You all evening molested girl with big breasts begging her to kiss her breasts. By evening, the two of you got drunk in the trash and then you climbed her face in his chest and began kissing them.'
 act 'Leave': gt 'dorm','korr'
+=======
+'<center><img src="picparty/itog6.jpg" ></center>'
+'You all evening molested the girl with big breasts begging her to kiss her breasts. In the evening .'
+act 'Get_Away':gt 'dorm','korr'
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end7':
+=======
+if $ARGS[0]='end7':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 '<center><img src="images\img\centr\itog7.jpg"></center>'
 'Natreskavshis zyuzyu to you and do not understand how the dance began to undress, but alcohol has done his job and lost his balance and falls down Man sitting on the couch, then immediately took advantage of the situation and began to grope your breasts.'
 act 'Writing in the balls and leave': gt 'dorm','korr'
@@ -138,11 +260,50 @@ act 'Remove panties':
 			end
 		end
 	end
+=======
+'<center><img src="img/centr/itog7.jpg" ></center>'
+'Natreskavshis in zyuzyu you yourself do not understand how the dance began to undress, but alcohol has done his job and lost his balance and falls down on the guy sitting on the couch, then immediately took advantage of the situation and began to touch your breasts.'
+act 'Writing in the balls and go':gt 'dorm','korr'
+act 'take off her panties':
+	 cla
+	 *clr
+	 set guy+=1
+	 set bj+=1
+	 set sex+=1
+	 set cumass+=1
+	 '<center><img src="img/centr/itog71.jpg" ></center>'
+	 'You climb to his feet and shoot the last thing you have left, panties, again almost fell. Seeing your fellow rush immediately releases chleniz pants.'
+	 act 'suck':
+		 cla
+		 *clr
+		 '<center><img src="img/centr/itog72.jpg" ></center>'
+		 'You go down on his knees and clasped his dick lips retract a, you move smoothly sucking his dildo oblivious to the crowd gathered around you, but it seemed to him that is not enough, he grabbed you by the head and began to literally stick your mouth on my dick.'
+		 act'further':
+			 cla
+			 *clr
+			 '<center><img src="img/centr/itog73.jpg" ></center>'
+			 'When he became a member of the stone, he put you on the couch with cancer and with force entered your vagina, he did not even try to make you even as it pleased, just fucked, the crowd cheered him around you, shouting that he would fuck you as follows, although how do they know how to. The guy was drunk he could not get to finish.'
+			 act'further':
+				 cla
+				 *clr
+				 '<center><img src="img/centr/itog74.jpg" ></center>'
+				 'When you have ceased to feel that either he pulled Resko of you cock and you run down to the buttocks. Collecting clothes from the floor.'
+				 act 'Get_Away':gt 'dorm','korr'
+				 end
+			 end
+		 end
+	 end
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end8':
+=======
+if $ARGS[0]='end8':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 '<center><img src="images\picparty\itog8.jpg"></center>'
 'You ran with Vika Vika became sex with what that guy is not known. You were lying next fun chatting with her until Vika tore drunk in the trash is not familiar guy.'
 act 'Leave': gt 'dorm','korr'
@@ -190,15 +351,73 @@ act 'Caress Vic':
 			end
 		end
 	end
+=======
+'<center><img src="picparty/itog8.jpg" ></center>'
+'You ran with Vika and Vika became sex with some sort of unknown guy. You lay beside fun chatting with Vika until it tore up drunk in the trash is not familiar guy.'
+act 'Get_Away':gt 'dorm','korr'
+act 'caress Vic':
+	 cla
+	 if vikasex = 0:set vikasex = 1
+	 set girl+=1
+	 set lesbian+=1
+     *clr
+     '<center><img src="img/centr/itog81.jpg" ></center>'
+     'You kiss and caress his chest Wiki, she is very nervous and you decide to give it a lick your pussy.'
+     set horny = horny + 60
+     if horny < 100:'You started to get tired of licking and wanted to continue'
+     if horny >= 100:set horny = 0&set orgasm+=1&'The muscles of the vagina began to decline sharply, the entire abdomen as if covered hot wave of pleasure, you shout from the powerful orgasm.'
+     'The guy pulls his penis out of Vicki and lifting it inserts his penis into her mouth.'
+         act 'watch':
+         cla
+         *clr
+         '<center><img src="img/centr/itog82.jpg" ></center>'
+         'The guy cums in her mouth Vick. Lips Wiki peremazanny in semen and she reaches out to you that would kiss her.'
+             act 'Kissing with Vika':
+             cla
+             *clr
+             Set cumlip = cumlip + 1
+             '<center><img src="img/centr/itog83.jpg" ></center>'
+             'You`re kissing licking each other cum.'
+             act 'Get_Away':gt 'dorm','korr'
+             end
+         end
+         act 'Suck together with Vika':
+         cla
+         *clr
+         set bj+=1
+         set guy+=1
+         set cumface = cumface + 1
+         '<center><img src="img/centr/itog84.jpg" ></center>'
+         'You aspirated member together with Vika, Perrin finally cums on the face you.'
+             act 'Kissing with Vika':
+             cla
+             *clr
+             set cumlip = cumlip + 1
+             '<center><img src="img/centr/itog83.jpg" ></center>'
+             'You`re kissing licking each other cum.'
+             act 'Get_Away':gt 'dorm','korr'
+             end
+         end
+     end
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end9':
 cla
 '<center><img src="images\picparty\itog9.jpg"></center>'
 'Girls love to have fun, you two had a drunken girlfriends lesbian show right at the party. Caressing, kissing and squeezing each other in front of everyone.'
 act 'Leave': gt 'dorm','korr'
+=======
+if $ARGS[0]='end9':
+cla
+'<center><img src="picparty/itog9.jpg" ></center>'
+'Little girls love to party, you with two girlfriends made вЂ‹вЂ‹a drunken lesbian show right at the party. caressing, squeezing and kissing each other in front of everyone.'
+act 'Get_Away':gt 'dorm','korr'
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end10':
 cla
 '<center><img src="images\picparty\itog10.jpg"></center>'
@@ -208,27 +427,63 @@ act 'Leave': gt 'dorm','korr'
 	set $sexloc = 'obroom'
 	gt 'sex','start'
 	end
+=======
+if $ARGS[0]='end10':
+cla
+'<center><img src="picparty/itog10.jpg" ></center>'
+'You got drunk and danced with what that guy, that muddy paw you for boobs.'
+act 'Get_Away':gt 'dorm','korr'
+     act 'Touch for fly':
+     set $sexloc = 'obroom'
+     gt 'sex','start'
+     end
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end11':
+=======
+if $ARGS[0]='end11':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 set cumfrot += 1
 '<center><img src="images\picparty\skirtcum.jpg"></center>'
 'You woke up in a strange room, lying on his stomach, thank god clothes, then no you are not drunk ripped.'
 'What´s this? Damn! What that bastard, you dragged into another room and obkonchal your ass.'
 act 'Leave': gt 'dorm','korr'
+=======
+set cumfrot+=1
+'<center><img src="picparty/skirtcum.jpg" ></center>'
+'You woke up in a strange room, lying on his stomach, Glory to God in clothes, then no you are not drunk ripped.'
+'what is that? Damn! What a bastard, dragged you into another room and obkonchal your ass.'
+act 'Get_Away':gt 'dorm','korr'
+>>>>>>> 139_vecher
 end
 
+<<<<<<< 139_vecher
 if $ARGS[0] = 'end12':
+=======
+if $ARGS[0]='end12':
+>>>>>>> 139_vecher
 cla
 *clr
+<<<<<<< 139_vecher
 set picrand = rand(3,9)
 set minut += 15
 '<center><img src="images\img\centr\vechend<<picrand>>.jpg "></center>'
 'All mixed up in a big ball of women´s bodies, you do not understand or who or whom, and how that now makes your tongue or in your hole either language, or fingers.'
 act 'More': gt 'vecher','end12'
 act 'Leave': gt 'dorm','korr'
+=======
+set picrand=rand(3,9)
+set minut+=15
+'<center><img src="img/centr/vechend<<picrand>>.jpg" ></center>'
+'All mixed up in a big ball of women`s bodies, you will not understand nor anyone and neither now nor does your tongue in your hole whether language, either fingers.'
+act'yet':gt'vecher','end12'
+act 'Get_Away':gt 'dorm','korr'
+>>>>>>> 139_vecher
 end
 --- vecher ---------------------------------
 

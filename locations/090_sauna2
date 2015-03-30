@@ -1,4 +1,5 @@
 # sauna2
+<<<<<<< 090_sauna2
 set minut += 5
 '<center><B><font color = maroon>Sauna</font></B></center>'
 '<center><img src="images\etogame\sauna1.jpg"></center>'
@@ -6,8 +7,18 @@ set minut += 5
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>sauna</font></B></center>'
+'<center><img src="pic/sauna1.jpg" ></center>'
+'Stay for an hour worth 2000 RUB.'
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 090_sauna2
 LCOLOR = rgb(106,90,205)
 
+<<<<<<< 090_sauna2
 act 'QUIT': gt 'sauna'
 
 	if money >= 2000 and saunaday ! day:
@@ -26,5 +37,27 @@ act 'QUIT': gt 'sauna'
 		act 'Leave': gt 'sauna'
 		end
 	end
+=======
+
+act 'GO_OUT':gt'sauna'
+
+
+	 if money>= 2000 and saunaday ! day:
+		 act 'stay':
+		 cls
+		 money=money-2000
+		 minut+=60
+		 fat-=10
+		 sweat=-10
+		 dynamic $showerdin
+		 saunaday = day
+		 manna = (intel*magik) + magik*100 + vital*10 + rikudo
+		 gs'stat'
+		 '<center><img src="pic/sau.jpg" ></center>' 
+		 'You are within an hour soared in the sauna, washed in the shower and relax.'
+		 act 'Get_Away':gt'sauna'
+		 end
+	 end
+>>>>>>> 090_sauna2
 --- sauna2 ---------------------------------
 

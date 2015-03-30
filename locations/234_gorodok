@@ -1,21 +1,44 @@
 # gorodok
 $metka = $ARGS[0]
 $loc = $CURLOC
+<<<<<<< 234_gorodok
 litltown = 1
+=======
+$metkaStreet = $ARGS[0]
+$locStreet = $CURLOC
+litltown=1
+
+music_on=0
+>>>>>>> 234_gorodok
 cla
 *clr
+<<<<<<< 234_gorodok
 '<center><H4>The Village</H4></center>'
 '<center><img src="images\etogame\gorodok.jpg"></center>'
 'A quiet province village, if you had no idea of you where abouts, you couldn''t differ this village from others. It''s tallest building is the chuches tower.'
 if AlbFather >= 1:
 if AlbFaterBlackTime = 0: AlbFaterBlackTime = totminut + 2880
 'You can see voting posters on the walls. They say, "Vote for Boris Barlovsky!".'
+=======
+'<center><H4>town</H4></center>'
+'<center><img src="pic/gorodok.jpg" ></center>'
+'Quiet provincial town indistinguishable from thousands of others like him towns. The restored church domes rise above the dilapidated shacks that were built more German prisoners.'
+if AlbFather>=1:
+if AlbFaterBlackTime=0:AlbFaterBlackTime=totminut+2880
+'On the houses are seen pasted posters. "Boris Barlovsky, Our candidate!"'
+>>>>>>> 234_gorodok
 end
 
+<<<<<<< 234_gorodok
 if AlbFaterBlackTime > 0 and AlbFaterBlackTime <= totminut and rand(1,100) > 90 and hour >= 16 and AlbFather = 1:
 gt 'AlbFatherQW'
+=======
+if AlbFaterBlackTime>0 and AlbFaterBlackTime<=totminut and hour>=16 and AlbFather=1:
+gt'AlbFatherQW'
+>>>>>>> 234_gorodok
 end
 
+<<<<<<< 234_gorodok
 if StoryLine > 0 and hour < 5 and motherWorry = 0:
 motherWorry = 1
 end
@@ -28,16 +51,60 @@ set gorodokstreetsexrand = RAND(1,20)
 if gorodokwhore > 5 and gorodokstreetsexrand = 20:
 'To you a guy came up and offered to move into the bushes to get laid for a hundred'
 act 'Agree': gt 'gevent','5'
+=======
+if hour>=16 and hour<=22 and AlbFather=2 and AlbZaDay+30<daystart and year>2010:
+gt'AlbStarsEnd'
 end
 
+if StoryLine>0 and hour<5 and motherWorry=0:
+motherWorry=1
+end
+if NosovRevenge=2 and daynosovrevenge+1>=daystart:
+cls
+gs'stat'
+'<center><B><font color=maroon><<$npcName[1]>> <<$npcSurName[1]>></font></B></center>'
+'<center><img src="qwest/alter/npc/1.jpg" ></center>'
+'Near the house "Well slut. If you do not want that to video became public, Now let`s go and talk to me."'
+     act 'Go to the Dime':
+     cls
+     NosovRevenge=3
+     minut+=30
+     gs'stat'
+     'You went to the house of Dima. The house where he lives belongs to his parents, this is a big two-storey, detached house with a manicured lawn and a large garden. With Dima you have gone to his room and he closed the door with a key.'
+     act 'Go into the room Dima':gt 'dimaHome'
+     end
+exit
+end
+
+set gorodokwhorerand = rand (1,5)
+if gorodokwhore >=2 and gorodokwhore <6 and gorodokwhorerand =>4:'You catch yourself on people`s views, some are trying to find out who is in you- then, maybe, and learn. Occasionally you hear the laughter of people. It_seems, who- I learned about your adventures.'
+if gorodokwhore >=6 and gorodokwhore <10 and gorodokwhorerand =>4:'People look at you with a smile, who- doing something vulgar gestures toward you, some hints on your adventures.'
+if gorodokwhore >=10 and gorodokwhorerand =>4:'Everyone around you will recognize whore. some, passing, slap you on the ass. Grandmother on the benches name-calling you whore.'
+set gorodokstreetsexrand = rand (1,20)
+if gorodokwhore > 5 and gorodokstreetsexrand = 20:
+'To the guy you came and offered to move into the bushes for a hundred fuck'
+act 'agree':gt 'gevent','5'
+>>>>>>> 234_gorodok
+end
+
+<<<<<<< 234_gorodok
 gs 'stat'
 gs 'time'
+=======
+gs'stat'
+gs'time'
+>>>>>>> 234_gorodok
 
 if car > 0 and cardrive = 20:
 set cardrive = 20
+<<<<<<< 234_gorodok
 'In the parking stands <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
+=======
+'In the parking lot is worth <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
+>>>>>>> 234_gorodok
 end
 
+<<<<<<< 234_gorodok
 if StoryLine = 1 and ParHomeBlock = 0: 'Your home is in one of the houses, it''s an <a href="exec: minut += 15 & GT ''korrPar''">apartment</a> your parents own.'
 'The <a href="exec:minut += 15 & GT ''vokzalG''">Train Station</a>.'
 'The <a href="exec:minut += 15 & GT ''gpoli''">Clinic</a>.'
@@ -63,5 +130,79 @@ if workPTU > 2: act '<b>Go to the hostel</b>': gt 'etoexhib','pos40'
 		end
 	act 'Take a look at the clock': gt curloc
 	end
+=======
+if StoryLine=1 and ParHomeBlock=0:'In one of the houses is <a href="exec:minut+=15&GT ''korrPar''">apartment</a> your parents.'
+'<a href="exec:minut+=15&GT ''vokzalG''">railway_station</a>.'
+'<a href="exec:minut+=15&GT ''gpoli''">clinic</a>.'
+if hour>=8 and hour<=22:'The kiosk selling <a href="exec:dynamic $kiosksig">cigarettes.</a>'
+'Automotive <a href="exec:GT ''zaprF'',''start''">filling.</a>'
+'district <a href="exec:GT ''gdk''">house of Culture.</a>'
+if SchoolBlock=0:'local <a href="exec:GT ''gschool''">school</a>'
+if hour>=7 and hour<=18:'<a href="exec:GT ''etoexhib'',''pos20''">Vocational School.</a>'
+if hour >= 8 and hour <= 20:'The only major store in town <a href="exec:GT ''shop'',''start''">supermarket</a>'
+'small city <a href="exec:GT ''gskver'',''park''">square</a>, in which people relax'
+'Aside from residential buildings is <a href="exec:minut+=5&GT ''garmassiv''">garage array</a>'
+if ArtomBeInHome>0 and artemblok=0:'apartment <a href="exec:minut+=15&GT ''artemhome''">Artem Chebotarev</a>'
+if DimaBeHomeOnce=1 and DimaRudeBlock=0:'Private house in which he lives <a href="exec:minut+=15&GT ''dimaGoHome2''">Dima Nosov</a>'
+if katjaFirstKiss>=1:'Private house in which he lives <a href="exec:minut+=15&GT ''KatjaHome''">Katya Meynold</a>'
+if BeInNatBelHome=1: 
+     if hour>=18 and hour<=20 and week<6 or hour>=8 and hour<=20 and week>=6:
+     'The house where the apartment <a href="exec:minut+=15&GT ''NatBelHome''">Natasha Belova</a>'
+     end
+end
+if BeInJulMilHome=1: 
+     if hour>=18 and hour<=20 and week<6 or hour>=8 and hour<=20 and week>=6:
+     'The house where the apartment <a href="exec:minut+=15&GT ''JuliaMilHome''">Julia Milova</a>'
+     end
+end
+if beinalbinahome>0:'Luxurious mansion in which he lives <a href="exec:minut+=15&GT ''albinaporog''">Albina Barlovskaya</a>'
+'urban development enterprise <a href="exec:minut+=15&GT ''Gshveyfab''">Garment factory named Paris Commune</a>'
+     act 'wait':
+     cla
+     waiting = input ("How many minutes to wait? (not any more 120 minutes)")
+         if waiting <= 0 or waiting > 120:
+         set minut = minut + 15
+         end
+         if waiting > 0 and waiting <= 120:
+         set minut = minut + waiting
+         end
+     act 'Look at the clock':gt curloc
+     end
+
+
+if StoryLine=1 and hour>=8 and hour<23:
+     if cumface>0:
+     sosedrand=rand(0,3)
+         if sosedrand=0 and sosedday!day:
+         cls
+             if sosedknow=0:
+             sosedknow=1
+             sosedday=day
+             gs'stat'
+             'Suddenly "Sveta." You turn around and see a neighbor Uncle Misha, he looks at your face with surprise "It`s that on your face?" You blush and hesitate, Stra hand to wipe off the face of sperm. he grins "Well, all clear." and goes on about his business.'
+             act 'further':gt curloc
+             exit
+             end
+             if sosedknow>0:
+             sosedday=day
+             'Once again you are confronted face to face with Uncle Misha, your neighbor, he chuckled looking at you "Well."'
+             act 'further':gt curloc
+             end
+         end
+     end
+end
+
+
+
+!act 'rating':gt'ratinglist'
+
+
+
+
+
+
+
+
+>>>>>>> 234_gorodok
 --- gorodok ---------------------------------
 

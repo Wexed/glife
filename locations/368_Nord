@@ -1,6 +1,7 @@
 # Nord
 $metka = $ARGS[0]
 $loc = $CURLOC
+<<<<<<< 368_Nord
 gs 'dinam'
 '<center><B>Northern region</B></center>'
 '<center><img src="images\etogame\nord.jpg"></center>'
@@ -63,8 +64,61 @@ act 'Take a cab':
 		end
 	act 'Turn him down and leave': gt '<<$loc>>'
 	end
+=======
+$metkaStreet = $ARGS[0]
+$locStreet = $CURLOC
+gs'dinam'
+'<center><B>Northern region</B></center>'
+'<center><img src="pic/nord.jpg" ></center>'
+clr
+gs'stat'
+gs'time'
+
+!act 'Exit at North Highway':minut+=15&nroad=0&gt'road'
+
+     act 'wait':
+     cla
+     waiting = input ("How many minutes to wait? (not any more 120 minutes)")
+         if waiting <= 0 or waiting > 120:
+         set minut = minut + 15
+         end
+         if waiting > 0 and waiting <= 120:
+         set minut = minut + waiting
+         end
+     act 'Look at the clock':gt curloc
+     end
+     
+act 'Taxi':
+	 cla
+	 *clr
+	 '<center><img src="pic/taxi1.jpg" ></center>'
+	 'You caught a passing taksishku.
+	 fare 250 RUB.'
+   	 set minut+=5
+	 if $loc!'street':
+		 act 'Go to the sleeping area':
+			 set $loc='street'
+			 dynamic $taxi
+			 end
+		 end
+	 if $loc!'down':
+		 act 'Go to the center':
+			 set $loc='down'
+			 dynamic $taxi
+			 end
+		 end
+	 if $loc!'Nord':
+		 act 'Go to the northern region':
+			 set $loc='Nord'
+			 dynamic $taxi
+			 end
+		 end
+	 act 'Opt_Out':gt'<<$loc>>'
+	 end
+>>>>>>> 368_Nord
 
 if car > 0:
+<<<<<<< 368_Nord
 	if cardrive = 3 or cardrive >= 6 and cardrive <= 9: 'In the parking stands your <a href="exec: GS ''carF'',''start''"><<$car>></a>.'
 end
 
@@ -95,8 +149,41 @@ if hour = meethour and $meetloc = $CURLOC:
 	if svidanieB = 1: '<B><a href="exec: GT ''meet'',''start''"><<$boyA>></a> waits next to the entrance to the house your apartment is in.</B>'
 	if svidanieC = 1: '<B><a href="exec: GT ''meet'',''start''"><<$boyA>></a> waits next to the entrance to the house your apartment is in.</B>'
 end
+=======
+	 if cardrive = 3 or cardrive >= 6 and cardrive <= 9:'In the parking lot is worth <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
+	 end
+if hour>=8 and hour<=22:'The kiosk selling <a href="exec:dynamic $kiosksig">cigarettes</a>'
+'<a href="exec:minut+=15&GT ''vokzal''">railway_station</a>.'
+if slavaQW>=1:'<a href="exec:GT ''qwBarPolet''">bar "flight"</a>.'
+litltown=0
+'Automotive <a href="exec:GT ''zaprF'',''start''">filling</a>'
+if hour >= 5 and hour <= 23:'station <a href="exec:GT ''metro'',''start''">subway</a> situated in 5 walking distance.'
+if hour >= 9 and hour <= 17 and week > 1:'<a href="exec:GT ''autosalonF'',''start''">Motor Show</a>'
+if hour >= 9 and hour <= 20 and week < 7:'<a href="exec:GT ''autoservisF'',''start''">Service_and_repair</a>'
+if hour >= 9 and hour <= 17 and week > 1:'<a href="exec:GT ''autotraidF'',''start''">Car_market</a>'
+if hour >= 9 and hour <= 17 and week < 6:'<a href="exec:GT ''dk'',''start''">The House of Culture named after Lenin</a>'
+if hour >= 8 and hour <= 20:'A bright spot in a vacant lot worth <a href="exec:GT ''shop'',''start''">supermarket</a>'
+if hour>=12 and hour<20:'Above the door to the basement emblazoned inscription <a href="exec:GT ''pirsingsalon''">piercing parlor</a>'
+if tobiQW >= 1:'The old mansion home <a href="exec:GT ''kakuzu'',''start''">Kakuzu</a>'
+'The huge building which houses <a href="exec:GT ''casino''">casino</a> hotel sparkles and lights.'
+if hour >= 14 or hour < 4:'Not far from the buildings located <a href="exec:GT ''lakecafe'',''main''">Barbecue</a>.'
+if jouryResult=10:'In one of the newly located <a href="exec:GT ''youry''">apartment Yuri</a>'
+if IvanKvartira>0:'In one of the houses is <a href="exec:GT ''ivanRoom''">Apartment manager Ivan</a>'
+'For a long concrete fence is <a href="exec:GT ''Terminal''">storage terminal</a>'
+>>>>>>> 368_Nord
 
 dynamic $din_street_cum
+<<<<<<< 368_Nord
 dynamic $meet_boyfriend
+=======
+
+
+
+
+
+
+
+
+>>>>>>> 368_Nord
 --- Nord ---------------------------------
 

@@ -1,4 +1,5 @@
 # BDsex
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'start':
 !выбор интеракций
 !gs 'BDsex','start'
@@ -73,9 +74,86 @@ gs 'stat'
 			end
 		end
 	end
+=======
+if $ARGS[0]='start':
+!range of interactions
+!gs'BDsex','start'
+minut+=3
+if NoGuy=0:guy+=1
+horny+=10
+gs'stat'
+'<center><img src="picKav/petting.jpg" ></center>'
+     if harakBoy=0:
+     '<<$boy>> hugs you and gently caresses your breasts.'
+     act 'Lick me':gt'BDsex','kuni'
+     act 'Masturbate his penis':gt'BDsex','hj'
+     act 'Take by mouth':gt'BDsex','minet'
+     act 'Lie on your back and spread her legs':gt'BDsex','sex'
+     act 'Stand on all fours':gt'BDsex','sex2'
+     act 'anal':gt'BDsex','anal2'
+     end
+     
+     if harakBoy=1:
+     '<<$boy>> you and skillfully caresses your breasts.'
+     brand=RAND(0,100)
+         if brand<70:
+         '<<$boy>> hugs you and caress your pussy with my fingers.'
+         trand=RAND(0,2)
+             if trand<2:
+             'He puts you in the back.'
+             act 'Lie on your back and spread her legs':gt'BDsex','sex'
+             else
+             'He turns you on belly.'
+             act 'Stand on all fours':gt'BDsex','sex2'
+             end
+             act 'Let me suck':gt'BDsex','minet'
+         else
+         '<<$boy>> baby, caressed my mouth.'
+             act 'Masturbate his penis':gt'BDsex','hj'
+             act 'Take by mouth':gt'BDsex','minet'
+             act 'I do not want. Lie on your back and spread her legs':gt'BDsex','sex'
+         end
+     end
+     
+     if harakBoy=2:
+     '<<$boy>> embraces you and passionately caress your breasts.'
+     brand=RAND(0,100)
+         if brand<70:
+         '<<$boy>> caress your pussy with my fingers.'
+         trand=RAND(0,2)
+             if trand<2:
+             'He puts you in the back.'
+             act 'Lie on your back and spread her legs':gt'BDsex','sex'
+             else
+             'He turns you on belly.'
+             act 'Stand on all fours':gt'BDsex','sex2'
+             end
+         end
+         
+         if brand>=70 and brand<90:
+         '<<$boy>> takes you behind your head and pulls you face to its members.'
+         act 'Take by mouth':gt'BDsex','minet'
+             if dom>0:
+                 act 'Lie on your back and spread her legs':gt'BDsex','sex'
+                 act 'Stand on all fours':gt'BDsex','sex2'
+             end
+         end
+         
+         if brand>=90:
+         '<<$boy>> tells you that he wants you in the ass.'
+         act 'anal':gt'BDsex','anal2'
+             if dom>0:
+                 act 'I do not want! Lie on your back and spread her legs':gt'BDsex','sex'
+                 act 'I `ll get cancer, but the priest will not give!':gt'BDsex','sex2'
+                 act 'Take by mouth':gt'BDsex','minet'
+             end
+         end
+     end
+>>>>>>> 415_BDsex
 end
 
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'kuni':
 minut += 15
 gs 'stat'
@@ -100,13 +178,44 @@ set horny += DOM + (silaVag * 2 + 5)
 	act 'Lie on your back and spread her legs': gt 'BDsex','sex'
 	act 'Stand on all fours': gt 'BDsex','sex2'
 	act 'Anal': gt 'BDsex','anal2'
+=======
+if $ARGS[0]='kuni':
+minut+=15
+gs'stat'
+set DOM = DOM + 1
+set kuni = kuni + 1
+set horny = horny + DOM + (silaVag*2 + 5)
+ '<center><img src="picV/kuni.jpg" ></center>'
+ 'You undressed and lay on the bed, saying that the guy you caressed his tongue.'
+ '<<$boy>> lay down between your legs and began to work on your tongue pussy.'
+     if horny >= 90:
+     set horny = 0
+	 set manna = manna + 15
+	 set willpower = willpower + 15
+	 set orgasm = orgasm + 1
+     'Man of skillful actions you covered orgasm.'
+     else
+     'Action Man though they were exciting, but they began to bore you.'
+     end
+     
+     act 'Masturbate his penis':gt'BDsex','hj'
+     act 'Take by mouth':gt'BDsex','minet'
+     act 'Lie on your back and spread her legs':gt'BDsex','sex'
+     act 'Stand on all fours':gt'BDsex','sex2'
+     act 'anal':gt'BDsex','anal2'
+>>>>>>> 415_BDsex
 end
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<<<<<<< 415_BDsex
 !!!!!!!!!!!!!!!!!vagina
+=======
+!!!!!!!!!!!!!!!!!vagina    
+>>>>>>> 415_BDsex
 !!!!!!!!!!!!!!!!!sex
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'sex':
 !миссионерская поза
 minut += 10
@@ -133,8 +242,37 @@ givfinrand = RAND(0,10)
 	end
 gs 'BDsex','cum'
 act 'Leave': gt 'BDsex','end'
+=======
+if $ARGS[0]='sex':
+!missionary position
+minut+=10
+gs'stat'
+'<center><img src="picV/vag.jpg" ></center>'
+pose=0
+gs'BDsex','org'
+givfinrand=RAND(0,10)
+     if harakBoy>0:
+		 if givfinrand>=8:
+		 'suddenly <<$boy>> took out of you cock and taking you by the shoulders put in front of him on his knees.'
+		 act 'substitute person':gt'BDsex','facial'
+		 act 'open your mouth':gt'BDsex','swallow' 
+		 exit
+		 end 
+     end
+givfinrand=RAND(0,10)
+     if harakBoy=2:
+		 if givfinrand>=8:
+		 'suddenly <<$boy>> took out of you cock and began to fondle your ass preparing its penetration.'
+		 act 'anal':gt'BDsex','anal2'
+		 exit
+		 end 
+     end    
+gs'BDsex','cum'
+act 'Get_Away':gt'BDsex','end'
+>>>>>>> 415_BDsex
 end
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'sex2':
 !раком
 minut += 10
@@ -164,8 +302,42 @@ givfinrand = RAND(0,10)
 	end
 gs 'BDsex','cum'
 act 'Leave': gt 'BDsex','end'
+=======
+if $ARGS[0]='sex2':
+!cancer
+minut+=10
+gs'stat'
+picrand=RAND(1,5)
+if picrand=1:'<center><img src="pics/vagdog.jpg" ></center>'
+if picrand=2:'<center><img src="pics/vagdog2.jpg" ></center>'
+if picrand=3:'<center><img src="pics/vagdog3.jpg" ></center>'
+if picrand=4:'<center><img src="pics/vagdog4.jpg" ></center>'
+if picrand=5:'<center><img src="pics/vagdog5.jpg" ></center>'
+pose=1
+gs'BDsex','org'
+givfinrand=RAND(0,10)
+     if harakBoy>0:
+		 if givfinrand>=8:
+		 'suddenly <<$boy>> took out of you cock and taking you by the shoulders put in front of him on his knees.'
+		 act 'substitute person':gt'BDsex','facial'
+		 act 'open your mouth':gt'BDsex','swallow' 
+		 exit
+		 end 
+     end
+givfinrand=RAND(0,10)
+     if harakBoy=2:
+		 if givfinrand>=8:
+		 'suddenly <<$boy>> took out of you cock and began to fondle your ass preparing its penetration.'
+		 act 'anal':gt'BDsex','anal2'
+		 exit
+		 end 
+     end 
+gs'BDsex','cum'
+act 'Get_Away':gt'BDsex','end'
+>>>>>>> 415_BDsex
 end
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'sex3':
 !с верху
 minut += 10
@@ -175,12 +347,28 @@ picrand = RAND(1,6)
 pose = 0
 gs 'BDsex','org'
 gs 'BDsex','cum'
+=======
+if $ARGS[0]='sex3':
+!to top
+minut+=10
+gs'stat'
+picrand=RAND(1,5)
+if picrand=1:'<center><img src="pics/vagcow.jpg" ></center>'
+if picrand=2:'<center><img src="pics/vagcow.jpg" ></center>'
+if picrand=3:'<center><img src="pics/vagcow.jpg" ></center>'
+if picrand=4:'<center><img src="pics/vagcow.jpg" ></center>'
+if picrand=5:'<center><img src="pics/vagcow.jpg" ></center>'
+pose=0
+gs'BDsex','org'
+gs'BDsex','cum'
+>>>>>>> 415_BDsex
 
 end
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!anal
 !!!!!!!!!!!!!!!!!!anus
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'anal':
 !миссионерская поза
 minut += 10
@@ -188,9 +376,19 @@ gs 'stat'
 
 gs 'bdsex','an'
 gs 'bdsex','ancum'
+=======
+if $ARGS[0]='anal':
+!missionary position
+minut+=10
+gs'stat'
+
+gs'bdsex','an'
+gs'bdsex','ancum'
+>>>>>>> 415_BDsex
 
 end
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'anal2':
 !раком
 minut += 10
@@ -218,19 +416,57 @@ givfinrand = RAND(0,10)
 	end
 gs 'bdsex','ancum'
 act 'Leave': gt 'BDsex','end'
+=======
+if $ARGS[0]='anal2':
+!cancer
+minut+=10
+gs'stat'
+picrand=RAND(1,10)
+if picrand=1:'<center><img src="pics/anal.jpg" ></center>'
+if picrand=2:'<center><img src="pics/anal2.jpg" ></center>'
+if picrand=3:'<center><img src="pics/anal3.jpg" ></center>'
+if picrand=4:'<center><img src="pics/anal4.jpg" ></center>'
+if picrand=5:'<center><img src="pics/anal5.jpg" ></center>'
+if picrand=6:'<center><img src="pics/anal6.jpg" ></center>'
+if picrand=7:'<center><img src="pics/anal7.jpg" ></center>'
+if picrand=8:'<center><img src="pics/anal8.jpg" ></center>'
+if picrand=9:'<center><img src="pics/anal9.jpg" ></center>'
+if picrand=10:'<center><img src="pics/anal10.jpg" ></center>'
+gs'bdsex','an'
+givfinrand=RAND(0,10)
+     if harakBoy>0:
+		 if givfinrand>=8:
+		 'suddenly <<$boy>> took out of you cock and taking you by the shoulders put in front of him on his knees.'
+		 act 'substitute person':gt'BDsex','facial'
+		 act 'open your mouth':gt'BDsex','swallow' 
+		 exit
+		 end 
+     end
+gs'bdsex','ancum'
+act 'Get_Away':gt'BDsex','end'
+>>>>>>> 415_BDsex
 end
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'anal3':
 !с верху
 
 gs 'bdsex','an'
 gs 'bdsex','ancum'
+=======
+if $ARGS[0]='anal3':
+!to top
+
+gs'bdsex','an'
+gs'bdsex','ancum'
+>>>>>>> 415_BDsex
 
 end
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!hj
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'hj':
 !ханджоб
 hj += 1
@@ -291,6 +527,68 @@ bjrand = RAND(0,100)
 		act 'Substitute person': gt 'BDsex','facial'
 		act 'Open mouth': gt 'BDsex','swallow'
 	end
+=======
+if $ARGS[0]='hj':
+!handzhob
+hj+=1
+minut+=5
+gs'stat'
+'<center><img src="picV/hand1.jpg" ></center>'
+'You got it <<dick>> inch cock and began to caress her arms around his hands, moving the skin on purple head.'
+bjrand=RAND(0,100)
+     if bjrand>=75:
+		 if harakBoy=0:
+		 '<<$boy>> groaned "I `ll finish."'
+			 act 'Let cums':
+			 cla
+			 *clr
+			 '<center><img src="picV/hand2.jpg" ></center>'
+			 '<<$boy>> you had finished her hands covering their hot and sticky sperm.'
+			 act 'Get_Away':gt'BDsex','end'
+			 end
+			 
+			 act 'Take by mouth':gt'BDsex','minet'
+			 act 'Lie on your back and spread her legs':gt'BDsex','sex'
+			 
+		 elseif harakBoy=1:
+		 '<<$boy>> groaned "Svetsik, Take in the mouth or sex Let us come."'
+			 act 'Take by mouth':gt'BDsex','minet'
+			 act 'Lie on your back and spread her legs':gt'BDsex','sex'
+		 else
+		  brand=RAND(0,100)
+			 if brand<70:
+			 '<<$boy>> caress your pussy with my fingers.'
+			 trand=RAND(0,2)
+				 if trand<2:
+				 'He puts you in the back.'
+				 act 'Lie on your back and spread her legs':gt'BDsex','sex'
+				 else
+				 'He turns you on belly.'
+				 act 'Stand on all fours':gt'BDsex','sex2'
+				 end
+			 end
+			 
+			 if brand>=70 and brand<80:
+			 '<<$boy>> tells you that he wants you in the ass.'
+			 act 'anal':gt'BDsex','anal2'
+				 if dom>5:
+					 act 'I do not want! Lie on your back and spread her legs':gt'BDsex','sex'
+					 act 'I `ll get cancer, but the priest will not give!':gt'BDsex','sex2'
+					 act 'Take by mouth':gt'BDsex','minet'
+				 end
+			 end
+			 if brand>=80:
+			 '<<$boy>> tightens your face to its members.'
+			 act 'Take by mouth':gt'BDsex','minet'
+			 end
+		 
+		 end
+     else
+     '<<$boy>> now finish.'
+		 act 'substitute person':gt'BDsex','facial'
+		 act 'open your mouth':gt'BDsex','swallow' 
+     end
+>>>>>>> 415_BDsex
 end
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -298,6 +596,7 @@ end
 !!!!!!!!!!!!!!!!!!!!throat
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'minet':
 !минет
 minut += 5
@@ -364,8 +663,77 @@ bjrand = RAND(0,100)
 			end
 		end
 	end
+=======
+if $ARGS[0]='minet':
+!blow_job
+minut+=5
+gs'stat'
+picrand=RAND(0,4)
+if picrand=0:'<center><img src="picV/bj.jpg" ></center>'
+if picrand=1:'<center><img src="picV/bj1.jpg" ></center>'
+if picrand=2:'<center><img src="picV/bj2.jpg" ></center>'
+if picrand=3:'<center><img src="picV/bj3.jpg" ></center>'
+if picrand=4:'<center><img src="picV/bj4.jpg" ></center>'
+gs'bdsex','autobj'
+bjrand=RAND(0,100)
+     if bjrand>=75:
+		 if harakBoy=0:
+		 '<<$boy>> groaned "I `ll finish."'
+			 act 'In the palm of your hand':
+			 cla
+			 *clr
+			 '<center><img src="picV/hand2.jpg" ></center>'
+			 '<<$boy>> you had finished her hands covering their hot and sticky sperm.'
+			 act 'Get_Away':gt'BDsex','end'
+			 end
+			 
+			 act 'Lie on your back and spread her legs':gt'BDsex','sex'
+			 
+		 elseif harakBoy=1:
+		 '<<$boy>> groaned "Svetsik, Take in the mouth or sex Let us come."'
+			 act 'Lie on your back and spread her legs':gt'BDsex','sex'
+		 else
+		  brand=RAND(0,100)
+			 if brand<70:
+			 '<<$boy>> caress your pussy with my fingers.'
+			 trand=RAND(0,2)
+				 if trand<2:
+				 'He puts you in the back.'
+				 act 'Lie on your back and spread her legs':gt'BDsex','sex'
+				 else
+				 'He turns you on belly.'
+				 act 'Stand on all fours':gt'BDsex','sex2'
+				 end
+			 end
+			 
+			 if brand>=70:
+			 '<<$boy>> tells you that he wants you in the ass.'
+			 act 'anal':gt'BDsex','anal2'
+				 if dom>0:
+					 act 'I do not want! Lie on your back and spread her legs':gt'BDsex','sex'
+					 act 'I `ll get cancer, but the priest will not give!':gt'BDsex','sex2'
+				 end
+			 end
+		 
+		 end
+     else
+     '<<$boy>> now finish.'
+		 act 'substitute person':gt'BDsex','facial'
+		 act 'open your mouth':gt'BDsex','swallow' 
+		 if harakBoy=0:
+			 act 'In the palm of your hand':
+			 cla
+			 *clr
+			 '<center><img src="picV/hand2.jpg" ></center>'
+			 '<<$boy>> you had finished her hands covering their hot and sticky sperm.'
+			 act 'Get_Away':gt'BDsex','end'
+			 end
+		 end
+     end
+>>>>>>> 415_BDsex
 end
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'facial':
 facial += 1
 cumface += 1
@@ -379,8 +747,24 @@ if picrand = 4: '<center><img src="images\pics\facial4.jpg"></center>'
 if picrand = 5: '<center><img src="images\pics\facial5.jpg"></center>'
 'Thick jet of sperm hit sharply smelling you in the face.'
 act 'Brush up': gt 'BDsex','end'
+=======
+if $ARGS[0]='facial':
+facial+=1
+cumface+=1
+minut+=3
+gs'stat'
+picrand=RAND(1,5)
+if picrand=1:'<center><img src="pics/facial.jpg" ></center>'
+if picrand=2:'<center><img src="pics/facial2.jpg" ></center>'
+if picrand=3:'<center><img src="pics/facial3.jpg" ></center>'
+if picrand=4:'<center><img src="pics/facial4.jpg" ></center>'
+if picrand=5:'<center><img src="pics/facial5.jpg" ></center>'
+'Thick jet sharply smelling sperm hit you in the face.'
+act 'Brush up':gt'BDsex','end'
+>>>>>>> 415_BDsex
 end
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'swallow':
 swallow += 1
 cumlip += 1
@@ -399,13 +783,38 @@ if picrand = 9: '<center><img src="images\pics\cum9.jpg"></center>'
 if picrand = 10: '<center><img src="images\pics\cum10.jpg"></center>'
 'Thick jet of sperm hit sharply smelling your mouth.'
 act 'Brush up': gt 'BDsex','end'
+=======
+if $ARGS[0]='swallow':
+swallow+=1
+cumlip+=1
+minut+=3
+gs'stat'
+picrand=RAND(1,10)
+if picrand=1:'<center><img src="pics/cum.jpg" ></center>'
+if picrand=2:'<center><img src="pics/cum2.jpg" ></center>'
+if picrand=3:'<center><img src="pics/cum3.jpg" ></center>'
+if picrand=4:'<center><img src="pics/cum4.jpg" ></center>'
+if picrand=5:'<center><img src="pics/cum5.jpg" ></center>'
+if picrand=6:'<center><img src="pics/cum6.jpg" ></center>'
+if picrand=7:'<center><img src="pics/cum7.jpg" ></center>'
+if picrand=8:'<center><img src="pics/cum8.jpg" ></center>'
+if picrand=9:'<center><img src="pics/cum9.jpg" ></center>'
+if picrand=10:'<center><img src="pics/cum10.jpg" ></center>'
+'Thick jet sharply smelling sperm hit you in the mouth.'
+act 'Brush up':gt'BDsex','end'
+>>>>>>> 415_BDsex
 end
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<<<<<<< 415_BDsex
 !!!!!!!!!!!!!!!!!!выход
+=======
+!!!!!!!!!!!!!!!!!!sign_out
+>>>>>>> 415_BDsex
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'end':
 NoGuy = 0
 	if InYouHome = 1:
@@ -432,9 +841,38 @@ NoGuy = 0
 	if harakBoy = 2:
 	'<<$boy>> has not given you even go to the bathroom.'
 	end
+=======
+if $ARGS[0]='end':
+NoGuy=0
+     if InYouHome=1:
+     InYouHome=0
+     '<<$boy>> politely said goodbye and left.'
+     act 'Get_Away':gt'korr'
+     exit
+     end
+     
+	 if harakBoy=0:
+	 set minut = minut + 15
+	 set sweat = -3
+	 set horny = horny + 1
+	 set hapri = 1
+	 set mop = 1
+	 dynamic $showerdin
+	 '<center><img src="pics/dush.jpg" ></center>'
+	 'You got into the bathroom and turned on the shower. Soaped and washed the body in the shower.'
+	 end
+	 if harakBoy=1:
+	 if cumface>0:cumface=0
+	 'You washed and <<$boy>> you began to hurry.'
+	 end
+	 if harakBoy=2:
+	 '<<$boy>> not given you even go to the bathroom.'
+	 end
+>>>>>>> 415_BDsex
 
 
 !
+<<<<<<< 415_BDsex
 	if finance > 0:
 	if finance = 1: money += 300
 	if finance = 2: money += 500
@@ -457,12 +895,37 @@ NoGuy = 0
 		if GoToGuy = 2: GoToGuy = 0 & gt 'street'
 		end
 	end
+=======
+	 if finance>0:
+	 if finance=1:money+=300
+	 if finance=2:money+=500
+	 '<<$boy>> gave you the money for a taxi and evicted from the apartment.'
+	 end
+	 if finance=0:
+	 '<<$boy>> shoved you out of the apartment.'
+	 end
+     if GoToGuy=0:
+		 act 'Get_Away':
+		 gorand=RAND(0,2)
+		 if gorand=0:gt'street'
+		 if gorand=1:gt'down'
+		 if gorand=2:gt'nord'
+		 end
+	 end
+	 if GoToGuy>0:
+	 	 act 'Get_Away':
+		 if GoToGuy=1:GoToGuy=0&gt'nord'
+		 if GoToGuy=2:GoToGuy=0&gt'street'
+		 end
+	 end
+>>>>>>> 415_BDsex
 end
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'org':
 set protect = 0
 set vidageday -= 1
@@ -471,8 +934,20 @@ set vidageday -= 1
 		set protect = 1
 		'<<$boy>> you took a condom and put it on your <<dick>> centimeter member.'
 	end
+=======
+if $ARGS[0]='org':
+set protect = 0
+set vidageday = vidageday - 1
+
+     if tabletki <= 0 and prezik > 0:
+     set prezik = prezik - 1
+     set protect = 1 
+     '<<$boy>> You took the condom and put it on your <<dick>> inch dick.'
+     end
+>>>>>>> 415_BDsex
 
 
+<<<<<<< 415_BDsex
 	if mesec > 0:
 	!месячные, оргазм не возможен
 	set horny = 0
@@ -620,10 +1095,160 @@ set vidageday -= 1
 	end
 if vagina < dick: vagina += 1
 sex += 1
+=======
+     if mesec > 0:
+     !periods, orgasm is not possible
+     set horny = 0
+     set manna = manna - 10
+     set willpower = willpower - 10
+     'You have monthly and while yet a member of the rams you, vaginal blood flows slowly. Painful sensations and pleasant. You moan while strong <<dick>> inch dick fuck your pussy.'
+     end
+
+     if mesec <= 0 and vagina > 0:
+     !no monthly
+     !horny - excitement
+     !vagina - the elasticity of the vagina
+     !silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
+     !dick - penis Man
+     !orgazm - Total coefficient of pleasure
+     !0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
+     set smazka = horny/10
+     set prinat = smazka + vagina
+         if dick >= prinat*2:
+         !member of the critical features more years
+             if silavag = 0:set orgazm = 0
+             if silavag = 1:set orgazm = 1
+             if silavag = 2:set orgazm = 2
+         end
+         
+         if dick < prinat*2 and dick > prinat:
+         !member more options gg
+             if silavag = 0:
+                 if horny >= 100:set orgazm = 5
+                 if horny >= 90 and horny < 100:set orgazm = 4
+                 if horny >= 80 and horny < 90:set orgazm = 3
+                 if horny >= 70 and horny < 80:set orgazm = 2
+                 if horny >= 60 and horny < 70:set orgazm = 1
+                 if horny < 60:set orgazm = 0
+             end
+             if silavag = 1:
+                 if horny >= 90:set orgazm = 5
+                 if horny >= 80 and horny < 90:set orgazm = 4
+                 if horny >= 70 and horny < 80:set orgazm = 3
+                 if horny >= 60 and horny < 70:set orgazm = 2
+                 if horny >= 50 and horny < 60:set orgazm = 1
+                 if horny < 50:set orgazm = 0
+             end
+             if silavag = 2:
+                 if horny >= 80:set orgazm = 5
+                 if horny >= 70 and horny < 80:set orgazm = 4
+                 if horny >= 60 and horny < 70:set orgazm = 3
+                 if horny >= 50 and horny < 60:set orgazm = 2
+                 if horny >= 40 and horny < 50:set orgazm = 1
+                 if horny < 40:set orgazm = 0
+             end
+         end
+         
+         if dick <= prinat and dick >= vagina:
+         !Member fewer opportunities gg
+             if silavag = 0:
+                 if horny >= 80:set orgazm = 5
+                 if horny >= 60 and horny < 80:set orgazm = 4
+                 if horny >= 40 and horny < 60:set orgazm = 3
+                 if horny < 40:set orgazm = 2
+             end
+             if silavag = 1:
+                 if horny >= 70:set orgazm = 5
+                 if horny >= 50 and horny < 70:set orgazm = 4
+                 if horny >= 30 and horny < 50:set orgazm = 3
+                 if horny < 30:set orgazm = 2
+             end
+             if silavag = 2:
+                 if horny >= 60:set orgazm = 5
+                 if horny >= 40 and horny < 60:set orgazm = 4
+                 if horny >= 20 and horny < 40:set orgazm = 3
+                 if horny < 20:set orgazm = 2
+             end
+         end
+         if dick <= prinat and dick < vagina:
+             if silavag = 0:
+                 if horny >= 100:set orgazm = 5
+                 if horny >= 90 and horny < 100:set orgazm = 4
+                 if horny < 90:set orgazm = 6
+             end
+             if silavag = 1:
+                 if horny >= 90:set orgazm = 5
+                 if horny >= 80 and horny < 90:set orgazm = 4
+                 if horny < 80:set orgazm = 6
+             end
+             if silavag = 2:
+                 if horny >= 80:set orgazm = 5
+                 if horny >= 70 and horny < 80:set orgazm = 4
+                 if horny < 70:set orgazm = 6
+             end
+         end
+         
+         if orgazm = 0:
+         set horny = 0
+         set manna = manna - 15
+         set willpower = willpower - 15
+         'You groaned in pain when <<$boy>> You entered, tears flowed from the eyes and between the legs feeling as if you drove a red-hot rod. You cry and moan until strong <<dick>> inch dick fuck your pussy.'
+         end 
+         if orgazm = 1:
+         set horny = horny - 10
+         set manna = manna - 10
+         set willpower = willpower - 10
+         'You bit her lip in pain when <<$boy>> You entered, between the legs pain. You are frowning and moaning in pain while strong <<dick>> inch dick fuck your pussy.'
+         end 
+         if orgazm = 2:
+         set horny = horny - 5
+         set manna = manna - 5
+         set willpower = willpower - 5
+         'You flinched at the sudden pain when <<$boy>> You entered, between the legs pain, which gradually settle down and become quite tolerable. Are you trying to be excited until strong <<dick>> inch dick fuck your pussy, but you will not go out.'
+         end 
+         if orgazm = 3:
+         !set horny = horny + 5
+         set manna = manna + 5
+         set willpower = willpower + 5
+         'You flinched from feeling, your pussy stretched, when <<$boy>> You entered. Between the legs becomes a little nice, when strong <<dick>> inch dick fuck your pussy.'
+         end 
+         if orgazm = 4:
+         !set horny = horny + 10
+         set manna = manna + 10
+         set willpower = willpower + 10
+         'You flinched from feeling, your pussy stretched, when <<$boy>> You entered. Between the legs becomes a little nice, when strong <<dick>> inch dick fuck your pussy. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of. '
+         end 
+         if orgazm = 5:
+         set horny = 0
+         set manna = manna + 15
+         set willpower = willpower + 15
+         set orgasm = orgasm + 1
+         'You startled by the pleasant sensation, when your pussy rastyagivatsya start taking a dick. Between the legs becomes very warm and pleasant, when strong <<dick>> inch dick fuck your pussy. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling descend on you and your entire body covered hot waves of orgasm, you involuntarily shout of pleasure writhing on elde. '
+         end
+         if orgazm = 6:
+         set horny = horny + 5
+         set manna = manna + 5
+         set willpower = willpower + 5
+         'You feel as a member gets into your pussy, when <<$boy>> You entered. Between her legs nice, but much smaller than your dick and pussy <<dick>> centimeters for you little. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of. '
+         end 
+         if vagina <= dick:set vagina = vagina + 1
+     end
+     
+     if vagina = 0 and mesec <= 0:
+     set horny = 0
+     set manna = manna - 15
+     set willpower = willpower - 15
+     set vagina = vagina + 1
+     'You bit her lip in pain and tears streamed from his eyes when <<$boy>> You entered, break your hymen. You weeping and moaning while strong <<dick>> inch dick fucks your bloody pussy.'
+     end
+if vagina<dick:vagina+=1
+sex+=1
+>>>>>>> 415_BDsex
 end
 
 
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'cum':
 	if protect ! 1:
 	!не защищенный секс
@@ -655,12 +1280,46 @@ if $ARGS[0] = 'cum':
 	set protect = 0
 	'<<$boy>> groaned and you realized that he had finished in the condom.'
 	end
+=======
+if $ARGS[0]='cum':
+     if protect ! 1:
+     !unprotected sex
+     set finrand = RAND (0,1)
+         if finrand = 0:
+         !inside
+         set cumpussy = cumpussy + 1
+         '<<$boy>> groaned and you feel like a jet of sperm hit you inside your body.'
+             if tabletki <= 0 and mesec <= 0:
+             gs'preg'
+             set manna = manna - 15
+             set willpower = willpower - 15
+             'Damn, because after all, you thought with horror.'
+             end 
+         end
+         if finrand = 1:
+         !out
+             if pose = 0:
+             set cumbelly = cumbelly + 1
+             '<<$boy>> groaned and removing a member of you, cumshot on your stomach.'
+             end 
+             if pose = 1:
+             set cumass = cumass + 1
+             '<<$boy>> groaned and removing a member of you, cumshot on your ass.'
+             end 
+         end 
+     end
+     if protect = 1:
+     set protect = 0
+     '<<$boy>> groaned and you realize, he finished in a condom.'
+     end
+>>>>>>> 415_BDsex
 set pose = 0
 end
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'autobj':
 bj += 1
 'You little fingers caress <<dick>> centimeter term then cupped his mouth and began to suck.'
@@ -692,9 +1351,43 @@ bj += 1
 	'Suddenly you started sucking dick you finish yourself. Between the legs blazing fire and waves of pleasure covered body, you moaned but did not release a member of his mouth continued to suck.'
 	end
 !'Finally <<$boy>> groaned and you realize that now he will start to finish.'
+=======
+if $ARGS[0]='autobj':
+bj+=1
+'You little fingers caress <<dick>> inch dick, then wrapped around his lips and began to suck.'
+     if harakBoy = 0:
+     '<<$boy>> closed his eyes in pleasure and enjoys the affection of your lips.'
+     end
+     if harakBoy = 1:
+     '<<$boy>> staring you in the face until your lips slide on his hard dick.'
+     end
+     if harakBoy = 2:
+     if mop > 1:set mop = 0
+     set hapri = 0
+     set throat = throat + 1
+     '<<$boy>> took you by the hair and began to fuck you in the mouth, from members beat you to the throat tears flowed from his eyes.'
+     end
+     set horny = horny + throat + SUB + VAF - DOM
+'Hard and hot cock slides in your wet her mouth filling it completely, your lips firmly wrapped around his dick caressing.'
+     if horny >= 100:
+     set VAF = VAF + 1
+     set orgasm = orgasm + 1
+     set horny = 20
+     set manna = manna + 15
+     set willpower = willpower + 15
+     set lipkoef = lipkoef + 1
+         if lipkoef > 50:
+         set lipkoef = 0
+         set lip = lip + 1
+         end
+     'Suddenly. Fire was burning between her legs and waves of pleasure covered body, You groaned but did not release a member of continuing his mouth to suck.'
+     end
+!'At_Last <<$boy>> groaned and you realize, now he begins to cum.'
+>>>>>>> 415_BDsex
 end
 
 
+<<<<<<< 415_BDsex
 if $ARGS[0] = 'an':
 
 !{
@@ -773,8 +1466,66 @@ if $ARGS[0] = 'an':
 	end
 
 	anal += 1
+=======
+if $ARGS[0]='an':
+     
+     !'if analplugin=1:
+         analpluginbonus = 10
+         analplugin=0
+         if anus < 16:'<<$boy>> pulled out of your more narrow and tight ass plug,'
+         
+         if anus >= 16:'<<$boy>> pulled out of your ass juices oozing feverish plug,'
+         'and you feel like hard cock ran into your hole.'
+          
+         if anus + analpluginbonus < dick:
+	     'You screamed and bit his lip from a sharp pain when his <<dick>> Member inch apart your ass you entered.'
+	     end
+	     if anus + analpluginbonus >= dick:
+	     'You groaned feeling of fullness when it <<dick>> Member inch apart your ass you entered.'
+	     end
+         !gs 'BDsex','ancum'
+     end'
+     
+      
+     if analplugin=1:
+         analpluginbonus = 10
+         analplugin=0
+         '<<$boy>> pulled out of your more narrow and tight ass plug,'
+     end
+     
+      if dick < anus:set anus = anus + 1
+     
+     
+     if lubri = 0:
+     set lubonus = 2
+     'Lubricant and you do not <<$boy>> spitting on his fingers began to lubricate your ass saliva.'
+     end
+     
+     if lubri > 0:
+     set lubri = lubri - 1
+     set lubonus = 10
+     'You took a tube of lubricant and handed him over to the guy, He choked a little on his palm and rubbed your anus.'
+     end
+     
+'<<$boy>> put your stomach on the bed apart and your buttocks began to massage your anus with your fingers, first one, then two.'
+if anus < 10:'When your ass you entered three fingers involuntarily groaned in pain.'
+if anus >= 10:'Then the guy brought you three fingers and began to stretch your anus.'
+'<<$boy>> pulled his fingers out of your priests and you feel his hard cock ran into your hole.'
+	if anus + lubonus < dick:'You screamed and bit his lip from a sharp pain when his <<dick>> Member inch apart your ass you entered.'
+	if anus + lubonus >= dick:'You groaned feeling of fullness when it <<dick>> Member inch apart your ass you entered.'
+	'<<$boy>> froze for a moment giving your ass adapt to sticking out of her term, then began to drive them all the more insistent.'
+	if anus + lubonus + 2 < dick:
+	if mop > 1:set mop = 0
+	'You cry and sank his teeth into the pillow when <<dick>> inch cock began to fuck your ass at full power.'
+	end
+	if anus + lubonus + 2 >= dick:
+	'You started moaning rhythmically to the beat of limb movements inside you.'
+	end
+anal+=1
+>>>>>>> 415_BDsex
 end
 
+<<<<<<< 415_BDsex
 
 if $ARGS[0] = 'ancum':
 	'Finally <<$boy>> grabbed you tight ass and drove for your aching ass dick up to the finished balls inside you.'
@@ -792,5 +1543,27 @@ if $ARGS[0] = 'ancum':
 		'In anus blazing fire and waves of pleasure swept body, you were moaning and impale themselves on the ass dick.'
 	end
 end
+=======
+if $ARGS[0]='ancum':
+'At_Last <<$boy>> grabbed you stronger for the back and drove into your aching ass dick down to the eggs you finished inside.'
+cumass+=1
+set minut = minut + 3
+set cumanus = cumanus + 1
+if anus < dick:set anus = anus + 1
+set horny = horny + ((anus-dick)*3)
+if horny< 1: set horny = 1
+     if horny >=100:
+         horny  = 1
+         set orgasm = orgasm + 1
+         set analorgasm= analorgasm+1
+         'In anus blazing fire and waves of pleasure swept body, you moaning and ass impaling themselves on the penis.'
+     end
+end
+
+
+
+
+
+>>>>>>> 415_BDsex
 --- BDsex ---------------------------------
 

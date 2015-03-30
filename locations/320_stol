@@ -1,4 +1,5 @@
 # stol
+<<<<<<< 320_stol
 if $ARGS[0] = 'start':
 	cla
 	clr
@@ -120,9 +121,56 @@ if $ARGS[0] = 'start':
 		gt 'stol','start'
 		end
 	end
+=======
+if $ARGS[0]='start':
+cla
+clr
+gs'stat'
+'Storage compartment.'
+if prezik > 0:'Packaging condoms, therein <<prezik>> Pieces.'
+if tabletki > 0:'birth control pills <<tabletki>> Pieces.'
+if lubri > 0:'lubricant, enough for <<lubri>> time.'
+if krem > 0:'Suntan cream <<krem>>'
+if abonement > 0:'Subscription is valid for <<abonement>> Occupation'
+if dildo > 0:'faloimitator Realistika'
+     act 'Close the drawer':
+     cla
+     gt'stol','fin'
+     end
+     
+     if money>0:
+         act 'Put money on the table':
+         cla
+         stolIN = input ("How much money you want to put on the table?")
+		     if stolIN <= 0 or stolIN > money:
+		     !'Not correct operation.'
+		     else
+		     set stolmoney = stolmoney + stolIN
+		     set money = money - stolIN
+		     end
+         gt'stol','fin'
+         end
+     end
+     
+     if stolmoney>0:
+         act 'Take the money from the table you <<stolmoney>> rubles in the table':
+         cla
+         stolOUT = input ("How much money do you want to take from the table?")
+		     if stolOUT <= 0 or stolOUT > stolmoney:
+		     !'Not correct operation.'
+		     else
+		     set stolmoney = stolmoney - stolOUT
+		     set money = money + stolOUT
+		     !'You have removed from the account <<kartaOUT>> rubles, now in your account <<karta>> rubles.'
+		     end
+         gt'stol','fin'
+         end
+     end
+>>>>>>> 320_stol
 end
 
 
+<<<<<<< 320_stol
 if $ARGS[0] = 'fin':
 	cla
 	gt $locM, $metkaM
@@ -130,6 +178,15 @@ if $ARGS[0] = 'fin':
 	set housrA = 0
 	gt 'sitr'
 	end'
+=======
+if $ARGS[0]='fin':
+cla
+gt $locM, $metkaM
+     !'if housr = 1 and housrA = 1:
+     set housrA = 0
+     gt'sitr'
+     end'
+>>>>>>> 320_stol
 end
 --- stol ---------------------------------
 

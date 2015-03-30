@@ -1,13 +1,24 @@
 # gskino
+<<<<<<< 265_gskino
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 265_gskino
 LCOLOR = rgb(106,90,205)
 gs 'stat'
+<<<<<<< 265_gskino
 '<center><img src="images\gevent\kinoteatr.jpg"></center>'
 'Small cinema in which there is just one small room. A movie ticket costs 100 rubles.'
+=======
+'<center><img src="gevent/kinoteatr.jpg" ></center>'
+'small cinema, in which there is only one small room. Movie ticket worth 100 rubles.'
+>>>>>>> 265_gskino
 
 if money >= 100:
 
+<<<<<<< 265_gskino
 	act 'Go to the movies':
 	cla
 	*clr
@@ -16,9 +27,24 @@ if money >= 100:
 	set manna += RAND(60,90)
 		'You quietly watched the film, and then came out of the cinema.'
 		act 'Leave the hall': gt 'gskver'
+=======
+	 act 'Go to the movies':
+	 cla
+	 *clr
+	 set money = money - 100
+	 set minut = minut + 120
+	 set manna=manna+ RAND(60,90)
+		'You calmly watched the film, then came out of the cinema.'
+		act 'Leave the hall':gt 'gskver'
+>>>>>>> 265_gskino
 	end
 end
 
+<<<<<<< 265_gskino
 act 'Get out of the theater': set minut += 5 & gt 'gskver'
+=======
+act 'Get out of the theater':set minut = minut+5&gt 'gskver'
+
+>>>>>>> 265_gskino
 --- gskino ---------------------------------
 

@@ -1,7 +1,12 @@
 # restoran
+<<<<<<< 356_restoran
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 356_restoran
 cla
 *clr
+<<<<<<< 356_restoran
 set minut += 5
 '<center><B><font color = maroon>Restaurant</font></B></center>'
 '<center><img src="images\etogame\restoran.jpg"></center>'
@@ -34,12 +39,51 @@ LCOLOR = rgb(106,90,205)
 
 	if vladimirday = day and vladimirQW = 21 and hour = 20: gt 'qwmeet'
 
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>restaurant</font></B></center>'
+'<center><img src="pic/restoran.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+  
+     !eto there_were glamur>1 and vnesh>50
+     if glamur => 1 and mop>1 and hapri=1 and sweat<=0:
+     'The man at the entrance politely interested in what you prefer in the table VIP room or in the common room'
+         if money >= 5000:
+             act 'VIP hall 5000 RUB':
+             cla
+             set money = money - 5000
+             gt'restoran','vip'
+             end
+         end
+     act 'common room':gt'restoran','zal'
+     else
+     'It suits you man and politely informs you, that with a similar appearance to the restaurant can not be.'
+     end
+
+     act 'WITHDRAW FROM RESTAURANT':
+     cla
+     set minut = minut + 5
+     gt'down'
+     end
+     
+     if vladimirday=day and vladimirQW=21 and hour = 20:gt 'qwmeet'
+     
+>>>>>>> 356_restoran
 end
 
 
+<<<<<<< 356_restoran
 if $ARGS[0] = 'zal':
+=======
+if $ARGS[0]='zal':
+>>>>>>> 356_restoran
 cla
 *clr
+<<<<<<< 356_restoran
 set minut += 5
 '<center><B><font color = maroon>restaurant, common room</font></B></center>'
 '<center><img src="images\etogame\restoran2.jpg"></center>'
@@ -48,9 +92,20 @@ clr
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>restaurant, common room</font></B></center>'
+'<center><img src="pic/restoran2.jpg" ></center>'
+'The room is quite nice atmosphere. Soft lighting and light furniture. Until you hear the sound of music, the clink of glasses and female laughter. It seems you, at_last, can relax a little.'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 356_restoran
 LCOLOR = rgb(106,90,205)
 
 	!etogame
+<<<<<<< 356_restoran
 	nastjarand = RAND(0,100)
 	if nastjarand > 80 and nastjaqw = 0 and energy > 15 and nastjaday ! day:
 	cls
@@ -83,11 +138,50 @@ LCOLOR = rgb(106,90,205)
 		end
 	end
 	act 'Leave': set minut += 5 & gt 'restoran','start'
+=======
+    nastjarand = RAND(0,100)
+	 if nastjarand > 80 and nastjaqw = 0 and energy>15 and nastjaday!day:
+	 cls
+	 nastjaday=day
+	 gs'stat'	
+		 '<center><img src="etogame/nastja1.jpg" ></center>'
+		 'In the hall you will notice a pretty girl, I wonder why she sits alone. She looks pretty nice. While you looked at the stranger prekrastno, she caught your eyes on her and suddenly looked at you.'
+		 act 'downcast eyes':
+		 cla
+		 'she turned away'
+		 act 'Get_Away':gt'restoran', 'zal'
+		 end
+		 
+		 act 'her smile':gt 'nastja', 'pos1'  
+	 end
+     
+	 if money>= 5000:
+         act 'eat 5 sput':
+		 cla
+		 set minut = minut + 60
+		 energy =22
+		 fat+=5
+		 water = 22
+		 willpower+=30
+		 manna=manna+80
+		 health=health+20
+		 money-=5000
+		 'On the recommendation of the chef, you ordered a wonderful meal and gladly ate in a noisy dining room.'
+		 act 'Get_Away':gt'restoran', 'zal'
+		 end
+	 end	
+	 act 'Get_Away':set minut = minut + 5&gt'restoran','start'
+>>>>>>> 356_restoran
 end
 
+<<<<<<< 356_restoran
 if $ARGS[0] = 'vip':
+=======
+if $ARGS[0]='vip':
+>>>>>>> 356_restoran
 cla
 *clr
+<<<<<<< 356_restoran
 set minut += 5
 '<center><B><font color = maroon>Restaurant, VIP room</font></B></center>'
 '<center><img src="images\etogame\restoran3.jpg"></center>'
@@ -96,8 +190,19 @@ clr
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>restaurant, VIP hall</font></B></center>'
+'<center><img src="pic/restoran3.jpg" ></center>'
+'Caught in vip bed you, I caught myself thinking, that involuntarily smile. In the box calm, pleasant atmosphere. Soft lighting and furniture in the Empire style. You hear light music. At_Last, Your new weak female essence, though not for long, but can feel safe.'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 356_restoran
 LCOLOR = rgb(106,90,205)
 
+<<<<<<< 356_restoran
 	act 'Leave':
 	cla
 	set minut += 5
@@ -118,6 +223,28 @@ LCOLOR = rgb(106,90,205)
 		'On the recommendation of a chef, a wonderful dish you ordered and ate with pleasure in the cozy vip room of the restaurant.'
 		act 'Leave': gt 'restoran', 'vip'
 		end
+=======
+     act 'Get_Away':
+     cla
+     set minut = minut + 5
+     gt'restoran','start'
+     end
+
+	if money>= 5000:
+         act 'eat 5 sput':
+		 cla
+		 set minut = minut + 60
+		 energy = 22
+		 fat+=5
+		 water = 22
+		 willpower+=30
+		 manna=manna+100
+		 health=health+20
+		 money-=5000
+		 'On the recommendation of the chef, you ordered a wonderful meal and gladly ate in the cozy vip the restaurant.'
+		 act 'Get_Away':gt'restoran', 'vip'
+		 end
+>>>>>>> 356_restoran
 	end
 end
 --- restoran ---------------------------------

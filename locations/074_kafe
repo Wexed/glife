@@ -1,9 +1,14 @@
 # kafe
+<<<<<<< 074_kafe
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 074_kafe
 cla
 *clr
 $metkaM = $ARGS[0]
 $locM = $CURLOC
+<<<<<<< 074_kafe
 set minut += 1
 '<center><B><font color = maroon>Cafe</font></B></center>'
 '<center><img src="images\etogame\kafe.jpg"></center>'
@@ -11,8 +16,18 @@ set minut += 1
 'Lunch - 100 rubles'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+set minut = minut + 1
+'<center><B><font color=maroon>cafe</font></B></center>'
+'<center><img src="pic/kafe.jpg" ></center>'
+'you see <a href="exec:GT ''kafe'',''vlad''">owner of a cafe</a> dealing with paperwork.'
+'lunch_Time - 100 RUB'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 074_kafe
 LCOLOR = rgb(106,90,205)
 clr
+<<<<<<< 074_kafe
 gs 'stat'
 if QWdogReiq = 3 and week = 7 and hour >= 12:
 	act 'Sit down at the table and wait for a Margarita': dynamic $margokafedin
@@ -60,11 +75,65 @@ if money >= 100:
 		end
 	end
 act 'QUIT': gt 'street'
+=======
+gs'stat'
+if QWdogReiq=3 and week=7 and hour>=12:
+	 act 'Sit down at a table and wait for Margarita':dynamic $margokafedin
+     end
+!act 'agree':gt 'cafe3','wc'
+if money >= 100:
+	 act 'eat 100 RUB':
+		 cla
+		 *clr
+		 frost=0
+		 '<center><img src="pics/food.jpg" ></center>'
+		 set razvrand=rand(1,10)
+		 set minut = minut + 30
+		 set health = health + 10
+		 set money = money - 100
+		 set manna = manna + 5
+		 set willpower = willpower + 5
+		 if energy >= 30:
+			  set fat = fat + 5
+			 'You can no longer have.'
+			 end
+		 if energy >= 20 and energy < 30:
+			 set fat = fat + 3
+			 set energy = energy + 10
+			 'You pushed through the power of a meal.'
+			 end
+		 if energy < 20:
+			 set energy = energy +20
+			 set fat = fat + 1
+			 'You gladly ate food.'
+			 end
+		 if water >= 20:
+			 'Tea in you no longer climbs.'
+			 end
+		 if water < 20:
+			 'You gladly drank a cup of tea.'
+			 set water = water +20
+			 end
+		 if razvrand>5:
+			 gs'boy'
+			 'Came to your table <<$boybody>> <<$boybod>> <<$boyface>> introduced himself as <<$boy>>.'
+			 xgt 'kafe','razvod'
+			 end
+		 act 'Get up from the table':gt'kafe','start'
+		 end
+     end
+act 'GO_OUT':gt'street'
+>>>>>>> 074_kafe
 end
 
+<<<<<<< 074_kafe
 if $ARGS[0] = 'vlad':
+=======
+if $ARGS[0]='vlad':
+>>>>>>> 074_kafe
 cla
 *clr
+<<<<<<< 074_kafe
 set minut += 5
 gs 'stat'
 '<center><B><font color = maroon>Cafe</font></B></center>'
@@ -187,11 +256,140 @@ if work = 0:
 		end
 	end
 act 'Leave': gt 'kafe','start'
+=======
+set minut = minut + 5
+gs'stat'
+'<center><B><font color=maroon>cafe</font></B></center>'
+'<center><img src="pic/kafe.jpg" ></center>'
+if givi = 0:'At the reception costs no more, but very thick Caucasian, he writes that.'
+if givi > 0:'We should stand Givi Karapetovich, cafe owner, he writes that.'
+if workKafe = 0:
+	 if GiviSex >= 2 and Givisexday <1 and Venera < 4:
+		 act 'provoke Givi':
+			 cla
+			 *clr
+			 set Givisexday=1
+			 set GiviSex = GiviSex +1
+			 '<center><img src="pic/kafe.jpg" ></center>'
+			 ' You went behind the bar to Givi and asked about podrabotke. '
+			 ' "Bax, Svetik, he missed!" said Givi Karapetovich unbuttoning his pants '
+			 act 'Kneel':
+				 cla
+				 *clr
+				 set bj = bj + 1
+				 set dick = 20
+				 set harakBoy = 2
+				 set minut = minut + 30
+				 set $nameV = 'Givi Karapetovich'
+				 $boy='Givi Karapetovich'
+				 set SUB = SUB + 1
+				 '<center><img src="picVA/barbj.jpg" ></center>'
+				 'You bent down and hid from visitors to the high bar, knelt before Givi, he took a member.'
+				 gs'oral','start'
+				 'Givi firmly grabbed you by the hair and pulled your mouth on his cock deep.'
+				 act 'continue to suck.':
+					 cla
+					 *clr
+					 set swallow = swallow + 1
+					 set cumlip = cumlip + 1
+					 '<center><img src="picV/swallow1.jpg" ></center>'
+					 'A jet of hot cum hit you in the mouth. You started to swallow cum, and <<$nameV>> continued to cum in your mouth. Finally.'
+					 set money=money+500
+					 '-Zahady More! - says Givi gives you 500 rubles.'
+					 act 'Get_Away':gt'kafe','start' 
+					 end
+				 end    
+			 end
+		 end        
+	 end  
+if workKafe > 0:
+	 if GiviSex >= 2 and Givisexday <1 and Venera < 4:
+		 act 'provoke Givi':
+			 cla
+			 *clr
+			 set Givisexday=1
+			 set GiviSex = GiviSex +1
+			 '<center><img src="pic/kafe.jpg" ></center>'
+			 ' You went behind the bar to Givi and asked about podrabotke. '
+			 ' "Sverhurochnye want?" asked Givi Karapetovich and not interested in the answer took you by the hand '
+			 act 'Kneel':
+				 cla
+				 *clr
+				 set smenaKafe = smenaKafe + 1
+				 set bj = bj + 1
+				 set dick = 20
+				 set harakBoy = 2
+				 set minut = minut + 30
+				 set $nameV = 'Givi Karapetovich'
+				 $boy='Givi Karapetovich'
+				 set SUB = SUB + 1
+				 '<center><img src="picVA/barbj.jpg" ></center>'
+				 'You bent down and hid from visitors to the high bar, knelt before Givi, he took a member.'
+				 gs'oral','start'
+				 'Givi firmly grabbed you by the hair and pulled your mouth on his cock deep.'
+				 act 'continue to suck.':
+					 cla
+					 *clr
+					 set swallow = swallow + 1
+					 set cumlip = cumlip + 1
+					 '<center><img src="picV/swallow1.jpg" ></center>'
+					 'A jet of hot cum hit you in the mouth. You started to swallow cum, and <<$nameV>> continued to cum in your mouth. Finally.'
+					 act 'Get_Away':gt'kafe','start' 
+					 end
+				 end
+			 end        
+		 end 
+	 act 'resign':
+		 cla
+		 set work = 0
+		 set workKafe = 0
+		 set pay = smenaKafe*600
+		 set money = money + pay
+		 set smenaKafe = 0
+		 'Givi Karapetovich shook his head sadly, "Fair_Enough, here are your <<pay>> rubles and employment history. Go."'
+		 act 'Get_Away':gt'kafe','start'
+		 end
+	 end
+if workKafe > 0 and week > 1 and week < 5:'Bax, Svetsik. zachem truant?'
+if workKafe > 0 and week > 4:'Bax, pryvet Svetsik!'
+if givi = 1 and workKafe < 1:'listening to you.'
+if givi = 0:
+	 set givi = 1
+	 'Pryvet! I Givi Karapetovich. Hozain cafe. What do you want?'
+	 end
+if work = 0:
+	 act 'Vozmet ask whether he hire you.':
+		 cla
+		 'You are asked whether you will work Givi.'
+		 if vnesh < 5:'Wai, wai, wai, you give me all customers scare away. Go, whether that priodensya, Use cosmetics, brush_your_hair. And you look just terrible.'
+		 if vnesh >= 5:
+			 'Givi Karapetovich pristolno examines you from head to toe. "Ok, Listen working conditions"'
+			 '"The cafe is open from 12 prior_to 22 every day except Monday. Your change Tuesday, Wednesday, Thursday. Come to the cafГ© with 11 prior_to 12, to open it . do not come, This day you will not be counted in the salary. salary lists 25th of, for each worked shift 600 rubles. Plus every time you can get a tip, it depends on you. And free meals."'
+			 '"Yes_I_Am, and further, I `ll get you work book, you can not be arranged to another job until I fired. Well? satisfied."'
+			 act 'To get a job':
+				 cla
+				 set work = 1
+				 set workKafe = 1
+				 set smenaKafe = 0
+				 'You gave Givi Karapetovich work book. He took her and remind you. "Come any day except Monday from 11 prior_to 12 and work."'
+				 act 'move_away':gt'kafe','start'
+				 end
+			 end
+		 act 'move_away':gt'kafe','start'
+		 end
+	 end
+act 'move_away':gt'kafe','start'
+>>>>>>> 074_kafe
 end
 
+<<<<<<< 074_kafe
 if $ARGS[0] = 'work':
+=======
+if $ARGS[0]='work':
+>>>>>>> 074_kafe
 cla
 *clr
+<<<<<<< 074_kafe
 set minut += 5
 gs 'stat'
 '<center><B><font color = maroon>Cafe</font></B></center>'
@@ -215,18 +413,56 @@ act 'Resign':
 	'Givi K. sadly shakes his head, "Okay, here''s your <<pay>> rubles and employment history. Go."'
 	act 'Leave': gt 'kafe','start'
 	end
+=======
+set minut = minut + 5
+gs'stat'
+'<center><B><font color=maroon>cafe</font></B></center>'
+'<center><img src="pic/kafe.jpg" ></center>'
+set smenaKafe = smenaKafe + 1
+'You have replaced a cafe, Givi Karapetovich, wrote in his book, you came on time and stood at the bar. The kitchen is a cook young strong, Caucasian Ashot. Another waitress Irina preparing to work. Tamara dishwasher cleans the sink.'
+act 'begin work':
+     cla
+     set minut = 0
+     set hour = 12
+     set Givi = Givi + RAND (5,10)
+     gt'kafe','workPred'
+     end
+act 'resign':
+     cla
+     set work = 0
+     set workKafe = 0
+     set pay = smenaKafe*600
+     set money = money + pay
+     set smenaKafe = 0
+     'Givi Karapetovich shook his head sadly, "Fair_Enough, here are your <<pay>> rubles and employment history. Go."'
+     act 'Get_Away':gt'kafe','start'
+     end
+>>>>>>> 074_kafe
 end
 
+<<<<<<< 074_kafe
 if $ARGS[0] = 'workPred':
+=======
+if $ARGS[0]='workPred':
+>>>>>>> 074_kafe
 cla
 *clr
+<<<<<<< 074_kafe
 gs 'kafedinamic'
 gs 'stat'
 '<center><B><font color = maroon>Cafe</font></B></center>'
 '<center><img src="images\etogame\kafe.jpg"></center>'
 'Café work boils, the cook <a href="exec:dynamic $ashotdin">Ashot</a> is busy in the kitchen. Your workmate <a href="exec:dynamic $iradin">Ira</a> serves tables with visitors. The owner <a href="exec:dynamic $gividin">Givi K.</a> is standing behind the bar.'
+=======
+gs'kafedinamic'
+gs'stat'
+'<center><B><font color=maroon>cafe</font></B></center>'
+'<center><img src="pic/kafe.jpg" ></center>'
+'Cafe are hard at work, cook <a href="exec:dynamic $ashotdin">Ashot busy in the kitchen</a>, your naparnitsa <a href="exec:dynamic $iradin">Ira</a> serving tables with visitors. owner <a href="exec:dynamic $gividin">Givi Karapetovich</a> stands behind the bar.'
+>>>>>>> 074_kafe
 clr
 gs 'stat'
+<<<<<<< 074_kafe
 if Givi > 100: set Givi = 100
 if Givi > 90 and GiviSex = 0: set Givi = 90
 '<a href="exec:dynamic $kafetualet">Toilet</a>'
@@ -750,11 +986,538 @@ if hour >= 22:
 			end
 		end
 	end
+=======
+if Givi>100:set Givi=100
+if Givi>90 and GiviSex=0:set Givi=90
+'<a href="exec:dynamic $kafetualet">Wc</a>'
+if IrinaSlut=1 and hour=22:
+	 cls
+	 set IrinaSlut=2
+	 gs'stat'
+	 '<center><B><font color=maroon>cafe</font></B></center>'
+	 '<center><img src="pic/kafe.jpg" ></center>'
+	 'Work over and Ira somewhere disappeared. Looking around . Tamara slipped out the door, Ashot puts the dishes in places.'
+	 act 'Search for missing where Ira':
+		 cls
+		 horny+=10
+		 gs'stat'
+		 '<center><img src="picKav/irinaslut.jpg" ></center>'
+		 'You come to the back room from which he emerged satisfied Givi fastening strap trousers. He smiled at you and said "Wai, good whore you found me, help her, and it is after this horseman did not come to life."'
+		 'You went into the back room and saw there Irina standing up naked butt cancer, which was a puddle of sperm. Ira groaned blissfully "such a thrill, I have never had such a."'
+		 act 'Ira and help hold up the house':
+			 cla
+			 minut+=15
+			 gs'stat'
+			 'Taking tissue you wiped the cum from her backside and helped her climb and put himself in order. Ira confessed with a beatific smile "Givi and can bellied ugly chock, but he fucked me so, nobody fucked, I even lost consciousness from an orgasm."'
+			 'You spent Ira home who could not move away from orgasm. Before the entrance she kissed you on the lips and left.'
+			 act 'go home':gt'street'
+			 end
+		 if horny>=50:
+			 act 'Lick the cum from her backside':
+				 cls
+				 horny+=10
+				 minut+=15
+				 cumlip+=1
+				 gs'stat'
+				 '<center><img src="picKav/irinaslut2.jpg" ></center>'
+				 'You knelt before just fucked in all holes ass Ira and began licking her red-rimmed hole licking cum.'
+				 'Ira moaned "Oh, it is so nice, and why I had feared this?"'
+				 act 'Swallow sperm and conduct Ira home':
+					 cla
+					 minut+=15
+					 sub+=1
+					 swallow+=1
+					 gs'stat'
+					 'You swallowed the sperm and helped her climb and put himself in order. Ira confessed with a beatific smile "Givi and can bellied ugly chock, but he fucked me so, nobody fucked, I even lost consciousness from an orgasm."'
+					 'You spent Ira home who could not move away from orgasm. Before the entrance she kissed you on the lips and left.'
+					 act 'go home':gt'street'
+					 end
+				 act 'Ira spit cum in her mouth':
+					 cls
+					 minut+=5
+					 dom+=1
+					 gs'stat'
+					 '<center><img src="picKav/irinaslut3.jpg" ></center>'
+					 'You have hands -il for the face and raised his, she willingly opened her mouth where you spit, passing all lick sperm Ira.'
+					 act 'tselovatsya':
+						 cls
+						 sub+=1
+						 gs'stat'
+						 '<center><img src="picKav/irinaslut4.jpg" ></center>'
+						 'You dug his lips on the lips of Ira and began her tselovatsya sharing cum in your mouths, Finally you both swallowed his portion of sperm'
+						 act 'Ira conduct home':
+							 cla
+							 minut+=15
+							 gs'stat'
+							 'You wiped the face of the remnants of sperm and helped her climb and put himself in order. Ira confessed with a beatific smile "Givi and can bellied ugly chock, but he fucked me so, nobody fucked, I even lost consciousness from an orgasm."'
+							 'You spent Ira home who could not move away from orgasm. Before the entrance she kissed you on the lips and left.'
+							 act 'go home':gt'street'
+							 end
+						 end
+					 act 'Ira conduct home':
+						 cla
+						 minut+=15
+						 dom+=1
+						 swallow+=1
+						 gs'stat'
+						 'You wiped the face of the remnants of sperm and helped her climb and put himself in order. Ira confessed with a beatific smile "Givi and can bellied ugly chock, but he fucked me so, nobody fucked, I even lost consciousness from an orgasm."'
+						 'You spent Ira home who could not move away from orgasm. Before the entrance she kissed you on the lips and left.'
+						 act 'go home':gt'street'
+						 end
+					 end
+				 end
+			 end
+		 end
+	 exit
+	 end
+if hour < 22:
+	 act 'serve table':
+		 cls
+		 set minut = minut + 30
+		 set manna = manna - 5
+		 set znarand = RAND (0,300)
+		 set chai = RAND (0,vnesh + oficiant/2)
+		 if oficiant < 100:set oficiant = oficiant + 1
+		 if vital < 30:set vital = vital + 1
+		 set money = money + chai
+		 if chai = 0:set willpower = willpower - 5&set manna = manna - 15
+		 set manna = manna - 5
+		 gs'stat'
+		 '<center><img src="picKav/waitress_client.jpg" ></center>'
+		 'You served table at which sat Visitors, and received <<chai>> rubles tips.'
+		 act 'move_away':gt'kafe','workPred'
+		 if znarand > vnesh or bfA > 0:
+			 set kaferand = RAND (0,100)
+			 if kaferand=0:
+				 cls
+				 gs'stat'
+				 '<center><img src="img/spaln/kafe1.jpg" ></center>'
+				 'Serving a table at one of the individual booths you see two men seduce pretty drunk girl, soon she was on her knees sucking both, one of the men looking at you with a clear allusion to join.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 if daystart>10 and sex>0:
+					 act 'Prisoedinitsa a girl':
+						 set kafesexrand=1
+						 set picrand=13
+						 set guy+=2
+						 set girl+=1
+						 set gang+=1
+						 xgt'sexdvanadva','var'
+						 end
+					 end
+				 end
+			 if kaferand=1:
+				 cls
+				 gs'stat'
+				 '<center><img src="img/spaln/kafe2.jpg" ></center>'
+				 'You serve a table in the attic, with two men, every time you approach them and strive to slap you pinch or run your hands under her skirt.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 if daystart>10 and sex>0:
+					 act 'succumb':
+						 set kafesexrand=1
+						 set picrand=17
+						 set guy+=2
+						 xgt'sexdvoe','var'
+						 end
+					 end
+				 end
+			 if vnesh>15: 
+				 if kaferand=2:
+					 cls
+					 '<center><img src="picKav/waitress_client.jpg" ></center>'
+					 'At the table in a separate room sat a man. He looked appreciatively at you and said "girl, do not keep me company?" at the same time you notice how bristling fly of his trousers, he obviously has got dick.'
+					 act 'Get_Away':gt'kafe','workPred'
+					 act 'Sit next to him':
+						 cls
+						 'You sat next to the client. And looked at him expecting that he would take. The client took your palm and put it on the fly.'
+						 act 'Get_Away':gt'kafe','workPred'
+						 if horny>=50 or bj>0:
+							 act 'Unbutton his pants':
+								 cls
+								 dick=RAND(12,21)
+								 gs'stat'
+								 '<center><img src="picKav/waitress_work_2.jpg" ></center>'
+								 'You undid his pants and pulled out a warm and hard cock <<dick>> inches long, covered with veins and small droplets on the purple head.'
+								 act 'masturbate dick':
+									 cls
+									 boy+=1
+									 hj+=1
+									 money+=500
+									 gs'stat'
+									 '<center><img src="picKav/waitress_work_hj.jpg" ></center>'
+									 'Clasping his fingers member you started to masturbate, man rather quickly groaned and discharged you in the palm. Then you wiped his cock napkin and he gave you 500 rubles for your work.'
+									 act 'Get_Away':gt'kafe','workPred'
+									 end
+								 act 'sucking dick':
+									 cls
+									 boy+=1
+									 bj+=1
+									 gs'stat'
+									 '<center><img src="picKav/waitress_work_bj.jpg" ></center>'
+									 dynamic $dinrandbj
+									 act 'Take cum in her mouth':
+										 cls
+										 cumlip+=1
+										 money+=700
+										 gs'stat'
+										 '<center><img src="picKav/waitress_work_bj2.jpg" ></center>'
+										 dynamic $dinrandswallow
+										 act 'Get_Away':gt'kafe','workPred'
+										 end
+									 end
+								 end
+							 end
+						 end
+					 end
+				 if kaferand=3:
+					 cls
+					 '<center><img src="picKav/waitress_client.jpg" ></center>'
+					 'At the table in a separate room sat a man. He looked appreciatively at you and said "- girl, do not help? I have prepared for you an excellent tip, but accidentally dropped them under the table. And I myself am so stuffed, that already do not bend..." at the same time you notice how bristling fly of his trousers, he obviously has got dick.'
+					 act 'Get_Away':gt'kafe','workPred'
+					 act 'Crawl under the table':
+						 cls
+						 gs'stat'
+						 '<center><img src="picKav/waitress_work_3_1.jpg" ></center>'
+						 '- Ok, at_the_moment, - I say.'
+						 'In the end, Tipping is not for sin and under the table slazit. Standing on all fours and climbed under the table, I did discover there pyatisotrublevuyu paper. But when I extend my hand, what would it take, man comes to the edge of the banknote shoe. Then unzips his pants and pulls out of his pants member.'
+						 act 'Get_Away':gt'kafe','workPred'
+						 if horny>=50 or bj>0:
+							 act 'suck':
+								 cls
+								 bj+=1
+								 guy+=1
+								 gs'stat'
+								 '<center><img src="picKav/waitress_work_3_2.jpg" ></center>'
+								 'And knew, that free cheese... just under the table is not lying.'
+								 'But I need these five hundred rubles, so I take his cock hand and goes straight into her mouth. The next five minutes. At_Last, visitor, made several short convulsive movements hips, begins to throw out the hot cum right into my mouth.'
+								 act '....':
+									 cls
+									 cumlip+=1
+									 cumface+=1
+									 money+=500
+									 gs'stat'
+									 '<center><img src="picKav/waitress_work_3_3.jpg" ></center>'
+									 'Fill my mouth to the brim, He took his foot with notes and I was able to, at_last, pick it up.'
+									 act 'Get_Away':gt'kafe','workPred'
+									 end
+								 end
+							 end
+						 end
+					 end
+				 end
+			 if kaferand=4:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand.jpg" ></center>'
+				 'Going into one of the booths you see that girl leaning over a guy sucking him.'
+				 act 'tactfully leave':
+					 cls
+					 money+=300
+					 gs'stat'
+					 'You tactfully out of the booth, and after a couple left on a tip found 300 rubles'
+					 act 'Get_Away':gt'kafe','workPred'
+					 end
+				 act 'troubled':
+					 cls
+					 gs'stat'
+					 'You said indignantly, that the cafe is not a brothel, here people eat.'
+					 iverand=RAND(0,2)
+					 if iverand=0:'The guy had called you a bitch and severing his girlfriend blowjob left the cafe without leaving a penny tip.'
+					 if iverand=1:'Guy sent you fucking whore and called frigid, then finished in the mouth of his girlfriend and left without leaving a penny tip.'
+					 if iverand=2:
+						 'The guy got into the purse and pulled out a dollar bill pyatisotennuyu, "on and leave us"'
+						 act 'expel them':gt'kafe','workPred'
+						 act 'Get_Away':
+							 cls
+							 money+=500
+							 gs'stat'
+							 'You took the money and went further by allowing a couple Entertain.'
+							 act 'Get_Away':gt'kafe','workPred'
+							 end
+						 end
+					 act 'Get_Away':gt'kafe','workPred'
+					 end
+				 if bj>10 and swallow>5 and horny>=50:
+					 act 'giggle':
+						 cls
+						 gs'stat'
+						 'The girl looked up from the penis and waved her hand inviting you to join.'
+						 act 'tactfully leave':
+							 cls
+							 money+=300
+							 gs'stat'
+							 'You tactfully out of the booth, and after a couple left on a tip found 300 rubles'
+							 act 'Get_Away':gt'kafe','workPred'
+							 end
+						 act 'Kneel down in front of a guy':
+							 cls
+							 bj+=1
+							 if SergeaAndKatjaSex=0:SergeaAndKatjaSex=1&guy+=1
+							 gs'stat'
+							 '<center><img src="picKav/ivrandBJ.jpg" ></center>'
+							 'You got up on his knees and began to suck dick with a girl kissing in the process.'
+							 act '....':
+								 cls
+								 cumlip+=1
+								 cumface+=1
+								 gs'stat'
+								 '<center><img src="picKav/ivrandCUM.jpg" ></center>'
+								 'Finally the guy broke down and began to finish. Hot sperm gets into your mouth and a little on the face. You dvoem Woman licking dick to dry.'
+								 if SergeaAndKatjaQW=0:
+									 SergeaAndKatjaQW=1
+									 'After blowjob guy introduced himself "I Sergey, and this is Kate. Do not know what`s so hot waitresses work."'
+									 end
+								 act 'Get_Away':gt'kafe','workPred'
+								 end
+							 end
+						 end
+					 end
+				 end
+			 if kaferand=5:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand.jpg" ></center>'
+				 'Serving tables you accidentally noticed as some sort of a girl ukratkoy Fingering dick her boyfriend.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=6:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand3.jpg" ></center>'
+				 'Going into one of the booths you see that there sits a few girls and one of them kneeling licking vagina from another.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=7:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand4.jpg" ></center>'
+				 'Passing the dance floor where the youth hanging out pyanaya you see as one drunken girl sitting on his haunches began to suck dick.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=8:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand5.jpg" ></center>'
+				 'Passing the bar as you saw what that girl squatting sucks dick guy drinking beer..'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=9:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand6.jpg" ></center>'
+				 'Going into one of the booths you see that there is the cheerful company of young people and one of devchenok fuck cancer right in front of the table.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=10:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand7.jpg" ></center>'
+				 'Fun on the dance floor lit girls.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=11:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand8.jpg" ></center>'
+				 'You see how two drunk girls lick passionately feel free to anyone.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=12:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand9.jpg" ></center>'
+				 'You see how drunk girl crawled under the table after losing there something, Her skirt rode up and no panties on his ass, so that almost all the cafes can see all the content podyubochnogo space in detail.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=13:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand10.jpg" ></center>'
+				 'You see how a couple of drunken frolics, girl licks cock, a man pours champagne in her mouth.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=14:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand11.jpg" ></center>'
+				 'Do you happen to notice that a couple of fun chattering girls not only fun chats, one of the girls put her hand into her panties and caresses her girlfriend there.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=15:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand12.jpg" ></center>'
+				 'You see how on the dance floor dancing with a Negro girl lapaya her for all that is possible, but the girl apparently do not mind.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=16:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand13.jpg" ></center>'
+				 'Going into one of the booths you see the guys play with girls cards on the strip and the girl is clearly losing sitting in his underwear.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=17:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand14.jpg" ></center>'
+				 'You see two guys dancing with a girl in every way it lapaya and bullying her skirt, on the girl reacts laugh without even trying to cover up how your profiles from the eyes of the surrounding public.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=18:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand15.jpg" ></center>'
+				 'You see on the dance floor as a guy kisses a girl and he ran her hand under her skirt almost fucks her fingers through panties.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=19:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand16.jpg" ></center>'
+				 'You can see how at the bar one drunken girl spread her Lyashko and at least buhoy and cheerful young man fuck her pussy with her fingers.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=20:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand17.jpg" ></center>'
+				 'You see the guy hugging drunk girl in the wood and took a mouthful of beer pours it to her with a kiss while the other guy matzo her boobs.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=21:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand18.jpg" ></center>'
+				 'Going to the attic you see two guys pyalyut at both ends for a Woman, which chomps sucking cock and ass podmahivaet trying to spread on a member of the second guy as far as possible.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=22:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand19.jpg" ></center>'
+				 'You see on the dance floor as one no longer young madam in revealing outfits dancing with a young guy paw her.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=23:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand20.jpg" ></center>'
+				 'You see how two young men bent over her and portrayed her sexual intercourse under the cheerful and leaping laughter girls.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand=24:
+				 cls
+				 horny+=5
+				 gs'stat'
+				 '<center><img src="picKav/ivrand21.jpg" ></center>'
+				 'Going into one of the booths you see as man licks pussy then a cheeky lady, which put her Lyashko on his back and catching a buzz smokes a cigarette.'
+				 act 'Get_Away':gt'kafe','workPred'
+				 end
+			 if kaferand >= 90 and opusk > 0 and pirsA = 0:
+				 cls
+				 '<center><img src="picBody/pirs.jpg" ></center>'
+				 'Beckons you to one of the clients, you come to the table and notice that before you are the real criminals.'
+				 'When you come to the table, leader called you close to me, and when you come, it is very hard and painful grabbed you by the neck.'
+				 'The ringleader told you - vaflersha, open your mouth. You obediently opened his mouth, He looked back and you slapped you podschechinu. I do not see a pierced tongue. Vaflersha should wear piercings, that would be a decent person could immediately understand that before him chlenososka.'
+				 'The ringleader turned to his old chap and said. It is necessary to draw chlenososku. Tackle. At the same moment you grabbed strong arms and carried out of the cafe, there was thrown into the back seat of the jeep. And the jeep jumped up.'
+				 'Drove you not very long, On reaching the gate somehow, jeep and signaled gates opened soundlessly. Jeep drove to the territory Cottages. Strong lads pulled you out of the car and dragged him to the basement.'
+				 'The basement has all the tools were ready. You sat on a chair and a hefty tattooed bandyugan came to you with a clamp and scissors, he pulled you out of the mouth and tongue pierced his lightning speed needle. In a bleeding wound in the language he zasoval small post.'
+				 set pirsA = 1
+				 set pirsday = day
+				 'Damn, it is very painful. You moan with his tongue hanging out, bandyuki laugh at your pain. Finally your tongue pulled out of the clamp. How did you hurt. Bandits escorted you out of Cottages.'
+				 act 'go home':gt'street'
+				 end
+			 if kaferand >= 8 and opusk > 0 and pirsA = 1 and hour >= 12 and hour <= 19:
+				 cls
+				 'You beckons mob boss to his table. You came up to him with trembling knees. He looks at you like a boa constrictor on the rabbit and says, vaflersha, open	mouth. You obediently open your mouth and draw out the tongue piercing labeled.'
+				 'The ringleader took you for the face and stared saw piercing. All the guys did a good job. Okay vaflersha, crawl under the table and entertain me.'
+				 act 'Get under the table':
+					 cla
+					 '<center><img src="pics/glavarBJ.jpg" ></center>'
+					 'You dutifully crawled under the table and pulled out a member of the leader of his pants, obediently caress his tongue and begins to suck. Ringleader as if the whole is made of stone, he did not flinch a muscle when he emptied his stock of sperm in your mouth.'
+					 if glavar = 0:Set glavar = 1&Set guy+= 1
+					 bj+= 1
+					 Set horand = RAND (1,100)
+					 if horand > horny:Set horny = horny + 10&'You were not satisfied'
+					 if horand <= horny:Set horny = 0&orgasm+=1&'You covered orgasm'
+					 cumface = cumface + 1
+					 'You swallow all his cum and licked his cock until dry.'
+					 act 'return to work':gt 'kafe','workPred'
+					 end
+				 end
+			 end
+		 if znarand <= vnesh and bfA <= 0:
+			 cls
+			 gs'boy'
+			 '<center><img src="picKav/waitress_client.jpg" ></center>'
+			 'At the table sits <<$boybody>> <<$boybod>> <<$boyface>>. he <<$boyClo>>'
+			 'You took his order, he took the bill and asked if he could meet you.'
+			 act 'No':
+				 cla
+				 set money = money + 10
+				 'Man upset, has left you 10 rubles tip and left.'
+				 act 'move_away':gt'kafe','workPred'
+				 end
+			 if bfA <= 0 or bfB = 0 or bfC = 0:
+				 act 'Yes_I_Am':
+					 cla
+					 set money = money + 100
+					 gs'boyfrend','start'
+					 set stopboy = 0
+					 'The guy was delighted to, that you do not mind to meet him. He introduced himself as <<$boy>> and asked for a phone number, promising to call you back tomorrow.'
+					 'Then left you a hundred rubles .'
+					 act 'move_away':gt'kafe','workPred'
+					 end
+				 end
+			 end
+		 end
+	 end
+if hour >= 22:
+	 act 'This collection of home':
+		 cla
+		 if GiviSex = 0 and Givi < 90 or Vnesh <0:
+			 'Givi nodding your head, "bye now, Svetik."'
+			 act 'Get_Away':
+				 cla
+				 set minut = minut + 5
+				 gt'kafeend'
+				 end
+			 else
+				 dynamic $givipredlogdin
+			 end
+		 end
+	 end
+>>>>>>> 074_kafe
 end
 
+<<<<<<< 074_kafe
 if $ARGS[0] = 'razvod':
+=======
+if $ARGS[0]='razvod':
+>>>>>>> 074_kafe
 cla
 !*clr
+<<<<<<< 074_kafe
 !act 'Get up from the table': gt 'kafe','start'
 Set deyst = RAND(0,3)
 if deyst = 0:
@@ -798,6 +1561,51 @@ if deyst = 3:
 			end
 		end
 	end
+=======
+!act 'Get up from the table':gt'kafe','start'
+Set deyst = RAND (0,3)
+if deyst = 0:
+	 '<<$boy>> invited you to dance.'
+	 act 'dance':gt 'cafe2','dance'
+	 if horny < 75:
+		 act 'otshit':gt 'street'
+		 end
+	 end
+if deyst = 1:
+	 '<<$boy>> asked permission to sit down at a table to you.'
+	 act 'drink':gt 'cafe2','booze'
+	 if horny < 75:
+		 act 'otshit':gt 'street'
+		 end
+	 end
+if deyst = 2:
+	 '<<$boy>> invited you to join the party on which he walks.'
+	 act 'agree':gt 'cafe2','kampashka'
+	 if horny < 75:
+		 act 'otshit':gt 'street'
+		 end
+	 end
+if deyst = 3:
+	 '<<$boy>> drunk in the trash and going to pour you an incredible smell you. "Hey babe, what time to pull? Come have fun in toilet."'
+	 act 'agree':gt 'cafe3','wc'
+	 if horny < 95:
+		 act 'otshit':
+			 cla
+			 derand=RAND(0,100)
+			 if derand<vnesh:
+				 'Fair_Enough, baby, I will give two thousand. Daddy must be fun.'
+				 act 'agree':
+					 money+=2000
+					 gt 'cafe3','wc' 
+					 end
+				 else
+				 'Oh well, get lost, you still have legs and curves ebalo like a monkey.'
+				 end
+			 act 'Fuck you':gt 'street'
+			 end
+		 end
+	 end
+>>>>>>> 074_kafe
 end
 --- kafe ---------------------------------
 

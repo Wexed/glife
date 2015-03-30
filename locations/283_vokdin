@@ -1,0 +1,283 @@
+# vokdin
+$din_vokzalg_kassi={
+cls
+gs'stat'
+'<center><H4>Cashiers</H4></center>'
+'<center><img src="qwest/alter/kassa.jpg" ></center>'
+'A ticket to the city costs 200 rubles.
+Long-distance trains are in 11:00-11:30 and 18:00-18:30'
+
+if money>=200:
+     act 'Buy a ticket to the Center (200 r)':
+     cls
+     money-=200
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/electri.jpg" ></center>'
+     'You paid for a ticket and boarded the train going into town.'
+     'through 15 minute train stopped at the station.'
+     
+         act 'go further':
+         cls
+         minut+=15
+         gs'stat'
+         '<center><img src="pic/electri.jpg" ></center>'
+         'through 15 minute train stopped at the station.'
+          
+             act 'go further':
+			 cls
+			 minut+=15
+			 gs'stat'
+			  '<center><img src="pic/electri.jpg" ></center>'
+			 'through 15 minute train stopped at the station.' 
+			     act 'go further':
+				 cls
+				 minut+=15
+				 gs'stat'
+				  '<center><img src="pic/electri.jpg" ></center>'
+				 'through 15 minute train stopped in the center.'
+				  
+				 act 'Go_Out':minut+=5&nroad=0&gt'Vokzal'
+				 end
+				 
+				 act 'Go_Out':minut+=5&nroad=5&gt'road'
+			 end
+			 
+			 act 'Go_Out':minut+=5&nroad=10&gt'road'
+         end
+         
+         act 'Go_Out':minut+=5&nroad=15&gt'road'
+     end
+
+end
+act 'Get away from banks':minut+=1&gt'vokzalGin'
+}
+$din_vokzalg_kabinet={
+cls
+gs'stat'
+'You came to the office of the chief of station. Around the office hangs ads "requires cleaner. 2 hours of operation at any time, salary 250 rubles per day."'
+act 'Get_Away':minut+=1&gt'vokzalGin'
+     if hour>=8 and hour<=16:
+         act 'Login to Account':
+         cls
+         gs'stat'
+         'You knock on the door and entered the office of the chief. An elderly man was distracted by scribbling and looked at you "On what issue?"'
+         
+         act 'Get_Away':minut+=1&gt'vokzalGin'
+             if vokzalVork=0:
+                 act 'arrange cleaner':
+                 cls
+                 vokzalVork=1
+                 minut+=15
+                 gs'stat'
+                 'you said, that would like to apply as a cleaner. Head Station delighted, it is obvious that, that no one wants to work for such little pay. He recorded your data and explained. You will have to wash the floors at the station and clean toilets. How to do it, so get 250 rubles. If something does not have time, you will not get anything. Then you came out of his office and he showed closet that stores inventory.'
+                 act 'Get_Away':minut+=1&gt'vokzalGin'
+                 end
+             end
+         end
+     end
+}
+$din_vokzalg_toilet_deyst={
+     if hapri = 0:
+         act 'coiffured':
+         cla
+         set minut = minut + 3
+         set hapri = 1
+		 if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		 if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+         end
+     end
+     
+     if mop = 1 and kosmetica > 0:
+         act 'apply Makeup':
+         cla
+         *clr
+         '<center><img src="pic/mop.jpg" ></center>'
+             act 'light makeup':
+             cla
+             set minut = minut + 3
+             set kosmetica = kosmetica - 1
+             set mop = 2 
+             'You lightly summed eyes and a little lipstick.'
+		     if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		     if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+             end
+             
+             if kosmetica >= 2:
+				 act 'normal makeup':
+				 cla
+				 set minut = minut + 5
+				 set kosmetica = kosmetica - 2
+				 set mop = 3
+				 'You lipstick, summed up the eyes and eyelids.'
+		         if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		         if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+				 end
+             end
+             
+             if kosmetica >= 3:
+				 act 'The caller makeup':
+				 cla
+				 set minut = minut + 10
+				 set kosmetica = kosmetica - 3
+				 set vidageday = vidageday - 1
+				 set mop = 4
+				 'You densely nakrasili eyes, imposed shadows and mascara , nakrasili lip contour pencil and lipstick.'
+		         if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		         if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+				 end
+             end
+         end
+     end
+
+
+	if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus >0:
+		 act 'substitution 15 min':
+		 cla
+		 *clr
+		 dynamic $showerdin
+		 set sweat = sweat - 1
+		 set minut = minut + 15
+		 '<center><img src="pics/wash5.jpg" ></center>'
+		 'You carefully washed sperm with yourself.'
+		 if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		 if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+		 end
+	end
+
+	if cumlip > 0 or cumface > 0:
+		 act 'Wash off with facial cum 15 min':
+		 cla
+		 *clr
+		 set mop=1
+		 set cumlip = 0
+		 set cumface = 0
+		 set sweat = sweat - 1
+		 set minut = minut + 15
+		 '<center><img src="pic/facesp.jpg" ></center>'
+		 'You carefully washed sperm from the face.'
+		 if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		 if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+		 end
+	end
+
+	if cumfrot > 0:
+		 act 'Wipe the cum from clothes 15 min':
+		 cla
+		 *clr
+		 set cumfrot = 0
+		 set sweat = sweat - 1
+		 set minut = minut + 15
+		 '<center><img src="pic/frotsp.jpg" ></center>'
+		 'You have erased the traces of semen from clothing.'
+		 if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		 if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+		 end
+	end
+	if tampon > 0 and mesec > 0 and isprok = 0:
+	 act 'change swab':
+		 cla
+		 *clr
+		 set tampon = tampon - 1
+		 set isprok = 1
+		 set minut = minut + 5
+		 set manna = manna - 5
+		 '<center><img src="pics/wash3.jpg" ></center>'
+		 'You change a tampon.'
+		 if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		 if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+		 end
+	 end
+	 
+	 if horny>=90:
+	     act 'mastrubirovat':
+	     cls
+	     gs'stat'
+	     '<center><img src="qwest/alter/Ev/mastr.jpg" ></center>'
+	     'You closed the booth, removed the panties and sat on the toilet.'
+	     'Your fingers began to caress the pussy juice expiring and you started to rub the clitoris.'
+	     orgasm+=1
+	     mastr+=1
+	     horny=0
+	     gs'stat'
+	     'Soon pleasant wave began to spread throughout the body and have covered a very powerful orgasm.'
+	     if vokzalToilet=1:act 'End_Up':dynamic $din_vokzalg_toilet_f
+		 if vokzalToilet=2:act 'End_Up':dynamic $din_vokzalg_toilet_m
+	     end
+	 end
+
+
+}
+$din_vokzalg_toilet_f={
+cls
+gs'stat'
+vokzalToilet=1
+'<center><H4>Female toilet</H4></center>'
+'<center><img src="pic/PublicToilet.jpg" ></center>'
+'You have opened the door to the ladies` room and went in.'
+act 'Get_Away':minut+=1&dynamic $din_vokzalg_toilet
+dynamic $din_vokzalg_toilet_deyst
+}
+$din_vokzalg_toilet_m={
+cls
+gs'stat'
+vokzalToilet=2
+'<center><H4>the men`s room</H4></center>'
+'<center><img src="pic/PublicToilet.jpg" ></center>'
+'You have opened the door to the men`s room and went in.'
+act 'Get_Away':minut+=1&dynamic $din_vokzalg_toilet
+dynamic $din_vokzalg_toilet_deyst
+}
+$din_vokzalg_toilet={
+cls
+gs'stat'
+vokzalToilet=0
+'<center><H4>railway_station</H4></center>'
+'<center><img src="qwest/alter/vokzal.jpg" ></center>'
+'You are logged into the wing where the station to be <a href="exec:minut+=1&dynamic $din_vokzalg_toilet_f">women`s</a> and <a href="exec:minut+=1&dynamic $din_vokzalg_toilet_m">men`s</a> wc.'
+act 'Get_Away':minut+=1&gt'vokzalGin'
+}
+$din_vokazalg_podbros2={
+cls
+gs'stat'
+'You showed the man his money and he said, what this amount is not enough and in his wallet. The man demanded, What would you money back.'
+	 act 'money back':
+	 cls
+	 money=0
+	 podbros=1
+	 gs'stat'
+	 '<center><H4>railway_station</H4></center>'
+	 '<center><img src="qwest/alter/vokzal.jpg" ></center>'
+	 'You gave your money man, that would not be venturing scandal and not to be attracted by the police, for theft.'
+		 act 'Get_Away':minut+=1&gt'vokzalGin'
+	 end
+}
+$din_vokzalg_podbros={
+cls
+gs'stat'
+'<center><H4>railway_station</H4></center>'
+'<center><img src="qwest/alter/vokzal.jpg" ></center>'
+'You cant pick up the purse and then some sort of slim girl leans to the purse. You have time to first raised the purse and she offers to step aside and share the money.'
+
+act 'Get away with a purse':
+cls
+gs'stat'
+'<center><H4>railway_station</H4></center>'
+'<center><img src="qwest/alter/vokzal.jpg" ></center>'
+'You took the purse and went to the door, girl screaming out loud, you stole wallet. To you approached by a man lost his wallet and demanded the return of his. You gave the man purse, He counted the money and said, that in your wallet is not enough large sum of money. Then he demanded, what would you show him your money.'
+     act 'Show money':dynamic $din_vokazalg_podbros2
+end
+
+act 'Give your wallet and leave':minut+=1&gt'vokzalGin'
+
+act 'Stand back and share the money':
+cls
+gs'stat'
+'<center><H4>railway_station</H4></center>'
+'<center><img src="qwest/alter/vokzal.jpg" ></center>'
+'You walked away, together with the girl and got the purse, that would divide the money. You divided the money on a flat and give half to the girl, having put the remaining money in your pocket. At this point, lost wallet. He took the wallet out of your hands. He counted the money and said, that in your wallet is not enough large sum of money. Then he demanded, what would you show him your money.'
+     act 'Show money':dynamic $din_vokazalg_podbros2
+end
+}
+--- vokdin ---------------------------------
+

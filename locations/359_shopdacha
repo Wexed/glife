@@ -1,5 +1,6 @@
 # shopdacha
 
+<<<<<<< 359_shopdacha
 '<center><B><font color = maroon>Shop for all homes</font></B></center>'
 '<center><img src="images\etogame\shopdacha.jpg"></center>'
 'In this store you can buy a cottage in a cooperative, land for cottage for 1.5 million and pay for all the buildings.'
@@ -8,13 +9,28 @@ clr
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+'<center><B><font color=maroon>Shop Stores</font></B></center>'
+'<center><img src="pic/shopdacha.jpg" ></center>'
+'In this store you can buy a cottage in the co-op, a plot of land for cottage 1,5 million and pay for all the buildings.'
+'All payments shop produces a bank card. On your map now <<karta>> rubles.'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 359_shopdacha
 LCOLOR = rgb(106,90,205)
 
+<<<<<<< 359_shopdacha
 act 'QUIT': set minut += 5 & gt 'torgcentr'
+=======
+act 'GO_OUT':set minut = minut + 5&gt'torgcentr'
+>>>>>>> 359_shopdacha
 if hour < 8 or hour > 20:
 'Shop is closed and you are asked to retire.'
 else
 
+<<<<<<< 359_shopdacha
 	if karta >= 30000 and dachaest = 0:
 		act 'Buy a cottage for 30,000 rubles':
 		cls
@@ -38,9 +54,35 @@ else
 		'You have bought land for Mansion'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=30000 and dachaest=0:
+		 act 'Buy a cottage for 30 thousand.rubles':
+		 cls
+		 karta-=30000
+		 dachaest=1
+		 minut+=15
+		 etoexhib=0
+		 gs'stat'
+		 'You bought a house with a garden in a cottage on the co-op 5 km. along the northern road.'
+		 act 'Get_Away':gt $curloc
+		 end
+	 end
+
+	if karta>=1500000 and placeMansion=0:
+		 act 'Buy land for cottage 1,5 million':
+		 cls
+		 karta-=1500000
+		 placeMansion=1
+		 minut+=5
+		 gs'stat'
+		 'You bought a plot cottage'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
 
+<<<<<<< 359_shopdacha
 	if karta >= 500000 and placeMansion = 1:
 		act 'Connect water, electricity for 500,000 rubles':
 		cls
@@ -51,8 +93,21 @@ else
 		'You paid for a connection of services to the site'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=500000 and placeMansion=1:
+		 act 'Pay for supply of communications 500 sput':
+		 cls
+		 karta-=500000
+		 placeMansion=2
+		 minut+=5
+		 gs'stat'
+		 'You paid for a supply of communications to the site'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 1500000 and placeMansion = 2:
 		act 'Build Mansion´s shell for 1.5 million rubles':
 		cls
@@ -63,8 +118,21 @@ else
 		'You paid for the construction of the Mansion´s shell'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=1500000 and placeMansion=2:
+		 act 'Pay for the construction of the building 1,5 million':
+		 cls
+		 karta-=1500000
+		 placeMansion=3
+		 minut+=5
+		 gs'stat'
+		 'You paid for the construction of housing mansion'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 500000 and placeMansion = 3 and ymanrem[3] = 0:
 		act 'Build rooms for 500,000 rubles':
 		cls
@@ -75,8 +143,21 @@ else
 		'You paid for the construction of the Mansion´s rooms'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=500000 and placeMansion=3 and ymanrem[3]=0:
+		 act 'Pay for the construction of rooms 500 sput':
+		 cls
+		 karta-=500000
+		 ymanrem[3]=1
+		 minut+=5
+		 gs'stat'
+		 'You paid for the construction of housing mansion'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 800000 and placeMansion >= 2 and banaMansion = 0:
 		act 'Build baths for 800,000 rubles':
 		cls
@@ -87,8 +168,21 @@ else
 		'You paid for the construction of the Mansion´s bathrooms'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=800000 and placeMansion>=2 and banaMansion=0:
+		 act 'Pay for building baths 800 thousand':
+		 cls
+		 karta-=800000
+		 banaMansion=1
+		 minut+=5
+		 gs'stat'
+		 'You paid for the construction of housing mansion'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 500000 and placeMansion >= 2 and bassMansion = 0:
 		act 'Build pool for 500,000 rubles':
 		cls
@@ -99,8 +193,21 @@ else
 		'You paid for the construction of the Mansion´s pool'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=500000 and placeMansion>=2 and bassMansion=0:
+		 act 'Pay build basseynai 500 thousand':
+		 cls
+		 karta-=500000
+		 bassMansion=1
+		 minut+=5
+		 gs'stat'
+		 'You paid for the construction of swimming pools'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[3] = 1:
 		act 'Pay for repairs Hall for 250,000 rubles':
 		cls
@@ -111,8 +218,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[3]=1:
+		 act 'Pay for repairs hall 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[3]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 150000 and placeMansion = 3 and ymanrem[3] = 2:
 		act 'Pay lounge furniture for 150,000 rubles':
 		cls
@@ -123,8 +243,21 @@ else
 		'You paid for the purchase of furniture'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=150000 and placeMansion=3 and ymanrem[3]=2:
+		 act 'Pay furniture for living room 150 thousand':
+		 cls
+		 karta-=150000
+		 ymanrem[3]=3
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[4] = 0:
 		act 'Pay for repairs bedroom for 250,000 rubles':
 		cls
@@ -135,8 +268,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[4]=0:
+		 act 'Pay for repairs bedroom 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[4]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 300000 and placeMansion = 3 and ymanrem[4] = 1:
 		act 'Pay bedroom furniture for 300,000 rubles':
 		cls
@@ -147,8 +293,21 @@ else
 		'You paid for the purchase of furniture'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=300000 and placeMansion=3 and ymanrem[4]=1:
+		 act 'Pay furniture for bedroom 300 thousand':
+		 cls
+		 karta-=300000
+		 ymanrem[4]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[5] = 0:
 		act 'Pay bathroom renovation for 250,000 rubles':
 		cls
@@ -159,8 +318,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[5]=0:
+		 act 'Pay for bathroom renovation 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[5]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[5] = 1:
 		act 'Pay for bathroom furniture and fixtures for 250,000 rubles':
 		cls
@@ -171,8 +343,21 @@ else
 		'You paid for the purchase of furniture and sanitary ware.'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[5]=1:
+		 act 'Pay for furniture and fixtures for the bathroom 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[5]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture and sanitary ware.'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[6] = 0:
 		act 'Pay renovated kitchen for 250,000 rubles':
 		cls
@@ -183,8 +368,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[6]=0:
+		 act 'Pay for a kitchen renovation 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[6]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 350000 and placeMansion = 3 and ymanrem[6] = 1:
 		act 'Pay kitchen furniture for 350,000 rubles':
 		cls
@@ -195,8 +393,21 @@ else
 		'You paid for the purchase of furniture for the kitchen.'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=350000 and placeMansion=3 and ymanrem[6]=1:
+		 act 'Pay kitchen furniture 350 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[6]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture for kitchen.'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[7] = 0:
 		act 'Pay for repairs hall for 250,000 rubles':
 		cls
@@ -207,8 +418,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[7]=0:
+		 act 'Pay for repairs hall 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[7]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[7] = 1:
 		act 'Pay furniture hall for 250,000 rubles':
 		cls
@@ -219,8 +443,21 @@ else
 		'You paid for the purchase of furniture for the hall'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[7]=1:
+		 act 'Pay furniture hall 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[7]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture for the hall'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[8] = 0:
 		act 'Pay for repairs fireplace room for 250,000 rubles':
 		cls
@@ -231,8 +468,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[8]=0:
+		 act 'Pay for repairs fireplace room 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[8]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[8] = 1:
 		act 'Pay for the purchase of furniture for the fireplace room for 250,000 rubles':
 		cls
@@ -243,8 +493,21 @@ else
 		'You paid for the purchase of furniture.'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[8]=1:
+		 act 'Pay for the purchase of furniture for the fireplace room 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[8]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture.'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[9] = 0:
 		act 'Children´s room to pay for repairs for 250,000 rubles':
 		cls
@@ -255,8 +518,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[9]=0:
+		 act 'Pay repair a child`s room 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[9]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[9] = 1:
 		act 'Pay for the purchase of furniture for the nursery 250,000':
 		cls
@@ -267,8 +543,21 @@ else
 		'You paid for the purchase of furniture'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[9]=1:
+		 act 'Pay for the purchase of furniture for children`s rooms 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[9]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[10] = 0:
 		act 'Pay for repairs library for 250,000 rubles':
 		cls
@@ -279,8 +568,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[10]=0:
+		 act 'Pay for repairs library 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[10]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[10] = 1:
 		act 'Pay for the purchase of furniture for libraries for 250,000 rubles':
 		cls
@@ -291,8 +593,21 @@ else
 		'You paid for the purchase of furniture'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[10]=1:
+		 act 'Pay for the purchase of furniture for the library 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[10]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[11] = 0:
 		act 'Pay for repairs gym 250,000':
 		cls
@@ -303,8 +618,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[11]=0:
+		 act 'Pay for repairs gym 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[11]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[11] = 1:
 		act 'Pay furniture gym 250,000':
 		cls
@@ -315,8 +643,21 @@ else
 		'You paid for the purchase of furniture for the gym'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[11]=1:
+		 act 'Pay furniture for the gym 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[11]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture for the gym'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[12] = 0:
 		act 'Pay for repair of the 250 000':
 		cls
@@ -327,8 +668,21 @@ else
 		'You pay for repairs'
 		act 'Leave': gt $curloc
 		end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[12]=0:
+		 act 'Pay for repairs Cabinet 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[12]=1
+		 minut+=5
+		 gs'stat'
+		 'You pay for repairs'
+		 act 'Get_Away':gt $curloc
+		 end
+>>>>>>> 359_shopdacha
 	end
 
+<<<<<<< 359_shopdacha
 	if karta >= 250000 and placeMansion = 3 and ymanrem[12] = 1:
 		act 'Pay for the purchase of furniture for the office 250 000':
 		cls
@@ -340,6 +694,24 @@ else
 		act 'Leave': gt $curloc
 		end
 	end
+=======
+	if karta>=250000 and placeMansion=3 and ymanrem[12]=1:
+		 act 'Pay for the purchase of furniture for the office 250 thousand':
+		 cls
+		 karta-=250000
+		 ymanrem[12]=2
+		 minut+=5
+		 gs'stat'
+		 'You pay for the purchase of furniture.'
+		 act 'Get_Away':gt $curloc
+		 end
+	end
+
+
+
+
+
+>>>>>>> 359_shopdacha
 end
 --- shopdacha ---------------------------------
 

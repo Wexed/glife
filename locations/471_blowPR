@@ -1,9 +1,14 @@
 # blowPR
+<<<<<<< 471_blowPR
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 471_blowPR
 $metka = $ARGS[0]
 $loc = $CURLOC
 *clr
 cla
+<<<<<<< 471_blowPR
 zpprand = RAND(0,100)
 if zpprand >= 70: dynamic $venerasiak
 set minut += 1
@@ -19,13 +24,34 @@ gs 'stat'
 if prezik > 0: act 'Wear a condom on the penis mouth.': gt 'blowPR','1'
 !if prezik = 0:
 act 'Mark cock in her mouth.': gt 'blowPR','2'
+=======
+zpprand=RAND(0,100)
+if zpprand>=70:dynamic $venerasiak
+set minut = minut + 1
+set guy = guy + 1
+set bj = bj + 1
+set throat = throat + 1
+set prosta = prosta + 1
+!set son = son - 1
+clr
+gs'stat'
+'<center><img src="prost/bj.jpg" ></center>'
+'Your hand slipped on the perineum Man and unzipped his pants. You have thrust his hand into his pants and pulled out his cock.'
+if prezik > 0:act 'Dress up your mouth condom on the penis.':gt 'blowPR','1'
+if prezik = 0:act 'Take a cock in her mouth.':gt 'blowPR','2'
+>>>>>>> 471_blowPR
 end
 
+<<<<<<< 471_blowPR
 if $ARGS[0] = '1':
+=======
+if $ARGS[0]='1':
+>>>>>>> 471_blowPR
 $metka = $ARGS[0]
 $loc = $CURLOC
 *clr
 cla
+<<<<<<< 471_blowPR
 set minut += 5
 set prezik -= 1
 usecondom = 1
@@ -54,14 +80,48 @@ if picrand = 6: '<center><img src="images\img\prost\bjp7.jpg"></center>'
 	'Client sufficiently warmed up and you can continue.'
 	act 'Further.': gt 'AnalPR','1'
 	end
+=======
+set minut = minut + 5
+set prezik = prezik - 1 
+clr
+gs'stat'
+set picrand = RAND (0,6)
+if picrand = 0:'<center><img src="prost/bjp.jpg" ></center>'
+if picrand = 1:'<center><img src="prost/bjp2.jpg" ></center>'
+if picrand = 2:'<center><img src="prost/bjp3.jpg" ></center>'
+if picrand = 3:'<center><img src="prost/bjp4.jpg" ></center>'
+if picrand = 4:'<center><img src="prost/bjp5.jpg" ></center>'
+if picrand = 5:'<center><img src="prost/bjp6.jpg" ></center>'
+if picrand = 6:'<center><img src="prost/bjp7.jpg" ></center>'
+'You pulled my lips condom on the penis'
+     if prosti = 0:
+     'Your lips slide down the barrel of the client, until he cums in a condom'
+     act 'Get_Away.':GOTO $locSex, $metkaSex
+     end
+     
+     if prosti = 1:
+     'Client warmed up enough and you can continue.'
+     act 'further.':gt'NormPR','1'
+     end
+     
+     if prosti = 2:
+     'Client warmed up enough and you can continue.'
+     act 'further.':gt'AnalPR','1'
+     end
+>>>>>>> 471_blowPR
 end
 
+<<<<<<< 471_blowPR
 if $ARGS[0] = '2':
+=======
+if $ARGS[0]='2':
+>>>>>>> 471_blowPR
 $metka = $ARGS[0]
 $loc = $CURLOC
 *clr
 cla
 dynamic $venerasiak
+<<<<<<< 471_blowPR
 set minut += 5
 usecondom = 1
 clr
@@ -75,13 +135,32 @@ if picrand = 4: '<center><img src="images\img\prost\bjp12.jpg"></center>'
 if picrand = 5: '<center><img src="images\img\prost\bjp13.jpg"></center>'
 'You clasped lips member.'
 act 'Suck': gt 'blowPR','12'
+=======
+set minut = minut + 5
+clr
+gs'stat'
+set picrand = RAND (0,5)
+if picrand = 0:'<center><img src="prost/bjp8.jpg" ></center>'
+if picrand = 1:'<center><img src="prost/bjp9.jpg" ></center>'
+if picrand = 2:'<center><img src="prost/bjp10.jpg" ></center>'
+if picrand = 3:'<center><img src="prost/bjp11.jpg" ></center>'
+if picrand = 4:'<center><img src="prost/bjp12.jpg" ></center>'
+if picrand = 5:'<center><img src="prost/bjp13.jpg" ></center>'
+'You are a member of her lips.'
+act'suck':gt'blowPR','12'
+>>>>>>> 471_blowPR
 end
 
+<<<<<<< 471_blowPR
 if $ARGS[0] = '12':
+=======
+if $ARGS[0]='12':
+>>>>>>> 471_blowPR
 $metka = $ARGS[0]
 $loc = $CURLOC
 *clr
 cla
+<<<<<<< 471_blowPR
 	if prosti = 0:
 	bjrand = RAND(0,100)
 		if bj <= 15 and bjrand > 0 and bjrand <= 50:
@@ -146,5 +225,78 @@ cla
 	act 'Further.': gt 'AnalPR','2'
 	end
 end
+=======
+     if prosti = 0:
+     bjrand = RAND (0,100)
+         if bj <= 15 and bjrand > 0 and bjrand <= 50:
+         'You clumsy movements suck dick client, until he cums in your mouth, making you wince from the unpleasant taste of sperm.'
+         set cumlip = cumlip + 1
+         '<center><img src="prost/bjm.jpg" ></center>'
+         act 'Get_Away.':GOTO $locSex, $metkaSex
+         end
+         
+         if bj > 15 and bjrand > 0 and bjrand <= 50:
+         set cumlip = cumlip + 1
+         '<center><img src="prost/bjm2.jpg" ></center>'
+         'Your trained lips slide up and down, delivering customer delight. Very soon you will feel the taste of his seed, you swallow with pleasure to the last drop.'
+         set cumlip = cumlip + 1
+         act 'Get_Away.':GOTO $locSex, $metkaSex
+         end
+         
+         if bjrand > 50 and bjrand <= 80 and bj <= 15 and mop = 1:
+         set cumface = cumface + 1
+         '<center><img src="prost/bjf.jpg" ></center>'
+         'You clumsy movements suck dick client, suddenly he pulls you my dick, ending with your face, you do not have time to blink, little sperm gets in your eyes, but, despite the burning, you can not cry, can only smile.'
+         act 'Get_Away.':GOTO $locSex, $metkaSex
+         end
+         
+         if bjrand > 50 and bjrand <= 80 and bj <= 15 and mop > 1:
+         set cumface = cumface + 1
+         set mop = 0
+         '<center><img src="prost/bjf.jpg" ></center>'
+         'You clumsy movements suck dick client, suddenly he pulls you my dick, ending with your face, you do not have time to blink, little sperm gets in your eyes, but, despite the burning, you can not cry, can only smile.'
+         act 'Get_Away.':GOTO $locSex, $metkaSex
+         end
+         
+         if bjrand > 50 and bjrand <= 80 and bj > 15:
+         set cumface = cumface + 1
+         '<center><img src="prost/bjf2.jpg" ></center>'
+         'Your trained lips slide up and down, delivering customer delight, Once the client has released your mouth, you get the idea, Now that your face is flooded with sperm. you have time, tilt your head back with her eyes closed, heavy drops fall on your chin, forcing to smile at the thought of, not smeared makeup.'
+         act 'Get_Away.':GOTO $locSex, $metkaSex
+         end
+         
+         if bjrand > 80 and bjrand <= 100 and bj <= 15:
+         '<center><img src="prost/bjt2.jpg" ></center>'
+         'You clumsy movements suck dick client, He stretches his hands to your chest trying to expose it. you bellowed, implying, that did not agree. Dissatisfied client continued to have you in the mouth. You have already relaxed, client, pushing, pulled wet with saliva member.  his eyes closed, you feel, as a drop of sperm not fall on your face, and chest! Surprised you open your eyes, with horror when he saw stained clothes in the semen, Pretty smiling and client.'
+         set cumfrot = cumfrot + 1
+         act 'Get_Away.':GOTO $locSex, $metkaSex
+         end
+         
+         if bjrand > 80 and bjrand <= 100 and bj > 15:
+         '<center><img src="prost/bjt.jpg" ></center>'
+         'Your trained lips slide up and down, delivering customer delight. He stretches his hands to your chest does not patiently trying to expose it, Do you understand without words. Exposing tits you have become thoroughly work the mouth, when he was already on the verge of, you have stepped back sharply, slipped back to the member, became an instant client shoot sperm on your carefully the substituted Hemisphere. remains fairly, he handed you another Pjatihatki. '
+         set money += 500
+         act 'Get_Away.':GOTO $locSex, $metkaSex
+         end
+     end
+     
+     if prosti = 1:
+     'Client warmed up enough and you can continue.'
+     act 'further.':gt'NormPR','2'
+     end
+     
+     if prosti = 2:
+     'Client warmed up enough and you can continue.'
+     act 'further.':gt'AnalPR','2'
+     end
+end
+
+
+
+
+
+
+
+>>>>>>> 471_blowPR
 --- blowPR ---------------------------------
 

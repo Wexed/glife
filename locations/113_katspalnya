@@ -1,10 +1,17 @@
 # katspalnya
 $sexloc = $CURLOC
+<<<<<<< 113_katspalnya
 if $ARGS[0] = 'start':
 cls
 gs 'stat'
+=======
+if $ARGS[0]='start':
+cls
+gs'stat'
+>>>>>>> 113_katspalnya
 $metkaM = $ARGS[0]
 $locM = $CURLOC
+<<<<<<< 113_katspalnya
 '<center><B><font color = maroon>Guest Katie</font></B></center>'
 '<center><img src="images\img\SleepingQuarter\Kathouse\bedroom.jpg"></center>'
 
@@ -12,24 +19,51 @@ if hour >= 18 and hour < 23: 'Sitting on the couch <a href="exec: gt ''katspalny
 if hour >= 23 or hour < 6: 'In bed asleep <a href="exec: gt ''katspalnya'',''katslip''">Kate</a>.'
 'Large room in the middle is a huge bed, a small couch in the side.'
 act 'Leave': gt 'street'
+=======
+'<center><B><font color=maroon>Katie room</font></B></center>'
+'<center><img src="img/SleepingQuarter/Kathouse/bedroom.jpg"></center>'
+
+if hour >= 18 and hour < 23:'Sitting on the couch <a href="exec:gt''katspalnya'',''kat''">katya</a> watching TV'
+if hour >= 23 or hour < 6:'In bed asleep <a href="exec:gt''katspalnya'',''katslip''">katya</a>.'
+'The large room in the middle stands a huge bed, with a small side couch.'
+act'Get_Away':gt'street'
+>>>>>>> 113_katspalnya
 end
 
+<<<<<<< 113_katspalnya
 if $ARGS[0] = 'katslip':
+=======
+if $ARGS[0]='katslip':
+>>>>>>> 113_katspalnya
 cla
 clr
 *clr
+<<<<<<< 113_katspalnya
 set minut += 30
 if katjob = 0 and kat > 60: gt 'katspalnya','katjobs'
 '<center><img src="images\img\Kathouse\kat.jpg"></center>'
 'Katya rubs his eyes "Hey how´s it going."'
 act 'Move away': gt 'katspalnya','start'
 if kat > 50: act 'Sex': gt 'lezbsex','start'
+=======
+set minut+=30
+if katjob=0 and kat>60:gt 'katspalnya','katjobs'
+'<center><img src="img/Kathouse/kat.jpg"></center>'
+'Kate rubs his eyes "Hi".'
+act 'move_away':gt 'katspalnya','start'
+if kat>50: act 'sex':gt 'lezbsex','start'
+>>>>>>> 113_katspalnya
 end
 
+<<<<<<< 113_katspalnya
 if $ARGS[0] = 'kat':
+=======
+if $ARGS[0]='kat':
+>>>>>>> 113_katspalnya
 cla
 clr
 *clr
+<<<<<<< 113_katspalnya
 set minut += 30
 if katjob = 0 and kat > 60: gt 'katspalnya','katjobs'
 '<center><img src="images\img\Kathouse\kat.jpg"></center>'
@@ -45,13 +79,35 @@ act 'Chat':
 	'<center><img src="images\img\Kathouse\kat.jpg"></center>'
 	'You talked for half an hour.'
 	act 'Finish': gt 'katspalnya','start'
+=======
+set minut+=30
+if katjob=0 and kat>60:gt 'katspalnya','katjobs'
+'<center><img src="img/Kathouse/kat.jpg"></center>'
+'See you smiling Kate "Hi".'
+act 'move_away':gt 'katspalnya','start'
+if kat>50: act 'sex':gt 'lezbsex','start'
+act 'chat':
+	 cla
+	 clr
+	 if telkat=0: set telkat=1
+	 set kat += 1
+	 set minut+=30
+	 '<center><img src="img/Kathouse/kat.jpg"></center>'
+	 'You talked for half an hour.'
+	 act 'End_Up':gt 'katspalnya','start'
+>>>>>>> 113_katspalnya
 end
 end
 
+<<<<<<< 113_katspalnya
 if $ARGS[0] = 'katjobs':
+=======
+if $ARGS[0]='katjobs':
+>>>>>>> 113_katspalnya
 cla
 clr
 *clr
+<<<<<<< 113_katspalnya
 set katjob = 1
 set minut += 30
 '<center><img src="images\img\Kathouse\kat.jpg"></center>'
@@ -63,6 +119,19 @@ act '"But I´m not a nurse."':
 	'"Yes, it was." otveteli you thinking about what you are interested in while not dressings.'
 	'"Well, okay, I´ll talk and you yourself want to come see it or not."'
 	act '"Good."': gt 'katspalnya','start'
+=======
+set katjob=1
+set minut+=30
+'<center><img src="img/Kathouse/kat.jpg"></center>'
+'"Svetsik if you want I can talk to the head doctor and you take a job at the clinic".'
+act '"But I`m not a nurse."':
+	 cla
+	 '"but, I`m not a nurse." You have tried to argue.
+	 "oh, Come, you start with what something unpretentious, ligation will do. And there you will learn, Life safety in school because it was."
+	 "Yes_I_Am, there_were." otveteli you, Thinking about what you have at that time was not interested in dressing.
+	 "Anyway, I`ll talk and you yourself want to see come, want not."'
+	 act '"Ok."':gt'katspalnya','start'
+>>>>>>> 113_katspalnya
 end
 end
 

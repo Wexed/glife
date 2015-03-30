@@ -1,4 +1,5 @@
 # husb
+<<<<<<< 479_husb
 if $ARGS[0] = 'start':
 clr
 gs 'stat'
@@ -37,6 +38,46 @@ act 'Leave': GOTO $loc, $metka
 if husbandsexday < 4:
 	act 'Sex with my husband.': gt 'husbsex','room'
 	end
+=======
+if $ARGS[0]='start':
+clr
+gs'stat'
+	 if week<6:
+		 if hour>22 or hour<7:
+		 'your husband <<$husName>> lying in bed opens his eyes. "what do you? night had, go to sleep."'
+		 end
+		 if hour=7:
+		 '<<$husName>> sitting at the kitchen table.'
+		 end
+		 if hour=17:
+		 '<<$husName>> sitting at the kitchen table.'
+		 end
+		 if hour>17 and hour<=22:
+		 '<<$husName>> sitting on the couch and watching TV.'
+		 end
+	 else
+		 if hour>22 or hour<7:
+		 'your husband <<$husName>> lying in bed opens his eyes. "what do you? night had, go to sleep."'
+		 end
+		 if hour=7:
+		 '<<$husName>> sitting at the kitchen table.'
+		 end
+		 if hour>7 and hour<17:
+		 '<<$husName>> sitting on the couch and watching TV.'
+		 end
+		 if hour=17:
+		 '<<$husName>> sitting at the kitchen table.'
+		 end
+		 if hour>17 and hour<=22:
+		 '<<$husName>> sitting on the couch and watching TV.'
+		 end
+	 end
+
+act 'Get_Away':GOTO $loc, $metka
+if husbandsexday<4:
+     act 'Sex with her husband.':gt'husbsex','room'
+     end
+>>>>>>> 479_husb
 end
 --- husb ---------------------------------
 

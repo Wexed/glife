@@ -1,4 +1,5 @@
 # din_bad
+<<<<<<< 025_din_bad
 $d_salf = {
 clr
 salfetka -= 1
@@ -14,8 +15,25 @@ pl '<a href="exec:gs ''stat''"><B>Close makeup bag</B></a>'
 if kosmetitka >= 1: pl '<a href="exec:mop = 2 & kosmetitka -= 1 & gs ''stat''"><B>Light make-up</B></a>'
 if kosmetitka >= 2: pl '<a href="exec:mop = 3 & kosmetitka -= 2 & gs ''stat''"><B>Natural make-up</B></a>'
 if kosmetitka >= 3: pl '<a href="exec:mop = 4 & kosmetitka -= 3 & gs ''stat''"><B>Heavy make-up</B></a>'
+=======
+$d_salf={
+clr
+salfetka-=1
+pl'<a href="exec:gs''stat''"><B>throw a napkin</B></a>'
+if cumface>0:pl'<a href="exec:cumface-=1&gs''stat''"><B>wipe his face</B></a>'
+if cumfrot>0:pl'<a href="exec:cumfrot-=1&gs''stat''"><B>wipe clothes</B></a>'
+if mop!1:pl'<a href="exec:mop=1&gs''stat''"><B>erase cosmetics</B></a>'
+}
+$d_kosmetitka={
+clr
+pl'<a href="exec:gs''stat''"><B>Close beautician</B></a>'
+if kosmetitka>=1:pl'<a href="exec:mop=2&kosmetitka-=1&gs''stat''"><B>light makeup</B></a>'
+if kosmetitka>=2:pl'<a href="exec:mop=3&kosmetitka-=2&gs''stat''"><B>normal makeup</B></a>'
+if kosmetitka>=3:pl'<a href="exec:mop=4&kosmetitka-=3&gs''stat''"><B>thick makeup</B></a>'
+>>>>>>> 025_din_bad
 }
 
+<<<<<<< 025_din_bad
 $d_bag_heroin = {
 clr
 heroin -= 1
@@ -44,6 +62,23 @@ if bottle > 0: pl 'You have a bottle of water. <a href="exec:bottle = 0 & water 
 if buterbrod > 0: pl 'You have a sandwich. <a href="exec:buterbrod = 0 & energy+= 20 & cumlip = 0 & salo += 1 & gs ''stat''"><B>Eat</B></a>'
 if heroin > 0: pl 'You have <<heroin>> doses of heroin. <a href="exec:dynamic $d_bag_heroin"><B>Inject</B></a>'
 if selfPornvidDVDCarry > 0: pl 'You are carrying <<selfPornvidDVDCarry>> of your amateur porn DVDs.'
+=======
+
+$d_bag={
+clr
+pl'<a href="exec:gs''stat''"><B>Close bag</B></a>'
+
+if salfetka>0:pl'Do you have wet wipes, <<salfetka>> pcs. <a href="exec:dynamic $d_salf"><B>take a napkin</B></a>'
+if kosmetitka>0 and mop=1:pl'Do you have pernosnaya beautician. Cosmetics enough for <<kosmetitka>> time. <a href="exec:dynamic $d_kosmetitka"><B>make_up</B></a>'
+if kosmetitka>0 and mop!1:pl'Do you have pernosnaya beautician. Cosmetics enough for <<kosmetitka>> time.'
+if greben>0 and hapri=0:pl'Do you have a comb. <a href="exec:hapri=1&gs''stat''"><B>coiffured</B></a>'
+if greben>0 and hapri=1:pl'Do you have a comb.'
+if prezik>0:pl'you have <<prezik>> condom.'
+if tabletki>0:pl'you have <<tabletki>> birth control pills.'
+if bottle>0:pl'Do you have a bottle of water. <a href="exec:bottle=0&water = 20&cumlip=0&gs''stat''"><B>drink</B></a>'
+if buterbrod>0:pl'Do you have buterbrot. <a href="exec:buterbrod=0&energy+= 20&cumlip=0&salo+=1&gs''stat''"><B>eat</B></a>'
+if wine=1:pl'In her purse is a bottle of wine'
+>>>>>>> 025_din_bad
 }
 --- din_bad ---------------------------------
 

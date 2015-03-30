@@ -1,4 +1,5 @@
 # vokzal
+<<<<<<< 381_vokzal
 '<center><H4>Station</H4></center>'
 '<center><img src="images\etogame\vokzal.jpg"></center>'
 clr
@@ -53,6 +54,66 @@ if money >= 200:
 
 		act 'Exit': minut += 5 & nroad = 5 & gt 'road'
 	end
+=======
+'<center><H4>railway_station</H4></center>'
+'<center><img src="pic/vokzal.jpg" ></center>'
+'.'
+clr
+gs'stat'
+gs'time'
+
+
+
+
+
+
+
+act 'Get_Away':minut+=15&gt'nord'
+
+act 'Exit at North Highway':minut+=15&nroad=0&gt'road'
+
+if money>=200:
+     act 'Buy a ticket to town':
+     cls
+     money-=200
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/electri.jpg" ></center>'
+     'You paid for a ticket and boarded the train going into town.'
+     'through 15 minute train stopped at the station.'
+     
+         act 'go further':
+         cls
+         minut+=15
+         gs'stat'
+         '<center><img src="pic/electri.jpg" ></center>'
+         'through 15 minute train stopped at the station.'
+          
+             act 'go further':
+			 cls
+			 minut+=15
+			 gs'stat'
+			  '<center><img src="pic/electri.jpg" ></center>'
+			 'through 15 minute train stopped at the station.' 
+			     act 'go further':
+				 cls
+				 minut+=15
+				 gs'stat'
+				  '<center><img src="pic/electri.jpg" ></center>'
+				 'through 15 minute train stopped in town.'
+				  
+				 act 'Go_Out':minut+=5&nroad=20&gt'VokzalG'
+				 end
+				 
+				 act 'Go_Out':minut+=5&nroad=15&gt'road'
+			 end
+			 
+			 act 'Go_Out':minut+=5&nroad=10&gt'road'
+         end
+         
+         act 'Go_Out':minut+=5&nroad=5&gt'road'
+     end
+>>>>>>> 381_vokzal
 
 end
 --- vokzal ---------------------------------

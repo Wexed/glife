@@ -1,4 +1,5 @@
 # atakA
+<<<<<<< 051_atakA
 if $ARGS[0] = 'atak':
 cla
 !расчет попадания уворота
@@ -29,9 +30,42 @@ set popKoef = popad * 50/100
 	'<B><font color = red>is washed</font></B>'
 	xgt 'fight','sta'
 	end
+=======
+if $ARGS[0]='atak':
+cla
+!payment hit dodge
+set poSp = speed*20/100
+set uvAg = agilV*20/100
+set poBox = react*20/100
+set uvBox = reactV*20/100
+set popad = RAND (react-poBox,react+poBox) + RAND (speed-poSp,speed+poSp) + bonusSh
+set uvorot = RAND (reactV-uvBox,reactV+uvBox) + RAND (agilV-uvAg,agilV+uvAg)
+set uvorKoef = uvorot*50/100
+set popKoef = popad*50/100
+     if popad > uvorot:
+         if popad >= uvorot+uvorKoef:
+         !Crete, very direct hit
+         '<B><font color=green>Critical hits</font></B>'
+         xgt'atakA','uronKrit'
+         end
+         
+         if popad < uvorot+uvorKoef:
+         !normal hit
+         !attack the enemy
+         '<B><font color=green>EYE</font></B>'
+         xgt'atakA','uron'
+         end
+     end
+     
+     if popad <= uvorot:
+     '<B><font color=red>LOST</font></B>'
+     xgt'fight','sta'
+     end
+>>>>>>> 051_atakA
 end
 
 
+<<<<<<< 051_atakA
 if $ARGS[0] = 'uronKrit':
 cla
 set damKoef = damTip * 20/100
@@ -41,8 +75,20 @@ set damage = RAND(damTip + damKoef, damTip + damKoef * 2)
 	set damageM = RAND(damTipM + damKoefM, damTipM + damKoefM * 2)
 	end
 xgt 'atakA','damage'
+=======
+if $ARGS[0]='uronKrit':
+cla
+set damKoef = damTip*20/100 
+set damage = RAND(damTip+damKoef,damTip+damKoef*2)
+     if damTipM > 0:
+     set damKoefM = damTipM*20/100 
+     set damageM = RAND(damTipM+damKoefM,damTipM+damKoefM*2)
+     end
+xgt'atakA','damage'
+>>>>>>> 051_atakA
 end
 
+<<<<<<< 051_atakA
 if $ARGS[0] = 'uron':
 cla
 set damKoef = damTip * 20/100
@@ -52,8 +98,20 @@ set damage = RAND(damTip - damKoef, damTip + damKoef)
 	set damageM = RAND(damTipM - damKoefM, damTipM + damKoefM)
 	end
 xgt 'atakA','damage'
+=======
+if $ARGS[0]='uron':
+cla
+set damKoef = damTip*20/100 
+set damage = RAND(damTip-damKoef,damTip+damKoef)
+     if damTipM > 0:
+     set damKoefM = damTipM*20/100 
+     set damageM = RAND(damTipM-damKoefM,damTipM+damKoefM)
+     end
+xgt'atakA','damage'
+>>>>>>> 051_atakA
 end
 
+<<<<<<< 051_atakA
 if $ARGS[0] = 'damage':
 cla
 	if defenceV <= 0 and klonV <= 0 and unmaterialV <= 0 and barierV <= 0:
@@ -131,9 +189,89 @@ cla
 		end
 	xgt 'fight','sta'
 	end
+=======
+if $ARGS[0]='damage':
+cla   
+     if defenceV <= 0 and klonV <= 0 and unmaterialV <= 0 and barierV <= 0:
+     if dospehV > 0:set damageV = damageV - dospehDefV&set dospehEn = dospehEn - 1
+     if damage < 0:set damage = 0
+     Set healthV = healthV - damage
+         if damTipM > 0:
+         set mannaV = mannaV - damageM
+         set manna = manna + damageM
+         '<B><font color=green>you swallowed <<damageM>> manna enemy units.</font></B>'
+         end
+     !Set manna = manna - damageM
+         if eleSh > 0:
+         set stunV = RAND (eleSh,eleSh*3)
+         '<B><font color=green><<$nameV>> paralyzed <<stunV>> Rounds</font></B>'
+         end
+     '<B><font color=green>You have caused damage <<damage>> units</font></B>'
+     
+     !'<B><font color=red>Your manna harmed <<damageM>> units</font></B>'
+         if zerkaloV > 0:
+         set zerkaloV = zerkaloV - 1
+         set health = health - damage
+         '<B><font color=red><<$nameV>> reflected the damage and you got <<damage>> points of damage</font></B>'
+         end
+     xgt'fight','sta'
+     end
+     
+     if defenceV > 0 and klonV <= 0 and unmaterialV <= 0:
+     !set damSum = damage + damageM
+     !Set defence = defence - damSum
+     Set defenceV = defenceV - damage
+     '<B><font color=green>You have caused damage <<damage>> Protection of enemy units</font></B>'
+     xgt'fight','sta'
+     end
+     
+     if klonV > 0 and unmaterialV <= 0:
+     set klonV = klonV - 1
+     '<B><font color=green>Destroyed enemy clone</font></B>'
+     xgt'fight','sta'
+     end
+     
+     if unmaterialV > 0:
+     set unmaterialV = unmaterialV - 1
+     '<B><font color=red>Your blow has passed through the body of the enemy. Opponents do not materials</font></B>'
+     xgt'fight','sta'
+     end
+     
+     if barierV > 0:
+     !imeniteta barrier for damage
+         if barierV >= damage:
+         '<B><font color=red><<$nameV>> easily withstood the blow your</font></B>'
+         xgt'fight','sta'
+         end
+         if barierV < damage:
+         !Set manna = manna - damageM
+         !Set health = health - damage
+         set damage = damage - barierV
+         Set healthV = healthV - damage
+             if damTipM > 0:
+			 set mannaV = mannaV - damageM
+			 set manna = manna + damageM
+			 '<B><font color=green>you swallowed <<damageM>> manna enemy units.</font></B>'
+			 end
+             if eleSh > 0:
+			 set stunV = RAND (eleSh,eleSh*3)
+			 '<B><font color=green><<$nameV>> paralyzed <<stunV>> Rounds</font></B>'
+			 end
+         '<B><font color=green>You have caused damage <<damage>> units</font></B>'
+         !'<B><font color=red>Your manna harmed <<damageM>> units</font></B>'
+             if zerkaloV > 0:
+             set zerkaloV = zerkaloV - 1
+             set health = health - damage
+             '<B><font color=red>Opponent reflected damage and you got <<damage>> points of damage</font></B>'
+             end
+         end
+     xgt'fight','sta'
+     end
+>>>>>>> 051_atakA
 
 end
 
+<<<<<<< 051_atakA
 if $ARGS[0] = 'atakW':
 cla
 !расчет попадания уворота
@@ -163,9 +301,41 @@ set popKoef = popad * 50/100
 	'<B><font color = green>is washed</font></B>'
 	xgt 'fight','sta'
 	end
+=======
+if $ARGS[0]='atakW':
+cla
+!payment hit dodge
+set poSp = speed*20/100
+set uvAg = agilV*20/100
+set poBox = react*20/100
+set uvBox = reactV*20/100
+set popad = RAND (react-poBox,react+poBox) + RAND (speed-poSp,speed+poSp)
+set uvorot = RAND (reactV-uvBox,reactV+uvBox) + RAND (agilV-uvAg,agilV+uvAg)
+set uvorKoef = uvorot*50/100
+set popKoef = popad*50/100
+     if popad > uvorot:
+         if popad >= uvorot+uvorKoef:
+         !Crete, very direct hit
+         '<B><font color=red>Critical hits</font></B>'
+         xgt'atakA','uronKritW'
+         end
+         
+         if popad < uvorot+uvorKoef:
+         !normal hit
+         '<B><font color=red>EYE</font></B>'
+         xgt'atakA','uronW'
+         end
+     end
+     
+     if popad <= uvorot:
+     '<B><font color=green>LOST</font></B>'
+     xgt'fight','sta'
+     end
+>>>>>>> 051_atakA
 end
 
 
+<<<<<<< 051_atakA
 if $ARGS[0] = 'uronKritW':
 cla
 set damKoef = damTip * 20/100
@@ -173,8 +343,18 @@ set damage = RAND(damTip + damKoef, damTip + damKoef * 2)
 set damKoefM = damTipM * 20/100
 set damageM = RAND(damTipM + damKoefM, damTipM + damKoefM * 2)
 xgt 'atakA','damageW'
+=======
+if $ARGS[0]='uronKritW':
+cla
+set damKoef = damTip*20/100 
+set damage = RAND(damTip+damKoef,damTip+damKoef*2)
+set damKoefM = damTipM*20/100 
+set damageM = RAND(damTipM+damKoefM,damTipM+damKoefM*2)
+xgt'atakA','damageW'
+>>>>>>> 051_atakA
 end
 
+<<<<<<< 051_atakA
 if $ARGS[0] = 'uronW':
 cla
 set damKoef = damTip * 20/100
@@ -182,8 +362,18 @@ set damage = RAND(damTip - damKoef, damTip + damKoef)
 set damKoefM = damTipM * 20/100
 set damageM = RAND(damTipM - damKoefM, damTipM + damKoefM)
 xgt 'atakA','damageW'
+=======
+if $ARGS[0]='uronW':
+cla
+set damKoef = damTip*20/100 
+set damage = RAND(damTip-damKoef,damTip+damKoef)
+set damKoefM = damTipM*20/100 
+set damageM = RAND(damTipM-damKoefM,damTipM+damKoefM)
+xgt'atakA','damageW'
+>>>>>>> 051_atakA
 end
 
+<<<<<<< 051_atakA
 if $ARGS[0] = 'damageW':
 cla
 	if defenceV <= 0 and klonV <= 0 and unmaterialV <= 0 and barierV <= 0:
@@ -241,7 +431,70 @@ cla
 		end
 	xgt 'fight','sta'
 	end
+=======
+if $ARGS[0]='damageW':
+cla   
+     if defenceV <= 0 and klonV <= 0 and unmaterialV <= 0 and barierV <= 0:
+     if dospehV > 0:set damageV = damageV - dospehDefV&set dospehEn = dospehEn - 1
+     if damage < 0:set damage = 0
+     Set healthV = healthV - damage
+     Set mannaV = mannaV - damageM
+     '<B><font color=green>You harmed <<damage>> units</font></B>'
+     '<B><font color=green>You have caused damage to the enemy manna <<damageM>> units</font></B>'
+         if zerkaloV > 0:
+         set zerkaloV = zerkaloV - 1
+         set health = health - damage
+         '<B><font color=red><<$nameV>> reflected the damage and you got <<damage>> points of damage</font></B>'
+         end
+     xgt'fight','sta'
+     end
+     
+     if defenceV > 0 and klonV <= 0 and unmaterialV <= 0:
+     set damSum = damage + damageM
+     Set defenceV = defenceV - damSum
+     !Set defenceV = defenceV - damage
+     '<B><font color=green>You have caused damage <<damSum>> Protection of enemy units</font></B>'
+     xgt'fight','sta'
+     end
+     
+     if klonV > 0 and unmaterialV <= 0:
+     set klonV = klonV - 1
+     '<B><font color=green>Destroyed enemy clone</font></B>'
+     xgt'fight','sta'
+     end
+     
+     if unmaterialV > 0:
+     set unmaterialV = unmaterialV - 1
+     '<B><font color=red>Your blow has passed through the body of the enemy. Opponents do not materials</font></B>'
+     xgt'fight','sta'
+     end
+     
+     if barierV > 0:
+     !imeniteta barrier for damage
+         if barierV >= damage:
+         '<B><font color=red><<$nameV>> easily withstood the blow your</font></B>'
+         xgt'fight','sta'
+         end
+         if barierV < damage:
+         Set mannaV = mannaV - damageM
+         Set healthV = healthV - damage
+         !Set healthV = healthV - damage
+         '<B><font color=green>You have caused damage <<damage>> units</font></B>'
+         '<B><font color=green>You have caused damage to the enemy manna <<damageM>> units</font></B>'
+             if zerkaloV > 0:
+             set zerkaloV = zerkaloV - 1
+             set health = health - damage
+             '<B><font color=red>Opponent reflected damage and you got <<damage>> points of damage</font></B>'
+             end
+         end
+     xgt'fight','sta'
+     end
+>>>>>>> 051_atakA
 
 end
+
+
+
+
 --- atakA ---------------------------------
 

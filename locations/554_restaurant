@@ -1,9 +1,14 @@
 # restaurant
+<<<<<<< 554_restaurant
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 554_restaurant
 $metka = $ARGS[0]
 $loc = $CURLOC
 cla
 *clr
+<<<<<<< 554_restaurant
 set minut += 5
 '<center><B><font color = maroon>Bank</font></B></center>'
 '<center><img src="images\etogame\bank.jpg"></center>'
@@ -20,13 +25,36 @@ LCOLOR = rgb(106,90,205)
 	gt 'hall'
 	end
 	if hour >= 9 and hour <= 21: act 'Go to the bank': gt 'bank','1'
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>Bank</font></B></center>'
+'<center><img src="pic/bank.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'Working hours 9 prior_to 21.'
+
+     act 'GO_OUT':
+     cla
+     set minut = minut + 5
+     gt'hall'
+     end
+     if hour >= 9 and hour <= 21:act 'Go to the bank':gt'bank','1'
+>>>>>>> 554_restaurant
 end
 
+<<<<<<< 554_restaurant
 if $ARGS[0] = '1':
+=======
+if $ARGS[0]='1':
+>>>>>>> 554_restaurant
 $metka = $ARGS[0]
 $loc = $CURLOC
 cla
 *clr
+<<<<<<< 554_restaurant
 set minut += 5
 '<center><B><font color = maroon>Bank</font></B></center>'
 '<center><img src="images\etogame\bank1.jpg"></center>'
@@ -74,6 +102,59 @@ if bankfond > 0: 'Personal account <<bankfond>> rubles'
 		act 'Move away': gt 'restaurant','1'
 		end
 	end
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>Bank</font></B></center>'
+'<center><img src="pic/bank1.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+if bankfond > 0:'personal account <<bankfond>> RUB'
+     act 'GO_OUT':
+     cla
+     set minut = minut + 5
+     gt'restaurant','start'
+     end
+     
+     
+     if bankfond >= 0:
+         act 'Put money into a personal account':
+		 cla
+		 set minut = minut + 5
+		 kartaIN = input ("How much money you want to deposit?")
+		     if kartaIN <= 0 or kartaIN > money:
+		     'Incorrect operation.'
+		     else
+		     set bankfond = bankfond + kartaIN
+		     set money = money - kartaIN
+		     'You put into the account <<kartaIN>> rubles, now in your account <<bankfond>> rubles.'
+		     end
+		     
+		 act 'move_away':gt'restaurant','1'
+		 end
+		 
+		 act 'Withdraw money from the personal account':
+		 cla
+		 set minut = minut + 5
+		 kartaOUT = input ("How much money you want to withdraw?")
+		     if kartaOUT <= 0 or kartaOUT > bankfond:
+		     'Not correct operation.'
+		     else
+		     set bankfond = bankfond - kartaOUT
+		     set money = money + kartaOUT
+		     'You have removed from the account <<kartaOUT>> rubles, now in your account <<bankfond>> rubles.'
+		     end
+		     
+		 act 'move_away':gt'restaurant','1'
+		 end
+     
+     end
+     
+
+
+>>>>>>> 554_restaurant
 end
 --- restaurant ---------------------------------
 

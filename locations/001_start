@@ -1,4 +1,5 @@
 # start
+<<<<<<< 001_start
 killall
 close all
 
@@ -33,14 +34,51 @@ $version = "0.2.5e (Minor G&M bugfix) (If you haven't updated your image library
 *nl
 '<center>This is game is based on the russian game ЭТО by DeGross.</center>'
 *nl
+=======
+KILLALL
+CLOSE ALL
+!ADDQST 'car.qsp'
+
+USEHTML=1
+SHOWSTAT 0
+SHOWOBJS 0
+$ONGLOAD='loadg'
+$ONGSAVE='saveg'
+$ONNEWLOC  = 'LOCA'
+$onobjsel = 'onobjsel'
+showinput 0
+$counter = 'counter'
+$USERCOM='ObrabotkaVvoda'
+debug=1
+DISABLESCROLL = 1
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+FSIZE = 12
+$FNAME = 'Tahoma'
+
+!nosave 0
+!$backimage = 'content/pic/achtung.jpg'
+'<center>http://albedo.fludilka.su/ and DeGross</center>'
+*nl
+'<hr align="left" color="red" size="3" width="1200">'
+'<center><h2>IS_THIS</h2></center>'
+>>>>>>> 001_start
 '<hr align="left" color="red" size="3" width="1200">'
 *nl
+<<<<<<< 001_start
 '<center>Version <b><<$version>></b></center>'
 *nl
 *nl
 '<center><font color=red><b>Children under 18 years are strictly forbidden to play</b></font></center>'
+=======
+'<center>version 1.0.5.</center>'
+*nl
+!'<center><img src="studiand/car.gif" ></center>'
+>>>>>>> 001_start
 *nl
 *nl
+<<<<<<< 001_start
 
 'This game is about the simulated life of a woman containing elements of RPG, strategy, porn and magical combat.'
 'You may choose what kind of life the character will leave according to your play style, conscience or even personal beliefs.'
@@ -97,6 +135,19 @@ $version = "0.2.5e (Minor G&M bugfix) (If you haven't updated your image library
 StoryLine = 0
 MagikDostup = 0
 
+=======
+!'<center><img src="pic/start.jpg" ></center>'
+*nl
+*nl
+
+StoryLine=0
+MagikDostup=0
+!'<center><img src="qwest/alter/evdima/cock3.gif" ></center>'
+'<center><img src="qwest/alter/eto.gif" ></center>'
+*nl
+*nl
+'Life simulator with elements of RPG, strategy, porn. <b>children up to 18 years is strictly forbidden to play it.</b>'
+>>>>>>> 001_start
 set $name = 'Michael'
 set $surname = 'Kuznetsov'
 set age = 35
@@ -106,12 +157,14 @@ set month = 5
 set week = 1
 set hour = 7
 set day = 25
+!body
 set rost = 186
 set fat = 130
 set dick = 0
 set energy = 15
 set water = 15
 set son = 16
+!stats
 set stren = 160
 set speed = 50
 set agil = 50
@@ -119,6 +172,7 @@ set vital = 160
 set intel = 50
 set will = 100
 set react = 50
+<<<<<<< 001_start
 set health = vital * 10
 set willpower = intel * 5 + will * 5
 set manna = (intel * magik) + vital * 5
@@ -172,5 +226,61 @@ act '<center><b>Start</b></center>':
 	cla
 	gt 'begin'
 end
+=======
+set health = vital*10
+set willpower = intel*5 + will*5
+set manna = (intel*magik) + vital*5 
+set BDSMfilm=0
+set pornstudio=0
+set pfilmSTOP=0
+
+set money = 1500
+!act 'begin':gt'begin'
+set opPRE = 1
+tanga=1
+clrbelo=1
+act '<center><b>begin</b></center>':
+cla
+gt'begin'
+end
+
+
+
+
+!105 101 106 112
+
+
+	 if music_on=0:
+		 inited = 1
+		 music_on=1
+		 volume = 100
+		 $music_theme = 'sukizaebali'
+		 gs 'init_music'
+	 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 001_start
 --- start ---------------------------------
 

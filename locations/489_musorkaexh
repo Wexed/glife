@@ -1,8 +1,13 @@
 # musorkaexh
+<<<<<<< 489_musorkaexh
 if $args[0] = 'pos2':
+=======
+if $args[0]='pos2':
+>>>>>>> 489_musorkaexh
 cla
 *clr
 bumtolik = 1
+<<<<<<< 489_musorkaexh
 minut += 5
 gs 'stat'
 '<center><img src="images\etogame\bum.jpg"></center>'
@@ -11,9 +16,20 @@ act 'Leave': gt 'street'
 end
 
 if $args[0] = 'pos3':
+=======
+minut+=5
+gs'stat' 
+'<center><img src="etogame/bum.jpg" ></center>'
+'You see the kind of hangover homeless. You looked at him angry look and turned away.'
+act'Get_Away':gt 'street'
+end	
+
+if $args[0]='pos3':
+>>>>>>> 489_musorkaexh
 cla
 *clr
 bumtolik = 2
+<<<<<<< 489_musorkaexh
 minut += 5
 gs 'stat'
 '<center><img src="images\etogame\bum.jpg"></center>'
@@ -21,11 +37,25 @@ gs 'stat'
 'Bum: - Is that you, young lady, do not fear the old man! - With a predatory smile, said homeless.'
 act 'Ask what he needs': gt 'musorkaexh', 'pos4'
 act 'Leave': gt 'dis21'
+=======
+minut+=5
+gs'stat' 
+'<center><img src="etogame/bum.jpg" ></center>'
+'You see the kind of hangover homeless.'
+'bum: - is that you, young lady, Fear not the old man! - with a predatory smile, said the homeless.'
+act 'Ask what he needs':gt 'musorkaexh', 'pos4'
+act'Get_Away':gt 'dis21'
+>>>>>>> 489_musorkaexh
 end
 
+<<<<<<< 489_musorkaexh
 if $args[0] = 'pos4':
+=======
+if $args[0]='pos4':
+>>>>>>> 489_musorkaexh
 cla
 *clr
+<<<<<<< 489_musorkaexh
 minut += 5
 gs 'stat'
 '<center><img src="images\etogame\bum.jpg"></center>'
@@ -37,11 +67,29 @@ gs 'stat'
 act 'Give him a trifle (20 rubles)': gt 'musorkaexh', 'pos5'
 act 'Give him 100 rubles': gt 'musorkaexh', 'pos6'
 act 'Leave': gt 'trashplace'
+=======
+minut+=5
+gs'stat' 
+'<center><img src="etogame/bum.jpg" ></center>'
+'You see the kind of hangover homeless.'
+'Do_You: - What do you want from me?'
+'bum: - ah, good lady. Just nothing, understand, Here is the deal, holiday today, I aground...'
+'Do_You: - In_short, if I give money, you expect me to get behind?'
+'bum: - Yes_I_Am,yes_they_are. money.'
+act 'Give him a trifle (20 rubles)':gt 'musorkaexh', 'pos5'
+act 'give him 100 rubles':gt 'musorkaexh', 'pos6'
+act'Get_Away':gt 'trashplace'
+>>>>>>> 489_musorkaexh
 end
 
+<<<<<<< 489_musorkaexh
 if $args[0] = 'pos5':
+=======
+if $args[0]='pos5':
+>>>>>>> 489_musorkaexh
 cla
 *clr
+<<<<<<< 489_musorkaexh
 minut += 5
 bumtolik = 2
 money -= 20
@@ -52,11 +100,28 @@ gs 'stat'
 '(He looks at you with her tearful eyes)'
 act 'Allow and lend a hand for a kiss': gt 'musorkaexh', 'pos7'
 act '- Of course not! Fu, nasty old man!': gt 'street'
+=======
+minut+=5
+bumtolik=2
+money-=20
+gs'stat' 
+'<center><img src="etogame/bum.jpg" ></center>'
+'You see the kind of hangover homeless.'
+'bum: - oh, young_lady, it`s so touching. I never helped anybody. I am so unhappy. My whole life just beat. can I, in appreciation, kiss your hand? Allow, old_man, the last time in my life?'
+'(Looks at you with her tearful eyes)'
+act 'Allow and lend a hand for a kiss':gt 'musorkaexh', 'pos7'
+act'- of course, no! phew, nasty old man!':gt 'street'
+>>>>>>> 489_musorkaexh
 end
 
+<<<<<<< 489_musorkaexh
 if $args[0] = 'pos6':
+=======
+if $args[0]='pos6':
+>>>>>>> 489_musorkaexh
 cla
 *clr
+<<<<<<< 489_musorkaexh
 minut += 5
 bumtolik = 2
 money -= 100
@@ -68,8 +133,22 @@ act 'Leave': gt 'street'
 end
 
 if $args[0] = 'pos7':
+=======
+minut+=5
+bumtolik=2
+money-=100
+gs'stat' 
+'<center><img src="etogame/bum.jpg" ></center>'
+'You see the kind of hangover homeless.'
+'bum: - Wow, so much. have to napit... uh, ie to buy gifts for the grandchildren, cough-cough.'
+act'Get_Away':gt 'street'
+end	
+
+if $args[0]='pos7':
+>>>>>>> 489_musorkaexh
 cla
 *clr
+<<<<<<< 489_musorkaexh
 set minut += 5
 '<center><img src="images\etogame\bum_kiss.jpg"></center>'
 'You see the kind of hangover homeless.'
@@ -82,11 +161,30 @@ act 'Further':
 	'Bum: - Argh, what a beauty!'
 	act '- The ugly freak! (Slap)': gt 'street'
 	end
+=======
+set minut=minut+5 
+'<center><img src="etogame/bum_kiss.jpg" ></center>'
+'You see the kind of hangover homeless.'
+'bum, carefully, disbelief, stretches moist lips to your snow-white pen and kisses her. It`s all flutters and closes his eyes in pleasure. But when opened, you notice the evil twinkle in his eyes...' 
+act 'further':
+	 cls
+	 gs'stat'
+	 'suddenly, pulling your hand to yourself, He grabs your buttocks and starts, directly through clothing, violently kiss and sniff you between the legs. '
+	 '<center><img src="etogame/bum_gra.jpg" ></center>'
+	 'bum: - Argh, what a beauty!'
+	 act'- nasty freak!(give a slap)':gt 'street'
+	 end	
+>>>>>>> 489_musorkaexh
 end
 
+<<<<<<< 489_musorkaexh
 if $args[0] = 'pos8':
+=======
+if $args[0]='pos8':
+>>>>>>> 489_musorkaexh
 cla
 *clr
+<<<<<<< 489_musorkaexh
 set minut += 5
 '<center><img src="images\etogame\bum.jpg"></center>'
 'You see the kind of hangover homeless.'
@@ -111,11 +209,41 @@ act 'Agree':
 	act 'Leave': gt 'street'
 	end
 act 'Refuse': gt 'street'
+=======
+set minut=minut+5 
+'<center><img src="etogame/bum.jpg" ></center>'
+'You see the kind of hangover homeless.'
+'bum: - understand, cares. How would you say. I gathered some money, and spend them to me except on the booze, yes no place for grub. I`ve been watching you, you`re a girl business. Besides beautiful, takes as much heat!'
+'But I`m a man , but the beauty of the female pleasure as I appreciate.'
+*nl
+'Do_You: - You are referring to that?!'
+*nl
+'bum: - Do not think anything like that, I just wanted to offer money in exchange for beauty. You tell me that-any show, I only look. Yes_I_Am, more money and give, All that for a week scraped. As_many_as 300 rubles!' 
+act 'agree':
+	 cls
+	 money+=300
+	 bumtolik=3
+	 set bomjshet = bomjshet + 1
+	 gs'stat'
+	 '<center><img src="etogame/bumt1.jpg" ></center>'
+	 'Looking around and making sure, that there is one near you show tramp breasts and panties. Homeless man looks at you with round eyes and violently pulls his dick. You get scared, suddenly someone-throw some garbage.'
+	 'bum: - Argh, wait let me finish!'
+	 'Finally homeless nachivaet loud sniff and collapses on the carboard box.'
+	 'Do_You: - money, give money! - with this you cry grabs all his money to the homeless and laughing carried away.'
+	 act'Get_Away':gt 'street'
+	 end
+act 'Opt_Out':gt 'street'	
+>>>>>>> 489_musorkaexh
 end
 
+<<<<<<< 489_musorkaexh
 if $args[0] = 'pos9':
+=======
+if $args[0]='pos9':
+>>>>>>> 489_musorkaexh
 cla
 *clr
+<<<<<<< 489_musorkaexh
 set minut += 5
 bumtolik = 4
 '<center><img src="images\etogame\bumt4.jpg"></center>'
@@ -124,6 +252,14 @@ bumtolik = 4
 'Olga: - Of course, I never thought that I would do it. Sent me here the court of public works, as a punishment for an administrative offense. Although in principle the right thing, and for karma is useful to help people. If interested, take a business card, the people we really need.'
 'On the business card is written "Mercy Hospital." Address points to the northern area'
 act 'Leave': gt 'street'
+=======
+set minut=minut+5
+bumtolik=4 
+'It_turned_out, that girl named Olga. And it works in the service of the disadvantaged.'
+*nl
+'Olga: - I certainly never thought, I`ll be doing it. I was sent here Court, for public works, as a punishment for an administrative offense. Although in principle the right thing, yes and karma helpful, helping people. if you`re interested, take a business card, We really need people.'
+act 'Get_Away':gt 'street'	
+>>>>>>> 489_musorkaexh
 end
 --- musorkaexh ---------------------------------
 

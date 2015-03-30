@@ -1,7 +1,12 @@
 # beg
+<<<<<<< 476_beg
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 476_beg
 cla
 *clr
+<<<<<<< 476_beg
 set minut += 5
 set razdtumbler = 0
 	'<center><img src="images\etogame\fit1.jpg"></center>'
@@ -22,9 +27,28 @@ set razdtumbler = 0
 	'You ran around the stadium practicing the skill of running and developing speed.'
 	act 'Leave': gt 'fit','razd'
 	end
+=======
+set minut = minut + 5
+set razdtumbler = 0
+
+     act 'section jogging':
+     cla
+     *clr
+     set minut = minut + 120
+     set speed = speed + RAND (1,3)
+     set manna = manna - 5
+     set fat = fat - 5
+     set sweat = sweat + 3
+     set beg = beg + RAND(2,5)
+     '<center><img src="pic/fit5.jpg" ></center>'
+     'You ran through the stadium practicing and developing the skill of running speed.'
+     act 'Get_Away':gt'fit','razd'
+     end
+>>>>>>> 476_beg
 end
 
 if begsec > 0:
+<<<<<<< 476_beg
 	act 'Go to coaching':
 	cla
 	' Igor Y. in his coaching. You are interested in your success at it.'
@@ -37,6 +61,20 @@ if begsec > 0:
 		act 'Leave': gt 'beg','start'
 		end
 	end
+=======
+	 act 'Go to coaching':
+	 cla
+	 ' Igor Y. in his coaching. Are you interested in him your progress.'
+		 if beg < 50:
+		 'You need to train, you have not even a third category can not be withdrawn, in running the main athleticism and dyhalki. Yet it is important that there was no excess weight, but undermine the diet in shape, therefore recommends that the coach used to dry sauna.'
+		 act 'Go_Out':gt'beg','start'
+		 end
+		 if beg >= 50 and razradbegEG = 0:
+		 'you`re doing fine, really well done, you can have a very good sporting future. It may even become European champion. But do not forget, The key to victory, dyhalki, athleticism and an ounce.'
+		 act 'Get_Away':gt'beg','start'
+		 end
+     end
+>>>>>>> 476_beg
 end
 --- beg ---------------------------------
 

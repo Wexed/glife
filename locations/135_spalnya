@@ -1,6 +1,7 @@
 # spalnya
 $metkaM = $ARGS[0]
 $locM = $CURLOC
+<<<<<<< 135_spalnya
 '<center><B>Bedroom</B></center>'
 '<center><img src="images\img\centr\spaln.jpg"></center>'
 set minut += 5
@@ -44,5 +45,50 @@ else
 		gt 'spalnya'
 		end
 	end
+=======
+'<center><B>bedroom</B></center>'
+'<center><img src="img/centr/spaln.jpg" ></center>'
+set minut+=5
+set tanhouse1=1
+gs 'stat'
+if komp = 1:'<a href="exec:GT ''Komp'',''start''">computer</a>.'
+act 'In the corridor':gt'house'
+act 'do(2 hours)':
+	 cla
+	 set minut+=120
+	 set intel+=1
+	 'You prozanimalsya two o`clock, I think in your head that-then postponed'
+	 act 'End_Up':gt'spalnya'
+	 end
+if student > 0 and kursovik < 100:
+     act 'write kursovik 1 h':
+		 cla
+		 *clr
+		 set minut = minut + 60
+		 set kursovik = kursovik + RAND (intel/20,intel/10)
+		 if kursovik > 100:set kursovik = 100
+		 set manna = manna - 10
+		 '<center><img src="pic/study.jpg" ></center>'
+		 'You sat on coursework and prepare it for <<kursovik>> percent.'
+		 act 'End_Up':gt'spalnya'
+		 end
+     end
+act 'mirror':gt'mirror','start'
+act 'cupboard':gt'loker','start'
+act 'In bed':gt'bed','start'
+if tanga=0 and clrbelo>0:
+	 act 'Dress Underwear':
+		 cla
+		 set tanga = 1
+		 gt'spalnya'
+		 end
+else
+	 act 'Remove underwear':
+		 cla
+		 set tanga = 0
+		 gt'spalnya'
+		 end
+	 end
+>>>>>>> 135_spalnya
 --- spalnya ---------------------------------
 

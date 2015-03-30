@@ -1,4 +1,5 @@
 # otelPRE
+<<<<<<< 040_otelPRE
 '<center><img src="images\picPRE\otelPRE.jpg"></center>'
 set minut += 30
 clr
@@ -11,8 +12,23 @@ set money -= 3000
 'Availability in a hotel was only a double room you have paid in full, what would you have settled inadvertently nobody.'
 
 act 'Up to the room.':
+=======
+'<center><img src="picPRE/otelPRE.jpg" ></center>'
+set minut = minut + 30
+clr
+gs'statPRE'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+set money = money - 3000
+'You uneventful found sparkling lights Hotels and put the car went to the bar, to get a room.'
+'Available rooms in the hotel were only two people, you paid Room, What would you inadvertently nobody have settled.'
+
+act 'Rise in the number.':
+>>>>>>> 040_otelPRE
 cla
 *clr
+<<<<<<< 040_otelPRE
 set minut += 5
 clr
 gs 'statPRE'
@@ -128,6 +144,124 @@ gs 'statPRE'
 			end
 		end
 	end
+=======
+set minut = minut + 5
+clr
+gs'statPRE'
+'<center><img src="picPRE/otelPRE1.jpg" ></center>'
+'You lay on the bed. And they reflect, occurring over. And what a mysterious amulet you find there. After him.'
+	 act 'call Director.':
+	 cla
+	 *clr
+	 set minut = minut + 30
+	 clr
+	 gs'statPRE'
+	 '<center><img src="picPRE/otelPRE1.jpg" ></center>'
+	 'You have dialed the number of Roman Vsevolodovicha and after a few rings he responded. you told, that the excavation under some sort of ancient tomb, bone, what - that vessels, scrolls. Director pokumekat little while and decided to stop construction. He instructed you to stay until, watch and wait for further instructions.'
+	 	 act 'go to bed.':
+		 cla
+		 *clr
+		 set minut = minut + 600
+		 clr
+		 gs'statPRE'
+		 '<center><img src="picPRE/otelPRE1.jpg" ></center>'
+		 'You lay down on the bed and fell asleep. In the dream, than inconceivable. You vidili moon his bloody eye looks at the world and the people see the world not as what it is. Suddenly in his sleep, you feel, that someone in the room that is.'
+		 	 act 'open your eyes.':
+			 cla
+			 *clr
+			 set minut = minut + 5
+			 clr
+			 gs'statPRE'
+			 '<center><img src="picPRE/tobiPRE.jpg" ></center>'
+			 'Opening his eyes . A man in a long black cloak with an orange mask on the face in which there was only one hole for the eye. A man came up to you and asked "where the statue?"'
+			 	 act 'who are you?':
+				 cla
+				 *clr
+				 set minut = minut + 5
+				 clr
+				 gs'statPRE'
+				 '<center><img src="picPRE/tobiPRE.jpg" ></center>'
+				 '"who are you?" asked you wondering. "Listen, muzhik, do not look for yourself problems out of the blue, Give the statue and close construction. This place belongs to us." said unknown confident voice.'
+				 'you are thinking, who is that, and what it all means. "I see without a little show of force ." the man said , as if the stranger saw you through and felt a strong desire to give him a statue.'
+				 	 act 'Give him a statue':
+					 cla
+					 *clr
+					 set minut = minut + 5
+					 clr
+					 gs'statPRE'
+					 '<center><img src="picPRE/otelPRE1.jpg" ></center>'
+					 'You got out of bed and gave him a statue. The man picked it up, and then turned it around his eyes as if formed vortex draws him into his same eye, as a funnel. A few seconds and the man disappeared. You rubbed their eyes, "what the hell is going on here. me, dreamed it. Yes No, I do not like a lunatic, that would walk around the room in a dream, and the statue disappeared." speculated you.'
+					 'At this point. You came to the door and asked who was there. A woman`s voice from behind the door you said that she and the hotel manager wants to talk to you on an urgent matter.'
+					 	 act 'answer the door':
+						 cla
+						 *clr
+						 set minut = minut + 5
+						 clr
+						 gs'statPRE'
+						 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+						 'You opened the door and entered the room confident step is not a big girl with red hair and glasses. She walked into the room quickly examined the situation and finally fixed his eyes on you.'
+						 '"Michael? Am I correct to assume?", you nodded. "Last night you found a place and took out something very valuable and powerful." said the girl stroking your eyes.'
+						 	 act 'Listen, there has already come teammates on the matter.':
+							 cla
+							 *clr
+							 set minut = minut + 5
+							 clr
+							 gs'statPRE'
+							 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+							 'You embraced slight irritation, these idiots that can not even agree among themselves who come and take the statue? So you blurted out the girl "Listen, You have already started to bother me. That one comes with that damn statue, else, administrator, how."'
+							 'The girl looked at you with surprise. how? I already came up to someone? Who was it?'
+							 	 act 'Share':
+								 cla
+								 *clr
+								 set minut = minut + 5
+								 clr
+								 gs'statPRE'
+								 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+								 '"What a man in a black cloak with red clouds and orange mask with one hole for the eye. He already took the statue." answer You.'
+								 'The girl`s face lengthened. "Curse. ahead. Okay Michael, we will continue the conversation in a different place. Juugo, vyazhi it." said the girl at the door.'
+								 'Entered the room a tall man.'
+								 	 act 'Prepare to fight':
+									 cla
+									 *clr
+									 set minut = minut + 5
+									 clr
+									 gs'statPRE'
+									 '<center><img src="picPRE/jugoPRE.jpg" ></center>'
+									 'The man across the right side of the face was visible tattoo. Red hair stood on end.'
+									 set $nameV = 'Juugo'
+									 !stats
+									 set strenV = 600
+									 set speedV = 60
+									 set agilV = 60
+									 set reactV = 50
+									 set vitalV = 200
+									 set intelV = 50
+									 set willV = 50
+									 !skills
+									 set magikV = 100
+									 set boxingV = 100
+									 set shootV = 100
+									 !parameters
+									 set healthV = vitalV*10 + strenV*5
+									 set mannaV = intelV*10 + magikV*10
+									 set willpowerV = willV*10
+									 set BonusAtakV = 0
+									 set BonusDefV = 0
+									 !Programme of Action
+									 set program = 0
+									 set jugoFight = 1
+									 act 'fight':gt'fight','start'
+									 end
+								 end
+							 end
+						 end
+					 end
+				 end
+			 end
+		 end
+	 end
+
+>>>>>>> 040_otelPRE
 end
 --- otelPRE ---------------------------------
 

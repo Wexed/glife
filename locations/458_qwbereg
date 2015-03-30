@@ -1,4 +1,5 @@
 # qwbereg
+<<<<<<< 458_qwbereg
 $qwvlsexhjdy = {
 	act 'Pat his hand between her legs.':
 	cls
@@ -58,8 +59,70 @@ $qwvlsexhjdy = {
 		end
 
 	end
+=======
+$qwvlsexhjdy={
+	 act 'Pat his hand between her legs.':
+	 cls
+	 minut+=5
+	 VladimirHJ+=1
+	 hj+=1
+	 gs'stat'
+	 '<center><img src="qwest/sex/hand.jpg" ></center>'
+	 'You started stroking his hand over his fly and Vladimir felt his cock gets. He unzipped and pulled standing member who put you in the palm.'
+	 'You began to fondle her slender fingers hard and hot cock Vladimir.'
+	     act 'wank him.':
+		 cls
+		 minut+=5
+		 gs'stat'
+		 '<center><img src="qwest/sex/hand2.jpg" ></center>'
+		 'You develop a strong jerk his cock and soon finished Vladimir moan in your hands.'
+		 act '....':gt'qwbereg2'
+		 end
+		 
+		 act 'Take by mouth.':
+		 cls
+		 minut+=5
+		 bj+=1
+		 VladimirBJ+=1
+		 gs'stat'
+		 '<center><img src="qwest/sex/bj.jpg" ></center>'
+		 'Going down on your knees you wrapped around his lips a member of Vladimir and began to suck absorbing every movement of his hard cock to throat and abundantly wetting saliva.'
+		 'Finally .'
+		 	 act 'continue to suck.':
+			 cla
+			 *clr
+			 set swallow = swallow + 1
+			 set cumlip = cumlip + 1
+			 '<center><img src="picV/swallow.jpg" ></center>'
+			 'A jet of hot cum hit you in the mouth. You started to swallow cum, and Vladimir continued to cum in your mouth. Finally.'
+				 act '....':gt'qwbereg2'
+			 end
+			 
+			 act 'Remove the mouth.':
+			 cla
+			 *clr
+			 set tiprand = RAND (0,1)
+				 if tiprand = 1:
+				 '<center><img src="picV/hand.jpg" ></center>'
+				 'You remove a member from the mouth and Vladimir finished you in the palm.'
+				 end 
+			 
+				 if tiprand = 0:
+				 set facial = facial + 1
+				 set cumface = cumface + 1
+				 '<center><img src="picV/facial.jpg" ></center>'
+				 'Have you taken the member and at this point Vladimir discharged directly on your face, covering it with warm and sticky sperm.'
+				 end
+			  
+				 act '....':gt'qwbereg2'
+			 end
+		 end
+	 
+	 end
+>>>>>>> 458_qwbereg
 }
 
+<<<<<<< 458_qwbereg
 minut += 30
 gs 'stat'
 '<center><B><font color = maroon>The boat</font></B></center>'
@@ -138,5 +201,94 @@ gs 'stat'
 			end
 		end
 	end
+=======
+minut+=30
+gs'stat'
+'<center><B><font color=maroon>boat</font></B></center>'
+'<center><img src="qwest/vladimir/kater.jpg" ></center>'
+'The boat is moored to the shore and Glory jumping off a boat tied moorings. Everyone began to descend from the boat to the shore. Vladimir said "Glory to you now razvezet home, and then pick me up and the light."' 
+'Nicholas, Vitaly and Isolde said goodbye and got in the car. Glory sat behind the wheel and drove off. You were near the boat together with Vladimir.'
+'Vladimir gathered the remnants of food in a bag and threw it in the trash. Boxes with unspoiled food delivered to the deck, as long as you wipe with a damp cloth table on the deck.'
+'Finally with the cleaning has been completed and Vladimir sat down on the sofa to rest on deck.'
+
+	 act 'sit down.':
+	 cls
+	 '<center><B><font color=maroon>Vladimir</font></B></center>'
+     '<center><img src="qwest/vladimir/001.jpg" ></center>'
+	 'You sat next to Vladimir and he hugged you by the shoulders. "Well?"'
+	     act 'It was not bad. excellent boat.':
+		 cla
+		 '(Do_You) - It was not bad. Excellent you have a boat.'
+		 '(Vladimir) - The boat is not my. Borrowed from an acquaintance pokatatsya. Absolutely no pleasure, therefore it is necessary to combine business meetings with relaxation.'
+		 'Vladimir leaned toward your face trying to kiss him.'
+		     act 'tselovatsya.':
+			 cla
+			 minut+=5
+			 horny+=10
+			 VladimirSex+=1
+			 guy+=1
+			 gs'stat'
+			 'You started with Vladimir tselovatsya sitting on the couch. His hands slid to your chest and began to knead her through clothing.'
+			  dynamic $qwvlsexhjdy
+				 
+				 act 'Savoury.':
+				 cls
+				 minut+=5
+				 horny+=15
+				 gs'stat'
+				 '<center><img src="qwest/sex/tits.jpg" ></center>'
+				 'Vladimir lifted your shirt and began to lick and suck your breasts. Gentle warmth pierced you and you become very good caresses Vladimir.'
+				 dynamic $qwvlsexhjdy
+				 
+				     act 'Savoury.':
+				     cla
+				     minut+=5
+				     horny+=15
+				     DOM+=1
+                     kuni+=1
+				     gs'stat'
+				     '<center><img src="qwest/sex/kuni.jpg" ></center>'
+				     'Vladimir started to remove your clothes, that would get here before your pussy. He began to caress the tongue your pussy.'
+				         if horny >= 90:
+						 set horny = 0
+						 set manna = manna + 15
+						 set willpower = willpower + 15
+						 set orgasm = orgasm + 1
+						 'By skillful actions of Vladimir orgasm you covered.'
+						 else
+						 'Actions Vladimir though they were exciting, but they began to bore you.'
+						 end
+						 
+						 dynamic $qwvlsexhjdy
+						 
+						 act 'give him.':
+						 cls
+						 set sex = sex + 1
+						 set minut = minut + 30
+						 set pose = 0
+						 set $nameV = 'Vladimir'
+						 set dick = 16
+						 set silavag = 1
+						 '<center><img src="picV/vag.jpg" ></center>'
+						 '<<$nameV>> spread your legs and began to caress her fingers pussy.'
+						 gs'orgazm','start'
+						 act '....':gt'qwbereg2'
+						 end
+				     end
+				 end
+				 
+			 end
+		 end
+	 end
+
+
+
+
+
+
+
+
+
+>>>>>>> 458_qwbereg
 --- qwbereg ---------------------------------
 

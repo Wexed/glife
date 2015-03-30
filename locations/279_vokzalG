@@ -1,6 +1,7 @@
 # vokzalG
 $metka = $ARGS[0]
 $loc = $CURLOC
+<<<<<<< 279_vokzalG
 '<center><H4>Station</H4></center>'
 '<center><img src="images\etogame\vokzal.jpg"></center>'
 'Little quiet station. About <a href="exec:minut += 3 & GT ''vokzalGin''">Station</a> worth <a href="exec:minut += 5 & GT ''gkafe''">cafe</a>. Just outside the station is a small hotel, guesthouse, post office and police station.'
@@ -37,8 +38,50 @@ podrand = rand(0,3)
 		end
 	exit
 	end
+=======
+'<center><H4>railway_station</H4></center>'
+'<center><img src="pic/vokzal.jpg" ></center>'
+'Small quiet station. about <a href="exec:minut+=3&GT ''vokzalGin''">station</a> costs <a href="exec:minut+=5&GT ''gkafe''">caff</a>. Just near the station is a small hotel for visitors, post office and police station. On the area is fenced not a big market.'
+clr
+gs'stat'
+gs'time'
+'On the forecourt placed small <a href="exec:minut+=1&GT ''Grinok''">market</a>'
+'not great <a href="exec:minut+=1&GT ''Gotel''">hotel</a> in which they live travel.'
+
+
+if kidalob=0:
+podrand=rand(0,3)
+     if money>=5000 and hour>=8 and hour<=20 and podrand=0 and monthKidalo!month:
+     cls
+     monthKidalo=month
+     gs'stat'
+     '<center><H4>railway_station</H4></center>'
+     '<center><img src="pic/vokzal.jpg" ></center>'
+     'You go to the station and to the right for you girl with a microphone and a man with a TV camera. Woman appeals to you "Hello. We with Television. Is now undergoing unprecedented action - shows to distribute gifts. We have chosen you." Girl gets beautifully wrapped box with a bow and gives you. "Here laptop last generation."'
+     act 'Get_Away':minut+=15&gt $curloc
+         act 'take a box':
+         cls
+         gs'stat'
+         '<center><H4>railway_station</H4></center>'
+         '<center><img src="pic/vokzal.jpg" ></center>'
+         'You took the box and the man began to take you on camera. The girl held up a microphone and offered to convey greetings to relatives and friends. You are standing with heavy boxes on camera to say hello to and thanked for the gift handed. The man and the girl took all offered you pay VAT, with the value of the gift. This is just what that 5five thousand.'
+             act 'pay VAT':
+			 cls
+			 money-=5000
+			 kidalob=1
+			 gs'stat'
+			 '<center><H4>railway_station</H4></center>'
+			 '<center><img src="pic/vokzal.jpg" ></center>'
+			 'You gave money and began to print a gift. When you manage to open the box, you saw, that there is a brick wrapped in newspaper. You looked around for girls and men, but they are already gone.'
+				 act 'Get_Away':minut+=15&gt $curloc 
+			 end 
+         end
+     exit
+     end
+>>>>>>> 279_vokzalG
 end
 
+<<<<<<< 279_vokzalG
 if kidalo = 0:
 podrand = rand(0,3)
 	if money >= 1000 and hour >= 8 and hour <= 20 and podrand = 0 and glamur > 0 and monthKidalo ! month:
@@ -102,16 +145,91 @@ podrand = rand(0,3)
 		end
 	exit
 	end
+=======
+if kidalo=0:
+podrand=rand(0,3)
+     if money>=1000 and hour>=8 and hour<=20 and podrand=0 and glamur>0 and monthKidalo!month:
+     cls
+     monthKidalo=month
+     '<center><H4>railway_station</H4></center>'
+     '<center><img src="pic/vokzal.jpg" ></center>'
+     'Going to the station you notice how near the station are two men. They notice you and come up to you talking to each other. "Well, well-then..." One of the guys, in a representative suit comes to you and says. "We are opening a new store your city and we need a girl to advertise. We offer you 30 thousands of photos for advertising."'
+     act 'Get_Away':minut+=15&gt $curloc
+         act 'agree':
+         cls
+         gs'stat'
+         'You willingly agree, on such a tempting offer. The guys took you to build the site near the railway station, one of the guys took out the camera and put it in front of a tree with bushes. "Will shoot on natural background. so vivid. But that`s the problem, your dress glare. You need to change." Man pulled from the trunk of the car and gave you the dress. "Can change clothes in the car" The guy showed you that Audi was not far.'
+         act 'Get_Away':minut+=15&gt $curloc
+             act 'dress_up':
+			 cls
+			 gs'stat'
+			 dress[numdress]=0
+			 set numdress=0
+			 set odetjeans=0
+			 set odetyoga=0
+			 set odetsarafan=1
+			 set odetshort=0
+			 set odetskirt=0
+			 set odetdress=0
+			 set odetprofi=0
+			 set odetpants=0
+			 set odetlatex=0
+			 set odethooker=0
+			 set odetkis=0
+			 set odetnewclo=0
+			 set odetero=0
+			 set vatnik=0
+			 set glamur = 0
+			 set sport = 0
+			 set ski = 0
+			 set hook = 0
+			 set ofclo = 0
+			 set sexual = 0
+			 if cumfrot > 0:set cumfrot = 0
+			 set nude = 0
+			 set odevnesh = 0
+			 !
+			 sarafan[3]=2
+			 sarafanH[3]=20
+			 'You got into the car and took off her dress. Then you put on her dress, which gave you a man.'
+			     act 'pose':
+			     cls
+			     kidalo=1
+			     gs'stat'
+			     'You got out leaving their belongings in the car and approached the tree. One of the guys stood behind the camera, second fussing around you, showing you, as it should be. The camera clicked. "so_Much, and now the picture from the back" You stood with his back to the camera . "Very_Well. Tepr slightly raised his head and close your eyes." You have executed instructions, but no camera schelcha not followed. Instead.'
+			         act 'turn_out':
+					 cls
+					 money=0
+					 gs'stat'
+					 'You turned and saw, that no camera no. Both men sit in Audi, which moved off and tore through the streets. You frantically realized, that his clothes and money you have left in the car. You threw as last lohushku.'
+					 act 'Get_Away':minut+=15&gt $curloc
+					 end
+			     end
+			 end
+         end
+     exit
+     end
+>>>>>>> 279_vokzalG
 end
 
+<<<<<<< 279_vokzalG
 gs 'family'
+=======
+gs'family'
+>>>>>>> 279_vokzalG
 
 
 
 
+<<<<<<< 279_vokzalG
 act 'Go to the town': minut += 15 & gt 'gorodok'
 
 act 'Exit to the northern highway': minut += 15 & nroad = 20 & gt 'road'
+=======
+act 'Go into town':minut+=15&gt'gorodok'
+
+act 'Exit at North Highway':minut+=15&nroad=20&gt'road'
+>>>>>>> 279_vokzalG
 
 
 --- vokzalG ---------------------------------

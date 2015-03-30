@@ -1,4 +1,5 @@
 # igravt
+<<<<<<< 538_igravt
 *PL 'You enter the room and see a lot of slot machines and a bunch of people around them. Heard ringing constantly twitching handles and falling coins.'
 *PL 'On the left side of the hall is very little availability.'
 *PL 'Apparently there is less than the required rate of all but small gains.'
@@ -15,6 +16,24 @@ ACT 'For machines for 100 rubles':
 END
 ACT 'For machines for 1000 rubles':
 	gt 'avt3'
+=======
+*PL 'You enter a room and see a lot of slot machines and a bunch of people around them. Constantly hear ringing twitching handles and falling coins.'
+*PL 'On the left side of the hall is very little free space.'
+*PL 'Apparently there is less than the required rate of, but small gain.'
+*PL 'To the right of these people less and bid more.'
+*PL 'But in the back of the room sat a unit.'
+*PL 'There`s biggest bet required, but also the corresponding jackpot - 10 million. rubles.'
+*P '<right><img src="casino/zaligravt.jpg" ></right>'
+ACT 'By vending machines for 10r':
+	set minut=minut+10
+	gt 'authors1'
+END
+ACT 'By vending machines for 100r':
+	gt 'authors2'
+END
+ACT 'By vending machines for 1000r':
+	gt 'authors3'
+>>>>>>> 538_igravt
 END
 ACT 'Back in the hall':
 	gt 'hall'
@@ -22,8 +41,13 @@ END
 USEHTML = 1
 
 clr
+<<<<<<< 538_igravt
 gs 'stat'
 set minut += 10
+=======
+gs'stat'
+set minut=minut + 10
+>>>>>>> 538_igravt
 
 --- igravt ---------------------------------
 

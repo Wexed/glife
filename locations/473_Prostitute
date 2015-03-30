@@ -1,11 +1,16 @@
 # Prostitute
+<<<<<<< 473_Prostitute
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 473_Prostitute
 $metka = $ARGS[0]
 $loc = $CURLOC
 $metkaSex = $ARGS[0]
 $locSex = $CURLOC
 cla
 *clr
+<<<<<<< 473_Prostitute
 set minut += 5
 '<center><B><font color = maroon>Hooker</font></B></center>'
 '<center><img src="images\etogame\park2.jpg"></center>'
@@ -234,10 +239,241 @@ act 'Leave':
 	set prosta = 0
 	gt 'park','start'
 	end
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>prostitute</font></B></center>'
+'<center><img src="pic/park2.jpg" ></center>'
+clr
+gs'stat'
+gs'time'
+if hour >= 16 and hour <= 23:
+	 if whoreQW = 2:
+		 'Prostitutes look at you with curiosity.'
+		 end
+	 if whoreQW = 1:
+		 'Prostitutes look at you with interest.'
+		 act 'talk':
+			 cla
+			 set whoreQW = 2
+			 'You went to a prostitute and asked her how things are done here at all. She began to explain. "We are all free, do not work on anyone, but because of the many problems. Stella with her вЂ‹вЂ‹friends is svimi beat us and rob, sometimes come petty criminals and rob us of money. If you want to work here, you have to pay and Stella and bandyukov. You certainly cool, you can try to lay siege to Stella and her bridesmaids, but the bandits do not advise to contact. And more, you do not bite on customers, if you nebudesh dressed like a whore, you can buy some clothes in a sex shop."'
+			 act 'move_away':gt'prostitute','start'
+			 end
+		 end
+	 if whoreQW = 0:
+		 'hey, you are not one of our, brought down to our terms, and that the teeth do not gather.'
+		 act 'Fuck you!':
+			 cla
+			 set minut = minut + 15
+			 set $nameV = 'stoned prostitute'
+			 !stats
+			 set strenV = 20
+			 set speedV = 30
+			 set agilV = 30
+			 set reactV = 30
+			 set vitalV = 50
+			 set intelV = 10
+			 set willV = 10
+			 !skills
+			 set magikV = 10
+			 set boxingV = 10
+			 set shootV = 10
+			 !parameters
+			 set healthV = vitalV*10 + strenV*5
+			 set mannaV = intelV*10 + magikV*10
+			 set willpowerV = willV*10
+			 set BonusAtakV = 0
+			 set BonusDefV = 0
+			 !Programme of Action
+			 set program = 0
+			 set prostitutFight = 1
+			 if spellavtoklon = 1:set klon = 3
+			 if spellbefshild = 1:set defence = 500
+			 gt'fight','start'
+			 end
+		 act 'How to become one of your?':
+			 cla
+			 'How to become one of your? asked you. Prostitute grinned impudently, spat. To do this.'
+			 act 'move_away':gt'prostitute','start'
+			 act 'I agree':
+				 cla
+				 whoreQW = 2
+				 'you agreed. The prostitute told you, you need to buy some clothes in the sex shop. Then customers will immediately realize that you are a prostitute.'
+				 act 'move_away':gt'prostitute','start'
+				 end
+			 end
+		 end
+	 if whoreQW > 1 and hook = 1 and son > 0:
+		 act 'Stand on the panel 15 min':
+			 cla
+			 set minut = minut + 10
+			 set prosrand = RAND (0,(vnesh+hour)*2)
+			 if prosrand < 20:
+				 'No you are not interested in.'
+				 act 'Get_Away':gt'prostitute','start'
+				 end
+			 if prosrand >= 20:
+				 'To you drove the car.'
+				 set proseventrand = RAND (0,100)
+				 if proseventrand <= 5:
+					 'To you drove a black jeep, opened the window and leaned out healthy impudent face. "Hey whore, it`s time to pay tribute. Come here Shtukar and Wali further work."'
+					 if money >= 1000:
+						 act 'give money':
+							 cla
+							 set money = money - 1000
+							 'You gave money big man in the jeep. He put them in his pocket and left.'
+							 act 'move_away':gt'prostitute','start'
+							 end
+						 end
+					 if money<1000:
+						 act 'I still do not earn as much':
+							 cla
+							 money = 0
+							 'You begin to explain big man, that you have not earned it grabbed you by the arm and threw him into a jeep, there you have it brushed his pocket, how to work.'
+							 act 'work':
+								 set $nameV = 'bandit'
+								 set $boy = 'bandit'
+								 set dick = RAND (18,21)
+								 gt'blowPR','start'
+								 end
+							 end
+						 end
+					 act 'Fuck you!':
+						 cla
+						 set minut = minut + 15
+						 set $nameV = 'bandit'
+						 !stats
+						 set strenV = 200
+						 set speedV = 30
+						 set agilV = 20
+						 set reactV = 20
+						 set vitalV = 150
+						 set intelV = 10
+						 set willV = 10
+						 !skills
+						 set magikV = 10
+						 set boxingV = 10
+						 set shootV = 10
+						 !parameters
+						 set healthV = vitalV*10 + strenV*5
+						 set mannaV = intelV*10 + magikV*10
+						 set willpowerV = willV*10
+						 set BonusAtakV = 0
+						 set BonusDefV = 0
+						 !Programme of Action
+						 set program = 0
+						 set prostitutFight = 2
+						 if spellavtoklon = 1:set klon = 3
+						 if spellbefshild = 1:set defence = 500
+						 gt'fight','start'
+						 end
+					 end
+				 if proseventrand > 5 and proseventrand <= 50:
+				 klient_needs=0
+				 prosti = 0
+				 KlientMON=RAND(1,10)
+					 'The client wants a blowjob and asks how much it will cost.'
+				 end
+				 if proseventrand > 50 and proseventrand <= 75:
+				 klient_needs=1
+				 prosti = 0
+				 KlientMON=RAND(3,25)
+					 'The client wants sex and asks how much it will cost.'
+				 end
+				 if proseventrand > 75 and proseventrand <= 95:
+				 klient_needs=2
+				 prosti = 0
+				 KlientMON=RAND(5,40)
+					 'Client wants anal and asks how much it will cost.'
+				 end 
+				 if proseventrand > 5 and proseventrand <= 95:
+				 klienVNPR=RAND(0,30)
+				 
+				 act 'Get_Away':gt'prostitute','start'
+					 if ProsMoney>0:
+						 act '<<ProsMoney*100>> rubles':
+						 cls
+						 dynamic $universalklient
+						 end
+					 end
+					 
+					 act 'put a price':
+					 cls
+					 gs'stat'
+					 ProsMoney=input("Assign cost hundreds")
+					     if ProsMoney<1:
+					     'The client looked at you in surprise and muttered "Some sort of fucked." Then started the car and drove off.'
+					     act 'Get_Away':gt'prostitute','start'
+					     else
+					     dynamic $universalklient
+					     end
+					 end
+					     
+					     
+				 end
+				 if proseventrand > 95:
+					 'To you came prostitute. "Slysh, slut, If you do not want problems, you have to pay Stella. Come here pyatihatnik and Wali further work."'
+					 if money >= 500:
+						 act 'give money':
+							 cla
+							 set money = money - 500
+							 'You gave money to a prostitute, She turned and walked away.'
+							 act 'move_away':gt'prostitute','start'
+							 end
+						 end
+					 if money<500:
+						 act 'I still do not earn as much':
+							 cla
+							 set money = 0
+							 'You started zhalovatsya that have not yet earned so much money. Prostitute search you took everything of value and left.'
+							 act 'move_away':gt'prostitute','start'
+							 end
+						 end
+					 act 'Fuck you!':
+						 cla
+						 set minut = minut + 15
+						 set $nameV = 'prostitute'
+						 !stats
+						 set strenV = 50
+						 set speedV = 50
+						 set agilV = 40
+						 set reactV = 30
+						 set vitalV = 60
+						 set intelV = 10
+						 set willV = 10
+						 !skills
+						 set magikV = 10
+						 set boxingV = 10
+						 set shootV = 10
+						 !parameters
+						 set healthV = vitalV*10 + strenV*5
+						 set mannaV = intelV*10 + magikV*10
+						 set willpowerV = willV*10
+						 set BonusAtakV = 0
+						 set BonusDefV = 0
+						 !Programme of Action
+						 set program = 0
+						 set prostitutFight = 3
+						 if spellavtoklon = 1:set klon = 3
+						 if spellbefshild = 1:set defence = 500
+						 gt'fight','start'
+						 end
+					 end
+				 end
+			 end
+		 end
+	 end
+act 'GET_AWAY':
+	 cla
+	 set minut = minut + 5
+	 set prosta = 0
+	 gt'park','start'
+	 end	
+>>>>>>> 473_Prostitute
 end
 --- Prostitute ---------------------------------
 
 # Menu.Info
+<<<<<<< 473_Prostitute
 *NL 'Module to work with the menu'
 *NL 'Version: 1.0'
 *NL 'Author: Olegus t.Gl. (C) 2011'
@@ -245,30 +481,60 @@ end
 *NL 'e-mail: olegus.tgl @ gmail.com'
 *NL 'icq: 145540276'
 *NL 'Forum topic: http://forum.ifiction.ru/viewtopic.php?id = 1527'
+=======
+*NL 'Module for menu'
+*NL 'version: 1.0'
+*NL 'author: Olegus t.Gl. (c) 2011'
+*NL 'website: http://olegus.ifiction.ru'
+*NL 'e-mail: olegus.tgl@gmail.com'
+*NL 'icq: 145 540 276'
+*NL 'Forum topic: http://forum.ifiction.ru/viewtopic.php?id=1527'
+>>>>>>> 473_Prostitute
 --- Menu.Info ---------------------------------
 
 # Menu.Create
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '': EXIT
 !----------
 $ARGS[0] = 'otg_Menyu_'+$ARGS[0]
+=======
+if $ARGS[0]='': EXIT
+!----------
+$ARGS[0]='otg_Menyu_'+$ARGS[0]
+>>>>>>> 473_Prostitute
 !----------
 killvar '<<$ARGS[0]>>'
+<<<<<<< 473_Prostitute
 killvar '<<$ARGS[0]>>_Parametry'
 killvar '<<$ARGS[0]>>_Vybrali'
 killvar '<<$ARGS[0]>>_VybrannyyPunkt'
 killvar '<<$ARGS[0]>>_Vremya'
+=======
+killvar '<<$ARGS[0]>>_parameters'
+killvar '<<$ARGS[0]>>_selected'
+killvar '<<$ARGS[0]>>_VybrannyyPunkt'
+killvar '<<$ARGS[0]>>_time'
+>>>>>>> 473_Prostitute
 killvar '<<$ARGS[0]>>_ModuliSobyty'
 
 --- Menu.Create ---------------------------------
 
 # Menu.Add
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '' or $ARGS[1] = '': EXIT
 !----------
 if $ARGS[1] = '---' or lcase($ARGS[1])='separator':
 	dynamic "$otg_Меню_<<$ARGS[0]>>[] = '-: -'"
+=======
+if $ARGS[0]='' or $ARGS[1]='': EXIT
+!----------
+if $ARGS[1]='---' or lcase($ARGS[1])='separator':
+	dynamic "$otg_Menyu_<<$ARGS[0]>>[]='-:-'"
+>>>>>>> 473_Prostitute
 	EXIT
 end
 !----------
+<<<<<<< 473_Prostitute
 ARGS[10] = arrsize('ARGS')
 if ARGS[10]<3: $ARGS[2] = ''
 if ARGS[10]<4: $ARGS[3] = ''
@@ -277,61 +543,126 @@ $ARGS[0] = 'otg_Menyu_<<$ARGS[0]>>'
 $ARGS[1] = replace($ARGS[1],'''','''''')
 if $ARGS[2]<>'': $ARGS[2] = ':'+replace($ARGS[2],'''','''''')
 if $ARGS[3]<>'': $ARGS[3] = replace($ARGS[3],'''','''''')
+=======
+ARGS[10]=arrsize('ARGS')
+if ARGS[10]<3: $ARGS[2]=''
+if ARGS[10]<4: $ARGS[3]=''
+!----------
+$ARGS[0]='otg_Menyu_<<$ARGS[0]>>'
+$ARGS[1]=replace($ARGS[1],'''','''''')
+if $ARGS[2]<>'': $ARGS[2]=':'+replace($ARGS[2],'''','''''')
+if $ARGS[3]<>'': $ARGS[3]=replace($ARGS[3],'''','''''')
+>>>>>>> 473_Prostitute
 !----------
 dynamic "
+<<<<<<< 473_Prostitute
 	$<<$ARGS[0]>>[] = '<<$ARGS[1]>>Menu.{Processing}<<$ARGS[2]>>'
 	$<<$ARGS[0]>>_Параметры[str(arrsize('<<$ARGS[0]>>'))+'_Z'] = '<<$ARGS[1]>>'
 	$<<$ARGS[0]>>_Параметры[str(arrsize('<<$ARGS[0]>>'))+'_F'] = '<<$ARGS[3]>>'
+=======
+	$<<$ARGS[0]>>[]='<<$ARGS[1]>>:menu.{treatment}<<$ARGS[2]>>'
+	$<<$ARGS[0]>>_parameters[str(arrsize('<<$ARGS[0]>>'))+'_W']='<<$ARGS[1]>>'
+	$<<$ARGS[0]>>_parameters[str(arrsize('<<$ARGS[0]>>'))+'_F']='<<$ARGS[3]>>'
+>>>>>>> 473_Prostitute
 "
 !----------
+<<<<<<< 473_Prostitute
 $ARGS[3] = ''
 if ARGS[10]>4:
 	ARGS[11] = 4
+=======
+$ARGS[3]=''
+if ARGS[10]>4:
+	ARGS[11]=4
+>>>>>>> 473_Prostitute
 	:otg_menyu_metka_1
 	if ARGS[11]<ARGS[10]:
 		if $ARGS[ARGS[11]]<>'':
+<<<<<<< 473_Prostitute
 			$ARGS[3] += ''''+replace($ARGS[ARGS[11]],'''','''''')+''''
+=======
+			$ARGS[3]+=','''+replace($ARGS[ARGS[11]],'''','''''')+''''
+>>>>>>> 473_Prostitute
 		else
 			if ARGS[ARGS[11]]<>0:
+<<<<<<< 473_Prostitute
 				$ARGS[3] += ','+str(ARGS[ARGS[11]])
 			else
 				$ARGS[3] += ''' '''
+=======
+				$ARGS[3]+=','+str(ARGS[ARGS[11]])
+			else
+				$ARGS[3]+=','''''
+>>>>>>> 473_Prostitute
 			end
 		end
+<<<<<<< 473_Prostitute
 		ARGS[11] += 1
+=======
+		ARGS[11]+=1
+>>>>>>> 473_Prostitute
 		jump 'otg_menyu_metka_1'
 	end
 end
 !----------
 dynamic "
+<<<<<<< 473_Prostitute
 $<<$ARGS[0]>>_Параметры[str(arrsize('<<$ARGS[0]>>'))+'_P'] = '<<replace($ARGS[3],'''','''''')>>'
+=======
+$<<$ARGS[0]>>_parameters[str(arrsize('<<$ARGS[0]>>'))+'_P']='<<replace($ARGS[3],'''','''''')>>'
+>>>>>>> 473_Prostitute
 "
 --- Menu.Add ---------------------------------
 
 # Menu.AddCondition
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '' or $ARGS[1] = '': EXIT
 !----------
 ARGS[10] = dyneval("Result = arrsize('otg_Menyu_<<$ARGS[0]>>')")
 if dyneval("$Result = $otg_Меню_<<$ARGS[0]>>[<<ARGS[10]>>-1]")='-: -': EXIT
+=======
+if $ARGS[0]='' or $ARGS[1]='': EXIT
+!----------
+ARGS[10]=dyneval("Result=arrsize('otg_Menyu_<<$ARGS[0]>>')")
+if dyneval("$Result=$otg_Menyu_<<$ARGS[0]>>[<<ARGS[10]>>-1]")='-:-': EXIT
+>>>>>>> 473_Prostitute
 !----------
 dynamic "
+<<<<<<< 473_Prostitute
 	$otg_Меню_<<$ARGS[0]>>_Параметры['<<ARGS[10]>>y'] = '<<replace($ARGS[1],'''','''''')>>'
+=======
+	$otg_Menyu_<<$ARGS[0]>>_parameters['<<ARGS[10]>>_Do']='<<replace($ARGS[1],'''','''''')>>'
+>>>>>>> 473_Prostitute
 "
 
 --- Menu.AddCondition ---------------------------------
 
 # Menu.AddModule
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '' or $ARGS[1] = '': EXIT
 !----------
 ARGS[10] = dyneval("Result = arrsize('otg_Menyu_<<$ARGS[0]>>')")
 if dyneval("$Result = $otg_Меню_<<$ARGS[0]>>[<<ARGS[10]>>-1]")='-: -': EXIT
+=======
+if $ARGS[0]='' or $ARGS[1]='': EXIT
+!----------
+ARGS[10]=dyneval("Result=arrsize('otg_Menyu_<<$ARGS[0]>>')")
+if dyneval("$Result=$otg_Menyu_<<$ARGS[0]>>[<<ARGS[10]>>-1]")='-:-': EXIT
+>>>>>>> 473_Prostitute
 !----------
 dynamic "
+<<<<<<< 473_Prostitute
 	$otg_Меню_<<$ARGS[0]>>_Параметры['<<ARGS[10]>>_M'] = '<<replace($ARGS[1],'''','''''')>>'
 "
+=======
+	$otg_Menyu_<<$ARGS[0]>>_parameters['<<ARGS[10]>>_M']='<<replace($ARGS[1],'''','''''')>>'
+"
+
+>>>>>>> 473_Prostitute
 --- Menu.AddModule ---------------------------------
 
 # Menu.AddEvent
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '' or $ARGS[1] = '': EXIT
 !----------
 $ARGS[1] = lcase(trim($ARGS[1]))
@@ -343,55 +674,115 @@ elseif $ARGS[1] = 'selecting processing after':
 elseif $ARGS[1] = 'failure of the choice':
 	dynamic "$otg_Меню_<<$ARGS[0]>>_МодулиСобытий['<<$ARGS[1]>>'] = '<<replace($ARGS[2],'''','''''')>>'"
 end
+=======
+if $ARGS[0]='' or $ARGS[1]='': EXIT
+!----------
+$ARGS[1]=lcase(trim($ARGS[1]))
+!----------
+if $ARGS[1]='when you select':
+	dynamic "$otg_Menyu_<<$ARGS[0]>>_ModuliSobyty['<<$ARGS[1]>>']='<<replace($ARGS[2],'''','''''')>>'"
+elseif $ARGS[1]='after selection processing':
+	dynamic "$otg_Menyu_<<$ARGS[0]>>_ModuliSobyty['<<$ARGS[1]>>']='<<replace($ARGS[2],'''','''''')>>'"
+elseif $ARGS[1]='failure of the choice':
+	dynamic "$otg_Menyu_<<$ARGS[0]>>_ModuliSobyty['<<$ARGS[1]>>']='<<replace($ARGS[2],'''','''''')>>'"
+end
+
+>>>>>>> 473_Prostitute
 --- Menu.AddEvent ---------------------------------
 
 # Menu.Call
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '': EXIT
 !----------
 ARGS[10] = arrsize('otg_Menyu_<<$ARGS[0]>>')
 if ARGS[10] = 0: EXIT
 !----------
 $otg_Menu_Current = 'otg_Menyu_<<$ARGS[0]>>'
+=======
+if $ARGS[0]='': EXIT
+!----------
+ARGS[10]=arrsize('otg_Menyu_<<$ARGS[0]>>')
+if ARGS[10]=0: EXIT
+!----------
+$otg_Menu_Current='otg_Menyu_<<$ARGS[0]>>'
+>>>>>>> 473_Prostitute
 killvar 'otg_Menyu_Vyzyvaemoe'
 killvar 'otg_Menu_Compliance'
 !----------
+<<<<<<< 473_Prostitute
 ARGS[11] = 0
+=======
+ARGS[11]=0
+>>>>>>> 473_Prostitute
 :otg_menyu_metka_2
 if ARGS[11]<ARGS[10]:
 	dynamic "
+<<<<<<< 473_Prostitute
 		$ARGS[0] = $<<$otg_Menu_Current>>_Параметры['<<ARGS[11]+1>>y']
 		if $ARGS[0] = '':
 			$otg_Меню_Вызываемое[] = $<<$otg_Menu_Current>>[<<ARGS[11]>>]
+=======
+		$ARGS[0]=$<<$otg_Menu_Current>>_parameters['<<ARGS[11]+1>>_Do']
+		if $ARGS[0]='':
+			$otg_Menyu_Vyzyvaemoe[]=$<<$otg_Menu_Current>>[<<ARGS[11]>>]
+>>>>>>> 473_Prostitute
 			otg_Menu_Compliance[]=<<ARGS[11]+1>>
 		else
 			if dyneval($ARGS[0])<>0:
+<<<<<<< 473_Prostitute
 				$otg_Меню_Вызываемое[] = $<<$otg_Menu_Current>>[<<ARGS[11]>>]
+=======
+				$otg_Menyu_Vyzyvaemoe[]=$<<$otg_Menu_Current>>[<<ARGS[11]>>]
+>>>>>>> 473_Prostitute
 				otg_Menu_Compliance[]=<<ARGS[11]+1>>
 			end
 		end
 	"
+<<<<<<< 473_Prostitute
 	ARGS[11] += 1
+=======
+	ARGS[11]+=1
+>>>>>>> 473_Prostitute
 	!----------
 	jump 'otg_menyu_metka_2'
 end
 !----------
+<<<<<<< 473_Prostitute
 otg_Menu_Time = 0
 dynamic "
 	<<$otg_Menu_Current>>_Выбрали = 0
 	<<$otg_Menu_Current>>_ВыбранныйПункт = 0
 	<<$otg_Menu_Current>>_Время = MSECSCOUNT
+=======
+otg_Menu_Time=0
+dynamic "
+	<<$otg_Menu_Current>>_selected=0
+	<<$otg_Menu_Current>>_VybrannyyPunkt=0
+	<<$otg_Menu_Current>>_time=MSECSCOUNT
+>>>>>>> 473_Prostitute
 "
 !----------
 menu 'otg_Menyu_Vyzyvaemoe'
 !----------
 dynamic "
+<<<<<<< 473_Prostitute
 	if <<$otg_Menu_Current>>_Выбрали = 0:
 		<<$otg_Menu_Current>>_Время = MSECSCOUNT-<<$otg_Menu_Current>>_Время
 		$ARGS[0] = $<<$otg_Menu_Current>>_МодулиСобытий['failure of the choice']
+=======
+	if <<$otg_Menu_Current>>_selected=0:
+		<<$otg_Menu_Current>>_time=MSECSCOUNT-<<$otg_Menu_Current>>_time
+		$ARGS[0]=$<<$otg_Menu_Current>>_ModuliSobyty['failure of the choice']
+>>>>>>> 473_Prostitute
 		if $ARGS[0]<>'': dynamic $ARGS[0]
 	else
+<<<<<<< 473_Prostitute
 		$ARGS[0] = $<<$otg_Menu_Current>>_МодулиСобытий['selecting processing after']
 		if $ARGS[0]<>'': dynamic $ARGS[0],$<<$otg_Menu_Current>>_Параметры[str(<<$otg_Menu_Current>>_ВыбранныйПункт)+'_Z']"+dyneval("$Result = $<<$otg_Menu_Current>>_Параметры[str(<<$otg_Menu_Current>>_ВыбранныйПункт)+'_P']")+"
+=======
+		$ARGS[0]=$<<$otg_Menu_Current>>_ModuliSobyty['after selection processing']
+		if $ARGS[0]<>'': dynamic $ARGS[0],$<<$otg_Menu_Current>>_parameters[str(<<$otg_Menu_Current>>_VybrannyyPunkt)+'_W']"+dyneval("$Result=$<<$otg_Menu_Current>>_parameters[str(<<$otg_Menu_Current>>_VybrannyyPunkt)+'_P']")+"
+>>>>>>> 473_Prostitute
 	end
 "
 !----------
@@ -399,24 +790,44 @@ killvar 'otg_Menyu_Tekuschee'
 killvar 'otg_Menyu_Vyzyvaemoe'
 killvar 'otg_Menu_Compliance'
 !----------
+<<<<<<< 473_Prostitute
 Result = dyneval("Result = otg_Меню_<<$ARGS[0]>>_Выбрали")
+=======
+Result=dyneval("Result=otg_Menyu_<<$ARGS[0]>>_selected")
+>>>>>>> 473_Prostitute
 --- Menu.Call ---------------------------------
 
 # Menu.Chosen
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '': EXIT
 Result = dyneval("Result = otg_Меню_<<$ARGS[0]>>_Выбрали")
+=======
+if $ARGS[0]='': EXIT
+Result=dyneval("Result=otg_Menyu_<<$ARGS[0]>>_selected")
+>>>>>>> 473_Prostitute
 --- Menu.Chosen ---------------------------------
 
 # Menu.Time
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '':
 	Result = otg_Menu_Time
 else
 	Result = dyneval("Result = otg_Меню_<<$ARGS[0]>>_Время")
+=======
+if $ARGS[0]='':
+	Result=otg_Menu_Time
+else
+	Result=dyneval("Result=otg_Menyu_<<$ARGS[0]>>_time")
+>>>>>>> 473_Prostitute
 end
 --- Menu.Time ---------------------------------
 
 # Menu.Destroy
+<<<<<<< 473_Prostitute
 if $ARGS[0] = '': EXIT
+=======
+if $ARGS[0]='': EXIT
+>>>>>>> 473_Prostitute
 GS 'Menu.Create',$ARGS[0]
 --- Menu.Destroy ---------------------------------
 

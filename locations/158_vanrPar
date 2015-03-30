@@ -1,11 +1,17 @@
 # vanrPar
+<<<<<<< 158_vanrPar
 ACT 'Leave the room':
 	gt 'korrPar'
+=======
+ACT 'Exit the room':
+	gt'korrPar'
+>>>>>>> 158_vanrPar
 END
 $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
+<<<<<<< 158_vanrPar
 '<center><B><font color = maroon>Bath</font></B></center>'
 '<center><img src="images\qwest\alter\<<$loc>>.jpg "></center>'
 clr
@@ -18,12 +24,32 @@ LCOLOR = rgb(106,90,205)
 if stanok > 0: 'Your razor will suffice for <b><<stanok>></b> time.'
 
 act 'Wash in the shower (0:15)':
+=======
+'<center><B><font color=maroon>bathtub</font></B></center>'
+'<center><img src="qwest/alter/<<$loc>>.jpg" ></center>'
+clr
+set minut = minut + 1
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'Bathroom close and very unpretentious.'
+if stanok>0:'Your razor will suffice for <<stanok>> time.'
+
+act 'Wash in the shower 15 min':
+>>>>>>> 158_vanrPar
 cls
 dynamic $showerdin
+<<<<<<< 158_vanrPar
 minut += 15
 set horny += 1
+=======
+minut+=15
+set horny = horny + 1
+>>>>>>> 158_vanrPar
 set hapri = 0
 set mop = 1
+<<<<<<< 158_vanrPar
 if sweat > -3: set sweat = -3
 if frost > 0: frost = 0
 set HasWashed = 0
@@ -31,16 +57,35 @@ gs 'stat'
 '<center><img src="images\pics\dush.jpg"></center>'
 'You got into the shower and began to lather your body washcloth. After washed soap and washed hair with shampoo. Rinse off the shampoo you become completely clean.'
 act 'Out of the bath': gt $locM, $metkaM
+=======
+set sweat = -3
+if frost>0:frost=0
+gs'stat'
+'<center><img src="pics/dush.jpg" ></center>'
+'You got into the shower and began to lather your body washcloth. After washed off the soap and washed her hair with shampoo. Rinse off the shampoo you become completely clean.'
+act 'Get out of the bath':gt $locM, $metkaM
+>>>>>>> 158_vanrPar
 end
 
+<<<<<<< 158_vanrPar
 act 'Wash in the bathroom (1:00)':
+=======
+act 'Wash in the bathroom 1 h':
+>>>>>>> 158_vanrPar
 cls
 dynamic $showerdin
+<<<<<<< 158_vanrPar
 minut += 60
 if sweat > -3: set sweat = -3
 set horny += 3
+=======
+minut+=60
+set sweat = -3
+set horny = horny + 3
+>>>>>>> 158_vanrPar
 set hapri = 0
 set mop = 1
+<<<<<<< 158_vanrPar
 set manna += 10
 if frost > 0: frost = 0
 set skinvan += 1
@@ -83,8 +128,53 @@ act 'Out of the bath': gt $locM, $metkaM
 		gt 'selfplay'
 		end
 	end
+=======
+set manna = manna + 10
+if frost>0:frost=0
+set skinvan = skinvan + 1
+if skinvan >= 20:set skinvan = 0&set skin = skin + 1
+gs'stat'
+'<center><img src="pics/wash4.jpg" ></center>'
+'including water, you got into the bathroom and went into the warm water. Ponaslazhdatsya pleasant warmth you lathered his body washcloth and shampoo. Then you are washed with water.'
+act 'Get out of the bath':gt $locM, $metkaM
+	 if horny >= 90:
+		 act 'Direct water on pussy':
+		 cla
+		 *clr
+		 set horny = 0
+		 set minut = minut + 30
+		 set mastr = mastr + 1
+		 set orgasm = orgasm + 1
+		 set manna = manna + 15
+		 set willpower = willpower + 15
+		 '<center><img src="pics/wash7.jpg" ></center>'
+		 'You sent a water tap on the pussy and tight jet of warm water began to caress you. Soon you will feel like a warm wave covers your whole body and you start to shudder in orgasm.'
+		 act 'Out of the bathroom and get dressed':gt $locM, $metkaM
+		 end
+	 end
+	 if horny >= 40 and horny < 90:
+		 act 'Direct water on pussy':
+		 cla
+		 *clr
+		 set horny = horny + 5
+		 set minut = minut + 30
+		 set manna = manna + 10
+		 set willpower = willpower + 10
+		 '<center><img src="pics/wash7.jpg" ></center>'
+		 'You sent a water tap on the pussy and tight jet of warm water began to caress you. At first it was not even very bad, but then the excitement subsided and became even as it is not nice. Therefore.'
+		 act 'Out of the bathroom and get dressed':gt $locM, $metkaM
+		 end
+	 end
+
+	 if horny>=50:
+	 	 act 'mastrubirovat':
+		 gt'selfplay'
+		 end
+	 end
+>>>>>>> 158_vanrPar
 end
 
+<<<<<<< 158_vanrPar
 if tampon > 0 and mesec > 0 and isprok = 0:
 	act 'Change a tampon':
 	cla
@@ -98,8 +188,24 @@ if tampon > 0 and mesec > 0 and isprok = 0:
 	'You change a tampon.'
 	act 'Finish': gt $curloc
 	end
+=======
+ if tampon > 0 and mesec > 0 and isprok = 0:
+	 act 'change swab':
+	 cla
+	 *clr
+	 set tampon = tampon - 1
+	 set isprok = 1
+	 set minut = minut + 5
+	 set manna = manna - 5
+	 gs'stat'
+	 '<center><img src="picb/tampon.jpg" ></center>'
+	 'You change a tampon.'
+	 act 'End_Up':gt $curloc
+	 end
+>>>>>>> 158_vanrPar
 end
 
+<<<<<<< 158_vanrPar
 if mop ! 1:
 	act 'Wash off cosmetics':
 	cla
@@ -153,5 +259,119 @@ if lobok > 0 and stanok > 0:
 		act 'postpone machine': gt $curloc
 		end
 	end
+=======
+ if mop ! 1:
+     act 'wash off cosmetics':
+	 cla
+	 set mop = 1
+	 set minut = minut + 15
+	 gs'stat'
+	 '<center><img src="pic/facesp.jpg" ></center>'
+	 'You have washed off cosmetics.'
+	 act 'End_Up':gt $curloc
+	 end
+ end
+ 
+ if cumfrot>0:
+     act 'Scour sperm from clothes':
+	 cla
+	 set cumfrot = 0
+	 set minut = minut + 15
+	 gs'stat'
+	 '<center><img src="pic/frotsp.jpg" ></center>'
+	 'You zamyli semen stains on your clothes.'
+	 act 'End_Up':gt $curloc
+	 end
+ end
+ 
+ 
+ if leghair > 0 and stanok > 0:
+	 act 'shave your legs 15 min':
+		 cla
+		 *clr
+		 set minut = minut + 15
+		 set leghair = -5
+		 set horny = horny + 5
+		 set stanok = stanok - 1
+		 '<center><img src="pics/shave.jpg" ></center>'
+        'You lathered his feet and took a razor. Deft movements you shaved hair on the legs and washed shaving foam.'
+		 !'You lathered up and shaved off the hair with them.'
+		 act 'postpone the machine':gt $curloc
+		 end
+	 end
+if lobok > 0 and stanok > 0:
+	 act 'Shaved 15 min':
+		 cla
+		 *clr
+		 set minut = minut + 15
+		 set lobok = -5
+		 set horny = horny + 5
+		 set stanok = stanok - 1
+		 '<center><img src="pics/shave3.jpg" ></center>'
+         'You lathered pubis and taking a razor deft movements began to shave pubic hairs and shave pussy vokurug. Finally shaving was over and you washed foam with pussy.'
+		 !'You lathered pubis, then shaved off his hair all.'
+		 act 'postpone the machine':gt $curloc
+		 end
+	 end
+	 
+if analplug = 1 and analplugin=0 and klismaday1= 1 and plugday!daystart:
+     act 'Insert a butt plug 5 min':
+     cla
+     *clr
+     plugday=daystart
+     set minut = minut + 5
+     set analplugIN = 1
+     if anus < 10:set anus = anus + 5
+     if anus >= 10 and anus<20:anus+=rand(1,2)
+     if anus >= 20 and anus<30:anus+=rand(0,1)
+     '<center><img src="pic/analplug.jpg" ></center>'
+     if butpluguse > 0:'You tilt and habitual movement inserted itself anal plug.'
+     if butpluguse = 0:set butpluguse = 1&'You tried to relax as much as possible the ass and began to insert the plug itself, biting her lip from feeling, your ass is about to burst you gently pushed in the thickest part of his ass and finally plug into place.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+if analplug = 1 and analplugin=1:
+     act 'Remove the butt plug 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set analplugIN = 0
+     if anus < 30:set anus = anus + 1
+     '<center><img src="pic/analplug.jpg" ></center>'
+     if butpluguse > 0:'You bent down and removed from the habitual movement itself anal plug.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+if klisma = 1 and klismaday ! day:
+     act 'Make yourself an enema 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set klismaday = day
+     set klismaday1= 1
+     '<center><img src="picV/klisma.jpg" ></center>'
+     'You have set yourself an enema and clean the intestines, now your ass ready for anal sex.'
+     act 'Go_Out':gt $curloc
+     end
+end
+
+
+if pregtest>0:
+     act 'Do a pregnancy test':
+     pregtest-=1
+     cla
+     gs'stat'
+		if preg=1:
+		'The test showed the two strips. you are pregnant.'
+		'you think, that the father <<$father>>.'
+		else:
+		'The test showed one band.'
+		end
+     act 'further': gt $curloc
+     end
+end
+>>>>>>> 158_vanrPar
 --- vanrPar ---------------------------------
 

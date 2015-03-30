@@ -1,21 +1,41 @@
 # lakecafe
+<<<<<<< 376_lakecafe
 if $ARGS[0] = 'main':
+=======
+if $ARGS[0]='main':
+>>>>>>> 376_lakecafe
 
 cla
 *clr
+<<<<<<< 376_lakecafe
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
 gs 'stat'
 set barrnd = RAND(1,3)
 !LCWorkRand = RAND(1,6)
 '<center><img src="images\LakeCafe\LakeCafe.jpg"></center>'
+=======
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+gs 'stat'
+set barrnd = rand (1,3)
+!LCWorkRand=RAND(1,6)
+'<center><img src="LakeCafe/LakeCafe.jpg" ></center>'
+>>>>>>> 376_lakecafe
 *nl
 *nl
+<<<<<<< 376_lakecafe
 'Naiobyknovenneyshaya barbecue, of which there are many in the vast country.'
 'The cost of lunch - 75 rubles'
 'Opening hours cafe - 14:00 to 04:00'
+=======
+'Naiobyknovenneyshaya barbecue, whom many in the vast country.'
+'The cost of lunch - 75 rubles'
+'Hours CafГ© - with 14:00 prior_to 04:00'
+>>>>>>> 376_lakecafe
 *nl
 
+<<<<<<< 376_lakecafe
 	if hour >= 14 or hour < 4:
 
 		if barmenshameet = 0:
@@ -64,11 +84,66 @@ set barrnd = RAND(1,3)
 			if LCwork = 0: 'One of the tables sits a fat man and talking on the phone.'
 			if LCwork = 1: 'One of the tables sitting <a href="exec: GT ''LCwork'',''start6''">fat man</a> and talking on the phone.'
 			end
+=======
+	if hour >= 14 or hour <4:
+
+		 if barmenshameet = 0:
+			 if barrnd = 1:'The bar stands smiling <a href="exec:GT ''lakecafe'',''barmensha''">barmaid</a> and polishes glasses'
+			 if barrnd = 2:'The bar stands smiling <a href="exec:GT ''lakecafe'',''barmensha''">barmaid</a> and wipes the table'
+			 if barrnd = 3:'The bar stands smiling <a href="exec:GT ''lakecafe'',''barmensha''">barmaid</a> so what- it mixes'
+		 end
+
+		 if barmenshameet = 1:
+			 if barrnd = 1:'The bar is worth <a href="exec:GT ''lakecafe'',''barmensha''">Zhenya</a> and polishes glasses'
+			 if barrnd = 2:'The bar is worth <a href="exec:GT ''lakecafe'',''barmensha''">Zhenya</a> and wipes the table'
+			 if barrnd = 3:'The bar is worth <a href="exec:GT ''lakecafe'',''barmensha''">Zhenya</a> so what- it mixes'
+		 end
+		 
+		 
+		 
+		 if week = 1 and hour = 22: 
+			 
+			 if LCWorkRand = 1:
+			 randguycafe=RAND(3,6)
+			 if LCwork = 0: 'One of the tables sat a group of men and drinks, talking loudly and laughing.'
+			 if LCwork = 1: 'One of the tables sits <a href="exec:GT ''LCwork'',''start1''"><<randguycafe>> men</a> and drinks, talking loudly and laughing.'
+			 end
+			 
+			 if LCWorkRand = 2:
+			 if LCwork = 0: 'One of the tables sat an old man and eats barbecue.'
+			 if LCwork = 1: 'One of the tables sits <a href="exec:GT ''LCwork'',''start2''">elderly man</a> and eating a kebab.'
+			 end
+			 
+			 if LCWorkRand = 3:
+			 if LCwork = 0: 'One of the tables sit two guys and drink.'
+			 if LCwork = 1: 'One of the tables sit <a href="exec:GT ''LCwork'',''start3''">two guys</a> and drink.'
+			 end
+			 
+			 if LCWorkRand = 4:
+			 if LCwork = 0: 'One of the tables sit a guy with a girl and talk about what- then.'
+			 if LCwork = 1: 'One of the tables sit <a href="exec:GT ''LCwork'',''start4''">boy and girl</a> and talk about what- then.'
+			 end
+			 
+			 if LCWorkRand = 5:
+			 if LCwork = 0: 'One of the tables and sitting girl dines.'
+			 if LCwork = 1: 'One of the tables sits <a href="exec:GT ''LCwork'',''start5''">girl</a> and supper.'
+			 end
+			 
+			 if LCWorkRand = 6:
+			 if LCwork = 0: 'One of the tables sat a fat man and talking on the phone.'
+			 if LCwork = 1: 'One of the tables sits <a href="exec:GT ''LCwork'',''start6''">fat man</a> and talking on the phone.'
+			 end
+>>>>>>> 376_lakecafe
 		end
 	*nl
+<<<<<<< 376_lakecafe
 	'- <a href="exec:GT ''laketoilet'',''main''">Toilet</a>'
+=======
+	'- <a href="exec:GT ''laketoilet'',''main''">Wc</a>'
+>>>>>>> 376_lakecafe
 
 		if money >= 75:
+<<<<<<< 376_lakecafe
 			act 'Eat 75 rubles':
 			cla
 			*clr
@@ -101,41 +176,105 @@ set barrnd = RAND(1,3)
 				set water += 20
 				end
 			end
+=======
+			 act 'eat 75 RUB':
+			 cla
+			 *clr
+				 act 'Get up from the table':set minut = minut + 20&gt 'lakecafe','main' 
+			 '<center><img src="pics/food.jpg" ></center>'
+			 set minut = minut + 30
+			 set health = health + 10
+			 set money = money - 75
+			 set manna = manna + 5
+			 set willpower = willpower + 5
+				 if energy >= 30:
+				 set fat = fat + 5
+				 'You can no longer have.'
+				 end
+				 if energy >= 20 and energy < 30:
+				 set fat = fat + 3
+				 set energy = energy + 10
+				 'You pushed through the power of a meal.'
+				 end
+				 if energy < 20:
+				 set energy = energy +20
+				 set fat = fat + 1
+				 'You gladly ate food.'
+				 end
+				 if water >= 20:
+				 'Tea in you no longer climbs.'
+				 end
+				 if water < 20:
+				 'You gladly drank a cup of tea.'
+				 set water = water +20
+				 end
+			 end
+>>>>>>> 376_lakecafe
 		end
 
 	end
 
+<<<<<<< 376_lakecafe
 if LCwork2 >= 1 and LCwork2day ! day and hour = 18:
 	act 'Help in the kitchen':
 	gt 'LCwork','Kitchen'
 	end
+=======
+if LCwork2 => 1 and LCwork2day ! day and hour = 18:
+     act 'Help in the kitchen':
+     gt 'LCwork','Kitchen'
+     end
+>>>>>>> 376_lakecafe
 end
 
+<<<<<<< 376_lakecafe
 act 'Leave': set minut += 2 & gt 'nord'
+=======
+act 'Get_Away':set minut = minut + 2&gt'nord'
+>>>>>>> 376_lakecafe
 end
 
+<<<<<<< 376_lakecafe
 if $ARGS[0] = 'barmensha':
+=======
+if $ARGS[0]='barmensha':
+>>>>>>> 376_lakecafe
 cls
 gs 'stat'
+<<<<<<< 376_lakecafe
 '<center><img src="images\LakeCafe\LakeBarmensha.jpg"></center>'
+=======
+'<center><img src="LakeCafe/LakeBarmensha.jpg" ></center>'
+>>>>>>> 376_lakecafe
 *nl
 *nl
 	if barmenshameet = 0:
 
+<<<<<<< 376_lakecafe
 	'The bartender looked at your eyes and, with a smile, asked:'
 	'-Would that something?'
+=======
+	'The bartender looked at your eyes and, smilingly, asked:'
+	'-Would you like that- some?'
+>>>>>>> 376_lakecafe
 
 	end
 
 	if barmenshameet = 1:
 
+<<<<<<< 376_lakecafe
 	'Eugene smiled, when you come to it'
 	'Hi! - She said with a smile'
+=======
+	'Jack smiled, when you come to it'
+	'-hello! - she said with a smile'
+>>>>>>> 376_lakecafe
 
 	end
 
 	if hour >= 14 or hour < 4:
 		if barmenshameet = 0:
+<<<<<<< 376_lakecafe
 			act 'Chat':
 			cla
 			*clr
@@ -149,12 +288,32 @@ gs 'stat'
 				gt 'lakecafe','barmensha'
 				end
 			end
+=======
+			 act 'chat':
+			 cla
+			 *clr
+			 set barmenshameet = 1
+			 set JenyaLC = 10
+			 set minut = minut + 30
+			 gs 'stat'
+			 '<center><img src="LakeCafe/LakeBarmensha.jpg" ></center>'
+			 'You chatted with bartender. During the conversation, that her name is Eugene and it works here with his girlfriend, Angela, which is a cook on the barbecue.'
+				 act '...':
+				 gt 'lakecafe','barmensha'
+				 end
+			 end
+>>>>>>> 376_lakecafe
 		end
 
 		if barmenshameet = 1:
+<<<<<<< 376_lakecafe
 			act 'Chat':
+=======
+			act 'chat':
+>>>>>>> 376_lakecafe
 			cla
 			*clr
+<<<<<<< 376_lakecafe
 			if JenyaLC < 60: set JenyaLC += 3
 			set minut += 30
 			gs 'stat'
@@ -163,14 +322,32 @@ gs 'stat'
 				act '...':
 				gt 'lakecafe','barmensha'
 				end
+=======
+			if JenyaLC < 60: set JenyaLC = JenyaLC + 3
+			set minut = minut + 30
+			gs 'stat'
+			'<center><img src="LakeCafe/LakeBarmensha.jpg" ></center>'
+			'You are talking to the works of Eugene, work, life and all sorts of trivia.'
+				 act '...':
+				 gt 'lakecafe','barmensha'
+				 end
+>>>>>>> 376_lakecafe
 			end
 		end
+<<<<<<< 376_lakecafe
 
 
 		if JenyaLC >= 60 and horny > 50:
 			act 'Flirt':
+=======
+         
+         
+		if JenyaLC >=60 and horny > 50:
+			act 'flirt':
+>>>>>>> 376_lakecafe
 			cla
 			*clr
+<<<<<<< 376_lakecafe
 			set minut += 10
 			gs 'stat'
 			'<center><img src="images\LakeCafe\LakeBarmensha.jpg"></center>'
@@ -179,8 +356,19 @@ gs 'stat'
 				if JenyaLCfirst = 0: gt 'LCporn','firsttime'
 				if JenyaLCfirst = 1: gt 'LCporn','sex'
 				end
+=======
+			set minut = minut + 10
+			gs 'stat'
+			'<center><img src="LakeCafe/LakeBarmensha.jpg" ></center>'
+			'You chat with Zhenya, making it ambiguous hints. Zhenya, it_seems, understands you and invites you to go for it. You agree and follow along with her to the kitchen.'
+				 act '...':
+				 if JenyaLCfirst = 0: gt 'LCporn','firsttime'
+				 if JenyaLCfirst = 1: gt 'LCporn','sex'
+				 end
+>>>>>>> 376_lakecafe
 			end
 		end
+<<<<<<< 376_lakecafe
 
 		if JenyaLC >= 35:
 			act 'Ask about work':
@@ -238,12 +426,77 @@ gs 'stat'
 				end
 
 			end
+=======
+		
+        if JenyaLC >=35:
+             act 'Ask about work':
+             cla
+             *clr
+             '<center><img src="LakeCafe/LakeBarmensha.jpg" ></center>'
+                 if LCworkwork2 < 1:
+                 
+                 
+                 'You ask about the work of Eugene. It tells you, that her sister needed help in the kitchen, come to 18 hours, you need to work a half hour, for that you will be paid 175 rubles.'
+                 set LCworkwork2 = 1
+                 set LCwork2 = 1
+                 
+                 act '...':
+				 set minut = munut + 4
+				 gt 'lakecafe','barmensha'
+				 end
+                 
+                 else
+                 
+                 'You ask about the work of Eugene. It reminds you that, that her sister needed help in the kitchen, come to 18 hours, you need to work a half hour, pay for it 175 rubles.'
+                 
+                 
+                 act '...':
+				 set minut = munut + 4
+				 gt 'lakecafe','barmensha'
+				 end
+				 
+				 end
+			 end
+		 end
+		 
+		if JenyaLC >= 80:
+			 act 'ask about "special" work':
+			 cla
+			 *clr
+			 '<center><img src="LakeCafe/LakeBarmensha.jpg" ></center>'
+				 if LCworkwork = 0:
+				 
+				 'You ask about Eugene "special" work. It tells you, that on Mondays, in 22 hours, in the cafe visitors, which require qualitative "service". pay from 500 prior_to 2000 rubles.'
+					 act '...':
+					 set LCworkwork = 1
+					 set LCwork = 1
+					 set minut = munut + 4
+					 gt 'lakecafe','barmensha'
+					 end
+				 end
+				 
+				 if LCworkwork = 1:
+				 'You ask about the work of Eugene. It reminds you of conditions: Mondays, in 22 hours, must be "serve" certain visitors. Paid for it by 500 prior_to 2000 rubles.'
+					 act '...':
+					 set minut = minut + 3
+					 gt 'lakecafe','barmensha'
+					 end
+				 end
+			 
+			 end
+>>>>>>> 376_lakecafe
 		end
 
 	end
 
+<<<<<<< 376_lakecafe
 act 'Move away': gt 'lakecafe','main'
 
+=======
+act 'move_away':gt 'lakecafe','main'
+
+
+>>>>>>> 376_lakecafe
 end
 --- lakecafe ---------------------------------
 

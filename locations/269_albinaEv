@@ -1,4 +1,5 @@
 # albinaEv
+<<<<<<< 269_albinaEv
 $din_albina_get_over_car = {
 'Strong hands grabbed you and out of the car.'
 	act 'Further':
@@ -8,17 +9,37 @@ $din_albina_get_over_car = {
 	'<center><img src="images\qwest\alter\grab.jpg"></center>'
 
 	end
+=======
+$din_albina_get_over_car={
+'Strong hands grabbed you and pulled out of the car.'
+	 act 'further':
+	 cls
+	 albinaCar=1
+	 gs'stat'
+     '<center><img src="qwest/alter/grab.jpg" ></center>'
+     
+     end
+>>>>>>> 269_albinaEv
 }
 
 
 
+<<<<<<< 269_albinaEv
 albinaCarday = day
 gs 'stat'
 '<center><img src="images\qwest\alter\BMW.jpg"></center>'
 'You went out to the car and looked at Albina. She looked around you haughty look and started the car.'
 if albinaCar > 0:
+=======
+albinaCarday=day
+gs'stat'
+'<center><img src="qwest/alter/BMW.jpg" ></center>'
+'You went out to the car and looked at Albina. She looked around you haughty look and started the car.'
+if albinaCar>0:
+>>>>>>> 269_albinaEv
 
 end
+<<<<<<< 269_albinaEv
 if albinaCar = 0:
 	act 'Is that your car?':
 	cls
@@ -92,8 +113,99 @@ if albinaCar = 0:
 			end
 		end
 	end
+=======
+if albinaCar=0:
+	 act 'It `s your car?':
+	 cls
+	 albinaCar=1
+	 gs'stat'
+	 '<center><B><font color=maroon><<$npcName[23]>> <<$npcSurName[23]>></font></B></center>'
+     '<center><img src="qwest/alter/npc/23.jpg" ></center>'
+	 'You asked Albina "It `s your car?" Albin pulled a contemptuous grimassy "what? of course not! This machine is the father, I would never have bought it. in_general X5 this machine suddenly grown rich rednecks, but not for decent people." You shake your head "Do not you? rights have?" Albina laughed "rights? why do I need, rights? Do you know who my father? He is the chief of police of our town, though retired, but communications were. I never stopped in his car." Albina second thought about something and said "went `ll ride."'
+	 	 act 'Go to Albina':
+		 cls
+		 minut+=5
+		 gs'stat'
+		 '<center><img src="qwest/alter/BMW.jpg" ></center>'
+		 'You sat on the seat next to Albina and she touched the car. You went through the streets of the town, soon you moved out of the main streets and stopped at what that wilderness, where the trees darkened factory building. Albina looking at you smiled enigmatically "This is a surprise."'
+		     act 'look_around':
+			 cls
+			 minut+=5
+			 gs'stat'
+			 '<center><img src="qwest/alter/castle.jpg" ></center>'
+			 'You looked around and realized, that you are on the territory of an abandoned factory. You looked at Albina, she grinned and pointed her manicured finger at plate. Have you read the inscription on the plate "Property Ltd. The Snow Queen" Albina laughed "This castle of the Snow Queen. My territory" The car stopped and two men approached BMW, the appearance of the two was a little over 30 year_old, one high, Athletic, the second is not a big growth, tum, but very strong, wrestling with a red neck, powerful hands and broad shoulders. Albina opened the door "Hi guys. How is it going?" Guys frowning examined you and boomed shorty "it`s okay."'
+			     if AlbinaLast>0 or AlbinaBlokDance>0:
+			     'Albina does not stops the engine, out of the car and told the guy "I `ve brought you a not very obedient girl, who knows something about my dancing business." high grinned "I_Get_It." Strong Shorty silently and lazily toward you.'
+			         if dom>0:
+						 act 'Go behind the wheel':
+						 cls
+						 minut+=5
+						 gs'stat'
+						 '<center><img src="qwest/alter/BMW.jpg" ></center>'
+							 if agil>=100:
+							 'You deftly jumped behind the wheel of cars. Fortress was at the hood, a long guy rushed to the driver`s door, that would get you.'
+								 act 'Enable reverse gear':
+								 cls
+								 minut+=1
+								 gs'stat'
+								 '<center><img src="qwest/alter/BMW.jpg" ></center>' 
+								 'You sharply passed back and stopped almost concrete fence. In front of your hood you see as burly running to you. A driver`s door to long runs.'
+								 
+								 end
+								 
+								 act 'Very go ahead':
+								 cls
+								 minut+=1
+								 gs'stat'
+								 '<center><img src="qwest/alter/BMW.jpg" ></center>'
+								 'You abruptly thrust gear and squeeze the clutch abruptly moved forward. Fortress rattled plopped down on the hood of the car and fell off. Ahead you see the bushes, gate in which you entered Albina is on the right from you. On the left of you is a brick wall factory building.'
+								 
+								 end
+							 end
+							 if agil<100:
+							 'You jumped behind the wheel of a car, but confused nogmi between the seat and the gear lever. In the driver`s door slid her hands long man.'
+							 dynamic $din_albina_get_over_car
+							 end
+						 end
+					 end
+					 
+					 act 'Out of the car':
+					 cls
+					 minut+=5
+					 gs'stat'
+					 '<center><img src="qwest/alter/castle.jpg" ></center>'
+					 'You jumped out of the car and see how you run stalwart from the hood, and from the trunk of the car long obbegat. The road back to you cut off, but you notice the open door to the shop.'
+					 
+					 end
+					 
+					 act 'Sitting in the car':
+					 cls
+					 minut+=5
+					 gs'stat'
+					 '<center><img src="qwest/alter/BMW.jpg" ></center>'
+					 dynamic $din_albina_get_over_car
+					 end
+			     exit
+			     end
+			     if DanceWhore>0:
+			     'Albina does not stops the engine, out of the car and said "relax guys. Light of my Zvezdushek. newcomer. But a lot of promise."'
+			     
+			     end
+			 end
+		 end
+	 end
+>>>>>>> 269_albinaEv
 end
 
+<<<<<<< 269_albinaEv
 act 'Move away': gt $loc, $metka
+=======
+act 'move_away':gt $loc, $metka
+
+
+
+
+
+>>>>>>> 269_albinaEv
 --- albinaEv ---------------------------------
 

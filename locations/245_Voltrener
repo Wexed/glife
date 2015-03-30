@@ -1,4 +1,5 @@
 # Voltrener
+<<<<<<< 245_Voltrener
 	$din_trener_bj = {
 		act 'give blowjob':
 		cls
@@ -173,5 +174,181 @@
 		act 'Leave': gt 'gdksport'
 		end
 	act 'Leave': gt 'gdksport'
+=======
+$din_trener_bj={
+	 act 'do blowjob':
+	 cls
+	 bj+=1
+	 if trenerSex>0:trenerSex+=1
+	 if trenerSex=0:trenerSex=1&guy+=1
+	 if volleysostav>0:trenerepa+=2
+	 gs'stat'
+	 '<center><img src="qwest/alter/ev/tren.jpg" ></center>'
+	 'You sit down in front of the coach and stroked his crotch and felt that, stood as his cock. You reached into his pants with the other hand holding the gum and groped hot cock trainer. You pulled standing member of the sports pants and leaned toward him wrapped around his lips.'
+	     
+	     if trenerSex>=5:
+	     
+	     end
+	     
+	     if tipTrsex=0:
+	     cumlip+=1
+	     swallow+=1
+	     gs'stat'
+	     'Coach slightly groaned and your mouth spurted warm jet of sperm. You started to swallow the warm liquid fills your mouth.'
+	     end
+	     
+	     if volleysostav=0:
+		 volleysostav=1
+		 trenerepa=20
+		 'Coach bosses cock in his pants. "Okay Lebedev, you are very diligent girl, can and will come out a lot about you, count, you`re already on the team, but of course in The Benchwarmers."'
+	     end
+	 if tipTrsex=0:act 'Get_Away':tipTrsex=0&gt'gdksport'
+	 end
+}
+$din_trener_gorslut={
+gs'stat'
+'You reluctantly nodded his head "it is true, I really <<$gnikname>>. And what does this have to volleyball?" The coach smiled, "indirect relationship, very indirect, We`re now discussing how you get into the team. And I wonder, what you can do. You know what I Gauvreau?"'
+	 act 'No':
+	 cls
+	 gs'stat'
+	 'You shook his head and said coach, you do not understand, coach sighed "And you do not mind bleschesh, is not it? Well, I`m a lonely man, and all around a pretty young girl. so clear?"'
+	 act 'Get_Away':gt'gdksport'
+	 dynamic $din_trener_bj
+	 end
+	 
+	 act 'Put his hand on his knee coach':
+	 cls
+	 gs'stat'
+	 'You leaned forward slightly and put her palm on his knee coach, you whispered with a grin "Need a little demonstration of my other skills? I understand you correctly?" Coach leaned back in his chair "Are you clever girl Light, go_ahead."'
+	 dynamic $din_trener_bj
+	 end
+}
+
+gs'stat'
+'<center><img src="qwest/alter/gdksport.jpg" ></center>'
+'You went into the room coach, in which there are cups, balls, different sports equipment and a table for which sometimes sits coach and fills a variety of paper. Coach Mikhail Vlasov deals not only with fans in the section but also in the same professional team coach volleybolistok.'
+if volleysostav>0:
+if trenerepa<20:'The coach does not want you to suffer more.'
+if trenerepa>=20 and trenerepa<40:'Coach barely tolerates you.'
+if trenerepa>=40 and trenerepa<60:'You have a normal relationship with the coach.'
+if trenerepa>=60 and trenerepa<80:'You have a good relationship with the coach.'
+if trenerepa>=80:'Coach you doted.'
+     if trenerepa<=0:
+     volleysostav=-1
+     'Coach menacingly appeals to you. "All Lebedev, You make me sick with their flourishes. I`ll exclude from the team!"'
+     act 'Get_Away':gt'gdksport'
+     exit
+     end
+
+end
+     act 'Talk with the coach':
+     cls
+     gs'stat'
+     	 if volleysostav=-1:
+		     if trenerSex=0:
+		     'The coach looked at you "Lebedev. Do not even come near me. I do not include you in command!"'
+		     end
+		     if trenerSex>0:
+		     'The coach looked at you "Lebedev. Do not even come near me. I do not include you in command!"'
+		     end
+		 end
+         if volleysostav=0:
+			 if volleyboll<25:
+			 'The coach looked at you "And Lebedev. Do not distract me from affairs."'
+			 end
+			 if volleyboll>=25 and volleyboll<50:
+			 'The coach looked at you "And Lebedev. You need to spend more time training, you are all very bad."'
+			 end
+			 if volleyboll>=50 and volleyboll<75:
+			 'The coach looked at you "And Lebedev. You`re certainly not a bad game, but not bad for an amateur. Higher level you do not potyanesh."'
+			 end
+			 if volleyboll>=75:
+			 'The coach looked at you "And Lebedev. Do you have the makings of athletes, but I`m not sure, that at the professional level."'
+			     act 'Asks in the pros':
+			     cls
+			     gs'stat'
+			         if GorSlut=0:
+						 if volleyboll<100:
+						 'You started to ask the coach to include you in command, but he shook his head. "Lebedev, Do not bury, you have a good amateur level. But you do not potyanesh."'
+						 end
+						 if volleyboll>=100:
+						 'You started to ask the coach to include you in command, coach thought. "Of course you can try to enable you to spare, but I do not even know, whether."'
+							 act 'convince':
+							 cls
+							 dom-=1
+							 gs'stat'
+								 if dom>=10:
+								 !if volleysostav>0:trenerepa-=1
+								 volleysostav=1
+								 trenerepa=20
+								 'You started to prove coach, that you want to include in the team, coach tried to object, but your head was so compelling, that in the end he gave up. "Okay Lebedev, I `ll put you in command, while naturally only in replacement players."'
+								 else
+								 'You started to prove coach, that you want to include in the team, but failed to show sufficient vigor and the coach threw all your arguments to deny you.'
+								 end
+							 act 'Get_Away':gt'gdksport'
+							 end
+						 end
+			         end
+			         if GorSlut>0:
+			         'You started to ask the coach to include you in the. The coach thought "Listen Lebedev, then other devchoki about you say different things. For example you <<$gnikname>>. it is true?"'
+						 act 'It `s all lies':
+						 cls
+						 gs'stat'
+							 if dom>0:
+							 'You started to prove coach, that the rumors about you. You spoke quite clearly and it seems the coach believed.'
+							 	 act 'Make sure to include the team':
+								 cls
+								 dom-=1
+								 gs'stat'
+									 if dom>=10:
+									 !if volleysostav>0:trenerepa-=1
+									 volleysostav=1
+									 trenerepa=20
+									 'You started to prove coach, that you want to include in the team, coach tried to object, but your head was so compelling, that in the end he gave up. "Okay Lebedev, I `ll put you in command, while naturally only in replacement players."'
+									 else
+									 'You started to prove coach, that you want to include in the team, but failed to show sufficient vigor and the coach threw all your arguments to deny you.'
+									 end
+								 act 'Get_Away':gt'gdksport'
+								 end
+							 else
+							 'You started to prove coach, that the rumors about you. You say not very convincing and coach you frankly do not believe. "Lebedev, Stop lying! You hold me for a fool?"'
+								 act 'Fair_Enough, it is true, I <<$gnikname>>':
+								 cls
+								 gs'stat'
+								 dynamic $din_trener_gorslut
+								 end
+							 end
+						 act 'Get_Away':gt'gdksport'
+						 end
+						 
+						 act 'it is true, I <<$gnikname>>':
+						 cls
+						 gs'stat'
+						 dynamic $din_trener_gorslut
+						 end
+						 
+			         end
+			     act 'Get_Away':gt'gdksport'
+			     end
+			 end
+		 end
+		 if volleysostav>0:
+		     if trenerSex=0:
+		     'The coach looked at you "And Lebedev. Do not distract me from affairs."'
+		     end
+		     if trenerSex>0:
+		     'The coach looked at you "And Lebedev. Fellow that came."'
+		     	 act 'Put his hand on his knee coach':
+				 cls
+				 gs'stat'
+				 'You leaned forward slightly and put her palm on his knee coach, you whispered with a grin "Need a little demonstration of my skills? I understand you correctly?" Coach leaned back in his chair "Are you clever girl Light, go_ahead."'
+				 dynamic $din_trener_bj
+				 end
+		     end
+		 end
+	 act 'Get_Away':gt'gdksport'
+	 end
+act 'Get_Away':gt'gdksport'
+>>>>>>> 245_Voltrener
 --- Voltrener ---------------------------------
 

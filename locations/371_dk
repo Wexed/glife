@@ -1,7 +1,12 @@
 # dk
+<<<<<<< 371_dk
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 371_dk
 cla
 *clr
+<<<<<<< 371_dk
 set minut += 5
 clr
 gs 'stat'
@@ -31,12 +36,48 @@ LCOLOR = rgb(106,90,205)
 	end
 
 act 'Leave': gt 'nord'
+=======
+set minut = minut + 5
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'<center><B>The House of Culture named after Lenin</B></center>'
+'<center><img src="pic/dk.jpg" ></center>'
+'Opening hours 9 prior_to 17, weekend Saturday, Sunday.'
+
+     if hour >= 9 and hour <= 17 and week < 6:
+     act 'Go to the House of Culture':gt'dk','holl'
+     end
+     
+	 if avtoskul >= 1 and avtoskul < 11 and skulday ! day and week>=6 and money>=1000 and age>=18:
+		 act 'Learn from the law for a fee (1000 RUB 2 hours)':
+		 cla
+		 *clr
+		 money-=1000
+		 set skulday = day
+		 set avtoskul = avtoskul + 1
+		 set minut = minut + 120
+		 '<center><img src="pic/dk2.jpg" ></center>'
+		 'You were trained in modern methods driving.'
+		 act 'Get_Away':gt'dk','holl'
+		 end
+	 end
+
+act 'Get_Away':gt 'nord'
+>>>>>>> 371_dk
 end
 
 
+<<<<<<< 371_dk
 if $ARGS[0] = 'holl':
+=======
+if $ARGS[0]='holl':
+>>>>>>> 371_dk
 cla
 *clr
+<<<<<<< 371_dk
 set minut += 5
 clr
 gs 'stat'
@@ -76,8 +117,47 @@ LCOLOR = rgb(106,90,205)
 		act 'Leave': gt 'dk','holl'
 		end
 	end
+=======
+set minut = minut + 5
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'<center><B>The House of Culture</B></center>'
+'<center><img src="pic/dk1.jpg" ></center>'
+'services, Driving_School, payment 30sput. 10 Occupation, at any convenient time during the working day recreation.'
+'Education office programs, degree-granting Secretary. 15sput, training period 30 days.'
+!'Medium for new opportunities - Once we, only freebies.'
+'On the wall hangs an ad. voice lessons. 500 rubles per lesson.
+Education massage, one lesson 5000 RUB.
+Courses of personal growth 1000 rub one session.'
+
+    !' act 'Go to a medium':
+	 cla
+	 *clr
+	 Set minut=minut +30
+	 killobj
+	 addobj 'back'
+	 'You have not understood, Does that happen-some, and mixed feelings came from the charlatan.'
+	 act 'Get_Away':gt'dk','holl'
+     end'
+     
+     if money>=1000:
+         act 'Courses of personal growth 1sput':
+         cls
+         money-=1000
+         dom+=5
+         minut+=60
+         gs'stat'
+         'You are within an hour with the other guests and played up the lead different life situations and learn to be a winner in life situations, defend their interests. After the course you feel, your dominance increased.'
+         act 'Get_Away':gt'dk','holl'
+         end
+     end
+>>>>>>> 371_dk
 
 
+<<<<<<< 371_dk
 if secrDiplom = 0 and sekrObu > 0: set sekrObuA = sekrObu - 1 & 'Trained on the Secretary-General <<sekrObuA>> 30 days of'
 	if hour >= 9 and hour <= 17 and week < 6:
 		if vokalday ! day and alexeySex > 0 and alexeyVopros = 2:
@@ -374,6 +454,304 @@ if money >= 5000 and masash < 10 and masashshoolday ! day:
 	end
 end
 act 'Leave': gt 'nord'
+=======
+if secrDiplom = 0 and sekrObu > 0:set sekrObuA = sekrObu - 1&'Trained on the Secretary <<sekrObuA>> days of 30'
+     if hour >= 9 and hour <= 17 and week < 6:
+         if vokalday!day and alexeySex>0 and alexeyVopros=2:
+             act 'Go to singing lessons':
+             cls
+             alexeyQW+=1
+             vokal+=1
+             vokalday=day
+             horny+=30
+             gs'stat'
+             'You are within an hour doing vocals with Alex, which is occasionally caressing your leg, then touch the ass, then stroked his chest.'
+             deystrand=RAND(0,10)
+                 if deystrand>=8:
+                 'After time spent Alex turned to you "Today I can not Svetsik, a lot of work, suck me quick.'
+                     act 'Kneel down and take in the mouth':
+					 cls
+					 alexeySex+=1
+					 horny+=10
+					 bj+=1
+					 minut+=10
+					 gs'stat'
+					 picrand=RAND(0,13)
+					 if picrand=0:'<center><img src="qwest/alexey/bj.jpg" ></center>'
+					 if picrand=1:'<center><img src="qwest/alexey/bj1.jpg" ></center>'
+					 if picrand=2:'<center><img src="qwest/alexey/bj2.jpg" ></center>'
+					 if picrand=3:'<center><img src="qwest/alexey/bj3.jpg" ></center>'
+					 if picrand=4:'<center><img src="qwest/alexey/bj4.jpg" ></center>'
+					 if picrand=5:'<center><img src="qwest/alexey/bj5.jpg" ></center>'
+					 if picrand=6:'<center><img src="qwest/alexey/bj6.jpg" ></center>'
+					 if picrand=7:'<center><img src="qwest/alexey/bj7.jpg" ></center>'
+					 if picrand=8:'<center><img src="qwest/alexey/bj8.jpg" ></center>'
+					 if picrand=9:'<center><img src="qwest/alexey/bj9.jpg" ></center>'
+					 if picrand=10:'<center><img src="qwest/alexey/bj10.jpg" ></center>'
+					 if picrand=11:'<center><img src="qwest/alexey/bj11.jpg" ></center>'
+					 if picrand=12:'<center><img src="qwest/alexey/bj12.jpg" ></center>'
+					 if picrand=13:'<center><img src="qwest/alexey/bj13.jpg" ></center>'
+					 'You knelt before him and clasped his dick <<$liptalk>> began sucking. Alex helped her hips almost hammering you in the mouth. Finally he groaned "Catch huesoska their rations, if that is on the floor, lick will make."'
+					 gs'oral','0'
+					     act 'substitute mouth':
+						 cls
+						 horny+=10
+						 minut+=10
+						 swallow+=1
+						 cumlip+=1
+						 gs'stat'
+						 picrand=RAND(0,13)
+						 if picrand=0:'<center><img src="qwest/alexey/bjcum.jpg" ></center>'
+						 if picrand=1:'<center><img src="qwest/alexey/bjcum1.jpg" ></center>'
+						 if picrand=2:'<center><img src="qwest/alexey/bjcum2.jpg" ></center>'
+						 if picrand=3:'<center><img src="qwest/alexey/bjcum3.jpg" ></center>'
+						 if picrand=4:'<center><img src="qwest/alexey/bjcum4.jpg" ></center>'
+						 if picrand=5:'<center><img src="qwest/alexey/bjcum5.jpg" ></center>'
+						 if picrand=6:'<center><img src="qwest/alexey/bjcum6.jpg" ></center>'
+						 if picrand=7:'<center><img src="qwest/alexey/bjcum7.jpg" ></center>'
+						 if picrand=8:'<center><img src="qwest/alexey/bjcum8.jpg" ></center>'
+						 if picrand=9:'<center><img src="qwest/alexey/bjcum9.jpg" ></center>'
+						 if picrand=10:'<center><img src="qwest/alexey/bjcum10.jpg" ></center>'
+						 if picrand=11:'<center><img src="qwest/alexey/bjcum11.jpg" ></center>'
+						 if picrand=12:'<center><img src="qwest/alexey/bjcum12.jpg" ></center>'
+						 if picrand=13:'<center><img src="qwest/alexey/bjcum13.jpg" ></center>'
+						 'Jet of sperm hit you in the mouth and began to run down your <<$liptalk>>. Alex wiped his penis on your <<$liptalk>> and put it in your pants.'
+						 'You became diligently to swallow warm, sharply smelling sperm and semen to collect the remains of spilled chin. Once you have swallowed the seed, you licked his lips and stood up from the floor ready to leave.'
+						 act 'Get_Away':gt'dk','holl'
+						 end
+					 end
+                 else
+                 'After the lesson.'
+                 if sashaClubQW=0:act 'go':gt'alex'
+                     if sashaClubQW>0:
+                     ivrand=RAND(0,10)
+                         if ivrand<8:act 'go':gt'alex'
+                         if ivrand>=8:act 'go':gt'alexgang'
+                     end
+                 end
+             end
+         end
+     
+         if money>=500 and vokalday!day and alexeySex>0 and alexeyVopros=1:
+             act 'Go to singing lessons (500 rubles 1 h)':
+             cls
+             money-=500
+             alexeyQW+=1
+             vokal+=1
+             vokalday=day
+             gs'stat'
+             'You are within an hour doing vocals with Alex, which showed no signs of, that when he otduplil you in all holes.'
+             act 'Get_Away':gt'dk','holl'
+             end
+         end
+         
+     
+         if money>=500 and vokalday!day and alexeySex>0 and alexeyVopros=0:
+             act 'Go to singing lessons (500 rubles 1 h)':
+             cls
+             alexeyQW+=1
+             vokal+=1
+             vokalday=day
+             gs'stat'
+             'You are logged in to the office to Alexey. He guiltily looked at you and said. "Sorry, musician is primarily a creative person , drunken rednecks."'
+             'You could not help smiling at the memory as you dragged the carcass of his teacher sleeping with his back, where he was snoring peacefully.'
+             'Alex smiled openly walked up to you. "Svetsik. We can now proceed in two ways. Now we both forget, between us and that it would continue to learn how not in what happened, or we can vstrechatsya. If we vstrechatsya, I like a true gentleman will not charge you a fee, but will be very hard to invite you to visit me. choose."'
+                 act 'Let`s forget, between us that it was.':
+                 cls
+                 money-=500
+                 alexeyVopros=1
+                 'You offered Alexei forget what happened and gave him 500 rubles per lesson, Lech nodded sadly and began to teach you singing.'
+                 act 'Get_Away':gt'dk','holl'
+                 end
+                 
+                 act 'If you will not be so napivatsya, we could try again.':
+                 cls
+                 alexeyVopros=2
+                 'You playfully smiled and said to him, that you do not mind him vstrechatsya, if it is not so napivatsya. Alex smiled with relief. "That`s good. And now engaged." The remaining time you have dedicated classes.'
+                 act 'Get_Away':gt'dk','holl'
+                 end
+             end
+         
+         end
+         
+         
+     
+         if money>=500 and vokalday!day and alexeySex=0:
+             act 'Go to singing lessons (500 rubles 1 h)':
+             cls
+             minut+=60
+             set money = money - 500
+             alexeyQW+=1
+             vokal+=1
+             vokalday=day
+             gs'stat'
+             !'<center><img src="pic/dk2.jpg" ></center>'
+             if alexeyQW=1:'You entered the room where there was a man with long hair pulled back in a tail. He looked at you look confident and well -modulated voice said. "It takes a girl, You are on vocals?" You nodded and gave him 500 rubles. He put them in his pocket and rising introduced "I`m Alex, and you?" You answered him saying that your name is Light. After that. You did not notice as an hour passed. You went out and the man politely said good-bye to you.'
+             if alexeyQW=2:horny+=10&'Alex met you and take the money started with you, when you have something that did not work, He touched her hand explaining you for your face. Not knowing what to, you is a little excited.'
+             if alexeyQW>=3 and alexeyQW<7:horny+=10&'Alex met you and take the money started with you, when you have something that did not work, He touched her hand explaining you for your face. Not knowing what to, you is a little excited. After class .'
+             if alexeyQW>=7:horny+=20&'Alex met you and take the money started with you, when you have something that did not work, He touched her hand explaining you for your face. Not knowing what to, you is aroused. Alex looked at you so, as if seen through you .'
+                 if alexeyQW=10 and alexeyVQW=0:
+                 'Even during the lessons you have caught from his teacher smell of alcohol. After class you came Alex and offered you go to somewhere together.'
+                     act 'Go with Alex':
+                     cls
+                     'Alex took you by the elbow and led somewhere along the way telling you about myself, he was a professional musician. Laban could only where, phonics works in DC, moonlights as a DJ in a club. In it you immediately saw talent, voice you have not delivered, but he is rapidly developing, Alex just amazed that your data. During the conversation . Alex smiled charmingly and invited you to his home.'
+                         act 'Get_Away':gt'nord'
+                         
+                         act 'Go to Alexey home':
+                         cls
+                         alexeyVQW+=1
+                         minut+=120
+                         gs'stat'
+                         'Alex lives in a studio apartment, All decoration which suggests, that he was a bachelor, musician and rare wino. The floor was littered bottles, in the room are huge concert speakers occupying the floor kamnaty, worth some sort of equipment. Alex put you on the couch and brought alcohol with a snack. He sat on the Odal from you on an armchair. And you start to drink. Lech proved, simple, gay guy, with a rich biography and interesting outlook on life, you were very pleased with it obschatsya, but Alex quickly looked tipsy and drunk openly.'
+                         'He looked at you and said intelligent expression "Well Light, You`re not just agreed to go to my house? I think it`s time to go to the main action. Come to me."'
+                         'You think to yourself, what is he still arrogant, but did not expect to stand up and not solid legs went to the chair where he sat Lech.'
+                         'When you come to the chair Alex brazenly took dick out of his pants and winked at you "Come, do not be shy, here all their."'
+                         	 act 'Kneel down and take in the mouth':
+							 cls
+							 guy+=1
+							 alexeySex=1
+							 horny+=10
+							 bj+=1
+							 minut+=10
+							 gs'stat'
+							 '<center><img src="qwest/alexey/bj.jpg" ></center>'
+							 'You knelt in front of him and stared at his cock, it is really great, not less 20 centimeters. Caressed his hands, you wrapped around his dick <<$liptalk>> and began to suck. While you are smacking their lips flushed on dick, Lech took a mug of beer and began to sip demonstratively. After that.'
+							 gs'oral','0'
+							     act 'unclothed':
+								 cls
+								 minut+=10
+								 set $nameV = 'Alexey'
+								 $boy=$nameV
+								 set dick = 20
+								 set silavag = 2
+								 pose=1
+								 gs'stat'
+								 '<center><img src="qwest/alexey/sex.jpg" ></center>'
+								 'You barely undressed, Alesya as practically force you pulled on the bed and put the cancer.'
+								 dynamic $sexstart
+								 'Alex slapped you in the ass with his hand and said "I see people at once, you`re a real slut, and place your cancer or kneeling with by a dick in her mouth. You want it herself."'
+								 dynamic $sexstart2
+								 'During sex Alex stuck somehow smeared cream finger in the ass and started to move it there. Soon he took his dick out of your overworked pussy and rested them to you in the ass.'
+								 	 act 'moan':
+									 cls
+									 minut+=10
+									 set $nameV = 'Alexey'
+									 $boy=$nameV
+									 set dick = 20
+									 set silavag = 2
+									 pose=1
+									 gs'stat'
+									 '<center><img src="qwest/alexey/anal.jpg" ></center>'
+									 dynamic $analsex
+									 gs 'BDsex','ancum'
+									 'Alex had finished you fell on his back and kissed you on the cheek. You lay beneath him not knowing what to do. Soon he heard snoring Alexei. You tried to push apart but does. With difficulty you got rid of it with himself on the bed and got out from under his sleeping carcass. Lech slept soundly filling the room. You indignantly dressed and decided to leave the apartment.'
+									 act 'Get_Away':gt'nord'
+									 end
+								 end
+							 
+							 end
+                         end
+                     end
+                 end
+             act 'Get_Away':gt'dk','holl'
+             end
+         end
+         
+         if avtoskul = 0 and money >= 30000 and prava = 0 and age>=18:
+             act 'Checkout 30sput (training on the rights of)':
+             cla
+             set money = money - 30000
+             set avtoskul = 1
+             !'<center><img src="pic/dk2.jpg" ></center>'
+             'You paid the money to the cashier and you can now learn every day for the right within 2hours.'
+             act 'Get_Away':gt'dk','holl'
+             end
+         end
+         
+         if secrDiplom = 0 and sekrObu = 0 and money >= 15000:
+             act 'Checkout 15sput (training Secretary)':
+             cla
+             set money = money - 15000
+             set sekrObu = 1
+             !'<center><img src="pic/dk2.jpg" ></center>'
+             'You paid the money to the cashier and you can now learn every day for the secretary within 2hours. only 10five school days.'
+             act 'Get_Away':gt'dk','holl'
+             end
+         end
+         
+         if sekrObu > 0 and sekrObu < 11 and secrday ! day:
+             act 'To learn from the Secretary (2 hours)':
+             cla
+             *clr
+             set secrday = day
+             set sekrObu = sekrObu + 1
+             set minut = minut + 120
+             '<center><img src="pic/kurs.jpg" ></center>'
+             'You went to the office with computers, mainly student in such courses women. In class the teacher came and began to tell you the subtleties of working secretary and the basics of working in the office programs.'
+             if cumfrot > 0:set horny = horny + 10&'You fumble nervously in his chair trying to hide the stain of semen on her ass, but it seems from this worse. You started to pay attention to other student.'
+             act 'Get_Away':gt'dk','holl'
+             end
+         end
+         
+         if sekrObu >= 11 and secrday ! day:
+             act 'Get a diploma Secretary':
+             cla
+             *clr
+             set secrday = day
+             set sekrObu = 0
+             set minut = minut + 15
+             set secrDiplom = 1
+             '<center><img src="pic/kurs.jpg" ></center>'
+             'You went to the office with computers, mainly student in such courses women. In class the teacher came and began to tell you the subtleties of working secretary and the basics of working in the office programs.'
+             act 'Get_Away':gt'dk','holl'
+             end
+         end
+         
+         if avtoskul >= 1 and avtoskul < 11 and skulday ! day and age>=18:
+             act 'Learn rights (2 hours)':
+             cla
+             *clr
+             set skulday = day
+             set avtoskul = avtoskul + 1
+             set minut = minut + 120
+             '<center><img src="pic/dk2.jpg" ></center>'
+             'You were trained in modern methods driving.'
+                 if nikpravaQW=1:
+                 
+                 end
+             act 'Get_Away':gt'dk','holl'
+             end
+         end
+     if avtoskul >= 11 and skulday ! day and age>=18:
+	     act 'To surrender the rights 2 hours':
+		 cla
+		 *clr
+		 set minut = minut + 120
+		 set avtoskul = 0
+		 set prava = 1
+		 set minut = minut + 120
+		 '<center><img src="pic/dk3.jpg" ></center>'
+		 'Have you been to the traffic cop during 2hours in the city, He was satisfied and did not find what pridratsya.'
+		 'You gave ready right.'
+		 act 'Get_Away':gt'dk','holl'
+		 end
+	 end
+     if money>=5000 and masash<10 and masashshoolday ! day:
+	     act'learn massage':
+		 cla
+		 set masashshoolday = day
+		 set money-=5000
+		 set masash+=1
+		 set minut+=120
+		 gs'stat'
+		 'You two o`clock studied massage'
+		 if masash=10:'You have issued a certificate of completion of courses masseurs.'
+		 act 'Get_Away':gt'dk','holl'
+		 end
+	 end
+end
+act 'Get_Away':gt 'nord'
+>>>>>>> 371_dk
 end
 --- dk ---------------------------------
 

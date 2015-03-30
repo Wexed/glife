@@ -1,13 +1,24 @@
 # Nudelake
 gs 'stat'
+<<<<<<< 123_Nudelake
 '<center><B>nudist beach</B></center>'
 '<center><img src="images\img\Lake\Nudelake.jpg"></center>'
+=======
+'<center><B>nude beach</B></center>'
+'<center><img src="img/Lake/Nudelake.jpg" ></center>'
+>>>>>>> 123_Nudelake
 'Here you can walk naked and no one will blame you.'
 if hour >= 6 and hour <= 20:
+<<<<<<< 123_Nudelake
 'Here you can <a href="exec:gt ''Nudelake'',''zagarat''">tanning</a> and <a href="exec:gt ''Nudelake'',''swim''">swim</a>'
 'And, you can play <a href="exec:gt ''Nudelake'',''voleybol''">beach volleyball</a>'
+=======
+'here you can <a href="exec:gt''Nudelake'',''zagarat''">sunbathe</a> and <a href="exec:gt''Nudelake'',''swim''">bathe</a>'
+'And <a href="exec:gt''Nudelake'',''voleybol''">beach volleyball</a>'
+>>>>>>> 123_Nudelake
 end
 
+<<<<<<< 123_Nudelake
 act 'Go to the main beach': gt 'lake','start'
 if katday ! day and kat >= 1:
 	'You see at the beach Cat.'
@@ -15,9 +26,19 @@ if katday ! day and kat >= 1:
 		gt 'Katlake','kat'
 		end
 	end
+=======
+act 'Leave on the main beach':gt'lake','start'
+if katday ! day and kat >= 1:
+	 'You see at the beach Cat.'
+	 act 'Approach the Cat':
+		 gt'Katlake','kat'
+		 end
+	 end
+>>>>>>> 123_Nudelake
 
 if $ARGS[0] = 'voleybol':
 cls
+<<<<<<< 123_Nudelake
 set minut += 1
 '<center><img src="images\img\Lake\voleybol.jpg"></center>'
 'You came to the volleyball court.'
@@ -33,11 +54,29 @@ act 'Play':
 	'<center><img src="images\img\Lake\voleybol.jpg"></center>'
 	'You go up to the players and ask whether it is possible to join, you will be happy to take the team.'
 	act 'Finish': gt 'Nudelake'
+=======
+set minut+=1
+'<center><img src="img/Lake/voleybol.jpg"></center>'
+'You have come to the volleyball court.'
+act'watch':gt 'Nudelake','smotr'
+act'Get_Away':gt 'Nudelake'
+act'play':
+	 cla
+	 *clr
+	 set agil+=1
+	 set react+=1
+	 set speed+=1
+	 set minut+=30
+	 '<center><img src="img/Lake/voleybol.jpg"></center>'
+	 'You come to play and ask whether it is possible to join, You gladly take the team.'
+	 act'End_Up':gt 'Nudelake'
+>>>>>>> 123_Nudelake
 end
 end
 
 
 if $ARGS[0] = 'zagarat':
+<<<<<<< 123_Nudelake
 set minut += 30
 cls
 gs 'stat'
@@ -59,6 +98,29 @@ if nzagrand >= 80 and nzagrand < 90: gt 'Vnlake1'
 if nzagrand >= 90: gt 'Vnlake2'
 if katday ! day and kat = 0 and nzagrand >= 70 and nzagrand < 80: gt 'Katlake'
 act 'Finish': gt 'Nudelake'
+=======
+set minut+=30
+cls
+gs'stat'
+'<center><img src="img/Lake/nudezagarat.jpg"></center>'
+set sweat = sweat + 1
+set manna = manna + 5
+if krem = 0:
+	 set tan = tan + 1
+	 'You went to the beach to sunbathe.'
+	 end
+if krem > 0:
+	 set krem = krem - 1
+	 set tan = tan + 3
+	 'You smeared body suntan lotion and went to sunbathe.'
+	 end
+set nzagrand = RAND (0,100)
+if kat > 30 and katkey = 0 and nzagrand >= 60 and nzagrand < 70:gt'Katlake','key'
+if nzagrand >= 80 and nzagrand < 90:gt'Vnlake1'
+if nzagrand >= 90:gt'Vnlake2'
+if katday ! day and kat = 0 and nzagrand >= 70 and nzagrand < 80:gt'Katlake'
+act'End_Up':gt'Nudelake'
+>>>>>>> 123_Nudelake
 end
 
 if $ARGS[0] = 'swim':
@@ -70,6 +132,7 @@ set cumass = 0
 set cumlip = 0
 set cumface = 0
 set cumfrot = 0
+<<<<<<< 123_Nudelake
 set minut += 60
 if sweat > -3: set sweat = -3
 set manna += 5
@@ -78,15 +141,34 @@ if stren < 30: set stren += 1
 '<center><img src="images\img\Lake\nudeswim.jpg"></center>'
 'You went for a swim.'
 act 'Finish': gt 'Nudelake'
+=======
+set minut = minut + 60
+set sweat = -3
+set manna = manna + 5
+set willpower = willpower + 5
+if stren < 30:set stren = stren + 1
+'<center><img src="img/Lake/nudeswim.jpg"></center>'
+'You went to bathe.'
+act'End_Up':gt 'Nudelake'
+>>>>>>> 123_Nudelake
 end
 
 if $ARGS[0] = 'smotr':
+<<<<<<< 123_Nudelake
 set minut += 30
 cls
 gs 'stat'
 '<center><img src="images\img\Lake\voleybol.jpg"></center>'
 'You see how others play.'
 act 'Leave': gt 'Nudelake'
+=======
+set minut+=30
+cls
+gs'stat'
+'<center><img src="img/Lake/voleybol.jpg"></center>'
+'You see how others play.'
+act'Get_Away':gt 'Nudelake'
+>>>>>>> 123_Nudelake
 end
 --- Nudelake ---------------------------------
 

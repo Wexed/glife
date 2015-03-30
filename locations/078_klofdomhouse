@@ -1,4 +1,5 @@
 # klofdomhouse
+<<<<<<< 078_klofdomhouse
 if $ARGS[0] = 'start':
 	cla
 	*clr
@@ -22,11 +23,37 @@ if $ARGS[0] = 'start':
 	end
 
 	act 'Go home': gt 'street'
-end
-
-if $ARGS[0] = 'start1':
+=======
+if $ARGS[0]='start':
 cla
 *clr
+set minut = minut + 5
+	 act 'Ring the doorbell':
+	 cla 
+	     if klofQW = 2 and hour>=16 and klofday!day:
+	     klofday=day
+         gt 'klofdomhouse','ev1'
+         elseif klofQW > 2 and hour>=16 and klofday!day:
+         klofday=day
+         gt 'klofdomhouse','start1'
+         else
+         'No one is home'
+         act 'go home':gt 'street'
+         end
+	 end
+
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
+end
+
+<<<<<<< 078_klofdomhouse
+if $ARGS[0] = 'start1':
+=======
+if $ARGS[0]='start1':
+>>>>>>> 078_klofdomhouse
+cla
+*clr
+<<<<<<< 078_klofdomhouse
 set klofday = day
 set minut += 5
 kloftimes += 1
@@ -42,11 +69,31 @@ gs 'stat'
 			gt 'klofdomhouse','ev7'
 		end
 	end
+=======
+set klofday=day
+set minut = minut + 5
+kloftimes+=1
+gs'stat'
+     if kloftimes<10:
+     gt 'klofdomhouse','ev7'
+     end
+     if kloftimes>=10:
+	 '<center><img src="klof/klof.jpg" ></center>'
+	 'You`ve reached the door.	Jora came and scratched the belly. Yawned and said, that he is engaged.'
+	 act 'go home':gt 'street'
+	 end
+     
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev1':
+=======
+if $args[0]='ev1':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set klofday = day
 set minut += 5
 kloftimes += 1
@@ -64,11 +111,35 @@ gs 'stat'
 	'You rang the doorbell. Jora and went belly scratched. Yawned and said he was busy.'
 	act 'Go home': gt 'street'
 	end
+=======
+set klofday=day
+set minut=minut+5 
+kloftimes+=1
+gs'stat'
+	 if kloftimes<10:
+	 '<center><img src="klof/klof.jpg" ></center>'
+	 'You`ve reached the door.
+	You do not open and you want to leave, but then the door opened.
+	-hello- Say you
+	-And it`s you- said a smiling guy- Come.'
+	 act'go':gt 'klofdomhouse','ev2'
+	 end
+	 if kloftimes>=10:
+	 '<center><img src="klof/klof.jpg" ></center>'
+	 'You`ve reached the door.	Jora came and scratched the belly. Yawned and said, that he is engaged.'
+	 act 'go home':gt 'street'
+	 end
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev2':
+=======
+if $args[0]='ev2':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 '<center><img src="images\klof\klof 1.JPG"></center>'
 'You looked around the apartment was a pigsty, the walls papered with peeled everywhere strewn socks.'
@@ -78,11 +149,27 @@ set minut += 5
 '- Call me Zhora, and my sidekick Senya, and now just quickly clean this up in the apartment.'
 	act 'Clean up': gt 'klofdomhouse','ev4'
 	if sub < 30 and horny < 75: act 'Leave': gt 'klofdomhouse','ev3'
+=======
+set minut=minut+5
+'<center><img src="klof/klof 1.JPG" ></center>'
+'you looked around, the apartment was a pigsty ,wall with peeled wallpaper, littered everywhere socks. 
+-how-is pathetic you guys here rebya - you said and smiled,eye contact with a guy. 
+-It`S_Nothing, we just arrived in this city obzhivaya soon- said grinning guy. 
+- It_Is_Clear. We are never met.
+- Call me Zhora, and my sidekick Senya,and now quickly tidy apartment.'
+     act 'clean_up':gt 'klofdomhouse','ev4'
+	 if sub<30 and horny<75: act 'Get_Away':gt 'klofdomhouse','ev3'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev3':
+=======
+if $args[0]='ev3':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set klofQW -= 1
 if dom > 0: set dom += 5
@@ -90,11 +177,25 @@ if sub > 0: set sub -= 5
 '<center><img src="images\qwest\pnx.jpg"></center>'
 'You decided that the guy above you just izdevaetsya and left.'
 act 'Leave': gt 'street'
+=======
+set minut=minut+5
+set klofQW=klofQW-1
+if dom>0:set dom=dom+5
+if sub>0:set sub=sub-5
+'<center><img src="picQW/pnx.jpg" ></center>'
+'You have decided that the guy above you just izdevaetsya and left.'
+act 'Get_Away':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev4':
+=======
+if $args[0]='ev4':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 '<center><img src="images\klof\klof 3.JPG"></center>'
 'Remove ZHore you approached and asked.'
@@ -103,11 +204,26 @@ set minut += 5
 '- When will become closer acquainted, talk about business.'
 '- Now be a good girl and I discussed'
 act 'Open your legs ZHore': gt 'klofdomhouse','ev5'
+=======
+set minut=minut+5
+'<center><img src="klof/klof 3.JPG" ></center>'
+'Remove you approached and asked Zhora:.
+-Jora you promised money and entertainment, but so far I have not seen what this
+-well listen, As I said we are not in a long time, until now we need a girl for services at home
+- When will become closer acquainted, to talk business.
+- Now be obedient girl and I discussed '
+act 'Open your legs Zhora':gt 'klofdomhouse','ev5'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev5':
+=======
+if $args[0]='ev5':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 sex += 1
 vagina += 1
@@ -115,11 +231,25 @@ vagina += 1
 'Jora began to fuck you in the pussy, suddenly the door opened.'
 'Into the room came Senya and said, "Suck my cock baby ka"'
 act 'Get a mouth Cenis': gt 'klofdomhouse','ev6'
+=======
+set minut=minut+5
+sex+=1
+vagina+=1
+'<center><img src="klof/klof 4.jpg" ></center>'
+'Jora began to fuck you in the pussy, Suddenly the door opened.
+Entered the room and said: "Suck my cock baby ka"'
+act 'To take by mouth in Seney':gt 'klofdomhouse','ev6'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev6':
+=======
+if $args[0]='ev6':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set hour += 23
 set minut += 5
 set klofQW += 1
@@ -141,23 +271,62 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 	if Sex >= oral and Sex >= anal: set callnm = 3
 	if vaf >= 100: set callnm = 4
 act 'Go home': gt 'street'
+=======
+set hour=hour+23
+set minut=minut+5
+set klofQW=klofQW+1
+cla
+ *clr
+ set money = money + 2000
+ Set bj = bj + 1
+ Set cumface = cumface + 1
+ set cumpussy = cumpussy + 1
+'<center><img src="klof/klof 5.jpg" ></center>'
+'Jora zhetko pecked in your pussy, Xian fuck you in the mouth.'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+'You are dressed and ready to go home.
+To you came up and handed the money Jora: "earned crumb" '
+	 if bj>=anal and bj>=sex:set callnm=1
+	 if anal>=oral and anal>=sex:set callnm=2
+	 if Sex>=oral and Sex>=anal:set callnm=3
+	 if vaf>=100:set callnm=4
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev7':
+=======
+if $args[0]='ev7':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 '<center><img src="images\klof\klof 1.JPG"></center>'
 'You went to the apartment'
 act 'Say hello to the guys': gt 'klofdomhouse','ev8'
+=======
+set minut=minut+5
+'<center><img src="klof/klof 1.JPG" ></center>'
+'You went to the apartment'
+act 'Hello guys':gt 'klofdomhouse','ev8'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev8':
+=======
+if $args[0]='ev8':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 '<center><img src="images\klof\klof 6.jpg"></center>'
 'Hey baby-boys said, baring his chest and you started to caress you.'
@@ -166,23 +335,48 @@ act 'Entertain ZHoru': gt 'klofdomhouse','ev9'
 act 'entertain Senya': gt 'klofdomhouse','ev10'
 act 'Entertain both': gt 'klofdomhouse','ev19'
 act 'Talk about the affairs of Zhora': gt 'klofdomhouse', 'ev20'
+=======
+set minut=minut+5
+'<center><img src="klof/klof 6.jpg" ></center>'
+'-Hi Babe- told the guys, baring your breasts and began to caress you.
+- Hello boys missed me?- you said and blushed'
+act 'entertain Zhora':gt 'klofdomhouse','ev9'
+act 'entertain Senya':gt 'klofdomhouse','ev10'
+act 'entertain both':gt 'klofdomhouse','ev19'
+act 'Talk about affairs with Zhora':gt 'klofdomhouse', 'ev20'
+>>>>>>> 078_klofdomhouse
 end
 
 
 
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev9':
+=======
+if $args[0]='ev9':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
 
+<<<<<<< 078_klofdomhouse
 act 'Writing in the pussy ZHore.': gt 'klofdomhouse','ev13'
 act 'Writing in the ass ZHore.': gt 'klofdomhouse','ev14'
 act 'ZHore suck.': gt 'klofdomhouse','ev19'
+=======
+act 'Post a pussy Zhora.':gt 'klofdomhouse','ev13'
+act 'Writing in the ass Zhora.':gt 'klofdomhouse','ev14'
+act 'suck Zhora.':gt 'klofdomhouse','ev19'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev13':
+=======
+if $args[0]='ev13':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 set money += 100
@@ -202,11 +396,37 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 'You are dressed and ready to go home.'
 'Jora handed you the money, "Earned crumb"'
 act 'Go home': gt 'street'
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ set vagina = vagina + 1                      
+ Set sex = sex + 1
+ set cumpussy = cumpussy + 1
+'Jora zhetko pecked in your pussy.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 7.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 8.jpg" ></center>'
+         if picrand = 3:'<center><img src="klof/klof 9.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+'you chustvuete, Jora razryazhaetsya that into you.'
+'<center><img src="klof/klof 10.jpg" ></center>'
+ 'You are dressed and ready to go home.
+ Jora handed you money: "earned crumb" '
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev14':
+=======
+if $args[0]='ev14':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 set money += 100
@@ -231,12 +451,43 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 	'Jora handed you the money, "Earned crumb"'
 	act 'Go home': gt 'street'
 	end
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ Set anal = anal + 1
+ set anus = anus + 1
+ Set cumass = cumass + 1
+ 
+'Jora with full force hammer you in the ass.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 11.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 12.jpg" ></center>'
+         if picrand = 3:'<center><img src="klof/klof 13.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+     act '....':
+     cla
+     *clr
+	 'Jora discharge point you in, and inserts it in the ass gag'
+	 '<center><img src="klof/klof 14.jpg" ></center>'
+	 'You are dressed and ready to go home.
+	 Jora handed you money: "earned crumb" '
+	 act 'go home':gt 'street'
+	 end
+>>>>>>> 078_klofdomhouse
 end
 
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev15':
+=======
+if $args[0]='ev15':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 set money += 100
@@ -262,23 +513,65 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 	'Jora handed you the money, "Earned crumb"'
 	act 'Go home': gt 'street'
 	end
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ set bj = bj + 1 
+ Set cumface = cumface + 1
+'You are gripped with passion Zhorin member lips.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 15.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 16.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 17.jpg." ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+     act '....':
+     cla
+     *clr
+     'Jora discharged in your face'
+     set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 18.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 19.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 20.jpg." ></center>'
+     'You are dressed and ready to go home.
+     Jora handed you money: "earned crumb" '
+     act 'go home':gt 'street'
+     end
+>>>>>>> 078_klofdomhouse
 end
 
 
 
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev10':
+=======
+if $args[0]='ev10':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
 
+<<<<<<< 078_klofdomhouse
 act 'Writing in the pussy Seine.': gt 'klofdomhouse','ev 16'
 act 'Writing in the ass Seine.': gt 'klofdomhouse','ev 17'
 act 'Suck Seine.': gt 'klofdomhouse','ev 18'
+=======
+act 'Post a pussy Seine.':gt 'klofdomhouse','ev 16'
+act 'Writing in the ass Seine.':gt 'klofdomhouse','ev 17'
+act 'suck Seine.':gt 'klofdomhouse','ev 18'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev 16':
+=======
+if $args[0]='ev 16':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 set money += 100
@@ -301,11 +594,40 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 	'Hsien handed you the money, "Earned crumb"'
 	act 'Go home': gt 'street'
 	end
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ set vagina = vagina + 1                      
+ Set sex = sex + 1
+'Senya zhetko pecked in your pussy.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 7.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 8.jpg" ></center>'
+         if picrand = 3:'<center><img src="klof/klof 9.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+     act '....':
+     cla
+     *clr
+	 'you chustvuete, Jora razryazhaetsya that into you.'
+	 '<center><img src="klof/klof 10.jpg" ></center>'
+	 'You are dressed and ready to go home.
+	 Senya handed you money: "earned crumb" '
+	 act 'go home':gt 'street'
+	 end
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev 17':
+=======
+if $args[0]='ev 17':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 set money += 100
@@ -330,11 +652,42 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 	'Hsien handed you the money, "Earned crumb"'
 	act 'Go home': gt 'street'
 	end
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ Set cumass = cumass + 1
+ anal+=1
+ anus+=1
+'Senja with all his might hammer you in the ass.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 11.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 12.jpg" ></center>'
+         if picrand = 3:'<center><img src="klof/klof 13.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+ 
+     act '....':
+     cla
+     *clr
+	 'Senya discharge point you in, and inserts it in the ass gag'
+	 '<center><img src="klof/klof 14.jpg" ></center>'
+	 'You are dressed and ready to go home.
+	 Senya handed you money: "earned crumb" '
+	 act 'go home':gt 'street'
+	 end
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev 18':
+=======
+if $args[0]='ev 18':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 set money += 100
@@ -362,12 +715,46 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 	'Hsien handed you the money, "Earned crumb"'
 	act 'Go home': gt 'street'
 	end
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+ set money = money + 100
+ bj+=1                 
+ Set guy = guy + 1
+ Set cumlip = cumlip + 1
+'You are gripped with passion Senenin member lips.'
+set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 15.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 16.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 17.jpg." ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+     act '....':
+     cla
+     *clr
+     facial+=1
+     'Senya discharged in your face'
+     set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 18.jpg" ></center>'
+         if picrand = 2:'<center><img src="klof/klof 19.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 20.jpg." ></center>'
+     'You are dressed and ready to go home.
+     Senya handed you money: "earned crumb" '
+     act 'go home':gt 'street'
+     end
+>>>>>>> 078_klofdomhouse
 end
 
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev19':
+=======
+if $args[0]='ev19':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 2
 set money += 200
@@ -389,11 +776,39 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 'You are dressed and ready to go home.'
 'Boys stretched you money, "Earned crumb"'
 act 'Go home': gt 'street'
+=======
+set minut=minut+30
+set klofQW=klofQW+2
+set money = money + 200
+sex+=1
+ Set bj = bj + 1
+ Set cumface = cumface + 1
+ facial+=1
+ set cumpussy = cumpussy + 1
+ set vagina = vagina + 1    
+ set picrand = RAND (1,3)
+         if picrand = 1:'<center><img src="klof/klof 21.jpg." ></center>'
+         if picrand = 2:'<center><img src="klof/klof 22.jpg." ></center>'
+         if picrand = 3:'<center><img src="klof/klof 23.jpg." ></center>'
+'Jora brutally fuck you in the mouth, and CEnja dryuchit pussy'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+ 'Finally they both finished, one in the pussy, the other on the face.'
+'You are dressed and ready to go home.
+ Guys stretched you money: "earned crumb" '
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev20':
+=======
+if $args[0]='ev20':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set klofday = day
 set minut += 5
 '<center><img src="images\klof\klof.jpg"></center>'
@@ -403,138 +818,303 @@ set minut += 5
 	if klofQW < 10: gt 'klofdomhouse','ev21'
 	if klofQW >= 10: gt 'klofdomhouse','ev22'
 	end
+=======
+set klofday=day
+set minut=minut+5 
+'<center><img src="klof/klof.jpg" ></center>'
+'If you want to talk serious business with our boss '
+	 act 'Talk with the boss':
+	 cla 
+	 if klofQW< 10:gt 'klofdomhouse','ev21'
+	 if klofQW >= 10:gt 'klofdomhouse','ev22'
+	 end
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev21':
+=======
+if $args[0]='ev21':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'From the room came an ugly old man'
 '<center><img src="images\klof\klof24.jpg"></center>'
 '"Too early you climb into our business" - he said.'
 act 'Go home': gt 'street'
+=======
+'The room came an ugly old man'
+'<center><img src="klof/klof24.jpg" ></center>'
+'"You climb a bit early in our affairs" - he said.'
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev22':
+=======
+if $args[0]='ev22':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'From the room came an ugly old man'
 '<center><img src="images\klof\klof24.jpg"></center>'
 'Boss looked closely at you and said, "Come to me, look at what you´re ready for the money"'
 act 'Go to the boss room.': gt 'klofdomhouse','ev23'
 act 'Go home': gt 'street'
+=======
+'The room came an ugly old man'
+'<center><img src="klof/klof24.jpg" ></center>'
+'Boss carefully looked at you and said: "Come to me"'
+act 'Go to the boss room.':gt 'klofdomhouse','ev23'
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev23':
+=======
+if $args[0]='ev23':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You went into the room boss surprisingly it was well renovated and furnished'
 '<center><img src="images\klof\klof25.jpg"></center>'
 'Well Well take off your clothes and show yourself - said the boss'
 
 act 'Show yourself': gt 'klofdomhouse','ev24'
 act 'Send it to .....': gt 'street'
+=======
+'You went into the room boss surprisingly it has been well renovated and furnished'
+'<center><img src="klof/klof25.jpg" ></center>'
+'Well Well take off your clothes and show yourself - said boss'
+
+act 'Show yourself':gt 'klofdomhouse','ev24'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev24':
+=======
+if $args[0]='ev24':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You sat on the bed modestly'
 '<center><img src="images\klof\klof 26.jpg"></center>'
 'Show breast - ordered boss'
 act 'Show breast': gt 'klofdomhouse','ev25'
 act 'Send it to .....': gt 'street'
+=======
+'You humbly sat on the bed'
+'<center><img src="klof/klof 26.jpg" ></center>'
+'Show chest - ordered the boss'
+act 'Show chest':gt 'klofdomhouse','ev25'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev25':
+=======
+if $args[0]='ev25':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
 'You bared her breasts'
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\klof 26 (1).jpg"></center>'
 'Show ass! - Ordered the boss'
 act 'Show ass': gt 'klofdomhouse','ev26'
 act 'Send it to .....': gt 'street'
+=======
+'<center><img src="klof/klof 26 (1).jpg" ></center>'
+'Show the ass! - ordered the boss'
+act 'Show the ass':gt 'klofdomhouse','ev26'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev26':
+=======
+if $args[0]='ev26':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
 'You showed your ass boss'
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\klof 26</center>.jpg"></center>'
 'Let´s pull off her dress! - He said'
 act 'Remove dress': gt 'klofdomhouse','ev27'
 act 'Send it to .....': gt 'street'
+=======
+'<center><img src="klof/klof 26 (3).jpg" ></center>'
+'Come pulls off her dress! - he said'
+act 'remove the dress':gt 'klofdomhouse','ev27'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev27':
+=======
+if $args[0]='ev27':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
 'You took off her dress'
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\klof 26 (4).jpg"></center>'
 'Spreads legs! - Received an order'
 act 'Extend the legs': gt 'klofdomhouse','ev28'
 act 'Send it to .....': gt 'street'
+=======
+'<center><img src="klof/klof 26 (4).jpg" ></center>'
+'Spreading legs! - received an order'
+act 'Extend the legs':gt 'klofdomhouse','ev28'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev28':
+=======
+if $args[0]='ev28':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You sat on the bed and pushed the legs'
 '<center><img src="images\klof\klof 26 (6).jpg"></center>'
 'And now to seduce me - smiled boss'
 act 'Seduce the boss': gt 'klofdomhouse','ev29'
 act 'Send it to .....': gt 'street'
+=======
+'You sat on the bed and parted legs'
+'<center><img src="klof/klof 26 (6).jpg" ></center>'
+'And now - grinned boss'
+act 'seduce boss':gt 'klofdomhouse','ev29'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev29':
+=======
+if $args[0]='ev29':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You rolled over on his side and showed their charms boss'
 '<center><img src="images\klof\1284364hjl.jpg"></center>'
 act 'Spin the ass before the boss': gt 'klofdomhouse','ev30'
 act 'Send it to .....': gt 'street'
+=======
+'You rolled over and showed their charms boss'
+'<center><img src="klof/1284364hjl.jpg" ></center>'
+act 'Twist ass in front of the boss':gt 'klofdomhouse','ev30'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev30':
+=======
+if $args[0]='ev30':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
 'You got cancer and began to twist her ass before the boss noticed that onachal fidget in his chair'
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\1284365sgp.jpg"></center>'
 act 'Lick the head of the boss': gt 'klofdomhouse','ev31'
 act 'Send it to .....': gt 'street'
+=======
+'<center><img src="klof/1284365sgp.jpg" ></center>'
+act 'Lick the head of the boss':gt 'klofdomhouse','ev31'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev31':
+=======
+if $args[0]='ev31':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You gently began to lick penis'
 '<center><img src="images\klof\klof27.jpg"></center>'
 act 'Clasp member lips': gt 'klofdomhouse','ev32'
 act 'Send it to .....': gt 'street'
+=======
+'You gently began to lick the head of the penis'
+'<center><img src="klof/klof27.jpg" ></center>'
+act 'Clasp member lips':gt 'klofdomhouse','ev32'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev32':
+=======
+if $args[0]='ev32':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You eagerly clasped member lips'
 '<center><img src="images\klof\klof28.jpg"></center>'
 'Boss hoarse voice you ordered, "spreads her legs bitch"'
 act 'Spread her legs': gt 'klofdomhouse','ev33'
 act 'Send it to .....': gt 'street'
+=======
+'You eagerly clasped dick lips'
+'<center><img src="klof/klof28.jpg" ></center>'
+'Boss hoarse voice you ordered: "bitch spreads her legs"'
+act 'spread her legs':gt 'klofdomhouse','ev33'
+act 'Send it to .....':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev33':
+=======
+if $args[0]='ev33':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You call razdvinuli legs'
 '<center><img src="images\klof\klof 26 (5).jpg"></center>'
 'Well, check your front - asked the boss'
 act 'Writing in the pussy': gt 'klofdomhouse','ev34'
 act 'Refuse': gt 'street'
+=======
+'You call pushed the legs'
+'<center><img src="klof/klof 26 (5).jpg" ></center>'
+'Well - asked the boss'
+act 'Writing in the pussy':gt 'klofdomhouse','ev34'
+act 'Opt_Out':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev34':
+=======
+if $args[0]='ev34':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 set vagina += 1
@@ -547,11 +1127,30 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 'Let me try your ass - the boss ordered'
 act 'Writing in the ass': gt 'klofdomhouse','ev35'
 act 'Refuse': gt 'street'
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+ set vagina = vagina + 1                      
+ Set sex = sex + 1
+'Boss with full force pushes his penis into your vagina.'
+'<center><img src="klof/klof 28.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+'Dai ka I `ll try your ass - ordered the boss'
+act 'Writing in the ass':gt 'klofdomhouse','ev35' 
+act 'Opt_Out':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev35':
+=======
+if $args[0]='ev35':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 anal += 1
@@ -565,57 +1164,133 @@ if horand > sex: Set horny += 10 & 'You were not satisfied'
 	act 'Substitute person that he finished': gt 'klofdomhouse','ev36'
 	act 'Let them ends up in the ass': gt 'klofdomhouse','ev37'
 	act 'Insert dick in pussy': gt 'klofdomhouse','ev38'
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+ anal+=1
+ anus+=1
+'Boss skewer your point on his cock.'
+'<center><img src="klof/klof29.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+ 'You chustvuete the boss is ready to be discharged'
+     act 'Substitute the person that he had finished':gt'klofdomhouse','ev36'
+	 act 'Let cums in the ass':gt 'klofdomhouse','ev37'
+	 act 'Insert dick in pussy': gt 'klofdomhouse','ev38'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev36':
+=======
+if $args[0]='ev36':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 Set cumface += 1
 set money += 500
 'You jump from a member and start nadrachivat member face to the boss'
 '<center><img src="images\klof\klof30.jpg"></center>'
 act 'Get out of bed': gt 'klofdomhouse','ev39'
+=======
+ Set cumface = cumface + 1
+ set money = money + 500
+'You jump from a member and start nadrachivat boss face to the member'
+'<center><img src="klof/klof30.jpg" ></center>'
+act 'Get out of bed':gt 'klofdomhouse','ev39'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev37':
+=======
+if $args[0]='ev37':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set cumpussy += 1
 set money += 500
 'You start furiously podmahivat ass trying to quickly help him reach orgasm'
 '<center><img src="images\klof\klof32.jpg"></center>'
 act 'Get out of bed': gt 'klofdomhouse','ev39'
+=======
+set cumpussy = cumpussy + 1
+set money = money + 500
+'You start furiously podmahivat ass try to quickly help him reach orgasm'
+'<center><img src="klof/klof32.jpg" ></center>'
+act 'Get out of bed ':gt 'klofdomhouse','ev39'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev38':
+=======
+if $args[0]='ev38':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set money += 500
 'Catching the moment you insert member into the vagina'
 '<center><img src="images\klof\klof31.jpg"></center>'
 'Well, check your front - asked the boss'
 act 'Get out of bed': gt 'klofdomhouse','ev39'
+=======
+set money = money + 500
+'Catch the moment you insert into the vagina dick '
+'<center><img src="klof/klof31.jpg" ></center>'
+'Well - asked the boss'
+act 'Get out of bed':gt 'klofdomhouse','ev39'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev39':
+=======
+if $args[0]='ev39':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You got out of bed, looked at the exhausted man, with a grin and asked the boss: "Well, I passed the test?"'
 '<center><img src="images\klof\klof33l.jpg"></center>'
 '-Well you went bed-check, check you in obedience,'
 '- Served both my boys only dvoi and only pussy once - ordered boss'
 act ' Obediently serve children': gt 'klofdomhouse','ev40'
 act 'Refuse': gt 'street'
+=======
+'You got out of bed, looked at the guy obessilivgshego,
+ and with a smile asked the boss: "Well I passed the test?"'
+'<center><img src="klof/klof33l.jpg" ></center>'
+'-Well you`ve been postelnuyuproverku, check you in obedience,
+- Cater for both my boys only dvoi and only pussy immediately - ordered the boss'
+act ' Obediently serve children':gt 'klofdomhouse','ev40'
+act 'Opt_Out':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev40':
+=======
+if $args[0]='ev40':  
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
 set klofQW += 1
 set db += 1
+=======
+set minut=minut+30
+set klofQW=klofQW+1
+set db=db+1
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 Set bj += 1
 set vagina += 2
 'Jora and Senja in Two Smoking Barrels hammering you in the pussy.'
@@ -624,58 +1299,130 @@ Set horand = RAND(1,100)
 if horand <= sex: Set horny = 0 & orgasm += 1 & 'You covered orgasm'
 if horand > sex: Set horny += 10 & 'You were not satisfied'
 act 'Get up and get dressed': gt 'klofdomhouse','ev41'
+=======
+ Set bj = bj + 1
+ set vagina = vagina + 2                     
+'Zhora and Senya two trunk hammering you in the pussy.'
+'<center><img src="klof/klof33.jpg" ></center>'
+ Set horand = RAND (1,100)
+ if horand <= sex:Set horny = 0&orgasm+=1&'You covered orgasm'
+ if horand > sex:Set horny = horny + 10&'You were not satisfied'
+act 'Get up and dress':gt 'klofdomhouse','ev41' 
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev41':
+=======
+if $args[0]='ev41':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set money += 5000
 'You got dressed and cleaned up.'
 '<center><img src="images\klof\klof 3.JPG"></center>'
 'To you Zhorik approached and said, "You´re like the boss, he told you to come tomorrow after 10 in the pool, keep money in swimsuit'
 act 'Go home': gt 'street'
+=======
+set money = money + 5000
+'You got dressed and brought myself up. '
+'<center><img src="klof/klof 3.JPG" ></center>'
+'To you came and said Zhorik:" You liked the boss, he ordered you to come tomorrow after 10  in the pool, keep your money in a swimsuit'
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev42':
+=======
+if $args[0]='ev42':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You look around and notice the crowd ZHoru'
 '<center><img src="images\klof\klof 3.JPG"></center>'
 'It is suitable to you and says, "Come on baby swim"'
 act 'Go swimming.': gt 'klofdomhouse','ev43'
 act 'Go home': gt 'street'
+=======
+'You are viewing the crowd and notice Zhora'
+'<center><img src="klof/klof 3.JPG" ></center>'
+'He is suitable to you and says: "Come bathe baby"'
+act 'to go swimming.':gt 'klofdomhouse','ev43'
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev43':
+=======
+if $args[0]='ev43':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You dress up in a swimsuit and waiting at the entrance ZHoru'
 '<center><img src="images\klof\bas.jpg"></center>'
 'Jora takes place in a swimming pool talking to you, ''Lie down until Svetsik wait until more people gather "'
 act 'Lie down beside the pool': gt 'klofdomhouse','ev44'
 act 'Go home': gt 'street'
+=======
+'You change into a swimsuit and wait at the entrance Zhora'
+'<center><img src="klof/bas.jpg" ></center>'
+'Jora takes place in a swimming pool telling you : "Lie down until Svetsik wait until meet more people"'
+act 'Lie down by the pool':gt 'klofdomhouse','ev44'
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev44':
+=======
+if $args[0]='ev44':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 30
+=======
+set minut=minut+30
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You lay around the pool, the pool is filled with people'
 '<center><img src="images\klof\bas1.jpg"></center>'
 'Jora swims up to you ordered, "Take off your clothes in front of the crowd"'
 if sub > 0: act 'Hesitantly remove bra': gt 'klofdomhouse','ev45'
 act 'Send it': gt 'street'
+=======
+'You are lying by the pool, pool filled with people'
+'<center><img src="klof/bas1.jpg" ></center>'
+'Jora swims up to you orders : "Undress in front of a crowd"'
+if sub>0:act 'Hesitantly removed her bra':gt 'klofdomhouse','ev45'
+act 'Send it':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev45':
+=======
+if $args[0]='ev45':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You lower a little webbing'
 '<center><img src="images\klof\bas3.jpg"></center>'
 'You lower a little cup'
@@ -685,15 +1432,36 @@ cla
 'Jora says with a grin, "Show the people hunting them chest entertainment"'
 if sub > 5: act 'Remove hands': gt 'klofdomhouse','ev46'
 act 'Send it': gt 'street'
+=======
+'You lower a little strap '
+'<center><img src="klof/bas3.jpg" ></center>'
+'You lower a little cup'
+'<center><img src="klof/bas2.jpg" ></center>'
+'You are standing in the water conceal chest burning with shame'
+'<center><img src="klof/bas4.jpg" ></center>'
+'Jora said with a smirk: "Show people hunting them chest entertainment"'
+if sub>5:act 'remove hands':gt 'klofdomhouse','ev46'
+act 'Send it':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev46':
+=======
+if $args[0]='ev46':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'Do you give your hands from the chest around you starts to gather a crowd of men'
 '<center><img src="images\klof\bas5.jpg"></center>'
 'You picturesquely crank arms behind his head'
@@ -701,31 +1469,68 @@ cla
 'Jora ordered: "subtended panties"'
 if sub > 10: act 'To go into the water removing panties': gt 'klofdomhouse','ev47'
 act 'Send it': gt 'street'
+=======
+'Do you attach to your hands from the chest, around you starts to gather a crowd of men '
+'<center><img src="klof/bas5.jpg" ></center>'
+'You picturesquely crank arms behind his head'
+'<center><img src="klof/bas6.jpg" ></center>'
+'Jora orders: "contractible panties"'
+if sub>10:act 'To go into the water removing panties':gt 'klofdomhouse','ev47'
+act 'Send it':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev47':
+=======
+if $args[0]='ev47':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
 'You go down into the water, the people around you more'
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\bas7.jpg"></center>'
 'You shoot panties in water'
 '<center><img src="images\klof\bas8.jpg"></center>'
 'Jora ordered: "Come out and show yourself to all"'
 if sub > 15: act 'Out of the water': gt 'klofdomhouse','ev48'
 act 'Send it': gt 'street'
+=======
+'<center><img src="klof/bas7.jpg" ></center>'
+'You shoot panties in water'
+'<center><img src="klof/bas8.jpg" ></center>'
+'Jora orders: "Come out and show yourself to all"'
+if sub>15:act 'Out of the water':gt 'klofdomhouse','ev48'
+act 'Send it':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev48':
+=======
+if $args[0]='ev48':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You picturesquely out of the water'
 '<center><img src="images\klof\bas9.jpg"></center>'
 'And go to the edge of the pool, there is a crowd around you guys excited'
@@ -733,15 +1538,34 @@ cla
 'Jora ordered: "Spread your legs"'
 if sub > 20: act 'Spread her legs': gt 'klofdomhouse','ev49'
 act 'Send it': gt 'street'
+=======
+'You picture out of the water'
+'<center><img src="klof/bas9.jpg" ></center>'
+'And lie on the edge of the pool, around you there is a crowd of excited men'
+'<center><img src="klof/bas10.jpg" ></center>'
+'Jora orders: "Spread your legs"'
+if sub>20:act 'spread her legs':gt 'klofdomhouse','ev49'
+act 'Send it':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev49':
+=======
+if $args[0]='ev49':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You push the legs, the crowd whooped'
 '<center><img src="images\klof\bas11.jpg"></center>'
 'Excitement you heat covers you go into the water and relax'
@@ -749,173 +1573,382 @@ cla
 'Jora ordered: "Spread your lips"'
 if sub > 25: act 'Push the sponge': gt 'klofdomhouse','ev50'
 act 'Send it': gt 'street'
+=======
+'You push the legs, crowd whooped'
+'<center><img src="klof/bas11.jpg" ></center>'
+'Excitement you covered heat you go into the water and relax'
+'<center><img src="klof/bas12.jpg" ></center>'
+'Jora orders: "Spread your lips"'
+if sub>25:act 'push the sponge':gt 'klofdomhouse','ev50'
+act 'Send it':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev50':
+=======
+if $args[0]='ev50':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You push the legs, hands and dip disclose your vagina'
 '<center><img src="images\klof\bas13.jpg"></center>'
 'Most men opened mouth'
 'Jora ordered: "play with themselves"'
 if sub > 30: act 'Caressing her pussy': gt 'klofdomhouse','ev51'
 act 'Send it': gt 'street'
+=======
+'You push the legs, give up and open your vagina'
+'<center><img src="klof/inas13.jpg" ></center>'
+'Most of the men opened her mouth'
+'Jora orders: "caressed herself"'
+if sub>30:act 'Caressing her pussy':gt 'klofdomhouse','ev51'
+act 'Send it':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev51':
+=======
+if $args[0]='ev51':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You are so excited that not oraschaya attention to the crowd start to pull at your girl'
 '<center><img src="images\klof\bas14.gif"></center>'
 'Most men opened mouth'
 act 'Come': gt 'klofdomhouse','ev52'
+=======
+'You are so excited that not oraschaya attention to the crowd begins to pull at your girl'
+'<center><img src="klof/inas14.gif" ></center>'
+'Most of the men opened her mouth'
+act 'come':gt 'klofdomhouse','ev52'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev52':
+=======
+if $args[0]='ev52':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set orgasm += 1
+=======
+set minut=minut+5
+set orgasm = orgasm + 1
+>>>>>>> 078_klofdomhouse
 set horny = 0
 cla
 *clr
 'Within a few minutes you covered wild orgasm'
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\bas15.gif"></center>'
 'Crowd of men standing in complete shock'
 'Jora Didelot hands you and says, "insert it yourself"'
 act 'Insert Didlo': gt 'klofdomhouse','ev53'
+=======
+'<center><img src="klof/inas15.gif" ></center>'
+'A crowd of men standing in complete shock'
+'Jora hands you Didelot and says: "Insert it yourself" '
+act 'insert Didelot':gt 'klofdomhouse','ev53'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev53':
+=======
+if $args[0]='ev53':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You start planting in your cave Didelot'
 '<center><img src="images\klof\bas16.jpg"></center>'
 'Jora hands you a second Didelot and says "Insert to the same"'
 act 'Insert second Didelot': gt 'klofdomhouse','ev54'
+=======
+'You start planting in his cave Didelot'
+'<center><img src="klof/bas16.jpg" ></center>'
+'Jora hands you a second and says Didelot: "Insert to the same" '
+act 'Insert the second Didelot':gt 'klofdomhouse','ev54'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev54':
+=======
+if $args[0]='ev54':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You nachinaetebez labor stick in the hole in his second Didelot'
 '<center><img src="images\klof\bas17.jpg"></center>'
 'Jora orders: "Put about one in the ass"'
 act 'Paste in the ass': gt 'klofdomhouse','ev55'
+=======
+'You nachinaetebez labor stuck in its second hole Didelot'
+'<center><img src="klof/bas17.jpg" ></center>'
+'Jora orders: "Put about one in the ass" '
+act 'Paste in the ass':gt 'klofdomhouse','ev55'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev55':
+=======
+if $args[0]='ev55':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\bas18.jpg"></center>'
 'Jora takes you and members of your thrusts his fist into the vagina'
 act 'Kajfovat': gt 'klofdomhouse','ev56'
+=======
+'<center><img src="klof/bas18.jpg" ></center>'
+'Jora takes you and members of your thrusts his fist into the vagina'
+act 'kayfovat':gt 'klofdomhouse','ev56'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev56':
+=======
+if $args[0]='ev56':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\bas19.jpg"></center>'
 'Jora raises your pelvis with the words: "Hold my cup ka"'
 'Inserts in you and pours himself a glass of juice'
 act 'Obediently keep glass': gt 'klofdomhouse','ev57'
+=======
+'<center><img src="klof/bas19.jpg" ></center>'
+'Jora raise your pelvis with words:"Hold my cup ka" 
+Inserts in you and pours himself a glass of juice'
+act 'Obediently hold a glass':gt 'klofdomhouse','ev57'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev57':
+=======
+if $args[0]='ev57':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 set horny += 10
+=======
+set minut=minut+5
+set horny = horny + 10
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 '<center><img src="images\klof\bas20.jpg"></center>'
 'Jora leisurely drink juice and smiling said: "I Suck dick bitch"'
 act 'Suck Zhora': gt 'klofdomhouse','ev58'
+=======
+'<center><img src="klof/bas20.jpg" ></center>'
+'Jora leisurely drink juice and smiling says:"Suck my dick bitch" '
+act 'Suck Zhora':gt 'klofdomhouse','ev58'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev58':
+=======
+if $args[0]='ev58':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 5
 Set bj += 1
+=======
+set minut=minut+5
+Set bj = bj + 1
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You take Zhorin member cheek'
 '<center><img src="images\klof\bas21.jpg"></center>'
 'Aroused Jora ordered: "Get in. on my dick"'
 act 'Jump on a limb': gt 'klofdomhouse','ev60'
+=======
+'You take Zhorin member of the cheek'
+'<center><img src="klof/bas21.jpg" ></center>'
+'Excite Jora orders:"Climbs on my dick" '
+act 'Jump on a limb':gt 'klofdomhouse','ev60'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev60':
+=======
+if $args[0]='ev60':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 10
 set vagina += 1
 Set sex += 1
+=======
+set minut=minut+10
+set vagina = vagina + 1                      
+Set sex = sex + 1
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You furiously springing on Zhorina dick'
 '<center><img src="images\klof\bas 27.jpg"></center>'
 'Jora ready to cum'
 act 'Take charge of a': gt 'klofdomhouse','ev61'
+=======
+'You furiously riding on a dick Zhorina'
+'<center><img src="klof/bas 27.jpg" ></center>'
+'Jora ready to cum'
+act 'To take charge of a':gt 'klofdomhouse','ev61'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev61':
+=======
+if $args[0]='ev61':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set cumface += 1
 set minut += 10
 set orgasm += 1
+=======
+set cumface = cumface + 1
+set minut=minut+10
+set orgasm = orgasm + 1
+>>>>>>> 078_klofdomhouse
 set horny = 0
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You Kochan Zhorina taking a sperm'
 '<center><img src="images\klof\bas22.jpg"></center>'
 'Zhora gets up and goes into the shower with the words to the crowd: "otderu this damn"'
 act 'Fuck with the crowd': gt 'klofdomhouse','ev62'
+=======
+'You Kochan taking a sperm Zhorina'
+'<center><img src="klof/bas22.jpg" ></center>'
+'Jora gets up and goes into the shower with the words to the crowd: "Otderite this whore"'
+act 'Fuck with the crowd':gt 'klofdomhouse','ev62'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev62':
+=======
+if $args[0]='ev62':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 10
 set orgasm += 1
 Set cumlip += 3
+=======
+set minut=minut+10
+set orgasm = orgasm + 1
+Set cumlip = cumlip + 3
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'Not what you´re not realizing fucked by group of men'
 '<center><img src="images\klof\bas23.jpg"></center>'
 'Someone puts you cancer and plants you ass your dick'
 act 'Fuck with the crowd': gt 'klofdomhouse','ev63'
+=======
+'Not what you`re not realizing aspirated group of men'
+'<center><img src="klof/bas23.jpg" ></center>'
+'Someone puts you cancer and plants you ass his cock'
+act 'Fuck with the crowd':gt 'klofdomhouse','ev63'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev63':
+=======
+if $args[0]='ev63':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 10
 Set bj += 1
 Set cumlip += 3
@@ -924,17 +1957,39 @@ set orgasm += 1
 Set cumass += 1
 anal += 1
 anus += 1
+=======
+set minut=minut+10
+Set bj = bj + 1
+Set cumlip = cumlip + 3
+Set sex = sex +1
+set orgasm = orgasm + 1
+Set cumass = cumass + 1
+anal+=1
+anus+=1
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'You continue to suck, who then hammer you in the ass'
 '<center><img src="images\klof\bas24.jpg"></center>'
 'Covers you orgasm, you chuvsvuete that someone´s dick goes into your pussy'
 act 'Fuck with the crowd': gt 'klofdomhouse','ev64'
+=======
+'You continue to suck, someone you hammer in the ass '
+'<center><img src="klof/bas24.jpg" ></center>'
+'You covered orgasm, chuvsvuete you that someone`s dick goes into your pussy'
+act 'Fuck with the crowd':gt 'klofdomhouse','ev64'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev64':
+=======
+if $args[0]='ev64':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set minut += 10
 set orgasm += 1
 Set bj += 1
@@ -944,24 +1999,65 @@ set orgasm += 1
 Set cumass += 1
 anal += 1
 anus += 1
+=======
+set minut=minut+10
+set orgasm = orgasm + 1
+Set bj = bj + 1
+Set cumlip = cumlip + 3
+Set sex = sex +1
+set orgasm = orgasm + 1
+Set cumass = cumass + 1
+anal+=1
+anus+=1
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 'Fuck you and end up in all the cracks. Orgasm you covered'
 '<center><img src="images\klof\bas25.jpg"></center>'
 act 'Get up and dress swimsuit': gt 'klofdomhouse','ev65'
+=======
+'Fuck you and end up in all the cracks. You covered orgasm'
+'<center><img src="klof/bas25.jpg" ></center>'
+act 'Get up and put on a swimsuit':gt 'klofdomhouse','ev65'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 if $args[0] = 'ev65':
+=======
+if $args[0]='ev65':
+>>>>>>> 078_klofdomhouse
 cla
 *clr
+<<<<<<< 078_klofdomhouse
 set money += 200
 'You odelis swimsuit rose and rested on the column. Your arms and legs were shaking and pussy and ass itched unbearably'
 '<center><img src="images\klof\bas26.jpg"></center>'
 'Jora came out of the locker room and said, "Well, we´ll show staged here, boss delighted!'
 'Even-handed on TV, keep the money and a business card with his address.'
 act 'Go home': gt 'street'
+=======
+set money = money + 200
+'You odelis swimsuit stood up and leaned on the column. Your arms and legs were shaking, pussy and ass and itched unbearably '
+'<center><img src="klof/bas26.jpg" ></center>'
+'Jora came out of the locker room and said:" Well,boss happy! 
+  -Even on TV broadcast, keep your money and a business card with his address. '
+act 'go home':gt 'street'
+>>>>>>> 078_klofdomhouse
 end
 
+<<<<<<< 078_klofdomhouse
 !господи, какая хуета, я плакал кровавыми слезами
+=======
+!Jesus, what hueta, I cried tears of blood
+
+
+
+
+
+
+
+>>>>>>> 078_klofdomhouse
 --- klofdomhouse ---------------------------------
 

@@ -1,4 +1,5 @@
 # divan
+<<<<<<< 317_divan
 if $ARGS[0] = 'start':
 cla
 $divmastr = {
@@ -13,8 +14,25 @@ gs 'stat'
 if horny >= 100: orgasm += 1 & horny = 0 & 'Suddenly a nice cramp brought your body and you covered powerful orgasm from which you groan.'
 act 'Get off the couch': divanmastr = 0 & gt 'divan','fin'
 if horny >= 75: act 'Proceed': dynamic $divmastr
+=======
+if $ARGS[0]='start':
+cla
+$divmastr={
+cls
+ '<center><img src="pics/divmas.jpg" ></center>'
+ set minut = minut + 15
+ sweat+=1
+ set horny = horny + RAND(1,5)
+ if divanmastr=0:divanmastr=1&set mastr = mastr + 1
+ gs'stat'
+ 'You lay on the sofa and started with one hand caressing her breasts, finger of the other hand you started rubbing and stroking a small bump between his legs that respond to the touch of pleasant languor covering your entire body.'
+ if horny>=100:orgasm+=1&horny=0&'Suddenly nice cramp brought your body and you covered powerful orgasm, from which you moan.'
+act 'Get up from the couch':divanmastr=0&gt'divan','fin'
+if horny>=75:act 'Resume':dynamic $divmastr
+>>>>>>> 317_divan
 }
 clr
+<<<<<<< 317_divan
 gs 'stat'
 '<center><img src="images\pics\divan.jpg"></center>'
 'You lay down on the sofa.'
@@ -59,15 +77,72 @@ gs 'stat'
 	cla
 	gt 'divan','fin'
 	end
+=======
+gs'stat'
+'<center><img src="pics/divan.jpg" ></center>'
+'You lay on the sofa.'
+     act 'lie':
+     cla
+     waiting = input ("How many minutes to wait? (not any more 120 minutes)")
+         if waiting <= 0 or waiting > 120:
+         set minut = minut + 15
+         end
+         if waiting > 0 and waiting <= 120:
+         set minut = minut + waiting
+         end
+     act 'Get up from the couch':gt'divan','fin'
+     end
+     
+     if TV > 0:
+         act 'watching TV':
+         cla
+         gt'TV','start'
+         end
+     end
+     
+     if book > 0:
+         act 'read the book 30 minutes':
+         cla
+         *clr
+         '<center><img src="pics/book.jpg" ></center>'
+         set minut = minut + 30
+         set horny = horny + 5
+         'You are reading a book.'
+         act 'put the book':gt'divan','start'
+         end
+     end
+     
+     if horny>=75:
+         act 'masturbate 15 minutes':
+         dynamic $divmastr
+         end
+     end
+     
+     act 'Get up from the couch':
+     cla
+     gt'divan','fin'
+     end
+>>>>>>> 317_divan
 end
 
+<<<<<<< 317_divan
 if $ARGS[0] = 'fin':
+=======
+if $ARGS[0]='fin':
+>>>>>>> 317_divan
 cla
 gt $locM, $metkaM
+<<<<<<< 317_divan
 	!'if housr = 1 and housrA = 1:
 	set housrA = 0
 	gt 'sitr'
 	end'
+=======
+     !'if housr = 1 and housrA = 1:
+     set housrA = 0
+     gt'sitr'
+     end'
+>>>>>>> 317_divan
 end
 --- divan ---------------------------------
 

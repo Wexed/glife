@@ -1,7 +1,12 @@
 # housecall
+<<<<<<< 153_housecall
 if $ARGS[0] = 'ninel0':
+=======
+if $ARGS[0]='ninel0':
+>>>>>>> 153_housecall
 cla
 *clr
+<<<<<<< 153_housecall
 '<center><img src="images\inBed\ninel00.jpg"></center>'
 'You open the door. Stands on the threshold of a pretty young girl with meitsinskim suitcase in hand.'
 '(You) - Hello, doctor'
@@ -182,11 +187,198 @@ cla
 			end
 		end
 	end
+=======
+'<center><img src="inBed/ninel00.jpg" ></center>'
+'You open the door. Stands on the threshold of a pretty young girl with meitsinskim traveling bag in his hand.'
+'(Do_You) - hello, doctor'
+'(doctor) - hello. My name Ninel Pavlovna - I substitute your local therapist. where the patient?'
+'(Do_You) - this is me... kha-kha-kha.'
+'(doctor) - It_Is_Clear. Then come - you need to go back to bed.'
+	 act'To carry out the doctor `s bedroom and lie down':
+	 cla
+	 *clr
+	 set ninelmet = 1
+	 '<center><img src="inBed/nadom0.jpg" ></center>'
+	 'The doctor sat on the edge of your bed and sprsil:'
+	 '(doctor)- At that complain, Sveta? Can I call you?'
+	 '(Do_You) - Of_Course... Kha, kha, kha... oh, doctor, surely, i have the flu - cough just kills and very sore throat. And the temperature is high.'
+	 '(doctor) - runny nose there? headaches? Aching bones?'
+	 '(Do_You) - Yes_I_Am-yes_they_are. A-Sneezy-and!'
+	 '(doctor) - Now I will examine you. Undress.'
+		 act'undress':
+		 cla
+		 *clr
+		 set minut = minut + 5 
+		 set horny = horny + 10
+		 clr
+		 gs'stat'
+		 '<center><img src="inBed/nadom1.jpg" ></center>'
+		 'You undressed and listened to the doctor for a long time your lungs. Her hands cool and gentle touch and a stethoscope like a weasel...'
+		 '(doctor) - Yes_I_Am, crepitation... Now open your mouth. here we go - "and-and-and"...'
+			 act'A-a-a':
+			 cla 
+			 *clr
+			 '<center><img src="inBed/ninel03.jpg" ></center>'
+			 'You have opened my mouth and the doctor examined your sore throat'
+			 '(doctor) - hmmm... throat blushed and inflamed... Now it is necessary to measure the temperature.'
+				 act'Stick a thermometer in her mouth':
+				 cla
+				 *clr
+				 '<center><img src="inBed/ninel04.jpg" ></center>'
+				 '(doctor) No, not. The temperature should be measured rectally.'
+				 '(Do_You) - E-e-e...'
+				 '(doctor) - do not be afraid, Sveta, is not painful.' 
+				 '(Do_You) - Well...'
+				 '(doctor) - I`m_sure. Come - lie down on his stomach and spread your arms buttocks.'
+					 act'substitute the ass':
+					 cla
+					 *clr
+					 set minut = minut + 10
+					 set horny = horny + 10
+					 clr
+					 gs'stat'
+					 '<center><img src="inBed/nadom2.jpg" ></center>'
+					 'You obediently flips and substitute the ass. Dr. lubricate your anus lubricant and deft movement introduces a thermometer. you flinch, but no pain, and pleasure. The doctor does not leave the thermometer just stick in your ass, and slowly moves it there-here and it is very nice. Do you feel the growing excitement.'
+						 if horny >= 50:
+							 act'Moan with pleasure':
+							 cla 
+							 *clr 
+							 '<center><img src="inBed/nadom3.jpg" ></center>'
+							 'The doctor takes out a thermometer from your priests and checks'
+							 '(doctor) 39,2... very bad. Turn, you`re_welcome, on the back - you need to palpate lymph nodes.'
+								 act'Roll over on his back':
+								 cla
+								 *clr
+								 set minut = minut + 15
+								 set horny = horny + 10
+								 clr
+								 gs'stat'
+								 '<center><img src="inBed/nadom5.jpg" ></center>'
+								 'The doctor began to stroke and knead your stomach and thighs. You are not sure, it is a medical procedure - too long and tenderly she delalet, but you are very nice and you did not object.' 
+								 'excitation, meanwhile, all increases, you feel, as your pussy moistened and begins to whine sweet...'
+									 act'Blush with embarrassment': 
+									 cla
+									 *clr
+									 set horny = horny + 15
+									 set time = time + 15
+									 clr
+									 gs'stat'
+									 '<center><img src="inBed/nadom6.jpg" ></center>'
+									 'You blush with embarrassment, but then fall below the hands of the doctor and she begins to caress your pussy'
+									 '(Do_You) - doctor, what you do?! - simultaneously embarrassed, indignant and frightened screams you.'
+									 '(doctor) - I treat you, stupid. I feel your magic, which means you`re one of us.'
+									 '(Do_You) - So you?!'
+									 '(doctor) - Yes_I_Am, Only my magic special - Tantric. Heard about this?'
+									 '(Do_You) - No, I do not remember...'
+									 '(doctor) - This is the magic, based on sensuality and sex. roughly speaking, I can conjure, Only when having sex.'
+									 '(Do_You) - i.e...?'
+									 '(doctor) - i.e., if you and I `s have sex - I heal you. Do you agree?'
+									 '(Do_You) - And in return?'
+									 '(doctor) - nothing - I do it solely for their own satisfaction. I, see, whether, have orgasms, only if conjure.'
+									 '(Do_You) - Then of course - I agree.'
+										 act'Surrender to the gentle hands Ninel':gt'housecall','ninel2'
+									 end
+								 end
+							 end
+						 end 
+					 
+						 act'rebel':
+						 cla
+						 *clr
+						 '<center><img src="inBed/nadom3.jpg" ></center>'
+						 '(Do_You) - doctor, what you do?'
+						 'The doctor takes out a thermometer from your priests and calmly answers:'
+						 '(doctor) - You measure the temperature. 39,2 - very bad.'
+							  if sick< 48:
+								 act'doctor, that with me?':
+								 cla 
+								 '(Do_You, fright) - doctor, that with me?' 
+								 '(doctor) Do you really have the flu. Now I `ll give you an injection of antibiotic and antipyretic .'
+									 act'Lie on your stomach and bare ass':
+									 cla
+									 *clr
+									 set minut = minut + 10
+									 set sick = sick - 2
+									 set lekar = lekar + 3
+									 clr
+									 gs'stat'
+									 '<center><img src="inBed/nadom4.jpg" ></center>'
+									 'The doctor give you an injection in the ass - you cried'
+									 '(doctor) - already all, already all.  You prescribe bed rest, hot drink, antibiotics, nose drops and a balanced diet. When the temperature drops - the clinic appointment.'
+									 '(Do_You) - thanks you, doctor - necessarily.'
+									 'The doctor said goodbye and left.'	
+										 act'Back to bed':gt'bedr'
+									 end
+								 end
+							 end
+							 
+							 if sick >= 48:
+								 act'doctor, that with me?':
+								 cla
+								 '(Do_You, fright) - doctor, that with me?' 
+								 '(doctor) - I`M_Afraid, that you have a sore throat, Sveta. I would advise you to inpatient treatment'
+								 '(Do_You) - This is what - hospitalized, what-whether?'
+								 '(doctor) - Well yes'
+									 !'act'agree':
+									 cla 
+									 '(Do_You, sobbing) - oh... Kha-kha-kha... If you think, that it is really necessary...'
+									 '(doctor) - I`M_Afraid, yes - this is a serious disease... But do not be afraid - we have a good hospital.'
+									 '(Do_You) - well, I agree.' 
+										 act'Go to hospital':
+										 cla
+										 *clr
+										 set minut = minut + 120
+										 gt'hospital','start'
+										 end
+									 end' 
+									 
+									 act'Opt_Out':
+									 cla
+									 *clr
+									 '(Do_You, sobbing) - oh, doctor, I do not want to hospital...'
+									 '(doctor, reflectively) - well-at... probably all-still possible. Then I `ll give you a couple of jabs - for a start...'
+									 '(Do_You) - oh, thank_you, doctor!'
+										 act'Lie on your stomach and bare ass': 
+										 cla
+										 set minut = minut + 15
+										 set horny = 100
+										 clr
+										 gs'stat'
+										 '<center><img src="inBed/nadom9.jpg" ></center>'
+										 'The doctor made вЂ‹вЂ‹you a few shots in the ass, and you suddenly seized incredible sexual arousal. Between her thighs as if you fire broke out, sweet pussy ache and flowed, breasts grew heavy, nipples stiffened and hardened...'
+										 '(Do_You) - doctor, what`s happening? - you scream in fright and embarrassment, but your voice treacherously broken on voluptuous groan'
+										 '(doctor) - Yup! I knew - I feel your magic, which means you`re one of us.'
+										 '(Do_You) - So you?!.'
+										 '(doctor) - Yes_I_Am, Only my magic special - Tantric. Heard about this?'
+										 '(Do_You) - No, I do not remember...'
+										 '(doctor) - This is the magic, based on sensuality and sex. roughly speaking, I can conjure, Only when having sex.'
+										 '(Do_You) - i.e...?'
+										 '(doctor) - i.e., if you and I `s have sex - I heal you. Do you agree?'
+										 '(Do_You) - And in return?'
+										 '(doctor) - nothing - I do it solely for their own satisfaction. I, see, whether, have orgasms, only if conjure.'
+										 '(Do_You) - Then of course - I agree.'
+											 act'Surrender to the gentle hands Ninel':gt'housecall','ninel2'
+										 end
+									 end 
+								 end
+							 end
+						 end
+					 end
+				 end
+			 end
+		 end
+	 end
+>>>>>>> 153_housecall
 end
 
+<<<<<<< 153_housecall
 if $ARGS[0] = 'ninel1':
+=======
+if $ARGS[0]='ninel1':
+>>>>>>> 153_housecall
 cla
 *clr
+<<<<<<< 153_housecall
 '<center><img src="images\inBed\ninel10.jpg"></center>'
 'Thank you in advance opened the door once again to not get up, so when the phone rang, you hoarse voice shouted:'
 '(You) - Open! Kha-kha ... I´m in the bedroom!'
@@ -348,11 +540,179 @@ cla
 			end
 		end
 	end
+=======
+'<center><img src="inBed/ninel10.jpg" ></center>'
+'Thank you in advance opened the door once again to not get up, that_is_why, when the phone rang, You hoarse voice shouted:'
+'(Do_You) - open! Kha-kha... I`m in the bedroom!'
+'Young cute girl with meitsinskim traveling bag in his hand goes into your bedroom and stopped by the bed, carefully considering you'
+'(Do_You) - hello, doctor'
+'(doctor) - hello. My name Ninel Pavlovna - I substitute your local therapist. This you call a doctor?'
+'(Do_You) - this is me... kha-kha-kha.' 
+'(doctor)- At that complain, Sveta? Can I call you?'
+	 act'complain':
+	 cla
+	 *clr
+	 set ninelmet = 1
+	 '<center><img src="inBed/ninel11.jpg" ></center>'
+	 '(Do_You) - Of_Course... Kha, kha, kha... oh, doctor, surely, i have the flu - cough just kills and very sore throat. And the temperature is high.'
+	 '(doctor) - runny nose there? headaches? Aching bones?'
+	 '(Do_You) - Yes_I_Am-yes_they_are. A-Sneezy-and!'
+	 'The doctor sat on the edge of your bed and took you by the wrist, listening to the pulse.'
+	 'you thought, that emanates from her fingers a force, but decided, it`s you from the heat of imagining'
+	 '(doctor) - Undress - let you listen.'
+		 act'undress':
+		 cla
+		 *clr
+		 set minut = minut + 5 
+		 set horny = horny + 10
+		 clr
+		 gs'stat'
+		 '<center><img src="inBed/ninel12.jpg" ></center>'
+		 'You undressed and listened to the doctor for a long time your lungs. Her hands cool and gentle touch and a stethoscope like a weasel...'
+		 'Do you feel the growing excitement'
+		 '(doctor) - Rattling very unpleasant... Now open your mouth. here we go - "and-and-and"...'
+			 act'A-a-a':
+			 cla 
+			 *clr
+			 '<center><img src="inBed/ninel03.jpg" ></center>'
+			 'You have opened my mouth and the doctor examined your sore throat'
+			 '(doctor) - Yes_I_Am... throat blushed and inflamed... Now it is necessary to measure the temperature.'
+				 act'Stick a thermometer in her mouth':
+				 cla
+				 *clr
+				 '<center><img src="inBed/ninel04.jpg" ></center>'
+				 '(doctor) No, not. The temperature should be measured rectally.'
+				 '(Do_You) - E-e-e...'
+				 '(doctor) - do not be afraid, Sveta, is not painful.' 
+				 '(Do_You) - Well...'
+				 '(doctor) - I`m_sure. Come - lie down on his stomach and spread your arms buttocks.'
+					 act'substitute the ass':
+					 cla
+					 *clr
+					 set minut = minut + 10
+					 set horny = horny + 10
+					 clr
+					 gs'stat'
+					 '<center><img src="inBed/rectaltemp.jpg" ></center>'
+					 'You obediently flips and substitute the ass. Dr. lubricate your anus lubricant and deft movement introduces a thermometer. you flinch, but no pain, and pleasure. The doctor does not leave the thermometer just stick in your ass, and slowly moves it there-here and it is very nice.'
+					 'Do you feel, it`s cool excited - your breasts were filled with sweet and aching, and wet pussy.'
+					 'And - again you feel, both at the hands of Ninel apply force'
+						 act'doctor, what`s happening?':
+						 cla
+						 *clr
+						 set minut = minut + 10
+						 set horny = horny + 10
+						 clr
+						 gs'stat'
+						 '<center><img src="inBed/ninel13.jpg" ></center>'
+						 'Ninel lies down next to you and starts hugging and frankly caress your half-naked body.'
+						 'Are you confused and frightened by her behavior, but it is so tender, and you are so excited, that you simply can not resist. The_only, that you manage - is choking sprsit:'
+						 '(Do_You) - doctor, what you do? what`s happening?'
+						 '(doctor) - A - felt! I knew immediately, you`re one of us, and therefore I can take advantage of their power peacefully.'
+						 '(Do_You) - So you?!'
+						 '(doctor) - Yes_I_Am, Only my magic special - Tantric. Heard about this?'
+						 '(Do_You) - No, I do not remember...'
+						 '(doctor) - This is the magic, based on sensuality and sex. roughly speaking, I can conjure, Only when having sex.'
+						 '(Do_You) - i.e...?'
+						 '(doctor) - i.e., if you and I `s have sex - I heal you. Do you agree?'
+						 '(Do_You) - And in return?'
+						 '(doctor) - nothing - I do it solely for their own satisfaction. I, see, whether, have orgasms, only if conjure.'
+						 '(Do_You) - Then of course - I agree.'
+							 act'Surrender caresses Ninel':
+							 cla
+							 *clr
+ 							 set minut = minut + 10
+							 set horny = horny + 10
+							 clr
+							 gs'stat'
+							 '<center><img src="inBed/ninel14.jpg" ></center>'
+							 'Ninel opens his robe, exposing beautiful breasts with nipples strained. do you understand, that she too excited.'
+							 'She caresses your breasts with her hands, then his lips, tugging and sucking nipples. You moan softly and it inflames her even more.'
+							 'Ninel lifts the hem - underwear on it there - and runs fingers between her legs.'
+								 act'enjoy':
+								 cla
+								 *clr
+								 set minut = minut + 10
+								 set horny = horny + 10
+								 clr
+								 gs'stat'
+								 '<center><img src="inBed/ninel15.jpg" ></center>'
+								 'You groan under its ability to caress her lips and Ninel - Oh dear! - glide over your body lower and lower...'
+								 'minute, and she crouches to your burning, juices flowing pussy and her tongue out at her wet depths'
+								 'You pass voluptuous cry, then another and another... Waves of pleasure pierce your body trembling from the womb to the fingertips. You are incredibly well!'
+								 'ah, A-and-x! yet, yet-about-about-about! - pray you.'
+									 act'change position':
+									 cla
+									 *clr
+									 set horny = 100
+									 set kuni = kuni + 1
+									 clr
+									 gs'stat'
+									 '<center><img src="inBed/ninel16.jpg" ></center>'
+									 'Sharp movement Ninel leans forward and sits on top of you. Do you feel, as her pussy juices flowing out of your rubs. you moan, clenches his hands firm buttocks and the doctor held her. Harder! even more! Oh - what bliss!!'
+									 'Ninel rubs on you faster, powerful, almost masculine tolchkakmi, voluptuously groaning with every movement - it`s crazy!'
+	 								 '- oh, Sveta, Sveta! - doctor exhales: - I want you! caress me, weasel-and-and-ouch!'
+										 act'caress Ninel':
+										 cla
+										 *clr
+										 set ninelsex = ninelsex + 1
+										 set lesbian = lesbian + 1
+										 '<center><img src="inBed/ninel17.jpg" ></center>'
+										 'Ninel you put on your knees and shoves his fingers into her vagina inflamed. She is so abundantly flowing, in that it comprises fingers with a loud squelch.'
+										 'doctor screams, flex, ottopyrivaya his magnificent ass and she is placed on your fingers. her scent, her moans, her delightful body circling your head. You furiously fuck Ninel hand, and she squirms beneath you and begs:'
+										 '- You`Re_Welcome, do not stop! here we go! that is the-and-ak! Yes_I_Am-and-and! Oh yeah-and-and!!!'
+											 act'...':
+											 cla
+											 *clr
+											 if ninelsex = 1:set girl = girl + 1
+											 set orgasm = orgasm + 1
+											 set sick = 0
+											 set horny = 0
+											 set health = vital*10 + stren*5+1000
+											 set willpower = intel*5 + will*5+1000
+											 set manna = (intel*magik) + magik*100 + vital*10 + rikudo
+											 clr
+											 gs'stat'
+											 '<center><img src="inBed/ninel18.jpg" ></center>'
+											 'Do you feel, that here-about to explode and how Ninel-somehow gets it. It upsets you on the back and down the top, dropping to your languishing pussy and inserting itself you my wet, with wide-open jaws, vagina.'
+											 'Without hesitation, you run into it again and start furiously fingers her nadrachivat, while Ninel instrument of the language you have between your legs. another minute, vagina and the doctor convulsively compressed, of it on your face and hands thick white liquid spills. The whole body is shaking in spasms Ninel, She muffled grunts, burying his tongue between his legs you. do you understand, she cums and it pulls like a spring'
+											 'You pierces stunning force orgasm. You shout from the incredible, almost unbearable pleasure, frantically bending, thirds of the crotch of the person Ninel and ends - long, painfully slow. Orgasm lasts and lasts without end.'
+												 act'Lie in exhaustion': 
+												 cla
+												 *clr
+												 set minut = minut + 30
+												 clr
+												 gs'stat'
+												 '<center><img src="inBed/ninel19.jpg" ></center>'
+												 'You go down on the bed in the sweet exhaustion, still hugging Ninel. She opusketsya close and gently kissed you, asks:'
+												 '(Ninel) - well, how are you feeling?'
+												 '(Do_You) - Oh-oh... Just fine, - you answer and only then realize, how you are right - of the disease has disappeared, you are full of health and a great mood. A sweet exhaustion makes this bouquet of sensations even more enjoyable'
+												 '(Ninel) - Well. This is the magic, Babe. M-m-m... You are a miracle - a long time I did not get so much pleasure from his magic. If you get sick again - immediately call me. Well - look for me in the clinic.'
+												 'You promised to be sure to find it, closed his eyes and fell asleep. While you were sleeping, Ninel quietly dressed and went.'
+													 act'sleep':gt'bed2'
+												 end
+											 end
+										 end
+									 end
+								 end
+							 end
+						 end
+					 end
+				 end
+			 end
+		 end
+	 end
+>>>>>>> 153_housecall
 end
 
+<<<<<<< 153_housecall
 if $ARGS[0] = 'ninel2':
+=======
+if $ARGS[0]='ninel2':
+>>>>>>> 153_housecall
 cla
 *clr
+<<<<<<< 153_housecall
 set minut += 10
 set horny += 10
 clr
@@ -438,14 +798,106 @@ gs 'stat'
 		end
 	end
 end
+=======
+ set minut = minut + 10
+set horny = horny + 10
+clr
+gs'stat'
+'<center><img src="inBed/ninel13.jpg" ></center>'
+'Ninel lies down next to you and starts hugging and frankly caress your half-naked body.'
+	 act'Surrender caresses Ninel':
+	 cla
+	 *clr
+	 set minut = minut + 10
+	 set horny = horny + 10
+	 clr
+	 gs'stat'
+	 '<center><img src="inBed/ninel14.jpg" ></center>'
+	 'Ninel opens his robe, exposing beautiful breasts with nipples strained. do you understand, that she too excited.'
+	 'She caresses your breasts with her hands, then his lips, tugging and sucking nipples. You moan softly and it inflames her even more.'
+	 'Ninel lifts the hem - underwear on it there - and runs fingers between her legs.'
+		 act'enjoy':
+		 cla
+		 *clr
+		 set minut = minut + 10
+		 set horny = horny + 10
+		 clr
+		 gs'stat'
+		 '<center><img src="inBed/ninel15.jpg" ></center>'
+		 'You groan under its ability to caress her lips and Ninel - Oh dear! - glide over your body lower and lower...'
+		 'minute, and she crouches to your burning, juices flowing pussy and her tongue out at her wet depths'
+		 'You pass voluptuous cry, then another and another... Waves of pleasure pierce your body trembling from the womb to the fingertips. You are incredibly well!'
+		 'ah, A-and-x! yet, yet-about-about-about! - pray you.'
+			 act'change position':
+			 cla
+			 *clr
+			 set horny = 100
+			 set kuni = kuni + 1
+			 clr
+			 gs'stat'
+			 '<center><img src="inBed/ninel16.jpg" ></center>'
+			 'Sharp movement Ninel leans forward and sits on top of you. Do you feel, as her pussy juices flowing out of your rubs. you moan, clenches his hands firm buttocks and the doctor held her. Harder! even more! Oh - what bliss!!'
+			 'Ninel rubs on you faster, powerful, almost masculine tolchkakmi, voluptuously groaning with every movement - it`s crazy!'
+			 '- oh, Sveta, Sveta! - doctor exhales: - I want you! caress me, weasel-and-and-ouch!'
+				 act'caress Ninel':
+				 cla
+				 *clr
+				 set ninelsex = ninelsex + 1
+				 set lesbian = lesbian + 1
+				 '<center><img src="inBed/ninel17.jpg" ></center>'
+				 'Ninel you put on your knees and shoves his fingers into her vagina inflamed. She is so abundantly flowing, in that it comprises fingers with a loud squelch.'
+				 'doctor screams, flex, ottopyrivaya his magnificent ass and she is placed on your fingers. her scent, her moans, her delightful body circling your head. You furiously fuck Ninel hand, and she squirms beneath you and begs:'
+				 '- You`Re_Welcome, do not stop! here we go! that is the-and-ak! Yes_I_Am-and-and! Oh yeah-and-and!!!'
+					 act'...':
+					 cla
+					 *clr
+					 if ninelsex = 1:set girl = girl + 1
+					 set orgasm = orgasm + 1
+					 set sick = 0
+					 set horny = 0
+					 set health = vital*10 + stren*5+1000
+					 set willpower = intel*5 + will*5+1000
+					 set manna = (intel*magik) + magik*100 + vital*10 + rikudo
+					 clr
+					 gs'stat'
+					 '<center><img src="inBed/ninel18.jpg" ></center>'
+					 'Do you feel, that here-about to explode and how Ninel-somehow gets it. It upsets you on the back and down the top, dropping to your languishing pussy and inserting itself you my wet, with wide-open jaws, vagina.'
+					 'Without hesitation, you run into it again and start furiously fingers her nadrachivat, while Ninel instrument of the language you have between your legs. another minute, vagina and the doctor convulsively compressed, of it on your face and hands thick white liquid spills. The whole body is shaking in spasms Ninel, She muffled grunts, burying his tongue between his legs you. do you understand, she cums and it pulls like a spring'
+					 'You pierces stunning force orgasm. You shout from the incredible, almost unbearable pleasure, frantically bending, thirds of the crotch of the person Ninel and ends - long, painfully slow. Orgasm lasts and lasts without end.'
+						 act'Lie in exhaustion': 
+						 cla
+						 *clr
+						 set minut = minut + 30
+						 clr
+						 gs'stat'
+						 '<center><img src="inBed/ninel19.jpg" ></center>'
+						 'You go down on the bed in the sweet exhaustion, still hugging Ninel. She opusketsya close and gently kissed you, asks:'
+						 '(Ninel) - well, how are you feeling?'
+						 '(Do_You) - Oh-oh... Just fine, - you answer and only then realize, how you are right - of the disease has disappeared, you are full of health and a great mood. A sweet exhaustion makes this bouquet of sensations even more enjoyable'
+						 '(Ninel) - Well. This is the magic, Babe. M-m-m... You are a miracle - a long time I did not get so much pleasure from his magic. If you get sick again - immediately call me. Well - look for me in the clinic.'
+						 'You promised to be sure to find it, closed his eyes and fell asleep. While you were sleeping, Ninel quietly dressed and went.'
+							 act'sleep':gt'bedr'
+						 end
+					 end
+				 end
+			 end
+		 end
+	 end
+end 
+>>>>>>> 153_housecall
 
 
 
+<<<<<<< 153_housecall
 if $ARGS[0] = 'ninel3':
+=======
+if $ARGS[0]='ninel3':
+>>>>>>> 153_housecall
 cla
 *clr
 set horny = 50
 clr
+<<<<<<< 153_housecall
 gs 'stat'
 '<center><img src="images\inBed\ninel20.jpg"></center>'
 'You lie in bed and quietly waiting Ninel fingers caress her pussy to prepare herself for her coming, so when the bell rings you are ready.'
@@ -555,5 +1007,117 @@ gs 'stat'
 		end
 	end
 end
+=======
+gs'stat'
+'<center><img src="inBed/ninel20.jpg" ></center>'
+'You `re lying in bed waiting for Ninel and gently caress her fingers her pussy, to prepare themselves for the arrival of her, so when the bell rings .'
+	 act'Come - openly!':
+	 cla
+	 *clr
+	 '<center><img src="inBed/ninel21.jpg" ></center>'
+	 '(Do_You) - Come - openly! - Rattling you my sore throat and enters the room Ninel.'
+	 '(Ninel) - hello, Svetsik. again ill?'
+	 '(Do_You, coughing into a fist) - Yup. I `ll fly?'
+	 '(Ninel) - Of_Course, Babe. Undress - I`ll listen.'
+	 '(Do_You) - why? You sorceress...'
+	 '(Ninel laughs) - silly. How could you not know much about magic. I did need to know, from which I will treat, otherwise it will happen as the old song - make like a storm, but I got the goat. magic - fine thing'
+	 '(Do_You) - Here`s how... Well then.'
+		 act'undress':
+		 cla
+		 *clr
+		 set horny = 75
+		 clr
+		 gs'stat'
+		 '<center><img src="inBed/ninel22.jpg" ></center>'
+		 'You undress and Ninel listens to your lungs. as usual, her hands are light and tender and the touch of her stethoscope your breasts fill with sensual warmth'
+		 '(Ninel) - Yes_I_Am... You again wheezing. And much. the temperature is high?'
+		 '(Do_You) - A-Sneezy-and! Yes_I_Am - 39,6...'
+		 '(Ninel) - Oh, poor_little_soul. Bring_It_On-ka Pomeroy.'
+		 '(Do_You, winking) - as usual?'
+		 '(Ninel, smiling) - Well. You`re so excited and overthrowing measures - and look cum.'
+		 '(Do_You) - Do-at-at...'
+		 '(Ninel) - what - liked? A first feared... It`S_Nothing - another time'
+			 act'Pomeroy temperature':
+			 cla
+			 *clr
+			 '<center><img src="inBed/ninel23.jpg" ></center>'
+			 'Ninel looking at the thermometer and shakes his head:'
+			 '(Ninel) - Yes_I_Am... things are bad. Well nothing - This will help us grief.'
+			 'She slowly pulls down your blanket...'
+				 act'Unbutton his robe Ninel':
+				 cla
+				 *clr
+				 set horny = 100
+				 clr
+				 gs'stat'
+				 '<center><img src="inBed/ninel24.jpg" ></center>'
+				 'You can no longer hold back - rather, rather enjoy caresses Ninel. Poryvstym movement to unbutton her gown'
+				 'Skillful hands of the doctor slide on your body, but not in a hurry to the most desirable townships'
+				 '(Do_You) - caress me - I`m burnin! I want you! - breathless whisper you, but your cruel mistress just grins:'
+				 '(Ninel) - ask me - show me, how much you want.'
+				 '(Do_You) - Ninel, native, sweet, you`re_welcome - caress me! take me - i`m all yours! I beg you! I beg you - rather!!!'
+				 '(Ninel) - ask for more! begged me!'
+				 '(Do_You, almost crying) - You`Re_Welcome, you`re_welcome, you`re_welcome! I beg you, I pray thee - caress me!!! I`m dying to!!!'
+					 act'Beg and plead':
+					 cla
+					 *clr
+					 '<center><img src="inBed/ninel25.jpg" ></center>'
+					 'You beg and plead Ninel pity and finally it comes down to your pleas and her tongue flows into a sweet journey of your bosom'
+					 'You scream and moan, heat wave voluptuous body diverge, your pussy expires lustful juice and Ninel guzzles the juice'
+					 'You are coming to an end, Ninel when suddenly interrupted and broken voice commands:'
+					 '(Ninel) - now I. appease me'
+						 act'Ninel pleasing language':
+						 cla
+						 *clr
+						 '<center><img src="inBed/ninel26.jpg" ></center>'
+						 'Ninel spreads on the bed and you start to fondle and lick her vagina. Ninel incensed as you are - she shrieks and groans of your touch, out of her pussy oozing thick goo, you eagerly licks her but she flows and flows, zalivvaya your face and thigh'
+						 '(Ninel, through groans) - Good_For_You... A-ah! The Good Girl... come here-and-and..!'
+							 act'69':
+							 cla
+							 *clr
+							 '<center><img src="inBed/ninel27.jpg" ></center>'
+							 'You go into the pose "69" and lachinaete greedily lick each other, alternating affection cries and groans.'
+							 'You are getting closer and closer to the peak, and Ninel, It seems too, but then it stops again'
+							 '(Do_You) - You`Re_Welcome, you`re_welcome, go_ahead! I`ve been-about to finish! - pray you, and caressed her insistently, hoping for a reaction ontvetnuyu, but Ninel strongly otrvyaet you from yourself'
+							 '(Ninel) - No... not so! I want to, you to death itself.'
+								 act'masturbate pussy':
+								 cla
+								 *clr
+								 '<center><img src="inBed/ninel29.jpg" ></center>'
+								 'With a groan. Near Ninel does the same thing. view, which spreads through the room spicy languid smell your juices, your mistress moans and furious work fingers elevate you to the peak of bliss. You scream and squirm in orgasm and Neiel under you also beats and shouts - it also ends'
+									 act'Fall in exhaustion':
+									 cla
+									 *clr
+									 set horny = 0
+									 set minut = minut + 40
+									 set orgasm = orgasm + 1
+									 set lesbian = lesbian + 1
+									 set ninelsex = ninelsex + 1
+									 set SUB = SUB + 1
+									 set sick = 0
+									 set health = vital*10 + stren*5+1000
+									 set willpower = intel*5 + will*5+1000
+									 set manna = (intel*magik) + magik*100 + vital*10 + rikudo
+									 clr
+									 gs'stat'
+	 								 '<center><img src="inBed/ninel28.jpg" ></center>'
+									 'You are lying in the arms of Ninel and pant, departing from a crushing orgasm'
+									 'You chuvstuete polnosyu yourself healthy, Only extremely frazzled'
+									 '(Do_You) - Thank_U, sweet. - you whisper.'
+									 '(Ninel) - Pozhluysta. See me as-something in the clinic. With you I am particularly well.'
+									 'you promise, exhausted lean on wet crumpled sheet and go to sleep, Ninel and quietly dressed and leaves'
+										 act'sleep':gt'bedr'
+									 end
+								 end 
+							 end 
+						 end
+					 end
+				 end
+			 end
+		 end
+	 end
+end
+
+>>>>>>> 153_housecall
 --- housecall ---------------------------------
 

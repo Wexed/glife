@@ -1,4 +1,5 @@
 # torgpred
+<<<<<<< 098_torgpred
 gs 'stat'
 '<center><B><font color = maroon>Trade Representative</font></B></center>'
 '<center><img src="images\etogame\clener.jpg"></center>'
@@ -95,7 +96,168 @@ if SVqw = 2:
 		end
 	end
 
+=======
+gs'stat'
+'<center><B><font color=maroon>trade mission</font></B></center>'
+'<center><img src="pic/clener.jpg" ></center>'
+'Not a big room in which there are office desks and other office equipment. In the office there is a door that says "director"'
+'One of the tables sits Stas, for other Vitali, for the third table sits a girl Chief Accountant.'
+
+act 'GO_OUT':gt'clener','start'
+
+
+if SVqw=2:
+     if TorgPredDay!day:
+         if TorgPredZ=0 and TorgPredZV=0:
+             act 'take the job':
+             cls
+             TorgPredZ=3
+             minut+=5
+             TorgPredDay=day
+             gs'stat'
+             '<center><img src="pic/clener.jpg" ></center>'
+             'You have come to Stas for job. He smiled and handed you the paper. "do not forget. Supermarkets three pieces. You need to arrange the items in all supermarkets."'
+             act 'GO_OUT':gt'clener','start'
+             end
+         end
+     end
+     
+     
+     
+	 if TorgPredZ=0 and TorgPredZV=3:
+		 act 'get money':
+		 cls
+		 TorgPredZV=0
+		 minut+=5
+		 money+=500
+		 TPworkTimes+=1
+		 gs'stat'
+		 '<center><img src="pic/clener.jpg" ></center>'
+		 'You have come to Stas for money. He smiled and handed you 500 rubles'
+		     if StasikSex=0:
+		         if TPworkTimes>=3 and TPmainQW=0 and mesec = 0:
+		             if ski>0 or glamur>0:
+					 'Stas asked with interest "Well?"'
+						 act 'Very_Well!':
+						 cls
+						 TPmainQW=1
+						 minut+=5
+						 gs'stat'
+						 '<center><img src="pic/clener.jpg" ></center>'
+						 'You answered Stas that everything is fine and he smiled. "Our company only develops, and intelligent man there will be a place better. By_The_Way, let`s go to the cafe, you have not stamped for work."'
+							 act 'agree':
+							 cls
+							 minut+=15
+							 gs'stat'
+							 '<center><img src="pic/clener.jpg" ></center>'
+							 'You had to agree, because all of your new job and prospects depend on Stas. Stas and made you happy in the cafe, along the way talking about work. CafГ© Stas gallantly pushed to you chair.'
+							 act 'sit':gt'StasQW'
+							 end
+						 end
+						 
+						 act 'so-so.':
+						 cls
+						 TPmainQW=1
+						 minut+=5
+						 gs'stat'
+						 '<center><img src="pic/clener.jpg" ></center>'
+						 'You answered Stas that so-so and he grinned. "Our company only develops, and intelligent man there will be a place better. By_The_Way, let`s go to the cafe, you have not stamped for work."'
+							 act 'agree':
+							 cls
+							 minut+=15
+							 gs'stat'
+							 '<center><img src="pic/clener.jpg" ></center>'
+							 'You had to agree, because all of your new job and prospects depend on Stas. Stas and made you happy in the cafe, along the way talking about work. CafГ© Stas gallantly pushed to you chair.'
+							 act 'sit':gt'StasQW'
+							 end
+						 end
+					 end
+		         exit
+		         end
+		     end
+		     if TPmainQW=1:
+				 if StasikSex>0 and StVaGang=0:
+				 !Light gave Stas, he did not consider her a whore, and wants to continue the relationship
+				 ''
+				 
+				 end
+				 if StasikSex=0:
+				 !Light refused Stas, Stas is not happy and is all in the bank
+				 ''
+				 
+				 end
+		     end
+		     if StVaGang>0:
+		     !Stas and Valera believe whore Light
+		     ''
+		     
+		     end
+		 act 'GO_OUT':gt'clener','start'
+		 end
+	 end
+	 
+	  if TPmainQW=1 and StasikSex>0 and StVaGang=0:
+		'In view of Stas clearly glimpsed joy, when he sees you. in_a_low_voice, to not hear his colleagues are busy, it offers you to continue your relationship and start dating.'
+		 if bfa >= 1: 'you think, that your current boyfriend is unlikely to please, you accept this offer. Stas, of_course, very nice, but you first need to understand their current relationship.'
+		 if bfa < 1:
+		     act 'agree':
+			 'You answered Stas consent, to which he beamed and promised to call you back shortly.'
+			 TPmainQW=2
+			 $boy='Stas'
+			 boybodyrand = 1
+			 $boybody = 'high'
+			 boybodrand = 1
+			 $boybod = 'thin'
+			 boyfacerand = 3
+			 $boyface = 'blond'
+			 dick=15
+			 silavag=1
+			 harakBoy=1
+			 finance = 1
+			 vneshBoy=1
+			 $boyClo = 'dressed in jeans and a sweater.'
+			 set figurBoy = RAND (0,2)
+			 set titBoy = RAND (0,2)
+			 set haerBoy = RAND (0,3)
+			 izvrat = 0
+			 gs'boyfrend','start'
+			 stopboy = 0
+			 bfa=70
+			 boyonceA = 1
+			 cla
+			 gs'stat'
+			 act 'GO_OUT':gt'clener','start'
+		     end
+		 end
+		 
+		 act 'I need to think':
+		 'You answered Stas, you will find it very much, but you are not ready to give an answer, and ask him a little-just wait. Stas frowns, but accepts your answer.'
+		 cla
+		 act 'GO_OUT':gt'clener','start'
+		 end
+		
+		 act 'Contribute':
+		 TPmainQW=2
+		 'You quite sharply denied Stas, what he is offended: "Oh well! I-thought, we have that-something more, than an occasional census."'
+		 cla
+		 gs'stat'
+		 act 'GO_OUT':gt'clener','start'
+		 end
+	 end
+>>>>>>> 098_torgpred
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
 --- torgpred ---------------------------------
 

@@ -1,8 +1,14 @@
 # elevator
+<<<<<<< 546_elevator
 ACT 'Back':
 	gt 'hotel'
+=======
+ACT 'return':
+	gt 'inn'
+>>>>>>> 546_elevator
 END
 ACT 'Go to your room':
+<<<<<<< 546_elevator
 	msg 'Sorry, but the elevator is not working'
 	gt 'elevator'
 	!if nomer = 0
@@ -20,7 +26,27 @@ ACT 'Go to your room':
 	!end
 	!if nomer = 4
 	!   gt 'number4'
+=======
+	msg 'Excuse_Me, but the elevator is not working'
+	gt 'elevator'
+	!if nomer=0
+	!	msg 'You have not paid for this hotel'
+	!	gt 'elevator'
+	!end
+	!if nomer=1
+	!	gt 'number1'
+	!end
+	!if nomer=2
+	!	gt 'number2'
+	!end
+	!if nomer=3
+	!	gt 'number3'
+	!end
+	!if nomer=4
+	!	gt 'number4'
+>>>>>>> 546_elevator
 	!end
 END
+
 --- elevator ---------------------------------
 

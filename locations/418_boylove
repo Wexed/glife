@@ -1,4 +1,5 @@
 # boylove
+<<<<<<< 418_boylove
 if $ARGS[0] = 'haer':
 	if haerBoyA ! hcol:
 	bfA = bfA - 1
@@ -11,8 +12,23 @@ if $ARGS[0] = 'haer':
 	set bfA += 1
 	'<<$boyA>> says that you have beautiful hair.'
 	end
+=======
+if $ARGS[0]='haer':
+     if haerBoyA ! hcol:
+     bfA = bfA - 1
+         if haerBoyA = 0:'<<$boyA>> speaks, you are very beautiful, although he likes brunettes.'
+         if haerBoyA = 1:'<<$boyA>> speaks, you are very beautiful, although he likes the brown-haired.'
+         if haerBoyA = 2:'<<$boyA>> speaks, you are very beautiful, although he likes redheads.'
+         if haerBoyA = 3:'<<$boyA>> speaks, you are very beautiful, although he likes blondes.'
+     end
+     if haerBoyA = hcol:
+     set bfA = bfA + 1
+     '<<$boyA>> speaks, that you have beautiful hair.'
+     end 
+>>>>>>> 418_boylove
 end
 
+<<<<<<< 418_boylove
 if $ARGS[0] = 'figure':
 
 	if figurBoyA = 0:
@@ -55,8 +71,53 @@ if $ARGS[0] = 'figure':
 		'<<$boyA>> says that you are beautiful, but the woman should be in the body.'
 		end
 	end
+=======
+if $ARGS[0]='figure':
+
+	 if figurBoyA = 0:
+	     if bedra < 80:
+	     set bfA = bfA + 1
+	     '<<$boyA>> tells you, that you have a perfect figure.'
+	     end
+	     
+	     if bedra >= 80:
+	     set bfA = bfA - 1
+	     '<<$boyA>> speaks, that you really like him despite the fact, that he always met with hudyshku.'
+	     end
+	 end
+	 
+	 if figurBoyA = 1:
+	     if bedra > 80 and bedra < 100:
+	     set bfA = bfA + 1
+	     '<<$boyA>> tells you, that you have a perfect figure.'
+	     end
+	     
+	     if bedra <= 80:
+	     set bfA = bfA - 1
+	     '<<$boyA>> asks, whether you have anorexia.'
+	     end
+	     
+	     if bedra >= 100:
+	     set bfA = bfA - 1
+	     '<<$boyA>> asks, are you going to go on a diet.'
+	     end
+	 end
+	 
+	 if figurBoyA = 2:
+	     if bedra >= 100:
+	     set bfA = bfA + 1
+	     '<<$boyA>> tells you, that you have a perfect figure.'
+	     end
+	     
+	     if bedra < 100:
+	     set bfA = bfA - 1
+	     '<<$boyA>> speaks, you are beautiful, but a woman should be in the body.'
+	     end
+	 end
+>>>>>>> 418_boylove
 end
 
+<<<<<<< 418_boylove
 if $ARGS[0] = 'tits':
 !titBoyA
 	if titBoyA = 0:
@@ -99,6 +160,50 @@ if $ARGS[0] = 'tits':
 		'<<$boyA>> says that you are beautiful, though small breasts.'
 		end
 	end
+=======
+if $ARGS[0]='tits':
+!titBoyA
+	 if titBoyA = 0:
+	     if tits < 3:
+	     set bfA = bfA + 1
+	     '<<$boyA>> tells you, that you have beautiful breasts.'
+	     end
+	     
+	     if tits >= 3:
+	     set bfA = bfA - 1
+	     '<<$boyA>> speaks, that you really like him despite the fact, that he prefers small breasts.'
+	     end
+	 end
+	 
+	 if titBoyA = 1:
+	     if tits >= 3 and tits <= 4:
+	     set bfA = bfA + 1
+	     '<<$boyA>> tells you, that you have the perfect breasts.'
+	     end
+	     
+	     if tits < 3:
+	     set bfA = bfA - 1
+	     '<<$boyA>> speaks, that you have a beautiful, although small breasts.'
+	     end
+	     
+	     if tits > 4:
+	     set bfA = bfA - 1
+	     '<<$boyA>> speaks, that you have a really huge breasts.'
+	     end
+	 end
+	 
+	 if titBoyA = 2:
+	     if tits > 4:
+	     set bfA = bfA + 1
+	     '<<$boyA>> tells you, that you have great breasts.'
+	     end
+	     
+	     if tits <= 4:
+	     set bfA = bfA - 1
+	     '<<$boyA>> speaks, that you have a beautiful, although small breasts.'
+	     end
+	 end
+>>>>>>> 418_boylove
 
 end
 --- boylove ---------------------------------

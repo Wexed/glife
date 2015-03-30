@@ -1,7 +1,12 @@
 # park
+<<<<<<< 083_park
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 083_park
 cla
 *clr
+<<<<<<< 083_park
 gs 'parkivent'
 gs 'parkdin'
 $torchki = {
@@ -11,8 +16,20 @@ gs 'time'
 SNarkPriton = 1
 'The junkies look at you with a daunted gaze. They probably thought you are a police officer. Then one of them said, "We don''t sell no drugs. Go to the Drug House, ye can get zome there."'
 act 'Walk away from them': gt 'park','start'
+=======
+gs'parkivent'
+gs'parkdin'
+$torchki={
+cls
+gs'stat'
+gs'time'
+SNarkPriton=1
+'Torchki looked at you stupid detached gaze. But one of them said. "Slysh, if you need the crap, Go to the hut, here do not sell."'
+act 'Move away from them':gt'park','start'
+>>>>>>> 083_park
 }
 $sexloc = $CURLOC
+<<<<<<< 083_park
 '<center><B><font color = maroon>Park</font></B></center>'
 '<center><img src="images\etogame\park.jpg"></center>'
 clr
@@ -154,24 +171,188 @@ if SNarkPriton = 0: 'Near one of the shops roll <a href="exec: dynamic $torchki"
 	act 'Go to the highway near the park': gt 'Prostitute','start'
 
 	act 'Go to the fair': gt 'park','luna'
+=======
+set minut = minut + 30
+'<center><B><font color=maroon>park</font></B></center>'
+'<center><img src="pic/park.jpg" ></center>'
+clr
+gs'stat'
+gs'time'
+'Large urban park equipped with benches around the track. Although the majority of lights do not work at night and there may be dangerous.'
+if SNarkPriton=0:'Near one of the shops roll <a href="exec:dynamic $torchki">torchki</a>.'
+	 if car > 0 and cardrive = 5:
+	 set cardrive = 5
+	 'Near the park stands <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
+	 end
+
+	 if tanga = 0 and ski = 1 and hour > 6 and hour <= 20 or tanga = 0 and glamur = 1 and hour > 6 and hour <= 20:
+	 set nurand = RAND (0,100)
+		 if nurand >= 80:
+		 set manna = manna - 5
+		 set SUB = SUB + 1
+		 set horny = horny + SUB
+		 set nudity = nudity+1
+		 'A man passing by you whistled "Hey Devchenka, briefs-where is lost?"'
+		 'You blushed in shame and hurried deleted.'
+		 end
+	 end
+	 	 
+     act 'LEAVE THE PARK':
+     cla
+     set minut = minut + 30
+     gt'street'
+     end
+     
+     if hour>=10 and hour<=22:
+		 act 'Sit in a cafe in the park':
+		 cla
+		 *clr
+		 set minut=minut+30
+		 gt 'ParkKafe','food'
+		 end
+     end
+     
+     act 'Walk in the park 1 h':
+		 cla
+		 set minut+=60
+		 set parkrand = RAND (0,20)
+			 if hour>7 and hour<21:
+				 if parkrand<10 and parkrand>0:
+				 dynamic $parkrandivdin
+				 exit
+				 end
+				 !if parkrand>14:
+				 !dynamic $parkrandivdin
+				 !exit
+				 !end
+			 end
+		 set manna = manna + 10
+		 set willpower = willpower + 10
+		 gs'stat'
+		 'You leisurely stroll in the park. Breathing fresh air, reflecting on the vicissitudes of life.'
+		 act 'complete the walk':gt'park','start'
+     end
+     
+     if pusher = 1 and hour >= 6 and hour <= 21:
+     'You see merchant foolishness rubbing at the entrance to the park.'
+         if money >= 2000:
+			 act 'Buy pale lady (2000 RUB 1 dose)':
+			 cla
+			 set minut = minut + 10
+			 palelady = input ("How many doses you want to buy?")
+			 
+				 if palelady*2000 > money or palelady <= 0:
+				 'Not correct operation'
+				 end 
+				 
+				 if palelady*2000 <= money:
+				 set money = money - palelady*2000
+				 set dur = dur + palelady
+				 'You quickly hid the bundle is targeted and handed you a trader in your pocket. Then you will be able to sniff at home in the bedroom.'
+				 end
+			 act 'Get_Away':gt'park','start'
+			 end
+         else
+         'You do not have enough money even for a single dose.'
+         end
+     end
+     
+     if sport > 0 and parkrunday ! day:
+         act 'Jogging in the park 1 h':
+		 cla
+		 *clr
+		 set parkrunday = day
+		 set minut = minut + 30
+		 set manna = manna - 10
+		 set willpower = willpower - 10
+		 set beg = beg + 1
+		 set fat = fat - 8
+		 set speed = speed + 1
+		 set sweat = sweat + 3
+		 '<center><img src="pic/parkbeg.jpg" ></center>'
+		 'You`ve done a few laps around the park, out of breath and sweating tired.'
+		     if hour >= 20:
+			 set parkrand = RAND (0,10)
+				 if parkrand >= 8:
+				 'From the shade of a tree guy came, He came up to you and through clenched teeth "slut!", you dragged into the bushes.'
+					 act 'fight':
+					 cla
+					 set $nameV = 'rapist'
+					 !stats
+					 set strenV = 100
+					 set speedV = 50
+					 set agilV = 40
+					 set reactV = 40
+					 set vitalV = 50
+					 set intelV = 10
+					 set willV = 10
+					 !skills
+					 set magikV = 100
+					 set boxingV = 50
+					 set shootV = 100
+					 !parameters
+					 set healthV = vitalV*10 + strenV*5
+					 set mannaV = intelV*10 + magikV*10
+					 set willpowerV = willV*10
+					 set BonusAtakV = 0
+					 set BonusDefV = 0
+					 !Programme of Action
+					 set program = 1
+					 set RapistFight = 1
+					 if spellavtoklon = 1:set klon = 3
+	                 if spellbefshild = 1:set defence = 500
+					 gt'fight','start'
+					 end
+				 exit
+				 end
+             end
+		 act 'complete run':gt'park','start'
+		 end
+     
+     end
+     
+     act 'Go to the highway near the park':gt'park','whore'
+     
+     act 'Go to the attractions':gt'park','luna'
+>>>>>>> 083_park
 
 end
 
+<<<<<<< 083_park
 if $ARGS[0] = 'luna':
+=======
+if $ARGS[0]='luna':
+>>>>>>> 083_park
 cla
 *clr
+<<<<<<< 083_park
 set minut += 5
 '<center><B><font color = maroon>The Fun Fair</font></B></center>'
 '<center><img src="images\etogame\luna.jpg"></center>'
 clr
 gs 'stat'
 gs 'time'
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>attractions</font></B></center>'
+'<center><img src="pic/luna.jpg" ></center>'
+clr
+gs'stat'
+gs'time'
+>>>>>>> 083_park
 
 
+<<<<<<< 083_park
 'The fun fair sits in the hearts of the park and attracts families, people on a vacation and loving couples from all over the town. It''s a popular gathering spot and a place to forget your worries for a few hours.'
 if vladimirQW = 0 and hour >= 9 and hour <= 20 and week > 5 and vnesh > 10: '<a href="exec: GT ''qwloc''">There''s a strong looking man staring at you from the fences.</a>.'
+=======
+
+'Rides take a substantial part of the park and in the afternoon there is always the fuss of travelers, loving couples and mothers with children.'
+if vladimirQW=0 and hour >= 9 and hour <= 20 and week>5 and vnesh>10:'<a href="exec:GT ''qwloc''">Near the fence stands a strong man and looks at you</a>.'
+>>>>>>> 083_park
 
 
+<<<<<<< 083_park
 	if hour >= 9 and hour <= 20:
 		act 'Distribute flyers to earn money (50 rubles per hour)':
 		cla
@@ -334,12 +515,181 @@ if vladimirQW = 0 and hour >= 9 and hour <= 20 and week > 5 and vnesh > 10: '<a 
 	end
 
 act 'Go back to the park': gt 'park','start'
+=======
+     if hour >= 9 and hour <= 20:
+         act 'Distributing flyers to earn 50 rubles per hour':
+         cla
+         *clr
+         '<center><img src="pic/flaer.jpg" ></center>'
+         'You ran for an hour in the park and handed out flyers to visitors with a silly smile on his face. Then you got 50 rubles.'
+		 set minut = minut + 60
+		 set money = money + 50
+		 set manna = manna - 5
+		 act 'move_away':gt'park','luna'
+         end
+     end
+     
+     if hour >= 9 and hour <= 20 and money >= 50:
+         act 'eat shawarma 50 RUB':
+         cla
+         *clr
+         '<center><img src="pic/luna1.jpg" ></center>'
+         set minut = minut + 30
+		 set health = health + 10
+		 set money = money - 50
+		 set manna = manna + 5
+		 set willpower = willpower + 5
+			 if energy >= 30:
+			  set fat = fat + 7
+			 'You can no longer have.'
+			 end
+			 if energy >= 20 and energy < 30:
+			 set fat = fat + 5
+			 set energy = energy + 10
+			 'You pushed through the power of a Shawarma.'
+			 end
+			 if energy < 20:
+			 set energy = energy +20
+			 set fat = fat + 3
+			 'You gladly ate Shawarma.'
+			 end
+         act 'move_away':gt'park','luna'
+         end
+     end
+     
+     if hour >= 9 and hour <= 20 and money >= 50:
+         act 'drink lemonade 50 RUB':
+         cla
+         *clr
+         '<center><img src="pic/luna1.jpg" ></center>'
+         set minut = minut + 30
+		 set health = health + 10
+		 set money = money - 50
+		 set manna = manna + 5
+		 set willpower = willpower + 5
+			 if water >= 20:
+			 set fat = fat + 3
+			 'Lemonade in you no longer climbs.'
+			 end
+			 if water < 20:
+			 set fat = fat + 2
+			 'You gladly drank lemonade jar.'
+			 set water = water +20
+			 end
+         act 'move_away':gt'park','luna'
+         end
+     end
+     
+     if hour >= 9 and hour <= 20 and money >= 100:
+         act 'Shoot in the dash 100 RUB':
+         cla
+         *clr
+         '<center><img src="pic/tir.jpg" ></center>'
+         set minut = minut + 30
+         set money = money - 100
+         'you paid 100 rubles for ten bullets. If you manage to get all 10 time, you will win a teddy bear.'
+             act 'shoot':
+             cla
+             set tirkoef = agil + shoot
+             set tirmin = tirkoef*20/100
+             set tirand = RAND (tirkoef - tirmin,tirkoef + tirmin)
+                 if tirand >= 80:
+                 set mishka = mishka + 1
+                 set manna = manna + 5
+                 'You just put all 10 bullets in goals and won a teddy bear'
+                 end
+                 if tirand < 80 and tirand >= 70:
+                 'Eh, You missed only once.'
+                 end
+                 if tirand < 70 and tirand >= 60:
+                 'Do_You 8NIL just hit the target  2 times missed.'
+                 end 
+                 if tirand < 60 and tirand >= 50:
+                 'Do_You 7NIL just hit the target  3 times missed.'
+                 end 
+                 if tirand < 50 and tirand >= 40:
+                 'Do_You 6five times and hit the target 4 times missed.'
+                 end 
+                 if tirand < 40 and tirand >= 30:
+                 'Do_You 5five times and hit the target 5five times missed.'
+                 end
+                 if tirand < 30 and tirand >= 25:
+                 'Do_You 4 times hit the target and 6five times missed.'
+                 end
+                 if tirand < 25 and tirand >= 20:
+                 'Do_You 3 times hit the target and 7NIL just missed.'
+                 end
+                 if tirand < 20 and tirand >= 15:
+                 'Do_You 2and twice hit the target and 8NIL just missed.'
+                 end
+                 if tirand < 15 and tirand >= 10:
+                 'Do_You 1 just hit the target  9five times missed.'
+                 end
+                  if tirand < 10:
+                 'You have never hit the target.'
+                 end
+             set shoot = shoot + 1
+             act 'move_away':gt'park','luna'
+             end
+         end
+     end
+     
+     if hour >= 9 and hour <= 20 and money >= 20:
+         act 'Hit the dynamometer 20 RUB':
+         cla
+         *clr
+         '<center><img src="pic/silomer.jpg" ></center>'
+         'you paid 20 rubles for a blow to the dynamometer.'
+             act 'hit':
+             cla
+			 set minut = minut + 30
+			 set money = money - 20
+			 set stKo = stren*20/100
+			 set damage = RAND(stren-stKo,stren+stKo)
+			 if stren < 30:set stren = stren + 1
+			 if stren >= 30:set stren = stren + RAND (0,1)
+			 'Do_You, that there are forces struck on the dynamometer and the screen lit figure <<damage>>'
+			 if damage > maxdamage:set maxdamage = damage&'Hmm, new record.'
+			 act 'move_away':gt'park','luna'
+			 end
+         end
+     end
+     
+     if hour >= 9 and hour <= 20 and money >= 50:
+         act 'Ride on the carousel 50 RUB':
+         cla
+         *clr
+         '<center><img src="pic/karusel.jpg" ></center>'
+         'you paid 50 rubles and sat in the carousel.'
+		 set minut = minut + 30
+		 set money = money - 50
+		 if will < 30:set will = will + 1
+		 if will >= 30:set will = will + RAND (0,1)
+		 set willpower = willpower + 10
+		 set manna = manna + 10
+		 'You have a great ride, already dazzled.'
+		 act 'move_away':gt'park','luna'
+         end
+     end
+     
+     
+     if hour >= 9 and hour <= 20:
+         act 'The one-armed bandit':gt'park','avtomat'
+     end
+   
+act 'Get_Away':gt'park','start'
+>>>>>>> 083_park
 end
 
+<<<<<<< 083_park
 if $ARGS[0] = 'avtomat':
+=======
+if $ARGS[0]='avtomat':
+>>>>>>> 083_park
 cla
 *clr
 clr
+<<<<<<< 083_park
 gs 'stat'
 gs 'time'
 '<center><img src="images\etogame\avtomat.jpg"></center>'
@@ -348,12 +698,27 @@ if money >= 5 and hour <= 20:
 	act 'Throw in 5 rubles and pull the lever': gt 'park','avtomat2'
 	end
 act 'Move away from the slot machine': gt 'park','luna'
+=======
+gs'stat'
+gs'time'
+'<center><img src="pic/avtomat.jpg" ></center>'
+'Rules of the game are very simple, toss a coin 5 rubles and pull lever. jackpot 1000.'
+if money >= 5 and hour <= 20:
+	 act 'throw 5 rubles and pull the lever':gt'park','avtomat2'
+	 end
+act 'Move away from the machine':gt'park','luna'
+>>>>>>> 083_park
 end
 
+<<<<<<< 083_park
 if $ARGS[0] = 'avtomat2':
+=======
+if $ARGS[0]='avtomat2':
+>>>>>>> 083_park
 cla
 *clr
 clr
+<<<<<<< 083_park
 gs 'stat'
 gs 'time'
 set minut += 5
@@ -379,11 +744,43 @@ if avtrand < 75:
 	'Unfortunately, you weren''t able to win anything this time.'
 	end
 act 'Try your luck once more': gt 'park','avtomat'
+=======
+gs'stat'
+gs'time'
+set minut = minut + 5
+set money = money - 5
+set avtrand = RAND (0,100)
+if avtrand = 100:
+     set money = money + 1000
+     'jackpot!!! you won 1 thousand rubles.'
+     end
+if avtrand < 100 and avtrand >= 95:
+     set money = money + 100
+     'you won 100 rubles.'
+     end
+if avtrand < 95 and avtrand >= 85:
+     set money = money + 10
+     'you won 10 rubles.'
+     end
+if avtrand < 85 and avtrand >= 75:
+     set money = money + 5
+     'you won 5 rubles.'
+     end
+if avtrand < 75:
+     'You have not won anything.'
+     end
+act 'further':gt'park','avtomat'
+>>>>>>> 083_park
 end
 
+<<<<<<< 083_park
 !"if $ARGS[0] = 'whore':
+=======
+if $ARGS[0]='whore':
+>>>>>>> 083_park
 cla
 *clr
+<<<<<<< 083_park
 set minut += 5
 '<center><B><font color = maroon>The road near the park</font></B></center>'
 if hour < 16: '<center><img src="images\etogame\glpark.jpg"></center>'
@@ -408,12 +805,31 @@ if hour >= 16:
 	'Cars drive on the road past the park and then not see anything interesting.'
 	end
 act 'Go back to the park': gt 'park','start'
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>Road near the park</font></B></center>'
+'<center><img src="pic/park1.jpg" ></center>'
+clr
+gs'stat'
+gs'time'
+if hour >= 16 and hour <= 23:
+	 'Walk along the roadside <a href="exec:GT ''prostitute'',''start''">Prostitutes</a>, Sometimes they drive up the car and take them.'
+	 else
+	 'Cars passing on the road past the park and there is not seen nothing interesting.'
+	 end 
+act 'Go to the park':gt'park','start'
+>>>>>>> 083_park
 end
 
+<<<<<<< 083_park
 !!!!!!!!! Excluded for now! There are no links to this location, as protition takes place in 'protitute'. This seems ot be the remnant of an older version of ETO
 if $ARGS[0] = 'whore':
+=======
+if $ARGS[0]='prost':
+>>>>>>> 083_park
 cla
 *clr
+<<<<<<< 083_park
 set minut += 5
 '<center><B><font color = maroon>Hooker</font></B></center>'
 '<center><img src="images\etogame\park2.jpg"></center>'
@@ -592,8 +1008,187 @@ end
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 if $ARGS[0] = 'rape1':
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>prostitute</font></B></center>'
+'<center><img src="pic/park2.jpg" ></center>'
+clr
+gs'stat'
+gs'time'
+if whoreQW = 2:
+	 'Prostitutes look at you with curiosity.'
+	 end
+if whoreQW = 1:
+	 'Prostitutes look at you with interest.'
+	 act 'talk':
+		 cla
+		 set whoreQW = 2
+		 'You went to a prostitute and asked her how things are done here at all. She began to explain. "We are all free, do not work on anyone, but because of the many problems. Stella with her вЂ‹вЂ‹friends is svimi beat us and rob, sometimes come petty criminals and rob us of money. If you want to work here, you have to pay and Stella and bandyukov. You certainly cool, you can try to lay siege to Stella and her bridesmaids, but the bandits do not advise to contact. And more, you do not bite on customers, if you nebudesh dressed like a whore, you can buy some clothes in a sex shop."'
+		 act 'move_away':gt'park','prost'
+		 end
+	 end
+if whoreQW = 0:
+	'hey, you are not one of our, brought down to our terms, and that the teeth do not gather.'
+	act 'Fuck you!':
+		 cla
+		 set minut = minut + 15
+		 set $nameV = 'stoned prostitute'
+		 !stats
+		 set strenV = 20
+		 set speedV = 30
+		 set agilV = 30
+		 set reactV = 30
+		 set vitalV = 50
+		 set intelV = 10
+		 set willV = 10
+		 !skills
+		 set magikV = 10
+		 set boxingV = 10
+		 set shootV = 10
+		 !parameters
+		 set healthV = vitalV*10 + strenV*5
+		 set mannaV = intelV*10 + magikV*10
+		 set willpowerV = willV*10
+		 set BonusAtakV = 0
+		 set BonusDefV = 0
+		 !Programme of Action
+		 set program = 0
+		 set prostitutFight = 1
+		 if spellavtoklon = 1:set klon = 3
+		 if spellbefshild = 1:set defence = 500
+		 gt'fight','start'
+		 end
+	 end
+if whoreQW > 1 and hook = 1: 
+	 act 'Search client 15 min':
+		 cla
+		 *clr
+		 set minut = minut + 15
+		 set whrand = RAND (0,100)
+		 if whrand <= 5:
+			 'To you drove a black jeep, opened the window and leaned out healthy impudent face. "Hey whore, it`s time to pay tribute. Come here Shtukar and Wali further work."'
+			 if money >= 1000:
+				 act 'give money':
+					 cla
+					 set money = money - 1000
+					 'You gave money big man in the jeep. He put them in his pocket and left.'
+					 act 'move_away':gt'park','prost'
+					 end
+				 end
+			 act 'Fuck you!':
+				 cla
+				 set minut = minut + 15
+				 set $nameV = 'bandit'
+				 !stats
+				 set strenV = 200
+				 set speedV = 30
+				 set agilV = 20
+				 set reactV = 20
+				 set vitalV = 150
+				 set intelV = 10
+				 set willV = 10
+				 !skills
+				 set magikV = 10
+				 set boxingV = 10
+				 set shootV = 10
+				 !parameters
+				 set healthV = vitalV*10 + strenV*5
+				 set mannaV = intelV*10 + magikV*10
+				 set willpowerV = willV*10
+				 set BonusAtakV = 0
+				 set BonusDefV = 0
+				 !Programme of Action
+				 set program = 0
+				 set prostitutFight = 2
+				 if spellavtoklon = 1:set klon = 3
+				 if spellbefshild = 1:set defence = 500
+				 gt'fight','start'
+				 end
+			 end 
+		 if whrand > 5 and whrand <= 60:
+			 'To you a car drove up and a man sitting behind the wheel asked how much it would cost a suction. You called a standard fee of 500 rubles. He agreed and opened the door for you to Passenger.'
+			 '<center><img src="picV/car.jpg" ></center>'
+			 set minut = minut + 15
+			 set bj = bj + 1
+			 set guy = guy + 1
+			 set money = money + 500
+			 set throat = throat + 1
+			 if prezik > 0:
+				 'You got a condom and put it in your mouth, Then he leaned over the pants and put his client condom on the penis with her mouth.'
+				 end
+			 'You are a member of the client her lips and began to suck it, caress the tongue and try to take it as deep as possible.'
+			 if prezik = 0:
+				 set swallow = swallow + 1
+				 set cumlip = cumlip + 1
+				 'The client started to cum in your mouth, you continued to suck and swallow his hot, tart sperm.'
+				 set gerprand = RAND (0,100)
+				 if gerprand > 96:
+					 if VeneraOnce = 0:set VeneraOnce = 1
+					 set Venera = Venera + 1
+					 end
+				 end
+			 if prezik > 0:
+				 set prezik = prezik - 1
+				 'Client finished in a condom.'
+				 end
+			 'After the client terminated by you immediately dropped out of the car.'
+			 act 'Go to the panel':gt'park','prost'
+			 end
+		 if whrand > 60 and whrand <= 90:
+			 set minut = minut + 15
+			 'You were walking down the sidewalk showing their charms completely in vain, no you are not interested in.'
+			 act 'Go to the panel':gt'park','prost'
+			 end
+		 if whrand > 90:
+			 'To you came prostitute. "Slysh, slut, If you do not want problems, you have to pay Stella. Come here pyatihatnik and Wali further work."'
+			 if money >= 500:
+				 act 'give money':
+					 cla
+					 set money = money - 500
+					 'You gave money to a prostitute, She turned and walked away.'
+					 act 'move_away':gt'park','prost'
+					 end
+				 end
+			 act 'Fuck you!':
+				 cla
+				 set minut = minut + 15
+				 set $nameV = 'prostitute'
+				 !stats
+				 set strenV = 50
+				 set speedV = 50
+				 set agilV = 40
+				 set reactV = 30
+				 set vitalV = 60
+				 set intelV = 10
+				 set willV = 10
+				 !skills
+				 set magikV = 10
+				 set boxingV = 10
+				 set shootV = 10
+				 !parameters
+				 set healthV = vitalV*10 + strenV*5
+				 set mannaV = intelV*10 + magikV*10
+				 set willpowerV = willV*10
+				 set BonusAtakV = 0
+				 set BonusDefV = 0
+				 !Programme of Action
+				 set program = 0
+				 set prostitutFight = 3
+				 if spellavtoklon = 1:set klon = 3
+				 if spellbefshild = 1:set defence = 500
+				 gt'fight','start'
+				 end
+			 end 
+		 end
+	 end
+act 'move_away':gt'park','start'
+end
+
+if $ARGS[0]='rape1':
+>>>>>>> 083_park
 cla
 *clr
+<<<<<<< 083_park
 '<center><img src="images\img\spaln\rape.jpg"></center>'
 'Suddenly, you are hit on the head. You awake sometime later in a bush. Somehow you''re not able to move your arms, they must be tied up. As you look down on yourself, you realize, that you''re not wearing anything and before you can even react some dude is ramming his into your cunt. ''Shit'', you think yourself, ''I''m being raped.'''
 set rape += 1
@@ -626,5 +1221,42 @@ act 'Try to relax and enjoy it':
 		end
 	end
 end
+=======
+'<center><img src="img/spaln/rape.jpg"></center>'
+'You hit on the head, You woke up in the bushes without panties, rapist and his bored dildo your vagina.'
+set rape+=1
+set sex+=1
+set SUB+=3
+set money=0
+act 'resist':
+	 cla
+	 'You tried to push the rapist, but he only pressed harder you to my, and continued to fuck, until you cried and tried to escape , taking all of your money.'
+	 set cumpussy+=1
+	 act 'Get_Away':gt'park','start'
+	 end
+act 'Try to feel relaxed and have fun':
+	 cla
+	 *clr
+	 '<center><img src="img/spaln/rapean.jpg"></center>'
+	 'Seeing that you do not even try to resist, rapist set you cancer and put his penis in your ass. You cried in pain, but he held your mouth and continued to rape your ass.'
+	 set anal+=1
+	 set SUB+=5
+	 act 'further':
+		 cla
+		 *clr
+		 set bj+=1
+		 set cumlip+=1
+		 set cumface+=1
+		 set SUB+=5
+		 '<center><img src="img/spaln/cum.jpg"></center>'
+		 'He put you on your knees and began to fuck in the mouth until I came, "swallow slut" he hissed, fearing the consequences you swallow sperm. Grinning , taking all of your money.'
+		 act 'Get_Away':gt'park','start'
+		 end
+	 end
+end
+
+
+
+>>>>>>> 083_park
 --- park ---------------------------------
 

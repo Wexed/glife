@@ -1,4 +1,5 @@
 # kazinosvid
+<<<<<<< 114_kazinosvid
 set minut += 60
 set kisvrand = 0
 set manna += 10
@@ -38,10 +39,52 @@ act 'Play':
 		if kat < 20: gt 'kazinosvid','3'
 		end
 	end
+=======
+set minut+=60
+set kisvrand=0
+set manna+=10
+gs 'stat'
+'<center><B>theater</B></center>'
+'<center><img src="img/kazinosvid/0.jpg" ></center>'
+'you and <<$telsob>> sat down at the table and began to play.'
+act 'play':
+	 if $telsob = 'Alla':
+		 set alla+=1
+		 if alla>=20:
+			 set kisvrand=RAND(0,10)
+			 if kisvrand>0 and kisvrand<3:gt 'kazinosvid','1'
+			 if kisvrand>2 and kisvrand<5:gt 'kazinosvid','2'
+			 if kisvrand=0 or kisvrand>4:gt 'kazinosvid','3'
+			 end
+		 if alla<20:gt'kazinosvid','3'
+		 end
+	 if $telsob = 'Masha':
+		 set masha+=1
+		 if masha>=20:
+			 set kisvrand=RAND(0,10)
+			 if kisvrand>0 and kisvrand<3:gt 'kazinosvid','1'
+			 if kisvrand>2 and kisvrand<5:gt 'kazinosvid','2'
+			 if kisvrand=0 or kisvrand>4:gt 'kazinosvid','3'
+			 end
+		 if masha<20:gt'kazinosvid','3'
+		 end
+	 if $telsob = 'katya':
+		 set kat+=1
+		 if kat>=20:
+			 set kisvrand=RAND(0,10)
+			 if kisvrand>0 and kisvrand<3:gt 'kazinosvid','1'
+			 if kisvrand>2 and kisvrand<5:gt 'kazinosvid','2'
+			 if kisvrand=0 or kisvrand>4:gt 'kazinosvid','3'
+			 end
+		 if kat<20:gt'kazinosvid','3'
+		 end
+	 end
+>>>>>>> 114_kazinosvid
 
 if $ARGS[0] = '1':
 cla
 *clr
+<<<<<<< 114_kazinosvid
 '<center><img src="images\img\kazinosvid\0.jpg"></center>'
 'While you play you two guys hooked and offered to play two by two in their room.'
 '<<$telsob>> said that she does not mind and looked questioningly at you.'
@@ -106,12 +149,79 @@ act 'Agree':
 			end
 		end
 	end
+=======
+'<center><img src="img/kazinosvid/0.jpg" ></center>'
+'While you play you two guys sat down and offered to play two by two they have in the room.
+<<$telsob>> said that she is not against it.'
+act 'Opt_Out':gt 'kazinosvid','3'
+act 'agree':
+	 cla
+	 *clr
+	 set pikrand=RAND(14,15)
+	 '<center><img src="img/kazinosvid/<<picrand>>.jpg" ></center>'
+	 set randkazinv=RAND(0,1)
+	 set randkazinvsum=RAND(100,10000)
+	 if randkazinv=1:
+		 set money+=randkazinvsum
+		 'You won and your share <<randkazinvsum>> RUB. you and <<$telsob>> ready to leave, but the guys started to beg you to stay "Come on girls, where can sit in a hurry, drink, take a closer look. Well losers are left reassurance" said one rastegnuv his pants and pulled out a member, clearly implying what he was waiting for the consolation.'
+		 set telsobnastr=RAND(0,10)
+		 if telsobnastr<4:
+			 '"No, it`s time, reassurance themselves." said <<$telsob>> and taking you by the hand brought back into the hall'
+			 act 'End_Up':gt 'kazinosvid','3'
+			 end
+		 if telsobnastr>3:
+			 '"I am not opposed to console the losers" said <<$telsob>> lasciviously smiling and looking at a guy who has his fly open from sticking member.'
+			 act 'pick_up <<$telsob>> and go.':gt 'kazinosvid','3'
+			 act 'to console the losers':
+				 set kazsexdva=1
+				 set guy+=2
+				 set gang+=1
+				 xgt'sexdvanadva','var'
+				 end
+			 end
+		 end
+	 if randkazinv=0:
+		 'You lose and your share of loss <<randkazinvsum>> RUB.'
+		 if money<randkazinvsum:
+			 'You do not have the money to pay and <<$telsob>> also that no money left to pay, no options have to spread her legs.'
+			 act 'pay in kind':
+				 set kazsexdva=1
+				 set guy+=2
+				 set gang+=1
+				 xgt'sexdvanadva','var'
+				 end
+			 end
+		 if money>=randkazinvsum:
+			 'Do you have enough money to pay and <<$telsob>> too short of money that would pay, but the guys clearly hinted that the pay is not necessarily money, They are happy to take another form of payment.'
+			 if telsobnastr<4:
+				 set money-=randkazinvsum
+				 '"No, it`s time, here is your money." said <<$telsob>> and taking you by the hand brought back into the hall'
+				 act 'End_Up':gt 'kazinosvid','3'
+				 end
+			 if telsobnastr>3:
+				 '"I do not mind to use an alternative form of payment" said <<$telsob>> smiling lasciviously.'
+				 act 'give money, pick_up <<$telsob>> and go.':
+					 set money-=randkazinvsum
+					 gt 'kazinosvid','3'
+					 end
+				 act 'Use an alternative form of payment':
+					 set kazsexdva=1
+					 set guy+=2
+					 set gang+=1
+					 xgt'sexdvanadva','var'
+					 end
+				 end
+			 end
+		 end
+	 end
+>>>>>>> 114_kazinosvid
 end
 
 
 if $ARGS[0] = '2':
 cla
 *clr
+<<<<<<< 114_kazinosvid
 '<center><img src="images\img\kazinosvid\0.jpg"></center>'
 'While you are playing you addicted man and offered to play with him in his room.'
 '<<$telsob>> said that she does not mind and looked questioningly at you.'
@@ -143,16 +253,56 @@ act 'Agree':
 			end
 		end
 	end
+=======
+'<center><img src="img/kazinosvid/0.jpg" ></center>'
+'While you are playing you hooked guy and offered to play with him in his room.
+<<$telsob>> said that she is not against it.'
+act 'Opt_Out':gt 'kazinosvid','3'
+act 'agree':
+	 cla
+	 *clr
+	 '<center><img src="img/kazinosvid/3.jpg" ></center>'
+	 'Arriving at the hotel you are located in the bed and began to play, a few minutes later a guy offered to play strip. <<$telsob>> giggled "And then you will not be ashamed, and that in fact is not yet never won", man grinned "I have nothing to be ashamed of."'
+	 act 'Opt_Out, pick_up <<$telsob>> and go':gt 'kazinosvid','3'
+	 act 'agree':
+		 cla
+		 *clr
+		 '<center><img src="img/kazinosvid/4.jpg" ></center>'
+		 'After a few minutes  <<$telsob>> already removed her panties. "So do not honestly, you spetsalno first succumbed, so we agreed to" said <<$telsob>>, defiantly pouting.
+		 "Good girls last game, the two of you against me, can even change cards, win doing that tell, lose full fun?." the guy said.
+		 "play" immediately blurted <<$telsob>>'
+		 act 'play':
+			 cla
+			 *clr
+			 '<center><img src="img/kazinosvid/5.jpg" ></center>'
+			 'A minute later he was standing with his pants down "Well girls, card debt - holy, swoop" he said pointing to his dildo'
+			 act 'start':
+				 set guy+=1
+				 set pikrand=23
+				 set kazsexdva=1
+				 gt'podrsex','var'
+				 end
+			 end
+		 end
+	 end
+>>>>>>> 114_kazinosvid
 end
 
 
 if $ARGS[0] = '3':
 cla
 set horny = 0
+<<<<<<< 114_kazinosvid
 set minut += 90
 gs 'stat'
 'Soon <<$telsob>> said that she had to flee and left'
 act 'Leave': gt 'nord'
+=======
+set minut+=90
+gs 'stat'
+'soon <<$telsob>> said that she had to flee and left'
+act 'Get_Away':gt 'nord'
+>>>>>>> 114_kazinosvid
 end
 --- kazinosvid ---------------------------------
 

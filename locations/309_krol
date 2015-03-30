@@ -1,7 +1,12 @@
 # krol
+<<<<<<< 309_krol
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 309_krol
 cla
 *clr
+<<<<<<< 309_krol
 set minut += 5
 '<center><img src="images\zoo\1791_640.jpg"></center>'
 '<center><<$namekrol>> rests.</center>'
@@ -9,8 +14,18 @@ clr
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+set minut = minut + 5
+'<center><img src="zoo/1791_640.jpg" ></center>'
+'<center><<$namekrol>> resting.</center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 309_krol
 LCOLOR = rgb(106,90,205)
 
+<<<<<<< 309_krol
 act 'Leave': gt 'korr'
 act 'Grant on skewers for meat':
 	set krolik = 0
@@ -18,6 +33,15 @@ act 'Grant on skewers for meat':
 	set money += 200
 	gt 'korr'
 	end
+=======
+act 'Get_Away':gt'korr'
+act 'Grant on skewers for meat':
+	 set krolik=0
+	 set minut+=60
+	 set money+=200
+	 gt'korr'
+	 end
+>>>>>>> 309_krol
 end
 --- krol ---------------------------------
 

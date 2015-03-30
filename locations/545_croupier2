@@ -1,3 +1,4 @@
+<<<<<<< 545_croupier2
 # krupe2
 *PL '<right><img src="images\casino\crupcw.jpg"></right>'
 *P '- How can I help you?'
@@ -10,12 +11,32 @@ ACT 'Ask rules':
 	Also, after the rate you are given the opportunity to bet on a draw. Then, in case of a tie the payment will be 10 to 1.
 	Enjoy the game)'
 	gt 'krupe2'
+=======
+# croupier2
+*PL '<right><img src="casino/crupcw.jpg" ></right>'
+*P '- How can I help you?'
+ACT 'ask rules':
+	msg 'The rules are very simple.
+	First, you want to put.
+	But just remember, that our casino is the maximum rate 1000 rubles.
+	The dealer deals the cards, her card over at par and won the. payment 1 to 1.
+	When you are given a choice of a draw: take half of your bet or continue to play (Your bid is automatically doubled). Whose card is more on par and won the. payment 1 to 1. When the draw you receive a payment for the increase, equal to your bet and you are returned to your total bet.
+	Also. Then 10 to 1.
+	Enjoy the game)'
+	gt 'croupier2'
+>>>>>>> 545_croupier2
 END
 ACT 'Move away from the dealer':
 	gt 'kazvar'
 END
 clr
+<<<<<<< 545_croupier2
 gs 'stat'
 set minut += 5
 --- krupe2 ---------------------------------
+=======
+gs'stat'
+set minut=minut + 5
+--- croupier2 ---------------------------------
+>>>>>>> 545_croupier2
 

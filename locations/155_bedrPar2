@@ -1,12 +1,19 @@
 # bedrPar2
+<<<<<<< 155_bedrPar2
 ACT 'Leave the room':
 	gt 'korrPar'
 END
 
+=======
+ACT 'Exit the room':
+	gt'korrPar'
+END
+>>>>>>> 155_bedrPar2
 $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
+<<<<<<< 155_bedrPar2
 
 '<center><B><font color = maroon>Master bedroom</font></B></center>'
 '<center><img src="images\qwest\alter\<<$loc>>.jpg "></center>'
@@ -21,5 +28,21 @@ LCOLOR = rgb(106,90,205)
 'The room in which the parents live. In the center stands a double bed and a large closet wall.'
 
 gs 'family'
+=======
+'<center><B><font color=maroon>Master bedroom</font></B></center>'
+'<center><img src="qwest/alter/<<$loc>>.jpg" ></center>'
+clr
+set minut = minut + 1
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'The room in which the parents live. In the center stands a double bed and large wardrobe against the wall.'
+
+
+gs'family'
+
+if hour=21 and parsexrand=5 and parentsexday!daystart:gt'seeparentsex'
+>>>>>>> 155_bedrPar2
 --- bedrPar2 ---------------------------------
 

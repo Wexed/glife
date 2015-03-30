@@ -1,4 +1,5 @@
 # ivanRoom
+<<<<<<< 370_ivanRoom
 set minut += 5
 '<center><B><font color = maroon>Apartment manager Ivan</font></B></center>'
 '<center><img src="images\etogame\podezdhr.jpg"></center>'
@@ -8,8 +9,20 @@ fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
 LCOLOR = rgb(106,90,205)
 'Apartment door Ivan steel, with good locks.'
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>The apartment manager Ivan</font></B></center>'
+'<center><img src="pic/podezdhr.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'The door to the apartment of Ivan iron, with good locks.'
+>>>>>>> 370_ivanRoom
 
 
+<<<<<<< 370_ivanRoom
 	act 'QUIT':
 	cla
 	set minut += 5
@@ -190,5 +203,198 @@ if softKAR = 1:
 		end
 	end
 end
+=======
+     act 'GO_OUT':
+     cla
+     set minut = minut + 5
+     gt'nord'
+     end
+
+if poverKAR=1:
+'You came to the door behind you and Ivan was a rustling. You turned and saw Juugo. He came up to you and said "Ivan apartment. Take this here -and-shoot camera. Now we `ll get."'
+     act 'Come on we`ll get this monster':
+     cls
+     IvanKvartira=0
+     poverKAR=2
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/gun.jpg" ></center>'
+     'Juugo went to the door, you noticed a tattoo on his face woke up and came to life, covering their skin black lines. Line broke and you see like Juugo fists began to increase. He growled and slammed his fist on the door. The door rattled bent. Juugo hand grabbed the door and opened it. Juugo a roar broke into the apartment. You ran into the apartment after Juugo and saw Ivan left the room holding a gun. Ivan shot and jerked Juugo, Ivan then fired again and again. Juugo fell to the floor. Ivan ran out of bullets and he began feverishly to reload the gun.'
+         if dom>0:
+			 act 'embed Ivan':
+			 cls
+			 gs'stat'
+			 !'<center><img src="pic/gun.jpg" ></center>'
+			 'You ran to Ivan with the intent to kick him while he reloads his gun. Ivan suddenly jumped back into the room and slammed the door in front of your nose. The inertia you hit the door. Immediately shot and slammed the door flew chips, Only by chance the bullet did not hurt you. Behind you heard a movement and as you saw in the hallway on his feet gets Juugo, his wounds are tightened. Even the bullet hole in his forehead became rapidly tightened. Pokryvatsya body was black and then a scab, color grown horns. Juugo yelled furiously "NOW YOU DIE!!!" and rushed to the wooden door behind which hid Ivan turning it into pieces and flung away you away. Have you seen, Ivan lying on the floor in the blood and without movement, gun fell from his hands weakened. Juugo with a triumphant cry rushed to Ivan and became powerful blows to beat the motionless body. You have seen how just a second Juugo turned his head into a bloody mess Ivan. But Juugo did not stop there and you feel like it `s going to force, concentrating in his hand. The air smelled of ozone and there was a nasty, thin squeal. you understand, Juugo now hit than a very powerful.'
+				 act 'run_Away':
+				 cls
+				 gs'stat'
+				 !'<center><img src="pic/gun.jpg" ></center>'
+				 'You turned and ran out of the apartment. Behind a powerful explosion hit, house shuddered, ringing in your ears . Looking around you to understand, Ivan struck the apartment, from the doorway stuck a piece of concrete slab, spinning dust in the air, ears ringing.'
+				 act 'Run away from the entrance':gt'nord'
+				 end
+			 end
+		 end
+		 
+		 act 'Freeze in horror':
+		 cls
+		 gs'stat'
+		 '<center><img src="pic/gun.jpg" ></center>'
+		 'You froze in horror and stared at Ivan and Juugo. Juugo was lying in blood, in his head was a decent bullet hole from which it follows bloody mess. Ivan quickly reloaded his gun and pointed it at you. Juugo suddenly turned over on the floor and you saw his wounds are tightened. The body is covered with black and then a crust. Ivan started and pointing a gun at Juugo shot at it. Bullets whistled hit the wall deflects off the body Juugo. Juugo finally turned into what that monster with horns and jumped to his feet angrily screamed "NOW YOU DIE!!!" Ivan began to retreat back, trying to reload the gun. Juugo instantly jumped up to him and hit Ivan, zashvyrnuv him like a rag doll in the room. Have you seen, Ivan lying on the floor in the blood and without movement, gun fell from his hands weakened. Juugo with a triumphant cry rushed to Ivan and became powerful blows to beat the motionless body. You have seen how just a second Juugo turned his head into a bloody mess Ivan. But Juugo did not stop there and you feel like it `s going to force, concentrating in his hand. The air smelled of ozone and there was a nasty, thin squeal. you understand, Juugo now hit than a very powerful.'
+		     act 'run_Away':
+			 cls
+			 gs'stat'
+			 !'<center><img src="pic/gun.jpg" ></center>'
+			 'You turned and ran out of the apartment. Behind a powerful explosion hit, house shuddered, ringing in your ears . Looking around you to understand, Ivan struck the apartment, from the doorway stuck a piece of concrete slab, spinning dust in the air, ears ringing.'
+			 act 'Run away from the entrance':gt'nord'
+			 end
+		 end
+		 
+		 
+     end
+end
+if softKAR=1:
+'You have come to kavrtire Ivan and saw there Karin. She adjusted her glasses and told you. "Ivan is now in his apartment."'
+	 act 'what plan?':
+	 cls
+	 horny=0
+	 gs'stat'
+	 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+	 'Karin started to explain "I can impose on you a temporary spell. Ivan did not recognize you. We seduce him, for this I have means, enough to smell it and immediately vozbudishsya. The main thing we keep ourselves in the hands of. Then when he is ready to offer him a drink, Podillya it means, that would unleash his tongue. We write his confession on camera. And the hat."'
+	     act 'Let`s begin':
+	     cls
+	     minut+=5
+	     horny+=10
+	     gs'stat'
+	     '<center><img src="picPRE/karinPRE.jpg" ></center>'
+	     'Karina something probomotala and touched your face palm. She took her hand and said "all, Ivan did not recognize you, Here you go . There is a strong aphrodisiac, which works when it sniffs. Watch_Out, We are also subject to it." Karin gave you a bubble and you sprinkled a little before the door, trying not to inhale the aroma. Karin rang the bell at the door and the door opened. Appeared on the threshold Ivan, he`s a little confused looking at you. Karin smiled sweetly Ivan "We service of social surveys, Can we ask you a few questions?" Ivan aside gesture inviting you to go to the apartment.'
+	         act 'Log in to the apartment':
+			 cls
+			 minut+=5
+			 horny+=50
+			 gs'stat'
+			 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+			 'Together with Karin you entered the apartment and went to Ivan in his living room. The room was clean and comfortable. Ivan invited you to sit down on the sofa and sat down in front of you. Karin started asking questions about sex Ivan. Ivan looked surprisingly calm for a man fell under the aphrodisiac. You tried not to breathe and still feel its effects. Karin elbow and pushed you look revealed your bubble.'
+			     act 'splash in secret':
+				 cls
+				 minut+=5
+				 horny+=25
+				 gs'stat'
+				 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+				 'While Karin distracted Ivan showing him her cleavage, you still secretly streamed aphrodisiac in the air and feel like themselves become excited. Karin all alluring and seductive talked with Ivan trying to seduce him, you even noticed her cheeks flushed. But Ivan reacted rather calmly to what is happening and you just noticed how he became interested in, but did not notice any signs of excitation. Meanwhile.'
+				     act 'Splash again':
+					 cls
+					 minut+=5
+					 horny+=25
+					 gs'stat'
+					 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+					 'Karin got up from the sofa and turning his back to Ivan leaned over and began fumbling in his bag seductively curving. Ivan looked curiously at the bottom Karin and calmly looked away. You spurted again and felt, as your pussy swelled and began to demand the attention. Karin meanwhile sat on the sofa. It was evident, acted as an aphrodisiac and it. She flushed lips, reddened cheeks and she frantically clutched his feet. Ivan looked at you with interest, but again, no signs of the beyond excitement did not show. Karin broke down and snatched you from the hands of the bubble. She stood up and asked Ivan to smell perfume, and tell her what he thought of them. Ivan smiled at it and said "Excuse_Me, i have a runny nose. I do not feel quite odors." Karin helplessly sat on the sofa, all her cunning plan with magic and alchemy fell from the banal common cold.'
+					     act 'suggest drink':
+						 cls
+						 minut+=5
+						 gs'stat'
+						 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+						 'You are offered a drink Ivan. he grinned "girls, I do not know what you `re up here, but there is no. think for yourself, two unknown girls, come to my house, ask me stupid questions, seduce, offered a drink, can you klofelinschitsy? Podolete me certain things, I pass out?" Karin visibly confused understanding, that her plan raspolzsya at the seams. Ivan got up from the couch and asked you to leave the apartment. Karin tried something else to take. But Ivan had already been set up to show the door and you vym nothing left to do, but to proceed to the exit.'
+						     act 'Leave the apartment':
+							 cls
+							 minut+=5
+							 softKAR=0
+							 gs'stat'
+							 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+							 'Together with Karin you left the apartment and Ivan closed the door behind you. Karin angrily slammed fist into his palm. "devil. Well? Fair_Enough, I ran. disassemble itself."'
+							 act 'Withdraw from the entrance':gt'nord'
+							 end
+						 end
+						 
+						 act 'to_be_silent':
+						 cls
+						 minut+=5
+						 gs'stat'
+						 '<center><img src="picQW/Threesome.jpg" ></center>'
+						 'You perplexed silence, but Karin found the first. "cold? I know the perfect remedy for the common cold." Karin went to Ivan and put her hand on his nose, starting his massage. According to Ivan became clear eyes, that nasmortk began to pass and he began to feel an aphrodisiac. Ivan grabbed Karin and drew her to him. She tried to rebel by, but very powerful aphrodisiac and she pounced on Ivan began to kiss him. Second hand Ivan attracted you to your. You feel powerful excitement of this situation.'
+						     act '...':
+							 cls
+							 minut+=5
+							 softKAR=2
+							 gs'stat'
+							 '<center><img src="picQW/Threesome1.jpg" ></center>'
+							 'Karin kissing Ivan began to unbutton his pants. Finally. Karin leaned against a member and began to suck. Ivan dug its lips in your lips and began to kiss you, a greedy smacking Karina. Ivan took your head in his hands and sent it to his groin.'
+							 	 act 'Suck dick together with Karin':
+								 cls
+								 minut+=5
+								 guy+=1
+								 if KarinSex=0:KarinSex=1&girl+=1
+								 bj+=1
+								 gang+=1
+								 gs'stat'
+								 '<center><img src="picQW/Threesome2.jpg" ></center>'
+								 'Exhausted from a painful desire you moaning, together with Karin, suck dick, vylizyvyete eggs. You greedy bites his lips in a hard and hot flesh crimson member, trying to suck in your mouth as much as possible.'
+								 	 act '....':
+									 cls
+									 minut+=5
+									 
+									 gs'stat'
+									 '<center><img src="picQW/Threesome3.jpg" ></center>'
+									 'Karin Ivan dropped on his back and on the go tearing off his clothes jumped on top of his cock. While Karin furiously rides a member Ivan you caress his balls and stroking ass Karin.'
+									 	 act 'Pussy sit on the face of Ivan':
+										 cls
+										 minut+=5
+										 kuni+=1
+										 gs'stat'
+										 '<center><img src="picQW/Threesome4.jpg" ></center>'
+										 'While Karin jumps on a limb you walked Ivan and transferred over his head leg placing her pussy in front of his face. Ivan began to lick your pussy, incredible bliss enveloped you. Ivan after a while you took off your face and put Karin on her back.'
+										 	 act '69 Karin':
+											 cls
+											 minut+=5
+											 lesb+=1
+											 sex+=1
+											 vagina+=1
+											 orgasm+=1
+											 gs'stat'
+											 '<center><img src="picQW/Threesome5.jpg" ></center>'
+											 'You started to lick pussy Karin and felt something hard like that boils down to you in the pussy juices expiring. When hard cock parted the folds of your pussy, You suffocated by surging feelings for you. Do you dizzy and the whole body girth bliss, suddenly you covered under this orgasm, shuddering convulsions, you heard his cry as if from the outside and feel the body Karin under you also start to shake with orgasm. Ivan groaned and pulled his dick out of you, he grabbed you with Karin and set you on your knees in front of him.'
+											 	 act 'on your knees':
+												 cls
+												 minut+=5
+												 facial+=1
+												 cumface+=1
+												 gs'stat'
+												 '<center><img src="picQW/Threesome6.jpg" ></center>'
+												 'You knelt together with Karin and Ivan began to masturbate his penis in front of your faces. Suddenly flew out of his cock and a hot jet of sperm hit on your faces. From a member for some time flying a jet of sperm fall on your face with Karin. But finally dried up and exhausted Ivan sat on the couch trying to catch my breath. Karin whispered to you, Prepare the camera.'
+												     act 'cooking chamber':
+													 cls
+													 softKAR=10
+													 IvanEvidence=1
+													 cumface=0
+													 gs'stat'
+													 '<center><img src="picPRE/karinPRE.jpg" ></center>'
+													 'You secretly prepared a camera pointing her out of her purse at Ivan and included it. Karin meanwhile, Ivan thirsty drank the water and Karin asked him. Tell us how you stole from his boss. Ivan smiled "elementary! I lost in the casino and I urgently need money. I knew, that this old asshole lie in the safe money on bribes. This slut has not given me a dishwasher. And I was born a brilliant plan. I naboltal this fool that it will take manager. Yup, how manager. And Imagine this fool bought into such nonsense. I gave her the keys, who stole. stood there, where I will not see the camera, and sent this pridurochnuyu cleaner to take the money. She brought them to me" Karin asked "And where is the money?" Ivan said sadly "debts distributed. you know, holy card debt." Karin grinned, "it`s done. And you go to sleep Ivan." Ivan immediately started snoring on the couch. Karin turned to you. "Yes_I_Am, I almost screwed up because of his rhinitis. A good lesson for you. Things can not go according to plan. I had the idea to paralyze him, but I`ve since tried once. Paralyzed object choked, when I gave to drink. Hardly his Evacuate. Fair_Enough, go away faster. Here are just umoemsya." You quickly washed in the bathroom along with Karin, wash sperm. She obviously avoiding your eyes and you should be on the streets, She immediately began to say goodbye to you.'
+													 act 'Get_Away':gt'nord'
+													 end
+												 end
+											 end
+										 end
+									 end
+								 end
+							 end
+						 end
+						 
+						 
+						 
+						 
+					 end
+				 end
+			 end
+	     end
+	 end
+end
+
+
+
+
+
+
+
+>>>>>>> 370_ivanRoom
 --- ivanRoom ---------------------------------
 

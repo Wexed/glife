@@ -1,4 +1,5 @@
 # kitchen
+<<<<<<< 117_kitchen
 '<center><B>Kitchen</B></center>'
 '<center><img src="images\img\centr\kitchen.jpg"></center>'
 set minut += 5
@@ -224,8 +225,235 @@ if pranik > 0:
 		act 'Get up from the table': gt 'kitchen'
 		end
 	end
+=======
+'<center><B>kitchen</B></center>'
+'<center><img src="img/centr/kitchen.jpg" ></center>'
+set minut+=5
+gs 'stat'
+act 'In the corridor':gt'house'
+act 'Is_There':
+	 cla
+	 *clr
+	 gs'stat'
+	 frost=0
+	 '<center><img src="pics/food.jpg" ></center>'
+	 set minut = minut + 30
+	 set edahot = 0
+	 set health = health + 10
+	 set manna = manna + 20
+	 if energy >= 30:
+		 set fat = fat + 5
+		 'You can no longer have.'
+		 end
+	 if energy >= 20 and energy < 30:
+		 set fat = fat + 3
+		 set energy = energy + 10
+		 'You pushed through the power of a meal.'
+		 end
+	 if energy < 20:
+		 set energy = energy +20
+		 set fat = fat + 1
+		 'You gladly ate cooked food.'
+		 end
+	 if water >= 20:
+		 'Tea in you no longer climbs.'
+		 end
+	 if water < 20:
+		 'You gladly drank a cup of tea.'
+		 set water = water +20
+		 end
+	 act 'Get up from the table':gt'kitchen'
+	 end
+
+if tanwork=1:
+	 act 'cook':
+		 set minut+=60
+		 set nikrand=rand(0,5)
+		 if vnesh>20 and nikrand=0 and hour>=6 and hour<=9 and week<6 and niksexday ! day:
+			 cla
+			 set niksexday = day
+			 'The kitchen has breakfast Tannin stepfather, Mamontov'
+			 act 'Do their own thing.':gt'kitchen'
+			 if niksex=0 and tanga=0:
+				 cla
+				 'You notice that he is not taking his eyes off your ass, which is not surprising trisikov because you do not have.'
+				 act 'Do their own thing.':gt'kitchen'
+				 act 'seduce':
+					 cla
+					 *clr
+					 set niksex=1
+					 set nik+=1
+					 '<center><img src="img/centr/kitchensob.jpg" ></center>'
+					 'You bend down so, your bare ass appears before him in all its glory, and continue to do their work, pretending that he did not notice that the skirt rode up and you bare ass, in the end when you once again that you drop or bend down behind it without bending the legs, Nicholas comes to you and gently lozhit hand on your buttocks.'
+					 act 'blow_job':
+						 cla
+						 *clr
+						 set nik+=2
+						 set cumlip+=1
+						 set bj+=1
+						 set guy+=1
+						 '<center><img src="img/centr/kitchenminet.jpg" ></center>'
+						 'You get up on his knees and his pants are releasing rastegnuv his huge cock. Licked the head of his lips grabs you and takes diligently trying to suck tighten it as far as possible, but do not reach even half, and finally he starts to cum in your mouth pouring jet of sperm, you hardly have time to swallow, but she does not end, When she finally came to an end you carefully licked a member of sperm, and removing it back in your pants stood up and turned to the plate without even looking at Nicholas. He put around the plate 1000 and left.'
+						 act 'get money':
+							 set money+=1000
+							 set nikslut=1
+							 gt'kitchen'
+							 end
+						 act 'Do not borrow money':gt'kitchen'
+						 end
+					 act 'anal':
+						 cla
+						 *clr
+						 set guy+=1
+						 set anal+=1
+						 set nik+=5
+						 set cumassin+=1
+						 '<center><img src="img/centr/kitchenanal.jpg" ></center>'
+						 'Not turning to him , Spreading the buttocks, a second you in the anus rests his dick, when it starts to go -would not cry out in pain, his cock is too big for your ass. You only slightly moan as his big dildo breaks your anus, Although you want to scream in pain. Finally, it so much that you have to exert much buttocks, what-would not it all spilled out onto the floor. He lozhit about plate 2000 and is.'
+						 act 'get money':
+							 set money+=2000
+							 set nikslut=1
+							 gt'kitchen'
+							 end
+						 act 'Do not borrow money':gt'kitchen'
+						 end
+					 end
+				 end
+			 if niksex=1 and nikslut=0 and niksvid=0:
+				 cla
+				 'He comes to you and his hands once you climb under her skirt'
+				 act 'blow_job':
+					 cla
+					 *clr
+					 set bj+=1
+					 set guy+=1
+					 set nik+=1
+					 set cumlip+=1
+					 '<center><img src="img/centr/kitchenminet.jpg" ></center>'
+					 'You get up on his knees and his pants are releasing rastegnuv his huge cock. Licked the head of his lips grabs you and takes diligently trying to suck tighten it as far as possible, but not even half dostoete, and finally he starts to cum in your mouth pouring jet of sperm, you hardly have time to swallow, but she does not end, When she finally came to an end definitively you licked a member of sperm, and removing it back in your pants stood up and turned to the plate without even looking at Nicholas. He turns to you and stretches itself 1000 RUB.'
+					 act 'get money':
+						 set money+=1000
+						 set nikslut=1
+						 gt'kitchen'
+						 end
+					 act 'Do not borrow money':
+						 cla
+						 set niksvid=1
+						 'You look at the money and then at him vleplyaete slap him with the words, "I`m not a whore, and do not fuck for money".
+						 He looks at you a little dumbfounded "Fair_Enough" says Nicholas and out of the kitchen.'
+						 act 'Back to business':gt'kitchen'
+						 end
+					 end
+				 act 'anal':
+					 cla
+					 *clr
+					 set nik+=2
+					 set cumassin+=1
+					 '<center><img src="img/centr/kitchenanal.jpg" ></center>'
+					 'Not turning to him , Spreading the buttocks, a second you in the anus rests his dick, he quickly comes into you and you will not hurt so much and even nice when his cock is fucking your ass. You moan and he diligently podmahivat, he soon discharged in you. He hands you 2000 RUB.'
+					 act 'get money':
+						 set money+=2000
+						 set nikslut=1
+						 gt'kitchen'
+						 end
+					     act 'Do not borrow money':
+						 set niksvid=1
+						 'You look at the money and then at him vleplyaete slap him with the words, "I`m not a whore, and do not fuck for money".
+						 He looks at you a little dumbfounded "Fair_Enough" says Nicholas and out of the kitchen.'
+						 act 'Back to business':gt'kitchen'
+						 end
+					 end
+				 end
+			 if nikslut=1:
+				 cla
+				 *clr
+				 set SUB+=1
+				 set nikslutrand=rand(0,1)
+				 if nikslutrand=0:
+					 set bj+=1
+					 set cumlip+=1
+					 set money+=500
+					 '<center><img src="img/centr/kitchenminet.jpg" ></center>'
+					 'He comes to you and put a hand on his shoulder to his knees otuskaet. Quickly realizing that he wants you open your mouth and obediently suck until it fills your mouth with his sperm, it leaves you 500 RUB. and leaves.'
+					 if horny>60:
+						 cla
+						 set orgasm+=1
+						 set horny=0
+						 'You too excited that-to think about something other than sex, you`ll have to do a'
+						 act'hand':
+							 cla
+							 *clr
+							 '<center><img src="img/th/m0.jpg" ></center>'
+							 'Lowering his hand to the crotch of a pair palichikov you have inserted themselves in the pussy and began to actively move them to bring themselves to orgasm.'
+							 act 'Back to business':gt'kitchen'
+							 end
+						 act'improvised means':
+							 cla
+							 *clr
+							 '<center><img src="img/th/m1.jpg" ></center>'
+							 'You got out of the refrigerator cucumber, lick it on the right itself in the pussy. It was a cold cucumber, and at first you start to disappear excitement, but soon gave chill new sensations and you start to like it, cold cucumber moved in your pussy. You have opened the refrigerator for plowing and settled close to him, chill run you on the back and the skin crawled. Only your pussy remained razgorechennoy and soon enveloped you enjoy. Slightly recovering himself ejecting already warmed cucumber and closed the refrigerator, looking at the cucumber you decide to put it on the salad and even the hostess did not wash, be it a special taste.'
+							 act 'Back to business':gt'kitchen'
+							 end
+						 end
+					 act 'Back to business':gt'kitchen'
+					 end
+				 if nikslutrand=1:
+					 set anal+=1
+					 set cumass+=1
+					 set money+=1000
+					 '<center><img src="img/centr/kitchenanal.jpg" ></center>'
+					 'He comes to you and you lifted up her skirt pushed the buttocks, you barely have time to lubricate the anus before it with force pushes him his cock, You stand in silence and wait until he finishes, to Nicholas vyterat your body on your ass and leave you 1000 RUB. leaves.'
+					 if horny>60:
+						 cla
+						 set orgasm+=1
+						 set horny=0
+						 'You too excited that-to think about something other than sex, you`ll have to do a'
+						 act'hand':
+							 cla
+							 *clr
+							 '<center><img src="img/th/m0.jpg" ></center>'
+							 'Lowering his hand to the crotch of a pair palichikov you have inserted themselves in the pussy and began to actively move them to bring themselves to orgasm.'
+							 act 'Back to business':gt'kitchen'
+							 end
+						 act'improvised means':
+							 cla
+							 *clr
+							 '<center><img src="img/th/m1.jpg" ></center>'
+							 'You got out of the refrigerator cucumber, lick it on the right itself in the pussy. It was a cold cucumber, and at first you start to disappear excitement, but soon gave chill new sensations and you start to like it, cold cucumber moved in your pussy. You have opened the refrigerator for plowing and settled close to him, chill run you on the back and the skin crawled. Only your pussy remained razgorechennoy and soon enveloped you enjoy. Slightly recovering himself ejecting already warmed cucumber and closed the refrigerator, looking at the cucumber you decide to put it on the salad and even the hostess did not wash, be it a special taste.'
+							 act 'Back to business':gt'kitchen'
+							 end
+						 end
+					 act 'Back to business':gt'kitchen'
+					 end
+				 end
+			 end
+		 'You have prepared food'
+		 act 'End_Up':gt'kitchen'
+		 end
+	 end
+
+if pranik>0:
+	 act 'Cup of tea with cookies (5 min)':
+		 cla
+		 *clr
+		 minut+=5
+		 pranik-=1
+		 set health = health + 30
+		 set manna = manna + 100
+		 energy += 20
+		 water += 20
+		 fat+=50
+		 frost=0
+		 gs'stat'
+		 '<center><img src="pics/food.jpg" ></center>'
+		 'You drank tea with cookies, very sweet and bad for the figure, but so nice.'
+		 act 'Get up from the table':gt'kitchen'
+		 end
+	 end
+>>>>>>> 117_kitchen
 
 if edaD > 0:
+<<<<<<< 117_kitchen
 	act 'Eat diet food (0:30)':
 		cla
 		*clr
@@ -256,8 +484,41 @@ if edaD > 0:
 		act 'Get up from the table': gt 'kitchen'
 		end
 	end
+=======
+	 act 'There are diet food (30 min)':
+		 cla
+		 *clr
+		 frost=0
+		 '<center><img src="pics/food.jpg" ></center>'
+		 set minut = minut + 30
+		 set health = health + 10
+		 set manna = manna + 20
+		 set edaD = edaD - 1
+		 if energy >= 30:
+			 'You can no longer have.'
+			 end
+			 if energy >= 20 and energy < 30:
+			 set energy = energy + 10
+			 'You pushed through the power of a meal.'
+			 end
+			 if energy < 20:
+			 set energy = energy +20
+			 'You gladly ate cooked food.'
+			 end
+			 if water >= 20:
+			 'Tea in you no longer climbs.'
+			 end
+			 if water < 20:
+			 'You gladly drank a cup of tea.'
+			 set water = water +20
+			 end
+		 act 'Get up from the table':gt'kitchen'
+		 end
+	 end
+>>>>>>> 117_kitchen
 
 if fatdel > 0:
+<<<<<<< 117_kitchen
 	act 'Consume fat burners':
 		cla
 		*clr
@@ -338,5 +599,87 @@ if nikslut = 1 and hour > 17 and hour < 20 and housekitrand > 8 and niksexday ! 
 	'Nicholas went to the kitchen with another man "<<$name>>, feed us," he said. You get all warmed up and began to wait when they will eat. When they finished Nicholas looked at you and said, "Thank you, everything was tasty <<$name>>, where the dessert?" You frantically began to think that they give for dessert, because you have not cooked anything. "Yes you wait" said Nikolai see your kitchen by throwing in search of dessert, "You do not understand, so let this dessert," he said, slapping you on the ass. You sigh of relief, so this dessert you always at the ready. You get everything cleaned off the table and do not have got it.'
 	act 'Start': xgt 'sexdvoe','var'
 	end
+=======
+	 act 'to use fat burners':
+		 cla
+		 *clr
+		 set fatdel = fatdel - 1
+		 set fat = fat - 25
+		 if fat<0:fat=0
+		 'You drank fat burning capsule. These capsules are gradually and results will be seen at once.'
+		 act 'Get up from the table':gt'kitchen'
+		 end
+	 end
+
+act 'drink':
+	 cla
+	 set minut = minut + 5
+	 if water >= 20:
+		 'Water in you no longer climbs.'
+		 end
+	 if water < 20:
+		 'You gladly drank a glass of water.'
+		 set water = water +20
+		 end
+	 act 'Get up from the table':gt'kitchen'
+	 end
+if lekarstvo>0:
+	 'you have <<lekarstvo>> tablets.'
+	 if sick>0 and lekarday!day:
+		 act 'take a pill':
+			 cla
+			 *clr
+			 set minut = minut + 5
+			 lekarday=day
+			 lekarstvo-=1
+			 sick-=sick*20/100
+			 set lekrand = RAND (0,8)
+			 if lekrand = 0:'<center><img src="inBed/lekr1.jpg" ></center>'
+			 if lekrand = 1:'<center><img src="inBed/lekr2.jpg" ></center>'
+			 if lekrand = 2:'<center><img src="inBed/lekr3.jpg" ></center>'
+			 if lekrand = 3:'<center><img src="inBed/lekr4.jpg" ></center>'
+			 if lekrand = 4:'<center><img src="inBed/lekr5.jpg" ></center>'
+			 if lekrand = 5:'<center><img src="inBed/lekr6.jpg" ></center>'
+			 if lekrand = 6:'<center><img src="inBed/lekr7.jpg" ></center>'
+			 if lekrand = 7:'<center><img src="inBed/lekr8.jpg" ></center>'
+			 if lekrand = 8:'<center><img src="inBed/lekr9.jpg" ></center>'
+			 'You drank the pill'
+			 act 'move_away':gt'kitchen'
+			 end
+		 end
+	 end
+
+if vitamin>0:
+	 'you have <<vitamin>> vitaminok.'
+	 if vitaminday!day:
+		 act 'drink Vitaminki':
+			 cla
+			 *clr
+			 set minut = minut + 5
+			 set vitaminday=day
+			 set vitamin-=1
+			 set frost=0
+			 set skinvan = skinvan + 1
+			 if skinvan = 20:set skinvan = 0&set skin = skin + 1
+			 'You drank Vitaminki'
+			 act 'move_away':gt'kitchen'
+			 end
+		 end
+	 end
+set housekitrand=rand(0,10)
+if nikslut=1 and hour>17 and hour<20 and housekitrand>8 and niksexday ! day:
+	 cla
+	 *clr
+	 set SUB+=1
+	 set guy+=1
+	 set minut+=20
+	 set niksexday = day
+	 set money+=2000
+	 set picrand=36
+	 '<center><img src="img/th/s1.jpg" ></center>'
+	 'Nicholas went to the kitchen with another man "Sveta, Feed us" he said. You get all warmed up and began to wait when they will eat. When they finished  "Thank_U, Light it was delicious, and where dessert?" You frantically began to think that they give for dessert, because you did not have anything prepared. "Yes you stand" said Nikolai see your throwing the kitchen in search of dessert, "You do not understand, Here come the dessert" he said. You exhaled with relief, so this dessert you always at the ready. You quickly removed everything from the table and do not have got it.'
+	 act'begin':xgt'sexdvoe','var'
+	 end
+>>>>>>> 117_kitchen
 --- kitchen ---------------------------------
 

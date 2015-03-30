@@ -1,4 +1,5 @@
 # fitgirl
+<<<<<<< 351_fitgirl
 $dintaniastart = {
 if dom > 10:
 	act 'Molest':
@@ -57,9 +58,70 @@ cls
 set minut += 15
 if sweat > -3: set sweat = -3
 set horny += 1
+=======
+$dintaniastart={
+ if dom>10:
+	 act 'molest':
+	 cla
+	 *clr
+	 set tanday=day
+	 gs'stat'
+	 '<center><img src="img/centr/razd1.jpg" ></center>'
+	 'You walk up to a girl and vskhvativ one hand on the buttock deploy to face him'
+		 if vnesh<20:
+		 'The girl pushes you, and shouting that-something about you and all of your Relatives, out of the locker room'
+		 act '...':gt'fit','razd'
+		 end
+		 
+		 if vnesh>=20:
+		 'Girl vskhvatila your hand squeezes her ass, but froze for a moment considering you, She probably expected to see a man and certainly not for a Woman.'
+			 act 'Take advantage of the confusion':
+			 cla
+			 *clr
+			 gs'stat'
+			 '<center><img src="img/centr/razd2.jpg" ></center>'
+			 'While she was trying to understand what`s going on , and now her hand stroking your buttocks'
+			 act 'further':set tanznak=1 & gt 'lezbsex','start'
+			 end
+			 
+			 act 'Wait for her reaction':
+			 cls
+			 gs'stat'
+				 if vnesh<30:
+				 'The girl smiles at you, but removes your hand, and leaves, sending you a kiss.'
+				 act '...':gt'fit','razd'
+				 end
+				 if vnesh>=30:
+				 cla
+				 *clr
+				 '<center><img src="img/centr/razd3.jpg" ></center>'
+				 'The girl pressed to you even stronger and kisses your lips.'
+					 act 'further':
+					 set tanznak=1
+					 gt 'lezbsex','start'
+					 end
+				 end
+			 end
+		 end
+	 end
+ end
+ }
+
+gs'stat'
+
+'The girl sees your look and smile turns. Girl undressing and taking toiletries are in the shower.'
+act 'turn':gt'fit','razd'
+
+act 'Go in the shower after a girl':
+cls
+set minut = minut + 15
+set sweat = -3
+set horny = horny + 1
+>>>>>>> 351_fitgirl
 set hapri = 0
 set mop = 1
 dynamic $showerdin
+<<<<<<< 351_fitgirl
 shovertania += 1
 '<center><img src="images\pics\dush.jpg"></center>'
 gs 'stat'
@@ -67,5 +129,16 @@ gs 'stat'
 dynamic $dintaniastart
 act 'Out of the shower': gt 'fit','razd'
 end
+=======
+shovertania+=1
+'<center><img src="pics/dush.jpg" ></center>'
+gs'stat'
+'You are logged in shower. There`s no one, except this girl. The girl looked back and see you smile again turned.'
+dynamic $dintaniastart
+act 'Get out of the shower':gt'fit','razd'
+end
+
+
+>>>>>>> 351_fitgirl
 --- fitgirl ---------------------------------
 

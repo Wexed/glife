@@ -1,7 +1,12 @@
 # popu
+<<<<<<< 310_popu
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 310_popu
 cla
 *clr
+<<<<<<< 310_popu
 set minut += 5
 '<center><img src="images\zoo\parrot2.jpg"></center>'
 '<center><<$namepopu>> sitting in his cell.</center>'
@@ -9,14 +14,32 @@ clr
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+set minut = minut + 5
+'<center><img src="zoo/1a640f07cc5c.jpg" ></center>'
+'<center><<$namepopu>> sits in his cage.</center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 310_popu
 LCOLOR = rgb(106,90,205)
 
+<<<<<<< 310_popu
 act 'Leave': gt 'korr'
 act 'Release window':
 	set popugai = 0
 	set minut += 10
 	gt 'korr'
 	end
+=======
+act 'Get_Away':gt'korr'
+act 'To release the window':
+	 set popugai=0
+	 set minut+=10
+	 gt'korr'
+	 end
+>>>>>>> 310_popu
 end
 --- popu ---------------------------------
 

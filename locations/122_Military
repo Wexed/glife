@@ -1,6 +1,7 @@
 # Military
 if $ARGS[0] = 'start':
 $sexloc = $CURLOC
+<<<<<<< 122_Military
 gs 'stat'
 '<center><B><font color = maroon>polygon</font></B></center>'
 '<center><img src="images\img\military\military.jpg"></center>'
@@ -14,8 +15,24 @@ if sanrand = 0: gt 'Military','san0'
 if sanrand = 1: gt 'Military','san1'
 'You worked in the infirmary.'
 act 'Exit': gt 'Military','start'
+=======
+gs'stat'
+'<center><B><font color=maroon>ground</font></B></center>'
+'<center><img src="img/military/military.jpg" ></center>'
+'Around full of people, near the tent city, and a lot of guys running around with guns.'
+
+act'Work in the infirmary':
+cla
+set minut+=60
+set sanrand=rand(0,10)
+if sanrand=0:gt'Military','san0'
+if sanrand=1:gt'Military','san1'
+'You worked in the infirmary.'
+act 'Go_Out':gt'Military','start'
+>>>>>>> 122_Military
 end
 
+<<<<<<< 122_Military
 act 'Go to his tent': gt 'Palatka','start'
 
 act 'Walking in the woods':
@@ -26,8 +43,21 @@ if milprorand = 0: gt 'Military','pro0'
 if milprorand = 1: gt 'Military','pro1'
 'You walk.'
 act 'Finish': gt 'Military','start'
+=======
+act'Go to his tent':gt 'Palatka','start'
+
+act'Walking in the woods':
+cla
+set minut+=60
+set milprorand=rand(0,10)
+if milprorand=0:gt'Military','pro0'
+if milprorand=1:gt'Military','pro1'
+'you take a walk.'
+act 'End_Up':gt'Military','start'
+>>>>>>> 122_Military
 end
 
+<<<<<<< 122_Military
 act 'There is a field kitchen':
 	set minut += 30
 	set health += 10
@@ -42,12 +72,29 @@ cla
 set minut += 60
 set money += 5000
 act 'Go to town': gt 'street'
+=======
+act'There is a field kitchen':
+	 set minut = minut + 30
+     set health = health + 10
+     set manna = manna + 20
+     set energy = energy +20
+     set water = water +20
+     gs'stat'
+     end
+
+if week<6 or week=7 and hour>=18:
+cla
+set minut+=60
+set money+=5000
+act'Go to town':gt'street'
+>>>>>>> 122_Military
 end
 end
 
 if $ARGS[0] = 'san0':
 cla
 *clr
+<<<<<<< 122_Military
 '<center><img src="images\img\military\san0.jpg"></center>'
 'During the examination, the patient shows you your erection and looks at you in anticipation of responses.'
 act 'Drive away': gt 'Military','start'
@@ -56,11 +103,22 @@ act 'Post':
 	set picrand = 41
 	gt 'sex','minet'
 	end
+=======
+'<center><img src="img/military/san0.jpg" ></center>'
+'In the process of inspection, patient shows you your erection and looks at you in anticipation of the reaction.'
+act 'drive_away':gt'Military','start'
+act 'give':
+	 set guy+=1
+	 set picrand=41
+	 gt 'sex','minet'
+	 end
+>>>>>>> 122_Military
 end
 
 if $ARGS[0] = 'san1':
 cla
 *clr
+<<<<<<< 122_Military
 '<center><img src="images\img\military\san1.jpg"></center>'
 'While in the infirmary is unoccupied, the doctor begins to pester you.'
 act 'Send': gt 'Military','start'
@@ -69,10 +127,21 @@ act 'Post':
 	set picrand = 42
 	gt 'sex','minet'
 	end
+=======
+'<center><img src="img/military/san1.jpg" ></center>'
+'While no one in the infirmary, doctor starts to stick to you.'
+act 'send':gt'Military','start'
+act 'give':
+	 set guy+=1
+	 set picrand=42
+	 gt 'sex','minet'
+	 end
+>>>>>>> 122_Military
 end
 
 if $ARGS[0] = 'pro0':
 cla
+<<<<<<< 122_Military
 'To suit you two guys and offer to help them in one game, play the role of a captive spy.'
 act 'Refuse': gt 'Military','start'
 act 'Agree':
@@ -87,10 +156,27 @@ act 'Agree':
 		xgt 'sexdvoe','var'
 		end
 	end
+=======
+'For you fit two guys and offer to help them in one game, play the role of captive spy.'
+act 'Opt_Out':gt'Military','start'
+act 'agree':
+	 cla
+	 *clr
+	 '<center><img src="img/military/pro0.jpg" ></center>'
+	 'You tie the hands and lead to the headquarters, where they represent long -examination, and then the words "Now we will torture you" take out members. That`s what you thought before allowing two burly men you associate.'
+	 act 'submit':
+		 set guy+=2
+		 set SUB+=1
+		 set picrand=21
+		 xgt'sexdvoe','var'
+		 end
+	 end
+>>>>>>> 122_Military
 end
 
 if $ARGS[0] = 'pro1':
 cla
+<<<<<<< 122_Military
 'For you several minutes is what that guy'
 act 'Disregard': gt 'military','rape'
 act 'Run':
@@ -114,11 +200,37 @@ act 'Run':
 		act 'Further': gt 'military','start'
 		end
 	end
+=======
+'For you several munut is what that guy'
+act 'Disregard':gt 'military','rape'
+act 'run':
+	 if beg<10:set peshimraperand=rand(0,11)
+	 if beg>=10 and beg<20:set peshimraperand=rand(0,20)
+	 if beg>=20 and beg<30:set peshimraperand=rand(0,30)
+	 if beg>=30 and beg<40:set peshimraperand=rand(0,40)
+	 if beg>=40 and beg<50:set peshimraperand=rand(0,50)
+	 if beg>=50 and beg<60:set peshimraperand=rand(0,60)
+	 if beg>=60 and beg<70:set peshimraperand=rand(0,70)
+	 if beg>=70 and beg<80:set peshimraperand=rand(0,80)
+	 if beg>=80 and beg<90:set peshimraperand=rand(0,90)
+	 if beg>=90:set peshimraperand=rand(11,100)
+	 if peshimraperand<11:
+		 cla
+		 'You tried to run away but the guy you caught'
+		 act 'further':gt 'military','rape'
+		 end
+	 if peshimraperand>10:
+		 'You are rushing headlong, crashing through the bushes. Finally'
+		 act 'further':gt'military','start'
+		 end
+	 end
+>>>>>>> 122_Military
 end
 
 if $ARGS[0] = 'rape':
 cla
 *clr
+<<<<<<< 122_Military
 set rape += 1
 set bj += 1
 set sex += 1
@@ -157,6 +269,46 @@ act 'Shout':
 			end
 		end
 	end
+=======
+set rape+=1
+set bj+=1
+set sex+=1
+set guy+=1
+set anal+=1
+'<center><img src="img/military/rape1.jpg" ></center>'
+'You woke up in a certain barn with a bag on his head, head ached badly from the impact.'
+act 'shout_Out':
+	 cla
+	 *clr
+	 '<center><img src="img/military/rape2.jpg" ></center>'
+	 'You started screaming, when suddenly your mouth stuck member.
+	 "Here`s a nipple not to scream" came the voice of the rapist.
+	 You tried to spit member, but this only became worse, He thrust it in your throat, and began to fuck your mouth.'
+	 act 'further':
+		 cla
+		 *clr
+		 '<center><img src="img/military/rape3.jpg" ></center>'
+		 'When you have already started to lose consciousness, choking on his cock in the throat, He took it out and threw you on what that box, with the power you entered into the vagina, his cock pecked you nischadno, and you had to look at the leash him through tears.'
+		 act 'further':
+			 cla
+			 *clr
+			 '<center><img src="img/military/rape4.jpg" ></center>'
+			 'When he was tired of your pussy, he turned you and drove his buttocks apart bolt you in the ass, you cried out in pain, but he did not care , you cried and begged him to even be lubricated, but heard only in response contented wheezing, Mom said you learn to run that would not hurt Ass.'
+			 act 'further':
+				 cla
+				 *clr
+				 '<center><img src="img/military/rape5.jpg" ></center>'
+				 'You do not remember how much time passed you then fainted again then came a, but in the end he pulled you from the box and you`re exhausted knelt, he again stuck you cock in her mouth, with words "suck", you obediently began to suck his dildo, he has just brutally raped your anus, in my head flashed the thought of his bite, but it knocked a second thought, and suddenly not be able to do it then with my ass, Finally he came to you in the mouth. And once you have lowered his head as once again got hit on the head.'
+				 set cumlip+=1
+				 set mop=0
+				 set minut+=240
+				 set SUB+=5
+				 act 'further':gt 'military','start'
+				 end
+			 end
+		 end
+	 end
+>>>>>>> 122_Military
 end
 --- Military ---------------------------------
 

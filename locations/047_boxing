@@ -1,15 +1,28 @@
 # boxing
+<<<<<<< 047_boxing
 !Выбор физической атаки
+=======
+!The choice of a physical attack
+>>>>>>> 047_boxing
 
 if weapon = 0:
+<<<<<<< 047_boxing
 	act 'Fist':
 	cla
 	!gs 'atak'
 	xgt 'atak','player'
 	end
+=======
+	 act 'fist':
+	 cla
+	 !gs'atak'
+	 xgt'atak','player'
+	 end
+>>>>>>> 047_boxing
 end
 
 if weapon > 0:
+<<<<<<< 047_boxing
 if weaponTipe = 1: set $weap = 'sword'
 if weaponTipe = 2: set $weap = 'mace'
 if weaponTipe = 3: set $weap = 'ax'
@@ -18,9 +31,20 @@ if weaponTipe = 3: set $weap = 'ax'
 	!gs 'atak'
 	xgt 'atak','player'
 	end
+=======
+if weaponTipe = 1:set $weap = 'sword'
+if weaponTipe = 2:set $weap = 'mace'
+if weaponTipe = 3:set $weap = 'ax'
+	 act 'hit <<$weap>>':
+	 cla
+	 !gs'atak'
+	 xgt'atak','player'
+	 end
+>>>>>>> 047_boxing
 end
 
 if kunai > 0:
+<<<<<<< 047_boxing
 'You have <<kunai>> throwing knives.'
 	act 'Throw a knife':
 	cla
@@ -35,10 +59,30 @@ if kunai > 0:
 	'<font color = green>You are flashed <<knife>> knives.</font>'
 	xgt 'atak','player'
 	end
+=======
+'you have <<kunai>> throwing knives.'
+     act 'throw a knife':
+     cla
+     knife = input ("How to throw knives?")
+         if knife > kunai:
+         set knife = kunai
+         set kunai = 0
+         end
+         if knife <= kunai:
+         set kunai = kunai - knife
+         end
+     '<font color=green>you hurled <<knife>> knives.</font>'
+     xgt'atak','player'
+     end
+>>>>>>> 047_boxing
 end
 
 if magik > 0:
+<<<<<<< 047_boxing
 act 'Magical Attack': gt 'magik'
+=======
+act 'magical Attack':gt'magik'
+>>>>>>> 047_boxing
 end
 --- boxing ---------------------------------
 

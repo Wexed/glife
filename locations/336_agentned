@@ -1,4 +1,5 @@
 # agentned
+<<<<<<< 336_agentned
 gs 'stat'
 '<center><B><font color = maroon>Real Estate Agency</font></B></center>'
 
@@ -101,5 +102,57 @@ end
 if ArendHouseSL['Street']>0: 'Your residential house has <<ArendHouseSL[''Street'']>> rental days left.'
 if ArendHouseSL['Down']>0: 'Your Downtown house has <<ArendHouseSL[''Down'']>> rental days left.'
 if ArendHouseSL['Nord']>0: 'Your northern district house has <<ArendHouseSL[''Nord'']>> rental days left.'
+=======
+gs'stat'
+'<center><B><font color=maroon>agentsvo property</font></B></center>'
+!'<center><img src="pic/bank.jpg" ></center>'
+
+act 'Go_Out':gt'down'
+
+if StoryLine>0 and housr = 0:
+'You can buy an apartment in a residential area of 2 million. Rent an apartment worth 200 rubles per day, the minimum rental period 30 days.'
+     if money>=2000000:
+         act 'Buy an apartment':
+         cls
+         money-=2000000
+         housr = 1
+         BuyHous=1
+         gs'stat'
+         'You bought an apartment in a residential area.'
+         act 'Go_Out':gt'down'
+         end
+     end
+     
+end
+
+if BuyHous!1:
+     if money>=6000:
+         act 'rent an apartment':
+         cls
+         money-=6000
+         housr = 1
+         BuyHous=2
+         ArendHouseSL+=30
+         gs'stat'
+         'You rented an apartment in a residential area. Now you <<ArendHouseSL>> rental days.'
+         act 'Go_Out':gt'down'
+         end
+     end
+end
+
+if ArendHouseSL>0:'you have <<ArendHouseSL>> rental days.'
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 336_agentned
 --- agentned ---------------------------------
 

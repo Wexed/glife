@@ -1,16 +1,28 @@
 # sell_young_clothes
+<<<<<<< 443_sell_young_clothes
 set mag = 1
+=======
+set mag=1
+>>>>>>> 443_sell_young_clothes
 $metka = $ARGS[0]
 $loc = $CURLOC
 $metkaM = $ARGS[0]
 $locM = $CURLOC
+<<<<<<< 443_sell_young_clothes
 '<B><center><font size = 4>Women´s Clothing</font></center></B>'
 *nl
 act '<font color = navy>Go</font>':
 minut += 1
+=======
+'<B><center><font size=4>Women`s clothing</font></center></B>'
+*nl
+act '<font color=navy>Get_Away</font>':
+minut+=1
+>>>>>>> 443_sell_young_clothes
 gt 'young_shop'
 end
 if odekis[1] = 0:
+<<<<<<< 443_sell_young_clothes
 	act '<font color = navy>See the first variant of clothes</font>': set numdres = 1 & payclo = 10000 & gt 'loker','odekis'
 	end
 if odekis[2] = 0:
@@ -40,5 +52,36 @@ if odekis[9] = 0:
 if odekis[10] = 0:
 	act '<font color = navy>See a tenth embodiment of clothing</font>': set numdres = 10 & payclo = 10000 & gt 'loker','odekis'
 	end
+=======
+	 act '<font color=navy>View first variant of clothes</font>':set numdres=1&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[2] = 0:
+	 act '<font color=navy>See the second variant of clothes</font>':set numdres=2&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[3] = 0:
+	 act '<font color=navy>See the third variant of clothes</font>':set numdres=3&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[4] = 0:
+	 act '<font color=navy>View fourth variant of clothes</font>':set numdres=4&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[5] = 0:
+	 act '<font color=navy>View the fifth variant of clothes</font>':set numdres=5&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[6] = 0:
+	 act '<font color=navy>View a sixth embodiment of clothes</font>':set numdres=6&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[7] = 0:
+	 act '<font color=navy>View seventh embodiment clothes</font>':set numdres=7&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[8] = 0:
+	 act '<font color=navy>View eighth embodiment clothes</font>':set numdres=8&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[9] = 0:
+	 act '<font color=navy>View ninth embodiment clothes</font>':set numdres=9&payclo=10000&gt'loker','odekis'
+	 end
+if odekis[10] = 0:
+	 act '<font color=navy>View tenth embodiment clothes</font>':set numdres=10&payclo=10000&gt'loker','odekis'
+	 end
+>>>>>>> 443_sell_young_clothes
 --- sell_young_clothes ---------------------------------
 

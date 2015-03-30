@@ -1,5 +1,6 @@
 # igrkart1
 !by Master Set (blakarchont@gmail.com)
+<<<<<<< 539_igrkart1
 !НАЧАЛО ИГРЫ
 clr
 gs 'stat'
@@ -30,8 +31,41 @@ ACT 'Move away from the table':
 GT 'bldzh'
 END
 
+=======
+!HOME GAMES
+clr
+gs'stat'
+set minut=minut + 5
+IF turn = 0:
+ CLA
+ '<right><img src="casino/stavkabd.jpg" ></right>'
+ ' Please tender, gentlemen.'
+ACT 'make a bet':
+   deal = input 'enter the amount'
+   if money<deal:
+	 msg 'You do not have enough money'
+	 gt 'igrkart1'
+   end
+   if deal<0:
+	 msg 'wrong, try again.'
+	 gt 'igrkart1'
+   end
+   if deal>1000:
+	 msg 'maximum rate 1000 rubles.'
+	 gt 'igrkart1'
+   end
+   set money = money - deal
+   turn = 1
+   GT 'igrkart1'
+END
+ ACT 'Away from the table':
+  GT 'bldzh'
+ END
+ 
+>>>>>>> 539_igrkart1
 END
 
+<<<<<<< 539_igrkart1
 !РАЗДАЧА КАРТ
 IF turn = 1:
 CLA
@@ -83,9 +117,63 @@ turn = 0
 GT 'igrkart1'
 END
 END
+=======
+!the cards are dealt
+IF turn = 1:
+ CLA
+ '<right><img src="casino/cartbd.jpg" ></right>'
+ ' The dealer deals the cards:'
+ '...'
+ suit = RAND (1,4)
+ number = RAND (1,13)
+ $d_card[1] = $number[number] + $suit[suit]
+ d_points = points[number]
+ suit = RAND (1,4)
+ number = RAND (1,13) 
+ $p_card[1] = $number[number] + $suit[suit]
+ p_points = points[number]
+ suit = RAND (1,4)
+ number = RAND (1,13) 
+ $p_card[2] = $number[number] + $suit[suit]
+ p_points = p_points + points[number]
+ IF p_points = 22: p_points = 21  
+ wait 1000
+ IF p_points < 21:
+  'Map dealer:'
+  '  <<$d_card[1]>>'
+  '__________________________'
+  'Player Maps:'
+  '  <<$p_card[1]>>'
+  '  <<$p_card[2]>>'
+  ACT 'enough':
+   turn = 3
+   GT 'igrkart1'
+  END
+  ACT 'another map':
+   turn = 2
+   GT 'igrkart1'
+  END  
+ END
+ IF p_points = 21:
+  'Map dealer:'
+  '  <<$d_card[1]>>'
+  '__________________________'
+  'Player Maps:'
+  '  <<$p_card[1]>>'
+  '  <<$p_card[2]>>'
+  'Black Jack!!!'
+  prise = deal*3
+  ACT 'take the win <<prise>> RUB.':
+   set money = money + prise
+   turn = 0
+   GT 'igrkart1'  
+  END
+ END 
+>>>>>>> 539_igrkart1
 
 END
 
+<<<<<<< 539_igrkart1
 !ДОПОЛНИТЕЛЬНАЯ КАРТА
 IF turn = 2:
 CLA
@@ -127,9 +215,53 @@ turn = 0
 GT 'igrkart1'
 END
 END
+=======
+!Additional cards
+IF turn = 2:
+ CLA
+ '<right><img src="casino/cartbde.jpg" ></right>' 
+ 'The dealer deals one more card:'
+ '...' 
+ suit = RAND (1,4)
+ number = RAND (1,13) 
+ $p_card[3] = $number[number] + $suit[suit]
+ p_points = p_points + points[number] 
+ IF p_points <= 21:
+  'Map dealer:'
+  '  <<$d_card[1]>>'
+  '__________________________'
+  'Player Maps:'
+  '  <<$p_card[1]>>'
+  '  <<$p_card[2]>>'
+  '  <<$p_card[3]>>'
+  ACT 'enough':
+   turn = 3
+   GT 'igrkart1'
+  END
+  ACT 'another map':
+   turn = 22
+   GT 'igrkart1'
+  END   
+ END
+ IF p_points > 21:
+  'Map dealer:'
+  '  <<$d_card[1]>>'
+  '__________________________'
+  'Player Maps:'
+  '  <<$p_card[1]>>'
+  '  <<$p_card[2]>>'
+  '  <<$p_card[3]>>'
+  'busting! you lost.'
+  ACT '...':
+   turn = 0
+   GT 'igrkart1'
+  END
+ END 
+>>>>>>> 539_igrkart1
 END
 
 IF turn = 22:
+<<<<<<< 539_igrkart1
 CLA
 '<right><img src="images\casino\cartbde.jpg"></right>'
 'The dealer deals one more card:'
@@ -171,9 +303,53 @@ turn = 0
 GT 'igrkart1'
 END
 END
+=======
+ CLA
+ '<right><img src="casino/cartbde.jpg" ></right>'
+ 'The dealer deals one more card:'
+ '...' 
+ suit = RAND (1,4)
+ number = RAND (1,13) 
+ $p_card[4] = $number[number] + $suit[suit]
+ p_points = p_points + points[number] 
+ IF p_points <= 21:
+  'Map dealer:'
+  '  <<$d_card[1]>>'
+  '__________________________'
+  'Player Maps:'
+  '  <<$p_card[1]>>'
+  '  <<$p_card[2]>>'
+  '  <<$p_card[3]>>'
+  '  <<$p_card[4]>>'
+  ACT 'enough':
+   turn = 3
+   GT 'igrkart1'
+  END
+  ACT 'another map':
+   turn = 222
+   GT 'igrkart1'
+  END   
+ END
+ IF p_points > 21:
+  'Map dealer:'
+  '  <<$d_card[1]>>'
+  '__________________________'
+  'Player Maps:'
+  '  <<$p_card[1]>>'
+  '  <<$p_card[2]>>'
+  '  <<$p_card[3]>>'
+  '  <<$p_card[4]>>'  
+  'busting! you lost.'
+  ACT '...':
+   turn = 0
+   GT 'igrkart1'
+  END
+ END 
+>>>>>>> 539_igrkart1
 END
 
 IF turn = 222:
+<<<<<<< 539_igrkart1
 CLA
 '<right><img src="images\casino\cartbde.jpg"></right>'
 'The dealer deals one more card:'
@@ -214,8 +390,51 @@ turn = 0
 GT 'igrkart1'
 END
 END
+=======
+ CLA
+ '<right><img src="casino/cartbde.jpg" ></right>'
+ 'The dealer deals one more card:'
+ '...' 
+ suit = RAND (1,4)
+ number = RAND (1,13) 
+ $p_card[5] = $number[number] + $suit[suit]
+ p_points = p_points + points[number] 
+ wait 500
+ IF p_points <= 21:
+  'Map banks:'
+  '  <<$d_card[1]>>'
+  '__________________________'
+  'Player Maps:'
+  '  <<$p_card[1]>>'
+  '  <<$p_card[2]>>'
+  '  <<$p_card[3]>>'
+  '  <<$p_card[4]>>'
+  '  <<$p_card[5]>>'  
+  ACT 'enough':
+   turn = 3
+   GT 'igrkart1'
+  END
+ END
+ IF p_points > 21:
+  'Map dealer:'
+  '  <<$d_card[1]>>'
+  '__________________________'
+  'Player Maps:'
+  '  <<$p_card[1]>>'
+  '  <<$p_card[2]>>'
+  '  <<$p_card[3]>>'
+  '  <<$p_card[4]>>'
+  '  <<$p_card[5]>>'    
+  'busting! you lost.'
+  ACT '...':
+   turn = 0
+   GT 'igrkart1'
+  END
+ END 
+>>>>>>> 539_igrkart1
 END
 
+<<<<<<< 539_igrkart1
 !ДОБОР КАРТ БАНКУЮЩИМ
 IF turn = 3:
 CLA
@@ -317,6 +536,109 @@ ACT 'Pick up the win <<prise>> rub.':
 END
 END
 END
+=======
+!Transoms Bank`s cards
+IF turn = 3:
+ CLA
+ '<right><img src="casino/cartbde.jpg" ></right>'
+ 'The dealer gets the card:'
+ '...' 
+ suit = RAND (1,4)
+ number = RAND (1,13) 
+ $d_card[2] = $number[number] + $suit[suit]
+ d_points = d_points + points[number]  
+ IF p_points = 22: p_points = 21   
+ wait 500
+ IF d_points => 17:
+  'Maps of the Bank:'
+  '  <<$d_card[1]>>'
+  '  <<$d_card[2]>>'
+  'Points dealer: <<d_points>>'
+  '__________________________'
+  'Player Points: <<p_points>>'
+  '__________________________'  
+  IF d_points > p_points:
+   'casino won'
+   ACT '...':
+    turn = 0
+    GT 'igrkart1'
+   END   
+  END
+  IF d_points = p_points:
+   'draw'
+   ACT 'pick rate':
+    set money = money + deal
+    turn = 0
+    GT 'igrkart1'
+   END      
+  END
+  IF d_points < p_points:
+   'player won'
+   prise = deal*2   
+   ACT 'take the win <<prise>> RUB.':
+    set money = money + prise
+    turn = 0
+    GT 'igrkart1'
+   END      
+  END  
+ END
+ IF d_points < 17:
+  suit = RAND (1,4)
+  number = RAND (1,13) 
+  $d_card[3] = $number[number] + $suit[suit]
+  d_points = d_points + points[number]    
+  IF d_points <= 21:
+   'Maps dealer:'
+   '  <<$d_card[1]>>'
+   '  <<$d_card[2]>>'
+   '  <<$d_card[3]>>'
+   'Points dealer: <<d_points>>'   
+   '__________________________'
+   'Player Points: <<p_points>>'
+   '__________________________'  
+   IF d_points > p_points:
+    'casino won'
+    ACT '...':
+     turn = 0
+     GT 'igrkart1'  
+    END   
+   END
+   IF d_points = p_points:
+    'draw'
+    ACT 'pick rate':
+     set money = money + deal
+     turn = 0
+     GT 'igrkart1'
+    END      
+   END
+   IF d_points < p_points:
+    'player won'
+    prise = deal*2   
+    ACT 'take the win <<prise>> RUB.':
+     set money = money + prise
+     turn = 0
+     GT 'igrkart1'
+    END      
+   END     
+  END
+  IF d_points > 21:
+   'Maps dealer:'
+   '  <<$d_card[1]>>'
+   '  <<$d_card[2]>>'
+   '  <<$d_card[3]>>'
+   '__________________________'
+   'busting!!!'
+   '__________________________'
+   'player won'
+   prise = deal*2   
+   ACT 'take the win <<prise>> RUB.':
+    set money = money + prise
+    turn = 0
+    GT 'igrkart1'
+   END      
+  END    
+ END
+>>>>>>> 539_igrkart1
 END
 --- igrkart1 ---------------------------------
 

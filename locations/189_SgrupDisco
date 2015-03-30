@@ -1,4 +1,5 @@
 # SgrupDisco
+<<<<<<< 189_SgrupDisco
 gs 'stat'
 $textgrup = ''
 $textgrup2 = ''
@@ -18,5 +19,34 @@ if i < 26: jump 'markgruploop'
 '<<$textgrup2>>'
 
 act 'Move away': gt $loc, $metka
+=======
+gs'stat'
+$textgrup=''
+$textgrup2=''
+i=0
+:markgruploop
+i+=1
+if grupTipe[i]=3:$textgrup+='
+'+$npcGo[i]
+if grupTipe[i]=4:$textgrup2+='
+'+$npcGo[i]
+if i<26:jump'markgruploop'
+
+
+'Dancing on the dance floor
+<<$textgrup>>'
+
+'In one corner stand
+<<$textgrup2>>'
+
+
+
+
+
+
+
+
+act 'move_away':gt $loc, $metka
+>>>>>>> 189_SgrupDisco
 --- SgrupDisco ---------------------------------
 

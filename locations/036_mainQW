@@ -1,11 +1,19 @@
 # mainQW
+<<<<<<< 036_mainQW
 '<center><img src="images\qwest\main.jpg"></center>'
 set minut += 15
 '(Karin) - "Hmm, strange. Seems I begin to understand what was happening. Get in the car, you´ll go check."'
 'You sat in the back seat black jeep. Juugo sat behind the wheel, and Karin village near you. Karin began to feel you. "Interesting. I understand you had an orgasm and orgasm during part of the force Rikudo, male power, transformed into your power."'
+=======
+'<center><img src="picQW/main.jpg" ></center>'
+set minut = minut + 15
+'(Karin) - "Hmm, strangely. I think I begin to understand what was going on. Get in the car, go check you."'
+'You sat on the back seat of a black jeep. Juugo got behind the wheel, and Karin village near you. Karin took you feel. "interestingly. I understand you had an orgasm and orgasm during part of the force Rikudo, male power, transformed into your power."'
+>>>>>>> 036_mainQW
 !'(Karin) -'
 act 'I am now a magician?':
 cla
+<<<<<<< 036_mainQW
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
 LCOLOR = rgb(106,90,205)
@@ -79,5 +87,84 @@ LCOLOR = rgb(106,90,205)
 
 	end
 end
+=======
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+'(Do_You) - I am now a magician?'
+'(Karin) - Yeah , you also have legs and you still juggler, you also have your hands. You_catch? The magician is a person managing magical powers, you it is, but you manage it do not know how.'
+     act 'So teach me!':
+     cla
+     '(Do_You) - So teach me!'
+     '(Karin) - teach? I am in life no one taught magic. Besides. I have a rather magical gift. I feel better than all the magic, wherein at any distance. Plus I fly and I can change the organic life forms. but understand, mostly it is a gift, rather than learning. I`m just learning honed his gift.'
+     '(Do_You) - Well.'
+     '(Karin) - just the basics.'
+     '(Juugo) - arrived, get_out, ladies.'
+     'You got out and slammed the door. Passed down the alley to the steel doors. They opened Juugo and Karin missed you forward.'
+         act 'Sign on the door':
+         cla
+         *clr
+         '<center><img src="picQW/lab.jpg" ></center>'
+         'The building was a laboratory. A wide variety of stands with equipment and shelves with various flasks and bottles.'
+         '(Karin) - Welcome to my lab. Here I explore and live. Undress and lie down on the couch, I will search you.'
+         set health = vital*10
+         set willpower = intel*5 + will*5
+         set manna = (intel*magik) + vital*5 + rikudo 
+         clr
+         gs'stat'
+             act 'Lie on the couch':
+			 cla
+			 *clr
+			 clr
+             gs'stat'
+             set minut = minut + 30
+             killobj
+             if oldobjmenu=0:
+             addobj 'character'
+             addobj 'see'
+             addobj 'Others'
+             addobj 'menu'
+             else
+             addobj '<font color=green>character</font>'
+             addobj 'skills'
+             addobj 'statistics'
+             addobj 'magic'
+             addobj 'face'
+             addobj 'body'
+             addobj 'clothing'
+             addobj 'Tattoos'
+             addobj 'piercing'
+             addobj 'notebook'
+             addobj 'emergency exit'
+             addobj 'Refresh'
+             addobj 'menu'
+             addobj 'The new menu'
+             end
+			 '<center><img src="picQW/main1.jpg" ></center>'
+			 'You undressed and lay on the couch, Karin began to look around you. It applies what that charms to you and use different devices. Cherz half hour examination, She sighed and told you to dress.'
+			 'You got up from the couch and dressed. You asked Karin "So what? Teach me anything?"'
+			 '(Karin) - Fair_Enough. But only theoretically. Listen carefully and heed, I will not repeat. To begin to tell about magic. The magical energy, in Asian culture it is called chakra, produced by all living organisms. This vital energy, deprived of her body begins to slowly die.  Clear symptom of the lack of magical energy is in a bad mood. It itself can not kill, but it shakes the mind, and exhausts the mind body, as a result of either the body does not survive, or mind.'
+			 'That is magical energy there in the grass, and in the trees, and others, no it into dead matter. It is the energy of life itself, what awakens in inanimate living.  She and you have been and there, the body itself protects itself, prohibiting the use of this energy. This exhausts the body and can kill him. Magee just know how to circumvent the protection of the body and separating themselves from the magical energy to convert it into some kind of action. The main task of any magician is the maximum their potential and learn to draw their energy as much as possible. But magicians can not scoop up more energy, than they contain. You in something lucky, you entered in the amount of energy, as none of the magician no. You only need to learn how to use it. As I have understood, Your orgasms are capable of handling the energy Rikudo in their own. But each new stage will be harder given. Maybe there is still some way to recycle some energy in your own Rikudo. but the main thing, your magical energy supply is almost exhausted, unlike other magicians. understand, you theoretically the most powerful magician in the world, as Rikudo was the strongest in the history of. Perhaps there is a technique of magic that can only work with the power Rikudo. Most likely in the scrolls are in the dungeon just had some spells.'
+			 '(Do_You) - Igor! Igor took one of the scrolls!'
+			 '(Karin) - Just do not think, I`ll be for you to solve your problems. If you want to look for their own Igor.'
+			 '(Do_You) - I have no idea where he lives. May pay a visit to the trench.'
+			 '(Karin) - Do you think the Order of Dawn retreated from such findings? Listen, I see you do not quite understand, what is the Order of Dawn. It`s not what you whipping boy. There all the magicians of the highest level. Neither I nor Juugo no good even hold a candle to any of them. Any of these razotret us Juugo without straining. They force, their combat experience and unique technology. Do not mess with these guys, they are pros in their field. Their main business of destroying other magicians and catching demons.'
+			 '(Do_You) - What else for demons?'
+			 '(Karin) - Demons demons, creatures come to us from other worlds. Possibly Rikudo was a demon, demons but unlike him, but blunt and aggressive. Something like beasts woven from pure magic.'
+			 '(Do_You) - guys own. Listen, and you can turn me back into a man?'
+			 '(Karin) - can. But I will not. You have no idea how much energy it took me, I squeezed myself to dry and Juugo. I barely had enough energy. Now I`m her physically not enough because of the mad energy consumption . And there`s more to consider that now your body begins prisposablivatsya magic and I have even harder. This will be possible, Only if you bleed the magical about not less 10level and pass me all his energy forever. I can make you the same again, but you`ll never be a magician, This path will be closed for you forever.'
+			 '(Karin) - You still do not look so far into the future. Develop body, learn to fight, Mine magical power, coach mind. Gradually everything will rise on the places on which all should be.'
+             act 'Go_Out':gt'down'
+			 end
+         
+         end
+         
+     end
+end
+
+
+
+
+>>>>>>> 036_mainQW
 --- mainQW ---------------------------------
 

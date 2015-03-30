@@ -1,3 +1,4 @@
+<<<<<<< 547_Maria1
 # Mariya1
 	'- How can I help you?'
 act 'Move away': gt 'rack'
@@ -30,37 +31,102 @@ if nomer = 0:
 			nomer = 1
 			nom_1 = 1
 			gt 'mariya1'
+=======
+# Maria1
+	'- How can I help you?'
+act 'move_away':gt'rack'	
+if nom_1=0:	
+	 act 'Ask about plans for the evening':
+	 cla
+		'- What are you doing tonight?'
+		'- I walk with my husband. even that-some?'
+	 act 'move_away':gt'rack'	
+	 end
+	 
+	 if tobiQW = 2000:
+	 	 act 'Why in the hotel so crowded?':
+		 cla
+		 tobiQW = 2001
+			'- Why in the hotel so crowded?'
+			'- Here stopped members of Congress rare languages, as they call themselves quack.'
+		 act 'move_away':gt'rack'	
+		 end
+	 end
+end
+if nomer=0:
+	*clear
+	act 'stay':
+		'- I would like to stay'
+		'- Ok, What would you like to?'
+		cla
+		act 'cheapest room':
+			'- cheapest room'
+			nomer=1
+			nom_1=1
+			gt 'Maria1'
+>>>>>>> 547_Maria1
 		end
 		act 'Standard Room':
 			'- Standard Room'
+<<<<<<< 547_Maria1
 			nomer = 2
 			nom_1 = 1
 			gt 'mariya1'
+=======
+			nomer=2
+			nom_1=1
+			gt 'Maria1'
+>>>>>>> 547_Maria1
 		end
 		act 'Suite':
 			'- Suite'
+<<<<<<< 547_Maria1
 			nomer = 3
 			nom_1 = 1
 			gt 'mariya1'
+=======
+			nomer=3
+			nom_1=1
+			gt 'Maria1'
+>>>>>>> 547_Maria1
 		end
 		act 'Presidential Suite':
 			'- Presidential Suite'
+<<<<<<< 547_Maria1
 			nomer = 4
 			nom_1 = 1
 			gt 'mariya1'
+=======
+			nomer=4
+			nom_1=1
+			gt 'Maria1'
+>>>>>>> 547_Maria1
 		end
 	end
 end
+<<<<<<< 547_Maria1
 if nom_1 = 1 and flag = 0:
+=======
+if nom_1=1 and flag=0:
+>>>>>>> 547_Maria1
 	*clear
 	cla
 	'- You shoot a room for one night.'
+<<<<<<< 547_Maria1
 	sto_nom = nom_o[nomer]
+=======
+	sto_nom=nom_o[nomer]
+>>>>>>> 547_Maria1
 	'- It will cost <<sto_nom>>'
 	cla
+<<<<<<< 547_Maria1
 	act 'Pay':
+=======
+	act 'Checkout':
+>>>>>>> 547_Maria1
 		if sto_nom > money:
 			msg 'Not enough money'
+<<<<<<< 547_Maria1
 			srokarend = 0
 			nomer = 0
 			nom_1 = 0
@@ -74,19 +140,51 @@ if nom_1 = 1 and flag = 0:
 		'Your room <<nom_nom>>'
 		cla
 		act 'Goodbye':
+=======
+			srokarend=0
+			nomer=0
+			nom_1=0
+			gt 'Maria1'
+		end
+		money=money-sto_nom
+		flag=1
+		nom_1=0
+		nom_nom=rand(1,1000)
+		'Thank you for using our services'
+		'your room number is <<nom_nom>>'
+		cla
+		act 'bye now':
+>>>>>>> 547_Maria1
 			gt 'rack'
 		end
 	end
+<<<<<<< 547_Maria1
 	act 'Change Your Mind':
 		nomer = 0
 		nom_1 = 0
 		gt 'mariya1'
+=======
+	act 'change_your_mind':
+		nomer=0
+		nom_1=0
+		gt 'Maria1'
+>>>>>>> 547_Maria1
 	end
 end
+<<<<<<< 547_Maria1
 if nom_1 = 0:
 	act 'Move away':
+=======
+if nom_1=0:	
+	act 'move_away':
+>>>>>>> 547_Maria1
 		gt 'rack'
 	end
+<<<<<<< 547_Maria1
 end
 --- Mariya1 ---------------------------------
+=======
+end	
+--- Maria1 ---------------------------------
+>>>>>>> 547_Maria1
 

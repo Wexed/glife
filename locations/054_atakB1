@@ -1,4 +1,5 @@
 # atakB1
+<<<<<<< 054_atakB1
 if $ARGS[0] = 'atak':
 cla
 !расчет попадания уворота
@@ -28,25 +29,77 @@ set popKoef = popad * 50/100
 	if popad <= uvorot:
 	'<B><font color = red>is washed</font></B>'
 	end
+=======
+if $ARGS[0]='atak':
+cla
+!payment hit dodge
+set poSp = speedV*20/100
+set uvAg = agil*20/100
+set poBox = reactV*20/100
+set uvBox = react*20/100
+set popad = RAND (reactV-poBox,reactV+poBox) + RAND (speedV-poSp,speedV+poSp) + bonusShV
+set uvorot = RAND (react-uvBox,react+uvBox) + RAND (agil-uvAg,agil+uvAg)
+set uvorKoef = uvorot*50/100
+set popKoef = popad*50/100
+     if popad > uvorot:
+         if popad >= uvorot+uvorKoef:
+         !Crete, very direct hit
+         '<B><font color=green>Critical hits</font></B>'
+         gs'atakB1','uronKrit'
+         end
+         
+         if popad < uvorot+uvorKoef:
+         !normal hit
+         !attack the enemy
+         '<B><font color=green>EYE</font></B>'
+         gs'atakB1','uron'
+         end
+     end
+     
+     if popad <= uvorot:
+     '<B><font color=red>LOST</font></B>'
+     end
+>>>>>>> 054_atakB1
 end
 
 
+<<<<<<< 054_atakB1
 if $ARGS[0] = 'uronKrit':
+=======
+if $ARGS[0]='uronKrit':
+>>>>>>> 054_atakB1
 cla
 set damDef = defenceV/100
+<<<<<<< 054_atakB1
 set damKoef = damDef * 20/100
 set damage = RAND(damDef + damKoef, damDef + damKoef * 2)
 gs 'atakB1','damage'
+=======
+set damKoef = damDef*20/100 
+set damage = RAND(damDef+damKoef,damDef+damKoef*2)
+gs'atakB1','damage'
+>>>>>>> 054_atakB1
 end
 
+<<<<<<< 054_atakB1
 if $ARGS[0] = 'uron':
+=======
+if $ARGS[0]='uron':
+>>>>>>> 054_atakB1
 cla
 set damDef = defenceV/100
+<<<<<<< 054_atakB1
 set damKoef = damDef * 20/100
 set damage = RAND(damDef - damKoef, damDef + damKoef)
 gs 'atakB1','damage'
+=======
+set damKoef = damDef*20/100 
+set damage = RAND(damDef-damKoef,damDef+damKoef)
+gs'atakB1','damage'
+>>>>>>> 054_atakB1
 end
 
+<<<<<<< 054_atakB1
 if $ARGS[0] = 'damage':
 cla
 	if defence <= 0 and klon <= 0 and unmaterial <= 0 and barier <= 0:
@@ -112,7 +165,79 @@ cla
 		end
 	!xgt 'fight','sta'
 	end
+=======
+if $ARGS[0]='damage':
+cla   
+     if defence <= 0 and klon <= 0 and unmaterial <= 0 and barier <= 0:
+     if dospeh > 0:set damage = damage - dospehDefV&set dospehEn = dospehEn - 1
+     if damage < 0:set damage = 0
+     Set health = health - damage
+     !Set manna = manna - damageM
+         if eleShV > 0:
+         set stun = RAND (eleShV,eleShV*3)
+         '<B><font color=red>Protect your enemy paralyzed on <<stun>> Rounds</font></B>'
+         end
+     '<B><font color=red>Protect your enemy inflicted damage <<damage>> units</font></B>'
+     !'<B><font color=red>Your manna harmed <<damageM>> units</font></B>'
+         if zerkalo > 0:
+         set zerkalo = zerkalo - 1
+         set defenceV = defenceV - damage
+         '<B><font color=green>You have reflected the damage done by the defense  <<damage>> points of damage</font></B>'
+         end
+     !xgt'fight','sta'
+     end
+     
+     if defence > 0 and klon <= 0 and unmaterial <= 0:
+     !set damSum = damage + damageM
+     !Set defence = defence - damSum
+     Set defence = defence - damage
+     '<B><font color=red>Your defense harmed <<damage>> units of the defense</font></B>'
+     !xgt'fight','sta'
+     end
+     
+     if klon > 0 and unmaterial <= 0:
+     set klon = klon - 1
+     '<B><font color=red>Destroy your clone</font></B>'
+     !xgt'fight','sta'
+     end
+     
+     if unmaterial > 0:
+     set unmaterial = unmaterial - 1
+     '<B><font color=green>Beat the defense went through you. YOU are not material</font></B>'
+     !xgt'fight','sta'
+     end
+     
+     if barier > 0:
+     !imeniteta barrier for damage
+         if barier >= damage:
+         '<B><font color=green>You can easily withstand the impact of the defense</font></B>'
+         !xgt'fight','sta'
+         end
+         if barier < damage:
+         !Set manna = manna - damageM
+         !Set health = health - damage
+         Set health = health - damage
+             if eleShV > 0:
+			 set stun = RAND (eleShV,eleShV*3)
+			 '<B><font color=red>Protect your enemy paralyzed on <<stun>> Rounds</font></B>'
+			 end
+         '<B><font color=red>You harmed <<damage>> units of the defense</font></B>'
+         !'<B><font color=red>Your manna harmed <<damageM>> units</font></B>'
+             if zerkalo > 0:
+             set zerkalo = zerkalo - 1
+             set defenceV = defenceV - damage
+             '<B><font color=green>You have reflected damage and the defense was <<damage>> points of damage</font></B>'
+             end
+         end
+     !xgt'fight','sta'
+     end
+>>>>>>> 054_atakB1
 
 end
+
+
+
+
+
 --- atakB1 ---------------------------------
 

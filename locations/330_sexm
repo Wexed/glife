@@ -1,8 +1,13 @@
 # sexm
+<<<<<<< 330_sexm
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 330_sexm
 cla
 *clr
 if love = 0 and bfa >= 100 and daya >= 30 and husband = 0:
+<<<<<<< 330_sexm
 	act 'Talk about cohabitation.': gt 'love','start'
 	end
 '<<$boyA>> will guide you to the entrance.'
@@ -179,8 +184,187 @@ if husband > 0:
 			end
 		end
 	end
+=======
+     act 'Talk about cohabitation.':gt'love','start'
+	 end
+'<<$boyA>> guide you to the entrance.'
+if harakBoyA = 2:'Svetsik, can priglasish me in for a cup of coffee?'
+if harakBoyA = 1:'Let me give you a kiss, beloved.'
+if harakBoyA = 0:'While Light, I will wait for the moment when we meet again .'
+act 'Kiss goodbye to':
+	 cla
+	 if boyonceA = 0:
+		 if harakBoyA = 2:
+			 if daya < 3:
+				 set bfa = bfa + 1
+				 '<<$boyA>> kisses you on the lips goodbye hands and squeezes your ass.'
+				 end
+			 if daya >= 3:
+				 set bfa = bfa - 2
+				 '<<$boyA>> kisses you on the lips and pulled away from the kiss mumbling irritably "Fair_Enough, as_long_as, dynamo."'
+				 end
+			 end
+		 if harakBoyA = 1:
+			 if daya < 10:
+				 set bfa = bfa + 2
+				 '<<$boyA>> kisses you on the lips goodbye tightly hugging your waist.'
+				 end
+			 if daya >= 10:
+				 set bfa = bfa - 2
+				 '<<$boyA>> kisses you on the lips goodbye and says goodbye "Long as we keep the pioneers of the handles?".'
+				 end
+			 end
+		 if harakBoyA = 0:
+			 if daya < 20:
+				 set bfa = bfa + 3
+				 '<<$boyA>> kisses you on the lips goodbye and gently hugs your waist.'
+				 end
+			 if daya >= 20:
+				 set bfa = bfa - 1
+				 '<<$boyA>> kisses you on the lips goodbye and broke away from the kiss looks at you big sad eyes.'
+				 end
+			 end
+		 end
+	 if boyonceA = 1:
+		 if harakBoyA = 2:
+			 if daya < 3:
+				 set bfa = bfa - 2
+				 '<<$boyA>> kisses you on the lips goodbye hands and squeezes your ass.'
+				 end
+			 if daya >= 3:
+				 set bfa = bfa - 3
+				 '<<$boyA>> kisses you on the lips and pulled away from the kiss mumbling irritably "What you do today you do not want sex?"'
+				 end
+			 end
+		 if harakBoyA = 1:
+			 if daya < 10:
+				 set bfa = bfa - 1
+				 '<<$boyA>> kisses you on the lips goodbye tightly hugging your waist.'
+				 end
+			 if daya >= 10:
+				 set bfa = bfa - 2
+				 '<<$boyA>> kisses you on the lips goodbye and says goodbye "Fair_Enough, live a day without sex.".'
+				 end
+			 end
+		 if harakBoyA = 0:
+			 if daya < 20:
+				 set bfa = bfa + 1
+				 '<<$boyA>> kisses you on the lips goodbye and gently hugs your waist.'
+				 end
+			 if daya >= 20:
+				 set bfa = bfa - 1
+				 '<<$boyA>> kisses you on the lips goodbye and broke away from the kiss looks at you big sad eyes.'
+				 end
+			 end
+		 end
+	 act 'Go to the apartment':gt'street'
+	 end
+act 'say_goodbye':
+	 cla
+	 if boyonceA = 0:
+		 if harakBoyA = 2:
+			 if daya < 3:
+				 set bfa = bfa - 1
+				 '<<$boyA>> slightly annoyed "Do not make yourself out holy innocence."'
+				 end
+			 if daya >= 3:
+				 set bfa = bfa - 3
+				 '<<$boyA>> irritated "So even you do not want to kiss? Well."'
+				 end
+			 end
+		 if harakBoyA = 1:
+			 if daya < 10:
+				 set bfa = bfa + 1
+				 '<<$boyA>> waved and walked out of the house.'
+				 end
+			 if daya >= 10:
+				 set bfa = bfa - 2
+				 '<<$boyA>> irritably waved your hand in farewell and walked quickly out of the door.'
+				 end
+			 end
+		 if harakBoyA = 0:
+			 if daya < 20:
+				 set bfa = bfa + 2
+				 '<<$boyA>> waving you goodbye and smiling.'
+				 end
+			 if daya >= 20:
+				 set bfa = bfa - 1
+				 '<<$boyA>> waving goodbye to you and looking at you big sad eyes.'
+				 end
+			 end
+		 end
+	 if boyonceA = 1:
+		 if harakBoyA = 2:
+			 if daya < 3:
+				 set bfa = bfa - 2
+				 '<<$boyA>> annoyed "Well?"'
+				 end
+			 if daya >= 3:
+				 set bfa = bfa - 4
+				 '<<$boyA>> furious "Brezguesh?"'
+				 end
+			 end
+		 if harakBoyA = 1:
+			 if daya < 10:
+				 set bfa = bfa - 1
+				 '<<$boyA>> waved and walked out of the house.'
+				 end
+			 if daya >= 10:
+				 set bfa = bfa - 3
+				 '<<$boyA>> irritably waved your hand in farewell and walked quickly out of the door.'
+				 end
+			 end
+		 if harakBoyA = 0:
+			 if daya < 20:
+				 set bfa = bfa + 1
+				 '<<$boyA>> waving you goodbye and smiling.'
+				 end
+			 if daya >= 20:
+				 set bfa = bfa - 2
+				 '<<$boyA>> waving goodbye to you and looking at you big sad eyes.'
+				 end
+			 end
+		 end
+	 act 'Go to the apartment':gt'street'
+	 end
+if husband=0:
+	 act 'To invite':
+		 cla
+		 gt'sexm','room'
+		 end
+	 end
+if husband>0:
+	 if week<6 and hour<17 and hour>7:
+		 act 'To invite':gt'sexm','room'
+		 end
+	 if week>5 or week<6 and hour>16:
+		 act 'To say that the house husband and you can not.':
+			 cla
+			 if harakBoyA = 0:
+				 set bfA = 0
+				 '"what? you are married, you me obmannyvala, I love you so, adieu!" he shouted and ran away in tears.'
+				 act 'Go to the apartment':gt'korr'
+				 end
+			 if harakBoyA = 1:
+				 '"Well then, before the meeting, I `ll call you" he said.'
+				 act 'Go to the apartment':gt'korr'
+				 end
+			 if harakBoyA = 2:
+				 '"Husband is not a wall, may move up, and can lift the slightly higher, For example ?" he said, rather grinning.'
+				 act 'Opt_Out':set bfa-=1&gt'korr'
+				 act 'agree':
+					 set bfa+=1
+					 set boycherdaksex=1
+					 gt'sexm','room'
+					 end
+				 end
+			 end
+		 end
+	 end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 !harakHusb > 0
 
 if $ARGS[0] = 'room':
@@ -199,8 +383,29 @@ set minut += 20
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+!harakHusb>0
+
+if $ARGS[0]='room':
+if boycherdaksex=1:
+	 '<center><img src="etogame/cherdak.jpg" ></center>'
+	 'You are a man climbed into the attic.'
+	 end
+if boycherdaksex=0:
+	 '<center><B><font color=maroon>bedroom</font></B></center>'
+	 if rembedr = 0:'<center><img src="pic/bedr.jpg" ></center>'
+	 if rembedr = 1:'<center><img src="pic/bedr2.jpg" ></center>'
+	 'You took off his shoes and went with the guy in the bedroom.'
+	 end
+clr
+set minut+=20
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 330_sexm
 LCOLOR = rgb(106,90,205)
 if harakBoyA = 2:
+<<<<<<< 330_sexm
 	'<<$boyA>> grabs you and rudely pushes you to your starting passionately kiss you and try to steal your clothes.'
 	set sexrand = RAND(0,3)
 	'Finally <<$boyA>> won in an unequal battle with your bra straps and you section.'
@@ -288,8 +493,98 @@ if harakBoyA = 0:
 	'<<$boyA>> is shy and does not know what to do.'
 	act 'Propose options': gt 'sexm','variant'
 	end
+=======
+	 '<<$boyA>> roughly grabs you and pulls you to your starting passionately kiss you and try to steal your clothes.'
+	 set sexrand = RAND (0,3)
+	 'finally <<$boyA>> won in an unequal battle with the straps of your bra and your profile.'
+	 if boyonceA = 1:
+		 if sexrand = 0:
+			 '"Svetsik, I pine juicy huytsa."'
+			 act 'do blowjob':
+				 cla
+				 set bfa = bfa + 3
+				 gt'sexm','minet'
+				 end
+			 act 'I do not want, Let`s take another':gt'sexm','variant'
+			 end
+		 if sexrand = 1:
+			 '"Svetsik, cup your ass."'
+			 act 'anal':
+				 cla
+				 set bfa = bfa + 5
+				 gt'sexm','anal'
+				 end
+			 act 'Oh nafig, Let`s take another':gt'sexm','variant'
+			 end
+		 if sexrand = 2:
+			 '"Lie down and push the Svetsik Lyashko."'
+			 act 'spread her legs':gt'sexm','miss'
+			 act 'I do not want, Let`s take another':gt'sexm','variant'
+			 end
+		 if sexrand = 3:
+			 '"Get up crustaceans Svetsik."'
+			 act 'get cancer':gt'sexm','dog'
+			 act 'I do not want, Let`s take another':gt'sexm','variant'
+			 end
+		 end
+	 if boyonceA = 0:
+		 '<<$boyA>> threw you on the bed and fixed his lips to your breast.'
+		 act 'sex':gt'sexm','miss'
+		 act 'I do not want, Let`s take another':gt'sexm','variant'
+		 end
+	 end
+if harakBoyA = 1:
+	 '<<$boyA>> gently hugs you and cuddle.'
+	 set sexrand = RAND (0,3)
+	 'You slowly undress and <<$boyA>> tells you, as you want, beloved.'
+	 act 'I want so, how do you want.':
+		 cla
+		 if boyonceA = 1:
+			 if sexrand = 0:
+				 '"Svetulya, I suck."'
+				 act 'do blowjob':
+					 cla
+					 set bfa = bfa + 2
+					 gt'sexm','minet'
+					 end
+				 act 'I do not want, Let`s take another':gt'sexm','variant'
+				 end
+			 if sexrand = 1:
+				 '"Svetulya, I want you in the ass."'
+				 act 'anal':
+					 cla
+					 set bfa = bfa + 4
+					 gt'sexm','anal'
+					 end
+				 act 'I do not want, Let`s take another':gt'sexm','variant'
+				 end
+			 if sexrand = 2:
+				 '"Svetulya, i want you."'
+				 act 'spread her legs':gt'sexm','miss'
+				 act 'I do not want, Let`s take another':gt'sexm','variant'
+				 end
+			 if sexrand = 3:
+				 '"Svetulya, Get up on all fours."'
+				 act 'get cancer':gt'sexm','dog'
+				 act 'I do not want, Let`s take another':gt'sexm','variant'
+				 end
+			 end
+		 if boyonceA = 0:
+			 '<<$boyA>> threw you on the bed and fixed his lips to your breast.'
+			 act 'sex':gt'sexm','miss'
+			 act 'I do not want, Let`s take another':gt'sexm','variant'
+			 end
+		 end
+	 act 'propose options':gt'sexm','variant'
+	 end
+if harakBoyA = 0:
+	 '<<$boyA>> shy and does not know, what to do.'
+	 act 'propose options':gt'sexm','variant'
+     end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 if $ARGS[0] = 'variant':
 if harakBoyA = 0: set bfa += 1
 if harakBoyA = 2: set bfa -= 1
@@ -305,8 +600,26 @@ if kunday ! day:
 if DOM > 0 and boyonceA = 1 and harakBoyA = 0 and izvratA = 1 and strapon > 0:
 	act 'Otstraponili': gt 'sexm','strapon'
 	end
+=======
+if $ARGS[0]='variant':
+if harakBoyA = 0:set bfa = bfa + 1
+if harakBoyA = 2:set bfa = bfa - 1
+'<<$boyA>> looks at you and waiting for what you say'
+act 'spread her legs':gt'sexm','miss'
+act 'get cancer':gt'sexm','dog'
+act 'anal':gt'sexm','anal'
+act 'do blowjob':gt'sexm','minet'
+act 'masturbate him':gt'sexm','hand'
+if kunday ! day:
+	 act 'Cooney':gt'sexm','kuni'
+	 end
+if DOM > 0 and boyonceA = 1 and harakBoyA = 0 and izvratA = 1 and strapon > 0:
+	 act 'Otstraponit':gt'sexm','strapon'
+	 end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 if $ARGS[0] = 'minet':
 *clr
 set popolaini = 1
@@ -314,8 +627,18 @@ set bfA += 1
 gs 'brosok'
 set bj += 1
 set bja += 1
+=======
+if $ARGS[0]='minet':
+*clr
+set popolaini=1
+set bfA = bfA + 1
+gs'brosok'
+set bj = bj + 1
+set bja+=1
+>>>>>>> 330_sexm
 set dick = dickA
 set harakBoy = harakBoyA
+<<<<<<< 330_sexm
 set minut += 30
 set $nameV = $boyA
 gs 'stat'
@@ -363,8 +686,58 @@ act 'Remove the mouth.':
 		end
 	act 'Leave.': gt 'sexm','endsex'
 	end
+=======
+set minut = minut + 30
+set $nameV = $boyA
+gs'stat'
+'<center><img src="picV/bj.jpg" ></center>'
+'<<$boyA>> as a member you spent on the lips.'
+if bj = 1:'you think "Damn, I rolled, sit in front of a man, and he told me in the mouth by a dick pokes."'
+gs'oral','start'
+act 'continue to suck.':
+	 cla
+	 *clr
+	 set swallow = swallow + 1
+	 set cumlip = cumlip + 1
+	 set bfa = bfa + 3
+	 '<center><img src="picV/swallow.jpg" ></center>'
+	 'A jet of hot cum hit you in the mouth. You started to swallow cum, and <<$boyA>> continued to cum in your mouth. Finally.'
+	 act 'Get_Away.':gt'sexm','endsex'
+	 end
+act 'Remove the mouth.':
+	 cla
+	 *clr
+	 if harakBoyA = 0:
+		 '<center><img src="picV/hand.jpg" ></center>'
+		 'You remove a member from the mouth and <<$boyA>> finished you in the palm.'
+		 end
+	 if harakBoyA = 1:
+		 set tiprand = RAND (0,3)
+		 if tiprand < 3:
+			 '<center><img src="picV/hand.jpg" ></center>'
+			 'You remove a member from the mouth and <<$boyA>> finished you in the palm.'
+			 end 
+		 if tiprand = 3:
+			 set facial = facial + 1
+			 set cumface = cumface + 1
+			 set bfa = bfa + 1
+			 '<center><img src="picV/facial.jpg" ></center>'
+			 'Have you taken the member and at this point <<$boyA>> discharged directly on your face, covering it with warm and sticky sperm.'
+			 end
+		 end
+	 if harakBoyA = 2:
+		 set facial = facial + 1
+		 set cumface = cumface + 1
+		 set bfa = bfa + 1
+		 '<center><img src="picV/facial.jpg" ></center>'
+		 '<<$boyA>> hold your hair pulled dick out of your mouth and on your face cumshot, covering it with warm and sticky sperm.'
+		 end
+	 act 'Get_Away.':gt'sexm','endsex'
+     end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 if $ARGS[0] = 'hand':
 *clr
 set popolaini = 1
@@ -382,11 +755,35 @@ if harakBoyA = 0: set bfA -= 1
 if harakBoyA = 1: set bfA -= 5
 if harakBoyA = 2: set bfA -= 10
 act 'Wipe your hands and carry to the door guy.': gt 'sexm','endsex'
+=======
+if $ARGS[0]='hand':
+*clr
+set popolaini=1
+gs'brosok'
+set DOM = DOM + 1
+set hj = hj + 1
+set hja+=1
+set minut = minut + 30
+set horny = horny + DOM
+gs'stat'
+'<center><img src="picV/hand1.jpg" ></center>'
+'You got it <<dick>> inch cock and began to caress her arms around his hands, moving the skin on purple head.'
+'Soon, covering them with warm and sticky sperm.'
+if harakBoyA = 0:set bfA = bfA - 1
+if harakBoyA = 1:set bfA = bfA - 5
+if harakBoyA = 2:set bfA = bfA - 10
+act 'Wipe his hands and spend a Man -to-door.':gt'sexm','endsex'
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 if $ARGS[0] = 'kuni':
+=======
+if $ARGS[0]='kuni':
+>>>>>>> 330_sexm
 *clr
 set kunday = day
+<<<<<<< 330_sexm
 gs 'brosok'
 set DOM += 1
 set kuni += 1
@@ -414,8 +811,38 @@ gs 'stat'
 	if husband > 0 and hour < 17 and hour > 7 and boycherdaksex = 0: set popolaini = 2 & gt 'sexm','popala'
 	gt 'sexm','variant'
 	end
+=======
+gs'brosok'
+set DOM = DOM + 1
+set kuni = kuni + 1
+set minut = minut + 30
+set horny = horny + DOM + (silaVag*2 + 5)
+gs'stat'
+ '<center><img src="picV/kuni.jpg" ></center>'
+ 'You undressed and lay on the bed, saying that the guy you caressed his tongue.'
+ '<<$boyA>> lay down between your legs and began to work on your tongue pussy.'
+	 if harakBoyA = 0:set bfA = bfA - 1
+	 if harakBoyA = 1:set bfA = bfA - 5
+	 if harakBoyA = 2:set bfA = bfA - 10
+     if horny >= 90:
+     set horny = 0
+	 set manna = manna + 15
+	 set willpower = willpower + 15
+	 set orgasm = orgasm + 1
+     'Man of skillful actions you covered orgasm.'
+     else
+     'Action Man though they were exciting, but they began to bore you.'
+     end
+     
+	 act 'further.':
+	 cla
+	 if husband>0 and hour<17 and hour>7 and boycherdaksex=0:set popolaini=2&gt'sexm','popala'
+	 gt'sexm','variant'
+	 end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 if $ARGS[0] = 'strapon':
 *clr
 gs 'brosok'
@@ -432,9 +859,28 @@ gs 'stat'
 	cla
 	gt 'korr'
 	end
+=======
+if $ARGS[0]='strapon':
+*clr
+gs'brosok'
+ set DOM = DOM + 5
+ set pegging = pegging + 1
+ set minut = minut + 30
+ set horny = horny + DOM
+ gs'stat'
+ '<center><img src="picV/pegging.jpg" ></center>'
+ 'You got out of the drawer and put it strapon. <<$boyA>> got cancer on the bed.'
+ 'Greased and lubricated anus guy stuck in a strap-on. While you fucked his ass and he moaned finally finished. You remove the strap from him and went to the bathroom.'
+     set bfA = bfA + 5
+     act 'Wipe his hands and spend a Man -to-door.':
+     cla
+	 gt'korr'
+	 end
+>>>>>>> 330_sexm
 end
 
 
+<<<<<<< 330_sexm
 if $ARGS[0] = 'anal':
 	*clr
 	set popolaini = 3
@@ -549,8 +995,105 @@ if $ARGS[0] = 'anal':
 		if anus < dick: set anus += 1
 		act 'Hold up doors.': set lubonus = 0 & gt 'sexm','endsex'
 	end
+=======
+if $ARGS[0]='anal':
+*clr
+set popolaini=3
+set bfA = bfA + 1
+gs'brosok'
+set minut+=30
+gs'stat'
+set anal = anal + 1
+anala+=1
+     if dickA < anus:set anus = anus + 1
+     '<center><img src="picV/dog2.jpg" ></center>'
+     if analplugin=1 :
+         analpluginbonus = 10
+         analplugin=0
+         if anus < 16 : 
+         '<<$boyA>> pulled out of your more narrow and tight ass plug, '
+         end
+         if anus >= 16 : 
+         ' <<$boyA>>pulled out of your ass juices oozing feverish plug, ' 
+         end
+         'and you feel like hard cock ran into your hole.'
+         if anus + analpluginbonus < dick:
+	     'You screamed and bit his lip from a sharp pain when his <<dickA>> Member inch apart your ass you entered.'
+	     end
+	     if anus + analpluginbonus >= dick:
+	     'You groaned feeling of fullness when it <<dickA>> Member inch apart your ass you entered.'
+	     end
+         'At_Last <<$boyA>> grabbed you stronger for the back and drove into your aching ass dick down to the eggs you finished inside.'
+         cumass+=1
+         set minut = minut + 3
+         set cumanus = cumanus + 1
+         if anus < dickA:set anus = anus + 1
+         set horny = horny + ((anus-dickA)*3)
+         if horny< 1 : set horny = 1
+             if horny >=100 :
+              horny  = 1
+             set orgasm = orgasm + 1
+             set analorgasm= analorgasm+1
+             ' In anus blazing fire and waves of pleasure swept body, you moaning and ass impaling themselves on the penis.'
+             end
+             act 'Hold up doors.':gt'sexm','endsex'
+	 else :
+     if lubri = 0:
+     set lubonus = 2
+     'Lubricant and you do not <<$boyA>> spitting on his fingers began to lubricate your ass saliva.'
+     end
+     if lubri > 0:
+     set lubri = lubri - 1
+     set lubonus = 10
+     'You got out of the box with a tube of lubricant and handed him over to the guy, He choked a little on his palm and rubbed your anus.'
+     end
+'<<$boyA>> put your stomach on the bed apart and your buttocks began to massage your anus with your fingers, first one, then two.'
+if anus < 10:'When your ass you entered three fingers involuntarily groaned in pain.'
+if anus >= 10:'Then the guy brought you three fingers and began to stretch your anus.'
+'<<$boyA>> pulled his fingers out of your priests and you feel his hard cock ran into your hole.'
+if anus + lubonus < dickA:
+'You screamed and bit his lip from a sharp pain when his cock parted your ass you entered.'
+end
+if anus + lubonus >= dickA:
+'You groaned feeling of fullness when his cock parted your ass you entered.'
+end
+'<<$boyA>> froze for a moment giving your ass adapt to sticking out of her term, then began to drive them all the more insistent.'
+if anus + lubonus + 2 < dickA:
+if mop > 1:set mop = 0
+'You cry and sank his teeth into the pillow when <<dickA>> inch cock began to fuck your ass at full power.'
+end
+if anus + lubonus + 2 >= dickA:
+'You started moaning rhythmically to the beat of limb movements inside you.'
+end
+'At_Last <<$boyA>> grabbed you stronger for the back and drove into your aching ass dick down to the eggs you finished inside.'
+     if klismaday ! day:
+     set bfA = bfA - 8
+     '<<$boyA>> took out a member of your ass and see on your dick shit said, "Oban, Charlie and the Chocolate Factory, Babe, before anal enema should be done, but it is not hygienic to knead the clay by a dick."'
+     end
+     if klismaday = day:
+     
+             set cumanus = cumanus + 1
+             if anus < dickA:set anus = anus + 1
+             set horny = horny + ((anus-dickA)*3)
+         
+         if horny< 1 : set horny = 1
+             if horny >=100 :
+              horny  = 1
+             set orgasm = orgasm + 1
+             set analorgasm= analorgasm+1
+             ' In anus blazing fire and waves of pleasure swept body, you moaning and ass impaling themselves on the penis.'
+             end
+     
+     set bfA = bfA + 5
+     '<<$boyA>> took a member of you and kiss you went to the bathroom.'
+     end
+if anus < dick:set anus = anus + 1
+	 act 'Hold up doors.':set lubonus = 0&gt'sexm','endsex'
+	 end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 
 if $ARGS[0] = 'miss':
 	*clr
@@ -569,8 +1112,28 @@ if $ARGS[0] = 'miss':
 	'<<$boyA>> spread your legs and began to fondle her fingers pussy.'
 	gs 'orgazm','start'
 	act 'Hold up doors.': gt 'sexm','endsex'
+=======
+if $ARGS[0]='miss':
+*clr
+set popolaini=3
+set bfA = bfA + 1
+gs'brosok'
+set sex = sex + 1
+sexa+=1
+set minut = minut + 30
+gs'stat'
+set pose = 0
+set $nameV = $boyA
+set dick = dickA
+set silavag = silavagA
+'<center><img src="picV/vag.jpg" ></center>'
+'<<$boyA>> spread your legs and began to caress her fingers pussy.'
+gs'orgazm','start'
+	 act 'Hold up doors.':gt'sexm','endsex'
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 
 if $ARGS[0] = 'dog':
 	*clr
@@ -589,8 +1152,28 @@ if $ARGS[0] = 'dog':
 	'<<$boyA>> poctavil you cancer and spread your bread before you enter.'
 	gs 'orgazm','start'
 	act 'Hold up doors.': gt 'sexm','endsex'
+=======
+if $ARGS[0]='dog':
+*clr
+set popolaini=3
+set bfA = bfA + 1
+gs'brosok'
+set sex = sex + 1
+sexa+=1
+set minut = minut + 30
+gs'stat'
+set pose = 1
+set $nameV = $boyA
+set dick = dickA
+set silavag = silavagA
+'<center><img src="picV/dog1.jpg" ></center>'
+'<<$boyA>> oncTawil you cancer and spread your bread before you enter the.'
+gs'orgazm','start'
+	 act 'Hold up doors.':gt'sexm','endsex'
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 
 if $ARGS[0] = 'startPod':
 	set podrand = RAND(0,1)
@@ -620,8 +1203,35 @@ if $ARGS[0] = 'startPod':
 
 		act 'Doggy-Style': gt 'sexm','doggy'
 	end
+=======
+if $ARGS[0]='startPod':
+set podrand = RAND (0,1)
+     if podrand = 0:
+     '<<$boyA>> whispered to you, Take in the mouth.'
+         act 'Beat_It!':
+	     cla
+	     set DOM = DOM + 1
+	     set bfA = 0
+	     gt'street'
+	     end
+	     
+	     act 'Stand on his heels':gt'sexm','blow'
+     end
+     if podrand = 1:
+     '<<$boyA>> began to rip off your clothes.'
+     	 act 'Beat_It!':
+	     cla
+	     set DOM = DOM + 1
+	     set bfA = 0
+	     gt'street'
+	     end
+	     
+	     act 'get cancer':gt'sexm','doggy'
+     end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 
 if $ARGS[0] = 'doggy':
 	set bfA    += 1
@@ -640,8 +1250,28 @@ if $ARGS[0] = 'doggy':
 		cla
 		gt 'street'
 	end
+=======
+if $ARGS[0]='doggy':
+set bfA = bfA + 1
+gs'brosok'
+set sex = sex + 1
+sexa+=1
+set minut = minut + 30
+set pose = 1
+set $nameV = $boyA
+set dick = dickA
+set silavag = silavagA
+'<center><img src="picV/dog.jpg" ></center>'
+'<<$boyA>> oncTawil you cancer and spread your bread before you enter the.'
+gs'orgazm','start'
+	 act 'Correct clothes and go.':
+	 cla
+	 gt'street'
+	 end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 
 if $ARGS[0] = 'blow':
 	set minut += 20
@@ -737,9 +1367,99 @@ if $ARGS[0] = 'blow':
 			gt 'korr'
 		end
 	end
+=======
+if $ARGS[0]='blow':
+set minut = minut + 20
+'You sat on his haunches and <<$boyA>> pulled out his penis.'
+	 act 'Take by mouth':
+	 cla
+	 *clr
+	 set bfA = bfA + 1
+	 gs'brosok'
+	 set bj = bj + 1
+	 bja+=1
+	 set dick = dickA
+	 set harakBoy = harakBoyA
+	 set minut = minut + 30
+	 set $nameV = $boyA
+	 '<center><img src="picV/bj.jpg" ></center>'
+	 '<<$boyA>> as a member you spent on the lips.'
+	 if bj = 1:'you think "Damn, I rolled, sit in front of a man, and he told me in the mouth by a dick pokes."'
+	 gs'oral','start'
+		 act 'continue to suck.':
+		 cla
+		 *clr
+		 set swallow = swallow + 1
+		 set cumlip = cumlip + 1
+		 '<center><img src="picV/swallow.jpg" ></center>'
+		 'A jet of hot cum hit you in the mouth. You started to swallow cum, and <<$boyA>> continued to cum in your mouth. Finally.'
+			 act 'Get_Away.':
+			 cla
+			 gt'korr'
+			 end
+		 end
+		 
+		 act 'Remove the mouth.':
+		 cla
+		 *clr
+			 if harakBoyA = 0:
+			 '<center><img src="picV/hand.jpg" ></center>'
+			 'You remove a member from the mouth and <<$boyA>> finished you in the palm.'
+			 end
+			 if harakBoyA = 1:
+			 set tiprand = RAND (0,3)
+				 if tiprand < 3:
+				 '<center><img src="picV/hand.jpg" ></center>'
+				 'You remove a member from the mouth and <<$boyA>> finished you in the palm.'
+				 end 
+				 if tiprand = 3:
+				 set facial = facial + 1
+				 set cumface = cumface + 1
+				 '<center><img src="picV/facial.jpg" ></center>'
+				 'Have you taken the member and at this point <<$boyA>> discharged directly on your face, covering it with warm and sticky sperm.'
+				 end
+			 end
+			 if harakBoyA = 2:
+			 set facial = facial + 1
+			 set cumface = cumface + 1
+			 '<center><img src="picV/facial.jpg" ></center>'
+			 '<<$boyA>> hold your hair pulled dick out of your mouth and on your face cumshot, covering it with warm and sticky sperm.'
+			 end
+		  
+			 act 'Get_Away.':
+			 cla
+			 gt'korr'
+			 end
+	     end
+     end
+     
+     act 'masturbate him':
+	 cla
+	 *clr
+	 gs'brosok'
+	 set DOM = DOM + 1
+	 set hj = hj + 1
+	 hja+=1
+	 set minut = minut + 30
+	 set horny = horny + DOM
+	 '<center><img src="picV/hand1.jpg" ></center>'
+	 'You got his cock and began to caress her arms around his hands.'
+	 'Soon.'
+	     if harakBoyA = 0:set bfA = bfA - 1
+		 if harakBoyA = 1:set bfA = bfA - 5
+		 if harakBoyA = 2:set bfA = bfA - 10
+		 
+	     act 'Wipe his hands and walk away.':
+	     cla
+		 gt'korr'
+		 end
+	 end
+     
+>>>>>>> 330_sexm
 end
 
 
+<<<<<<< 330_sexm
 if $ARGS[0] = 'gangrape':
 	'You began struggling and one of the guys hit you with his hand on the cheek, saying, "Shut up slut Spreads and thighs! And that´ll blow fuck up now!"'
 	act 'Obey.': gt 'sexm','gangbang'
@@ -772,8 +1492,42 @@ if $ARGS[0] = 'gangrape':
 		if spellbefshild = 1: set defence = 500
 		gt 'fight','start'
 	end
+=======
+if $ARGS[0]='gangrape':
+'You became escape and one of the guys hit you with his hand on the cheek with the words "Shut up slut thighs and Spreads! And that `ll blow ebalo now!"'
+act 'obey.':gt'sexm','gangbang'
+     act 'start a fight.':
+     cla
+     set $nameV = 'drunken mug'
+	 !stats
+	 set strenV = 100
+	 set speedV = 20
+	 set agilV = 10
+	 set reactV = 10
+	 set vitalV = 50
+	 set intelV = 10
+	 set willV = 10
+	 !skills
+	 set magikV = 100
+	 set boxingV = 10
+	 set shootV = 100
+	 !parameters
+	 set healthV = vitalV*10 + strenV*5
+	 set mannaV = intelV*10 + magikV*10
+	 set willpowerV = willV*10
+	 set BonusAtakV = 0
+	 set BonusDefV = 0
+	 !Programme of Action
+	 set program = 0
+	 set gangrapeFight = 1
+	 if spellavtoklon = 1:set klon = 3
+	 if spellbefshild = 1:set defence = 500
+	 gt'fight','start'
+     end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 
 if $ARGS[0] = 'gangbang':
 	'<center><img src="images\picV\gangbang.jpg"></center>'
@@ -840,8 +1594,67 @@ if $ARGS[0] = 'gangbang':
 			end
 		end
 	end
+=======
+if $ARGS[0]='gangbang':
+'<center><img src="picV/gangbang.jpg" ></center>'
+if izvrat = 1:
+     set bfA = bfA + 5
+     else
+     set bfa = 0
+     end
+set minut = minut + 30
+set gang = gang + 1
+set guy = guy + 4
+bj+=4
+anal+=1
+sex+=1
+set cumface = cumface + 1
+set cumlip = cumlip + 1
+set facial = facial + 1
+set vagina = vagina + 1
+set anus = anus + 1
+set throat = throat + 1
+if mop > 1:set mop = 0
+set SUB = SUB + 3
+set horny = horny + SUB*10
+'One of the guys live in the stairwell and you dragged into his apartment, there tore your clothes.'
+'The boys undressed and put you on your knees substituting your peppers for maintenance. You obediently steel is processed mouth and hands like a real thick members mnogostanochnitsa.'
+'One of the guys lay on the sofa and grab you by the waist and pulled up to his planted your pussy on his cock, you do not have time to come to his senses as your lips pressed against two wet from your saliva member.'
+'Did you feel like your anus lubricated than cold and then there began to enter that something big and solid.'
+     act 'moan.':
+     cla
+     *clr
+     '<center><img src="picV/gangbang1.jpg" ></center>'
+     'You groaned when you planted in the ass fat cock and started to fuck you in all holes.'
+         if anus >= 10:
+         set horny = horny + anus + SUB
+         'Two members of the hammering you from behind, you feel like they rub through a thin barriers according blazing between the anus and the vagina sloshing. You with twice the enthusiasm handle two dick her lips swollen from work.'
+         end
+         if anus < 10:
+         set horny = horny + (10 - anus)
+         'From your eyes dripping tears from terrible pain, when hard cock ramming your ass and rubs through the thin stenochku with another member of your pussy.'
+         end
+         if horny >= 90:
+		 set orgasm = orgasm + 1
+		 'Sensation in the abdomen began to grow and soon your whole body as if struck current, you moan orgasm.'
+		 end
+	 'It seems the guys played enough with you and the person you decide to obkonchat. You have removed from the Member States and pointed to the floor.'
+	     act 'Kneel.':
+		 cla
+		 *clr
+		 '<center><img src="picV/gangbang2.jpg" ></center>'
+		 'You humbly knelt before the guys, they surrounded you and started to cum on your face, covering it with adhesive, warm and fragrant sperm.'
+		 'After the boys run out .'
+		 	 act 'Get_Away.':
+			 cla
+			 gt'korr'
+			 end
+		 end
+     end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 
 if $ARGS[0] = 'popala':
 	cla
@@ -1109,13 +1922,254 @@ if $ARGS[0] = 'popala':
 			end
 		end
 	end
+=======
+if $ARGS[0]='popala':
+cla
+*clr
+if popolaini=1:
+	 '<center><img src="img/hasb/p0.jpg" ></center>'
+	 'Once you have gathered to go to the bath to wash that appeared in the doorway as your husband, catches you kneeling in front of the entire semen omit terms.'
+	 end
+if popolaini=2:
+	 '<center><img src="img/hasb/p5.jpg" ></center>'
+	 'Once you have gathered to change the pose as her husband enters the room.'
+	 end
+if popolaini=2:
+	 '<center><img src="img/hasb/p4.jpg" ></center>'
+	 'Once you`ve acquired a taste for both the husband enters the room.'
+	 end
+if harakHusb = 0:
+	 '"Dear happening here, Are you cheating on me" babbled <<$husName>> looking at you.
+	 "<<$husName>> it`s not what you think, it`s just sex, no feelings, I love only you. It is for me nothing, come to me I`ll show you how much I love you." answer You, do not understand how you cann`t be such nonsense.'
+	 if izvratH=0:
+		 '"No, i quit, you betrayed our love." he faltered and ran out of the room almost crying.'
+		 set husbizvradd=0
+		 set husbharmin=0
+		 set husbandMark=0
+		 set husband=0
+		 set divorced+=1
+		 if harakBoyA = 0:
+			 set bfA = 0
+			 '"So you`re married, you me obmannyvala, I love you so, adieu!" your guy shouted and ran after her husband.'
+			 act'Get_Away':gt'korr'
+			 end
+		 if harakBoyA = 1:
+			 '"Well, I see you are not up to me, so I probably will go, but if you want I can and stay, comfort" said <<$boyA>>'
+			 act'Let him go':gt'korr'
+			 act'Let it remain':
+				 set bfA+=1
+				 set picrand=83
+				 if popolaini=3:set picrand=84
+				 xgt 'sex','var'
+				 end
+			 end
+		 if harakBoyA = 2:
+			 '"Here is the number of, Well, and I once again ready, let`s continue, let this wimp fells" said <<$boyA>>, clearly intending to continue the evening.'
+			 act'Opt_Out':set bfA-=1&gt'korr'
+			 act'carry_On':
+				 set bfA+=2
+				 set picrand=83
+				 if popolaini=3:set picrand=84
+				 xgt 'sex','var'
+				 end
+			 end
+		 end
+	 if izvratH=1:
+		 '"Do you really love me only." asked <<$husName>>.
+		 "Yes_I_Am, only you, come to me I sbelayu you everything that made вЂ‹вЂ‹him, but it will be with love and you will understand what is the difference" answer You, without ceasing to be amazed as he believes in this nonsense. <<$husName>> came up to you and you unbuttoned his pants got dick.'
+		 if harakBoyA = 0:
+			 set bfA = 0
+			 set husbizvradd=0
+			 set husbharmin=0
+			 set husbandMark=0
+			 set husband=0
+			 set divorced+=1
+			 '"So you`re married, you me obmannyvala, I love you so, You despicable liar, adieu!" your guy shouted and ran out of the room.'
+			 '"He`s right you`re a liar, and you are not worthy of me, you fallen woman, I do not want you vidit" burst into tears and ran out of your husband in the wake of Man.'
+			 act'Get_Away':gt'korr'
+			 end
+		 if harakBoyA = 1:
+			 '<<$boyA>> stood and looked like you were aspirated husband "Well, so you can not compare, let you enter into it, I `ll give her mouth only then will compare with" he said.
+			 "And let`s." brightened <<$husName>> "Dear lie down on the bed"'
+			 act'lie_Down':
+				 cla
+				 *clr
+				 set houseslut+=1
+				 '<center><img src="img/hasb/p1.jpg" ></center>'
+				 'You lay down on the bed and <<$husName>> you entered into the vagina, and <<$boyA>> lay down in front of you substitute member to the mouth. You diligently podmahivat husband do not forget to meet her lover mouth.
+				 "Or maybe try a different, that would say so check in all positions and be uverrenymi to the end." again proposed <<$boyA>>, and her husband agreed.'
+				 act'carry_On':
+					 set bfA+=1
+					 if popolaini=1:set picrand=40
+					 if popolaini=2:set picrand=41
+					 if popolaini=3:set picrand=42
+					 xgt 'sexdvoe','var'
+					 end
+				 end
+			 end
+		 if harakBoyA = 2:
+			 '"That`s right , and even better Poimena her ass, and I will be in her mouth dryuchit, See how she ass can show your love, or not" said <<$boyA>>, clearly podnachivaya your husband.
+			 "Yes_I_Am, Come to bed, see how you are going to love her ass" said <<$husName>>.'
+			 act'lie_Down':
+				 cla
+				 *clr
+				 set houseslut+=1
+				 '<center><img src="img/hasb/p2.jpg" ></center>'
+				 'You lay down on the bed and <<$husName>> you entered into the anus, and <<$boyA>> lay down in front of you substitute member to the mouth. You diligently podmahivat husband trying to put her ass on his cock to the hilt, not forgetting to meet the lover mouth.
+				 "Now let`s change, let show your love to your member, is removed from her ass, mouth." again proposed <<$boyA>>, and her husband agreed.'
+				 act'carry_On':
+					 set bfA+=1
+					 if popolaini=2:set picrand=41
+					 if popolaini=1:set picrand=40
+					 if popolaini=3:set picrand=42
+					 xgt 'sexdvoe','var'
+					 end
+				 end
+			 end
+		 end
+	 end
+if harakHusb = 1:
+	 set husbizvradd=0
+	 set husbharmin=0
+	 set husbandMark=0
+	 set husband=0
+	 set divorced+=1
+	 '"What is this crap going on here" said <<$husName>> looking at you.
+	 "<<$husName>> it`s not what you think, it`s just sex, no feelings, I love only you. It is for me nothing, come to me I`ll show you how much I love you." answer You, do not understand how you cann`t be such nonsense.'
+	 if izvratH=0:
+		 '"You do ohrenela slut, what love. you fuckin ` with everyone, and I can see if she likes, Come thou forest slut." he said and left the room.'
+		 if harakBoyA = 0:
+			 set bfA = 0
+			 '"So you`re married, you me obmannyvala, I love you so, adieu!" your guy shouted and ran out of the room.'
+			 act'Get_Away':gt'korr'
+			 end
+		 if harakBoyA = 1:
+			 '"Well, I see you are not up to me, so I probably will go, but if you want I can and stay, comfort" said <<$boyA>>'
+			 act'Let him go':gt'korr'
+			 act'Let it remain':
+				 set bfA+=1
+				 set picrand=83
+				 if popolaini=3:set picrand=84
+				 xgt 'sex','var'
+				 end
+			 end
+		 if harakBoyA = 2:
+			 '"Here is the number of, but oh well hubby dumped, and I once again ready, let`s continue, let this cuckold is shoals horns knocks" said <<$boyA>>, clearly intending to continue the evening.'
+			 act'Opt_Out':set bfA-=1&gt'korr'
+			 act'carry_On':
+				 set bfA+=2
+				 set picrand=83
+				 if popolaini=3:set picrand=84
+				 xgt 'sex','var'
+				 end
+			 end
+		 end
+	 if izvratH=1:
+		 set bfA = 0
+		 '"You do it yourself you hear, what nonsense bear" asked <<$husName>>.
+		 "forgive" just told you, downcast eyes.
+		 <<$husName>> came up to you "Today I leave and will file for divorce, but lastly" he said rastegivaya pants and pulling member. "Well then froze suck, whore."'
+		 if harakBoyA = 0:
+			 act'Take by mouth':
+				 cla
+				 *clr
+				 '<center><img src="img/hasb/p3.jpg" ></center>'
+				 '"So you`re married, You lied to me, I love you so, You despicable liar, adieu!" your guy shouted and ran out of the room.
+				 <<$husName>> did not pay attention to him, he inserted a member of your mouth and holding your head literally started to fuck you in the mouth with each thrust pushing it deeper. You frantically grabbed the air, trying not to choke as he continued, Suddenly he made a sudden movement and his cock jumped in your throat, you tried to pull away, but he obmatiril telling you tolerate. He gave you a few seconds to get used to the term in the throat and began to fuck your throat, you do not get enough air and you become frantically trying to beat him free, but <<$husName>> only tightened his grip on your glolovu. When you have already started to lose consciousness, he finally finished, you feel his sperm spread on your throat, making a couple of strong aftershocks . <<$husName>> looked like you writhing on the floor, spat on the floor next to you .'
+				 act'Get_Away':gt'korr'
+				 end
+			 end
+		 if harakBoyA = 1:
+			 '<<$boyA>> stood and looked like you were aspirated husband "Well ." he said.
+			 "Hang_On, let this whore for two write out" offered him <<$husName>>.
+			 "And let`s, I`m with her all the same does not intend to meet more." answered <<$boyA>>'
+			 act'Lie on the bed':
+				 cla
+				 *clr
+				 '<center><img src="img/hasb/p1.jpg" ></center>'
+				 'You lay down on the bed and <<$husName>> you entered into the vagina, and <<$boyA>> lay down in front of you substitute member to the mouth. You diligently podmahivat husband do not forget to meet her lover mouth.
+				 "And he still fucks very best" said the husband.
+				 "I could not agree" supported <<$boyA>>'
+				 act'carry_On':
+					 if popolaini=1:set picrand=40
+					 if popolaini=2:set picrand=41
+					 if popolaini=3:set picrand=42
+					 xgt 'sexdvoe','var'
+					 end
+				 end
+			 end
+		 if harakBoyA = 2:
+			 '"That`s right these whores should be punished, if you want to come help, otymeem it together so that the week will not be able to sit" said <<$boyA>>, clearly podnachivaya your husband.
+			 "Yes_I_Am, let`s punish the bitch, and then go to the pub otpraznuem my divorce and remove a couple of bitches and punish, I stamped" said <<$husName>>.'
+			 act'Lie on the bed':
+				 cla
+				 *clr
+				 '<center><img src="img/hasb/p2.jpg" ></center>'
+				 'You lay down on the bed and <<$husName>> you entered into the anus, and <<$boyA>> lay down in front of you substitute member to the mouth. You diligently podmahivat husband trying to put her ass on his cock to the hilt, not forgetting to meet the lover mouth.
+				 "And the ass she still works smartly" said <<$husName>>.
+				 "Yeah " answered <<$boyA>>'
+				 act'carry_On':
+					 if popolaini=1:set picrand=40
+					 if popolaini=2:set picrand=41
+					 if popolaini=3:set picrand=42
+					 xgt 'sexdvoe','var'
+					 end
+				 end
+			 end
+		 end
+	 end
+if harakHusb = 2:
+	 set fingal+=1
+	 '"Oh damn" had you heard before flew to the wall by a powerful blow in the face.'
+	 if izvratH=0:
+	 	 set husbizvradd=0
+		 set husbharmin=0
+		 set husbandMark=0
+		 set husband=0
+		 set divorced+=1
+		 set bfA = 0
+		 set mop=0
+		 set minut+=120
+		 set stolmoney=0
+		 set money=0
+		 set komp=0
+		 'Lying in the corner you see a husband deals blow after blow on the guy, and <<$boyA>> difficulty fighting off attempts to jump out the door, Finally he succeeds and he runs out of the apartment at breakneck speed.
+		 <<$husName>> suited to you "Here_It_Is ... to_you ... slut ... member ... and in pussy ... and in the ass ... but in the mouth." he said putting a strong kick in in shivot at every word, the last word, it hits you in the face and kick you disconnect. You woke up two hours later my husband nor any of his things in the house was not so .'
+		 act'Get_Away':gt'korr'
+		 end
+	 if izvratH=1:
+		 set bfA = 0
+		 set houseslut+=1
+		 '"Oh damn, and that allowed you podstavlyut him their holes" asked <<$husName>>, "And you give me money now must, for the pleasure you have to pay, this is my whore" he added.
+		 "And now we have it together fuck that-would not povadno." he added, picking you up from the floor and throwing on the bed.'
+		 if harakBoyA = 0:'<<$boyA>> tried to argue, But seeing the face contorted with rage your husband agreed'
+		 if harakBoyA = 1:'<<$boyA>> acquiesced'
+		 if harakBoyA = 2:'<<$boyA>> gladly accepted'
+		 act'carry_On':
+			 if popolaini=1:set picrand=40
+			 if popolaini=2:set picrand=41
+			 if popolaini=3:set picrand=42
+			 xgt 'sexdvoe','var'
+			 end
+		 end
+	 end
+>>>>>>> 330_sexm
 end
 
+<<<<<<< 330_sexm
 
 if $ARGS[0] = 'endsex':
 	if husband > 0 and hour < 17 and hour > 7 and boycherdaksex = 0: gt 'sexm','popala'
 	set boycherdaksex = 0
 	gt 'korr'
 end
+=======
+if $ARGS[0]='endsex':
+if husband>0 and hour<17 and hour>7 and boycherdaksex=0:gt'sexm','popala'
+set boycherdaksex=0
+gt'korr'
+end
+
+>>>>>>> 330_sexm
 --- sexm ---------------------------------
 

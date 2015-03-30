@@ -1,4 +1,5 @@
 # kotovtalker
+<<<<<<< 178_kotovtalker
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Витек Котов!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 	if $loc = 'gdkin':
@@ -74,8 +75,90 @@ if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 	end
 	'<<$npcName[numnpc]>> - Hey Svetsik, who will get. Tell me about you to anyone I wring your neck.'
 	dynamic $din_sekondparturok
+=======
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Vitek Cats!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if numnpc=9 and grupNPC[numnpc]>=80 and GorSlut=0 and kotovLoveQW>=0:
+     if $loc='gdkin':
+         if alko<2:
+         '<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something as dumb.'
+         	 act 'drink beer':
+			 cls
+			 minut+=5
+			 grupNPC[numnpc]+=5
+			 alko+=2
+			 salo+=1
+             fat+=2
+             energy+=10
+			 gs'stat'
+			 'Vitek poured you a beer and you have been with him drink. Vitek staring at you eye and tells you what you are cool girl.'
+			 act 'move_away':gt $loc, $metka
+			 end
+			 
+			 act 'Opt_Out':grupNPC[numnpc]-=5&gt $loc, $metka
+		 exit
+		 end
+		 
+         if alko>=2:
+         '<<$npcName[numnpc]>> - Hey Svetsik, Shall We Dance.'
+         act 'Opt_Out':grupNPC[numnpc]-=5&gt $loc, $metka
+             act 'dance':
+			 cls
+			 minut+=5
+			 grupNPC[numnpc]+=5
+			 dance+=RAND(1,3)
+			 horny+=10
+			 kotovQW+=1
+			 gs'stat'
+			 'You went to the dance floor and started dancing with Vityok. Vitek paw you on the ass with his strong hands, are more similar to pliers.'
+			     if kotovLoveQW=0:
+					 if kotovQW<5 or grupTipe[25]=0:act 'move_away':gt $loc, $metka
+					 if kotovQW>=5 and grupTipe[25]!0:
+					 'The dance ends and Vitek took you by the hand steers you to the wall. "Slysh, Svetsik, Let`s stir up, you will type my chick. I any of you unscrewed Bosko"'
+						 act 'Opt_Out':
+						 cls
+						 grupNPC[numnpc]=0
+						 gs'stat'
+						 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+						 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+						 'You refused and Vitek looks totally confused, but he was immediately covered anger. "Well!"'
+						 act 'move_away':gt $loc, $metka
+						 end
+						 
+						 act 'agree':
+						 cls
+						 kotovLoveQW=1
+						 gs'stat'
+						 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+						 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+						 'You Vitek and happy "ohuet. I myself do not believe, that you will agree with me roil."'
+						 act 'move_away':gt $loc, $metka
+						 end
+					 end
+			     end
+			     if kotovLoveQW>0:
+			     'The dance ends and Vitek took you by the hand removes the wall.'
+			     'Vitek embraces you "Svetsik, go to my home."'
+			     act 'move_away':gt $loc, $metka
+			         act 'Go to Vit`ka.':
+					 cls
+					 minut+=15
+					 gs'stat'
+					 '<center><img src="qwest/alter/npc/9.jpg" ></center>'
+					 'You came out of the disco and went in the direction where he lives with him Vitek, while holding his arm. Soon you with Vityok approached the dilapidated house , where lay crumpled heaps of clothes on the floor littered with empty bottles.'
+					 act 'further.':gt'kotovSex'
+					 end
+			     end
+			 end
+		 
+         end
+     exit
+     end
+     '<<$npcName[numnpc]>> - Hey Svetsik, who will get. tell me, I for you any wring the neck.'
+     dynamic $din_sekondparturok
+>>>>>>> 178_kotovtalker
 exit
 end
+<<<<<<< 178_kotovtalker
 if numnpc = 9 and kotovLoveQW > 0 and GorSlut > 0:
 'Witek scowled and tells you "Slysh Svetsik, Th for garbage? We´re mutim, and then you tell me about what you <<$gnikname>>. Whole town already know the boys with me neigh district. You ohuevshaya bitch! "'
 	act 'a scandal':
@@ -99,7 +182,67 @@ if numnpc = 9 and kotovLoveQW > 0 and GorSlut > 0:
 		if $loc = 'gdkin': act 'Move away': gt $loc, $metka
 		end
 	end
+=======
+if numnpc=9 and kotovLoveQW>0 and GorSlut>0:
+'Vitek nabychilsya and tells you "Slysh Svetsik, Th for garbage? We`re mutim, and then you tell me about, what do you <<$gnikname>>. The whole town is already up to date, boys with me neigh area. You ohuevshaya creature!"'
+	 act 'create a scandal':
+	 cls
+	 grupNPC[9]=0
+	 kotovLoveQW=-1
+	 gs'stat'
+	 'You started yelling at Vic, that he had already Jam. Vitek started yelling at you and suddenly you have a ringing in your head and you were on the floor. Standing over you Vitek. Severely burned cheek, you do not understand, what happened, but it seems he slapped you podschechinu. "All creature! Most do not come to me! We`re through!"'
+	 if $loc='gschool':dynamic $din_sekondparturok
+     if $loc='gdkin':act 'move_away':gt $loc, $metka
+	 end
+	 
+	 if dom>=20:
+	 	 act 'convince, that all this gossip':
+		 cls
+		 sub+=20
+		 GorSlut=0
+		 gs'stat'
+		 'You have begun to convince Vic, that all this gossip, no unfounded. Vitek frowned "I `ll knock your teeth these talkers, if ever even some garbage about you hear. do not worry, I pozatykayu these yapping mouths."'
+		 if $loc='gschool':dynamic $din_sekondparturok
+		 if $loc='gdkin':act 'move_away':gt $loc, $metka
+		 end
+	 end
+>>>>>>> 178_kotovtalker
 exit
 end
+ if $loc='gdkin':
+	 if GorSlut<2:
+		 '<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something as dumb.' 
+		 
+		 act 'drink beer':
+		 cls
+		 minut+=5
+		 grupNPC[numnpc]+=5
+		 alko+=1
+		 salo+=1
+		 fat+=2
+		 energy+=10
+		 gs'stat'
+		 'You drank beer in the company of friends.'
+		 act 'move_away':gt $loc, $metka
+		 end
+		 
+		 
+		 act 'Opt_Out':grupNPC[numnpc]-=5&gt $loc, $metka
+	 end
+	 if GorSlut>=2:
+		 '<<$npcName[numnpc]>> - Cho priperlas, vaflersha. Huytsa want to nap or something?' 
+		 
+		 act 'Get_Away':grupNPC[numnpc]-=5&gt $loc, $metka
+	 end
+ exit
+ end
+
+
+
+
+
+
+
+
 --- kotovtalker ---------------------------------
 

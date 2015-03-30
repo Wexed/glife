@@ -1,0 +1,87 @@
+# artemhome2
+gs'stat'
+if artemhomemark=0:
+'You came to the house Artem Chebotarev.'
+act 'Get_Away':minut+=15&gt'gorodok'
+     if week<6:
+         if hour<16 and hour>=7:
+         'Artem not at home.'
+         end
+         if hour>=16 and hour<20:
+         'The door you opened Artem and invited to enter.'
+         act'Login':artemhomemark=1&gt $curloc
+         end
+         if hour>=20 or hour<7:
+         'Too late, that would go to visit.'
+         end
+     end
+     if week>=6:
+         if hour<10:
+         'Too early time, that would go to visit.'
+         end
+         if hour>=10 and hour<20:
+         'The door you opened Artem and invited to enter.'
+         act'Login':artemhomemark=1&gt $curloc
+         end
+         if hour>=20 or hour<5:
+         'Too late, that would go to visit.'
+         end
+     end
+end
+if artemhomemark=1:
+'Artem sits in his room on the bed.'
+     if artompower>0:
+     'Artem smiling at you "Sveta, you are so beautiful!"'
+     
+	     act'kiss':
+	     cls
+	     horny+=10
+	     gs'stat'
+	     '<center><img src="qwest/alter/Ev/kiss.jpg" ></center>'
+		 'You smiled Artem and his face a little closer to him. Artem approached you and kissed you. You started kissing.'
+		 if artompower=3:'During a kiss Artem rubs against your thigh his crotch and you feel his hard cock through clothes. Do you feel that Artem took dick out of his pants and rubs them on your hip.'
+		 if artompower=2:'During a kiss Artem rubs against your thigh his crotch and you feel his hard cock through clothes.'
+         if artompower=1:'Finally ending the kiss shyly said Artem. "Sveta, I like you very nravishsya."'
+			 dynamic $din_artom_leghump
+			 dynamic $din_artom_leghump2
+	     end
+     end
+     if artompower=0:
+     'Artem with a smile looking at you "Oh Light, you milked me dry, I need a vacation."'
+     end
+     
+     if lernHome>0:act'teach lessons':artemhomemark=2&gt $curloc
+     
+     act'Get_Away':artemhomemark=0&minut+=15&gt'gorodok'
+end
+if artemhomemark=2:
+	 minut+=60
+	 grupNPC[2]+=10
+	 lernHome=0
+	 lern+=RAND(3,6)
+	 intel+=RAND(1,2)
+	 gs'stat'
+	 '<center><img src="qwest/alter/npc/<<2>>.jpg" ></center>'
+	 'Did you do with Artem in under an hour, During this time he helped you with homework and explained something of the studied material.'
+	 act'rest':artemhomemark=1&gt $curloc
+end
+
+
+!'
+     act'':
+     cls
+     minut+=5
+     gs'stat'
+     '<center><img src="qwest/alter/artom/2.jpg" ></center>'
+     ''
+     act'':
+     end
+
+
+'
+
+
+
+
+--- artemhome2 ---------------------------------
+

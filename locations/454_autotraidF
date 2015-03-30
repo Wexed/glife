@@ -1,11 +1,21 @@
 # autotraidF
+<<<<<<< 454_autotraidF
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 454_autotraidF
 $metka = $ARGS[0]
 $loc = $CURLOC
+<<<<<<< 454_autotraidF
 set minut += 5
 gs 'stat'
+=======
+set minut = minut + 5
+gs'stat'
+>>>>>>> 454_autotraidF
 cla
 *clr
+<<<<<<< 454_autotraidF
 '<center><B>Car</B></center>'
 '<center><img src="images\etogame\autotraid.jpg"></center>'
 'Machine can only be bought if you have permission. And you can not have two cars.'
@@ -14,15 +24,35 @@ if hour <= 17:
 	act 'View cars put up for sale': gt 'autotraidF','car'
 	end
 act 'Leave': gt 'Nord'
+=======
+'<center><B>Car_market</B></center>'
+'<center><img src="pic/autotraid.jpg" ></center>'
+'The machine can be purchased only at presence of the rights. And you can not have two cars.'
+if hour <= 17:
+	 if car > 0:act 'Approach to the buyer-':gt'autotraidF','manager1'
+	 act 'View cars for sale':gt'autotraidF','car'
+	 end
+act 'Get_Away':gt'Nord'
+>>>>>>> 454_autotraidF
 end
 
+<<<<<<< 454_autotraidF
 if $ARGS[0] = 'manager1':
+=======
+if $ARGS[0]='manager1':
+>>>>>>> 454_autotraidF
 $metka = $ARGS[0]
 $loc = $CURLOC
+<<<<<<< 454_autotraidF
 set minut += 5
 gs 'stat'
+=======
+set minut = minut + 5
+gs'stat'
+>>>>>>> 454_autotraidF
 cla
 *clr
+<<<<<<< 454_autotraidF
 '<center><B>Car</B></center>'
 '<center><img src="images\etogame\autotraid.jpg"></center>'
 gs 'avb'
@@ -51,20 +81,66 @@ if cardrive ! 9:
 		end
 	end
 act 'Leave': gt 'Nord'
+=======
+'<center><B>Car_market</B></center>'
+'<center><img src="pic/autotraid.jpg" ></center>'
+gs'avb'
+if cardrive = 9 and car > 0:
+	 'Fence walked around the car and asked you for it <<bupay>> rubles'
+     act 'sell for <<bupay>> (1 h)':
+         cla
+         set minut = minut + 60
+         money=money+bupay
+         car=0
+         'You sold your car.'
+         act 'Get_Away':gt'Nord'
+         end
+	 end
+if cardrive ! 9:
+	 'Fence says, that he needs to look at the car, before you put a price, and if you want, it calls for a tow truck 2500, that would deliver your car to the market.'
+     if money >= 2500:
+		 act 'Tow truck to market 2500RUB (1 h)':
+			 cla
+			 set minut = minut + 60
+			 set cardrive = 9
+			 set money = money - 2500
+			 'You gave money and waited for an hour and when you bring the car, Finally.'
+			 act 'For buyers-up':gt'autotraidF','manager1'
+			 end
+         end
+	 end
+act 'Get_Away':gt'Nord'
+>>>>>>> 454_autotraidF
 end
 
+<<<<<<< 454_autotraidF
 if $ARGS[0] = 'car':
+=======
+if $ARGS[0]='car':
+>>>>>>> 454_autotraidF
 $metka = $ARGS[0]
 $loc = $CURLOC
+<<<<<<< 454_autotraidF
 set minut += 5
 gs 'stat'
+=======
+set minut = minut + 5
+gs'stat'
+>>>>>>> 454_autotraidF
 cla
 *clr
+<<<<<<< 454_autotraidF
 '<center><B>Car</B></center>'
 '<center><img src="images\etogame\autotraid.jpg"></center>'
 'So many cars in the parking lot that you can spend a lifetime and never osmotrish all machines, even if the machines on the go, you can understand their technical condition, the machine moves is not a cat in a bag can be a bargain, and can be a waste money, and do not forget, you still deliver it to the service will need.'
+=======
+'<center><B>Car_market</B></center>'
+'<center><img src="pic/autotraid.jpg" ></center>'
+'So many cars in the parking lot, that you can spend a lifetime and never osmotrish all cars, if still with the machines on the go , then the machine is not on the moves is a cat in a bag, may be a bargain, and can be a waste of money, and do not forget, you still deliver it to the service will need to be.'
+>>>>>>> 454_autotraidF
 set carT = 0
 if hour <= 17:
+<<<<<<< 454_autotraidF
 	act 'Inspect 2107 (on the go)':
 		cla
 		*clr
@@ -173,5 +249,121 @@ if hour <= 17:
 	end
 act 'Leave': gt 'Nord'
 end
+=======
+	 act 'inspect VAZ 2107 (on the run)':
+		 cla
+		 *clr
+		 '<center><B>VAZ 2107 (on the run)</B></center>'
+		 '<center><img src="picar/car.jpg" ></center>'
+		 set tehNT = 200
+		 set tehT = RAND (10,tehNT)
+		 set carT = 1
+		 gs'avt' 
+		 '<<$tehT>> trader wants <<bupay>> rubles'
+		 act 'Get_Away':gt'autotraidF','car'
+	     if car = 0 and prava = 1 and money >= bupay:
+	         act 'Buy for <<bupay>> rubles':
+		         cla
+		         set money = money - bupay
+		         set $car = 'VAZ 2107'
+				 set car = 1
+				 set benz = 3
+				 set cardrive = 9
+				 set teh = tehT
+				 set tehcar = 200
+				 set wrek = 0
+				 'you paid <<bupay>> rubles and bought a car. Trader put it near the market and warned, that there is little gasoline.'
+		         act 'Get_Away':gt'Nord'
+		         end
+		     end
+		 end
+	 act 'inspect VAZ 2107 (not on the move)': 
+		 cla
+		 *clr
+		 set tehNT = 200
+		 set tehT = RAND (10,tehNT)
+		 set bupay = RAND (10000,50000) 
+		 'The machine is not on the move. trader wants <<bupay>> rubles'
+		 act 'Get_Away':gt'autotraidf','car'
+	 	 if car = 0 and prava = 1 and money >= bupay:
+	         act 'Buy for <<bupay>> rubles':
+		         cla
+		         set money = money - bupay
+		         set $car = 'VAZ 2107'
+				 set car = 1
+				 set benz = 3
+				 set cardrive = 9
+				 set teh = tehT
+				 set tehcar = 200
+				 set wrek = 1
+				 'you paid <<bupay>> rubles and bought a car. Trader put it near the market.'
+		         act 'Get_Away':gt'Nord'
+		         end
+		     end
+		 end
+	 act 'inspect GAS 3102 (on the run)':
+		 cla
+		 *clr
+		 '<center><B>GAZ 3102 (on the run)</B></center>'
+		 '<center><img src="picar/car11.jpg" ></center>'
+		 set tehNT = 1000
+		 set tehT = RAND (10,tehNT)
+		 set carT = 2
+		 gs'avt' 
+		 '<<$tehT>> trader wants <<bupay>> rubles'
+		 act 'Get_Away':gt'autotraidf','car'
+	     if car = 0 and prava = 1 and money >= bupay:
+	         act 'Buy for <<bupay>> rubles':
+		         cla
+		         set money = money - bupay
+		         set $car = 'GAZ 3102'
+				 set car = 11
+				 set benz = 5
+				 set cardrive = 9
+				 set teh = tehT
+				 set tehcar = 1000
+				 set wrek = 0
+				 'you paid <<bupay>> rubles and bought a car. Trader put it near the market and warned, that there is little gasoline.'
+		         act 'Get_Away':gt'Nord'
+		         end
+		     end
+		 end
+	 act 'inspect GAS 3110 (on the run)':
+		 cla
+		 *clr
+		 '<center><B>GAZ 3110 (on the run)</B></center>'
+		 '<center><img src="picar/car12.jpg" ></center>'
+		 set tehNT = 800
+		 set tehT = RAND (10,tehNT)
+		 set carT = 2
+		 gs'avt' 
+		 '<<$tehT>> trader wants <<bupay>> rubles'
+		 act 'Get_Away':gt'autotraidF','car'
+	     if car = 0 and prava = 1 and money >= bupay:
+	         act 'Buy for <<bupay>> rubles':
+		         cla
+		         set money = money - bupay
+		         set $car = 'GAZ 3110'
+				 set car = 12
+				 set benz = 5
+				 set cardrive = 9
+				 set teh = tehT
+				 set tehcar = 800
+				 set wrek = 0
+				 'you paid <<bupay>> rubles and bought a car. Trader put it near the market and warned, that there is little gasoline.'
+		         act 'Get_Away':gt'Nord'
+		         end
+		     end
+		 end
+     end
+act 'Get_Away':gt'Nord'
+end
+
+
+
+
+
+
+>>>>>>> 454_autotraidF
 --- autotraidF ---------------------------------
 

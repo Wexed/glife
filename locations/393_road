@@ -1,4 +1,5 @@
 # road
+<<<<<<< 393_road
 $polustanok = {
 cls
 gs 'stat'
@@ -47,9 +48,60 @@ if money >= 50:
 	'After 15 minutes the train stopped at the Centre.'
 	act 'Exit': minut += 5 & nroad = 0 & gt 'Vokzal'
 	end
+=======
+$polustanok={
+cls
+gs'stat'
+'Ordinary railway platform.'
+act 'Go_Out':minut+=10&nroad=5&gt'road'
+if money>=150:
+     act 'Buy a ticket to town (150 RUB)':
+     cls
+     money-=150
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/electri.jpg" ></center>'
+     'You paid for a ticket and boarded the train going into town.'
+     'through 15 minute train stopped at the station.'
+     
+         act 'go further':
+         cls
+         minut+=15
+         gs'stat'
+         '<center><img src="pic/electri.jpg" ></center>'
+         'through 15 minute train stopped at the station Gadyukino.'
+          
+             act 'go further':
+			 cls
+			 minut+=15
+			 gs'stat'
+			  '<center><img src="pic/electri.jpg" ></center>'
+			 'through 15 minute train stopped in town.'
+				 act 'Go_Out':minut+=20&nroad=20&gt'vokzalG'
+			 end
+			 
+			 act 'Go_Out':minut+=15&nroad=15&gt'road'
+         end
+         
+         act 'Go_Out':minut+=10&nroad=10&gt'road'
+     end
+end
+if money>=50:
+     act 'Buy a ticket to the Center (50 RUB)':
+     cls
+     money-=50
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/electri.jpg" ></center>'
+     'You paid for a ticket and boarded the train going into town.'
+     'through 15 minute train stopped in the center.'
+	 act 'Go_Out':minut+=5&nroad=0&gt'Vokzal'
+     end
+>>>>>>> 393_road
 end
 }
 
+<<<<<<< 393_road
 $polustanok2 = {
 cls
 gs 'stat'
@@ -96,8 +148,57 @@ if money >= 100:
 		end
 	act 'Exit': minut += 20 & nroad = 5 & gt 'road'
 	end
+=======
+$polustanok2={
+cls
+gs'stat'
+'Ordinary railway platform.'
+act 'Go_Out':minut+=10&nroad=10&gt'road'
+if money>=100:
+     act 'Buy a ticket to town (100 RUB)':
+     cls
+     money-=100
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/electri.jpg" ></center>'
+     'You paid for a ticket and boarded the train going into town.'
+     'through 15 minute train stopped at the station Gadyukino.'
+     
+         act 'go further':
+         cls
+         minut+=15
+         gs'stat'
+         '<center><img src="pic/electri.jpg" ></center>'
+         'through 15 minute train stopped in town.'
+			act 'Go_Out':minut+=20&nroad=20&gt'vokzalG'
+         end
+         
+         act 'Go_Out':minut+=10&nroad=15&gt'road'
+     end
+end
+if money>=100:
+     act 'Buy a ticket to the Center (100 RUB)':
+     cls
+     money-=100
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/electri.jpg" ></center>'
+     'You paid for a ticket and boarded the train going into town.'
+         act 'go further':
+         cls
+         minut+=15
+         gs'stat'
+         '<center><img src="pic/electri.jpg" ></center>'
+         'through 15 minute train stopped in the center.'
+	      act 'Go_Out':minut+=5&nroad=0&gt'Vokzal'
+			
+         end
+     act 'Go_Out':minut+=20&nroad=5&gt'road'
+     end
+>>>>>>> 393_road
 end
 }
+<<<<<<< 393_road
 $polustanok3 = {
 cls
 gs 'stat'
@@ -143,11 +244,59 @@ if money >= 150:
 		end
 	act 'Exit': minut += 20 & nroad = 10 & gt 'road'
 	end
+=======
+$polustanok3={
+cls
+gs'stat'
+'Ordinary railway platform.'
+act 'Go_Out':minut+=15&nroad=15&gt'road'
+if money>=50:
+     act 'Buy a ticket to town (50 RUB)':
+     cls
+     money-=100
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/electri.jpg" ></center>'
+     'You paid for a ticket and boarded the train going into town.'
+     'through 15 minute train stopped in town.'
+		 act 'Go_Out':minut+=20&nroad=20&gt'vokzalG'
+     end
+end
+if money>=150:
+     act 'Buy a ticket to the Center (150 RUB)':
+     cls
+     money-=150
+     minut+=15
+     gs'stat'
+     '<center><img src="pic/electri.jpg" ></center>'
+     'You paid for a ticket and boarded the train going into town.'
+		 act 'go further':
+		 cls
+		 minut+=15
+		 gs'stat'
+		  '<center><img src="pic/electri.jpg" ></center>'
+		 'through 15 minute train stopped at the station.' 
+			 act 'go further':
+			 cls
+			 minut+=15
+			 gs'stat'
+			  '<center><img src="pic/electri.jpg" ></center>'
+			 'through 15 minute train stopped in the center.'
+			  
+			 act 'Go_Out':minut+=5&nroad=0&gt'Vokzal'
+			 end
+			 
+			 act 'Go_Out':minut+=5&nroad=5&gt'road'
+		 end
+     act 'Go_Out':minut+=20&nroad=10&gt'road'
+     end
+>>>>>>> 393_road
 end
 }
 $metka = $ARGS[0]
 $loc = $CURLOC
 '<center><H4>Northern Highway</H4></center>'
+<<<<<<< 393_road
 '<center><img src="images\etogame\road.jpg"></center>'
 '<center><<nroad>> km</center>'
 'Highway which carried cars at high speed, with the hum of the wind enveloping sweep wagon.'
@@ -155,9 +304,19 @@ clr
 gs 'stat'
 gs 'time'
 if car > 0 and cardrive = 19 and ncarroad = nroad:
+=======
+'<center><img src="pic/road.jpg" ></center>'
+'<center><<nroad>> kilometer</center>'
+'Highway vehicles that fly at high speed, with sweeping trucks rumble enveloping wind.'
+clr
+gs'stat'
+gs'time'
+if car > 0 and cardrive = 19 and ncarroad=nroad:
+>>>>>>> 393_road
 'Standing on the sidelines <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
 end
 
+<<<<<<< 393_road
 if nroad = 0: act 'Go to town': minut += 60 & gt 'nord'
 
 if nroad = 16: act 'Go to object': minut += 60 & gt 'obekt'
@@ -175,41 +334,104 @@ if nroad = 1:
 'Not podaleku from the city could be seen <a href="exec:minut += 15 & GT ''locmansion''">houses</a>.'
 end
 if nroad = 2:
+=======
+if nroad=0:act 'Go to town':minut+=60&gt'nord'
+
+if nroad=16:act 'Go to the object':minut+=60&gt'obekt'
+
+if nroad=20:act 'Go into town':minut+=60&gt'gorodok'
+
+if nroad<20:act 'Go north':minut+=60&nroad+=1&gt $curloc
+
+if nroad>0:act 'Go south':minut+=60&nroad-=1&gt $curloc
+
+
+if nroad=0:
+'Outskirts of the town which brought sad dilapidated huts among the trees kryazhestyh.'
+'At a roadside stand <a href="exec:minut+=5&GT ''furi''">Lorry</a>'
+end
+if nroad=1:
+'Not podaleku of the city are seen <a href="exec:minut+=15&GT ''locmansion''">mansions</a>.'
+end
+if nroad=2:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 3:
 'Podaleku not seen from the road <a href="exec:minut += 15 & GT ''graveyard''">cemetery</a>.'
 end
 if nroad = 4:
+=======
+if nroad=3:
+'Podaleku not seen from the road <a href="exec:minut+=15&GT ''graveyard''">cemetery</a>.'
+end
+if nroad=4:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 5:
 'Not podaleku from the road is <a href="exec:dynamic $polustanok">railway stop</a> next to which is <a href="exec:minut += 15 & GT ''dachi''">cottage cooperative</a>.'
 end
 if nroad = 6:
+=======
+if nroad=5:
+'Not podaleku from the road is <a href="exec:dynamic $polustanok">train whistle-stop</a> next to which is <a href="exec:minut+=15&GT ''dachi''">dacha cooperative</a>.'
+end
+if nroad=6:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 7:
+=======
+if nroad=7:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 8:
+=======
+if nroad=8:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 9:
+=======
+if nroad=9:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 10:
 'Not podaleku from the road is <a href="exec:dynamic $polustanok2">railway stop</a>.'
 end
 if nroad = 11:
+=======
+if nroad=10:
+'Not podaleku from the road is <a href="exec:dynamic $polustanok2">train whistle-stop</a>.'
+end
+if nroad=11:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 12:
+=======
+if nroad=12:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 13:
+=======
+if nroad=13:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 14:
 'Near the road is <a href="exec:minut += 15 & GT ''motel''">motel</a>'
 end
@@ -220,16 +442,42 @@ if nroad = 16:
 'Not podaleku is seen from the road abandoned building.'
 end
 if nroad = 17:
+=======
+if nroad=14:
+'Near the road is <a href="exec:minut+=15&GT ''motel''">motel</a>'
+end
+if nroad=15:
+'Not podaleku from the road is <a href="exec:dynamic $polustanok3">train whistle-stop</a>. From the little station leads to a dirt road <a href="exec:minut+=30&GT ''gadukino''">village Gadyukino</a>'
+end
+if nroad=16:
+'Not podaleku from the road you can see the abandoned building.'
+end
+if nroad=17:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 18:
+=======
+if nroad=18:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 19:
+=======
+if nroad=19:
+>>>>>>> 393_road
 ''
 end
+<<<<<<< 393_road
 if nroad = 20:
 'Highway abuts the old provincial town.'
+=======
+if nroad=20:
+'Track rests on the old provincial town.'
+'At a roadside stand <a href="exec:minut+=5&GT ''furi''">Lorry</a>'
+>>>>>>> 393_road
 end
 --- road ---------------------------------
 

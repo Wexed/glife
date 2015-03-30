@@ -1,8 +1,13 @@
 # TV
+<<<<<<< 322_TV
 if $ARGS[0] = 'start':
+=======
+if $ARGS[0]='start':
+>>>>>>> 322_TV
 cla
 
 clr
+<<<<<<< 322_TV
 gs 'stat'
 set elektro += 5
 
@@ -27,11 +32,40 @@ if daystart < 10 and StoryLine = 0: 'Sometimes while watching TV look accidental
 		cla
 		gt 'TV','fin'
 	end
+=======
+gs'stat'
+set elektro = elektro + 5
+'<center><img src="pics/telek.jpg" ></center>'
+'You turn on the TV and comfortably ensconced on the couch.'
+if TV = 1:'Ancient TV turns on and out came the sound of hoarse advertising.'
+if TV = 2:'Huge plasma is turned on and out of it came the sound smartly advertising.'
+
+     if kabel = 0:
+     'You do not have cable, therefore shows only one channel at a constant advertising and news.'
+     act 'watching TV 1 h':gt'TV','nokable'
+     end
+     if kabel = 1:
+     'You have cable TV.'
+     act 'watching TV 1 h':gt'TV','kable'
+     end
+     
+if daystart<10 and StoryLine=0:'Sometimes while watching TV casually glance stops on your legs or chest .'
+
+     act 'Turn off the TV and get up from the couch':
+     cla
+     gt'TV','fin'
+     end
+>>>>>>> 322_TV
 end
 
+<<<<<<< 322_TV
 if $ARGS[0] = 'nokable':
+=======
+if $ARGS[0]='nokable':
+>>>>>>> 322_TV
 cla
 *clr
+<<<<<<< 322_TV
 set minut += 60
 set manna += 3
 set willpower += RAND(5,10)
@@ -45,11 +79,31 @@ if daystart < 10 and StoryLine = 0: 'Sometimes while watching TV look accidental
 
 act 'Watch TV (1:00)': gt 'TV','nokable'
 act 'Turn off the TV and get off the couch': gt 'TV','fin'
+=======
+set minut = minut + 60
+set manna = manna + 3
+set willpower = willpower + RAND (5,10)
+set manna = manna + RAND (10,50)
+set elektro = elektro + 3
+clr
+gs'stat'
+'<center><img src="pics/telek.jpg" ></center>'
+'You see the central channel lying on the couch. Look almost nothing, solid advertising and cheesy program.'
+if daystart<10 and StoryLine=0:'Sometimes while watching TV casually glance stops on your legs or chest .'
+
+act 'watching TV 1 h':gt'TV','nokable'
+act 'Turn off the TV and get up from the couch':gt'TV','fin'
+>>>>>>> 322_TV
 end
 
+<<<<<<< 322_TV
 if $ARGS[0] = 'kable':
+=======
+if $ARGS[0]='kable':
+>>>>>>> 322_TV
 cla
 *clr
+<<<<<<< 322_TV
 set minut += 60
 set manna += 6
 set willpower += RAND(10,20)
@@ -63,11 +117,37 @@ if daystart < 10 and StoryLine = 0: 'Sometimes while watching TV look accidental
 
 act 'Watch TV (1:00)': gt 'TV','kable'
 act 'Turn off the TV and get off the couch': gt 'TV','fin'
+=======
+set minut = minut + 60
+set manna = manna + 6
+set willpower = willpower + RAND (10,20)
+set manna = manna + RAND (50,100)
+set elektro = elektro + 3
+clr
+gs'stat'
+'<center><img src="pics/telek.jpg" ></center>'
+'You are watching cable TV.'
+if daystart<10 and StoryLine=0:'Sometimes while watching TV casually glance stops on your legs or chest .'
+
+act 'watching TV 1 h':gt'TV','kable'
+act 'Turn off the TV and get up from the couch':gt'TV','fin'
+>>>>>>> 322_TV
 end
 
+<<<<<<< 322_TV
 if $ARGS[0] = 'fin':
 	cla
 	gt $locM, $metkaM
+=======
+if $ARGS[0]='fin':
+cla
+gt $locM, $metkaM
+     !'if housr = 1 and housrA = 1:
+     set housrA = 0
+     gt'sitr'
+     end'
+
+>>>>>>> 322_TV
 end
 --- TV ---------------------------------
 

@@ -1,3 +1,4 @@
+<<<<<<< 553_result
 # RESULTS
 *P '<right><img src="images\casino\resul.jpg"></right>'
 clr
@@ -13,8 +14,26 @@ else
 		$color = 'red'
 	else
 		$color = 'black'
+=======
+# result
+*P '<right><img src="casino/resul.jpg" ></right>'
+clr
+gs'stat'
+set minut=minut + 5
+
+x_rul=100
+x_rul=rand(0,36)
+if x_rul=0:
+	$color=' '
+else
+	if x_rul=1 or x_rul=3 or x_rul=5 or x_rul=7 or x_rul=9 or x_rul=12 or x_rul=14 or x_rul=16 or x_rul=18 or x_rul=19 or x_rul=21 or x_rul=23 or x_rul=25 or x_rul=27 or x_rul=30 or x_rul=32 or x_rul=34 or x_rul=36:
+		$color='red'
+	else
+		$color='black'
+>>>>>>> 553_result
 	end
 end
+<<<<<<< 553_result
 ' '
 'The ball stopped at <<x_rul>> <<$color>>'
 if кч ! 0:
@@ -23,29 +42,56 @@ if кч ! 0:
 		if x_rul = 1 or x_rul = 3 or x_rul = 5 or x_rul = 7 or x_rul = 9 or x_rul = 12 or x_rul = 14 or x_rul = 16 or x_rul = 18 or x_rul = 19 or x_rul = 21 or x_rul = 23 or x_rul = 25 or x_rul = 27 or x_rul = 30 or x_rul = 32 or x_rul = 34 or x_rul = 36:
 			act 'You have won <<2*st_1>>':
 				set money += 2 * st_1
+=======
+' '
+'The ball stopped at <<x_rul>> <<$color>>'
+if kh!0:
+	if kh=1:
+		'1'
+		if x_rul=1 or x_rul=3 or x_rul=5 or x_rul=7 or x_rul=9 or x_rul=12 or x_rul=14 or x_rul=16 or x_rul=18 or x_rul=19 or x_rul=21 or x_rul=23 or x_rul=25 or x_rul=27 or x_rul=30 or x_rul=32 or x_rul=34 or x_rul=36:
+			act 'you won <<2*st_1>>':
+				set money=money+2*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
+<<<<<<< 553_result
 	if кч = 2:
 		if x_rul = 2 or x_rul = 4 or x_rul = 6 or x_rul = 8 or x_rul = 10 or x_rul = 11 or x_rul = 13 or x_rul = 15 or x_rul = 17 or x_rul = 20 or x_rul = 22 or x_rul = 24 or x_rul = 26 or x_rul = 28 or x_rul = 29 or x_rul = 31 or x_rul = 33 or x_rul = 35:
 			cla
 			act 'You have won <<2*st_1>>':
 				set money += 2 * st_1
+=======
+	if kh=2:
+		if x_rul=2 or x_rul=4 or x_rul=6 or x_rul=8 or x_rul=10 or x_rul=11 or x_rul=13 or x_rul=15 or x_rul=17 or x_rul=20 or x_rul=22 or x_rul=24 or x_rul=26 or x_rul=28 or x_rul=29 or x_rul=31 or x_rul=33 or x_rul=35:
+			cla
+			act 'you won <<2*st_1>>':
+				set money=money+2*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
 end
+<<<<<<< 553_result
 if чнч ! 0:
 	if чнч = 1:
 		чнч = 0
@@ -53,31 +99,58 @@ if чнч ! 0:
 			cla
 			act 'You have won <<2*st_1>>':
 				set money += 2 * st_1
+=======
+if chnch!0:
+	if chnch=1:
+		chnch=0
+		if x_rul mod 2=0:
+			cla
+			act 'you won <<2*st_1>>':
+				set money=money+2*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
+<<<<<<< 553_result
 	if чнч = 2:
 		чнч = 0
 		if x_rul mod 2 = 1:
 			cla
 			act 'You have won <<2*st_1>>':
 				set money += 2 * st_1
+=======
+	if chnch=2:
+		chnch=0
+		if x_rul mod 2=1:
+			cla
+			act 'you won <<2*st_1>>':
+				set money=money+2*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
 end
+<<<<<<< 553_result
 if мб ! 0:
 	if мб = 1:
 		мб = 0
@@ -85,13 +158,27 @@ if мб ! 0:
 			cla
 			act 'You have won <<2*st_1>>':
 				set money += 2 * st_1
+=======
+if mb!0:
+	if mb=1:
+		mb=0
+		if x_rul>0 and x_rul<19:
+			cla
+			act 'you won <<2*st_1>>':
+				set money=money+2*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
+<<<<<<< 553_result
 		end
 	end
 	if мб = 2:
@@ -100,16 +187,31 @@ if мб ! 0:
 			cla
 			act 'You have won <<2*st_1>>':
 				set money += 2 * st_1
+=======
+		end	
+	end
+	if mb=2:
+		mb=0
+		if x_rul>18 and x_rul<37:
+			cla
+			act 'you won <<2*st_1>>':
+				set money=money+2*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
 end
+<<<<<<< 553_result
 if дю ! 0:
 	if дю = 1:
 		дю = 0
@@ -117,46 +219,86 @@ if дю ! 0:
 			cla
 			act 'You have won <<3*st_1>>':
 				set money += 3 * st_1
+=======
+if du!0:
+	if du=1:
+		du=0
+		if x_rul>0 and x_rul<13:
+			cla
+			act 'you won <<3*st_1>>':
+				set money=money+3*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
+<<<<<<< 553_result
 	if дю = 2:
 		дю = 0
 		if x_rul > 12 and x_rul < 25:
 			cla
 			act 'You have won <<3*st_1>>':
 				set money += 3 * st_1
+=======
+	if du=2:
+		du=0
+		if x_rul>12 and x_rul<25:
+			cla
+			act 'you won <<3*st_1>>':
+				set money=money+3*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
+<<<<<<< 553_result
 	if дю = 3:
 		дю = 0
 		if x_rul > 24 and x_rul < 37:
 			cla
 			act 'You have won <<3*st_1>>':
 				set money += 3 * st_1
+=======
+	if du=3:
+		du=0
+		if x_rul>24 and x_rul<37:
+			cla
+			act 'you won <<3*st_1>>':
+				set money=money+3*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
 end
+<<<<<<< 553_result
 if ряд ! 0:
 	if ряд = 1:
 		ряд = 0
@@ -164,59 +306,114 @@ if ряд ! 0:
 			cla
 			act 'You have won <<3*st_1>>':
 				set money += 3 * st_1
+=======
+if series!0:
+	if series=1:
+		series=0
+		if x_rul=1 or x_rul=4 or x_rul=7 or x_rul=10 or x_rul=13 or x_rul=16 or x_rul=19 or x_rul=22 or x_rul=25 or x_rul=28 or x_rul=31 or x_rul=34:
+			cla
+			act 'you won <<3*st_1>>':
+				set money=money+3*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
+<<<<<<< 553_result
 	if ряд = 2:
 		ряд = 0
 		if x_rul = 2 or x_rul = 3 or x_rul = 8 or x_rul = 11 or x_rul = 14 or x_rul = 17 or x_rul = 20 or x_rul = 23 or x_rul = 26 or x_rul = 29 or x_rul = 32 or x_rul = 35:
 			cla
 			act 'You have won <<3*st_1>>':
 				set money += 3 * st_1
+=======
+	if series=2:
+		series=0
+		if x_rul=2 or x_rul=3 or x_rul=8 or x_rul=11 or x_rul=14 or x_rul=17 or x_rul=20 or x_rul=23 or x_rul=26 or x_rul=29 or x_rul=32 or x_rul=35:
+			cla
+			act 'you won <<3*st_1>>':
+				set money=money+3*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
+<<<<<<< 553_result
 	if ряд = 3:
 		ряд = 0
 		if x_rul = 3 or x_rul = 4 or x_rul = 9 or x_rul = 12 or x_rul = 15 or x_rul = 18 or x_rul = 21 or x_rul = 24 or x_rul = 27 or x_rul = 30 or x_rul = 33 or x_rul = 36:
 			cla
 			act 'You have won <<3*st_1>>':
 				set money += 3 * st_1
+=======
+	if series=3:
+		series=0
+		if x_rul=3 or x_rul=4 or x_rul=9 or x_rul=12 or x_rul=15 or x_rul=18 or x_rul=21 or x_rul=24 or x_rul=27 or x_rul=30 or x_rul=33 or x_rul=36:
+			cla
+			act 'you won <<3*st_1>>':
+				set money=money+3*st_1
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		else
 			cla
+<<<<<<< 553_result
 			act 'You lost':
+=======
+			act 'you lost':
+>>>>>>> 553_result
 				gt 'amrul'
 			end
 		end
 	end
 end
+<<<<<<< 553_result
 if чи ! 100:
 	if чи = x_rul:
 		cla
 		act 'You have won <<37*st_1>>':
 			set money += 37 * st_1
+=======
+if chi!100:
+	if chi=x_rul:
+		cla
+		act 'you won <<37*st_1>>':
+			set money=money+37*st_1
+>>>>>>> 553_result
 			gt 'amrul'
 		end
 	else
 		cla
+<<<<<<< 553_result
 		act 'You lost':
+=======
+		act 'you lost':
+>>>>>>> 553_result
 			gt 'amrul'
 		end
 	end
 end
+<<<<<<< 553_result
 --- RESULTS ---------------------------------
+=======
+--- result ---------------------------------
+>>>>>>> 553_result
 

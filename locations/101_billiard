@@ -3,6 +3,7 @@ $sexloc = $CURLOC
 cla
 *clr
 gs 'stat'
+<<<<<<< 101_billiard
 '<center><B>Pool</B></center>'
 '<center><img src="images\img\centr\bil.jpg"></center>'
 'Quite a large billiard room, there are plenty of tables in the hall, but there are tables in individual cubicles.'
@@ -55,10 +56,65 @@ if money >= 300:
 		gt 'billiard','randwin'
 		end
 	end
+=======
+'<center><B>billiard</B></center>'
+'<center><img src="img/centr/bil.jpg" ></center>'
+'Quite a large billiard, there are many tables in the hall, but there are tables in separate cubicles.'
+
+act 'Get_Away':gt'torgcentr'
+if hour >= 8 and hour <= 20:
+if money>=250:
+	 act 'play 250 rubles per hour':
+		 set money-=250
+		 set billiardnav+=rand(0,3)
+		 set minut+=60
+		 set billrand=rand(0,5)
+		 set billvar=0
+		 if billrand=0:
+			 cla
+			 'To the guy for you and offers to play with him'
+			 if money>=1000:act 'Play for Money, rate 1000':gt 'billiard','randwin'
+			 if DOM>20 and strapon=1:
+				 act 'Play on your ass, lose fuck me':
+					 set billvar=1
+					 gt 'billiard','randwin'
+					 end
+				 end
+			 act 'Get_Away':gt'billiard'
+			 end
+		 if billrand=1:
+			 cla
+			 'It is right for you and offer a couple of guys to play with them'
+			 if money>=1000:act 'Play for Money, rate 1000':gt 'billiard','randwin'
+			 if DOM>20 and strapon=1:
+				 act 'Play on your ass, lose fuck me':
+					 set billvar=2
+					 gt 'billiard','randwin'
+					 end
+				 end
+			 act 'Get_Away':gt'billiard'
+			 end
+		 if billrand>1:
+			 cla
+			 'You played billiards'
+			 act 'Get_Away':gt'billiard'
+			 end
+		 end
+	 end
+if money>=300:
+	 act 'Play for Money':
+		 set money-=300
+		 set minut+=60
+		 set billvar=3
+		 gt 'billiard','randwin'
+		 end
+	 end
+>>>>>>> 101_billiard
 end
 
 if $ARGS[0] = 'randwin':
 cla
+<<<<<<< 101_billiard
 if billiardnav < 10: set billwin = rand(0,10)
 if billiardnav >= 10 and billiardnav < 20: set billwin = rand(0,12)
 if billiardnav >= 20 and billiardnav < 30: set billwin = rand(0,14)
@@ -113,12 +169,76 @@ if billwin <= 10 and billvar = 3:
 	'You lost and paid 300 rubles.'
 	act 'Leave': gt 'billiard'
 	end
+=======
+if billiardnav<10:set billwin=rand(0,10)
+if billiardnav>=10 and billiardnav<20:set billwin=rand(0,12)
+if billiardnav>=20 and billiardnav<30:set billwin=rand(0,14)
+if billiardnav>=30 and billiardnav<40:set billwin=rand(0,16)
+if billiardnav>=40 and billiardnav<50:set billwin=rand(0,18)
+if billiardnav>=50 and billiardnav<60:set billwin=rand(0,20)
+if billiardnav>=60 and billiardnav<70:set billwin=rand(0,22)
+if billiardnav>=70 and billiardnav<80:set billwin=rand(0,24)
+if billiardnav>=80 and billiardnav<90:set billwin=rand(0,26)
+if billiardnav>=90:set billwin=rand(0,28)
+if billwin>10 and billvar=0:
+	 set money+=1000
+	 'You won and received 1000 RUB.'
+	 act 'Get_Away':gt'billiard'
+	 end
+if billwin>10 and billvar=1:
+	 *clr
+	 set DOM+=5
+	 '<center><img src="img/centr/strapon.jpg" ></center>'
+	 'you won, put the strap, and looked at the guy: "Well stand stoop, Today you`re my bitch"
+The guy dropped his pants and got cancer, You fucked his threesome.'
+	 act 'Get_Away':gt'billiard'
+	 end
+if billwin>10 and billvar=2:
+	 set DOM+=8
+	 '<center><img src="img/centr/strapon.jpg" ></center>'
+	 'You won clothed strapon, and looked at the guys: "Come on girls get down and get up coward in all"
+You fucked them all one by one.'
+	 act 'Get_Away':gt'billiard'
+	 end
+if billwin<=10 and billvar=0:
+	 set money-=1000
+	 'You lost and paid 1000 RUB.'
+	 act 'Get_Away':gt'billiard'
+	 end
+if billwin<=10 and billvar=1:
+	 'you lost, have to push the legs.'
+	 set picrand=16
+	 act 'pay':xgt'sex','var'
+	 end
+if billwin<=10 and billvar=2:
+	 'you lost, have to push the legs.'
+	 act 'pay':gt 'paysex','var'
+	 end
+if billwin>10 and billvar=3:
+	 set money+=300
+	 'You won and received 300 RUB.'
+	 act 'Get_Away':gt'billiard'
+	 end
+if billwin<=10 and billvar=3:
+	 !set money-=300
+	 'You lost and paid 300 RUB.'
+	 act 'Get_Away':gt'billiard'
+	 end
+>>>>>>> 101_billiard
 end
 
 if $ARGS[0] = 'start':
+<<<<<<< 101_billiard
 '<center><B>Pool</B></center>'
 '<center><img src="images\img\centr\bil.jpg"></center>'
 act 'Leave': gt 'billiard'
 end
+=======
+'<center><B>billiard</B></center>'
+'<center><img src="img/centr/bil.jpg" ></center>'
+act 'Get_Away':gt'billiard'
+end
+
+>>>>>>> 101_billiard
 --- billiard ---------------------------------
 

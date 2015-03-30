@@ -1,5 +1,6 @@
 # kino
 gs 'stat'
+<<<<<<< 115_kino
 '<center><B>Cinema</B></center>'
 '<center><img src="images\img\centr\kino.jpg"></center>'
 'Small cinema ticket costs 300 rubles.'
@@ -51,11 +52,65 @@ if hour >= 8 and hour <= 20:
 	end
 else
 'Cinema closed.'
+=======
+'<center><B>theater</B></center>'
+'<center><img src="img/centr/kino.jpg" ></center>'
+'small cinema, ticket price 300 RUB.'
+
+act 'Get_Away':gt'torgcentr'
+if hour >= 8 and hour <= 20:
+     if money>=300:
+		 act 'watch movies':
+		 cls
+		 set money-=300
+		 set minut+=60
+		 manna+=300
+		 gs'stat'
+		 set kinorand=rand(0,9)
+		     if kinorand=9:
+			 'The hall is empty, just sitting beside you one guy.'
+			 act 'watch the movie':minut+=60&gt 'kino'
+			     act 'seduce':
+				 cla
+				 *clr
+				 '<center><img src="img/centr/kino1.jpg" ></center>'
+				     if vnesh<15:
+					 'You bare chest demonstrate her boyfriend, but he does not pay attention to you'
+					 act 'Get_Away':gt 'kino'
+					 end
+				     if vnesh>=15:
+					 'You bare chest demonstrate her boyfriend, he is clearly interested in and looks at you in looking forward to a'
+					     act 'Cooney':
+						 cla
+						 *clr
+						 set guy+=1
+						 set kuni+=1
+						 set horny+=10
+						 '<center><img src="img/centr/kino2.jpg" ></center>'
+						 'Put your feet up and you ask him to lick, man quickly dropped to his knees and began to lick you.'
+						 act 'Get_Away':set DOM+=1&gt'kino'
+						 act 'blow_job':gt'kino','sex'
+						 end
+					 act 'blow_job':gt'kino','sex'
+					 end
+				 end
+		     exit
+			 end
+		 set minut+=60
+		 gs'stat'
+		 'You watched the film'
+		 act 'Get_Away':gt 'kino'
+		 end
+	 end
+else
+'cinema closed.'
+>>>>>>> 115_kino
 end
 
 if $ARGS[0] = 'sex':
 cla
 *clr
+<<<<<<< 115_kino
 set bj += 1
 '<center><img src="images\img\centr\kino3.jpg"></center>'
 'You cupped his excited penis lips and began to suck his hand while playing with his balls. Soon you will feel that he is about to finish.'
@@ -74,6 +129,26 @@ set bj += 1
 	'You get up on your knees chair, turning his back to the guy and invitingly swaying ass, he did not wait and you quickly entered into the vagina, after a few seconds he groaned and came inside you, leaving you unsatisfied.'
 	act 'Leave': set cumpussy += 1 & gt 'kino'
 	end
+=======
+set bj+=1
+'<center><img src="img/centr/kino3.jpg" ></center>'
+'You wrapped around his penis excited lips and began to suck his hand while playing with his eggs. Soon you will feel that he is about to finish.'
+     act'suck':
+	 cla
+	 'You continued to suck the guy is dead and your mouth filling it with warm viscous liquid.'
+	 act 'Get_Away':set cumlip+=1&gt'kino'
+	 end
+	 
+     act'give':
+	 cla
+	 *clr
+	 set sex+=1
+	 set horny+=50
+	 '<center><img src="img/centr/kino4.jpg" ></center>'
+	 'You stand up knees on the chair, Turning his back to the guy and swaying invitingly ass, He did not wait and quickly came to you in the vagina, after a few seconds he groaned and finished in you, leaving you unsatisfied.'
+	 act 'Get_Away':set cumpussy+=1&gt'kino'
+	 end
+>>>>>>> 115_kino
 end
 --- kino ---------------------------------
 

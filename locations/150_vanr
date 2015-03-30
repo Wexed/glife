@@ -1,14 +1,24 @@
 # vanr
+<<<<<<< 150_vanr
 ACT 'Go to the corridor':
 	gt 'korr'
+=======
+ACT 'In the corridor':
+	gt'korr'
+>>>>>>> 150_vanr
 END
 $metka = $ARGS[0]
 $loc = $CURLOC
 $metkaM = $ARGS[0]
 $locM = $CURLOC
+<<<<<<< 150_vanr
 $stirkad = {
+=======
+$stirkad={
+>>>>>>> 150_vanr
 cla
 *clr
+<<<<<<< 150_vanr
 set minut += dirtbelo * 5
 set suhbelo += dirtbelo
 set poroshok -= 1
@@ -17,8 +27,19 @@ set manna -= 10
 '<center><img src="images\etogame\stir.jpg"></center>'
 'You soak the dirty linen in a basin and pour the powder on them. You wash the clothes until they are finally clean.'
 act 'Hang the laundry out to dry': gt 'korr'
+=======
+ set minut = minut + dirtbelo*5
+ set suhbelo = suhbelo + dirtbelo
+ set poroshok = poroshok - 1
+ set dirtbelo = 0
+ set manna = manna - 10
+ '<center><img src="pic/stir.jpg" ></center>'
+ 'You soaked clothes in the basin and poured the powder there, then you become a wash clothes, until it finally became clear.'
+ act 'Hang the laundry out to dry':gt'korr'
+>>>>>>> 150_vanr
 }
 
+<<<<<<< 150_vanr
 '<center><B><font color = maroon>Bathroom</font></B></center>'
 if remvanr = 0: '<center><img src="images\etogame\vanr.jpg"></center>'
 if remvanr = 1: '<center><img src="images\etogame\vanr2.jpg"></center>'
@@ -47,8 +68,40 @@ if stiralka > 0:
 	elseif poroshok<dirtbelo:
 		'You ran out of powder for washing machine.'
 	end
+=======
+
+
+'<center><B><font color=maroon>bathroom</font></B></center>'
+if remvanr = 0:'<center><img src="pic/vanr.jpg" ></center>'
+if remvanr = 1:'<center><img src="pic/vanr2.jpg" ></center>'
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+set minut = minut + 1
+set housrA = 1
+set elektro = elektro + 1
+
+if stiralka>0:
+     if husband>0 and husbanday>0 and husporday!day and poroshok>=2:
+	 husband+=5
+	 set poroshok = poroshok - 2
+	 husporday=day
+	 'Washing machine washed smelly socks husband and his prossannye and properdannye truselya.'
+	 end
+     if dirtbelo>0 and poroshok>=dirtbelo:
+     clrbelo+=dirtbelo
+     poroshok-=dirtbelo
+     dirtbelo=0
+     'Washer washed the your laundry'
+     elseif poroshok<dirtbelo:
+     'You run out of powder for washing machine.'
+     end
+>>>>>>> 150_vanr
 end
 
+<<<<<<< 150_vanr
 if remvanr = 1:'There is a <a href="exec:GT ''mirror'',''start''">mirror</a> just above the sink.'
 
 if tampon > 0:
@@ -95,8 +148,52 @@ if tanga = 1:
 	gt 'vanr'
 	end
 end'
+=======
+if tampon > 0:
+'On a shelf is packing tampons. It will suffice for <B><<tampon>></B> time'
+else
+'<B><font color=red>You do not have tampons.</font></B>'
+end
+if stanok > 0:'On a shelf is a machine for shaving, it will have the blades out, that would shave <B><<stanok>></B> time.'
+if dirtbelo>0:'Your cart is <font color=red><B><<dirtbelo>></B></font> Power. dirty laundry.'
+if poroshok>0:
+if dirtbelo=0:$stirka=''
+if dirtbelo>0:$stirka='<a href="exec: dynamic $stirkad ">You can do your laundry</a>'
+'Under the bath worth can for washing powder, which is enough for <B><<poroshok>></B> washings. <<$stirka>>'
+else
+'<B><font color=red>You do not have washing powder and nothing to wash clothes.</font></B>'
+end
+if clrbelo > 0:
+'In the locker is <font color=blue><B><<clrbelo>></B></font>Power. clean linen.'
+else
+'<B><font color=red>You do not have clean linen.</font></B>'
+end
+if shampoo>0:
+'Do you have enough shampoo <<shampoo>> time. you can <a href="exec: gt''vann'',''start'' ">have_a_wash</a>.'
+else
+'You ran out of shampoo, therefore problems with washing.'
+end
+if mosolmaz>0:'On a shelf is a tube of ointment protivomozolnoy, which will suffice for <<mosolmaz>> applications.'
+if stiralka>0:'In the bathroom a washing machine.'
+
+     !'if tanga=0 and clrbelo>0:
+		 act 'Dress Underwear':
+		 cla
+		 set tanga = 1
+		 gt'vanr'
+		 end
+     end
+     if tanga=1:
+		 act 'Do not wear underwear':
+		 cla
+		 set tanga = 0
+		 gt'vanr'
+		 end
+     end'
+>>>>>>> 150_vanr
 
 if tampon > 0 and mesec > 0 and isprok = 0:
+<<<<<<< 150_vanr
 	act 'Change a tampon':
 		cla
 		*clr
@@ -115,8 +212,24 @@ if shampoo > 0:
 		gt'vann','start'
 	end
 end
+=======
+	 act 'change swab':
+		 cla
+		 *clr
+		 set tampon = tampon - 1
+		 set isprok = 1
+		 set minut = minut + 5
+		 set manna = manna - 5
+		 '<center><img src="picb/tampon.jpg" ></center>'
+		 'You change a tampon.'
+		 act 'Go_Out':gt'vanr'
+		 end
+	 end
+
+>>>>>>> 150_vanr
 
 if cumpussy > 0 and clrbelo > 0 or cumbelly > 0 and clrbelo > 0 or cumass > 0 and clrbelo > 0:
+<<<<<<< 150_vanr
 	act 'Wash up (0:05)':
 	cla
 	*clr
@@ -135,9 +248,30 @@ if cumpussy > 0 and clrbelo > 0 or cumbelly > 0 and clrbelo > 0 or cumass > 0 an
 	'You carefully wash the sperm off yourself.'
 	act 'Exit': gt 'vanr'
 	end
+=======
+     act 'substitution 5 min':
+     cla
+     *clr
+     set cumpussy = 0
+     set cumbelly = 0
+     set cumass = 0
+     set cumlip = 0
+     set cumface = 0
+     set cumanus = 0
+     set cumfrot = 0
+     set sweat = sweat - 1
+     set minut = minut + 5
+     set clrbelo = clrbelo - 1
+     set dirtbelo = dirtbelo + 1
+     '<center><img src="pics/wash5.jpg" ></center>'
+     'You carefully washed sperm in the bathroom.'
+     act 'Go_Out':gt'vanr'
+     end
+>>>>>>> 150_vanr
 end
 
 if cumlip > 0 or cumface > 0:
+<<<<<<< 150_vanr
 	act 'Wash cum off your face (0:05)':
 	cla
 	*clr
@@ -150,9 +284,25 @@ if cumlip > 0 or cumface > 0:
 	'You carefully wash the sperm off your face.'
 	act 'Exit': gt 'vanr'
 	end
+=======
+     act 'Wash off with facial cum 5 min':
+     cla
+     *clr
+     set mop=1
+     set cumlip = 0
+     set cumface = 0
+     set sweat = sweat - 1
+     set minut = minut + 5
+     '<center><img src="pic/facesp.jpg" ></center>'
+     'You carefully washed sperm from the face.'
+     act 'Go_Out':gt'vanr'
+     end
+
+>>>>>>> 150_vanr
 end
 
 if mop ! 1:
+<<<<<<< 150_vanr
 	act 'Wash off cosmetics':
 	cla
 	set mop = 1
@@ -160,8 +310,18 @@ if mop ! 1:
 	'You wash the makeup from your face.'
 	act 'Exit': gt 'vanr'
 	end
+=======
+     act 'wash off cosmetics':
+     cla
+     set mop = 1
+     set minut = minut + 15
+     'You have washed off cosmetics.'
+     act 'Go_Out':gt'vanr'
+     end
+>>>>>>> 150_vanr
 end
 
+<<<<<<< 150_vanr
 if klisma = 1 and klismaday ! day:
 	act 'Give yourself an enema (0:05)':
 	cla
@@ -173,8 +333,23 @@ if klisma = 1 and klismaday ! day:
 	'You give yourself an enema and clean your intestines. Your ass is now ready for anal sex.'
 	act 'Exit': gt 'vanr'
 	end
+=======
+
+if klisma = 1 and klismaday ! day:
+     act 'Make yourself an enema 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set klismaday = day
+     set klismaday1= 1
+     '<center><img src="picV/klisma.jpg" ></center>'
+     'You have set yourself an enema and clean the intestines, now your ass ready for anal sex.'
+     act 'Go_Out':gt $curloc
+     end
+>>>>>>> 150_vanr
 end
 
+<<<<<<< 150_vanr
 if vibrator = 1 and vibratorIN = 0:
 	act 'Insert the vibrator (0:05)':
 	cla
@@ -186,8 +361,22 @@ if vibrator = 1 and vibratorIN = 0:
 	'You bend over the sink and insert the vibrator in your pussy.'
 	act 'Exit': gt 'vanr'
 	end
+=======
+if vibrator = 1 and vibratorIN=0:
+     act 'insert the vibrator 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set vibratorIN = 1
+     if vagina < 30:set vagina = vagina + 2
+     '<center><img src="pic/vibrator.jpg" ></center>'
+     'You leaned over and put in a phallic object currently in the pussy.'
+     act 'Go_Out':gt'vanr'
+     end
+>>>>>>> 150_vanr
 end
 
+<<<<<<< 150_vanr
 if vibrator = 1 and vibratorIN = 1:
 	act 'Remove the vibrator (0:05)':
 	cla
@@ -199,9 +388,23 @@ if vibrator = 1 and vibratorIN = 1:
 	'You bend over the sink and take the vibrator out of your pussy.'
 	act 'Exit': gt 'vanr'
 	end
+=======
+if vibrator = 1 and vibratorIN=1:
+     act 'Remove the vibrator 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set vibratorIN = 0
+     if vagina < 30:set vagina = vagina + 1
+     '<center><img src="pic/vibrator.jpg" ></center>'
+     'You bent down and took out a vibrator from the vagina.'
+     act 'Go_Out':gt'vanr'
+     end
+>>>>>>> 150_vanr
 end
 
 
+<<<<<<< 150_vanr
 if analplug = 1 and analplugin = 0 and klismaday1= 1:
 	act 'Insert a butt plug (0:05)':
 	cla
@@ -214,8 +417,26 @@ if analplug = 1 and analplugin = 0 and klismaday1= 1:
 	if butpluguse = 0: set butpluguse = 1 & '"I do this not even touch, and why I bought it!" you thought. Then still decided to take a closer look. Feel, smell, in general, that ordinary gag. "Oh, was not," you think, "Wow priest ever to develop, it will have great adventures, you could even say a huge and thick adventures with crimson heads, uh, that I got carried away." You scratched thin fingers unusually hairy head. Then you sent peg his ass, it was a bit painful when rastyagivatsya anus started taking a foreign object, but as soon as the widest part plunged into the murky depths of anal, it became easier and almost gag herself flew to the end, and got put on the manufacturer place.'
 	act 'Exit': gt 'vanr'
 	end
+=======
+if analplug = 1 and analplugin=0 and klismaday1= 1 and plugday!daystart:
+     act 'Insert a butt plug 5 min':
+     cla
+     *clr
+     plugday=daystart
+     set minut = minut + 5
+     set analplugIN = 1
+     if anus < 10:set anus = anus + 5
+     if anus >= 10 and anus<20:anus+=rand(1,2)
+     if anus >= 20 and anus<30:anus+=rand(0,1)
+     '<center><img src="pic/analplug.jpg" ></center>'
+     if butpluguse > 0:'You tilt and habitual movement inserted itself anal plug.'
+     if butpluguse = 0:set butpluguse = 1&'You tried to relax as much as possible the ass and began to insert the plug itself, biting her lip from feeling, your ass is about to burst you gently pushed in the thickest part of his ass and finally plug into place.'
+     act 'Go_Out':gt $curloc
+     end
+>>>>>>> 150_vanr
 end
 
+<<<<<<< 150_vanr
 if analplug = 1 and analplugin = 1:
 	act 'Remove the butt plug (0:05)':
 	cla
@@ -227,8 +448,22 @@ if analplug = 1 and analplugin = 1:
 	if butpluguse > 0: 'You bend over and pull the butt plug out.'
 	act 'Exit': gt 'vanr'
 	end
+=======
+if analplug = 1 and analplugin=1:
+     act 'Remove the butt plug 5 min':
+     cla
+     *clr
+     set minut = minut + 5
+     set analplugIN = 0
+     if anus < 30:set anus = anus + 1
+     '<center><img src="pic/analplug.jpg" ></center>'
+     if butpluguse > 0:'You bent down and removed from the habitual movement itself anal plug.'
+     act 'Go_Out':gt $curloc
+     end
+>>>>>>> 150_vanr
 end
 
+<<<<<<< 150_vanr
 if husband > 0 and husbanday > 0 and husporday ! day and poroshok >= 2:
 	act 'Wash your husbands clothes 1:00 (2 units of washing powder)':
 	cla
@@ -242,8 +477,24 @@ if husband > 0 and husbanday > 0 and husporday ! day and poroshok >= 2:
 	'You spend an hour washing your husbands smelly socks and his prossannye and properdannye truselya.'
 	act 'Move away from the bathroom': gt 'vanr'
 	end
+=======
+if husband>0 and husbanday>0 and husporday!day and poroshok>=2:
+     act 'Wash clothes husband 1 h (2 units of washing powder)':
+     cla
+     *clr
+     husband+=5
+     set poroshok = poroshok - 2
+     set minut = minut + 60
+     husporday=day
+     manna-=25
+     '<center><img src="pic/stir.jpg" ></center>'
+     'You hour washes smelly socks husband and his prossannye and properdannye truselya.'
+     act 'Move away from the bathroom':gt'vanr'
+     end
+>>>>>>> 150_vanr
 end
 
+<<<<<<< 150_vanr
 if husband > 0 and husbanday > 0 and huspolday ! day:
 	act 'Clean the apartment (1:00)':
 	cla
@@ -257,5 +508,35 @@ if husband > 0 and husbanday > 0 and huspolday ! day:
 	act 'Leave': gt 'vanr'
 	end
 end
+=======
+if husband>0 and husbanday>0 and huspolday!day:
+     act 'Ubiratsya apartment 1 h':
+     cla
+     *clr
+     husband+=5
+     set minut = minut + 60
+     huspolday=day
+     manna-=25
+     !'<center><img src="pics/cook.jpg" ></center>'
+     'You took a rag and started to get out of the apartment.'
+     act 'Get_Away':gt'vanr'
+     end
+end
+
+if pregtest>0:
+     act 'Do a pregnancy test':
+     pregtest-=1
+     cla
+     gs'stat'
+		if preg=1:
+		'The test showed the two strips. you are pregnant.'
+		!'father - <<$father>>.'
+		else:
+		'The test showed one band.'
+		end
+     act 'further': gt $curloc
+     end
+end
+>>>>>>> 150_vanr
 --- vanr ---------------------------------
 

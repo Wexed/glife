@@ -1,4 +1,5 @@
 # FSgame
+<<<<<<< 438_FSgame
 minut += 1
 gs 'stat'
 gs 'FSstat'
@@ -38,5 +39,84 @@ gs 'FSstat'
 	!'You left the room.'
 	gt 'FSroom'
 	end
+=======
+minut+=1
+gs'stat'
+gs'FSstat'
+'<center><B>The room at the hotel</B></center>'
+''
+     if FSmedkit>0:
+     'kits <<FSmedkit>> pcs'
+         if FSHP<100:
+             act 'treated':
+             cls
+             FShour+=1
+             FSHP=100
+             FSmedkit-=1
+             minut+=1
+             gs'stat'
+             'You cured with the help of health kits.'
+             act 'further':gt $curloc
+             end
+         end
+     end
+     
+     act 'laze':
+     cls
+	 FShour+=1
+	 minut+=1
+	 gs'stat'
+	 'You lounged in the apartment, lounging on the couch and thinking, as you vykruchivatsya of the situation.'
+	 act 'further':gt $curloc
+     end
+     
+     
+     act 'Exit the room':
+     cls
+	 FShour+=1
+	 minut+=1
+	 gs'stat'
+	 !'You left the room.'
+	 gt 'FSroom'
+     end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 438_FSgame
 --- FSgame ---------------------------------
 

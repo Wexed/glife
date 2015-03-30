@@ -1,5 +1,6 @@
 # croupier
 *PL '- How can I help you?'
+<<<<<<< 543_croupier
 *P '<right><img src="images\casino\crup.jpg"></right>'
 ACT 'Ask rules':
 	msg 'The rules are very simple.
@@ -13,13 +14,33 @@ ACT 'Ask rules':
 	Series    -   1 to 2
 	Number   -   1 to 36
 	Well, then it all depends on your luck.'
+=======
+*P '<right><img src="casino/crup.jpg" ></right>'
+ACT 'ask rules':
+	msg 'Rules are very simple.
+	First.
+	But just remember, that our casino is the maximum rate 1000 rubles.
+	Then you choose what to put their money. Is_There 5 bets:
+	color -   1 to 1
+	Chet/odd -   1 to 1
+	Mal/big-   1 to 1
+	dozen -   1 to 2   
+	series -   1 to 2   
+	number -   1 to 36  
+	Well.'
+>>>>>>> 543_croupier
 	gt 'croupier'
 END
 ACT 'Move away from the dealer':
 	gt 'roulette'
 END
 clr
+<<<<<<< 543_croupier
 gs 'stat'
 set minut += 5
+=======
+gs'stat'
+set minut=minut + 5
+>>>>>>> 543_croupier
 --- croupier ---------------------------------
 

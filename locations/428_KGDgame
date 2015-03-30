@@ -1,4 +1,5 @@
 # KGDgame
+<<<<<<< 428_KGDgame
 minut += 1
 gs 'stat'
 gs 'KGDexp'
@@ -18,16 +19,46 @@ if KGDsput6 > 0: '<<$KGDname6>>. Level <<KGDlvl6>>Life <<KGDHP6>>Done <<KGDdam6>
 ''
 '<center><B>Brands for</B></center>'
 'Do you own <<KGDkarta>>% of'
+=======
+minut+=1
+gs'stat'
+gs'KGDexp'
+'<center><B>day <<KGDday>></B></center>'
+'<center><B>your city</B></center>'
+'<center>Structures</center>'
+'tower hero, which is stored <<KGDmoney>> resources'
+'farms <<KGDfarm>> pcs'
+''
+'<center><B>List of party hero (6five people maximum)</B></center>'
+'hero. level <<KGDlvl>>, life <<KGDHP>>, damage <<KGDdam>>'
+if KGDsput2>0:'<<$KGDname2>>. level <<KGDlvl2>>, life <<KGDHP2>>, damage <<KGDdam2>>'
+if KGDsput3>0:'<<$KGDname3>>. level <<KGDlvl3>>, life <<KGDHP3>>, damage <<KGDdam3>>'
+if KGDsput4>0:'<<$KGDname4>>. level <<KGDlvl4>>, life <<KGDHP4>>, damage <<KGDdam4>>'
+if KGDsput5>0:'<<$KGDname5>>. level <<KGDlvl5>>, life <<KGDHP5>>, damage <<KGDdam5>>'
+if KGDsput6>0:'<<$KGDname6>>. level <<KGDlvl6>>, life <<KGDHP6>>, damage <<KGDdam6>>'
+''
+'<center><B>territory</B></center>'
+'Do you own <<KGDkarta>>% territory'
+>>>>>>> 428_KGDgame
 
 
+<<<<<<< 428_KGDgame
 act 'Next Day':
 cls
 KGDbrod = 0
 KGDday += 1
 KGDmoney += KGDkarta * 5 + KGDfarm * 10
+=======
+act 'the next day':
+cls
+KGDbrod=0
+KGDday+=1
+KGDmoney+=KGDkarta*5+KGDfarm*10
+>>>>>>> 428_KGDgame
 gt $curloc
 end
 
+<<<<<<< 428_KGDgame
 if KGDmoney >= 150 and KGDfarm > KGDkarta:
 	act 'Build a farm (150 resources)':
 	cls
@@ -35,8 +66,18 @@ if KGDmoney >= 150 and KGDfarm > KGDkarta:
 	KGDfarm += 1
 	gt $curloc
 	end
+=======
+if KGDmoney>=150 and KGDfarm>KGDkarta:
+	 act 'build a farm (150 resources)':
+	 cls
+	 KGDmoney-=150
+	 KGDfarm+=1
+	 gt $curloc
+	 end
+>>>>>>> 428_KGDgame
 end
 
+<<<<<<< 428_KGDgame
 	act 'Arrange the soldiers':
 	cls
 	KGDpartyCreate = 1
@@ -62,10 +103,38 @@ if KGDbrod = 0 and KGDpartyCreate > 0:
 
 	gt 'KGDbefore'
 	end
+=======
+	 act 'arrange the soldiers':
+	 cls
+     KGDpartyCreate=1
+     $kgdplace='1place empty'
+     $kgdplace2='2place empty'
+     $kgdplace3='3place empty'
+     $kgdplace4='4place empty'
+     $kgdplace5='5place empty'
+     $kgdplace6='6place empty'
+     kgdplace=0
+     kgdplace2=0
+     kgdplace3=0
+     kgdplace4=0
+     kgdplace5=0
+     kgdplace6=0
+	 gt 'KGDparty'
+	 end
+
+if KGDbrod=0 and KGDpartyCreate>0:
+	 act 'win territory':
+	 cls
+     KGDbrod=1
+     
+	 gt 'KGDbefore'
+	 end
+>>>>>>> 428_KGDgame
 end
 
 
 
+<<<<<<< 428_KGDgame
 if KGDsput6 = 0 and KGDmoney >= 250:
 	act 'Hire a satellite (250 resources)':
 	cls
@@ -303,8 +372,285 @@ if KGDsput6 = 0 and KGDmoney >= 250:
 
 		end
 	end
+=======
+if KGDsput6=0 and KGDmoney>=250:
+	 act 'hire satellite (250 resources)':
+	 cls
+     KGDmoney-=250
+     KGDpartyCreate=0
+		 act 'warrior':
+		     if KGDsput2=0:
+		     $KGDname2='warrior'
+		     KGDlvl2=1
+		     KGDHP2=100
+		     KGDdam2=10
+		     KGDsput2=1
+		     KGDexp2=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput3=0:
+		     $KGDname3='warrior'
+		     KGDlvl3=1
+		     KGDHP3=100
+		     KGDdam3=10
+		     KGDsput3=1
+		     KGDexp3=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput4=0:
+		     $KGDname4='warrior'
+		     KGDlvl4=1
+		     KGDHP4=100
+		     KGDdam4=10
+		     KGDsput4=1
+		     KGDexp4=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput5=0:
+		     $KGDname5='warrior'
+		     KGDlvl5=1
+		     KGDHP5=100
+		     KGDdam5=10
+		     KGDsput5=1
+		     KGDexp5=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput6=0:
+		     $KGDname6='warrior'
+		     KGDlvl6=1
+		     KGDHP6=100
+		     KGDdam6=10
+		     KGDsput6=1
+		     KGDexp6=0
+		     gt $curloc
+		     exit
+		     end
+		 
+		 end
+		 
+		 act 'magician':
+		     if KGDsput2=0:
+		     $KGDname2='magician'
+		     KGDlvl2=1
+		     KGDHP2=60
+		     KGDdam2=20
+		     KGDsput2=1
+		     KGDexp2=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput3=0:
+		     $KGDname3='magician'
+		     KGDlvl3=1
+		     KGDHP3=60
+		     KGDdam3=20
+		     KGDsput3=1
+		     KGDexp3=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput4=0:
+		     $KGDname4='magician'
+		     KGDlvl4=1
+		     KGDHP4=60
+		     KGDdam4=20
+		     KGDsput4=1
+		     KGDexp4=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput5=0:
+		     $KGDname5='magician'
+		     KGDlvl5=1
+		     KGDHP5=60
+		     KGDdam5=20
+		     KGDsput5=1
+		     KGDexp5=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput6=0:
+		     $KGDname6='magician'
+		     KGDlvl6=1
+		     KGDHP6=60
+		     KGDdam6=20
+		     KGDsput6=1
+		     KGDexp6=0
+		     gt $curloc
+		     exit
+		     end
+		 
+		 end
+		 
+		 act 'archer':
+		     if KGDsput2=0:
+		     $KGDname2='archer'
+		     KGDlvl2=1
+		     KGDHP2=80
+		     KGDdam2=15
+		     KGDsput2=1
+		     KGDexp2=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput3=0:
+		     $KGDname3='archer'
+		     KGDlvl3=1
+		     KGDHP3=80
+		     KGDdam3=15
+		     KGDsput3=1
+		     KGDexp3=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput4=0:
+		     $KGDname4='archer'
+		     KGDlvl4=1
+		     KGDHP4=80
+		     KGDdam4=15
+		     KGDsput4=1
+		     KGDexp4=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput5=0:
+		     $KGDname5='archer'
+		     KGDlvl5=1
+		     KGDHP5=80
+		     KGDdam5=15
+		     KGDsput5=1
+		     KGDexp5=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput6=0:
+		     $KGDname6='archer'
+		     KGDlvl6=1
+		     KGDHP6=80
+		     KGDdam6=15
+		     KGDsput6=1
+		     KGDexp6=0
+		     gt $curloc
+		     exit
+		     end
+		 
+		 end
+		 
+		 act 'priest':
+		     if KGDsput2=0:
+		     $KGDname2='priest'
+		     KGDlvl2=1
+		     KGDHP2=40
+		     KGDdam2=20
+		     KGDsput2=1
+		     KGDexp2=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput3=0:
+		     $KGDname3='priest'
+		     KGDlvl3=1
+		     KGDHP3=40
+		     KGDdam3=20
+		     KGDsput3=1
+		     KGDexp3=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput4=0:
+		     $KGDname4='priest'
+		     KGDlvl4=1
+		     KGDHP4=40
+		     KGDdam4=20
+		     KGDsput4=1
+		     KGDexp4=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput5=0:
+		     $KGDname5='priest'
+		     KGDlvl5=1
+		     KGDHP5=40
+		     KGDdam5=20
+		     KGDsput5=1
+		     KGDexp5=0
+		     gt $curloc
+		     exit
+		     end
+		     
+		     if KGDsput6=0:
+		     $KGDname6='priest'
+		     KGDlvl6=1
+		     KGDHP6=40
+		     KGDdam6=20
+		     KGDsput6=1
+		     KGDexp6=0
+		     gt $curloc
+		     exit
+		     end
+		 
+		 end
+	 end
+>>>>>>> 428_KGDgame
 end
 
+<<<<<<< 428_KGDgame
 act 'Quit Game': gt 'Komp','start'
+=======
+
+
+
+
+act 'Leave the game':gt'Komp','start'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 428_KGDgame
 --- KGDgame ---------------------------------
 

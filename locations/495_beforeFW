@@ -1,3 +1,4 @@
+# beforeFW
 $endurdin={
 Ken=(musle/100)*Kus/100
 if ken<=0:ken=1
@@ -91,6 +92,7 @@ endurE=endurMaxE
 croonce=0
 round=1
 rMin=8
+<<<<<<< 495_beforeFW
 stoper = 0
 Ku = 0
 Kb = 0
@@ -98,19 +100,39 @@ Kz = 0
 KuE = 0
 KbE = 0
 KzE = 0
+=======
+stoper=0
+
+Ku=0
+Kb=0
+Kz=0
+KuE=0
+KbE=0
+KzE=0
+>>>>>>> 495_beforeFW
 !minus the endurance of fat
 !force depends on the endurance
 !speed depends on the endurance
 
+<<<<<<< 495_beforeFW
 if Formula = 0:
 	Formula = 3
 end
+=======
+if Formula=0:Formula=3
+
+>>>>>>> 495_beforeFW
 
 '<center><b>before round</b></center>'
+<<<<<<< 495_beforeFW
 '<center><img src="images/pic/fight/bef.jpg" ></center>'
+=======
+'<center><img src="pic/fight/bef.jpg" ></center>'
+>>>>>>> 495_beforeFW
 'you and <<$nameE>> greeted each other.'
 'Referee required to start a fight on his hands.'
 !picture
+<<<<<<< 495_beforeFW
 
 act 'Fight on his hands':
 	cls
@@ -152,3 +174,38 @@ act 'Fight on his hands':
 		gt 'FightCrouch'
 	end
 end
+=======
+act 'Fight on his hands':
+cls
+!picture
+'<center><img src="pic/fight/arm.jpg" ></center>'
+     if strenw>strenwE:
+     point+=1
+     lustw+=1
+     $text='Stand your opponent on all fours, and you catch him from behind.'
+     'You won the fight on his hands.'
+     crouch=1
+     end
+     if strenw<strenwE:
+     pointE+=1
+     lustwE+=1
+     $text='You get up on all fours, and your opponent to catch him from behind.'
+     'You lost the battle on his hands.'
+     crouch=0
+     end
+     if strenw=strenwE:
+     'Quest on hand ended in a draw. The referee tossed the coin, that would determine the winner.'
+     varrand=rand(0,1)
+     if varrand=0:crouch=1&$text='Stand your opponent on all fours, and you catch him from behind.'
+     if varrand=1:crouch=0&$text='You get up on all fours, and your opponent to catch him from behind.'
+     end
+
+'Refferi stopped you and commanded <<$text>>'
+     act 'Follow the instructions referees':
+     gt'FightCrouch'
+     end
+end
+
+--- beforeFW ---------------------------------
+
+>>>>>>> 495_beforeFW

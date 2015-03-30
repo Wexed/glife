@@ -1,15 +1,28 @@
 # butoilet
+<<<<<<< 345_butoilet
 set minut += 5
 '<center><B><font color = maroon>WC</font></B></center>'
 '<center><img src="images\etogame\PublicToilet.jpg"></center>'
+=======
+set minut = minut + 5
+'<center><B><font color=maroon>Wc</font></B></center>'
+'<center><img src="pic/PublicToilet.jpg" ></center>'
+>>>>>>> 345_butoilet
 ''
 clr
+<<<<<<< 345_butoilet
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 345_butoilet
 LCOLOR = rgb(106,90,205)
 
 
+<<<<<<< 345_butoilet
 	if tanga = 1:
 		act 'Remove Underwear':
 		cla
@@ -30,8 +43,67 @@ act 'Off the toilet': gt 'burger','start'
 			gt $curloc
 		end
 	end
+=======
+     if tanga=1:
+		 act 'Remove underwear':
+		 cla
+		 set tanga = 0
+		 gt $curloc
+		 end
+     end
+act 'Exit out of the closet':gt'burger','start'
+
+     if hapri = 0:
+         act 'coiffured':
+         cla
+         set minut = minut + 3
+         set hapri = 1
+         act 'View results':gt $curloc
+         end
+     end
+     
+     if mop = 1 and kosmetica > 0:
+         act 'apply Makeup':
+         cla
+         *clr
+         '<center><img src="pic/mop.jpg" ></center>'
+             act 'light makeup':
+             cla
+             set minut = minut + 3
+             set kosmetica = kosmetica - 1
+             set mop = 2 
+             'You lightly summed eyes and a little lipstick.'
+             act 'Go_Out':gt $curloc
+             end
+             
+             if kosmetica >= 2:
+				 act 'normal makeup':
+				 cla
+				 set minut = minut + 5
+				 set kosmetica = kosmetica - 2
+				 set mop = 3
+				 'You lipstick, summed up the eyes and eyelids.'
+				 act 'Go_Out':gt $curloc
+				 end
+             end
+             
+             if kosmetica >= 3:
+				 act 'The caller makeup':
+				 cla
+				 set minut = minut + 10
+				 set kosmetica = kosmetica - 3
+				 set vidageday = vidageday - 1
+				 set mop = 4
+				 'You densely nakrasili eyes, imposed shadows and mascara , nakrasili lip contour pencil and lipstick.'
+				 act 'Go_Out':gt $curloc
+				 end
+             end
+         end
+     end
+>>>>>>> 345_butoilet
 
 
+<<<<<<< 345_butoilet
 if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus > 0:
 	act 'Wash up (0:15)':
 	cla
@@ -48,9 +120,28 @@ if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus > 0:
 	'You carefully washed sperm with yourself.'
 	act 'Exit': gt $curloc
 	end
+=======
+if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus >0:
+     act 'substitution 15 min':
+     cla
+     *clr
+     set cumpussy = 0
+     set cumbelly = 0
+     set cumass = 0
+     set cumanus =0
+     set cumlip = 0
+     set cumface = 0
+     set sweat = sweat - 1
+     set minut = minut + 15
+     '<center><img src="pics/wash5.jpg" ></center>'
+     'You carefully washed sperm with yourself.'
+     act 'Go_Out':gt $curloc
+     end
+>>>>>>> 345_butoilet
 end
 
 if cumlip > 0 or cumface > 0:
+<<<<<<< 345_butoilet
 	act 'Wash cum off face (0:15)':
 	cla
 	*clr
@@ -63,9 +154,24 @@ if cumlip > 0 or cumface > 0:
 	'You carefully washed sperm from her face.'
 	act 'Exit': gt $curloc
 	end
+=======
+     act 'Wash off with facial cum 15 min':
+     cla
+     *clr
+     set mop=1
+     set cumlip = 0
+     set cumface = 0
+     set sweat = sweat - 1
+     set minut = minut + 15
+     '<center><img src="pic/facesp.jpg" ></center>'
+     'You carefully washed sperm from the face.'
+     act 'Go_Out':gt $curloc
+     end
+>>>>>>> 345_butoilet
 end
 
 if cumfrot > 0:
+<<<<<<< 345_butoilet
 	act 'Wipe the cum from clothing  (0:15)':
 	cla
 	*clr
@@ -76,8 +182,21 @@ if cumfrot > 0:
 	'You erase traces of semen from the clothes.'
 	act 'Exit': gt $curloc
 	end
+=======
+     act 'Wipe the cum from clothes 15 min':
+     cla
+     *clr
+     set cumfrot = 0
+     set sweat = sweat - 1
+     set minut = minut + 15
+     !'<center><img src="pic/facesp.jpg" ></center>'
+     'You have erased the traces of semen from clothing.'
+     act 'Go_Out':gt $curloc
+     end
+>>>>>>> 345_butoilet
 end
 if tampon > 0 and mesec > 0 and isprok = 0:
+<<<<<<< 345_butoilet
 	act 'Change a tampon':
 		cla
 		*clr
@@ -89,6 +208,19 @@ if tampon > 0 and mesec > 0 and isprok = 0:
 		'You change a tampon.'
 		act 'Finish': gt $curloc
 	end
+=======
+	 act 'change swab':
+		 cla
+		 *clr
+		 set tampon = tampon - 1
+		 set isprok = 1
+		 set minut = minut + 5
+		 set manna = manna - 5
+		 '<center><img src="pics/wash3.jpg" ></center>'
+		 'You change a tampon.'
+		 act 'End_Up':gt $curloc
+	 end
+>>>>>>> 345_butoilet
 end
 --- butoilet ---------------------------------
 

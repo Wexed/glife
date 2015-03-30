@@ -1,4 +1,5 @@
 # metro
+<<<<<<< 080_metro
 if $ARGS[0] = 'start':
 '<center><B><font color = maroon>Metro station</font></B></center>'
 if $loc = 'street':'<center><B><font color = maroon>Residential area</font></B></center>'
@@ -40,8 +41,52 @@ act 'Get off the subway':
 	set minut += 15
 	gt '<<$loc>>'
 	end
+=======
+if $ARGS[0]='start':
+'<center><B><font color=maroon>subway station</font></B></center>'
+if $loc='street':'<center><B><font color=maroon>dormitory</font></B></center>'
+if $loc='down':'<center><B><font color=maroon>center</font></B></center>'
+if $loc='Nord':'<center><B><font color=maroon>Northern region</font></B></center>'
+'<center><img src="pic/metro.jpg" ></center>'
+'Travel on the subway costs 16 rubles.'
+set minut+=15
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+if workDisk=3 and konvert=1:
+	 badrand=RAND(0,100)
+	 if badrand>=80:konvert=0
+	 end
+if money >= 16:
+	 if $loc!'street':
+		 act 'Go to the sleeping area':
+			 set $loc='street'
+			 gt'metro','vagon'
+			 end
+		 end
+	 if $loc!'down':
+		 act 'Go to the center':
+			 set $loc='down'
+			 gt'metro','vagon'
+			 end
+		 end
+	 if $loc!'Nord':
+		 act 'Go to the northern region':
+			 set $loc='Nord'
+			 gt'metro','vagon'
+			 end
+		 end
+	 end
+act 'Exit the subway':
+	 set minut+=15
+	 gt'<<$loc>>'
+	 end
+>>>>>>> 080_metro
 end
 
+<<<<<<< 080_metro
 if $ARGS[0] = 'vagon':
 cla
 '<center><B><font color = maroon>Subway car</font></B></center>'
@@ -50,8 +95,19 @@ set money -= 16
 gs 'stat'
 fcolor = rgb(0,0,0)
 bcolor = rgb(255,255,255)
+=======
+if $ARGS[0]='vagon':
+cla
+'<center><B><font color=maroon>subway car</font></B></center>'
+clr
+set money-=16
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+>>>>>>> 080_metro
 LCOLOR = rgb(106,90,205)
 if hour < 5 or hour > 10 and hour < 15 or hour > 24:
+<<<<<<< 080_metro
 	'<center><img src="images\etogame\vagon.jpg"></center>'
 	'In the car just a few passengers sadly examines advertising in the car.'
 	end
@@ -92,6 +148,48 @@ if cumfrot > 0 or cumface > 0:
 		end
 	end
 act 'Get out of the car': gt 'metro','start'
+=======
+	 '<center><img src="pic/vagon.jpg" ></center>'
+	 'In the car only a few passengers sadly examines advertising in the car.'
+	 end
+if hour >= 5 and hour <= 10 or hour >= 15 and hour <= 24:
+	 '<center><img src="pic/vagonFull.jpg" ></center>'
+	 'In the car, All the statues are not paying the slightest attention to the surrounding.'
+	 set frotrand = RAND (0,100)
+	 if frotrand >= 90 - (frot*10) and frot < 3:gt'frot','a'
+	 if frotrand >= 90 - (frot*10) and frot >=3 and cumfrot = 0 and ski = 1 or frotrand >= 90 - (frot*10) and frot >= 3 and cumfrot = 0 and glamur = 1:
+		 set tipfrot = RAND (0,1)
+		 if tipfrot = 0:gt'frot','b'
+		 if tipfrot = 1:gt'frot','d1'
+		 !gt'frot','b'
+		 end
+	 if frotrand >= 90 - (frot*10) and frot >=3 and cumfrot = 0 and ski = 0 or frotrand >= 90 - (frot*10) and frot >= 3 and cumfrot = 0 and glamur = 0:
+		 set tipfrot = RAND (0,2)
+		 if tipfrot =0:gt'frot','c'
+		 if tipfrot =1:gt'frot','d'
+		 if tipfrot =2:gt'frot','e'
+		 end
+	 end
+	 if sosedQW>=1:
+         if hour=7 or hour=15:
+	 sosedMetroRand=RAND(0,100)
+			 if sosedMetroRand>=60 and sosedMetroDay!day:
+			  'You notice in the subway <a href="exec:Gt ''TimofeiMetro''">Timothy</a>, your neighbor.'
+			 end
+	     
+	     end
+	  
+	 end
+	 
+	 
+if cumfrot > 0 or cumface>0:
+	 if hour>=7 and hour<=21:
+		 manna-=10
+		 'Several passengers hatched at you looking at sperm in which you smeared.'
+		 end
+	 end
+act 'Get out of the car':gt'metro','start'
+>>>>>>> 080_metro
 end
 --- metro ---------------------------------
 

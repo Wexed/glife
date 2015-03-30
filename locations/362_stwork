@@ -3,6 +3,7 @@ if $ARGS[0] = 'start':
 $sexloc = $CURLOC
 $metkaM = $ARGS[0]
 $locM = $CURLOC
+<<<<<<< 362_stwork
 set minut += 5
 stripMir = 1
 '<center><B><font color = maroon>Dressing for strippers</font></B></center>'
@@ -47,9 +48,56 @@ if hour >= 15 or hour <= 2:
 
 else
 'Working time is over. Time to go home.'
+=======
+set minut = minut + 5
+stripMir = 1
+'<center><B><font color=maroon>Locker room for strippers</font></B></center>'
+'<center><img src="pic/striprazd.jpg" ></center>'
+'On the wall a lot of <a href="exec:GT ''mirror'',''start''">mirrors</a> to whom <a href="exec:dynamic $stripgirl">girls</a> brush up before performances.'
+'<a href="exec:stripMir = 0&GT ''stripclub'',''start''">no perceptible, steel door</a> in the hallway out to the back yard and all the staff walks through the door to work, and not through the front entrance. About this input is always <a href="exec:dynamic $stripohr">security_guard</a>.'
+'For wooden door located <a href="exec:dynamic $striptoilet">toilet for staff</a>' 
+clr
+gs'stat'
+fcolor=rgb(0,0,0)
+bcolor=rgb(255,255,255)
+LCOLOR = rgb(106,90,205)
+if tatplech>0:stripKoef=RAND(1,3)
+if tatback>0:stripKoef2=RAND(1,3)
+if tatback>0:stripKoef3=RAND(1,3)
+if tatupb>0:stripKoef4=RAND(3,6)
+if tatleg>0:stripKoef5=RAND(1,3)
+publichot=vnesh-10+stripKoef+stripKoef2+stripKoef3+stripKoef4+stripKoef5
+publichotstart=publichot
+if hour >= 15 or hour<=2:
+     if mop>=4:
+         if hapri = 1:
+             if sweat<=0:
+                 if leghair <= 0 and lobok<=0:
+                     if fingal<=0:
+                     act 'Go on stage':stpredmet=3&gt'stwork2'
+                     else
+                     'With such a black eye as you, on stage doing nothing.'
+                     end
+                 else
+                 'There is nothing more terrible than a stripper with hairy legs or pubis, in this form can not work.'
+                 end
+             else
+             'Jesus, yes you also stinks like a horse, must first wash.'
+             end
+         else
+         'Can not be such a disheveled hair pokazyvatsya in public.'
+         end
+     else
+     'Need to work very caller makeup.'
+     end
+     
+else
+'Working time is over. It`s time to go home.'
+>>>>>>> 362_stwork
 end
 
 
+<<<<<<< 362_stwork
 $stripgirl = {
 cls
 gs 'stat'
@@ -68,16 +116,45 @@ if striptalkrand = 10:$striptalk = 'I heard a decent clubs abroad strippers them
 'Girls are engaged with their appearance in the mirror fun chatting about all sorts of trivia.'
 '<<$striptalk>>'
 act 'Move away': gt $curloc,'start'
+=======
+$stripgirl={
+cls
+gs'stat'
+striptalkrand=RAND(0,10)
+if striptalkrand=0:$striptalk='heard? Then somehow came one Devchenka, all so beautiful, but came to the stage, complete zero, did not know how, so it only booed.'
+if striptalkrand=1:$striptalk='I `m telling you, men give birth to girls with tattoos.'
+if striptalkrand=2:$striptalk='On a pole over much more profitable than just dancing striptease, easier to excite the customer, but this is quite difficult to pole.'
+if striptalkrand=3:$striptalk='Fuh, they do not go out on stage, back all sweaty, disheveled hair and makeup certainly splyvet. Here one can be ruined cosmetics.'
+if striptalkrand=4:$striptalk='In general, on the stage .'
+if striptalkrand=5:$striptalk='There was one ugly Devchenka, came on the scene, Let`s just her boo, but as the beginning revolves around a pole, customers jaw fell off, well it `s not bad earned.'
+if striptalkrand=6:$striptalk='And why the manager never says, male or female day? I recently rushed to work, even broke a nail, seek_refuge, and here these bears are jumping on stage. Turned around and went back.'
+if striptalkrand=7:$striptalk='Some dechonki told that they had problems arise because of the work. For many stritizersha still a whore.'
+if striptalkrand=8:$striptalk='There is one fat woman trying on a pole dance, so flopped muzzle on the floor and put a strong bruise.'
+if striptalkrand=9:$striptalk='Recently one zhirnuhu raised a laugh in the hall. Like and simpotnaya and dances well, but did not help.'
+if striptalkrand=10:$striptalk='I heard a decent clubs abroad strippers themselves pay for the right to work in a club.'
+'Girls are engaged in their appearance before the mirror fun talking about all sorts of trivia.'
+'<<$striptalk>>'
+act 'move_away':gt $curloc,'start'
+>>>>>>> 362_stwork
 }
 
+<<<<<<< 362_stwork
 $stripohr = {
 cls
 gs 'stat'
 'Hefty bored guard at the door. Seeing you it lazily throws "Hello <<$name>>."'
 act 'Move away': gt $curloc,'start'
+=======
+$stripohr={
+cls
+gs'stat'
+'Burly security guard at the door misses. Seeing you  "Hello World."'
+act 'move_away':gt $curloc,'start'
+>>>>>>> 362_stwork
 }
 
 
+<<<<<<< 362_stwork
 $striptoilet2 = {
 cls
 gs 'stat'
@@ -109,9 +186,43 @@ gs 'stat'
 		end
 	end
 act 'Out of the shower and get dressed': dynamic $striptoilet
+=======
+$striptoilet2={
+cls
+gs'stat'
+'You rinsed the razor, blade which will suffice for <<stanok>> time.'
+     if leghair > 0 and stanok > 0:
+		 act 'shave your legs 15 min':
+		 cla
+		 *clr
+		 set minut = minut + 15
+		 set leghair = -5
+		 set horny = horny + 5
+		 set stanok = stanok - 1
+		 '<center><img src="pics/shave.jpg" ></center>'
+		 'You lathered up and shaved off the hair with them.'
+		 act 'postpone the machine':dynamic $striptoilet2
+		 end
+     end
+     if lobok > 0 and stanok > 0:
+		 act 'Shaved 15 min':
+		 cla
+		 *clr
+		 set minut = minut + 15
+		 set lobok = -5
+		 set horny = horny + 5
+		 set stanok = stanok - 1
+		 '<center><img src="pics/shave3.jpg" ></center>'
+		 'You lathered pubis, then shaved off his hair all.'
+		 act 'postpone the machine':dynamic $striptoilet2
+		 end
+     end
+act 'Get out of the shower and get dressed':dynamic $striptoilet
+>>>>>>> 362_stwork
 }
 
 
+<<<<<<< 362_stwork
 $striptoilet = {
 cls
 '<center><img src="images\LakeCafe\Toilet.jpg"></center>'
@@ -201,8 +312,136 @@ gs 'stat'
 
 	act 'Out of the shower and get dressed': dynamic $striptoilet
 	end
+=======
+$striptoilet={
+cls
+'<center><img src="LakeCafe/Toilet.jpg" ></center>'
+'Dirty and smelly toilet, wherein, seems, never cleaned'
+gs'stat'
+
+     if tanga=1:
+     act 'Remove underwear':
+     cla
+     set tanga = 0
+     dynamic $striptoilet
+     end
+     end
+     
+     if hapri = 0:
+         act 'coiffured':
+         cla
+         set minut = minut + 3
+         set hapri = 1
+         act 'View results':dynamic $striptoilet
+         end
+     end
+     
+     if mop!1:
+         act 'wash off makeup':
+         cla
+         *clr
+         minut+=5
+         mop=1
+         '<center><img src="pic/mop.jpg" ></center>'
+         'You washed the makeup.'
+         act 'Go_Out':dynamic $striptoilet
+         end
+     end
+     
+     if mop = 1 and kosmetica > 0:
+         act 'apply Makeup':
+         cla
+         *clr
+         '<center><img src="pic/mop.jpg" ></center>'
+             act 'light makeup':
+             cla
+             set minut = minut + 3
+             set kosmetica = kosmetica - 1
+             set mop = 2 
+             'You lightly summed eyes and a little lipstick.'
+             act 'Go_Out':dynamic $striptoilet
+             end
+             
+             if kosmetica >= 2:
+				 act 'normal makeup':
+				 cla
+				 set minut = minut + 5
+				 set kosmetica = kosmetica - 2
+				 set mop = 3
+				 'You lipstick, summed up the eyes and eyelids.'
+				 act 'Go_Out':dynamic $striptoilet
+				 end
+             end
+             
+             if kosmetica >= 3:
+				 act 'The caller makeup':
+				 cla
+				 set minut = minut + 10
+				 set kosmetica = kosmetica - 3
+				 set vidageday = vidageday - 1
+				 set mop = 4
+				 'You densely nakrasili eyes, imposed shadows and mascara , nakrasili lip contour pencil and lipstick.'
+				 act 'Go_Out':dynamic $striptoilet
+				 end
+             end
+         end
+     end
+     
+     act 'take a shower 15 min':
+     cla
+     *clr
+     set minut = minut + 15
+     set sweat = -3
+     set horny = horny + 1
+     set hapri = 0
+     set mop = 1
+     set cumpussy = 0
+     set cumbelly = 0
+     set cumass = 0
+     set cumanus = 0
+     set cumlip = 0
+     set cumface = 0
+     set cumanus =0
+     '<center><img src="pics/dush.jpg" ></center>'
+     'You got into the bathroom and turned on the shower. Soaped and washed the body in the shower.'
+         if leghair > 0 and stanok > 0 or lobok > 0 and stanok > 0:
+         act 'get razor':dynamic $striptoilet2
+         end
+         if horny >= 90:
+             act 'Send a shower pussy':
+             cla
+             *clr
+             set horny = 0
+             set minut = minut + 30
+             set mastr = mastr + 1
+             set orgasm = orgasm + 1
+			 set manna = manna + 15
+			 set willpower = willpower + 15
+             '<center><img src="pics/wash2.jpg" ></center>'
+             'You sent a shower pussy and tight jet of warm water began to caress you. Soon you will feel like a warm wave covers your whole body and you start to shudder in orgasm.'
+             act 'Out of the bathroom and get dressed':dynamic $striptoilet
+             end
+         end
+         if horny >= 40 and hormy < 90:
+             act 'Send a shower pussy':
+             cla
+             *clr
+             set horny = horny + 5
+             set minut = minut + 30
+			 set manna = manna + 10
+			 set willpower = willpower + 10
+             '<center><img src="pics/wash2.jpg" ></center>'
+             'You sent a shower pussy and tight jet of warm water began to caress you. First, but after a while it became even as it hurts. Excitation asleep and you stop masturbating.'
+             act 'Out of the bathroom and get dressed':dynamic $striptoilet
+             end
+         end
+         
+     act 'Get out of the shower and get dressed':dynamic $striptoilet
+     end
+>>>>>>> 362_stwork
 
 
+<<<<<<< 362_stwork
 if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus > 0:
 	act 'Wash up (0:15)':
 	cla
@@ -219,9 +458,28 @@ if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus > 0:
 	'You carefully washed sperm with yourself.'
 	act 'Exit': dynamic $striptoilet
 	end
+=======
+if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus >0:
+     act 'substitution 15 min':
+     cla
+     *clr
+     set cumpussy = 0
+     set cumbelly = 0
+     set cumass = 0
+     set cumanus =0
+     set cumlip = 0
+     set cumface = 0
+     set sweat = sweat - 1
+     set minut = minut + 15
+     '<center><img src="pics/wash5.jpg" ></center>'
+     'You carefully washed sperm with yourself.'
+     act 'Go_Out':dynamic $striptoilet
+     end
+>>>>>>> 362_stwork
 end
 
 if cumlip > 0 or cumface > 0:
+<<<<<<< 362_stwork
 	act 'Wash cum off face (0:15)':
 	cla
 	*clr
@@ -233,9 +491,23 @@ if cumlip > 0 or cumface > 0:
 	'You carefully washed sperm from her face.'
 	act 'Exit': dynamic $striptoilet
 	end
+=======
+     act 'Wash off with facial cum 15 min':
+     cla
+     *clr
+     set cumlip = 0
+     set cumface = 0
+     set sweat = sweat - 1
+     set minut = minut + 15
+     '<center><img src="pic/facesp.jpg" ></center>'
+     'You carefully washed sperm from the face.'
+     act 'Go_Out':dynamic $striptoilet
+     end
+>>>>>>> 362_stwork
 end
 
 if cumfrot > 0:
+<<<<<<< 362_stwork
 	act 'Wipe the cum from clothing  (0:15)':
 	cla
 	*clr
@@ -246,11 +518,58 @@ if cumfrot > 0:
 	'You erase traces of semen from the clothes.'
 	act 'Exit': dynamic $striptoilet
 	end
+=======
+     act 'Wipe the cum from clothes 15 min':
+     cla
+     *clr
+     set cumfrot = 0
+     set sweat = sweat - 1
+     set minut = minut + 15
+     !'<center><img src="pic/facesp.jpg" ></center>'
+     'You have erased the traces of semen from clothing.'
+     act 'Go_Out':dynamic $striptoilet
+     end
+>>>>>>> 362_stwork
 end
 
+<<<<<<< 362_stwork
 act 'Off the toilet': gt $curloc,'start'
+=======
+act 'Exit out of the closet':gt $curloc,'start'
+>>>>>>> 362_stwork
 }
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --- stwork ---------------------------------
 

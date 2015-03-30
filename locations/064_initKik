@@ -1,22 +1,37 @@
 # initKik
 
 set init = speed + reakt
+<<<<<<< 064_initKik
 set initKoef = init * 20/100
 set initi = RAND(initi - initKoef, initi + initKoef)
 set initV = speedV + reaktV
 set initKoefV = initV * 20/100
 set initiV = RAND(initiV - initKoefV, initiV + initKoefV)
+=======
+set initKoef = init*20/100
+set initi = RAND (initi - initKoef,initi + initKoef)
+set initV = speedV + reaktV
+set initKoefV = initV*20/100
+set initiV = RAND (initiV - initKoefV,initiV + initKoefV)
+>>>>>>> 064_initKik
 
 if initi > initiV and hodtime < 3 and ionce = 0 or hodtimeV >= 3 and ionce = 0:
 set hod = 0
+<<<<<<< 064_initKik
 set hodtime += 1
 if hodtimeV >= 3: set hodtimeV = 0
 '<font color = green>You took the initiative</font>'
+=======
+set hodtime = hodtime + 1
+if hodtimeV >= 3:set hodtimeV = 0
+'<font color=green>You took the initiative</font>'
+>>>>>>> 064_initKik
 set ionce = 1
 end
 
 if initi < initiV and hodtimeV < 3 and ionce = 0 or hodtime >= 3 and ionce = 0:
 set hod = 1
+<<<<<<< 064_initKik
 set hodtimeV += 1
 if hodtime >= 3: set hodtime = 0
 '<font color = red><<$nameV>> took the initiative</font>'
@@ -37,10 +52,33 @@ set ionce = 1
 	'<font color = red><<$nameV>> took the initiative</font>'
 	end
 end
+=======
+set hodtimeV = hodtimeV + 1
+if hodtime >= 3:set hodtime = 0
+'<font color=red><<$nameV>> seized the initiative</font>'
+set ionce = 1
+end 
+ 
+if initi = initiV and hodtime < 3 and hodtimeV < 3 and ionce = 0:
+set inrand = RAND (0,1)
+set ionce = 1
+     if inrand = 0:
+     set hod = 0
+     set hodtime = hodtime + 1
+     '<font color=green>You took the initiative</font>'
+     end
+     if inrand = 1:
+     set hod = 1
+     set hodtimeV = hodtimeV + 1
+     '<font color=red><<$nameV>> seize the initiative</font>'
+     end 
+end  
+>>>>>>> 064_initKik
 
 if initi = initiV and hodtime >= 3 and ionce = 0 or initi = initiV and hodtimeV >= 3 and ionce = 0:
 set hodtime = 0
 set hodtimeV = 0
+<<<<<<< 064_initKik
 set inrand = RAND(0,1)
 set ionce = 1
 	if inrand = 0:
@@ -54,5 +92,24 @@ set ionce = 1
 	'<font color = red><<$nameV>> took the initiative</font>'
 	end
 end
+=======
+set inrand = RAND (0,1)
+set ionce = 1
+     if inrand = 0:
+     set hod = 0
+     set hodtime = hodtime + 1
+     '<font color=green>You took the initiative</font>'
+     end
+     if inrand = 1:
+     set hod = 1
+     set hodtimeV = hodtimeV + 1
+     '<font color=red><<$nameV>> seize the initiative</font>'
+     end     
+end
+
+
+
+
+>>>>>>> 064_initKik
 --- initKik ---------------------------------
 

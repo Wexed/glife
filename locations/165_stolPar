@@ -1,4 +1,5 @@
 # stolPar
+<<<<<<< 165_stolPar
 if BakaGHomework = 0:
 	gs 'stat'
 	!'<center><img src="images\pics\telek.jpg"></center>'
@@ -9,8 +10,14 @@ if BakaGHomework = 0:
 	if krem> 0: 'There are <<krem>> uses of suntan lotion.'
 	if abonement> 0: 'subscription is valid for <<abonement>> Occupation'
 	if dildo> 0: 'Realistic dildo'
+=======
+gs'stat'
+!'<center><img src="pics/telek.jpg" ></center>'
+'You sat down at the desk.'
+>>>>>>> 165_stolPar
 
 
+<<<<<<< 165_stolPar
 	act 'Get up from the table': gt $locM, $metkaM
 	if prezik > 0:
 		act 'Remove condoms from purse':
@@ -147,6 +154,27 @@ if BakaGHomework = 1:
 	act 'Get up': gt $locM, $metkaM
 	if lernHome > 0: dynamic $homework
 	if lernHome < 1: dynamic $study
+=======
+act 'Get up from the table':gt $locM, $metkaM
+
+if lernHome>0:
+     act 'teach lessons':
+     cls
+		 if lernHome<=2:
+		 minut+=60*lernHome
+		 lernHome=0
+		 lern+=1
+		 end
+		 if lernHome>2:
+		 minut+=60*2
+		 lernHome=0
+		 end
+     gs'stat'
+     'Sitting for a long time for the lessons you yet they were able to learn.'
+     act 'Get up from the table':gt $locM, $metkaM
+     end
+
+>>>>>>> 165_stolPar
 end
 --- stolPar ---------------------------------
 

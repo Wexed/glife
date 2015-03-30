@@ -1,4 +1,5 @@
 # KGOLgame
+<<<<<<< 422_KGOLgame
 minut += 1
 gs 'stat'
 if KGOLset = 0:$KGOLset = 'On the head there is nothing'
@@ -75,14 +76,98 @@ if KGOLPrizeM > 0: 'You have <<KGOLmoney>> coins'
 if KGOLneedExp <= 0: '<a href="exec: dynamic $KGOLrise "><font color = red>You need to increase the level.</font></a>'
 if KGOLpoint > 0: '<a href="exec: dynamic $KGOLrise "><font color = red>You have not allocated skill points.</font></a>'
 if KGOLspellpoint >= 4: '<a href="exec: dynamic $KGOLrise2 "><font color = red>You can choose your skill.</font></a>'
+=======
+minut+=1
+gs'stat'
+if KGOLset=0:$KGOLset='On the head there is nothing'
+if KGOLset2=0:$KGOLset2='On the body of simple clothes'
+if KGOLset3=0:$KGOLset3='Simple shoes on his feet'
+if KGOLset4=0:$KGOLset4='In the hands of no gloves'
+if KGOLset5=0:$KGOLset5='no weapons'
+$KGOLstat={
+clr
+pl'<<$KGOLname>> <<$KGOLrace>> <<$KGOLklass>> <<KGOLlvl>> level' 
+pl'<a href="exec:dynamic $KGOLstat2 ">Close Statistics</a>'
+if KGOLneedExp>0:pl'Total experience <<KGOLexp>>, necessary to the next level <<KGOLneedExp>> experience'
+if KGOLneedExp<=0:pl'<a href="exec:dynamic $KGOLrise "><font color=red>You need to raise the level of.</font></a>'
+pl'power <<KGOLstren>>,speed and dodge <<KGOLspeed>>,endurance <<KGOLvital>>,intelligence <<KGOLintel>>, armor protection <<KGOLbrona>>, bonus damage from weapons <<KGOLwpower>>'
+pl''
+pl'<center>Exodus</center>'
+pl'<<$KGOLset>>'
+pl'<<$KGOLset2>>'
+pl'<<$KGOLset3>>'
+pl'<<$KGOLset4>>'
+pl'<<$KGOLset5>>'
+pl''
+pl'<center>inventory</center>'
+if KGOLpotionH>0:pl'health potions <<KGOLpotionH>> pcs. <a href="exec:KGOLpotionH-=1&KGHP+=100&gs''stat''&gt $curloc "><font color=red>drink.</font></a>'
+if KGOLpotionM>0:pl'mana potions <<KGOLpotionM>> pcs. <a href="exec:KGOLpotionM-=1&KGManna+=100&gs''stat''&gt $curloc "><font color=red>drink.</font></a>'
+
+pl'<center>PVE</center>'
+pl'Wins <<KGOLWin>>, lesions <<KGOLLoss>>'
+pl'<center>PVP</center>'
+pl'Wins <<KGOLpvpWin>>, lesions <<KGOLpvpLoss>>'
+}
+$KGOLstat2={
+gs'stat'
+}
+KGHPMAX=KGOLvital*10
+KGMannaMax=KGOLintel*10
+if KGHP>KGHPMAX:KGHP=KGHPMAX
+if KGManna>KGMannaMax:KGManna=KGMannaMax
+KGOLbrona-=KGOLbronaMod
+KGOLbronaMod=0
+KGOLstren-=KGOLstrenMod
+KGOLstrenMod=0
+KGOLspeed-=KGOLspeedMod
+KGOLspeedMod=0
+KGOLvital-=KGOLvitalMod
+KGOLvitalMod=0
+KGOLintel-=KGOLintelMod
+KGOLintelMod=0
+KGOLwpower-=KGOLwpowerMod
+KGOLwpowerMod=0
+KGOLcooldown=0
+
+if KGHP<KGHPMAX and KGOLhirka>0:
+kghneed=KGHPMAX-KGHP
+     if KGOLhirka>=kghneed:
+     KGOLhirka-=kghneed
+     KGHP=KGHPMAX
+     else
+     KGHP=KGOLhirka
+     KGOLhirka=0
+     end
+end
+if KGHP<0:KGHP=0
+
+gs'KGOLexpa'
+'<a href="exec:GT ''KGstart''">Leave the game</a>'
+'<a href="exec:dynamic $KGOLstat ">View Statistics</a>'
+'<<$KGOLname>> <<$KGOLrace>> <<$KGOLklass>> <<KGOLlvl>> level' 
+'life <<KGHP>>, manna <<KGManna>>'
+if KGHP<KGHPMAX:'You have left <<KGHP*100/KGHPMAX>>% life'
+if KGManna<KGMannaMax:'You have left <<KGManna*100/KGMannaMax>>% manna from'
+if KGOLhirka>0:'Khirqa can recover automatically <<KGOLhirka>> health units'
+if KGOLPrizeM>0:'you have <<KGOLmoney>> coin'
+if KGOLneedExp<=0:'<a href="exec:dynamic $KGOLrise "><font color=red>You need to raise the level of.</font></a>'
+if KGOLpoint>0:'<a href="exec:dynamic $KGOLrise "><font color=red>You have not allocated skill points.</font></a>'
+if KGOLspellpoint>=4:'<a href="exec:dynamic $KGOLrise2 "><font color=red>You can choose your skill.</font></a>'
+>>>>>>> 422_KGOLgame
 '<<KGOLspellpoint>>'
 ''
 
+<<<<<<< 422_KGOLgame
 '<center><B>Countryside</B></center>'
 'You are in the picturesque village where to spawn characters stand motionless. NPC standing pillars and in the distance one can see the monsters.'
+=======
+'<center><B>village</B></center>'
+'You are in the picturesque village where to spawn stand motionless characters. NPCs are the pillars and in the distance one can see the monsters.'
+>>>>>>> 422_KGOLgame
 
 act 'Approach the NPC':
 cls
+<<<<<<< 422_KGOLgame
 minut += 1
 	if KGOLmqw = 12 and KGOLlvl >= 5:
 	KGOLmqw = 13
@@ -181,10 +266,111 @@ minut += 1
 	'(NPS) - <<$KGOLname>> congratulations, here´s your gun.'
 	end
 act 'Leave': gt $curloc
+=======
+minut+=1
+     if KGOLmqw=12 and KGOLlvl>=5:
+     KGOLmqw=13
+     '(NPS) - <<$KGOLname>> you have to kill 10five royal beetles. reward 200 experience.'
+     end
+     
+     if KGOLmqw=13 and KGOLqwvip>=10:
+     KGOLqwvip=0
+     KGOLmqw=14
+     KGOLexp+=200
+     '(NPS) - <<$KGOLname>> congratulations, Here is a reward 200 experience.'
+     end
+     
+     if KGOLmqw=10 and KGOLlvl>=5:
+     KGOLmqw=11
+     '(NPS) - <<$KGOLname>> you have to kill 10five toads. reward 100 experience.'
+     end
+     
+     if KGOLmqw=11 and KGOLqwvip>=10:
+     KGOLqwvip=0
+     KGOLmqw=12
+     KGOLexp+=100
+     '(NPS) - <<$KGOLname>> congratulations, Here is a reward 100 experience.'
+     end
+     
+     if KGOLmqw=8:
+     KGOLmqw=9
+     '(NPS) - <<$KGOLname>> you have to kill 30be young cacti. Then I`ll give you a helmet.'
+     end
+     
+     if KGOLmqw=9 and KGOLqwvip>=30:
+     KGOLqwvip=0
+     KGOLmqw=10
+     KGOLset=1
+     KGOLbrona+=2
+     $KGOLset='Helmet rough skin'
+     '(NPS) - <<$KGOLname>> congratulations, Here`s your helmet.'
+     end
+     
+     if KGOLmqw=6:
+     KGOLmqw=7
+     '(NPS) - <<$KGOLname>> you have to kill 25be toothless wolves. Then I`ll give you mittens.'
+     end
+     
+     if KGOLmqw=7 and KGOLqwvip>=25:
+     KGOLqwvip=0
+     KGOLmqw=8
+     KGOLset4=1
+     KGOLbrona+=2
+     $KGOLset4='Gauntlets of rough skin'
+     '(NPS) - <<$KGOLname>> congratulations, Here are your mittens.'
+     end
+     
+     if KGOLmqw=4:
+     KGOLmqw=5
+     '(NPS) - <<$KGOLname>> you have to kill 20be rosyanok. Then I will give you boots.'
+     end
+     
+     if KGOLmqw=5 and KGOLqwvip>=20:
+     KGOLqwvip=0
+     KGOLmqw=6
+     KGOLset3=1
+     KGOLbrona+=2
+     $KGOLset3='Rind Leather Boots'
+     '(NPS) - <<$KGOLname>> congratulations, Here are your boots.'
+     end
+     
+     if KGOLmqw=2:
+     KGOLmqw=3
+     '(NPS) - <<$KGOLname>> you have to kill 10be iridescent beetles. Then I`ll give you the armor.'
+     end
+     
+     if KGOLmqw=3 and KGOLqwvip>=10:
+     KGOLqwvip=0
+     KGOLmqw=4
+     KGOLset2=1
+     KGOLbrona+=10
+     $KGOLset2='simple armor'
+     '(NPS) - <<$KGOLname>> congratulations, here is your armor.'
+     end
+     
+     if KGOLmqw=0:
+     KGOLmqw=1
+     '(NPS) - <<$KGOLname>> you have to kill 5be carnivorous flowers. Then I`ll give you a weapon.'
+     end
+     
+     if KGOLmqw=1 and KGOLqwvip>=5:
+     KGOLqwvip=0
+     KGOLmqw=2
+     KGOLset5=1
+     KGOLwpower=10
+     if KGOLklass=1 or KGOLklass=6:$KGOLset5='In the hands of a simple sword'
+     if KGOLklass=2:$KGOLset5='In the hands of ordinary daggers'
+     if KGOLklass=3 or KGOLklass=4:$KGOLset5='In the hands of a simple staff'
+     if KGOLklass=5:$KGOLset5='In the hands of a simple bow'
+     '(NPS) - <<$KGOLname>> congratulations, Here is your weapon.'
+     end
+act 'Get_Away':gt $curloc
+>>>>>>> 422_KGOLgame
 end
 
 act 'Go to the store':
 cls
+<<<<<<< 422_KGOLgame
 minut += 1
 	if KGOLmoney >= 300:
 		act 'Buy health potion 300':
@@ -208,8 +394,34 @@ minut += 1
 		end
 	end
 act 'Leave': gt $curloc
+=======
+minut+=1
+     if KGOLmoney>=300:
+         act 'Buy health potion 300':
+         KGOLmoney-=300
+         KGOLpotionH+=1
+         gt $curloc
+         end
+     end
+     if KGOLmoney>=300:
+         act 'Buy mana potion 300':
+         KGOLmoney-=300
+         KGOLpotionM+=1
+         gt $curloc
+         end
+     end
+     if KGOLmoney>=1500 and KGOLhirka<=0:
+         act 'Buy Khirqa 1500':
+         KGOLmoney-=1500
+         KGOLhirka+=10000
+         gt $curloc
+         end
+     end
+act 'Get_Away':gt $curloc
+>>>>>>> 422_KGOLgame
 end
 
+<<<<<<< 422_KGOLgame
 if KGHP < KGHPMAX or KGManna<KGMannaMax:
 	act 'Regenerate (1:00)':
 	cls
@@ -219,8 +431,20 @@ if KGHP < KGHPMAX or KGManna<KGMannaMax:
 	'It was very sad. You´ve been sitting for an hour to regenerate your character. But free.'
 	act 'Leave': gt $curloc
 	end
+=======
+if KGHP<KGHPMAX or KGManna<KGMannaMax:
+	 act 'regenerate (1 h)':
+	 cls
+	 minut+=60
+	 KGHP=KGHPMAX
+	 KGManna=KGMannaMax
+	 'It was very sad. You sat for an hour regenerating your character. But free.'
+	 act 'Get_Away':gt $curloc
+	 end
+>>>>>>> 422_KGOLgame
 end
 
+<<<<<<< 422_KGOLgame
 if KGHP > 0:
 	act 'Farm near the village':
 	cls
@@ -252,8 +476,42 @@ if KGHP > 0:
 		gt 'KGOLfight'
 		end
 	end
+=======
+if KGHP>0:
+	 act 'Farm near the village':
+	 cls
+	 minut+=1
+	 KGOLdist=RAND(1,10)
+	 'On a variety of monsters roam the field'
+		 act 'predatory flower':
+		 gs'KGOLenemy','0'
+		 gt'KGOLfight'
+		 end
+		 
+		 act 'Rainbow beetle':
+		 gs'KGOLenemy','1'
+		 gt'KGOLfight'
+		 end
+		 
+		 act 'sundew':
+		 gs'KGOLenemy','2'
+		 gt'KGOLfight'
+		 end
+		 
+		 act 'toothless dog':
+		 gs'KGOLenemy','3'
+		 gt'KGOLfight'
+		 end
+		 
+		 act 'young cactus':
+		 gs'KGOLenemy','4'
+		 gt'KGOLfight'
+		 end
+	 end
+>>>>>>> 422_KGOLgame
 end
 
+<<<<<<< 422_KGOLgame
 if KGOLlvl >= 5 and KGHP > 0:
 	act 'Farm near the mill':
 	cls
@@ -290,7 +548,73 @@ if KGOLlvl >= 5 and KGHP > 0:
 	gs 'KGOLboss','1'
 	gt 'KGOLfight'
 	end
+=======
+if KGOLlvl>=5 and KGHP>0:
+	 act 'Farm near Mill':
+	 cls
+	 minut+=1
+	 KGOLdist=RAND(1,10)
+	 'About a variety of monsters roam the mill'
+		 act 'toad':
+		 gs'KGOLenemy','5'
+		 gt'KGOLfight'
+		 end
+		 
+		 act 'Royal beetle':
+		 gs'KGOLenemy','6'
+		 gt'KGOLfight'
+		 end
+		 
+		 act 'spotted mantis':
+		 gs'KGOLenemy','7'
+		 gt'KGOLfight'
+		 end
+		 
+		 act 'plague Rat':
+		 gs'KGOLenemy','8'
+		 gt'KGOLfight'
+		 end
+		 
+		 act 'prickly cactus':
+		 gs'KGOLenemy','9'
+		 gt'KGOLfight'
+		 end
+	 end
+	 
+	 act 'boss 5level':
+	 gs'KGOLboss','1'
+	 gt'KGOLfight'
+	 end
+>>>>>>> 422_KGOLgame
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --- KGOLgame ---------------------------------
 
