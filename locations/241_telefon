@@ -2,7 +2,7 @@
 $objmobilaraz = {
 cla
 set telotvet = RAND(0,10)
-'"Yes, I´m listening," said a voice from the speaker.'
+'"Yes, I''m listening," said a voice from the speaker.'
 act 'Invite to movie':
 	cla
 	'YOU: Come with me to the movies?'
@@ -15,7 +15,7 @@ act 'Invite to movie':
 if month > 5 and temper > 20 and osadki < painweather:
 act 'Invite a walk in the park':
 	cla
-	'YOU: Let´s go take a walk in the park.'
+	'YOU: Let''s go take a walk in the park.'
 	if telotvet > 3:
 	'<<$telsob>>: Well let an hour in the park.'
 	act 'Go': gt 'parksvid'
@@ -25,7 +25,7 @@ act 'Invite a walk in the park':
 	end
 act 'Invite billiards':
 	cla
-	'YOU: Let´s go to the pool.'
+	'YOU: Let''s go to the pool.'
 	if telotvet > 3:
 	'<<$telsob>>: Well let an hour of billiards.'
 	act 'Go': gt 'billsvid'
@@ -43,7 +43,7 @@ act 'Invite a cafe':
 	end
 act 'Invite casino':
 	cla
-	'YOU: Let´s go to the casino´s go.'
+	'YOU: Let''s go to the casino''s go.'
 	if telotvet > 3:
 	'<<$telsob>>: Well let an hour at the casino.'
 	act 'Go': gt 'kazinosvid'
@@ -101,14 +101,14 @@ act 'Hangup': gt 'telefon','fin'
 $telotkaz = {
 cla
 set minut += 10
-'<<$telsob>>: Sorry I´m busy, come next time.'
+'<<$telsob>>: Sorry I''m busy, come next time.'
 act 'Hangup': gt 'telefon','fin'
 }
 
 $telotkazboy = {
 cla
 set minut += 10
-'<<$boyA>>: Sorry, I´m busy right now, come next time.'
+'<<$boyA>>: Sorry, I''m busy right now, come next time.'
 act 'Hangup': gt 'telefon','fin'
 }
 
@@ -198,55 +198,55 @@ set ring = 0
 set ringA = 0
 set boydayA = day
 set svetrand = RAND(0,5)
-if svetrand = 0: set $sveta = 'lapulya'
-if svetrand = 1: set $sveta = 'Bunny'
-if svetrand = 2: set $sveta = 'pussy'
-if svetrand = 3: set $sveta = 'small fish'
-if svetrand = 4: set $sveta = 'Svetsik'
+if svetrand = 0: set $sveta = 'cutie'
+if svetrand = 1: set $sveta = 'honey'
+if svetrand = 2: set $sveta = 'sweetie'
+if svetrand = 3: set $sveta = 'baby'
+if svetrand = 4: set $sveta = 'hot stuff'
 if svetrand = 5: set $sveta = '<<$name>>'
-'Hi <<$sveta>> is <<$boyA>> how´s it going?'
+'Hey <<$sveta>>, it''s me, <<$boyA>> how''s it going?'
 act 'Normally':
 	cla
-	'(You) - normally, and you have both?'
-	'(<<$boyA>>) - just great, that´s just miss you, can meet today?'
+	'(You) - Pretty good, you?'
+	'(<<$boyA>>) - Just great, but I kind of miss you, can we meet today?'
 	if pregtime <= dayA and pregtime >= 7 and pregtalk = 0:
-		act 'Honey, you will soon become a dad.':
+        act 'Honey, you will soon become a dad.':
 			cla
 			pregtalk = 1
-			'(You) - Honey, you will soon become a dad.'
+			'(You) - Honey, I''m pregnant with your child.'
 			if harakBoyA = 0:
 				if bfA >= 90:
-					'(<<$boyA>>) - This is wonderful! We will soon be addition.'
+					'(<<$boyA>>) - This is wonderful! We have to celebrate!'
 					set love = 1
-					'You started talking about cohabitation. What <<$boyA>> told you that it is in principle not against, but first he wants you to meet his parents.'
-					'He warns you that my mother is very demanding and rigorous, <<$boyA>> says that he loves her mother and does not want to upset her. Therefore, you must look gorgeous, the dress from a boutique, well-groomed and curled hair, cosmetics in moderation.'
-					'At the next vstreche once you will be totally ready <<$boyA>> will take you to their parents.'
+					'You started talking about living together. <<$boyA>> told you that he is not against it in principle, but first he wants you to meet his parents.'
+					'He warns you that my mother is very demanding and rigorous. <<$boyA>> says that he loves her mother and does not want to upset her. Therefore, you must look gorgeous, wear a dress from a boutique, have well-groomed and curled hair, and make-up in moderation.'
+					'When you are totally ready <<$boyA>> will take you to their parents.'
 					act 'Hang up.': gt 'telefon','fin'
 					act 'Meet tonight':
 						cla
 						set svidanieA = 1
-						'(You) - can be found in the evening.'
-						'(<<$boyA>>) - What time I come to your house?'
-						act 'Call time.':
+						'(You) - How about this evening?'
+						'(<<$boyA>>) - Sounds great! When can I come pick you up?'
+						act 'Set up a time.':
 							cla
 							meetday = daystart
-							meethour = input ("Name the hour in which the guy to come. now <<hour>> hour, you can only assign a greater number of")
+							meethour = input ("Set up a time to get picked up. It is now <<hour>> o'clock.")
 							if meethour <= hour or meethour > 23: meethour = 20
-							'(You) - Do it in 20 hours.'
-							'(<<$boyA>>) - Okay, <<$sveta>> then to <<meethour>> hours.'
+							'(You) - How about 8pm?'
+							'(<<$boyA>>) - Okay <<$sveta>>, see you at <<meethour>> o''clock.'
 							$meetloc[0] = $HouseLocation
 							act 'Hang up.': gt 'telefon','fin'
 							end
 						end
 					end
 				if bfA < 90:
-					'(<<$boyA>>) - I´m not yet ready to become a dad. I´ll give you the money for an abortion. Go out and get rid of the child.'
+					'(<<$boyA>>) - I''m not yet ready to become a dad. I''ll give you the money for an abortion. Go out and get rid of the child.'
 					money += 20000
 					act 'Hang up.': gt 'telefon','fin'
 					end
 				end
 			if harakBoyA = 1:
-				'(<<$boyA>>) - I´m not yet ready to become a dad. I´ll give you the money for an abortion. Go out and get rid of the child.'
+				'(<<$boyA>>) - I''m not yet ready to become a dad. I''ll give you the money for an abortion. Go out and get rid of the child.'
 				money += 20000
 				act 'Hang up.': gt 'telefon','fin'
 				end
@@ -259,19 +259,18 @@ act 'Normally':
 			end
 		end
 	if pregtime > dayA and pregtime >= 7 and pregtalk = 0:
-		act 'Honey, you will soon become a dad.':
-			cla
-			'(You) - Honey, you will soon become a dad.'
-			'(<<$boyA>>) - How the fuck dad? We meet with you less than you´re pregnant. Sprained whore who is here, and go to him. Everything. I can not call. Goodbye.'
+        act 'Honey, you will soon become a dad.':
+			'(You) - Honey, I''m pregnant with your child.'
+			'(<<$boyA>>) - How the fuck dad? We meet with you less than you''re pregnant. Sprained whore who is here, and go to him. Everything. I can not call. Goodbye.'
 			set bfA = 0
 			act 'Hang up.': gt 'telefon','fin'
 			end
 		end
 	if week > 1 and week < 5 and workKafe = 1:
-		act 'Oh, sorry, I´m working today.':
+		act 'Sorry, I''m working today.':
 			cla
-			'(You) - Oh, sorry, I´m working today.'
-			'(<<$boyA>>) - okay, call tomorrow.'
+			'(You) - Oh, sorry, I''m working today.'
+			'(<<$boyA>>) - okay, I''ll call tomorrow.'
 			act 'Hang up.': gt 'telefon','fin'
 			end
 		end
@@ -280,19 +279,19 @@ act 'Normally':
 		set bfA += 1
 		set svidanieA = 1
 		meetday = daystart
-		'(You) - can be found in the evening.'
-		'(<<$boyA>>) - What time I come to your house?'
-		act 'Call time.':
-			cla
-			meethour = input ("Name the hour in which the guy to come. Now <<hour>> hour, you can only assign a greater number of single-digit")
-			if meethour <= hour or meethour > 23: meethour = 20
-			'(You) - Come on in <<meethour>> hours.'
-			'(<<$boyA>>) - Okay, <<$sveta>> then to <<meethour>> hours.'
-			$meetloc[0] = $HouseLocation
-			act 'Hang up.': gt 'telefon','fin'
-			end
-		end
-	act 'I´m busy today. Call tomorrow.':
+        '(You) - How about this evening?'
+        '(<<$boyA>>) - Sounds great! When can I come pick you up?'
+        act 'Set up a time.':
+            cla
+            meethour = input ("Set up a time to get picked up. It is now <<hour>> o'clock.")
+            if meethour <= hour or meethour > 23: meethour = 20
+            '(You) - How about 8pm?'
+            '(<<$boyA>>) - Okay <<$sveta>>, see you at <<meethour>> o''clock.'
+            $meetloc[0] = $HouseLocation
+            act 'Hang up.': gt 'telefon','fin'
+            end
+        end
+	act 'I´m busy today. Why not call me tomorrow?':
 		cla
 		set bfA -= 1
 		'(You) - I´m busy today. Call tomorrow.'
