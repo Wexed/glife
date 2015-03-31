@@ -19,6 +19,23 @@ $sitr_tread_d = {
 	act 'Exit': gt $curloc
 }
 
+$d_read_porn={
+act'Read porn magazine':
+cls
+'<center><img src="qwest/alter/porn.jpg" ></center>'
+     if pornMagazine=1:
+     'skukota, this magazine you`ve memorized by heart, think it`s time to buy a new one.'
+     else
+     pornMagazine-=1
+     horny+=10
+     minut+=5
+     gs'stat'
+     'You pornozhurnal flipping through reading stories and looking at pictures, sly excitement begins to cover you.'
+     end
+act 'Go_Out':gt $curloc
+end
+}
+
 $sitrobrd = {
 	cla
 	*clr
@@ -200,145 +217,6 @@ $showerdin = {
 	exit
 }
 
-
-!Przemar: ** KIOSK ** ver 02
-!Przemar: IMAGE NEEDED 'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles'
-!WD: Set  "SUB >= 15" for act - Will need balancing / playtesting
-$kiosksig = {
-	cls
-	gs'stat'
-	'<center><img src="images\community\kiosk.jpg"></center>'
-	'A pack of cigarettes costs 50 rubles.'
-	*pl
-
-	if money >= 50:
-		if hour >= 12 and hour <= 15:
-			'<center><img src="images\community\queue.jpg"></center>'
-			'There''s a long queue infron of the kiosk.'
-
-			act 'Wait in line and buy cigarettes (30 Minutes)':
-				minut += 30
-				siga  += 20
-				money -= 50
-				gt $curloc
-				act 'Leave': gt $curloc
-			end
-
-			if exhibi >= 4:
-				act 'Flash both your tits and your pussy':
-					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
-					if kioskflash = 0:
-						set exhibi += 1
-						set kioskflash = 1
-					end
-					'<center><img src="images\community\flash_tits_pus.jpg"></center>'
-					'The people infront of you are shocked, as they see you flashing your tits and your pussy. As a small thank you, some of them let you move further up in the queue.'
-					act 'Buy and leave': gt $curloc
-				end
-			end
-
-			if exhibi >= 3:
-				act 'Flash your pussy':
-					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
-					if kioskflash = 0:
-						set exhibi += 1
-						set kioskflash = 1
-					end
-					if lobok >= 2:'<center><img src="images\community\flash_hairy.jpg"></center>'
-					if lobok <= 2:'<center><img src="images\community\flash_nohairy.jpg"></center>'
-					'The people infront of you are shocked, as they see you flashing your pussy. As a small thank you, some of them let you move further up in the queue.'
-					act 'Buy and leave': gt $curloc
-				end
-			end
-
-			if exhibi >= 2:
-				act 'Flash your tits':
-					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
-					if kioskflash = 0:
-						set exhibi += 1
-						set kioskflash = 1
-					end
-					'<center><img src="images\community\flash_tits.jpg"></center>'
-					'The people infront of you are shocked, as they see you flashing your tits. As a small thank you, some of them let you move further up in the queue.'
-					act 'Buy and leave': gt $curloc
-				end
-			end
-
-			if SUB >= 15:
-				act 'Suggest to blow someone infront of you':
-					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
-					throat += 1
-					bj     += 1
-
-					if cumlip = 0:
-						'<center><img src="images\community\kiosk_blowjob.jpg"></center>'
-						'A man agreed to your suggestion and let''s you move infront of him.'
-
-						act 'Cum on face':
-							cls
-							'<center><img src="images\body\cumface.jpg"></center>'
-							'The man cums on your face.'
-							cumface += 1
-							act 'Go away and buy cigarettes': gt $curloc
-						end
-
-						act 'Cum in mouth':
-							cls
-							'<center><img src="images\etogame\cumlip.jpg"></center>'
-							'The man cums inside your mouth.'
-							cumlip += 1
-							act 'Go away and buy cigarettes': gt $curloc
-						end
-
-					!if cumlip = 1:
-					else
-
-						!Przemar: IMAGE NEEDED
-						'<center><img src="images\community\Image_needed.png"></center>'
-						'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles.'
-						minut += 240
-						siga  += 20
-						money -= 200
-						act 'Leave': gt $curloc
-					end
-				end
-			end
-
-		!if money >= 50 and hour > 15 or hour < 12:
-		else
-			act 'Buy a pack of cigarettes':
-				siga  += 20
-				money -= 50
-				minut += 5
-				gt $curloc
-			end
-		end
-
-	!if money < 50
-	else
-
-		'Not enough money to buy cigarettes.'
-	end
-
-	act 'Leave': gt $curloc
-	exit
-}
 
 
 $budilnik = {
@@ -932,6 +810,145 @@ $meet_boyfriend ={
 $vladimir_driver={
 	if vladimirday = day and vladimirQW = 30 and hour >= 16 and week = 6: '<a href="exec: GT ''qwmeet2''">Before your porch worth audit and near stolidly worth waiting for you driver Glory</a>.'
 	if vladimirday = day and vladimirQW = 40 and hour >= 16 and week = 6: '<a href="exec: GT ''qwmeet3''">Before your porch worth audit and near stolidly worth waiting for you driver Glory</a>.'
+}
+
+!Przemar: ** KIOSK ** ver 02
+!Przemar: IMAGE NEEDED 'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles'
+!WD: Set  "SUB >= 15" for act - Will need balancing / playtesting
+$kiosksig = {
+	cls
+	gs'stat'
+	'<center><img src="images\community\kiosk.jpg"></center>'
+	'A pack of cigarettes costs 50 rubles.'
+	*pl
+
+	if money >= 50:
+		if hour >= 12 and hour <= 15:
+			'<center><img src="images\community\queue.jpg"></center>'
+			'There''s a long queue infron of the kiosk.'
+
+			act 'Wait in line and buy cigarettes (30 Minutes)':
+				minut += 30
+				siga  += 20
+				money -= 50
+				gt $curloc
+				act 'Leave': gt $curloc
+			end
+
+			if exhibi >= 4:
+				act 'Flash both your tits and your pussy':
+					cls
+					gs'stat'
+					minut  += 10
+					siga   += 20
+					money  -= 50
+					if kioskflash = 0:
+						set exhibi += 1
+						set kioskflash = 1
+					end
+					'<center><img src="images\community\flash_tits_pus.jpg"></center>'
+					'The people infront of you are shocked, as they see you flashing your tits and your pussy. As a small thank you, some of them let you move further up in the queue.'
+					act 'Buy and leave': gt $curloc
+				end
+			end
+
+			if exhibi >= 3:
+				act 'Flash your pussy':
+					cls
+					gs'stat'
+					minut  += 10
+					siga   += 20
+					money  -= 50
+					if kioskflash = 0:
+						set exhibi += 1
+						set kioskflash = 1
+					end
+					if lobok >= 2:'<center><img src="images\community\flash_hairy.jpg"></center>'
+					if lobok <= 2:'<center><img src="images\community\flash_nohairy.jpg"></center>'
+					'The people infront of you are shocked, as they see you flashing your pussy. As a small thank you, some of them let you move further up in the queue.'
+					act 'Buy and leave': gt $curloc
+				end
+			end
+
+			if exhibi >= 2:
+				act 'Flash your tits':
+					cls
+					gs'stat'
+					minut  += 10
+					siga   += 20
+					money  -= 50
+					if kioskflash = 0:
+						set exhibi += 1
+						set kioskflash = 1
+					end
+					'<center><img src="images\community\flash_tits.jpg"></center>'
+					'The people infront of you are shocked, as they see you flashing your tits. As a small thank you, some of them let you move further up in the queue.'
+					act 'Buy and leave': gt $curloc
+				end
+			end
+
+			if SUB >= 15:
+				act 'Suggest to blow someone infront of you':
+					cls
+					gs'stat'
+					minut  += 10
+					siga   += 20
+					money  -= 50
+					throat += 1
+					bj     += 1
+
+					if cumlip = 0:
+						'<center><img src="images\community\kiosk_blowjob.jpg"></center>'
+						'A man agreed to your suggestion and let''s you move infront of him.'
+
+						act 'Cum on face':
+							cls
+							'<center><img src="images\body\cumface.jpg"></center>'
+							'The man cums on your face.'
+							cumface += 1
+							act 'Go away and buy cigarettes': gt $curloc
+						end
+
+						act 'Cum in mouth':
+							cls
+							'<center><img src="images\etogame\cumlip.jpg"></center>'
+							'The man cums inside your mouth.'
+							cumlip += 1
+							act 'Go away and buy cigarettes': gt $curloc
+						end
+
+					!if cumlip = 1:
+					else
+
+						!Przemar: IMAGE NEEDED
+						'<center><img src="images\community\Image_needed.png"></center>'
+						'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles.'
+						minut += 240
+						siga  += 20
+						money -= 200
+						act 'Leave': gt $curloc
+					end
+				end
+			end
+
+		!if money >= 50 and hour > 15 or hour < 12:
+		else
+			act 'Buy a pack of cigarettes':
+				siga  += 20
+				money -= 50
+				minut += 5
+				gt $curloc
+			end
+		end
+
+	!if money < 50
+	else
+
+		'Not enough money to buy cigarettes.'
+	end
+
+	act 'Leave': gt $curloc
+	exit
 }
 --- dina ---------------------------------
 

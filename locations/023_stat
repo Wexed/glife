@@ -3,6 +3,121 @@ clr
 
 view
 
+gs'dinSex2'
+!1095
+if nippain=2:
+     if nippainday+5<daystart:
+     $nippain='You have greatly hurt nipples.'
+     nippain=1
+     nippainday=daystart
+     end
+     if nippainday+5>=daystart:
+     $nippain='You have greatly hurt nipples.'
+     end
+end
+if nippain=1:
+     if nippainday+5<daystart:
+     $nippain=''
+     nippain=0
+     end
+     if nippainday+5>=daystart:
+     $nippain='You have a little sore nipples.'
+     end
+end
+if painpub=2:
+     if painpubday+5<daystart:
+     $painpub='You have very sore vagina.'
+     painpub=1
+     painpubday=daystart
+     end
+     if painpubday+5>=daystart:
+     $painpub='You have very sore vagina.'
+     end
+end
+if painpub=1:
+     if painpubday+5<daystart:
+     $painpub=''
+     painpub=0
+     painpubday=daystart
+     end
+     if painpubday+5>=daystart:
+     $painpub='You have a little sore vagina.'
+     end
+end
+
+if year=2011 and katjaPreg=0:katjaPreg=1
+
+if analplay>=2 and anus<=10:anus+=1&analplay=0
+if analplay>=4 and anus<=15:anus+=1&analplay=0
+if analplay>=8 and anus<=20:anus+=1&analplay=0
+
+musle[1]=musle
+flex[1]=agil
+stamina[1]=vital*3
+wipo[1]=will
+intel[1]=intel
+krasota[1]=vnesh
+rost[1]=rost
+salo[1]=salo
+fat[1]=fat
+Bteh[1]=bteh
+Uteh[1]=uteh
+Zteh[1]=zteh
+!flex[0]=agil
+!stamina[0]=vital*3
+!krasota[0]=vnesh
+!wipo[0]=will
+
+if nopornowrestling=0:
+nopornowrestling=1
+NPCnum=30
+NPCnow=1
+!shag=1
+gs'npc'
+NoView=1
+NPCrost=30
+gs'generation'
+NoView=1
+NPCrost=30
+gs'generation'
+NoView=1
+NPCrost=30
+gs'generation'
+NoView=1
+NPCrost=30
+gs'generation'
+NoView=1
+NPCrost=30
+gs'generation'
+
+$nikname[1]='schoolgirl'
+!musle[0]=100
+!flex[0]=agil
+!stamina[0]=vital*3
+!wipo[0]=will
+!intel[0]=10
+!krasota[0]=vnesh
+!rost[0]=165
+!salo[0]=100
+!fat[0]=100
+
+!$nikname[1]='steel Virgo'
+!musle[1]=100
+!flex[1]=100
+!stamina[1]=300
+!wipo[1]=50
+!intel[1]=10
+!krasota[1]=10
+!rost[1]=165
+!salo[1]=100
+!fat[1]=100
+
+
+
+
+
+end
+
 if newclo[131] = 1 and SchoolAtestat = 1 or newclo[131] = 1 and SchoolBlock = 1: newclo[131] = 0
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!Automatic Stuff
 if AutoMakeupType < 2: AutoMakeupType = 2
@@ -253,6 +368,9 @@ if GorSlut = 4:$gnikname = 'sex addict'
 if GorSlut = 5:$gnikname = 'slut'
 if GorSlut = 6:$gnikname = 'talking pussy'
 
+if GorSlut>=2:KatjaKnowBJ=1
+if GorSlut>=1 or preg>0:KatjaKnowSex=1
+
 	if film > 0 and kompromatLife < 10:
 	!порноактрисса
 	if kompromatLife < 10: kompromatLife = 10
@@ -471,11 +589,11 @@ end
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!ВРЕМЯ
+!!!!!!!!!!TIME
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 if nminut ! minut:
-	!totminut время игры в минутах
+	!totminut = playing time in minutes
 	totminut += minut
 	nminut = minut
 end
@@ -514,22 +632,26 @@ if agape > 0:
 	end
 end
 
-:loopsec
 if sec >= 60:
-	minut+= 1
+:loopsec
+minut+= 1
 	sec -= 60
+	if sec >= 60:
 	jump 'loopsec'
+	end
 end
 
-:loopmin
 if minut >= 60:
+:loopmin
+if SbrosNerdism=1:nerdism-=((will/10)+orgasm)
+if nerdism<0:nerdism=0
 	if CompCheckedResponses = 1:
 		CompCheckedResponses = 0
 		if obkvsdam['Street']>0: set obkvsdam['Street'] = RAND(2,5)
 		if obkvsdam['Down']>0: set obkvsdam['Down'] = RAND(2,5)
 		if obkvsdam['Nord']>0: set obkvsdam['Nord'] = RAND(2,5)
 	end
-
+	
 	set hour += 1
 	set energy -= 1
 	set water -= 1
@@ -549,6 +671,24 @@ if minut >= 60:
 		alko -= 1
 	end
 
+	 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     !!!!!!!!!!!!!!!!Avtoboy
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     if hour>=8 and hour<=23 and NPCnum>10:
+     :markturnirotbort
+	 xf=0
+	 :markturnirotbortt
+	 xf+=1
+	 turnirFighter[xf]=RAND(2,NPCnum)
+	 if xf<2:jump'markturnirotbortt'
+	 if turnirFighter[1]=turnirFighter[2]:jump'markturnirotbort'
+	 a=turnirFighter[1]
+	 i=turnirFighter[2]
+	 NoView=1
+	 gs 'Autofight'
+     end
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
 	if shame > 0: shame -= 1 & manna -= 5
 	if smoker >= 20: smokerNeed += 1
 	if smokerNeed > 10 and InSleep = 0: manna -= manna * 10/100
@@ -592,8 +732,9 @@ if minut >= 60:
 		if KGHP < KGHPMAX: KGHP += 10
 		if KGManna < KGMannaMax: KGManna += 10
 	end
-
-	jump 'loopmin'
+if minut >= 60:
+     jump 'loopmin'
+     end
 end
 
 if hour >= 24:
@@ -611,6 +752,21 @@ if hour >= 24:
 		set vidage += 1
 	end
 
+	 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     !!!!!!!!!!!!generation
+     if NPCnum<290:
+     NPCnow=NPCnum
+     NPCnum+=RAND(1,3)
+     gs'npc'
+     end
+     if NPCnum>=290 and NPCnum<300:
+     NPCnow=NPCnum
+     NPCnum+=1
+     gs'npc'
+     end
+     !End generation
+     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
 	if kanikuli = 0: Suspeh -= 1
 	set dmishaevent = 0
 
@@ -742,7 +898,7 @@ if week > 7:
 end
 $week = $week_name[week]
 
-!Выплаты
+!payments
 if day = 25:
 	interest = (karta/100)
 	if (interest>0) and (interestPay=0):
@@ -807,9 +963,9 @@ if day = 25:
 
 	if husband > 0 and paydayHusb = 0:
 	paydayHusb = 1
-		if husbFin = 0: huspay = 30000
-		if husbFin = 1: huspay = 60000
-		if husbFin = 2: huspay = 90000
+		if husbFin = 0: huspay = 15000
+		if husbFin = 1: huspay = 25000
+		if husbFin = 2: huspay = 40000
 		karta += huspay
 		'<B><font color = green>Your husband has sent you <<huspay>> rubles to your bank account.</font></B>'
 	end
@@ -903,8 +1059,39 @@ else
 	$mud = ''
 end
 
+if nerdism>0:
+     if lastreadday=daystart:
+	 !<font color=green>You are completely healthy shine and a healthy glow.</font>
+	 manna=mannamax
+	 SbrosNerdism=0
+     $mudnerd='<font color=green>You are lost in a fantasy after reading the book.</font>'
+	 end
+	 
+	 if lastreadday+1=daystart:
+	 !manna=mannamax
+	 SbrosNerdism=0
+     $mudnerd='<font color=black>You a little bored and want to again plunge into a book.</font>'
+	 end
+	 
+	 if lastreadday+2=daystart:
+	 SbrosNerdism=0
+	 if manna>mannamax/2:manna-=10
+     $mudnerd='<font color=red>Do you really want something to read.</font>'
+	 end
+	 
+	 if lastreadday+3<=daystart:
+	 if manna>mannamax/10:manna-=10
+	 SbrosNerdism=1
+     $mudnerd='<font color=red><b>You terribly want at least something to read!!!</b></font>'
+	 end
+	 !$mudnerd+='lastread<<lastread>> totminut<<totminut>> <<totminut-lastread>>'
+else
+SbrosNerdism=0
+$mudnerd=''
+end
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!КОНЕЦ ВРЕМЕНИ
+!!!!!!!!!END OF TIME
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 subage = 0
 :metakasubage
@@ -939,7 +1126,7 @@ else
 end
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!ЭНЕРГИЯ
+!!!!!!!!!!!!ENERGY
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if son < 0:
 	set son = 0
@@ -1074,7 +1261,7 @@ if hour >= 8 and hour < 16 and week < 6 and StoryLine > 0 and SchoolAtestat = 0 
 end
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!НАЧАЛО ОПИСАНИЯ
+!!!!!!!!!Beginning Description
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 if hour > 9 :
@@ -1236,6 +1423,15 @@ if siga > 0 and smoker < 20:
 end
 
 if smokeHour = hour and smokeday = day and smokeminut >= minut: pl '<font color = green>You are smoking a cigarette</font>'
+
+if pirs_pain_ton>0:
+if pirs_pain_ton=1:pl'<font color=red>You have aches language and it is a little swollen.</font>'
+if pirs_pain_ton=2:pl'<font color=red>You often aches language and it is noticeably swollen.</font>'
+if pirs_pain_ton>2:pl'<font color=red><b>Do you have a sore tongue, he was very swollen and almost tossed in the mouth.</b></font>'
+end
+if nippain>0:pl'<font color=red><b><<$nippain>></b></font>'
+if painpub>0:pl'<font color=red><b><<$painpub>></b></font>'
+
 if ReminderSystem = 1:
 	if tampon < ReminderNumber: pl '<font color = red>I should go buy some tampons</font>'
 	if stanok < ReminderNumber: pl '<font color = red>I should go buy some razors</font>'
@@ -1372,6 +1568,7 @@ if sick > 1 and sick < 24: pl '<B><font color = red>you chills. You flowing from
 if sick >= 24 and sick < 48: pl '<B><font color = red>You have a fever. You clogged nose, it hurts to swallow - throat aches. You continually cough and sneeze - it looks like you prosudilis.</font></B>'
 if sick >= 48 and sick < 72: pl '<B><font color = red>You have a high fever. You have a stuffy nose, sore head and throat, coughing badly you - it sounds like you got a strong cold. Maybe it´s the flu.</font></B>'
 if sick >= 72: pl '<B><font color = red>you toss in the heat. You have a stuffy nose, headache and aching all the bones. Your throat is inflamed and very sore. You heavily with anguish cough - it sounds like you are seriously ill. Maybe it´s a sore throat.</font></B>'
+if $mudnerd!'':pl'<<$mudnerd>>'
 
 if $meetloc = 'street': $meetlocation = 'residential'
 if $meetloc = 'down': $meetlocation = 'downtown'
@@ -1388,20 +1585,112 @@ if alko > 0:
 	if alko >= 6: pl '<B><font color = red>You´re wasted.</font></B>'
 end
 
+if day=29 and month=12 and year=2010 and StoryLine=1:
+     if hour>=5 and hour<=14:pl'B 14 School hours will be held New Year`s party.'
+end
+
 gs 'din_bad'
 
 if bag > 0:
 	pl '<a href="exec:dynamic $d_bag"><B>Handbag</B></a>'
 end
 
-!обнуление проверок на замужество
+!zero checks marriage
 set proverka1 = 0
 set proverka2 = 0
 set proverka3 = 0
 set proverka4 = 0
 set proverka5 = 0
 
-!!!!!!!!!!!!!!!!!!!!
+!{
+!"clothing repair, for old saved." - uncertain what this does exactly
+if remdrop=0:
+	set remdrop=1
+	if jeans = 1:set jeans[1]=1&set jeansH[1]=50&set jeansB[1]=bedra
+	if jeans2 = 1:set jeans[2]=1&set jeansH[2]=50&set jeansB[2]=bedra
+	if jeans3 = 1:set jeans[3]=1&set jeansH[3]=50&set jeansB[3]=bedra
+	if jeans4 = 1:set jeans[4]=1&set jeansH[4]=50&set jeansB[4]=bedra
+	if jeans5 = 1:set jeans[5]=1&set jeansH[5]=50&set jeansB[5]=bedra
+	if yoga = 1:set yoga[1]=1&set yogaH[1]=50
+	if yoga2 = 1:set yoga[2]=1&set yogaH[2]=50
+	if yoga3 = 1:set yoga[3]=1&set yogaH[3]=50
+	if yoga4 = 1:set yoga[4]=1&set yogaH[4]=50
+	if yoga5 = 1:set yoga[5]=1&set yogaH[5]=50
+	if yoga6 = 1:set yoga[6]=1&set yogaH[6]=50
+	if yoga7 = 1:set yoga[7]=1&set yogaH[7]=50
+	if yoga8 = 1:set yoga[8]=1&set yogaH[8]=50
+	if yoga9 = 1:set yoga[9]=1&set yogaH[9]=50
+	if yoga10 = 1:set yoga[10]=1&set yogaH[10]=50
+	if yoga11 = 1:set yoga[11]=1&set yogaH[11]=50
+	if yoga12 = 1:set yoga[12]=1&set yogaH[12]=50
+	if yoga13 = 1:set yoga[13]=1&set yogaH[13]=50
+	if yoga14 = 1:set yoga[14]=1&set yogaH[14]=50
+	if yoga15 = 1:set yoga[15]=1&set yogaH[15]=50
+	if yoga16 = 1:set yoga[16]=1&set yogaH[16]=50
+	if yoga17 = 1:set yoga[17]=1&set yogaH[17]=50
+	if yoga18 = 1:set yoga[18]=1&set yogaH[18]=50
+	if sarafan = 1:set sarafan[1] = 1&set sarafanH[1]=50
+	if sarafan2 = 1:set sarafan[2] = 1&set sarafanH[2]=50
+	if short = 1:set short[1]=1&set shortH[1]=50&set shortB[1]=bedra
+	if short2 = 1:set short[2]=1&set shortH[2]=50&set shortB[2]=bedra
+	if short3 = 1:set short[3]=1&set shortH[3]=50&set shortB[3]=bedra
+	if short4 = 1:set short[4]=1&set shortH[4]=50&set shortB[4]=bedra
+	if short5 = 1:set short[5]=1&set shortH[5]=50&set shortB[5]=bedra
+	if skirt = 1:set skirt[1]=1&set skirtH[1]=50&set skirtB[1]=bedra
+	if skirt2 = 1:set skirt[2]=1&set skirtH[2]=50&set skirtB[2]=bedra
+	if skirt3 = 1:set skirt[3]=1&set skirtH[3]=50&set skirtB[3]=bedra
+	if skirt4 = 1:set skirt[4]=1&set skirtH[4]=50&set skirtB[4]=bedra
+	if skirt5 = 1:set skirt[5]=1&set skirtH[5]=50&set skirtB[5]=bedra
+	if dress = 1:set dress[1]=1&set dressH[1]=100&set dressB[1]=bedra
+	if dress2 = 1:set dress[2]=1&set dressH[2]=100&set dressB[2]=bedra
+	if dress3 = 1:set dress[3]=1&set dressH[3]=100&set dressB[3]=bedra
+	if dress4 = 1:set dress[4]=1&set dressH[4]=100&set dressB[4]=bedra
+	if dress5 = 1:set dress[5]=1&set dressH[5]=100&set dressB[5]=bedra
+	if dress6 = 1:set dress[6]=1&set dressH[6]=100&set dressB[6]=bedra
+	if dress7 = 1:set dress[7]=1&set dressH[7]=100&set dressB[7]=bedra
+	if dress8 = 1:set dress[8]=1&set dressH[8]=100&set dressB[8]=bedra
+	if dress9 = 1:set dress[9]=1&set dressH[9]=100&set dressB[9]=bedra
+	if dress10 = 1:set dress[10]=1&set dressH[10]=100&set dressB[10]=bedra
+	if dress11 = 1:set dress[11]=1&set dressH[11]=100&set dressB[11]=bedra
+	if dress12 = 1:set dress[12]=1&set dressH[12]=100&set dressB[12]=bedra
+	if dress13 = 1:set dress[13]=1&set dressH[13]=100&set dressB[13]=bedra
+	if dress14 = 1:set dress[14]=1&set dressH[14]=100&set dressB[14]=bedra
+	if dress15 = 1:set dress[15]=1&set dressH[15]=100&set dressB[15]=bedra
+	if dress16 = 1:set dress[16]=1&set dressH[16]=100&set dressB[16]=bedra
+	if dress17 = 1:set dress[17]=1&set dressH[17]=100&set dressB[17]=bedra
+	if dress18 = 1:set dress[18]=1&set dressH[18]=100&set dressB[18]=bedra
+	if dress19 = 1:set dress[19]=1&set dressH[19]=100&set dressB[19]=bedra
+	if dress20 = 1:set dress[20]=1&set dressH[20]=100&set dressB[20]=bedra
+	if dress21 = 1:set dress[21]=1&set dressH[21]=100&set dressB[21]=bedra
+	if dress22 = 1:set dress[22]=1&set dressH[22]=100&set dressB[22]=bedra
+	if dress23 = 1:set dress[23]=1&set dressH[23]=100&set dressB[23]=bedra
+	if dress24 = 1:set dress[24]=1&set dressH[24]=100&set dressB[24]=bedra
+	if profi = 1:set profi[1]=1&set profiH[1]=50&set profiB[1]=bedra
+	if profi2 = 1:set profi[2]=1&set profiH[2]=50&set profiB[2]=bedra
+	if pants = 1:set pants[1]=1&set pantsH[1]=50&set pantsB[1]=bedra
+	if pants2 = 1:set pants[2]=1&set pantsH[2]=50&set pantsB[2]=bedra
+	if pants3 = 1:set pants[3]=1&set pantsH[3]=50&set pantsB[3]=bedra
+	if pants4 = 1:set pants[4]=1&set pantsH[4]=50&set pantsB[4]=bedra
+	if pants5 = 1:set pants[5]=1&set pantsH[5]=50&set pantsB[5]=bedra
+	if latex = 1:set latex[1]=1&set latexH[1]=50&set latexB[1]=bedra
+	if latex2 = 1:set latex[2]=1&set latexH[2]=50&set latexB[2]=bedra
+	if hooker = 1:set hooker[1]=1&set hookerH[1]=50&set hookerB[1]=bedra
+	if hooker2 = 1:set hooker[2]=1&set hookerH[2]=50&set hookerB[2]=bedra
+	if hooker3 = 1:set hooker[3]=1&set hookerH[3]=50&set hookerB[3]=bedra
+	if hooker4 = 1:set hooker[4]=1&set hookerH[4]=50&set hookerB[4]=bedra
+	if hooker5 = 1:set hooker[5]=1&set hookerH[5]=50&set hookerB[5]=bedra
+	if dressel1 = 1:set odekis[1]=1&set odekisH[1]=50&set odekisB[1]=bedra
+	if odekis1 = 1:set odekis[2]=1&set odekisH[2]=50&set odekisB[2]=bedra
+	if odekis2 = 1:set odekis[3]=1&set odekisH[3]=50&set odekisB[3]=bedra
+	if odekis3 = 1:set odekis[4]=1&set odekisH[4]=50&set odekisB[4]=bedra
+	if odekis4 = 1:set odekis[5]=1&set odekisH[5]=50&set odekisB[5]=bedra
+	if odekis5 = 1:set odekis[6]=1&set odekisH[6]=50&set odekisB[6]=bedra
+	if odekis6 = 1:set odekis[7]=1&set odekisH[7]=50&set odekisB[7]=bedra
+	if odekis7 = 1:set odekis[8]=1&set odekisH[8]=50&set odekisB[8]=bedra
+	if odekis8 = 1:set odekis[9]=1&set odekisH[9]=50&set odekisB[9]=bedra
+	if odekis9 = 1:set odekis[10]=1&set odekisH[10]=50&set odekisB[10]=bedra
+end
+}
 
 
 
