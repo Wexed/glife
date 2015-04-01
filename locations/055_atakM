@@ -1,315 +1,169 @@
 # atakM
-<<<<<<< 055_atakM
+
 if $ARGS[0] = 'atakVmanna':
-cla
-!расчет попадания уворота
-set poSp = speedV * 20/100
-set uvAg = agil * 20/100
-set poBox = reactV * 20/100
-set uvBox = react * 20/100
-set popad = RAND(reactV - poBox, reactV + poBox) + RAND(speedV-poSp, speedV + poSp)
-set uvorot = RAND(react - uvBox, react + uvBox) + RAND(agil-uvAg, agil + uvAg)
-set uvorKoef = uvorot * 50/100
-set popKoef = popad * 50/100
+	cla
+	!расчет попадания уворота
+	set poSp = speedV * 20 / 100
+	set uvAg = agil * 20 / 100
+	set poBox = reactV * 20 / 100
+	set uvBox = react * 20 / 100
+	set popad = rand(reactV - poBox, reactV + poBox) + rand(speedV - poSp, speedV + poSp)
+	set uvorot = rand(react - uvBox, react + uvBox) + rand(agil - uvAg, agil + uvAg)
+	set uvorKoef = uvorot * 50/100
+	set popKoef = popad * 50/100
+
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
-		!крит, очень точное попадание
-		'<B><font color = red>critical hits</font></B>'
-		xgt 'atakM','uronKritV'
+			!крит, очень точное попадание
+			'<b><font color="red">critical hits</font></b>'
+			xgt 'atakM', 'uronKritV'
 		end
 
 		if popad < uvorot+uvorKoef:
-		!нормальное попадание
-		!атаковал противник
-		'<B><font color = red>Contact</font></B>'
-		xgt 'atakM','uronV'
+			!нормальное попадание
+			!атаковал противник
+			'<b><font color="red">Contact</font></b>'
+			xgt 'atakM', 'uronV'
 		end
 	end
 
 	if popad <= uvorot:
-	'<B><font color = green>is washed</font></B>'
-	xgt 'fight','sta'
+		'<b><font color="green">is washed</font></b>'
+		xgt 'fight', 'sta'
 	end
-=======
-if $ARGS[0]='atakVmanna':
-cla
-!payment hit dodge
-set poSp = speedV*20/100
-set uvAg = agil*20/100
-set poBox = reactV*20/100
-set uvBox = react*20/100
-set popad = RAND (reactV-poBox,reactV+poBox) + RAND (speedV-poSp,speedV+poSp)
-set uvorot = RAND (react-uvBox,react+uvBox) + RAND (agil-uvAg,agil+uvAg)
-set uvorKoef = uvorot*50/100
-set popKoef = popad*50/100
-     if popad > uvorot:
-         if popad >= uvorot+uvorKoef:
-         !Crete, very direct hit
-         '<B><font color=red>Critical hits</font></B>'
-         xgt'atakM','uronKritV'
-         end
-         
-         if popad < uvorot+uvorKoef:
-         !normal hit
-         !attack the enemy
-         '<B><font color=red>EYE</font></B>'
-         xgt'atakM','uronV'
-         end
-     end
-     
-     if popad <= uvorot:
-     '<B><font color=green>LOST</font></B>'
-     xgt'fight','sta'
-     end
->>>>>>> 055_atakM
 end
 
-
-<<<<<<< 055_atakM
 if $ARGS[0] = 'uronKritV':
-=======
-if $ARGS[0]='uronKritV':
->>>>>>> 055_atakM
-cla
-set damage = RAND(1000,2000)
-set damageM = RAND(1000,2000)
-
-<<<<<<< 055_atakM
+	cla
+	set damage = rand(1000, 2000)
+	set damageM = rand(1000, 2000)
 
 	if defence <= 0 and klon <= 0 and unmaterial <= 0 and barier <= 0:
-	if dospeh > 0: set damage -= dospehDef & set dospehEn -= 1
-	if damage < 0: set damage = 0
-	Set health -= damage
-	Set manna -= damageM
-	'<B><font color = red>caused damage your health <<damage>> units</font></B>'
-	'<B><font color = red>caused damage your manna <<damageM>> units</font></B>'
+		if dospeh > 0:set damage -= dospehDef & set dospehEn -= 1
+		if damage < 0:set damage = 0
+
+		set health -= damage
+		set manna -= damageM
+		'<b><font color="red">caused damage your health <<damage>> units</font></b>'
+		'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
+
 		if zerkalo > 0:
-		set zerkalo -= 1
-		set healthV -= damage
-		'<B><font color = green>You are repelled damage and <<$nameV>> to give <<damage>> points of damage</font></B>'
+			set zerkalo -= 1
+			set healthV -= damage
+			'<b><font color="green">You are repelled damage and <<$nameV>> to give <<damage>> points of damage</font></b>'
 		end
-	xgt 'fight','sta'
+
+		xgt 'fight', 'sta'
 	end
 
 	if defence > 0 and klon <= 0 and unmaterial <= 0:
-	set damSum = damage + damageM
-	Set defence -= damSum
-	'<B><font color = red>Protection of your harmed <<damSum>> units</font></B>'
-	xgt 'fight','sta'
+		set damSum = damage + damageM
+		set defence -= damSum
+		'<b><font color="red">Protection of your harmed <<damSum>> units</font></b>'
+		xgt 'fight', 'sta'
 	end
 
 	if klon > 0 and unmaterial <= 0:
-	set klon -= 1
-	'<B><font color = red>destroy your clone, you have more <<Klon>> clones</font></B>'
-	xgt 'fight','sta'
+		set klon -= 1
+		'<b><font color="red">destroy your clone, you have more <<Klon>> clones</font></b>'
+		xgt 'fight', 'sta'
 	end
 
 	if unmaterial > 0:
-	set unmaterial -= 1
-	'<B><font color = green>Strike the enemy flew right through your body. YOU is not material</font></B>'
-	xgt 'fight','sta'
+		set unmaterial -= 1
+		'<b><font color="green">Strike the enemy flew right through your body. YOU is not material</font></b>'
+		xgt 'fight', 'sta'
 	end
 
 	if barier > 0:
-	!барьер именитета для урона
+		!барьер именитета для урона
 		if barier >= damage:
-		'<B><font color = green>You can easily withstood the impact of the opponent</font></B>'
-		xgt 'fight','sta'
+			'<b><font color="green">You can easily withstood the impact of the opponent</font></b>'
+			xgt 'fight', 'sta'
 		end
+
 		if barier < damage:
-		Set manna -= damageM
-		Set health -= damage
-		'<B><font color = red>You harmed <<damage>> units</font></B>'
-		'<B><font color = red>caused damage your manna <<damageM>> units</font></B>'
+			set manna -= damageM
+			set health -= damage
+			'<b><font color="red">You harmed <<damage>> units</font></b>'
+			'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
+
 			if zerkalo > 0:
-			set zerkalo -= 1
-			set healthV -= damage
-			'<B><font color = green>You are repelled damage and <<$nameV>> to give <<damage>> points of damage</font></B>'
+				set zerkalo -= 1
+				set healthV -= damage
+				'<b><font color="green">You are repelled damage and <<$nameV>> to give <<damage>> points of damage</font></b>'
 			end
 		end
-	xgt 'fight','sta'
-	end
-=======
-   
-     if defence <= 0 and klon <= 0 and unmaterial <= 0 and barier <= 0:
-     if dospeh > 0:set damage = damage - dospehDef&set dospehEn = dospehEn - 1
-     if damage < 0:set damage = 0
-     Set health = health - damage
-     Set manna = manna - damageM
-     '<B><font color=red>Your health harmed <<damage>> units</font></B>'
-     '<B><font color=red>Your manna harmed <<damageM>> units</font></B>'
-         if zerkalo > 0:
-         set zerkalo = zerkalo - 1
-         set healthV = healthV - damage
-         '<B><font color=green>You have reflected damage and <<$nameV>> received <<damage>> points of damage</font></B>'
-         end
-     xgt'fight','sta'
-     end
-     
-     if defence > 0 and klon <= 0 and unmaterial <= 0:
-     set damSum = damage + damageM
-     Set defence = defence - damSum
-     '<B><font color=red>Your defense harmed <<damSum>> units</font></B>'
-     xgt'fight','sta'
-     end
-     
-     if klon > 0 and unmaterial <= 0:
-     set klon = klon - 1
-     '<B><font color=red>Destroy your clone, Do you have more <<Klon>> clones</font></B>'
-     xgt'fight','sta'
-     end
-     
-     if unmaterial > 0:
-     set unmaterial = unmaterial - 1
-     '<B><font color=green>Beat the enemy flew right through your body. YOU are not material</font></B>'
-     xgt'fight','sta'
-     end
-     
-     if barier > 0:
-     !imeniteta barrier for damage
-         if barier >= damage:
-         '<B><font color=green>You can easily withstand the impact of the enemy</font></B>'
-         xgt'fight','sta'
-         end
-         if barier < damage:
-         Set manna = manna - damageM
-         Set health = health - damage
-         '<B><font color=red>You harmed <<damage>> units</font></B>'
-         '<B><font color=red>Your manna harmed <<damageM>> units</font></B>'
-             if zerkalo > 0:
-             set zerkalo = zerkalo - 1
-             set healthV = healthV - damage
-             '<B><font color=green>You have reflected damage and <<$nameV>> received <<damage>> points of damage</font></B>'
-             end
-         end
-     xgt'fight','sta'
-     end
->>>>>>> 055_atakM
 
+		xgt 'fight', 'sta'
+	end
 end
 
-
-<<<<<<< 055_atakM
 if $ARGS[0] = 'uronV':
-=======
-if $ARGS[0]='uronV':
->>>>>>> 055_atakM
-cla
-set damage = RAND(500,1000)
-set damageM = RAND(500,1000)
-
-<<<<<<< 055_atakM
+	cla
+	set damage = rand(500, 1000)
+	set damageM = rand(500, 1000)
 
 	if defence <= 0 and klon <= 0 and unmaterial <= 0 and barier <= 0:
-	if dospeh > 0: set damage -= dospehDef & set dospehEn -= 1
-	if damage < 0: set damage = 0
-	Set health -= damage
-	Set manna -= damageM
-	'<B><font color = red>caused damage your health <<damage>> units</font></B>'
-	'<B><font color = red>caused damage your manna <<damageM>> units</font></B>'
+		if dospeh > 0:set damage -= dospehDef & set dospehEn -= 1
+		if damage < 0:set damage = 0
+
+		set health -= damage
+		set manna -= damageM
+		'<b><font color="red">caused damage your health <<damage>> units</font></b>'
+		'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
+
 		if zerkalo > 0:
-		set zerkalo -= 1
-		set healthV -= damage
-		'<B><font color = green>You are repelled damage and <<$nameV>> to give <<damage>> points of damage</font></B>'
+			set zerkalo -= 1
+			set healthV -= damage
+			'<b><font color="green">You are repelled damage and <<$nameV>> to give <<damage>> points of damage</font></b>'
 		end
-	xgt 'fight','sta'
+
+		xgt 'fight', 'sta'
 	end
 
 	if defence > 0 and klon <= 0 and unmaterial <= 0:
-	set damSum = damage + damageM
-	Set defence -= damSum
-	'<B><font color = red>Protection of your harmed <<damSum>> units</font></B>'
-	xgt 'fight','sta'
+		set damSum = damage + damageM
+		set defence -= damSum
+		'<b><font color="red">Protection of your harmed <<damSum>> units</font></b>'
+		xgt 'fight', 'sta'
 	end
 
 	if klon > 0 and unmaterial <= 0:
-	set klon -= 1
-	'<B><font color = red>destroy your clone, you have more <<Klon>> clones</font></B>'
-	xgt 'fight','sta'
+		set klon -= 1
+		'<b><font color="red">destroy your clone, you have more <<Klon>> clones</font></b>'
+		xgt 'fight', 'sta'
 	end
 
 	if unmaterial > 0:
-	set unmaterial -= 1
-	'<B><font color = green>Strike the enemy flew right through your body. YOU is not material</font></B>'
-	xgt 'fight','sta'
+		set unmaterial -= 1
+		'<b><font color="green">Strike the enemy flew right through your body. YOU is not material</font></b>'
+		xgt 'fight', 'sta'
 	end
 
 	if barier > 0:
-	!барьер именитета для урона
+		!барьер именитета для урона
 		if barier >= damage:
-		'<B><font color = green>You can easily withstood the impact of the opponent</font></B>'
-		xgt 'fight','sta'
+			'<b><font color="green">You can easily withstood the impact of the opponent</font></b>'
+			xgt 'fight', 'sta'
 		end
+
 		if barier < damage:
-		Set manna -= damageM
-		Set health -= damage
-		'<B><font color = red>You harmed <<damage>> units</font></B>'
-		'<B><font color = red>caused damage your manna <<damageM>> units</font></B>'
+			set manna -= damageM
+			set health -= damage
+			'<b><font color="red">You harmed <<damage>> units</font></b>'
+			'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
+
 			if zerkalo > 0:
-			set zerkalo -= 1
-			set healthV -= damage
-			'<B><font color = green>You are repelled damage and <<$nameV>> to give <<damage>> points of damage</font></B>'
+				set zerkalo -= 1
+				set healthV -= damage
+				'<b><font color="green">You are repelled damage and <<$nameV>> to give <<damage>> points of damage</font></b>'
 			end
 		end
-	xgt 'fight','sta'
-	end
-=======
-   
-     if defence <= 0 and klon <= 0 and unmaterial <= 0 and barier <= 0:
-     if dospeh > 0:set damage = damage - dospehDef&set dospehEn = dospehEn - 1
-     if damage < 0:set damage = 0
-     Set health = health - damage
-     Set manna = manna - damageM
-     '<B><font color=red>Your health harmed <<damage>> units</font></B>'
-     '<B><font color=red>Your manna harmed <<damageM>> units</font></B>'
-         if zerkalo > 0:
-         set zerkalo = zerkalo - 1
-         set healthV = healthV - damage
-         '<B><font color=green>You have reflected damage and <<$nameV>> received <<damage>> points of damage</font></B>'
-         end
-     xgt'fight','sta'
-     end
-     
-     if defence > 0 and klon <= 0 and unmaterial <= 0:
-     set damSum = damage + damageM
-     Set defence = defence - damSum
-     '<B><font color=red>Your defense harmed <<damSum>> units</font></B>'
-     xgt'fight','sta'
-     end
-     
-     if klon > 0 and unmaterial <= 0:
-     set klon = klon - 1
-     '<B><font color=red>Destroy your clone, Do you have more <<Klon>> clones</font></B>'
-     xgt'fight','sta'
-     end
-     
-     if unmaterial > 0:
-     set unmaterial = unmaterial - 1
-     '<B><font color=green>Beat the enemy flew right through your body. YOU are not material</font></B>'
-     xgt'fight','sta'
-     end
-     
-     if barier > 0:
-     !imeniteta barrier for damage
-         if barier >= damage:
-         '<B><font color=green>You can easily withstand the impact of the enemy</font></B>'
-         xgt'fight','sta'
-         end
-         if barier < damage:
-         Set manna = manna - damageM
-         Set health = health - damage
-         '<B><font color=red>You harmed <<damage>> units</font></B>'
-         '<B><font color=red>Your manna harmed <<damageM>> units</font></B>'
-             if zerkalo > 0:
-             set zerkalo = zerkalo - 1
-             set healthV = healthV - damage
-             '<B><font color=green>You have reflected damage and <<$nameV>> received <<damage>> points of damage</font></B>'
-             end
-         end
-     xgt'fight','sta'
-     end
->>>>>>> 055_atakM
 
+		xgt 'fight', 'sta'
+	end
 end
+
 --- atakM ---------------------------------
 

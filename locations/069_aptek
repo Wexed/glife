@@ -1,144 +1,175 @@
 # aptek
-if $ARGS[0]='start':
-cla
-*clr
-set minut = minut + 5
-'<center><B><font color=maroon>pharmacy</font></B></center>'
-'<center><img src="pic/aptek.jpg" ></center>'
-'condoms - 100 r
-birth control pills - 500 r'
-'medicine 500 RUB
-vitamins 500 RUB
-Moisturizing Lip Balm 1000 RUB'
-clr
-gs'stat'
-gs'time'
-if money>=200:
-     act 'Buy a pregnancy test (200 RUB)':
-     cla
-     *clr
-     set money = money - 200
-     pregtest+=2
-     '<center><img src="pic/kassa.jpg" ></center>'
-     'You bought a test and get paid in cash.'
-     act 'Move away from the counter':gt'aptek','start'
-     end
-end
-if money >= 100:
-  	 act 'Buy condoms 100 RUB':
-		 cla
-		 *clr
-		 portion = input ("How many packages you want to buy?")
-		 if portion*100 > money:'You do not have enough money.'
-		 if portion*100 <= money:
-			 set prezik = prezik + portion*5
-			 set money = money - portion*100
-			 '<center><img src="pic/kassa.jpg" ></center>'
-			 'You bought condoms and get paid in cash.'
+!!!0.2.6 addition: Optimized flow of the code, updated descriptions - now lists everything the drugstore has to sell
+if $ARGS[0] = 'start':
+	cla
+	*clr
+	set minut += 5
+	'<center><b><font color="maroon">Drugstore</font></b></center>'
+	'<center><img src="images\etogame\aptek.jpg"></center>'
+	'Condoms - 100 rubles' & nl
+	'Pregnancy test - 200 rubles' & nl
+	'Birth control pills - 500 rubles' & nl
+	'Enema - 500 rubles' & nl
+	'Medicine - 500 rubles' & nl
+	'Vitamins - 500 rubles' & nl
+	'Ointment from corns - 600 rubles' & nl
+	'Moisturizing Lip Balm 1,000 rubles' & nl
+	'Fat burners - 1,500 rubles' & nl
+	'Cure pills for yeast infection - 1,500 rubles
+	clr
+	gs 'stat'
+	gs 'time'
+
+	if money >= 100:
+		act 'Buy condoms 100 rublesles':
+			portion = input ("How many packages you want to buy?")
+
+			if portion * 100 > money: 'You do not have enough money.'
+
+			if portion*100 <= money:
+				set prezik = prezik + portion * 5
+				set money -= portion * 100
+				'<center><img src="images/pic/kassa.jpg" ></center>'
+				'You bought condoms and paid the money to the cashier.'
+			end
+
+			act 'Move away from the counter':gt'aptek', 'start'
+		end
+	end
+
+	if money >= 200:
+		act 'Buy a pregnancy test (200 rubles)':
+			cla
+			*clr
+			set money -= 200
+			pregtest += 2
+			'<center><img src="images/pic/kassa.jpg" ></center>'
+			'You bought a test and get paid in cash.'
+
+			act 'Move away from the counter':gt'aptek', 'start'
+		end
+	end
+
+	if money >= 500:
+		act 'Buy birth control pills 500 rublesles':
+			portion = input ("How many packages you want to buy?")
+
+			if portion * 500 > money: 'You do not have enough money.'
+
+			if portion * 500 <= money:
+				set tabletki += portion * 28
+				set money -= portion * 500
+				'<center><img src="images/pic/kassa.jpg" ></center>'
+				'You bought the pills and paid the money to the cashier.'
+			end
+
+			act 'Move away from the counter':gt'aptek', 'start'
+		end
+
+		if klisma = 0:
+			act 'Buy enema 500 rublesles':
+				cla
+				*clr
+				set klisma = 1
+				set money -= 500
+				'<center><img src="images/pic/kassa.jpg" ></center>'
+				'You bought an enema and paid the money to the cashier.'
+
+				act 'Move away from the counter':gt'aptek', 'start'
+			end
+		end
+
+		act 'Buy medicine 500 rubles':
+			cla
+			*clr
+			portion = input ("How many packages you want to buy?")
+
+			if portion * 500 > money:'You do not have enough money.'
+
+			if portion * 500 <= money:
+			 	set lekarstvo += portion * 10
+				set money -= portion * 500
+				'<center><img src="images/pic/kassa.jpg" ></center>'
+				'You bought drugs and paid the money to the cashier.'
 			 end
-		 act 'Move away from the counter':gt'aptek','start'
-		 end
-	 end
-if money >= 500:
-   	 act 'Buy birth control pills 500 RUB':
-		 cla
-		 *clr
-		 portion = input ("How many packages you want to buy?")
-		 if portion*500 > money:'You do not have enough money.'
-		 if portion*500 <= money:
-			 set tabletki = tabletki + portion*28
-			 set money = money - portion*500
-			 '<center><img src="pic/kassa.jpg" ></center>'
-			 'You bought the pill and get paid in cash.'
-			 end
-		 act 'Move away from the counter':gt'aptek','start'
-		 end
-	 if klisma = 0:
-	     act 'Buy enema 500 RUB':
-			 cla
-			 *clr
-			 set klisma = 1
-			 set money = money - 500
-			 '<center><img src="pic/kassa.jpg" ></center>'
-			 'You bought an enema and get paid in cash.'
+
 			 act 'Move away from the counter':gt'aptek','start'
-			 end
 		 end
-	 end
-if money >= 1500:
-     act 'buy fat burners 1500 RUB':
-		 cla
-		 *clr
-		 set fatdel = fatdel + 1
-		 set money = money - 1500
-		 '<center><img src="pic/kassa.jpg" ></center>'
-		 'You bought a fat burning capsule and get paid in cash.'
-		 act 'Move away from the counter':gt'aptek','start'
+
+		act 'Buy vitamins 500 rubles':
+			cla
+			*clr
+			portion = input ("How many packages you want to buy?")
+
+			if portion * 500 > money:'You do not have enough money.'
+
+			if portion * 500 <= money:
+				set vitamin += portion * 20
+				set money = money - portion*500
+				'<center><img src="images/pic/kassa.jpg" ></center>'
+				'You bought vitamins and paid the money to the cashier.'
+			end
+
+			act 'Move away from the counter':gt'aptek', 'start'
+		end
+	end
+
+	if money >= 600:
+		act 'Buy ointment from corns (600 rubles)':
+			cla
+			*clr
+			set money = money - 600
+			mosolmaz += 10
+			'<center><img src="images/pic/kassa.jpg" ></center>'
+			'You bought the pills and paid the money to the cashier.'
+
+			act 'Move away from the counter':gt'aptek','start'
 		 end
-     end
-if money >= 500:
-     act 'buy medicine 500 RUB':
-		 cla
-		 *clr
-		 portion = input ("How many packages you want to buy?")
-		 if portion*500 > money:'You do not have enough money.'
-		 if portion*500 <= money:
-			 set lekarstvo+= portion*10
-			 set money = money - portion*500
-			 '<center><img src="pic/kassa.jpg" ></center>'
-			 'You bought drugs and get paid in cash.'
-			 end
-		 act 'Move away from the counter':gt'aptek','start'
+	end
+
+	if money >= 1000:
+		act 'Buy a moisturizing lip balm (1,000 rubles)':
+			cla
+			*clr
+			set lipbalm += 25
+			set money -= 1000
+			'<center><img src="images/pic/kassa.jpg" ></center>'
+			'You bought vitamins and paid the money to the cashier.'
+
+			act 'Move away from the counter':gt'aptek','start'
+		end
+	end
+
+	if money >= 1500:
+		act 'Buy fat burners (1,500 rubles)':
+			cla
+			*clr
+			set fatdel += 1
+			set money -= 1500
+			'<center><img src="images/pic/kassa.jpg" ></center>'
+			'You bought a fat burning capsule and paid the money to the cashier.'
+
+			act 'Move away from the counter':gt'aptek','start'
 		 end
-	 act 'Buy vitamins 500 RUB':
-		 cla
-		 *clr
-		 portion = input ("How many packages you want to buy?")
-		 if portion*500 > money:'You do not have enough money.'
-		 if portion*500 <= money:
-			 set vitamin+= portion*20
-			 set money = money - portion*500
-			 '<center><img src="pic/kassa.jpg" ></center>'
-			 'You bought vitamins and paid the money to the cashier.'
-			 end
-		 act 'Move away from the counter':gt'aptek','start'
-		 end
-     end
-if money>=1000:
-   	 act 'Buy a moisturizing lip balm (1000 RUB)':
-		 cla
-		 *clr
-		 set lipbalm+= 25
-		 set money = money - 1000
-		 '<center><img src="pic/kassa.jpg" ></center>'
-		 'You bought vitamins and paid the money to the cashier.'
-		 act 'Move away from the counter':gt'aptek','start'
-		 end
-     end
-if money>=1500 and KandidNapr=1:
-     act 'Buy pills from yeast (1500 RUB)':
-		 cla
-		 *clr
-		 set money = money - 1500
-		 Kandidoz=0
-		 '<center><img src="pic/kassa.jpg" ></center>'
-		 'You bought the pills and get paid in cash.'
-		 'Immediately about cash you drink tablet.'
-		 act 'Move away from the counter':gt'aptek','start'
-		 end
-     end
-if money>=600:
-     act 'Buy ointment from corns (600 RUB)':
-		 cla
-		 *clr
-		 set money = money - 600
-		 mosolmaz+=10
-		 '<center><img src="pic/kassa.jpg" ></center>'
-		 'You bought the pills and get paid in cash.'
-		 act 'Move away from the counter':gt'aptek','start'
-		 end
-     end
-act 'GO_OUT':gt'street'
+
+		if KandidNapr = 1:
+			act 'Buy cure pills for yeast infection (1,500 rubles)':
+				cla
+				*clr
+				set money -= 1500
+				Kandidoz = 0
+				'<center><img src="images/pic/kassa.jpg" ></center>'
+				'You bought the pills and paid the money to the cashier.'
+				'Immediately about cash you drink tablet.'
+
+				act 'Move away from the counter':gt'aptek','start'
+		 	end
+		end
+	end
+
+	act 'Quit': gt $loc
 end
---- aptek ---------------------------------
+!!!
+
+--- gaptek ---------------------------------
 

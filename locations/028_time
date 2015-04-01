@@ -1,860 +1,358 @@
 # time
 If month = 1 and pogodaday ! day:
-set pogodaday = day
-set temper = RAND (-30,8)
-<<<<<<< 028_time
+	set pogodaday = day
+	set temper = rand(-30, 8)
+
 	if temper <= 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Clear.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'Goes fluffy snow.'
-		end
+	set osadki = rand(0, 10)
+		if osadki < painweather:set $osadki = 'Clear.'
+		if osadki >= painweather:set $osadki = 'Goes fluffy snow.'
 	end
+
 	if temper > 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'Wet snow falls, which immediately melts forming slush.'
-		end
+		set osadki = rand(0, 10)
+		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
+		if osadki >= painweather:set $osadki = 'Wet snow falls, which immediately melts forming slush.'
 	end
-set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-     if temper <= 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'It_Is_Clear.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'Is fluffy snow.'
-		 end
-     end
-     if temper > 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'It_Is_Clear, snow begins to melt something where forming slush.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'Falling sleet, who immediately melts forming slush.'
-		 end
-     end
-set $pogoda = 'On the street there is snow, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+
+	set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 2 and pogodaday ! day:
-set pogodaday = day
-set temper = RAND (-35,8)
-<<<<<<< 028_time
+	set pogodaday = day
+	set temper = rand(-35, 8)
+
 	if temper <= 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Cloudy and windy.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'It´s snowing.'
-		end
+		set osadki = rand(0, 10)
+			if osadki < painweather:set $osadki = 'Cloudy and windy.'
+			if osadki >= painweather:set $osadki = 'It´s snowing.'
 	end
+
 	if temper > 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'Wet snow falls, which immediately melts forming slush.'
-		end
+		set osadki = rand(0, 10)
+		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
+		if osadki >= painweather:set $osadki = 'Wet snow falls, which immediately melts forming slush.'
 	end
-set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-     if temper <= 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'Clear and windy.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'It`s snowing.'
-		 end
-     end
-     if temper > 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'It_Is_Clear, snow begins to melt something where forming slush.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'Falling sleet, who immediately melts forming slush.'
-		 end
-     end
-set $pogoda = 'On the street there is snow, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+
+	set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 3 and pogodaday ! day:
-set pogodaday = day
-set temper = RAND (-20,17)
-<<<<<<< 028_time
+	set pogodaday = day
+	set temper = rand(-20, 17)
+
 	if temper <= 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Clear and cloudless.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'It´s snowing.'
-		end
+		set osadki = rand(0, 10)
+
+		if osadki < painweather:set $osadki = 'Clear and cloudless.'
+		if osadki >= painweather:set $osadki = 'It´s snowing.'
 	end
+
 	if temper > 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'Wet snow falls, which immediately melts forming slush.'
-		end
+		set osadki = rand(0, 10)
+		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
+		if osadki >= painweather:set $osadki = 'Wet snow falls, which immediately melts forming slush.'
 	end
-set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-     if temper <= 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'Clear and cloudless.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'It`s snowing.'
-		 end
-     end
-     if temper > 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'It_Is_Clear, snow begins to melt something where forming slush.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'Falling sleet, who immediately melts forming slush.'
-		 end
-     end
-set $pogoda = 'On the street there is snow, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+
+	set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 4 and pogodaday ! day:
-set pogodaday = day
-<<<<<<< 028_time
-set temper = RAND(2,20)
-set osadki = RAND(0,10)
+	set pogodaday = day
+	set temper = rand(2, 20)
+	set osadki = rand(0, 10)
+
 	if osadki < painweather:
-		if hour >= 7 and hour <= 20:
-		set $osadki = 'Clear.'
-		end
-		if hour < 7 or hour > 20:
-		set $osadki = 'Clear.'
-		end
-	end
-	if osadki >= painweather:
-	set $osadki = 'Rain.'
+		if hour >= 7 and hour <= 20:set $osadki = 'Clear.'
+		if hour < 7 or hour > 20:set $osadki = 'Clear.'
 	end
 
-set $pogoda = 'On the street the snow melts, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-set temper = RAND (2,20)
-set osadki = RAND (0,10)
-	 if osadki < painweather:
-	     if hour >= 7 and hour <= 20:
-         set $osadki = 'It_Is_Clear.'
-         end
-         if hour < 7 or hour > 20:
-         set $osadki = 'It_Is_Clear.'
-         end
-	 end
-	 if osadki >= painweather:
-	 set $osadki = 'the rain.'
-	 end
+	if osadki >= painweather:set $osadki = 'Rain.'
 
-set $pogoda = 'On the street the snow melts, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+	set $pogoda = 'On the street the snow melts, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 5 and pogodaday ! day:
-set pogodaday = day
-<<<<<<< 028_time
-set temper = RAND(7,25)
-set osadki = RAND(0,10)
-	if osadki < painweather:
-	set $osadki = 'Clear.'
-	end
-	if osadki >= painweather:
-	set $osadki = 'Rain.'
-	end
+	set pogodaday = day
+	set temper = rand(7, 25)
+	set osadki = rand(0, 10)
 
-set $pogoda = 'From puddles in the street rastaevshego snow, dirt and debris all around seem after winter, something where new grass pleases the eye with its greenery, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-set temper = RAND (7,25)
-set osadki = RAND (0,10)
-	 if osadki < painweather:
-	 set $osadki = 'It_Is_Clear.'
-	 end
-	 if osadki >= painweather:
-	 set $osadki = 'the rain.'
-	 end
+	if osadki < painweather:set $osadki = 'Clear.'
+	if osadki >= painweather:set $osadki = 'Rain.'
 
-set $pogoda = 'On the street puddles of snow rastaevshego, circle of dirt and debris shown after winter, something new where the grass is pleasing to the eye for its greenery, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+	set $pogoda = 'From puddles in the street rastaevshego snow, dirt and debris all around seem after winter, something where new grass pleases the eye with its greenery, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 6 and pogodaday ! day:
-set pogodaday = day
-<<<<<<< 028_time
-set temper = RAND(15,35)
-set osadki = RAND(0,10)
-	if osadki < painweather:
-	set $osadki = 'Clear.'
-	end
-	if osadki >= painweather:
-	set $osadki = 'Rain.'
-	end
+	set pogodaday = day
+	set temper = rand(15, 35)
+	set osadki = rand(0, 10)
 
-set $pogoda = 'On the street the green grass, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-set temper = RAND (15,35)
-set osadki = RAND (0,10)
-	 if osadki < painweather:
-	 set $osadki = 'It_Is_Clear.'
-	 end
-	 if osadki >= painweather:
-	 set $osadki = 'the rain.'
-	 end
+	if osadki < painweather:set $osadki = 'Clear.'
+	if osadki >= painweather:set $osadki = 'Rain.'
 
-set $pogoda = 'Green grass on the street, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+	set $pogoda = 'On the street the green grass, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 7 and pogodaday ! day:
-set pogodaday = day
-<<<<<<< 028_time
-set temper = RAND(20,40)
-set osadki = RAND(0,10)
-	if osadki < painweather:
-	set $osadki = 'Clear.'
-	end
-	if osadki >= painweather:
-	set $osadki = 'Warm rain comes.'
-	end
+	set pogodaday = day
+	set temper = rand(20, 40)
+	set osadki = rand(0, 10)
 
-set $pogoda = 'Green grass on the street, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-set temper = RAND (20,40)
-set osadki = RAND (0,10)
-	 if osadki < painweather:
-	 set $osadki = 'It_Is_Clear.'
-	 end
-	 if osadki >= painweather:
-	 set $osadki = 'Is warm rain.'
-	 end
+	if osadki < painweather:set $osadki = 'Clear.'
+	if osadki >= painweather:set $osadki = 'Warm rain comes.'
 
-set $pogoda = 'Green grass on the street, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+	set $pogoda = 'Green grass on the street, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 8 and pogodaday ! day:
-set pogodaday = day
-<<<<<<< 028_time
-set temper = RAND(20,35)
-set osadki = RAND(0,10)
-	if osadki < painweather:
-	set $osadki = 'Clear.'
-	end
-	if osadki >= painweather:
-	set $osadki = 'Warm rain comes.'
-	end
+	set pogodaday = day
+	set temper = rand(20, 35)
+	set osadki = rand(0, 10)
 
-set $pogoda = 'Outdoors green grass, where some are already visible yellowing leaves, temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-set temper = RAND (20,35)
-set osadki = RAND (0,10)
-	 if osadki < painweather:
-	 set $osadki = 'It_Is_Clear.'
-	 end
-	 if osadki >= painweather:
-	 set $osadki = 'Is warm rain.'
-	 end
+	if osadki < painweather:set $osadki = 'Clear.'
+	if osadki >= painweather:set $osadki = 'Warm rain comes.'
 
-set $pogoda = 'Green grass on the street, something which is already visible yellowing leaves, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+	set $pogoda = 'Outdoors green grass, where some are already visible yellowing leaves, temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 9 and pogodaday ! day:
-set pogodaday = day
-<<<<<<< 028_time
-set temper = RAND(10,30)
-set osadki = RAND(0,10)
-	if osadki < painweather:
-	set $osadki = 'Clear.'
-	end
-	if osadki >= painweather:
-	set $osadki = 'Rain.'
-	end
+	set pogodaday = day
+	set temper = rand(10, 30)
+	set osadki = rand(0, 10)
 
-set $pogoda = 'Street zhuhnet grass, visible yellow leaves, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-set temper = RAND (10,30)
-set osadki = RAND (0,10)
-	 if osadki < painweather:
-	 set $osadki = 'It_Is_Clear.'
-	 end
-	 if osadki >= painweather:
-	 set $osadki = 'the rain.'
-	 end
+	if osadki < painweather:set $osadki = 'Clear.'
+	if osadki >= painweather:set $osadki = 'Rain.'
 
-set $pogoda = 'On the street zhuhnet grass, visible yellow leaves, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+	set $pogoda = 'Street zhuhnet grass, visible yellow leaves, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 10 and pogodaday ! day:
-set pogodaday = day
-<<<<<<< 028_time
-set temper = RAND(2,20)
-set osadki = RAND(0,10)
-	if osadki < painweather:
-	set $osadki = 'Clear.'
-	end
-	if osadki >= painweather:
-	set $osadki = 'Goes cold rain.'
-	end
+	set pogodaday = day
+	set temper = rand(2, 20)
+	set osadki = rand(0, 10)
 
-set $pogoda = 'On the street faded grass, falling yellow leaves, mud and puddles around, temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-set temper = RAND (2,20)
-set osadki = RAND (0,10)
-	 if osadki < painweather:
-	 set $osadki = 'It_Is_Clear.'
-	 end
-	 if osadki >= painweather:
-	 set $osadki = 'There is a cold rain.'
-	 end
+	if osadki < painweather:set $osadki = 'Clear.'
+	if osadki >= painweather:set $osadki = 'Goes cold rain.'
 
-set $pogoda = 'On the street faded grass, falling yellow leaves, around mud and puddles, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+	set $pogoda = 'On the street faded grass, falling yellow leaves, mud and puddles around, temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 11 and pogodaday ! day:
-set pogodaday = day
-set temper = RAND (-20,17)
-<<<<<<< 028_time
+	set pogodaday = day
+	set temper = rand(-20, 17)
+
 	if temper <= 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Clear and cloudless.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'It´s snowing.'
-		end
+	set osadki = rand(0, 10)
+		if osadki < painweather:set $osadki = 'Clear and cloudless.'
+		if osadki >= painweather:set $osadki = 'It´s snowing.'
 	end
+
 	if temper > 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'Cold rain.'
-		end
+		set osadki = rand(0, 10)
+
+		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
+		if osadki >= painweather:set $osadki = 'Cold rain.'
 	end
-set $pogoda = 'The street is dirty and thin snow cover, temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-     if temper <= 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'Clear and cloudless.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'It`s snowing.'
-		 end
-     end
-     if temper > 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'It_Is_Clear, snow begins to melt something where forming slush.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'cold rain.'
-		 end
-     end
-set $pogoda = 'The street is thin and dirty snow cover, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+
+	set $pogoda = 'The street is dirty and thin snow cover, temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 12 and pogodaday ! day:
-set pogodaday = day
-set temper = RAND (-30,8)
-<<<<<<< 028_time
+	set pogodaday = day
+	set temper = rand(-30, 8)
 	if temper <= 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Cloudy and windy.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'Goes fluffy snow.'
-		end
+	set osadki = rand(0, 10)
+
+	if osadki < painweather:set $osadki = 'Cloudy and windy.'
+	if osadki >= painweather:set $osadki = 'Goes fluffy snow.'
 	end
+
 	if temper > 0:
-	set osadki = RAND(0,10)
-		if osadki < painweather:
-		set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		end
-		if osadki >= painweather:
-		set $osadki = 'Wet snow falls, which immediately melts forming slush.'
-		end
+		set osadki = rand(0, 10)
+
+		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
+		if osadki >= painweather:set $osadki = 'Wet snow falls, which immediately melts forming slush.'
 	end
-set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
-=======
-     if temper <= 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'Clear and windy.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'Is fluffy snow.'
-		 end
-     end
-     if temper > 0: 
-     set osadki = RAND (0,10)
-		 if osadki < painweather:
-		 set $osadki = 'It_Is_Clear, snow begins to melt something where forming slush.'
-		 end
-		 if osadki >= painweather:
-		 set $osadki = 'Falling sleet, who immediately melts forming slush.'
-		 end
-     end
-set $pogoda = 'On the street there is snow, temperature <<temper>> degrees Celsius. <<$osadki>>'
->>>>>>> 028_time
+
+	set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
 end
 
-<<<<<<< 028_time
 pl '<<$pogoda>>'
-=======
-pl'<<$pogoda>>'
->>>>>>> 028_time
+
 if osadki >= painweather and umbrella = 0 and mop > 1:
-set mop = 0
-<<<<<<< 028_time
-'You do not have an umbrella and on the moisture flowed your cosmetics.'
-=======
-'You do not have an umbrella .'
->>>>>>> 028_time
+	set mop = 0
+	'You do not have an umbrella and on the moisture flowed your cosmetics.'
 end
 
 if osadki >= painweather and umbrella = 0 and hapri = 1:
-set hapri = 0
-<<<<<<< 028_time
-if curly > 0: set curly -= 1
-'You do not have an umbrella and on the moisture your hair has deteriorated.'
-=======
-if curly > 0:set curly = curly - 1
-'You do not have an umbrella .'
->>>>>>> 028_time
+	set hapri = 0
+
+	if curly > 0:set curly -= 1
+
+	'You do not have an umbrella and on the moisture your hair has deteriorated.'
 end
 
 if isprok = 0 and mesec > 0 and preg = 0:
-<<<<<<< 028_time
-'<B><font color = red>You have the blood flowing in the legs and staining the linen clothes.</font></B>'
-if clrbelo > 0: set clrbelo -= 1
-set sweat += 1
-set manna -= 10
-set willpower -= 10
-gs 'starenie'
-=======
-'<B><font color=red>You have blood flowing in the legs soiling underwear and clothing.</font></B>'
-if clrbelo > 0:set clrbelo = clrbelo - 1
-set sweat = sweat + 1
-set manna = manna - 10
-set willpower = willpower - 10
-gs'starenie'
->>>>>>> 028_time
+	'<b><font color="red">You have the blood flowing in the legs and staining the linen clothes.</font></b>'
+
+	if clrbelo > 0:set clrbelo -= 1
+
+	set sweat += 1
+	set manna -= 10
+	set willpower -= 10
+	gs 'starenie'
 end
 
+if vibratorin = 1:horny += rand(1, 5)
+
 if hour = 0:
-<<<<<<< 028_time
-fcolor = rgb(255,255,255)
-bcolor = rgb(0,0,0)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(255,255,255)
-bcolor=rgb(0,0,0)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(0, 0, 0)
 end
-end
+
 if hour = 1:
-<<<<<<< 028_time
-fcolor = rgb(255,255,255)
-bcolor = rgb(5,5,5)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(255,255,255)
-bcolor=rgb(5,5,5)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(5, 5, 5)
 end
-end
+
 if hour = 2:
-<<<<<<< 028_time
-fcolor = rgb(255,255,255)
-bcolor = rgb(10,10,10)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(255,255,255)
-bcolor=rgb(10,10,10)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(10, 10, 10)
 end
-end
+
 if hour = 3:
-<<<<<<< 028_time
-fcolor = rgb(255,255,255)
-bcolor = rgb(30,15,15)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(255,255,255)
-bcolor=rgb(30,15,15)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(30, 15, 15)
 end
-end
+
 if hour = 4:
-<<<<<<< 028_time
-fcolor = rgb(255,255,255)
-bcolor = rgb(60,20,20)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(255,255,255)
-bcolor=rgb(60,20,20)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(60, 20, 20)
 end
-end
+
 if hour = 5:
-<<<<<<< 028_time
-fcolor = rgb(255,255,255)
-bcolor = rgb(100,40,40)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(255,255,255)
-bcolor=rgb(100,40,40)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(100, 40, 40)
 end
-end
+
 if hour = 6:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(200,100,100)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(200,100,100)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
-end
+	fcolor=rgb(0, 0, 0)
+	bcolor=rgb(200, 100, 100)
 end
 if hour = 7:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,150,150)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,150,150)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 150, 150)
 end
-end
+
 if hour = 8:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,200,200)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,200,200)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 200, 200)
 end
-end
+
 if hour = 9:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,245,245)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,245,245)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 245, 245)
 end
-end
+
 if hour = 10:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,250,250)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,250,250)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 250, 250)
 end
-end
+
 if hour = 11:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
 end
-end
+
 if hour = 12:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
 end
-end
+
 if hour = 13:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
 end
-end
+
 if hour = 14:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,250,250)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,250,250)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 250, 250)
 end
-end
+
 if hour = 15:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,245,245)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,245,245)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 245, 245)
 end
-end
+
 if hour = 16:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,240,240)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,240,240)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 240, 240)
 end
-end
+
 if hour = 17:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,230,230)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,230,230)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 230, 230)
 end
-end
+
 if hour = 18:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,220,220)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,220,220)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 220, 220)
 end
-end
+
 if hour = 19:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,210,210)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,210,210)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 210, 210)
 end
-end
+
 if hour = 20:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,200,200)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,200,200)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 200, 200)
 end
-end
+
 if hour = 21:
-<<<<<<< 028_time
-fcolor = rgb(0,0,0)
-bcolor = rgb(250,150,150)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(0,0,0)
-bcolor=rgb(250,150,150)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(250, 150, 150)
 end
-end
+
 if hour = 22:
-<<<<<<< 028_time
-fcolor = rgb(255,255,255)
-bcolor = rgb(25,25,25)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(255,255,255)
-bcolor=rgb(25,25,25)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(25, 25, 25)
 end
-end
+
 if hour = 23:
-<<<<<<< 028_time
-fcolor = rgb(255,255,255)
-bcolor = rgb(5,5,5)
-if vibratorin = 1:
-horny = horny + rand(1,5)
-=======
-fcolor=rgb(255,255,255)
-bcolor=rgb(5,5,5)
-if vibratorin=1:
-horny=horny+rand(1,5)
->>>>>>> 028_time
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(5, 5, 5)
 end
-end
+
 if temper <= 0:
-<<<<<<< 028_time
-	if palto = 1: bonusZ = -3
-	if palto = 2: bonusZ = 0
-	if palto = 3: bonusZ = 3
+	if palto = 1:bonusZ = -3
+	if palto = 2:bonusZ = 0
+	if palto = 3:bonusZ = 3
+
 	if temper<-10 and palto = 1:
 		set frost += 1
-		if energy < 5: set frost += 1
-		if tanga = 0: set frost += 1
-		if sweat > 0: set frost += 1
-		end
+		if energy < 5:set frost += 1
+		if tanga = 0:set frost += 1
+		if sweat > 0:set frost += 1
+	end
+
 	if temper<-20 and palto = 2:
 		set frost += 1
-		if energy < 5: set frost += 1
-		if sweat > 0: set frost += 1
-		end
-	if temper<-30 and palto = 3: set frost += 1
+		if energy < 5:set frost += 1
+		if sweat > 0:set frost += 1
+	end
+
+	if temper<-30 and palto = 3:set frost += 1
+
 	if palto <= 0:
-		if temper<-10: frost += 1
-		if temper<-20: frost += 2
-		if temper<-30: frost += 5
-		end
-	if frost >= 12: set sick += 1
-	if sick > 0 and sickstage = 0: set sickstage = 1
-=======
-	 if palto=1:bonusZ=-3
-	 if palto=2:bonusZ=0
-	 if palto=3:bonusZ=3
-	 if temper<-10 and palto=1:
-		 set frost+=1
-		 if energy < 5:set frost+=1
-		 if tanga = 0:set frost+=1
-		 if sweat>0:set frost+=1
-		 end
-	 if temper<-20 and palto=2:
-		 set frost+=1
-		 if energy < 5:set frost+=1
-		 if sweat>0:set frost+=1
-		 end
-	 if temper<-30 and palto=3:set frost+=1
-	 if palto<=0:
-		 if temper<-10:frost+=1
-		 if temper<-20:frost+=2
-		 if temper<-30:frost+=5
-		 end
-	 if frost>=12:set sick+=1
-	 if sick>0 and sickstage=0:set sickstage=1
->>>>>>> 028_time
+		if temper<-10:frost += 1
+		if temper<-20:frost += 2
+		if temper<-30:frost += 5
+	end
+
+	if frost >= 12:set sick += 1
+	if sick > 0 and sickstage = 0:set sickstage = 1
 end
 --- time ---------------------------------
 

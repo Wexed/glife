@@ -1,178 +1,116 @@
 # narkopriton
-<<<<<<< 081_narkopriton
-'<center><B>drug houses</B></center>'
-'<center><img src="images\etogame\narkopriton.jpg"></center>'
+'<center><b>drug houses</b></center>'
+'<center><img src="images/etogame/narkopriton.jpg"></center>'
 'Crappy apartment where addicts come to inject and buy heroin.'
 clr
 gs 'stat'
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-=======
-'<center><B>shooting_galleries</B></center>'
-'<center><img src="pic/narkopriton.jpg" ></center>'
-'Crap kvartirenka where addicts inject and at the same time you can get the crap.'
-clr
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
->>>>>>> 081_narkopriton
-LCOLOR = rgb(106,90,205)
-
-<<<<<<< 081_narkopriton
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 'Door is opened by a skinny guy with a crazy look. After examining you, he said, "This product is worth apiece."'
-=======
-'The door you opened the skinny guy with crazy eyes. Look around you  "Goods worth Unit."'
->>>>>>> 081_narkopriton
 
-
-
-<<<<<<< 081_narkopriton
-act 'Leave': minut += 15 & gt 'street'
+act 'Leave':minut += 15 & gt 'street'
 
 if money >= 1000:
-	act 'Buy heroin.':
+	act 'Buy dope and shirnutsya.':
 		cls
+		minut += 5
 		money -= 1000
-		if SLomka > 0:
-			minut += 5
-			StrongNarkota += 25
-			SNarkTimes += 1
-			gs 'stat'
-			$tempval = ''
-			if narkoman ! 0: $tempval = ' with trembling hands'
-			gt 'narkopriton'
-			'You bought some heroin and injected yourself<<$tempval>>'
-		else
-			heroin += 1
-			gt 'narkopriton'
-		end
-	end
-=======
-act 'Get_Away':minut+=15&gt'street'
+		StrongNarkota += 25
+		SNarkTimes += 1
+		gs 'stat'
+		'You bought some heroin and injected yourself with trembling hands'
 
-if money>=1000:
-     act 'Buy dope and shirnutsya.':
-     cls
-     minut+=5
-     money-=1000
-     StrongNarkota+=25
-     SNarkTimes+=1
-     gs'stat'
-     'You paid for a piece syringe with foolishness and stuck it into my vein shaking hands.'
-     act 'Get_Away':gt $curloc
-     end
->>>>>>> 081_narkopriton
+		act 'Go away':gt $curloc
+	end
 end
 
-<<<<<<< 081_narkopriton
 if SLomka > 0 and money < 1000:
 	act 'Persuade to sell you on credit.':
-		$tempname = 'he'
-		if HaveMetBobka = 1: $tempname = 'Bobka'
 		cls
 		minut += 5
 		gs 'stat'
-		$tempval = 'You'
-		if SNarkTimes > 0: $tempval = 'You are experiencing withdrawal and'
-		'<<$tempval>> start to persuade <<$tempname>> to give you a dose on credit, promising to pay back later.'
-		'But <<$tempname>> only grinned wickedly "Yeah, Do you know how many times a day I hear that? I won´t give anything on credit."'
-		act 'Leave': gt $curloc
-		act 'Beg and promise to do anything for it.':
-			cls
-			minut += 5
-			gs 'stat'
-			'You started begging to give you drugs on credit, and promise to do anything for it. He thought a little and then took you by the hand to the next room'
-			act 'Escape': gt $curloc
-			act 'Go to the next room.':
+		if NarkShmaraTimes > 0:
+			'You start to persuade Bobkov to give you a dose on credit, promising to pay back later. But he only grinned wickedly "Yeah, Do you know how many times a day I hear that? I won´t give anything on credit."'
+
+			act 'Leave':gt $curloc
+
+			act 'Beg and promise to do anything for it.':
 				cls
 				minut += 5
 				gs 'stat'
-				bobrand = RAND(0,3)
-				$tempval = ''
-				if bobrand < 3: $tempval = ' and start sucking'
-				'"Get on your knees<<$tempval>>."'
-				act 'Run away': gt $curloc
-				act 'Do as he says': gt 'bobka'
+				'You started begging to give you drugs on credit, and promise to do anything for it. He thought a little and then took you by the hand to the next room and said "Get on your knees".'
+
+				act 'Escape':gt $curloc
+
+				act 'Go to the next room.':
+					cls
+					minut += 5
+					gs 'stat'
+					bobrand = rand(0, 3)
+
+					if bobrand = 0:$bobtalk = 'Get on your knees and suck me.' & $bobtext = 'suck'
+					if bobrand = 1:$bobtalk = 'Get on your knees and suck me.' & $bobtext = 'suck'
+					if bobrand = 2:$bobtalk = 'Get on your knees and suck me.' & $bobtext = 'suck'
+					if bobrand = 3:$bobtalk = 'Fuck I do not hunt, but piss would be my pleasure. Get on your knees.' & $bobtext = 'Kneel'
+
+					'You begged Man give you drugs in debt, and promise to do for it whatever you like, little guy thought, after which he took you by the hand led into the room and said "<<$bobtalk>>"'
+
+					act 'Run away':gt $curloc
+					act '<<$bobtext>>':gt'bobka'
+				end
+			end
+		end
+
+		if NarkShmaraTimes = 0:
+			'You start to persuade Bobkov to give you a dose on credit, promising to pay back later. But he only grinned wickedly "Yeah, Do you know how many times a day I hear that? I won´t give anything on credit."'
+
+			act 'Go away':gt $curloc
+
+			act 'Beg and promise to do for it whatever you like.':
+				cls
+				minut += 5
+				gs 'stat'
+				'You started begging to give you drugs on credit, and promise to do anything for it. He thought a little and then took you by the hand to the next room and said "Get on your knees".'
+
+				act 'Run away':gt $curloc
+
+				act 'Go into the room.':
+					cls
+					minut += 5
+					gs 'stat'
+					'You begged Man give you drugs in debt, and promise to do for it whatever you like, little guy thought, after which he took you by the hand led into the room and said "Get on your knees and suck me."'
+
+					act 'Run away':gt $curloc
+
+					act 'suck.':
+						cls
+						minut += 5
+						guy += 1
+						bj += 1
+						swallow += 1
+						NarkShmaraTimes += 1
+						cumlip += 1
+						gs 'stat'
+						dynamic $venerasiak
+						'<center><img src="images/qwest/sosed/bj.jpg"></center>'
+						'You need so much dope, you flopped down in front of a guy on his knees and began to suck his flaccid penis. Finally. Suddenly. You continued sucking swallowing sperm. Man exhausted and took his penis in your mouth. He tucked his dick in his pants and threw you a syringe.'
+
+						act 'shirnutsya.':
+							cls
+							minut += 5
+							StrongNarkota += 25
+							SNarkTimes += 1
+							gs 'stat'
+							'You grabbed the syringe and injected his foolishness itself in a vein shaking hands. Man with a smile looking at you. "By the way my name is Bobkov, and you?" You mumbled through a veil "Sveta."'
+
+							act 'Leave': minut += 15 & gt'street'
+						end
+					end
+				end
 			end
 		end
 	end
 end
-=======
-if SLomka>0 and money<1000:
-     act 'Persuaded to give goods on credit.':
-     cls
-     minut+=5
-     gs'stat'
-         if NarkShmaraTimes>0:
-         'You brittle and you very badly, you started to persuade Bobkov give you a dose of duty, promising to return later. But Bobka only grinned wickedly "Yup, how, do you know how many times a day, I hear it? In the debt does not give."'
-         act 'Get_Away':gt $curloc
-			 act 'Beg and promise to do for it whatever you like.':
-			 cls
-			 minut+=5
-			 gs'stat'
-			 'You begged Man give you drugs in debt, and promise to do for it whatever you like, little guy thought, after which he took you by the hand led into the room and said "Get on your knees"'
-			 act 'Get_Away':gt $curloc
-				 act 'Go into the room.':
-				 cls
-				 minut+=5
-				 gs'stat'
-				 bobrand=RAND(0,3)
-				 if bobrand=0:$bobtalk='Get on your knees and suck me.'&$bobtext='suck'
-				 if bobrand=1:$bobtalk='Get on your knees and suck me.'&$bobtext='suck'
-				 if bobrand=2:$bobtalk='Get on your knees and suck me.'&$bobtext='suck'
-				 if bobrand=3:$bobtalk='Fuck I do not hunt, but piss would be my pleasure. Get on your knees.'&$bobtext='Kneel'
-				 'You begged Man give you drugs in debt, and promise to do for it whatever you like, little guy thought, after which he took you by the hand led into the room and said "<<$bobtalk>>"'
-				 act 'Get_Away':gt $curloc
-				     act '<<$bobtext>>':gt'bobka'
-				 end
-			 end
-         end
-         if NarkShmaraTimes=0:
-		 'You brittle and you very badly, you started to persuade Man to give you a dose of duty, promising to return later. But the guy just grinned wickedly "Yup, how, do you know how many times a day, I hear it? In the debt does not give."'
-		 act 'Get_Away':gt $curloc
-			 act 'Beg and promise to do for it whatever you like.':
-			 cls
-			 minut+=5
-			 gs'stat'
-			 'You begged Man give you drugs in debt, and promise to do for it whatever you like, little guy thought, after which he took you by the hand led into the room and said "Get on your knees"'
-			 act 'Get_Away':gt $curloc
-				 act 'Go into the room.':
-				 cls
-				 minut+=5
-				 gs'stat'
-				 'You begged Man give you drugs in debt, and promise to do for it whatever you like, little guy thought, after which he took you by the hand led into the room and said "Get on your knees and suck me."'
-				 act 'Get_Away':gt $curloc
-				     act 'suck.':
-					 cls
-					 minut+=5
-					 guy+=1
-					 bj+=1
-					 swallow+=1
-					 NarkShmaraTimes+=1
-					 cumlip+=1
-					 gs'stat'
-					 dynamic $venerasiak
-					 '<center><img src="qwest/sosed/bj.jpg"></center>'
-					 'You need so much dope, you flopped down in front of a guy on his knees and began to suck his flaccid penis. Finally. Suddenly. You continued sucking swallowing sperm. Man exhausted and took his penis in your mouth. He tucked his dick in his pants and threw you a syringe.'
-					     act 'shirnutsya.':
-						 cls
-						 minut+=5
-						 StrongNarkota+=25
-						 SNarkTimes+=1
-						 gs'stat'
-						 'You grabbed the syringe and injected his foolishness itself in a vein shaking hands. Man with a smile looking at you. "By the way my name is Bobkov, and you?" You mumbled through a veil "Sveta."'
-						 act 'Get_Away':minut+=15&gt'street'
-						 end
-					 
-					 end
-				 end
-			 end
-		 end
-     end
-end
-
-
-
->>>>>>> 081_narkopriton
 --- narkopriton ---------------------------------
 

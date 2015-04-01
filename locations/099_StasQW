@@ -1,339 +1,183 @@
 # StasQW
-<<<<<<< 099_StasQW
 gs 'stat'
 if StasKafe = 2:
-'<center><img src="images\qwest\sosed\kafe2.jpg"></center>'
-'After the dance, Stas took you by the hand to the table and taking your waist sat on his lap. He immediately began to kiss you and you felt his hand again penetrated you under her skirt began to caress your clitoris. Stas you whispered in your ear, "Come to you or can have fun in the toilet?"'
-	act 'Come to me!':
-	cls
-	gs 'stat'
 	'<center><img src="images\qwest\sosed\kafe2.jpg"></center>'
-	'Stas sweeping gesture threw the money to the waitress, and then stood up and gave you a hand. Leaning on his arm you up from their homes and together with Stas left the cafe.'
+	'After the dance, Stas took you by the hand to the table and taking your waist sat on his lap. He immediately began to kiss you and you felt his hand again penetrated you under her skirt began to caress your clitoris. Stas you whispered in your ear, "Come to you or can have fun in the toilet?"'
+
+	act 'Come to me!':
+		cls
+		gs 'stat'
+		'<center><img src="images\qwest\sosed\kafe2.jpg"></center>'
+		'Stas sweeping gesture threw the money to the waitress, and then stood up and gave you a hand. Leaning on his arm you up from their homes and together with Stas left the cafe.'
+
 		act 'Go':
-		cls
-		minut += 5
-		gs 'stat'
-		'<center><img src="images\qwest\sosed\go.jpg"></center>'
-		'Quite unsure of drunk step you went home, Stas gallantly caught under your arm and led you to the house, you show him the way home. Finally you come to your home, you Stas conducted to the apartment and when you opened the door, he literally dragged you to your apartment.'
-		act 'Further': SStip = 0 & gt 'StasSex'
-		end
-	end
-
-	!секс в туалете со стасом
-
-
-end
-if StasKafe = 1:
-'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
-'After the dance, you sat down again at the table, the waitress brought the bill. You look at the figure and slightly stunned. Five thousand! Stas took the paper out of your hands and you said "Do not worry, I´ll pay."'
-	if money >= 5000:
-		act 'No thank you, I´ll pay.':
-		cls
-		money -= 5000
-		gs 'stat'
-		'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
-		'You got the money and paid the waitress. Stas stood up and gave you a hand. Leaning on his arm you up from their homes and together with Stas left the cafe.'
-			act 'Go':
 			cls
 			minut += 5
 			gs 'stat'
 			'<center><img src="images\qwest\sosed\go.jpg"></center>'
-			'Quite unsure of drunk step you went home, Stas gallantly caught under your arm and led you to the house, you show him the way home. Finally you come to your home, you have to spend Stas apartments and clearly expects you to invite him.'
-				act 'To invite': SStip = 0 & gt 'StasSex'
+			'Quite unsure of drunk step you went home, Stas gallantly caught under your arm and led you to the house, you show him the way home. Finally you come to your home, you Stas conducted to the apartment and when you opened the door, he literally dragged you to your apartment.'
+
+			act 'Further':SStip = 0 & gt 'StasSex'
+		end
+	end
+
+	!секс в туалете со стасом
+end
+
+if StasKafe = 1:
+	'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
+	'After the dance, you sat down again at the table, the waitress brought the bill. You look at the figure and slightly stunned. Five thousand! Stas took the paper out of your hands and you said "Do not worry, I´ll pay."'
+
+	if money >= 5000:
+		act 'No thank you, I´ll pay.':
+			cls
+			money -= 5000
+			gs 'stat'
+			'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
+			'You got the money and paid the waitress. Stas stood up and gave you a hand. Leaning on his arm you up from their homes and together with Stas left the cafe.'
+
+			act 'Go':
+				cls
+				minut += 5
+				gs 'stat'
+				'<center><img src="images\qwest\sosed\go.jpg"></center>'
+				'Quite unsure of drunk step you went home, Stas gallantly caught under your arm and led you to the house, you show him the way home. Finally you come to your home, you have to spend Stas apartments and clearly expects you to invite him.'
+
+				act 'To invite':SStip = 0 & gt 'StasSex'
 
 				act 'Say goodbye':
-				cls
-				gs 'stat'
-				'You said goodbye with Stas and he sighed sadly and went down.'
-				act 'Close the door': gt 'korr'
+					cls
+					gs 'stat'
+					'You said goodbye with Stas and he sighed sadly and went down.'
+
+					act 'Close the door':gt 'korr'
 				end
 			end
 		end
 	end
 
 	act 'Oh it´s so cute!':
-	cls
-	gs 'stat'
-	'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
-	'You are glad that will not have to pay for the cafe and Stas sweeping gesture threw the money to the waitress, and then stood up and gave you a hand. Leaning on his arm you up from their homes and together with Stas left the cafe.'
-		act 'Go':
 		cls
-		minut += 5
-		gs 'stat'
-		'<center><img src="images\qwest\sosed\go.jpg"></center>'
-		'Quite unsure of drunk step you went home, Stas gallantly caught under your arm and led you to the house, you show him the way home. Finally you come to your home, you have to spend Stas apartments and clearly expects you to invite him. You get crushed on the doorstep, thinking how would snub Stas, but looking at it you feel indebted to him, he found you a job, he forked over the cafe, though it was your duty and put it over the threshold, you just can not.'
-		act 'To invite': SStip = 0 & gt 'StasSex'
-		end
-	end
-
-end
-if StasKafe = 0:
-'<center><B><font color = maroon>Cafe</font></B></center>'
-'<center><img src="images\etogame\kafe.jpg"></center>'
-'You sat on a chair and gestured Stas master´s waitress. When the waitress came, he ordered champagne and fruit. Order quickly brought Stas poured champagne glasses. "A toast to friendship."'
-	act 'Drink for acquaintance':
-	cls
-	minut += 5
-	horny += 5
-	gs 'stat'
-	'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
-	'You drank champagne and Stas started telling funny stories pouring champagne into glasses.'
-		act 'Drink and chat':
-		cls
-		minut += 60
-		horny += 15
-		water = 24
-		energy = 24
-		salo += 2
-		fat += 20
 		gs 'stat'
 		'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
-		'You are relaxed and drinking champagne that you listened to tales regaled Stas. For chatter, you do not even notice how Stas ordered another bottle and more. Finally you realize that you are already well plucked. Here in the cafe zairala music and Stas rising from his chair gallantly handed you a hand offering dance.'
-			act 'Dance':
+		'You are glad that will not have to pay for the cafe and Stas sweeping gesture threw the money to the waitress, and then stood up and gave you a hand. Leaning on his arm you up from their homes and together with Stas left the cafe.'
+
+		act 'Go':
 			cls
-			minut += 1
-			horny += 10
+			minut += 5
 			gs 'stat'
-			'<center><img src="images\qwest\sosed\dance.jpg"></center>'
-			'You came to the dance floor and Stas hugged you and you start dancing. His hands while dancing slowly slipped from the waist to the hips and you began to stroke them. You feel like your hand Stas squeezed soft ass.'
+			'<center><img src="images\qwest\sosed\go.jpg"></center>'
+			'Quite unsure of drunk step you went home, Stas gallantly caught under your arm and led you to the house, you show him the way home. Finally you come to your home, you have to spend Stas apartments and clearly expects you to invite him. You get crushed on the doorstep, thinking how would snub Stas, but looking at it you feel indebted to him, he found you a job, he forked over the cafe, though it was your duty and put it over the threshold, you just can not.'
+
+			act 'To invite':SStip = 0 & gt 'StasSex'
+		end
+	end
+end
+
+if StasKafe = 0:
+	'<center><b><font color="maroon">Cafe</font></b></center>'
+	'<center><img src="images\etogame\kafe.jpg"></center>'
+	'You sat on a chair and gestured Stas master´s waitress. When the waitress came, he ordered champagne and fruit. Order quickly brought Stas poured champagne glasses. "A toast to friendship."'
+
+	act 'Drink for acquaintance':
+		cls
+		minut += 5
+		horny += 5
+		gs 'stat'
+		'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
+		'You drank champagne and Stas started telling funny stories pouring champagne into glasses.'
+
+		act 'Drink and chat':
+			cls
+			minut += 60
+			horny += 15
+			water = 24
+			energy = 24
+			salo += 2
+			fat += 20
+			gs 'stat'
+			'<center><img src="images\qwest\sosed\kafe.jpg"></center>'
+			'You are relaxed and drinking champagne that you listened to tales regaled Stas. For chatter, you do not even notice how Stas ordered another bottle and more. Finally you realize that you are already well plucked. Here in the cafe zairala music and Stas rising from his chair gallantly handed you a hand offering dance.'
+
+			act 'Dance':
+				cls
+				minut += 1
+				horny += 10
+				gs 'stat'
+				'<center><img src="images\qwest\sosed\dance.jpg"></center>'
+				'You came to the dance floor and Stas hugged you and you start dancing. His hands while dancing slowly slipped from the waist to the hips and you began to stroke them. You feel like your hand Stas squeezed soft ass.'
+
 				if horny < 100:
 					act 'Raise his hands above':
-					cls
-					minut += 1
-					horny += 10
-					gs 'stat'
-					'<center><img src="images\qwest\sosed\dance.jpg"></center>'
-					'You took his hands and raised them Stas again on your waist. Stas just smiled wider and again his hands began to crawl to you on the ass.'
+						cls
+						minut += 1
+						horny += 10
+						gs 'stat'
+						'<center><img src="images\qwest\sosed\dance.jpg"></center>'
+						'You took his hands and raised them Stas again on your waist. Stas just smiled wider and again his hands began to crawl to you on the ass.'
+
 						if horny < 100:
 							act 'Again raise his hands above':
-							cls
-							minut += 1
-							horny += 10
-							gs 'stat'
-							'<center><img src="images\qwest\sosed\dance.jpg"></center>'
-							'Once again you took Stas hands and raised them to his waist. Stas apparently only covered by this passion and he began gently stroking gently down your back you hands on the ass. Finally dance is over.'
-							act 'Sit at the table': StasKafe = 1 & gt $curloc
+								cls
+								minut += 1
+								horny += 10
+								gs 'stat'
+								'<center><img src="images\qwest\sosed\dance.jpg"></center>'
+								'Once again you took Stas hands and raised them to his waist. Stas apparently only covered by this passion and he began gently stroking gently down your back you hands on the ass. Finally dance is over.'
+
+								act 'Sit at the table':StasKafe = 1 & gt $curloc
 							end
 						end
 
 						act 'Dance':
-						cls
-						minut += 1
-						horny += 20
-						gs 'stat'
-						'<center><img src="images\qwest\sosed\dance2.jpg"></center>'
-						'You continued to dance and become inflamed Stas tuck your hands under her skirt. Soon Stas felt your panties and ran my hand. You swept excitement when your Stas felt a small bump clitoris and began to fondle him. Suddenly, the dance is over, but Stas was not going back sits at the table'
-							act 'Sit at the table': StasKafe = 2 & gt $curloc
-						end
+							cls
+							minut += 1
+							horny += 20
+							gs 'stat'
+							'<center><img src="images\qwest\sosed\dance2.jpg"></center>'
+							'You continued to dance and become inflamed Stas tuck your hands under her skirt. Soon Stas felt your panties and ran my hand. You swept excitement when your Stas felt a small bump clitoris and began to fondle him. Suddenly, the dance is over, but Stas was not going back sits at the table'
 
+							act 'Sit at the table':StasKafe = 2 & gt $curloc
+						end
 					end
 				end
 
 				act 'Dance':
-				cls
-				minut += 1
-				horny += 20
-				gs 'stat'
-				'<center><img src="images\qwest\sosed\dance2.jpg"></center>'
-				'You continued to dance and become inflamed Stas tuck your hands under her skirt. Soon Stas felt your panties and ran my hand. You swept excitement when your Stas felt a small bump clitoris and began to fondle him.'
-						if horny < 100:
-							act 'Raise his hands above':
+					cls
+					minut += 1
+					horny += 20
+					gs 'stat'
+					'<center><img src="images\qwest\sosed\dance2.jpg"></center>'
+					'You continued to dance and become inflamed Stas tuck your hands under her skirt. Soon Stas felt your panties and ran my hand. You swept excitement when your Stas felt a small bump clitoris and began to fondle him.'
+
+					if horny < 100:
+						act 'Raise his hands above':
 							cls
 							minut += 1
 							horny += 10
 							gs 'stat'
 							'<center><img src="images\qwest\sosed\dance.jpg"></center>'
 							'Once again you took Stas hands and raised them to his waist. Stas apparently only covered by this passion and he began gently stroking gently down your back you hands on the ass. Finally dance is over.'
-							act 'Sit at the table': StasKafe = 2 & gt $curloc
-							end
-						end
 
-						act 'Dance':
+							act 'Sit at the table':StasKafe = 2 & gt $curloc
+						end
+					end
+
+					act 'Dance':
 						cls
 						minut += 1
 						horny += 20
 						gs 'stat'
 						'<center><img src="images\qwest\sosed\dance2.jpg"></center>'
 						'You continued to dance and become inflamed Stas tuck your hands under her skirt. Soon Stas felt your panties and ran my hand. You swept excitement when your Stas felt a small bump clitoris and began to fondle him. Suddenly, the dance is over, but Stas was not going back sits at the table'
-							act 'Sit at the table': StasKafe = 2 & gt $curloc
-						end
+
+						act 'Sit at the table':StasKafe = 2 & gt $curloc
+					end
 				end
 			end
 		end
 	end
-=======
-gs'stat'
-if StasKafe=2:
-'<center><img src="qwest/sosed/kafe2.jpg"></center>'
-'After the dance. He immediately began to kiss you and you feel his hand again penetrated under your skirt began to caress your clitoris. Stas you whispered in your ear "Come to you or can have fun in the toilet?"'
-	 act 'Come to me!':
-	 cls
-	 gs'stat'
-	 '<center><img src="qwest/sosed/kafe2.jpg"></center>'
-	 'Stas sweeping gesture threw the money to the waitress, then rose from his chair and gave you a hand. Leaning on his hand .'
-	     act 'go':
-		 cls
-		 minut+=5
-		 gs'stat'
-		 '<center><img src="qwest/sosed/go.jpg"></center>'
-		 'Not quite sure from drunk step you`re headed home, Stas gallantly picked up under your hand and led you home, You showed him the way home. Finally you come to your home, Stas escort you to the apartment and when you opened the door he literally dragged you in your apartment.'
-		 act 'further':SStip=0&gt'StasSex'
-		 end
-	 end
-	 
-	 !sex in the toilet with Stas
-	 
-	 
 end
-if StasKafe=1:
-'<center><img src="qwest/sosed/kafe.jpg"></center>'
-'After the dance, The waitress brought the bill. You look at the figure and slightly stunned. five thousand! Stas took the paper out of your hands and you said "do not worry, I will pay."'
-     if money>=5000:
-         act 'no thanks, I myself pay.':
-         cls
-         money-=5000
-         gs'stat'
-         '<center><img src="qwest/sosed/kafe.jpg"></center>'
-         'You get the money and paid the waitress. Stas stood up and gave you a hand. Leaning on his hand .'
-             act 'go':
-			 cls
-			 minut+=5
-			 gs'stat'
-			 '<center><img src="qwest/sosed/go.jpg"></center>'
-			 'Not quite sure from drunk step you`re headed home, Stas gallantly picked up under your hand and led you home, You showed him the way home. Finally you come to your home, Stas escort you to the apartment and apparently expects, you invite him.'
-			     act 'To invite':SStip=0&gt'StasSex'
-			     
-			     act 'say_goodbye':
-			     cls
-			     gs'stat'
-			     'You said goodbye with Stas and he sighed sadly and went down.'
-			     act 'close the door':gt'korr'
-			     end
-			 end
-         end
-     end
-     
-	 act 'Oh this is so cute!':
-	 cls
-	 gs'stat'
-	 '<center><img src="qwest/sosed/kafe.jpg"></center>'
-	 'you happy, do not have to pay for a cafe and Stas sweeping gesture threw the money to the waitress, then rose from his chair and gave you a hand. Leaning on his hand .'
-	     act 'go':
-		 cls
-		 minut+=5
-		 gs'stat'
-		 '<center><img src="qwest/sosed/go.jpg"></center>'
-		 'Not quite sure from drunk step you`re headed home, Stas gallantly picked up under your hand and led you home, You showed him the way home. Finally you come to your home, Stas escort you to the apartment and apparently expects, you invite him. You get crushed on the doorstep, thinking like otshit Stas, but looking at it you feel indebted to him, he found you a job, he forked over cafe, though it was your duty and put it over the threshold you just can not.'
-		 act 'To invite':SStip=0&gt'StasSex'
-		 end
-	 end
-     
-end
-if StasKafe=0:
-'<center><B><font color=maroon>cafe</font></B></center>'
-'<center><img src="pic/kafe.jpg" ></center>'
-'You sat down on a chair and a master`s Stas beckoned the waitress. When the waitress came . Order quickly and brought Stas poured champagne by the glass. "Come for familiarity."'
-	 act 'A toast to familiarity':
-	 cls
-	 minut+=5
-	 horny+=5
-	 gs'stat'
-     '<center><img src="qwest/sosed/kafe.jpg"></center>'
-     'You drank champagne and Stas started telling funny stories pouring champagne in glasses.'
-         act 'Drink and chat':
-		 cls
-		 minut+=60
-		 horny+=15
-		 water=24
-		 energy=24
-		 salo+=2
-		 fat+=20
-		 gs'stat'
-		 '<center><img src="qwest/sosed/kafe.jpg"></center>'
-		 'You are relaxed and sipping champagne listening to stories which you regaled Stas. for chatter, you do not even notice how Stas ordered another bottle and another. Finally you realize, that already typed decently. Here in the cafe zairala music and Stas rising from his chair gallantly handed you a hand offering dance.'
-		     act 'dance':
-			 cls
-			 minut+=1
-			 horny+=10
-			 gs'stat'
-			 '<center><img src="qwest/sosed/dance.jpg"></center>'
-			 'You went to the dance floor and Stas hugged you and you began to dance. His hands while dancing slowly slipped from the waist to the hips and you began to stroke them. Did you feel like your hand Stas squeezed soft ass.'
-			     if horny<100:
-					 act 'Raise his hands above':
-					 cls
-					 minut+=1
-					 horny+=10
-					 gs'stat'
-					 '<center><img src="qwest/sosed/dance.jpg"></center>'
-					 'You took his hands and raised them Stas again to your waist. Stas only smiled wider and again his hands began to crawl to you on the ass.'
-					     if horny<100:
-							 act 'Again raise his hands above':
-							 cls
-							 minut+=1
-							 horny+=10
-							 gs'stat'
-							 '<center><img src="qwest/sosed/dance.jpg"></center>'
-							 'Once again you have Stas hands and raised them on your waist. Stas apparently only covered by this passion and he began gently stroking your back smoothly down your hands on the ass. Finally the dance ended.'
-							 act 'Sit down':StasKafe=1&gt $curloc
-							 end
-						 end
-						 
-						 act 'dance':
-						 cls
-						 minut+=1
-						 horny+=20
-						 gs'stat'
-						 '<center><img src="qwest/sosed/dance2.jpg"></center>'
-						 'You continued to dance and Stas became inflamed shove your hands under her skirt. Soon Stas felt your panties and ran my hand. You captured excitement when Stas felt a small bump your clitoris and began to caress him. Suddenly the dance ended, but Stas was not going to sit at the table back'
-						     act 'Sit down':StasKafe=2&gt $curloc
-						 end
-						 
-					 end
-				 end
-				 
-				 act 'dance':
-				 cls
-				 minut+=1
-				 horny+=20
-				 gs'stat'
-				 '<center><img src="qwest/sosed/dance2.jpg"></center>'
-				 'You continued to dance and Stas became inflamed shove your hands under her skirt. Soon Stas felt your panties and ran my hand. You captured excitement when Stas felt a small bump your clitoris and began to caress him.'
-				 		 if horny<100:
-							 act 'Raise his hands above':
-							 cls
-							 minut+=1
-							 horny+=10
-							 gs'stat'
-							 '<center><img src="qwest/sosed/dance.jpg"></center>'
-							 'Once again you have Stas hands and raised them on your waist. Stas apparently only covered by this passion and he began gently stroking your back smoothly down your hands on the ass. Finally the dance ended.'
-							 act 'Sit down':StasKafe=2&gt $curloc
-							 end
-						 end
-						 
-						 act 'dance':
-						 cls
-						 minut+=1
-						 horny+=20
-						 gs'stat'
-						 '<center><img src="qwest/sosed/dance2.jpg"></center>'
-						 'You continued to dance and Stas became inflamed shove your hands under her skirt. Soon Stas felt your panties and ran my hand. You captured excitement when Stas felt a small bump your clitoris and began to caress him. Suddenly the dance ended, but Stas was not going to sit at the table back'
-						     act 'Sit down':StasKafe=2&gt $curloc
-						 end
-				 end
-			 end
-		 end
-	 end
->>>>>>> 099_StasQW
-end
-
-
-
-
-
-
-
-
-
 
 --- StasQW ---------------------------------
 

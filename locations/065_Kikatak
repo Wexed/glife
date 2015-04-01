@@ -1,170 +1,95 @@
 # Kikatak
-<<<<<<< 065_Kikatak
 if $ARGS[0] = 'player':
-set defsumV = agilV + reaktV + KikDefV
-set defkofV = defsumV * 20/100
-set defV = RAND(defsumV - defkofV, defsumV + defkofV)
+	set defsumV = agilV + reaktV + KikDefV
+	set defkofV = defsumV * 20 / 100
+	set defV = rand(defsumV - defkofV, defsumV + defkofV)
+
 	if popad >= defV * 2:
-	'<B><font color = green>CRETE</font></B>'
-	set damageKrit = damage * 20/100
-	set damage += damageKrit
-	set healthV -= damage
-	set pointKik += 1
-	'<font color = green>You applied <<damage>> points of damage</font>'
-		if damage >= healthV * 20/100:
+		'<b><font color="green">CRETE</font></b>'
+		set damageKrit = damage * 20/100
+		set damage += damageKrit
+		set healthV -= damage
 		set pointKik += 1
-		'<font color = green><<$nameV>> fell to the ring</font>'
-			if healthV < (vitalV*10 + strenV*5)/4:
-			'<font color = green><<$nameV>> in a knockout. This is a victory!</font>'
-			xgt 'enderKik','winKO'
-			exit
+		'<font color="green">You applied <<damage>> points of damage</font>'
+
+		if damage >= healthV * 20 / 100:
+			set pointKik += 1
+			'<font color="green"><<$nameV>> fell to the ring</font>'
+
+			if healthV < (vitalV * 10 + strenV * 5) / 4:
+				'<font color="green"><<$nameV>> in a knockout. This is a victory!</font>'
+				xgt 'enderKik', 'winKO'
+				exit
 			end
 		end
 	end
+
 	if popad < defV*2 and popad >= defV:
-	'<font color = green>Contact</font>'
-	set healthV -= damage
-	set pointKik += 1
-	'<font color = green>You applied <<damage>> points of damage</font>'
-		if damage >= healthV * 20/100:
+		'<font color="green">Contact</font>'
+		set healthV -= damage
 		set pointKik += 1
-		'<font color = green><<$nameV>> fell to the ring</font>'
-			if healthV < (vitalV*10 + strenV*5)/4:
-			'<font color = green><<$nameV>> in a knockout. This is a victory!</font>'
-			xgt 'enderKik','winKO'
-			exit
+		'<font color="green">You applied <<damage>> points of damage</font>'
+
+		if damage >= healthV * 20 / 100:
+			set pointKik += 1
+			'<font color="green"><<$nameV>> fell to the ring</font>'
+
+			if healthV < (vitalV * 10 + strenV * 5) / 4:
+				'<font color="green"><<$nameV>> in a knockout. This is a victory!</font>'
+				xgt 'enderKik', 'winKO'
+				exit
 			end
 		end
 	end
-	if popad < defV:
-	'<font color = red>Slip</font>'
-	end
-=======
-if $ARGS[0]='player':
-set defsumV = agilV + reaktV + KikDefV
-set defkofV = defsumV*20/100
-set defV = RAND (defsumV - defkofV,defsumV + defkofV)
-     if popad >= defV*2:
-     '<B><font color=green>CRETE</font></B>'
-     set damageKrit = damage*20/100
-     set damage = damage + damageKrit
-     set healthV = healthV - damage
-     set pointKik = pointKik + 1
-     '<font color=green>you applied <<damage>> points of damage</font>'
-         if damage >= healthV*20/100:
-         set pointKik = pointKik + 1
-         '<font color=green><<$nameV>> fell into the ring</font>'
-             if healthV < (vitalV*10 + strenV*5)/4:
-             '<font color=green><<$nameV>> knocked out. This is a victory!!!</font>'
-             xgt'enderKik','winKO'
-             exit
-             end
-         end
-     end 
-     if popad < defV*2 and popad >= defV:
-     '<font color=green>hit</font>'
-     set healthV = healthV - damage
-     set pointKik = pointKik + 1
-     '<font color=green>you applied <<damage>> points of damage</font>'
-         if damage >= healthV*20/100:
-         set pointKik = pointKik + 1
-         '<font color=green><<$nameV>> fell into the ring</font>'
-             if healthV < (vitalV*10 + strenV*5)/4:
-             '<font color=green><<$nameV>> knocked out. This is a victory!!!</font>'
-             xgt'enderKik','winKO'
-             exit
-             end
-         end
-     end 
-     if popad < defV:
-     '<font color=red>bloomer</font>'
-     end 
->>>>>>> 065_Kikatak
 
+	if popad < defV:'<font color="red">Slip</font>'
 end
 
-<<<<<<< 065_Kikatak
 if $ARGS[0] = 'enemy':
-set defsum = agil + reakt + KikDef
-set defkof = defsum * 20/100
-set def = RAND(defsum - defkof, defsum + defkof)
-	if popad >= def * 2:
-	'<B><font color = red>CRETE</font></B>'
-	set damageKrit = damage * 20/100
-	set damage += damageKrit
-	set health -= damage
-	set pointKikV += 1
-	'<font color = red>You have caused <<damage>> points of damage</font>'
-		if damage >= health * 20/100:
-		set pointKikV += 1
-		'<font color = red>You have fallen into the ring</font>'
-			if health < (vital*10 + stren*5)/4:
-			'<font color = red>You are in a knockout. This defeat</font>'
-			xgt 'enderKik','loss'
-			exit
-			end
-		end
-	end
-	if popad < def*2 and popad >= def:
-	'<font color = red>Contact</font>'
-	set health -= damage
-	set pointKikV += 1
-	'<font color = red>You have caused <<damage>> points of damage</font>'
-		if damage >= health * 20/100:
-		set pointKikV += 1
-		'<font color = red>You have fallen into the ring</font>'
-			if health < (vital*10 + stren*5)/4:
-			'<font color = red>You are in a knockout. This defeat</font>'
-			xgt 'enderKik','loss'
-			exit
-			end
-		end
-	end
-	if popad < def:
-	'<font color = green>Slip</font>'
-	end
-=======
-if $ARGS[0]='enemy':
-set defsum = agil + reakt + KikDef
-set defkof = defsum*20/100
-set def = RAND (defsum - defkof,defsum + defkof)
-     if popad >= def*2:
-     '<B><font color=red>CRETE</font></B>'
-     set damageKrit = damage*20/100
-     set damage = damage + damageKrit
-     set health = health - damage
-     set pointKikV = pointKikV + 1
-     '<font color=red>you have caused <<damage>> points of damage</font>'
-         if damage >= health*20/100:
-         set pointKikV = pointKikV + 1
-         '<font color=red>You fell into the ring</font>'
-             if health < (vital*10 + stren*5)/4:
-             '<font color=red>You knocked out. This defeat!</font>'
-             xgt'enderKik','loss'
-             exit
-             end
-         end
-     end 
-     if popad < def*2 and popad >= def:
-     '<font color=red>hit</font>'
-     set health = health - damage
-     set pointKikV = pointKikV + 1
-     '<font color=red>you have caused <<damage>> points of damage</font>'
-         if damage >= health*20/100:
-         set pointKikV = pointKikV + 1
-         '<font color=red>You fell into the ring</font>'
-             if health < (vital*10 + stren*5)/4:
-             '<font color=red>You knocked out. This defeat!</font>'
-             xgt'enderKik','loss'
-             exit
-             end
-         end
-     end 
-     if popad < def:
-     '<font color=green>bloomer</font>'
-     end 
->>>>>>> 065_Kikatak
+	set defsum = agil + reakt + KikDef
+	set defkof = defsum * 20 / 100
+	set def = rand(defsum - defkof, defsum + defkof)
 
+	if popad >= def * 2:
+		'<b><font color="red">CRETE</font></b>'
+		set damageKrit = damage * 20 / 100
+		set damage += damageKrit
+		set health -= damage
+		set pointKikV += 1
+		'<font color="red">You have caused <<damage>> points of damage</font>'
+
+		if damage >= health * 20 / 100:
+			set pointKikV += 1
+			'<font color="red">You have fallen into the ring</font>'
+
+			if health < (vital * 10 + stren * 5) / 4:
+				'<font color="red">You are in a knockout. This defeat</font>'
+				xgt 'enderKik', 'loss'
+				exit
+			end
+		end
+	end
+
+	if popad < def * 2 and popad >= def:
+		'<font color="red">Contact</font>'
+		set health -= damage
+		set pointKikV += 1
+		'<font color="red">You have caused <<damage>> points of damage</font>'
+
+		if damage >= health * 20 / 100:
+			set pointKikV += 1
+			'<font color="red">You have fallen into the ring</font>'
+
+			if health < (vital * 10 + stren * 5) / 4:
+				'<font color="red">You are in a knockout. This defeat</font>'
+				xgt 'enderKik', 'loss'
+				exit
+			end
+		end
+	end
+
+	if popad < def:'<font color="green">Slip</font>'
 end
+
 --- Kikatak ---------------------------------
 
