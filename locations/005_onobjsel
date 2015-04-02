@@ -425,6 +425,7 @@ $din_cheat = {
 $objmagic = {
 	clr
 	pl '<a href="exec:dynamic $din_cheat"><b>Cheat menu</b></a>.'
+
 	if magik = 0:
 		pl 'You are unable to use magic.'
 	else
@@ -472,6 +473,7 @@ $objmagic = {
 		if spellwater3 = 1:pl 'Water bubble creates a protective sphere of water 1,500 protection from all influences, this protection is self-healing in 10 moves absorbing units 20 mana per turn. (150 mana cost)' & nl
 		if spellwater4 = 1:pl 'Water shark missile, causing great damage and absorbs a lot of mana. Cost 250 mana.' & nl
 		if spellwater5 = 1:pl 'Great flood, the water creates a huge sphere that absorbs enemy and deflating manna from it and handing it to provide increased protection. 500 mana cost.' & nl
+	end
 }
 
 $objface = {
@@ -795,6 +797,8 @@ $objbody = {
 		if bedra >= 115 and bedra < 120:VIEW 'images/body/fat12.jpg'
 		if bedra >= 120:view 'images/body/fat13.jpg'
 	end
+}
+
 $objclothes = {
 	clr
 
