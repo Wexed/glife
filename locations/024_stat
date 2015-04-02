@@ -45,7 +45,7 @@ end
 
 if year = 2011 and katjaPreg = 0:katjaPreg = 1
 
-if analplay> = 2 and anus <= 10:anus += 1 & analplay = 0
+if analplay >= 2 and anus <= 10:anus += 1 & analplay = 0
 if analplay >= 4 and anus <= 15:anus += 1 & analplay = 0
 if analplay >= 8 and anus <= 20:anus += 1 & analplay = 0
 
@@ -343,12 +343,12 @@ end
 
 if vgape > 0:
 	if vgape = 3:
+		if manna > mannamax / 4:manna = mannamax / 4
+	end
 
-	if manna > mannamax / 4:manna = mannamax / 4
-end
-
-if vgape = 2:
-	if manna > mannamax / 2:manna = mannamax / 2
+	if vgape = 2:
+		if manna > mannamax / 2:manna = mannamax / 2
+	end
 end
 
 if agape > 0:
@@ -757,7 +757,7 @@ end'
 
 if day = 0:set day = 1
 
-if week > 7
+if week > 7:
 	:loopweek
 	set week -= 7
 	set husbandrink = 0
