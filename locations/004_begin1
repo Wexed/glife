@@ -1,23 +1,32 @@
 # begin1
 showstat 1
 showobjs 1
-
 set $name = 'Svetlana'
 set $surname = 'Lebedev'
+!!!0.2.6 addition
+set $nickname = 'Svetski'
+!!!
 set $name = input("What is your first name?")
-if $name = '':
-	set $name = 'Svetlana'
-end
+
+if $name = '':set $name = 'Svetlana'
+
 set $surname = input("What is your last name?")
-if $surname = '':
-	set $surname = 'Lebedev'
-end
+
+if $surname = '':set $surname = 'Lebedev'
+
+!!!0.2.6 addition
+set $nickname = input("What is your nick name?")
+
+if $nickname = '':set $nickname = 'Svetski'
+!!!
+
 set age = 18
 set vidage = 16
 set year = 2010
 set month = 5
 set week = 3
 set hour = 13
+!body
 set rost = 170
 set fat = 60
 set salo = 60
@@ -25,6 +34,7 @@ set dick = 0
 set energy = 15
 set water = 15
 set son = 16
+!stats
 set stren = 10
 set strenbuf = 10
 set speed = 10
