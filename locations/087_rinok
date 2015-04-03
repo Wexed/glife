@@ -168,8 +168,8 @@ mag = 1
 '<center><img src="images/etogame/rinok.jpg"></center>'
 '<a href="exec:dynamic $rinbuy1 ">dishwashing detergent - 50 rubles</a> <a href="exec:dynamic $rinbuy2 ">laundry detergent - 150 rubles</a> <a href="exec:dynamic $rinbuy3 ">a set of 3 plates - 150 rubles</a> <a href="exec:dynamic $rinbuy4 ">Cosmetics - 500 rubles</a> <a href="exec:dynamic $rinbuy5 ">razor - 200 rubles</a> <a href="exec:dynamic $rinbuy6 ">tampons - 100 rubles</a> <a href="exec:dynamic $rinbuy7 ">Underwear - 200 rubles</a>'
 
-if bikini < 1:'<a href="exec:dynamic $rinbuy8 ">swimsuit - 1000 rubles</a>'
-if umbrella < 1:'<a href="exec:dynamic $rinbuy9 ">umbrella - 1000 rubles</a>'
+if bikini < 1:'<a href="exec:dynamic $rinbuy8 ">swimsuit (1,000 rubles)</a>'
+if umbrella < 1:'<a href="exec:dynamic $rinbuy9 ">umbrella (1,000 rubles)</a>'
 
 'On one of the tents hanging listing <a href="exec:gt ''loker2'', ''start''">"Accept the things to implement"</a>'
 
@@ -251,7 +251,7 @@ if (analplugIN = 1 and tanga = 0 and ski = 1) or (analplugIN = 1 and tanga = 0 a
 	end
 
 	if palto < 1:
-		'On the market sell for winter jackets. 5000 rubles'
+		'On the market sell for winter jackets. (5,000 rubles)'
 
 		if money >= 5000:
 			act 'Buy a down jacket':
