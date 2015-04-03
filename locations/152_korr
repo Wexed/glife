@@ -56,14 +56,14 @@ set housrMir = 0
 set elektro += 1
 
 if ring = 1:'<b><font color="red">The phone is ringing</font></b>'
-if remkorr = 0:'In the hallway wallpaper which where moved away from the walls, and has long faded. A coat rack and a shelf for shoes are near the entrance. A wall-mounted <a href="exec:GT ''mirror'', ''start''">mirror</a> and a <a href="exec:GT ''telefon'', ''start''">phone</a> hang on the wall.'
-if remkorr = 1:'Modern hall with stylish furniture, a wall-mounted <a href="exec:GT ''mirror'', ''start''">mirror</a>, and a <a href="exec:GT ''telefon'', ''start''">phone</a>'
+if remkorr = 0:'In the hallway wallpaper which where moved away from the walls, and has long faded. A coat rack and a shelf for shoes are near the entrance. A wall-mounted <a href="exec:gt ''mirror'', ''start''">mirror</a> and a <a href="exec:gt ''telefon'', ''start''">phone</a> hang on the wall.'
+if remkorr = 1:'Modern hall with stylish furniture, a wall-mounted <a href="exec:gt ''mirror'', ''start''">mirror</a>, and a <a href="exec:gt ''telefon'', ''start''">phone</a>'
 if suhbelo > 0:'Drying on the clothesline are <<suhbelo>> laundry items.'
 if umbrella > 0:'An umbrella hangs on a hook.'
 if palto > 0:'Hanging on the hook <<$palto>>.'
-if sobaka = 1:'<br>Your dog, <a href="exec:GT ''soba'', ''start''"><<$namesob>></a>, is lying on the floor near the entrance.'
-if krolik = 1:'Resting on the floor your rabbit <a href="exec:GT ''krol'', ''start''"><<$namekrol>></a>.'
-if popugai = 1:'In the cage sits your parrot <a href="exec:GT ''popu'', ''start''"><<$namepopu>></a>.'
+if sobaka = 1:'<br>Your dog, <a href="exec:gt ''soba'', ''start''"><<$namesob>></a>, is lying on the floor near the entrance.'
+if krolik = 1:'Resting on the floor your rabbit <a href="exec:gt ''krol'', ''start''"><<$namekrol>></a>.'
+if popugai = 1:'In the cage sits your parrot <a href="exec:gt ''popu'', ''start''"><<$namepopu>></a>.'
 
 if parkday ! day and parkblackmail = 1:
 	'A heavy envelope has arrived in the mail. When you open it you can see pictures in it. Damn, it''s pictures of you where you are giving blowjobs to two guys in the park.'
@@ -120,10 +120,10 @@ if bfC > 1 and boydayC ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyC:
 	set bfC = 0
 end
 
-if vladimirday ! day and vladimirQW = 20 and hour >= 15 and hour <= 17:'<a href="exec:GT ''qwloc2''"><font color="red"><b>The phone is ringing</b></font></a>.'
-if vladimirday ! day and vladimirQW = 25 and hour >= 15 and hour <= 17 and week = 6:'<a href="exec:GT ''qwloc3''"><font color="red"><b>The phone is ringing</b></font></a>.'
-if vladimirday ! day and vladimirQW = 35 and hour >= 15 and hour <= 17 and week = 6:'<a href="exec:GT ''qwloc4''"><font color="red"><b>The phone is ringing</b></font></a>.'
-if QWdogreiqTimer = 0 and QWdogReiq = 2 and week = 7 and qwdogiventday ! day and hour >= 12:'<a href="exec:GT ''qwlocdog''"><font color="red"><b>The phone is ringing</b></font></a>.'
+if vladimirday ! day and vladimirQW = 20 and hour >= 15 and hour <= 17:'<a href="exec:gt ''qwloc2''"><font color="red"><b>The phone is ringing</b></font></a>.'
+if vladimirday ! day and vladimirQW = 25 and hour >= 15 and hour <= 17 and week = 6:'<a href="exec:gt ''qwloc3''"><font color="red"><b>The phone is ringing</b></font></a>.'
+if vladimirday ! day and vladimirQW = 35 and hour >= 15 and hour <= 17 and week = 6:'<a href="exec:gt ''qwloc4''"><font color="red"><b>The phone is ringing</b></font></a>.'
+if QWdogreiqTimer = 0 and QWdogReiq = 2 and week = 7 and qwdogiventday ! day and hour >= 12:'<a href="exec:gt ''qwlocdog''"><font color="red"><b>The phone is ringing</b></font></a>.'
 
 if bfA = 1 or bfB = 1 or bfC = 1:
 	if bfA = 1 and boydayA ! day and hour > 5 and hour < 20 and ringA = 0:

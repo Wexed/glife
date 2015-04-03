@@ -203,7 +203,7 @@ $d_van_vtor = {
 $d_sis_prov = {
 	if sister_indorf = 0:
 		if $loc = 'bedrPar':
-			gs'family'
+			gs 'family'
 
 			if sisterHere = 0 and proverkasisterhere = 0:proverkasisterhere = 1
 			if sisterHere > 0 and proverkasisterhere = 2:gt $curloc
@@ -327,7 +327,7 @@ if horny > 0 and agape < 3:
 		if $loc = 'vanrPar' and selfplaytime >= 60:dynamic $d_van_vtor
 
 		dynamic $d_sis_prov
-		gs'stat'
+		gs 'stat'
 
 		act 'rest':gt $curloc
 

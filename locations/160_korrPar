@@ -31,7 +31,7 @@ bonusZ = 0
 fcolor="rgb"(0, 0, 0)
 bcolor="rgb"(255, 255, 255)
 lcolor="rgb"(106, 90, 205)
-'On the wall near the front door hanging <a href="exec:GT ''mirror'', ''start''">mirror</a>.'
+'On the wall near the front door hanging <a href="exec:gt ''mirror'', ''start''">mirror</a>.'
 
 if palto > 0:'Hanging on the hook <<$palto>>'
 
@@ -61,7 +61,7 @@ if hour >= 16 and hour <= 20 and indorf = 0:
 				act 'move_away':gt $curloc
 			end
 		 
-			act'Be silent':
+			act 'Be silent':
 				cls
 				mothervideotalk = 3
 				minut += 5
@@ -150,7 +150,7 @@ end
 
 :markboyfrendcall2
 
-if Gcall > 0:'In the hallway rings <a href="exec:GT ''gtelefon''">phone</a>.'
+if Gcall > 0:'In the hallway rings <a href="exec:gt ''gtelefon''">phone</a>.'
 if motherWorry = 1:gt 'mother'
 
 --- korrPar ---------------------------------

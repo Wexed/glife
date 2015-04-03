@@ -65,7 +65,7 @@ if artemhomemark = 1:
 					gt 'gorodok'
 				end
 				 
-				act'Go with Artem':
+				act 'Go with Artem':
 					cls
 					minut += 15
 					gs 'stat'
@@ -74,7 +74,7 @@ if artemhomemark = 1:
 					Artem:"Look who I have here. As I promised you Svetochka kindly agreed to teach us all the secrets of the female body. Anatomy lessons will be held on Mondays. And today`s lesson we will start with the vagina ...!"
 					Artem:"Stretch ka pussy. I can imagine what else you got up with Nosov!"'
 
-					act'stretch':
+					act 'stretch':
 						cls
 						minut += 15
 						vagina += 3
@@ -110,7 +110,7 @@ if artemhomemark = 1:
 							Artem :"Erase ... but not today ... we Petka at you a lot of plans. Do not roar.
 							It will be our little secret. Fair_Enough - until next week."'
 
-							act'Leave':gt 'garmassiv'
+							act 'Leave':gt 'garmassiv'
 						end
 					end
 				end
@@ -218,7 +218,7 @@ if artemhomemark = 1:
 		if artQW = 20 and artomkissday ! daystart:
 			'Artem hugs you and kisses'
 
-			act'tselovatsya':
+			act 'tselovatsya':
 				cls
 				artomkissday = daystart
 				minut += 5
@@ -286,7 +286,7 @@ if artemhomemark = 1:
 								if lernHome > 0:
 									act 'Teach lessons':artemhomemark = 2 & gt $curloc
 								else
-									act'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
+									act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 								end
 							end
 						end
@@ -393,7 +393,7 @@ if artemhomemark = 1:
 						if lernHome > 0:
 							act 'Teach lessons':artemhomemark = 2 & gt $curloc
 						else
-							act'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
+							act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 						end
 					end	 
 				end

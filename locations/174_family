@@ -51,31 +51,31 @@ if StoryLine > 0:
 
 			if hour < 7:
 				sisterHere = 1
-				'Your sister <a href="exec:GT ''sistersleep''">Anne</a> asleep in bed.'
+				'Your sister <a href="exec:gt ''sistersleep''">Anne</a> asleep in bed.'
 			end
 
 			if week < 6:
 				if hour = 7:
 					sisterHere = 2
-					'Your sister <a href="exec:GT ''sister''">Anne</a> is going to work.'
+					'Your sister <a href="exec:gt ''sister''">Anne</a> is going to work.'
 				end
 			end
 
 			if week >= 6:
 				if hour >= 7 and hour < 10:
 					sisterHere = 1
-					'Your sister <a href="exec:GT ''sistersleep''">Anne</a> asleep in bed.'
+					'Your sister <a href="exec:gt ''sistersleep''">Anne</a> asleep in bed.'
 				end
 
 				if hour = 10:
 					sisterHere = 2
-					'Your sister <a href="exec:GT ''sisterprogulka''">Anne</a> going for a walk.'
+					'Your sister <a href="exec:gt ''sisterprogulka''">Anne</a> going for a walk.'
 				end
 			end
 
 			if hour >= 18:
 				sisterHere = 2
-				'Your sister <a href="exec:GT ''sister''">Anne</a> sitting on bed and reading a book.'
+				'Your sister <a href="exec:gt ''sister''">Anne</a> sitting on bed and reading a book.'
 			end
 		end
 	end
@@ -98,43 +98,43 @@ if StoryLine > 0:
 			if hour < 7 or hour >= 21:'Sleeps on the couch your younger brother Kolya.'
 
 			if week < 6:
-				if hour >= 16 and hour < 21:'Sitting on the couch <a href="exec:GT ''father''">stepfather</a> and watching TV.'
-				if hour >= 18 and hour < 20:'Sitting at the table your little brother <a href="exec:GT ''brother''">Kolka</a> and teaches lessons.'
-				if hour = 20:'Sitting on the couch your younger brother <a href="exec:GT ''brother''">Kolka</a> and watching TV.'
+				if hour >= 16 and hour < 21:'Sitting on the couch <a href="exec:gt ''father''">stepfather</a> and watching TV.'
+				if hour >= 18 and hour < 20:'Sitting at the table your little brother <a href="exec:gt ''brother''">Kolka</a> and teaches lessons.'
+				if hour = 20:'Sitting on the couch your younger brother <a href="exec:gt ''brother''">Kolka</a> and watching TV.'
 			end
 
 			if week >= 6:
 				if father_go = 0:
-					if hour >= 7 and hour < 21:'Sitting on the couch <a href="exec:GT ''father''">stepfather</a> and watching TV.'
+					if hour >= 7 and hour < 21:'Sitting on the couch <a href="exec:gt ''father''">stepfather</a> and watching TV.'
 				end
 
 				if father_go = 1:
-					if hour >= 7 and hour < 16:'Sitting on the couch <a href="exec:GT ''father''">stepfather</a> watching TV.'
+					if hour >= 7 and hour < 16:'Sitting on the couch <a href="exec:gt ''father''">stepfather</a> watching TV.'
 				end
 
-				if hour >= 18 and hour <= 20:'Sitting on the couch your younger brother <a href="exec:GT ''brother''">Kolka</a> and watching TV.'
+				if hour >= 18 and hour <= 20:'Sitting on the couch your younger brother <a href="exec:gt ''brother''">Kolka</a> and watching TV.'
 			end
 		end
 
 		if $loc = 'kuhrPar':
 			if week < 6:
 				if mother_go = 0:
-					if hour >= 16 and hour < 21:'Stands near the stove <a href="exec:GT ''mother''">Mom</a> and that it cooks.'
+					if hour >= 16 and hour < 21:'Stands near the stove <a href="exec:gt ''mother''">Mom</a> and that it cooks.'
 				end
 
 				if mother_go = 1:
-					if hour >= 17 and hour < 21:'Near the stove stands <a href="exec:GT ''mother''">mom</a> and that it is preparing.'
+					if hour >= 17 and hour < 21:'Near the stove stands <a href="exec:gt ''mother''">mom</a> and that it is preparing.'
 				end
 			end
 
 			if week >= 6:
 				if mother_go = 0:
-					if hour >= 7 and hour < 21:'Stands near the stove <a href="exec:GT ''mother''">Mom</a> and that it cooks.'
+					if hour >= 7 and hour < 21:'Stands near the stove <a href="exec:gt ''mother''">Mom</a> and that it cooks.'
 				end
 
 				if mother_go = 1:
-					if hour >= 7 and hour < 16:'Near the stove stands <a href="exec:GT ''mother''">mom</a> and that it is preparing.'
-					if hour >= 17 and hour < 21:'Near the stove stands <a href="exec:GT ''mother''">mom</a> and that it is preparing.'
+					if hour >= 7 and hour < 16:'Near the stove stands <a href="exec:gt ''mother''">mom</a> and that it is preparing.'
+					if hour >= 17 and hour < 21:'Near the stove stands <a href="exec:gt ''mother''">mom</a> and that it is preparing.'
 				end
 			end
 		end
@@ -155,21 +155,21 @@ if StoryLine > 0:
 
 		if $loc = 'gdk':
 			if week < 6:
-				if hour >= 16 and hour < 18:'Your sister <a href="exec:GT ''sister''">Anne</a> sitting in the company of beautiful girls and guys drinking beer.'
+				if hour >= 16 and hour < 18:'Your sister <a href="exec:gt ''sister''">Anne</a> sitting in the company of beautiful girls and guys drinking beer.'
 			end
 
 			if week >= 6:
-				if hour >= 11 and hour < 18:'Your sister <a href="exec:GT ''sister''">Anne</a> sitting in the company of beautiful girls and guys drinking beer.'
+				if hour >= 11 and hour < 18:'Your sister <a href="exec:gt ''sister''">Anne</a> sitting in the company of beautiful girls and guys drinking beer.'
 			end
 		end
 
 		if $loc = 'gschool':
 			if week < 6:
-				if hour >= 15 and hour <= 17:'On the football field near the school your <a href="exec:GT ''brother''">brother</a> rides in football.'
+				if hour >= 15 and hour <= 17:'On the football field near the school your <a href="exec:gt ''brother''">brother</a> rides in football.'
 			end
 
 			if week >= 6:
-				if hour >= 7 and hour <= 17:'On the football field near the school your <a href="exec:GT ''brother''">brother</a> rides in football.'
+				if hour >= 7 and hour <= 17:'On the football field near the school your <a href="exec:gt ''brother''">brother</a> rides in football.'
 			end
 		end
 	end

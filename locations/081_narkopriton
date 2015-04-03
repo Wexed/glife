@@ -57,7 +57,7 @@ if SLomka > 0 and money < 1000:
 					'You begged Man give you drugs in debt, and promise to do for it whatever you like, little guy thought, after which he took you by the hand led into the room and said "<<$bobtalk>>"'
 
 					act 'Run away':gt $curloc
-					act '<<$bobtext>>':gt'bobka'
+					act '<<$bobtext>>':gt 'bobka'
 				end
 			end
 		end
@@ -104,7 +104,7 @@ if SLomka > 0 and money < 1000:
 							gs 'stat'
 							'You grabbed the syringe and injected his foolishness itself in a vein shaking hands. Man with a smile looking at you. "By the way my name is Bobkov, and you?" You mumbled through a veil "Sveta."'
 
-							act 'Leave':minut += 15 & gt'street'
+							act 'Leave':minut += 15 & gt 'street'
 						end
 					end
 				end

@@ -63,7 +63,7 @@ $d_read_book={
 		if w_book > 0:'You still <<w_book>> not read the novel female.'
 
 		if womanbook > 0:
-			act'Read Women`s Novel. There are <<womanbook * 100>> more pages to read':
+			act 'Read Women`s Novel. There are <<womanbook * 100>> more pages to read':
 				cls
 				womanbook -= 1
 
@@ -98,7 +98,7 @@ $d_read_book={
 			end
 		end
 
-		act' Close this book':gt $loc
+		act ' Close this book':gt $loc
 	end
 }
 

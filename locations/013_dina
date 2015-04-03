@@ -3,7 +3,7 @@ gs 'dinSex'
 gs 'dinBoroda'
 
 $d_read_porn = {
-	act'Read porn magazine':
+	act 'Read porn magazine':
 		cls
 		'<center><img src="images/qwest/alter/porn.jpg"></center>'
 
@@ -181,7 +181,7 @@ $showerdin = {
 !WD:set  "SUB >= 15" for act - Will need balancing / playtesting
 $kiosksig = {
 	cls
-	gs'stat'
+	gs 'stat'
 	'<center><img src="images/community/kiosk.jpg"></center>'
 	'A pack of cigarettes costs 50 rubles.'
 	*pl
@@ -203,7 +203,7 @@ $kiosksig = {
 			if exhibi >= 4:
 				act 'Flash both your tits and your pussy':
 					cls
-					gs'stat'
+					gs 'stat'
 					minut  += 10
 					siga   += 20
 					money  -= 50
@@ -222,7 +222,7 @@ $kiosksig = {
 			if exhibi >= 3:
 				act 'Flash your pussy':
 					cls
-					gs'stat'
+					gs 'stat'
 					minut  += 10
 					siga   += 20
 					money  -= 50
@@ -244,7 +244,7 @@ $kiosksig = {
 			if exhibi >= 2:
 				act 'Flash your tits':
 					cls
-					gs'stat'
+					gs 'stat'
 					minut  += 10
 					siga   += 20
 					money  -= 50
@@ -264,7 +264,7 @@ $kiosksig = {
 			if SUB >= 15:
 				act 'Suggest to blow someone infront of you':
 					cls
-					gs'stat'
+					gs 'stat'
 					minut  += 10
 					siga   += 20
 					money  -= 50
