@@ -8,7 +8,7 @@ $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><b><font color = maroon>Living room</font></b></center>'
+'<center><b><font color="maroon">Living room</font></b></center>'
 
 if remsitr = 0 and TV = 0 or komp = 0 and remsitr = 0:'<center><img src="images/etogame/sitr.jpg"></center>'
 if remsitr = 0 and TV > 0 and komp > 0:'<center><img src="images/etogame/sitr1.jpg"></center>'
@@ -16,9 +16,9 @@ if remsitr = 1:'<center><img src="images/etogame/sitr2.jpg"></center>'
 
 clr
 gs 'stat'
-fcolor = rgb(0, 0, 0)
-bcolor = rgb(255, 255, 255)
-lcolor = rgb(106, 90, 205)
+fcolor="rgb"(0, 0, 0)
+bcolor="rgb"(255, 255, 255)
+lcolor="rgb"(106, 90, 205)
 set minut += 1
 set housrA = 1
 set elektro += 1
@@ -51,7 +51,7 @@ sports = 0
 $sportStringPrefix = ''
 
 if obruch > 0 and obruchday ! day:
-	$sitrobr = $sportStringPrefix + ' <a href="exec:dynamic $sitrobrd ">twist hoop</a>'
+	$sitrobr = $sportStringPrefix + ' <a href="exec:dynamic $sitrobrd">twist hoop</a>'
 	sports = 1
 	$sportStringPrefix = ', '
 else
@@ -59,7 +59,7 @@ else
 end
 
 if bookYog > 0 and bookYogday ! day:
-	$sitryog = $sportStringPrefix + ' <a href="exec:dynamic $sitryogd ">meditation</a>'
+	$sitryog = $sportStringPrefix + ' <a href="exec:dynamic $sitryogd">meditation</a>'
 	sports = 1
 	$sportStringPrefix = ', '
 else
@@ -67,7 +67,7 @@ else
 end
 
 if skak > 0 and skakday ! day:
-	$sitrskak = $sportStringPrefix + ' <a href="exec:dynamic $sitrskakd ">jumping rope</a>'
+	$sitrskak = $sportStringPrefix + ' <a href="exec:dynamic $sitrskakd">jumping rope</a>'
 	sports = 1
 	$sportStringPrefix = ', '
 else
@@ -75,7 +75,7 @@ else
 end
 
 if pressday ! day:
-	$sitrpress = $sportStringPrefix + ' <a href="exec:dynamic $sitrpressd ">abdominal exercises</a>'
+	$sitrpress = $sportStringPrefix + ' <a href="exec:dynamic $sitrpressd">abdominal exercises</a>'
 	sports = 1
 	$sportStringPrefix = ', '
 else
@@ -83,7 +83,7 @@ else
 end
 
 if pushday ! day:
-	$sitrpush = ' <a href="exec:dynamic $sitrpushd ">push-ups</a>'
+	$sitrpush = ' <a href="exec:dynamic $sitrpushd">push-ups</a>'
 	sports = 1
 	$sportStringPrefix = ', '
 else
@@ -92,7 +92,7 @@ end
 
 !!!kept, but does not exists in 1.0.5 anymore
 if treadmill > 0 and treadmillday ! day:
-	$sitr_tread = $sportStringPrefix + ' <a href="exec:dynamic $sitr_tread_d ">treadmill</a>'
+	$sitr_tread = $sportStringPrefix + ' <a href="exec:dynamic $sitr_tread_d">treadmill</a>'
 	sports = 1
 	$sportStringPrefix = ', '
 else
@@ -107,16 +107,16 @@ end
 
 !set housegostrand = rand(1, 20)
 !if husband > 0 and husbandrink ! 10 and week = 5 and hour > 17 and hour < 21 and housegostrand > 15:gt 'sitr', 'guest'
-if suhbelo2 > 0:'<br>Lying on the table are <<suhbelo2>> pieces of dried laundry that need <a href="exec:dynamic $gladbelo ">ironing</a>.'
+if suhbelo2 > 0:'<br>Lying on the table are <<suhbelo2>> pieces of dried laundry that need <a href="exec:dynamic $gladbelo">ironing</a>.'
 
 *nl
 
 if husband > 0 and husbandrink ! 10 and husbandrinkday ! day:
 	if week < 6:
-		if hour > 17 and hour <= 22:'<a href="exec:gt ''husb'', ''start'' ">On the couch sits husband and watching TV.</a>'
+		if hour > 17 and hour <= 22:'<a href="exec:gt ''husb'', ''start''">On the couch sits husband and watching TV.</a>'
 	else
-		if hour > 7 and hour < 17:'<a href="exec:gt ''husb'', ''start'' ">On the couch sits husband and watching TV.</a>'
-		if hour > 17 and hour <= 22:'<a href="exec:gt ''husb'', ''start'' ">On the couch sits husband and watching TV.</a>'
+		if hour > 7 and hour < 17:'<a href="exec:gt ''husb'', ''start''">On the couch sits husband and watching TV.</a>'
+		if hour > 17 and hour <= 22:'<a href="exec:gt ''husb'', ''start''">On the couch sits husband and watching TV.</a>'
 	end
 end
 

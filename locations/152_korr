@@ -4,30 +4,30 @@ act 'The bedroom':gt 'bedr'
 act 'The bathroom':gt 'vanr'
 act 'The kitchen':gt 'kuhr'
 act 'The living room':gt 'sitr'
-act '<font color = maroon>Apartment hallway</font>':
+act '<font color="maroon">Apartment hallway</font>':
 	cls
 
 	if sick <= 72 and nude = 0:
 		xgt 'etoexhib', 'pos51'
 	elseif nude = 0:
-		'<b><font color = red>You''re too sick to walk around in the streets.</font></b>'
+		'<b><font color="red">You''re too sick to walk around in the streets.</font></b>'
 		xgt $curloc
 	else
-		'<b><font color = red>You need to get dressed before going out.</font></b>'
+		'<b><font color="red">You need to get dressed before going out.</font></b>'
 		xgt $curloc
 	end
 end
 
-act '<b><font color = maroon>Go outside</font></b>':
+act '<b><font color="maroon">Go outside</font></b>':
 	cls
 
 	if sick <= 72 and nude = 0:
 		xgt 'street'
 	elseif nude = 0:
-		'<b><font color = red>You''re too sick to walk around in the streets.</font></b>'
+		'<b><font color="red">You''re too sick to walk around in the streets.</font></b>'
 		xgt $curloc
 	else
-		'<b><font color = red>You need to get dressed before going out.</font></b>'
+		'<b><font color="red">You need to get dressed before going out.</font></b>'
 		xgt $curloc
 	end
 end
@@ -39,7 +39,7 @@ $loc = $CURLOC
 set popolaini = 0
 set saunaYouRoom = 0
 set boycherdaksex = 0
-'<center><b><font color = maroon>Corridor</font></b></center>'
+'<center><b><font color="maroon">Corridor</font></b></center>'
 
 if remkorr = 0:'<center><img src="images/etogame/korr.jpg"></center>'
 if remkorr = 1:'<center><img src="images/etogame/korr2.jpg"></center>'
@@ -47,15 +47,15 @@ if remkorr = 1:'<center><img src="images/etogame/korr2.jpg"></center>'
 clr
 gs 'stat'
 bonusZ = 0
-fcolor = rgb(0, 0, 0)
-bcolor = rgb(255, 255, 255)
-lcolor = rgb(106, 90, 205)
+fcolor="rgb"(0, 0, 0)
+bcolor="rgb"(255, 255, 255)
+lcolor="rgb"(106, 90, 205)
 set minut += 1
 set housrA = 1
 set housrMir = 0
 set elektro += 1
 
-if ring = 1:'<b><font color = red>The phone is ringing</font></b>'
+if ring = 1:'<b><font color="red">The phone is ringing</font></b>'
 if remkorr = 0:'In the hallway wallpaper which where moved away from the walls, and has long faded. A coat rack and a shelf for shoes are near the entrance. A wall-mounted <a href="exec:GT ''mirror'', ''start''">mirror</a> and a <a href="exec:GT ''telefon'', ''start''">phone</a> hang on the wall.'
 if remkorr = 1:'Modern hall with stylish furniture, a wall-mounted <a href="exec:GT ''mirror'', ''start''">mirror</a>, and a <a href="exec:GT ''telefon'', ''start''">phone</a>'
 if suhbelo > 0:'Drying on the clothesline are <<suhbelo>> laundry items.'
@@ -83,47 +83,47 @@ if parkday ! day and parkblackmail = 2:
 end
 
 if bfA < 0:
-	'<b><font color = red>Your boyfried does not call you, he probably dumped you.</font></b>'
+	'<b><font color="red">Your boyfried does not call you, he probably dumped you.</font></b>'
 	set bfA = 0
 end
 
 if bfA > 1 and boydayA ! day and hour >= 5 and hour < 20 and vnesh >= vneshBoyA:
 	set ring = 1
 	set ringA = 1
-	'<b><font color = red>The phone is ringing</font></b>'
+	'<b><font color="red">The phone is ringing</font></b>'
 end
 
 if bfB > 1 and boydayB ! day and hour >= 5 and hour < 20 and vnesh >= vneshBoyB:
 	set ring = 1
 	set ringB = 1
-	'<b><font color = red>The phone is ringing</font></b>'
+	'<b><font color="red">The phone is ringing</font></b>'
 end
 
 if bfC > 1 and boydayC ! day and hour >= 5 and hour < 20 and vnesh >= vneshBoyC:
 	set ring = 1
 	set ringC = 1
-	'<b><font color = red>The phone is ringing</font></b>'
+	'<b><font color="red">The phone is ringing</font></b>'
 end
 
 if bfA > 1 and boydayA ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyA:
-	'<b><font color = red>Your boyfried does not call you, he probably dumped you.</font></b>'
+	'<b><font color="red">Your boyfried does not call you, he probably dumped you.</font></b>'
 	set bfA = 0
 end
 
 if bfB > 1 and boydayB ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyB:
-	'<b><font color = red>Your boyfried does not call you, he probably dumped you.</font></b>'
+	'<b><font color="red">Your boyfried does not call you, he probably dumped you.</font></b>'
 	set bfB = 0
 end
 
 if bfC > 1 and boydayC ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyC:
-	'<b><font color = red>Your boyfried does not call you, he probably dumped you.</font></b>'
+	'<b><font color="red">Your boyfried does not call you, he probably dumped you.</font></b>'
 	set bfC = 0
 end
 
-if vladimirday ! day and vladimirQW = 20 and hour >= 15 and hour <= 17:'<a href="exec:GT ''qwloc2''"><font color = red><b>The phone is ringing</b></font></a>.'
-if vladimirday ! day and vladimirQW = 25 and hour >= 15 and hour <= 17 and week = 6:'<a href="exec:GT ''qwloc3''"><font color = red><b>The phone is ringing</b></font></a>.'
-if vladimirday ! day and vladimirQW = 35 and hour >= 15 and hour <= 17 and week = 6:'<a href="exec:GT ''qwloc4''"><font color = red><b>The phone is ringing</b></font></a>.'
-if QWdogreiqTimer = 0 and QWdogReiq = 2 and week = 7 and qwdogiventday ! day and hour >= 12:'<a href="exec:GT ''qwlocdog''"><font color = red><b>The phone is ringing</b></font></a>.'
+if vladimirday ! day and vladimirQW = 20 and hour >= 15 and hour <= 17:'<a href="exec:GT ''qwloc2''"><font color="red"><b>The phone is ringing</b></font></a>.'
+if vladimirday ! day and vladimirQW = 25 and hour >= 15 and hour <= 17 and week = 6:'<a href="exec:GT ''qwloc3''"><font color="red"><b>The phone is ringing</b></font></a>.'
+if vladimirday ! day and vladimirQW = 35 and hour >= 15 and hour <= 17 and week = 6:'<a href="exec:GT ''qwloc4''"><font color="red"><b>The phone is ringing</b></font></a>.'
+if QWdogreiqTimer = 0 and QWdogReiq = 2 and week = 7 and qwdogiventday ! day and hour >= 12:'<a href="exec:GT ''qwlocdog''"><font color="red"><b>The phone is ringing</b></font></a>.'
 
 if bfA = 1 or bfB = 1 or bfC = 1:
 	if bfA = 1 and boydayA ! day and hour > 5 and hour < 20 and ringA = 0:
@@ -138,7 +138,7 @@ if bfA = 1 or bfB = 1 or bfC = 1:
 		if vnesh >= vneshBoyA:
 			set ring = 1
 			set ringA = 1
-			'<b><font color = red>The phone is ringing</font></b>'
+			'<b><font color="red">The phone is ringing</font></b>'
 		end
 	end
 
@@ -154,7 +154,7 @@ if bfA = 1 or bfB = 1 or bfC = 1:
 		if vnesh >= vneshBoyB:
 			set ring = 1
 			set ringB = 1
-			'<b><font color = red>The phone is ringing</font></b>'
+			'<b><font color="red">The phone is ringing</font></b>'
 		end
 	end
 
@@ -170,14 +170,14 @@ if bfA = 1 or bfB = 1 or bfC = 1:
 		if vnesh >= vneshBoyC:
 			set ring = 1
 			set ringC = 1
-			'<b><font color = red>The phone is ringing</font></b>'
+			'<b><font color="red">The phone is ringing</font></b>'
 		end
 	end
 end
 
 
 if hour >= 9 and hour <= 20 and santehnikDolg > 0 and money >= santehnikDolg:
-	'<b><font color = red>, the doorbell rings</font></b>'
+	'<b><font color="red">, the doorbell rings</font></b>'
 
 	act 'Go to the door':
 		cls
@@ -211,7 +211,7 @@ if IvanPodstavaQW = 3 and hour >= 9 and hour <= 20:
 	end
 
 	if DolgRS > moneySUM:
-		DolgRS = 650000 - moneySUM-60000
+		DolgRS = 650000 - moneySUM - 60000
 		money = 0
 		karta = 0
 		stolmoney = 0
@@ -263,7 +263,7 @@ if IvanPodstavaQW = 3 and hour >= 9 and hour <= 20:
 end
 
 if IvanPodstavaDay ! day and IvanPodstavaQW = 1 and hour >= 8 and hour <= 20:
-	'<b><font color = red>, the doorbell rang</font></b>'
+	'<b><font color="red">, the doorbell rang</font></b>'
 
 	act 'Come to the door':
 		cls

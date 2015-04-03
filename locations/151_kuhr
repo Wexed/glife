@@ -21,7 +21,7 @@ $dirtarm = {
 
 		act 'Wipe your hands':gt $locM, $metkaM
 	else
-		'<b><font color = red>You have no dishwashing liquid.</font></b>'
+		'<b><font color="red">You have no dishwashing liquid.</font></b>'
 	end
 }
 
@@ -180,10 +180,10 @@ $santehnikend = {
 	if money < 1500:
 		'Do you lack the money'
 
-		if money+stolmoney >= 1500:'But in the table have a stash and you have enough.'
+		if money + stolmoney >= 1500:'But in the table have a stash and you have enough.'
 	end
 
-	if money+stolmoney >= 1500:
+	if money + stolmoney >= 1500:
 		act 'Pay':
 			if money < 1500:set money += stolmoney & stolmoney = 0
 
@@ -192,7 +192,7 @@ $santehnikend = {
 		end
 	end
 
-	if money+stolmoney < 1500:
+	if money + stolmoney < 1500:
 		act 'I did not have enough money':
 			cls
 			gs 'stat'
@@ -403,16 +403,16 @@ $santehnik = {
 $metka = $ARGS[0]
 $loc = $CURLOC
 set polomka = rand(1, 100)
-'<center><b><font color = maroon>Kitchen</font></b></center>'
+'<center><b><font color="maroon">Kitchen</font></b></center>'
 
 if remkuhr = 0:'<center><img src="images/etogame/kuhr.jpg"></center>'
 if remkuhr = 1:'<center><img src="images/etogame/kuhr2.jpg"></center>'
 
 clr
 gs 'stat'
-fcolor = rgb(0, 0, 0)
-bcolor = rgb(255, 255, 255)
-lcolor = rgb(106, 90, 205)
+fcolor="rgb"(0, 0, 0)
+bcolor="rgb"(255, 255, 255)
+lcolor="rgb"(106, 90, 205)
 set minut += 1
 set housrA = 1
 set elektro += 1
@@ -444,31 +444,31 @@ end
 if cltarelka > 0:
 	'<b><<cltarelka>></b> pieces of clean plates are stored in the cupboard.'
 else
-	'<b><font color = red>You have no clean dishes left.</font></b>'
+	'<b><font color="red">You have no clean dishes left.</font></b>'
 end
 
-if dirttarelka > 0:'<b><<dirttarelka>></b> pieces of dirty dishes are lying in the sink. <a href="exec:dynamic $dirtarm ">Wash the dishes</a>.'
+if dirttarelka > 0:'<b><<dirttarelka>></b> pieces of dirty dishes are lying in the sink. <a href="exec:dynamic $dirtarm">Wash the dishes</a>.'
 
 if fairy > 0:
 	'Next to the sink is dishwashing liquid, enough for <b><<fairy>></b> uses.'
 else
-	'<b><font color = red>You have nothing to wash dishes with, you need to buy dishwashing liquid.</font></b>'
+	'<b><font color="red">You have nothing to wash dishes with, you need to buy dishwashing liquid.</font></b>'
 end
 
 if eda > 0:
 	if cltarelka = 0 or edahot > 0:$edagot = ''
-	if cltarelka > 0 and edahot = 0:$edagot = '<a href="exec:dynamic $edagotd ">Cook meal (0:30)</a>'
+	if cltarelka > 0 and edahot = 0:$edagot = '<a href="exec:dynamic $edagotd">Cook meal (0:30)</a>'
 
 	'In the refrigerator there''s food, good for <b><<eda>></b> servings. <<$edagot>>'
 end
 
-if edaD = 0 and eda = 0:'<b><font color = red>The refrigerator is empty, nothing to eat at all.</font></b>'
+if edaD = 0 and eda = 0:'<b><font color="red">The refrigerator is empty, nothing to eat at all.</font></b>'
 if edaD > 0:'The refrigerator contains healthy meals, good for <b><<edaD>></b> servings.'
 if posudomashina > 0:'The kitchen has a dishwasher.'
-if edahot > 0:'<a href="exec:dynamic $edahotd ">A cooked meal is on the table (0:30).</a>'
+if edahot > 0:'<a href="exec:dynamic $edahotd">A cooked meal is on the table (0:30).</a>'
 
 if husband > 0 and husbandrink ! 10:
-	if hour = 7 or hour = 17:'<a href="exec:gt ''husb'', ''start'' ">Your husband is eating at the table.</a>'
+	if hour = 7 or hour = 17:'<a href="exec:gt ''husb'', ''start''">Your husband is eating at the table.</a>'
 end
 
 if pranik > 0:

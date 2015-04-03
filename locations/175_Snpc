@@ -4,7 +4,7 @@ $npcName[numnpc] = ''
 $npcSurName[numnpc] = ''
 $npcText[numnpc] = ''
 
-grupNPC[numnpc]=
+grupNPC[numnpc] = 
 npcPol[numnpc]
 grupTipe[numnpc]
 
@@ -111,7 +111,7 @@ act 'Chat':
 	if $loc = 'gdkin':minut += 5
 
 	gs 'stat'
-	'<center><b><font color = maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
+	'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 	'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 
 	if numnpc = 1 and grupNPC[numnpc] = 0:
@@ -147,7 +147,7 @@ if numnpc = 2:
 			if GorSlut < 3:artomLernQW = 1
 
 			gs 'stat'
-			'<center><b><font color = maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
+			'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 			'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 
 			if GorSlut < 3:'You came to Artem and asked him to help you to learn. Artem was a bit surprised and said to you "Okay. Come after school to my home, work."'
@@ -170,7 +170,7 @@ if numnpc = 2:
 				JuliaMilLernQW = 1
 				gs 'stat'
 				'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-				'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+				'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 
 				if GorSlut < 1:'You came to Julia and asked you to pull up a little learning, She thought agreed.'
 				if GorSlut >= 1:'You came to Julia and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
@@ -189,11 +189,11 @@ if numnpc = 2:
 			grupNPC[numnpc] += 5
 			meynoldQW = 2
 			gs 'stat'
-			'<center><b><font color = maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
+			'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 			'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 			'You came to Kate and thanked her for what she stole you from the disco home when you have touched. Kate smiled at you. "Not at all, only you do not get drunk. Drunkenness could end badly."'
 
-			if $loc!'gdkin':dynamic $din_sekondparturok
+			if $loc ! 'gdkin':dynamic $din_sekondparturok
 			if $loc = 'gdkin':act 'Move away':gt $loc, $metka
 		end
 	end
@@ -207,7 +207,7 @@ if numnpc = 2:
 			if $loc = 'gdkin':minut += 5
 
 			gs 'stat'
-			'<center><b><font color = maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
+			'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 			'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 			'Katia quickly straightened your hair and asked. "You what? Little tint, usually distribute or shovel?"'
 
@@ -227,7 +227,7 @@ if numnpc = 2:
 				'Kate has made up your lips, eyes and let the eyelids.'
 
 				if KatjaOTN > 0:KatjaHorny += 10 & 'Kate blushes and depart from your eyes.'
-				if $loc!'gdkin':dynamic $din_sekondparturok
+				if $loc ! 'gdkin':dynamic $din_sekondparturok
 				if $loc = 'gdkin':act 'Move away':gt $loc, $metka
 			end
 
@@ -244,7 +244,7 @@ if numnpc = 2:
 	end
 
 	if numnpc = 14 and meynoldQW > 1 and mop > 1:
-		if $loc!'gdkin':
+		if $loc ! 'gdkin':
 			!school
 			if KatjaHorny >= 50:
 			end
@@ -278,10 +278,10 @@ if numnpc = 2:
 			NatBelLernQW = 1
 			gs 'stat'
 			'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-			'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 
 			if GorSlut<1:'You came to Natasha and asked you to pull up a little learning, She thought agreed.'
-			if GorSlut>=1:'You came to Natasha and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
+			if GorSlut> = 1:'You came to Natasha and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
 			if $loc ! 'gdkin':dynamic $din_sekondparturok
 			if $loc = 'gdkin':act 'Move away':gt $loc, $metka
 		end

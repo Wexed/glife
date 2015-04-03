@@ -344,23 +344,23 @@ end
 if $ARGS[0] = 'start':
 gs 'stat'
 
-'<center><b><font color=maroon>The Barber Shop</font></b></center>'
+'<center><b><font color = maroon>The Barber Shop</font></b></center>'
 '<center>The only barber shop in the area. While he can''t do special hairstyles, he''s cheap and works fast.</center>'
 clr
 gs 'stat'
-fcolor=rgb(0, 0, 0)
-bcolor=rgb(255, 255, 255)
-LCOLOR = rgb(106, 90, 205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+Lcolor="rgb"(106, 90, 205)
 ''
-if money >= 500 and hairlength > 15:'<a href="exec:dynamic $cuthair ">Cut your hair - 750 rubles</a>'
+if money >= 500 and hairlength > 15:'<a href="exec:dynamic $cuthair">Cut your hair - 750 rubles</a>'
 if money < 500 and hairlength <= 15:'You don''t have enough money to get your hair properly cut. It costs 750 rubles but you only have <<money>>.'
 ''
-if money >= 300 and hairlength > 80:'<a href="exec:dynamic $zavivka ">Curl your hair - 500 rubles</a>'
+if money >= 300 and hairlength > 80:'<a href="exec:dynamic $zavivka">Curl your hair - 500 rubles</a>'
 if money < 300:'You cannot afford curling your hair, as it costs 500 rubles, which you do not have at the moment.'
 if money >= 300 and hairlength <= 80:'Your hair is too short to be curled.'
 if hairlength <= 80:'Your hair is not long enough to be curled.'
 ''
-if money >= 750:'<a href="exec:dynamic $pokraska ">Dye your hair - 1.000 rubles</a>'
+if money >= 750:'<a href="exec:dynamic $pokraska">Dye your hair - 1.000 rubles</a>'
 if money < 750:'You cannot afford dyeing your hair, as you are missing the 1.000 rubles required for it.'
 ''
 if hour =< 8 or hour >= 20:

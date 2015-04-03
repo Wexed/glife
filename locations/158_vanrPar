@@ -7,14 +7,14 @@ $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
 
-'<center><b><font color = maroon>Bath</font></b></center>'
-'<center><img src="images/qwest/alter/<<$loc>>.jpg "></center>'
+'<center><b><font color="maroon">Bath</font></b></center>'
+'<center><img src="images/qwest/alter/<<$loc>>.jpg"></center>'
 clr
 set minut += 1
 gs 'stat'
-fcolor = rgb(0, 0, 0)
-bcolor = rgb(255, 255, 255)
-lcolor = rgb(106, 90, 205)
+fcolor="rgb"(0, 0, 0)
+bcolor="rgb"(255, 255, 255)
+lcolor="rgb"(106, 90, 205)
 'Bathroom cramped and very unpretentious.'
 
 if stanok > 0:'Your razor will suffice for <b><<stanok>></b> time.'
@@ -182,7 +182,7 @@ if analplug = 1 and analplugin = 0 and klismaday1= 1 and plugday ! daystart:
 		if anus >= 10 and anus < 20:anus += rand(1, 2)
 		if anus >= 20 and anus < 30:anus += rand(0, 1)
 
-		'<center><img src="pic/analplug.jpg" ></center>'
+		'<center><img src="pic/analplug.jpg"></center>'
 
 		if butpluguse > 0:'You tilt and habitual movement inserted itself anal plug.'
 		if butpluguse = 0:set butpluguse = 1 & 'You tried to relax as much as possible the ass and began to insert the plug itself, biting her lip from feeling, your ass is about to burst you gently pushed in the thickest part of his ass and finally plug into place.'
@@ -191,7 +191,7 @@ if analplug = 1 and analplugin = 0 and klismaday1= 1 and plugday ! daystart:
 	end
 end
 
-if analplug = 1 and analplugin=1:
+if analplug = 1 and analplugin = 1:
 	act 'Remove the butt plug (0:05)':
 		cla
 		*clr
@@ -200,7 +200,7 @@ if analplug = 1 and analplugin=1:
 
 		if anus < 30:set anus += 1
 
-		'<center><img src="pic/analplug.jpg" ></center>'
+		'<center><img src="pic/analplug.jpg"></center>'
 
 		if butpluguse > 0:'You bent down and removed from the habitual movement itself anal plug.'
 
@@ -215,7 +215,7 @@ if klisma = 1 and klismaday ! day:
 		set minut += 5
 		set klismaday = day
 		set klismaday1 = 1
-		'<center><img src="picV/klisma.jpg" ></center>'
+		'<center><img src="picV/klisma.jpg"></center>'
 		'You have set yourself an enema and clean the intestines, now your ass ready for anal sex.'
 
 		act 'Leave':gt $curloc

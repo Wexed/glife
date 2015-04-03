@@ -29,16 +29,16 @@ if magik >= 6 and spellbefshild = 1 and tobiQW = 0:gt 'tobiQW', 'start'
 $metka = $ARGS[0]
 $loc = $CURLOC
 
-'<center><b><font color = maroon>Bedroom</font></b></center>'
+'<center><b><font color="maroon">Bedroom</font></b></center>'
 
 if rembedr = 0:'<center><img src="images/etogame/bedr.jpg"></center>'
 if rembedr = 1:'<center><img src="images/etogame/bedr2.jpg"></center>'
 
 clr
 gs 'stat'
-fcolor = rgb(0, 0, 0)
-bcolor = rgb(255, 255, 255)
-lcolor = rgb(106, 90, 205)
+fcolor="rgb"(0, 0, 0)
+bcolor="rgb"(255, 255, 255)
+lcolor="rgb"(106, 90, 205)
 set minut += 1
 set housrA = 1
 set housrMir = 1
@@ -57,7 +57,7 @@ if husbandrinkday = day:
 end
 
 if husband > 0 and husbandrink ! 10 and husbandrinkday ! day:
-	if hour > 22 or hour < 7:'<a href="exec:gt ''husb'', ''start'' ">Husband is sleeping on the bed.</a>'
+	if hour > 22 or hour < 7:'<a href="exec:gt ''husb'', ''start''">Husband is sleeping on the bed.</a>'
 end
 
 if husbandrink = 11 and husbanstrapon > 0 and husbandrinkday ! day:

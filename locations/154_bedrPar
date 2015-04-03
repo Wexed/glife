@@ -3,14 +3,14 @@ $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><b><font color = maroon>Your bedroom</font></b></center>'
-'<center><img src="images/qwest/alter/<<$loc>>.jpg "></center>'
+'<center><b><font color="maroon">Your bedroom</font></b></center>'
+'<center><img src="images/qwest/alter/<<$loc>>.jpg"></center>'
 clr
 set minut += 1
 gs 'stat'
-fcolor = rgb(0, 0, 0)
-bcolor = rgb(255, 255, 255)
-lcolor = rgb(106, 90, 205)
+fcolor="rgb"(0, 0, 0)
+bcolor="rgb"(255, 255, 255)
+lcolor="rgb"(106, 90, 205)
 'Small room in which hardly squeezed <a href="exec:GT ''loker'', ''start''">cabinet</a>, your <a href="exec:GT ''bedPar''">bed</a>, <a href="exec:GT ''stolPar''">desk</a> bed and sisters.'
 gs 'family'
 
@@ -37,7 +37,7 @@ if horny >= 50 and sisterHere = 0:
 	act 'Masturbate':gt 'selfplay'
 end
 if pornMagazine > 0:'Under the mattress you have hidden pornozhurnal.'
-if sisterHere=0 and pornMagazine > 0:dynamic $d_read_porn
+if sisterHere = 0 and pornMagazine > 0:dynamic $d_read_porn
 
 dynamic $d_read_book
 
@@ -63,7 +63,7 @@ if dur > 0 and narkday ! day:
 		set horny = 100
 		set nark += 10
 		set dur -= 1
-		'<center><img src="images/pic/dur.jpg" ></center>'
+		'<center><img src="images/pic/dur.jpg"></center>'
 		'You otsypali dose of powder and its nyuhnuli, then you feel just fine.'
 
 		act 'Leave':gt $curloc
