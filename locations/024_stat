@@ -226,18 +226,18 @@ if vokal > 100:vokal = 100
 if dance > 100:dance = 100
 if stripdance > 100:stripdance = 100
 if poledance > 100:poledance = 100
-!'if libonce=0:
+!'if libonce = 0:
 	libonce = 1
 	addqst 'lib/otg_lib_menu_eng.qsp'
 end'
 
-!'if youngshoponce=0:
-youngshoponce=1
+!'if youngshoponce = 0:
+youngshoponce = 1
 ADDQST 'youngshop.qsp'
 end
 
-if qwestonce=0:
-qwestonce=1
+if qwestonce = 0:
+qwestonce = 1
 ADDQST 'qwest/qwest.qsp'
 end'
 if bfa < 0:bfa = 0
@@ -482,7 +482,7 @@ if hour >= 24:
 	if artompower <= 0:artompower = 3
  	if brow > 0 and browper = 0:brow -= 1
 
-	if shorthair=1:
+	if shorthair = 1:
 		shorthairday += 1
 
 		if shorthairday >= 45:shorthairday = 0 & shorthair = 0
@@ -814,27 +814,27 @@ if nerdism > 0:
 		!<font color="green">You are completely healthy shine and a healthy glow.</font>
 		manna = mannamax
 		SbrosNerdism = 0
-		$mudnerd='<font color="green">You are lost in a fantasy after reading the book.</font>'
+		$mudnerd = '<font color="green">You are lost in a fantasy after reading the book.</font>'
 	end
 
 	if lastreadday + 1 = daystart:
 		!manna = mannamax
 		SbrosNerdism = 0
-		$mudnerd='<font color="black">You a little bored and want to again plunge into a book.</font>'
+		$mudnerd = '<font color="black">You a little bored and want to again plunge into a book.</font>'
 	end
 	if lastreadday + 2 = daystart:
 		SbrosNerdism = 0
 
 		if manna > mannamax / 2:manna -= 10
 
-		$mudnerd='<font color="red">Do you really want something to read.</font>'
+		$mudnerd = '<font color="red">Do you really want something to read.</font>'
 	end
 
 	if lastreadday + 3 <= daystart:
 		if manna > mannamax / 10:manna -= 10
 
 		SbrosNerdism = 1
-		$mudnerd='<font color="red"><b>You terribly want at least something to read!!!</b></font>'
+		$mudnerd = '<font color="red"><b>You terribly want at least something to read!!!</b></font>'
 	end
 
 	!$mudnerd += 'lastread<<lastread>> totminut<<totminut>> <<totminut - lastread>>'
@@ -1041,7 +1041,7 @@ pl '<b><<$manna>></b>'
 if horny >= 90:pl '<font color="#FF1493">It takes an incredible amount of willpower not to touch yourself all the time.</font>'
 if horny >= 50 and horny < 90:pl '<font color="#DB7093">You have trouble focusing at times, as your mind drifts to sex.</font>'
 
-if ETOmenu=1:
+if ETOmenu = 1:
 	pl '<b><<$health>></b>'
 	pl '<b><<$willpower>></b>'
 	pl '<b><<$energy>></b>'
@@ -1054,7 +1054,7 @@ if ETOmenu = 0:
 	!set a1 = horny
 	gs 'indik', '2'
 	pl '<<$ind>> Arousal'
-	healthmax=(vital * 10 + stren * 5)
+	healthmax = (vital * 10 + stren * 5)
 	set a = health * 100 / healthmax
 	set a1 = health
 	gs 'indik', '1'
