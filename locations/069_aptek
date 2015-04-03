@@ -24,7 +24,7 @@ if $ARGS[0] = 'start':
 		act 'Buy condoms 100 rublesles':
 			portion = input ("How many packages you want to buy?")
 
-			if portion * 100 > money: 'You do not have enough money.'
+			if portion * 100 > money:'You do not have enough money.'
 
 			if portion * 100 <= money:
 				set prezik = prezik + portion * 5
@@ -54,7 +54,7 @@ if $ARGS[0] = 'start':
 		act 'Buy birth control pills 500 rublesles':
 			portion = input ("How many packages you want to buy?")
 
-			if portion * 500 > money: 'You do not have enough money.'
+			if portion * 500 > money:'You do not have enough money.'
 
 			if portion * 500 <= money:
 				set tabletki += portion * 28
@@ -167,7 +167,7 @@ if $ARGS[0] = 'start':
 		end
 	end
 
-	act 'Quit': gt $loc
+	act 'Quit':gt $loc
 end
 !!!
 
