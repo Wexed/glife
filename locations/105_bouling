@@ -68,14 +68,14 @@ if $ARGS[0] = 'randwin':
 
 	if boulwin > 10 and boulvar = 1:
 		set money += 2000
-		'You won and received 2000 rubles.'
+		'You won and received 2,000 rubles.'
 
 		act 'Leave':gt 'torgcentr'
 	end
 
 	if boulwin > 10 and boulvar = 2:
 		set money += 5000
-		'You won and received 5000 rubles.'
+		'You won and received 5,000 rubles.'
 
 		act 'Leave':gt 'torgcentr'
 	end
@@ -84,7 +84,7 @@ if $ARGS[0] = 'randwin':
 		set picrand = 14
 
 		if money >= 2000:
-			'You lose and have to pay 2000 rubles.'
+			'You lose and have to pay 2,000 rubles.'
 
 			act 'Offer in-kind':xgt 'sexdvoe', 'var'
 
