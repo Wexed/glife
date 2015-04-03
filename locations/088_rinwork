@@ -70,7 +70,7 @@ if $ARGS[0] = 'start':
 				if poknorand >= 10:
 					rinmon += prodpay - 100
 					rinvesh += 1
-					'Buyer collected and paid item <<prodpay-100>> rubles'
+					'Buyer collected and paid item <<prodpay - 100>> rubles'
 
 					act 'Trading on':gt 'rinwork', 'start'
 				else
@@ -90,7 +90,7 @@ if $ARGS[0] = 'start':
 				if poknorand >= 30:
 					rinmon += prodpay - 50
 					rinvesh += 1
-					'Buyer collected and paid item <<prodpay-50>> rubles'
+					'Buyer collected and paid item <<prodpay - 50>> rubles'
 
 					act 'Trading on':gt 'rinwork', 'start'
 				else
@@ -230,14 +230,14 @@ if $ARGS[0] = 'start':
 			poktiprand = rand(0, 7)
 			pokupatel = 1
 
-			if poktiprand = 0:$pokup = 'To the tray approached middle-aged man.' & $poktip = 'Man'&pokti = 1
-			if poktiprand = 1:$pokup = 'To the tray approached by a young man.' & $poktip = 'Guy'&pokti = 2
-			if poktiprand = 2:$pokup = 'Guy came to the tray teenager.' & $poktip = 'Boy'&pokti = 3
-			if poktiprand = 3:$pokup = 'A woman came up to the tray.' & $poktip = 'Woman'&pokti = 1
-			if poktiprand = 4:$pokup = 'Girl came to the tray.' & $poktip = 'Girl'&pokti = 2
-			if poktiprand = 5:$pokup = 'To the tray approached teen girl.' & $poktip = 'Girlfriend'&pokti = 3
-			if poktiprand = 6:$pokup = 'Approached the old man to the tray.' & $poktip = 'Old man'&pokti = 0
-			if poktiprand = 7:$pokup = 'Grandma went to the tray.' & $poktip = 'Granny'&pokti = 0
+			if poktiprand = 0:$pokup = 'To the tray approached middle-aged man.' & $poktip = 'Man' & pokti = 1
+			if poktiprand = 1:$pokup = 'To the tray approached by a young man.' & $poktip = 'Guy' & pokti = 2
+			if poktiprand = 2:$pokup = 'Guy came to the tray teenager.' & $poktip = 'Boy' & pokti = 3
+			if poktiprand = 3:$pokup = 'A woman came up to the tray.' & $poktip = 'Woman' & pokti = 1
+			if poktiprand = 4:$pokup = 'Girl came to the tray.' & $poktip = 'Girl' & pokti = 2
+			if poktiprand = 5:$pokup = 'To the tray approached teen girl.' & $poktip = 'Girlfriend' & pokti = 3
+			if poktiprand = 6:$pokup = 'Approached the old man to the tray.' & $poktip = 'Old man' & pokti = 0
+			if poktiprand = 7:$pokup = 'Grandma went to the tray.' & $poktip = 'Granny' & pokti = 0
 		end
 
 		'<b><<$pokup>></b>'

@@ -121,7 +121,7 @@ if $ARGS[0] = 'start':
 	if $loc = 'gorodok':
 		if week < 6:
 			if hour >= 8 and hour < 16:
-				'Your sister <a href="exec:SiSonWork = 1 & GT ''sister''">Anne</a> sits at the checkout.'
+				'Your sister <a href="exec:SiSonWork = 1 & gt ''sister''">Anne</a> sits at the checkout.'
 			end
 		end
 	end
@@ -410,7 +410,7 @@ if $ARGS[0] = 'cosm':
 			portion = input ("How much you want to buy?")
 			if portion <= 0:portion = 1
 
-			if portion*500 > money:
+			if portion * 500 > money:
 				'You do not have enough money.'
 			else
 				set stanok += portion * 10
@@ -503,7 +503,7 @@ if $ARGS[0] = 'cosm':
 		portion = input ("How much you want to buy?")
 		if portion <= 0:portion = 1
 
-		if portion*80 > money:
+		if portion * 80 > money:
 			'You do not have enough money.'
 		else
 			set hscrunch = portion * 10
@@ -524,7 +524,7 @@ if $ARGS[0] = 'cosm':
 		portion = input ("How much you want to buy?")
 		if portion <= 0:portion = 1
 
-		if portion*100 > money:
+		if portion * 100 > money:
 			'You do not have enough money.'
 		else
 			set hpingrip = portion * 12
@@ -668,7 +668,7 @@ if $ARGS[0] = 'hos':
 			portion = input ("How much you want to buy?")
 			if portion <= 0:portion = 1
 
-			if portion*300 > money:
+			if portion * 300 > money:
 				'You do not have enough money.'
 			else
 				set cltarelka += portion * 5

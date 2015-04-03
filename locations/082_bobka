@@ -19,7 +19,7 @@ $bobka_inject = {
 		$tempval = ''
 		if narkoman ! 0:$tempval = ' with trembling hands'
 		'You grabbed the syringe and injected yourself<<$tempval>>. While <<$tempname>> was looking at you with a smile.'
-		if HaveMetBobka = 0:'"By the way I´m Bobka, and you are?" You mumbled "<<$name>>."'&HaveMetBobka = 1
+		if HaveMetBobka = 0:'"By the way I´m Bobka, and you are?" You mumbled "<<$name>>."' & HaveMetBobka = 1
 		act 'Leave':minut += 15 & gt 'street'
 	end
 }

@@ -1,6 +1,6 @@
 # pharmacy
 $regular_items = {
-	act 'Buy <b>fat burners</b> (1500 rubles) <<iif(fatdel>0, ''[left:<b>''+fatdel+''</b>]'', '''')>>':
+	act 'Buy <b>fat burners</b> (1, 500 rubles) <<iif(fatdel > 0, ''[left:<b>'' + fatdel + ''</b>]'', '''')>>':
 		if money >= 1500:
 			cla
 			*clr
@@ -14,11 +14,11 @@ $regular_items = {
 		act 'Move away from the counter':gt 'pharmacy', 'start'
 	end
 
-	act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo>0, ''[left:<b>''+lekarstvo+''</b>]'', '''')>>':
+	act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, ''[left:<b>'' + lekarstvo + ''</b>]'', '''')>>':
 		cla
 		*clr
 		portion = input ("How many packages you want to buy?")
-		if portion*500 <= money:
+		if portion * 500 <= money:
 			set lekarstvo+= portion * 10
 			set money -= portion * 500
 			'<center><img src="images/etogame/kassa.jpg"></center>'
@@ -29,11 +29,11 @@ $regular_items = {
 		act 'Move away from the counter':gt 'pharmacy', 'start'
 	end
 
-	act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin>0, ''[left:<b>''+vitamin+''</b>]'', '''')>>':
+	act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin > 0, ''[left:<b>'' + vitamin + ''</b>]'', '''')>>':
 		cla
 		*clr
 		portion = input ("How many packages you want to buy?")
-		if portion*500 <= money:
+		if portion * 500 <= money:
 			set vitamin+= portion * 20
 			set money -= portion * 500
 			'<center><img src="images/etogame/kassa.jpg"></center>'
@@ -44,7 +44,7 @@ $regular_items = {
 		act 'Move away from the counter':gt 'pharmacy', 'start'
 	end
 
-	act 'Buy <b>moisturizing lip balm</b> (1000 rubles) <<iif(lipbalm>0, ''[left:<b>''+lipbalm+''</b>]'', '''')>>':
+	act 'Buy <b>moisturizing lip balm</b> (1,000 rubles) <<iif(lipbalm > 0, ''[left:<b>'' + lipbalm + ''</b>]'', '''')>>':
 		if money >= 1000:
 			cla
 			*clr
@@ -58,7 +58,7 @@ $regular_items = {
 		act 'Move away from the counter':gt 'pharmacy', 'start'
 	end
 
-	act 'Buy <b>ointment for corns</b> (600 rubles) <<iif(mosolmaz>0, ''[left:<b>''+mosolmaz+''</b>]'', '''')>>':
+	act 'Buy <b>ointment for corns</b> (600 rubles) <<iif(mosolmaz > 0, ''[left:<b>'' + mosolmaz + ''</b>]'', '''')>>':
 		if money >= 600:
 			cla
 			*clr
@@ -98,11 +98,11 @@ if $ARGS[0] = 'start':
 	gs 'stat'
 	gs 'time'
 
-	act 'Buy <b>condoms</b> (100 rubles) <<iif(prezik>0, ''[left:<b>''+prezik+''</b>]'', '''')>>':
+	act 'Buy <b>condoms</b> (100 rubles) <<iif(prezik > 0, ''[left:<b>'' + prezik + ''</b>]'', '''')>>':
 		cla
 		*clr
 		portion = input ("How many packages you want to buy?")
-		if portion*100 <= money:
+		if portion * 100 <= money:
 			set prezik += portion * 5
 			set money -= portion * 100
 			'<center><img src="images/etogame/kassa.jpg"></center>'
@@ -114,11 +114,11 @@ if $ARGS[0] = 'start':
 		act 'Move away from the counter':gt 'pharmacy', 'start'
 	end
 
-	act 'Buy <b>birth control pills</b> (500 rubles) <<iif(tabletki>0, ''[left:<b>''+tabletki+''</b>]'', '''')>>':
+	act 'Buy <b>birth control pills</b> (500 rubles) <<iif(tabletki > 0, ''[left:<b>'' + tabletki + ''</b>]'', '''')>>':
 		cla
 		*clr
 		portion = input ("How many packages you want to buy?")
-		if portion*500 <= money:
+		if portion * 500 <= money:
 			set tabletki += portion * 28
 			set money -= portion * 500
 			'<center><img src="images/etogame/kassa.jpg"></center>'

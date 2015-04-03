@@ -78,8 +78,8 @@ if $ARGS[0] = 'popad':
 	set uvAg = agilD * 20/100
 	set poBox = boxingA * 20/100
 	set uvBox = boxingD * 20/100
-	set popad = rand(boxingA - poBox, boxingA + poBox) + rand(speedA-poSp, speedA + poSp) + BonusA + initBonusA
-	set uvorot = rand(boxingD - uvBox, boxingD + uvBox) + rand(agilD-uvAg, agilD + uvAg) + BonusD
+	set popad = rand(boxingA - poBox, boxingA + poBox) + rand(speedA - poSp, speedA + poSp) + BonusA + initBonusA
+	set uvorot = rand(boxingD - uvBox, boxingD + uvBox) + rand(agilD - uvAg, agilD + uvAg) + BonusD
 	set uvorKoef = uvorot * 50/100
 	set popKoef = popad * 50/100
 
@@ -116,7 +116,7 @@ if $ARGS[0] = 'popad':
 	end
 
 	if popad <= uvorot:
-		if popad+popKoef <= uvorot:
+		if popad + popKoef <= uvorot:
 			!критический промах
 			if tip = 0:
 				!атаковал игрок
@@ -131,7 +131,7 @@ if $ARGS[0] = 'popad':
 			end
 		end
 
-		if popad+popKoef > uvorot:
+		if popad + popKoef > uvorot:
 			!промах
 			if tip = 0:
 				!атаковал игрок

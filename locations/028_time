@@ -330,25 +330,25 @@ if temper <= 0:
 	if palto = 2:bonusZ = 0
 	if palto = 3:bonusZ = 3
 
-	if temper<-10 and palto = 1:
+	if temper < -10 and palto = 1:
 		set frost += 1
 		if energy < 5:set frost += 1
 		if tanga = 0:set frost += 1
 		if sweat > 0:set frost += 1
 	end
 
-	if temper<-20 and palto = 2:
+	if temper < -20 and palto = 2:
 		set frost += 1
 		if energy < 5:set frost += 1
 		if sweat > 0:set frost += 1
 	end
 
-	if temper<-30 and palto = 3:set frost += 1
+	if temper< -30 and palto = 3:set frost += 1
 
 	if palto <= 0:
-		if temper<-10:frost += 1
-		if temper<-20:frost += 2
-		if temper<-30:frost += 5
+		if temper < -10:frost += 1
+		if temper < -20:frost += 2
+		if temper < -30:frost += 5
 	end
 
 	if frost >= 12:set sick += 1

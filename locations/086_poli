@@ -40,7 +40,7 @@ if $ARGS[0] = 'start':
 		end
 	end
 
-	if willpower < intel*5 + will*5 and money >= 1000:
+	if willpower < intel * 5 + will * 5 and money >= 1000:
 		act 'See a therapist 1,000 rubles':
 			cla
 			set money    -= 1000
@@ -259,8 +259,8 @@ if $ARGS[0] = 'start':
 			'You put on the bed and lit up. Began a terrible pain in the abdomen, you yelled with all the dope and finally gave birth.'
 			set polkid[numkid] = rand(0, 1)
 
-			if polkid[numkid] = 0:$polreb[numkid] = 'girl'&'The doctor said that you had a girl.'
-			if polkid[numkid] = 1:$polreb[numkid] = 'boy'&'The doctor said that you have a baby boy.'
+			if polkid[numkid] = 0:$polreb[numkid] = 'girl' & 'The doctor said that you had a girl.'
+			if polkid[numkid] = 1:$polreb[numkid] = 'boy' & 'The doctor said that you have a baby boy.'
 
 			kid += 1
 
@@ -358,7 +358,7 @@ if $ARGS[0] = 'start':
 				if analplugIN ! 0:analplugIN = 0
 
 				gs 'stat'
-				'<center><img src="images/body/<<anpic>>.jpg" ></center>'
+				'<center><img src="images/body/<<anpic>>.jpg"></center>'
 				'You`ve come to the office to the proctologist. He immediately asked you to undress from the waist down and tilt.'
 
 				if anus <= 15:'The doctor examined your anus and said "Well , slightly distended anus, but no abnormalities."'
@@ -375,7 +375,7 @@ if $ARGS[0] = 'start':
 					proktologday = day
 					anus -= 5
 					gs 'stat'
-					'<center><img src="images/body/<<anpic>>.jpg" ></center>'
+					'<center><img src="images/body/<<anpic>>.jpg"></center>'
 					'You paid for the procedure and the doctor an hour tinkering in your ass causing her to order.'
 
 					act 'Get away from the clinic':gt 'street'

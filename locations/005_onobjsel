@@ -341,7 +341,7 @@ $din_cheat_param = {
 	pl '<<titK>> - tits'
 	pl '<<silicone>> - silicone'
 	pl '<<grudi>> - <<talia>> - <<bedra>>, breast size <<tits>>, the difference between the hips and waist <<bedra-talia>> cm'
-	pl 'Indicator muscularity <<musle>> - musle, <<salo>> - salo <<salo*2>> - salo * 2 <<fat>> - fat'
+	pl 'Indicator muscularity <<musle>> - musle, <<salo>> - salo <<salo * 2>> - salo * 2 <<fat>> - fat'
 }
 
 $din_cheat = {
@@ -960,7 +960,7 @@ $objbloknot = {
 	pl '<center><b><font color="maroon">Diary</font></b></center>'
 	if housr > 0:pl 'I live in a two-room apartment in a residential area. Payment for the apartment is taken automatically in the amount of 3,000 rubles each 25e number. Plus a light bill.'&nl
 	if work > 0 or stripwork > 0 or workPTU > 2:pl '<center><font color ="maroon">-- My Job --</font></center>'
-	if workPTU > 2:pl'I work as a teacher in the Lyceum. Working days Mon-Sat from 14.00 to 16.00. Salary 300r / day. Dress code - office, strict. The road from the apartment to the Lyceum takes 2 hours and 10 minutes.' & nl
+	if workPTU > 2:pl'I work as a teacher in the Lyceum. Working days Mon-Sat from 14.00 to 16.00. Salary 300 rubles / day. Dress code - office, strict. The road from the apartment to the Lyceum takes 2 hours and 10 minutes.' & nl
 	if work > 0 and workKafe > 0:pl'I work as a waitress in a cafe. Need to come to work with 11 to 12 working days, Tuesday, Wednesday, Thursday. At work every day you get tips from customers and automatically transferred to the 25th salary number.' & nl
 	if work > 0 and workhosp > 0:pl'I work as a nurse in the clinic. Need to come to work from 8 to 9 on weekdays. Salary is automatically transferred to the 25th number.' & nl
 	if work > 0 and worksalon > 0:pl'I work as a masseuse in the cabin. Need to come to work from 9 to 10 working days, Monday, Wednesday and Friday. Salary is automatically transferred to the 25th number.' & nl
@@ -975,12 +975,12 @@ $objbloknot = {
 	if husband > 0:pl 'I ve been married for <<husbanday>> days. My husband <<$husName>> <<$husBody>> <<$husFat>> <<$husHair>>. Member <<husDick>> Relationships <<husband>>' & nl
 	if kid > 0:pl 'I have a child <<$kidname[kidDiary]>>, age <<kid[kidDiary]>> days.' & nl
 	if $bfsex > 0:pl '<<$bfsex>>'
-	if bfA > 1:pl 'My current boyfriend, <<$boyA>>, is a <<$boybodyA>> <<$boybodA>> <<$boyfaceA>>. He is usually <<$boyCloA>> Our relationship is <<bfA>> and we have met <<dayA>> times.'&nl
-	if harakBoyA = 0 and bfA > 1:pl 'He is calm and self-possessed character.'&nl
-	if harakBoyA = 1 and bfA > 1:pl 'He is cheerful and sociable nature.'&nl
-	if harakBoyA = 2 and bfA > 1:pl 'He is irascible and very rigid.'&nl
-	if bfB > 1:pl 'Another boyfriend, <<$boyB>>, is a <<$boybodyB>> <<$boybodB>> <<$boyfaceB>>. He is usually <<$boyCloB>>. Our relationship is <<bfB>> and we have met <<dayB>> times.'&nl
-	if bfC > 1:pl 'My third boyfriend, <<$boyC>>, is a <<$boybodyC>> <<$boybodC>> <<$boyfaceC>>. He is usually <<$boyCloC>>. Our relationship is <<bfC>> and we have met <<dayC>> times.'&nl
+	if bfA > 1:pl 'My current boyfriend, <<$boyA>>, is a <<$boybodyA>> <<$boybodA>> <<$boyfaceA>>. He is usually <<$boyCloA>> Our relationship is <<bfA>> and we have met <<dayA>> times.' & nl
+	if harakBoyA = 0 and bfA > 1:pl 'He is calm and self-possessed character.' & nl
+	if harakBoyA = 1 and bfA > 1:pl 'He is cheerful and sociable nature.' & nl
+	if harakBoyA = 2 and bfA > 1:pl 'He is irascible and very rigid.' & nl
+	if bfB > 1:pl 'Another boyfriend, <<$boyB>>, is a <<$boybodyB>> <<$boybodB>> <<$boyfaceB>>. He is usually <<$boyCloB>>. Our relationship is <<bfB>> and we have met <<dayB>> times.' & nl
+	if bfC > 1:pl 'My third boyfriend, <<$boyC>>, is a <<$boybodyC>> <<$boybodC>> <<$boyfaceC>>. He is usually <<$boyCloC>>. Our relationship is <<bfC>> and we have met <<dayC>> times.' & nl
 
 	GS 'Menu.Create','zapisMenu'
 	GS 'Menu.Add', 'zapisMenu', 'Recording from avtodatoy', '', 'MenuLoc', 'zapisosn'
@@ -1135,12 +1135,12 @@ unselect
 Scale rendering using the table:
 "
 
-$func ('scale.table', 275, 420)+' 275 / 420'
-$func ('scale.table', 400, 420)+' 400 / 420'
-$func ('scale.table', 420, 420)+' 420 / 420'
-$func ('scale.table', 157, 420)+' 157 / 420'
-$func ('scale.table', 42, 420)+'  42 / 420'
-$func ('scale.table', 0, 420)+'   0 / 420'
+$func ('scale.table', 275, 420) + ' 275 / 420'
+$func ('scale.table', 400, 420) + ' 400 / 420'
+$func ('scale.table', 420, 420) + ' 420 / 420'
+$func ('scale.table', 157, 420) + ' 157 / 420'
+$func ('scale.table', 42, 420) + '  42 / 420'
+$func ('scale.table', 0, 420) + '   0 / 420'
 
 '
 
@@ -1169,7 +1169,7 @@ if args['empty'] > 0:
 end
 
 ! "close" table
-$args['table']+='</tr></table>'
+$args['table'] += '</tr></table>'
 ! the_result
 $result = $args['table']
 

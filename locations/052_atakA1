@@ -6,8 +6,8 @@ if $ARGS[0] = 'atak':
 	set uvAg = agil * 20/100
 	set poBox = reactV * 20/100
 	set uvBox = react * 20/100
-	set popad = rand(reactV - poBox, reactV + poBox) + rand(speedV-poSp, speedV + poSp) + bonusShV
-	set uvorot = rand(react - uvBox, react + uvBox) + rand(agil-uvAg, agil + uvAg)
+	set popad = rand(reactV - poBox, reactV + poBox) + rand(speedV - poSp, speedV + poSp) + bonusShV
+	set uvorot = rand(react - uvBox, react + uvBox) + rand(agil - uvAg, agil + uvAg)
 	set uvorKoef = uvorot * 50/100
 	set popKoef = popad * 50/100
 
@@ -18,7 +18,7 @@ if $ARGS[0] = 'atak':
 			xgt 'atakA1', 'uronKrit'
 		end
 
-		if popad < uvorot+uvorKoef:
+		if popad < uvorot + uvorKoef:
 			!нормальное попадание
 			!атаковал противник
 			'<b><font color="red">Contact</font></b>'
@@ -172,7 +172,7 @@ if $ARGS[0] = 'atakW':
 	set uvAg = agil * 20 / 100
 	set poBox = reactV * 20 / 100
 	set uvBox = react * 20 / 100
-	set popad = rand(reactV - poBox, reactV + poBox) + rand(speedV-poSp, speedV + poSp)
+	set popad = rand(reactV - poBox, reactV + poBox) + rand(speedV - poSp, speedV + poSp)
 	set uvorot = rand(react - uvBox, react + uvBox) + rand(agil - uvAg, agil + uvAg)
 	set uvorKoef = uvorot * 50 / 100
 	set popKoef = popad * 50 / 100
@@ -184,7 +184,7 @@ if $ARGS[0] = 'atakW':
 			xgt 'atakA1', 'uronKritW'
 		end
 
-		if popad < uvorot+uvorKoef:
+		if popad < uvorot + uvorKoef:
 			!нормальное попадание
 			'<b><font color="red">Contact</font></b>'
 			xgt 'atakA1', 'uronW'
