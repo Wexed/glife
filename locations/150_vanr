@@ -62,7 +62,7 @@ else
 end
 
 if stanok > 0:'A package of razors is on a shelf above the sink. You have enough blades for <b><<stanok>></b> shaves.'
-if dirtbelo>0:'The laundry basket currently has <font color = red><b><<dirtbelo>></b></font> pieces of dirty laundry.'
+if dirtbelo>0:'The laundry basket currently has <font color="red"><b><<dirtbelo>></b></font> pieces of dirty laundry.'
 if poroshok > 0:
 	if dirtbelo = 0:$stirka = ''
 	if dirtbelo > 0:$stirka = '<a href="exec:dynamic $stirkad">You can wash clothes</a>'
@@ -72,9 +72,9 @@ else
 end
 
 if clrbelo > 0:
-	*p 'A cupboard contains <font color = blue><b><<clrbelo>></b></font> pairs of clean underwear. '
+	*p 'A cupboard contains <font color="blue"><b><<clrbelo>></b></font> pairs of clean underwear. '
 else
-	*p '<b><font color = red>You do not have any clean underwear.</font></b> '
+	*p '<b><font color="red">You do not have any clean underwear.</font></b> '
 end
 
 if shampoo > 0:
