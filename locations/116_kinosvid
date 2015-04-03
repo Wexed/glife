@@ -1,447 +1,281 @@
 # kinosvid
-<<<<<<< 116_kinosvid
 set minut += 60
 set kisvrand = 0
 set manna += 10
 gs 'stat'
-'<center><B>Cinema</B></center>'
-'<center><img src="images\img\kinosvid\0.jpg"></center>'
+'<center><b>Cinema</b></center>'
+'<center><img src="images/img/kinosvid/0.jpg"></center>'
 'And you <<$telsob>> have bought tickets and took their seats ready for viewing'
+
 act 'Watch a movie':
 	if $telsob = 'Alla':
 		set alla += 1
 		if alla >= 20:
-			set kisvrand = RAND(0,10)
-			if kisvrand > 0 and kisvrand < 3: gt 'kinosvid','1'
-			if kisvrand > 2 and kisvrand < 5: gt 'kinosvid','2'
-			if kisvrand = 0 or kisvrand > 4: gt 'kinosvid','3'
-			end
-		if alla < 20: gt 'kinosvid','3'
+			set kisvrand = rand(0, 10)
+
+			if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
+			if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
+			if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
 		end
+
+		if alla < 20:gt 'kinosvid', '3'
+	end
+
 	if $telsob = 'Masha':
 		set masha += 1
+
 		if masha >= 20:
-			set kisvrand = RAND(0,10)
-			if kisvrand > 0 and kisvrand < 3: gt 'kinosvid','1'
-			if kisvrand > 2 and kisvrand < 5: gt 'kinosvid','2'
-			if kisvrand = 0 or kisvrand > 4: gt 'kinosvid','3'
-			end
-		if masha < 20: gt 'kinosvid','3'
+			set kisvrand = rand(0, 10)
+
+			if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
+			if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
+			if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
 		end
+
+		if masha < 20:gt 'kinosvid', '3'
+	end
+
 	if $telsob = 'Katia':
 		set kat += 1
+
 		if kat >= 20:
-			set kisvrand = RAND(0,10)
-			if kisvrand > 0 and kisvrand < 3: gt 'kinosvid','1'
-			if kisvrand > 2 and kisvrand < 5: gt 'kinosvid','2'
-			if kisvrand = 0 or kisvrand > 4: gt 'kinosvid','3'
-			end
-		if kat < 20: gt 'kinosvid','3'
+			set kisvrand = rand(0, 10)
+
+			if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
+			if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
+			if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
 		end
+
+		if kat < 20:gt 'kinosvid', '3'
 	end
-=======
-set minut+=60
-set kisvrand=0
-set manna+=10
-gs 'stat'
-'<center><B>theater</B></center>'
-'<center><img src="img/kinosvid/0.jpg" ></center>'
-'you and <<$telsob>> bought tickets and took their seats ready for viewing'
-act 'watch movies':
-	 if $telsob = 'Alla':
-		 set alla+=1
-		 if alla>=20:
-			 set kisvrand=RAND(0,10)
-			 if kisvrand>0 and kisvrand<3:gt 'kinosvid','1'
-			 if kisvrand>2 and kisvrand<5:gt 'kinosvid','2'
-			 if kisvrand=0 or kisvrand>4:gt 'kinosvid','3'
-			 end
-		 if alla<20:gt 'kinosvid','3'
-		 end
-	 if $telsob = 'Masha':
-		 set masha+=1
-		 if masha>=20:
-			 set kisvrand=RAND(0,10)
-			 if kisvrand>0 and kisvrand<3:gt 'kinosvid','1'
-			 if kisvrand>2 and kisvrand<5:gt 'kinosvid','2'
-			 if kisvrand=0 or kisvrand>4:gt 'kinosvid','3'
-			 end
-		 if masha<20:gt 'kinosvid','3'
-		 end
-	 if $telsob = 'katya':
-		 set kat+=1
-		 if kat>=20:
-			 set kisvrand=RAND(0,10)
-			 if kisvrand>0 and kisvrand<3:gt 'kinosvid','1'
-			 if kisvrand>2 and kisvrand<5:gt 'kinosvid','2'
-			 if kisvrand=0 or kisvrand>4:gt 'kinosvid','3'
-			 end
-		 if kat<20:gt 'kinosvid','3'
-		 end
-	 end
->>>>>>> 116_kinosvid
+end
 
 if $ARGS[0] = '1':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\1.jpg"></center>'
-'Passing you submissive <<$telsob>> distracted by the screen and it wakes you.'
-act 'Oh':
 	cla
 	*clr
-	set lesbian += 1
-	'<center><img src="images\img\kinosvid\2.jpg"></center>'
-	'"Here I am clumsy," she whispered, and began to clean up the popcorn with your clothes, her hands glided over your body collecting popcorn when she took off all her clothes c fingers slipped under clothing pulling back from the remnants of popcorn, her touch you a little excited, <<$telsob>> same clothes you have lifted up so that it was easier to get popcorn.'
-	'Suddenly she lifted her head and looked around the hall where no one except you and smile nebilo said "regaled popkornchikom?" With that, she put her head down to your chest and the remnants of popcorn became quickly disappear from your body under the influence of her tongue, sending them into her mouth.'
-	act 'Enjoy': gt 'kinosvid','10'
-	act 'Fondle her': gt 'kinosvid','11'
+	'<center><img src="images/img/kinosvid/1.jpg"></center>'
+	'Passing you submissive <<$telsob>> distracted by the screen and it wakes you.'
+
+	act 'Oh':
+		cla
+		*clr
+		set lesbian += 1
+		'<center><img src="images/img/kinosvid/2.jpg"></center>'
+		'"Here I am clumsy, " she whispered, and began to clean up the popcorn with your clothes, her hands glided over your body collecting popcorn when she took off all her clothes c fingers slipped under clothing pulling back from the remnants of popcorn, her touch you a little excited, <<$telsob>> same clothes you have lifted up so that it was easier to get popcorn.'
+		'Suddenly she lifted her head and looked around the hall where no one except you and smile nebilo said "regaled popkornchikom?" With that, she put her head down to your chest and the remnants of popcorn became quickly disappear from your body under the influence of her tongue, sending them into her mouth.'
+
+		act 'Enjoy':gt 'kinosvid', '10'
+		act 'Fondle her':gt 'kinosvid', '11'
 	end
-=======
-'<center><img src="img/kinosvid/1.jpg" ></center>'
-'By submitting you obediently <<$telsob>> distracted by the screen and wake it on you.'
-act 'oh':
-	 cla
-	 *clr
-	 set lesbian+=1
-	 '<center><img src="img/kinosvid/2.jpg" ></center>'
-	 '"Here I am clumsy" she whispered, her hands glided over your body picking popcorn, when she took off everything c dress her fingers slipped under clothes pulling back from the remnants of popcorn, from her touch you a little excited, <<$telsob>> as you have lifted up the clothes so that it was easier to get the popcorn.
-	 Suddenly she lifted her head and looked around the room, in which no one except you nebilo and said with a smile "will treat popkornchikom?" With these words she lowered her head to your chest and balances popcorn became quickly disappears from your body under the influence of its language, Send them to her mouth.'
-	 act 'enjoy':gt 'kinosvid','10'
-	 act 'fondle her':gt 'kinosvid','11'
-	 end
->>>>>>> 116_kinosvid
 end
 
 if $ARGS[0] = '10':
-cla
-*clr
-set orgasm += 1
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\3.jpg"></center>'
-'Soon her tongue down below the stomach and that <<$telsob>> has already dug tongue in your pussy expertly massaging the clitoris and bringing you to orgasm.'
-act 'Enjoy':
 	cla
 	*clr
 	set orgasm += 1
-	set vagina += 1
-	'<center><img src="images\img\kinosvid\4.jpg"></center>'
-	'<<$telsob>> floated fingers, continuing to massage the clitoris tongue, she tucked first one, then a second finger, and so long as you were not her four fingers, in fact she put all her fingers and brush wholly entered into and you start gently move inside continuing to lick the clitoris, a few seconds of this massage you again covered orgasm.'
-	act 'Fondle her': gt 'kinosvid','13'
-	act 'Finish': gt 'kinosvid','3'
+	'<center><img src="images/img/kinosvid/3.jpg"></center>'
+	'Soon her tongue down below the stomach and that <<$telsob>> has already dug tongue in your pussy expertly massaging the clitoris and bringing you to orgasm.'
+
+	act 'Enjoy':
+		cla
+		*clr
+		set orgasm += 1
+		set vagina += 1
+		'<center><img src="images/img/kinosvid/4.jpg"></center>'
+		'<<$telsob>> floated fingers, continuing to massage the clitoris tongue, she tucked first one, then a second finger, and so long as you were not her four fingers, in fact she put all her fingers and brush wholly entered into and you start gently move inside continuing to lick the clitoris, a few seconds of this massage you again covered orgasm.'
+
+		act 'Fondle her':gt 'kinosvid', '13'
+		act 'Finish':gt 'kinosvid', '3'
 	end
-act 'Fondle her': gt 'kinosvid','12'
-=======
-'<center><img src="img/kinosvid/3.jpg" ></center>'
-'Soon her tongue down below the stomach and here <<$telsob>> already dug tongue in your pussy expertly massaging the clitoris and bringing you to orgasm.'
-act 'enjoy':
-	 cla
-	 *clr
-	 set orgasm += 1
-	 set vagina += 1
-	 '<center><img src="img/kinosvid/4.jpg" ></center>'
-	 '<<$telsob>> Suppose that in the course of fingers, continuing to massage the clitoris language, she put her first one, then a second finger , for so she put all her fingers and brush completely entered and you start to move cautiously in continuing to lick clit, after a few seconds of this massage you again covered orgasm.'
-	 act 'fondle her':gt 'kinosvid','13'
-	 act 'End_Up':gt 'kinosvid','3'
-	 end
-act 'fondle her':gt 'kinosvid','12'
->>>>>>> 116_kinosvid
+
+	act 'Fondle her':gt 'kinosvid', '12'
 end
 
 if $ARGS[0] = '11':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\5.jpg"></center>'
-'You rose from the chair and forcing her to stand glaring lips to her chest, ran his hand into her pants, her pussy was already very wet and your fingers easily proskalznuli inside. After a minute <<$telsob>> strongly pressed your head to your chest and you felt like her whole body shook your hand and on her juices flowed.'
-act 'Caressing her pussy': gt 'kinosvid','14'
-act 'Caress her ass': gt 'kinosvid','15'
-act 'Put on your knees': gt 'kinosvid','16'
-=======
-'<center><img src="img/kinosvid/5.jpg" ></center>'
-'You rose from the chair and forcing her to stand glaring lips in her chest, put his hand into her pants, her pussy was already very wet and your fingers easily into proskalznuli. A minute later <<$telsob>> strongly pressed your head to your chest and you feel like all of her body shuddered and in your hand ran down her juices.'
-act 'Caressing her pussy':gt 'kinosvid','14'
-act 'Fondle her ass':gt 'kinosvid','15'
-act 'To its knees':gt 'kinosvid','16'
->>>>>>> 116_kinosvid
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/5.jpg"></center>'
+	'You rose from the chair and forcing her to stand glaring lips to her chest, ran his hand into her pants, her pussy was already very wet and your fingers easily proskalznuli inside. After a minute <<$telsob>> strongly pressed your head to your chest and you felt like her whole body shook your hand and on her juices flowed.'
+
+	act 'Caressing her pussy':gt 'kinosvid', '14'
+	act 'Caress her ass':gt 'kinosvid', '15'
+	act 'Put on your knees':gt 'kinosvid', '16'
 end
 
 if $ARGS[0] = '12':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\6.jpg"></center>'
-'You slipped lower and taking <<$telsob>> under the arms pulled up, she realized what you want and quickly zaskachila on chair, placing her pussy oozing over your face. Lips clinging to her crotch you entered my tongue into her, diligently plying them inside. A few minutes later <<$telsob>> was rapidly rub against your mouth and after a few seconds her juices fill your mouth.'
-act 'Finish': gt 'kinosvid','3'
-=======
-'<center><img src="img/kinosvid/6.jpg" ></center>'
-'You slipped lower and taking <<$telsob>> under the arms pulled upward, she understood what you want quickly and zaskachila on chair, placing her oozing pussy on your face. Clinging lips to her crotch you have entered your tongue in her, diligently plying them inside. After a few minutes <<$telsob>> quickly began to rub against your mouth and within seconds.'
-act 'End_Up':gt 'kinosvid','3'
->>>>>>> 116_kinosvid
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/6.jpg"></center>'
+	'You slipped lower and taking <<$telsob>> under the arms pulled up, she realized what you want and quickly zaskachila on chair, placing her pussy oozing over your face. Lips clinging to her crotch you entered my tongue into her, diligently plying them inside. A few minutes later <<$telsob>> was rapidly rub against your mouth and after a few seconds her juices fill your mouth.'
+
+	act 'Finish':gt 'kinosvid', '3'
 end
 
 if $ARGS[0] = '13':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\7.jpg"></center>'
-'Seated in her chair, you knelt down and began to lick her pussy odnovremeno inserting her fingers one by one, when her pussy was stretched enough, you have laid a hand and gently entered her. Soon <<$telsob>> and shuddered from her lips escaped a moan of pleasure.'
-act 'Substitute ass': gt 'kinosvid','110'
-act 'Finish': gt 'kinosvid','3'
-=======
-'<center><img src="img/kinosvid/7.jpg" ></center>'
-'Seated in her chair, you knelt down and began to lick her pussy Simultaneity inserting her fingers one by one, when her pussy stretched enough, you with folded hands and gently entered her. soon <<$telsob>> shuddered and pulled out of her mouth moan of pleasure.'
-act 'substitute the ass':gt 'kinosvid','110'
-act 'End_Up':gt 'kinosvid','3'
->>>>>>> 116_kinosvid
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/7.jpg"></center>'
+	'Seated in her chair, you knelt down and began to lick her pussy odnovremeno inserting her fingers one by one, when her pussy was stretched enough, you have laid a hand and gently entered her. Soon <<$telsob>> and shuddered from her lips escaped a moan of pleasure.'
+
+	act 'Substitute ass':gt 'kinosvid', '110'
+	act 'Finish':gt 'kinosvid', '3'
 end
 
 if $ARGS[0] = '14':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\8.jpg"></center>'
-'Unfolding her back to him you´re a little pushed her forward so that she stood on a chair and knees kneeling clung to her pussy, then dropped into your tongue inside it caressed the clitoris <<$telsob>> moaning with pleasure.'
-act 'Fondle her': gt 'kinosvid','17'
-=======
-'<center><img src="img/kinosvid/8.jpg" ></center>'
-'Unfolding it back to him you are a bit pushed her forward so that she got her knees on a chair and knelt clung to her pussy, your tongue is dropped into it inside to caress the clitoris, <<$telsob>> moaning with pleasure.'
-act 'fondle her':gt 'kinosvid','17'
->>>>>>> 116_kinosvid
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/8.jpg"></center>'
+	'Unfolding her back to him you´re a little pushed her forward so that she stood on a chair and knees kneeling clung to her pussy, then dropped into your tongue inside it caressed the clitoris <<$telsob>> moaning with pleasure.'
+
+	act 'Fondle her':gt 'kinosvid', '17'
 end
 
 if $ARGS[0] = '15':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\9.jpg"></center>'
-'Unfolding her back to him you´re a little pushed her forward so that she stood on a chair and knees kneeling clung to her ass, then dropped into your tongue inside the anus then fondled the buttocks <<$telsob>> moaning with pleasure, trying to run a deeper your language .'
-act 'Fondle her': gt 'kinosvid','17'
-=======
-'<center><img src="img/kinosvid/9.jpg" ></center>'
-'Unfolding it back to him you are a bit pushed her forward so that she got her knees on a chair and knelt clung to her ass, your tongue is dropped into the inside of the anus is caressed the buttocks, <<$telsob>> moaning with pleasure, trying to run a deeper your language.'
-act 'fondle her':gt 'kinosvid','17'
->>>>>>> 116_kinosvid
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/9.jpg"></center>'
+	'Unfolding her back to him you´re a little pushed her forward so that she stood on a chair and knees kneeling clung to her ass, then dropped into your tongue inside the anus then fondled the buttocks <<$telsob>> moaning with pleasure, trying to run a deeper your language .'
+
+	act 'Fondle her':gt 'kinosvid', '17'
 end
 
 if $ARGS[0] = '16':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\11.jpg"></center>'
-'You pressed on her shoulders and <<$telsob>> quickly dropped to his knees in front of you, you bulged forward trying to give her maximum access to her crotch, <<$telsob>> pressed his lips to your pussy and then draw in your lips then indulge in language, massaging your clitoris.'
-act 'Enjoy': gt 'kinosvid','18'
-act 'Fondle her': gt 'kinosvid','19'
-=======
-'<center><img src="img/kinosvid/11.jpg" ></center>'
-'You pressed on her shoulders and <<$telsob>> quickly dropped to his knees in front of you, You arched forward trying to give her maximum access to her crotch, <<$telsob>> pressed her lips to your pussy and then sucks in your sponge is to indulge in language, massaging your clitoris.'
-act 'enjoy':gt 'kinosvid','18'
-act 'fondle her':gt 'kinosvid','19'
->>>>>>> 116_kinosvid
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/11.jpg"></center>'
+	'You pressed on her shoulders and <<$telsob>> quickly dropped to his knees in front of you, you bulged forward trying to give her maximum access to her crotch, <<$telsob>> pressed his lips to your pussy and then draw in your lips then indulge in language, massaging your clitoris.'
+
+	act 'Enjoy':gt 'kinosvid', '18'
+	act 'Fondle her':gt 'kinosvid', '19'
 end
 
 if $ARGS[0] = '17':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\10.jpg"></center>'
-'Gradually you start getting fingers in her pussy, her anus odnovremeno Shchekotov tongue, every time her vagina stretched enough you shoved another finger, a few minutes later your whole hand was inside her pussy. <<$telsob>> moaning and diligently podmahivala the beat of your hand, in a couple of minutes, she cried, clutching the chair strongly you felt inside her womb spreads heat.'
-act 'Finish': gt 'kinosvid','3'
-=======
-'<center><img src="img/kinosvid/10.jpg" ></center>'
-'Gradual you have started to enter her pussy fingers, Simultaneity Shchekotov her anus tongue, every time her vagina stretched enough you shoved another finger, a few minutes later your whole hand was inside her pussy. <<$telsob>> moaning and diligently podmahivala to the beat of your hand, a couple of minutes she screamed, strongly gripping the chair and you felt inside her womb spreads heat.'
-act 'End_Up':gt 'kinosvid','3'
->>>>>>> 116_kinosvid
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/10.jpg"></center>'
+	'Gradually you start getting fingers in her pussy, her anus odnovremeno Shchekotov tongue, every time her vagina stretched enough you shoved another finger, a few minutes later your whole hand was inside her pussy. <<$telsob>> moaning and diligently podmahivala the beat of your hand, in a couple of minutes, she cried, clutching the chair strongly you felt inside her womb spreads heat.'
+
+	act 'Finish':gt 'kinosvid', '3'
 end
 
 if $ARGS[0] = '18':
-cla
-*clr
-set orgasm += 1
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\12.jpg"></center>'
-'You pulled up a chair and foot <<$telsob>> hug your hip continued to kiss your pussy then penetrating tongue inside, kissing clit, sucked it into itself. A few minutes later weaken and satisfied collapsed on a chair.'
-act 'Finish': gt 'kinosvid','3'
-=======
-'<center><img src="img/kinosvid/12.jpg" ></center>'
-'You killed a leg up on a chair and <<$telsob>> embracing your hip continued to kiss your pussy then penetrates into the language, then kissing her clit, sucked into itself. A few minutes later exhausted and satisfied collapsed on a chair.'
-act 'End_Up':gt 'kinosvid','3'
->>>>>>> 116_kinosvid
-end
-
-if $ARGS[0] = '19':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\13.jpg"></center>'
-'You picked her up and helped to climb back in his chair, and then spread wide her legs bowed down to her pussy passionately licking her lips and clit, a few minutes later <<$telsob>> moaned, clutching your hair and richly finished, you tchatelno lapped up all that flowed from it countries not to miss drop.'
-act 'Finish': gt 'kinosvid','3'
-=======
-'<center><img src="img/kinosvid/13.jpg" ></center>'
-'You raised her and helped to get back in his chair, then straddled her legs sat down at her pussy passionately licking her lips and clitoris, after a few minutes <<$telsob>> moaned, grabbing you by the hair and richly finished, you tchatelno licked all that flowed from it Stra not miss not drop.'
-act 'End_Up':gt 'kinosvid','3'
->>>>>>> 116_kinosvid
-end
-
-if $ARGS[0] = '110':
-cla
-*clr
-set orgasm += 1
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\14.jpg"></center>'
-'You got my knees on a chair, turning to her ass and began to shake her hips invitingly, <<$telsob>> does not make them wait in a couple of seconds her hands parted the buttocks and your tongue aggressively invade you in the ass, after a few minutes of this massage you left off, and <<$telsob>> tchatelno lapped up all the juices from your hips.'
-act 'Finish': gt 'kinosvid','3'
-=======
-'<center><img src="img/kinosvid/14.jpg" ></center>'
-'You stood knee on a chair, Turning to her ass and began to shake her hips invitingly, <<$telsob>> not long in coming, after a couple of seconds, after a few minutes of this massage you left off, and <<$telsob>> tchatelno lapped up all the juices from your hips.'
-act 'End_Up':gt 'kinosvid','3'
->>>>>>> 116_kinosvid
-end
-
-if $ARGS[0] = '2':
-cla
-*clr
-<<<<<<< 116_kinosvid
-set lesbian += 1
-'<center><img src="images\img\kinosvid\0.jpg"></center>'
-'During the session <<$telsob>> said that it should go out and quietly left the room.'
-act 'Wait':
-	cla
-	*clr
-	'<center><img src="images\img\kinosvid\20.jpg"></center>'
-	if kendra = 0: 'While it was not nice to you hooked no circumstances African and putting his hand on your hip, started stroking it slowly priblezhayas to the perineum and now her fingers naglazhivayut your clitoris. You are confused by such impudence and just sat in a stupor watching namanikyurinye marigolds you penetrate into the vagina. At this point in the back room <<$telsob>> and uvidivetu picture immediately vskhvatila africana by the ear and pulled out of the hall, the guys sitting in the hall laughed and back <<$telsob>> started yelling at them so that they would prefer to leave. In the hall were just you and <<$telsob>>.'
-	if kendra > 0: 'While it was not hooked to you and Kendra no circumstances putting a hand on your hip, started stroking it slowly priblezhayas perineum and now her fingers naglazhivayut your clitoris. You are confused by such impudence and just sat in a stupor watching namanikyurinye marigolds you penetrate into the vagina. At this point in the back room <<$telsob>> and uvidivetu picture immediately vskhvatila Kendra ear and pulled out of the hall, the guys sitting in the hall laughed and back <<$telsob>> started yelling at them so that they would prefer to leave. In the hall were just you and <<$telsob>>.'
-	act 'Wait':
-		cla
-		*clr
-		'<center><img src="images\img\kinosvid\21.jpg"></center>'
-		'When <<$telsob>> a little calmed down and sat back down next to you, you are still and sat with her legs spread wide and bare wet pussy. Looking at you, <<$telsob>> quietly began filming with you top clothing'
-		act 'Wait':
-			cla
-			*clr
-			set vagina += 1
-			set orgasm += 1
-			'<center><img src="images\img\kinosvid\22.jpg"></center>'
-			'When <<$telsob>> bared your breasts, first walked on her tongue, and then glaring you in the lips, with the force you inserted two fingers into her vagina and pryanyalas violently move them, it seems that the anger in her still raged. You flattered that <<$telsob>> you jealous and began diligently podmahivat though hardly keep up with her movements, and finished in a few minutes. <<$telsob>> does not appeased and tried to flip you.'
-			act 'Submit':
-				cla
-				*clr
-				set orgasm += 1
-				'<center><img src="images\img\kinosvid\23.jpg"></center>'
-				'You obediently rolled over and got cancer in his chair, this time you got four fingers in her vagina. <<$telsob>> moved them at such a rate that soon you become sick, but made its way through the pain and pleasure you again soon finished.'
-				act 'Further':
-					cla
-					*clr
-					'<center><img src="images\img\kinosvid\24.jpg"></center>'
-					'<<$telsob>> stood on a nearby chair and poodlokotniki taking your hand inserted four fingers of their pussy, you began to gently move his hand trying not to cause her pain, but received ukorizniny opinion, accelerated I could. <<$telsob>> moan so shouted over the film, she soon vskriknulai limp, sliding armrests with you and kiss it as if nothing had happened continued to watch the movie.'
-					act 'Finish': gt 'kinosvid','3'
-					end
-				end
-			act 'Fondle her': gt 'kinosvid','22'
-			end
-		act 'Fondle her': gt 'kinosvid','21'
-		end
-	end
-=======
-set lesbian+=1
-'<center><img src="img/kinosvid/0.jpg" ></center>'
-'During the session <<$telsob>> said that it is necessary to go out and quietly left the room.'
-act 'wait':
-	 cla
-	 *clr
-	 '<center><img src="img/kinosvid/20.jpg" ></center>'
-	 if kendra = 0:'While it was not nice to you hooked African beztseremonno and putting his hand on her hip you, began stroking it slowly priblezhayas to the perineum and now her fingers naglazhivayut your clitoris. You are confused by such impudence and just sat in a stupor watching namanikyurinye nails penetrate you in the vagina. At this point in the hall back <<$telsob>> and uvidivetu picture, African vskhvatila immediately behind the ear, guys sitting in the audience laughed and returned <<$telsob>> started yelling at them as, that they would prefer to retire. In the hall there were only you and <<$telsob>>.'
-	 if kendra > 0:'While she was not addicted to you and Kendra beztseremonno putting his hand on her hip you, began stroking it slowly priblezhayas to the perineum and now her fingers naglazhivayut your clitoris. You are confused by such impudence and just sat in a stupor watching namanikyurinye nails penetrate you in the vagina. At this point in the hall back <<$telsob>> and uvidivetu picture, immediately vskhvatila Kendra `s ear and pulled out of the hall, guys sitting in the audience laughed and returned <<$telsob>> started yelling at them as, that they would prefer to retire. In the hall there were only you and <<$telsob>>.'
-	 act'wait':
-		 cla
-		 *clr
-		 '<center><img src="img/kinosvid/21.jpg" ></center>'
-		 'when <<$telsob>> calmed down a bit and sat back down next to you, you still and sat with legs wide open and bare wet pussy. Looking at you, <<$telsob>> quietly began to take off with your clothes top'
-		 act'wait':
-			 cla
-			 *clr
-			 set vagina += 1
-			 set orgasm += 1
-			 '<center><img src="img/kinosvid/22.jpg" ></center>'
-			 'when <<$telsob>> bared your breasts, you first walked on her tongue, and then you glaring lips, with the force you put two fingers into the vagina and moving them violently pryanyalas, It seems that the anger in her still raged. You flattered that <<$telsob>> jealous and you began to carefully podmahivat, though hardly keep up with her вЂ‹вЂ‹movements, and finished in a few minutes. <<$telsob>> not appeased and tried to turn you.'
-			 act 'submit':
-				 cla
-				 *clr
-				 set orgasm += 1
-				 '<center><img src="img/kinosvid/23.jpg" ></center>'
-				 'You obediently rolled over and got up on the chair cancer, this time four fingers into the vagina you have entered. <<$telsob>> they moved with such speed that soon you become sick, but made вЂ‹вЂ‹its way through the pain and the pleasure you again soon finished.'
-				 act 'further':
-					 cla
-					 *clr
-					 '<center><img src="img/kinosvid/24.jpg" ></center>'
-					 '<<$telsob>> stood on a nearby chair and poodlokotniki taking your hand put four fingers in the pussy itself, you started to move his hand gently trying not to hurt her, but received ukorizniny view, accelerated as I could. <<$telsob>> Moaned so shouted over film, Soon she went limp vskriknulai, sliding armrest with you and kiss it as if nothing had happened continued to watch the movie.'
-					 act 'End_Up':gt 'kinosvid','3'
-					 end
-				 end
-			 act 'fondle her':gt 'kinosvid','22'
-			 end
-		 act 'fondle her':gt 'kinosvid','21'
-		 end
-	 end
->>>>>>> 116_kinosvid
-end
-
-if $ARGS[0] = '21':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\25.jpg"></center>'
-'Without waiting for her to finish in throw off the remnants of clothes and sat on the floor in front of her to throw back his head and draw out the tongue. <<$telsob>> slowly got up off his clothes and stood over you, she shook her hips a few times so that your tongue sticking out walked over her pussy, then stopped placing her pussy so that your tongue lightly touched her clitoris. You clung to her crotch and then ran into a language that tickled the clitoris, a few minutes later <<$telsob>> finished filling your mouth with their droppings.'
-act 'Finish':
 	cla
 	*clr
 	set orgasm += 1
-	'<center><img src="images\img\kinosvid\26.jpg"></center>'
-	'When you´re dressed and sat down to watch the movie again, <<$telsob>> suddenly dropped to his knees in your chair and your feet spread wide lips you dug in the pussy, her tongue zasklzil on your lips and clitoris then dropping into the vagina then slipped just below the anus. Soon her efforts were crowned with success, your body is stirred up by the skin and shivers ran wave of pleasure you covered.'
-	act 'Finish': gt 'kinosvid','3'
+	'<center><img src="images/img/kinosvid/12.jpg"></center>'
+	'You pulled up a chair and foot <<$telsob>> hug your hip continued to kiss your pussy then penetrating tongue inside, kissing clit, sucked it into itself. A few minutes later weaken and satisfied collapsed on a chair.'
+
+	act 'Finish':gt 'kinosvid', '3'
+end
+
+if $ARGS[0] = '19':
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/13.jpg"></center>'
+	'You picked her up and helped to climb back in his chair, and then spread wide her legs bowed down to her pussy passionately licking her lips and clit, a few minutes later <<$telsob>> moaned, clutching your hair and richly finished, you tchatelno lapped up all that flowed from it countries not to miss drop.'
+
+	act 'Finish':gt 'kinosvid', '3'
+end
+
+if $ARGS[0] = '110':
+	cla
+	*clr
+	set orgasm += 1
+	'<center><img src="images/img/kinosvid/14.jpg"></center>'
+	'You got my knees on a chair, turning to her ass and began to shake her hips invitingly, <<$telsob>> does not make them wait in a couple of seconds her hands parted the buttocks and your tongue aggressively invade you in the ass, after a few minutes of this massage you left off, and <<$telsob>> tchatelno lapped up all the juices from your hips.'
+
+	act 'Finish':gt 'kinosvid', '3'
+end
+
+if $ARGS[0] = '2':
+	cla
+	*clr
+	set lesbian += 1
+	'<center><img src="images/img/kinosvid/0.jpg"></center>'
+	'During the session <<$telsob>> said that it should go out and quietly left the room.'
+
+	act 'Wait':
+		cla
+		*clr
+		'<center><img src="images/img/kinosvid/20.jpg"></center>'
+
+		if kendra = 0:'While it was not nice to you hooked no circumstances African and putting his hand on your hip, started stroking it slowly priblezhayas to the perineum and now her fingers naglazhivayut your clitoris. You are confused by such impudence and just sat in a stupor watching namanikyurinye marigolds you penetrate into the vagina. At this point in the back room <<$telsob>> and uvidivetu picture immediately vskhvatila africana by the ear and pulled out of the hall, the guys sitting in the hall laughed and back <<$telsob>> started yelling at them so that they would prefer to leave. In the hall were just you and <<$telsob>>.'
+		if kendra > 0:'While it was not hooked to you and Kendra no circumstances putting a hand on your hip, started stroking it slowly priblezhayas perineum and now her fingers naglazhivayut your clitoris. You are confused by such impudence and just sat in a stupor watching namanikyurinye marigolds you penetrate into the vagina. At this point in the back room <<$telsob>> and uvidivetu picture immediately vskhvatila Kendra ear and pulled out of the hall, the guys sitting in the hall laughed and back <<$telsob>> started yelling at them so that they would prefer to leave. In the hall were just you and <<$telsob>>.'
+
+		act 'Wait':
+			cla
+			*clr
+			'<center><img src="images/img/kinosvid/21.jpg"></center>'
+			'When <<$telsob>> a little calmed down and sat back down next to you, you are still and sat with her legs spread wide and bare wet pussy. Looking at you, <<$telsob>> quietly began filming with you top clothing'
+
+			act 'Wait':
+				cla
+				*clr
+				set vagina += 1
+				set orgasm += 1
+				'<center><img src="images/img/kinosvid/22.jpg"></center>'
+				'When <<$telsob>> bared your breasts, first walked on her tongue, and then glaring you in the lips, with the force you inserted two fingers into her vagina and pryanyalas violently move them, it seems that the anger in her still raged. You flattered that <<$telsob>> you jealous and began diligently podmahivat though hardly keep up with her movements, and finished in a few minutes. <<$telsob>> does not appeased and tried to flip you.'
+
+				act 'Submit':
+					cla
+					*clr
+					set orgasm += 1
+					'<center><img src="images/img/kinosvid/23.jpg"></center>'
+					'You obediently rolled over and got cancer in his chair, this time you got four fingers in her vagina. <<$telsob>> moved them at such a rate that soon you become sick, but made its way through the pain and pleasure you again soon finished.'
+
+					act 'Further':
+						cla
+						*clr
+						'<center><img src="images/img/kinosvid/24.jpg"></center>'
+						'<<$telsob>> stood on a nearby chair and poodlokotniki taking your hand inserted four fingers of their pussy, you began to gently move his hand trying not to cause her pain, but received ukorizniny opinion, accelerated I could. <<$telsob>> moan so shouted over the film, she soon vskriknulai limp, sliding armrests with you and kiss it as if nothing had happened continued to watch the movie.'
+
+						act 'Finish':gt 'kinosvid', '3'
+					end
+				end
+
+				act 'Fondle her':gt 'kinosvid', '22'
+			end
+
+			act 'Fondle her':gt 'kinosvid', '21'
+		end
 	end
-=======
-'<center><img src="img/kinosvid/25.jpg" ></center>'
-'Without waiting for her to finish in throw off the remnants of clothes and sat on the floor in front of her to throw back his head and draw out the tongue. <<$telsob>> slowly got up off his clothes and stood over you, She shook her hips several times so your protruding tongue walked on her pussy, then stopped by placing her pussy so, your tongue lightly touched her clitoris. You clung to her crotch and then ran into the language that tickled the clitoris, after a few minutes <<$telsob>> finished filling your mouth with their secretions.'
-act 'End_Up':
-	 cla
-	 *clr
-	 set orgasm += 1
-	 '<center><img src="img/kinosvid/26.jpg" ></center>'
-	 'When you `re dressed and sat down to watch the film again, <<$telsob>> suddenly dropped to her knees in your chair and your feet spread wide his lips snapped you in the pussy, zasklzil her tongue on your lips and clitoris then dropping into the vagina then slipped just below the anus. Soon, your body stirred up the skin and chills ran wave of pleasure you covered.'
-	 act 'End_Up':gt 'kinosvid','3'
-	 end
->>>>>>> 116_kinosvid
+end
+
+if $ARGS[0] = '21':
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/25.jpg"></center>'
+	'Without waiting for her to finish in throw off the remnants of clothes and sat on the floor in front of her to throw back his head and draw out the tongue. <<$telsob>> slowly got up off his clothes and stood over you, she shook her hips a few times so that your tongue sticking out walked over her pussy, then stopped placing her pussy so that your tongue lightly touched her clitoris. You clung to her crotch and then ran into a language that tickled the clitoris, a few minutes later <<$telsob>> finished filling your mouth with their droppings.'
+
+	act 'Finish':
+		cla
+		*clr
+		set orgasm += 1
+		'<center><img src="images/img/kinosvid/26.jpg"></center>'
+		'When you´re dressed and sat down to watch the movie again, <<$telsob>> suddenly dropped to his knees in your chair and your feet spread wide lips you dug in the pussy, her tongue zasklzil on your lips and clitoris then dropping into the vagina then slipped just below the anus. Soon her efforts were crowned with success, your body is stirred up by the skin and shivers ran wave of pleasure you covered.'
+
+		act 'Finish':gt 'kinosvid', '3'
+	end
 end
 
 if $ARGS[0] = '22':
-cla
-*clr
-<<<<<<< 116_kinosvid
-'<center><img src="images\img\kinosvid\27.jpg"></center>'
-'You gently pushed her away and knelt bullying her feet up. <<$telsob>> pushing the hips and hands you start to caress her tongue, first spending thighs then lick her lips and her tongue was neatly enter the vagina, then spiral back to the hips back, a few of these approaches <<$telsob>> begins to tremble and from breaking moan of pleasure.'
-act 'Finish': gt 'kinosvid','3'
-=======
-'<center><img src="img/kinosvid/27.jpg" ></center>'
-'You gently pushes him away and knelt lifts up her legs up. <<$telsob>> opens her thighs with his hands and you start to caress her tongue, first carried out on the thighs and then lick her lips and tongue akuratno enter it into the vagina, then spiraling back to back thigh, a few such approaches <<$telsob>> begins to tremble .'
-act 'End_Up':gt 'kinosvid','3'
->>>>>>> 116_kinosvid
+	cla
+	*clr
+	'<center><img src="images/img/kinosvid/27.jpg"></center>'
+	'You gently pushed her away and knelt bullying her feet up. <<$telsob>> pushing the hips and hands you start to caress her tongue, first spending thighs then lick her lips and her tongue was neatly enter the vagina, then spiral back to the hips back, a few of these approaches <<$telsob>> begins to tremble and from breaking moan of pleasure.'
+
+	act 'Finish':gt 'kinosvid', '3'
 end
 
 if $ARGS[0] = '3':
-cla
-set horny = 0
-<<<<<<< 116_kinosvid
-set minut += 90
-gs 'stat'
-'When the movie ended <<$telsob>> said that she had to flee and left'
-act 'Leave': gt 'torgcentr'
-=======
-set minut+=90
-gs 'stat'
-'When the film ended <<$telsob>> said that she had to flee and left'
-act 'Get_Away':gt'torgcentr'
->>>>>>> 116_kinosvid
+	cla
+	set horny = 0
+	set minut += 90
+	gs 'stat'
+	'When the movie ended <<$telsob>> said that she had to flee and left'
+
+	act 'Leave':gt 'torgcentr'
 end
+
 --- kinosvid ---------------------------------
 

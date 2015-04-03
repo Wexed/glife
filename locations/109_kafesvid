@@ -1,374 +1,299 @@
 # kafesvid
-<<<<<<< 109_kafesvid
 set minut += 60
 set manna += 10
 gs 'stat'
-'<center><B>Cafe</B></center>'
-'<center><img src="images\img\kafesvid\0.jpg"></center>'
+'<center><b>Cafe</b></center>'
+'<center><img src="images/img/kafesvid/0.jpg"></center>'
 'And you <<$telsob>> went into a small cafe in the center of'
+
 act 'Chat':
 	if $telsob = 'Alla':
 		set alla += 1
+
 		if alla >= 20:
-			set kaferand = RAND(0,10)
-			if kaferand > 0 and kaferand < 3: gt 'kafesvid','1'
-			if kaferand > 2 and kaferand < 5: gt 'kafesvid','2'
-			if kaferand = 0 or kaferand > 4: gt 'kafesvid','3'
-			end
-		if alla < 20: gt 'kafesvid','3'
+			set kaferand = rand(0, 10)
+			if kaferand > 0 and kaferand < 3:gt 'kafesvid', '1'
+			if kaferand > 2 and kaferand < 5:gt 'kafesvid', '2'
+			if kaferand = 0 or kaferand > 4:gt 'kafesvid', '3'
 		end
+
+		if alla < 20:gt 'kafesvid', '3'
+	end
+
 	if $telsob = 'Masha':
 		set masha += 1
+
 		if masha >= 20:
-			set kaferand = RAND(0,10)
-			if kaferand > 0 and kaferand < 3: gt 'kafesvid','1'
-			if kaferand > 2 and kaferand < 5: gt 'kafesvid','2'
-			if kaferand = 0 or kaferand > 4: gt 'kafesvid','3'
-			end
-		if masha < 20: gt 'kafesvid','3'
+			set kaferand = rand(0, 10)
+			if kaferand > 0 and kaferand < 3:gt 'kafesvid', '1'
+			if kaferand > 2 and kaferand < 5:gt 'kafesvid', '2'
+			if kaferand = 0 or kaferand > 4:gt 'kafesvid', '3'
 		end
+
+		if masha < 20:gt 'kafesvid', '3'
+	end
+
 	if $telsob = 'Katia':
 		set kat += 1
+
 		if kat >= 20:
-			set kaferand = RAND(0,10)
-			if kaferand > 0 and kaferand < 3: gt 'kafesvid','1'
-			if kaferand > 2 and kaferand < 5: gt 'kafesvid','2'
-			if kaferand = 0 or kaferand > 4: gt 'kafesvid','3'
-			end
-		if kat < 20: gt 'kafesvid','3'
+			set kaferand = rand(0, 10)
+			if kaferand > 0 and kaferand < 3:gt 'kafesvid', '1'
+			if kaferand > 2 and kaferand < 5:gt 'kafesvid', '2'
+			if kaferand = 0 or kaferand > 4:gt 'kafesvid', '3'
 		end
+
+		if kat < 20:gt 'kafesvid', '3'
 	end
-=======
-set minut+=60
-set manna+=10
-gs 'stat'
-'<center><B>cafe</B></center>'
-'<center><img src="img/kafesvid/0.jpg" ></center>'
-'you and <<$telsob>> went into a small cafe in the center'
-act 'chat':
-	 if $telsob = 'Alla':
-		 set alla+=1
-		 if alla>=20:
-			 set kaferand=RAND(0,10)
-			 if kaferand>0 and kaferand<3:gt 'kafesvid','1'
-			 if kaferand>2 and kaferand<5:gt 'kafesvid','2'
-			 if kaferand=0 or kaferand>4:gt 'kafesvid','3'
-			 end
-		 if alla<20:gt'kafesvid','3'
-		 end
-	 if $telsob = 'Masha':
-		 set masha+=1
-		 if masha>=20:
-			 set kaferand=RAND(0,10)
-			 if kaferand>0 and kaferand<3:gt 'kafesvid','1'
-			 if kaferand>2 and kaferand<5:gt 'kafesvid','2'
-			 if kaferand=0 or kaferand>4:gt 'kafesvid','3'
-			 end
-		 if masha<20:gt'kafesvid','3'
-		 end
-	 if $telsob = 'katya':
-		 set kat+=1
-		 if kat>=20:
-			 set kaferand=RAND(0,10)
-			 if kaferand>0 and kaferand<3:gt 'kafesvid','1'
-			 if kaferand>2 and kaferand<5:gt 'kafesvid','2'
-			 if kaferand=0 or kaferand>4:gt 'kafesvid','3'
-			 end
-		 if kat<20:gt'kafesvid','3'
-		 end
-	 end
->>>>>>> 109_kafesvid
+end
 
 if $ARGS[0] = '1':
-cla
-*clr
-<<<<<<< 109_kafesvid
-'<center><img src="images\img\kafesvid\1.jpg"></center>'
-'In malnkom cafe but you do not have anyone, and you are located in the far corner, in the shadows, in the course of conversation <<$telsob>> moved to the table right in front of you, and from under her skirt panties were visible. Noticing that you periodically glancing under her skirt. <<$telsob>> prepodnyala skirt, and has got one foot between your and began stroking her your hips.'
-act 'Move over': gt 'kafesvid','3'
-act 'Touch it':
 	cla
 	*clr
-	'<center><img src="images\img\kafesvid\2.jpg"></center>'
-	'You had a hand on her hip and sent hand to her panties <<$telsob>> jumped off the table and stood beside that, would you feel more comfortable stroking her pussy and running his hand under your clothes you started massaging his chest. A few seconds later she tried to take off your clothes.'
-	act 'Well, not here': gt 'kafesvid','3'
-	act 'Let her':
+	'<center><img src="images/img/kafesvid/1.jpg"></center>'
+	'In malnkom cafe but you do not have anyone, and you are located in the far corner, in the shadows, in the course of conversation <<$telsob>> moved to the table right in front of you, and from under her skirt panties were visible. Noticing that you periodically glancing under her skirt. <<$telsob>> prepodnyala skirt, and has got one foot between your and began stroking her your hips.'
+
+	act 'Move over':gt 'kafesvid', '3'
+
+	act 'Touch it':
 		cla
 		*clr
-		set lesbian += 1
-		'<center><img src="images\img\kafesvid\3.jpg"></center>'
-		'<<$telsob>> pulled off your clothes and on their knees, began to lick your pussy deftly wielding tongue.'
-		act 'Doggy-Style':
+		'<center><img src="images/img/kafesvid/2.jpg"></center>'
+		'You had a hand on her hip and sent hand to her panties <<$telsob>> jumped off the table and stood beside that, would you feel more comfortable stroking her pussy and running his hand under your clothes you started massaging his chest. A few seconds later she tried to take off your clothes.'
+
+		act 'Well, not here':gt 'kafesvid', '3'
+
+		act 'Let her':
 			cla
 			*clr
-			set orgasm += 1
-			'<center><img src="images\img\kafesvid\5.jpg"></center>'
-			'You get up from a chair, and she bends over the table <<$telsob>> immediately pushes your buttocks and begins to fuck you tongue, and sometimes she misses her tongue slips you into the anus, you it gets harder and soon you covering orgasm.'
-			act 'Proceed': gt 'kafesvid','10'
+			set lesbian += 1
+			'<center><img src="images/img/kafesvid/3.jpg"></center>'
+			'<<$telsob>> pulled off your clothes and on their knees, began to lick your pussy deftly wielding tongue.'
+
+			act 'Doggy-Style':
+				cla
+				*clr
+				set orgasm += 1
+				'<center><img src="images/img/kafesvid/5.jpg"></center>'
+				'You get up from a chair, and she bends over the table <<$telsob>> immediately pushes your buttocks and begins to fuck you tongue, and sometimes she misses her tongue slips you into the anus, you it gets harder and soon you covering orgasm.'
+
+				act 'Proceed':gt 'kafesvid', '10'
 			end
-		act 'Lick her':
-			cla
-			*clr
-			'<center><img src="images\img\kafesvid\4.jpg"></center>'
-			'You pick it up from his knees, and themselves go down on them. <<$telsob>> sits on a table and spreads her legs to the side, you cling to her crotch lips and start kissing her and then release the tab and a sensitive clitoris, occasionally running it into the vagina. Soon <<$telsob>> shudders and strongly pressed you to pussy violently cums from her pussy sees some powerful jets, first you have even decided that she pees in your mouth, but having tasted her juices realized that this is not so. You swallowed a few times its juice before this stream has dried up, but still her juices spilled over her hips and your breasts. <<$telsob>> without forces collapsed on the floor and kiss you sent last portion of its juice from his mouth in it, <<$telsob>> swallowed the juice, and began to lick your breasts licking droplets off her own juice.'
-			act 'Proceed': gt 'kafesvid','10'
+
+			act 'Lick her':
+				cla
+				*clr
+				'<center><img src="images/img/kafesvid/4.jpg"></center>'
+				'You pick it up from his knees, and themselves go down on them. <<$telsob>> sits on a table and spreads her legs to the side, you cling to her crotch lips and start kissing her and then release the tab and a sensitive clitoris, occasionally running it into the vagina. Soon <<$telsob>> shudders and strongly pressed you to pussy violently cums from her pussy sees some powerful jets, first you have even decided that she pees in your mouth, but having tasted her juices realized that this is not so. You swallowed a few times its juice before this stream has dried up, but still her juices spilled over her hips and your breasts. <<$telsob>> without forces collapsed on the floor and kiss you sent last portion of its juice from his mouth in it, <<$telsob>> swallowed the juice, and began to lick your breasts licking droplets off her own juice.'
+
+				act 'Proceed':gt 'kafesvid', '10'
 			end
 		end
 	end
-=======
-'<center><img src="img/kafesvid/1.jpg" ></center>'
-'In malnkom cafe except you nobody was, and you are located in the far corner, shade, during a conversation <<$telsob>> moved to the table in front of you and from under her skirt could see her panties. noticing, that you periodically looked under her skirt. <<$telsob>> prepodnyala skirt, and has got one foot between your and began stroking her your hips.'
-act 'move_away':gt 'kafesvid','3'
-act 'touch it':
-	 cla
-	 *clr
-	 '<center><img src="img/kafesvid/2.jpg" ></center>'
-	 'You ran a hand over her thighs and sent to the hand panties, <<$telsob>> jumped off the table and stood beside, what-would make it easier to stroke her pussy, and running his hand under your clothes began to massage your breasts. A few seconds later she tried to take off your clothes.'
-	 act 'Well':gt 'kafesvid','3'
-	 act 'let her':
-		 cla
-		 *clr
-		 set lesbian+=1
-		 '<center><img src="img/kafesvid/3.jpg" ></center>'
-		 '<<$telsob>> pulled off your clothes and kneeling, started to lick your pussy deftly wielding tongue.'
-		 act 'get cancer':
-			 cla
-			 *clr
-			 set orgasm += 1
-			 '<center><img src="img/kafesvid/5.jpg" ></center>'
-			 'You get up from the chair and bend down over the table, <<$telsob>> immediately pushes you buttocks and begins to fuck your tongue, sometimes she misses and her tongue slips you into the anus, you.'
-			 act 'Resume':gt 'kafesvid','10'
-			 end
-		 act 'lick it':
-			 cla
-			 *clr
-			 '<center><img src="img/kafesvid/4.jpg" ></center>'
-			 'You raise her from her knees, while they themselves descend on them. <<$telsob>> sits on the desk and spreads her legs to the side, You cling to the lips of her crotch, and start to kiss her and then release the tab and Shchekotov clitoris, periodically running it into the vagina. soon <<$telsob>> shudders and strongly pressed you to pussy, violently ends, from her pussy sees several powerful jets, first you even decide, she wrote to you in the mouth, but having tasted her juices understood that it is not. You repeatedly swallowed her juice before the stream has dried up, but still its juice spilled on her hips and your chest. <<$telsob>> without forces collapsed on the floor and kiss you sent last portion of its juice from his mouth in her, <<$telsob>> swallowed the juice, and began to lick your breasts licking off her own juice droplets.'
-			 act 'Resume':gt 'kafesvid','10'
-			 end
-		 end
-	 end
->>>>>>> 109_kafesvid
 end
 
 if $ARGS[0] = '10':
-cla
-*clr
-<<<<<<< 109_kafesvid
-'<center><img src="images\img\kafesvid\6.jpg"></center>'
-'<<$telsob>> found her purse, which flew in the process where it is under the table, and a little digging in her dildo learned to light. Sitting on poluryadom with a handbag she brought a dildo to her lips and began to tickle his head tongue playfully glancing at you.'
-act 'Her pussy': gt 'kafesvid','11'
-act 'Her ass': gt 'kafesvid','12'
-act 'Their pussy': gt 'kafesvid','13'
-act 'Finish': gt 'kafesvid','3'
-=======
-'<center><img src="img/kafesvid/6.jpg" ></center>'
-'<<$telsob>> found her purse, which in the course flew somewhere under the table, and a little digging it learned to light dildo. Sitting on poluryadom with her handbag she brought a dildo to his lips and began to tickle his head tongue, playfully looking at you.'
-act 'Her pussy':gt 'kafesvid','11'
-act 'Her ass':gt 'kafesvid','12'
-act 'Statement pussy':gt 'kafesvid','13'
-act 'End_Up':gt 'kafesvid','3'
->>>>>>> 109_kafesvid
+	cla
+	*clr
+	'<center><img src="images/img/kafesvid/6.jpg"></center>'
+	'<<$telsob>> found her purse, which flew in the process where it is under the table, and a little digging in her dildo learned to light. Sitting on poluryadom with a handbag she brought a dildo to her lips and began to tickle his head tongue playfully glancing at you.'
+
+	act 'Her pussy':gt 'kafesvid', '11'
+	act 'Her ass':gt 'kafesvid', '12'
+	act 'Their pussy':gt 'kafesvid', '13'
+	act 'Finish':gt 'kafesvid', '3'
 end
 
 if $ARGS[0] = '11':
-cla
-*clr
-<<<<<<< 109_kafesvid
-'<center><img src="images\img\kafesvid\8.jpg"></center>'
-'You take a dildo and sat her on a chair, enter it in her vagina. You fuck her carefully introducing dildo almost to the end, and <<$telsob>> at the time t handle her clitoris, until cums softly yelp.'
-set kafesvidsex += 1
-if kafesvidsex < 3:
-act 'Her ass': gt 'kafesvid','12'
-act 'Their pussy': gt 'kafesvid','13'
-end
-act 'Finish': gt 'kafesvid','3'
-=======
-'<center><img src="img/kafesvid/8.jpg" ></center>'
-'You take a dildo and sat her on a chair, enter it in her vagina. You diligently to fuck her, introducing a dildo until near the end, and <<$telsob>> at the time t handle her clitoris, until cums quietly yelp.'
-set kafesvidsex+=1
-if kafesvidsex<3:
-act 'Her ass':gt 'kafesvid','12'
-act 'Statement pussy':gt 'kafesvid','13'
-end
-act 'End_Up':gt 'kafesvid','3'
->>>>>>> 109_kafesvid
+	cla
+	*clr
+	'<center><img src="images/img/kafesvid/8.jpg"></center>'
+	'You take a dildo and sat her on a chair, enter it in her vagina. You fuck her carefully introducing dildo almost to the end, and <<$telsob>> at the time t handle her clitoris, until cums softly yelp.'
+	set kafesvidsex += 1
+	if kafesvidsex < 3:
+		act 'Her ass':gt 'kafesvid', '12'
+		act 'Their pussy':gt 'kafesvid', '13'
+	end
+
+	act 'Finish':gt 'kafesvid', '3'
 end
 
 if $ARGS[0] = '12':
-cla
-*clr
-<<<<<<< 109_kafesvid
-'<center><img src="images\img\kafesvid\9.jpg"></center>'
-'Taking a couple of times you dildo slaps the table, quickly realizing what you want <<$telsob>> is taken on the table and gets on all fours, licking juicy dildo you spit on her ass and send dildo behind. While you fuck her ass dildo <<$telsob>> moaning on the table, and you second hand pat yourself trying to achieve orgasm but in vain.'
-set kafesvidsex += 1
-if kafesvidsex < 3:
-act 'Her pussy': gt 'kafesvid','11'
-act 'Their pussy': gt 'kafesvid','13'
-end
-act 'Finish': gt 'kafesvid','3'
-=======
-'<center><img src="img/kafesvid/9.jpg" ></center>'
-'Taking dildo you slap a couple of times with his hand on the table, quickly understand what you want <<$telsob>> climbs on the table and gets up on all fours, licking dildo you relish spits on her ass and send dildo after. While you fuck her ass dildo, <<$telsob>> moaning on the table, and you second hand caresses herself trying to achieve orgasm but in vain.'
-set kafesvidsex+=1
-if kafesvidsex<3:
-act 'Her pussy':gt 'kafesvid','11'
-act 'Statement pussy':gt 'kafesvid','13'
-end
-act 'End_Up':gt 'kafesvid','3'
->>>>>>> 109_kafesvid
+	cla
+	*clr
+	'<center><img src="images/img/kafesvid/9.jpg"></center>'
+	'Taking a couple of times you dildo slaps the table, quickly realizing what you want <<$telsob>> is taken on the table and gets on all fours, licking juicy dildo you spit on her ass and send dildo behind. While you fuck her ass dildo <<$telsob>> moaning on the table, and you second hand pat yourself trying to achieve orgasm but in vain.'
+	set kafesvidsex += 1
+
+	if kafesvidsex < 3:
+		act 'Her pussy':gt 'kafesvid', '11'
+		act 'Their pussy':gt 'kafesvid', '13'
+	end
+
+	act 'Finish':gt 'kafesvid', '3'
 end
 
 if $ARGS[0] = '13':
-cla
-*clr
-set orgasm += 1
-set vagina += 1
-<<<<<<< 109_kafesvid
-'<center><img src="images\img\kafesvid\7.jpg"></center>'
-'You stand on the table and rastavlyaete feet <<$telsob>> immediately turns on his knees in front of you with a dildo in hand, she begins to caress your clitoris tongue, then enters a dildo in your pussy, continuing to lick clitoris orgasm covers you soon.'
-set kafesvidsex += 1
-if kafesvidsex < 3:
-act 'Her pussy': gt 'kafesvid','11'
-act 'Her ass': gt 'kafesvid','12'
-end
-act 'Finish': gt 'kafesvid','3'
-=======
-'<center><img src="img/kafesvid/7.jpg" ></center>'
-'You are relying on the table and legs rastavlyaet, <<$telsob>> immediately turns on her knees in front of you with a dildo in his hand, she begins to caress your clitoris tongue, then introduces a dildo in your pussy, continuing to lick clit, Soon you orgasm covers.'
-set kafesvidsex+=1
-if kafesvidsex<3:
-act 'Her pussy':gt 'kafesvid','11'
-act 'Her ass':gt 'kafesvid','12'
-end
-act 'End_Up':gt 'kafesvid','3'
->>>>>>> 109_kafesvid
+	cla
+	*clr
+	set orgasm += 1
+	set vagina += 1
+	'<center><img src="images/img/kafesvid/7.jpg"></center>'
+	'You stand on the table and rastavlyaete feet <<$telsob>> immediately turns on his knees in front of you with a dildo in hand, she begins to caress your clitoris tongue, then enters a dildo in your pussy, continuing to lick clitoris orgasm covers you soon.'
+	set kafesvidsex += 1
+
+	if kafesvidsex < 3:
+		act 'Her pussy':gt 'kafesvid', '11'
+		act 'Her ass':gt 'kafesvid', '12'
+	end
+
+	act 'Finish':gt 'kafesvid', '3'
 end
 
 if $ARGS[0] = '2':
-cla
-*clr
-<<<<<<< 109_kafesvid
-'<center><img src="images\img\kafesvid\10.jpg"></center>'
-'Sitting at the table you made the order, in a cafe like anyone except you and the waiter was not the waiter constantly spinning around your table, and then looking at you.'
-'"And you liked it," said <<$telsob>> caught you once his eyes.'
-'"Say also like we´re here alone so he rubs nearby, eavesdropping, then he has nothing more." you objected'
-'And when the waiter once again came up to you to ask whether you want anything else, <<$telsob>> grabbed you with one hand on his chest and squeezed it so that you just do not have jumped on the chair.'
-'"What are you, that hurts" started talking you trying to unhook her hand.'
-'<<$Telsob>> meanwhile without weakening grip and not paying attention to you turned to the waiter, "Want to touch a second?"'
-'The waiter hesitated looking at you.'
-act '"Just try, balls cut off"': gt 'kafesvid','3'
-act 'Do not resist':
 	cla
 	*clr
-	'<center><img src="images\img\kafesvid\11.jpg"></center>'
-	'Noticing that you stopped struggling, <<$telsob>> let go your chest and took the waiter´s hand, put it on your chest, "Do not hesitate to see a girl do not mind."'
-	'He began timidly to feel your breasts, but soon grew bolder and already being crushed your chest with both hands.'
-	'A minute later, <<$telsob>> again began to direct your actions, "Well, you´re selfish, paw Woman and her own personal touch not given."'
-	'The guy pulled his hands away from your chest and back neznaya hesitated what to do.'
-	'<<$Telsob>> rapid hand movement undid his pants, from which immediately freed his erection "That´s what you still can touch, the second did not uvidivish?" she asked, and immediately noticed that the guy falls into a stupor again added, "The question is rhetorical, not necessarily respond. Well, you´re beautiful what are you waiting, help yourself."'
-	act 'Refuse': gt 'kafesvid','3'
-	act 'Take in hand':
+	'<center><img src="images/img/kafesvid/10.jpg"></center>'
+	'Sitting at the table you made the order, in a cafe like anyone except you and the waiter was not the waiter constantly spinning around your table, and then looking at you.'
+	'"And you liked it, " said <<$telsob>> caught you once his eyes.'
+	'"Say also like we´re here alone so he rubs nearby, eavesdropping, then he has nothing more." you objected'
+	'And when the waiter once again came up to you to ask whether you want anything else, <<$telsob>> grabbed you with one hand on his chest and squeezed it so that you just do not have jumped on the chair.'
+	'"What are you, that hurts" started talking you trying to unhook her hand.'
+	'<<$Telsob>> meanwhile without weakening grip and not paying attention to you turned to the waiter, "Want to touch a second?"'
+	'The waiter hesitated looking at you.'
+
+	act '"Just try, balls cut off"':gt 'kafesvid', '3'
+
+	act 'Do not resist':
 		cla
 		*clr
-		set hj += 1
-		'<center><img src="images\img\kafesvid\12.jpg"></center>'
-		'You took his penis in his hand and began to masturbate <<$telsob>> continued to chat with you not paying any attention to the guy, but after a couple of mine when the guy started to shake, going to cum, she again joined "You and let him finish on the table, even taste not try, at least let you finish in her mouth? "'
-		act 'Take in the mouth':
+		'<center><img src="images/img/kafesvid/11.jpg"></center>'
+		'Noticing that you stopped struggling, <<$telsob>> let go your chest and took the waiter´s hand, put it on your chest, "Do not hesitate to see a girl do not mind."'
+		'He began timidly to feel your breasts, but soon grew bolder and already being crushed your chest with both hands.'
+		'A minute later, <<$telsob>> again began to direct your actions, "Well, you´re selfish, paw Woman and her own personal touch not given."'
+		'The guy pulled his hands away from your chest and back neznaya hesitated what to do.'
+		'<<$Telsob>> rapid hand movement undid his pants, from which immediately freed his erection "That´s what you still can touch, the second did not uvidivish?" she asked, and immediately noticed that the guy falls into a stupor again added, "The question is rhetorical, not necessarily respond. Well, you´re beautiful what are you waiting, help yourself."'
+
+		act 'Refuse':gt 'kafesvid', '3'
+
+		act 'Take in hand':
 			cla
 			*clr
-			set SUB += 1
-			set cumlip += 1
-			set swallow += 1
-			'<center><img src="images\img\kafesvid\16.jpg"></center>'
-			'You go down on his knees, and <<$telsob>> you catching his cock quickly starts to masturbate aiming your mouth, just seconds after jet of sperm enters your mouth, and <<$telsob>> continues to play cock trying to squeeze it dry in your mouth when she finally ends and the last drop of warm liquid falls into your mouth, you swallow it quickly, and licking lips sit at the table and continue to talk as if nothing had happened.'
-			act 'Finish': gt 'kafesvid','3'
-			end
-		act 'Continue to masturbate':
-			cla
-			*clr
-			'<center><img src="images\img\kafesvid\12.jpg"></center>'
-			'You are not paying attention to her words, and soon the guy is dead on the table.'
-			'Thereafter <<$telsob>> started up again, "Well, let´s at least try yogurt"'
-			act 'Lick sperm':
+			set hj += 1
+			'<center><img src="images/img/kafesvid/12.jpg"></center>'
+			'You took his penis in his hand and began to masturbate <<$telsob>> continued to chat with you not paying any attention to the guy, but after a couple of mine when the guy started to shake, going to cum, she again joined "You and let him finish on the table, even taste not try, at least let you finish in her mouth? "'
+
+			act 'Take in the mouth':
 				cla
 				*clr
 				set SUB += 1
+				set cumlip += 1
 				set swallow += 1
-				'<center><img src="images\img\kafesvid\14.jpg"></center>'
-				'You lean over to the table and start licking sperm tightening it in yourself and swallowing.'
-				act 'Finish': gt 'kafesvid','3'
-				end
-			act 'Do not touch the sperm':
+				'<center><img src="images/img/kafesvid/16.jpg"></center>'
+				'You go down on his knees, and <<$telsob>> you catching his cock quickly starts to masturbate aiming your mouth, just seconds after jet of sperm enters your mouth, and <<$telsob>> continues to play cock trying to squeeze it dry in your mouth when she finally ends and the last drop of warm liquid falls into your mouth, you swallow it quickly, and licking lips sit at the table and continue to talk as if nothing had happened.'
+			end
+
+			act 'Continue to masturbate':
 				cla
 				*clr
-				'<center><img src="images\img\kafesvid\15.jpg"></center>'
-				'Seeing that you´re not going to touch the sperm <<$telsob>> she leaned over to the table and rapid movements of the tongue collected all cum in your mouth, and then play a bit with her mouth, swallowed. "And the taste is not even go far wrong, knowingly refused."'
-				act 'Finish': gt 'kafesvid','3'
+				'<center><img src="images/img/kafesvid/12.jpg"></center>'
+				'You are not paying attention to her words, and soon the guy is dead on the table.'
+				'Thereafter <<$telsob>> started up again, "Well, let´s at least try yogurt"'
+
+				act 'Lick sperm':
+					cla
+					*clr
+					set SUB += 1
+					set swallow += 1
+					'<center><img src="images/img/kafesvid/14.jpg"></center>'
+					'You lean over to the table and start licking sperm tightening it in yourself and swallowing.'
+
+					act 'Finish':gt 'kafesvid', '3'
+				end
+
+				act 'Do not touch the sperm':
+					cla
+					*clr
+					'<center><img src="images/img/kafesvid/15.jpg"></center>'
+					'Seeing that you´re not going to touch the sperm <<$telsob>> she leaned over to the table and rapid movements of the tongue collected all cum in your mouth, and then play a bit with her mouth, swallowed. "And the taste is not even go far wrong, knowingly refused."'
+
+					act 'Finish':gt 'kafesvid', '3'
 				end
 			end
 		end
-	act 'Take by mouth':
-		cla
-		*clr
-		set bj += 1
-		'<center><img src="images\img\kafesvid\13.jpg"></center>'
-		'You seat guys in front of him on the table and spent some time on the tongue base of his cock head start to suck, <<$telsob>> at this time coming to you from behind, and pulled out from under slul vases, removes clothes and spreading buttocks little bites tongue in your pussy.'
-		'A few minutes later <<$telsob>> continued to lead the process, "Now fuck her cancer"'
-		act 'Doggy-Style':
+
+		act 'Take by mouth':
 			cla
 			*clr
-			set sex += 1
-			'<center><img src="images\img\kafesvid\17.jpg"></center>'
-			'You broke away from his cock, and bent over with his hands on the table <<$telsob>> sat in front of you and pulled up her breasts goliv to your face, tongue cost you touch her breasts, as you feel like you are in the pussy dick rested. Guy raised your foot and dramatically drove his bolt in you, he began to peck force your pussy. Soon <<$telsob>> again commanded "Now lay down on the table," you felt pornographic actress on the sets, and <<$telsob>> was set by producer, but you is only a factory and you are prepared to fulfill all of her team.'
-			act 'Lie on a table':
+			set bj += 1
+			'<center><img src="images/img/kafesvid/13.jpg"></center>'
+			'You seat guys in front of him on the table and spent some time on the tongue base of his cock head start to suck, <<$telsob>> at this time coming to you from behind, and pulled out from under slul vases, removes clothes and spreading buttocks little bites tongue in your pussy.'
+			'A few minutes later <<$telsob>> continued to lead the process, "Now fuck her cancer"'
+
+			act 'Doggy-Style':
 				cla
 				*clr
-				'<center><img src="images\img\kafesvid\18.jpg"></center>'
-				'You lie on a table and the guy came to you to take you by the legs and spreading them wide apart, you re-entered into the vagina, beating her with such force that you slid on the table, <<$telsob>> even put his hand behind you, so you do not flew off the table, and the second you massaged her clit. Actions guys were inept and even massage the clitoris is not helping you to cum in the end, after a few minutes <<$telsob>> commanded "And now in the ass"'
-				act 'Doggy-Style':
+				set sex += 1
+				'<center><img src="images/img/kafesvid/17.jpg"></center>'
+				'You broke away from his cock, and bent over with his hands on the table <<$telsob>> sat in front of you and pulled up her breasts goliv to your face, tongue cost you touch her breasts, as you feel like you are in the pussy dick rested. Guy raised your foot and dramatically drove his bolt in you, he began to peck force your pussy. Soon <<$telsob>> again commanded "Now lay down on the table, " you felt pornographic actress on the sets, and <<$telsob>> was set by producer, but you is only a factory and you are prepared to fulfill all of her team.'
+
+				act 'Lie on a table':
 					cla
 					*clr
-					set cumanus += 1
-					set anal += 1
-					set analorgasm += 1
-					set orgasm += 1
-					'<center><img src="images\img\kafesvid\19.jpg"></center>'
-					'You stasis from the table, lie down on his stomach and buttocks Spreading hands, <<$telsob>> several times relish spits you on the ass, "Now very gently fuck her ass" refers to the guy, he carefully collects saliva her head and directs his dildo you in the ass, he moves ahead and carefully, and <<$telsob>> closely watching the process, occasionally spits on his dick, dobovlyaya grease a couple of minutes your ass adapts to your penis and the guy begins to slowly accelerate, you chuvstvuetekak it member of the slides in your ass and as <<$telsob>> looming over you spit you with his chest, it gets you much dildo and once inside you begins to swell, ready to finish, one of you sees a moan of pleasure from the long-awaited orgasm. At that moment, you feel like a warm liquid escaping from his penis fills your ass.'
-					'"Clever, from anal cum, and now raise him until he did not fall," cried <<$telsob>>'
-					act 'No, that´s enough': gt 'kafesvid','3'
-					act 'Pick up':
+					'<center><img src="images/img/kafesvid/18.jpg"></center>'
+					'You lie on a table and the guy came to you to take you by the legs and spreading them wide apart, you re-entered into the vagina, beating her with such force that you slid on the table, <<$telsob>> even put his hand behind you, so you do not flew off the table, and the second you massaged her clit. Actions guys were inept and even massage the clitoris is not helping you to cum in the end, after a few minutes <<$telsob>> commanded "And now in the ass"'
+
+					act 'Doggy-Style':
 						cla
 						*clr
-						set bj += 1
-						set cumlip += 1
-						'<center><img src="images\img\kafesvid\20.jpg"></center>'
-						'You jump off the table and natsinaete yarosno suck, trying not to fall term.'
-						if klismaday ! day: 'Do you realize that there´s not an enema did you lie in member izmazany mixture of sperm and the contents of your ass, you´re choking back retching continue sucking, and <<$telsob>> noticing it looks at you with a grin, "That Vidisha as important in the ass keep clean, for me it´s like brush your teeth. "'
-						if klismaday = day: 'You suck dick feeling the taste of semen left on it, and how of your ass is not yet closed and sperm follows spreads to the buttocks and thighs'
-						'When a member of the newly gained strength and was ready to continue, <<$telsob>> once again commanded "And now on top and ass at full speed"'
-						act 'Jump to member':
-							cls
+						set cumanus += 1
+						set anal += 1
+						set analorgasm += 1
+						set orgasm += 1
+						'<center><img src="images/img/kafesvid/19.jpg"></center>'
+						'You stasis from the table, lie down on his stomach and buttocks Spreading hands, <<$telsob>> several times relish spits you on the ass, "Now very gently fuck her ass" refers to the guy, he carefully collects saliva her head and directs his dildo you in the ass, he moves ahead and carefully, and <<$telsob>> closely watching the process, occasionally spits on his dick, dobovlyaya grease a couple of minutes your ass adapts to your penis and the guy begins to slowly accelerate, you chuvstvuetekak it member of the slides in your ass and as <<$telsob>> looming over you spit you with his chest, it gets you much dildo and once inside you begins to swell, ready to finish, one of you sees a moan of pleasure from the long-awaited orgasm. At that moment, you feel like a warm liquid escaping from his penis fills your ass.'
+						'"Clever, from anal cum, and now raise him until he did not fall, " cried <<$telsob>>'
+
+						act 'No, that´s enough':gt 'kafesvid', '3'
+
+						act 'Pick up':
+							cla
 							*clr
-							set analorgasm += 5
-							set orgasm += 5
-							set anus += 1
-							'<center><img src="images\img\kafesvid\21.jpg"></center>'
-							'Without waiting until you release it from the mouth of a member of the man abruptly pulled him and lay down on the table, <<$telsob>> has helped you to climb on top and put his penis in your anus from which is still leaking sperm. Once you have settled down as the guy began to move his movements were quick and strong, he fucked your ass so you Vijay, and <<$telsob>> stood nearby and pressing down on you at every push you deeper trying to impose on his penis, kept saying, "Faster, deeper, let´s fuck her point to sit week could not. " And the guy started to move even faster Smashan pain with pleasure, then you are finished again again and again, you and started yelling at the guy that he fucked faster and at every push with force to sit down to a member of his anus. you already struggling to understand how this is going to ecstatic ass you rode out on a limb, was replaced by another one orgasm you end up exhausted stretched on it, but the guy has not yet finished, and <<$telsob>> you vskhvativ legs lifted them to the top and a few more minutes your body already obmyagshee fucked in the anus. "Well enough," said <<$telsob>> and pulled you to the floor. "Now it is settled in her mouth," she said to the guy.'
-							act 'Open mouth':
-								cla
+							set bj += 1
+							set cumlip += 1
+							'<center><img src="images/img/kafesvid/20.jpg"></center>'
+							'You jump off the table and natsinaete yarosno suck, trying not to fall term.'
+
+							if klismaday ! day:'Do you realize that there´s not an enema did you lie in member izmazany mixture of sperm and the contents of your ass, you´re choking back retching continue sucking, and <<$telsob>> noticing it looks at you with a grin, "That Vidisha as important in the ass keep clean, for me it´s like brush your teeth. "'
+							if klismaday = day:'You suck dick feeling the taste of semen left on it, and how of your ass is not yet closed and sperm follows spreads to the buttocks and thighs'
+
+							'When a member of the newly gained strength and was ready to continue, <<$telsob>> once again commanded "And now on top and ass at full speed"'
+
+							act 'Jump to member':
+								cls
 								*clr
-								set cumface += 1
-								set cumlip += 1
-								set swallow += 1
-								'<center><img src="images\img\kafesvid\21.jpg"></center>'
-								'You barely got on their knees before the guy, his mouth wide open. <<$telsob>> took his penis in his hand and began to masturbate aiming your mouth, soon man groaned and sperm gushed out of him, filling your mouth, chest and ran down his stomach.'
-								act 'Kiss <<$telsob>>':
+								set analorgasm += 5
+								set orgasm += 5
+								set anus += 1
+								'<center><img src="images/img/kafesvid/21.jpg"></center>'
+								'Without waiting until you release it from the mouth of a member of the man abruptly pulled him and lay down on the table, <<$telsob>> has helped you to climb on top and put his penis in your anus from which is still leaking sperm. Once you have settled down as the guy began to move his movements were quick and strong, he fucked your ass so you Vijay, and <<$telsob>> stood nearby and pressing down on you at every push you deeper trying to impose on his penis, kept saying, "Faster, deeper, let´s fuck her point to sit week could not. " And the guy started to move even faster Smashan pain with pleasure, then you are finished again again and again, you and started yelling at the guy that he fucked faster and at every push with force to sit down to a member of his anus. you already struggling to understand how this is going to ecstatic ass you rode out on a limb, was replaced by another one orgasm you end up exhausted stretched on it, but the guy has not yet finished, and <<$telsob>> you vskhvativ legs lifted them to the top and a few more minutes your body already obmyagshee fucked in the anus. "Well enough, " said <<$telsob>> and pulled you to the floor. "Now it is settled in her mouth, " she said to the guy.'
+
+								act 'Open mouth':
 									cla
 									*clr
-									'<center><img src="images\img\kafesvid\22.jpg"></center>'
-									'You grab her by the arm and pulled up to his bites her lips, infusing the sperm in her mouth <<$telsob>> swallows sperm and reaches out to you for more, but you have already swallowed, then she licks cum off your chest and abdomen, and then gently pushing you forward so that you are on all fours, licking all that leaked out of your ass, and lastly your anus kisses passionately trying to suck from it all to the last drop. When it finishes, you get dressed and sit down to chat continuing as if nothing had happened.'
-									act 'Finish': gt 'kafesvid','3'
+									set cumface += 1
+									set cumlip += 1
+									set swallow += 1
+									'<center><img src="images/img/kafesvid/21.jpg"></center>'
+									'You barely got on their knees before the guy, his mouth wide open. <<$telsob>> took his penis in his hand and began to masturbate aiming your mouth, soon man groaned and sperm gushed out of him, filling your mouth, chest and ran down his stomach.'
+
+									act 'Kiss <<$telsob>>':
+										cla
+										*clr
+										'<center><img src="images/img/kafesvid/22.jpg"></center>'
+										'You grab her by the arm and pulled up to his bites her lips, infusing the sperm in her mouth <<$telsob>> swallows sperm and reaches out to you for more, but you have already swallowed, then she licks cum off your chest and abdomen, and then gently pushing you forward so that you are on all fours, licking all that leaked out of your ass, and lastly your anus kisses passionately trying to suck from it all to the last drop. When it finishes, you get dressed and sit down to chat continuing as if nothing had happened.'
+
+										act 'Finish':gt 'kafesvid', '3'
 									end
 								end
 							end
@@ -378,155 +303,18 @@ act 'Do not resist':
 			end
 		end
 	end
-=======
-'<center><img src="img/kafesvid/10.jpg" ></center>'
-'Sitting at the table you made the order, in the cafe seems nobody but you and the waiter was not, The waiter is constantly spinning around your table, every now and then looking at you.
-"And you liked it" said <<$telsob>> Catch up on you once his eyes.
-"Say also liked, we`re here alone so he rubs close, overhears, to do what he has nothing more." objected to you
-And when the waiter once again came to ask you whether you want it-anything else, <<$telsob>> you grabbed one hand on his chest and squeezed her, so you just do not jumped on the chair.
-"Are you, that hurts" began to say you trying to unhook her hand.
-<<$telsob>> Meanwhile "Do you want to touch second?"
-The waiter hesitated looking at you.'
-act '"just try, eggs cut off"':gt 'kafesvid','3'
-act 'Do not resist':
-	 cla
-	 *clr
-	 '<center><img src="img/kafesvid/11.jpg" ></center>'
-	 'Noticing that you stopped struggling, <<$telsob>> let your chest and took the waiter `s hand, put it on your chest "Do not hesitate to see a girl do not mind".
-	 He timidly began to feel your breasts, but soon grew bolder and already being squeezed your breasts with both hands.
-	 A minute later, <<$telsob>> again began to direct your actions, "Well, paw Woman and her own personal touch not given".
-	 The guy pulled his hands away from your chest and again hesitated neznaya what to do.
-	 <<$telsob>> rapid movement of the hand unzipped his pants, from which immediately freed his erection "Here`s what you still can touch, the second is not uvidivish?" she asked  "rhetorical question, answer does not necessarily. Well, Help_yourself."'
-	 act 'Opt_Out':gt 'kafesvid','3'
-	 act 'Take in hand':
-		 cla
-		 *clr
-		 set hj+=1
-		 '<center><img src="img/kafesvid/12.jpg" ></center>'
-		 'You took his cock in his hand and began to masturbate, <<$telsob>> continued to chat with you without paying any attention to the Man, but after a couple of mine when the guy started to shudder, about to finish, it is re-enabled "You did give him finish on the table, even the taste of the pudding, at least let you finish in her mouth?"'
-		 act 'Take in the mouth':
-			 cla
-			 *clr
-			 set SUB+=1
-			 set cumlip+=1
-			 set swallow+=1
-			 '<center><img src="img/kafesvid/16.jpg" ></center>'
-			 'You kneels, and <<$telsob>> catching you his cock starts to masturbate quickly aiming your mouth, Within seconds after jet of sperm enters your mouth, and <<$telsob>> continues to play cock trying to squeeze him dry your mouth, when it finally ends and the last drop of warm liquid drops into your mouth, you will quickly swallow it and licked his lips sit at the table and continue to talk as if nothing had happened.'
-			 end
-		 act 'continue to masturbate':
-			 cla
-			 *clr
-			 '<center><img src="img/kafesvid/12.jpg" ></center>'
-			 'You neobraschaya attention to her words and soon the guy is dead on the table.
-			 after that <<$telsob>> started up again "Well"'
-			 act 'lick cum':
-				 cla
-				 *clr
-				 set SUB+=1
-				 set swallow+=1
-				 '<center><img src="img/kafesvid/14.jpg" ></center>'
-				 'You lean over to the table and begin to lick sperm, tightening it in himself and swallowing.'
-				 act 'End_Up':gt 'kafesvid','3'
-				 end
-			 act 'Do not touch the sperm':
-				 cla
-				 *clr
-				 '<center><img src="img/kafesvid/15.jpg" ></center>'
-				 'Seeing that you`re not going to touch cum <<$telsob>> she leaned over the table and rapid movements of the tongue collected all the sperm in her mouth, then play a bit with her mouth, swallowed. "And the taste is not even Duren, knowingly refused."'
-				 act 'End_Up':gt 'kafesvid','3'
-				 end
-			 end
-		 end
-	 act 'Take by mouth':
-		 cla
-		 *clr
-		 set bj+=1
-		 '<center><img src="img/kafesvid/13.jpg" ></center>'
-		 'Man you seat in front of him on the table and spent some time tongue from the base of his cock head start to suck, <<$telsob>> at this time is coming to you from behind, and pulling out of vases slul, eliminates the clothes and spreading buttocks slightly tongue bites you in the pussy.
-		 A few minutes later <<$telsob>> continued to lead the process "Now fuck her cancer"'
-		 act 'get cancer':
-			 cla
-			 *clr
-			 set sex+=1
-			 '<center><img src="img/kafesvid/17.jpg" ></center>'
-			 'You come off his penis and bent over with his hands on the table, <<$telsob>> sat in front of you and pulled her breasts goliv to your face, should you touch her вЂ‹вЂ‹breasts language, How did you feel as you pussy rested member. The guy lifted your foot and dramatically drove his bolt in you, he started with the power to batter your pussy. soon <<$telsob>> again commanded "And now lie down on the table", you feel on the shooting porn actress, and <<$telsob>> was by producer, but you is only a factory and you readily comply with all of her team.'
-			 act 'Lie on a table':
-				 cla
-				 *clr
-				 '<center><img src="img/kafesvid/18.jpg" ></center>'
-				 'You lay down on the table and a guy came up to you to take you by the legs and spreading them wide apart, you re-entered into the vagina, hammering her with such force that you slide on the table, <<$telsob>> even put his hand behind you, so you will not have taken off the table, and the second massaging your clitoris. Action Man were inept and even massage the clitoris does not help you finish, eventually a few minutes <<$telsob>> commanded "And now in the ass"'
-				 act 'get cancer':
-					 cla
-					 *clr
-					 set cumanus+=1
-					 set anal+=1
-					 set analorgasm+=1
-					 set orgasm+=1
-					 '<center><img src="img/kafesvid/19.jpg" ></center>'
-					 'You stasis from the table, lie on his stomach and his hands moved apart buttocks, <<$telsob>> several times with relish spits on you ass "Now very gently fuck her ass" drawn to the guy, he carefully collects saliva her head and directs his dildo you in the ass, he moves ahead and carefully, and <<$telsob>> carefully watching the process, periodically spits on his dick, dobovlyaya lubrication, a couple of minutes your ass adapts to your penis, and the guy begins to slowly accelerate, you chuvstvuetekak his cock slides into your ass and how <<$telsob>> navisnuv over you spit you with their breasts, it you strong winds and once dildo inside you starts to swell, Ready to cum, one of you sees a moan of pleasure from the long-awaited orgasm. At the same moment you feel like a warm liquid escaping from his penis fills your ass.
-					 "brain, from anal cum, Now get to it, yet he did not fall" cried <<$telsob>>'
-					 act 'No, enough':gt 'kafesvid','3'
-					 act 'pick_up':
-						 cla
-						 *clr
-						 set bj+=1
-						 set cumlip+=1
-						 '<center><img src="img/kafesvid/20.jpg" ></center>'
-						 'You jump off the table and suck natsinaete yarosno, trying not to let fall a member.'
-						 if klismaday ! day:'Do you realize that there `s not doing an enema, you have to lie member izmazany mixture of sperm and the contents of your ass, you barely holding back retching continued to suck, and <<$telsob>> noticing it looks at you with a smile "That`s how important vidish ass to keep clean, for me it`s like brush your teeth."'
-						 if klismaday = day:'You suck dick feeling the taste of semen remaining on it, and how out of your ass is not yet closed follows sperm and spreads to the buttocks and thighs'
-						 'When a member of the newly gained strength and was ready to continue, <<$telsob>> again commanded "Now the top and butt at full rate"'
-						 act 'Jump to the member':
-							 cls
-							 *clr
-							 set analorgasm+=5
-							 set orgasm+=5
-							 set anus+=1
-							 '<center><img src="img/kafesvid/21.jpg" ></center>'
-							 'Not waiting until you release his cock from his mouth guy abruptly yanked it and lay down on the table, <<$telsob>> helped you to get on top and put his penis into the anus of you who still leaking cum. Once you have settled as the guy began to move his movements were swift and strong, he fucked your ass so you Vijay, and <<$telsob>> stood beside him and pushing on you with every jolt trying to spread you deeper on his cock, kept_saying "faster, deeper, let`s fuck her point, to sit week could not". And the guy starts to move even faster, smashalas pain with pleasure, you re finished then again and again, you yourself started yelling at the guy that he fucked faster, and at every jolt with the power to sit down on your ass dick. You already struggling to understand how it goes, istupleniya you rode in her ass on a limb, was replaced by another one orgasm in the end you exhausted stretched it, but the guy was not finished and <<$telsob>> vskhvativ your legs lifted them to the top and a few minutes of your already obmyagshee body fucked in the ass. "Well enough" said <<$telsob>> and you pulled on the floor. "Now it is settled in her mouth" she turned to the guy.'
-							 act 'open your mouth':
-								 cla
-								 *clr
-								 set cumface+=1
-								 set cumlip+=1
-								 set swallow+=1
-								 '<center><img src="img/kafesvid/21.jpg" ></center>'
-								 'You struggled to his knees in front of boyfriend, mouth wide open. <<$telsob>> took his penis in his hand and began to masturbate aiming your mouth, Soon the boy groaned and sperm gushing out of it, filling your mouth, chest and ran down to the stomach.'
-								 act 'kiss <<$telsob>>':
-									 cla
-									 *clr
-									 '<center><img src="img/kafesvid/22.jpg" ></center>'
-									 'You grab her by the arm and pulled up to his bites her lips, pouring of the sperm in her mouth, <<$telsob>> swallows sperm and reaches out to you for the additive, but you have already swallowed, then she licks the cum from your chest and abdomen, then gently pushing you forward, so you find yourself on all fours, licks all that leaked out of your ass, and lastly kisses your ass passionately trying to suck from it all to the last drop. When she finishes, you dress and sit down to chat while continuing as if nothing had happened.'
-									 act 'End_Up':gt 'kafesvid','3'
-									 end
-								 end
-							 end
-						 end
-					 end
-				 end
-			 end
-		 end
-	 end
->>>>>>> 109_kafesvid
 end
 
 if $ARGS[0] = '3':
-cla
-<<<<<<< 109_kafesvid
-set kafesvidsex = 0
-set horny = 0
-set minut += 60
-gs 'stat'
-'Soon <<$telsob>> said that she had to flee and left'
-act 'Leave': gt 'down'
-=======
-set kafesvidsex=0
-set horny = 0
-set minut+=60
-gs 'stat'
-'soon <<$telsob>> said that she had to flee and left'
-act 'Get_Away':gt'down'
->>>>>>> 109_kafesvid
+	cla
+	set kafesvidsex = 0
+	set horny = 0
+	set minut += 60
+	gs 'stat'
+	'Soon <<$telsob>> said that she had to flee and left'
+
+	act 'Leave':gt 'down'
 end
+
 --- kafesvid ---------------------------------
 

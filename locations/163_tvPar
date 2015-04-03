@@ -1,48 +1,24 @@
 # tvPar
-<<<<<<< 163_tvPar
 gs 'stat'
-'<center><img src="images\pics\telek.jpg"></center>'
+'<center><img src="images/pics/telek.jpg"></center>'
 'You turn on the TV and settled comfortably on the couch.'
-=======
-gs'stat'
-'<center><img src="pics/telek.jpg" ></center>'
-'You turn on the TV and comfortably ensconced on the couch.'
->>>>>>> 163_tvPar
 
 
-<<<<<<< 163_tvPar
 $din_wath_tv_h = {
-cls
-minut += 60
-willpower += RAND(5,10)
-manna += RAND(10,50)
-gs 'stat'
-'<center><img src="images\pics\telek.jpg"></center>'
-'You are viewing the central channel lying on the couch. Watch almost nothing solid and cheesy advertising program.'
-act 'Watch TV (1:00)': dynamic $din_wath_tv_h
-act 'Get off the couch': gt $locM, $metkaM
-=======
-$din_wath_tv_h={
-cls
-minut+=60
-willpower+=RAND(5,10)
-manna+=RAND(10,50)
-gs'stat'
-'<center><img src="pics/telek.jpg" ></center>'
-'You see the central channel lying on the couch. Look almost nothing, solid advertising and cheesy program.'
-act 'watching TV 1 h':dynamic $din_wath_tv_h
-act 'Get up from the couch':gt $locM, $metkaM
->>>>>>> 163_tvPar
+	cls
+	minut += 60
+	willpower += rand(5, 10)
+	manna += rand(10, 50)
+	gs 'stat'
+	'<center><img src="images/pics/telek.jpg"></center>'
+	'You are viewing the central channel lying on the couch. Watch almost nothing solid and cheesy advertising program.'
+
+	act 'Watch TV (1:00)':dynamic $din_wath_tv_h
+	act 'Get off the couch':gt $locM, $metkaM
 }
 
-<<<<<<< 163_tvPar
-act 'Watch TV (1:00)': dynamic $din_wath_tv_h
+act 'Watch TV (1:00)':dynamic $din_wath_tv_h
+act 'Get off the couch':gt $locM, $metkaM
 
-act 'Get off the couch': gt $locM, $metkaM
-=======
-act 'watching TV 1 h':dynamic $din_wath_tv_h
-
-act 'Get up from the couch':gt $locM, $metkaM
->>>>>>> 163_tvPar
 --- tvPar ---------------------------------
 

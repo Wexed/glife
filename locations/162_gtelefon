@@ -1,104 +1,53 @@
 # gtelefon
-<<<<<<< 162_gtelefon
 boyinday[numnpcboy] = day
 Gcall = 0
 minut += 3
 gs 'stat'
 'You take the phone, "Hello."'
-if boyvstre[numnpcboy]>0:
-'Male voice on the phone says "Hello Svetsik is I <<$nameBoyfrend[numnpcboy]>>, let´s go to somewhere to walk."'
-end
+
+if boyvstre[numnpcboy] > 0:'Male voice on the phone says "Hello Svetsik is I <<$nameBoyfrend[numnpcboy]>>, let´s go to somewhere to walk."'
+
 if boyvstre[numnpcboy] = 0:
-'In the tube, a male voice says "Hello Can <<$name>>?"'
-'You answer the caller that you are the <<$name>>. Stranger delighted "I <<$nameBoyfrend[numnpcboy]>>, we´re met at a disco. Remember? Let´s go for a walk."'
-=======
-boyinday[numnpcboy]=day
-Gcall=0
-minut+=3
-gs'stat'
-'You take the phone "Hello."'
-if boyvstre[numnpcboy]>0:
-'Male voice on the phone says "Hi, <<$nameBoyfrend[numnpcboy]>>, let`s go for a walk to somewhere."'
-end
-if boyvstre[numnpcboy]=0:
-'In the tube male voice says "hello. Light can be?"'
-'You are responsible interlocutor, that you are the Light. The stranger was delighted "I <<$nameBoyfrend[numnpcboy]>>, you and I met at the disco. remember? Let`s go for a walk."'
->>>>>>> 162_gtelefon
+	'In the tube, a male voice says "Hello Can <<$name>>?"'
+	'You answer the caller that you are the <<$name>>. Stranger delighted "I <<$nameBoyfrend[numnpcboy]>>, we´re met at a disco. Remember? Let´s go for a walk."'
 end
 
-
-<<<<<<< 162_gtelefon
 act 'I´m busy today':
-cls
-minut += 3
-if boyvstre[numnpcboy] = 0: otnBoyFrend[numnpcboy] -= 10
-if boyvstre[numnpcboy]>0: otnBoyFrend[numnpcboy] -= 5
-gs 'stat'
-''
-	if otnBoyFrend[numnpcboy]>20:
-	otnBoyFrend[numnpcboy] = 0
-	'<<$nameBoyfrend[numnpcboy]>> upset. "Well, then, as something next time."'
-	end
-	if otnBoyFrend[numnpcboy] <= 20:
-	otnBoyFrend[numnpcboy] = 0
-	'<<$nameBoyfrend[numnpcboy]>> angry. "Well, if you went to the dick." And hung up.'
-	end
-act 'Hangup': gt 'korrPar'
-=======
-act 'I`m busy today':
-cls
-minut+=3
-if boyvstre[numnpcboy]=0:otnBoyFrend[numnpcboy]-=10
-if boyvstre[numnpcboy]>0:otnBoyFrend[numnpcboy]-=5
-gs'stat'
-''
-     if otnBoyFrend[numnpcboy]>20:
-     !otnBoyFrend[numnpcboy]=0
-     '<<$nameBoyfrend[numnpcboy]>> upset. "Well then."'
-     end
-     if otnBoyFrend[numnpcboy]<=20:
-     otnBoyFrend[numnpcboy]=0
-     '<<$nameBoyfrend[numnpcboy]>> angry. "Well." And hung up.'
-     end
-act 'Hang up':gt'korrPar'
->>>>>>> 162_gtelefon
-end
-
-<<<<<<< 162_gtelefon
-if GvstreBoy = 0:
-	act 'Meet me in the park':
 	cls
 	minut += 3
-	GvstreBoy = 1
-	GvstreBoyAfter[numnpcboy] = 1
-	SkverBoy = numnpcboy
+
+	if boyvstre[numnpcboy] = 0:otnBoyFrend[numnpcboy] -= 10
+	if boyvstre[numnpcboy] > 0:otnBoyFrend[numnpcboy] -= 5
+
 	gs 'stat'
-	'You are invited to meet in the park.'
-	act 'Hangup': gt 'korrPar'
+	''
+
+	if otnBoyFrend[numnpcboy] > 20:
+		otnBoyFrend[numnpcboy] = 0
+		'<<$nameBoyfrend[numnpcboy]>> upset. "Well, then, as something next time."'
+	end
+
+	if otnBoyFrend[numnpcboy] <= 20:
+		otnBoyFrend[numnpcboy] = 0
+		'<<$nameBoyfrend[numnpcboy]>> angry. "Well, if you went to the dick." And hung up.'
+	end
+
+	act 'Hangup':gt 'korrPar'
+end
+
+if GvstreBoy = 0:
+	act 'Meet me in the park':
+		cls
+		minut += 3
+		GvstreBoy = 1
+		GvstreBoyAfter[numnpcboy] = 1
+		SkverBoy = numnpcboy
+		gs 'stat'
+		'You are invited to meet in the park.'
+
+		act 'Hangup':gt 'korrPar'
 	end
 end
-=======
-if GvstreBoy=0:
-	 act 'Let`s meet in the park':
-	 cls
-	 minut+=3
-	 GvstreBoy=1
-	 GvstreBoyAfter[numnpcboy]=1
-	 SkverBoy=numnpcboy
-	 gs'stat'
-	 'You are invited to meet in the park.'
-	 act 'Hang up':gt'korrPar'
-	 end
-end
 
-
-
-
-
-
-
-
-
->>>>>>> 162_gtelefon
 --- gtelefon ---------------------------------
 

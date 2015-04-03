@@ -1,44 +1,21 @@
 # sitrPar
-<<<<<<< 157_sitrPar
-ACT 'Leave the room':
-	gt 'korrPar'
-END
 
-=======
-ACT 'Exit the room':
-	gt'korrPar'
-END
->>>>>>> 157_sitrPar
+act 'Leave the room':gt 'korrPar'
+
 $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-<<<<<<< 157_sitrPar
-
-'<center><B><font color = maroon>Hall</font></B></center>'
-'<center><img src="images\qwest\alter\<<$loc>>.jpg "></center>'
+'<center><b><font color = maroon>Hall</font></b></center>'
+'<center><img src="images/qwest/alter/<<$loc>>.jpg "></center>'
 clr
 set minut += 1
 gs 'stat'
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 'In the window is a <a href="exec:GT ''tvPar''">TV</a>. Front of the TV is a sofa on which sleeps at night your brother. The wall is a wall with utensils and books.'
-
 gs 'family'
 
-=======
-'<center><B><font color=maroon>hall</font></B></center>'
-'<center><img src="qwest/alter/<<$loc>>.jpg" ></center>'
-clr
-set minut = minut + 1
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
-'In the window is <a href="exec:GT ''tvPar''">tv_set</a>. Front of the TV is a sofa, which sleeps at night your brother. The wall is a wall with utensils and books.'
-
-gs'family'
->>>>>>> 157_sitrPar
 --- sitrPar ---------------------------------
 

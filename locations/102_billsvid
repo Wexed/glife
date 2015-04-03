@@ -1,302 +1,194 @@
 # billsvid
-<<<<<<< 102_billsvid
 set minut += 60
 set bilrand = 0
 set manna += 10
 set bilsvidukiy = 0
 set bilsvidkiy = 0
 gs 'stat'
-'<center><B>Pool</B></center>'
-'<center><img src="images\img\bilsvid\0.jpg"></center>'
+'<center><b>Pool</b></center>'
+'<center><img src="images/img/bilsvid/0.jpg"></center>'
 'And you <<$telsob>> rented a booth'
+
 act 'Play':
 	if $telsob = 'Alla':
 		set alla += 1
+
 		if alla >= 20:
-			set bilrand = RAND(0,10)
-			if bilrand > 0 and bilrand < 3: gt 'billsvid','1'
-			if bilrand > 2 and bilrand < 5: gt 'billsvid','2'
-			if bilrand = 0 or bilrand > 4: gt 'billsvid','3'
-			end
-		if alla < 20: gt 'billsvid','3'
+			set bilrand = rand(0, 10)
+			if bilrand > 0 and bilrand < 3:gt 'billsvid', '1'
+			if bilrand > 2 and bilrand < 5:gt 'billsvid', '2'
+			if bilrand = 0 or bilrand > 4:gt 'billsvid', '3'
+		end
+
+		if alla < 20:gt 'billsvid', '3'
+
 		end
 	if $telsob = 'Masha':
 		set masha += 1
+
 		if masha >= 20:
-			set bilrand = RAND(0,10)
-			if bilrand > 0 and bilrand < 3: gt 'billsvid','1'
-			if bilrand > 2 and bilrand < 5: gt 'billsvid','2'
-			if bilrand = 0 or bilrand > 4: gt 'billsvid','3'
-			end
-		if masha < 20: gt 'billsvid','3'
+			set bilrand = rand(0, 10)
+			if bilrand > 0 and bilrand < 3:gt 'billsvid', '1'
+			if bilrand > 2 and bilrand < 5:gt 'billsvid', '2'
+			if bilrand = 0 or bilrand > 4:gt 'billsvid', '3'
 		end
+
+		if masha < 20:gt 'billsvid', '3'
+	end
+
 	if $telsob = 'Katia':
 		set kat += 1
+
 		if kat >= 20:
-			set bilrand = RAND(0,10)
-			if bilrand > 0 and bilrand < 3: gt 'billsvid','1'
-			if bilrand > 2 and bilrand < 5: gt 'billsvid','2'
-			if bilrand = 0 or bilrand > 4: gt 'billsvid','3'
-			end
-		if kat < 20: gt 'billsvid','3'
+			set bilrand = rand(0, 10)
+			if bilrand > 0 and bilrand < 3:gt 'billsvid', '1'
+			if bilrand > 2 and bilrand < 5:gt 'billsvid', '2'
+			if bilrand = 0 or bilrand > 4:gt 'billsvid', '3'
 		end
+
+		if kat < 20:gt 'billsvid', '3'
 	end
-=======
-set minut+=60
-set bilrand=0
-set manna+=10
-set bilsvidukiy=0
-set bilsvidkiy=0
-gs 'stat'
-'<center><B>billiard</B></center>'
-'<center><img src="img/bilsvid/0.jpg" ></center>'
-'you and <<$telsob>> rented a booth'
-act 'play':
-	 if $telsob = 'Alla':
-		 set alla+=1
-		 if alla>=20:
-			 set bilrand=RAND(0,10)
-			 if bilrand>0 and bilrand<3:gt 'billsvid','1'
-			 if bilrand>2 and bilrand<5:gt 'billsvid','2'
-			 if bilrand=0 or bilrand>4:gt 'billsvid','3'
-			 end
-		 if alla<20:gt 'billsvid','3'
-		 end
-	 if $telsob = 'Masha':
-		 set masha+=1
-		 if masha>=20:
-			 set bilrand=RAND(0,10)
-			 if bilrand>0 and bilrand<3:gt 'billsvid','1'
-			 if bilrand>2 and bilrand<5:gt 'billsvid','2'
-			 if bilrand=0 or bilrand>4:gt 'billsvid','3'
-			 end
-		 if masha<20:gt 'billsvid','3'
-		 end
-	 if $telsob = 'katya':
-		 set kat+=1
-		 if kat>=20:
-			 set bilrand=RAND(0,10)
-			 if bilrand>0 and bilrand<3:gt 'billsvid','1'
-			 if bilrand>2 and bilrand<5:gt 'billsvid','2'
-			 if bilrand=0 or bilrand>4:gt 'billsvid','3'
-			 end
-		 if kat<20:gt 'billsvid','3'
-		 end
-	 end
->>>>>>> 102_billsvid
+end
 
 if $ARGS[0] = '1':
-cla
-*clr
-<<<<<<< 102_billsvid
-'<center><img src="images\img\bilsvid\1.jpg"></center>'
-'When you once again leaned over the table to strike <<$telsob>> podozhla back and slipped her hands on your hips, back and stayed on his chest.'
-act 'Not now <<$telsob>>': gt 'billsvid','3'
-act 'Kiss her':
 	cla
 	*clr
-	set lesbian += 1
-	'<center><img src="images\img\bilsvid\2.jpg"></center>'
-	'You turned around and kissed her, in response to <<$telsob>> quickly took off her clothes, stole everything from you and thrown back on the table, you jumped on, continuing to kiss.'
-	act 'Make her Cooney': gt 'billsvid','10'
-	act 'Cooney': gt 'billsvid','11'
+
+	'<center><img src="images/img/bilsvid/1.jpg"></center>'
+	'When you once again leaned over the table to strike <<$telsob>> podozhla back and slipped her hands on your hips, back and stayed on his chest.'
+
+	act 'Not now <<$telsob>>':gt 'billsvid', '3'
+
+	act 'Kiss her':
+		cla
+		*clr
+		set lesbian += 1
+		'<center><img src="images/img/bilsvid/2.jpg"></center>'
+		'You turned around and kissed her, in response to <<$telsob>> quickly took off her clothes, stole everything from you and thrown back on the table, you jumped on, continuing to kiss.'
+
+		act 'Make her Cooney':gt 'billsvid', '10'
+		act 'Cooney':gt 'billsvid', '11'
 	end
-=======
-'<center><img src="img/bilsvid/1.jpg" ></center>'
-'When you are once again bent over the table to strike, <<$telsob>> podozhla back and slipped her hands on your hips, back and stopped on the chest.'
-act 'not now <<$telsob>>':gt 'billsvid','3'
-act 'kiss her':
-	 cla
-	 *clr
-	 set lesbian+=1
-	 '<center><img src="img/bilsvid/2.jpg" ></center>'
-	 'You turned around and kissed her, in reply <<$telsob>> quickly took off her clothes, stole everything from you and throwing you jumped on the table top, continuing to kiss.'
-	 act 'Make her Cooney':gt 'billsvid','10'
-	 act 'Cooney':gt 'billsvid','11'
-	 end
->>>>>>> 102_billsvid
 end
 
 if $ARGS[0] = '10':
-cla
-*clr
-<<<<<<< 102_billsvid
-'<center><img src="images\img\bilsvid\4.jpg"></center>'
-'You put her cancer to the table and squatted themselves opustivshs pressed his lips to her pussy. You kissed her and caressed the tongue until she came.'
-act 'Cooney': gt 'billsvid','11'
-if bilsvidkiy = 0: act 'Play with a cue': gt 'billsvid','12'
-if bilsvidukiy = 0: act 'Ask her to play with a cue': gt 'billsvid','13'
-=======
-'<center><img src="img/bilsvid/4.jpg" ></center>'
-'You put her cancer to the table, and themselves opustivshs on his heels pressed his lips to her pussy. You kissed her and caressed the tongue until it is finished.'
-act 'Cooney':gt 'billsvid','11'
-if bilsvidkiy=0:act 'Play with cue':gt 'billsvid','12'
-if bilsvidukiy=0:act 'Ask her to play with cue':gt 'billsvid','13'
->>>>>>> 102_billsvid
+	cla
+	*clr
+
+	'<center><img src="images/img/bilsvid/4.jpg"></center>'
+	'You put her cancer to the table and squatted themselves opustivshs pressed his lips to her pussy. You kissed her and caressed the tongue until she came.'
+
+	act 'Cooney':gt 'billsvid', '11'
+
+	if bilsvidkiy = 0:act 'Play with a cue':gt 'billsvid', '12'
+	if bilsvidukiy = 0:act 'Ask her to play with a cue':gt 'billsvid', '13'
 end
 
 if $ARGS[0] = '11':
-cla
-*clr
-<<<<<<< 102_billsvid
-'<center><img src="images\img\bilsvid\3.jpg"></center>'
-'You stood at the table, legs spread, and <<$telsob>> dropping to his knees in front of you began to kiss your pussy, but her tongue could not bring you to the desired state.'
-act 'Make her Cooney': gt 'billsvid','10'
-if bilsvidkiy = 0: act 'Play with a cue': gt 'billsvid','12'
-if bilsvidukiy = 0: act 'Ask her to play with a cue': gt 'billsvid','13'
-=======
-'<center><img src="img/bilsvid/3.jpg" ></center>'
-'You stood by the table legs spread, and <<$telsob>> dropping to his knees in front of you kissed your pussy, but her tongue could not bring you to the desired state.'
-act 'Make her Cooney':gt 'billsvid','10'
-if bilsvidkiy=0:act 'Play with cue':gt 'billsvid','12'
-if bilsvidukiy=0:act 'Ask her to play with cue':gt 'billsvid','13'
->>>>>>> 102_billsvid
+	cla
+	*clr
+
+	'<center><img src="images/img/bilsvid/3.jpg"></center>'
+	'You stood at the table, legs spread, and <<$telsob>> dropping to his knees in front of you began to kiss your pussy, but her tongue could not bring you to the desired state.'
+
+	act 'Make her Cooney':gt 'billsvid', '10'
+
+	if bilsvidkiy = 0:act 'Play with a cue':gt 'billsvid', '12'
+	if bilsvidukiy = 0:act 'Ask her to play with a cue':gt 'billsvid', '13'
 end
 
 if $ARGS[0] = '12':
-cla
-*clr
-<<<<<<< 102_billsvid
-set bilsvidkiy = 1
-'<center><img src="images\img\bilsvid\6.jpg"></center>'
-'<<$telsob>> climbed on the table and spread her legs wide. Picking up the cue stick and you licked medleno inserted it into her vagina. <<$telsob>> Diligently podmahivala your movements to the beat and a few minutes later collapsed on the table in a shuddering orgasm.'
-if bilsvidukiy = 0: act 'Ask her to play with a cue': gt 'billsvid','13'
-act 'Finish': gt 'billsvid','3'
-=======
-set bilsvidkiy=1
-'<center><img src="img/bilsvid/6.jpg" ></center>'
-'<<$telsob>> climbed on the table and spread her legs wide. Picking up a cue stick and you licked Medley inserted it in her vagina. <<$telsob>> podmahivala carefully to the beat of your movements and a few minutes later collapsed on the table shuddering in orgasm.'
-if bilsvidukiy=0:act 'Ask her to play with cue':gt 'billsvid','13'
-act 'End_Up':gt 'billsvid','3'
->>>>>>> 102_billsvid
+	cla
+	*clr
+
+	set bilsvidkiy = 1
+	'<center><img src="images/img/bilsvid/6.jpg"></center>'
+	'<<$telsob>> climbed on the table and spread her legs wide. Picking up the cue stick and you licked medleno inserted it into her vagina. <<$telsob>> Diligently podmahivala your movements to the beat and a few minutes later collapsed on the table in a shuddering orgasm.'
+
+	if bilsvidukiy = 0:act 'Ask her to play with a cue':gt 'billsvid', '13'
+
+	act 'Finish':gt 'billsvid', '3'
 end
 
 if $ARGS[0] = '13':
-cla
-*clr
-set orgasm += 1
-set vagina += 1
-<<<<<<< 102_billsvid
-set bilsvidukiy = 1
-'<center><img src="images\img\bilsvid\5.jpg"></center>'
-'You sat on the edge of the table, throwing one leg on the table and stretched her cue, "get into the pocket?". <<$telsob>> smiled and demonstrotivno spending tongue rukoyadke cue quickly inserted it you pussy, you already squealed in surprise. While she diligently fucked you cue, turning it in different directions, you´re massaging her clitoris with a finger. After a few minutes pleasant negative spread through your body and you are disconnected from the second nacrite you orgasm.'
-if bilsvidkiy = 0: act 'Play with a cue': gt 'billsvid','12'
-act 'Finish': gt 'billsvid','3'
-=======
-set bilsvidukiy=1
-'<center><img src="img/bilsvid/5.jpg" ></center>'
-'You sat on the edge of the table, throwing one leg on the table and handed it to the cue, "Get into the pocket?". <<$telsob>> smiled, and demonstrotivno spending tongue rukoyadke cue, quickly put it to you pussy, You already screamed from surprise. While she diligently fuck you cue, turning it into different directions, you are massaging her clit with a finger. After a few minutes of pleasant languor spread over your body, and for a moment you were disconnected from the cover with your orgasm.'
-if bilsvidkiy=0:act 'Play with cue':gt 'billsvid','12'
-act 'End_Up':gt 'billsvid','3'
->>>>>>> 102_billsvid
+	cla
+	*clr
+	set orgasm += 1
+	set vagina += 1
+
+	set bilsvidukiy = 1
+	'<center><img src="images/img/bilsvid/5.jpg"></center>'
+	'You sat on the edge of the table, throwing one leg on the table and stretched her cue, "get into the pocket?". <<$telsob>> smiled and demonstrotivno spending tongue rukoyadke cue quickly inserted it you pussy, you already squealed in surprise. While she diligently fucked you cue, turning it in different directions, you´re massaging her clitoris with a finger. After a few minutes pleasant negative spread through your body and you are disconnected from the second nacrite you orgasm.'
+
+	if bilsvidkiy = 0:act 'Play with a cue':gt 'billsvid', '12'
+
+	act 'Finish':gt 'billsvid', '3'
 end
 
 if $ARGS[0] = '2':
-cla
-*clr
-<<<<<<< 102_billsvid
-'<center><img src="images\img\bilsvid\10.jpg"></center>'
-'During the game <<$telsob>> is constantly trying to put his arm around you, you will hand over the hips, then casually touch a chest.'
-act 'Continue to play': gt 'billsvid','3'
-act 'Kiss her':
 	cla
 	*clr
-	set lesbian += 1
-	'<center><img src="images\img\bilsvid\11.jpg"></center>'
-	'When <<$telsob>> once again put her hand on your stomach, you moved up closer to her and kissed her hand immediately slipped under your clothes and stood on his chest.'
-	act 'Proceed':
+	'<center><img src="images/img/bilsvid/10.jpg"></center>'
+	'During the game <<$telsob>> is constantly trying to put his arm around you, you will hand over the hips, then casually touch a chest.'
+
+	act 'Continue to play':gt 'billsvid', '3'
+
+	act 'Kiss her':
 		cla
 		*clr
-		'<center><img src="images\img\bilsvid\12.jpg"></center>'
-		'<<$telsob>> knelt down and taking off your clothes started to kiss your crotch down below until her tongue under your pussy.'
-		act 'Lick her':
+		set lesbian += 1
+		'<center><img src="images/img/bilsvid/11.jpg"></center>'
+		'When <<$telsob>> once again put her hand on your stomach, you moved up closer to her and kissed her hand immediately slipped under your clothes and stood on his chest.'
+
+		act 'Proceed':
 			cla
 			*clr
-			'<center><img src="images\img\bilsvid\13.jpg"></center>'
-			'Holding her knees with her face you have deployed to the table and lifted up her leg on the table and began to kiss her pussy and caressing tongue, then sucking in her lips.'
-			act 'Proceed':
+			'<center><img src="images/img/bilsvid/12.jpg"></center>'
+			'<<$telsob>> knelt down and taking off your clothes started to kiss your crotch down below until her tongue under your pussy.'
+
+			act 'Lick her':
 				cla
 				*clr
-				'<center><img src="images\img\bilsvid\14.jpg"></center>'
-				'Unfolding her to face him, you put it on the table and spreading her legs continued to caress pussy tongue until she came.'
-				act 'Give her to lick':
+				'<center><img src="images/img/bilsvid/13.jpg"></center>'
+				'Holding her knees with her face you have deployed to the table and lifted up her leg on the table and began to kiss her pussy and caressing tongue, then sucking in her lips.'
+
+				act 'Proceed':
 					cla
 					*clr
-					'<center><img src="images\img\bilsvid\15.jpg"></center>'
-					'When <<$telsob>> finished, you climbed on the table and positioned her pussy right in front of her face, <<$telsob>> immediately began to caress her lips parted fingers she tried to thrust deeper language.'
-					act 'Lick her':
+					'<center><img src="images/img/bilsvid/14.jpg"></center>'
+					'Unfolding her to face him, you put it on the table and spreading her legs continued to caress pussy tongue until she came.'
+
+					act 'Give her to lick':
 						cla
 						*clr
-						set orgasm += 1
-						'<center><img src="images\img\bilsvid\16.jpg"></center>'
-						'You turned around so that pussy was over her face, and have started to lick her pussy in a few minutes you feel as her body shook and <<$telsob>> groaning strongly pressed against your pussy, and then you have shrouded pleasant waves of orgasm.'
-						act 'Finish': gt 'billsvid','3'
+						'<center><img src="images/img/bilsvid/15.jpg"></center>'
+						'When <<$telsob>> finished, you climbed on the table and positioned her pussy right in front of her face, <<$telsob>> immediately began to caress her lips parted fingers she tried to thrust deeper language.'
+
+						act 'Lick her':
+							cla
+							*clr
+							set orgasm += 1
+							'<center><img src="images/img/bilsvid/16.jpg"></center>'
+							'You turned around so that pussy was over her face, and have started to lick her pussy in a few minutes you feel as her body shook and <<$telsob>> groaning strongly pressed against your pussy, and then you have shrouded pleasant waves of orgasm.'
+
+							act 'Finish':gt 'billsvid', '3'
 						end
 					end
 				end
 			end
 		end
 	end
-=======
-'<center><img src="img/bilsvid/10.jpg" ></center>'
-'During the game <<$telsob>> constantly trying you hugged, it will hand over the hips, then accidentally touch a breast.'
-act 'continue to play':gt 'billsvid','3'
-act 'kiss her':
-	 cla
-	 *clr
-	 set lesbian+=1
-	 '<center><img src="img/bilsvid/11.jpg" ></center>'
-	 'when <<$telsob>> once again put her hand on your stomach, You moved up closer to her and kissed, her hand immediately slid under your clothes and stood on his chest.'
-	 act'Resume':
-		 cla
-		 *clr
-		 '<center><img src="img/bilsvid/12.jpg" ></center>'
-		 '<<$telsob>> knelt down and taking off your clothes started kissing down below your crotch, while her tongue under your pussy.'
-		 act 'lick it':
-			 cla
-			 *clr
-			 '<center><img src="img/bilsvid/13.jpg" ></center>'
-			 'Lifting her knees with her вЂ‹вЂ‹face you have deployed to the table and lifted her leg on the table, began to kiss her pussy, then caressing tongue, then sucking in her lips.'
-			 act 'Resume':
-				 cla
-				 *clr
-				 '<center><img src="img/bilsvid/14.jpg" ></center>'
-				 'Unfolding her to face him, you put it on the table and spread her legs continued to caress pussy tongue until it is finished.'
-				 act 'Give her to lick':
-					 cla
-					 *clr
-					 '<center><img src="img/bilsvid/15.jpg" ></center>'
-					 'when <<$telsob>> finished, You climbed on the table and positioned her pussy right in front of her face, <<$telsob>> immediately began to caress her, fingers parted lips she tried to thrust deeper language.'
-					 act'lick it':
-						 cla
-						 *clr
-						 set orgasm += 1
-						 '<center><img src="img/bilsvid/16.jpg" ></center>'
-						 'You turned around so that her pussy was over the face, and have started to lick her pussy, after a few minutes you feel as her body trembled and <<$telsob>> groaning, strongly pressed against your pussy, and then you have shrouded pleasant wave of orgasm.'
-						 act 'End_Up':gt 'billsvid','3'
-						 end
-					 end
-				 end
-			 end
-		 end
-	 end
->>>>>>> 102_billsvid
 end
 
 if $ARGS[0] = '3':
-cla
-set horny = 0
-<<<<<<< 102_billsvid
-set minut += 60
-gs 'stat'
-'When you have finished playing <<$telsob>> said that she needed to flee and left'
-act 'Leave': gt 'torgcentr'
-=======
-set minut+=60
-gs 'stat'
-'When you`re finished playing <<$telsob>> said that she had to flee and left'
-act 'Get_Away':gt'torgcentr'
->>>>>>> 102_billsvid
+	cla
+	set horny = 0
+	set minut += 60
+	gs 'stat'
+	'When you have finished playing <<$telsob>> said that she needed to flee and left'
+
+	act 'Leave':gt 'torgcentr'
 end
+
 --- billsvid ---------------------------------
 

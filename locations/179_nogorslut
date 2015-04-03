@@ -1,288 +1,93 @@
 # nogorslut
-<<<<<<< 179_nogorslut
 if GorSlut <= 0:
-bonusotnG = vnesh/2
-if bonusotnG <= 0: bonusotnG = 1
+bonusotnG = vnesh / 2
+if bonusotnG <= 0:bonusotnG = 1
 grupNPC[numnpc] += bonusotnG
 talkmarkeronce = 0
-	if grupNPC[numnpc]<20 and talkmarkeronce = 0:
+
+if grupNPC[numnpc] < 20 and talkmarkeronce = 0:
 	talkmarkeronce = 1
 	'You chat about any nonsense and <<$npcName[numnpc]>> listens to you in half an ear.'
-	end
-	if grupNPC[numnpc]<80 and grupNPC[numnpc] >= 20 and talkmarkeronce = 0:
+end
+
+if grupNPC[numnpc] < 80 and grupNPC[numnpc] >= 20 and talkmarkeronce = 0:
 	talkmarkeronce = 2
 	'You chat about any nonsense and <<$npcName[numnpc]>> willingly assents to you.'
-	end
-	if grupNPC[numnpc] >= 80 and talkmarkeronce = 0:
+end
+
+if grupNPC[numnpc] >= 80 and talkmarkeronce = 0:
 	talkmarkeronce = 3
 	'You chat about all the nonsense and <<$npcName[numnpc]>> with a smile, talking to you, too, telling all sorts of stories.'
-		if numnpc = 1:
+
+	if numnpc = 1:
 		Mud = totminut + 60
-		!крутой Дима Носов
-			if DimaRudeQW > 0 and DimaRudeBlock = 0:
-			'Dima looks at you look aloof "After high school, go to my place. I´ll wait for you at the entrance."'
-			end
-		end
-		if numnpc = 2:
-		!ботан Артем Чеботарев
-		''
-		end
-		if numnpc = 3:
+		!Dima steep Nosov
+
+		if DimaRudeQW > 0 and DimaRudeBlock = 0:'Dima looks at you look aloof "After high school, go to my place. I´ll wait for you at the entrance."'
+	end
+
+	if numnpc = 2:'' !nerdy Artem Chebotarev
+
+	if numnpc = 3:
 		Mud = totminut + 60
-		!спортик Иван Прохоров
-			if IvanShowerQW = 1:
+
+		!sportik Ivan Prokhorov
+		if IvanShowerQW = 1:
 			IvanShowerQW = 2
 			'Ivan smiles "<<$name>>, I´m sorry for what happened in the shower. Just thought I´d make a row or anything."'
-			end
-			if IvanShowerQW = 10:
+		end
+
+		if IvanShowerQW = 10:
 			IvanShowerQW = 11
 			manna = 0
 			Mud = 0
 			'Ivan thinks "<<$name>>, I wanted to talk to the account of what happened in the shower. Devchenka you cool and everything was great, but I´m not ready for a relationship, I now need to vigorously engage in sports that would get to the championship of Russia. I can not be distracted by girls even such attractive as you. So let´s just forget about what happened."'
-			end
-		end
-		if numnpc = 4:
-		!игорь круглов
-		''
-		end
-		if numnpc = 5:
-		!федор козлов
-		''
-		end
-		if numnpc = 6:
-		!петя клюев
-		''
-		end
-		if numnpc = 7:
-		!лешка царев
-		''
-		end
-		if numnpc = 8:
-		!святослав воинов
-		''
-		end
-		if numnpc = 9:
-		!Витек Котов
-		''
-		end
-		if numnpc = 10:
-		!гопник Дэн Рыжов
-		''
-		end
-		if numnpc = 11:
-		!гопник Васян Шульгин
-		''
-		end
-		if numnpc = 12:
-		!юля милова
-		''
-		end
-		if numnpc = 13:
-		!лариска груздева
-		''
-		end
-		if numnpc = 14:
-		!Катя Мейнольд
-		''
-		if KatjaOTN > 0: KatjaHorny += 10 & 'Kate blushes and depart from your eyes.'
-		end
-		if numnpc = 15:
-		!Вика Мейнольд
-		''
-		end
-		if numnpc = 16:
-		!наташа белова
-		''
-		end
-		if numnpc = 17:
-		!инна девятова
-		''
-		end
-		if numnpc = 18:
-		!кристина зверева
-			if kristinaSex = 0 and swinbeggor = 0 and kristinaSex = 0:
-			''
-			end
-			if kristinaSex = 0 and swinbeggor > 0 and kristinaSex = 0:
-			grupNPC[numnpc] = 20
-			'Christina hate looking at you. "You bitch already tired under my feet hang out!"'
-			end
-			if kristinaSex > 0:
-			''
-			end
-		end
-		if numnpc = 19:
-		!лина старова
-		''
-		end
-		if numnpc = 20:
-		!лена котова
-		''
-		end
-		if numnpc = 21:
-		!лера царева
-		''
-		end
-		if numnpc = 22:
-		!бэлла артамонова
-		''
-		end
-		if numnpc = 23:
-		!Альбина Барловская
-		''
-		end
-		if numnpc = 24:
-		!полина себаготулина
-		''
-		end
-		if numnpc = 25:
-		!соня иванько
-		''
 		end
 	end
+
+	if numnpc = 4:'' !Igor Kruglov
+	if numnpc = 5:'' !Fedor goats
+	if numnpc = 6:'' !Peter Klyuyev
+	if numnpc = 7:'' !Leszek Tsarev
+	if numnpc = 8:'' !Svyatoslav soldiers
+	if numnpc = 9:'' !Vitek Cats
+	if numnpc = 10:'' !Gopnik Dan Ryzhov
+	if numnpc = 11:'' !Gopnik Bob Shulgin
+	if numnpc = 12:'' !Julia Milov
+	if numnpc = 13:'' !Lariska Gruzdeva
+
+	if numnpc = 14:
+		!Katya Meynold
+		''
+
+		if KatjaOTN > 0:KatjaHorny += 10 & 'Kate blushes and depart from your eyes.'
+	end
+
+	if numnpc = 15:'' !Vic Meynold
+
+	if numnpc = 16:'' !Natasha Belova
+	if numnpc = 17:'' !Inna Devyatova
+
+	if numnpc = 18:
+		!Christina Zvereva
+		if kristinaSex = 0 and swinbeggor = 0:''
+
+		if kristinaSex = 0 and swinbeggor > 0 and kristinaSex = 0:
+			grupNPC[numnpc] = 20
+			'Christina hate looking at you. "You bitch already tired under my feet hang out!"'
+		end
+
+		if kristinaSex > 0:''
+	end
+
+	if numnpc = 19:'' !Length Starov
+	if numnpc = 20:'' !Lena Kotova
+	if numnpc = 21:'' !Lera Tsar
+	if numnpc = 22:'' !Bella Artamonov
+	if numnpc = 23:'' !Albina Barlovskaya
+	if numnpc = 24:'' !Pauline sebagotulina
+	if numnpc = 25:'' !Sonia Ivanko
 end
-=======
- if GorSlut<=0:
- bonusotnG=vnesh/2
- if bonusotnG<=0:bonusotnG=1
- grupNPC[numnpc]+=bonusotnG
- talkmarkeronce=0
-	 if grupNPC[numnpc]<20 and talkmarkeronce=0:
-	 talkmarkeronce=1
-	 'You are chatting about any nonsense and <<$npcName[numnpc]>> listens to you on the floor of the ear.'
-	 end
-	 if grupNPC[numnpc]<80 and grupNPC[numnpc]>=20 and talkmarkeronce=0:
-	 talkmarkeronce=2
-	 'You are chatting about any nonsense and <<$npcName[numnpc]>> readily assents to you.'
-	 end
-	 if grupNPC[numnpc]>=80 and talkmarkeronce=0:
-	 talkmarkeronce=3
-	 'You are chatting about nonsense and <<$npcName[numnpc]>> with a smile communicates with you, also telling all sorts of stories.'
-		 if numnpc=1:
-		 Mud=totminut+60
-		 !Dima steep Nosov
-			 if DimaRudeQW>0 and DimaRudeBlock=0:
-			 'Dima looks at you gaze detached "After high school. I `ll wait for you at the entrance."'
-			 end
-		 end
-		 if numnpc=2:
-		 !nerdy Artem Chebotarev
-		 ''
-		 end
-		 if numnpc=3:
-		 Mud=totminut+60
-		 !sportik Ivan Prokhorov
-			 if IvanShowerQW=1:
-			 IvanShowerQW=2
-			 'Ivan smiling "light, I`m sorry for what happened in the shower. Just decided to make a row, nothing."'
-			 end
-			 if IvanShowerQW=10:
-			 IvanShowerQW=11
-			 manna=0
-			 Mud=0
-			 'Ivan thinks "light, I would like to speak to an account of what happened in the shower. You Devchenka cool and everything was great, but I`m not ready to relations, I now need to vigorously engage in sports, that would get to the championship of Russia. I can not be distracted by girls, even such attractive as you. That_Is_Why, let`s just forget about what happened and be friends."'
-			 end
-		 end
-		 if numnpc=4:
-		 !Igor Kruglov
-		 ''
-		 end
-		 if numnpc=5:
-		 !Fedor goats
-		 ''
-		 end
-		 if numnpc=6:
-		 !Peter Klyuyev
-		 ''
-		 end
-		 if numnpc=7:
-		 !Leszek Tsarev
-		 ''
-		 end
-		 if numnpc=8:
-		 !Svyatoslav soldiers
-		 ''
-		 end
-		 if numnpc=9:
-		 !Vitek Cats
-		 ''
-		 end
-		 if numnpc=10:
-		 !Gopnik Dan Ryzhov
-		 ''
-		 end
-		 if numnpc=11:
-		 !Gopnik Bob Shulgin
-		 ''
-		 end
-		 if numnpc=12:
-		 !Julia Milov
-		 ''
-		 end
-		 if numnpc=13:
-		 !Lariska Gruzdeva
-		 ''
-		 end
-		 if numnpc=14:
-		 !Katya Meynold
-		 ''
-		 if KatjaOTN>0:KatjaHorny+=10&'Katya blushes and depart from your eyes.'
-		 end
-		 if numnpc=15:
-		 !Vic Meynold
-		 ''
-		 end
-		 if numnpc=16:
-		 !Natasha Belova
-		 ''
-		 end
-		 if numnpc=17:
-		 !Inna Devyatova
-		 ''
-		 end
-		 if numnpc=18:
-		 !Christina Zvereva
-			 if kristinaSex=0 and swinbeggor=0 and kristinaSex=0:
-			 ''
-			 end
-			 if kristinaSex=0 and swinbeggor>0 and kristinaSex=0:
-			 grupNPC[numnpc]=20
-			 'Christina hate looking at you. "You`re already tired bitch under my feet dangle!"'
-			 end
-			 if kristinaSex>0:
-			 ''
-			 end
-		 end
-		 if numnpc=19:
-		 !Length Starov
-		 ''
-		 end
-		 if numnpc=20:
-		 !Lena Kotova
-		 ''
-		 end
-		 if numnpc=21:
-		 !Lera Tsar
-		 ''
-		 end
-		 if numnpc=22:
-		 !Bella Artamonov
-		 ''
-		 end
-		 if numnpc=23:
-		 !Albina Barlovskaya
-		 ''
-		 end
-		 if numnpc=24:
-		 !Pauline sebagotulina
-		 ''
-		 end
-		 if numnpc=25:
-		 !Sonia Ivanko
-		 ''
-		 end
-	 end
- end
->>>>>>> 179_nogorslut
+
 --- nogorslut ---------------------------------
 
