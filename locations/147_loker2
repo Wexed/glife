@@ -465,8 +465,8 @@ if $ARGS[0] = 'start':
 	if odetdress = 1 and numdress ! ! and dress[221] = 1 or odetdress = 0 and dress[221] = 1:'Form-fitting, pink-grey dress. (The remaining strength <<dressH[221]>>, The size of the hips <<dressB[221]>>) <a href="exec:set numdres = 221 & gt ''loker2'', ''dress''">pass</a>'
 	if odetdress = 1 and numdress ! ! and dress[222] = 1 or odetdress = 0 and dress[222] = 1:'Pink dress. (The remaining strength <<dressH[222]>>, The size of the hips <<dressB[222]>>) <a href="exec:set numdres = 222 & gt ''loker2'', ''dress''">pass</a>'
 	if odetdress = 1 and numdress ! ! and dress[223] = 1 or odetdress = 0 and dress[223] = 1:'Long, glittery red dress, with a deep cleavage. (The remaining strength <<dressH[223]>>, The size of the hips <<dressB[223]>>) <a href="exec:set numdres = 223 & gt ''loker2'', ''dress''">pass</a>'
-	if odetdress = 1 and numdress ! ! and dress[224] = 1 or odetdress = 0 and dress[226] = 1:'Long, formal dress in blue. (The remaining strength <<dressH[223]>>, The size of the hips <<dressB[223]>>) <a href="exec:set numdres = 223 & gt &gt ''loker2'', ''dress''">pass</a>'
-	if odetdress = 1 and numdress ! ! and dress[225] = 1 or odetdress = 0 and dress[227] = 1:'Long, formal dress in red. (The remaining strength <<dressH[223]>>, The size of the hips <<dressB[223]>>) <a href="exec:set numdres = 223 & gt &gt ''loker2'', ''dress''">pass</a>'
+	if odetdress = 1 and numdress ! ! and dress[224] = 1 or odetdress = 0 and dress[226] = 1:'Long, formal dress in blue. (The remaining strength <<dressH[223]>>, The size of the hips <<dressB[223]>>) <a href="exec:set numdres = 223 & gt  & gt ''loker2'', ''dress''">pass</a>'
+	if odetdress = 1 and numdress ! ! and dress[225] = 1 or odetdress = 0 and dress[227] = 1:'Long, formal dress in red. (The remaining strength <<dressH[223]>>, The size of the hips <<dressB[223]>>) <a href="exec:set numdres = 223 & gt  & gt ''loker2'', ''dress''">pass</a>'
 
 	if odetprofi = 1 and numdress ! 201 and profi[201] = 1 or odetprofi = 0 and profi[201] = 1:'Office dress 201 (strength <<profiH[201]>>, hip size <<profiB[201]>>) <a href="exec:set numdres = 201 & gt ''loker2'', ''profi''">surrender</a>'
 	if odetprofi = 1 and numdress ! 202 and profi[202] = 1 or odetprofi = 0 and profi[202] = 1:'Office dress 202 (strength <<profiH[202]>>, hip size <<profiB[202]>>) <a href="exec:set numdres = 202 & gt ''loker2'', ''profi''">surrender</a>'
@@ -631,7 +631,7 @@ if $ARGS[0] = 'jeans':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if jeansH[numdres]>45:
+	if jeansH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -641,7 +641,7 @@ if $ARGS[0] = 'jeans':
 		end
 	end
 
-	if jeansH[numdres] <= 45 and jeansH[numdres]>30:
+	if jeansH[numdres] <= 45 and jeansH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -651,7 +651,7 @@ if $ARGS[0] = 'jeans':
 		end
 	end
 
-	if jeansH[numdres] <= 30 and jeansH[numdres]>0:
+	if jeansH[numdres] <= 30 and jeansH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -675,7 +675,7 @@ if $ARGS[0] = 'yoga':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if yogaH[numdres]>45:
+	if yogaH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -685,7 +685,7 @@ if $ARGS[0] = 'yoga':
 		end
 	end
 
-	if yogaH[numdres] <= 45 and yogaH[numdres]>30:
+	if yogaH[numdres] <= 45 and yogaH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -695,7 +695,7 @@ if $ARGS[0] = 'yoga':
 		end
 	end
 
-	if yogaH[numdres] <= 30 and yogaH[numdres]>0:
+	if yogaH[numdres] <= 30 and yogaH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 		act 'Pass':
 			set yoga[numdres] = 0
@@ -717,7 +717,7 @@ if $ARGS[0] = 'sarafan':
 	'(strength <<sarafanH[numdres]>>'
 	act 'To Top':gt 'loker2', 'start'
 
-	if sarafanH[numdres]>45:
+	if sarafanH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -727,7 +727,7 @@ if $ARGS[0] = 'sarafan':
 		end
 	end
 
-	if sarafanH[numdres] <= 45 and sarafanH[numdres]>30:
+	if sarafanH[numdres] <= 45 and sarafanH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -737,7 +737,7 @@ if $ARGS[0] = 'sarafan':
 		end
 	end
 
-	if sarafanH[numdres] <= 30 and sarafanH[numdres]>0:
+	if sarafanH[numdres] <= 30 and sarafanH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -760,7 +760,7 @@ if $ARGS[0] = 'short':
 	'(strength <<shortH[numdres]>>, hip size <<shortB[numdres]>>)'
 	act 'To Top':gt 'loker2', 'start'
 
-	if shortH[numdres]>45:
+	if shortH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -770,7 +770,7 @@ if $ARGS[0] = 'short':
 		end
 	end
 
-	if shortH[numdres] <= 45 and shortH[numdres]>30:
+	if shortH[numdres] <= 45 and shortH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -780,7 +780,7 @@ if $ARGS[0] = 'short':
 		end
 	end
 
-	if shortH[numdres] <= 30 and shortH[numdres]>0:
+	if shortH[numdres] <= 30 and shortH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -803,7 +803,7 @@ if $ARGS[0] = 'skirt':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if skirtH[numdres]>45:
+	if skirtH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -813,7 +813,7 @@ if $ARGS[0] = 'skirt':
 		end
 	end
 
-	if skirtH[numdres] <= 45 and skirtH[numdres]>30:
+	if skirtH[numdres] <= 45 and skirtH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -823,7 +823,7 @@ if $ARGS[0] = 'skirt':
 		end
 	end
 
-	if skirtH[numdres] <= 30 and skirtH[numdres]>0:
+	if skirtH[numdres] <= 30 and skirtH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -847,7 +847,7 @@ if $ARGS[0] = 'dress':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if dressH[numdres]>45:
+	if dressH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -857,7 +857,7 @@ if $ARGS[0] = 'dress':
 		end
 	end
 
-	if dressH[numdres] <= 45 and dressH[numdres]>30:
+	if dressH[numdres] <= 45 and dressH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -867,7 +867,7 @@ if $ARGS[0] = 'dress':
 		end
 	end
 
-	if dressH[numdres] <= 30 and dressH[numdres]>0:
+	if dressH[numdres] <= 30 and dressH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -890,7 +890,7 @@ if $ARGS[0] = 'profi':
 	'(strength <<profiH[numdres]>>, hip size <<profiB[numdres]>>)'
 	act 'To Top':gt 'loker2', 'start'
 
-	if profiH[numdres]>45:
+	if profiH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -900,7 +900,7 @@ if $ARGS[0] = 'profi':
 		end
 	end
 
-	if profiH[numdres] <= 45 and profiH[numdres]>30:
+	if profiH[numdres] <= 45 and profiH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -910,7 +910,7 @@ if $ARGS[0] = 'profi':
 		end
 	end
 
-	if profiH[numdres] <= 30 and profiH[numdres]>0:
+	if profiH[numdres] <= 30 and profiH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -934,7 +934,7 @@ if $ARGS[0] = 'pants':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if pantsH[numdres]>45:
+	if pantsH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -943,7 +943,7 @@ if $ARGS[0] = 'pants':
 			gt 'loker2', 'start'
 		end
 	end
-	if pantsH[numdres] <= 45 and pantsH[numdres]>30:
+	if pantsH[numdres] <= 45 and pantsH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -953,7 +953,7 @@ if $ARGS[0] = 'pants':
 		end
 	end
 
-	if pantsH[numdres] <= 30 and pantsH[numdres]>0:
+	if pantsH[numdres] <= 30 and pantsH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -977,7 +977,7 @@ if $ARGS[0] = 'latex':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if latexH[numdres]>45:
+	if latexH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -987,7 +987,7 @@ if $ARGS[0] = 'latex':
 		end
 	end
 
-	if latexH[numdres] <= 45 and latexH[numdres]>30:
+	if latexH[numdres] <= 45 and latexH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -997,7 +997,7 @@ if $ARGS[0] = 'latex':
 		end
 	end
 
-	if latexH[numdres] <= 30 and latexH[numdres]>0:
+	if latexH[numdres] <= 30 and latexH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -1021,7 +1021,7 @@ if $ARGS[0] = 'hooker':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if hookerH[numdres]>45:
+	if hookerH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -1031,7 +1031,7 @@ if $ARGS[0] = 'hooker':
 		end
 	end
 
-	if hookerH[numdres] <= 45 and hookerH[numdres]>30:
+	if hookerH[numdres] <= 45 and hookerH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -1041,7 +1041,7 @@ if $ARGS[0] = 'hooker':
 		end
 	end
 
-	if hookerH[numdres] <= 30 and hookerH[numdres]>0:
+	if hookerH[numdres] <= 30 and hookerH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -1065,7 +1065,7 @@ if $ARGS[0] = 'odekis':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if odekisH[numdres]>45:
+	if odekisH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -1075,7 +1075,7 @@ if $ARGS[0] = 'odekis':
 		end
 	end
 
-	if odekisH[numdres] <= 45 and odekisH[numdres]>30:
+	if odekisH[numdres] <= 45 and odekisH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -1085,7 +1085,7 @@ if $ARGS[0] = 'odekis':
 		end
 	end
 
-	if odekisH[numdres] <= 30 and odekisH[numdres]>0:
+	if odekisH[numdres] <= 30 and odekisH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':
@@ -1109,7 +1109,7 @@ if $ARGS[0] = 'newclo':
 
 	act 'To Top':gt 'loker2', 'start'
 
-	if newcloH[numdres]>45:
+	if newcloH[numdres] > 45:
 		'Offer you 500 rubles. for this thing'
 
 		act 'Pass':
@@ -1119,7 +1119,7 @@ if $ARGS[0] = 'newclo':
 		end
 	end
 
-	if newcloH[numdres] <= 45 and newcloH[numdres]>30:
+	if newcloH[numdres] <= 45 and newcloH[numdres] > 30:
 		'Offer you 300 rubles. for this thing'
 
 		act 'Pass':
@@ -1129,7 +1129,7 @@ if $ARGS[0] = 'newclo':
 		end
 	end
 
-	if newcloH[numdres] <= 30 and newcloH[numdres]>0:
+	if newcloH[numdres] <= 30 and newcloH[numdres] > 0:
 		'Offer you 100 rubles. for this thing'
 
 		act 'Pass':

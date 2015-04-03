@@ -21,7 +21,7 @@ $din_gboy_end_to_disco = {
 		end
 	end
 
-	if gnpcSex[numnpc]>0:
+	if gnpcSex[numnpc] > 0:
 		'<<$nameBoyfrend[numnpc]>> offered to go to his home.'
 		dynamic $din_gboy_go_to_boyhome
 
@@ -341,7 +341,7 @@ $din_gboy_go_to_disco = {
 						'<center><img src="images/qwest/alter/Ev/kiss.jpg"></center>'
 						'<<$nameBoyfrend[numnpc]>> you tenderly embraced and began to kiss your lips.'
 
-						if gnpcSex[numnpc]>0:
+						if gnpcSex[numnpc] > 0:
 							'<<$nameBoyfrend[numnpc]>> whispered in your ear, "Svetsik can Let us than anything right here?"'
 
 							act 'jerk guy':
@@ -1113,17 +1113,17 @@ gs 'stat'
 !'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 '<<$nameBoyfrend[numnpc]>> your guy.'
 
-if otnBoyFrend[numnpc]<20:'You have a bad attitude.'
-if otnBoyFrend[numnpc] >= 20 and otnBoyFrend[numnpc]<40:'You tensions.'
-if otnBoyFrend[numnpc] >= 40 and otnBoyFrend[numnpc]<60:'You have a normal relationship.'
-if otnBoyFrend[numnpc] >= 60 and otnBoyFrend[numnpc]<80:'You have a good relationship.'
+if otnBoyFrend[numnpc] < 20:'You have a bad attitude.'
+if otnBoyFrend[numnpc] >= 20 and otnBoyFrend[numnpc] < 40:'You tensions.'
+if otnBoyFrend[numnpc] >= 40 and otnBoyFrend[numnpc] < 60:'You have a normal relationship.'
+if otnBoyFrend[numnpc] >= 60 and otnBoyFrend[numnpc] < 80:'You have a good relationship.'
 if otnBoyFrend[numnpc] >= 80:'You have a great relationship.'
 
 ''
 ''
 
 if hour < 20:
-	if otnBoyFrend[numnpc]<80:
+	if otnBoyFrend[numnpc] < 80:
 		'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
 		act 'Go home':gt 'gorodok'
 	end
@@ -1143,7 +1143,7 @@ if hour < 20:
 		end
 	end
 
-	if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc]>0:
+	if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
 		'<<$nameBoyfrend[numnpc]>> offered to go to his home.'
 		dynamic $din_gboy_go_to_boyhome
 		act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
@@ -1151,7 +1151,7 @@ if hour < 20:
 end
 
 if hour >= 20 and hour < 23:
-	if otnBoyFrend[numnpc]<80:
+	if otnBoyFrend[numnpc] < 80:
 		'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
 		act 'Go home':gt 'gorodok'
 	end
@@ -1172,7 +1172,7 @@ if hour >= 20 and hour < 23:
 		end
 	end
 
-	if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc]>0:
+	if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
 		gdeystboyrand = rand(0, 1)
 
 		if gdeystboyrand = 0:

@@ -8,10 +8,10 @@ gs 'stat'
 !'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 '<<$nameBoyfrend[numnpc]>> your guy.'
 
-if otnBoyFrend[numnpc]<20:'You have a bad attitude.'
-if otnBoyFrend[numnpc] >= 20 and otnBoyFrend[numnpc]<40:'You tensions.'
-if otnBoyFrend[numnpc] >= 40 and otnBoyFrend[numnpc]<60:'You have a normal relationship.'
-if otnBoyFrend[numnpc] >= 60 and otnBoyFrend[numnpc]<80:'You have a good relationship.'
+if otnBoyFrend[numnpc] < 20:'You have a bad attitude.'
+if otnBoyFrend[numnpc] >= 20 and otnBoyFrend[numnpc] < 40:'You tensions.'
+if otnBoyFrend[numnpc] >= 40 and otnBoyFrend[numnpc] < 60:'You have a normal relationship.'
+if otnBoyFrend[numnpc] >= 60 and otnBoyFrend[numnpc] < 80:'You have a good relationship.'
 if otnBoyFrend[numnpc] >= 80:'You have a great relationship.'
 
 ''
@@ -176,7 +176,7 @@ act 'Walking through the square':
 					end
 				end
 
-				if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc]>0:
+				if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
 					'You have been watching the movies, and <<$nameBoyfrend[numnpc]>> put his hand on your foot and began to stroke your knee. Movie finally ended. In the hall lights went on and the screen went titles.'
 
 					act 'Go to the exit':gt 'Gnpc2'

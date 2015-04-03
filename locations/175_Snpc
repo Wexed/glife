@@ -23,9 +23,9 @@ if grupTipe[numnpc] = 2:'<<$npcName[numnpc]>> refers to a group sportikov.'
 if grupTipe[numnpc] = 3:'<<$npcName[numnpc]>> refers to a group of steep.'
 if grupTipe[numnpc] = 4:'<<$npcName[numnpc]>> refers to a group Gopnik.'
 if grupNPC[numnpc] < 20:'You have a bad attitude.'
-if grupNPC[numnpc] >= 20 and grupNPC[numnpc]<40:'You tensions.'
-if grupNPC[numnpc] >= 40 and grupNPC[numnpc]<60:'You have a normal relationship.'
-if grupNPC[numnpc] >= 60 and grupNPC[numnpc]<80:'You have a good relationship.'
+if grupNPC[numnpc] >= 20 and grupNPC[numnpc] < 40:'You tensions.'
+if grupNPC[numnpc] >= 40 and grupNPC[numnpc] < 60:'You have a normal relationship.'
+if grupNPC[numnpc] >= 60 and grupNPC[numnpc] < 80:'You have a good relationship.'
 if grupNPC[numnpc] >= 80:'You have a great relationship.'
 if numnpc = 14 and KatjaOTN > 0:
 	if KatjaHorny < 20:'Katia looks calm and indifferent.'
@@ -280,7 +280,7 @@ if numnpc = 2:
 			'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 			'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 
-			if GorSlut<1:'You came to Natasha and asked you to pull up a little learning, She thought agreed.'
+			if GorSlut < 1:'You came to Natasha and asked you to pull up a little learning, She thought agreed.'
 			if GorSlut> = 1:'You came to Natasha and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
 			if $loc ! 'gdkin':dynamic $din_sekondparturok
 			if $loc = 'gdkin':act 'Move away':gt $loc, $metka
