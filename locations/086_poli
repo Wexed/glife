@@ -16,7 +16,7 @@ if $ARGS[0] = 'start':
 	'Doctors appointments costs 1,000.'
 	'VD testing cost 1,000.'
 	*nl
-	'Abortion at the woman´s request can be made up to 84 days of pregnancy. The cost of abortion is 8,000.'
+	'Abortion at the woman´s request can be made up to 84 days of pregnancy. The cost of abortion is 8,000 rubles.'
 	*nl
 	'Be warned, abortions are dangerous to health. There is always a risk of complications and the possibility of sterility.'
 	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6:act 'Exit to replace':gt 'poli', 'beginwork'
@@ -25,7 +25,7 @@ if $ARGS[0] = 'start':
 	act 'Leave Clinic':gt 'street'
 
 	if health < (vital * 10 + stren * 5) and money >= 1000:
-		act 'Treat health 1,000 rubles':
+		act 'Treat health (1,000 rubles)':
 			cla
 			set money  -= 1000
 			set minut  += 60
@@ -41,7 +41,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if willpower < intel * 5 + will * 5 and money >= 1000:
-		act 'See a therapist 1,000 rubles':
+		act 'See a therapist (1,000 rubles)':
 			cla
 			set money    -= 1000
 			set minut    += 60
@@ -215,7 +215,7 @@ if $ARGS[0] = 'start':
 	!'Warn abortions are dangerous to health. There is always a risk of complications and the possibility of not getting pregnant in the future.'
 
 	if money >= 8000 and preg = 1 and pregtime < 84:
-		act 'Abortion 8,000 rubles':
+		act 'Abortion (8,000 rubles)':
 			cla
 			set vidage += 1
 			set abort += 1
@@ -392,12 +392,12 @@ if $ARGS[0] = 'start':
 			gs 'stat'
 			'Optometrist examined you and said that you can do laser vision correction  100 thousand. But from reading books eyesight can deteriorate again.'
 
-			if glass = 1:'Doctor looking at you add ,Of course you can buy glasses that will be better to look at you. 8 thousand.'
+			if glass = 1:'Doctor looking at you add, Of course you can buy glasses that will be better to look at you. 8,000 rubles.'
 
 			act 'Leave the clinic':gt 'street'
 
 			if money >= 100000 and glass ! 0:
-				act 'Pay for laser correction':
+				act 'Pay for laser correction (100,000 rubles)':
 					cls
 					money -= 100000
 					minut += 60
@@ -411,7 +411,7 @@ if $ARGS[0] = 'start':
 
 			if glass = 1:
 				if money >= 8000:
-					act 'Buy Points':
+					act 'Buy Points (8,000 rubles)':
 						cls
 						money -= 8000
 						minut += 60

@@ -402,7 +402,7 @@ $din_cheat = {
 	if intel > 0:pl 'Decrease intelligence by <a href="exec:intel -= 1 & dynamic $din_cheat">1</a> <a href="exec:intel -= 5 & dynamic $din_cheat">5</a> <a href="exec:intel -= 10 & dynamic $din_cheat">10</a>'
 
 	pl '<b>Cheats stats</b>'
-	pl 'Increase money by <a href="exec:money += 1,000 & dynamic $din_cheat">1000</a> <a href="exec:money += 5000 & dynamic $din_cheat">5,000</a> <a href="exec:money += 10000 & dynamic $din_cheat">10,000</a>'
+	pl 'Increase money by <a href="exec:money += 1, 000 & dynamic $din_cheat">1,000</a> <a href="exec:money += 5000 & dynamic $din_cheat">5,000</a> <a href="exec:money += 10000 & dynamic $din_cheat">10,000</a>'
 	pl'<a href="exec:money = 0 & dynamic $din_cheat">Throw away all money</a>'
 	pl 'Increase dominance by <a href="exec:dom += 1 & dynamic $din_cheat">1</a> <a href="exec:dom += 5 & dynamic $din_cheat">5</a> <a href="exec:dom += 10 & dynamic $din_cheat">10</a>'
 	pl 'Increase submission by <a href="exec:sub += 1 & dynamic $din_cheat">1</a> <a href="exec:sub += 5 & dynamic $din_cheat">5</a> <a href="exec:sub += 10 & dynamic $din_cheat">10</a>'
@@ -982,7 +982,7 @@ $objbloknot = {
 	if bfB > 1:pl 'Another boyfriend, <<$boyB>>, is a <<$boybodyB>> <<$boybodB>> <<$boyfaceB>>. He is usually <<$boyCloB>>. Our relationship is <<bfB>> and we have met <<dayB>> times.' & nl
 	if bfC > 1:pl 'My third boyfriend, <<$boyC>>, is a <<$boybodyC>> <<$boybodC>> <<$boyfaceC>>. He is usually <<$boyCloC>>. Our relationship is <<bfC>> and we have met <<dayC>> times.' & nl
 
-	GS 'Menu.Create','zapisMenu'
+	GS 'Menu.Create', 'zapisMenu'
 	GS 'Menu.Add', 'zapisMenu', 'Recording from avtodatoy', '', 'MenuLoc', 'zapisosn'
 	GS 'Menu.Add', 'zapisMenu', 'To record on 1th line', '', 'MenuLoc', 'zapis'
 	GS 'Menu.Add', 'zapisMenu', 'With a red line 1th line', '', 'MenuLoc', 'ot'
