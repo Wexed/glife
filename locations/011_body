@@ -16,17 +16,17 @@ end
 !!!!!SIZE AND WEIGHT
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if dounspell = 0:
-	strenbuf  = stren
-	vitalbuf  = vital
+	strenbuf = stren
+	vitalbuf = vital
 	set vmeat = (strenbuf + vitalbuf) / 8
-	set vfat  = salo / 10
-	set Kves  = vmeat + vfat
+	set vfat = salo / 10
+	set Kves = vmeat + vfat
 	set krost = rost - 130
-	set ves   = Kves + krost - (agilbuf/10)
+	set ves = Kves + krost - (agilbuf/10)
 	set talia = ves - (agilbuf/10) + waistShrink
 	set grudi = talia + 10 + vfat + silicone - waistShrink + brgrow
 	set bedra = talia + 15 + (vmeat/2) + vfat + hipGrow
-	set titK  = grudi - talia + bgrow + brgrow
+	set titK = grudi - talia + bgrow + brgrow
 	if titK <= 10:set tits = 0
 	if titK > 10 and titK <= 15:set tits = 1
 	if titK > 15 and titK <= 20:set tits = 2
@@ -39,12 +39,12 @@ if dounspell = 0:
 	if titK > 50 and titK <= 55:set tits = 9
 	if titK > 55:set tits = 10
 else
-	set fat   = 0
+	set fat = 0
 	set bedra = bedraDoun
 	set talia = TaliaDoun
 	set grudi = talia + 14 + silicone
-	set ves   = TaliaDoun
-	set titK  = grudi - talia
+	set ves = TaliaDoun
+	set titK = grudi - talia
 
 	if titK <= 10:set tits = 0
 	if titK > 10 and titK <= 15:set tits = 1

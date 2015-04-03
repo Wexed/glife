@@ -1139,14 +1139,14 @@ $func ('scale.table', 275, 420) + ' 275 / 420'
 $func ('scale.table', 400, 420) + ' 400 / 420'
 $func ('scale.table', 420, 420) + ' 420 / 420'
 $func ('scale.table', 157, 420) + ' 157 / 420'
-$func ('scale.table', 42, 420) + '  42 / 420'
-$func ('scale.table', 0, 420) + '   0 / 420'
+$func ('scale.table', 42, 420) + ' 42 / 420'
+$func ('scale.table', 0, 420) + ' 0 / 420'
 
 '
 
 !-----scale.table------
-args[0] = args[0]   &   ! the current value of the parameter
-args[1] = args[1]   &   ! the maximum value
+args[0] = args[0] & ! the current value of the parameter
+args[1] = args[1] & ! the maximum value
 
 if args[2] = 0:args[2] = 200 & ! Span (tables) pixels. default 350 px
 if $args[3] = "":$args[3] = "FF0000" & ! the color of the filled part of the scale in the format RRGGBB. default - red

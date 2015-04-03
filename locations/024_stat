@@ -138,7 +138,7 @@ if GorSlut = 6:$gnikname = 'talking pussy'
 if GorSlut >= 2:KatjaKnowBJ = 1
 if GorSlut >= 1 or preg > 0:KatjaKnowSex = 1
 if film > 0 and kompromatLife < 10:
-     !pornoaktrissa
+ !pornoaktrissa
 	if kompromatLife < 10:kompromatLife = 10
 
 	$kompromatFoto = 'This photo is a screenshot from one of the porn movies you were part of.'
@@ -480,10 +480,10 @@ end
 if hour >= 24:
 	if pirs_pain_ton > 0:pirs_pain_ton -= 1
 	if artompower <= 0:artompower = 3
-     	if brow > 0 and browper = 0:brow -= 1
+ 	if brow > 0 and browper = 0:brow -= 1
 
 	if shorthair=1:
-		shorthairday +=1
+		shorthairday += 1
 
 		if shorthairday >= 45:shorthairday = 0 & shorthair = 0
 	end
@@ -743,7 +743,7 @@ elseif month = 0:
 elseif month = 13:
 	month = 1
 
-	if day > 31:day -=31 & month += 1
+	if day > 31:day -= 31 & month += 1
 else
 	!30
 	if day > 30:day -= 30 & month += 1
@@ -1018,15 +1018,15 @@ end
 
 if hour < 10 :
 	if minut > 9 :
-		pl '<b><<hour>>:<<minut>></b>  <<$week>> <<day>> <<$month>> <<year>>'
+		pl '<b><<hour>>:<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
 	else
-		pl '<b><<hour>>:0<<minut>></b>  <<$week>> <<day>> <<$month>> <<year>>'
+		pl '<b><<hour>>:0<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
 	end
 else
 	if minut > 9 :
-		pl '<b>0<<hour>>:<<minut>></b>  <<$week>> <<day>> <<$month>> <<year>>'
+		pl '<b>0<<hour>>:<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
 	else
-		pl '<b>0<<hour>>:0<<minut>></b>  <<$week>> <<day>> <<$month>> <<year>>'
+		pl '<b>0<<hour>>:0<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
 	end
 end
 

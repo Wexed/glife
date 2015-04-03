@@ -30,11 +30,11 @@ act 'To fight with you':gt 'beforeFW'
 end
 
 if i!1:
-     if predlog>0 and predlog!i and predlog2=0:
+ if predlog>0 and predlog!i and predlog2=0:
 		 act 'Suggest a fight with <<$nikname[predlog]>>':
 		 cls
 		 a=predlog
-		 'In the red corner <<$nikname[a]>>  <<win[a]>>-<<loss[a]>>-<<draw[a]>> <<SubWin[a]>>/<<SubLoss[a]>>'
+		 'In the red corner <<$nikname[a]>> <<win[a]>>-<<loss[a]>>-<<draw[a]>> <<SubWin[a]>>/<<SubLoss[a]>>'
 		 !i=predlog2
 		 'In the blue corner <<$nikname[i]>> <<win[i]>>-<<loss[i]>>-<<draw[i]>> <<SubWin[i]>>/<<SubLoss[i]>>'
 		 gs 'Autofight'
@@ -43,9 +43,9 @@ if i!1:
 		 act 'further':gt $loc
 		 end
 	 end
-     if predlog=0:
-     act 'offer battle':predlog=i&gt $loc
-     end
+ if predlog=0:
+ act 'offer battle':predlog=i&gt $loc
+ end
 end
 --- npcview ---------------------------------
 
