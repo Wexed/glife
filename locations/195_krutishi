@@ -50,7 +50,7 @@ if grupTipe[numnpc] = 3:
 						'During the dance, hands Igor descend on you ass and start to stroke.'
 
 						if DimaRudeQW > 0:
-							'Igor whispers in your ear, "I told Dima what you cool cocksucker. Come out, show me your class."'
+							'Igor whispers in your ear, "I told Dimka what you cool cocksucker. Come out, show me your class."'
 
 							act 'Go to the street':
 								cls
@@ -62,7 +62,7 @@ if grupTipe[numnpc] = 3:
 							act 'Refuse':
 								cls
 								gs 'stat'
-								'You refused to go with Igor on the street. Dima came to you and asked you what´s happening. Igor shrugged, "Your cocksucker does not want me to suck." Dimka frowned, "she asks, he´s my best friend, because there would be nothing wrong if you otsosesh it." Boys took you by the hand and led him outside.'
+								'You refused to go with Igor on the street. Dimka came to you and asked you what´s happening. Igor shrugged, "Your cocksucker does not want me to suck." Dimka frowned, "she asks, he´s my best friend, because there would be nothing wrong if you otsosesh it." Boys took you by the hand and led him outside.'
 								dynamic $din_igor_dima_disco_bj
 							end
 
@@ -83,13 +83,13 @@ if grupTipe[numnpc] = 3:
 				end
 
 				if numnpc = 1 and grupNPC[numnpc] >= 80 and DimaRudeQW > 0:
-					'After the dance Dima holding your hand. "Let´s go outside."'
+					'After the dance Dimka holding your hand. "Let´s go outside."'
 
 					act 'Refuse':grupNPC[numnpc] -= 5 & gt $loc, $metka
-					act 'Dima go to the street':
+					act 'Dimka go to the street':
 						cls
 						gs 'stat'
-						'You left the club with Dima on the street. "Well, the pig, take it in your mouth."'
+						'You left the club with Dimka on the street. "Well, the pig, take it in your mouth."'
 
 						act 'Refuse':grupNPC[numnpc] -= 5 & gt $loc, $metka
 
@@ -98,26 +98,26 @@ if grupTipe[numnpc] = 3:
 				end
 
 				if numnpc = 1 and grupNPC[numnpc] >= 80 and DimaRudeQW = 0:
-					'After the dance Dima holding your hand. "Let´s go outside, get some fresh air."'
+					'After the dance Dimka holding your hand. "Let´s go outside, get some fresh air."'
 
-					act 'Dima go to the street':
+					act 'Dimka go to the street':
 						cls
 						gs 'stat'
-						'You went out with Dima and departed for the club. Dima came up to you and hugged you tight. "<<$name>>, you did the girl. Want to meet me?"'
+						'You went out with Dimka and departed for the club. Dimka came up to you and hugged you tight. "<<$name>>, you did the girl. Want to meet me?"'
 
 						act 'No':
 							cls
 							gs 'stat'
 							'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 							'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-							'You replied in the negative and Dima grinned. "Do not be shy, of course you want. Otherwise, why do you always come to me."'
+							'You replied in the negative and Dimka grinned. "Do not be shy, of course you want. Otherwise, why do you always come to me."'
 
 							act 'Well, maybe a little':
 								cls
 								gs 'stat'
 								'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 								'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-								'You were embarrassed and said that you do not know, but maybe. Dima smiled and hugged you. "Of course. I knew it from the start. Know, I do not need some sort of a nun, I need a girl without complexes. Overall so we will meet with you, if you are right now otsosesh me."'
+								'You were embarrassed and said that you do not know, but maybe. Dimka smiled and hugged you. "Of course. I knew it from the start. Know, I do not need some sort of a nun, I need a girl without complexes. Overall so we will meet with you, if you are right now otsosesh me."'
 								dynamic $din_dima_predlog
 							end
 
@@ -129,7 +129,7 @@ if grupTipe[numnpc] = 3:
 							gs 'stat'
 							'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 							'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-							'You were confused by the question and confirmed directness. Dima grinned. "Of course. I knew it from the start. Know, I do not need some sort of a nun, I need a girl without complexes. Overall so we will meet with you, if you are right now otsosesh me."'
+							'You were confused by the question and confirmed directness. Dimka grinned. "Of course. I knew it from the start. Know, I do not need some sort of a nun, I need a girl without complexes. Overall so we will meet with you, if you are right now otsosesh me."'
 							dynamic $din_dima_predlog
 						end
 					end
