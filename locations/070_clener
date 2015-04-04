@@ -69,7 +69,7 @@ if $ARGS[0] = 'start':
 
 					act 'Have a drink':
 						cla
-						"You drink the shitty vodka and it burns your throat. Breath you perlo of shit and you quickly grabbed cheese zanyuhivat friendship. Sasha casually downs the glass and doesn't even blink. 'Ah, good one.'"
+						'You drink the shitty vodka and it burns your throat. Breath you perlo of shit and you quickly grabbed cheese zanyuhivat friendship. Sasha casually downs the glass and doesn''t even blink. "Ah, good one."'
 						'While you are leaning over to eat the sausage, you feel a light touch as the guard pats you on the ass.'
 
 						act 'Smile':
@@ -80,6 +80,7 @@ if $ARGS[0] = 'start':
 							'You smile and Sasha pours more vodka, not stopping from caressing your buttocks.'
 
 							if horny < 50:dynamic $borodachNo2
+
 							dynamic $borodachDrink
 						end
 
@@ -94,6 +95,7 @@ if $ARGS[0] = 'start':
 							if picrand = 0:'<center><img src="images/qwest/ohrannik/hj.jpg"></center>'
 							if picrand = 1:'<center><img src="images/qwest/ohrannik/hj1.jpg"></center>'
 							if picrand = 2:'<center><img src="images/qwest/ohrannik/hj2.jpg"></center>'
+
 							'You put your hand on his crotch and feel his erection harden. Your thin fingers slide over his hardon and find the zipper. You unzip him and get his cock out of his pants. Sasha relaxes on the couch waiting for you to continue what you started.'
 							dynamic $ohrhj
 							dynamic $ohrbj
@@ -173,7 +175,7 @@ if $ARGS[0] = 'start':
 			*clr
 			'Elderly Jew makes a pattern at the table, he´s a bit down glasses and looking at you on top of the points.'
 
-			act 'QUIT':gt 'clener', 'start'
+			act 'Leave':gt 'clener', 'start'
 
 			if portnoyQW > 0:
 				'Aah Svetochka, come, come again cut down?'
@@ -187,7 +189,7 @@ if $ARGS[0] = 'start':
 						gs 'portnoi'
 						'You undressed and filed for shirmochka clothes Jacob Solomonovich it fifteen minutes ushil your clothes and returned to you.'
 
-						act 'QUIT':gt 'clener', 'start'
+						act 'Leave':gt 'clener', 'start'
 					end
 				end
 
@@ -212,12 +214,12 @@ if $ARGS[0] = 'start':
 						minut += 15
 						gs 'stat'
 						'(You) - Can you tailor my clothes to fit me better?'
-						"(Yasha) - Of course I can! Otherwise, what kind of tailor would I be? Here, let me see that you're wearing."
+						'(Yasha) - Of course I can! Otherwise, what kind of tailor would I be? Here, let me see that you''re wearing.'
 						'Jacob Solomonovich you jumped smartly and flexible by removing the meter from the neck began obmeryat your chest, waist and hips.'
 						'Well Well, I can take in this product, you will be 500 rubles.'
 
 						if money >= 500:
-							act 'Take in 500 rubles':
+							act 'Take in (500 rubles)':
 								cla
 								*clr
 								minut += 15
@@ -274,7 +276,7 @@ if $ARGS[0] = 'start':
 		act 'Mop the floor in the office (1:00)':
 			cla
 			*clr
-			!set clenday = day
+			!!set clenday = day
 			set minut += 60
 			set clener += 1
 			set manna -= 15
@@ -426,4 +428,3 @@ if $ARGS[0] = 'start':
 end
 
 --- clener ---------------------------------
-

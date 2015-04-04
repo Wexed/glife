@@ -2,7 +2,7 @@
 
 if $ARGS[0] = 'atakVmanna':
 	cla
-	!расчет попадания уворота
+	!!расчет попадания уворота
 	set poSp = speedV * 20 / 100
 	set uvAg = agil * 20 / 100
 	set poBox = reactV * 20 / 100
@@ -14,14 +14,14 @@ if $ARGS[0] = 'atakVmanna':
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
-			!крит, очень точное попадание
+			!!крит, очень точное попадание
 			'<b><font color="red">critical hits</font></b>'
 			xgt 'atakM', 'uronKritV'
 		end
 
 		if popad < uvorot+uvorKoef:
-			!нормальное попадание
-			!атаковал противник
+			!!нормальное попадание
+			!!атаковал противник
 			'<b><font color="red">Contact</font></b>'
 			xgt 'atakM', 'uronV'
 		end
@@ -76,7 +76,7 @@ if $ARGS[0] = 'uronKritV':
 	end
 
 	if barier > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barier >= damage:
 			'<b><font color="green">You can easily withstood the impact of the opponent</font></b>'
 			xgt 'fight', 'sta'
@@ -142,7 +142,7 @@ if $ARGS[0] = 'uronV':
 	end
 
 	if barier > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barier >= damage:
 			'<b><font color="green">You can easily withstood the impact of the opponent</font></b>'
 			xgt 'fight', 'sta'
@@ -166,4 +166,3 @@ if $ARGS[0] = 'uronV':
 end
 
 --- atakM ---------------------------------
-

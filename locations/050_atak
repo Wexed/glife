@@ -8,9 +8,9 @@ if $ARGS[0] = 'player':
 	set speedA = speed
 	set agilA = agil
 	set vitalA = vital
-	!Навыки
+	!!Навыки
 	set boxingA = boxing
-	!Параметры
+	!!Параметры
 	set healthA = health
 	set BonusA = BonusAtak
 	!!!!!!!!!
@@ -18,9 +18,9 @@ if $ARGS[0] = 'player':
 	set speedD = speedV
 	set agilD = agilV
 	set vitalD = vitalV
-	!Навыки
+	!!Навыки
 	set boxingD = boxingV
-	!Параметры
+	!!Параметры
 	set healthD = healthV
 	set initBonusA = initBonus
 	set initBonus = 0
@@ -44,9 +44,9 @@ if $ARGS[0] = 'enemy':
 	set speedA = speedV
 	set agilA = agilV
 	set vitalA = vitalV
-	!Навыки
+	!!Навыки
 	set boxingA = boxingV
-	!Параметры
+	!!Параметры
 	set healthA = healthV
 	set BonusA = BonusAtakV
 	!!!!!!!!!!!!!!
@@ -54,9 +54,9 @@ if $ARGS[0] = 'enemy':
 	set speedD = speed
 	set agilD = agil
 	set vitalD = vital
-	!Навыки
+	!!Навыки
 	set boxingD = boxing
-	!Параметры
+	!!Параметры
 	set healthD = health
 	set BonusD = BonusDef
 	set initBonusA = initBonusV
@@ -73,7 +73,7 @@ end
 
 if $ARGS[0] = 'popad':
 	cla
-	!расчет попадания уворота
+	!!расчет попадания уворота
 	set poSp = speedA * 20/100
 	set uvAg = agilD * 20/100
 	set poBox = boxingA * 20/100
@@ -85,30 +85,30 @@ if $ARGS[0] = 'popad':
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
-			!крит, очень точное попадание
+			!!крит, очень точное попадание
 			if tip = 0:
-				!атаковал игрок
+				!!атаковал игрок
 				'<b><font color="green">critical hits</font></b>'
 				xgt 'atak', 'uronKrit'
 			end
 
 			if tip = 1:
-				!атаковал противник
+				!!атаковал противник
 				'<b><font color="red">critical hits</font></b>'
 				xgt 'atak', 'uronKritV'
 			end
 		end
 
 		if popad < uvorot+uvorKoef:
-			!нормальное попадание
+			!!нормальное попадание
 			if tip = 0:
-				!атаковал игрок
+				!!атаковал игрок
 				'<b><font color="green">Contact</font></b>'
 				xgt 'atak', 'uron'
 			end
 
 			if tip = 1:
-				!атаковал противник
+				!!атаковал противник
 				'<b><font color="red">Contact</font></b>'
 				xgt 'atak', 'uronV'
 			end
@@ -117,30 +117,30 @@ if $ARGS[0] = 'popad':
 
 	if popad <= uvorot:
 		if popad + popKoef <= uvorot:
-			!критический промах
+			!!критический промах
 			if tip = 0:
-				!атаковал игрок
+				!!атаковал игрок
 				'<b><font color="red">CRITICAL SLIP</font></b>'
 				xgt 'atak', 'uronKritV'
 			end
 
 			if tip = 1:
-				!атаковал противник
+				!!атаковал противник
 				'<b><font color="green">CRITICAL SLIP</font></b>'
 				xgt 'atak', 'uronKrit'
 			end
 		end
 
 		if popad + popKoef > uvorot:
-			!промах
+			!!промах
 			if tip = 0:
-				!атаковал игрок
+				!!атаковал игрок
 				'<b><font color="red">is washed</font></b>'
 				xgt 'fight', 'sta'
 			end
 
 			if tip = 1:
-				!атаковал противник
+				!!атаковал противник
 				'<b><font color="green">is washed</font></b>'
 				xgt 'fight', 'sta'
 			end
@@ -207,7 +207,7 @@ if $ARGS[0] = 'uronKrit':
 	end
 
 	if barierV > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barierV >= damage:
 			'<b><font color="red"><<$nameV>> easily withstood your butt</font></b>'
 			xgt 'fight', 'sta'
@@ -293,7 +293,7 @@ if $ARGS[0] = 'uron':
 	end
 
 	if barierV > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barierV >= damage:
 			'<b><font color="red"><<$nameV>> easily withstood your butt</font></b>'
 			xgt 'fight', 'sta'
@@ -377,7 +377,7 @@ if $ARGS[0] = 'uronKritV':
 	end
 
 	if barier > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barier >= damage:
 			'<b><font color="green">You can easily withstood the impact of the opponent</font></b>'
 			xgt 'fight', 'sta'
@@ -463,7 +463,7 @@ if $ARGS[0] = 'uronV':
 	end
 
 	if barier > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barier >= damage:
 			'<b><font color="green">You can easily withstood the impact of the opponent</font></b>'
 			xgt 'fight', 'sta'
@@ -490,6 +490,4 @@ if $ARGS[0] = 'uronV':
 	end
 end
 
-
 --- atak ---------------------------------
-

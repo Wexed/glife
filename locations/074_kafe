@@ -19,7 +19,7 @@ if $ARGS[0] = 'start':
 		act 'Sit down at the table and wait for a Margarita':dynamic $margokafedin
 	end
 
-	!act 'Agree':gt 'Kafe3', 'WC'
+	!!act 'Agree':gt 'Kafe3', 'WC'
 
 	if money >= 100:
 		act 'Eat, 100 rubles':
@@ -905,8 +905,8 @@ end
 
 if $ARGS[0] = 'razvod':
 	cla
-	!*clr
-	!act 'Get up from the table':gt 'kafe', 'start'
+	!!*clr
+	!!act 'Get up from the table':gt 'kafe', 'start'
 	set deyst = rand(0, 3)
 
 	if deyst = 0:
@@ -966,4 +966,3 @@ if $ARGS[0] = 'razvod':
 end
 
 --- kafe ---------------------------------
-

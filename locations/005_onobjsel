@@ -35,37 +35,39 @@ $objdescrip = {
 	nl
 
 	if salo = 0 and musle > 0 and dounspell = 0:pl '<b><font color="red">You are showing signs undernourishment. You should probably eat more and more often.</font></b>'
-	if salo = 0 and musle = 0 and dounspell = 0:pl "<b><font color="red">You are dangerously malnourished, which has led to a loss in muscle mass. You're in a critical condition and likely to pass out!</font></b>"
+	if salo = 0 and musle = 0 and dounspell = 0:pl '<b><font color="red">You are dangerously malnourished, which has led to a loss in muscle mass. You''re in a critical condition and likely to pass out!</font></b>'
 	if curly > 0:pl 'Your curls are good for another <<curly>> days.'
 	if zub = 1:$zuba = ' tooth'
 	if zub >= 2:$zuba = ' teeth'
 	if zub > 0:pl 'You have <<zub>><<$zuba>>.'
 
-	!pl 'vnesh <<vnesh>>'
-	!pl 'curlykoef <<curlykoef>> a maximum of 1'
-	!pl 'tits <<tits>> A maximum of 6'
-	!pl 'lip <<lip>> a maximum of 4'
-	!pl 'tanKoef <<tanKoef>> a maximum of 1'
-	!pl 'skin <<skin>> a maximum of 4'
-	!pl 'mop <<mop>> a maximum of 4'
-	!pl 'resnic <<resnic>> a maximum of 2'
-	!pl 'glaraz <<glaraz>> a maximum of 3'
-	!pl 'bodykoef <<bodykoef>> a maximum of 8'
-	!pl 'legkoef <<legkoef>> a maximum of 3'
-	!pl 'lobkoef <<lobkoef>> a maximum of 3'
-	!pl 'odevnesh <<odevnesh>> a maximum of 15'
-	!pl 'sweat <<sweat>> the maximum 0'
-	!pl 'hapri <<hapri>> a maximum of 1'
+	!!pl 'vnesh <<vnesh>>'
+	!!pl 'curlykoef <<curlykoef>> a maximum of 1'
+	!!pl 'tits <<tits>> A maximum of 6'
+	!!pl 'lip <<lip>> a maximum of 4'
+	!!pl 'tanKoef <<tanKoef>> a maximum of 1'
+	!!pl 'skin <<skin>> a maximum of 4'
+	!!pl 'mop <<mop>> a maximum of 4'
+	!!pl 'resnic <<resnic>> a maximum of 2'
+	!!pl 'glaraz <<glaraz>> a maximum of 3'
+	!!pl 'bodykoef <<bodykoef>> a maximum of 8'
+	!!pl 'legkoef <<legkoef>> a maximum of 3'
+	!!pl 'lobkoef <<lobkoef>> a maximum of 3'
+	!!pl 'odevnesh <<odevnesh>> a maximum of 15'
+	!!pl 'sweat <<sweat>> the maximum 0'
+	!!pl 'hapri <<hapri>> a maximum of 1'
 
 	!!!!!!!! Maruda Hair Mod
 	if hairlength > 41 and hscrunch >= 1:
 		if hscrunchw = 0 and hpingripw = 0:pl 'As you have a scrunchy, you can arrange your hair into a <a href="exec:set hscrunchw = 1 & dynamic $objdescrip">ponytail</a>. You have <<hscrunch>> scrunchies left.'
 		if hscrunchw = 1:pl 'Remove the <a href="exec:set hscrunchw = 0 & dynamic $objdescrip">scrunchie</a> to get rid of the ponytail.'
 	end
+
 	if hairlength > 41 and hpingrip >= 1:
 		if hscrunchw = 0 and hpingripw = 0:pl 'You have several clips, pins and grips for you hair. Hence, you can <a href="exec:set hpingripw = 1 & dynamic $objdescrip">updo your hair</a>. You have <<hpingrip>> hair accessories at your disposal.'
 		if hpingripw = 1:pl 'Let your hair <a href="exec:set hpingripw = 0 & dynamic $objdescrip">flow free</a>.'
 	end
+
 	if hairlength > 80 and hscrunch >= 2:
 		if hscrunchw = 0 and hpingripw = 0:pl 'You can use two hair ties to make yourself some <a href="exec:hpigtail = 1 & hscrunchw = 2 & dynamic $objdescrip">pigtails</a>.'
 		if hscrunchw = 2:pl '<a href="exec:hpigtail = 0 & hscrunchw = 0 & dynamic $objdescrip">Remove</a> your scrunchies and let your hair flow free again.'
@@ -75,17 +77,16 @@ $objdescrip = {
 	if hpingrip < 1:set hpingripw = 0
 	if hscrunch < 2:set hpigtail = 0
 	!!!!!!!! Maruda Hair Mod
-
 }
 
 $objskills = {
 	clr
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1remake
-	!if salo > musle * 4:set $fat = 'You have a chubby disposition'
-	!if salo <= musle * 4 and fat > musle * 2:set $fat = 'You have a soft curvy body that still carries an elastic finesse.'
-	!if salo <= musle * 2 and fat > musle:set $fat = 'You have an average body showing signs that you take care of yourself.'
-	!if salo <= musle and fat >= musle / 2:set $fat = 'Your body is slim and trim. You probably workout often '
-	!if salo < musle / 2:set $fat = 'Your body is a prayer to the god of fitness! Your skin is taught against your lithe musculature.'
+	!!if salo > musle * 4:set $fat = 'You have a chubby disposition'
+	!!if salo <= musle * 4 and fat > musle * 2:set $fat = 'You have a soft curvy body that still carries an elastic finesse.'
+	!!if salo <= musle * 2 and fat > musle:set $fat = 'You have an average body showing signs that you take care of yourself.'
+	!!if salo <= musle and fat >= musle / 2:set $fat = 'Your body is slim and trim. You probably workout often '
+	!!if salo < musle / 2:set $fat = 'Your body is a prayer to the god of fitness! Your skin is taught against your lithe musculature.'
 
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	pl 'Attractiveness <<vnesh>>'
@@ -97,12 +98,12 @@ $objskills = {
 	pl 'Willpower <<will>>'
 	pl 'Reaction <<react>>'
 	pl '<<$fat>>'
-	!pl 'Bezstydstvo <<shameless>>'
+	!!pl 'Bezstydstvo <<shameless>>'
 
 	if SUB > 0:pl 'Subordination <<SUB>>'
 	if DOM > 0:pl 'Dominance <<DOM>>'
 
-	!pl 'Muscles <<$musle>>'
+	!!pl 'Muscles <<$musle>>'
 
 	if magik > 0:pl 'Magic <<magik>>'
 	if Jab > 0:pl 'Jab - <<Jab>>'
@@ -125,9 +126,9 @@ $objskills = {
 		if Suspeh >= 80 and Suspeh < 90:pl 'You are a bright student, just not the top of your class.'
 		if Suspeh >= 70 and Suspeh < 80:pl 'You are an above average student, but you have to work hard to keep up.'
 		if Suspeh >= 60 and Suspeh < 70:pl "You are the typical average student. You're good in the fields you like, but can't be bothered with the rest."
-		if Suspeh >= 50 and Suspeh < 60:pl "You're not very good in school, you wish you could be somewhere else and your grades show it."
-		if Suspeh >= 40 and Suspeh < 50:pl "You are not cut out for school, you skip out most of the time. You wonder how you're going to manage to get passing grades."
-		if Suspeh < 40:pl "You are the class nitwit. You're still not sure how you got this far in the first place."
+		if Suspeh >= 50 and Suspeh < 60:pl 'You''re not very good in school, you wish you could be somewhere else and your grades show it.'
+		if Suspeh >= 40 and Suspeh < 50:pl 'You are not cut out for school, you skip out most of the time. You wonder how you''re going to manage to get passing grades.'
+		if Suspeh < 40:pl 'You are the class nitwit. You''re still not sure how you got this far in the first place.'
 
 		if schoolprogul > 1:pl 'Absenteeism in school <<schoolprogul>>'
 	end
@@ -137,6 +138,7 @@ $objstatistika = {
 	clr
 	if opPRE = 0:pl 'It has been <<daystart>> the game has started.'
 	if BuyHous = 2 and ArendHouseSL >0:pl 'You have rented an apartment in the residential area <<ArendHouseSL>> days.'
+
 	if KikWinPro > 0 or KikLossPro > 0 or KikDrawPro > 0:
 		pl 'Professional Kickboxing Record:Win (Victory KO) - Loss (Defeat KO) - Draw'
 		pl '<<KikWinPro>> (<<KikWinProKO>>KO) - <<KikLossPro>> (<<KikLossProKO>>KO) - <<KikDrawPro>>'
@@ -172,10 +174,10 @@ $objstatistika = {
 	!!!
 	if stripdancesum > 0:pl '<<stripdancesum>> times dancing in the stripclub'
 	if profiDanceTime > 0:pl 'You danced <<profiDanceTime>> professionally.'
-	if razradKik = 1:set $razradKik = "You're ranked III in amateur kickboxing"
-	if razradKik = 2:set $razradKik = "You're ranked II in amateur kickboxing"
-	if razradKik = 3:set $razradKik = "You're ranked I in amateur kickboxing"
-	if razradKik = 4:set $razradKik = "You are a candidate for the title of Master in Kickboxing"
+	if razradKik = 1:set $razradKik = 'You''re ranked III in amateur kickboxing'
+	if razradKik = 2:set $razradKik = 'You''re ranked II in amateur kickboxing'
+	if razradKik = 3:set $razradKik = 'You''re ranked I in amateur kickboxing'
+	if razradKik = 4:set $razradKik = 'You are a candidate for the title of Master in Kickboxing'
 	if razradKik = 5:set $razradKik = 'You have the title of Master Kickboxer'
 	if SchoolAtestat = 1:pl 'You have finished school.'
 	if diplom = 1:pl 'You graduated.'
@@ -430,7 +432,7 @@ $objmagic = {
 		pl 'You are unable to use magic.'
 	else
 		pl 'Available to you <<manna>> units of manna.'
-		!' Rikudo forces available to you <<rikudo>> units'
+		!!' Rikudo forces available to you <<rikudo>> units'
 		nl
 		pl 'BASIC SPELL:' & nl
 		if spelltuman > 0:pl 'Cover the area fog, a great way to hide their actions from the attacking enemy and not a bad way to increase the chance to dodge enemy attacks, as he can not see you in your fog (mana cost of 10 units)' & nl
@@ -477,14 +479,14 @@ $objmagic = {
 }
 
 $objface = {
-	!if hcol = 0 and curly <= 0:view 'images/body/hcol.jpg'
-	!if hcol = 1 and curly <= 0:view 'images/body/hcol1.jpg'
-	!if hcol = 2 and curly <= 0:view 'images/body/hcol2.jpg'
-	!if hcol = 3 and curly <= 0:view 'images/body/hcol3.jpg'
-	!if hcol = 0 and curly > 0:view 'images/body/hcolcurly.jpg'
-	!if hcol = 1 and curly > 0:view 'images/body/hcolcurly1.jpg'
-	!if hcol = 2 and curly > 0:view 'images/body/hcolcurly2.jpg'
-	!if hcol = 3 and curly > 0:view 'images/body/hcolcurly3.jpg'
+	!!if hcol = 0 and curly <= 0:view 'images/body/hcol.jpg'
+	!!if hcol = 1 and curly <= 0:view 'images/body/hcol1.jpg'
+	!!if hcol = 2 and curly <= 0:view 'images/body/hcol2.jpg'
+	!!if hcol = 3 and curly <= 0:view 'images/body/hcol3.jpg'
+	!!if hcol = 0 and curly > 0:view 'images/body/hcolcurly.jpg'
+	!!if hcol = 1 and curly > 0:view 'images/body/hcolcurly1.jpg'
+	!!if hcol = 2 and curly > 0:view 'images/body/hcolcurly2.jpg'
+	!!if hcol = 3 and curly > 0:view 'images/body/hcolcurly3.jpg'
 
 	if curly <= 0 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
 		if hcol = 0 and hairlength <= 30:view 'images/body/hairstyles/vshort/normal/hcol0.jpg'
@@ -532,7 +534,7 @@ $objface = {
 		if hcol = 3 and hairlength > 400:view 'images/body/hairstyles/vlng/curly/hcol3.jpg'
 	end
 
-	if hbangs >= 1 and curly <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:	
+	if hbangs >= 1 and curly <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
 		if hcol = 0 and hairlength > 30 and hairlength <= 80:view 'images/body/hairstyles/short/bangs/hcol0.jpg'
 		if hcol = 1 and hairlength > 30 and hairlength <= 80:view 'images/body/hairstyles/short/bangs/hcol1.jpg'
 		if hcol = 2 and hairlength > 30 and hairlength <= 80:view 'images/body/hairstyles/short/bangs/hcol2.jpg'
@@ -554,7 +556,7 @@ $objface = {
 		if hcol = 2 and hairlength > 400:view 'images/body/hairstyles/vlng/bangs/hcol2.jpg'
 		if hcol = 3 and hairlength > 400:view 'images/body/hairstyles/vlng/bangs/hcol3.jpg'
 	end
-	
+
 	if curly >= 1 and hbangs >= 1 and hpingripw = 0 and hscrunchw <= 0 and hpigtail <= 0 and hbraids <= 0:
 		if hcol = 0 and hairlength > 80 and hairlength <= 160:view 'images/body/hairstyles/med/curly-bangs/hcol0.jpg'
 		if hcol = 1 and hairlength > 80 and hairlength <= 160:view 'images/body/hairstyles/med/curly-bangs/hcol1.jpg'
@@ -771,7 +773,7 @@ $objface = {
 
 $objbody = {
 	if musle >= salo:
-		!muscular type
+		!!muscular type
 		if bedra < 60:view 'images/body/fit.jpg'
 		if bedra >= 60 and bedra < 70:view 'images/body/fit1.jpg'
 		if bedra >= 70 and bedra < 80:view 'images/body/fit2.jpg'
@@ -781,7 +783,7 @@ $objbody = {
 		if bedra >= 110 and bedra < 120:view 'images/body/fit6.jpg'
 		if bedra >= 120:view 'images/body/fit7.jpg'
 	else
-		!bold type
+		!!bold type
 		if bedra < 60:view 'images/body/fat.jpg'
 		if bedra >= 60 and bedra < 65:view 'images/body/fat1.jpg'
 		if bedra >= 65 and bedra < 70:view 'images/body/fat2.jpg'
@@ -1089,7 +1091,7 @@ $menu_other[3] = 'Old menu:$menu_addoldmenu'
 
 if mobila > 0:$menu_other[4] = 'Phone:$menu_mobila'
 
-!old menu: beginning
+!!old menu: beginning
 if $selobj = '<font color="green">Character</font>':dynamic $objdescrip
 if $selobj = 'Skills':dynamic $objskills
 if $selobj = 'Statistics':dynamic $objstatistika
@@ -1103,12 +1105,12 @@ if $selobj = 'Diary':dynamic $objbloknot
 if $selobj = 'Emergency exit':dynamic $objavariya
 if $selobj = 'Update':gs 'stat'
 if $selobj = 'New Menu':dynamic $objnewmenu
-!old menu: end
-!The new menu: beginning
+!!old menu: end
+!!The new menu: beginning
 if $selobj = 'Character':menu '$menu_character'
 if $selobj = 'See':menu '$menu_lookon'
 if $selobj = 'Others':menu '$menu_other'
-!The new menu: end
+!!The new menu: end
 
 if $selobj = 'Player':
 	clr
@@ -1142,35 +1144,35 @@ $func ('scale.table', 157, 420) + ' 157 / 420'
 $func ('scale.table', 42, 420) + ' 42 / 420'
 $func ('scale.table', 0, 420) + ' 0 / 420'
 
-'
+'!
 
-!-----scale.table------
+!!-----scale.table------
 args[0] = args[0] & ! the current value of the parameter
 args[1] = args[1] & ! the maximum value
 
 if args[2] = 0:args[2] = 200 & ! Span (tables) pixels. default 350 px
 if $args[3] = "":$args[3] = "FF0000" & ! the color of the filled part of the scale in the format RRGGBB. default - red
 
-! at_first "create" corresponding table
+!! at_first "create" corresponding table
 $args['table'] = '<table width="<<args[2]>>" border="0" cellspacing="0" cellpadding="0"><tr>'
-! calculate the width as a percentage of the filled part
+!! calculate the width as a percentage of the filled part
 args['x'] = (args[0] * 100) / args[1]
-! calculate the percentage widths ullage
+!! calculate the percentage widths ullage
 args['empty'] = 100 - args['x']
 
-! If the width of the filled part of more than zero percent, added to the table cell with the specified color (red on-default)
+!! If the width of the filled part of more than zero percent, added to the table cell with the specified color (red on-default)
 if args['x'] > 0:
 	$args['table'] += '<td width="<<args['x']>>%" bgcolor="#' + $args[3] + '">&nbsp;</td>'
 end
 
-! If the width of the unfilled part of the scale is greater than zero percent, added to the table cell with another color (gray).
+!! If the width of the unfilled part of the scale is greater than zero percent, added to the table cell with another color (gray).
 if args['empty'] > 0:
 	$args['table'] + = "<td width="<<args['empty']>>%" bgcolor="#888888">&nbsp;</td>"
 end
 
-! "close" table
+!! "close" table
 $args['table'] += '</tr></table>'
-! the_result
+!! the_result
 $result = $args['table']
 
 --- scale.table ---------------------------------

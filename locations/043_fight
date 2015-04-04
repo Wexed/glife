@@ -126,9 +126,9 @@ if $ARGS[0] = 'start':
 	end
 
 	gs 'before'
-	'<b>=============================================== ===========</b>'
-	'<b>======================== (ROUND <<round>>) ================= ==========</b>'
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
+	'<b>======================== (ROUND <<round>>) ===========================</b>'
+	'<b>==========================================================</b>'
 	'<b><<$nameV>></b> Life <b><font color="red"><<healthV>></font></b>, manna <b><font color="blue"><<mannaV>></font></b>, the force will <b>(9 )<<willpowerV>></font></b>'
 
 	if defenceV > 0:'<b><font color="red">Protection <<defenceV>> units</font></b>'
@@ -144,15 +144,15 @@ if $ARGS[0] = 'start':
 	if defenceActM > 0:'<b><font color="green"><<defenceActM>> moves the protection from the effects of regeneration manna</font></b>'
 	if unmaterial > 0:'<b><font color="green">, Left <<unmaterial>> moves not materiality.</font></b>'
 
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
 	gs 'init'
 
 	if hod = 0:
-		!Player attacks
+		!!Player attacks
 		'<font color="green">You can attack</font>'
 
 		if gun > 0:
-			!Boomstick
+			!!Boomstick
 			if bulletIn > 0:
 				'<<bulletIn>> load cartridges in gun'
 
@@ -195,7 +195,7 @@ if $ARGS[0] = 'start':
 		end
 
 		if Mgun > 0:
-			!Boomstick
+			!!Boomstick
 			if mbulletIn > 0:
 				'<<mbulletIn>> load cartridges in the machine'
 
@@ -262,7 +262,7 @@ if $ARGS[0] = 'start':
 		end
 
 		if tragun > 0:
-			!Travmatik
+			!!Travmatik
 			if tbulletIn > 0:
 				'travmatik loaded'
 
@@ -305,7 +305,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if hod = 1:
-		!Enemy attacks
+		!!Enemy attacks
 		'<font color="red"><<$nameV>> attacks</font>'
 
 		act 'Further':xgt 'enemy', 'start'
@@ -326,7 +326,7 @@ if $ARGS[0] = 'sta':
 	set eleShV = 0
 	set poisonAV = 0
 	set hidanAtk = 0
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
 	'<b><<$nameV>></b> Life <b><font color="red"><<healthV>></font></b>, manna <b><font color="blue"><<mannaV>></font></b>, the force will <b>(9 )<<willpowerV>></font></b>'
 
 	if defenceV > 0:'<b><font color="red">Protection <<defenceV>> units</font></b>'
@@ -341,7 +341,7 @@ if $ARGS[0] = 'sta':
 	if defenceAct > 0:'<b><font color="green"><<defenceAct>> moves the regeneration of protection</font></b>'
 	if defenceActM > 0:'<b><font color="green"><<defenceActM>> moves the protection from the effects of regeneration manna</font></b>'
 
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
 
 	act 'Further':gt 'fight', 'start'
 end

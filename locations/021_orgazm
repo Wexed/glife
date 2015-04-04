@@ -21,7 +21,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if mesec > 0:
-		!periods, orgasm is not possible
+		!!periods, orgasm is not possible
 		set horny = 0
 		set manna -= 10
 		set willpower -= 10
@@ -29,25 +29,25 @@ if $ARGS[0] = 'start':
 	end
 
 	if mesec <= 0 and vagina > 0:
-		!no monthly
-		!horny - excitement
-		!vagina - the elasticity of the vagina
-		!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
-		!dick - penis Man
-		!orgazm - Total coefficient of pleasure
-		!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
+		!!no monthly
+		!!horny - excitement
+		!!vagina - the elasticity of the vagina
+		!!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
+		!!dick - penis Man
+		!!orgazm - Total coefficient of pleasure
+		!!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
 		set smazka = horny / 10
 		set prinat = smazka + vagina
 
 		if dick >= prinat * 2:
-			!member of the critical features more years
+			!!member of the critical features more years
 			if silavag = 0:set orgazm = 0
 			if silavag = 1:set orgazm = 1
 			if silavag = 2:set orgazm = 2
 		end
 
 		if dick < prinat*2 and dick > prinat:
-			!member more options gg
+			!!member more options gg
 			if silavag = 0:
 				if horny >= 100:set orgazm = 5
 				if horny >= 90 and horny < 100:set orgazm = 4
@@ -77,7 +77,7 @@ if $ARGS[0] = 'start':
 		end
 
 		if dick <= prinat and dick >= vagina:
-			!Member fewer opportunities gg
+			!!Member fewer opportunities gg
 			if silavag = 0:
 				if horny >= 80:set orgazm = 5
 				if horny >= 60 and horny < 80:set orgazm = 4
@@ -142,14 +142,14 @@ if $ARGS[0] = 'start':
 		end
 
 		if orgazm = 3:
-			!set horny += 5
+			!!set horny += 5
 			set manna += 5
 			set willpower += 5
 			'You startled by the feeling that your pussy is stretched when <<$nameV>> you entered. Between the legs becomes a little pleased when strong <<dick>> centimeter dick fucks your pussy.'
 		end
 
 		if orgazm = 4:
-			!set horny += 10
+			!!set horny += 10
 			set manna += 10
 			set willpower += 10
 			'You startled by the feeling that your pussy is stretched when <<$nameV>> you entered. Between the legs becomes a little pleased when strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and ripple grow in the lower abdomen, and then feeling a little decrease and remain until the end.'
@@ -182,11 +182,11 @@ if $ARGS[0] = 'start':
 	end
 
 	if protect ! 1:
-		!unprotected sex
+		!!unprotected sex
 		set finrand = rand(0, 1)
 
 		if finrand = 0:
-			!inside
+			!!inside
 			set cumpussy += 1
 			'<<$nameV>> groaned and you feel like jet of sperm hit you inside your body.'
 
@@ -199,7 +199,7 @@ if $ARGS[0] = 'start':
 		end
 
 		if finrand = 1:
-			!out
+			!!out
 			if pose = 0:
 				set cumbelly += 1
 				'<<$nameV>> groaned and removing a member of you finished your stomach.'
@@ -221,4 +221,3 @@ if $ARGS[0] = 'start':
 end
 
 --- orgazm ---------------------------------
-

@@ -1,10 +1,10 @@
 # enemy
-!Calculation of the enemy`s attack
+!!Calculation of the enemy`s attack
 
 if $ARGS[0] = 'start':
 	cla
 
-	!in this block is selected on the basis of the variable program enemy attacks
+	!!in this block is selected on the basis of the variable program enemy attacks
 	if program = 0:xgt 'enemy', 'fighter'
 	if program = 1:	xgt 'enemy', 'fighter2'
 	if program = 2:xgt 'enemy', 'fighter3'
@@ -177,14 +177,14 @@ end
 if $ARGS[0] = 'tobi':
 	cla
 
-	!программа атаки Тоби
+	!!программа атаки Тоби
 	if unmaterialV <= 0 and IzanagiV = 0 and GedoMazo = 0:
 		*clr
 		'<b><font color="red"><<$nameV>> fingers to his lips and said quietly, "KUCHIE SAINT BUT JITSU."</font></b>'
 		'<b><font color="red">you will see Huge stone statue of a demon, and you rushed to the attack.</font></b>'
 		set GedoMazo = 1
 		set $nameV = 'Gedo Mazo'
-		!Статы
+		!!Статы
 		set strenV = 1000
 		set speedV = 100
 		set agilV = 90
@@ -192,17 +192,17 @@ if $ARGS[0] = 'tobi':
 		set vitalV = 5000
 		set intelV = 50
 		set willV = 50
-		!Навыки
+		!!Навыки
 		set magikV = 1
 		set boxingV = 100
 		set shootV = 100
-		!Параметры
+		!!Параметры
 		set healthV = vitalV * 10 + strenV * 5
 		set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 		set willpowerV = willV * 10
 		set BonusAtakV = 0
 		set BonusDefV = 0
-		!программа действий
+		!!программа действий
 		set barierV = 1500
 		set program = 7
 		xgt 'fight', 'start'
@@ -282,7 +282,7 @@ if $ARGS[0] = 'tobi':
 	if unmaterialV <= 0 and tobizanagi < 2:
 		set mannaV -= 250
 		set tobizanagi += 1
-		!set unmaterialV = 10
+		!!set unmaterialV = 10
 		'<b><font color="red"><<$nameV>> adds the characters by hand.</font></b>'
 		xgt 'fight', 'sta'
 		exit
@@ -301,7 +301,7 @@ end
 
 if $ARGS[0] = 'kisame':
 	cla
-	!программа атаки Кисаме
+	!!программа атаки Кисаме
 
 	if defenceV <= 0 and kisamePro = 0:
 		set kisamePro = 1
@@ -366,8 +366,8 @@ end
 
 if $ARGS[0] = 'gun':
 	cla
-	!непосредственно программа атаки
-	!gs 'atak'
+	!!непосредственно программа атаки
+	!!gs 'atak'
 	set damTipV = 1500
 	'<b><font color="red"><<$nameV>> shoots at you.</font></b>'
 	xgt 'atakA1', 'atak'
@@ -375,14 +375,14 @@ end
 
 if $ARGS[0] = 'fighter':
 	cla
-	!непосредственно программа атаки
-	!gs 'atak'
+	!!непосредственно программа атаки
+	!!gs 'atak'
 	xgt 'atak', 'enemy'
 end
 
 if $ARGS[0] = 'fighter2':
 	cla
-	!непосредственно программа атаки
+	!!непосредственно программа атаки
 	set deystrand = rand(0, 1)
 
 	if deystrand = 0:xgt 'atak', 'enemy'
@@ -397,7 +397,7 @@ end
 if $ARGS[0] = 'fighter3':
 	cla
 
-	!непосредственно программа атаки
+	!!непосредственно программа атаки
 	if tuman = 0 and tumanV < 5 and mannaV > 10:
 		set mannaV -= 10
 		set tumanV += 10
@@ -420,7 +420,7 @@ end
 if $ARGS[0] = 'fighter4':
 	cla
 
-	!непосредственно программа атаки
+	!!непосредственно программа атаки
 	if tuman = 0 and tumanV < 5 and mannaV > 10:
 		set mannaV -= 10
 		set tumanV += 10
@@ -451,7 +451,7 @@ end
 if $ARGS[0] = 'fighter5':
 	cla
 
-	!непосредственно программа атаки
+	!!непосредственно программа атаки
 	if tuman = 0 and tumanV < 5 and mannaV > 10:
 		set mannaV -= 10
 		set tumanV += 10
@@ -487,4 +487,3 @@ if $ARGS[0] = 'fighter5':
 end
 
 --- enemy ---------------------------------
-

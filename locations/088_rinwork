@@ -252,7 +252,7 @@ if $ARGS[0] = 'start':
 				if pokvnirand = 1:'<<$poktip>> with interest examining selling things.'
 				if pokvnirand = 2:'<<$poktip>> picks up the item.'
 
-				!dynamic $answerrin
+				!!dynamic $answerrin
 				act 'Now it is very fashionable':
 					cla
 					tipred = 3
@@ -444,7 +444,7 @@ if $ARGS[0] = 'start':
 
 			act 'Chat with Nadia':
 				cla
-				!annaQW += 1
+				!!annaQW += 1
 				NadiaQW += 1
 				minut += 15
 				'Nadia leaves the crossword and willingly support the conversation about any nonsense.'
@@ -463,7 +463,7 @@ if $ARGS[0] = 'start':
 
 			act 'Chat with Nadia':
 				cla
-				!annaQW += 1
+				!!annaQW += 1
 				NadiaQW -= 1
 				minut += 15
 				'Nadia is not happy, light, no distractions, I have buyers.'
@@ -478,7 +478,7 @@ if $ARGS[0] = 'start':
 			act 'Chat with Anna':
 				cla
 				annaQW += 1
-				!NadiaQW -= 1
+				!!NadiaQW -= 1
 				minut += 15
 				'Anya support chat with you and tells you what nonsense.'
 
@@ -492,7 +492,7 @@ if $ARGS[0] = 'start':
 			act 'Chat with Anna':
 				cla
 				annaQW -= 1
-				!NadiaQW -= 1
+				!!NadiaQW -= 1
 				minut += 15
 				'Anya is not happy, light, no distractions, I have buyers.'
 
@@ -506,7 +506,7 @@ if $ARGS[0] = 'start':
 			act 'Chat with Anna and Aunt Katya':
 				cla
 				annaQW += 1
-				!NadiaQW += 1
+				!!NadiaQW += 1
 				tetaKataQW += 1
 				minut += 15
 				'Aunt Katya praises pies and Anya complains that it currently has on these patties Naela ass twice more than it was ..'
@@ -526,9 +526,9 @@ if $ARGS[0] = 'start':
 
 			act 'Look at Nadia and Caucasians.':
 				cla
-				!annaQW += 1
-				!NadiaQW += 1
-				!tetaKataQW += 1
+				!!annaQW += 1
+				!!NadiaQW += 1
+				!!tetaKataQW += 1
 				minut += 15
 				'Caucasians seem to be leaning toward sex Nadia.'
 
@@ -541,7 +541,7 @@ if $ARGS[0] = 'start':
 
 			act 'Chat with Nadia':
 				cla
-				!annaQW += 1
+				!!annaQW += 1
 				NadiaQW += 1
 				minut += 15
 				'Nadia leaves the crossword and willingly support the conversation about any nonsense.'
@@ -560,7 +560,7 @@ if $ARGS[0] = 'start':
 
 			act 'Chat with Nadia':
 				cla
-				!annaQW += 1
+				!!annaQW += 1
 				NadiaQW -= 1
 				minut += 15
 				'Nadia is not happy, light, no distractions, I have buyers.'
@@ -575,7 +575,7 @@ if $ARGS[0] = 'start':
 			act 'Chat with Anna':
 				cla
 				annaQW += 1
-				!NadiaQW -= 1
+				!!NadiaQW -= 1
 				minut += 15
 				'Anya support chat with you and tells you what nonsense.'
 
@@ -589,7 +589,7 @@ if $ARGS[0] = 'start':
 			act 'Chat with Anna':
 				cla
 				annaQW -= 1
-				!NadiaQW -= 1
+				!!NadiaQW -= 1
 				minut += 15
 				'Anya is not happy, light, no distractions, I have buyers.'
 
@@ -602,9 +602,9 @@ if $ARGS[0] = 'start':
 
 			act 'Look at Anya and Caucasians.':
 				cla
-				!annaQW += 1
-				!NadiaQW += 1
-				!tetaKataQW += 1
+				!!annaQW += 1
+				!!NadiaQW += 1
+				!!tetaKataQW += 1
 				minut += 15
 				'Caucasians seem to be leaning toward sex Anya.'
 
@@ -623,7 +623,7 @@ if $ARGS[0] = 'start':
 
 			act 'Chat with Nadia':
 				cla
-				!annaQW += 1
+				!!annaQW += 1
 				NadiaQW -= 1
 				minut += 15
 				'Nadia shy to talk with Hassan.'
@@ -637,7 +637,7 @@ if $ARGS[0] = 'start':
 
 			act 'Chat with Nadia':
 				cla
-				!annaQW += 1
+				!!annaQW += 1
 				NadiaQW -= 1
 				minut += 15
 				'Nadia is not happy, light, no distractions, I have buyers.'
@@ -674,7 +674,7 @@ if $ARGS[0] = 'start':
 			act 'Chat with Anna':
 				cla
 				annaQW -= 1
-				!NadiaQW -= 1
+				!!NadiaQW -= 1
 				minut += 15
 				'Anya is not happy, light, no distractions, I have buyers.'
 
@@ -688,7 +688,7 @@ if $ARGS[0] = 'start':
 			act 'Chat with Anna':
 				cla
 				annaQW += 1
-				!NadiaQW -= 1
+				!!NadiaQW -= 1
 				minut += 15
 				'Anya support chat with you and tells you what nonsense.'
 
@@ -701,7 +701,7 @@ if $ARGS[0] = 'start':
 
 			act 'Chat with Nadia':
 				cla
-				!annaQW += 1
+				!!annaQW += 1
 				NadiaQW += 2
 				minut += 15
 				'Nadia glad though what that entertainment and fun to chat with you.'
@@ -751,7 +751,7 @@ if $ARGS[0] = 'start':
 
 			if energy < 20:
 				set energy += 20
-				!set fat += 1
+				!!set fat += 1
 				'You gladly ate cooked food.'
 			end
 
@@ -770,4 +770,3 @@ if $ARGS[0] = 'start':
 end
 
 --- rinwork ---------------------------------
-

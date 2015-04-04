@@ -1,6 +1,6 @@
 # enderKik
 if $ARGS[0] = 'win':
-	!set KikWin = KikWin + 1
+	!!set KikWin = KikWin + 1
 	set pointKik = 0
 	set pointKikV = 0
 	set round = 0
@@ -27,7 +27,7 @@ if profi = 1:
 		if $ARGS[0] = 'winKO':
 			'<center><img src="images/community/kickboxing_win_ko.jpg"></center>'
 			'Congratulations! You win!'
-			'And it is a knockout!!'
+			'And it is a knockout!'
 
 			set KikWinPro += 1
 			set KikWinProKO += 1
@@ -48,7 +48,7 @@ if profi = 1:
 		end
 
 		if $ARGS[0] = 'draw':
-			'And it is a draw !!'
+			'And it is a draw !'
 			set KikDrawPro += 1
 		end
 
@@ -126,7 +126,7 @@ if amateur = 1:
 			*clr
 			'<center><img src="images/community/kickboxing_speaker.jpg"></center>'
 			'Time to the announcement ...'
-			'And it is a draw !!'
+			'And it is a draw !'
 			set KikDrawAm += 1
 		end
 
@@ -179,4 +179,3 @@ if sparing = 1:
 end
 
 --- enderKik ---------------------------------
-

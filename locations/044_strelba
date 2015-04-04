@@ -1,12 +1,12 @@
 # strelba
-!gunpricel = 0 no sighting
-!gunpricel = 1 sighting
-!gunpricel = 2 very accurate
-!gunpower Weapon damage
-!buu the number of shots
-!shoot shooting skills
+!!gunpricel = 0 no sighting
+!!gunpricel = 1 sighting
+!!gunpricel = 2 very accurate
+!!gunpower Weapon damage
+!!buu the number of shots
+!!shoot shooting skills
 :markstrelba
-!Reita hit
+!!Reita hit
 buurand = rand(0, 100)
 
 if buu = 0:xgt 'fight', 'sta'
@@ -504,8 +504,8 @@ if shoot >= 500:
 end
 
 :markstelokpopal
-!if hit
-!Calculation of damage
+!!if hit
+!!Calculation of damage
 if defenceV <= 0 and klonV <= 0 and unmaterialV <= 0 and barierV <= 0:
 	if dospehV > 0:set damage -= dospehDefV & set dospehEnV -= 1
 	if damage < 0:set damage = 0
@@ -549,7 +549,7 @@ if unmaterialV > 0:
 end
 
 if barierV > 0:
-	!meniteta barrier for damange
+	!!meniteta barrier for damange
 	if barierV >= damage:
 		'<b><font color="red"><<$nameV>> easily withstood hit</font></b>'
 
@@ -574,4 +574,3 @@ if barierV > 0:
 end
 
 --- strelba ---------------------------------
-

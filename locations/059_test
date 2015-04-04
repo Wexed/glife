@@ -1,7 +1,7 @@
 # test
 set rost = 170
 set fat = 110
-!Статы
+!!Статы
 set rikudo = 9000
 set stren = 100
 set speed = 100
@@ -61,10 +61,10 @@ set spellele3 = 1
 set spellele4 = 1
 set spellele5 = 1
 set spellert1 = 1
-set spellert2 = 1 
-set spellert3 = 1 
-set spellert4 = 1 
-set spellert5 = 1 
+set spellert2 = 1
+set spellert3 = 1
+set spellert4 = 1
+set spellert5 = 1
 set spellwind1 = 1
 set spellwind2 = 1
 set spellwind3 = 1
@@ -85,7 +85,7 @@ set mannaReset = 10000
 act '(Toby mag12)':
 	cla
 	set $nameV = 'Toby'
-	!Статы
+	!!Статы
 	set strenV = 300
 	set speedV = 100
 	set agilV = 100
@@ -93,17 +93,17 @@ act '(Toby mag12)':
 	set vitalV = 100
 	set intelV = 100
 	set willV = 200
-	!Навыки
+	!!Навыки
 	set magikV = 12
 	set boxingV = 100
 	set shootV = 100
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 6
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -126,7 +126,7 @@ act '(Kisame mag10)':
 	cla
 	set horny += 10
 	set $nameV = 'Kisame'
-	!Статы
+	!!Статы
 	set strenV = 300
 	set speedV = 100
 	set agilV = 100
@@ -134,17 +134,17 @@ act '(Kisame mag10)':
 	set vitalV = 200
 	set intelV = 100
 	set willV = 50
-	!Навыки
+	!!Навыки
 	set magikV = 10
 	set boxingV = 100
 	set shootV = 100
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 5
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -152,7 +152,7 @@ act '(Kisame mag10)':
 	!!!!!!!!!!!!!!!!!!!!
 	set KisaFight = 1
 	set klonV = 5
-	!set defenceV = 10000
+	!!set defenceV = 10000
 
 	if spellavtoklon = 1:set klon = 3
 	if spellbefshild = 1:set defence = 500
@@ -163,7 +163,7 @@ end
 act '(Sasori mag10)':
 	cla
 	set $nameV = 'Sasori doll'
-	!Статы
+	!!Статы
 	set strenV = 100
 	set speedV = 50
 	set agilV = 50
@@ -171,17 +171,17 @@ act '(Sasori mag10)':
 	set vitalV = 100
 	set intelV = 100
 	set willV = 100
-	!Навыки
+	!!Навыки
 	set magikV = 10
 	set boxingV = 50
 	set shootV = 100
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 9
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -189,7 +189,7 @@ act '(Sasori mag10)':
 	!!!!!!!!!!!!!!!!!!!!
 	set klonV = 3
 	set SasoriBody = 6
-	!set defenceV = 10000
+	!!set defenceV = 10000
 
 	if spellavtoklon = 1:set klon = 3
 	if spellbefshild = 1:set defence = 500
@@ -200,7 +200,7 @@ end
 act '(Conan mag10)':
 	cla
 	set $nameV = 'Conan'
-	!Статы
+	!!Статы
 	set strenV = 60
 	set speedV = 105
 	set agilV = 100
@@ -208,24 +208,24 @@ act '(Conan mag10)':
 	set vitalV = 60
 	set intelV = 100
 	set willV = 100
-	!Навыки
+	!!Навыки
 	set magikV = 10
 	set boxingV = 100
 	set shootV = 100
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 10
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
 	set konanPic = 1
 	!!!!!!!!!!!!!!!!!!!!
-	!set klonV = 3
-	!set defenceV = 10000
+	!!set klonV = 3
+	!!set defenceV = 10000
 	set unmaterialV = 20
 
 	if spellavtoklon = 1:set klon = 3
@@ -237,7 +237,7 @@ end
 act '(Hidan mag9)':
 	cla
 	set $nameV = 'Hidan'
-	!Статы
+	!!Статы
 	set strenV = 500
 	set speedV = 100
 	set agilV = 80
@@ -245,27 +245,27 @@ act '(Hidan mag9)':
 	set vitalV = 600
 	set intelV = 100
 	set willV = 100
-	!Навыки
+	!!Навыки
 	set magikV = 9
 	set boxingV = 110
 	set shootV = 100
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 11
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
 	set hidanPic = 1
 	!!!!!!!!!!!!!!!!!!!!
-	!set klonV = 3
-	!set defenceV = 10000
+	!!set klonV = 3
+	!!set defenceV = 10000
 	set barierV = 5500
 	set hidanAtk = 1
-	!set unmaterialV = 20
+	!!set unmaterialV = 20
 
 	if spellavtoklon = 1:set klon = 3
 	if spellbefshild = 1:set defence = 500
@@ -275,9 +275,9 @@ end
 
 act '(Juugo, mutant power 600)':
 	cla
-	!set judosparday = day
+	!!set judosparday = day
 	set $nameV = 'Juugo'
-	!Статы
+	!!Статы
 	set strenV = 600
 	set speedV = 60
 	set agilV = 60
@@ -285,17 +285,17 @@ act '(Juugo, mutant power 600)':
 	set vitalV = 200
 	set intelV = 50
 	set willV = 50
-	!Навыки
+	!!Навыки
 	set magikV = 1
 	set boxingV = 100
 	set shootV = 100
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 0
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -311,7 +311,7 @@ end
 act '(Karin mag6)':
 	cla
 	set $nameV = 'Karin'
-	!Статы
+	!!Статы
 	set strenV = 60
 	set speedV = 90
 	set agilV = 90
@@ -319,17 +319,17 @@ act '(Karin mag6)':
 	set vitalV = 100
 	set intelV = 100
 	set willV = 100
-	!Навыки
+	!!Навыки
 	set magikV = 6
 	set boxingV = 100
 	set shootV = 100
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 4
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -347,7 +347,7 @@ end
 act '(Throwing knives mag1)':
 	cla
 	set $nameV = 'Knife thrower'
-	!Статы
+	!!Статы
 	set strenV = 40
 	set speedV = 40
 	set agilV = 40
@@ -355,17 +355,17 @@ act '(Throwing knives mag1)':
 	set vitalV = 60
 	set intelV = 60
 	set willV = 60
-	!Навыки
+	!!Навыки
 	set magikV = 1
 	set boxingV = 60
 	set shootV = 60
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 1
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -380,7 +380,7 @@ end
 act '(Misty thrower, mag2)':
 	cla
 	set $nameV = 'Misty thrower'
-	!Статы
+	!!Статы
 	set strenV = 50
 	set speedV = 50
 	set agilV = 50
@@ -388,17 +388,17 @@ act '(Misty thrower, mag2)':
 	set vitalV = 60
 	set intelV = 60
 	set willV = 60
-	!Навыки
+	!!Навыки
 	set magikV = 2
 	set boxingV = 60
 	set shootV = 60
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 2
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -413,7 +413,7 @@ end
 act '(Misty lord clones mag3)':
 	cla
 	set $nameV = 'Misty lord clones'
-	!Статы
+	!!Статы
 	set strenV = 60
 	set speedV = 60
 	set agilV = 60
@@ -421,17 +421,17 @@ act '(Misty lord clones mag3)':
 	set vitalV = 70
 	set intelV = 70
 	set willV = 70
-	!Навыки
+	!!Навыки
 	set magikV = 3
 	set boxingV = 70
 	set shootV = 70
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 3
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -446,7 +446,7 @@ end
 act '(Gouge magician mag4)':
 	cla
 	set $nameV = 'Gouge magician'
-	!Статы
+	!!Статы
 	set strenV = 70
 	set speedV = 70
 	set agilV = 70
@@ -454,17 +454,17 @@ act '(Gouge magician mag4)':
 	set vitalV = 80
 	set intelV = 80
 	set willV = 80
-	!Навыки
+	!!Навыки
 	set magikV = 4
 	set boxingV = 80
 	set shootV = 80
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 4
 	!!!!!!!!!!!!!!!!!!!!
 	set test = 1
@@ -479,7 +479,7 @@ end
 act '(Commando)':
 	cla
 	set $nameV = 'Commando'
-	!Статы
+	!!Статы
 	set strenV = 200
 	set speedV = 100
 	set agilV = 100
@@ -487,17 +487,17 @@ act '(Commando)':
 	set vitalV = 200
 	set intelV = 10
 	set willV = 10
-	!Навыки
+	!!Навыки
 	set magikV = 0
 	set boxingV = 100
 	set shootV = 80
-	!Параметры
+	!!Параметры
 	set healthV = vitalV * 10 + strenV * 5
 	set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 	set willpowerV = willV * 10
 	set BonusAtakV = 0
 	set BonusDefV = 0
-	!программа действий
+	!!программа действий
 	set program = 8
 	set dospehV = 800
 	set dospehEnV = 10
@@ -512,4 +512,3 @@ act '(Commando)':
 end
 
 --- test ---------------------------------
-

@@ -1,9 +1,9 @@
 # korr
-
 act 'The bedroom':gt 'bedr'
 act 'The bathroom':gt 'vanr'
 act 'The kitchen':gt 'kuhr'
 act 'The living room':gt 'sitr'
+
 act '<font color="maroon">Apartment hallway</font>':
 	cls
 
@@ -74,7 +74,6 @@ if parkday ! day and parkblackmail = 1:
 	set parkblackmail = 2
 	set parkday = day
 end
-
 
 if parkday ! day and parkblackmail = 2:
 	'Damn, your photos with sperm on your face and two dicks in your mouth are plastered around porch.'
@@ -323,7 +322,7 @@ if sick > 0 and doktorday ! day:
 		'Has come to you from the clinic and the doctor examined you. After examination, the doctor made a shot and you will become easier.'
 
 		act 'Move away':gt 'korr'
-	end'
+	end'!
 
 	act 'Call a doctor':doktorday = day & dynamic $polidin
 end
@@ -411,7 +410,7 @@ $ninel0 = {
 										cla
 										*clr
 										set horny += 15
-										!set time += 15
+										!!set time += 15
 										clr
 										gs 'stat'
 										'<center><img src="images/inBed/nadom6.jpg"></center>'
@@ -658,7 +657,7 @@ $polidin = {
 
 						act 'Answer the door':
 							if ninel > 0 and sick <= 50:gt 'housecall', 'ninel1'
-					
+
 							if ninel = 0 or sick > 50:
 								set doctrnd = rand(0, 1)
 
@@ -674,4 +673,3 @@ $polidin = {
 }
 
 --- korr ---------------------------------
-

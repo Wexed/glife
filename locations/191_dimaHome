@@ -5,7 +5,7 @@ if DimaBeHomeOnce = 0:DimaBeHomeOnce = 1
 
 gs 'stat'
 '<center><b><font color="maroon"><<$npcName[1]>> <<$npcSurName[1]>></font></b></center>'
-<center><img src="images/qwest/alter/npc/1.jpg"></center>'
+'<center><img src="images/qwest/alter/npc/1.jpg"></center>'
 
 if dimaFilm = 0:
 	'Dimka took some white powder from his desk and nyuhnul. After that "smell, cool thing! Excellent relaxing!"'
@@ -16,7 +16,7 @@ if dimaFilm = 0:
 		set narkday = day
 		set health = vital * 10 + stren * 5
 		set willpower = intel * 5 + will * 5
-		set manna = intel * magik + magik * 100 + vital * 10 + rikudo 
+		set manna = intel * magik + magik * 100 + vital * 10 + rikudo
 		set horny = 100
 		set nark += 10
 		gs 'stat'
@@ -91,7 +91,7 @@ if dimaFilm = 0:
 							act 'Leave':gt 'gorodok'
 						end
 					end
-					 
+
 					act 'Suck on camera':
 						cls
 						minut += 15
@@ -122,7 +122,7 @@ if dimaFilm > 0:
 			set narkday = day
 			set health = vital * 10 + stren * 5
 			set willpower = intel * 5 + will * 5
-			set manna = intel * magik + magik * 100 + vital * 10 + rikudo 
+			set manna = intel * magik + magik * 100 + vital * 10 + rikudo
 			set horny = 100
 			set nark += 10
 			gs 'stat'
@@ -131,7 +131,7 @@ if dimaFilm > 0:
 
 			act 'catch a buzz':gt $curloc
 		end
-		 
+
 		act 'Opt out':
 			cls
 			dom += 1
@@ -283,7 +283,7 @@ if dimaFilm > 0:
 				end
 			end
 		end
- 
+
 	end
 
 	if narkday = day:
@@ -528,4 +528,3 @@ if dimaFilm > 0:
 end
 
 --- dimaHome ---------------------------------
-

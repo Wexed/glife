@@ -141,7 +141,6 @@ $bomzstartqwestdi = {
 	act 'Uh, better not, she can handle it.':bomzQW = -1 & gt 'street'
 }
 
-
 $workbomzdi = {
 	cls
 	minut += 15
@@ -237,6 +236,7 @@ if musor > 0:
 end
 
 if bomzQW = 0:bomzrand = rand(0, 100)
+
 if bomzrand >= 80 and hour <= 16 and bomzQW = 0 and week ! 4:
 	cls
 	gs 'stat'
@@ -293,4 +293,3 @@ end
 act 'Leave':gt 'street'
 
 --- trashplace ---------------------------------
-

@@ -1,5 +1,4 @@
 # shop
-
 if $ARGS[0] = 'start':
 	cla
 	*clr
@@ -23,7 +22,7 @@ if $ARGS[0] = 'start':
 					energy = 20
 					perkice += 1
 					gs 'stat'
-					!icecreem
+					!!icecreem
 					'<center><img src="images/etogame/icecreem.jpg"></center>'
 					'You bought ice cream and ate it not going far.'
 
@@ -1417,9 +1416,9 @@ if $ARGS[0] = 'teh':
 	if TV = 0:'<a href="exec:dynamic $buytv ">A small TV with a picture tube (5,000 rubles)</a>'
 	if TV ! 2:'<a href="exec:dynamic $buytv2 ">Large plasma TV (35,000 rubles)</a>'
 	if komp = 0:'<a href="exec:dynamic $buykomp ">Computer - (25,000 rubles)</a>'
-	!'<a href="exec:dynamic $buycd ">Computer game Disopl (500 rubles)</a>'
+	!!'<a href="exec:dynamic $buycd ">Computer game Disopl (500 rubles)</a>'
 	if GameCD2 = 0:'<a href="exec:dynamic $buycd2 ">Computer game Dead Sunset (500 rubles)</a>'
-	!'<a href="exec:dynamic $buycd3 ">Computer game Albida (500 rubles)</a>'
+	!!'<a href="exec:dynamic $buycd3 ">Computer game Albida (500 rubles)</a>'
 	if posudomashina = 0:'<a href="exec:dynamic $buyposudmoi ">A dishwasher (50,000 rubles)</a>'
 	if stiralka = 0:'<a href="exec:dynamic $buystiralka ">Washing machine (50,000 rubles)</a>'
 	if zenit = 0:'<a href="exec:dynamic $buyzenit ">Camera can be bought (10,000 rubles)</a>'
@@ -1429,4 +1428,3 @@ if $ARGS[0] = 'teh':
 end
 
 --- shop ---------------------------------
-

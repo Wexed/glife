@@ -1,5 +1,4 @@
 # kuhrPar
-
 act 'Leave the room':gt 'korrPar'
 
 $metkaM = $ARGS[0]
@@ -41,7 +40,7 @@ act 'Eat (0:30)':
 
 	if energy < 20:
 		set energy += 20
-		!set fat += 1
+		!!set fat += 1
 		'You gladly ate cooked food.'
 	end
 
@@ -79,7 +78,7 @@ act 'Have a snack (0:15)':
 
 	if energy < 20:
 		set energy += 10
-		!set fat += 1
+		!!set fat += 1
 		'You gladly ate cooked food.'
 	end
 
@@ -236,4 +235,3 @@ if vitamin > 0:
 end
 
 --- kuhrPar ---------------------------------
-

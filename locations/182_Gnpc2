@@ -1,7 +1,6 @@
 # Gnpc2
-
 $din_gboy_end_to_disco = {
-	!:markgoondisco
+	!!:markgoondisco
 	discofirsttime += 1
 	gs 'stat'
 	gdeystboyrand = rand(0, 1)
@@ -28,7 +27,6 @@ $din_gboy_end_to_disco = {
 		act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
 	end
 }
-
 
 $din_gboy_go_to_disco = {
 	act 'Go to the disco':
@@ -1102,15 +1100,14 @@ $din_gboy_go_to_boyhome = {
 			dynamic $din_gboy_knee
 		end
 
-		!act 'Go home':gt 'gorodok'
+		!!act 'Go home':gt 'gorodok'
 	end
 
 }
 
-
 gs 'stat'
 '<center><b><font color="maroon"><<$nameBoyfrend[numnpc]>></font></b></center>'
-!'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+!!'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 '<<$nameBoyfrend[numnpc]>> your guy.'
 
 if otnBoyFrend[numnpc] < 20:'You have a bad attitude.'
@@ -1197,4 +1194,3 @@ if hour >= 23:
 end
 
 --- Gnpc2 ---------------------------------
-

@@ -53,6 +53,7 @@ if tanga = 0 and ski = 1 and hour > 6 and hour <= 20 or tanga = 0 and glamur = 1
 		set minut += 30
 		gt 'street'
 	end
+
 	if hour >= 10 and hour <= 22:
 		act 'Sit in a Café':
 			cla
@@ -73,10 +74,10 @@ if tanga = 0 and ski = 1 and hour > 6 and hour <= 20 or tanga = 0 and glamur = 1
 				exit
 			end
 
-			!if parkrand > 14:
-				!dynamic $parkrandivdin
-				!exit
-			!end
+			!!if parkrand > 14:
+				!!dynamic $parkrandivdin
+				!!exit
+			!!end
 		end
 
 		set manna += 10
@@ -135,7 +136,7 @@ if tanga = 0 and ski = 1 and hour > 6 and hour <= 20 or tanga = 0 and glamur = 1
 					act 'Fight':
 						cla
 						set $nameV = 'Rapist'
-						!Статы
+						!!Статы
 						set strenV = 100
 						set speedV = 50
 						set agilV = 40
@@ -143,17 +144,17 @@ if tanga = 0 and ski = 1 and hour > 6 and hour <= 20 or tanga = 0 and glamur = 1
 						set vitalV = 50
 						set intelV = 10
 						set willV = 10
-						!Навыки
+						!!Навыки
 						set magikV = 100
 						set boxingV = 50
 						set shootV = 100
-						!Параметры
+						!!Параметры
 						set healthV = vitalV * 10 + strenV * 5
 						set mannaV = intelV * 10 + magikV * 10
 						set willpowerV = willV * 10
 						set BonusAtakV = 0
 						set BonusDefV = 0
-						!программа действий
+						!!программа действий
 						set program = 1
 						set RapistFight = 1
 
@@ -236,7 +237,7 @@ if $ARGS[0] = 'luna':
 	end
 
 	if hour >= 9 and hour <= 20 and money >= 50:
-		act 'Drink Lemonade - 50 rubles':
+		act 'Drink Lemonade (50 rubles)':
 			cla
 			*clr
 			'<center><img src="images/etogame/luna1.jpg"></center>'
@@ -262,7 +263,7 @@ if $ARGS[0] = 'luna':
 	end
 
 	if hour >= 9 and hour <= 20 and money >= 100:
-		act 'Shoot some targets - 100 rubles':
+		act 'Shoot some targets (100 rubles)':
 			cla
 			*clr
 			'<center><img src="images/etogame/tir.jpg"></center>'
@@ -301,7 +302,7 @@ if $ARGS[0] = 'luna':
 	end
 
 	if hour >= 9 and hour <= 20 and money >= 20:
-		act 'Ring-The-Bell - 20 rubles':
+		act 'Ring-The-Bell (20 rubles)':
 			cla
 			*clr
 			'<center><img src="images/etogame/silomer.jpg"></center>'
@@ -327,7 +328,7 @@ if $ARGS[0] = 'luna':
 	end
 
 	if hour >= 9 and hour <= 20 and money >= 50:
-		act 'Ride on the carousel - 50 rubles':
+		act 'Ride on the carousel (50 rubles)':
 			cla
 			*clr
 			'<center><img src="images/etogame/karusel.jpg"></center>'
@@ -404,7 +405,7 @@ if $ARGS[0] = 'avtomat2':
 	act 'Try your luck once more':gt 'park', 'avtomat'
 end
 
-!"if $ARGS[0] = 'whore':
+!!"if $ARGS[0] = 'whore':
 	cla
 	*clr
 	set minut += 5
@@ -457,7 +458,7 @@ if $ARGS[0] = 'whore':
 			cla
 			set minut += 15
 			set $nameV = 'Stoned prostitute'
-			!Статы
+			!!Статы
 			set strenV = 20
 			set speedV = 30
 			set agilV = 30
@@ -465,17 +466,17 @@ if $ARGS[0] = 'whore':
 			set vitalV = 50
 			set intelV = 10
 			set willV = 10
-			!Навыки
+			!!Навыки
 			set magikV = 10
 			set boxingV = 10
 			set shootV = 10
-			!Параметры
+			!!Параметры
 			set healthV = vitalV * 10 + strenV * 5
 			set mannaV = intelV * 10 + magikV * 10
 			set willpowerV = willV * 10
 			set BonusAtakV = 0
 			set BonusDefV = 0
-			!программа действий
+			!!программа действий
 			set program = 0
 			set prostitutFight = 1
 
@@ -510,7 +511,7 @@ if $ARGS[0] = 'whore':
 					cla
 					set minut += 15
 					set $nameV = 'Bandit'
-					!Статы
+					!!Статы
 					set strenV = 200
 					set speedV = 30
 					set agilV = 20
@@ -518,17 +519,17 @@ if $ARGS[0] = 'whore':
 					set vitalV = 150
 					set intelV = 10
 					set willV = 10
-					!Навыки
+					!!Навыки
 					set magikV = 10
 					set boxingV = 10
 					set shootV = 10
-					!Параметры
+					!!Параметры
 					set healthV = vitalV * 10 + strenV * 5
 					set mannaV = intelV * 10 + magikV * 10
 					set willpowerV = willV * 10
 					set BonusAtakV = 0
 					set BonusDefV = 0
-					!программа действий
+					!!программа действий
 					set program = 0
 					set prostitutFight = 2
 
@@ -598,7 +599,7 @@ if $ARGS[0] = 'whore':
 					cla
 					set minut += 15
 					set $nameV = 'Prostitute'
-					!Статы
+					!!Статы
 					set strenV = 50
 					set speedV = 50
 					set agilV = 40
@@ -606,17 +607,17 @@ if $ARGS[0] = 'whore':
 					set vitalV = 60
 					set intelV = 10
 					set willV = 10
-					!Навыки
+					!!Навыки
 					set magikV = 10
 					set boxingV = 10
 					set shootV = 10
-					!Параметры
+					!!Параметры
 					set healthV = vitalV * 10 + strenV * 5
 					set mannaV = intelV * 10 + magikV * 10
 					set willpowerV = willV * 10
 					set BonusAtakV = 0
 					set BonusDefV = 0
-					!программа действий
+					!!программа действий
 					set program = 0
 					set prostitutFight = 3
 
@@ -636,7 +637,7 @@ if $ARGS[0] = 'rape1':
 	cla
 	*clr
 	'<center><img src="images/img/spaln/rape.jpg"></center>'
-	'Suddenly, you are hit on the head. You awake sometime later in a bush. Somehow you''re not able to move your arms, they must be tied up. As you look down on yourself, you realize, that you''re not wearing anything and before you can even react some dude is ramming his into your cunt. ''Shit'', you think yourself, ''I''m being raped.'''
+	'Suddenly, you are hit on the head. You awake sometime later in a bush. Somehow you''re not able to move your arms, they must be tied up. As you look down on yourself, you realize, that you''re not wearing anything and before you can even react some dude is ramming his into your cunt. "Shit", you think yourself, "I''m being raped."'
 	set rape += 1
 	set sex += 1
 	set SUB += 3
@@ -674,4 +675,3 @@ if $ARGS[0] = 'rape1':
 end
 
 --- park ---------------------------------
-

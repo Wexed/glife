@@ -184,21 +184,21 @@ act 'Take a cab':
 	'"The drive will cost you <b>250 rubles</b>", the driver says.'
 	set minut += 5
 
-	if $loc!'street':
+	if $loc ! 'street':
 		act 'Go to the Residential Area':
 			set $loc = 'street'
 			dynamic $taxi
 			end
 		end
 
-	if $loc!'down':
+	if $loc ! 'down':
 		act 'Go to the City Center':
 			set $loc = 'down'
 			dynamic $taxi
 		end
 		end
 
-	if $loc!'Nord':
+	if $loc ! 'Nord':
 		act 'Go to the Northern Area':
 			set $loc = 'Nord'
 			dynamic $taxi
@@ -282,7 +282,7 @@ if streetrand = 40 and hour <= 3:
 	act 'Useless to resist':
 		cla
 		*clr
-		!set money += 500
+		!!set money += 500
 		set $nameV = 'Rapist'
 		set sex += 1
 		set guy += 1
@@ -306,11 +306,11 @@ if streetrand = 40 and hour <= 3:
 		end
 
 		if protect ! 1:
-			!не защищенный секс
+			!!не защищенный секс
 			set finrand = rand(0, 1)
 
 			if finrand = 0:
-				!внутрь
+				!!внутрь
 				set cumpussy += 1
 				'Man groaned and you feel like jet of sperm hit you inside your body.'
 
@@ -323,7 +323,7 @@ if streetrand = 40 and hour <= 3:
 			end
 
 			if finrand = 1:
-				!наружу
+				!!наружу
 				set cumass += 1
 				'<<$nameV>> groaned and removing a member of you finished on your ass.'
 			end
@@ -340,7 +340,7 @@ if streetrand = 40 and hour <= 3:
 	act 'Fight':
 		cla
 		set $nameV = 'Rapist'
-		!Статы
+		!!Статы
 		set strenV = 100
 		set speedV = 50
 		set agilV = 40
@@ -348,17 +348,17 @@ if streetrand = 40 and hour <= 3:
 		set vitalV = 50
 		set intelV = 10
 		set willV = 10
-		!Навыки
+		!!Навыки
 		set magikV = 100
 		set boxingV = 50
 		set shootV = 100
-		!Параметры
+		!!Параметры
 		set healthV = vitalV * 10 + strenV * 5
 		set mannaV = intelV * 10 + magikV * 10
 		set willpowerV = willV * 10
 		set BonusAtakV = 0
 		set BonusDefV = 0
-		!программа действий
+		!!программа действий
 		set program = 0
 		set RapistFight = 1
 
@@ -394,7 +394,7 @@ if streetrand = 50 and money >= 1000 and daystart >= 10 and hour <= 3:
 
 		act 'Fight':
 			set $nameV = 'Rapist'
-			!Статы
+			!!Статы
 			set strenV = 100
 			set speedV = 50
 			set agilV = 40
@@ -402,17 +402,17 @@ if streetrand = 50 and money >= 1000 and daystart >= 10 and hour <= 3:
 			set vitalV = 50
 			set intelV = 10
 			set willV = 10
-			!Навыки
+			!!Навыки
 			set magikV = 100
 			set boxingV = 50
 			set shootV = 100
-			!Параметры
+			!!Параметры
 			set healthV = vitalV * 10 + strenV * 5
 			set mannaV = intelV * 10 + magikV * 10
 			set willpowerV = willV * 10
 			set BonusAtakV = 0
 			set BonusDefV = 0
-			!программа действий
+			!!программа действий
 			set program = 0
 			set RapistFight = 1
 
@@ -425,7 +425,6 @@ if streetrand = 50 and money >= 1000 and daystart >= 10 and hour <= 3:
 
 	exit
 end
-
 
 set streetrand = rand(0, 100)
 
@@ -455,7 +454,7 @@ if streetrand = 60 and money >= 1000 and daystart >= 10 and hour <= 3:
 		end
 		if speed >= 60 and agil >= 60 and vital >= 60:
 			set $nameV = 'Rapist'
-			!Статы
+			!!Статы
 			set strenV = 100
 			set speedV = 50
 			set agilV = 40
@@ -463,17 +462,17 @@ if streetrand = 60 and money >= 1000 and daystart >= 10 and hour <= 3:
 			set vitalV = 50
 			set intelV = 10
 			set willV = 10
-			!Навыки
+			!!Навыки
 			set magikV = 100
 			set boxingV = 50
 			set shootV = 100
-			!Параметры
+			!!Параметры
 			set healthV = vitalV * 10 + strenV * 5
 			set mannaV = intelV * 10 + magikV * 10
 			set willpowerV = willV * 10
 			set BonusAtakV = 0
 			set BonusDefV = 0
-			!программа действий
+			!!программа действий
 			set program = 0
 			set RapistFight = 1
 
@@ -505,7 +504,7 @@ if streetrand >= 10 and bfa < 1:
 		end
 	end
 end
+
 dynamic $din_street_cum
 
 --- street ---------------------------------
-

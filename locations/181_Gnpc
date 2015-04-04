@@ -1,11 +1,11 @@
 # Gnpc
-!Guys
+!!Guys
 GvstreBoyAfter[numnpc] = 0
 GvstreBoy = 0
 boyvstre[numnpc] += 1
 gs 'stat'
 '<center><b><font color="maroon"><<$nameBoyfrend[numnpc]>></font></b></center>'
-!'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+!!'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 '<<$nameBoyfrend[numnpc]>> your guy.'
 
 if otnBoyFrend[numnpc] < 20:'You have a bad attitude.'
@@ -37,7 +37,7 @@ if preg = 1 and pregtime <= 80 and pregTalk[numnpc] = 0 and gnpcSex[numnpc] = 1:
 
 				act 'Leave':gt $loc, $metka
 			end
-			 
+
 			act 'Throw a guy throwing him the money in the face':
 				cls
 				dom += 10
@@ -48,7 +48,7 @@ if preg = 1 and pregtime <= 80 and pregTalk[numnpc] = 0 and gnpcSex[numnpc] = 1:
 
 				act 'Leave':gt $loc, $metka
 			end
-			 
+
 		else
 			'The guy was troubled "Yes you ohuel slut! Someone held up her pussy, and now will be with me grandmother swing? Fuck you on the dick!"'
 
@@ -112,7 +112,7 @@ act 'Walking through the square':
 	if ski > 0 or glamur > 0:otnBoyFrend[numnpc] += 2
 
 	minut += 15
-	!number of meetings
+	!!number of meetings
 	boytimes[numnpc] += 1
 	gs 'stat'
 	'You walk through the square with a guy and fun to hang out.'
@@ -234,4 +234,3 @@ end
 act 'Apologize and leave':otnBoyFrend[numnpc] -= 5 & gt $loc, $metka
 
 --- Gnpc ---------------------------------
-

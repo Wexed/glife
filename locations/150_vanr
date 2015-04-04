@@ -1,5 +1,4 @@
 # vanr
-
 act 'Go to the corridor':gt 'korr'
 
 $metka = $ARGS[0]
@@ -99,7 +98,7 @@ if tanga = 1:
 	set tanga = 0
 	gt 'vanr'
 	end
-end'
+end'!
 
 if tampon > 0 and mesec > 0 and isprok = 0:
 	act 'Change a tampon':
@@ -269,7 +268,7 @@ if husband > 0 and husbanday > 0 and huspolday ! day:
 		set minut += 60
 		huspolday = day
 		manna -= 25
-		!'<center><img src="images/pics/cook.jpg"></center>'
+		!!'<center><img src="images/pics/cook.jpg"></center>'
 		'You take a rag and start cleaning the apartment.'
 
 		act 'Leave':gt 'vanr'
@@ -284,7 +283,7 @@ if pregtest > 0:
 
 		if preg = 1:
 			'The test showed the two strips. you are pregnant.'
-			!'father - <<$father>>.'
+			!!'father - <<$father>>.'
 		else
 			'The test showed one band.'
 		end
@@ -294,4 +293,3 @@ if pregtest > 0:
 end
 
 --- vanr ---------------------------------
-

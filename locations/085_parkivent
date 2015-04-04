@@ -1,5 +1,4 @@
 # parkivent
-
 $parkemptyevent = {
 	set manna += 10
 	set willpower += 10
@@ -10,7 +9,6 @@ $parkemptyevent = {
 
 	exit
 }
-
 
 $parkivent1 = {
 	gs 'stat'
@@ -37,7 +35,7 @@ $parkivent1 = {
 			cls
 			cla
 			set $nameV = 'Rapist'
-			!Статы
+			!!Статы
 			set strenV = 100
 			set speedV = 50
 			set agilV = 40
@@ -45,17 +43,17 @@ $parkivent1 = {
 			set vitalV = 50
 			set intelV = 10
 			set willV = 10
-			!Навыки
+			!!Навыки
 			set magikV = 100
 			set boxingV = 50
 			set shootV = 100
-			!Параметры
+			!!Параметры
 			set healthV = vitalV * 10 + strenV * 5
 			set mannaV = intelV * 10 + magikV * 10
 			set willpowerV = willV * 10
 			set BonusAtakV = 0
 			set BonusDefV = 0
-			!программа действий
+			!!программа действий
 			set program = 0
 			set RapistFight = 1
 
@@ -104,11 +102,10 @@ $parkivent1 = {
 		exit
 	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!! 2
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 $parkivent2 = {
 	gs 'stat'
 
@@ -123,7 +120,7 @@ $parkivent2 = {
 
 	if vnesh >= 30 and parkday ! day and parkslut > 0:
 		cls
-		'From the bench under one of the trees came a guy up to you. It''s the guy who fucked you here in the park a while back. He smiles and asks you "Hello again beautiful girl, do you mind if we do it once again?'
+		'From the bench under one of the trees came a guy up to you. It''s the guy who fucked you here in the park a while back. He smiles and asks you "Hello again beautiful girl, do you mind if we do it once again?"'
 
 		act 'Walk away':gt 'park', 'start'
 
@@ -171,11 +168,11 @@ $parkivent2 = {
 				end
 
 				if protect ! 1:
-					!не защищенный секс
+					!!не защищенный секс
 					set finrand = rand(0, 1)
 
 					if finrand = 0:
-						!внутрь
+						!!внутрь
 						set cumpussy += 1
 						'The guy groans loudly and you feel his hot cum flowing inside your pussy.'
 
@@ -188,7 +185,7 @@ $parkivent2 = {
 					end
 
 					if finrand = 1:
-						!наружу
+						!!наружу
 						set cumass += 1
 						'<<$nameV>> groans as he cums inside your ass.'
 					end
@@ -254,11 +251,11 @@ $parkivent2 = {
 				end
 
 				if protect ! 1:
-					!не защищенный секс
+					!!не защищенный секс
 					set finrand = rand(0, 1)
 
 					if finrand = 0:
-						!внутрь
+						!!внутрь
 						set cumpussy += 1
 						'The guy groans loudly and you feel his hot cum flowing inside your pussy.'
 
@@ -271,7 +268,7 @@ $parkivent2 = {
 					end
 
 					if finrand = 1:
-						!наружу
+						!!наружу
 						set cumass += 1
 						'<<$nameV>> groans as he cums inside your ass.'
 					end
@@ -293,11 +290,10 @@ $parkivent2 = {
 		dynamic $parkemptyevent
 	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!! 3
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 $parkivent3 = {
 	cls
 	gs 'stat'
@@ -430,7 +426,6 @@ $parkivent3 = {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!! 4
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 $parkivent4 = {
 	gs 'stat'
 
@@ -510,7 +505,6 @@ $parkivent4 = {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!! 5
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 $parkivent5 = {
 	gs 'stat'
 	'You take a relaxing and refreshing walk through the park, trying to figure out the meaning of life.'
@@ -553,10 +547,10 @@ $parkivent5 = {
 		dynamic $parkemptyevent
 	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!! 6
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 $parkivent6 = {
 	gs 'stat'
 
@@ -783,10 +777,10 @@ $parkivent6 = {
 		dynamic $parkemptyevent
 	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!! 7
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 $parkivent7 = {
 	gs 'stat'
 
@@ -815,13 +809,13 @@ $parkivent7 = {
 		dynamic $parkemptyevent
 	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!! 8
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 $parkivent8 = {
-	!'You leisurely stroll through the park. Breathing fresh air, thinking about the vicissitudes of life.'
-	!act 'Complete walk':gt 'park', 'start'
+	!!'You leisurely stroll through the park. Breathing fresh air, thinking about the vicissitudes of life.'
+	!!act 'Complete walk':gt 'park', 'start'
 	gs 'stat'
 	set vnerand = rand(0, 300)
 
@@ -848,10 +842,10 @@ $parkivent8 = {
 		dynamic $parkemptyevent
 	end
 }
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!! 9
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 $parkivent9 = {
 	gs 'stat'
 
@@ -900,4 +894,3 @@ $parkivent9 = {
 }
 
 --- parkivent ---------------------------------
-

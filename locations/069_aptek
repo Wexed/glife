@@ -15,7 +15,7 @@ if $ARGS[0] = 'start':
 	'Ointment from corns - 600 rubles' & nl
 	'Moisturizing Lip Balm 1,000 rubles' & nl
 	'Fat burners - 1,500 rubles' & nl
-	'Cure pills for yeast infection - 1,500 rubles
+	'Cure pills for yeast infection - 1,500 rubles'
 	clr
 	gs 'stat'
 	gs 'time'
@@ -51,7 +51,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if money >= 500:
-		act 'Buy birth control pills 500 rublesles':
+		act 'Buy birth control pills (500 rubles)':
 			portion = input ("How many packages you want to buy?")
 
 			if portion * 500 > money:'You do not have enough money.'
@@ -67,7 +67,7 @@ if $ARGS[0] = 'start':
 		end
 
 		if klisma = 0:
-			act 'Buy enema 500 rublesles':
+			act 'Buy enema (500 rubles)':
 				cla
 				*clr
 				set klisma = 1
@@ -79,7 +79,7 @@ if $ARGS[0] = 'start':
 			end
 		end
 
-		act 'Buy medicine 500 rubles':
+		act 'Buy medicine (500 rubles)':
 			cla
 			*clr
 			portion = input ("How many packages you want to buy?")
@@ -96,7 +96,7 @@ if $ARGS[0] = 'start':
 			 act 'Move away from the counter':gt 'aptek', 'start'
 		 end
 
-		act 'Buy vitamins 500 rubles':
+		act 'Buy vitamins (500 rubles)':
 			cla
 			*clr
 			portion = input ("How many packages you want to buy?")
@@ -172,4 +172,3 @@ end
 !!!
 
 --- gaptek ---------------------------------
-

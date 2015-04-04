@@ -2,7 +2,7 @@
 
 if $ARGS[0] = 'atak':
 	cla
-	!расчет попадания уворота
+	!!расчет попадания уворота
 	set poSp = speed * 20/100
 	set uvAg = agilV * 20/100
 	set poBox = react * 20/100
@@ -14,14 +14,14 @@ if $ARGS[0] = 'atak':
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
-			!крит, очень точное попадание
+			!!крит, очень точное попадание
 			'<b><font color="green">critical hits</font></b>'
 			xgt 'atakA', 'uronKrit'
 		end
 
 		if popad < uvorot + uvorKoef:
-			!нормальное попадание
-			!атаковал противник
+			!!нормальное попадание
+			!!атаковал противник
 			'<b><font color="green">Contact</font></b>'
 			xgt 'atakA', 'uron'
 		end
@@ -75,7 +75,7 @@ if $ARGS[0] = 'damage':
 			'<b><font color="green">you have ingested <<damageM>> units of manna from the enemy.</font></b>'
 		end
 
-		!set manna -= damageM
+		!!set manna -= damageM
 
 		if eleSh > 0:
 			set stunV = rand(eleSh, eleSh * 3)
@@ -83,7 +83,7 @@ if $ARGS[0] = 'damage':
 		end
 
 		'<b><font color="green">You have caused damage <<damage>> units</font></b>'
-		!'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
+		!!'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
 
 		if zerkaloV > 0:
 			set zerkaloV -= 1
@@ -95,8 +95,8 @@ if $ARGS[0] = 'damage':
 	end
 
 	if defenceV > 0 and klonV <= 0 and unmaterialV <= 0:
-		!set damSum = damage + damageM
-		!set defence -= damSum
+		!!set damSum = damage + damageM
+		!!set defence -= damSum
 		set defenceV -= damage
 		'<b><font color="green">You have caused damage <<damage>> Protection of the enemy units</font></b>'
 		xgt 'fight', 'sta'
@@ -115,15 +115,15 @@ if $ARGS[0] = 'damage':
 	end
 
 	if barierV > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barierV >= damage:
 			'<b><font color="red"><<$nameV>> easily withstood your butt</font></b>'
 			xgt 'fight', 'sta'
 		end
 
 		if barierV < damage:
-			!set manna -= damageM
-			!set health -= damage
+			!!set manna -= damageM
+			!!set health -= damage
 			set damage -= barierV
 			set healthV -= damage
 
@@ -139,7 +139,7 @@ if $ARGS[0] = 'damage':
 			end
 
 			'<b><font color="green">You have caused damage <<damage>> units</font></b>'
-			!'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
+			!!'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
 
 			if zerkaloV > 0:
 				set zerkaloV -= 1
@@ -154,7 +154,7 @@ end
 
 if $ARGS[0] = 'atakW':
 	cla
-	!расчет попадания уворота
+	!!расчет попадания уворота
 	set poSp = speed * 20 / 100
 	set uvAg = agilV * 20 / 100
 	set poBox = react * 20 / 100
@@ -166,13 +166,13 @@ if $ARGS[0] = 'atakW':
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
-		!крит, очень точное попадание
+		!!крит, очень точное попадание
 			'<b><font color="red">critical hits</font></b>'
 			xgt 'atakA', 'uronKritW'
 		end
 
 		if popad < uvorot + uvorKoef:
-			!нормальное попадание
+			!!нормальное попадание
 			'<b><font color="red">Contact</font></b>'
 			xgt 'atakA', 'uronW'
 		end
@@ -226,7 +226,7 @@ if $ARGS[0] = 'damageW':
 	if defenceV > 0 and klonV <= 0 and unmaterialV <= 0:
 		set damSum = damage + damageM
 		set defenceV -= damSum
-		!set defenceV -= damage
+		!!set defenceV -= damage
 		'<b><font color="green">You have caused damage <<damSum>> Protection of the enemy units</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -244,7 +244,7 @@ if $ARGS[0] = 'damageW':
 	end
 
 	if barierV > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barierV >= damage:
 			'<b><font color="red"><<$nameV>> easily withstood your butt</font></b>'
 			xgt 'fight', 'sta'
@@ -253,7 +253,7 @@ if $ARGS[0] = 'damageW':
 		if barierV < damage:
 			set mannaV -= damageM
 			set healthV -= damage
-			!set healthV -= damage
+			!!set healthV -= damage
 			'<b><font color="green">You have caused damage <<damage>> units</font></b>'
 			'<b><font color="green">You have caused damage to the enemy manna <<damageM>> units</font></b>'
 
@@ -269,4 +269,3 @@ if $ARGS[0] = 'damageW':
 end
 
 --- atakA ---------------------------------
-

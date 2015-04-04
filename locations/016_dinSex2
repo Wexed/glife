@@ -3,7 +3,7 @@ $d_vag_sex_dildo = {
 	frost = 0
 
 	if mesec > 0:
-		!periods, orgasm is not possible
+		!!periods, orgasm is not possible
 		set horny = 0
 		set manna -= 10
 		set willpower -= 10
@@ -11,24 +11,24 @@ $d_vag_sex_dildo = {
 	end
 
 	if mesec <= 0 and vagina > 0:
-		!no monthly
-		!horny - excitement
-		!vagina - the elasticity of the vagina
-		!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
-		!dick - penis Man
-		!orgazm - Total coefficient of pleasure
-		!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
+		!!no monthly
+		!!horny - excitement
+		!!vagina - the elasticity of the vagina
+		!!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
+		!!dick - penis Man
+		!!orgazm - Total coefficient of pleasure
+		!!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
 
 		set smazka = horny / 10
 		set prinat = smazka + vagina
 
 		if dick >= prinat * 2:
-			!member of the critical features more years
+			!!member of the critical features more years
 			set orgazm = 0
 		end
 
 		if dick < prinat * 2 and dick > prinat:
-			!member more options gg
+			!!member more options gg
 			if horny >= 100:set orgazm = 5
 			if horny >= 90 and horny < 100:set orgazm = 4
 			if horny >= 80 and horny < 90:set orgazm = 3
@@ -38,7 +38,7 @@ $d_vag_sex_dildo = {
 		end
 
 		if dick <= prinat and dick >= vagina:
-			!Member fewer opportunities gg
+			!!Member fewer opportunities gg
 				if horny >= 80:set orgazm = 5
 				if horny >= 60 and horny < 80:set orgazm = 4
 				if horny >= 40 and horny < 60:set orgazm = 3
@@ -99,14 +99,14 @@ $d_vag_sex_dildo = {
 		end
 
 		if orgazm = 3:
-			!set horny = horny + 5
+			!!set horny = horny + 5
 			set manna += 5
 			set willpower += 5
 			'You flinched from feeling, your pussy stretched, when a thrust <<dick>> inch dildo. Between the legs becomes a little nice, when you fuck themselves with dildos.'
 		end
 
 		if orgazm = 4:
-			!set horny = horny + 10
+			!!set horny = horny + 10
 			set manna += 10
 			set willpower += 10
 			'You flinched from feeling, your pussy stretched, when a thrust <<dick>> inch dildo. Between the legs becomes a little nice, when you fuck themselves with dildos. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of. '
@@ -147,7 +147,7 @@ $d_analsex_dildo = {
 
 	if analplugin = 1:
 		!!!WD:No Anal Lube if Anal Plug
-		!analpluginbonus = 10
+		!!analpluginbonus = 10
 		lubonus = 10
 		!!!
 		analplugin = 0
@@ -216,7 +216,7 @@ $d_strapon_vag = {
 	frost = 0
 
 	if mesec > 0:
-		!periods, orgasm is not possible
+		!!periods, orgasm is not possible
 		set horny = 0
 		set manna -= 10
 		set willpower -= 10
@@ -224,23 +224,23 @@ $d_strapon_vag = {
 	end
 
 	if mesec <= 0 and vagina > 0:
-		!no monthly
-		!horny - excitement
-		!vagina - the elasticity of the vagina
-		!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
-		!dick - penis Man
-		!orgazm - Total coefficient of pleasure
-		!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
+		!!no monthly
+		!!horny - excitement
+		!!vagina - the elasticity of the vagina
+		!!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
+		!!dick - penis Man
+		!!orgazm - Total coefficient of pleasure
+		!!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
 		set smazka = horny/10
 		set prinat = smazka + vagina
 
 		if dick >= prinat * 2:
-			!member of the critical features more years
+			!!member of the critical features more years
 			set orgazm = 0
 		end
 
 		if dick < prinat * 2 and dick > prinat:
-			!member more options gg
+			!!member more options gg
 
 			if horny >= 100:set orgazm = 5
 			if horny >= 90 and horny < 100:set orgazm = 4
@@ -251,7 +251,7 @@ $d_strapon_vag = {
 		end
 
 		if dick <= prinat and dick >= vagina:
-			!Member fewer opportunities gg
+			!!Member fewer opportunities gg
 
 			if horny >= 80:set orgazm = 5
 			if horny >= 60 and horny < 80:set orgazm = 4
@@ -313,14 +313,14 @@ $d_strapon_vag = {
 		end
 
 		if orgazm = 3:
-			!set horny += 5
+			!!set horny += 5
 			set manna += 5
 			set willpower += 5
 			'You flinched from feeling, your pussy stretched, when <<$boy>> stuck in you <<dick>> cm strap. Between the legs becomes a little nice, when <<$boy>> you fucking threesome.'
 		end
 
 		if orgazm = 4:
-			!set horny = horny + 10
+			!!set horny = horny + 10
 			set manna = manna + 10
 			set willpower = willpower + 10
 			'You flinched from feeling, your pussy stretched, when <<$boy>> stuck in you <<dick>> cm strap. Between the legs becomes a little nice, when <<$boy>> fuck you using the strap. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of. '
@@ -361,7 +361,7 @@ $d_strapon_anal = {
 
 	if analplugin = 1:
 		!!!WD:No Anal Lube if Anal Plug
-		!analpluginbonus = 10
+		!!analpluginbonus = 10
 		lubonus = 10
 		!!!
 		analplugin = 0
@@ -428,7 +428,7 @@ $doublepenetration = {
 	set prinat = smazka + vagina
 
 	if dick > prinat:
-		!member more options gg
+		!!member more options gg
 		if vgape < 3:vgape = 3
 
 		vgapetime = totminut
@@ -436,7 +436,7 @@ $doublepenetration = {
 	end
 
 	if dick <= prinat and dick >= vagina:
-		!Member fewer opportunities gg
+		!!Member fewer opportunities gg
 		if vgape = 2:vgape = 3
 		if vgape < 2:vgape = 2
 
@@ -485,7 +485,7 @@ $doublepenetration = {
 	end
 
 	if mesec > 0:
-		!periods, orgasm is not possible
+		!!periods, orgasm is not possible
 		set horny = 0
 		set manna -= 10
 		set willpower -= 10
@@ -541,9 +541,8 @@ $doublepenetration = {
 	if anus < dick2:anus += 1
 
 
-	!sex += 1
+	!!sex += 1
 	gs 'stat'
 }
 
 --- dinSex2 ---------------------------------
-

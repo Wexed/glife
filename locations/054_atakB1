@@ -2,7 +2,7 @@
 
 if $ARGS[0] = 'atak':
 	cla
-	!расчет попадания уворота
+	!!расчет попадания уворота
 	set poSp = speedV * 20 / 100
 	set uvAg = agil * 20 / 100
 	set poBox = reactV * 20 / 100
@@ -14,14 +14,14 @@ if $ARGS[0] = 'atak':
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
-			!крит, очень точное попадание
+			!!крит, очень точное попадание
 			'<b><font color="green">critical hits</font></b>'
 			gs 'atakB1', 'uronKrit'
 		end
 
 		if popad < uvorot + uvorKoef:
-			!нормальное попадание
-			!атаковал противник
+			!!нормальное попадание
+			!!атаковал противник
 			'<b><font color="green">Contact</font></b>'
 			gs 'atakB1', 'uron'
 		end
@@ -53,7 +53,7 @@ if $ARGS[0] = 'damage':
 		if dospeh > 0:set damage -= dospehDefV & set dospehEn -= 1
 		if damage < 0:set damage = 0
 		set health -= damage
-		!set manna -= damageM
+		!!set manna -= damageM
 
 		if eleShV > 0:
 			set stun = rand(eleShV, eleShV * 3)
@@ -61,7 +61,7 @@ if $ARGS[0] = 'damage':
 		end
 
 		'<b><font color="red">Protection of the enemy caused you damage <<damage>> units</font></b>'
-		!'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
+		!!'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
 
 		if zerkalo > 0:
 			set zerkalo -= 1
@@ -69,39 +69,39 @@ if $ARGS[0] = 'damage':
 			'<b><font color="green">You are reflected damage from the defense and protection of the enemy received <<damage>> points of damage</font></b>'
 		end
 
-		!xgt 'fight', 'sta'
+		!!xgt 'fight', 'sta'
 	end
 
 	if defence > 0 and klon <= 0 and unmaterial <= 0:
-		!set damSum = damage + damageM
-		!set defence -= damSum
+		!!set damSum = damage + damageM
+		!!set defence -= damSum
 		set defence -= damage
 		'<b><font color="red">your defense harmed <<damage>> units from the defense</font></b>'
-		!xgt 'fight', 'sta'
+		!!xgt 'fight', 'sta'
 	end
 
 	if klon > 0 and unmaterial <= 0:
 		set klon -= 1
 		'<b><font color="red">destroy your clone</font></b>'
-		!xgt 'fight', 'sta'
+		!!xgt 'fight', 'sta'
 	end
 
 	if unmaterial > 0:
 		set unmaterial -= 1
 		'<b><font color="green">Beat the defense went through you. YOU is not material</font></b>'
-		!xgt 'fight', 'sta'
+		!!xgt 'fight', 'sta'
 	end
 
 	if barier > 0:
-		!барьер именитета для урона
+		!!барьер именитета для урона
 		if barier >= damage:
 			'<b><font color="green">You can easily withstand the impact of the defense</font></b>'
-			!xgt 'fight', 'sta'
+			!!xgt 'fight', 'sta'
 		end
 
 		if barier < damage:
-			!set manna -= damageM
-			!set health -= damage
+			!!set manna -= damageM
+			!!set health -= damage
 			set health -= damage
 
 			if eleShV > 0:
@@ -110,7 +110,7 @@ if $ARGS[0] = 'damage':
 			end
 
 			'<b><font color="red">You have harmed <<damage>> units from the defense</font></b>'
-			!'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
+			!!'<b><font color="red">caused damage your manna <<damageM>> units</font></b>'
 
 			if zerkalo > 0:
 				set zerkalo -= 1
@@ -119,9 +119,8 @@ if $ARGS[0] = 'damage':
 			end
 		end
 
-		!xgt 'fight', 'sta'
+		!!xgt 'fight', 'sta'
 	end
 end
 
 --- atakB1 ---------------------------------
-

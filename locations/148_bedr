@@ -1,9 +1,9 @@
 # bedr
 
 act 'The corridor':
-	!if nude = 0:
+	!!if nude = 0:
 	gt 'korr'
-	!end
+	!!end
 	!'if nude = 1:
 	cla
 	'You look at the underwear.'
@@ -17,12 +17,12 @@ act 'The corridor':
 			set tanga = 0
 			gt 'loker', 'start'
 		end
-	end'
+	end'!
 end
 
 $metkaM = $ARGS[0]
 $locM = $CURLOC
-!The new menu: end
+!!The new menu: end
 
 if magik >= 6 and spellbefshild = 1 and tobiQW = 0:gt 'tobiQW', 'start'
 
@@ -241,4 +241,3 @@ if dur > 0 and narkday ! day:
 end
 
 --- bedr ---------------------------------
-

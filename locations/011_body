@@ -11,7 +11,7 @@ else
 	$anus = 'In your <a href="exec:view''picb/analplug.jpg''">anus</a> you have an anal plug inserted.'
 end
 
-!'<a href="exec:view''images/body/1.jpg''">anus</a>'
+!!'<a href="exec:view''images/body/1.jpg''">anus</a>'
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!SIZE AND WEIGHT
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -85,7 +85,7 @@ if hbraids >= 1:
 	set hpingripw = 0
 	set hbangs = 0
 	set hpigtail = 0
-end	
+end
 
 if hapri = 0:set $hapri = '<b>tangled</b>, you should comb it, to keep it healthy'
 if hapri = 1:set $hapri = 'neatly arranged'
@@ -119,18 +119,18 @@ if hairlength > 80 and hairlength <= 160:set $hair = 'You have <<$curly>><<$hcol
 if hairlength > 160 and hairlength <= 260:set $hair = 'You have <<$curly>><<$hcol>> hair<<$hbangs>>. Your hair reaches your shoulders, with several strains going beyond. Currently your hair is <<$hapri>>.<<$hscrunch>><<$hpingrip>><<$hbraids>><<$hpigtail>>'
 if hairlength > 260 and hairlength <= 400:set $hair = 'You have <<$curly>><<$hcol>> hair<<$hbangs>>. As your hair reaches your bra-strapline, hairdress would consider this a rather long hair style, yet beautiful styles are created with this length. Your hair is <<$hapri>>.<<$hscrunch>><<$hpingrip>><<$hbraids>><<$hpigtail>>'
 if hairlength > 400:set $hair = 'Your very long <<$hcol>> hair<<$hbangs>>, that goes beyond your bra-strapline. Rapunzel would be jealous. Your hair is currently <<$hapri>>.<<$hscrunch>><<$hbraids>>'
-!if hcol = 0 and curly <= 0:set $hair = 'You have <<$hapri>> straight, black hair.'
-!if hcol = 1 and curly <= 0:set $hair = 'You have <<$hapri>> straight, brown hair.'
-!if hcol = 2 and curly <= 0:set $hair = 'You have <<$hapri>> straight, red hair.'
-!if hcol = 3 and curly <= 0:set $hair = 'You have <<$hapri>> straight, blonde hair.'
-!if hcol = 0 and curly > 0:set $hair = 'You have <<$hapri>> curly, black hair.'
-!if hcol = 1 and curly > 0:set $hair = 'You have <<$hapri>> curly, brown hair.'
-!if hcol = 2 and curly > 0:set $hair = 'You have <<$hapri>> curly red hair.'
-!if hcol = 3 and curly > 0:set $hair = 'You have <<$hapri>> curly blonde hair.'
-!if hcol = 0:set $hair = 'You have <<$hapri>> <<$curly>>, black hair.'
-!if hcol = 1:set $hair = 'You have <<$hapri>> <<$curly>>, brown hair.'
-!if hcol = 2:set $hair = 'You have <<$hapri>> <<$curly>>, red hair.'
-!if hcol = 3:set $hair = 'You have <<$hapri>> <<$curly>>, blonde hair.'
+!!if hcol = 0 and curly <= 0:set $hair = 'You have <<$hapri>> straight, black hair.'
+!!if hcol = 1 and curly <= 0:set $hair = 'You have <<$hapri>> straight, brown hair.'
+!!if hcol = 2 and curly <= 0:set $hair = 'You have <<$hapri>> straight, red hair.'
+!!if hcol = 3 and curly <= 0:set $hair = 'You have <<$hapri>> straight, blonde hair.'
+!!if hcol = 0 and curly > 0:set $hair = 'You have <<$hapri>> curly, black hair.'
+!!if hcol = 1 and curly > 0:set $hair = 'You have <<$hapri>> curly, brown hair.'
+!!if hcol = 2 and curly > 0:set $hair = 'You have <<$hapri>> curly red hair.'
+!!if hcol = 3 and curly > 0:set $hair = 'You have <<$hapri>> curly blonde hair.'
+!!if hcol = 0:set $hair = 'You have <<$hapri>> <<$curly>>, black hair.'
+!!if hcol = 1:set $hair = 'You have <<$hapri>> <<$curly>>, brown hair.'
+!!if hcol = 2:set $hair = 'You have <<$hapri>> <<$curly>>, red hair.'
+!!if hcol = 3:set $hair = 'You have <<$hapri>> <<$curly>>, blonde hair.'
 
 
 !!! Maruda Hair Mod
@@ -148,6 +148,7 @@ if lipbalmstat > 0:
 else
 	$lipbalmstat = ''
 end
+!!!
 
 if pirsA = 1:$pirsA = 'When you talk, your conversation partner can get a glance at your tongue piercing.'
 if pirsA = 0:$pirsA = ''
@@ -256,7 +257,7 @@ if vidage >= 45:vidagebonus = 50
 
 if age < 18:leghair = -5
 
-set vnesh = (curlykoef + tits + lip + tanKoef + skin + mop + resnic + glaraz + bodykoef + legkoef + lobkoef + odevnesh + hapri + bonusZ + lipbalmKoef + brokoef) - (sweatKoef + vidagebonus) - (zub * 2) - glassvnesh
+set vnesh = curlykoef + tits + lip + tanKoef + skin + mop + resnic + glaraz + bodykoef + legkoef + lobkoef + odevnesh + hapri + bonusZ + lipbalmKoef + brokoef - sweatKoef + vidagebonus - zub * 2 - glassvnesh
 
 if vnesh < 0:vnesh = 0
 
@@ -285,7 +286,7 @@ if vnesh >= 50:set $vnesh = 'Your appearence is divine! Noone is able to take hi
 musle = strenbuf + vitalbuf
 
 if musle >= salo:
-	!muscular type
+	!!muscular type
 		if bedra < 60:set $body = 'You are very thin and fat on the body virtually no muscles act through the skin.'
 		if bedra >= 60 and bedra < 70:set $body = 'You are very thin and fat on the body virtually no muscles act through the skin.'
 		if bedra >= 70 and bedra < 80:set $body = 'You are thin, fat on the body virtually no muscles act through the skin.'
@@ -295,7 +296,7 @@ if musle >= salo:
 		if bedra >= 110 and bedra < 120:set $body = 'Body fat there is little, through the skin are the massive muscles.'
 		if bedra >= 120:set $body = 'Body fat there is little, through the skin are the massive muscles.'
 	else
-		!bold type
+		!!bold type
 		if bedra < 60:set $body = 'You are very lean and you have virtually no muscle.'
 		if bedra >= 60 and bedra < 70:set $body = 'You are very thin girl with a small soft booty and you are virtually no muscle.'
 		if bedra >= 70 and bedra < 80:set $body = 'You are very skinny girl.'
@@ -309,4 +310,3 @@ if musle >= salo:
 	$fat = $body
 
 --- body ---------------------------------
-

@@ -1,6 +1,6 @@
 # mother
 motherAge = age + 19
-!Model Olga Kabaeva
+!!Model Olga Kabaeva
 if momslut >= 2 and mother < 40:mother = 40
 gs 'stat'
 '<center><b><font color="maroon">Mother</font></b></center>'
@@ -33,54 +33,56 @@ if SchoolAtestat = 1 and SAtestatGift = 0:
 end
 
 if hour > 5:
-if abort = 1 and pregTalkFamily = 1:
-	pregTalkFamily = 2
-	mother = 0
-	'Mother looked sadly at you "What are you still a fool! Still had an abortion, and if now you will not have children? What do you think will be forever young and whole life will be held in gladness?"'
-end
- 
-if momslut = 1:
-	act 'Say, you vidili mother fucking master cafe':
+	if abort = 1 and pregTalkFamily = 1:
+		pregTalkFamily = 2
+		mother = 0
+		'Mother looked sadly at you "What are you still a fool! Still had an abortion, and if now you will not have children? What do you think will be forever young and whole life will be held in gladness?"'
+	end
+
+	if momslut = 1:
+		act 'Say, you vidili mother fucking master cafe':
+			cls
+			minut += 5
+			momslut = 2
+			gs 'stat'
+			'<center><b><font color="maroon">Mom</font></b></center>'
+			'<center><img src="images/qwest/alter/mother.jpg"></center>'
+			'You said the mother, you`ve seen it in stock cafe with a host of cafes. Mother noticeably pale and sat down on a stool. "And what you saw?" You answered it, they saw as she sucked in a host cafes, and then he fucked her doggy style. Mother lowered her eyes "Well yes, I sleep with Slava. But I want to warn you, blackmail me you did not get." The mother looked into your eyes "All what you can is achieved, is to destroy the family."'
+
+			act 'Leave':gt $loc, $metka
+		end
+	end
+
+	if preg = 1 and pregTalkFamily = 0:
+		act 'Tell your mother that you are pregnant':
+			cls
+			minut += 5
+			mother = 20
+			pregTalkFamily = 1
+			gs 'stat'
+			'<center><b><font color="maroon">Mom</font></b></center>'
+			'<center><img src="images/qwest/alter/mother.jpg"></center>'
+			'You said the mother, you are pregnant. Mother with wide-eyed helplessly sat on a stool. She said sadly "Well. I was afraid of this. Now do not try to have an abortion, if you do an abortion, in the future is unlikely you manage to have children. You`ll have to have a child."'
+
+			act 'Leave':gt $loc, $metka
+		end
+	end
+
+	act 'Asking for money':
 		cls
 		minut += 5
-		momslut = 2
 		gs 'stat'
-		'<center><b><font color="maroon">Mom</font></b></center>'
+		'<center><b><font color="maroon">Mother</font></b></center>'
 		'<center><img src="images/qwest/alter/mother.jpg"></center>'
-		'You said the mother, you`ve seen it in stock cafe with a host of cafes. Mother noticeably pale and sat down on a stool. "And what you saw?" You answered it, they saw as she sucked in a host cafes, and then he fucked her doggy style. Mother lowered her eyes "Well yes, I sleep with Slava. But I want to warn you, blackmail me you did not get." The mother looked into your eyes "All what you can is achieved, is to destroy the family."'
+		'You asked my mother money.'
 
-		act 'Leave':gt $loc, $metka
-	end
-end
- 
-if preg = 1 and pregTalkFamily = 0:
-	act 'Tell your mother that you are pregnant':
-		cls
-		minut += 5
-		mother = 20
-		pregTalkFamily = 1
-		gs 'stat'
-		'<center><b><font color="maroon">Mom</font></b></center>'
-		'<center><img src="images/qwest/alter/mother.jpg"></center>'
-		'You said the mother, you are pregnant. Mother with wide-eyed helplessly sat on a stool. She said sadly "Well. I was afraid of this. Now do not try to have an abortion, if you do an abortion, in the future is unlikely you manage to have children. You`ll have to have a child."'
+		if SchoolAtestat = 0:
+			if mother > 80:
+				if motherPayDay = day:'Mother frowned "dochura, I told you already gave the money!"'
 
-		act 'Leave':gt $loc, $metka
-	end
-end
-act 'Asking for money':
-	cls
-	minut += 5
-	gs 'stat'
-	'<center><b><font color="maroon">Mother</font></b></center>'
-	'<center><img src="images/qwest/alter/mother.jpg"></center>'
-	'You asked my mother money.'
+				if motherPayDay ! day:
+					motherPayDay = day
 
-	if SchoolAtestat = 0:
-		if mother > 80:
-			if motherPayDay = day:'Mother frowned "dochura, I told you already gave the money!"'
-
-			if motherPayDay ! day:
-				motherPayDay = day
 					if Suspeh >= 70:
 						if Suspeh < 90:
 							money += 150
@@ -352,4 +354,3 @@ if week = 6 and dostupindorf = 1:
 end
 
 --- mother ---------------------------------
-

@@ -9,7 +9,7 @@ end
 indorf = 0
 
 if indorf_month ! month:
-	!monthly
+	!!monthly
 	indorf_month = month
 	dostupindorf = 1
 end
@@ -17,14 +17,14 @@ end
 if week = 1 and dostupindorf = 1:dostupindorf = 0
 
 if week = 6 and hour >= 12 and dostupindorf = 1:
-	!go to the village
+	!!go to the village
 	indorf = 1
 	father_go = 0
 	mother_go = 0
 end
 
 if week = 7 and hour < 20 and dostupindorf = 1:
-	!go to the village
+	!!go to the village
 	indorf = 1
 	father_go = 0
 	mother_go = 0
@@ -176,4 +176,3 @@ if StoryLine > 0:
 end
 
 --- family ---------------------------------
-

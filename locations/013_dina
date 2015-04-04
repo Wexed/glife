@@ -63,7 +63,7 @@ $sitryogd = {
 	set will += 1
 	set manna += 5
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/bookYog.jpg"></center>'
+	!!'<center><img src="images/etogame/bookYog.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/yoga_dressed.jpg"></center>'
 	if nude = 1 and tanga = 1:'<center><img src="images/community/yoga_underwear.jpg"></center>'
@@ -85,7 +85,7 @@ $sitrskakd = {
 	set manna -= 1
 	set fat -= 1
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/skak.jpg"></center>'
+	!!'<center><img src="images/etogame/skak.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/rope_dressed.jpg"></center>'
 	if nude = 1 and tanga = 0:'<center><img src="images/community/rope_naked.jpg"></center>'
@@ -107,7 +107,7 @@ $sitrpressd = {
 	set manna -= 1
 	set fat -= 1
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/press.jpg"></center>'
+	!!'<center><img src="images/etogame/press.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/abdominal_dressed.jpg"></center>'
 	if nude = 1 and tanga = 1:'<center><img src="images/community/abdominal_underwear.jpg"></center>'
@@ -129,7 +129,7 @@ $sitrpushd = {
 	set manna -= 1
 	set fat -= 1
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/push.jpg"></center>'
+	!!'<center><img src="images/etogame/push.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/push_dressed.jpg"></center>'
 	if nude = 1 and tanga = 1:'<center><img src="images/community/push_underwear.jpg"></center>'
@@ -154,7 +154,7 @@ $gladbelo = {
 	set manna -= 10
 	set elektro += 10
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/belo.jpg"></center>'
+	!!'<center><img src="images/etogame/belo.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/iron_dressed.jpg"></center>'
 	if nude = 1 and tanga = 1:'<center><img src="images/community/iron_underwear.jpg"></center>'
@@ -176,9 +176,9 @@ $showerdin = {
 	set cumanus = 0
 }
 
-!WD: Kioks event replaced with new code from Przemar!Przemar:** KIOSK ** ver 02
-!Przemar:IMAGE NEEDED 'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles'
-!WD:set "SUB >= 15" for act - Will need balancing / playtesting
+!!WD: Kioks event replaced with new code from Przemar!Przemar:** KIOSK ** ver 02
+!!Przemar:IMAGE NEEDED 'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles'
+!!WD:set "SUB >= 15" for act - Will need balancing / playtesting
 $kiosksig = {
 	cls
 	gs 'stat'
@@ -293,7 +293,7 @@ $kiosksig = {
 							act 'Go away and buy cigarettes':gt $curloc
 						end
 					else
-						!Przemar:IMAGE NEEDED
+						!!Przemar:IMAGE NEEDED
 						'<center><img src="images/community/Image_needed.png"></center>'
 						'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles.'
 						minut += 240
@@ -323,9 +323,9 @@ $kiosksig = {
 
 
 $budilnik = {
-	'<b><center><font size=4><font color="black"> Clock</font></center></b>'
+	'<b><center><font size = 4><font color="black"> Clock</font></center></b>'
 	'Clock wound <<alarm1>> hours <<alarm2>> minutes'
-	'<b><center><font size=3><font color="black"> Hours Minutes</font></center></b>'
+	'<b><center><font size = 3><font color="black"> Hours Minutes</font></center></b>'
 	'<center><a href="exec:set alarm1 = 01 & gt $curloc">01</a> <a href="exec:set alarm1 = 02 & gt $curloc">02</a><a href="exec:set alarm1 = 03 & gt $curloc">03</a><a href="exec:set alarm1 = 04 & gt $curloc">04</a><a href="exec:set alarm1 = 05 & gt $curloc">05</a></center>'
 	'<center><a href="exec:set alarm1 = 06 & gt $curloc">06</a> <a href="exec:set alarm1 = 07 & gt $curloc">07</a><a href="exec:set alarm1 = 08 & gt $curloc">08</a><a href="exec:set alarm1 = 09 & gt $curloc">09</a><a href="exec:set alarm1 = 10 & gt $curloc">10</a><a href="exec:set alarm2 = 00 & gt $curloc">00</a><a href="exec:set alarm2 = 05 & gt $curloc">05 ( 3)<a href="exec:set alarm2 = 10 & gt $curloc">10</a><a href="exec:set alarm2 = 15 & gt $curloc">15</a></center>'
 	'<center><a href="exec:set alarm1 = 11 & gt $curloc">11</a> <a href="exec:set alarm1 = 12 & gt $curloc">12</a><a href="exec:set alarm1 = 13 & gt $curloc">13</a><a href="exec:set alarm1 = 14 & gt $curloc">14</a><a href="exec:set alarm1 = 15 & gt $curloc">15</a><a href="exec:set alarm2 = 20 & gt $curloc">20</a><a href="exec:set alarm2 = 25 & gt $curloc">25 ( 3)<a href="exec:set alarm2 = 30 & gt $curloc">30</a><a href="exec:set alarm2 = 35 & gt $curloc">35</a></center>'
@@ -720,7 +720,7 @@ $polactdog = {
 	cls
 	streetdogday = day
 
-	!if QWdogReiq = 0:QWdogReiq = 1 & QWdogreiqTimer = 7
+	!!if QWdogReiq = 0:QWdogReiq = 1 & QWdogreiqTimer = 7
 
 	zoo += 1
 	minut += 10
@@ -934,4 +934,3 @@ $youriqwest = {
 }
 
 --- dina ---------------------------------
-

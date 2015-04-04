@@ -8,7 +8,7 @@ if nude = 1:'<center><img src="images/pics/son.jpg"></center>'
 
 act 'Set Alarm Clock':gt 'budilnik', 'start'
 
-!if son < 10:
+!!if son < 10:
 	act 'Undress and go to bed':
 		savegame 'altavtosave.sav'
 		cls
@@ -37,11 +37,11 @@ act 'Set Alarm Clock':gt 'budilnik', 'start'
 
 			act 'Get out of bed and get dressed (0:15)':
 				cla
-				!set numdress = odedosna
+				!!set numdress = odedosna
 				set InSleep = 0
 				set minut += 15
 				set tanga = 1
-				!set nude = 0
+				!!set nude = 0
 				gt $locM, $metkaM
 			end
 
@@ -53,11 +53,11 @@ act 'Set Alarm Clock':gt 'budilnik', 'start'
 
 			act 'Get out of bed and get dressed (0:15)':
 				cla
-				!set numdress = odedosna
+				!!set numdress = odedosna
 				set InSleep = 0
 				set minut += 15
 				set tanga = 1
-				!set nude = 0
+				!!set nude = 0
 				gt $locM, $metkaM
 			end
 
@@ -66,7 +66,7 @@ act 'Set Alarm Clock':gt 'budilnik', 'start'
 
 		jump 'loopson'
 	end
-!end
+!!end
 
 act 'Get out of bed':
 	cla
@@ -74,4 +74,3 @@ act 'Get out of bed':
 end
 
 --- bedPar ---------------------------------
-
