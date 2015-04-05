@@ -1,5 +1,5 @@
 # spell
-	if $ARGS[0] = 'reset':
+if $ARGS[0] = 'reset':
 	cla
 	!!Creating fog
 	'Accumulated manna <<mannaReset>> units.'
@@ -13,9 +13,8 @@
 	end
 
 	act 'Physical attacks':gt 'boxing'
-	if magik > 0:
-		act 'Magical attacks':gt 'magik'
-	end
+
+	if magik > 0:act 'Magical attacks':gt 'magik'
 end
 
 if $ARGS[0] = 'unmat':

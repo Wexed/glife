@@ -5,19 +5,19 @@ if $ARGS[0] = 'start':
 	cla
 
 	!!in this block is selected on the basis of the variable program enemy attacks
-	if program = 0:xgt 'enemy', 'fighter'
-	if program = 1:	xgt 'enemy', 'fighter2'
-	if program = 2:xgt 'enemy', 'fighter3'
-	if program = 3:xgt 'enemy', 'fighter4'
-	if program = 4:xgt 'enemy', 'fighter5'
+	if program = 0:xgt 'enemy', 'fighter' !!!Action Programme simple attacker fizuhoy
+	if program = 1:	xgt 'enemy', 'fighter2' !!Action Programme fizuha and knives
+	if program = 2:xgt 'enemy', 'fighter3' !!Action Programme fizuha, knives, it_mists
+	if program = 3:xgt 'enemy', 'fighter4' !!Action Programme fizuha, knives, it_mists, clones
+	if program = 4:xgt 'enemy', 'fighter5' !!Action Programme fizuha, knives, it_mists, clones, paralysis
 
-	if program = 5:xgt 'enemy', 'kisame'
-	if program = 6:xgt 'enemy', 'tobi'
-	if program = 7:xgt 'enemy', 'gedomazo'
-	if program = 8:xgt 'enemy', 'gun'
-	if program = 9:xgt 'enemy', 'sasori'
-	if program = 10:xgt 'enemy', 'konan'
-	if program = 11:xgt 'enemy', 'hidan'
+	if program = 5:xgt 'enemy', 'kisame' !!Action Programme Kisame
+	if program = 6:xgt 'enemy', 'tobi' !!Action Programme Toby
+	if program = 7:xgt 'enemy', 'gedomazo' !!Action Programme Toby
+	if program = 8:xgt 'enemy', 'gun' !!program of action firearms
+	if program = 9:xgt 'enemy', 'sasori' !!Action Programme Sasori
+	if program = 10:xgt 'enemy', 'konan' !!Action Programme Conan
+	if program = 11:xgt 'enemy', 'hidan' !!Action Programme Hidan
 end
 
 if $ARGS[0] = 'hidan':
@@ -177,14 +177,14 @@ end
 if $ARGS[0] = 'tobi':
 	cla
 
-	!!программа атаки Тоби
+	!!program attacks Toby
 	if unmaterialV <= 0 and IzanagiV = 0 and GedoMazo = 0:
 		*clr
 		'<b><font color="red"><<$nameV>> fingers to his lips and said quietly, "KUCHIE SAINT BUT JITSU."</font></b>'
 		'<b><font color="red">you will see Huge stone statue of a demon, and you rushed to the attack.</font></b>'
 		set GedoMazo = 1
 		set $nameV = 'Gedo Mazo'
-		!!Статы
+		!!stats
 		set strenV = 1000
 		set speedV = 100
 		set agilV = 90
@@ -192,17 +192,17 @@ if $ARGS[0] = 'tobi':
 		set vitalV = 5000
 		set intelV = 50
 		set willV = 50
-		!!Навыки
+		!!skills
 		set magikV = 1
 		set boxingV = 100
 		set shootV = 100
-		!!Параметры
+		!!parameters
 		set healthV = vitalV * 10 + strenV * 5
 		set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
 		set willpowerV = willV * 10
 		set BonusAtakV = 0
 		set BonusDefV = 0
-		!!программа действий
+		!!Programme of Action
 		set barierV = 1500
 		set program = 7
 		xgt 'fight', 'start'

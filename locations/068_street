@@ -1,9 +1,9 @@
 # street
 $metka = $ARGS[0]
 $loc = $CURLOC
+music_on = 0
 gs 'dinam'
 '<center><b>Residential Area</b></center>'
-*nl
 '<center><img src="images/etogame/street.jpg"></center>'
 
 if opusk > 0 and housr > 0:'Near the entrance to the house you live there something written on the wall. It says:<b>"<<$name>> from apartment 69 is a cheap slut!"</b>'
@@ -273,7 +273,7 @@ end
 
 set streetrand = rand(0, 100)
 
-if streetrand = 40 and hour <= 3:
+if streetrand >= 100 and hour <= 3:
 	cla
 	*clr
 	'<center><img src="images/etogame/street.jpg"></center>'
@@ -310,7 +310,7 @@ if streetrand = 40 and hour <= 3:
 			set finrand = rand(0, 1)
 
 			if finrand = 0:
-				!!внутрь
+				!!inside
 				set cumpussy += 1
 				'Man groaned and you feel like jet of sperm hit you inside your body.'
 
@@ -323,7 +323,7 @@ if streetrand = 40 and hour <= 3:
 			end
 
 			if finrand = 1:
-				!!наружу
+				!!out
 				set cumass += 1
 				'<<$nameV>> groaned and removing a member of you finished on your ass.'
 			end
@@ -372,7 +372,7 @@ if streetrand = 40 and hour <= 3:
 end
 
 set streetrand = rand(0, 100)
-if streetrand = 50 and money >= 1000 and daystart >= 10 and hour <= 3:
+if streetrand >= 100 and money >= 1000 and daystart >= 10 and hour <= 3:
 	cla
 	*clr
 	'<center><img src="images/etogame/street.jpg"></center>'
@@ -428,7 +428,7 @@ end
 
 set streetrand = rand(0, 100)
 
-if streetrand = 60 and money >= 1000 and daystart >= 10 and hour <= 3:
+if streetrand >= 100 and money >= 1000 and daystart >= 10 and hour <= 3:
 	cla
 	*clr
 	'<center><img src="images/etogame/street.jpg"></center>'

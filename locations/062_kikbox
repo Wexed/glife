@@ -11,7 +11,7 @@ end
 
 if $ARGS[0] = 'fight':
 	gs 'befKik'
-	'<b>======================== (ROUND <<round>>) ================= ==========</b>'
+	'<b>======================== (ROUND <<round>>) ===========================</b>'
 	if minround = 1:'<b>the fight 0:30</b>'
 	if minround = 2:'<b>the fight 1:00</b>'
 	if minround = 3:'<b>the fight 1:30</b>'
@@ -19,9 +19,9 @@ if $ARGS[0] = 'fight':
 	if minround = 5:'<b>the fight 2:30</b>'
 	'<b><<$nameV>></b> Life <b><font color="red"><<healthV>></font></b>, Endurance <b><font color="green"><<staminaV>></font></b>'
 	'Your life <b><font color="red"><<health>></font></b>, Endurance <b><font color="green"><<stamina>></font></b>'
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
 	'Your points <<pointKik>>Points opponent <<pointKikV>>'
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
 	gs 'initKik'
 
 	if hod = 0:
@@ -124,16 +124,16 @@ end
 if $ARGS[0] = 'sta':
 	cla
 	set ionce = 0
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
 	if minround = 1:'<b>the fight 1:00</b>'
 	if minround = 2:'<b>the fight 1:30</b>'
 	if minround = 3:'<b>the fight 2:00</b>'
 	if minround = 4:'<b>the fight 2:30</b>'
 	if minround = 5:'<b>the fight 3:00</b>'
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
 	'<b><<$nameV>></b> Life <b><font color="red"><<healthV>></font></b>, Endurance <b><font color="green"><<staminaV>></font></b>'
 	'Your life <b><font color="red"><<health>></font></b>, Endurance <b><font color="green"><<stamina>></font></b>'
-	'<b>=============================================== ===========</b>'
+	'<b>==========================================================</b>'
 
 	if health <= 0:
 		'<b><font color="red">You lost by TKO</font></b>'
