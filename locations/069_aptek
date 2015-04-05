@@ -21,7 +21,7 @@ if $ARGS[0] = 'start':
 	gs 'time'
 
 	if money >= 100:
-		act 'Buy condoms 100 rublesles':
+		act 'Buy condoms (100 rubles)':
 			portion = input ("How many packages you want to buy?")
 
 			if portion * 100 > money:'You do not have enough money.'
@@ -87,7 +87,7 @@ if $ARGS[0] = 'start':
 			if portion * 500 > money:'You do not have enough money.'
 
 			if portion * 500 <= money:
-			 	set lekarstvo += portion * 10
+				set lekarstvo += portion * 10
 				set money -= portion * 500
 				'<center><img src="images/pic/kassa.jpg"></center>'
 				'You bought drugs and paid the money to the cashier.'
@@ -163,12 +163,12 @@ if $ARGS[0] = 'start':
 				'Immediately about cash you drink tablet.'
 
 				act 'Move away from the counter':gt 'aptek', 'start'
-		 	end
+			end
 		end
 	end
 
-	act 'Quit':gt $loc
+	act 'Leave':gt $loc
 end
 !!!
 
---- gaptek ---------------------------------
+--- aptek ---------------------------------

@@ -35,7 +35,7 @@ $parkivent1 = {
 			cls
 			cla
 			set $nameV = 'Rapist'
-			!!Статы
+			!!stats
 			set strenV = 100
 			set speedV = 50
 			set agilV = 40
@@ -43,17 +43,17 @@ $parkivent1 = {
 			set vitalV = 50
 			set intelV = 10
 			set willV = 10
-			!!Навыки
+			!!skills
 			set magikV = 100
 			set boxingV = 50
 			set shootV = 100
-			!!Параметры
+			!!parameters
 			set healthV = vitalV * 10 + strenV * 5
 			set mannaV = intelV * 10 + magikV * 10
 			set willpowerV = willV * 10
 			set BonusAtakV = 0
 			set BonusDefV = 0
-			!!программа действий
+			!!Programme of Action
 			set program = 0
 			set RapistFight = 1
 
@@ -168,11 +168,11 @@ $parkivent2 = {
 				end
 
 				if protect ! 1:
-					!!не защищенный секс
+					!!unprotected sex
 					set finrand = rand(0, 1)
 
 					if finrand = 0:
-						!!внутрь
+						!!inside
 						set cumpussy += 1
 						'The guy groans loudly and you feel his hot cum flowing inside your pussy.'
 
@@ -185,7 +185,7 @@ $parkivent2 = {
 					end
 
 					if finrand = 1:
-						!!наружу
+						!!out
 						set cumass += 1
 						'<<$nameV>> groans as he cums inside your ass.'
 					end
@@ -251,11 +251,11 @@ $parkivent2 = {
 				end
 
 				if protect ! 1:
-					!!не защищенный секс
+					!!unprotected sex
 					set finrand = rand(0, 1)
 
 					if finrand = 0:
-						!!внутрь
+						!!inside
 						set cumpussy += 1
 						'The guy groans loudly and you feel his hot cum flowing inside your pussy.'
 
@@ -268,7 +268,7 @@ $parkivent2 = {
 					end
 
 					if finrand = 1:
-						!!наружу
+						!!out
 						set cumass += 1
 						'<<$nameV>> groans as he cums inside your ass.'
 					end

@@ -5,6 +5,8 @@ $din_show_tits = {
 	view 'images/body/t<<tits>>.jpg'
 }
 
+!!$objbody
+
 $objdescrip = {
 	clr
 	pl 'Your name is <<$name>> <<$surname>>.'
@@ -173,7 +175,7 @@ $objstatistika = {
 	if exhibi > 0:pl 'Experienced exhibitionism <<exhibi>>'
 	!!!
 	if stripdancesum > 0:pl '<<stripdancesum>> times dancing in the stripclub'
-	if profiDanceTime > 0:pl 'You danced <<profiDanceTime>> professionally.'
+	if profiDanceTime > 0:pl 'You danced <<profiDanceTime>> professionally.' & nl
 	if razradKik = 1:set $razradKik = 'You''re ranked III in amateur kickboxing'
 	if razradKik = 2:set $razradKik = 'You''re ranked II in amateur kickboxing'
 	if razradKik = 3:set $razradKik = 'You''re ranked I in amateur kickboxing'
@@ -272,9 +274,7 @@ $din_cheat_hapri = {
 		gs 'stat'
 		dynamic $din_cheat
 		exit
-	end
-
-	if cheatHapri = 1:
+	else
 		cheatHapri = 0
 		gs 'stat'
 		dynamic $din_cheat
@@ -287,9 +287,7 @@ $din_cheat_nomakeup = {
 		gs 'stat'
 		dynamic $din_cheat
 		exit
-	end
-
-	if cheatNomakeup = 1:
+	else
 		cheatNomakeup = 0
 		gs 'stat'
 		dynamic $din_cheat
@@ -302,9 +300,7 @@ $din_cheat_Nosweat = {
 		gs 'stat'
 		dynamic $din_cheat
 		exit
-	end
-
-	if cheatNosweat = 1:
+	else
 		cheatNosweat = 0
 		gs 'stat'
 		dynamic $din_cheat
@@ -317,9 +313,7 @@ $din_cheat_NoEat = {
 		gs 'stat'
 		dynamic $din_cheat
 		exit
-	end
-
-	if cheatNoEat = 1:
+	else
 		cheatNoEat = 0
 		gs 'stat'
 		dynamic $din_cheat
@@ -478,6 +472,7 @@ $objmagic = {
 	end
 }
 
+!!!Maruda hair mod
 $objface = {
 	!!if hcol = 0 and curly <= 0:view 'images/body/hcol.jpg'
 	!!if hcol = 1 and curly <= 0:view 'images/body/hcol1.jpg'
@@ -898,7 +893,9 @@ $objtattoos = {
 	$tatlegdi = {
 		view 'images/body/tatleg<<tatleg>>.jpg'
 	}
+
 	clr
+
 	if tatlip > 0:pl '<a href="exec:dynamic $tatlipdi ">tattoo on the lip</a>.'
 	if tatplech > 0:pl '<a href="exec:dynamic $tatpledi">tattoo on the shoulders</a>'
 	if tatback > 0:pl '<a href="exec:dynamic $tatbackdi">tattoo on the back</a>'

@@ -4,7 +4,7 @@ if music_on <> music_on_prev or $music_theme <> $music_theme_prev:
 	music_on_prev = music_on
 	$music_theme_prev = $music_theme
 
-	if $music_theme <>'':
+	if $music_theme <> '':
 		copyarr 'cur_theme', 'tracklist_<<$music_theme>>'
 		track[$music_theme] = track[$music_theme] - 1
 

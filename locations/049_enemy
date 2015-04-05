@@ -301,7 +301,7 @@ end
 
 if $ARGS[0] = 'kisame':
 	cla
-	!!программа атаки Кисаме
+	!!program attack Kisame
 
 	if defenceV <= 0 and kisamePro = 0:
 		set kisamePro = 1
@@ -366,7 +366,7 @@ end
 
 if $ARGS[0] = 'gun':
 	cla
-	!!непосредственно программа атаки
+	!!program directly attack
 	!!gs 'atak'
 	set damTipV = 1500
 	'<b><font color="red"><<$nameV>> shoots at you.</font></b>'
@@ -375,14 +375,14 @@ end
 
 if $ARGS[0] = 'fighter':
 	cla
-	!!непосредственно программа атаки
+	!!program directly attack
 	!!gs 'atak'
 	xgt 'atak', 'enemy'
 end
 
 if $ARGS[0] = 'fighter2':
 	cla
-	!!непосредственно программа атаки
+	!!program directly attack
 	set deystrand = rand(0, 1)
 
 	if deystrand = 0:xgt 'atak', 'enemy'
@@ -397,7 +397,7 @@ end
 if $ARGS[0] = 'fighter3':
 	cla
 
-	!!непосредственно программа атаки
+	!!program directly attack
 	if tuman = 0 and tumanV < 5 and mannaV > 10:
 		set mannaV -= 10
 		set tumanV += 10
@@ -420,7 +420,7 @@ end
 if $ARGS[0] = 'fighter4':
 	cla
 
-	!!непосредственно программа атаки
+	!!program directly attack
 	if tuman = 0 and tumanV < 5 and mannaV > 10:
 		set mannaV -= 10
 		set tumanV += 10
@@ -451,7 +451,7 @@ end
 if $ARGS[0] = 'fighter5':
 	cla
 
-	!!непосредственно программа атаки
+	!!program directly attack
 	if tuman = 0 and tumanV < 5 and mannaV > 10:
 		set mannaV -= 10
 		set tumanV += 10

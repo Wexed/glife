@@ -182,7 +182,7 @@ if modelfoto > 0 and kompromatLife < 1:
 	$kompromatFoto = 'These are photos of you being naked, when you were taking pictures at the model agence.'
 end
 
-shameless = guy + bj + anal + hj + slutty * 2 + gang * 2
+shameless = guy + bj + anal + hj + ((slutty + gang) * 2)
 moneySUM = money + karta + stolmoney
 cumSUM = cumbelly + cumpussy + cumass + cumlip + cumface + cumfrot + cumanus
 
@@ -384,14 +384,15 @@ if sec >= 60:
 	:loopsec
 	minut += 1
 	sec -= 60
-	jump 'loopsec'
+
+	if sec >= 60:jump 'loopsec'
 end
 
 if minut >= 60:
 	:loopmin
 	if SbrosNerdism = 1:nerdism = will / 10 + orgasm
 	if nerdism < 0:nerdism = 0
-
+	if obkvsdam > 0:set obkvsdam = rand(2, 5)
 	set hour += 1
 	set energy -= 1
 	set water -= 1
@@ -407,6 +408,8 @@ if minut >= 60:
 				if stren > 10:stren -= 1 & salo += 3
 				if vital > 10:vital -= 1 & salo += 3
 				if intel > 10:intel -= 1
+
+				alko -= alko / 2
 			end
 		end
 
@@ -481,7 +484,7 @@ end
 if hour >= 24:
 	if pirs_pain_ton > 0:pirs_pain_ton -= 1
 	if artompower <= 0:artompower = 3
- 	if brow > 0 and browper = 0:brow -= 1
+	if brow > 0 and browper = 0:brow -= 1
 
 	if shorthair = 1:
 		shorthairday += 1

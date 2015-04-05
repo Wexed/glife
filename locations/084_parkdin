@@ -1,7 +1,7 @@
 # parkdin
 $parkrandivdin = {
 	if hour > 7 and hour < 21:
-		!!день
+		!!day
 		if parkrand < 10 and parkrand > 0:
 			if parkrand = 1:dynamic $parkivent1
 			if parkrand = 2:dynamic $parkivent2
@@ -16,7 +16,7 @@ $parkrandivdin = {
 			dynamic $parkemptyevent
 		end
 	else
-		!!ночь
+		!!night
 		if parkrand >= 15:
 			dynamic $parkivent1
 		else

@@ -1,5 +1,4 @@
 # dinSex
-
 $universalklient = {
 	if klient_needs = 0:$klientwanttext = 'blow job'
 	if klient_needs = 1:$klientwanttext = 'sex'
@@ -455,6 +454,7 @@ $sexstart2 = {
 			set manna += 15
 			set willpower += 15
 			set orgasm += 1
+			vaginalOrgasm += 1
 			'You flinched from a pleasant feeling when your pussy is stretched by his dick. It feels good when his <<dick>> centimeter dick fucks your pussy. (! Pritnoe gradually grow warm and throbbing in the lower abdomen, then descend to the feeling you and your entire body covered hot waves of orgasm !), you scream with pleasure.'
 		end
 
@@ -674,6 +674,7 @@ $sexstart3 = {
 			set manna += 15
 			set willpower += 15
 			set orgasm += 1
+			vaginalOrgasm += 1
 			'You flinched from a pleasant feeling when your pussy rastyagivatsya start taking a dick. Between the legs becomes very warm and pleasant, when you jump on the strong <<dick>> centimeter penis. Pritnoe gradually grow warm and throbbing in the lower abdomen, then descend to the feeling you and your entire body covered hot waves of orgasm, you involuntarily scream with pleasure writhing on elde.'
 		end
 
@@ -1014,7 +1015,6 @@ $sexudo = {
 		end
 
 		if dick <= prinat and dick < vagina:
-
 			if silavag = 0:
 				if horny >= 100:set orgazm = 5
 				if horny >= 90 and horny < 100:set orgazm = 4
@@ -1129,6 +1129,7 @@ $sexudo = {
 			set manna += 15
 			set willpower += 15
 			set orgasm += 1
+			vaginalOrgasm += 1
 			'You flinched from a pleasant feeling when your pussy rastyagivatsya start taking a dick. Between the legs becomes very warm and pleasant, when strong <<dick>> centimeter dick fuck your pussy. Pritnoe gradually grow warm and throbbing in the lower abdomen, then descend to the feeling you and your entire body covered hot waves of orgasm, you involuntarily scream with pleasure writhing on elde.'
 		end
 
@@ -1187,13 +1188,24 @@ $sexcum = {
 				set cumass += 1
 				'<<$boy>> groaned and after pulling out came on your ass.'
 			end
+
+			narrand = rand(0, 100)
+
+			if narrand = 0:gs 'preg'
 		end
 	end
 
 	if protect = 1:
 		set protect = 0
 		'<<$boy>> groaned and you realized that he had came in the condom.'
+		prezrand = rand(0, 100)
+
+		if prezrand = 0:
+			'Pulling out of you dick <<$boy>> said "Hmm, condom burst"'
+			gs'preg'
+		end
 	end
+
 	set pose = 0
 }
 
@@ -1276,7 +1288,7 @@ $analsex2 = {
 		lubonus = 10
 		!!!
 		analplugin = 0
-		'You moan in pleasure while his dick moves inside your ass.'
+		'<<$boy>> pulled your butt plug out of your narrow and tight ass, '
 	end
 
 	if dick >= anus:set anus += 3
@@ -1298,8 +1310,10 @@ $analsex2 = {
 
 	'<<$boy>> pulled his fingers out of your ass and you felt his hard cock near your hole.'
 
+	!!!WD: Added lubonus
 	if anus + lubonus + 10 < dick:'You screamed and bit your lip from a sharp pain when his <<dick>> centimeter dick entered your ass.'
-	if anus + lubbonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
+	if anus + lubonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
+	!!!
 
 	'<<$boy>> stopped for a moment, giving your ass time to adjust to his cock in it, and then started to slowly move, stretching your anus.'
 
@@ -1359,8 +1373,8 @@ $analsexrude = {
 
 	'<<$boy>> pulled his fingers out of your priests and you feel his hard cock ran into your hole.'
 
-	if anus + lobonus + 10 < dick:'You screamed and bit your lip from a sharp pain when his <<dick>> centimeter dick entered your ass.'
-	if anus + lobonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
+	if anus + lubonus + 10 < dick:'You screamed and bit your lip from a sharp pain when his <<dick>> centimeter dick entered your ass.'
+	if anus + lubonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
 
 	'<<$boy>> stopped for a moment, giving your ass time to adjust to his cock in it, and then started to slowly move, stretching your anus.'
 

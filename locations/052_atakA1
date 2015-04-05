@@ -1,7 +1,7 @@
 # atakA1
 if $ARGS[0] = 'atak':
 	cla
-	!!расчет попадания уворота
+	!!payment hit dodge
 	set poSp = speedV * 20/100
 	set uvAg = agil * 20/100
 	set poBox = reactV * 20/100
@@ -13,14 +13,14 @@ if $ARGS[0] = 'atak':
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
-			!!крит, очень точное попадание
+			!!Crete, very direct hit
 			'<b><font color="red">critical hits</font></b>'
 			xgt 'atakA1', 'uronKrit'
 		end
 
 		if popad < uvorot + uvorKoef:
-			!!нормальное попадание
-			!!атаковал противник
+			!!normal hit
+			!!attack the enemy
 			'<b><font color="red">Contact</font></b>'
 			xgt 'atakA1', 'uron'
 		end
@@ -124,7 +124,7 @@ if $ARGS[0] = 'damage':
 	end
 
 	if barier > 0:
-		!!барьер именитета для урона
+		!!imeniteta barrier for damage
 		if barier >= damage:
 			'<b><font color="green">You can easily withstood the impact of the opponent</font></b>'
 			xgt 'fight', 'sta'
@@ -167,7 +167,7 @@ end
 
 if $ARGS[0] = 'atakW':
 	cla
-	!!расчет попадания уворота
+	!!payment hit dodge
 	set poSp = speedV * 20 / 100
 	set uvAg = agil * 20 / 100
 	set poBox = reactV * 20 / 100
@@ -179,13 +179,13 @@ if $ARGS[0] = 'atakW':
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
-			!!крит, очень точное попадание
+			!!Crete, very direct hit
 			'<b><font color="red">critical hits</font></b>'
 			xgt 'atakA1', 'uronKritW'
 		end
 
 		if popad < uvorot + uvorKoef:
-			!!нормальное попадание
+			!!normal hit
 			'<b><font color="red">Contact</font></b>'
 			xgt 'atakA1', 'uronW'
 		end
@@ -257,7 +257,7 @@ if $ARGS[0] = 'damageW':
 	end
 
 	if barier > 0:
-		!!барьер именитета для урона
+		!!imeniteta barrier for damage
 		if barier >= damage:
 			'<b><font color="red"><<$nameV>> easily withstood your butt</font></b>'
 			xgt 'fight', 'sta'

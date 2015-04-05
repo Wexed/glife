@@ -134,7 +134,7 @@ grupTipe[3] = 2
 $npcGo[3] = '<a href="exec:numnpc = 3 & gt ''Snpc''"><<$npcName[3]>> <<$npcSurName[3]>></a>'
 $npcName[4] = 'Igor'
 $npcSurName[4] = 'Kruglov'
-$npcText[4] = 'Igor Nosov is a friend of Dimka and they are always together.'
+$npcText[4] = 'Igor Nosov is the brother of Dimka and they are always together.'
 grupNPC[4] = 50
 npcPol[4] = 0
 grupTipe[4] = 3
@@ -202,16 +202,16 @@ grupNPC[13] = 50
 npcPol[13] = 1
 grupTipe[13] = 2
 $npcGo[13] = '<a href="exec:numnpc = 13 & gt ''Snpc''"><<$npcName[13]>> <<$npcSurName[13]>></a>'
-$npcName[14] = 'Katia'
+$npcName[14] = 'Katja'
 $npcSurName[14] = 'Meynold'
-$npcText[14] = 'Katia is a hot, but impulsive girl. Vick is her twin-sister.'
+$npcText[14] = 'Katja is a hot, but impulsive girl. Vick is her twin-sister.'
 grupNPC[14] = 50
 npcPol[14] = 1
 grupTipe[14] = 3
 $npcGo[14] = '<a href="exec:numnpc = 14 & gt ''Snpc''"><<$npcName[14]>> <<$npcSurName[14]>></a>'
-$npcName[15] = 'Vick'
+$npcName[15] = 'Vicky'
 $npcSurName[15] = 'Meynold'
-$npcText[15] = 'Vick is a very sensible girl. Katia is her twin sister.'
+$npcText[15] = 'Vicky is a very sensible girl. Katia is her twin sister.'
 grupNPC[15] = 50
 npcPol[15] = 1
 grupTipe[15] = 3
@@ -396,6 +396,7 @@ act 'Further':
 		volleyboll = 70
 		beg = 40
 		gsAboVolley = 120
+		dom = 10
 		!!!!!!!!!!!!!! Maruda Hair Mod
 		set hairlength = 97
 		set hcol = 3
@@ -406,6 +407,7 @@ act 'Further':
 		clr
 		dressB[5] = bedra
 		jeansB[1] = bedra
+		tan = 30
 		'You spent all your free time training your volleyball skills. Because of that you weren''t that good in school and had less friends.'
 
 		act 'Further':dynamic $din_alter_start_ev
@@ -427,6 +429,7 @@ act 'Further':
 		clr
 		dressB[5] = bedra
 		jeansB[1] = bedra
+		tan = 30
 		'You spent almost all your free time outdoors playing with other girls and boys. As a result, you know how to get yourself out of trouble. You aren''t interested in School and sports.'
 
 		act 'Further':dynamic $din_alter_start_ev

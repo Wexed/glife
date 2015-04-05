@@ -135,11 +135,10 @@ $sitrpushd = {
 	if nude = 1 and tanga = 1:'<center><img src="images/community/push_underwear.jpg"></center>'
 	if nude = 1 and tanga = 0:'<center><img src="images/community/push_naked.jpg"></center>'
 	!!!
-
 	'You do push-ups for fifteen minutes, developing your strength.'
-
 	pushnum = rand(stren / 10, stren / 5)
 	'<br>You managed to do <<pushnum>> push-ups. Your previous record is <<pushrecord>>.'
+
 	if pushrecord < pushnum:pushrecord = pushnum & 'This is a new record!'
 
 	act 'Exit':gt $curloc
@@ -320,7 +319,6 @@ $kiosksig = {
 
 	exit
 }
-
 
 $budilnik = {
 	'<b><center><font size = 4><font color="black"> Clock</font></center></b>'

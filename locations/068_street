@@ -74,7 +74,7 @@ if workDolgDay <= 0 and workDolg > 0:
 	if money >= workDolg:
 		money -= workDolg
 		workDolg = 0
-		'You take out your.'
+		'You gave money Bugay, they counted them.'
 
 		act 'Leave':gt $curloc
 
@@ -306,7 +306,7 @@ if streetrand = 40 and hour <= 3:
 		end
 
 		if protect ! 1:
-			!!не защищенный секс
+			!!unprotected sex
 			set finrand = rand(0, 1)
 
 			if finrand = 0:
@@ -340,7 +340,7 @@ if streetrand = 40 and hour <= 3:
 	act 'Fight':
 		cla
 		set $nameV = 'Rapist'
-		!!Статы
+		!!stats
 		set strenV = 100
 		set speedV = 50
 		set agilV = 40
@@ -348,17 +348,17 @@ if streetrand = 40 and hour <= 3:
 		set vitalV = 50
 		set intelV = 10
 		set willV = 10
-		!!Навыки
+		!!skills
 		set magikV = 100
 		set boxingV = 50
 		set shootV = 100
-		!!Параметры
+		!!parameters
 		set healthV = vitalV * 10 + strenV * 5
 		set mannaV = intelV * 10 + magikV * 10
 		set willpowerV = willV * 10
 		set BonusAtakV = 0
 		set BonusDefV = 0
-		!!программа действий
+		!!Programme of Action
 		set program = 0
 		set RapistFight = 1
 
@@ -394,7 +394,7 @@ if streetrand = 50 and money >= 1000 and daystart >= 10 and hour <= 3:
 
 		act 'Fight':
 			set $nameV = 'Rapist'
-			!!Статы
+			!!stats
 			set strenV = 100
 			set speedV = 50
 			set agilV = 40
@@ -402,17 +402,17 @@ if streetrand = 50 and money >= 1000 and daystart >= 10 and hour <= 3:
 			set vitalV = 50
 			set intelV = 10
 			set willV = 10
-			!!Навыки
+			!!skills
 			set magikV = 100
 			set boxingV = 50
 			set shootV = 100
-			!!Параметры
+			!!parameters
 			set healthV = vitalV * 10 + strenV * 5
 			set mannaV = intelV * 10 + magikV * 10
 			set willpowerV = willV * 10
 			set BonusAtakV = 0
 			set BonusDefV = 0
-			!!программа действий
+			!!Programme of Action
 			set program = 0
 			set RapistFight = 1
 
@@ -454,7 +454,7 @@ if streetrand = 60 and money >= 1000 and daystart >= 10 and hour <= 3:
 		end
 		if speed >= 60 and agil >= 60 and vital >= 60:
 			set $nameV = 'Rapist'
-			!!Статы
+			!!stats
 			set strenV = 100
 			set speedV = 50
 			set agilV = 40
@@ -462,17 +462,17 @@ if streetrand = 60 and money >= 1000 and daystart >= 10 and hour <= 3:
 			set vitalV = 50
 			set intelV = 10
 			set willV = 10
-			!!Навыки
+			!!skills
 			set magikV = 100
 			set boxingV = 50
 			set shootV = 100
-			!!Параметры
+			!!parameters
 			set healthV = vitalV * 10 + strenV * 5
 			set mannaV = intelV * 10 + magikV * 10
 			set willpowerV = willV * 10
 			set BonusAtakV = 0
 			set BonusDefV = 0
-			!!программа действий
+			!!Programme of Action
 			set program = 0
 			set RapistFight = 1
 

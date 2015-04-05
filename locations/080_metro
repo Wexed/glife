@@ -22,7 +22,7 @@ if $ARGS[0] = 'start':
 
 	if money >= 16:
 		if $loc ! 'street':
-			act 'Go to the residential area':
+			act 'Go to the residential area (16 rubles)':
 				set $loc = 'street'
 				gt 'metro', 'vagon'
 			end
@@ -36,7 +36,7 @@ if $ARGS[0] = 'start':
 		end
 
 		if $loc ! 'Nord':
-			act 'Go to the northern area':
+			act 'Go to the northern area (16 rubles)':
 				set $loc = 'Nord'
 				gt 'metro', 'vagon'
 			end

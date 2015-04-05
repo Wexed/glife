@@ -9,6 +9,7 @@
 
 act '<center><b>Original start</b></center>':
 	cla
+	music_on = 0
 	showstat 1
 	showobjs 1
 	addobj 'Player'
@@ -16,6 +17,7 @@ act '<center><b>Original start</b></center>':
 end
 
 act '<center>Original start (skip intro)</center>':
+	music_on = 0
 	gs 'begin1'
 	gt 'street'
 end

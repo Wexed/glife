@@ -16,7 +16,7 @@ if $ARGS[0] = 'start':
 	'Doctors appointments costs 1,000.'
 	'VD testing cost 1,000.'
 	*nl
-	'Abortion at the woman´s request can be made up to 84 days of pregnancy. The cost of abortion is 8,000 rubles.'
+	'Abortion at the woman´s request can be made up to 84 days of pregnancy. The cost of abortion is 20,000 rubles.'
 	*nl
 	'Be warned, abortions are dangerous to health. There is always a risk of complications and the possibility of sterility.'
 	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6:act 'Exit to replace':gt 'poli', 'beginwork'
@@ -211,15 +211,15 @@ if $ARGS[0] = 'start':
 		end
 	end
 
-	!!'Abortion on a woman´s request can be made up to 84 days of pregnancy. The cost of abortion 8,000 rubles'
+	!!'Abortion on a woman´s request can be made up to 84 days of pregnancy. The cost of abortion 20,000 rubles'
 	!!'Warn abortions are dangerous to health. There is always a risk of complications and the possibility of not getting pregnant in the future.'
 
-	if money >= 8000 and preg = 1 and pregtime < 84:
-		act 'Abortion (8,000 rubles)':
+	if money >= 20000 and preg = 1 and pregtime < 84:
+		act 'Abortion (20,000 rubles)':
 			cla
 			set vidage += 1
 			set abort += 1
-			set money -= 8000
+			set money -= 20000
 			set abortrand = rand(0, 10)
 
 			if age > 18:

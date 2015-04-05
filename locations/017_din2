@@ -16,14 +16,12 @@ $d_read_book = {
 
 		if f_book <= 0 and fantasybook <= 0 and w_book = 0 and womanbook = 0:'You scratch your head looking at already read the book "Eh, even read nothing, a walk or something on the market for a new book?"'
 
-		if f_book > 0:
-			if fantasybook <= 0:fantasybook = 5 & f_book -= 1
-		end
+		if f_book > 0:if fantasybook <= 0:fantasybook = 5 & f_book -= 1
 
 		if f_book > 0:'You still <<f_book>> do not read fantasy novels.'
 
 		if fantasybook > 0:
-			act 'Read fantasy book. There are <<fantasybook * 100>> more pages to read (01:00)':
+			act 'Read fantasy book. There are <<fantasybook * 100>> more pages to read (1:00)':
 				cls
 				fantasybook -= 1
 
@@ -63,7 +61,7 @@ $d_read_book = {
 		if w_book > 0:'You still <<w_book>> not read the novel female.'
 
 		if womanbook > 0:
-			act 'Read Women`s Novel. There are <<womanbook * 100>> more pages to read':
+			act 'Read Women`s Novel. There are <<womanbook * 100>> more pages to read (1:00)':
 				cls
 				womanbook -= 1
 

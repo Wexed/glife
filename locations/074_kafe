@@ -22,7 +22,7 @@ if $ARGS[0] = 'start':
 	!!act 'Agree':gt 'Kafe3', 'WC'
 
 	if money >= 100:
-		act 'Eat, 100 rubles':
+		act 'Eat (100 rubles)':
 			cla
 			*clr
 			frost = 0
@@ -912,7 +912,7 @@ if $ARGS[0] = 'razvod':
 	if deyst = 0:
 		'<<$boy>> has invited you to dance.'
 
-		act 'Dance':gt 'Kafe2', 'dance'
+		act 'Dance':gt 'cafe2', 'dance'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -922,7 +922,7 @@ if $ARGS[0] = 'razvod':
 	if deyst = 1:
 		'<<$boy>> asked permission to sit down at a table to you.'
 
-		act 'Drink':gt 'Kafe2', 'booze'
+		act 'Drink':gt 'cafe2', 'booze'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -931,7 +931,7 @@ if $ARGS[0] = 'razvod':
 
 	if deyst = 2:
 		'<<$boy>> has invited you to join the party on which he walks.'
-		act 'Agree':gt 'Kafe2', 'kampashka'
+		act 'Agree':gt 'cafe2', 'kampashka'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -941,7 +941,7 @@ if $ARGS[0] = 'razvod':
 	if deyst = 3:
 		'<<$boy>> drunk in the trash and going to douse you have an incredible smell. "Hey baby, what time to pull? Come have fun in the outhouse."'
 
-		act 'Agree':gt 'Kafe3', 'WC'
+		act 'Agree':gt 'cafe3', 'WC'
 
 		if horny < 95:
 			act 'Otshit':
@@ -953,7 +953,7 @@ if $ARGS[0] = 'razvod':
 
 					act 'Agree':
 						money += 2000
-						gt 'Kafe3', 'WC'
+						gt 'cafe3', 'WC'
 					end
 				else
 					'Well, okay, get out of here, you still have legs and curves fuck up like a monkey.'

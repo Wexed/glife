@@ -8,7 +8,7 @@ if analplugIN = 0:
 	if anus > 25 and anus <= 35:anpic = 5 & set $anus = 'Your <a href="exec:view''images/body/5.jpg''">anus</a> does not close anymore, you could put a fist through it and it wouldn''t stretch at all.'
 	if anus > 35:anpic = 6 & set $anus = 'Your <a href="exec:view''images/body/6.jpg''">anus</a> is almost completely destroyed and is a shapeless hole.' & $anustipe = 'destroyed'
 else
-	$anus = 'In your <a href="exec:view''picb/analplug.jpg''">anus</a> you have an anal plug inserted.'
+	$anus = 'In your <a href="exec:view''picb/analplug.jpg''">anus</a> you have a butt plug inserted.'
 end
 
 !!'<a href="exec:view''images/body/1.jpg''">anus</a>'
@@ -22,11 +22,11 @@ if dounspell = 0:
 	set vfat = salo / 10
 	set Kves = vmeat + vfat
 	set krost = rost - 130
-	set ves = Kves + krost - (agilbuf/10)
-	set talia = ves - (agilbuf/10) + waistShrink
-	set grudi = talia + 10 + vfat + silicone - waistShrink + brgrow
-	set bedra = talia + 15 + (vmeat/2) + vfat + hipGrow
-	set titK = grudi - talia + bgrow + brgrow
+	set ves = Kves + krost - (agilbuf / 10)
+	set talia = ves - (agilbuf / 10)
+	set grudi = talia + 10 + vfat + silicone
+	set bedra = talia + 15 + (vmeat / 2) + vfat
+	set titK = grudi - talia
 	if titK <= 10:set tits = 0
 	if titK > 10 and titK <= 15:set tits = 1
 	if titK > 15 and titK <= 20:set tits = 2
@@ -148,7 +148,6 @@ if lipbalmstat > 0:
 else
 	$lipbalmstat = ''
 end
-!!!
 
 if pirsA = 1:$pirsA = 'When you talk, your conversation partner can get a glance at your tongue piercing.'
 if pirsA = 0:$pirsA = ''
