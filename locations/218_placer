@@ -1,104 +1,38 @@
 # placer
-<<<<<<< 218_placer
-!$ev_name = 'Федор'
-!$ev_name_a = 'Федора'
-!$ev_name_om = 'Федором'
-!dick = 17
-!silavag = 0
-!gnpcSex[numnpc] - секс
-!grupNPC[numnpc] - отношения
-
-!наличие нпс теоретически могущих познакомиться
+!!$ev_name = 'Федор'
+!!$ev_name_a = 'Федора'
+!!$ev_name_om = 'Федором'
+!!dick = 17
+!!silavag = 0
+!!gnpcSex[numnpc] - секс
+!!grupNPC[numnpc] - отношения
+!!the presence of NPC theoretically able to meet
 mass_ver_zn = 0
-!хотят или нет нпс познакомиться
+!!want or do not meet NPCs
 ver_zn = 0
-!количество мужчин
+!!the number of men
 kol_man = 0
-!текст приветствия
+!!greeting text
 $text_znak = ''
-!возможность знания репы гг
+!!the possibility of knowledge turnip years
 know_status = 0
-!опознали репутацию или нет
+!!identified reputation or not
 know_gor_slut = 0
-!обнуление текста
+!!reset text
 $kol_man_text_no = ''
-
+plact = 0
 gs 'stat'
 $textEvent = ''
 if place = 0:
-!улица
+	!!street
 	if litltown = 1:$numplace = 'gorodok'
 end
-if place = 1:
-!сквер
-$numplace = 'gskver'
-end
-if place = 2:
-!кино
-=======
-!$ev_name='Fedor'
-!$ev_name_a='Fedor'
-!$ev_name_om='Fedor'
-!dick=17
-!silavag=0
-!gnpcSex[numnpc] - sex
-!grupNPC[numnpc] - relationship
 
-!the presence of NPC theoretically able to meet
-mass_ver_zn=0
-!want or do not meet NPCs
-ver_zn=0
-!the number of men
-kol_man=0
-!greeting text
-$text_znak=''
-!the possibility of knowledge turnip years
-know_status=0
-!identified reputation or not
-know_gor_slut=0
-!reset text
-$kol_man_text_no=''
-
-plact=0
-
-gs'stat'
-$textEvent=''
-if place=0:
-!street
-     if litltown=1:$numplace='gorodok'
-end
-if place=1:
-!square
-$numplace='gskver'
-end
-if place=2:
-!movie
->>>>>>> 218_placer
-
-end
-<<<<<<< 218_placer
-if place = 3:
-!домой к парню. Предлог видик
-=======
-if place=3:
-!home to the guy. preposition Vidic
->>>>>>> 218_placer
-
-end
-<<<<<<< 218_placer
-if place = 4:
-!дискотека в городке
-=======
-if place=4:
-!disco in town
->>>>>>> 218_placer
-
-end
-
-<<<<<<< 218_placer
+if place = 1:$numplace = 'gskver' !!сквер
+if place = 2:!!кино
+if place = 3:!!домой к парню. Предлог видик
+if place = 4:!!дискотека в городке
 gt 'placer_<<$numplace>>'
-=======
-gt'placer_<<$numplace>>'
->>>>>>> 218_placer
+
 --- placer ---------------------------------
 

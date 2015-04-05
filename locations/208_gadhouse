@@ -1,37 +1,28 @@
-<<<<<<< 208_gadhouse
-# gadhouse
-=======
 # Gadhouse
->>>>>>> 208_Gadhouse
 $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
 '<center><H4>cottage</H4></center>'
-<<<<<<< 208_gadhouse
-'<center><img src="images/qwest/gadukino/izba.jpg" ></center>'
-=======
-'<center><img src="qwest/gadukino/izba.jpg" ></center>'
->>>>>>> 208_Gadhouse
-'Simple village hut. In a small room is <a href="exec:GT ''loker'',''start''">cupboard</a> and <a href="exec:GT ''bedPar''">bed</a> where you can sleep. In a large room is <a href="exec:GT ''tvPar''">tv_set</a>. TV stands next to an ancient <a href="exec:GT ''mirror'',''start''">trellis</a>'
+'<center><img src="images/qwest/gadukino/izba.jpg"></center>'
+'Simple village hut. In a small room is <a href="exec:gt ''loker'', ''start''">cupboard</a> and <a href="exec:gt ''bedPar''">bed</a> where you can sleep. In a large room is <a href="exec:gt ''tvPar''">tv_set</a>. TV stands next to an ancient <a href="exec:gt ''mirror'', ''start''">trellis</a>'
 clr
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
+gs 'stat'
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 
-<<<<<<< 208_gadhouse
 act 'Go outside':
-	minut += 5 & gt'Gaddvor'
+	minut += 5
+	gt 'Gaddvor'
 end
 
 act 'Eat':
 	cla
 	*clr
-	gs'stat'
-
-	frost=0
-	'<center><img src="images/pics/food.jpg" ></center>'
+	gs 'stat'
+	frost = 0
+	'<center><img src="images/pics/food.jpg"></center>'
 	set minut += 30
 	set health += 10
 	set manna += 20
@@ -51,13 +42,11 @@ act 'Eat':
 
 	if energy < 20:
 		set energy += 20
-		!set fat = fat + 1
+		!!set fat = fat + 1
 		'You gladly ate cooked food.'
 	end
 
-	if water >= 20:
-		'Tea in you no longer climbs.'
-	end
+	if water >= 20:'Tea in you no longer climbs.'
 
 	if water < 20:
 		'You gladly drank a cup of tea.'
@@ -66,95 +55,25 @@ act 'Eat':
 
 	gs 'stat'
 
-	act 'Get up from the table':
-		gt $locM, $metkaM
-	end
+	act 'Get up from the table':gt $locM, $metkaM
 end
 
-=======
-
-act'Go outside':minut+=5&gt'Gaddvor'
-
-
- act 'Is_There':
- cla
- *clr
- gs'stat'
- frost=0
- '<center><img src="pics/food.jpg" ></center>'
- set minut = minut + 30
- set health = health + 10
- set manna = manna + 20
- wipo+=5
- salo+=1
-	 if energy >= 30:
-	  set fat = fat + 5
-	 'You can no longer have.'
-	 end
-	 if energy >= 20 and energy < 30:
-	 set fat = fat + 3
-	 set energy = energy + 10
-	 'You pushed through the power of a meal.'
-	 end
-	 if energy < 20:
-	 set energy = energy +20
-	 !set fat = fat + 1
-	 'You gladly ate cooked food.'
-	 end
-	 if water >= 20:
-	 'Tea in you no longer climbs.'
-	 end
-	 if water < 20:
-	 'You gladly drank a cup of tea.'
-	 set water = water +20
-	 end
- gs'stat'
- act 'Get up from the table':gt $locM, $metkaM
- end
-
-
-
->>>>>>> 208_Gadhouse
 dynamic $d_read_book
 
-<<<<<<< 208_gadhouse
 if indorf = 1:
 	'The room resting parents.'
 
 	if week = 7:
-		if hour >= 20:
-			gt 'farmhomeride'
-		end
+		if hour >= 20:gt 'farmhomeride'
 	end
-=======
-
-if indorf=1:
-'The room resting parents.'
-     if week=7:
-         if hour>=20:
-         gt'farmhomeride'
-         end
-     end
->>>>>>> 208_Gadhouse
 end
 
-<<<<<<< 208_gadhouse
 if monthbabkapay ! month:
 	monthbabkapay = month
 	money += 2000
-
 	gs 'stat'
-
 	'Grandma gives you two thousand.'
 end
---- gadhouse ---------------------------------
-=======
-if monthbabkapay!month:
-monthbabkapay=month
-money+=2000
-gs'stat'
-'Grandma gives you two thousand.'
-end
+
 --- Gadhouse ---------------------------------
 
->>>>>>> 208_Gadhouse

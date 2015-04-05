@@ -4,20 +4,21 @@ $loc = $CURLOC
 cls
 gs 'stat'
 gs 'time'
-<<<<<<< 263_gskver
-'<center><img src="images\gevent\skver.jpg"></center>'
+'<center><img src="images/gevent/skver.jpg"></center>'
 'Small park where people often rest, walk a couple, played by kids.'
 *nl
-if hour > 8 and hour < 19: 'Here is a small <a href="exec: minut += 5 & GT ''gskino''">Theater</a>'
 
-if GvstreBoy = 1: 'You can see that in the park walks <a href="exec: numnpc = SkverBoy & GT ''Gnpc''"><<$nameBoyfrend[SkverBoy]>></a>.'
-if kotovLoveQW > 0 and hour >= 18 and hour < 20 and week < 6 or week >= 6 and kotovLoveQW > 0 and hour >= 9 and hour < 20:
-'You see in the park sitting on the bench <a href="exec:minut += 3 & GT ''kotovEv''">Vitek Kotov</a> with Druganov and beer.'
+if hour > 8 and hour < 19:'Here is a small <a href="exec:minut += 5 & gt ''gskino''">Theater</a>'
+if GvstreBoy = 1:'You can see that in the park walks <a href="exec:numnpc = SkverBoy & gt ''Gnpc''"><<$nameBoyfrend[SkverBoy]>></a>.'
+!!if kotovLoveQW > 0 and hour >= 18 and hour < 20 and week < 6 or week >= 6 and kotovLoveQW > 0 and hour >= 9 and hour < 20:'You see in the park sitting on the bench <a href="exec:minut += 3 & gt ''kotovEv''">Vitek Kotov</a> with Druganov and beer.'
+!!'You see in the park sitting on the bench <a href="exec:minut+=3&GT ''kotovEv''">Vitek Cats</a> Druganov and beer.'
+!!end
+
+if StoryLine = 1 and BeInSchool > 0:
+	if hour >= 18 and hour < 20 and week < 6 or week >= 6 and hour >= 9 and hour < 20:'You see in the park sitting on the bench <a href="exec:minut += 3 & gt ''gopskver''">Vitek Cats, Dan Ryzhov and Shul`ga.</a>'
 end
 
-
-
-	act 'Walk (0:15)':
+act 'Walk (0:15)':
 	cla
 	*clr
 	set minut += 15
@@ -30,59 +31,18 @@ end
 		act 'Distributing flyers to earn money 10 rubles (1:00)':
 		cla
 		*clr
-		'<center><img src="images\etogame\flaer.jpg"></center>'
+		'<center><img src="images/etogame/flaer.jpg"></center>'
 		'You an hour handing out flyers park visitors. Then you got 10 rubles.'
 		set minut += 60
 		set money += 10
 		set manna -= 5
 		gs 'stat'
-		act 'Move away': gt 'gskver'
-		end
-	end
-act 'Get out of the park': minut += 5 & gt 'gorodok'
-=======
-'<center><img src="gevent/skver.jpg" ></center>'
-'little Square, in which people often rest, walk a couple, kids play.'
-*nl
-if hour >8 and hour < 19:'There is a small <a href="exec:minut+=5&GT ''gskino''">theater</a> '
 
-if GvstreBoy=1:'you see, that walks in the park <a href="exec:numnpc=SkverBoy&GT ''Gnpc''"><<$nameBoyfrend[SkverBoy]>></a>.'
-!if kotovLoveQW>0 and hour>=18 and hour<20 and week<6 or week>=6 and kotovLoveQW>0 and hour>=9 and hour<20:
-!'You see in the park sitting on the bench <a href="exec:minut+=3&GT ''kotovEv''">Vitek Cats</a> Druganov and beer.'
-!end
-if StoryLine=1 and BeInSchool>0:
-	 if hour>=18 and hour<20 and week<6 or week>=6 and hour>=9 and hour<20:
-	 'You see in the park sitting on the bench <a href="exec:minut+=3&GT ''gopskver''">Vitek Cats, Dan Ryzhov and Shul`ga.</a>'
-	 end
+		act 'Move away':gt 'gskver'
+	end
 end
 
-     act 'take_a_walk 15 minutes':
-	 cla
-	 *clr
-	 set minut = minut + 15
-	 place=1
-	 Frend_num=0
-	 gt'placer'
-     end
+act 'Get out of the park':minut += 5 & gt 'gorodok'
 
-	 if hour >= 8 and hour <22:
-		 act 'Distributing flyers to earn 10 rubles per hour':
-		 cla
-		 *clr
-		 '<center><img src="pic/flaer.jpg" ></center>'
-		 'You hour handing out flyers park visitors. Then you got 10 rubles.'
-		 set minut = minut + 60
-		 set money = money + 10
-		 set manna = manna - 5
-		 gs'stat'
-		 act 'move_away':gt'gskver'
-		 end
-	 end
-act 'Get out of the park':minut+=5&gt 'gorodok'
-
-
-
-
->>>>>>> 263_gskver
 --- gskver ---------------------------------
 

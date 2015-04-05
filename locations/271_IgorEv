@@ -1,75 +1,40 @@
 # IgorEv
-<<<<<<< 271_IgorEv
 gs 'stat'
-'<center><B><font color = maroon><<$npcName[4]>> <<$npcSurName[4]>></font></B></center>'
-'<center><img src="images\qwest\alter\npc4.jpg"></center>'
+'<center><b><font color="maroon"><<$npcName[4]>> <<$npcSurName[4]>></font></b></center>'
+'<center><img src="images/qwest/alter/npc4.jpg"></center>'
+
 if fedorKozlovQW >= 10 or $loc = 'gdkin':
-'To you and Igor suitable Fedor. "Gosh, you do not confused? <<$name>> my girl." Igor blushed "Well Fed, you know, I did not know. But if you insist, then okay, I´m just a joke." Fyodor nodded, "Well, go wherever you go, a practical joker."'
-act 'Go with Fedor': IdorBlock = 1 & gt 'FedorEv'
-=======
-gs'stat'
-'<center><B><font color=maroon><<$npcName[4]>> <<$npcSurName[4]>></font></B></center>'
-'<center><img src="qwest/alter/npc/4.jpg" ></center>'
-if fedorKozlovQW>=10 and $loc='gdkin':
-'To you and Igor suitable Fedor. "Gosh, You do not mistake? Light my girl." Igor blushed "Well Fed, understand, I did not know. But if you insist, it`s okay, I`m just so, in jest." Fyodor nodded "Well, joker."'
-act 'Go with Fedor':IdorBlock=1&gt 'FedorEv'
->>>>>>> 271_IgorEv
-exit
+	'To you and Igor suitable Fedor. "Gosh, you do not confused? <<$name>> my girl." Igor blushed "Well Fed, you know, I did not know. But if you insist, then okay, I´m just a joke." Fyodor nodded, "Well, go wherever you go, a practical joker."'
+
+	act 'Go with Fedor':IdorBlock = 1 & gt 'FedorEv'
+
+	exit
 end
-<<<<<<< 271_IgorEv
+
 'Igor eagerly tell you, "Well what? Come to my house?".'
-=======
-'Igor impatiently told you "what? go to my home?".'
->>>>>>> 271_IgorEv
 
-
-<<<<<<< 271_IgorEv
 if IgorLove > 0:
 	act 'Go to Igor':
-	cls
-	minut += 15
-	gs 'stat'
-	'You came home to Igor.'
-			if IgorDominaQW = 0:
-		'Igor starts hugging and kissing you.'
+		cls
+		minut += 15
+		gs 'stat'
+		'You came home to Igor.'
 
-		end
+		if IgorDominaQW = 0:'Igor starts hugging and kissing you.'
 
-		if IgorDominaQW > 0:
-		'Igor gets up on his knees in front of you, "Madam, I pray for a kiss!"'
+		if IgorDominaQW > 0:'Igor gets up on his knees in front of you, "Madam, I pray for a kiss!"'
 
-		end
-	act 'Leave': IgorLove -= 1 & gt 'gorodok'
+
+		act 'Leave':IgorLove -= 1 & gt 'gorodok'
 	end
 end
+
 if IgorLove <= 0:
-IgorLoverQW = -1
-'Along the way, Igor began to chant "<<$name>>, I love you so much, but you do not know me, you know, I began to wonder if perhaps we should leave."'
-act 'Leave': gt 'gorodok'
-=======
-if IgorLove>0:
-	 act 'Go to Igor':
-	 cls
-	 minut+=15
-	 gs'stat'
-	 'You came to Igor home.'
-		 if IgorDominaQW=0:
-		 'Igor starts to hug you and kiss.'
-		 
-		 end
-		 
-		 if IgorDominaQW>0:
-		 'Igor gets on his knees in front of you "Mrs., pray, the kiss!"'
-		 
-		 end
-     act 'Get_Away':IgorLove-=1&gt'gorodok'
-	 end
+	IgorLoverQW = -1
+	'Along the way, Igor began to chant "<<$name>>, I love you so much, but you do not know me, you know, I began to wonder if perhaps we should leave."'
+
+	act 'Leave':gt 'gorodok'
 end
-if IgorLove<=0:
-IgorLoverQW=-1
-'Along the way "Sveta, i love you so much, but you did not know, know, I began to wonder, we probably should leave."'
-act 'Get_Away':gt'gorodok'
->>>>>>> 271_IgorEv
-end
+
 --- IgorEv ---------------------------------
 

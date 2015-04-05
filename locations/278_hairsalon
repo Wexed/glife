@@ -22,7 +22,7 @@ if hcol ! 0:
 			'About an hour later, everything should be dried up and the female hairdress comes back to you.'
 			'She removes the dryer hood. "And we''re all done."'
 			'You stand up from the chair and pay the 1000 rubles.'
-		act 'Leave': gt 'hairsalon','start'
+		act 'Leave':gt 'hairsalon', 'start'
 		end
 	end
 end
@@ -41,7 +41,7 @@ if hcol ! 1:
 			'About an hour later, everything should be dried up and the female hairdress comes back to you.'
 			'She removes the dryer hood. "And we''re all done."'
 			'You stand up from the chair and pay the 1000 rubles.'
-		act 'Leave': gt 'hairsalon','start'
+		act 'Leave':gt 'hairsalon', 'start'
 		end
 	end
 end
@@ -60,7 +60,7 @@ if hcol ! 2:
 			'About an hour later, everything should be dried up and the female hairdress comes back to you.'
 			'She removes the dryer hood. "And we''re all done."'
 			'You stand up from the chair and pay the 1000 rubles.'
-		act 'Leave': gt 'hairsalon','start'
+		act 'Leave':gt 'hairsalon', 'start'
 		end
 	end
 end
@@ -79,7 +79,7 @@ if hcol ! 3:
 			'About an hour later, everything should be dried up and the female hairdress comes back to you.'
 			'She removes the dryer hood. "And we''re all done."'
 			'You stand up from the chair and pay the 1000 rubles.'
-		act 'Leave': gt 'hairsalon','start'
+		act 'Leave':gt 'hairsalon', 'start'
 		end
 	end
 end
@@ -91,7 +91,7 @@ $zavivka = {
 	set money -= 500
 	'You have your hair curled'
 	gs 'stat'
-	gt 'hairsalon','start'
+	gt 'hairsalon', 'start'
 }
 $cuthair = {
 cla
@@ -113,7 +113,7 @@ if hairlength > 10:
 			set hairlength = 10
 		'About half an hour later she is done and what''s left from you former hairstyle is a very short buzzcut.'
 		'You stand up and pay the women at the counter.'
-		act 'Stand up': gt 'hairsalon','start'
+		act 'Stand up':gt 'hairsalon', 'start'
 		end
 	end
 end
@@ -128,7 +128,7 @@ if hairlength > 31:
 				cla
 				*clr
 				'"Before we begin, I need to ask, if I should cut you a fringe or not.", she tells you.'
-					act 'Yes': 
+					act 'Yes':
 						cla
 						*clr
 						set minut += 30
@@ -137,7 +137,7 @@ if hairlength > 31:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 					act 'No':
 						cla
@@ -147,7 +147,7 @@ if hairlength > 31:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 			else 
 				cla
@@ -157,7 +157,7 @@ if hairlength > 31:
 				set hapri = 1
 				'30 minutes later, she is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 				'You stand up and pay the women at the counter.'
-				act 'Stand up': gt 'hairsalon','start'
+				act 'Stand up':gt 'hairsalon', 'start'
 			end
 		end
 	end
@@ -173,7 +173,7 @@ if hairlength > 81:
 				cla
 				*clr
 				'"Before we begin, I need to ask, if I should cut you a fringe or not.", she tells you.'
-					act 'Yes': 
+					act 'Yes':
 						cla
 						*clr
 						set minut += 30
@@ -182,7 +182,7 @@ if hairlength > 81:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. Your new hairstyle goes down to you chin-line and you have a fringe, covering your forehead.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 					act 'No':
 						cla
@@ -192,7 +192,7 @@ if hairlength > 81:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. Your new hairstyle goes down to you chin-line.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 			else 
 				cla
@@ -202,7 +202,7 @@ if hairlength > 81:
 				set hapri = 1
 				'30 minutes later, she is done cutting your hair. Your new hairstyle goes down to you chin-line.'
 				'You stand up and pay the women at the counter.'
-				act 'Stand up': gt 'hairsalon','start'
+				act 'Stand up':gt 'hairsalon', 'start'
 			end
 		end
 	end
@@ -218,7 +218,7 @@ if hairlength > 161:
 				cla
 				*clr
 				'"Before we begin, I need to ask, if I should cut you a fringe or not.", she tells you.'
-					act 'Yes': 
+					act 'Yes':
 						cla
 						*clr
 						set minut += 30
@@ -227,7 +227,7 @@ if hairlength > 161:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. Your hair now goes just to your shoulders and you have a fringe, covering your forehead.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 					act 'No':
 						cla
@@ -237,7 +237,7 @@ if hairlength > 161:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. Your hair now goes just to your shoulders..'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 			else 
 				cla
@@ -247,7 +247,7 @@ if hairlength > 161:
 				set hapri = 1
 				'30 minutes later, she is done cutting your hair. Your hair now goes just to your shoulders..'
 				'You stand up and pay the women at the counter.'
-				act 'Stand up': gt 'hairsalon','start'
+				act 'Stand up':gt 'hairsalon', 'start'
 			end
 		end
 	end
@@ -263,7 +263,7 @@ if hairlength > 261:
 				cla
 				*clr
 				'"Before we begin, I need to ask, if I should cut you a fringe or not.", she tells you.'
-					act 'Yes': 
+					act 'Yes':
 						cla
 						*clr
 						set minut += 30
@@ -272,7 +272,7 @@ if hairlength > 261:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. She cut your hair back to about the line where your bra sits, in addition she made you a fringe, covering your forehead, as requested.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 					act 'No':
 						cla
@@ -282,7 +282,7 @@ if hairlength > 261:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. She cut your hair back to about the line where your bra sits.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 			else 
 				cla
@@ -292,7 +292,7 @@ if hairlength > 261:
 				set hapri = 1
 				'30 minutes later, she is done cutting your hair. She cut your hair back to about the line where your bra sits.'
 				'You stand up and pay the women at the counter.'
-				act 'Stand up': gt 'hairsalon','start'
+				act 'Stand up':gt 'hairsalon', 'start'
 			end
 		end
 	end
@@ -308,16 +308,16 @@ if hairlength > 401:
 				cla
 				*clr
 				'"Before we begin, I need to ask, if I should cut you a fringe or not.", she tells you.'
-					act 'Yes': 
+					act 'Yes':
 						cla
 						*clr
 						set minut += 30
 						set hairlength = 401
 						set hbangs = 1
 						set hapri = 1
-						'30 minutes later, she is done cutting your hair. She just cuts the tips of your, barely making it shorter and as requested, she cut you a nice fringe,, which now covers your forehead.'
+						'30 minutes later, she is done cutting your hair. She just cuts the tips of your, barely making it shorter and as requested, she cut you a nice fringe, , which now covers your forehead.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 					act 'No':
 						cla
@@ -327,7 +327,7 @@ if hairlength > 401:
 						set hapri = 1
 						'30 minutes later, she is done cutting your hair. She just cuts the tips of your, barely making it shorter.'
 						'You stand up and pay the women at the counter.'
-						act 'Stand up': gt 'hairsalon','start'
+						act 'Stand up':gt 'hairsalon', 'start'
 					end
 			else 
 				cla
@@ -337,7 +337,7 @@ if hairlength > 401:
 				set hapri = 1
 				'30 minutes later, she is done cutting your hair. She just cuts the tips of your, barely making it shorter. '
 				'You stand up and pay the women at the counter.'
-				act 'Stand up': gt 'hairsalon','start'
+				act 'Stand up':gt 'hairsalon', 'start'
 			end
 		end
 	end
@@ -361,7 +361,7 @@ $makebraids = {
 				set money -= 1250
 				'"And we are done.", she says.'
 				'You stand up and pay her at the counter.'
-				act 'Stand up': gt 'hairsalon','start'
+				act 'Stand up':gt 'hairsalon', 'start'
 			end
 		end
 	end
@@ -371,57 +371,57 @@ end
 if $ARGS[0] = 'start':
 gs 'stat'
 
-'<center><B><font color=maroon>The Golden Curl Salon</font></B></center>'
+'<center><b><font color="maroon">The Golden Curl Salon</font></b></center>'
 '<center>A well reviewed hair salon, capable of creating the most beautiful hairstyles. For a price of course.</center>'
 '<center>Next to the check out are two aisles filled with premium merchandise for you hair, including Scrunchies, Hairpins and Shampoo.</center>'
 clr
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
+gs 'stat'
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 ''
-if money >= 750 and hairlength > 15: '<a href="exec: dynamic $cuthair ">Cut your hair - 750 rubles</a>'
-if money < 750 and hairlength <= 15: 'You don''t have enough money to get your hair properly cut. It costs 750 rubles but you only have <<money>>.'
+if money >= 750 and hairlength > 15:'<a href="exec:dynamic $cuthair ">Cut your hair - 750 rubles</a>'
+if money < 750 and hairlength <= 15:'You don''t have enough money to get your hair properly cut. It costs 750 rubles but you only have <<money>>.'
 ''
-if money >= 500 and hairlength > 80: '<a href="exec: dynamic $zavivka ">Curl your hair - 500 rubles</a>'
-if money < 500: 'You cannot afford curling your hair, as it costs 500 rubles, which you do not have at the moment.'
-if money >= 300 and hairlength <= 30: 'Your hair is too short to curl.'
+if money >= 500 and hairlength > 80:'<a href="exec:dynamic $zavivka ">Curl your hair - 500 rubles</a>'
+if money < 500:'You cannot afford curling your hair, as it costs 500 rubles, which you do not have at the moment.'
+if money >= 300 and hairlength <= 30:'Your hair is too short to curl.'
 ''
-if money >= 1000: '<a href="exec: dynamic $pokraska ">Dye your hair - 1.000 rubles</a>'
-if money < 1000: 'You cannot afford dyeing your hair, as you are missing the 1.000 rubles required for it.'
+if money >= 1000:'<a href="exec:dynamic $pokraska ">Dye your hair - 1.000 rubles</a>'
+if money < 1000:'You cannot afford dyeing your hair, as you are missing the 1.000 rubles required for it.'
 ''
-if money >= 1250 and hairlength > 80: '<a href="exec: dynamic $makebraids">Braid your hair - 1250 rubles</a>'
-if money >= 1250 and hairlength <= 80: 'While you do have enough money to get your hair braided, your hair is not long enough to get it done properly and get a satisfying outcome.'
-if money < 1250 and hairlength > 80: 'You don''t have the 1.250 rubles, which you''ll need to get your hair braided.'
-if money < 1250 and hairlength <= 80: 'Not only you''re missing the 1.250 rubles required to do this hair job, you''re hair is also too short to get it braided.'
+if money >= 1250 and hairlength > 80:'<a href="exec:dynamic $makebraids">Braid your hair - 1250 rubles</a>'
+if money >= 1250 and hairlength <= 80:'While you do have enough money to get your hair braided, your hair is not long enough to get it done properly and get a satisfying outcome.'
+if money < 1250 and hairlength > 80:'You don''t have the 1.250 rubles, which you''ll need to get your hair braided.'
+if money < 1250 and hairlength <= 80:'Not only you''re missing the 1.250 rubles required to do this hair job, you''re hair is also too short to get it braided.'
 
 
 if hour =< 8 or hour >= 20:
 	cls
 	'The hair salon is closed. You should come back during their working hours.'
-	act 'Leave': set minut += 2 & gt 'torgcentr'
+	act 'Leave':set minut += 2 & gt 'torgcentr'
 	exit
 	end
-act 'Leave': set minut += 2 & gt 'torgcentr'
+act 'Leave':set minut += 2 & gt 'torgcentr'
 end
 
 if money >= 100:
 	act 'Buy Scrunchies - 100 rubles':
 		cls
-		money    -= 100
+		money -= 100
 		hscrunch += 10
 		'You pay the cashier and bought the small box.'
-		act 'Move away': gt 'hairsalon','start'
+		act 'Move away':gt 'hairsalon', 'start'
 	end
 end
 
 if money >= 120:
 	act 'Buy Hairaccessories - 120 rubles':
 		cls
-		money    -= 120
+		money -= 120
 		hpingrip += 10
 		'You pay the cashier and bought the small box.'
-		act 'Move away': gt 'hairsalon','start'
+		act 'Move away':gt 'hairsalon', 'start'
 	end
 end
 

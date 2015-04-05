@@ -1,500 +1,135 @@
 # vokzalGin
-<<<<<<< 282_vokzalGin
-$din_vokzalg_kassi = {
-cls
-gs 'stat'
-'<center><H4>Cashier</H4></center>'
-'<center><img src="images\qwest/alter/kassa.jpg"></center>'
-'Ticket to the city costs 200 rubles.'
-if money >= 200:
-	act 'Buy a ticket to the Center (200 rubles)':
-	cls
-	money -= 200
-	minut += 15
-	gs 'stat'
-	'<center><img src="images\etogame\electri.jpg"></center>'
-	'You paid for the ticket and boarded the train going in the town.'
-	'After 15 minutes the train stopped at the station.'
-
-		act 'To go further':
-		cls
-		minut += 15
-		gs 'stat'
-		'<center><img src="images\etogame\electri.jpg"></center>'
-		'After 15 minutes the train stopped at the station.'
-
-			act 'To go further':
-			cls
-			minut += 15
-			gs 'stat'
-			'<center><img src="images\etogame\electri.jpg"></center>'
-			'After 15 minutes the train stopped at the station.'
-				act 'To go further':
-				cls
-				minut += 15
-				gs 'stat'
-				'<center><img src="images\etogame\electri.jpg"></center>'
-				'After 15 minutes the train stopped at the Centre.'
-
-				act 'Exit': minut += 5 & nroad = 0 & gt 'Vokzal'
-				end
-
-				act 'Exit': minut += 5 & nroad = 5 & gt 'road'
-			end
-
-			act 'Exit': minut += 5 & nroad = 10 & gt 'road'
-		end
-
-		act 'Exit': minut += 5 & nroad = 15 & gt 'road'
-	end
-end
-act 'Get away from banks': minut += 1 & gt 'vokzalGin'
-}
-$din_vokzalg_kabinet = {
-cls
-gs 'stat'
-'You came to the office of chief of station. About cabinet hanging ad "Wanted lady. 2 hours of work at any time, the salary of 50 rubles a day."'
-act 'Leave': minut += 1 & gt 'vokzalGin'
-	if hour >= 8 and hour <= 16:
-		act 'Login to Account':
-		cls
-		gs 'stat'
-		'You knocked on the door and entered the office of the chief. Elderly man distracted from scribbling and looked at you "On what issue?"'
-
-		act 'Leave': minut += 1 & gt 'vokzalGin'
-			if vokzalVork = 0:
-				act 'Arranged a cleaner':
-				cls
-				vokzalVork = 1
-				minut += 15
-				gs 'stat'
-				'You said that you would like to apply cleaner. Chief of station delighted obviously that nobody wants to work for such meager wages. He recorded your data and explained. You´ll have to wash the floors at the station and clean toilets. How to do it, so get 50 rubles. If something does not have time, you will not receive anything. Then you came out of his office and he showed pantry that stores inventory.'
-				act 'Leave': minut += 1 & gt 'vokzalGin'
-				end
-			end
-		end
-	end
-}
-$din_vokzalg_toilet_deyst = {
-	if hapri = 0:
-		act 'comb your hair':
-		cla
-		set minut = minut + 3
-		set hapri = 1
-		 if vokzalToilet=1:act 'finish':dynamic $din_vokzalg_toilet_f
-		 if vokzalToilet=2:act 'finish':dynamic $din_vokzalg_toilet_m
-		end
-	end
-
-	if mop = 1 and kosmetica > 0:
-		act 'apply makeup':
-		cla
-		*clr
-		'<center><img src="pic\mop.jpg" ></center>'
-			act 'Light make-up':
-			cla
-			set minut = minut + 3
-			set kosmetica = kosmetica - 1
-			set mop = 2
-			'You legonechko summed eyes and lips a little tint.'
-			if vokzalToilet=1:act 'finish':dynamic $din_vokzalg_toilet_f
-			if vokzalToilet=2:act 'finish':dynamic $din_vokzalg_toilet_m
-			end
-
-			if kosmetica >= 2:
-				 act 'normal makeup':
-				 cla
-				 set minut = minut + 5
-				 set kosmetica = kosmetica - 2
-				 set mop = 3
-				 'You lipstick, summed up the eyes and eyelids.'
-				if vokzalToilet=1:act 'finish':dynamic $din_vokzalg_toilet_f
-				if vokzalToilet=2:act 'finish':dynamic $din_vokzalg_toilet_m
-				 end
-			end
-
-			if kosmetica >= 3:
-				 act 'Challenging makeup':
-				 cla
-				 set minut = minut + 10
-				 set kosmetica = kosmetica - 3
-				 set vidageday = vidageday - 1
-				 set mop = 4
-				 'You densely nakrasili eyes, eyelids and mascara, lip contour nakrasili pencil and lipstick.'
-				if vokzalToilet=1:act 'finish':dynamic $din_vokzalg_toilet_f
-				if vokzalToilet=2:act 'finish':dynamic $din_vokzalg_toilet_m
-				 end
-			end
-		end
-	end
-
-	if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus > 0:
-		act 'Wash up (0:15)':
-		cla
-		*clr
-		dynamic $showerdin
-		set sweat -= 1
-		set minut += 15
-		'<center><img src="images\pics\wash5.jpg"></center>'
-		'You carefully washed sperm with yourself.'
-		if vokzalToilet = 1: act 'Finish': dynamic $din_vokzalg_toilet_f
-		if vokzalToilet = 2: act 'Finish': dynamic $din_vokzalg_toilet_m
-		end
-	end
-
-	if cumlip > 0 or cumface > 0:
-		act 'Wash cum off face (0:15)':
-		cla
-		*clr
-		set mop = 1
-		set cumlip = 0
-		set cumface = 0
-		set sweat -= 1
-		set minut += 15
-		'<center><img src="images\etogame\facesp.jpg"></center>'
-		'You carefully washed sperm from her face.'
-		if vokzalToilet = 1: act 'Finish': dynamic $din_vokzalg_toilet_f
-		if vokzalToilet = 2: act 'Finish': dynamic $din_vokzalg_toilet_m
-		end
-	end
-
-	if cumfrot > 0:
-		act 'Wipe the cum from clothing (0:15)':
-		cla
-		*clr
-		set cumfrot = 0
-		set sweat -= 1
-		set minut += 15
-		'<center><img src="images\etogame\frotsp.jpg"></center>'
-		'You erase traces of semen from the clothes.'
-		if vokzalToilet = 1: act 'Finish': dynamic $din_vokzalg_toilet_f
-		if vokzalToilet = 2: act 'Finish': dynamic $din_vokzalg_toilet_m
-		end
-	end
-	if tampon > 0 and mesec > 0 and isprok = 0:
-	act 'Change a tampon':
-		cla
-		*clr
-		set tampon -= 1
-		set isprok = 1
-		set minut += 5
-		set manna -= 5
-		'<center><img src="images\pics\wash3.jpg"></center>'
-		'You change a tampon.'
-		if vokzalToilet = 1: act 'Finish': dynamic $din_vokzalg_toilet_f
-		if vokzalToilet = 2: act 'Finish': dynamic $din_vokzalg_toilet_m
-		end
-	end
-
-	if horny >= 90:
-		act 'Masturbate':
-		cls
-		gs 'stat'
-		'<center><img src="images\qwest\alter\Ev\mastr.jpg"></center>'
-		'You closed booth, removed the pants and sat on the toilet.'
-		'Your fingers began to caress expiring pussy juice and you started to rub her clit.'
-		orgasm += 1
-		mastr += 1
-		horny = 0
-		gs 'stat'
-		'Soon pleasant wave began to spread throughout the body and you covered a very powerful orgasm.'
-		if vokzalToilet = 1: act 'Finish': dynamic $din_vokzalg_toilet_f
-		if vokzalToilet = 2: act 'Finish': dynamic $din_vokzalg_toilet_m
-		end
-	end
-}
-
-$din_vokzalg_toilet_f = {
-cls
-gs 'stat'
-vokzalToilet = 1
-'<center><H4>Women´s WC</H4></center>'
-'<center><img src="images\pic/PublicToilet.jpg"></center>'
-'You opened the door to women taulet and went inside.'
-act 'Leave': minut += 1 & dynamic $din_vokzalg_toilet
-dynamic $din_vokzalg_toilet_deyst
-}
-$din_vokzalg_toilet_m = {
-cls
-gs 'stat'
-vokzalToilet = 2
-'<center><H4>Male toilet</H4></center>'
-'<center><img src="images\pic/PublicToilet.jpg"></center>'
-'You opened the door to the men´s room and went inside.'
-if cloth_vid=1:
-	act 'Stand and wait for the adventure.':gt'vokBimbo','pos1'
-	act 'Go into the booth':gt'vokBimbo','pos5'
-end
-act 'Leave': minut += 1 & dynamic $din_vokzalg_toilet
-dynamic $din_vokzalg_toilet_deyst
-}
-$din_vokzalg_toilet = {
-cls
-gs 'stat'
-vokzalToilet = 0
-'<center><H4>Station</H4></center>'
-'<center><img src="images\qwest/alter/vokzal.jpg"></center>'
-'You are logged in to be where the wing station <a href="exec:minut += 1 & dynamic $din_vokzalg_toilet_f">female</a> and <a href="exec:minut += 1 & dynamic $din_vokzalg_toilet_m">men´s</a> toilet.'
-act 'Leave': minut += 1 & gt 'vokzalGin'
-}
-$din_vokazalg_podbros2 = {
-cls
-gs 'stat'
-'You showed your money man and he said that this was the sum and not enough in his wallet. The man demanded that you returned the money.'
-	act 'Money back':
-	cls
-	money = 0
-	podbros = 1
-	gs 'stat'
-	'<center><H4>Station</H4></center>'
-	'<center><img src="images\qwest/alter/vokzal.jpg"></center>'
-	'You gave the man his money, that would not contrive a scandal and not to be attracted by the police for theft.'
-		act 'Leave': minut += 1 & gt 'vokzalGin'
-	end
-}
-$din_vokzalg_podbros = {
-cls
-gs 'stat'
-'<center><H4>Station</H4></center>'
-'<center><img src="images\qwest/alter/vokzal.jpg"></center>'
-'You cant raise the purse and then some sort of slim girl leans to the purse. You are catching the first to raise the purse and she offers to step aside and share the money.'
-
-act 'Go with a purse':
-cls
-gs 'stat'
-'<center><H4>Station</H4></center>'
-'<center><img src="images\qwest/alter/vokzal.jpg"></center>'
-'You took the purse and went to the door, the girl began loudly yelling that you stole a purse. To you approached by a man who lost wallet and demanded it back. You gave the man purse, he counted the money and said that the purse is not enough large sum of money. Then he asked, what would you show him your money.'
-	act 'Show money': dynamic $din_vokazalg_podbros2
-end
-
-act 'Giving purse and go': minut += 1 & gt 'vokzalGin'
-
-act 'Step aside and share the money':
-cls
-gs 'stat'
-'<center><H4>Station</H4></center>'
-'<center><img src="images\qwest/alter/vokzal.jpg"></center>'
-'You went to one side with a girl and got a purse that would share the money. You divided the money on a flat and gave half girl, thrusting the remaining money in your pocket. At this point, a man came up to you, lost wallet. He took the wallet out of your hands. He counted the money and said that the purse is not enough large sum of money. Then he asked, what would you show him your money.'
-	act 'Show money': dynamic $din_vokazalg_podbros2
-end
-}
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-=======
-gs'vokdin'
+gs 'vokdin'
 gs'vokdinvera'
 gs'vokmantoiev'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
->>>>>>> 282_vokzalGin
-LCOLOR = rgb(106,90,205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 $metka = $ARGS[0]
 $loc = $CURLOC
-<<<<<<< 282_vokzalGin
 frost = 0
-'<center><H4>Station</H4></center>'
-'<center><img src="images\qwest/alter/vokzal.jpg"></center>'
+'<center><h4>Station</h4></center>'
+'<center><img src="images/qwest/alter/vokzal.jpg"></center>'
 'In the center of the station waiting room and <a href="exec:dynamic $din_vokzalg_kassi">Case</a> with the scoreboard. In one wing are <a href="exec:dynamic $din_vokzalg_kabinet">offices bosses</a>, and in the other <a href="exec:minut += 1 & dynamic $din_vokzalg_toilet">Toilets</a>.'
+if katalkinSexOnce >= 1:'<a href="exec:minut += 5 & gt ''katalkin''">police</a>'
 clr
 gs 'stat'
 
 if podbros = 0:
-podrand = rand(0,1)
-	if money >= 1000 and hour >= 8 and hour <= 20 and podrand = 0:
-		'Walking along the station you notice how a man falls thick <a href="exec:dynamic $din_vokzalg_podbros">purse</a>.'
-	end
-=======
-frost=0
-'<center><H4>railway_station</H4></center>'
-'<center><img src="qwest/alter/vokzal.jpg" ></center>'
-'In the center of the station waiting room and <a href="exec:dynamic $din_vokzalg_kassi">cash</a> with scoreboard. In one wing are <a href="exec:dynamic $din_vokzalg_kabinet">offices superiors</a>, and another <a href="exec:minut+=1&dynamic $din_vokzalg_toilet">toilets</a>.'
-if katalkinSexOnce>=1:'<a href="exec:minut+=5&gt''katalkin''">police</a>'
-clr
-gs'stat'
+	podrand = rand(0, 1)
 
-if podbros=0:
-podrand=rand(0,1)
-     if money>=1000 and hour>=8 and hour<=20 and podrand=0:
-         'Going to the station you notice how a man falls thick <a href="exec:dynamic $din_vokzalg_podbros">purse</a>.'
-     end
->>>>>>> 282_vokzalGin
+	if money >= 1000 and hour >= 8 and hour <= 20 and podrand = 0:'Walking along the station you notice how a man falls thick <a href="exec:dynamic $din_vokzalg_podbros">purse</a>.'
 end
 
-<<<<<<< 282_vokzalGin
-act 'Leave': minut += 3 & gt 'vokzalG'
+act 'Leave':minut += 3 & gt 'vokzalG'
 
 if vokzalVork >= 1:
 	if cleZalDay ! day:
 		act 'Mopping the floor in the waiting room':
-		cls
-		cleZalDay = day
-		minut += 60
-		sweat += 1
-		vital += RAND(0,1)
-		stren += RAND(0,1)
-		gs 'stat'
-		'<center><img src="images\etogame\clener1.jpg"></center>'
-		'You took inventory, poured water into a bucket and began to wash the floor in the waiting room.'
-		act 'Leave': minut += 1 & gt 'vokzalGin'
+			cls
+			cleZalDay = day
+			minut += 60
+			sweat += 1
+			vital += rand(0, 1)
+			stren += rand(0, 1)
+			gs 'stat'
+			'<center><img src="images/etogame/clener1.jpg"></center>'
+			'You took inventory, poured water into a bucket and began to wash the floor in the waiting room.'
+
+			act 'Leave':minut += 1 & gt 'vokzalGin'
 		end
 	end
+
 	if cleMTDay ! day:
 		act 'Mopping the floor in the men´s room':
-		cls
-		cleMTDay = day
-		minut += 30
-		sweat += 1
-		vital += RAND(0,1)
-		stren += RAND(0,1)
-		gs 'stat'
-		'<center><img src="images\etogame\clener1.jpg"></center>'
-		'You took inventory, poured water into a bucket and went to the men´s room.'
-		!if gloryholeVokzal = 9:gloryholeVokzal = 10 & ''
-		!if gloryholeVokzal = 8:gloryholeVokzal = 9 & ''
-		!if gloryholeVokzal = 6:gloryholeVokzal = 7 & ''
-		!if gloryholeVokzal = 5:gloryholeVokzal = 6 & ''
-		!if gloryholeVokzal = 4:gloryholeVokzal = 5 & ''
-		!if gloryholeVokzal = 3:gloryholeVokzal = 4 & ''
-		!if gloryholeVokzal = 2:gloryholeVokzal = 3 & ''
-		if gloryholeVokzal = 1: gloryholeVokzal = 2 & 'You notice that on the floor near the hole in the wall located in one of the booths what that strange white drops. You started to wipe them off the floor cloth and realized that it was sperm.'
-		if gloryholeVokzal = 0: gloryholeVokzal = 1 & 'You saw in one of the walls is fenced off from each other lockers circular opening at the waist. You curiously examined the smooth opening and proceeded to clean with a shrug.'
-		'You began to wash the floor in the men´s room, and then began to scrub toilets.'
-		act 'Leave': minut += 1 & gt 'vokzalGin'
+			cls
+			cleMTDay = day
+			minut += 30
+			sweat += 1
+
+			if vital < 15:vital += rand(0, 1)
+			if stren < 15:stren += rand(0, 1)
+
+			gs 'stat'
+			'<center><img src="images/etogame/clener1.jpg"></center>'
+			'You took inventory, poured water into a bucket and went to the men´s room.'
+			'You began to wash the floor in the men´s room, and then began to scrub toilets.'
+
+			act 'Leave':minut += 1 & gt 'vokzalGin'
 		end
 	end
+
 	if cleWTDay ! day:
 		act 'Mopping the floor in the women´s restroom':
-		cls
-		cleWTDay = day
-		minut += 30
-		sweat += 1
-		vital += RAND(0,1)
-		stren += RAND(0,1)
-		gs 'stat'
-		'<center><img src="images\etogame\clener1.jpg"></center>'
-		'You took inventory, poured water into a bucket and began to wash the floor in the ladies'' room, and then began to scour bowls.'
-		act 'Leave': minut += 1 & gt 'vokzalGin'
+			cls
+			cleWTDay = day
+			minut += 30
+			sweat += 1
+
+			if vital < 15:vital += rand(0, 1)
+			if stren < 15stren += rand(0, 1)
+
+			gs 'stat'
+			'<center><img src="images/etogame/clener1.jpg"></center>'
+			'You took inventory, poured water into a bucket and began to wash the floor in the ladies'' room, and then began to scour bowls.'
+			act 'Leave':minut += 1 & gt 'vokzalGin'
 		end
 	end
+
 	if cleMTDay = day and cleWTDay = day and cleZalDay = day and cleZarplatDay ! day:
 		act 'Get salary':
-		cls
-		cleZarplatDay = day
-		vokzalVork += 1
-		money += 50
-		minut += 3
-		gs 'stat'
-		'You went to the cashier and got their money.'
-		act 'Leave': minut += 1 & gt 'vokzalGin'
+			cls
+			cleZarplatDay = day
+			vokzalVork += 1
+			money += 50
+			minut += 3
+			gs 'stat'
+			'You went to the cashier and got their money.'
+
+			act 'Leave':minut += 1 & gt 'vokzalGin'
 		end
 	end
-=======
-
-act 'Get_Away':minut+=3&gt'vokzalG'
-
-if vokzalVork>=1:
-     if cleZalDay!day:
-     	 act 'Wash the floor in the waiting room':
-		 cls
-		 cleZalDay=day
-		 minut+=60
-		 sweat+=1
-		 if vital<15:vital+=RAND(0,1)
-		 if stren<15:stren+=RAND(0,1)
-		 gs'stat'
-		 '<center><img src="pic/clener1.jpg" ></center>'
-		 'You took inventory, poured water into a bucket and began to wash the floor in the waiting room.'
-		 act 'Get_Away':minut+=1&gt'vokzalGin'
-		 end
-     end
-     if cleMTDay!day:
-         act 'Wash the floor in the men`s room':
-		 cls
-		 cleMTDay=day
-		 minut+=30
-		 sweat+=1
-		 if vital<15:vital+=RAND(0,1)
-		 if stren<15:stren+=RAND(0,1)
-		 gs'stat'
-		 '<center><img src="pic/clener1.jpg" ></center>'
-		 'You took inventory, poured water into a bucket and went to the men`s room.'
-		 dynamic $d_vok_man_toilet_event
-		 !'You became wash the floor in the men`s room, then began to scour bowls.'
-		 act 'Get_Away':minut+=1&gt'vokzalGin'
-		 end
-     end
-     if cleWTDay!day:
-         act 'Wash the floor in the ladies` room':
-		 cls
-		 cleWTDay=day
-		 minut+=30
-		 sweat+=1
-		 if vital<15:vital+=RAND(0,1)
-		 if stren<15:stren+=RAND(0,1)
-		 gs'stat'
-		 '<center><img src="pic/clener1.jpg" ></center>'
-		 'You took inventory, poured water into a bucket and began to wash the floor in the ladies` room, then began to scour bowls.'
-		 dynamic $d_vokzal_vera_talk
-		 act 'Get_Away':minut+=1&gt'vokzalGin'
-		 end
-     end
-     if cleMTDay=day and cleWTDay=day and cleZalDay=day and cleZarplatDay!day:
-		 act 'get salary':
-		 cls
-		 cleZarplatDay=day
-		 vokzalVork+=1
-		 money+=250
-		 minut+=3
-		 gs'stat'
-		 'You went to the cashier and got their money.'
-		 act 'Get_Away':minut+=1&gt'vokzalGin'
-		 end
-     end
->>>>>>> 282_vokzalGin
-
 end
 
-poezddalsled=0
-if hour=11 and minut=0:
-poezddalsled=1
-'The platform comes long-distance trains.'
-end
-if hour=11 and minut>0 and minut<30:
-poezddalsled=1
-'At the platform stands distance trains.'
-end
-if hour=11 and minut=30:
-poezddalsled=1
-'Platform serving long-distance trains.'
-end
-if hour=18 and minut=0:
-poezddalsled=1
-'The platform comes long-distance trains.'
-end
-if hour=18 and minut>0 and minut<30:
-poezddalsled=1
-'At the platform stands distance trains.'
-end
-if hour=18 and minut=30:
-poezddalsled=1
-'Platform serving long-distance trains.'
+poezddalsled = 0
+
+if hour = 11 and minut = 0:
+	poezddalsled = 1
+	'The platform comes long-distance trains.'
 end
 
-if poezddalsled=1:
-'Platform fussy run hucksters vtyuhivat their goods train passengers. On the part of all this fuss watches Police.'
-     if tovarL>0:
-     	 act 'Vtyuhivat their goods passengers.':gt'vokzaltorg'
-     end
+if hour = 11 and minut > 0 and minut < 30:
+	poezddalsled = 1
+	'At the platform stands distance trains.'
 end
 
+if hour = 11 and minut = 30:
+	poezddalsled = 1
+	'Platform serving long-distance trains.'
+end
 
+if hour = 18 and minut = 0:
+	poezddalsled = 1
+	'The platform comes long-distance trains.'
+end
 
+if hour = 18 and minut > 0 and minut < 30:
+	poezddalsled = 1
+	'At the platform stands distance trains.'
+end
 
+if hour = 18 and minut = 30:
+	poezddalsled = 1
+	'Platform serving long-distance trains.'
+end
 
+if poezddalsled = 1:
+	'Platform fussy run hucksters vtyuhivat their goods train passengers. On the part of all this fuss watches Police.'
 
-
-
+	if tovarL > 0:
+ 		act 'Vtyuhivat their goods passengers.':gt 'vokzaltorg'
+	end
+end
 
 --- vokzalGin ---------------------------------
 

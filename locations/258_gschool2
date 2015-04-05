@@ -1,874 +1,571 @@
 # gschool2
-<<<<<<< 258_gschool2
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
+$d_fart_klass = {
+	if anus > 25 and analplugin = 0:
+		fartrand = rand(0, 5)
+
+		if fartrand = 0:
+			farttiperand = rand(0, 3)
+
+			if farttiperand = 0:
+				manna /= 2
+				gs 'stat'
+				'Stir in the chair you suddenly farted. Carefully looking around and looking at you understand classmates, that no one had heard of this.'
+			end
+
+			if farttiperand=1:
+				manna /= 2
+				gs 'stat'
+				'Stir in the chair you suddenly farted. Carefully looking around and looking at you understand classmates, that no one had heard of this. One of the guys suddenly become oziratsya and prinyuhivatsya, then whispered loudly neighbor "What a bastard naperdela?"'
+			end
+
+			if farttiperand = 2:
+				manna /= 2
+				sub += 1
+				gs 'stat'
+				'Stir in the chair you suddenly farted. Several people turned out at you and giggled.'
+			end
+
+			if farttiperand = 3:
+				manna = 0
+				sub += 5
+				fart += 1
+				gs 'stat'
+				'Stir in the chair you suddenly perdanuli loudly to the whole class. The whole class looked at you and classmates began to laugh at you. Teacher as something managed to calm the class. And you sit all red as a lobster out of shame and fear to raise their eyes to classmates, myself thinking "Christ, what a shame."'
+			end
+		end
+	end
+}
+
+$d_fart_fiz = {
+	if anus > 25 and analplugin = 0:
+		fartrand = rand(0, 5)
+
+		if fartrand = 0:
+			farttiperand = rand(0, 3)
+
+			if farttiperand = 0:
+				manna /= 2
+				gs 'stat'
+				'The voltage you suddenly farted. Carefully looking around and looking at you understand classmates, that no one had heard of this.'
+			end
+
+			if farttiperand = 1:
+				manna /= 2
+				gs 'stat'
+				'The voltage you suddenly farted. Carefully looking around and looking at you understand classmates, that no one had heard of this. One of the guys suddenly become oziratsya and prinyuhivatsya, then whispered loudly neighbor "What a bastard naperdela?"'
+			end
+
+			if farttiperand = 2:
+				manna = manna / 2
+				sub += 1
+				gs 'stat'
+				'The voltage you suddenly farted. Several people turned out at you and giggled.'
+			end
+
+			if farttiperand = 3:
+				manna = 0
+				sub += 5
+				fart += 1
+				gs 'stat'
+				'The voltage you suddenly perdanuli loudly to the whole class. The whole class looked at you and classmates began to laugh at you. Fizruk something like managed to calm the class. And you sit all red as a lobster out of shame and fear to raise their eyes to classmates, myself thinking "Christ, what a shame."'
+			end
+		end
+	end
+}
+
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 gs 'stat'
-'<center><B><font color = maroon>School</font></B></center>'
-'<center><img src="images\qwest\alter\gschool2.jpg"></center>'
+'<center><b><font color="maroon">School</font></b></center>'
+'<center><img src="images/qwest/alter/gschool2.jpg"></center>'
 'Hallways at school painted cheap toxic green paint.'
 
-act 'Exit': gt 'gschool'
+act 'Exit':gt 'gschool'
+
 $din_sekondparturok = {
 	act 'Go to lessons':
-	cls
-	minut += 60 * 3
-	schoolprogul -= 1
+		cls
+		minut += 60 * 3
+		schoolprogul -= 1
+
 		if week ! 3 and week ! 5:
-		urand = RAND(0,12)
-		lernSkill += 1
-		lernHome += 1
-		BeInSchool += 1
-		gs 'stat'
-		'<center><img src="images\qwest\alter\urok<<urand>>.jpg "></center>'
-		'You were sitting in the classroom and listened to the monotonous boom on teachers, at least that is trying to understand and not to fall asleep.'
-		'Finally the bell rang and students began to go home.'
-		act 'Exit': gt 'gschool'
-		end
-		if week = 3 or week = 5:
-		gs 'stat'
-		'<center><img src="images\qwest\alter\fizra.jpg"></center>'
-		'On Wednesdays and Fridays, as always in the afternoon exercise. You other devchenki dressed in the locker room and went to gym class. Viktor Pavlovich in tights with blisters on my knees and nickel whistle built your class in a line and began to conduct a roll call.'
-		fizrarand = RAND(0,4)
-			if fizrarand = 0:
-			set speed += RAND(1,3)
-			set manna -= 5
-			set fat -= 5
-			set sweat += 3
-			set beg += RAND(2,5)
-			'After the roll fizruk announced that today the class will take a run. You ran with the whole class the entire gym class.'
-			end
-			if fizrarand = 1:
-			set agil += RAND(1,3)
-			set fat -= 5
-			set manna -= 5
-			set sweat += 3
-			'After the roll fizruk announced that today the class will take the goat jumping through. You, along with all waiting their turn, that would jump over a goat.'
-			end
-			if fizrarand = 2:
-			set stren += RAND(1,3)
-			set manna -= 5
-			set fat -= 2
-			set sweat += 3
-			'After the roll fizruk announced that today the class will take the pull-ups. You, along with all waiting their turn, that would catch up on the bar with almost lying under a horizontal bar like all girls.'
-			end
-			if fizrarand = 3:
-			set vital += RAND(1,3)
-			set manna -= 5
-			set fat -= 2
-			set sweat += 3
-			'After the roll fizruk announced that today the class will take the news. You, along with all waiting their turn, that would perform abdominal exercises.'
-			end
-			if fizrarand = 4:
-			set stren += RAND(1,3)
-			set manna -= 5
-			set fat -= 2
-			set sweat += 3
-			cls
-			horny += 10
+			urand = rand(0, 12)
+			lernSkill += 1
+			lernHome += 1
+			BeInSchool += 1
 			gs 'stat'
-			'<center><img src="images\qwest\alter\rope.jpg"></center>'
+			'<center><img src="images/qwest/alter/urok<<urand>>.jpg "></center>'
+			'You were sitting in the classroom and listened to the monotonous boom on teachers, at least that is trying to understand and not to fall asleep.'
+			dynamic $d_fart_fiz
+			'Finally the bell rang and students began to go home.'
+
+			act 'Exit':gt 'gschool'
+		end
+
+		if week = 3 or week = 5:
+			gs 'stat'
+			'<center><img src="images/qwest/alter/fizra.jpg"></center>'
 			'On Wednesdays and Fridays, as always in the afternoon exercise. You other devchenki dressed in the locker room and went to gym class. Viktor Pavlovich in tights with blisters on my knees and nickel whistle built your class in a line and began to conduct a roll call.'
-			'After the roll fizruk announced that today the class will take the climbing rope. You, along with all waiting their turn, that would climb the rope.'
-				if horny >= 100:
-				horny = 0
-				orgasm += 1
-				rope_orgasm += 1
-				'You climb a rope and feel like a solid rope t your pussy. You cover the excitement of each meter preodaleniya finally you flinch from the cover you a pleasant feeling all the muscles quivering orgasm and you gripped right on the rope. Fizruk shouts from below "<<$surname>>, what you´re shaking? Tired of what? Come down then."'
-				end
-				if horny >= 50 and horny < 100:
-				'You climb a rope and feel like a solid rope t your pussy. You cover the excitement of each preodaleniya meters. You Stroud climbs up to the top and go down the rope with a burning face with excitement.'
-				end
-			end
-			if week = 5 and razradbeg = 0:
-			if schoolSorev = 0: schoolSorev = 1
-			'Fizruk announced that on Saturday at 10 am will be held school running competition.'
-			end
-			if week = 5 and razradbeg = 1:
-			if schoolSorev = 0: schoolSorev = 2
-			'Fizruk came to you and said that on Saturday at 10 am will be held city competitions in running.'
+			fizrarand = rand(0, 4)
+
+			if fizrarand = 0:
+				set speed += rand(1, 3)
+				set manna -= 5
+				set fat -= 5
+				set sweat += 3
+				set beg += rand(2, 5)
+				'After the roll fizruk announced that today the class will take a run. You ran with the whole class the entire gym class.'
 			end
 
-				if fizrukSex > 0 and kristinaSex > 0:
+			if fizrarand = 1:
+				set agil += rand(1, 3)
+				set fat -= 5
+				set manna -= 5
+				set sweat += 3
+				'After the roll fizruk announced that today the class will take the goat jumping through. You, along with all waiting their turn, that would jump over a goat.'
+			end
+
+			if fizrarand = 2:
+				set stren += rand(1, 3)
+				set manna -= 5
+				set fat -= 2
+				set sweat += 3
+				'After the roll fizruk announced that today the class will take the pull-ups. You, along with all waiting their turn, that would catch up on the bar with almost lying under a horizontal bar like all girls.'
+				dynamic $d_fart_fiz
+			end
+
+			if fizrarand = 3:
+				set vital += rand(1, 3)
+				set manna -= 5
+				set fat -= 2
+				set sweat += 3
+				'After the roll fizruk announced that today the class will take the news. You, along with all waiting their turn, that would perform abdominal exercises.'
+				dynamic $d_fart_fiz
+			end
+
+			if fizrarand = 4:
+				set stren += rand(1, 3)
+				set manna -= 5
+				set fat -= 2
+				set sweat += 3
+				cls
+				horny += 10
+				gs 'stat'
+				'<center><img src="images/qwest/alter/rope.jpg"></center>'
+				'On Wednesdays and Fridays, as always in the afternoon exercise. You other devchenki dressed in the locker room and went to gym class. Viktor Pavlovich in tights with blisters on my knees and nickel whistle built your class in a line and began to conduct a roll call.'
+				'After the roll fizruk announced that today the class will take the climbing rope. You, along with all waiting their turn, that would climb the rope.'
+
+				if horny >= 100:
+					horny = 0
+					orgasm += 1
+					rope_orgasm += 1
+					'You climb a rope and feel like a solid rope t your pussy. You cover the excitement of each meter preodaleniya finally you flinch from the cover you a pleasant feeling all the muscles quivering orgasm and you gripped right on the rope. Fizruk shouts from below "<<$surname>>, what you´re shaking? Tired of what? Come down then."'
+				end
+
+				if horny >= 50 and horny < 100:'You climb a rope and feel like a solid rope t your pussy. You cover the excitement of each preodaleniya meters. You Stroud climbs up to the top and go down the rope with a burning face with excitement.'
+			end
+
+			if week = 5 and razradbeg = 0:
+				if schoolSorev = 0:schoolSorev = 1
+
+				'Fizruk announced that on Saturday at 10 am will be held school running competition.'
+			end
+
+			if week = 5 and razradbeg = 1:
+				if schoolSorev = 0:schoolSorev = 2
+
+				'Fizruk came to you and said that on Saturday at 10 am will be held city competitions in running.'
+			end
+
+			if fizrukSex > 0 and kristinaSex > 0:
 				'Christina came to you after gym class, "Well <<$name>> sweetie, let´s go to the Pavlovich? Entertain."'
-					act 'Go to athletes':
+
+				act 'Go to athletes':
 					cls
 					bj += 1
-					!cumlip += 1
-					if fizrukSex = 0: fizrukSex = 1 & guy += 1
-					if kristinaSex = 0: kristinaSex = 1
+					!!cumlip += 1
+
+					if fizrukSex = 0:fizrukSex = 1 & guy += 1
+					if kristinaSex = 0:kristinaSex = 1
+
 					grupNPC[18] = 100
 					gs 'stat'
-					'<center><img src="images\qwest\alter\ev\fiz.jpg"></center>'
+					'<center><img src="images/qwest/alter/ev/fiz.jpg"></center>'
 					'You squatted before the coach next to Christine and kissed fizruka member. Then around his lips and began to suck. Christina squatted and looked like you were aspirated. Then she took the dick in his mouth and began to lick you a solid trunk and balls fizruka. Fizruk finally broke down and began to cum in her mouth Christina.'
-					act 'Exit': gt 'gschool'
-					end
+
+					act 'Exit':gt 'gschool'
 				end
-
-			if zverevaQW = 2:
-
 			end
-			if zverevaQW = 3 and fizrukSex = 0:
+			if zverRageQW = 10:
+				!!Christina broke SG
+				act 'In the locker room':gt 'gKristinaZv'
 
+				exit
 			end
 
+			!!if zverevaQW = 2:end
+			!!if zverevaQW = 3 and fizrukSex = 0:end
 			if zverevaQW = 1:
-			'You see that the gym teacher went to his room and went after him Christina Zvereva. All other students went to the exit.'
-			act 'Overheard under the doors':
-			cls
-			gs 'stat'
-			'You quietly stood near the door to the room where the athlete sits and started listening. Christina said, "Viktor Pavlovich, I should not go to the <<$surname>> regional competitions." Viktor Pavlovich said "<<$surname>> beat you." Christina interrupted sporty "Well, you promised!" further they both fell silent and there was a deep sigh fizruka. "Well Kristinochka, I can not just pick and choose you, not her." Christina purred, "And if you think?" Fizruk choked voice said, "Oh, my God." Heard what that champ.'
-				act 'Peek':
+				'You see that the gym teacher went to his room and went after him Christina Zvereva. All other students went to the exit.'
+
+				act 'Overheard under the doors':
+					cls
+					gs 'stat'
+					'You quietly stood near the door to the room where the athlete sits and started listening. Christina said, "Viktor Pavlovich, I should not go to the <<$surname>> regional competitions." Viktor Pavlovich said "<<$surname>> beat you." Christina interrupted sporty "Well, you promised!" further they both fell silent and there was a deep sigh fizruka. "Well Kristinochka, I can not just pick and choose you, not her." Christina purred, "And if you think?" Fizruk choked voice said, "Oh, my God." Heard what that champ.'
+
+					act 'Peek':
 						cls
 						zverevaQW = 2
 						horny += 10
 						gs 'stat'
-						'<center><img src="images\qwest\alter\Ev\zver.jpg"></center>'
+						'<center><img src="images/qwest/alter/Ev/zver.jpg"></center>'
 						'You bent to the keyhole and look there. Seen you amazed. Christina was on her knees in front of the coach and sucked his cock.'
-							act 'Enter the room':
+
+						act 'Enter the room':
 							cls
 							zverevaQW = 3
 							gs 'stat'
-							!'<center><img src="images\qwest\alter\Ev\zver.jpg"></center>'
-								if GorSlut = 0:
-								'You opened the door and entered the room fizruka. Christine´s eyes widened when she saw you. She immediately jumped up and turned away wiping his mouth. Fizruk quickly began to fill the standing member in the sport tights. "<<$surname>>, you have not been taught to knock? We´re discussing important issues!" You rebelled, "Questions? Yeah it sucks you have a member that you´d sent it to the competition!" Fizruk shrugged, "What is this nonsense? There was nothing that you sweetheart overheated? May cause a doctor?" You are even more outraged "Viktor Pavlovich, I saw everything!" He grinned "Congratulations <<$name>>. Only who will believe you? You openly slander pytaeshsya best school athlete Christina Zvereva and make me send you to the regional competition, how low I´ll complain to your parents and the director!" You choked with indignation and Christina smiled slyly you "You can not prove anything, bitch. Now get out."'
-								end
-								if GorSlut > 0:
+							!!'<center><img src="images/qwest/alter/Ev/zver.jpg"></center>'
+							if GorSlut = 0:'You opened the door and entered the room fizruka. Christine´s eyes widened when she saw you. She immediately jumped up and turned away wiping his mouth. Fizruk quickly began to fill the standing member in the sport tights. "<<$surname>>, you have not been taught to knock? We´re discussing important issues!" You rebelled, "Questions? Yeah it sucks you have a member that you´d sent it to the competition!" Fizruk shrugged, "What is this nonsense? There was nothing that you sweetheart overheated? May cause a doctor?" You are even more outraged "Viktor Pavlovich, I saw everything!" He grinned "Congratulations <<$name>>. Only who will believe you? You openly slander pytaeshsya best school athlete Christina Zvereva and make me send you to the regional competition, how low I´ll complain to your parents and the director!" You choked with indignation and Christina smiled slyly you "You can not prove anything, bitch. Now get out."'
+
+							if GorSlut > 0:
 								'You opened the door and entered the room fizruka. Christina broke away from the penis and giggled "<<$gnikname>> <<$name>> came. Want to suck on some candy?"'
+
 								act 'Give blowjob':
 									cls
 									bj += 1
-									!cumlip += 1
-									if fizrukSex = 0: fizrukSex = 1 & guy += 1
-									if kristinaSex = 0: kristinaSex = 1
+									!!cumlip += 1
+
+									if fizrukSex = 0:fizrukSex = 1 & guy += 1
+									if kristinaSex = 0:kristinaSex = 1
+
 									grupNPC[18] = 100
 									gs 'stat'
-									'<center><img src="images\qwest\alter\ev\fiz.jpg"></center>'
+									'<center><img src="images/qwest/alter/ev/fiz.jpg"></center>'
 									'You squatted before the coach next to Christine and kissed fizruka member. Then around his lips and began to suck. Christina squatted and looked like you were aspirated. Then she took the dick in his mouth and began to lick you a solid trunk and balls fizruka. Fizruk finally broke down and began to cum in her mouth Christina.'
-									act 'Exit': gt 'gschool'
-									end
+
+									act 'Exit':gt 'gschool'
 								end
-								act 'Exit': gt 'gschool'
 							end
 
-							act 'snoop on':
+							act 'Exit':gt 'gschool'
+						end
+
+						act 'snoop on':
 							cls
 							horny += 10
 							gs 'stat'
-							'<center><img src="images\qwest\alter\Ev\zver.jpg"></center>'
+							'<center><img src="images/qwest/alter/Ev/zver.jpg"></center>'
 							'Fizruk groaned and Christine finished in her mouth. That is not taking out a member of his mouth swallow cum.'
-								act 'Leave':
+
+							act 'Leave':
 								cls
 								gs 'stat'
 								'You left pondering what he saw. Christina turns fucking with gym teacher and she wants you to go instead to the regional competitions.'
-								act 'Exit': gt 'gschool'
-								end
-							end
 
-							act 'Leave':
+								act 'Exit':gt 'gschool'
+							end
+						end
+
+						act 'Leave':
 							cls
 							gs 'stat'
 							'You left pondering what he saw. Christina turns fucking with gym teacher and she wants you to go instead to the regional competitions.'
-							act 'Exit': gt 'gschool'
-							end
+
+							act 'Exit':gt 'gschool'
 						end
+					end
+				end
 			end
-			end
+
 			gs 'stat'
 
-			act 'Exit': gt 'gschool'
+			act 'Exit':gt 'gschool'
 		end
-
 	end
-=======
-$d_fart_klass={
- if anus > 25 and analplugin=0:
- fartrand=rand(0,5)
-	 if fartrand=0:
-	 farttiperand=rand(0,3)
-		 if farttiperand=0:
-		 manna=manna/2
-		 gs'stat'
-		 'Stir in the chair you suddenly farted. Carefully looking around and looking at you understand classmates, that no one had heard of this.'
-		 end
-		 if farttiperand=1:
-		 manna=manna/2
-		 gs'stat'
-		 'Stir in the chair you suddenly farted. Carefully looking around and looking at you understand classmates, that no one had heard of this. One of the guys suddenly become oziratsya and prinyuhivatsya, then whispered loudly neighbor "What a bastard naperdela?"'
-		 end
-		 if farttiperand=2:
-		 manna=manna/2
-		 sub+=1
-		 gs'stat'
-		 'Stir in the chair you suddenly farted. Several people turned out at you and giggled.'
-		 end
-		 if farttiperand=3:
-		 manna=0
-		 sub+=5
-		 fart+=1
-		 gs'stat'
-		 'Stir in the chair you suddenly perdanuli loudly to the whole class. The whole class looked at you and classmates began to laugh at you. Teacher as something managed to calm the class. And you sit all red as a lobster out of shame and fear to raise their eyes to classmates, myself thinking "Christ, what a shame."'
-		 end
-	 end
- end
-}
-$d_fart_fiz={
- if anus > 25 and analplugin=0:
- fartrand=rand(0,5)
-	 if fartrand=0:
-	 farttiperand=rand(0,3)
-		 if farttiperand=0:
-		 manna=manna/2
-		 gs'stat'
-		 'The voltage you suddenly farted. Carefully looking around and looking at you understand classmates, that no one had heard of this.'
-		 end
-		 if farttiperand=1:
-		 manna=manna/2
-		 gs'stat'
-		 'The voltage you suddenly farted. Carefully looking around and looking at you understand classmates, that no one had heard of this. One of the guys suddenly become oziratsya and prinyuhivatsya, then whispered loudly neighbor "What a bastard naperdela?"'
-		 end
-		 if farttiperand=2:
-		 manna=manna/2
-		 sub+=1
-		 gs'stat'
-		 'The voltage you suddenly farted. Several people turned out at you and giggled.'
-		 end
-		 if farttiperand=3:
-		 manna=0
-		 sub+=5
-		 fart+=1
-		 gs'stat'
-		 'The voltage you suddenly perdanuli loudly to the whole class. The whole class looked at you and classmates began to laugh at you. Fizruk something like managed to calm the class. And you sit all red as a lobster out of shame and fear to raise their eyes to classmates, myself thinking "Christ, what a shame."'
-		 end
-	 end
- end
 }
 
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
-gs'stat'
-'<center><B><font color=maroon>school</font></B></center>'
-'<center><img src="qwest/alter/gschool2.jpg" ></center>'
-'The corridors at school painted cheap, toxic green paint.'
-
-act 'Go_Out':gt'gschool'
-$din_sekondparturok={
-     act 'Go to lessons':
-     cls
-     minut+=60*3
-     schoolprogul-=1
-         if week!3 and week!5:
-		 urand=RAND(0,12)
-		 lernSkill+=1
-		 lernHome+=1
-		 BeInSchool+=1
-		 gs'stat'
-		 '<center><img src="qwest/alter/urok<<urand>>.jpg" ></center>'
-		 'You were sitting in the classroom and listened to the monotonous boom on teachers, at least that is trying to understand and not fall asleep.'
-		     dynamic $d_fart_klass
-		 'Finally the bell rang and the students began to gather home.'
-		 act 'Go_Out':gt'gschool'
-		 end
-		 if week=3 or week=5:
-		 gs'stat'
-		 '<center><img src="qwest/alter/fizra.jpg" ></center>'
-		 'On Wednesdays and Fridays. You other devchenki dressed in the locker room and went to gym class. Viktor Pavlovich in tights with blisters on his knees and nickel-plated whistle built your class in a line and began to conduct a roll call.'
-		 fizrarand=RAND(0,4)
-		     if fizrarand=0:
-		     set speed = speed + RAND (1,3)
-			 set manna = manna - 5
-			 set fat = fat - 5
-			 set sweat = sweat + 3
-			 set beg = beg + RAND(2,5)
-		     'After the roll fizruk announced, today class will take the running. You ran with the whole class the entire gym class.'
-		     
-		     end
-		     if fizrarand=1:
-		     set agil = agil + RAND (1,3)
-			 set fat = fat - 5
-			 set manna = manna - 5
-			 set sweat = sweat + 3
-		     'After the roll fizruk announced, today class will take the jumping goat. You , that would jump over a goat.'
-		     end
-		     if fizrarand=2:
-		     set stren = stren + RAND (1,3)
-			 set manna = manna - 5
-			 set fat = fat - 2
-			 set sweat = sweat + 3
-		     'After the roll fizruk announced, today class will take the pull. You , that would catch up on the bar with almost lying under a horizontal bar as well as all the girls.'
-		     dynamic $d_fart_fiz
-		     end
-		     if fizrarand=3:
-		     set vital = vital + RAND (1,3)
-			 set manna = manna - 5
-			 set fat = fat - 2
-			 set sweat = sweat + 3
-             'After the roll fizruk announced, today class will take the news. You , that would perform abdominal exercises.'
-             dynamic $d_fart_fiz
-		     end
-		     if fizrarand=4:
-		     set stren += RAND (1,3)
-			 set manna = manna - 5
-			 set fat = fat - 2
-			 set sweat = sweat + 3
-			 cls
-			 horny+=10
-			 gs'stat'
-			 '<center><img src="qwest/alter/rope.jpg" ></center>'
-		     'On Wednesdays and Fridays. You other devchenki dressed in the locker room and went to gym class. Viktor Pavlovich in tights with blisters on his knees and nickel-plated whistle built your class in a line and began to conduct a roll call.'
-             'After the roll fizruk announced, today class will take the climbing rope. You , that would climb the rope.'
-                 if horny>=100:
-                 horny=0
-                 orgasm+=1
-                 rope_orgasm+=1
-                 'You climb a rope and feel like a solid rope t your pussy. You cover the excitement of each meter preodaleniya, Finally you flinch from covering you a pleasant feeling, all the muscles quivered and you covered orgasm right on the rope. Fizruk shouts from the bottom "Lebedev, what are you doing tryaseshsya? Tired or something? Get off then."'
-                 end
-                 if horny>=50 and horny<100:
-                 'You climb a rope and feel like a solid rope t your pussy. You cover the excitement of each meter preodaleniya. You Strood to climb up to the top and go down the rope with a burning excitement face.'
-                 end
-		     end
-		         if week=5 and razradbeg = 0:
-		         if schoolSorev=0:schoolSorev=1
-		         'fizruk announced, that on Saturday 10 will be held in the morning school run competitions.'
-		         end
-		         if week=5 and razradbeg = 1:
-		         if schoolSorev=0:schoolSorev=2
-		         'Fizruk came up to you and said, that on Saturday 10 in the morning will be held city competitions in running.'
-		         end
-		         
-				 if fizrukSex>0 and kristinaSex>0:
-				 'Christine came to you after physical education classes "Well sweetie Sveta, go to Pavlovich? amuse."'
-					 act 'Go to the athletes':
-					 cls
-					 bj+=1
-					 !cumlip+=1
-					 if fizrukSex=0:fizrukSex=1&guy+=1
-					 if kristinaSex=0:kristinaSex=1
-					 grupNPC[18]=100
-					 gs'stat'
-					 '<center><img src="qwest/alter/ev/fiz.jpg" ></center>'
-					 'You sit down in front of the coach next to Christine and kissed member fizruka. Then. Christina sat on his haunches and looked like you were aspirated. Then she took the dick in his mouth and began to lick you a solid trunk and eggs fizruka. Finally fizruk broke down and began to cum in her mouth Christine.'
-					 act 'Go_Out':gt'gschool'
-					 end
-				 end
-				 
-				 if zverRageQW=10:
-				 !Christina broke SG
-				 act 'In the locker room':gt'gKristinaZv'
-				 exit
-				 end
-		         
-		         if zverevaQW=2:
-		         
-		         end
-		         if zverevaQW=3 and fizrukSex=0:
-		         
-		         end
-		         
-		         if zverevaQW=1:
-		         'you see, fizruk that went to his room and went after him Cristina Zvereva. All other students went to the output.'
-		             act 'Eavesdrop under the doors':
-		             cls
-		             gs'stat'
-		             'You stood quietly near the door to the room where the athlete sits and began eavesdropping. Christina said "Viktor Pavlovich, I`m not the Lebedev should go to regional competitions." Viktor Pavlovich said "Lebedev won you." Christina interrupted sporty "Well you promised!" then they both fell silent and there was a deep sigh fizruka. "Well Kristinochka, I can not just go and pick you up, and not its." Christina purred "And if you think?" Fizruk choked voice said "Oh God." Heard what that champ.'
-		                 act 'peep':
-						 cls
-						 zverevaQW=2
-						 horny+=10
-						 gs'stat'
-						 '<center><img src="qwest/alter/Ev/zver.jpg" ></center>'
-						 'You are inclined to the keyhole and looked back. What I saw you amazed. Christina was on her knees in front of the coach and sucked his cock.'
-							 act 'Enter the room':
-							 cls
-							 zverevaQW=3
-							 gs'stat'
-							 !'<center><img src="qwest/alter/Ev/zver.jpg" ></center>'
-							     if GorSlut=0:
-							     'You opened the door and entered the room fizruka. Christine `s eyes widened when she saw you. She immediately jumped up and turned away wiping his mouth. Fizruk quickly began to fill standing member in the sport tights. "Lebedev, you have not been taught to knock? We then discuss the important issues!" you have rebelled, "questions? Yes, What would you have sent it to the competition!" Fizruk shrugged "What nonsense? Nothing was, what are you darling overheated? Can cause a doctor?" You are even more outraged "Viktor Pavlovich, I saw it all!" he grinned "Congratulations Light. Just who do you believe? You openly slander pytaeshsya best school athlete Christine Zvereva and get me to send you to the regional competitions, how low! I will complain to your parents and to the Director!" You choking and Christina smiled slyly you "You can not prove anything, bitch. Now get."'
-							     end
-							     if GorSlut>0:
-							     'You opened the door and entered the room fizruka. Christina pulled away from the penis and giggled, "<<$gnikname>> Sveta came. Do you want to suck on candy?"'
-							         act 'do blowjob':
-									 cls
-									 bj+=1
-									 !cumlip+=1
-									 if fizrukSex=0:fizrukSex=1&guy+=1
-									 if kristinaSex=0:kristinaSex=1
-									 grupNPC[18]=100
-									 gs'stat'
-									 '<center><img src="qwest/alter/ev/fiz.jpg" ></center>'
-									 'You sit down in front of the coach next to Christine and kissed member fizruka. Then. Christina sat on his haunches and looked like you were aspirated. Then she took the dick in his mouth and began to lick you a solid trunk and eggs fizruka. Finally fizruk broke down and began to cum in her mouth Christine.'
-									 act 'Go_Out':gt'gschool'
-									 end
-							     end
-								 act 'Go_Out':gt'gschool'
-							 end
-							 
-							 act 'pry further':
-							 cls
-							 horny+=10
-							 gs'stat'
-							 '<center><img src="qwest/alter/Ev/zver.jpg" ></center>'
-							 'Fizruk groaned and finished Christine in her mouth. That is not taking out a member of the mouth swallow sperm.'
-								 act 'Get_Away':
-								 cls
-								 gs'stat'
-								 'You left pondering what he saw. Christina turns fucking with physical trainer and she wants you to go to instead of regional competitions.'
-								 act 'Go_Out':gt'gschool'
-								 end
-							 end
-							 
-							 act 'Get_Away':
-							 cls
-							 gs'stat'
-							 'You left pondering what he saw. Christina turns fucking with physical trainer and she wants you to go to instead of regional competitions.'
-							 act 'Go_Out':gt'gschool'
-							 end
-						 end
-		             end
-		         end
-		     gs'stat'
-		     act 'Go_Out':gt'gschool'
-		 end
-		 
-     end
->>>>>>> 258_gschool2
-
-}
-<<<<<<< 258_gschool2
 $din_bigperemena = {
 	if AlbFrend >= 1 and GorSlut >= 3 and SchoolGossip > 0 and kotovLoveQW <= 0 and AlbinaBlockHumiliation = 0:
-	AlbinaBlockHumiliation = 1
-	'During the break you approached the local Gopnik. "Slysh cocksucker, missed the dick? Come to jolt, feed you over." To the guys came Albina Barlovskaya "Hey kids, it took away from the quick." Boys began to run into Albina, but she just laughed in their faces, "Look, boys, pull up your pants and stomp where got out, if I see you again pestering Svetke, will have a deal with my dad, and you vkurse who he is." Guys poobzyvali Albina my father´s daughter and said that she kept in her father´s ass hiding, but Albina only grinned in response to them, soon the bell rang and the boys went to the lesson.'
-	dynamic $din_sekondparturok
-	exit
+		AlbinaBlockHumiliation = 1
+		'During the break you approached the local Gopnik. "Slysh cocksucker, missed the dick? Come to jolt, feed you over." To the guys came Albina Barlovskaya "Hey kids, it took away from the quick." Boys began to run into Albina, but she just laughed in their faces, "Look, boys, pull up your pants and stomp where got out, if I see you again pestering Svetke, will have a deal with my dad, and you vkurse who he is." Guys poobzyvali Albina my father´s daughter and said that she kept in her father´s ass hiding, but Albina only grinned in response to them, soon the bell rang and the boys went to the lesson.'
+		dynamic $din_sekondparturok
+		exit
 	end
+
 	if AlbFrend >= 1 and GorSlut >= 3 and SchoolGossip = 0 and kotovLoveQW <= 0 and AlbinaBlockHumiliation = 0:
-	AlbinaBlockHumiliation = 1
-	'During the break you approached the local Gopnik. "Slysh <<$name>>. Star blowjob. Potsiki We already told you zashkvarenaya. Tolchek Come in and chat right." To the guys came Albina Barlovskaya "Hey kids, it took away from the quick." Boys began to run into Albina, but she just laughed in their faces, "Look, boys, pull up your pants and stomp where got out, if I see you again pestering Svetke, will have a deal with my dad, and you vkurse who he is." Guys poobzyvali Albina my father´s daughter and said that she kept in her father´s ass hiding, but Albina only grinned in response to them, soon the bell rang and the boys went to the lesson.'
-	dynamic $din_sekondparturok
-	exit
+		AlbinaBlockHumiliation = 1
+		'During the break you approached the local Gopnik. "Slysh <<$name>>. Star blowjob. Potsiki We already told you zashkvarenaya. Tolchek Come in and chat right." To the guys came Albina Barlovskaya "Hey kids, it took away from the quick." Boys began to run into Albina, but she just laughed in their faces, "Look, boys, pull up your pants and stomp where got out, if I see you again pestering Svetke, will have a deal with my dad, and you vkurse who he is." Guys poobzyvali Albina my father´s daughter and said that she kept in her father´s ass hiding, but Albina only grinned in response to them, soon the bell rang and the boys went to the lesson.'
+		dynamic $din_sekondparturok
+		exit
 	end
 
+	if npcSex[14] = 1 and KatjaLust >= 50 and KatjaHorny + KatjaSlut >= 100 and KatjaHorny > 50:
+		'During the break you went red as a lobster Katya Meynold and invited to go along to a secluded place.'
 
-	if GorSlut >= 5 and SchoolGossip > 0 and kotovLoveQW <= 0 and AlbinaBlockHumiliation = 0:
-	'During the break you approached the local Gopnik. "Slysh cocksucker, soskuchelas on dick? Come to jolt, feed you over."'
-		act 'Go to the toilet':
-		cls
-		SchoolGossip += 1
-		gs 'stat'
-		'You sadly went with the guys in the men´s room. One of the guys drove small fry of sortra and stood at the door. Cats spoke to you. "Well, that cocksucker. Bury on the canine."'
-			act 'Suck':
+		act 'Go with Katja':
 			cls
-			minut += 60
-			bj += 1
-			if npcSex[9] = 0: npcSex[9] = 1 & guy += 1
-			cumlip += 1
-			swallow += 1
-			sub += 1
-			gs 'stat'
-			'<center><img src="images\qwest\alter\Ev\toiletBJ.jpg"></center>'
-			'You obediently squatted and pulled Witek member of his sweatpants. You clasped him with <<$liptalk3>> a hard cock and began to suck him. Finally you feel like your mouth spurt of semen and Vitek said in a choked voice, "Swallow cocksucker, if any drop will´ll lick." You diligently swallowing sperm trying not to drop a single drop Witek finally stopped and cleaned cum cock back in his pants. "Good cocksucker, now going to go to every change in tolchek portion struhni. Clear?" You nodded, feeling a nasty taste in the mouth of sperm.'
-			dynamic $din_sekondparturok
+			gs'stat'
+			'<center><img src="images/qwest/alter/katja/petting.jpg" ></center>'
+			'Katja brought you into a small room where it was stored inventory for cleanup. She barely closed the door immediately dug into your lips on my lips and whispered passionately "Sveta, I want you."'
+
+			act 'Lick Katja':
+				cls
+				lesbian += 1
+				sub += 1
+				KatjaDom += 1
+				katschoolsex += 1
+				KatjaSlut += 1
+				KatjaHorny = 0
+				gs 'stat'
+				'<center><img src="images/qwest/alter/katja/lesbian.jpg" ></center>'
+				'You sat on his haunches and Kate lifted her skirt and pulled down pants. You nuzzled into her crotch and began to caress his tongue deftly tiny clitoris Katie ,Soon Kate moaned and clutched your hair cum.'
+				dynamic $din_sekondparturok
 			end
 		end
-	exit
+         
+		dynamic $din_sekondparturok
+		exit
 	end
 
-	if GorSlut >= 5 and SchoolGossip = 0 and kotovLoveQW <= 0 and AlbinaBlockHumiliation = 0:
-	'During the break you approached the local Gopnik. "Slysh <<$name>>. Star blowjob. Potsiki We already told you zashkvarenaya. Tolchek Come in and chat right."'
+	if GorSlut >= 3 and SchoolGossip > 0 and kotovLoveQW <= 0 and AlbinaBlockHumiliation = 0:
+		'During the break you approached the local Gopnik. "Slysh cocksucker, soskuchelas on dick? Come to jolt, feed you over."'
+
 		act 'Go to the toilet':
-		cls
-		SchoolGossip = 1
-		gs 'stat'
-		'You trembling went with the guys in the men´s room. One of the guys drove small fry of sortra and stood at the door. Cats spoke to you. "Well, that cocksucker. Bury on the canine."'
-			act 'Suck':
 			cls
-			minut += 60
-			bj += 1
-			if npcSex[9] = 0: npcSex[9] = 1 & guy += 1
-			cumlip += 1
-			swallow += 1
-			sub += 1
+			SchoolGossip += 1
 			gs 'stat'
-			'<center><img src="images\qwest\alter\Ev\toiletBJ.jpg"></center>'
-			'You obediently squatted and pulled Witek member of his sweatpants. You clasped him with <<$liptalk3>> a hard cock and began to suck him. Finally you feel like your mouth spurt of semen and Vitek said in a choked voice, "Swallow cocksucker, if any drop will´ll lick." You diligently swallowing sperm trying not to drop a single drop Witek finally stopped and cleaned cum cock back in his pants. "Good cocksucker, now going to go to every change in tolchek portion struhni. Clear?" You nodded, feeling a nasty taste in the mouth of sperm.'
-			dynamic $din_sekondparturok
+			'You sadly went with the guys in the men´s room. One of the guys drove small fry of sortra and stood at the door. Cats spoke to you. "Well, that cocksucker. Bury on the canine."'
+
+			act 'Suck':
+				cls
+				minut += 60
+				bj += 1
+
+				if npcSex[9] = 0:npcSex[9] = 1 & guy += 1
+
+				cumlip += 1
+				swallow += 1
+				sub += 1
+				gs 'stat'
+				'<center><img src="images/qwest/alter/Ev/toiletBJ.jpg"></center>'
+				'You obediently squatted and pulled Witek member of his sweatpants. You clasped him with <<$liptalk3>> a hard cock and began to suck him. Finally you feel like your mouth spurt of semen and Vitek said in a choked voice, "Swallow cocksucker, if any drop will´ll lick." You diligently swallowing sperm trying not to drop a single drop Witek finally stopped and cleaned cum cock back in his pants. "Good cocksucker, now going to go to every change in tolchek portion struhni. Clear?" You nodded, feeling a nasty taste in the mouth of sperm.'
+				dynamic $din_sekondparturok
 			end
 		end
-	exit
+
+		exit
 	end
 
-	if soniaPS = 2: soniaPS = 3 & 'Когда началась перемена вы увидели как с Соней Иванько о чем то разговаривает Котов. Соня смотрит на него чуть не плача и кивает головой.'
+	if GorSlut >= 3 and SchoolGossip = 0 and kotovLoveQW <= 0 and AlbinaBlockHumiliation = 0:
+		gopbjtoiletrand=rand(0,2)
+
+		if gopbjtoiletrand=0:
+			'During the break you approached the local Gopnik. "Slysh <<$name>>. Star blowjob. Potsiki We already told you zashkvarenaya. Tolchek Come in and chat right."'
+
+			act 'Go to the toilet':
+				cls
+				SchoolGossip = 1
+				gs 'stat'
+				'You trembling went with the guys in the men´s room. One of the guys drove small fry of sortra and stood at the door. Cats spoke to you. "Well, that cocksucker. Bury on the canine."'
+
+				act 'Suck':
+					cls
+					minut += 60
+					bj += 1
+
+					if npcSex[9] = 0:npcSex[9] = 1 & guy += 1
+
+					cumlip += 1
+					swallow += 1
+					sub += 1
+					gs 'stat'
+					'<center><img src="images/qwest/alter/Ev/toiletBJ.jpg"></center>'
+					'You obediently squatted and pulled Witek member of his sweatpants. You clasped him with <<$liptalk3>> a hard cock and began to suck him. Finally you feel like your mouth spurt of semen and Vitek said in a choked voice, "Swallow cocksucker, if any drop will´ll lick." You diligently swallowing sperm trying not to drop a single drop Witek finally stopped and cleaned cum cock back in his pants. "Good cocksucker, now going to go to every change in tolchek portion struhni. Clear?" You nodded, feeling a nasty taste in the mouth of sperm.'
+					dynamic $din_sekondparturok
+				end
+
+				!!if dom > 0:end
+
+			end
+
+			exit
+		end
+
+		if gopbjtoiletrand=1:
+			'On the reverse to you guy came from another class. "Hey Light, star blowjob, I heard that you <<$gnikname>>, go to jolt me sosnesh."'
+
+			act 'Go to the toilet':
+				cls
+				gs 'stat'
+				'You went to the toilet with unfamiliar guy from another class. In the bathroom .'
+
+				act 'Suck':
+					cls
+					minut += 60
+					bj += 1
+					guy += 1
+					cumlip += 1
+					swallow += 1
+					sub += 1
+					gs 'stat'
+					'<center><img src="images/qwest/alter/Ev/toiletBJ2.jpg" ></center>'
+					'You obediently sat down on his haunches and the guy ran his purple head you lips. You wrapped around his own <<$liptalk3>> hard cock and started to suck his hard cock absorbing into his mouth. After a while the man groaned and you feel like a warm jet of sperm hit you in the mouth. that would not choke you immediately started to swallow sperm and dosasyvat member. Finally went limp dick and a guy hid in his pants.'
+					dynamic $din_sekondparturok
+				end
+			end	 
+
+			if dom > 0:
+				act 'Send it':
+					cls
+					gs 'stat'
+					'You idiot sent to hell .'
+					dynamic $din_sekondparturok
+				end
+			end
+
+			exit
+		end
+	end
+
+	if soniaPS = 2:soniaPS = 3 & When the change you have seen how Sonya Ivanko talking about something Cats. Sonia looks at him almost in tears and nods.'
 
 	act 'Sit in a classroom':
-	cls
-	minut += 60
-	urand = RAND(0,20)
-	gs 'stat'
-	'<center><img src="images\qwest\alter\peremena<<urand>>.jpg"></center>'
-	'You sit in a classroom with a few <a href="exec:GT ''Sgrup1''">and botanists zauchkami</a>. The class also remained <a href="exec:GT ''Sgrup5''">rogue</a>. Most of the students came out into the corridor.'
-	dynamic $din_sekondparturok
+		cls
+		minut += 60
+		urand = rand(0, 20)
+		gs 'stat'
+		'<center><img src="images/qwest/alter/peremena<<urand>>.jpg"></center>'
+		'You sit in a classroom with a few <a href="exec:gt ''Sgrup1''">and botanists zauchkami</a>. The class also remained <a href="exec:gt ''Sgrup5''">rogue</a>. Most of the students came out into the corridor.'
+		dynamic $din_sekondparturok
 	end
 
 	act 'Go through the corridor':
-	cls
-	minut += 60
-	gs 'stat'
-	'<center><img src="images\qwest\alter\school.jpg"></center>'
-	'Girls wandered through the piles and then discuss it. Guys derzhutsya separately and some went to smoke behind the school. You see the local <a href="exec:GT ''Sgrup3''">Spin the</a>, <a href="exec:GT ''Sgrup2''">sportikov</a>'
-	dynamic $din_sekondparturok
+		cls
+		minut += 60
+		gs 'stat'
+		'<center><img src="images/qwest/alter/school.jpg"></center>'
+		'Girls wandered through the piles and then discuss it. Guys derzhutsya separately and some went to smoke behind the school. You see the local <a href="exec:gt ''Sgrup3''">Spin the</a>, <a href="exec:gt ''Sgrup2''">sportikov</a>'
+		dynamic $din_sekondparturok
 	end
 
 	act 'Go to the toilet':
-	cls
-	minut += 60
-	urand = RAND(0,12)
-	gs 'stat'
-	'<center><img src="images\qwest\alter\toilet.jpg"></center>'
-	'The toilet as always full of beautiful girls who go about their business. Some people smoke at the window. Local hooligans rubs near <a href="exec:GT ''Sgrup4''">WC</a>.'
-	dynamic $din_sekondparturok
+		cls
+		minut += 60
+		urand = rand(0, 12)
+		gs 'stat'
+		'<center><img src="images/qwest/alter/toilet.jpg"></center>'
+		'The toilet as always full of beautiful girls who go about their business. Some people smoke at the window. Local hooligans rubs near <a href="exec:gt ''Sgrup4''">WC</a>.'
+		dynamic $din_sekondparturok
+
 		if soniaPS >= 3:
-		soniarand = rand(0,3)
+			soniarand = rand(0, 3)
+
 			if soniarand = 0:
-			cls
-			horny += 10
-			gs 'stat'
-			'<center><img src="images\qwest\alter\sonia\t.jpg"></center>'
-			'Войдя в туалет вы видите, что Соня сосет член у какого то пацана. Твердый член входит в ее рот и Соня чавкает и умело работает губками.'
-			dynamic $din_sekondparturok
+				cls
+				horny += 10
+				gs 'stat'
+				'<center><img src="images/qwest/alter/sonia/t.jpg"></center>'
+				'Going to the toilet you see, that Sonia sucks dick at what that kid. Hard cock entering her mouth and Sonia champs and skillfully works sponges.'
+				dynamic $din_sekondparturok
 			end
 		end
 	end
 
 	act 'Go to the canteen':
-	cls
-	minut += 60
-	urand = RAND(0,12)
-	gs 'stat'
-	'<center><img src="images\qwest\alter\stolovka.jpg"></center>'
-	'In the canteen at the big change all <a href="exec:GT ''Sgrup''">students</a> wanting to eat.'
-	dynamic $din_sekondparturok
+		cls
+		minut += 60
+		urand = rand(0, 12)
+		gs 'stat'
+		'<center><img src="images/qwest/alter/stolovka.jpg"></center>'
+		'In the canteen at the big change all <a href="exec:gt ''Sgrup''">students</a> wanting to eat.'
+		dynamic $din_sekondparturok
+
 		if money >= 50:
 			act 'Buy food 50 rubles':
-			cls
-			money -= 50
+				cls
+				money -= 50
+				gs 'stat'
+				'<center><img src="images/qwest/alter/stolovka.jpg"></center>'
+				set minut += 30
+				set health += 10
+				set manna += 20
 
-			gs 'stat'
-			'<center><img src="images\qwest\alter\stolovka.jpg"></center>'
-			set minut += 30
-			set health += 10
-			set manna += 20
 				if energy >= 30:
-				set fat += 5
-				'You can no longer have.'
+					set fat += 5
+					'You can no longer have.'
 				end
+
 				if energy >= 20 and energy < 30:
-				set fat += 3
-				set energy += 10
-				'You pushed through the power of a meal.'
+					set fat += 3
+					set energy += 10
+					'You pushed through the power of a meal.'
 				end
+
 				if energy < 20:
-				set energy += 20
-				!set fat += 1
-				'You gladly ate cooked food.'
+					set energy += 20
+					!!set fat += 1
+					'You gladly ate cooked food.'
 				end
-				if water >= 20:
-				'Tea in you no longer climbs.'
-				end
+
+				if water >= 20:'Tea in you no longer climbs.'
+
 				if water < 20:
-				'You gladly drank a mug of tea.'
-				set water += 20
+					'You gladly drank a mug of tea.'
+					set water += 20
 				end
-			gs 'stat'
-			dynamic $din_sekondparturok
+
+				gs 'stat'
+				dynamic $din_sekondparturok
 			end
 		end
 	end
-=======
-$din_bigperemena={
 
-     if AlbFrend>=1 and GorSlut>=3 and SchoolGossip>0 and kotovLoveQW<=0 and AlbinaBlockHumiliation=0:
-     AlbinaBlockHumiliation=1
-     'During the break you approached local Gopnik. "Slysh huesoska, missed dick? Come in tolchek, feed you Concha." To the guys came Albina Barlovskaya "Hey kids, took away from it in rapid." The boys began to run into Albina, but she just laughed in their face "that`s what, boys, pull up their pants and stomp climbed from, if I see you again adheres to the Sveta, will be dealing with my dad, and you who he vkurse." Guys poobzyvali Albina my father`s daughter , it all the time for my dad hiding ass, Albina but only smiled in response to them, Soon the bell rang and the boys went to a lesson.'
-     dynamic $din_sekondparturok
-     exit
-     end
-     if AlbFrend>=1 and GorSlut>=3 and SchoolGossip=0 and kotovLoveQW<=0 and AlbinaBlockHumiliation=0:
-     AlbinaBlockHumiliation=1
-     'During the break you approached local Gopnik. "Slysh Light. star blowjob. We have already said potsiki, you zashkvarenaya. Come in tolchek, need to talk." To the guys came Albina Barlovskaya "Hey kids, took away from it in rapid." The boys began to run into Albina, but she just laughed in their face "that`s what, boys, pull up their pants and stomp climbed from, if I see you again adheres to the Sveta, will be dealing with my dad, and you who he vkurse." Guys poobzyvali Albina my father`s daughter , it all the time for my dad hiding ass, Albina but only smiled in response to them, Soon the bell rang and the boys went to a lesson.'
-     dynamic $din_sekondparturok
-     exit
-     end
-     
-     if npcSex[14]=1 and KatjaLust>=50 and KatjaHorny+KatjaSlut>=100 and KatjaHorny>50:
-     'During the break you went red as a lobster Katya Meynold and invited to go along to a secluded place.'
-         act 'Go with Kate':
-         cls
-         gs'stat'
-         '<center><img src="qwest/alter/katja/petting.jpg" ></center>'
-         'Kate brought you into a small room where it was stored inventory for cleanup. She barely closed the door immediately dug into your lips on my lips and whispered passionately "Sveta, I want you."'
-             act 'Lick Katie':
-			 cls
-			 lesbian+=1
-			 sub+=1
-			 KatjaDom+=1
-			 katschoolsex+=1
-			 KatjaSlut+=1
-			 KatjaHorny=0
-			 gs'stat'
-			 '<center><img src="qwest/alter/katja/lesbian.jpg" ></center>'
-			 'You sat on his haunches and Kate lifted her skirt and pulled down pants. You nuzzled into her crotch and began to caress his tongue deftly tiny clitoris Katie ,Soon Kate moaned and clutched your hair cum.'
-			 dynamic $din_sekondparturok
-			 end
-         end
-         
-         dynamic $din_sekondparturok
-     exit
-     end
-     
+	if zverevaQW = 2 and zverRageQW = 0 or zverevaQW = 3 and zverRageQW = 0:
+		act 'Spread rumors about Christina':
+			cls
 
-     if GorSlut>=3 and SchoolGossip>0 and kotovLoveQW<=0 and AlbinaBlockHumiliation=0:
-     'During the break you approached local Gopnik. "Slysh huesoska, missed dick? Come in tolchek, feed you Concha."'
-         act 'Go to the toilet':
-         cls
-         SchoolGossip+=1
-         gs'stat'
-         'You sadly went with the guys in the men`s room. One of the guys drove small fry of sortra and stood at the door. Cats talk to you. "Well huesoska. Take on the canine."'
-             act 'suck':
-			 cls
-			 minut+=60
-			 bj+=1
-			 if npcSex[9]=0:npcSex[9]=1&guy+=1
-			 cumlip+=1
-			 swallow+=1
-			 sub+=1
-			 gs'stat'
-			 '<center><img src="qwest/alter/Ev/toiletBJ.jpg" ></center>'
-			 'You obediently sat down on his haunches and Vitek took a member of his sweatpants. You wrapped around his own <<$liptalk3>> hard cock and began to suck. Finally "swallow huesoska, if a drop of damage, will lick." You diligently swallowing sperm trying not to drop a single drop, Vitek finally stopped and removed the stop cock back in his pants. "Good for huesoska, now going to go to every change of tolchek portion struhni. I_Get_It?" You nodded, feeling the nasty taste of semen in the mouth.'
-			 dynamic $din_sekondparturok
-			 end
-         end
-     exit
-     end
+			if zverRageQW = 0:zverRageQW = 1
 
-     if GorSlut>=3 and SchoolGossip=0 and kotovLoveQW<=0 and AlbinaBlockHumiliation=0:
-     gopbjtoiletrand=rand(0,2)
-         if gopbjtoiletrand=0:
-		 'During the break you approached local Gopnik. "Slysh Light. star blowjob. We have already said potsiki, you zashkvarenaya. Come in tolchek, need to talk."'
-			 act 'Go to the toilet':
-			 cls
-			 SchoolGossip=1
-			 gs'stat'
-			 'You are trembling with fear went with the guys in the men`s room. One of the guys drove small fry of sortra and stood at the door. Cats talk to you. "Well huesoska. Take on the canine."'
-				 act 'suck':
-				 cls
-				 minut+=60
-				 bj+=1
-				 if npcSex[9]=0:npcSex[9]=1&guy+=1
-				 cumlip+=1
-				 swallow+=1
-				 sub+=1
-				 gs'stat'
-				 '<center><img src="qwest/alter/Ev/toiletBJ.jpg" ></center>'
-				 'You obediently sat down on his haunches and Vitek took a member of his sweatpants. You wrapped around his own <<$liptalk3>> hard cock and began to suck. Finally "swallow huesoska, if a drop of damage, will lick." You diligently swallowing sperm trying not to drop a single drop, Vitek finally stopped and removed the stop cock back in his pants. "Good for huesoska, now going to go to every change of tolchek portion struhni. I_Get_It?" You nodded, feeling the nasty taste of semen in the mouth.'
-				 dynamic $din_sekondparturok
-				 end
-				 
-				 if dom>0:
-				 
-				 end
-			 end
-		 exit
-		 end
-		 if gopbjtoiletrand=1:
-		 'On the reverse to you guy came from another class. "Hey Light, star blowjob, I heard that you <<$gnikname>>, go to jolt me sosnesh."'
-		 	 act 'Go to the toilet':
-			 cls
-			 gs'stat'
-			 'You went to the toilet with unfamiliar guy from another class. In the bathroom .'
-				 act 'suck':
-				 cls
-				 minut+=60
-				 bj+=1
-				 guy+=1
-				 cumlip+=1
-				 swallow+=1
-				 sub+=1
-				 gs'stat'
-				 '<center><img src="qwest/alter/Ev/toiletBJ2.jpg" ></center>'
-				 'You obediently sat down on his haunches and the guy ran his purple head you lips. You wrapped around his own <<$liptalk3>> hard cock and started to suck his hard cock absorbing into his mouth. After a while the man groaned and you feel like a warm jet of sperm hit you in the mouth. that would not choke you immediately started to swallow sperm and dosasyvat member. Finally went limp dick and a guy hid in his pants.'
-				 dynamic $din_sekondparturok
-				 end
-				 
-			 end
-			 
-			 if dom>0:
-			     act 'Send it':
-			     cls
-			     gs'stat'
-			     'You idiot sent to hell .'
-			     dynamic $din_sekondparturok
-			     end
-			 end
-		 exit
-		 end
-     end
-     
-     if soniaPS=2:soniaPS=3&'When the change you have seen how Sonya Ivanko talking about something Cats. Sonia looks at him almost in tears and nods.'
-
-     act 'Sitting in class':
-     cls
-     minut+=60
-     urand=RAND(0,20)
-     gs'stat'
-     '<center><img src="qwest/alter/peremena<<urand>>.jpg" ></center>'
-     'You sit in a classroom with several <a href="exec:GT ''Sgrup1''">botanists and zauchkami</a>. Also in the left class <a href="exec:GT ''Sgrup5''">rogue</a>. Most students came out into the corridor. '
-     dynamic $din_sekondparturok
-     end
-     
-     act 'Go through the corridor':
-     cls
-     minut+=60
-     gs'stat'
-     '<center><img src="qwest/alter/school.jpg" ></center>'
-     'Girls wandered through the piles and discussing something. The boys are kept separate and some went to school for smoking. You see local <a href="exec:GT ''Sgrup3''">krutanite</a>, <a href="exec:GT ''Sgrup2''">sportikov</a>'
-     dynamic $din_sekondparturok
-     end
-     
-     act 'Go to the toilet':
-     cls
-     minut+=60
-     urand=RAND(0,12)
-     gs'stat'
-     '<center><img src="qwest/alter/toilet.jpg" ></center>'
-     'The toilet is always full as devchenok who go about their business. Some smoke at the window. Local hooligans rubs near <a href="exec:GT ''Sgrup4''">toilet</a>.'
-     dynamic $din_sekondparturok
-         if soniaPS>=3:
-         soniarand=rand(0,3)
-             if soniarand=0:
-             cls
-             horny+=10
-             gs'stat'
-             '<center><img src="qwest/alter/sonia/t.jpg" ></center>'
-             'Going to the toilet you see, that Sonia sucks dick at what that kid. Hard cock entering her mouth and Sonia champs and skillfully works sponges.'
-             dynamic $din_sekondparturok
-             end
-         end 
-     end
-     
-     act 'Go to the dining room':
-     cls
-     minut+=60
-     urand=RAND(0,12)
-     gs'stat'
-     '<center><img src="qwest/alter/stolovka.jpg" ></center>'
-     'In the cafeteria at recess all <a href="exec:GT ''Sgrup''">schoolchildren</a> wanting a snack.'
-     dynamic $din_sekondparturok
-         if money>=50:
-             act 'buy food 50 RUB':
-			 cls
-			 money-=50
-			 salo+=2
-			 gs'stat'
-			 '<center><img src="qwest/alter/stolovka.jpg" ></center>'
-			  set minut = minut + 30
-			 set health = health + 10
-			 set manna = manna + 20
-				 if energy >= 30:
-				  set fat = fat + 5
-				 'You can no longer have.'
-				 end
-				 if energy >= 20 and energy < 30:
-				 set fat = fat + 3
-				 set energy = energy + 10
-				 'You pushed through the power of a meal.'
-				 end
-				 if energy < 20:
-				 set energy = energy +20
-				 !set fat = fat + 1
-				 'You gladly ate cooked food.'
-				 end
-				 if water >= 20:
-				 'Tea in you no longer climbs.'
-				 end
-				 if water < 20:
-				 'You gladly drank a cup of tea.'
-				 set water = water +20
-				 end
-			 gs'stat'
-			 dynamic $din_sekondparturok
-			 end
-         end
-     end
-     
-     if zverevaQW=2 and zverRageQW=0 or zverevaQW=3 and zverRageQW=0:
-         act 'Spread rumors about Christina':
-		 cls
-		 if zverRageQW=0:zverRageQW=1
-		 minut+=60
-		 gs'stat'
-		 'You secretly worldwide blabbed what Zvereva Christina sucks fizruka. Now.'
-		 dynamic $din_sekondparturok
-		 end
-     end
->>>>>>> 258_gschool2
+			minut += 60
+			gs 'stat'
+			'You secretly worldwide blabbed what Zvereva Christina sucks fizruka. Now.'
+			dynamic $din_sekondparturok
+		end
+	end
 }
 
-
-<<<<<<< 258_gschool2
 if hour <= 8:
 	act 'Go to lessons':
-	cls
-	hour = 9
-	minut = 0
-	minut += 60 * 3
-	urand = RAND(0,12)
+		cls
+		hour = 9
+		minut = 0
+		minut += 60 * 3
+		urand = rand(0, 12)
 
-	if lernHome = 0: Suspeh += 2
-	if lernHome > 0: Suspeh -= 1
-	if Suspeh > 100: Suspeh = 100
-	if Suspeh < 0: Suspeh = 0
-	lernSkill += 1
-	lernHome += 1
+		if lernHome = 0:Suspeh += 2
+		if lernHome > 0:Suspeh -= 1
+		if Suspeh > 100:Suspeh = 100
+		if Suspeh < 0:Suspeh = 0
 
-	if schoolSorev = 1: schoolSorev = 0
-	gs 'stat'
-	'<center><img src="images\qwest\alter\urok<<urand>>.jpg "></center>'
-	'You were sitting in the classroom and listened to the monotonous boom on teachers, at least that is trying to understand and not to fall asleep.'
-	'Finally the bell rang and the students went to a big change.'
-	if GorSlut > 0: 'You hear whispering classmates as showing a finger at you.'
-	if soniaPS = 1: soniaPS = 2 & 'The main news today was the news that Sonia Ivanko allowed in a circle at a disco. She sucked in as much as five guys.'
-	dynamic $din_bigperemena
+		lernSkill += 1
+		lernHome += 1
+
+		if schoolSorev = 1:schoolSorev = 0
+
+		gs 'stat'
+		'<center><img src="images/qwest/alter/urok<<urand>>.jpg "></center>'
+		'You were sitting in the classroom and listened to the monotonous boom on teachers, at least that is trying to understand and not to fall asleep.'
+		dynamic $d_fart_klass
+		'Finally the bell rang and the students went to a big change.'
+
+		if GorSlut > 0:'You hear whispering classmates as showing a finger at you.'
+		if soniaPS = 1:soniaPS = 2 & 'The main news today was the news that Sonia Ivanko allowed in a circle at a disco. She sucked in as much as five guys.'
+
+		dynamic $din_bigperemena
 	end
-=======
-if hour<=8:
-     act 'Go to lessons':
-     cls
-     hour=9
-     minut=0
-     minut+=60*3
-     urand=RAND(0,12)
-     
-     if lernHome=0:Suspeh+=2
-     if lernHome>0:Suspeh-=1
-     if Suspeh>100:Suspeh=100
-     if Suspeh<0:Suspeh=0
-     lernSkill+=1
-     lernHome+=1
-     
-     if schoolSorev=1:schoolSorev=0
-     gs'stat'
-     '<center><img src="qwest/alter/urok<<urand>>.jpg" ></center>'
-     'You were sitting in the classroom and listened to the monotonous boom on teachers, at least that is trying to understand and not fall asleep.'
-     dynamic $d_fart_klass
-     'Finally the bell rang and the students went to great change.'
-     if GorSlut>0:'You hear a whisper as classmates pointing at you finger.'
-     if soniaPS=1:soniaPS=2&'The main news today was the news, that Sonia Ivanko allowed in a circle at the disco. She sucked in as much as five guys.'
-     dynamic $din_bigperemena
-     end
->>>>>>> 258_gschool2
 end
+
 --- gschool2 ---------------------------------
 
