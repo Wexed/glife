@@ -4,7 +4,7 @@ gs 'stat'
 if artemhomemark = 0:
 	'You came to the house Artem Chebotarev.'
 
-	act 'Get_Away':minut += 15 & gt 'gorodok'
+	act 'Leave':minut += 15 & gt 'gorodok'
 
 	if week < 6:
 		if hour < 16 and hour >= 7:'Artem not at home.'
@@ -55,7 +55,7 @@ if artemhomemark = 1:
 	if artompower = 0:'Artem with a smile looking at you "Oh Light, you milked me dry, I need a vacation."'
 	if lernHome > 0:act 'Teach lessons':artemhomemark = 2 & gt $curloc
 
-	act 'Get_Away':artemhomemark = 0 & minut += 15 & gt 'gorodok'
+	act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 end
 
 if artemhomemark = 2:
