@@ -98,7 +98,9 @@ if StoryLine > 0:
 			if hour < 7 or hour >= 21:'Sleeps on the couch your younger brother Kolya.'
 
 			if week < 6:
-				if hour >= 16 and hour < 21:'Sitting on the couch <a href="exec:gt ''father''">stepfather</a> and watching TV.'
+				if father_go = 0:
+					if hour >= 16 and hour < 21:'Sitting on the couch <a href="exec:gt ''father''">stepfather</a> and watching TV.'
+				end
 				if hour >= 18 and hour < 20:'Sitting at the table your little brother <a href="exec:gt ''brother''">Kolka</a> and teaches lessons.'
 				if hour = 20:'Sitting on the couch your younger brother <a href="exec:gt ''brother''">Kolka</a> and watching TV.'
 			end

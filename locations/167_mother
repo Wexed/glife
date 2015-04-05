@@ -77,21 +77,30 @@ if hour > 5:
 		'You asked my mother money.'
 
 		if SchoolAtestat = 0:
-			if mother > 80:
+			if mother >= 80:
 				if motherPayDay = day:'Mother frowned "dochura, I told you already gave the money!"'
 
 				if motherPayDay ! day:
+					mother -= 1
 					motherPayDay = day
 
 					if Suspeh >= 70:
 						if Suspeh < 90:
 							money += 150
 							'Frowning mother gave you 150 rubles, "Will you learn better, I will give more. Meanwhile, it´s all that you deserve!"'
+
+							act 'Move away':gt $loc, $metka
+
+							exit
 						end
 
 						if Suspeh >= 90:
 							money += 300
 							'Your mother smiled and gave you 300 rubles, "Okay, here is your money."'
+
+							act 'Move away':gt $loc, $metka
+
+							exit
 						end
 					else
 						'Mother frowned "You´ll learn better, there will be money, as long as you deserve only the belt, not money!"'
@@ -103,17 +112,26 @@ if hour > 5:
 				if motherPayDay = day:'Mother frowned "No docha. I already gave money. Enough for today."'
 
 				if motherPayDay ! day:
+					mother -= 1
 					motherPayDay = day
 
 					if Suspeh >= 70:
 						if Suspeh < 90:
 							money += 100
 							'Frowning mother gave you $ 100, "Will you learn better, I will give more. Meanwhile, it´s all that you deserve!"'
+
+							act 'Move away':gt $loc, $metka
+
+							exit
 						end
 
 						if Suspeh >= 90:
 							money += 250
 							'The mother smiled and gave you 250 rubles, "Okay, on the money."'
+
+							act 'Move away':gt $loc, $metka
+
+							exit
 						end
 					else
 						'Mother frowned "You´ll learn better, there will be money, as long as you deserve only the belt, not money!"'
@@ -125,17 +143,26 @@ if hour > 5:
 				if motherPayDay = day:'Mother frowned "That thou Velcro. Received nothing!"'
 
 				if motherPayDay ! day:
+					mother -= 1
 					motherPayDay = day
 
 					if Suspeh >= 70:
 						if Suspeh < 90:
 							money += 50
 							'Frowning mother gave you 50 rubles, "Will you learn better, I will give more. Meanwhile, it´s all that you deserve!"'
+
+							act 'Move away':gt $loc, $metka
+
+							exit
 						end
 
 						if Suspeh >= 90:
 							money += 200
 							'Your mother smiled and gave you 200 rubles, "Okay, on the money."'
+
+							act 'Move away':gt $loc, $metka
+
+							exit
 						end
 					else
 						'Mother frowned "You´ll learn better, there will be money, as long as you deserve only the belt, not money!"'
@@ -145,10 +172,10 @@ if hour > 5:
 
 			if mother < 40 and motherKnowWhore = 0 and motherKnowSpravka = 0:'Mother frowned, "Do not you deserve the money!"'
 
-			if (motherKnowWhore => 1 or motherKnowSpravka => 1) and mother < 40:'-You ask for more money, whore? Get out of here, scram their stud beg for money'
+			if (motherKnowWhore >= 1 or motherKnowSpravka >= 1) and mother < 40:'"You ask for more money, whore? Get out of here, scram their stud beg for money"'
 		end
 
-		if SchoolAtestat > 0:'You´re old enough, earn myself.'
+		if SchoolAtestat > 0:'You´re old enough, earn yourself.'
 
 		act 'Move away':gt $loc, $metka
 	end
@@ -161,7 +188,7 @@ if hour > 5:
 		'<center><img src="images/qwest/alter/mother.jpg"></center>'
 
 		if mother < 80:'You asked your mother about her real father. Mother pulled a face and not contented said. "<<$name>>, I am not going to discuss this topic now. Just know that Vova, your stepfather growth you with Anya as their own daughters."'
-		if mother > 80:'You asked your mother about her real father. Mother pulled a face and not contented said. "I have no idea where he is and what he does. We were at school together. It made me your sister Anka. Our parents we were married. Michael, your father, and you made me thumped. We divorced and I married Vovk. Kolka already born from Vova. Vovk But you brought up with Anya as their own daughters. Soul in you looked for, and bathed you, and went for a walk with you for a walk. And tales told you at night. "'
+		if mother >= 80:'You asked your mother about her real father. Mother pulled a face and not contented said. "I have no idea where he is and what he does. We were at school together. It made me your sister Anka. Our parents we were married. Michael, your father, and you made me thumped. We divorced and I married Vovk. Kolka already born from Vova. Vovk But you brought up with Anya as their own daughters. Soul in you looked for, and bathed you, and went for a walk with you for a walk. And tales told you at night. "'
 
 		act 'Move away':gt $loc, $metka
 	end
@@ -175,7 +202,7 @@ if hour > 5:
 		'You asked for new clothes.'
 
 		if SchoolAtestat = 0:
-			if mother > 80:
+			if mother >= 80:
 				if motherClotheMonth ! month:
 					'Mom sighed, "Here we go again. You´re my world is empty. Come to the store, grief onion."'
 
@@ -311,7 +338,7 @@ if SchoolAtestat = 0:
 			'Mother shook her head sadly "Well. Look no zalet."'
 		end
 
-		act 'Leave':gt $loc, $metka
+		act 'Move away':gt $loc, $metka
 
 		exit
 	end
@@ -329,20 +356,20 @@ if cumlip > 1 or cumface > 0 or cumfrot > 0:
 	set motherKnowWhore = 1
 	if momslut < 2:
 		'The mother looked at you, rolled her eyes and blushed. You was noticeable sperm.'
-		'-Oh, you´re a juvenile whore, what is that to you? Telling everyone that her daughter is decent, but she fucked somewhere. Blyadina! Go away, do not get caught up in my eyes!'
+		'"Oh, you´re a juvenile whore, what is that to you? Telling everyone that my daughter is decent, but she fucked somewhere. Blyadina! Go away, do not get caught up in my eyes!"'
 	else
 		'Mother shook her head sadly "You would then wiped the sperm, and then the whole town will know, you whore."'
 	end
 
-	act 'Leave':gt $loc, $metka
+	act 'Move away':gt $loc, $metka
 
 	exit
 end
 
-if glamur > 0 and hour > 9:'Mom looked at you, "Where are you so dressed up?"'
+if glamur > 0 and hour > 9:'Mom looked at you, "Why are you so dressed up?"'
 
 if week = 5 and dostupindorf = 1:
-	if hour > 9:'Mom continued to go about their business tells you "Sveta, tomorrow we will go to the village, in 12 hours. If you want us then come to me to 12 ti."'
+	if hour > 9:'Mom continued to go about their business tells you "Sveta, tomorrow we will go to the village, at 12 o''clock. If you want us then come to me before 12."'
 end
 
 if week = 6 and dostupindorf = 1:

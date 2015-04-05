@@ -36,9 +36,9 @@ if rembedr = 1:'<center><img src="images/etogame/bedr2.jpg"></center>'
 
 clr
 gs 'stat'
-fcolor="rgb"(0, 0, 0)
-bcolor="rgb"(255, 255, 255)
-lcolor="rgb"(106, 90, 205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 set minut += 1
 set housrA = 1
 set housrMir = 1
@@ -221,6 +221,8 @@ if sick >= 1:
 	end
 end
 
+if dur > 0:'You have hidden <<dur>> doses pale lady'
+
 if dur > 0 and narkday ! day:
 	act 'Sniff pale lady (0:05)':
 		cla
@@ -236,7 +238,7 @@ if dur > 0 and narkday ! day:
 		'<center><img src="images/etogame/dur.jpg"></center>'
 		'You sniff dose of powder, then you start to feel just great.'
 
-		act 'Exit':gt 'bedr'
+		act 'Exit':gt $curloc
 	end
 end
 

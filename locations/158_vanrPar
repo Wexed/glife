@@ -11,9 +11,9 @@ $loc = $CURLOC
 clr
 set minut += 1
 gs 'stat'
-fcolor="rgb"(0, 0, 0)
-bcolor="rgb"(255, 255, 255)
-lcolor="rgb"(106, 90, 205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 'Bathroom cramped and very unpretentious.'
 
 if stanok > 0:'Your razor will suffice for <b><<stanok>></b> time.'
@@ -126,7 +126,7 @@ if mop ! 1:
 end
 
 if cumfrot > 0:
-	act 'Scour sperm from clothing':
+	act 'Scour sperm from clothing (0:15)':
 		cla
 		set cumfrot = 0
 		set minut += 15
@@ -164,7 +164,7 @@ if lobok > 0 and stanok > 0:
 		set stanok -= 1
 		'<center><img src="images/pics/shave3.jpg"></center>'
 		'You lathered crotch and took a razor deft movements began to shave pubic hairs and shave pussy vokurug. Finally shaving was finished and you flushed with foam pussy.'
-		!!'Вы намылили лобок, после чего сбрили с него все волосы.'
+		!!'You lathered pubis, then shaved off his hair all.'
 
 		act 'postpone machine':gt $curloc
 	end

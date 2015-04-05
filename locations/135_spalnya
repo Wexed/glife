@@ -10,7 +10,7 @@ if komp = 1:'<a href="exec:gt ''Komp'', ''start''">Computer</a>.'
 
 act 'In the corridor':gt 'house'
 
-act 'Lesson (2:00)':
+act 'Learn lesson (2:00)':
 	cla
 	set minut += 120
 	set intel += 1
@@ -24,7 +24,7 @@ if student > 0 and kursovik < 100:
 		cla
 		*clr
 		set minut += 60
-		set kursovik += rand(intel/20, intel/10)
+		set kursovik += rand(intel / 20, intel / 10)
 
 		if kursovik > 100:set kursovik = 100
 

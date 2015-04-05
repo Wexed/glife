@@ -33,7 +33,7 @@ if GorSlut > 0:
 			if kristinaSex > 0:'Christina smiles at you and says quietly, "Not bad the last time we entertained, you´re so sexy that just zakachaeshsya."'
 		end
 
-		if npcPol[numnpc] = 0:'Are you trying to talk to the guy, but <<$npcName[numnpc]>> dismisses you." I´m busy right now."' !Guy
+		if npcPol[numnpc] = 0:'Are you trying to talk to the guy, but <<$npcName[numnpc]>> dismisses you." I´m busy right now."' !!Guy
 		if npcPol[numnpc] > 0 and numnpc ! 18:'Are you trying to talk to a girl, but <<$npcName[numnpc]>> makes squeamish grimassy "Go away <<$gnikname>>!"' !!Girl
 	end
 
@@ -49,7 +49,7 @@ if GorSlut > 0:
 	if grupTipe[numnpc] = 4:
 		!!Gopnik
 		if npcPol[numnpc] = 0:
-			!!парень
+			!!Guy
 			if numnpc = 9:'Are you trying to talk to Victor, but he responds to you, "I hear it! Fuck off."' !!Cats
 			if numnpc ! 9:'<<$gnikname>> laughing at you "Ha ha <<$gnikname>> come. huytsa want more?"'
 		end

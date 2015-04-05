@@ -249,10 +249,10 @@ if tanwork = 1:
 end
 
 if pranik > 0:
-	act 'Drink tea with cookies (0:15)':
+	act 'Drink tea with cookies (0:05)':
 		cla
 		*clr
-		minut += 15
+		minut += 5
 		pranik -= 1
 		set health += 30
 		set manna += 100
@@ -364,7 +364,7 @@ end
 if vitamin > 0:
 	'You have <<vitamin>> vitaminok.'
 	if vitaminday ! day:
-		act 'Drink Vitamins':
+		act 'Drink Vitamins (0:05)':
 			cla
 			*clr
 			set minut += 5

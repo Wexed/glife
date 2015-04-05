@@ -11,9 +11,9 @@ $loc = $CURLOC
 clr
 set minut += 1
 gs 'stat'
-fcolor="rgb"(0, 0, 0)
-bcolor="rgb"(255, 255, 255)
-lcolor="rgb"(106, 90, 205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 'The kitchen is next to the stove sink. Large refrigerator in the corner and kitchen table with chairs is against the wall.'
 gs 'family'
 
@@ -110,10 +110,10 @@ end
 if pranik > 0:
 	'Cookies will suffice for <<pranik>> time.'
 
-	act 'Drink tea with cookies (0:15)':
+	act 'Drink tea with cookies (0:05)':
 		cla
 		*clr
-		minut += 15
+		minut += 5
 		pranik -= 1
 		set health += 30
 		set manna += 100
@@ -166,6 +166,8 @@ if fatdel > 0:
 	act 'Consume fat burners':
 		cla
 		*clr
+		if fat > salo:fat = salo
+
 		set fatdel -= 1
 		set fat -= 25
 
@@ -214,6 +216,8 @@ if vitamin > 0:
 		act 'Drink Vitamins (0:05)':
 			cla
 			*clr
+			if fat > salo:fat = salo
+
 			set minut += 5
 			vitaminday = day
 			vitamin -= 1
@@ -229,7 +233,7 @@ if vitamin > 0:
 
 			'You drank Vitams'
 
-			act 'move away':gt $curloc
+			act 'Move away':gt $curloc
 		end
 	end
 end

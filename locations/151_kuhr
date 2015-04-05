@@ -27,7 +27,7 @@ $dirtarm = {
 $edagotd = {
 	cla
 	*clr
-	set minut += 30
+	set minut += 60
 	gs 'stat'
 	set edahot += 1
 	set eda -= 1
@@ -409,9 +409,9 @@ if remkuhr = 1:'<center><img src="images/etogame/kuhr2.jpg"></center>'
 
 clr
 gs 'stat'
-fcolor="rgb"(0, 0, 0)
-bcolor="rgb"(255, 255, 255)
-lcolor="rgb"(106, 90, 205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 set minut += 1
 set housrA = 1
 set elektro += 1
@@ -473,10 +473,10 @@ end
 if pranik > 0:
 	'Cookies will be enough for <b><<pranik>></b> time.'
 
-	act 'Have tea with cookies (0:15)':
+	act 'Have tea with cookies (0:05)':
 		cla
 		*clr
-		minut += 15
+		minut += 5
 		pranik -= 1
 		set health += 30
 		set manna += 100
@@ -532,6 +532,9 @@ if fatdel > 0:
 	act 'Take fat burners':
 		cla
 		*clr
+
+		if fat > salo:fat = salo
+
 		set fatdel -= 1
 		set fat -= 25
 
@@ -543,7 +546,7 @@ if fatdel > 0:
 	end
 end
 
-act 'Drink water':
+act 'Drink water (0:05)':
 	cla
 	set minut += 5
 
@@ -610,6 +613,9 @@ if vitamin > 0:
 		act 'Drink Vitamins':
 			cla
 			*clr
+
+			if fat > salo:fat = salo
+
 			set minut += 5
 			vitaminday = day
 			vitamin -= 1
@@ -988,7 +994,7 @@ if dildo > 0 and horny >= 50:
 			'<center><img src="images/pics/mastr.gif"></center>'
 			'You dildo stuck to the floor and planted her wet pussy on him, jumping on the artificial active member you will quickly feel the excitement and orgasm you covered.'
 
-			act 'Breath.':gt 'kuhr'
+			act 'Breathe.':gt 'kuhr'
 		end
 	end
 end

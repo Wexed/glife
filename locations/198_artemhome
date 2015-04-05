@@ -35,7 +35,7 @@ if artemhomemark = 0:
 end
 
 if artemhomemark = 1:
-	if arthakQW = 1 and artomhakday ! daystart:
+	if arthakQW = 1 and artemhakday ! daystart:
 		!!tell_a_lie
 		DimaRudeBlock = 1
 		'Artem tells you "There are no words - well.I was ready to do anything for you .I think after that I saw our relationship will move to another plane. A record pobudet let me - so that your head is not climbed all sorts of nonsense. And now ON KNEES BITCH! Exhaustion - it`s the least you can do that I have not used this entry."Artem very disappointed and angry.It seems he began to despise you.'
@@ -60,8 +60,8 @@ if artemhomemark = 1:
 
 				act 'To escape and run away':
 					artemblok = 1
-					artomhakday = daystart
-					artomvbrosvid = 1
+					artemhakday = daystart
+					artemvbrosvid = 1
 					gt 'gorodok'
 				end
 
@@ -118,14 +118,14 @@ if artemhomemark = 1:
 		end
 
 		act 'To escape and run away':
-			artomvbrosvid = 1
+			artemvbrosvid = 1
 			artemblok = 1
-			artomhakday = daystart
+			artemhakday = daystart
 			gt 'gorodok'
 		end
 	end
 
-	if arthakQW = 2 and artomhakday ! daystart:
+	if arthakQW = 2 and artemhakday ! daystart:
 		arthakQW = 7
 		!!the_truth
 		DimaRudeBlock = 1
@@ -143,7 +143,7 @@ if artemhomemark = 1:
 		if artcooldown >= 10:artcooldown = 0 & artQW = 1 & gt 'artemev2'
 	end
 
-	if artQW = 3 and artomkissday ! daystart:
+	if artQW = 3 and artemkissday ! daystart:
 		!!wanker Artem
 		'Artem hugs you and kisses'
 
@@ -151,7 +151,7 @@ if artemhomemark = 1:
 			cls
 			minut += 5
 			horny += 10
-			artomkissday = daystart
+			artemkissday = daystart
 			gs 'stat'
 			'<center><img src="images/qwest/alter/artom/2.jpg"></center>'
 			'You kiss with Artem and his arms around you and caress your breasts'
@@ -215,12 +215,12 @@ if artemhomemark = 1:
 	end
 
 	if artQW = 4:!refused Artem
-		if artQW = 20 and artomkissday ! daystart:
+		if artQW = 20 and artemkissday ! daystart:
 			'Artem hugs you and kisses'
 
 			act 'tselovatsya':
 				cls
-				artomkissday = daystart
+				artemkissday = daystart
 				minut += 5
 				horny += 10
 				gs 'stat'
@@ -270,14 +270,14 @@ if artemhomemark = 1:
 						"I want you ..." Hear the voice of Artem.'
 
 					if mesec > 0:
-						if artomanal > 0:
+						if artemanal > 0:
 							'You do not remain isolated for long member said Artem, that you have a monthly, Artem immediately offered you anal.'
 
 							act 'Agree to anal':
 								cls
 								minut += 15
 								anala += 1
-								artomanal += 1
+								artemanal += 1
 								gs 'stat'
 								'<center><img src="images/qwest/alter/artom/anal.jpg"></center>'
 								'You went to the bathroom and made themselves an enema, then came into the room and undressed Artem got cancer.'
@@ -291,7 +291,7 @@ if artemhomemark = 1:
 							end
 						end
 
-						if artomsex >= 10 and artomanal = 0:
+						if artemsex >= 10 and artemanal = 0:
 							act 'I have my period':
 								cls
 								minut += 5
@@ -324,7 +324,7 @@ if artemhomemark = 1:
 									cls
 									minut += 15
 									anala += 1
-									artomanal += 1
+									artemanal += 1
 									gs 'stat'
 									'<center><img src="images/qwest/alter/artom/anal.jpg"></center>'
 									'You: "Yes, but first you need to clean yourself ... in short it is necessary to do an enema. You have?"
@@ -347,7 +347,7 @@ if artemhomemark = 1:
 							minut += 5
 							sexa += 1
 
-							if artomsex = 1:artomsex += 1
+							if artemsex = 1:artemsex += 1
 
 							gs 'stat'
 							'<center><img src="images/qwest/alter/artom/sex.jpg"></center>'
@@ -356,7 +356,7 @@ if artemhomemark = 1:
 							dynamic $sexstart2
 							dynamic $sexcum
 
-							if artomsex = 0:artomsex = 1 & '"Here you are the man"-Say you smile.
+							if artemsex = 0:artemsex = 1 & '"Here you are the man"-Say you smile.
 
 							Artem:"Light ... I ... my I love you ...."
 							In response. '
@@ -478,7 +478,7 @@ if artemhomemark = 2:
 	intel += rand(1, 2)
 	artemtimes += 1
 
-	if ArtomBeInHome = 0:ArtomBeInHome = 1
+	if ArtemBeInHome = 0:ArtemBeInHome = 1
 
 	gs 'stat'
 	'<center><img src="images/qwest/alter/npc/<<2>>.jpg"></center>'

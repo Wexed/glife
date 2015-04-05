@@ -28,9 +28,9 @@ if remvanr = 1:'<center><img src="images/etogame/vanr2.jpg"></center>'
 
 clr
 gs 'stat'
-fcolor="rgb"(0, 0, 0)
-bcolor="rgb"(255, 255, 255)
-lcolor="rgb"(106, 90, 205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 set minut += 1
 set housrA = 1
 set elektro += 1
@@ -214,16 +214,19 @@ if analplug = 1 and analplugin = 0 and klismaday1= 1:
 	act 'Insert a butt plug (0:05)':
 		cla
 		*clr
+		plugday = daystart
 		set minut += 5
 		set analplugIN = 1
 
-		if anus < 30:set anus += 5
+		if anus < 10:set anus = anus + 5
+		if anus >= 10 and anus < 20:anus += rand(1, 2)
+		if anus >= 20 and anus < 30:anus += rand(0, 1)
 		'<center><img src="images/etogame/analplug.jpg"></center>'
 
-		if butpluguse > 0:'You bend over and easily insert the anal plug.'
+		if butpluguse > 0:'You bend over and easily insert the butt plug.'
 		if butpluguse = 0:set butpluguse = 1 & '"I do this not even touch, and why I bought it!" you thought. Then still decided to take a closer look. Feel, smell, in general, that ordinary gag. "Oh, was not, " you think, "Wow priest ever to develop, it will have great adventures, you could even say a huge and thick adventures with crimson heads, uh, that I got carried away." You scratched thin fingers unusually hairy head. Then you sent peg his ass, it was a bit painful when rastyagivatsya anus started taking a foreign object, but as soon as the widest part plunged into the murky depths of anal, it became easier and almost gag herself flew to the end, and got put on the manufacturer place.'
 
-		act 'Exit':gt 'vanr'
+		act 'Exit':gt $curloc
 	end
 end
 
@@ -240,7 +243,7 @@ if analplug = 1 and analplugin = 1:
 
 		if butpluguse > 0:'You bend over and pull the butt plug out.'
 
-		act 'Exit':gt 'vanr'
+		act 'Exit':gt $curloc
 	end
 end
 

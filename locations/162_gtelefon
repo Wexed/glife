@@ -12,7 +12,7 @@ if boyvstre[numnpcboy] = 0:
 	'You answer the caller that you are the <<$name>>. Stranger delighted "I <<$nameBoyfrend[numnpcboy]>>, we´re met at a disco. Remember? Let´s go for a walk."'
 end
 
-act 'I´m busy today':
+act 'I''m busy today':
 	cls
 	minut += 3
 
@@ -23,7 +23,7 @@ act 'I´m busy today':
 	''
 
 	if otnBoyFrend[numnpcboy] > 20:
-		otnBoyFrend[numnpcboy] = 0
+		!!otnBoyFrend[numnpcboy] = 0
 		'<<$nameBoyfrend[numnpcboy]>> upset. "Well, then, as something next time."'
 	end
 

@@ -8,10 +8,10 @@ $locM = $CURLOC
 act 'In the corridor':gt 'dorm', 'korr'
 
 if eda > 0:
-	act 'Cook food (0:30)':
+	act 'Cook food (1:00)':
 		cla
 		*clr
-		set minut += 30
+		set minut += 60
 		gs 'stat'
 		set edahot += 1
 		set eda -= 1
@@ -65,10 +65,10 @@ if edahot > 0:
 end
 
 if pranik > 0:
-	act 'Drink tea with cookies (0:15)':
+	act 'Drink tea with cookies (0:05)':
 		cla
 		*clr
-		minut += 15
+		minut += 5
 		pranik -= 1
 		set health += 30
 		set manna += 100

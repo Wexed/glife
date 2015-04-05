@@ -18,7 +18,7 @@ $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-
+music_on = 0
 set popolaini = 0
 set saunaYouRoom = 0
 set boycherdaksex = 0
@@ -39,7 +39,7 @@ if palto > 0:'Hanging on the hook <<$palto>>'
 gs 'family'
 
 if hour >= 16 and hour <= 20 and indorf = 0:
-	if artomvbrosvid = 1 and artomhakday ! daystart and mothervideotalk = 0:
+	if artemvbrosvid = 1 and artemhakday ! daystart and mothervideotalk = 0:
 		cls
 		BJvideoPublic = 1
 		manna = 0
@@ -48,7 +48,7 @@ if hour >= 16 and hour <= 20 and indorf = 0:
 		'<center><img src="qwest/alter/mother.jpg"></center>'
 		'Mom backed hips hands "I then tossed a video with you ....... I never smacked you ....yes see in vain ... You realize that maybe this video is not only my? What about you now will speak.. What about you ... about all our family ... I guess you need to teach you a lesson. Volodya!"'
 
- 		if momslut < 2:
+		if momslut < 2:
 			act 'Beg to do nothing':
 				cls
 				mothervideotalk = 2
@@ -85,52 +85,53 @@ if hour >= 16 and hour <= 20 and indorf = 0:
 				gs 'stat'
 				'<center><b><font color="maroon">mom</font></b></center>'
 				'<center><img src="qwest/alter/mother.jpg"></center>'
-				'Come on -come_on - call the father! I`ll tell you what his daughter! And who went!
+				'"Come on -come_on - call the father! I`ll tell you what his daughter! And who went!"
 				Mother is looking at you and spit on the floor leaves.'
 
 				act 'Leave':gt $curloc
 			end
 		end
 
- 		exit
-	end
-end
-
-if schoolprogul > 2 and SchoolAtestat = 0:
-	cls
-	gs 'stat'
-	'<center><b><font color="maroon">mom</font></b></center>'
-	'<center><img src="images/qwest/alter/mother.jpg"></center>'
-
-	if schoolPredupr = 3:
-		SchoolBlock = 1
-		ParHomeBlock = 1
-		schoolprogul = 0
-		'In the corridor you vsrechaet mother, her eyes thundered. "Doprygat? Thee out of high school. All live the way you want, I am no longer a mother!" Mother gathered your things in a bag, put the bag in your hands and thrown by the scruff of the apartment.'
-
-		act 'Leave':gt 'gorodok'
-
 		exit
 	end
 
-	if schoolPredupr = 1:
-		schoolPredupr = 2
-		schoolprogul = 0
-		Suspeh -= 40
-		'In the corridor you vsrechaet mother, her eyes thundered. "That was the school. Again You absenteeism. You already want to exclude from school, I was literally on his knees begging the directors can not exclude you and give you one last chance to reform. More because of you I will not be humiliated and remember. Next time you Departure from school! And if you fly out of school, I will personally kick him out of the house if you do not understand a normal relationship, then get out, no one does not keep you here! "Mother angrily left the room.'
+	if schoolprogul > 2 and SchoolAtestat = 0:
+		cls
+		gs 'stat'
+		'<center><b><font color="maroon">mom</font></b></center>'
+		'<center><img src="images/qwest/alter/mother.jpg"></center>'
+
+		if schoolPredupr = 2:
+			schoolPredupr = 3
+			SchoolBlock = 1
+			ParHomeBlock = 1
+			schoolprogul = 0
+			'In the corridor you vsrechaet mother, her eyes thundered. "Doprygat? Thee out of high school. All live the way you want, I am no longer a mother!" Mother gathered your things in a bag, put the bag in your hands and thrown by the scruff of the apartment.'
+
+			act 'Leave':gt 'gorodok'
+
+			exit
+		end
+
+		if schoolPredupr = 1:
+			schoolPredupr = 2
+			schoolprogul = 0
+			Suspeh -= 40
+			'In the corridor you vsrechaet mother, her eyes thundered. "That was the school. Again You absenteeism. You already want to exclude from school, I was literally on his knees begging the directors can not exclude you and give you one last chance to reform. More because of you I will not be humiliated and remember. Next time you Departure from school! And if you fly out of school, I will personally kick him out of the house if you do not understand a normal relationship, then get out, no one does not keep you here! "Mother angrily left the room.'
+		end
+
+		if schoolPredupr = 0:
+			schoolPredupr = 1
+			mother = 0
+			schoolprogul = 0
+			Suspeh -= 20
+			'In the corridor you vsrechaet mother, her eyes thundered. "That was the school. You solid absenteeism. For the first time you have forgiven, but the next you just kicked. What are you doing, balbeska?" Mother angrily left the room.'
+		end
+
+		act 'Move away':gt $curloc
+
+		exit
 	end
-
-	if schoolPredupr = 0:
-		schoolPredupr = 1
-		mother = 0
-		schoolprogul = 0
-		Suspeh -= 20
-		'In the corridor you vsrechaet mother, her eyes thundered. "That was the school. You solid absenteeism. For the first time you have forgiven, but the next you just kicked. What are you doing, balbeska?" Mother angrily left the room.'
-	end
-
-	act 'Move away':gt $curloc
-
-	exit
 end
 
 if hour >= 15 and hour < 20:
