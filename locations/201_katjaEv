@@ -245,10 +245,10 @@ act 'Go with Katja':
 
 						exit
 					end
-					 
+
 					if katjaDeystRand = 1:
 						if npcSex[14] = 1:
-							'Katja invited you to take a walk in the park.' 
+							'Katja invited you to take a walk in the park.'
 
 							act 'Go to the park':
 								minut += 15
@@ -266,12 +266,12 @@ act 'Go with Katja':
 								p_alko = 0
 								gt 'placer'
 							end
-						 
+
 							act 'And refuse to go home':minut += 15 & KatjaHorny -= 5 & gt 'gorodok'
 
 							exit
 						end
-					     
+
 						if npcSex[14] = 0:
 							KatjaHorny += 5
 							KatjaLust += 1
@@ -280,7 +280,7 @@ act 'Go with Katja':
 							act 'Say goodbye and go home':minut += 15 & gt 'gorodok'
 						end
 					end
-					 
+
 					if katjaDeystRand = 2 and sweat > 0:
 						'Katja wrinkled her nose "Sveta, you`re all sweaty, go to the shower?"'
 
@@ -314,7 +314,7 @@ act 'Go with Katja':
 										'You came out of the shower and walked into the room to Katja. You have chatted and Katja said, what she was doing.'
 
 										act 'Say goodbye and go home':minut += 15 & gt 'gorodok'
-									end	
+									end
 								end
 
 								act 'bathe together':
@@ -393,7 +393,7 @@ act 'Go with Katja':
 										end
 									end
 								end
-							end 
+							end
 
 							if KatjaHorny < 50:
 								dynamic $showerdin
@@ -415,15 +415,15 @@ act 'Go with Katja':
 									'<center><img src="images/qwest/alter/npc/14.jpg" ></center>'
 									'You came out of the shower and walked into the room to Katja. You have chatted and Katja said, what she was doing.'
 									act 'Say goodbye and go home':minut += 15 & gt 'gorodok'
-								end	
+								end
 							end
 						end
-					     
+
 						act 'And refuse to go home':minut += 15 & KatjaHorny -= 5 & gt 'gorodok'
 
 						exit
 					end
-		 
+
 					if katjaDeystRand = 2 and sweat <= 0:
 						dynamic $d_katjaSextalk
 						exit
@@ -437,4 +437,3 @@ act 'Go with Katja':
 end
 
 --- katjaEv ---------------------------------
-

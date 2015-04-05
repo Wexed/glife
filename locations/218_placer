@@ -4,8 +4,8 @@
 !!$ev_name_om = 'Федором'
 !!dick = 17
 !!silavag = 0
-!!gnpcSex[numnpc] - секс
-!!grupNPC[numnpc] - отношения
+!!gnpcSex[numnpc] - sex
+!!grupNPC[numnpc] - relationship
 !!the presence of NPC theoretically able to meet
 mass_ver_zn = 0
 !!want or do not meet NPCs
@@ -28,11 +28,10 @@ if place = 0:
 	if litltown = 1:$numplace = 'gorodok'
 end
 
-if place = 1:$numplace = 'gskver' !!сквер
-if place = 2:!!кино
-if place = 3:!!домой к парню. Предлог видик
-if place = 4:!!дискотека в городке
+if place = 1:$numplace = 'gskver' !!square
+if place = 2:!!movie
+if place = 3:!!home to the guy. preposition Vidic
+if place = 4:!!disco in town
 gt 'placer_<<$numplace>>'
 
 --- placer ---------------------------------
-

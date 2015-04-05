@@ -55,7 +55,7 @@ if hour >= 12 and hour <= 18:
 					act 'Buy':
 						cls
 						minut += 15
-						vitamin += 20 
+						vitamin += 20
 						money -= tovpay
 						gt $curloc
 					end
@@ -71,7 +71,7 @@ if hour >= 12 and hour <= 18:
 					act 'Buy':
 						cls
 						minut += 15
-						prezik += 5 
+						prezik += 5
 						money -= tovpay
 						gt $curloc
 					end
@@ -87,7 +87,7 @@ if hour >= 12 and hour <= 18:
 					act 'Buy':
 						cls
 						minut += 15
-						lipbalm += 20 
+						lipbalm += 20
 						money -= tovpay
 						gt $curloc
 					end
@@ -104,7 +104,7 @@ if hour >= 12 and hour <= 18:
 						act 'buy':
 							cls
 							minut += 15
-							bag = 1 
+							bag = 1
 							money -= tovpay
 							gt $curloc
 						end
@@ -140,15 +140,15 @@ if hour >= 12 and hour <= 18:
 
 		act 'Move on':gt $curloc
 	end
- 
+
 	if pornmarkonce = 1:
 		act 'Go to the area with porn':gt 'Gpornmark'
 	end
- 
+
 	if arturKnow > 0:
 		act 'Go to Arthur':gt 'arturRinok'
 	end
- 
+
 	act 'Go to the book tray':
 		cls
 		minut += 15
@@ -167,7 +167,7 @@ if hour >= 12 and hour <= 18:
 				act 'Leave':gt $curloc
 			end
 		end
-		 
+
 		if money >= 300:
 			act 'Buy ladies'' novel (300 rubles)':
 				cls
@@ -188,4 +188,3 @@ else
 end
 
 --- Grinok ---------------------------------
-

@@ -30,8 +30,10 @@ if vokzalVork >= 1:
 			cleZalDay = day
 			minut += 60
 			sweat += 1
-			vital += rand(0, 1)
-			stren += rand(0, 1)
+
+			if vital < 15:vital += rand(0, 1)
+			if stren < 15:stren += rand(0, 1)
+
 			gs 'stat'
 			'<center><img src="images/etogame/clener1.jpg"></center>'
 			'You took inventory, poured water into a bucket and began to wash the floor in the waiting room.'
@@ -53,7 +55,8 @@ if vokzalVork >= 1:
 			gs 'stat'
 			'<center><img src="images/etogame/clener1.jpg"></center>'
 			'You took inventory, poured water into a bucket and went to the men´s room.'
-			'You began to wash the floor in the men´s room, and then began to scrub toilets.'
+			dynamic $d_vok_man_toilet_event
+			!!'You began to wash the floor in the men´s room, and then began to scrub toilets.'
 
 			act 'Leave':minut += 1 & gt 'vokzalGin'
 		end
@@ -67,7 +70,7 @@ if vokzalVork >= 1:
 			sweat += 1
 
 			if vital < 15:vital += rand(0, 1)
-			if stren < 15stren += rand(0, 1)
+			if stren < 15:stren += rand(0, 1)
 
 			gs 'stat'
 			'<center><img src="images/etogame/clener1.jpg"></center>'
@@ -81,7 +84,7 @@ if vokzalVork >= 1:
 			cls
 			cleZarplatDay = day
 			vokzalVork += 1
-			money += 50
+			money += 250
 			minut += 3
 			gs 'stat'
 			'You went to the cashier and got their money.'
@@ -132,4 +135,3 @@ if poezddalsled = 1:
 end
 
 --- vokzalGin ---------------------------------
-

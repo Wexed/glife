@@ -95,9 +95,9 @@ $din_sekondparturok = {
 			lernHome += 1
 			BeInSchool += 1
 			gs 'stat'
-			'<center><img src="images/qwest/alter/urok<<urand>>.jpg "></center>'
+			'<center><img src="images/qwest/alter/urok<<urand>>.jpg"></center>'
 			'You were sitting in the classroom and listened to the monotonous boom on teachers, at least that is trying to understand and not to fall asleep.'
-			dynamic $d_fart_fiz
+			dynamic $d_fart_klass
 			'Finally the bell rang and students began to go home.'
 
 			act 'Exit':gt 'gschool'
@@ -302,7 +302,7 @@ $din_bigperemena = {
 	end
 
 	if npcSex[14] = 1 and KatjaLust >= 50 and KatjaHorny + KatjaSlut >= 100 and KatjaHorny > 50:
-		'During the break you went red as a lobster Katya Meynold and invited to go along to a secluded place.'
+		'During the break you went red as a lobster Katja Meynold and invited to go along to a secluded place.'
 
 		act 'Go with Katja':
 			cls
@@ -324,7 +324,7 @@ $din_bigperemena = {
 				dynamic $din_sekondparturok
 			end
 		end
-         
+
 		dynamic $din_sekondparturok
 		exit
 	end
@@ -414,7 +414,7 @@ $din_bigperemena = {
 					'You obediently sat down on his haunches and the guy ran his purple head you lips. You wrapped around his own <<$liptalk3>> hard cock and started to suck his hard cock absorbing into his mouth. After a while the man groaned and you feel like a warm jet of sperm hit you in the mouth. that would not choke you immediately started to swallow sperm and dosasyvat member. Finally went limp dick and a guy hid in his pants.'
 					dynamic $din_sekondparturok
 				end
-			end	 
+			end
 
 			if dom > 0:
 				act 'Send it':
@@ -429,7 +429,7 @@ $din_bigperemena = {
 		end
 	end
 
-	if soniaPS = 2:soniaPS = 3 & When the change you have seen how Sonya Ivanko talking about something Cats. Sonia looks at him almost in tears and nods.'
+	if soniaPS = 2:soniaPS = 3 & 'When the change you have seen how Sonya Ivanko talking about something Cats. Sonia looks at him almost in tears and nods.'
 
 	act 'Sit in a classroom':
 		cls
@@ -486,6 +486,7 @@ $din_bigperemena = {
 			act 'Buy food 50 rubles':
 				cls
 				money -= 50
+				salo += 2
 				gs 'stat'
 				'<center><img src="images/qwest/alter/stolovka.jpg"></center>'
 				set minut += 30
@@ -555,7 +556,7 @@ if hour <= 8:
 		if schoolSorev = 1:schoolSorev = 0
 
 		gs 'stat'
-		'<center><img src="images/qwest/alter/urok<<urand>>.jpg "></center>'
+		'<center><img src="images/qwest/alter/urok<<urand>>.jpg"></center>'
 		'You were sitting in the classroom and listened to the monotonous boom on teachers, at least that is trying to understand and not to fall asleep.'
 		dynamic $d_fart_klass
 		'Finally the bell rang and the students went to a big change.'
@@ -568,4 +569,3 @@ if hour <= 8:
 end
 
 --- gschool2 ---------------------------------
-

@@ -43,7 +43,7 @@ act 'Leave':
 	gs 'stat'
 	'<center><img src="images/qwest/vokzal/katalkin.jpg"></center>'
 	'Near the platform you are already waiting for the police. "breach? Trade without proper papers?"'
-		 
+
 	if money >= 500:
 		act 'Pay (500 rubles)':
 			cls
@@ -55,7 +55,7 @@ act 'Leave':
 			act 'Leave':minut += 1 & gt 'vokzalGin'
 		end
 	end
-		 
+
 	act 'persuaded to forgive':
 		cls
 		gs 'stat'
@@ -68,7 +68,7 @@ act 'Leave':
 
 				act 'Leave':minut += 1 & gt 'vokzalGin'
 			end
-				 
+
 			if katalkinSexDay + 7 < daystart:
 				'The captain frowned "You long ago to me did not come, avoiding?"'
 
@@ -82,7 +82,7 @@ act 'Leave':
 				end
 			end
 		end
-			 
+
 		if katalkinSexOnce = 0:
 			schtraf = 500
 			'captain grinned "Come then now the Department. there shall understand."'
@@ -90,9 +90,8 @@ act 'Leave':
 			act 'Go to the police':minut += 5 & katalkinNoexit = 1 & gt 'katalkin'
 		end
 	end
-		  
+
 	dynamic $d_kachatprava
 end
 
 --- vokzaltorg ---------------------------------
-

@@ -193,8 +193,8 @@ if GorSlut = 0:
 		if alko < 3:
 			if DPtipe = 1:
 				deystrand = rand(0, 1)
-
-				if deystrand = 0:
+				randvnesh = rand(10, 30)
+				if deystrand = 0 and vnesh >= randvnesh:
 					'<<$bname>> said, "You´re a cool girl. Maybe we´ll meet again?"'
 
 					act 'And refuse to leave':gt 'gdkin'
@@ -216,7 +216,7 @@ if GorSlut = 0:
 					end
 				end
 
-				if deystrand = 1:
+				if deystrand = 1 or vnesh < randvnesh:
 					'<<$bname>> fits closer to you and starts kissing you.'
 
 					if horny <= 25:act 'Leave':gt 'gdkin'
@@ -278,7 +278,7 @@ if GorSlut = 0:
 										'<center><img src="images/qwest/alter/Ev/cock3.jpg"></center>'
 										'You moan with pleasure and your legs buckled, you squatted in front of the guy. When eyes brightened you will see in your face member.'
 
-										if sub > 0:
+										if sub > 10:
 											act 'Suck':
 												cls
 												minut += 5
@@ -321,7 +321,7 @@ if GorSlut = 0:
 											end
 										end
 
-										if sub = 0 and dom = 0:
+										if sub >= 10 and dom =< 10:
 											act 'Sit':
 												cls
 												minut += 5
@@ -338,7 +338,7 @@ if GorSlut = 0:
 											end
 										end
 
-										if dom > 0:
+										if dom > 10:
 											act 'Jerk guy':
 												cls
 												minut += 5
@@ -657,4 +657,3 @@ end
 !!dynamic $dinrandswallow
 
 --- EvBoyBuh ---------------------------------
-

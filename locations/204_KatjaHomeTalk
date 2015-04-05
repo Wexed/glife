@@ -32,7 +32,7 @@ if sweat > 0:
 
 				act 'Get out of the shower':gt $curloc
 			end
- 
+
 			act 'Bathe together':
 				cls
 				dynamic $showerdin
@@ -93,10 +93,10 @@ if sweat > 0:
 							act 'Get out of the shower':gt $curloc
 						end
 					end
-				end 
+				end
 			end
 		end
-		 
+
 		if KatjaHorny < 50:
 			dynamic $showerdin
 			minut += 15
@@ -156,7 +156,7 @@ else
 
 			act 'further':gt $curloc
 		end
- 
+
 		if KatjaLust > 10:
 			katkisrand = rand(0, 5)
 
@@ -180,4 +180,3 @@ end
 act 'Say goodbye and go home':gt 'gorodok'
 
 --- KatjaHomeTalk ---------------------------------
-

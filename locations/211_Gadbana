@@ -25,7 +25,7 @@ if week = 6:
 		'In the bath can be steamed'
 
 		if banaday!day:
-			act 'Steamed in the sauna':
+			act 'Steamed in the sauna (2:00)':
 				cls
 				minut += 120
 				dynamic $showerdin
@@ -55,7 +55,7 @@ end
 if week ! 6:canpar = 0
 
 if canpar = 0:
-	act 'wash':
+	act 'Wash (1:00)':
 		cls
 		dynamic $showerdin
 		minut += 60
@@ -74,7 +74,7 @@ if canpar = 0:
 end
 
 if tampon > 0 and mesec > 0 and isprok = 0:
-	act 'change swab':
+	act 'Change a tampon (0:05)':
 		cla
 		*clr
 		set tampon -= 1
@@ -90,7 +90,7 @@ if tampon > 0 and mesec > 0 and isprok = 0:
 end
 
 if mop ! 1:
-	act 'wash off cosmetics':
+	act 'wash off cosmetics (0:15)':
 		cla
 		set mop = 1
 		set minut += 15
@@ -116,4 +116,3 @@ if cumfrot > 0:
 end
 
 --- Gadbana ---------------------------------
-

@@ -250,7 +250,9 @@ $din_otel_man_beforesex = {
 		dynamic $sexcum
 		dynamic $din_otel_man_end
 	end
+	 if dom > 0:dynamic $din_otel_man_blow
 }
+music_on = 0
 minut += 15
 gs 'stat'
 
@@ -260,6 +262,7 @@ if DPtipe = 2:'The man came to standing next to a club and Takser spoken.a with 
 if DPtipe = 1:
 	act 'Walk into the room':
 		cls
+		BeInOtel += 1
 		minut += 5
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/otel.jpg"></center>'
@@ -291,4 +294,3 @@ if DPtipe = 2:
 end
 
 --- EvOtelMan ---------------------------------
-

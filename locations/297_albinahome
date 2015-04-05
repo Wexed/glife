@@ -125,16 +125,16 @@ if hour < 20:
 				'Albina you smiled and said "Now I can not afford to rent a hall for training, Here I train at home, that would not be out of shape. By_The_Way, I could teach you and stripdensu and poledensu."'
 
 				act 'further':gt $curloc
-			end 
+			end
 		end
-		 
+
 		if albsporthome > 0:
 			if albsportday!daystart:
 				cls
 				gs 'stat'
 				'<center><img src="images/qwest/alter/albina/train.jpg"></center>'
 				'Albina trains in his room doing stretching. She smiles at you and asks "what? Potreneruemsya?"'
-				 
+
 				act 'Stripdens':
 					cla
 					*clr
@@ -192,7 +192,7 @@ if hour < 20:
 
 					act 'rest':gt $curloc
 				end
-					 
+
 				if stren < 80:
 					'Albina grins "You`re still pretty weak for dancing on a pole, we can potrenirovatsya developing your strength."'
 
@@ -208,7 +208,7 @@ if hour < 20:
 						act 'rest':gt $curloc
 					end
 				end
-					 
+
 				act 'yah, not hunt.':albsportday = daystart & gt $curloc
 			end
 
@@ -250,10 +250,10 @@ if hour < 20:
 			end
 		end
 	end
-		 
+
 	!!if seeAlbinaFuck = 1:end
 end
-	
+
 if hour >= 20:
 	'Albina says, he wants to go to the disco.'
 
@@ -263,4 +263,3 @@ end
 act 'Say goodbye and go home':gt 'gorodok'
 
 --- albinahome ---------------------------------
-

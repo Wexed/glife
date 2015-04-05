@@ -40,7 +40,7 @@ if hour >= 8 and hour < 22:
 				act 'Leave':minut += 1 & gt 'vokzalGin'
 			end
 		end
- 
+
 		act 'work':katsexetap = 0 & gt 'katalkinSex'
 		end
 	end
@@ -110,7 +110,7 @@ if hour >= 8 and hour < 22:
 					act 'In jail':gt 'kutuzka'
 				end
 			end
-  
+
 			act 'beg':
 				cls
 				gs 'stat'
@@ -134,7 +134,7 @@ if hour >= 8 and hour < 22:
 				end
 
 				if money < schtraf:'You think to yourself, that out then you have no. As there is no required amount for payment of the fine.'
-				 
+
 				act 'smile at him':katsexetap = 0 & gt 'katalkinSex'
 			end
 		end
@@ -238,4 +238,3 @@ end
 if katalkinNoexit = 0:act 'Leave':minut += 1 & gt 'vokzalGin'
 
 --- katalkin ---------------------------------
-

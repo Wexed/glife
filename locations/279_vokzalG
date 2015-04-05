@@ -56,61 +56,62 @@ if kidalo = 0:
 		'Walking along the station you notice how near the station are two men. They notice you come up to you and talking among themselves. "Well, just the model, well, just kind of ... Claudia Schiffer" One of the guys in a representative suit comes up to you and says. "We are opening a new store your city and we need a woman for advertising. We offer you 30 thousand for the photograph on advertising."'
 
 		act 'Leave':minut += 15 & gt $curloc
-			act 'Agree':
+
+		act 'Agree':
+			cls
+			gs 'stat'
+			'You willingly agree to such a tempting offer. Boys took you to build the site near the railway station, one of the guys pulled out a camera and put it in front of a tree with bushes. "Shoot will on natural background. So picturesque. Only here´s the problem, your dress glare. You need to change." The guy pulled out of the car´s trunk, and gave you a dress. "Can change clothes in the car" guy showed you that Audi was not far away.'
+
+			act 'Leave':minut += 15 & gt $curloc
+
+			act 'To change':
 				cls
 				gs 'stat'
-				'You willingly agree to such a tempting offer. Boys took you to build the site near the railway station, one of the guys pulled out a camera and put it in front of a tree with bushes. "Shoot will on natural background. So picturesque. Only here´s the problem, your dress glare. You need to change." The guy pulled out of the car´s trunk, and gave you a dress. "Can change clothes in the car" guy showed you that Audi was not far away.'
-
-				act 'Leave':minut += 15 & gt $curloc
-
-				act 'To change':
-					cls
-					gs 'stat'
-					dress[numdress] = 0
-					set numdress = 0
-					set odetjeans = 0
-					set odetyoga = 0
-					set odetsarafan = 1
-					set odetshort = 0
-					set odetskirt = 0
-					set odetdress = 0
-					set odetprofi = 0
-					set odetpants = 0
-					set odetlatex = 0
-					set odethooker = 0
-					set odetkis = 0
-					set odetnewclo = 0
-					set odetero = 0
-					set vatnik = 0
-					set glamur = 0
-					set sport = 0
-					set ski = 0
-					set hook = 0
-					set ofclo = 0
+				dress[numdress] = 0
+				set numdress = 0
+				set odetjeans = 0
+				set odetyoga = 0
+				set odetsarafan = 1
+				set odetshort = 0
+				set odetskirt = 0
+				set odetdress = 0
+				set odetprofi = 0
+				set odetpants = 0
+				set odetlatex = 0
+				set odethooker = 0
+				set odetkis = 0
+				set odetnewclo = 0
+				set odetero = 0
+				set vatnik = 0
+				set glamur = 0
+				set sport = 0
+				set ski = 0
+				set hook = 0
+				set ofclo = 0
 					set sexual = 0
 
-					if cumfrot > 0:set cumfrot = 0
+				if cumfrot > 0:set cumfrot = 0
 
-					set nude = 0
-					set odevnesh = 0
-					!
-					sarafan[3] = 2
-					sarafanH[3] = 20
-					'You got into the car and took off her dress. Then you put on her dress, which gave you a man.'
+				set nude = 0
+				set odevnesh = 0
+				!
+				sarafan[3] = 2
+				sarafanH[3] = 20
+				'You got into the car and took off her dress. Then you put on her dress, which gave you a man.'
 
-					act 'Pose':
+				act 'Pose':
+					cls
+					kidalo = 1
+					gs 'stat'
+					'You got out leaving their belongings in the car and went up to the tree. One of the guys stood behind the camera, the second bustles around you, showing you how to stand. The camera clicked. "So, now picture from the back, " You stood with his back to the camera and heard a voice. "Excellent. Tepr slightly raised his head and close your eyes." You have done the instructions but no schelcha camera followed. Instead, the engine suddenly earned machine.'
+
+					act 'Turn out':
 						cls
-						kidalo = 1
+						money = 0
 						gs 'stat'
-						'You got out leaving their belongings in the car and went up to the tree. One of the guys stood behind the camera, the second bustles around you, showing you how to stand. The camera clicked. "So, now picture from the back, " You stood with his back to the camera and heard a voice. "Excellent. Tepr slightly raised his head and close your eyes." You have done the instructions but no schelcha camera followed. Instead, the engine suddenly earned machine.'
+						'You turned around and saw that no camera no. Both men sit in the audit, which began to move and tore through the streets. You frantically realized that her dress and the money you have left in the car. You threw as last lohushku.'
 
-						act 'Turn out':
-							cls
-							money = 0
-							gs 'stat'
-							'You turned around and saw that no camera no. Both men sit in the audit, which began to move and tore through the streets. You frantically realized that her dress and the money you have left in the car. You threw as last lohushku.'
-
-							act 'Leave':minut += 15 & gt $curloc
+						act 'Leave':minut += 15 & gt $curloc
 					end
 				end
 			end
@@ -126,4 +127,3 @@ act 'Go to the town':minut += 15 & gt 'gorodok'
 act 'Exit to the northern highway':minut += 15 & nroad = 20 & gt 'road'
 
 --- vokzalG ---------------------------------
-

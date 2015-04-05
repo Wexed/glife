@@ -87,15 +87,15 @@ if hour >= 8 and hour <= 20:'The only major store in town is the <a href="exec:g
 'Small city <a href="exec:gt ''gskver'', ''park''">park</a>, in which people are going'
 'Aside from residential buildings is <a href="exec:minut += 5 & gt ''garmassiv''">Garage array</a>'
 
-if ArtomBeInHome > 0 and artemblok = 0:'apartment <a href="exec:minut += 15 & gt ''artemhome''">Artem Chebotarev</a>'
+if ArtemBeInHome > 0 and artemblok = 0:'apartment <a href="exec:minut += 15 & gt ''artemhome''">Artem Chebotarev</a>'
 if DimaBeHomeOnce = 1 and DimaRudeBlock = 0:'Private house in which he lives <a href="exec:minut += 15 & gt ''dimaGoHome2''">Dimka Nosov</a>'
-if katjaFirstKiss >= 1:'Private house in which he lives <a href="exec:minut += 15 & gt ''KatjaHome''">Katya Meynold</a>'
+if katjaFirstKiss >= 1:'Private house in which he lives <a href="exec:minut += 15 & gt ''KatjaHome''">Katja Meynold</a>'
 
 if BeInNatBelHome = 1:
 	if hour >= 18 and hour <= 20 and week < 6 or hour >= 8 and hour <= 20 and week >= 6:'The house where the apartment <a href="exec:minut += 15 & gt ''NatBelHome''">Natasha Belova</a>'
 end
 
-if BeInJulMilHome = 1: 
+if BeInJulMilHome = 1:
 	if hour >= 18 and hour <= 20 and week < 6 or hour >= 8 and hour <= 20 and week >= 6:'The house where the apartment <a href="exec:minut += 15 & gt ''JuliaMilHome''">Julia Milova</a>'
 end
 
@@ -144,4 +144,3 @@ end
 !!act 'rating':gt 'ratinglist'
 
 --- gorodok ---------------------------------
-

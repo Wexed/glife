@@ -43,7 +43,7 @@ if lernHome = 0:
 
 			act 'rest':gt $curloc
 		end
-		 
+
 		act 'unsubscribe':
 			cls
 			eatJulMilDay = daystart
@@ -146,21 +146,21 @@ if lernHome = 0:
 										act 'rest':gt $curloc
 									end
 								end
-								 
+
 								act 'Oh you Julia, leave_me_alone':dom += 1 & gt $curloc
 							end
-							 
+
 							act 'Oh you Julia, leave_me_alone':dom += 5 & gt $curloc
 
 							exit
 						end
- 
+
 						act 'rest':gt $curloc
 					end
 				end
 			end
 		end
- 
+
 		act 'Chat with Julia':
 			cls
 			minut += 15
@@ -180,4 +180,3 @@ end
 act 'go home':gt 'gorodok'
 
 --- JuliaMilHome ---------------------------------
-

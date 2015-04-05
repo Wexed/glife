@@ -41,7 +41,7 @@ end
 
 if encounter = 4:
 	!!Gopnik in the park
-	kol_man = rand(2, 6)
+	kol_man = rand(3, 6)
 	$textEvent = 'In the park sitting on his haunches Gopnik and drink beer.'
 	mass_ver_zn = 1
 	know_status = 2
@@ -50,7 +50,7 @@ end
 if encounter = 5:$textEvent = 'In the park walks a couple in love.' !!couple in love in the park
 if encounter = 6: !!in the square of the familiar class
 
-if dick > 0:ver_zn = 0
+if dickfrend > 0:ver_zn = 0
 
 gs 'placer_man'
 
@@ -60,11 +60,12 @@ if hour >= 22 or hour < 8:'<center><img src="images/gevent/skver.jpg"></center>'
 if Frend_num > 0:
 	'together with <<$ev_name_om>> you have come to a quiet garden square. <<$textEvent>>'
 
-	if dick > 0:
+	if dickfrend > 0:
 		!!your friend guy
 		if kol_man = 1 and $text_znak = '':$kol_man_text_no = 'After the guy looked at you, he turned away.'
 		if kol_man > 1 and $text_znak = '':$kol_man_text_no = 'Once you guys are inspected, they turned their backs.'
 		if kol_man > 0:'You looked <<$kol_man_prefiks>> appreciatively <<$kol_man_text>>. <<$kol_man_text_no>>.'+$text_znak
+		!!!!!!!!!!action with a guy whom came to the square
 	end
 
 	if dickfrend = 0:
@@ -100,6 +101,7 @@ if Frend_num > 0:
 
 			'At you with his girlfriend looked <<$kol_man_prefiks>> appreciatively <<$kol_man_text>>. <<$kol_man_text_no>>.'
 		end
+		!!!!!!!!!!!!!acts with the girl you came
 	end
 
 	act 'Leave':gt 'gskver'
@@ -113,6 +115,8 @@ if Frend_num = 0:
 
 		if kol_man = 1:'The guy came up to you and said, "<<$text_znak>>"'
 		if kol_man > 1:'Guys come to you and one of the guys said "<<$text_znak>>"'
+
+		act 'meet':gt 'placer_act'
 	end
 
 	if ver_zn = 0 and kol_man > 0:
@@ -128,4 +132,3 @@ end
 gs 'stat'
 
 --- placer_gskver ---------------------------------
-

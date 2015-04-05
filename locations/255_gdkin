@@ -61,7 +61,8 @@ $din_reverse_reakt_dance = {
 
 $din_dance_vrp = {
 	minut += 5
-	dance += 1
+
+	if dance < 50 and agil >=dance:dance += 1
 	gs 'stat'
 	'You accepted the offer and the guy took you by the hand brought you to the dance floor where you started dancing together.'
 
@@ -292,7 +293,7 @@ if hour >= 20 and hour <= 23:
 	if StoryLine = 1 and BeInSchool > 0:'The club and you see a few <a href="exec:gt ''SgrupDisco''">of people you know</a>.'
 	if soniaslut < 5:soniaslut += 1
 
-	if grupTipe[25] = 0 and StoryLine = 1 and BeInSchool > 0 and soniaslut >= 5:
+	if grupTipe[25] = 0 and StoryLine = 1 and BeInSchool > 0 and soniaslut >= 5 and hour < 23:
 		'You notice the disco Sonia Ivanko of your class. She is talking about something with Victor Kotov.'
 
 		act 'View Sonya':gt 'soniaDisco'
@@ -308,7 +309,8 @@ if hour >= 20 and hour <= 23:
 		'<center><img src="images/etogame/club_dance.jpg"></center>'
 		minut += 5
 		!!fat -= 1
-		dance += 1
+
+		if dance < 50 and agil >= dance:dance += 1
 		manna += 10
 		willpower += 10
 		frost = 0
@@ -386,7 +388,6 @@ if hour >= 20 and hour <= 23:
 			'You''re drunk in the trash, and standing at the wall hard for her to restrain from the fact that the floor floats you from under their feet.'
 			dynamic $din_too_drunk_dance
 
-			exit
 		elseif alko < 4 and alko > 0:
 			'You´re drunk, and standing at the wall watching the dancing.'
 		else
@@ -438,4 +439,3 @@ if hour >= 20 and hour <= 23:
 	act 'Go outside':gt 'gdk'
 
 --- gdkin ---------------------------------
-
