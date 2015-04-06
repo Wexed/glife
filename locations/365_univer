@@ -1,530 +1,310 @@
 # univer
-<<<<<<< 365_univer
 if $ARGS[0] = 'start':
-=======
-if $ARGS[0]='start':
->>>>>>> 365_univer
-$sexloc = $CURLOC
-cla
-*clr
-<<<<<<< 365_univer
-set minut += 5
-'<center><B><font color = maroon>The University of</font></B></center>'
-'<center><img src="images\etogame\univer.jpg"></center>'
-clr
-gs 'stat'
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
-if student = 0 and abiturient = 0: 'Preparatory courses cost 15,000'
-'Examinations for admission to the University are held in August.'
-'All lectures begin with a 8:00, late for a lecture is not allowed.'
-if student > 0: 'You learn how to <<semestr>> semester <<kurs>> course'
-if abiturient = 1: 'You entrant.'
-	act 'QUIT':
+	$sexloc = $CURLOC
+	cla
+	*clr
+	set minut += 5
+	'<center><b><font color="maroon">The University of</font></b></center>'
+	'<center><img src="images/etogame/univer.jpg"></center>'
+	clr
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
+
+	if student = 0 and abiturient = 0:'Preparatory courses cost 15,000'
+	'Examinations for admission to the University are held in August.'
+	'All lectures begin with a 8:00, late for a lecture is not allowed.'
+
+	if student > 0:'You learn how to <<semestr>> semester <<kurs>> course'
+
+	if abiturient = 1:'You entrant.'
+		act 'Leave':
 	cla
 	set minut += 5
 	gt 'down'
 	end
 
 	if student = 0 and abiturient = 0 and money >= 15000 and month < 9 and diplom = 0 and age >= 17:
-	''
-		act 'Pay for training course 15,000 rubles':
-		cla
-		set minut += 5
-		set money -= 15000
-		set abiturient = 1
-		'You paid 15,000 for preparatory courses. Classes start in 21chas, on weekdays'
-		act 'Move away': gt 'univer','start'
-		end
+		''
 
+		act 'Pay for training course (15,000 rubles)':
+			cla
+			set minut += 5
+			set money -= 15000
+			set abiturient = 1
+			'You paid 15,000 for preparatory courses. Classes start in 21chas, on weekdays'
+
+			act 'Move away':gt 'univer', 'start'
+		end
 	end
 
 	if abiturient >= 1 and month < 9 and hour < 21 and week < 6:
 		act 'Attend preparatory courses (1:00)':
-		cla
-		*clr
-		set minut += 60
-		set abiturient += 1
-		set intel += 1
-		'<center><img src="images\etogame\Classroom.jpg"></center>'
-		'You were engaged in preparatory courses within an hour.'
-		act 'Get out of class': gt 'univer','start'
+			cla
+			*clr
+			set minut += 60
+			set abiturient += 1
+			set intel += 1
+			'<center><img src="images/etogame/Classroom.jpg"></center>'
+			'You were engaged in preparatory courses within an hour.'
+
+			act 'Get out of class':gt 'univer', 'start'
 		end
 	end
 
 	if month = 8 and student = 0 and diplom = 0 and age >= 17:
-	'You can try to take an entrance exam.'
+		'You can try to take an entrance exam.'
+
 		act 'Take the entrance exam (1:00)':
-		cla
-		*clr
-		set minut += 60
-		'<center><img src="images\etogame\Classroom.jpg"></center>'
-		'You passed the entrance exam to university.'
+			cla
+			*clr
+			set minut += 60
+			'<center><img src="images/etogame/Classroom.jpg"></center>'
+			'You passed the entrance exam to university.'
+
 			if intel + abiturient >= 100:
-			set student = 1
-			set kurs = 1
-			set semestr = 1
-			set abiturient = 0
-			'You have successfully passed the entrance exams and can start training in September.'
+				set student = 1
+				set kurs = 1
+				set semestr = 1
+				set abiturient = 0
+				'You have successfully passed the entrance exams and can start training in September.'
 			else
-			'You failed the entrance exam.'
+				'You failed the entrance exam.'
 			end
-		act 'Get out of class': gt 'univer','start'
+
+			act 'Get out of class':gt 'univer', 'start'
 		end
 	end
 
 	if week < 6 and student > 0 and month > 8 and month < 12:
-	! 1й семестр
+	!! 1st semester
 		act 'Go to the deanery':
-		cla
-		if semestr = 2 and examen = 0: set examen = 2
-		gt 'univer','dekanat'
+			cla
+
+			if semestr = 2 and examen = 0:set examen = 2
+
+			gt 'univer', 'dekanat'
 		end
 	end
+
 	if week < 6 and student > 0 and month > 1 and month < 5:
-	! 2й семестр
+		!! 2nd semester
 		act 'Go to the deanery':
-		cla
-		if semestr = 1 and examen = 0: set examen = 2
-		gt 'univer','dekanat'
+			cla
+
+			if semestr = 1 and examen = 0:set examen = 2
+
+			gt 'univer', 'dekanat'
 		end
 	end
+
 	if week < 6 and student > 0 and month = 12 and examen = 0 and semestr = 1:
-	! 1й семестр экзамены
-	act 'Go for exams': gt 'univer','examen'
+		!! 1st semester exams
+		act 'Go for exams':gt 'univer', 'examen'
 	end
+
 	if week < 6 and student > 0 and month = 5 and examen = 0 and semestr = 2:
-	! 2й семестр экзамены
-	act 'Go for exams': gt 'univer','examen'
+	!! 2nd semester exams
+		act 'Go for exams':gt 'univer', 'examen'
 	end
-=======
-set minut = minut + 5
-'<center><B><font color=maroon>university</font></B></center>'
-'<center><img src="pic/univer.jpg" ></center>'
-clr
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
-if student = 0 and abiturient = 0:'Preparatory courses cost 15 thousand'
-'Examinations for admission to the university held in August.'
-'All lectures begin with 8 hours, latecomers to the lectures are not allowed.'
-if student > 0:'You learn in <<semestr>> semester <<kurs>> exchange_rate'
-if abiturient = 1:'you applicant.'
-     act 'GO_OUT':
-     cla
-     set minut = minut + 5
-     gt'down'
-     end
-     
-     if student = 0 and abiturient = 0 and money >= 15000 and month < 9 and diplom = 0 and age>=17:
-     ''
-         act 'Pay preparatory courses 15 sput':
-		 cla
-		 set minut = minut + 5
-		 set money = money - 15000
-		 set abiturient = 1
-		 'you paid 15 thousands of training courses. Classes start in 21h, on weekdays'
-		 act 'move_away':gt'univer','start'
-		 end
-     
-     end
-     
-     if abiturient >= 1 and month < 9 and hour < 21 and week < 6:
-         act 'Engage in preparatory courses':
-		 cla
-		 *clr
-		 set minut = minut + 60
-		 set abiturient = abiturient + 1
-		 set intel = intel + 1
-		 '<center><img src="pic/Classroom.jpg" ></center>'
-		 'You are engaged in preparatory courses within an hour.'
-		 act 'Get out of class':gt'univer','start'
-		 end
-     end
-     
-     if month = 8 and student = 0 and diplom = 0 and age>=17:
-     'You can try to pass an entrance exam.'
-         act 'Entrance exams':
-		 cla
-		 *clr
-		 set minut = minut + 60
-		 '<center><img src="pic/Classroom.jpg" ></center>'
-		 'You take the entrance exam to the University.'
-		     if intel + abiturient >= 100:
-		     set student = 1
-		     set kurs = 1
-		     set semestr = 1
-		     set abiturient = 0
-		     'You have successfully passed the entrance exams and can start training in September.'
-		     else
-		     'You failed the entrance exams.'
-		     end
-		 act 'Get out of class':gt'univer','start'
-		 end
-     end
-     
-     if week < 6 and student > 0 and month > 8 and month < 12:
-     ! 1semester
-         act 'Go to the dean':
-         cla
-         if semestr = 2 and examen = 0:set examen = 2
-         gt'univer','dekanat'
-         end
-     end
-     if week < 6 and student > 0 and month > 1 and month < 5:
-     ! 2semester
-         act 'Go to the dean':
-         cla
-         if semestr = 1 and examen = 0:set examen = 2
-         gt'univer','dekanat'
-         end
-     end
-     if week < 6 and student > 0 and month = 12 and examen = 0 and semestr = 1:
-     ! 1Semester exams
-     act 'Go for exams':gt'univer','examen'
-     end
-     if week < 6 and student > 0 and month = 5 and examen = 0 and semestr = 2:
-     ! 2Semester exams
-     act 'Go for exams':gt'univer','examen'
-     end
->>>>>>> 365_univer
-
 end
 
-
-<<<<<<< 365_univer
 if $ARGS[0] = 'dekanat':
-=======
-if $ARGS[0]='dekanat':
->>>>>>> 365_univer
-$sexloc = $CURLOC
-cla
-*clr
+	$sexloc = $CURLOC
+	cla
+	*clr
 
-if examen = 1:
-set examen = 0
-<<<<<<< 365_univer
-	if semestr = 2:
-	set semestr = 1
-	set kurs += 1
+	if examen = 1:
+		set examen = 0
+
+		if semestr = 2:
+			set semestr = 1
+			set kurs += 1
+		end
+
+		if semestr = 1:set semestr = 2
 	end
-	if semestr = 1:
-	set semestr = 2
+
+	if kurs = 2:
+		set diplom = 1
+		set student = 0
+		set kurs = 0
+		set semestr = 0
+		set abiturient = 0
+		set stipuha = 0
+		'You handed a diploma.'
 	end
-=======
-     if semestr = 2:
-     set semestr = 1
-     set kurs = kurs + 1
-     end
-     if semestr = 1:
-     set semestr = 2
-     end
->>>>>>> 365_univer
-end
 
-if kurs = 2:
-set diplom = 1
-set student = 0
-set kurs = 0
-set semestr = 0
-set abiturient = 0
-set stipuha = 0
-<<<<<<< 365_univer
-'YOU handed a diploma.'
-=======
-'YOU awarded a diploma.'
->>>>>>> 365_univer
-end
+	if examen = 2:
+		set student = 0
+		set kurs = 0
+		set semestr = 0
+		set abiturient = 0
+		set stipuha = 0
+		set lektor = 0
+		'You are expelled from university.'
+	end
 
-if examen = 2:
-set student = 0
-set kurs = 0
-set semestr = 0
-set abiturient = 0
-set stipuha = 0
-set lektor = 0
-'YOU expelled from university.'
-end
+	set minut += 5
+	'<center><b><font color="maroon">Dean</font></b></center>'
+	'<center><img src="images/etogame/dekanat.jpg"></center>'
+	clr
+	gs 'stat'
+	'You learn how to <<semestr>> semester <<kurs>> course'
+	'Prior to the session must pass <<kurs>> coursework. More welcomed and encouraged during the session.'
 
-<<<<<<< 365_univer
-set minut += 5
-'<center><B><font color = maroon>Dean</font></B></center>'
-'<center><img src="images\etogame\dekanat.jpg"></center>'
-clr
-gs 'stat'
-'You learn how to <<semestr>> semester <<kurs>> course'
-'Prior to the session must pass <<kurs>> coursework. More welcomed and encouraged during the session.'
-if kursovikD > 0: 'You passed <<kursovikD>> coursework.'
-=======
-set minut = minut + 5
-'<center><B><font color=maroon>deanery</font></B></center>'
-'<center><img src="pic/dekanat.jpg" ></center>'
-clr
-gs'stat'
-'You learn in <<semestr>> semester <<kurs>> exchange_rate'
-'Prior to the session must pass <<kurs>> coursework. More welcomed and encouraged during the session.'
-if kursovikD > 0:'you passed <<kursovikD>> coursework.'
->>>>>>> 365_univer
+	if kursovikD > 0:'You passed <<kursovikD>> coursework.'
 
-
-<<<<<<< 365_univer
-act 'Escape from the dean´s office': gt 'univer','start'
-	if hour < 8 and student > 0:
-		act 'At the lecture':
-		cla
-		*clr
-		set minut += 360
-		set hour = 14
-		set minut = 0
-		set lektor += 1
-		set intel += 1
-		'<center><img src="images\etogame\Classroom1.jpg"></center>'
-		'You were sitting in lectures and recorded for teacher notes.'
-		set zanrand = rand(0,9)
-		if zanrand = 0:
-			set minut += 60
-			'During class lecturer starts you ask, but you did not really say you can not, and he says something to you stayed after school.'
-			'Classes are over, but you have to stay.'
-			act 'Remain in the classroom':
+	act 'Escape from the dean´s office':gt 'univer', 'start'
+		if hour < 8 and student > 0:
+			act 'At the lecture':
 				cla
 				*clr
-				zanpicrand = rand(1,3)
-				'<center><img src="images\img\oldtown\zan<<zanpicrand>>.jpg "></center>'
-				'After the class lecturer explains to you for an hour thing.'
-				act 'Leave': gt 'univer','dekanat'
-				act 'Seduce':
-					cla
-					*clr
-					if zanpicrand = 1: set picrand = 44
-					if zanpicrand = 2: set picrand = 45
-					if zanpicrand = 3: set picrand = 46
-					'<center><img src="images\img\oldtown\zan1<<zanpicrand>>.jpg "></center>'
-					'You grab his penis, he reflexively pulls away, but then relaxes and allows you to continue.'
-					act 'Blow job': gt 'sex','minet'
+				set minut += 360
+				set hour = 14
+				set minut = 0
+				set lektor += 1
+				set intel += 1
+				'<center><img src="images/etogame/Classroom1.jpg"></center>'
+				'You were sitting in lectures and recorded for teacher notes.'
+				set zanrand = rand(0, 9)
+
+				if zanrand = 0:
+					set minut += 60
+					'During class lecturer starts you ask, but you did not really say you can not, and he says something to you stayed after school.'
+					'Classes are over, but you have to stay.'
+
+					act 'Remain in the classroom':
+						cla
+						*clr
+						zanpicrand = rand(1, 3)
+						'<center><img src="images/img/oldtown/zan<<zanpicrand>>.jpg"></center>'
+						'After the class lecturer explains to you for an hour thing.'
+
+						act 'Leave':gt 'univer', 'dekanat'
+
+						act 'Seduce':
+							cla
+							*clr
+
+							if zanpicrand = 1:set picrand = 44
+							if zanpicrand = 2:set picrand = 45
+							if zanpicrand = 3:set picrand = 46
+
+							'<center><img src="images/img/oldtown/zan1<<zanpicrand>>.jpg"></center>'
+							'You grab his penis, he reflexively pulls away, but then relaxes and allows you to continue.'
+
+							act 'Blow job':gt 'sex', 'minet'
+						end
 					end
 				end
+
+				if zanrand = 1:
+					set minut += 60
+					'During class lecturer starts you ask, but you did not really say you can not, and he says something to you stayed after school.'
+					'Classes are over, but you have to stay.'
+
+					act 'Remain in the classroom':
+						cla
+						*clr
+						zanpicrand = rand(4, 6)
+						'<center><img src="images/img/oldtown/zan<<zanpicrand>>.jpg"></center>'
+						'After exercising for an hour lecturer explains to you another girl the importance of its subject.'
+
+						act 'Leave':gt 'univer', 'dekanat'
+
+						act 'Seduce':
+							cla
+							*clr
+
+							if zanpicrand = 4:set picrand = 20
+							if zanpicrand = 5:set picrand = 21
+							if zanpicrand = 6:set picrand = 22
+
+							'<center><img src="images/img/oldtown/zan1<<zanpicrand>>.jpg"></center>'
+							'You go down on your knees and grab his penis, the other girl looks at you with round eyes, but then also starts to stick to the teacher to design, he resists a little at first, but then completely given into your hand.'
+
+							act 'Blow job':gt 'podrsex', 'var'
+						end
+					end
+				end
+
+				act 'Exit from the audience':gt 'univer', 'dekanat'
 			end
-		if zanrand = 1:
-			set minut += 60
-			'During class lecturer starts you ask, but you did not really say you can not, and he says something to you stayed after school.'
-			'Classes are over, but you have to stay.'
-			act 'Remain in the classroom':
+		end
+
+		if kursovik >= 100:
+			act 'Pass the course work':
 				cla
 				*clr
-				zanpicrand = rand(4,6)
-				'<center><img src="images\img\oldtown\zan<<zanpicrand>>.jpg "></center>'
-				'After exercising for an hour lecturer explains to you another girl the importance of its subject.'
-				act 'Leave': gt 'univer','dekanat'
-				act 'Seduce':
-					cla
-					*clr
-					if zanpicrand = 4: set picrand = 20
-					if zanpicrand = 5: set picrand = 21
-					if zanpicrand = 6: set picrand = 22
-					'<center><img src="images\img\oldtown\zan1<<zanpicrand>>.jpg "></center>'
-					'You go down on your knees and grab his penis, the other girl looks at you with round eyes, but then also starts to stick to the teacher to design, he resists a little at first, but then completely given into your hand.'
-					act 'Blow job': gt 'podrsex','var'
-					end
-				end
+				set intel += 1
+				set kursovik = 0
+				set kursovikD += 1
+				'<center><img src="images/etogame/Classroom1.jpg"></center>'
+				'You passed the course work.'
+
+				act 'Exit from the audience':gt 'univer', 'dekanat'
 			end
-		act 'Exit from the audience': gt 'univer','dekanat'
 		end
 	end
 
-	if kursovik >= 100:
-		act 'Pass the course work':
+	if $ARGS[0] = 'examen':
 		cla
 		*clr
-		set intel += 1
-		set kursovik = 0
-		set kursovikD += 1
-		'<center><img src="images\etogame\Classroom1.jpg"></center>'
-		'You passed the course work.'
-		act 'Exit from the audience': gt 'univer','dekanat'
+		set minut += 60
+		'<center><b><font color="maroon">Exam</font></b></center>'
+		'<center><img src="images/etogame/examen.jpg"></center>'
+		clr
+		gs 'stat'
+
+		if lektor > 55 and kursovikD >= kurs:
+			set examen = 1
+			set kursovikD = 0
+			set stipuha = 1
+			set lektor = 0
+			!!1200
+			'You are well attended classes and you have no outstanding coursework, exam so you put a gun.'
+			jump 'exitexamem'
 		end
-	end
-=======
-act 'Escape from the dean`s office':gt'univer','start'
-     if hour < 8 and student > 0:
-         act 'at the lecture':
-         cla
-         *clr
-         set minut = minut + 360
-         set hour = 14
-         set minut = 0
-         set lektor = lektor + 1
-         set intel = intel + 1
-         '<center><img src="pic/Classroom1.jpg" ></center>'
-         'You were sitting in lectures and recorded for teacher synopsis.'
-         set zanrand=rand(0,9)
-		 if zanrand=0:
-			 set minut+=60
-			 'During class lecturer starts you ask, but you did not really say can not, and he says that-Would you stayed after school.'
-			 'classes ended, but you have to stay.'
-			 act'To remain in the classroom':
-				 cla
-				 *clr
-				 zanpicrand=rand(1,3)
-				 '<center><img src="img/oldtown/zan<<zanpicrand>>.jpg"></center>'
-				 'After the class teacher of an hour explains to you subject.'
-				 act'Get_Away':gt'univer','dekanat'
-				 act'seduce':
-					 cla
-					 *clr
-					 if zanpicrand=1:set picrand=44
-					 if zanpicrand=2:set picrand=45
-					 if zanpicrand=3:set picrand=46
-					 '<center><img src="img/oldtown/zan1<<zanpicrand>>.jpg"></center>'
-					 'You grab his dick, He reflexively pulls back, but then relaxes and allows you to continue.'
-					 act'blow_job':gt'sex','minet'
-					 end
-				 end
-			 end
-		 if zanrand=1:
-			 set minut+=60
-			 'During class lecturer starts you ask, but you did not really say can not, and he says that-Would you stayed after school.'
-			 'classes ended, but you have to stay.'
-			 act'To remain in the classroom':
-				 cla
-				 *clr
-				 zanpicrand=rand(4,6)
-				 '<center><img src="img/oldtown/zan<<zanpicrand>>.jpg"></center>'
-				 'After the class teacher of an hour tells you another girl the importance of its subject.'
-				 act'Get_Away':gt'univer','dekanat'
-				 act'seduce':
-					 cla
-					 *clr
-					 if zanpicrand=4:set picrand=20
-					 if zanpicrand=5:set picrand=21
-					 if zanpicrand=6:set picrand=22
-					 '<center><img src="img/oldtown/zan1<<zanpicrand>>.jpg"></center>'
-					 'You go down on his knees and grabs his dick, second girl looks at you with round eyes, but then also starts to stick to the teacher to, the first bit resists, but then completely given into your hand.'
-					 act'blow_job':gt'podrsex','var'
-					 end
-				 end
-			 end
-         act 'Withdraw from the audience':gt'univer','dekanat'
-         end
-     end
-     
-     if kursovik >= 100:
-         act 'Rent out your course work':
-         cla
-         *clr
-         set intel = intel + 1
-         set kursovik = 0
-         set kursovikD = kursovikD + 1
-         '<center><img src="pic/Classroom1.jpg" ></center>'
-         'You passed the course work.'
-         act 'Withdraw from the audience':gt'univer','dekanat'
-         end
-     end
->>>>>>> 365_univer
 
+		if ((intel >= 80) or (lektor > 40 and lektor <= 55)) and kursovikD >= kurs:
+			set examen = 1
+			set kursovikD = 0
+			set stipuha = 0
+			'You answered all the questions in the ticket and you have no outstanding coursework, so you score? Exam.'
+			set lektor = 0
+
+			act 'Exit from the audience':gt 'univer', 'dekanat'
+
+			exit
+		end
+
+		if (intel >= 100) and kursovikD >= kurs + 10:
+			set examen = 1
+			set kursovikD = 0
+			set stipuha = 1
+			'You showed great zeal and independence in learning, so you put a gun exam.'
+			set lektor = 0
+			jump 'exitexamem'
+			!!exit
+		end
+
+		if (intel < 70 and lektor <= 40) or kursovikD < kurs:
+			set examen = 2
+			set stipuha = 0
+			'You do not pass the exam.'
+		end
+
+		if examen = 0:
+			set examen = 2
+			set stipuha = 0
+			'You do not pass the exam.'
+		end
+	:exitexamem
+
+	act 'Exit from the audience':gt 'univer', 'dekanat'
 end
 
-<<<<<<< 365_univer
-if $ARGS[0] = 'examen':
-=======
-if $ARGS[0]='examen':
->>>>>>> 365_univer
-cla
-*clr
-<<<<<<< 365_univer
-set minut += 60
-'<center><B><font color = maroon>Exam</font></B></center>'
-'<center><img src="images\etogame\examen.jpg"></center>'
-clr
-gs 'stat'
-	if lektor > 55 and kursovikD >= kurs:
-	set examen = 1
-	set kursovikD = 0
-	set stipuha = 1
-	set lektor = 0
-	!1200
-	'You are well attended classes and you have no outstanding coursework, exam so you put a gun.'
-
-	jump 'exitexamem'
-	end
-	if ((intel >= 80) or (lektor > 40 and lektor <= 55)) and kursovikD >= kurs:
-	set examen = 1
-	set kursovikD = 0
-	set stipuha = 0
-	'You answered all the questions in the ticket and you have no outstanding coursework, so you score? Exam.'
-	set lektor = 0
-	act 'Exit from the audience': gt 'univer','dekanat'
-	exit
-	end
-	if (intel >= 100) and kursovikD >= kurs + 10:
-	set examen = 1
-	set kursovikD = 0
-	set stipuha = 1
-	'You showed great zeal and independence in learning, so you put a gun exam.'
-	set lektor = 0
-	jump 'exitexamem'
-	!exit
-	end
-	if (intel < 70 and lektor <= 40) or kursovikD < kurs:
-	set examen = 2
-	set stipuha = 0
-	'You do not pass the exam.'
-	end
-	if examen = 0:
-	set examen = 2
-	set stipuha = 0
-	'You do not pass the exam.'
-	end
-:exitexamem
-act 'Exit from the audience': gt 'univer','dekanat'
-=======
-set minut = minut + 60
-'<center><B><font color=maroon>exam</font></B></center>'
-'<center><img src="pic/examen.jpg" ></center>'
-clr
-gs'stat'
-     if lektor > 55 and kursovikD >= kurs:
-     set examen = 1
-     set kursovikD = 0
-     set stipuha = 1
-     set lektor = 0
-     !1200
-     'You are well attended classes and you do not have arrears of coursework, so the exam you put a gun.'
-     
-     jump 'exitexamem'
-     end
-     if ((intel>=80) or (lektor > 40 and lektor <= 55)) and kursovikD >= kurs:
-     set examen = 1
-     set kursovikD = 0
-     set stipuha = 0
-     'You have answered all the questions in the ticket and you do not have arrears of coursework, so the exam you score?.'
-     set lektor = 0
-     act 'Withdraw from the audience':gt'univer','dekanat'
-	 exit
-	 end
-     if (intel>=100) and kursovikD >= kurs + 10:
-     set examen = 1
-     set kursovikD = 0
-     set stipuha = 1
-     'You have shown great zeal and self- learning, so the exam you put a gun.'
-     set lektor = 0
-     jump 'exitexamem'
-	 !exit
-	 end
-     if (intel<70 and lektor <= 40) or kursovikD < kurs:
-     set examen = 2
-     set stipuha = 0
-     'You do not pass the exam.'
-     end
-     if examen = 0:
-     set examen = 2
-     set stipuha = 0
-     'You do not pass the exam.'
-     end
-:exitexamem
-act 'Withdraw from the audience':gt'univer','dekanat'
->>>>>>> 365_univer
-end
 --- univer ---------------------------------
 

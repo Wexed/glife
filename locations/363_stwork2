@@ -1,8 +1,8 @@
 # stwork2
-<<<<<<< 363_stwork2
-!set minut += 15
-'<center><B><font color = maroon>Stage</font></B></center>'
-'<center><img src="images\etogame\stripclub1.jpg"></center>'
+!!set minut += 15
+'<center><b><font color="maroon">Stage</font></b></center>'
+'<center><img src="images/etogame/stripclub1.jpg"></center>'
+
 if publichot < 10:$pubhot = 'and boo you, screams are heard "remove this stupid cow"'
 if publichot >= 10 and publichot < 20:$pubhot = 'and you boo'
 if publichot >= 20 and publichot < 30:$pubhot = 'Catching and frankly bored drinking and talking among themselves'
@@ -11,700 +11,409 @@ if publichot >= 60 and publichot < 70:$pubhot = 'and legim interest examined you
 if publichot >= 70 and publichot < 80:$pubhot = 'interest examined with you'
 if publichot >= 80 and publichot < 90:$pubhot = 'with strained faces, some even visible sweat on their foreheads'
 if publichot >= 90:$pubhot = 'forgotten about his drinking, whooped and rumble money'
-=======
-!set minut = minut + 15
-'<center><B><font color=maroon>scene</font></B></center>'
-'<center><img src="pic/stripclub1.jpg" ></center>'
-if publichot<10:$pubhot='and you boo, heard screams "remove this stupid cow"'
-if publichot>=10 and publichot<20:$pubhot='and you boo'
-if publichot>=20 and publichot<30:$pubhot='and frankly bored Catching a drink and talk to each other'
-if publichot>=30 and publichot<60:$pubhot='sometimes throws at you views accompanied by smiles'
-if publichot>=60 and publichot<70:$pubhot='and legim interest examined you and conduct conversations with each other over a beer'
-if publichot>=70 and publichot<80:$pubhot='with interest to examine you'
-if publichot>=80 and publichot<90:$pubhot='with strained faces, some even noticeable sweat on their foreheads'
-if publichot>=90:$pubhot='forgotten about their drinking, hooting and shaking money'
->>>>>>> 363_stwork2
+
 'Men sitting in front of the stage <<$pubhot>>.'
 clr
-<<<<<<< 363_stwork2
 gs 'stat'
-$pubhotdi = {
-if publichot < 30: payrand = 0 & 'Nobody even paid any attention to your movements on the stage.'
-if publichot >= 30 and publichot < 60: payrand = 0 & 'A couple of people looked at you but no more than that, you tip no one has.'
-if publichot >= 60 and publichot < 70:
-payrand = RAND(0,1)
-	if payrand = 0: 'A couple of people looked at you but no more than that, you tip no one has.'
-	if payrand = 1:
-	paymoneyrand = RAND(1,3)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-end
-if publichot >= 70 and publichot < 80:
-payrand = RAND(0,5)
-	if payrand = 0: 'Tip you no one has.'
-	if payrand = 1:
-	paymoneyrand = RAND(1,3)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 2:
-	paymoneyrand = RAND(2,4)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 3:
-	paymoneyrand = RAND(3,5)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 4:
-	paymoneyrand = RAND(4,6)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 5:
-	paymoneyrand = RAND(5,10)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-=======
-gs'stat'
-$pubhotdi={
-if publichot<30:payrand=0&'No one paid any attention to your movements on stage.'
-if publichot>=30 and publichot<60:payrand=0&'A couple of people looked at you but no more, tips you did not give a.'
-if publichot>=60 and publichot<70:
-payrand=RAND(0,1)
-     if payrand=0:'A couple of people looked at you but no more, tips you did not give a.'
-     if payrand=1:
-     paymoneyrand=RAND(1,3)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-end
-if publichot>=70 and publichot<80:
-payrand=RAND(0,5)
-     if payrand=0:'Tip you gave no.'
-     if payrand=1:
-     paymoneyrand=RAND(1,3)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=2:
-     paymoneyrand=RAND(2,4)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=3:
-     paymoneyrand=RAND(3,5)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=4:
-     paymoneyrand=RAND(4,6)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=5:
-     paymoneyrand=RAND(5,10)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
->>>>>>> 363_stwork2
-end
 
-<<<<<<< 363_stwork2
-if publichot >= 80 and publichot < 90:
-payrand = RAND(0,10)
-	if payrand = 0: 'Tip you no one has.'
-	if payrand = 1:
-	paymoneyrand = RAND(1,3)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+$pubhotdi = {
+	if publichot < 30:payrand = 0 & 'Nobody even paid any attention to your movements on the stage.'
+	if publichot >= 30 and publichot < 60:payrand = 0 & 'A couple of people looked at you but no more than that, you tip no one has.'
+	if publichot >= 60 and publichot < 70:
+		payrand = rand(0, 1)
+
+		if payrand = 0:'A couple of people looked at you but no more than that, you tip no one has.'
+
+		if payrand = 1:
+			paymoneyrand = rand(1, 3)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
 	end
-	if payrand = 2:
-	paymoneyrand = RAND(2,4)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+
+	if publichot >= 70 and publichot < 80:
+		payrand = rand(0, 5)
+
+		if payrand = 0:'Tip you no one has.'
+
+		if payrand = 1:
+			paymoneyrand = rand(1, 3)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 2:
+			paymoneyrand = rand(2, 4)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 3:
+			paymoneyrand = rand(3, 5)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 4:
+			paymoneyrand = rand(4, 6)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 5:
+			paymoneyrand = rand(5, 10)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
 	end
-	if payrand = 3:
-	paymoneyrand = RAND(3,5)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+
+	if publichot >= 80 and publichot < 90:
+		payrand = rand(0, 10)
+
+		if payrand = 0:'Tip you no one has.'
+
+		if payrand = 1:
+			paymoneyrand = rand(1, 3)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 2:
+			paymoneyrand = rand(2, 4)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 3:
+			paymoneyrand = rand(3, 5)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 4:
+			paymoneyrand = rand(4, 6)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 5:
+			paymoneyrand = rand(5, 10)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 6:
+			paymoneyrand = rand(7, 12)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 7:
+			paymoneyrand = rand(10, 15)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 8:
+			paymoneyrand = rand(15, 20)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 9:
+			paymoneyrand = rand(20, 30)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 10:
+			paymoneyrand = rand(30, 50)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
 	end
-	if payrand = 4:
-	paymoneyrand = RAND(4,6)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+
+	if publichot >= 90:
+		payrand = rand(0, 15)
+
+		if payrand = 0:'Tip you no one has.'
+
+		if payrand = 1:
+			paymoneyrand = rand(1, 3)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 2:
+			paymoneyrand = rand(2, 4)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 3:
+			paymoneyrand = rand(3, 5)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 4:
+			paymoneyrand = rand(4, 6)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 5:
+			paymoneyrand = rand(5, 10)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 6:
+			paymoneyrand = rand(7, 12)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 7:
+			paymoneyrand = rand(10, 15)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 8:
+			paymoneyrand = rand(15, 20)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 9:
+			paymoneyrand = rand(20, 30)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 10:
+			paymoneyrand = rand(30, 40)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 11:
+			paymoneyrand = rand(40, 50)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 12:
+			paymoneyrand = rand(50, 60)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 13:
+			paymoneyrand = rand(60, 70)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 14:
+			paymoneyrand = rand(70, 80)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
+
+		if payrand = 15:
+			paymoneyrand = rand(80, 100)
+			money += paymoneyrand * 10
+			'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
+		end
 	end
-	if payrand = 5:
-	paymoneyrand = RAND(5,10)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 6:
-	paymoneyrand = RAND(7,12)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 7:
-	paymoneyrand = RAND(10,15)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 8:
-	paymoneyrand = RAND(15,20)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 9:
-	paymoneyrand = RAND(20,30)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 10:
-	paymoneyrand = RAND(30,50)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-end
-if publichot >= 90:
-payrand = RAND(0,15)
-	if payrand = 0: 'Tip you no one has.'
-	if payrand = 1:
-	paymoneyrand = RAND(1,3)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 2:
-	paymoneyrand = RAND(2,4)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 3:
-	paymoneyrand = RAND(3,5)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 4:
-	paymoneyrand = RAND(4,6)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 5:
-	paymoneyrand = RAND(5,10)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 6:
-	paymoneyrand = RAND(7,12)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 7:
-	paymoneyrand = RAND(10,15)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 8:
-	paymoneyrand = RAND(15,20)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 9:
-	paymoneyrand = RAND(20,30)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 10:
-	paymoneyrand = RAND(30,40)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 11:
-	paymoneyrand = RAND(40,50)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 12:
-	paymoneyrand = RAND(50,60)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 13:
-	paymoneyrand = RAND(60,70)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 14:
-	paymoneyrand = RAND(70,80)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-	if payrand = 15:
-	paymoneyrand = RAND(80,100)
-	money += paymoneyrand * 10
-	'Some guy shoved you in panties <<paymoneyrand>>0 rubles'
-	end
-=======
-if publichot>=80 and publichot<90:
-payrand=RAND(0,10)
-     if payrand=0:'Tip you gave no.'
-     if payrand=1:
-     paymoneyrand=RAND(1,3)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=2:
-     paymoneyrand=RAND(2,4)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=3:
-     paymoneyrand=RAND(3,5)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=4:
-     paymoneyrand=RAND(4,6)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=5:
-     paymoneyrand=RAND(5,10)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=6:
-     paymoneyrand=RAND(7,12)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=7:
-     paymoneyrand=RAND(10,15)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=8:
-     paymoneyrand=RAND(15,20)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=9:
-     paymoneyrand=RAND(20,30)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=10:
-     paymoneyrand=RAND(30,50)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-end
-if publichot>=90:
-payrand=RAND(0,15)
-     if payrand=0:'Tip you gave no.'
-     if payrand=1:
-     paymoneyrand=RAND(1,3)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=2:
-     paymoneyrand=RAND(2,4)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=3:
-     paymoneyrand=RAND(3,5)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=4:
-     paymoneyrand=RAND(4,6)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=5:
-     paymoneyrand=RAND(5,10)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=6:
-     paymoneyrand=RAND(7,12)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=7:
-     paymoneyrand=RAND(10,15)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=8:
-     paymoneyrand=RAND(15,20)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=9:
-     paymoneyrand=RAND(20,30)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=10:
-     paymoneyrand=RAND(30,40)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=11:
-     paymoneyrand=RAND(40,50)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=12:
-     paymoneyrand=RAND(50,60)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=13:
-     paymoneyrand=RAND(60,70)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=14:
-     paymoneyrand=RAND(70,80)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
-     if payrand=15:
-     paymoneyrand=RAND(80,100)
-     money+=paymoneyrand*10
-     'What a guy shoved you in panties <<paymoneyrand>>0 rubles'
-     end
->>>>>>> 363_stwork2
-end
 }
 
-<<<<<<< 363_stwork2
 if hour >= 15 or hour <= 2:
 	if stpredmet > 0:
 		act 'Striptease 5 minutes (<<stpredmet>> items of clothing)':
-		cls
-		minut += 5
-		stpredmet -= 1
-		sweat += 1
-		fat -= 3
-		manna -= RAND(5,10)
-		if stpredmet = 1: sweat += 1
-		if stpredmet = 0: hapri = 0 & stripdancesum += 1
-		publichot += RAND(stripdance/30, stripdance/10)
-		if publichotstart = publichot: publichot -= RAND(5,10)&publichotstart = publichot
-		gs 'stat'
-		'<center><img src="images\etogame\stripclub2.jpg"></center>'
-		'You danced on stage undressing in public.'
+			cls
+			minut += 5
+			stpredmet -= 1
+			sweat += 1
+			fat -= 3
+			manna -= rand(5, 10)
+
+			if stpredmet = 1:sweat += 1
+			if stpredmet = 0:hapri = 0 & stripdancesum += 1
+
+			publichot += rand(stripdance/30, stripdance/10)
+
+			if publichotstart = publichot:publichot -= rand(5, 10) & publichotstart = publichot
+
+			gs 'stat'
+			'<center><img src="images/etogame/stripclub2.jpg"></center>'
+			'You danced on stage undressing in public.'
+
 			if ves > rost-90:
-			vesrand = RAND(0,100)
-			if vesrand >= 75:
-			publichot -= RAND(5,10)
-			'In the hall they laugh at you, "Look how fat she hang out. Aga and ass shaking like jelly."'
+				vesrand = rand(0, 100)
+
+				if vesrand >= 75:
+					publichot -= rand(5, 10)
+					'In the hall they laugh at you, "Look how fat she hang out. Aga and ass shaking like jelly."'
+				end
 			end
-			end
-		dynamic $pubhotdi
-		act 'further': gt $curloc
+
+			dynamic $pubhotdi
+
+			act 'further':gt $curloc
 		end
 
 		act 'Dance around a pole 5 minutes (<<stpredmet>> garments)':
-		cls
-		minut += 5
-		stpredmet -= 1
-		sweat += 2
-		fat -= 5
-		manna -= RAND(10,50)
-		if stpredmet = 1: hapri = 0
-		if stpredmet = 0: mop = 0 & stripdancesum += 1
-		hapri = 0
-		publichot += RAND(stripdance/20, stripdance/5)+ RAND(poledance/20, poledance/5)
-		if publichotstart = publichot: publichot -= RAND(5,10)&publichotstart = publichot
-		gs 'stat'
-		'<center><img src="images\etogame\strippole.jpg"></center>'
-		'You danced around the pole showing acrobatics and sexy undressing in public.'
+			cls
+			minut += 5
+			stpredmet -= 1
+			sweat += 2
+			fat -= 5
+			manna -= rand(10, 50)
+
+			if stpredmet = 1:hapri = 0
+			if stpredmet = 0:mop = 0 & stripdancesum += 1
+
+			hapri = 0
+			publichot += rand(stripdance/20, stripdance/5)+ rand(poledance/20, poledance/5)
+
+			if publichotstart = publichot:publichot -= rand(5, 10) & publichotstart = publichot
+
+			gs 'stat'
+			'<center><img src="images/etogame/strippole.jpg"></center>'
+			'You danced around the pole showing acrobatics and sexy undressing in public.'
+
 			if ves > rost-90:
-			vesrand = RAND(0,100)
-			if vesrand >= 75:
-			'Performing another trick on the pole you have not kept your weight and crashed to the floor. The crowd laughed, "Hey, hippopotamus, stomp at the swamp where it came from."'
-			publichot = 15
-			fingalrand = RAND(0,100)
-			if fingalrand >= 75:
-			fingal += RAND(2,5)
-			'When you fall, you greatly venerated person on the floor and it seems you have a bruise on his face blurred.'
+				vesrand = rand(0, 100)
+
+				if vesrand >= 75:
+					'Performing another trick on the pole you have not kept your weight and crashed to the floor. The crowd laughed, "Hey, hippopotamus, stomp at the swamp where it came from."'
+					publichot = 15
+					fingalrand = rand(0, 100)
+
+					if fingalrand >= 75:
+						fingal += rand(2, 5)
+						'When you fall, you greatly venerated person on the floor and it seems you have a bruise on his face blurred.'
+					end
+				end
+
+				if vesrand >= 50:
+					publichot -= rand(5, 10)
+					'In the hall they laugh at you, "Look how fat she hang out. Aga and ass shaking like jelly."'
+				end
 			end
-			end
-			if vesrand >= 50:
-			publichot -= RAND(5,10)
-			'In the hall they laugh at you, "Look how fat she hang out. Aga and ass shaking like jelly."'
-			end
-			end
-		dynamic $pubhotdi
-		act 'further': gt $curloc
+
+			dynamic $pubhotdi
+
+			act 'further':gt $curloc
 		end
 	end
 
 	if stpredmet = 0:
 		if publichot >= 80 and publichot < 90:
-		privatrand = RAND(0,100)
+			privatrand = rand(0, 100)
+
 			if privatrand >= 90:
-			'After the dance, the guard showed you that you have a customer for a private dance.'
-			dynamic $privatdancedi
-			exit
+				'After the dance, the guard showed you that you have a customer for a private dance.'
+				dynamic $privatdancedi
+				exit
 			end
 		end
+
 		if publichot >= 90:
-		privatrand = RAND(0,100)
+			privatrand = rand(0, 100)
+
 			if privatrand >= 70:
-			'After the dance, the guard showed you that you have a customer for a private dance.'
-			dynamic $privatdancedi
-			exit
+				'After the dance, the guard showed you that you have a customer for a private dance.'
+				dynamic $privatdancedi
+				exit
 			end
 		end
-
 	end
-=======
-if hour >= 15 or hour<=2:
-     if stpredmet>0:
-		 act 'striptease 5 minutes (<<stpredmet>> garments)':
-		 cls
-		 minut+=5
-		 stpredmet-=1
-		 sweat+=1
-		 fat-=3
-		 manna-=RAND(5,10)
-		 if stpredmet=1:sweat+=1
-		 if stpredmet=0:hapri=0&stripdancesum+=1
-		 publichot+=RAND(stripdance/30,stripdance/10)
-		 if publichotstart=publichot:publichot-=RAND(5,10)&publichotstart=publichot
-		 gs'stat'
-		 '<center><img src="pic/stripclub2.jpg" ></center>'
-		 'You danced on stage before an audience undressing.'
-		 	 if ves>rost-90:
-		     vesrand=RAND(0,100)
-		         if vesrand>=75:
-		         publichot-=RAND(5,10)
-		         'In the hall laugh at you, "Look how fat she hang. Yeah and ass shaking like jelly."'
-		         end
-		     end 
-		 dynamic $pubhotdi
-		 act 'further':gt $curloc
-		 end
-		 
-		 act 'Dancing around the pole 5 minutes (<<stpredmet>> garments)':
-		 cls
-		 minut+=5
-		 stpredmet-=1
-		 sweat+=2
-		 fat-=5
-		 manna-=RAND(10,50)
-		 if stpredmet=1:hapri=0
-		 if stpredmet=0:mop=0&stripdancesum+=1
-		 hapri=0
-		 publichot+=RAND(stripdance/20,stripdance/5)+ RAND(poledance/20,poledance/5)
-		 if publichotstart=publichot:publichot-=RAND(5,10)&publichotstart=publichot
-		 gs'stat'
-		 '<center><img src="pic/strippole.jpg" ></center>'
-		 'You danced around a pole showing acrobatics and erotic undressing in public.'
-		     if ves>rost-90:
-		     vesrand=RAND(0,100)
-		         if vesrand>=75:
-		         'Performing another trick on a pole . The crowd laughed "Hey hippopotamus, stamp into a swamp where it came from."'
-		         publichot=15
-		         fingalrand=RAND(0,100)
-		             if fingalrand>=75:
-		             fingal+=RAND(2,5)
-		             'When you fall.'
-		             end
-		         end
-		         if vesrand>=50:
-		         publichot-=RAND(5,10)
-		         'In the hall laugh at you, "Look how fat she hang. Yeah and ass shaking like jelly."'
-		         end
-		     end 
-		 dynamic $pubhotdi
-		 act 'further':gt $curloc
-		 end
-     end
-     
-     if stpredmet=0:
-         if publichot>=80 and publichot<90:
-         privatrand=RAND(0,100)
-             if privatrand>=90:
-             'After the dance.'
-             dynamic $privatdancedi
-             exit
-             end
-         end
-         if publichot>=90:
-          privatrand=RAND(0,100)
-             if privatrand>=70:
-             'After the dance.'
-             dynamic $privatdancedi
-             exit
-             end
-         end
-     
-     end
->>>>>>> 363_stwork2
-
-
 
 else
-<<<<<<< 363_stwork2
-'Working time is over. Time to go home.'
-=======
-'Working time is over. It`s time to go home.'
->>>>>>> 363_stwork2
+	'Working time is over. Time to go home.'
 end
 
-
-<<<<<<< 363_stwork2
-act 'Quit the stage': gt 'stwork','start'
+act 'Quit the stage':gt 'stwork', 'start'
 
 $privatdancedi = {
-=======
-act 'Quit the stage':gt'stwork','start'
+	act 'Go for a lap dance':
+		cls
+		minut += 30
+		money += 800
+		sweat = 1
+		hapri = 0
+		mop = 0
+		fat -= 5
+		stripdancesum += 1
 
-$privatdancedi={
->>>>>>> 363_stwork2
-act 'Go for a lap dance':
-cls
-<<<<<<< 363_stwork2
-minut += 30
-money += 800
-sweat = 1
-hapri = 0
-mop = 0
-fat -= 5
-stripdancesum += 1
-if stprrand = 0: gt 'stwork2','pr1'
-if stprrand = 1: gt 'stwork2','pr2'
-if stprrand = 2: gt 'stwork2','pr3'
-gs 'stat'
-'<center><img src="images\etogame\privatstrip.jpg"></center>'
-'In a separate room to the music you within half an hour showed different erotic dancing client.'
-act 'Go to the locker room': gt 'stwork','start'
-=======
-minut+=30
-money+=800
-sweat=1
-hapri=0
-mop=0
-fat-=5
-stripdancesum+=1
-if stprrand=0:gt'stwork2','pr1'
-if stprrand=1:gt'stwork2','pr2'
-if stprrand=2:gt'stwork2','pr3'
-gs'stat'
-'<center><img src="pic/privatstrip.jpg" ></center>'
-'In a separate room to the music you within half an hour showed different erotic dancing client.'
-act 'Go into the locker room':gt'stwork','start'
->>>>>>> 363_stwork2
-end
+		if stprrand = 0:gt 'stwork2', 'pr1'
+		if stprrand = 1:gt 'stwork2', 'pr2'
+		if stprrand = 2:gt 'stwork2', 'pr3'
+
+		gs 'stat'
+		'<center><img src="images/etogame/privatstrip.jpg"></center>'
+		'In a separate room to the music you within half an hour showed different erotic dancing client.'
+
+		act 'Go to the locker room':gt 'stwork', 'start'
+	end
 }
 
-
 if $ARGS[0] = 'pr1':
-cla
-*clr
-<<<<<<< 363_stwork2
-!set money += 2000
-'<center><img src="images\img\centr\pr1.jpg"></center>'
-'Four-bedded before you dance guys, after a while they offer you service them in full for 5000 rubles.'
-act 'Leave': gt 'stwork','start'
+	cla
+	*clr
+	!!set money += 2000
+	'<center><img src="images/img/centr/pr1.jpg"></center>'
+	'Four-bedded before you dance guys, after a while they offer you service them in full for 5000 rubles.'
+
+	act 'Leave':gt 'stwork', 'start'
+
 	act 'Agree':
-	set gang += 1
-	set guy += 4
-	set picrand = 12
-	set money += 5000
-	gt 'paysex','var'
+		set gang += 1
+		set guy += 4
+		set picrand = 12
+		set money += 5000
+		gt 'paysex', 'var'
 	end
-=======
-!set money+=2000
-'<center><img src="img/centr/pr1.jpg" ></center>'
-'Do you dance in front of the guys chetyrmya, after some time they offer you, serve them in full for 5000 RUB.'
-act 'Get_Away':gt'stwork','start'
-     act 'agree':
-	 set gang+=1
-	 set guy+=4
-	 set picrand=12
-	 set money+=5000
-	 gt'paysex','var'
-	 end
->>>>>>> 363_stwork2
 end
 
 if $ARGS[0] = 'pr2':
-cla
-*clr
-<<<<<<< 363_stwork2
-!set money += 2000
-'<center><img src="images\img\centr\pr2.jpg"></center>'
-'You dance in front of a guy while he fingering, he soon offers, serve it in full for 3000 rubles.'
-act 'Leave': gt 'stwork','start'
+	cla
+	*clr
+	!!set money += 2000
+	'<center><img src="images/img/centr/pr2.jpg"></center>'
+	'You dance in front of a guy while he fingering, he soon offers, serve it in full for 3000 rubles.'
+
+	act 'Leave':gt 'stwork', 'start'
+
 	act 'Agree':
-	set guy += 1
-	set picrand = 39
-	set money += 3000
-	xgt 'sex','var'
+		set guy += 1
+		set picrand = 39
+		set money += 3000
+		xgt 'sex', 'var'
 	end
-=======
-!set money+=2000
-'<center><img src="img/centr/pr2.jpg" ></center>'
-'Do you dance in front of boyfriend, until he Fingering, he soon offers, serve it in full for 3000 RUB.'
-act 'Get_Away':gt'stwork','start'
-     act 'agree':
-	 set guy+=1
-	 set picrand=39
-	 set money+=3000
-	 xgt'sex','var'
-	 end
->>>>>>> 363_stwork2
 end
 
 if $ARGS[0] = 'pr3':
-cla
-*clr
-<<<<<<< 363_stwork2
-!set money += 2000
-'<center><img src="images\img\centr\pr3.jpg"></center>'
-'You with another dancer portray leysbiyskie game after a few minutes you offer to make your games more realistic for each 2000rub.'
-act 'Leave': gt 'stwork','start'
+	cla
+	*clr
+	!!set money += 2000
+	'<center><img src="images/img/centr/pr3.jpg"></center>'
+	'You with another dancer portray leysbiyskie game after a few minutes you offer to make your games more realistic for each 2000rub.'
+
+	act 'Leave':gt 'stwork', 'start'
+
 	act 'Agree':
-	set girl += 1
-	set lesbian += 1
-	set picrand = 18
-	set money += 2000
-	xgt 'lezbsex','var'
+		set girl += 1
+		set lesbian += 1
+		set picrand = 18
+		set money += 2000
+		xgt 'lezbsex', 'var'
 	end
 end
-=======
-!set money+=2000
-'<center><img src="img/centr/pr3.jpg" ></center>'
-'You portray another dancer leysbiyskie games, after a few minutes you are offered to make your games more realistic for 2000rubles each.'
-act 'Get_Away':gt'stwork','start'
-     act 'agree':
-	 set girl+=1
-	 set lesbian+=1
-	 set picrand=18
-	 set money+=2000
-	 xgt'lezbsex','var'
-	 end
-end
 
-
-
-
-
-
-
-
-
-
->>>>>>> 363_stwork2
 --- stwork2 ---------------------------------
 

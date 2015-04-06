@@ -1,122 +1,25 @@
 # bed2
-<<<<<<< 315_bed2
 if $ARGS[0] = 'dosip':
-=======
-if $ARGS[0]='dosip':
->>>>>>> 315_bed2
 	dosip = 1
 else
 	dosip = 0
 end
 
-<<<<<<< 315_bed2
-$wokeup = {
-	if daystart < 10 and StoryLine = 0: 'My first thought was how you woke up, "Damn. This is not a dream, I do now baba."'
-	if daystart >= 10 and daystart < 30 and StoryLine = 0: 'You sleepy little surprised popyalitsya its female body.'
-
-	act 'Get out of bed and get dressed (0:15)':
-		cla
-		set InSleep = 0
-		set numdress = odedosna
-		set minut += 15
-		set tanga = 1
-		set nude = 0
-		gt 'bed','fin'
-	end
-
-	act 'Get out of bed':
-		cla
-		InSleep = 0
-		gt 'bed','fin'
-	end
-
-	act 'Try to sleep': gt 'bed2','dosip'
-}
-
-if numdress ! 0: set odedosna = numdress
 set nude = 1
+set odedosna = numdress
 set numdress = 0
+'<center><img src="images/pics/son.jpg" ></center>'
 
-'<center><img src="images\pics\son.jpg"></center>'
+if analplugIN = 1:set analplugIN = 0 & 'Before going to bed you remove a butt plug.'
+if vibratorIN = 1:set vibratorIN = 0 & 'Before going to bed .'
+if mop > 1:set mop = 0 & set vidageday = vidageday - 1 & 'Makeup smeared on the face, you think, that looks bad for sleeping with makeup, skin aging faster from this.'
 
-if mop ! 1 and AutoMakeup = 1: set mop = 1 & 'Before going to bed you washed away your makeup.'
-if analplugIN = 1: set analplugIN = 0 & 'Before going to bed you took the butt plug off.'
-if vibratorIN = 1: set vibratorIN = 0 & 'Before going to bed you remove the vibrator.'
-!if vibratorIN = 1: set vibratorIN = 0 & 'Before going to bed you washed away your makeup.'
-
-if mop > 1: set mop = 0 & set vidageday -= 1 & 'Cosmetics smeared face, you think that looks bad for sleeping with makeup, skin ages faster from it.'
-
-!WD: moved health to sleep loop
-!set health += RAND(5,10)
+set health += 5
 set hapri = 0
 InSleep = 1
-AEnema = 1
-HasWashed = 1
+set slep = rand(0, 10)
 
-set slep = RAND(0,3)
-if StoryLine = 1: slep = 0
-
-if slep = 0: set $slep = 'not dreaming'
-if slep = 1: set $slep = 'dream about what it is not clear images from the past'
-if slep = 2: set $slep = 'dreaming moon gazing at the world with his one bloody eye'
-if slep = 3: set $slep = 'dreaming that you are a man again'
-
-'You sleep and you <<$slep>>.'
-
-:loop_sleep
-
-set minut += 5
-set stime += 5
-
-if stime > 20:
-	set stime -= 20
-	set son   += 1
-	!WD: health gain from sleep now dependent on length of sleep
-	health    += RAND(0,1)
-end
-
-
-gs 'stat'
-
-if hour = timer and minut >= timerM:
-	set manna -= 10
-
-	'You slept. The alarm clock goes off.'
-
-	dynamic $wokeup
-
-elseif son > 23 and dosip = 0:
-	set manna -= 10
-
-	'You slept.'
-
-	dynamic $wokeup
-
-elseif son > 47 and dosip = 1:
-	set manna -= 10
-	set dosip = 0
-	set son -= 24
-
-	'You slept.'
-
-	dynamic $wokeup
-else
-	jump 'loop_sleep'
-end
-=======
-set nude=1
-set odedosna=numdress
-set numdress=0
-'<center><img src="pics/son.jpg" ></center>'
-if analplugIN = 1:set analplugIN = 0&'Before going to bed you remove a butt plug.'
-if vibratorIN=1:set vibratorIN=0&'Before going to bed .'
-if mop > 1:set mop = 0&set vidageday = vidageday - 1&'Makeup smeared on the face, you think, that looks bad for sleeping with makeup, skin aging faster from this.'
-set health = health + 5
-set hapri = 0
-InSleep=1
-
-set slep = RAND (0,10)
-if StoryLine=0:slep =0
+if StoryLine = 0:slep = 0
 if slep = 0:set $slep = 'do not dream'
 if slep = 1:set $slep = 'dreaming of what it is not clear images from the past'
 if slep = 2:set $slep = 'dreaming moon looking at the world with his one bloody eye'
@@ -130,89 +33,89 @@ if slep = 9:set $slep = 'do not dream'
 if slep = 10:set $slep = 'do not dream'
 'You sleep and you <<$slep>>.'
 :loopson
+set minut += 1
+set stime += 1
 
-set minut = minut + 1
-set stime = stime + 1
 if stime = 60:set stime = 0&set son = son + 3
+
 clr
 gs'stat'
+
 if hour = timer and minut = timerM:
-'alarm goes off'
-set manna = manna - 10
-if daystart<10 and StoryLine=0:'My first thought was how you wake up "Damn. This is not a dream, I really now a woman."'
-if daystart>=10 and daystart<30 and StoryLine=0:'You awake a little surprised stare at her female body.'
-     act 'Get out of bed and get dressed (15 minutes)':
-     cla
-     set numdress=odedosna
-     set InSleep=0
-     set minut+=15
-     set tanga = 1
-     set nude=0
-     gt'bed','fin'
-     end
-     
-     act 'Get out of bed':
-     cla
-     InSleep=0
-     gt'bed','fin'
-     end
-     
-     
-     act 'try to sleep':gt'bed2','dosip'
-     
+	'alarm goes off'
+	set manna = manna - 10
+
+	if daystart < 10 and StoryLine = 0:'My first thought was how you woke up, "Damn. This is not a dream, I do now baba."'
+	if daystart >= 10 and daystart < 30 and StoryLine = 0:'You sleepy little surprised popyalitsya its female body.'
+
+	act 'Get out of bed and get dressed (0:15)':
+		cla
+		set numdress = odedosna
+		set InSleep = 0
+		set minut += 15
+		set tanga = 1
+		set nude = 0
+		gt 'bed', 'fin'
+	end
+
+	act 'Get out of bed':
+		cla
+		InSleep = 0
+		gt 'bed', 'fin'
+	end
+
+	act 'Try to sleep':gt 'bed2', 'dosip'
+
 elseif son > 23 and dosip = 0:
+	set manna -= 10
+	'You slept'
 
-set manna = manna - 10
-'you slept'
-if daystart<10 and StoryLine=0:'My first thought was how you wake up "Damn. This is not a dream, I really now a woman."'
-if daystart>=10 and daystart<30 and StoryLine=0:'With a little surprised prosoni you stare at her female body.'
-     act 'Get out of bed and get dressed (15 minutes)':
-     cla
-     set numdress=odedosna
-     set InSleep=0
-     set minut+=15
-     set tanga = 1
-     set nude=0
-     gt'bed','fin'
-     end
-     
-     act 'Get out of bed':
-     cla
-     InSleep=0
-     gt'bed','fin'
-     end
-     
-     act 'try to sleep':gt'bed2','dosip'
-     
+	if daystart < 10 and StoryLine = 0:'My first thought was how you wake up "Damn. This is not a dream, I really now a woman."'
+	if daystart >= 10 and daystart < 30 and StoryLine = 0:'With a little surprised prosoni you stare at her female body.'
+
+	act 'Get out of bed and get dressed (0:15)':
+		cla
+		set numdress = odedosna
+		InSleep = 0
+		set minut += 15
+		set tanga = 1
+		set nude = 0
+		gt 'bed', 'fin'
+	end
+
+	act 'Get out of bed':
+		cla
+		InSleep = 0
+		gt 'bed', 'fin'
+	end
+
+	act 'Try to sleep':gt 'bed2', 'dosip'
 elseif son > 47 and dosip = 1:
+	set manna -= 10
+	set dosip = 0
+	set son -= 24
+	'You slept.'
 
-set manna = manna - 10
-set dosip = 0
-set son = son - 24
-'you slept'
+	act 'Get out of bed and get dressed (0:15)':
+		cla
+		set numdress = odedosna
+		set InSleep = 0
+		set minut += 15
+		set tanga = 1
+		set nude = 0
+		gt 'bed', 'fin'
+	end
 
-     act 'Get out of bed and get dressed (15 minutes)':
-     cla
-     set numdress=odedosna
-     set InSleep=0
-     set minut+=15
-     set tanga = 1
-     set nude=0
-     gt'bed','fin'
-     end
-     
-     act 'Get out of bed':
-     cla
-     InSleep=0
-     gt'bed','fin'
-     end
-     
-     
-     act 'try to sleep':gt'bed2','dosip'
+	act 'Get out of bed':
+		cla
+		InSleep = 0
+		gt 'bed','fin'
+	end
+	    
+	act 'try to sleep':gt'bed2','dosip'
 else
-jump 'loopson'
+	jump 'loopson'
 end
 
->>>>>>> 315_bed2
 --- bed2 ---------------------------------
 

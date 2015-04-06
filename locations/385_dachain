@@ -1,112 +1,59 @@
 # dachain
-<<<<<<< 385_dachain
-'<center><B><font color = maroon>Cottage</font></B></center>'
-'<center><img src="images\etogame\dachain.jpg"></center>'
-=======
-'<center><B><font color=maroon>dacha</font></B></center>'
-'<center><img src="etogame/dachain.jpg" ></center>'
->>>>>>> 385_dachain
+'<center><b><font color="maroon">Cottage</font></b></center>'
+'<center><img src="images/etogame/dachain.jpg"></center>'
 'Your favorite summer residence.'
 clr
-<<<<<<< 385_dachain
 gs 'stat'
 gs 'time'
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-=======
-gs'stat'
-gs'time'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
->>>>>>> 385_dachain
-LCOLOR = rgb(106,90,205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 
-<<<<<<< 385_dachain
-if hour >= 6 and hour <= 20 and etoexhib = 11: 'Kopashatsya working in the garden, hmm ... maybe sometime <a href="exec: GT ''etoexhib'',''pos10''">motivate</a> for them to work quicker and smarter.'
-if hour >= 6 and hour <= 20 and etoexhib = 12: 'Leave in <a href="exec: GT ''etoexhib'',''pos11''">garden in lingerie and robe.</a>'
-if hour >= 6 and hour <= 20 and etoexhib = 13 and temp ! day: 'I wonder how to <a href="exec: GT ''etoexhib'',''pos12''">garden</a>'
-=======
-if hour >= 6 and hour <= 20 and etoexhib=11:'Kopashatsya working in the garden, huh... can both-some <a href="exec:GT ''etoexhib'',''pos10''">motivate</a> their, to work quicker and smarter.'
-if hour >= 6 and hour <= 20 and etoexhib=12:'leave in <a href="exec:GT ''etoexhib'',''pos11''">garden in lingerie and robe.</a>'
-if hour >= 6 and hour <= 20 and etoexhib=13 and temp!day:'interestingly, as there <a href="exec:GT ''etoexhib'',''pos12''">garden</a>'
->>>>>>> 385_dachain
-
+if hour >= 6 and hour <= 20 and etoexhib = 11:'Kopashatsya working in the garden, hmm ... maybe sometime <a href="exec:gt ''etoexhib'', ''pos10''">motivate</a> for them to work quicker and smarter.'
+if hour >= 6 and hour <= 20 and etoexhib = 12:'Leave in <a href="exec:gt ''etoexhib'', ''pos11''">garden in lingerie and robe.</a>'
+if hour >= 6 and hour <= 20 and etoexhib = 13 and temp ! day:'I wonder how to <a href="exec:gt ''etoexhib'', ''pos12''">garden</a>'
 
 if hour < 23:
-<<<<<<< 385_dachain
 	act 'Lie on the couch':
 		cla
 		minut += 60
-		if son < 30:
-			son += 5
-		else
-			son = 29
-		end
+
+		son += 10
 		'I relax lying on the couch.'
-		act 'Pull': gt 'dachain'
+
+		act 'Pull':gt 'dachain'
 	end
-=======
-	act 'Lie down on the couch':
-		 cla
-		 minut+=60
-		 !!!amend
-		 son+=10
-		 'I relax lying on the couch.'
-		act 'pull':gt'dachain'
-	end 
->>>>>>> 385_dachain
 end
 
-<<<<<<< 385_dachain
 if hour >= 23:
 	act 'Sleep in a bed':
 		cla
 		*clr
-		'<center><img src="images\pics\son.jpg"></center>'
-		if analplugIN = 1: set analplugIN = 0 & 'Before going to bed you took a butt plug.'
-		if vibratorIN = 1: set vibratorIN = 0 & 'Before going to bed you remove the vibrator.'
-		if mop > 1: set mop = 0 & set vidageday -= 1 & 'Cosmetics smeared face, you think that looks bad for sleeping with makeup, skin ages faster from it.'
+		'<center><img src="images/pics/son.jpg"></center>'
+
+		if analplugIN = 1:set analplugIN = 0 & 'Before going to bed you took a butt plug.'
+		if vibratorIN = 1:set vibratorIN = 0 & 'Before going to bed you remove the vibrator.'
+
+		if mop > 1:set mop = 0 & set vidageday -= 1 & 'Cosmetics smeared face, you think that looks bad for sleeping with makeup, skin ages faster from it.'
+
 		set tanga = 1
 		set health += 5
 		set hapri = 0
 		InSleep = 1
 		gs 'stat'
 		'You slept'
-			act 'Up':
+
+		act 'Up':
 			cla
 			InSleep = 0
 			minut += 480
 			son = 30
 			gt 'dachain'
-			end
+		end
 	end
 end
-act 'Go outside': minut += 15 & gt 'dachamy'
-=======
-if hour =>23:
-	 act 'Sleep in the bed':
-		 cla
-		 *clr
-		 '<center><img src="pics/son.jpg" ></center>'
-		 if analplugIN = 1:set analplugIN = 0&'Before going to bed you remove a butt plug.'
-		 if vibratorIN=1:set vibratorIN=0&'Before going to bed .'
-		 if mop > 1:set mop = 0&set vidageday = vidageday - 1&'Makeup smeared on the face, you think, that looks bad for sleeping with makeup, skin aging faster from this.'
-		 set tanga = 1
-		 set health = health + 5
-		 set hapri = 0
-		 InSleep=1
-		 gs'stat'
-		 'you slept'
-			 act 'up':
-			 cla
-			 InSleep=0
-			 minut+=480
-			 son=30
-			 gt'dachain'
-			 end
-	 end	 
-end
-act 'come out':minut+=15&gt'dachamy'
->>>>>>> 385_dachain
+
+act 'Go outside':minut += 15 & gt 'dachamy'
+
 --- dachain ---------------------------------
 

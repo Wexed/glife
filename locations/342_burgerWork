@@ -1,436 +1,245 @@
 # burgerWork
-<<<<<<< 342_burgerWork
 $dinBistroWork = {
 	act 'Dinner':
-	cls
-	gs 'stat'
-	'<center><img src="images\pics\food.jpg"></center>'
-	set minut += 30
-	set health += 10
-	set manna += 5
-	set willpower += 5
-	'You took bystroezhke food and sat at a table for dinner.'
-		if energy >= 30:
-		set fat += 8
-		'You can no longer have.'
-		end
-		if energy >= 20 and energy < 30:
-		set fat += 6
-		set energy += 10
-		'You pushed through the power of a meal.'
-		end
-		if energy < 20:
-		set energy += 20
-		set fat += 4
-		'You gladly ate the food.'
-		end
-		if water >= 20:
-		'Tea in you no longer climbs.'
-		end
-		if water < 20:
-		'You gladly drank a mug of tea.'
-		set water += 20
-		end
-	gs 'stat'
+		cls
+		gs 'stat'
+		'<center><img src="images/pics/food.jpg"></center>'
+		set minut += 30
+		set health += 10
+		set manna += 5
+		set willpower += 5
+		'You took bystroezhke food and sat at a table for dinner.'
 
+		if energy >= 30:
+			set fat += 8
+			'You can no longer have.'
+		end
+
+		if energy >= 20 and energy < 30:
+			set fat += 6
+			set energy += 10
+			'You pushed through the power of a meal.'
+		end
+
+		if energy < 20:
+			set energy += 20
+			set fat += 4
+			'You gladly ate the food.'
+		end
+
+		if water >= 20:'Tea in you no longer climbs.'
+		if water < 20:
+			'You gladly drank a mug of tea.'
+			set water += 20
+		end
+
+		gs 'stat'
 		dynamic $dinBistroWork3
 	end
-=======
-$dinBistroWork={
-	 act 'dinner':
-	 cls
-	 gs'stat'
-	 '<center><img src="pics/food.jpg" ></center>'
-	 set minut = minut + 30
-	 set health = health + 10
-	 set manna = manna + 5
-	 set willpower = willpower + 5
-	 'You took bystroezhke food and sat at a table for dinner.'
-		 if energy >= 30:
-		  set fat = fat + 8
-		 'You can no longer have.'
-		 end
-		 if energy >= 20 and energy < 30:
-		 set fat = fat + 6
-		 set energy = energy + 10
-		 'You pushed through the power of a meal.'
-		 end
-		 if energy < 20:
-		 set energy = energy +20
-		 set fat = fat + 4
-		 'You gladly ate food.'
-		 end
-		 if water >= 20:
-		 'Tea in you no longer climbs.'
-		 end
-		 if water < 20:
-		 'You gladly drank a cup of tea.'
-		 set water = water +20
-		 end
-	 gs'stat'
-	 
-		 dynamic $dinBistroWork3
-	 end
->>>>>>> 342_burgerWork
 }
 
-<<<<<<< 342_burgerWork
 $dinBistroWork2 = {
 	act 'Leave work':
-	cls
-	gs 'stat'
+		cls
+		gs 'stat'
+
 		if kompromatBlackMail >= 6 and ivanFilmBJ > 0:
-		kobl = 0
-		kobl2 = 2
+			kobl = 0
+			kobl2 = 2
 		end
+
 		if kompromatBlackMail >= 6 and ivanFilmBJ = 0:
-		kobl = 0
-		kobl2 = 2
+			kobl = 0
+			kobl2 = 2
 		end
+
 		if kompromatBlackMail < 6:
-		kobl = 0
-		kobl2 = 1
+			kobl = 0
+			kobl2 = 1
 		end
-		komblrand = RAND(kobl, kobl2)
+
+		komblrand = rand(kobl, kobl2)
+
 		if kompromatBlackMail >= 2:
-		if komblrand = 0:
-			'After work, you are going to leave bystroezhki, but you came Ivan. "Where are you going, baby? And how to suck my candy?"'
-				act 'Agree':
-				cls
-				bj += 1
-				cumlip += 1
-				swallow += 1
-				kompromatBlackMail += 1
-				minut += 5
-				gs 'stat'
-				'<center><img src="images\qwest\sosed\ivanBJ.jpg"></center>'
-				'Ivan took you around the corner to a dirty alley bystroezhki smelling urine. He pulled out of his pants member. "And now for the baby and try to work better." You squatted in front of Ivan and took his penis in her mouth, it was salty and not washed. You started to suck trying to act more active, what would Ivan finished as quickly as possible. Ivan finally puffed and began to cum in your mouth. You quickly swallowed shooting eyes on the sides, in the hope that no one sees. Once you swallow cum, Ivan cleaned dick in his pants "Average nipple. Now get out of here!"'
-				act 'Leave': gt 'down'
-				end
+			if komblrand = 0:
+				'After work, you are going to leave bystroezhki, but you came Ivan. "Where are you going, baby? And how to suck my candy?"'
 
-				dynamic $din_Ivan_work4
-			end
-			if komblrand = 1:
-			'After work, you are going to leave bystroezhki, but you came Ivan. "Where are you going, baby? And how to suck my candy?"'
 				act 'Agree':
-				cls
-				bj += 1
-				cumlip += 1
-				swallow += 1
-				kompromatBlackMail += 1
-				minut += 5
-				gs 'stat'
-				'<center><img src="images\qwest\sosed\ivanBJcar.jpg"></center>'
-				'Ivan took you to your car standing in the alley, he got behind the wheel and you sat next to him. Ivan got dick out of his pants and grabbed you by the hair pulled your face to his groin until his cock is not buried you in your <<$liptalk3>>. You opened your mouth and allow the members to enter between your lips. You started trying to suck harder to compress their <<$liptalk3>> on the penis that Ivan would be finished quickly. Ivan finally broke down and finished in your mouth. You continued to suck dick swallowing sperm while falling. Ivan tucked dick in his pants and said, "Okay cocksucker, get out."'
-				act 'Leave': gt 'down'
-				end
-
-				dynamic $din_Ivan_work4
-			end
-			if komblrand = 2:
-			'After work, you are going to leave bystroezhki, but you came Ivan. "Where are you going, baby? And how to suck my candy?"'
-				act 'Agree':
-				cls
-				kompromatBlackMail += 1
-				minut += 5
-				gs 'stat'
-				'<center><img src="images\maggot\car.jpg"></center>'
-				'Ivan took you to your car standing in the alley, he got behind the wheel and you sat next to him. Ivan started the car and you go to the northern region. "And do not forget baby while you slushaesh me you have a job and prospects, but it is worth to you piss me off, and all you will take off from his job as a traffic jam." Soon you come to a new building, Ivan put the car in the free space. You got out and went with Ivan in the staircase. The lift takes you up to the apartment of Ivan and he opened the door for you. Ivan, without delay, to take you by the hand and led her into the bedroom. There he sat on the bed and took out the camera. Ivan got dick out of his pants and said, "Suck it baby, how can you do, should not get a bad porn."'
-
-					act 'Suck':
 					cls
-					minut += 5
 					bj += 1
-					ivanFilmBJ += 1
+					cumlip += 1
+					swallow += 1
+					kompromatBlackMail += 1
+					minut += 5
 					gs 'stat'
-					'<center><img src="images\qwest\sosed\ivanBJfilm.jpg"></center>'
-					'You sat down on his knees in front of Ivan and clasped their <<$liptalk3>> member. Ivan sent to you in the face the camera and filmed as you suck his cock closeup. Ivan put you back on the couch and sat on your chest so that his cock was in front of your face.'
+					'<center><img src="images/qwest/sosed/ivanBJ.jpg"></center>'
+					'Ivan took you around the corner to a dirty alley bystroezhki smelling urine. He pulled out of his pants member. "And now for the baby and try to work better." You squatted in front of Ivan and took his penis in her mouth, it was salty and not washed. You started to suck trying to act more active, what would Ivan finished as quickly as possible. Ivan finally puffed and began to cum in your mouth. You quickly swallowed shooting eyes on the sides, in the hope that no one sees. Once you swallow cum, Ivan cleaned dick in his pants "Average nipple. Now get out of here!"'
+
+					act 'Leave':gt 'down'
+				end
+
+				dynamic $din_Ivan_work4
+			end
+
+			if komblrand = 1:
+				'After work, you are going to leave bystroezhki, but you came Ivan. "Where are you going, baby? And how to suck my candy?"'
+
+				act 'Agree':
+					cls
+					bj += 1
+					cumlip += 1
+					swallow += 1
+					kompromatBlackMail += 1
+					minut += 5
+					gs 'stat'
+					'<center><img src="images/qwest/sosed/ivanBJcar.jpg"></center>'
+					'Ivan took you to your car standing in the alley, he got behind the wheel and you sat next to him. Ivan got dick out of his pants and grabbed you by the hair pulled your face to his groin until his cock is not buried you in your <<$liptalk3>>. You opened your mouth and allow the members to enter between your lips. You started trying to suck harder to compress their <<$liptalk3>> on the penis that Ivan would be finished quickly. Ivan finally broke down and finished in your mouth. You continued to suck dick swallowing sperm while falling. Ivan tucked dick in his pants and said, "Okay cocksucker, get out."'
+
+					act 'Leave':gt 'down'
+				end
+
+				dynamic $din_Ivan_work4
+			end
+
+			if komblrand = 2:
+				'After work, you are going to leave bystroezhki, but you came Ivan. "Where are you going, baby? And how to suck my candy?"'
+
+				act 'Agree':
+					cls
+					kompromatBlackMail += 1
+					minut += 5
+					gs 'stat'
+					'<center><img src="images/maggot/car.jpg"></center>'
+					'Ivan took you to your car standing in the alley, he got behind the wheel and you sat next to him. Ivan started the car and you go to the northern region. "And do not forget baby while you slushaesh me you have a job and prospects, but it is worth to you piss me off, and all you will take off from his job as a traffic jam." Soon you come to a new building, Ivan put the car in the free space. You got out and went with Ivan in the staircase. The lift takes you up to the apartment of Ivan and he opened the door for you. Ivan, without delay, to take you by the hand and led her into the bedroom. There he sat on the bed and took out the camera. Ivan got dick out of his pants and said, "Suck it baby, how can you do, should not get a bad porn."'
+
 					act 'Suck':
 						cls
 						minut += 5
+						bj += 1
+						ivanFilmBJ += 1
 						gs 'stat'
-						'<center><img src="images\qwest\sosed\ivanBJfilm2.jpg"></center>'
-						'North top Ivan began to fuck you in the mouth every time a member of his firm head sticking in your throat, you suck diligently trying not to choke. While Ivan did not forget to shoot you on camera. Finally he took a dick out of your mouth.'
-							act 'Open mouth':
+						'<center><img src="images/qwest/sosed/ivanBJfilm.jpg"></center>'
+						'You sat down on his knees in front of Ivan and clasped their <<$liptalk3>> member. Ivan sent to you in the face the camera and filmed as you suck his cock closeup. Ivan put you back on the couch and sat on your chest so that his cock was in front of your face.'
+
+						act 'Suck':
 							cls
 							minut += 5
-							facial += 1
-							cumface += 1
 							gs 'stat'
-							'<center><img src="images\qwest\sosed\ivanBJfilm3.jpg"></center>'
-							'Ivan began to finish you on your <<$liptalk3>> and language. Cum dripping from your lips on his chin and chest. Ivan finally turned off the camera and put it away in a drawer. "Not bad chlenososka fulfilled. Can wash up and get out."'
-							act 'Leave': cumface = 0 & gt 'nord'
+							'<center><img src="images/qwest/sosed/ivanBJfilm2.jpg"></center>'
+							'North top Ivan began to fuck you in the mouth every time a member of his firm head sticking in your throat, you suck diligently trying not to choke. While Ivan did not forget to shoot you on camera. Finally he took a dick out of your mouth.'
+
+							act 'Open mouth':
+								cls
+								minut += 5
+								facial += 1
+								cumface += 1
+								gs 'stat'
+								'<center><img src="images/qwest/sosed/ivanBJfilm3.jpg"></center>'
+								'Ivan began to finish you on your <<$liptalk3>> and language. Cum dripping from your lips on his chin and chest. Ivan finally turned off the camera and put it away in a drawer. "Not bad chlenososka fulfilled. Can wash up and get out."'
+
+								act 'Leave':cumface = 0 & gt 'nord'
 							end
 						end
 					end
-				dynamic $din_Ivan_work4
+
+					dynamic $din_Ivan_work4
 				end
 
 				dynamic $din_Ivan_work4
 			end
-			if komblrand = 3:
-			''
 
-			end
-		exit
+			if komblrand = 3:''
+
+			exit
 		end
-	gt 'burger','start'
-	end
-=======
-$dinBistroWork2={
-	 act 'Leave work':
-	 cls
-	 gs'stat'
-	 	 if kompromatBlackMail>=6 and ivanFilmBJ>0:
-	 	 kobl=0
-	     kobl2=2
-	     end
-	     if kompromatBlackMail>=6 and ivanFilmBJ=0:
-	     kobl=0
-	     kobl2=2
-	     end
-	     if kompromatBlackMail<6:
-	     kobl=0
-	     kobl2=1
-	     end
-	     komblrand=RAND(kobl,kobl2)
-	     if kompromatBlackMail>=2:
-	         if komblrand=0:
-			 'After work, but you went to Ivan. "Where are you going, Babe? And how to suck my candy?"'
-				 act 'agree':
-				 cls
-				 bj+=1
-				 cumlip+=1
-				 swallow+=1
-				 kompromatBlackMail+=1
-				 minut+=5
-				 gs'stat'
-				 '<center><img src="qwest/sosed/ivanBJ.jpg"></center>'
-				 'Ivan took you around the corner in a dirty alley bystroezhki smelling urine. He pulled out of his pants member. "And now for the baby and try to work better." You sit down in front of Ivan and took his cock in her mouth, it was salty and not washed. You started to suck trying to act more active, What would Ivan finished as soon as possible. Finally Ivan puffed and began to cum in your mouth. You quickly swallowed shooting eyes on the sides, in the hope of, that nobody sees. After you swallow cum, Ivan removed the term in the pants "Not_Bad, nipple. Now get out of here!"'
-				 act 'Get_Away':gt'down'
-				 end
-				 
-				 dynamic $din_Ivan_work4
-			 end
-			 if komblrand=1:
-			 'After work, but you went to Ivan. "Where are you going, Babe? And how to suck my candy?"'
-			 	 act 'agree':
-				 cls
-				 bj+=1
-				 cumlip+=1
-				 swallow+=1
-				 kompromatBlackMail+=1
-				 minut+=5
-				 gs'stat'
-				 '<center><img src="qwest/sosed/ivanBJcar.jpg"></center>'
-				 'Ivan took you to his car standing in the alley, He got behind the wheel and you sat down next to him. Ivan got dick out of his pants and grab you by the hair pulled your face to his groin while his penis is not buried you in your <<$liptalk3>>. You open your mouth and allow the members enter between your lips. You began to suck harder trying to squeeze their <<$liptalk3>> on a limb, that would be quickly finished Ivan. Ivan finally broke down and finished in your mouth. You continued to suck until cum swallowing dick fell. Ivan bosses cock in his pants and said "Okay huesoska, get_out."'
-				 act 'Get_Away':gt'down'
-				 end
-				 
-				 dynamic $din_Ivan_work4
-			 end
-			 if komblrand=2:
-			 'After work, but you went to Ivan. "Where are you going, Babe? And how to suck my candy?"'
-			 	 act 'agree':
-				 cls
-				 kompromatBlackMail+=1
-				 minut+=5
-				 gs'stat'
-				 '<center><img src="maggot/car.jpg"></center>'
-				 'Ivan took you to his car standing in the alley, He got behind the wheel and you sat down next to him. Ivan started the car and you went to the northern region. "And do not forget baby, until you slushaesh me you have a job and prospects, but should you piss me off , you will take off from her job as a stopper." Soon you come to a new building, Ivan put the car in the free space. You got out and went with Ivan to the entrance. On the elevator . Ivan without delay, took you by the hand and led her into the bedroom. There he sat on the bed and pulled out a camera. Ivan got dick out of his pants and said "Babe suck, you know how, should get not a bad porn."'
-				 
-				     act 'suck':
-				     cls
-				     minut+=5
-				     bj+=1
-				     ivanFilmBJ+=1
-				     gs'stat'
-				     '<center><img src="qwest/sosed/ivanBJfilm.jpg"></center>'
-				     'You sat down on his knees in front of Ivan and clasped his <<$liptalk3>> member. Ivan sent you face the camera and filmed as you suck his cock close-up. Ivan put you back on the sofa and sat down on your chest so, that his cock was in your face.'
-				         act 'suck':
-						 cls
-						 minut+=5
-						 gs'stat'
-						 '<center><img src="qwest/sosed/ivanBJfilm2.jpg"></center>'
-						 'North top Ivan began to fuck you in the mouth every time a member of their firm head sticking in your throat, you suck diligently trying not to choke on. At the same time Ivan did not forget to take you on camera. Finally he took a member of your mouth.'
-						 	 act 'open your mouth':
-							 cls
-							 minut+=5
-							 facial+=1
-							 cumface+=1
-							 gs'stat'
-							 '<center><img src="qwest/sosed/ivanBJfilm3.jpg"></center>'
-							 'Ivan began to finish you on your <<$liptalk3>> and language. Cum dripping from your lips on the chin and chest. Ivan finally turned off the camera and put it in a box. "Not bad worked chlenososka. you can wash and piss."'
-							 act 'Get_Away':cumface=0&gt'nord'
-							 end
-						 end
-				     end
-				 dynamic $din_Ivan_work4
-				 end
-				 
-				 dynamic $din_Ivan_work4
-			 end
-			 if komblrand=3:
-			 ''
-			 
-			 end
-	     exit
-	     end
-	 gt'burger','start'
-	 end
->>>>>>> 342_burgerWork
 
+		gt 'burger', 'start'
+	end
 }
-<<<<<<< 342_burgerWork
+
 $dinBistroWork3 = {
 	act 'Work':
-	cls
-	PSBBtimes = 2
-	minut += 30
-	minut += 60 * 3
-	gs 'stat'
-	'<center><img src="images\qwest\sosed\work.jpg"></center>'
-	!gs 'BurgerTip'
-	'You sat down and started on the computer to prepare the contract.'
-	dynamic $burger_work_din
-	dynamic $dinBistroWork2
+		cls
+		PSBBtimes = 2
+		minut += 30
+		minut += 60 * 3
+		gs 'stat'
+		'<center><img src="images/qwest/sosed/work.jpg"></center>'
+		!!gs 'BurgerTip'
+		'You sat down and started on the computer to prepare the contract.'
+		dynamic $burger_work_din
+		dynamic $dinBistroWork2
 	end
-=======
-$dinBistroWork3={
-	 act 'work':
-	 cls
-	 PSBBtimes=2
-	 minut+=30
-	 minut+=60*3
-	 gs'stat'
-	 '<center><img src="qwest/sosed/work.jpg"></center>'
-	 !gs'BurgerTip'
-	 'You sat down and started on the computer to prepare the contract.'
-	 dynamic $burger_work_din
-	 dynamic $dinBistroWork2
-	 end
->>>>>>> 342_burgerWork
-
 }
 
-<<<<<<< 342_burgerWork
 gs 'BurgerTip'
-if hour < 10: hour = 10 & minut = 0 & PersSecWorkTimes += 1
+
+if hour < 10:hour = 10 & minut = 0 & PersSecWorkTimes += 1
+
 gs 'stat'
-'<center><img src="images\qwest\sosed\work.jpg"></center>'
+'<center><img src="images/qwest/sosed/work.jpg"></center>'
 'You sit in front of his office cabinet Chubais.'
 
 if hour < 17:
 	act 'Work before lunch':
-	cls
-	PSBBtimes = 1
-	minut += 60 * 2
-	gs 'stat'
-	'<center><img src="images\qwest\sosed\work.jpg"></center>'
-	!gs 'BurgerTip'
-	'You sat at the table and began to prepare the agreement on the computer.'
+		cls
+		PSBBtimes = 1
+		minut += 60 * 2
+		gs 'stat'
+		'<center><img src="images/qwest/sosed/work.jpg"></center>'
+		!!gs 'BurgerTip'
+		'You sat at the table and began to prepare the agreement on the computer.'
+
 		if TerminalPapper = 1:
-		TerminalPapper = 0
-		kosiakBU += 1
-		'Chubais gave you dressing for what you are not carried documents in a storage terminal and disrupted supplies.'
-		end
-		if TerminalPapper = 2:
-		TerminalPapper = 0
-		'Anatoly Borisovich thanked you for what you just delivered documents to storage terminal.'
-		end
-		if BankPapper = 2:
-		BankPapper = 0
-		'Anatoly Borisovich thanked you for what you just delivered the documents to the bank.'
-		end
-		if BankPapper = 1:
-		BankPapper = 0
-		kosiakBU += 1
-		'Anatoly Borisovich chastised you for what you did not take the documents to the bank.'
-		end
-		if BuSWworkEnd = 1 or kompromatBlackMail = 1:
-		'Chubais came into your office and put the paper in front of you with a pen. "Write on your own. I do not need a secretary with a past like yours."'
-		act 'Write a statement of resignation':
-			cls
-			work = 0
-			PersSecWork = 2
-			Pay = PersSecWorkTimes * 2500
-			PersSecWorkTimes = 0
-			money += Pay
-			gs 'stat'
-			'You wrote a statement of resignation and quickly signed his boss, he was counted out to you <<pay>> rubles your paycheck and said, "It´s over <<$name>>, get out of here."'
-			act 'Leave': gt 'down'
-			end
-		exit
+			TerminalPapper = 0
+			kosiakBU += 1
+			'Chubais gave you dressing for what you are not carried documents in a storage terminal and disrupted supplies.'
 		end
 
-	dynamic $burger_work_din
-	dynamic $dinBistroWork
+		if TerminalPapper = 2:
+			TerminalPapper = 0
+			'Anatoly Borisovich thanked you for what you just delivered documents to storage terminal.'
+		end
+
+		if BankPapper = 2:
+			BankPapper = 0
+			'Anatoly Borisovich thanked you for what you just delivered the documents to the bank.'
+		end
+
+		if BankPapper = 1:
+			BankPapper = 0
+			kosiakBU += 1
+			'Anatoly Borisovich chastised you for what you did not take the documents to the bank.'
+		end
+
+		if BuSWworkEnd = 1 or kompromatBlackMail = 1:
+			'Chubais came into your office and put the paper in front of you with a pen. "Write on your own. I do not need a secretary with a past like yours."'
+
+			act 'Write a statement of resignation':
+				cls
+				work = 0
+				PersSecWork = 2
+				Pay = PersSecWorkTimes * 2500
+				PersSecWorkTimes = 0
+				money += Pay
+				gs 'stat'
+				'You wrote a statement of resignation and quickly signed his boss, he was counted out to you <<pay>> rubles your paycheck and said, "It´s over <<$name>>, get out of here."'
+
+				act 'Leave':gt 'down'
+			end
+
+			exit
+		end
+
+		dynamic $burger_work_din
+		dynamic $dinBistroWork
 	end
 end
-=======
-gs'BurgerTip'
-if hour<10:hour=10&minut=0&PersSecWorkTimes+=1
-gs'stat'
-'<center><img src="qwest/sosed/work.jpg"></center>'
-'You are sitting in his office in front of the Cabinet Anatoly Borisovich.'
 
-if hour<17:
-	 act 'Work before lunch':
-	 cls
-	 PSBBtimes=1
-	 minut+=60*2
-	 gs'stat'
-	 '<center><img src="qwest/sosed/work.jpg"></center>'
-	 !gs'BurgerTip'
-	 'You sat down and began to prepare computer contract.'
-	 	 if TerminalPapper=1:
-	     TerminalPapper=0
-	     kosiakBU+=1
-	     'Anatoly Borisovich gave a dressing down for you, you do not have carried documents for storage terminal and disrupted supply.'
-	     end
-	     if TerminalPapper=2:
-	     TerminalPapper=0
-	     'Anatoly Borisovich thanked you, for, you shall deliver the documents for storage terminal.'
-	     end
-	     if BankPapper=2:
-	     BankPapper=0
-	     'Anatoly Borisovich thanked you, for, you shall deliver the documents to the bank.'
-	     end
-	     if BankPapper=1:
-	     BankPapper=0
-	     kosiakBU+=1
-	     'Anatoly Borisovich chastised you for, that you have not taken the documents to the bank.'
-	     end
-	     if BuSWworkEnd=1 or kompromatBlackMail=1:
-	     'Anatoly Borisovich came into your office and put the paper in front of you with a pen. "Write on their own. I do not need a secretary with a past like yours."'
-	         act 'Write a statement about dismissal':
-             cls
-             work=0
-             PersSecWork=2
-             Pay=PersSecWorkTimes*2500
-             PersSecWorkTimes=0
-             money+=Pay
-             gs'stat'
-             'You wrote a statement of resignation of its chief and quickly signed, He counted to you <<pay>> rubles your paycheck and said "It`s over Svetlana, get out of here."'
-             act 'Get_Away':gt 'down'
-             end
-	     exit
-	     end
-	     
-	 dynamic $burger_work_din
-	 dynamic $dinBistroWork
-	 end
-	 
-end
+!!Anatoly Borisovich Director
+!!smart girl HR Manager, personnel department
+!!manager Ivan, player, ILO and brave guy
+!!Deputy manager, pimply boy, son of the owner bystroezhki
 
-
-
-!Anatoly Borisovich Director
-!smart girl HR Manager, personnel department
-!manager Ivan, player, ILO and brave guy
-!Deputy manager, pimply boy, son of the owner bystroezhki
-
-
->>>>>>> 342_burgerWork
 --- burgerWork ---------------------------------
 

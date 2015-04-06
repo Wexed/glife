@@ -1,120 +1,56 @@
 # vokzal
-<<<<<<< 381_vokzal
-'<center><H4>Station</H4></center>'
-'<center><img src="images\etogame\vokzal.jpg"></center>'
+'<center><h4>Station</h4></center>'
+'<center><img src="images/etogame/vokzal.jpg"></center>'
 clr
 gs 'stat'
 gs 'time'
 
-temp = RAND(1,100)
-if temp > 70: 'You see <a href="exec: GT ''etoexhib'',''pos54''">suspicious character.</a>'
-
-act 'Leave': minut += 15 & gt 'nord'
-
-act 'Exit to the northern highway': minut += 15 & nroad = 0 & gt 'road'
+act 'Leave':minut += 15 & gt 'nord'
+act 'Exit to the northern highway':minut += 15 & nroad = 0 & gt 'road'
 
 if money >= 200:
 	act 'Buy a ticket to the town':
-	cls
-	money -= 200
-	minut += 15
-	gs 'stat'
-	'<center><img src="images\etogame\electri.jpg"></center>'
-	'You paid for the ticket and boarded the train going in the town.'
-	'After 15 minutes the train stopped at the station.'
-
-		act 'To go further':
 		cls
+		money -= 200
 		minut += 15
 		gs 'stat'
-		'<center><img src="images\etogame\electri.jpg"></center>'
+		'<center><img src="images/etogame/electri.jpg"></center>'
+		'You paid for the ticket and boarded the train going in the town.'
 		'After 15 minutes the train stopped at the station.'
 
-			act 'To go further':
+		act 'To go further':
 			cls
 			minut += 15
 			gs 'stat'
-			'<center><img src="images\etogame\electri.jpg"></center>'
+			'<center><img src="images/etogame/electri.jpg"></center>'
 			'After 15 minutes the train stopped at the station.'
-				act 'To go further':
+
+			act 'To go further':
 				cls
 				minut += 15
 				gs 'stat'
-				'<center><img src="images\etogame\electri.jpg"></center>'
-				'After 15 minutes the train stopped in the Township.'
+				'<center><img src="images/etogame/electri.jpg"></center>'
+				'After 15 minutes the train stopped at the station.'
 
-				act 'Exit': minut += 5 & nroad = 20 & gt 'VokzalG'
+				act 'To go further':
+					cls
+					minut += 15
+					gs 'stat'
+					'<center><img src="images/etogame/electri.jpg"></center>'
+					'After 15 minutes the train stopped in the Township.'
+
+					act 'Exit':minut += 5 & nroad = 20 & gt 'VokzalG'
 				end
 
-				act 'Exit': minut += 5 & nroad = 15 & gt 'road'
+				act 'Exit':minut += 5 & nroad = 15 & gt 'road'
 			end
 
-			act 'Exit': minut += 5 & nroad = 10 & gt 'road'
+			act 'Exit':minut += 5 & nroad = 10 & gt 'road'
 		end
 
-		act 'Exit': minut += 5 & nroad = 5 & gt 'road'
+		act 'Exit':minut += 5 & nroad = 5 & gt 'road'
 	end
-=======
-'<center><H4>railway_station</H4></center>'
-'<center><img src="pic/vokzal.jpg" ></center>'
-'.'
-clr
-gs'stat'
-gs'time'
-
-
-
-
-
-
-
-act 'Get_Away':minut+=15&gt'nord'
-
-act 'Exit at North Highway':minut+=15&nroad=0&gt'road'
-
-if money>=200:
-     act 'Buy a ticket to town':
-     cls
-     money-=200
-     minut+=15
-     gs'stat'
-     '<center><img src="pic/electri.jpg" ></center>'
-     'You paid for a ticket and boarded the train going into town.'
-     'through 15 minute train stopped at the station.'
-     
-         act 'go further':
-         cls
-         minut+=15
-         gs'stat'
-         '<center><img src="pic/electri.jpg" ></center>'
-         'through 15 minute train stopped at the station.'
-          
-             act 'go further':
-			 cls
-			 minut+=15
-			 gs'stat'
-			  '<center><img src="pic/electri.jpg" ></center>'
-			 'through 15 minute train stopped at the station.' 
-			     act 'go further':
-				 cls
-				 minut+=15
-				 gs'stat'
-				  '<center><img src="pic/electri.jpg" ></center>'
-				 'through 15 minute train stopped in town.'
-				  
-				 act 'Go_Out':minut+=5&nroad=20&gt'VokzalG'
-				 end
-				 
-				 act 'Go_Out':minut+=5&nroad=15&gt'road'
-			 end
-			 
-			 act 'Go_Out':minut+=5&nroad=10&gt'road'
-         end
-         
-         act 'Go_Out':minut+=5&nroad=5&gt'road'
-     end
->>>>>>> 381_vokzal
-
 end
+
 --- vokzal ---------------------------------
 

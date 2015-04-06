@@ -1,341 +1,172 @@
 # burgerBoss
-<<<<<<< 341_burgerBoss
-!Подъяблонская
-!Калдазар Келвин Бродус
-!Андрей Криворотов
-!Денис Добровольский
-
+!!Podyablonskaya
+!!Calvin Broadus Kaldazar
+!!Andrew Krivorotov
+!!Dennis Dobrovolsky
 gs 'stat'
+
 if BistroBoss = 10:
-if week < 6 and hour >= 9 and hour < 17: 'Anatoly Borisovich sitting at the table and talking to someone on the phone.'
-if week < 6 and hour < 9 or week < 6 and hour >= 17: 'Anatoly Chubais is not there.'
-if week >= 6: 'Now weekends and Anatoly Chubais is not there.'
-act 'Leave': gt 'burger','start'
+	if week < 6 and hour >= 9 and hour < 17:'Anatoly Borisovich sitting at the table and talking to someone on the phone.'
+	if week < 6 and hour < 9 or week < 6 and hour >= 17:'Anatoly Chubais is not there.'
+	if week >= 6:'Now weekends and Anatoly Chubais is not there.'
+
+	act 'Leave':gt 'burger', 'start'
+
 	if PersSecWork = 2:
-		if week < 6 and hour < 10:
-		'Anatoly Borisovich looked sternly at you, "<<$name>>, you´re fired, and I did not raise, go away, we´re done, I, my wife more than you."'
-		end
+		if week < 6 and hour < 10:'Anatoly Borisovich looked sternly at you, "<<$name>>, you´re fired, and I did not raise, go away, we´re done, I, my wife more than you."'
 	end
+
 	if PersSecWork = 1:
 		if week < 6 and hour < 10 and ofclo = 1:
-		act 'Work': gt 'burgerWork'
+			act 'Work':gt 'burgerWork'
 		end
 
-		!if week < 6 and hour < 10 and ofclo = 1:
-		if week < 6 and hour >= 9 and hour < 17:
-			act 'Resign':
-				PersSecWork = 0
-				work = 0
-				minut += 20
-				gt 'burger','start'
-			end
-		end
-
-		if week < 6 and hour < 10 and ofclo ! 1:
-		'Anatoly Borisovich looked sternly at you, "<<$name>>, what are you dressed up? Go home and change your clothes, you hooky today!"'
-		end
-
+		if week < 6 and hour < 10 and ofclo ! 1:'Anatoly Borisovich looked sternly at you, "<<$name>>, what are you dressed up? Go home and change your clothes, you hooky today!"'
 	end
 
 	if PersSecWork = 0 and week < 6:
 		if secrDiplom = 1:
 			act 'Show diploma':
-			cls
-			minut += 1
-			gs 'stat'
-			'You showed diploma Anatoly Borisovich, "A labor there?"'
-				act 'No':
 				cls
 				minut += 1
 				gs 'stat'
-				'You said what works elsewhere. Anatoly Borisovich smiled a little, "What could I take you to work, what would you need to quit my former employment. You think hard, I do not force you, but I´ll give you a salary normal. Polchaetsya 2500 Will the working day is longer fifty dollars a month. "'
-					act 'Leave': gt 'burger','start'
+				'You showed diploma Anatoly Borisovich, "A labor there?"'
+
+				act 'No':
+					cls
+					minut += 1
+					gs 'stat'
+					'You said what works elsewhere. Anatoly Borisovich smiled a little, "What could I take you to work, what would you need to quit my former employment. You think hard, I do not force you, but I´ll give you a salary normal. Polchaetsya 2500 Will the working day is longer fifty dollars a month. "'
+
+					act 'Leave':gt 'burger', 'start'
 				end
 
 				if work = 0:
 					act 'That labor':
+						cls
+						minut += 1
+						gs 'stat'
+						'Labor you put on the table. Anatoly Borisovich little smile, "You think well, I will not force you, but I´ll give you a salary normal. Polchaetsya 2500 Will the working day is longer fifty dollars a month. From you I need loyalty, hard work, strict compliance guidelines."'
+
+						act 'Leave':gt 'burger', 'start'
+
+						act 'Find a job':
+							cls
+							minut += 1
+							work = 1
+							PersSecWork = 1
+							gs 'stat'
+							'You agreed to become secretary Anatoly Chubais, he took your career, made a copy of passport and diploma, and began to tell. Come back every weekday at bystroezhku no later than 9 o´clock, carefully observe the dress code. Receive calls, write, print documents, in general nothing supernatural. Will work to 17ti hours, salary every month.'
+
+							act 'Leave':gt 'burger', 'start'
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+if BistroBoss = 1:
+	'You have entered the principal´s office. Anatoly Borisovich sitting at the table and studied the documents, you see, he put them aside and showed you invited to sit on a chair.'
+
+	act 'Sit on a chair':
+		cls
+		minut += 1
+		BistroBoss = 10
+		gs 'stat'
+
+		if bistroQW = 57:
+			kosmetica += 200
+			'You sat on a chair and smiled Anatoly Borisovich you. "I´m so glad this damn trip over. I had already missed you. Incidentally I do not come empty-handed, here´s a gift." with these words Anatoly Borisovich put on the table a set of expensive cosmetics. "And yet, I want you to devote some of the details. I am married and I have kids. So do not even stutter about any marriage, this I will not go. My wife, the daughter of a very influential deputy and my current position of Director of the lousy diner time, very soon I´ll get the post of deputy minister of construction, but for now I just need to get the record in labor. So, you showed yourself a stiff upper lip, I need loyal people, and I invite you to be my secretary. Do you have passed the diploma courses secretary? "'
+
+			if secrDiplom = 1:
+				act 'Yes, I have a diploma.':
 					cls
 					minut += 1
 					gs 'stat'
-					'Labor you put on the table. Anatoly Borisovich little smile, "You think well, I will not force you, but I´ll give you a salary normal. Polchaetsya 2500 Will the working day is longer fifty dollars a month. From you I need loyalty, hard work, strict compliance guidelines."'
-						act 'Leave': gt 'burger','start'
+					'You said that you already have a diploma Secretary. Anatoly Borisovich smiled. "What are you still done. Listen, I now need to make a couple of calls, leave now."'
 
-						act 'Find a job':
-						cls
-						minut += 1
-						work = 1
-						PersSecWork = 1
-						gs 'stat'
-						'You agreed to become secretary Anatoly Chubais, he took your career, made a copy of passport and diploma, and began to tell. Come back every weekday at bystroezhku no later than 9 o´clock, carefully observe the dress code. Receive calls, write, print documents, in general nothing supernatural. Will work to 17ti hours, salary every month.'
-							act 'Leave': gt 'burger','start'
-
-						end
-					end
-
-				end
-
-
-			end
-		end
-	end
-=======
-!Podyablonskaya
-!Calvin Broadus Kaldazar
-!Andrew Krivorotov
-!Dennis Dobrovolsky
-
-gs'stat'
-if BistroBoss=10:
-if week<6 and hour>=9 and hour<17:'Anatoly Borisovich sitting at the table and talking to someone on the phone.'
-if week<6 and hour<9 or week<6 and hour>=17:'Chubais is not there.'
-if week>=6:'Now the weekend and Anatoly Borisovich not there.'
-act 'Get_Away':gt'burger','start'
-     if PersSecWork=2:
-         if week<6 and hour<10:
-         'Anatoly Borisovich looked sternly at you "Sveta, you`re fired, and I will not raise, get_away, we`re through, Me , what are you."'
-         end
-     end
-     if PersSecWork=1:
-         if week<6 and hour<10 and ofclo = 1:
-         act 'work':gt'burgerWork'
-         end
-         
-         if week<6 and hour<10 and ofclo ! 1:
-         'Anatoly Borisovich looked sternly at you "Svetlana, what you dressed up? Go home and disguise, Today you hooky!"'
-         end
-     
-     end
-     
-     if PersSecWork=0 and week<6:
-		 if secrDiplom = 1:
-			 act 'Show diploma':
-			 cls
-			 minut+=1
-			 gs'stat'
-			 'You have shown a degree Anatoly Borisovich, "And labor has?"'
-			     act 'No':
-				 cls
-				 minut+=1
-				 gs'stat'
-				 'you said, what works elsewhere. Anatoly Borisovich smiled slightly, "That I could get you a job, need you to quit her former employment. You think carefully, I will not force, but I`ll give you a salary normal. Will polchat 2500 in time, it is more fifty dollars a month."'
-					 act 'Get_Away':gt'burger','start'
-				 end
-				 
-				 if work = 0:
-				     act 'Here labor':
-					 cls
-					 minut+=1
-					 gs'stat'
-					 'You put labor on the table. Anatoly Borisovich smiled slightly, "You think carefully, I will not force, but I`ll give you a salary normal. Will polchat 2500 in time, it is more fifty dollars a month. From you I need loyalty, efficiency, strict compliance guidelines."'
-						 act 'Get_Away':gt'burger','start'
-						 
-						 act 'To get a job':
-						 cls
-						 minut+=1
-						 work = 1
-						 PersSecWork=1
-						 gs'stat'
-						 'You have agreed to become secretary Anatoly Borisovich, he took your career, made a copy of passport and diploma, and began to tell. Come every weekday at bystroezhku not later 9 o`clock, Be sure to observe the dress code. receive calls, Capture, print documents, in general. Going to work 17o`clock, salary once a month.'
-							 act 'Get_Away':gt'burger','start'
-							 
-						 end
-					 end
-				 
-				 end
-				 
-				 
-			 end
-		 end
-     end
->>>>>>> 341_burgerBoss
-end
-
-<<<<<<< 341_burgerBoss
-if BistroBoss = 1:
-'You have entered the principal´s office. Anatoly Borisovich sitting at the table and studied the documents, you see, he put them aside and showed you invited to sit on a chair.'
-
-	act 'Sit on a chair':
-	cls
-	minut += 1
-	BistroBoss = 10
-	gs 'stat'
-		if bistroQW = 57:
-		kosmetica += 200
-		'You sat on a chair and smiled Anatoly Borisovich you. "I´m so glad this damn trip over. I had already missed you. Incidentally I do not come empty-handed, here´s a gift." with these words Anatoly Borisovich put on the table a set of expensive cosmetics. "And yet, I want you to devote some of the details. I am married and I have kids. So do not even stutter about any marriage, this I will not go. My wife, the daughter of a very influential deputy and my current position of Director of the lousy diner time, very soon I´ll get the post of deputy minister of construction, but for now I just need to get the record in labor. So, you showed yourself a stiff upper lip, I need loyal people, and I invite you to be my secretary. Do you have passed the diploma courses secretary? "'
-			if secrDiplom = 1:
-			act 'Yes, I have a diploma.':
-				cls
-				minut += 1
-				gs 'stat'
-				'You said that you already have a diploma Secretary. Anatoly Borisovich smiled. "What are you still done. Listen, I now need to make a couple of calls, leave now."'
-				act 'Leave': gt 'burger','start'
+					act 'Leave':gt 'burger', 'start'
 				end
 			end
+
 			if secrDiplom = 0 and sekrObu > 0:
-			act 'I do not have a diploma, but I am a secretary.':
-				cls
-				minut += 1
-				gs 'stat'
-				'You said that you already have a diploma Secretary. Anatoly Borisovich smiled. "What are you still done. Douchishsya, come to me. Listen, I now need to make a couple of calls, leave now."'
-				act 'Leave': gt 'burger','start'
+				act 'I do not have a diploma, but I am a secretary.':
+					cls
+					minut += 1
+					gs 'stat'
+					'You said that you already have a diploma Secretary. Anatoly Borisovich smiled. "What are you still done. Douchishsya, come to me. Listen, I now need to make a couple of calls, leave now."'
+
+					act 'Leave':gt 'burger', 'start'
 				end
 			end
+
 			if secrDiplom = 0 and sekrObu = 0:
-			act 'No.':
-				cls
-				sekrObu = 1
-				minut += 1
-				gs 'stat'
-				'You shook his head. Anatoly Borisovich smiled. "It does not matter, I now pay for your training and once you´re done, come to me."'
-				act 'Leave': gt 'burger','start'
+				act 'No.':
+					cls
+					sekrObu = 1
+					minut += 1
+					gs 'stat'
+					'You shook his head. Anatoly Borisovich smiled. "It does not matter, I now pay for your training and once you´re done, come to me."'
+
+					act 'Leave':gt 'burger', 'start'
 				end
 			end
-
 		end
+
 		if bistroQW >= 65:
-		'You sat on a chair and Chubais gave you a grim look. "I did not think you were such deshovke. What is your fee? Three weave for suction to swallow?" He pulled out his bill of 300 rubles and threw it on the floor. "Get up on your knees and work it off, as you are able, vaflersha."'
-		act 'Leave': gt 'burger','start'
+			'You sat on a chair and Chubais gave you a grim look. "I did not think you were such deshovke. What is your fee? Three weave for suction to swallow?" He pulled out his bill of 300 rubles and threw it on the floor. "Get up on your knees and work it off, as you are able, vaflersha."'
+
+			act 'Leave':gt 'burger', 'start'
+
 			act 'To kneel':
-			cls
-			minut += 5
-			money += 300
-			bj += 1
-			swallow += 1
-			cumlip += 1
-			BistroBoss = 2
-			BistroBossDay = day
-			gs 'stat'
-			'<center><img src="images\qwest\sosed\bj2.jpg"></center>'
-			'You knelt down and took the money from the floor. Anatoly Borisovich member and you got tipped off his face on his solid body. Then you gripped it with his lips and began to suck as hard core feeling fills your mouth. Anatoly Borisovich his teeth with pleasure "Suck slut, now swallow, and that would be swallowed up all the drops!" You feel like you hit the sperm in her mouth and began to swallow cum quickly, that would not choke. When finished, Anatoly Borisovich took dick in pants and said, "Now get out."'
-			act 'Leave': gt 'burger','start'
+				cls
+				minut += 5
+				money += 300
+				bj += 1
+				swallow += 1
+				cumlip += 1
+				BistroBoss = 2
+				BistroBossDay = day
+				gs 'stat'
+				'<center><img src="images/qwest/sosed/bj2.jpg"></center>'
+				'You knelt down and took the money from the floor. Anatoly Borisovich member and you got tipped off his face on his solid body. Then you gripped it with his lips and began to suck as hard core feeling fills your mouth. Anatoly Borisovich his teeth with pleasure "Suck slut, now swallow, and that would be swallowed up all the drops!" You feel like you hit the sperm in her mouth and began to swallow cum quickly, that would not choke. When finished, Anatoly Borisovich took dick in pants and said, "Now get out."'
+
+				act 'Leave':gt 'burger', 'start'
 			end
 		end
 	end
-=======
-if BistroBoss=1:
-'You have entered the principal`s office. Anatoly Borisovich sat at the table and studied documents, see you .'
-
-     act 'Sit on a chair':
-     cls
-     minut+=1
-     BistroBoss=10
-     gs'stat'
-		 if bistroQW=57:
-		 kosmetica+=200
-		 'You sat down on a chair and smiled Anatoly Borisovich you. "I`m so glad, that the damn trip ended. I had already missed you. By the way , here`s a gift." With these words . "And more, I want you to devote a few details. I am married, I have children. So do not even stutter about any marriage, so. my wife, the daughter of a very influential deputy and my current position Director of the temporary crappy diner, I soon received the post of Deputy Minister for Construction, but for now I just need to get an entry in the labor force. so, are you showed a stiff upper lip, I need loyal people, and I suggest you be my secretary. Do you have a diploma of the courses secretary?"'
-		     if secrDiplom = 1:
-		         act 'Yes_I_Am, I have a diploma.':
-				 cls
-				 minut+=1
-				 gs'stat'
-				 'You said that you already have a diploma Secretary. Anatoly Borisovich smiled. "What do you all still done. Listen, I now need to make a couple of calls, Come out yet."'
-				 act 'Get_Away':gt'burger','start'
-				 end
-		     end
-		     if secrDiplom = 0 and sekrObu > 0:
-		         act 'I do not have a diploma, but I `m on the Secretary.':
-				 cls
-				 minut+=1
-				 gs'stat'
-				 'You said that you already have a diploma Secretary. Anatoly Borisovich smiled. "What do you all still done. Douchishsya, come to me. Listen, I now need to make a couple of calls, Come out yet."'
-				 act 'Get_Away':gt'burger','start'
-				 end
-		     end
-		     if secrDiplom = 0 and sekrObu = 0:
-		         act 'No.':
-				 cls
-				 sekrObu = 1
-				 minut+=1
-				 gs'stat'
-				 'You shook your head. Anatoly Borisovich smiled. "It does not matter, I now pay for your training and once you`re done, come to me."'
-				 act 'Get_Away':gt'burger','start'
-				 end
-		     end
-		 
-		 end
-		 if bistroQW>=65:
-		 'You sat down on a chair and Anatoly Borisovich gave you a dark look. "I did not think, you`re so deshovke. What is your fee? Three hundred of the suction to swallow?" He took out a bill to 300 rubles and threw it on the floor. "Kneel and waste, you know how, vaflersha."'
-		 act 'Get_Away':gt'burger','start'
-		     act 'Kneel':
-		     cls
-		     minut+=5
-		     money+=300
-		     bj+=1
-		     swallow+=1
-		     cumlip+=1
-		     BistroBoss=2
-		     BistroBossDay=day
-		     gs'stat'
-		     '<center><img src="qwest/sosed/bj2.jpg"></center>'
-		     'You knelt down and took the money from the floor. Anatoly Borisovich got dick and you tipped her face on his solid body. Then you wrapped around his own lips and began to suck feeling as solid rod fills your mouth. Anatoly Borisovich his teeth with pleasure "suck slut, and now swallow, and that would be all swallowed up drops!" You felt like you hit the sperm in her mouth and began to quickly swallow sperm, that would not choke. When_you_have_finished, Anatoly Borisovich removed term in pants and said "Now get out."'
-		     act 'Get_Away':gt'burger','start'
-		     end
-		 end
-	 end
->>>>>>> 341_burgerBoss
-
 end
-<<<<<<< 341_burgerBoss
+
 if BistroBoss = 2 and BistroBossDay = day:
-'Knocking you walked into the office to Anatoly Borisovich. He looked angrily at you, "I said, get out of here."'
-act 'Leave': gt 'burger','start'
-=======
-if BistroBoss=2 and BistroBossDay=day:
-'Knocking you are logged into the office of Anatoly Borisovich. He angrily looked at you "I told, get out of here."'
-act 'Get_Away':gt'burger','start'
->>>>>>> 341_burgerBoss
+	'Knocking you walked into the office to Anatoly Borisovich. He looked angrily at you, "I said, get out of here."'
+
+	act 'Leave':gt 'burger', 'start'
 end
 
-<<<<<<< 341_burgerBoss
 if BistroBoss = 2 and BistroBossDay ! day:
-'Knocking you walked into the office to Anatoly Borisovich. He looked darkly at you and got a bill of 300 rubles, "Get up on your knees and work it off, as you are able, vaflersha."'
-act 'Leave': gt 'burger','start'
-BistroBossDay = day
-	act 'To kneel':
-	cls
-	minut += 5
-	money += 300
-	bj += 1
-	swallow += 1
-	cumlip += 1
+	'Knocking you walked into the office to Anatoly Borisovich. He looked darkly at you and got a bill of 300 rubles, "Get up on your knees and work it off, as you are able, vaflersha."'
+
+	act 'Leave':gt 'burger', 'start'
+
 	BistroBossDay = day
-	gs 'stat'
-	'<center><img src="images\qwest\sosed\bj2.jpg"></center>'
-	'You knelt down and took the money from the floor. Anatoly Borisovich member and you got tipped off his face on his solid body. Then you gripped it with his lips and began to suck as hard core feeling fills your mouth. Anatoly Borisovich his teeth with pleasure "Suck slut, now swallow, and that would be swallowed up all the drops!" You feel like you hit the sperm in her mouth and began to swallow cum quickly, that would not choke. When finished, Anatoly Borisovich took dick in pants and said, "Now get out."'
-	act 'Leave': gt 'burger','start'
+
+	act 'To kneel':
+		cls
+		minut += 5
+		money += 300
+		bj += 1
+		swallow += 1
+		cumlip += 1
+		BistroBossDay = day
+		gs 'stat'
+		'<center><img src="images/qwest/sosed/bj2.jpg"></center>'
+		'You knelt down and took the money from the floor. Anatoly Borisovich member and you got tipped off his face on his solid body. Then you gripped it with his lips and began to suck as hard core feeling fills your mouth. Anatoly Borisovich his teeth with pleasure "Suck slut, now swallow, and that would be swallowed up all the drops!" You feel like you hit the sperm in her mouth and began to swallow cum quickly, that would not choke. When finished, Anatoly Borisovich took dick in pants and said, "Now get out."'
+
+		act 'Leave':gt 'burger', 'start'
 	end
 end
-=======
-if BistroBoss=2 and BistroBossDay!day:
-'Knocking you are logged into the office of Anatoly Borisovich. He looked darkly at you and took the bill in 300 rubles "Kneel and waste, you know how, vaflersha."'
-act 'Get_Away':gt'burger','start'
-BistroBossDay=day
-	 act 'Kneel':
-	 cls
-	 minut+=5
-	 money+=300
-	 bj+=1
-	 swallow+=1
-	 cumlip+=1
-	 BistroBossDay=day
-	 gs'stat'
-	 '<center><img src="qwest/sosed/bj2.jpg"></center>'
-	 'You knelt down and took the money from the floor. Anatoly Borisovich got dick and you tipped her face on his solid body. Then you wrapped around his own lips and began to suck feeling as solid rod fills your mouth. Anatoly Borisovich his teeth with pleasure "suck slut, and now swallow, and that would be all swallowed up drops!" You felt like you hit the sperm in her mouth and began to quickly swallow sperm, that would not choke. When_you_have_finished, Anatoly Borisovich removed term in pants and said "Now get out."'
-	 act 'Get_Away':gt'burger','start'
-	 end
-end
 
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 341_burgerBoss
 --- burgerBoss ---------------------------------
 

@@ -1,112 +1,60 @@
 # youry
-<<<<<<< 373_youry
 $roomyour = {
-set $nameV = 'Yuri'
-$boy = $nameV
-set dick = 18
-set silavag = 2
-harakBoy = 1
-NoGuy = 1
-GoToGuy = 1
-finance = 1
-act 'On the bed': gt 'BDsex','start'
-=======
-$roomyour={
- set $nameV = 'Yuri'
- $boy=$nameV
- set dick = 18
- set silavag = 2
- harakBoy=1
- NoGuy=1
- GoToGuy=1
- finance=1
- act 'on the bed':gt'BDsex','start'
->>>>>>> 373_youry
+	set $nameV = 'Yuri'
+	$boy = $nameV
+	set dick = 18
+	set silavag = 2
+	harakBoy = 1
+	NoGuy = 1
+	GoToGuy = 1
+	finance = 1
+
+	act 'On the bed':gt 'BDsex', 'start'
 }
 
-<<<<<<< 373_youry
 set minut += 5
-'<center><B><font color = maroon>Flat George</font></B></center>'
-'<center><img src="images\peter\peterdoor.jpg"></center>'
+'<center><b><font color="maroon">Flat George</font></b></center>'
+'<center><img src="images/peter/peterdoor.jpg"></center>'
 clr
 gs 'stat'
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-=======
-set minut = minut + 5
-'<center><B><font color=maroon>apartment Yuri</font></B></center>'
-'<center><img src="peter/peterdoor.jpg" ></center>'
-clr
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
->>>>>>> 373_youry
-LCOLOR = rgb(106,90,205)
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 
-<<<<<<< 373_youry
-	act 'QUIT':
+act 'Leave':
 	cla
 	set minut += 5
 	gt 'nord'
-	end
+end
 
-	act 'Ring the doorbell':
+act 'Ring the doorbell':
 	cla
-		if hour > 16:
+
+	if hour > 16:
 		'You rang the doorbell. The door opened very quickly, stood on the threshold Yuri. He invited you to enter.'
-			act 'Login to Jury':
+
+		act 'Login to Jury':
 			cls
 			minut += 15
 			gs 'stat'
 			'You entered the apartment to Yuri, he held you in the hall and sat on a chair. Went into the kitchen and priens bottle of champagne with grapes.'
+
 			act 'Drinking with Yuri':
 				cls
 				minut += 15
 				gs 'stat'
 				'You are listening to as Yuri praises your sex skills drank champagne. Yuri suggested we go to bed.'
 				dynamic $roomyour
-				end
 			end
-		exit
-		else
-		'You rang the doorbell, but nobody answered you.'
 		end
-	act 'Away from the door': gt $curloc
+
+		exit
+	else
+		'You rang the doorbell, but nobody answered you.'
 	end
-=======
-     act 'GO_OUT':
-     cla
-     set minut = minut + 5
-     gt'nord'
-     end
-     
-     act 'Ring the doorbell':
-     cla
-		 if hour>16:
-		 'You`ve reached the door. The door opened very quickly, Yuri stood on the threshold. He has invited you to enter.'
-		     act 'Login to Jury':
-		     cls
-		     minut+=15
-		     gs'stat'
-		     'You entered the apartment to Jury, he held you in the room and sat on the chair. I went into the kitchen and priens bottle of champagne with grapes.'
-		         act 'Drinking with Yuri':
-				 cls
-				 minut+=15
-				 gs'stat'
-				 'You are listening to Yuri praises your sex skills drank champagne. Yuri suggested we go to bed.'
-				 dynamic $roomyour
-				 end
-		     end
-		 exit
-		 else
-		 'You`ve reached the door, but you no one opened.'
-		 end
-     act 'Move away from the door':gt $curloc
-     end
 
+	act 'Away from the door':gt $curloc
+end
 
-
-
->>>>>>> 373_youry
 --- youry ---------------------------------
 

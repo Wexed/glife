@@ -1,41 +1,14 @@
 # ybass
-$metkaM = $ARGS[0]
-$locM = $CURLOC
-$metka = $ARGS[0]
-$loc = $CURLOC
-<<<<<<< 398_ybass
-'<center><B><font color = maroon>Pool</font></B></center>'
-'<center><img src="images\etogame\ybass.jpg"></center>'
-clr
-gs 'stat'
+	$metkaM = $ARGS[0]
+	$locM = $CURLOC
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b><font color="maroon">Swimming Pool</font></b></center>'
+	'<center><img src="images/etogame/ybass.jpg"></center>'
+	clr
+	gs 'stat'
 
-act 'Swim (0:15)':
-	cla
-	*clr
-	set cumpussy = 0
-	set cumbelly = 0
-	set cumass = 0
-	set cumanus =0
-	set cumlip = 0
-	set cumface = 0
-	set cumfrot = 0
-	set minut += 15
-	if sweat > -3: set sweat = -3
-	set manna += 5
-	set willpower += 5
-	if stren < 40: set stren += 1
-	'<center><img src="images\DeX\land\pool.jpg"></center>'
-	'You swim in the pool, the water is refreshing and invigorating.'
-	act 'Out of the water': gt 'ybass'
-end
-act 'Go to your house': minut += 5 & gt 'youplace'
-=======
-'<center><B><font color=maroon>Swimming_Pool</font></B></center>'
-'<center><img src="pic/ybass.jpg" ></center>'
-clr
-gs'stat'
+	act 'Go to your house':minut += 5 & gt 'youplace'
 
-act 'Enter the site':minut+=5&gt'youplace'
->>>>>>> 398_ybass
 --- ybass ---------------------------------
 

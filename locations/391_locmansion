@@ -1,45 +1,21 @@
 # locmansion
 $metka = $ARGS[0]
 $loc = $CURLOC
-<<<<<<< 391_locmansion
-'<center><H4>cottage settlement</H4></center>'
-'<center><img src="images\etogame\locmansion.jpg"></center>'
-=======
-'<center><H4>gated development</H4></center>'
-'<center><img src="pic/locmansion.jpg" ></center>'
->>>>>>> 391_locmansion
+'<center><h4>cottage settlement</h4></center>'
+'<center><img src="images/etogame/locmansion.jpg"></center>'
 'Elite settlement which can afford to live only the cream of society.'
 clr
-<<<<<<< 391_locmansion
 gs 'stat'
 gs 'time'
-=======
-gs'stat'
-gs'time'
->>>>>>> 391_locmansion
 
 if car > 0 and cardrive = 19:
-set cardrive = 19
-<<<<<<< 391_locmansion
-'In the parking stands <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
-=======
-'In the parking lot is worth <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
->>>>>>> 391_locmansion
+	set cardrive = 19
+	'In the parking stands <a href="exec:GS ''carF'', ''start''">your <<$car>></a>.'
 end
 
-<<<<<<< 391_locmansion
-act 'Exit the highway': minut += 15 & nroad = 1 & gt 'road'
+act 'Exit the highway':minut += 15 & nroad = 1 & gt 'road'
 
-if placeMansion > 0: '<a href="exec: GT ''youplace''">Your Land</a>.'
-=======
+if placeMansion > 0:'<a href="exec:gt ''youplace''">Your Land</a>.'
 
-act 'Exit the highway':minut+=15&nroad=1&gt'road'
-
-
-if placeMansion>0:'<a href="exec:GT ''youplace''">Your land</a>.'
-
-
-
->>>>>>> 391_locmansion
 --- locmansion ---------------------------------
 

@@ -1,17 +1,12 @@
 # down
 $metka = $ARGS[0]
 $loc = $CURLOC
-<<<<<<< 335_down
-
 gs 'dinam'
-
-'<center><B>Downtown</B></center>'
-'<center><img src="images\etogame\down.jpg"></center>'
+'<center><b>Downtown</b></center>'
+'<center><img src="images/etogame/down.jpg"></center>'
 clr
-
 gs 'stat'
 gs 'time'
-
 set palMir = 0
 set bordysh = 0
 set housrA = 0
@@ -42,7 +37,7 @@ if shantpopala > 0:
 	set bj += 1
 	set anal += 1
 	set shantpopala -= 1
-	'<center><img src="images\img\centr\rape.jpg"></center>'
+	'<center><img src="images/img/centr/rape.jpg"></center>'
 	'On the street close to you, a black jeep suddenly hit the brakes. You turn your head to see what''s happening and see two large men jump of it and start to run towards you in. Before you can react and run away, they grap you and drag you into the car.'
 	'"You''re doing this for a living? Taking pictures of naked people in the park?", one of the shouts, holding one of the pictures to your face you''ve made awhile back and sent someone over a social network, hoping they would pay the ransom.'
 	'"No...what? What the hell is going on? I don''t know what you''re talking about!", you try to explain.'
@@ -52,20 +47,25 @@ if shantpopala > 0:
 	'"Oh, she is finally awake, then the next fuck-cycle will be far more fun.", one of the men said, as he noticed you moving. Some of them are starting to get a evil grin on their face.'
 	'They got up and came back at you, barely a minute later you wished your were still knocked out, as these jackasses had their ways with. You tried to resist, but the tape hindered you from moving. Not long after, everything faded to black and you lost you consciousness again.'
 	'You feel groggy as you wake up, but it feels like someone is grapping you by the hair and shouts at you. "Let this be a lesson for you, bitch.", he shouts, then kicks you into the stomach and leaves. As you collapse on the ground holding your stomach in pain, you take a glimpse at the street and see the assholes driving away in their black jeep. The mainroad is about 200m away, you crawl most of the way there, but soon you can walk again and eventually you find your way back to one of the mainstreets.'
-	act 'Leave': gt $curloc
+
+	act 'Leave':gt $curloc
+
 	exit
 end
+
+if car > 0 and cardrive = 2:'In the parking stands your <a href="exec:GS ''carF'', ''start''"><<$car>></a>.'
+if hour >= 8 and hour <= 22:'A kiosk is selling <a href="exec:dynamic $kiosksig">cigarettes</a>.'
 
 if BuyHous['Down'] >= 1 and houserent['Down'] ! 1:
 	act '<b>GO HOME</b>':
 		$HouseLocation = 'down'
-		gorand = RAND(0,100)
+		gorand = rand(0, 100)
 		if loh > 0 and gopdolg > 0 and hour >= 20 and gorand >= 80:
-		gt 'gopnew','start'
+		gt 'gopnew', 'start'
 		exit
 		end
 		if opusk > 0 and hour >= 20 and gorand >= 80 and gopopusday ! day:
-		gt 'gopnew','start'
+		gt 'gopnew', 'start'
 		exit
 		end
 	gt 'korr'
@@ -80,211 +80,72 @@ end
 		if waiting > 0 and waiting <= 120:
 		set minut += waiting
 		end
-	act 'Take a look at the clock': gt curloc
+	act 'Take a look at the clock':gt curloc
 	end
 	
 act 'Take a cab':
 	cla
 	*clr
-	'<center><img src="images\etogame\taxi1.jpg"></center>'
+	'<center><img src="images/etogame/taxi1.jpg"></center>'
 	'You caught a passing taxi.'
 	'"The drive will cost you <b>250 rubles</b>", the driver says.'
 	set minut += 5
+
 	if $loc!'street':
 		act 'Go to the Residential Area':
 			set $loc = 'street'
 			dynamic $taxi
-			end
 		end
+	end
+
 	if $loc!'down':
 		act 'Go to the City Center':
 			set $loc = 'down'
 			dynamic $taxi
-			end
 		end
+	end
+
 	if $loc!'Nord':
 		act 'Go to the Northern Area':
 			set $loc = 'Nord'
 			dynamic $taxi
-			end
 		end
-	act 'Turn him down and leave': gt '<<$loc>>'
 	end
 
-if car > 0 and cardrive = 2:
-	'In the parking stands your <a href="exec:GS ''carF'',''start''"><<$car>></a>.'
+	act 'Turn him down and leave':gt '<<$loc>>'
 end
 
-dynamic $vladimir_driver
+if tanya > 0 and tanwork = 0 and hour >= 16 and hour <= 21 and tanday ! day:'<a href="exec:gt ''tanhouse''">Apartment of Thani</a>'
+if tanwork = 1:'<a href="exec:gt ''house''">Thanis</a> apartment'
+if izoldaWQ >= 1:'<a href="exec:gt ''qwIzoldaApp''">Isoldes</a> apartment'
+if mainQW >= 1:'<a href="exec:gt ''lab'', ''start''">Karinas</a> secret hideout'
+if hour >= 9 and hour <= 21:'On the main street is a store called <a href="exec:minut += 15 & gt ''NewCloShop''">"Fashionista"</a>, a clothing store exclusively for women'
+if yaq = 1:'<a href="exec:gt ''yarik'', ''start''">Yaroslavs</a> apartment'
+if peter > 0:'<a href="exec:gt ''peterroom'', ''start_door''">Peters</a> apartment'
+if hour >= 4 and hour <= 23:'The <a href="exec:gt ''metro'', ''start''">Metro</a> Station is within a 5 minute walk from here.'
+if week >= 4 and hour >= 15:'The trendy <a href="exec:gt ''club'', ''start''">Nightclub</a>, with it''s shining lights, attracts young people from all over the city.'
+if hour >= 15 or hour <= 2:'The <a href="exec:gt ''stripclub'', ''start''">Strip Clubs</a> red lights, attracting men from all over the city.'
 
-if hour >= 8 and hour <= 22: 'A kiosk is selling <a href="exec: dynamic $kiosksig">cigarettes</a>.'
-if tanya > 0 and tanwork = 0 and hour >= 16 and hour <= 21 and tanday ! day: '<a href="exec: gt ''tanhouse''">Flat-Thani</a>'
-if tanwork = 1: '<a href="exec: gt ''house''">Thanis</a> flat'
-if izoldaWQ >= 1: '<a href="exec: GT ''qwIzoldaApp''">Isoldes</a> flat'
-if mainQW >= 1: '<a href="exec: GT ''lab'',''start''">Karinas</a> secret hideout'
-if hour >= 9 and hour <= 21: 'On the main street is a store called <a href="exec: minut += 15 & GT ''NewCloShop''">"Fashionista"</a>, a clothing store exclusively for women'
-if yaq = 1: '<a href="exec: GT ''yarik'',''start''">Yaroslavs</a> apartment'
-if peter > 0: '<a href="exec: GT ''peterroom'',''start_door''">Peters</a> apartment'
-if hour >= 4 and hour <= 23: 'The <a href="exec: GT ''metro'',''start''">Metro</a> Station is within a 5 minute walk from here.'
-if week >= 4 and hour >= 15: 'The trendy <a href="exec: GT ''club'',''start''">Nightclub</a>, with it''s shining lights, attracts young people from all over the city.'
-if hour >= 15 or hour <= 2: 'The <a href="exec: GT ''stripclub'',''start''">Strip Clubs</a> red lights, attracting men from all over the city.'
-if (week = 1 or week = 3 or week = 5) and hour >= 8 and worksalon = 1: 'Use the back entrance to get to <a href="exec: gt ''salon'',''early''">work at the beauty salon</a>'
 if hour >= 9 and hour <= 20:
-'In the center is a large <a href="exec:gt ''torgcentr''">shopping center</a>'
-if hour >= 9 and hour <= 21: 'On the mainstreet, a brand new <a href="exec:GT ''budgetclothes'',''start''">G&M store</a> opened it´s doors.'
-'There is a <a href="exec:GT ''foto'',''start''">photo studio</a> next to a popular <a href="exec:GT ''fit'',''start''">fitness center</a>, where professional athletes can train.'
-'At the <a href="exec:GT ''bass'',''start''">pool</a>, people can train for the next beach season.'
+	'In the center is a large <a href="exec:gt ''torgcentr''">shopping center</a>'
+	'Popular <a href="exec:GT ''fit'',''start''">fitness center</a> in which trained as professional athletes, and wishing to lose weight for beach season.'
+	'There is a <a href="exec:gt ''foto'', ''start''">photo studio</a> next to a popular <a href="exec:gt ''fit'', ''start''">fitness center</a>, where professional athletes can train.'
+	'At the <a href="exec:gt ''bass'', ''start''">swimming pool</a>, people can train for the next beach season.'
 end
-'A 30 minute walk away is the <a href="exec: set minut += 44 & GT ''park'',''start''">central park</a>. You can reach all the districts of the town while walking through it. Walking to it''s center should take far less than an hour.'
-if hour >= 8 and hour <= 22: 'Infront of the expensive <a href="exec: GT ''restoran'',''start''">Restaurant</a> are luxury cars parking.'
-'A shop for <a href="exec:GT ''sexshop'',''start''">sex toys</a> is open for perverts from all around the city.'
-if hour >= 6 and hour <= 23: 'Diner <a href="exec: GT ''burger'',''start''">Bystroeshka</a>.'
-if bordel > 0 and hour >= 20 or bordel > 0 and hour <= 3: 'Inside the courtyard is the entrance to the <a href="exec: GT ''bordel''">brothel</a>.'
-if pornstudio >= 1 and hour > 5: 'At the <a href="exec: GT ''pornstudio'',''start''">Porn Studio</a>, a variety of naughty movies are created'
-if week < 6 and hour >= 7: 'At the <a href="exec: GT ''univer'',''start''">University</a> you can earn your diploma.'
-if hour >= 6 and hour <= 23: 'The <a href="exec: GT ''dorm'',''start''">Hostel</a> offers a small, but cheap, living space, but you have to be student at the university.'
-if week < 6 and hour >= 9 and hour <= 18: 'You can see the most important <a href="exec: GT ''bank'',''start''">Bank</a> in the city from here.'
-if week < 6 and hour >= 8 and hour <= 17: 'In the largest skyscraper is a huge <a href="exec: GT ''office'',''start''">Project Organization</a> located.'
-if hour >= 8 and hour <= 22: 'At the <a href="exec: GT ''agentned''">Real Estate Agency</a> you can buy or rent an apartment.'
-if hour = meethour and $meetloc = $CURLOC:
-	if svidanieA = 1: '<B><a href="exec: GT ''meet'',''start''"><<$boyA>></a> waits next to the entrance to the house your apartment is in.</B>'
-	if svidanieB = 1: '<B><a href="exec: GT ''meet'',''start''"><<$boyA>></a> waits next to the entrance to the house your apartment is in.</B>'
-	if svidanieC = 1: '<B><a href="exec: GT ''meet'',''start''"><<$boyA>></a> waits next to the entrance to the house your apartment is in.</B>'
-end
-!if beg >= 50 and begmon ! month and hour >= 6 and hour <= 23: 'Start at <a href="exec:GT ''beg1'',''start''">running competition</a>'
-!end
-dynamic $din_street_cum
-dynamic $meet_boyfriend
-=======
-gs'dinam'
-'<center><B>town centre</B></center>'
-'<center><img src="pic/down.jpg" ></center>'
-clr
-gs'stat'
-gs'time'
-set palMir=0
-set bordysh=0
-set housrA=0
-set palMir=0
-set obdysh=0
-set tanhouse1=0
-set obMir=0
-set obLoker=0
-set houseob=0
-set borMir=0
-set borLoker=0
 
-if shantpopala>0:
-	 cla
-	 *clr
-	 set hour+=8
-	 set cumbelly+=1
-	 set cumpussy+=1
-	 set cumass+=1
-	 set cumlip+=1
-	 set cumface+=1
-	 set cumfrot+=1
-	 set cumanus+=1
-	 set fingal+=1
-	 set guy+=2
-	 set rape+=1
-	 set sex+=1
-	 set bj+=1
-	 set anal+=1
-	 set shantpopala-=1
-	 '<center><img src="img/centr/rape.jpg" ></center>'
-	 'On the street around you dramatically slows down a black jeep, out of it popping up two big boys and dragged you in the car.
-	 "Your job creation?" shouts one poking your nose pictures that you sent yesterday .
-	 "No, I do not understand" you have tried to justify
-	 "Do not lie to you bitch calculated" With these words
-	 You woke up already somewhere outside the city, bound and naked srl, the whole body was covered with sperm and anus vagina hurt uzhastno.
-	 Umballa sat and smoked nedoleko, "About finally woke up, what else Circle, now flicked, will be more fun." said one of them.
-	 They got up and came to you, a minute later you regret that woke up, these freaks have you as they would, you tried soprativlyatsya but scotch does not allow you to move, soon you lost consciousness again.
-	 "Well understood, bitch" You woke up the voice of one of them and immediately got hit in the stomach with a shoe. Umballa got into the car and drove away. Until the road was about a hundred meters and you connected, izvevayas like a snake crawling in the side of the road. When you then crawled out again, You woke up to some machine, and that dovezla you home.'
-	 act 'Get_Away':gt $curloc
-	 exit
-	 end
+if hour >= 8 and hour <= 22:'Infront of the expensive <a href="exec:gt ''restoran'', ''start''">Restaurant</a> are luxury cars parking.'
+'A shop for <a href="exec:gt ''sexshop'', ''start''">sex toys</a> is open for perverts from all around the city.'
+if hour >= 6 and hour <= 23:'Diner <a href="exec:gt ''burger'', ''start''">Bystroeshka</a>.'
+if bordel > 0 and hour >= 20 or bordel > 0 and hour <= 3:'Inside the courtyard is the entrance to the <a href="exec:gt ''bordel''">brothel</a>.'
+if pornstudio >= 1 and hour > 5:'At the <a href="exec:gt ''pornstudio'', ''start''">Porn Studio</a>, a variety of naughty movies are created'
+if week < 6 and hour >= 7:'At the <a href="exec:gt ''univer'', ''start''">University</a> you can earn your diploma.'
+if hour >= 6 and hour <= 23:'The <a href="exec:gt ''dorm'', ''start''">Hostel</a> offers a small, but cheap, living space, but you have to be student at the university.'
+if week < 6 and hour >= 9 and hour <= 18:'You can see the most important <a href="exec:gt ''bank'', ''start''">Bank</a> in the city from here.'
+if week < 6 and hour >= 8 and hour <= 17:'In the largest skyscraper is a huge <a href="exec:gt ''office'', ''start''">Project Organization</a> located.'
+if hour >= 8 and hour <= 22:'At the <a href="exec:gt ''agentned''">Real Estate Agency</a> you can buy or rent an apartment.'
+!!if beg >= 50 and begmon ! month and hour >= 6 and hour <= 23:'Start at <a href="exec:gt ''beg1'', ''start''">running competition</a>'
 
-if car > 0 and cardrive = 2:
-set cardrive = 2
-'In the parking lot is worth <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
-end
-if hour>=8 and hour<=22:'The kiosk selling <a href="exec:dynamic $kiosksig">cigarettes</a>'
-
-     act 'wait':
-     cla
-     waiting = input ("How many minutes to wait? (not any more 120 minutes)")
-         if waiting <= 0 or waiting > 120:
-         set minut = minut + 15
-         end
-         if waiting > 0 and waiting <= 120:
-         set minut = minut + waiting
-         end
-     act 'Look at the clock':gt curloc
-     end
-
-act 'Taxi':
-	 cla
-	 *clr
-	 '<center><img src="pic/taxi1.jpg" ></center>'
-	 'You caught a passing taksishku.
-	 fare 250 RUB.'
-   	 set minut+=5
-	 if $loc!'street':
-		 act 'Go to the sleeping area':
-			 set $loc='street'
-			 dynamic $taxi
-			 end
-		 end
-	 if $loc!'down':
-		 act 'Go to the center':
-			 set $loc='down'
-			 dynamic $taxi
-			 end
-		 end
-	 if $loc!'Nord':
-		 act 'Go to the northern region':
-			 set $loc='Nord'
-			 dynamic $taxi
-			 end
-		 end
-	 act 'Opt_Out':gt'<<$loc>>'
-	 end
-
-if tanya>0 and tanwork=0 and hour>=16 and hour<=21 and tanday!day: '<a href="exec:gt''tanhouse''">apartment Thani</a>'
-if tanwork=1: '<a href="exec:gt''house''">apartment Thani</a>'
-if izoldaWQ>=1:'<a href="exec:GT ''qwIzoldaApp''">apartment Isolde</a>.'
-if mainQW >= 1:'secret <a href="exec:GT ''lab'',''start''">Karina shelter</a>.'
-if hour>=9 and hour<=21:'<a href="exec:minut+=15&GT ''NewCloShop''">Women`s clothing "fashion-monger"</a>.'
-if yaq = 1:'apartment <a href="exec:GT ''yarik'',''start''">Yaroslav</a>.'
-if peter > 0:'apartment <a href="exec:GT ''peterroom'',''start_door''">Peter</a>.'
-if hour >= 4 and hour <= 23:'station <a href="exec:GT ''metro'',''start''">subway</a> located at 5 walking distance.'
-if week >= 4 and hour >= 15:'fashionable <a href="exec:GT ''club'',''start''">nightclub</a> shining lights, attracting young people from all over the city.'
-if hour >= 15 or hour<=2:'bright <a href="exec:GT ''stripclub'',''start''">Strip club</a> glittering lights, attracting men from all over the city.'
-if hour>=9 and hour<=20:
-'The city center is a large <a href="exec:gt''torgcentr''">Commerce-entertainment Center</a>'
-'popular <a href="exec:GT ''fit'',''start''">fitness center</a> in which trained as professional athletes, and wishing to lose weight for beach season.'
-'<a href="exec:GT ''foto'',''start''">Photo_Studio</a>.'
-'<a href="exec:GT ''bass'',''start''">Swimming_Pool</a>.'
-end
-if hour >= 8 and hour <= 22:'My_Dear <a href="exec:GT ''restoran'',''start''">restaurant</a> around which are luxury cars.'
-'large <a href="exec:GT ''sexshop'',''start''">sex Toys</a> for perverts all over the city.'
-if hour >= 6 and hour <= 23:'eatery <a href="exec:GT ''burger'',''start''">Bystroeshka</a>.'
-if bordel>0 and hour>=20 or bordel>0 and hour<=3:'In the yards of the entrance to the <a href="exec:GT ''bordel''">brothel</a>.'
-if pornstudio>=1 and hour>5:'<a href="exec:GT ''pornstudio'',''start''">studio</a>, which make films for adults'
-if week < 6 and hour >= 7:'prestigious <a href="exec:GT ''univer'',''start''">university</a> is the alma mater of almost all educated people of the city.'
-if hour>=6 and hour<=23:'university <a href="exec:GT ''dorm'',''start''">hostel</a> little priglyadnoe, despite the high status of the university.'
-if week < 6 and hour >= 9 and hour <= 18:'primary <a href="exec:GT ''bank'',''start''">Bank</a> in the city.'
-if week < 6 and hour >= 8 and hour <= 17:'Biggest <a href="exec:GT ''office'',''start''">Project organization</a> in the city.'
-if hour >= 8 and hour <= 22:'<a href="exec:GT ''agentned''">Real estate agency</a>'
-!if beg >= 50 and begmon ! month and hour>=6 and hour<=23:'go to <a href="exec:GT ''beg1'',''start''">Competitions on the run</a>'
-!end 
 dynamic $din_street_cum
 
-
-
-
-
->>>>>>> 335_down
 --- down ---------------------------------
 

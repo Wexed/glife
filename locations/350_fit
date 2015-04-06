@@ -1,998 +1,507 @@
 # fit
-<<<<<<< 350_fit
 if $ARGS[0] = 'start':
-=======
-if $ARGS[0]='start':
->>>>>>> 350_fit
-cla
-*clr
-<<<<<<< 350_fit
-set minut += 5
-'<center><B><font color = maroon>Fitness Center</font></B></center>'
-'<center><img src="images\etogame\fit.jpg"></center>'
-'Subscribe to the 30 classes worth 3000 ruble'
-'Be sure to come to class in sportswear.'
-if abonement > 0: 'Subscription is valid for <<abonement>> Occupation'
-clr
-gs 'stat'
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-=======
-set minut = minut + 5
-'<center><B><font color=maroon>fitness center</font></B></center>'
-'<center><img src="pic/fit.jpg" ></center>'
-'Subscribe to 30 training costs 3000 rubles
-Be sure to come to class in sportswear.'
-if abonement > 0:'Subscription is valid for <<abonement>> Occupation'
-clr
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
->>>>>>> 350_fit
-LCOLOR = rgb(106,90,205)
-
-<<<<<<< 350_fit
-	act 'QUIT':
 	cla
+	*clr
 	set minut += 5
-	gt 'down'
+	'<center><b><font color="maroon">Fitness Center</font></b></center>'
+	'<center><img src="images/etogame/fit.jpg"></center>'
+	'Subscribe to the 30 classes worth 3000 ruble'
+	'Be sure to come to class in sportswear.'
+
+	if abonement > 0:'Subscription is valid for <<abonement>> Occupation'
+
+	clr
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
+
+	act 'Leave':
+		cla
+		set minut += 5
+		gt 'down'
 	end
 
 	if money >= 3000:
 		act 'Buy a subscription (3,000 rubles)':
-		cla
-		set money -= 3000
-		set abonement += 30
-		'You bought a ticket for 30 lessons'
-		act 'Move away from cash': gt 'fit','start'
+			cla
+			set money -= 3000
+			set abonement += 30
+			'You bought a ticket for 30 lessons'
+
+			act 'Move away from cash':gt 'fit', 'start'
 		end
 	end
 
 	if abonement > 0 and fitday ! day:
 		act 'Walk in dressing room':
-		cla
-		frost = 0
-		set abonement -= 1
-		set fitday = day
-		set razdtumbler = 1
-		gt 'fit','razd'
+			cla
+			frost = 0
+			set abonement -= 1
+			set fitday = day
+			set razdtumbler = 1
+			gt 'fit', 'razd'
 		end
 	end
-=======
-     act 'GO_OUT':
-     cla
-     set minut = minut + 5
-     gt'down'
-     end
-     
-     if money >= 3000:
-         act 'Buy ticket (3 sput)':
-         cla
-         set money = money - 3000
-         set abonement = abonement + 30
-         'You bought a subscription for 30 Occupation'
-         act 'Move away from cash':gt'fit','start'
-         end
-     end
-     
-     if abonement > 0 and fitday ! day:
-         act 'Go to the locker room':
-         cla
-         frost=0
-         set abonement = abonement - 1
-         set fitday = day
-         set razdtumbler = 1
-         gt'fit','razd'
-         end
-     end
->>>>>>> 350_fit
 end
 
-<<<<<<< 350_fit
 if $ARGS[0] = 'razd':
-clr
-gs 'stat'
-=======
-if $ARGS[0]='razd':
-clr
-gs'stat'
->>>>>>> 350_fit
-$metkaM = $ARGS[0]
-$locM = $CURLOC
-<<<<<<< 350_fit
-set minut += 5
-'<center><B><font color = maroon>Dressing</font></B></center>'
-'<center><img src="images\etogame\razd.jpg"></center>'
-
-'Classifieds'
-'Recruited girls section races, the winners of the competition receive cash prizes.'
-'Attention, visit the sports section razreshaetsya only with tracksuits.'
+	clr
+	gs 'stat'
+	$metkaM = $ARGS[0]
+	$locM = $CURLOC
+	set minut += 5
+	'<center><b><font color="maroon">Dressing</font></b></center>'
+	'<center><img src="images/etogame/razd.jpg"></center>'
+	'Classifieds'
+	'Recruited girls section races, the winners of the competition receive cash prizes.'
+	'Attention, visit the sports section razreshaetsya only with tracksuits.'
 
 	if razdrand = 0 and tanznak = 0 and tanday ! day:
-	tanday = day
-	'In the locker room you notice <a href="exec:gt ''fitgirl''">cute girl</a>.'
+		tanday = day
+		'In the locker room you notice <a href="exec:gt ''fitgirl''">cute girl</a>.'
 	end
 
 	if tanznak = 2:
-	cls
-	'<center><img src="images\img\centr\razd4.jpg"></center>'
-	'"You at least as name, maniac, and then raped her and Chesney did not even had the" asked the girl caught her breath.'
-	'"I am the <<$name>>, and I will not rape you herself was not against" you said trying to find the eyes of her panties.'
-	'"Looking for this?" asked the girl twirling on his finger your panties "I´m Tanya, and yet you seduced me, I did not have before the girls, and as it turned out a very good reason, I live here with my parents, if you want to come for a visit."'
-	'"Okay as anything the race, briefs is true" you said holding out his hand.'
-	'"Nope, do not return, there must me something to stay on the memory of the first girl." With these words, Tanya slipped your panties in his pocket and left.'
-	set tanznak = 3
-	set tanga = 0
-	set nude = 1
-	set tanya += 5
-	act 'Further': gt 'fit','razd'
-	exit
+		cls
+		'<center><img src="images/img/centr/razd4.jpg"></center>'
+		'"You at least as name, maniac, and then raped her and Chesney did not even had the" asked the girl caught her breath.'
+		'"I am the <<$name>>, and I will not rape you herself was not against" you said trying to find the eyes of her panties.'
+		'"Looking for this?" asked the girl twirling on his finger your panties "I´m Tanya, and yet you seduced me, I did not have before the girls, and as it turned out a very good reason, I live here with my parents, if you want to come for a visit."'
+		'"Okay as anything the race, briefs is true" you said holding out his hand.'
+		'"Nope, do not return, there must me something to stay on the memory of the first girl." With these words, Tanya slipped your panties in his pocket and left.'
+		set tanznak = 3
+		set tanga = 0
+		set nude = 1
+		set tanya += 5
+
+		act 'Further':gt 'fit', 'razd'
+
+		exit
 	end
-=======
-set minut = minut + 5
-'<center><B><font color=maroon>locker_room</font></B></center>'
-'<center><img src="pic/razd.jpg" ></center>'
 
-'advertisement'
-'Produced a set of girls in section running, winners of the competition receive cash prizes.'
-'Caution, visit the sports section razreshaetsya only with tracksuits.'
-
-     if razdrand=0 and tanznak=0 and tanday!day:
-     tanday=day
-	 'In the locker room  <a href="exec:gt ''fitgirl''">pretty girl</a>.'
-	 end
-	 
-     if tanznak=2:
-	 cls
-	 '<center><img src="img/centr/razd4.jpg" ></center>'
-	 '"You, manyachka, and then raped the girl and Chesney did not even had the" she asked breathless.
-	 "I Light, and I will not rape you yourself did not mind" Answer You eyes trying to find her panties.
-	 "Looking for this?" asked the girl twirling his finger on your panties "I`m Tanya, and yet you seduced me, I have the girls did not exist before, and as it turned out a very good reason, I live near here with my parents, if you want to come to visit."
-	 "Okay as a sprint, Panties is true" Say you`re holding out his hand.
-	 "Do_Not-and do not return, should at me that-then stay on the memory of the first girl." With these words.'
-	 set tanznak=3
-	 set tanga=0
-	 set nude=1
-	 set tanya+=5
-	 act 'further':gt'fit','razd'
-	 exit
-	 end
->>>>>>> 350_fit
-
-
-<<<<<<< 350_fit
-if begsec = 0: act 'Join section running': gt 'fit','1'
-
-if begsec > 0 and razdtumbler = 1 and sport > 0: act 'Go to section': gt 'beg','start'
-if begsec > 0 and razdtumbler = 1 and sport > 0 and beg >= 20 and week = 6: act '<B>Competitions on the run</B>': gt 'beg1','start'
+	if begsec = 0:act 'Join section running':gt 'fit', '1'
+	if begsec > 0 and razdtumbler = 1 and sport > 0:act 'Go to section':gt 'beg', 'start'
+	if begsec > 0 and razdtumbler = 1 and sport > 0 and beg >= 20 and week = 6:act '<b>Competitions on the run</b>':gt 'beg1', 'start'
 
 	act 'Take a shower (0:15)':
-	cla
-	*clr
-	set minut += 15
-	if sweat > -3: set sweat = -3
-	set horny += 1
-	set hapri = 0
-	set mop = 1
-	dynamic $showerdin
-	'<center><img src="images\pics\dush.jpg"></center>'
-	'You got into the bathroom and turned on the shower. Lathered body and washed off in the shower.'
-	act 'Get out of the shower': gt 'fit','razd'
+		cla
+		*clr
+		set minut += 15
+		set sweat = -3
+		set horny += 1
+		set hapri = 0
+		set mop = 1
+		dynamic $showerdin
+		'<center><img src="images/pics/dush.jpg"></center>'
+		'You got into the bathroom and turned on the shower. Lathered body and washed off in the shower.'
+
+		act 'Get out of the shower':gt 'fit', 'razd'
 	end
 
 	act 'Mirror':
-	cla
-	set fitMir = 1
-	gt 'mirror','start'
+		cla
+		set fitMir = 1
+		gt 'mirror', 'start'
 	end
 
 	act 'Cabinet':
-	cla
-	set fitLoker = 1
-	gt 'loker','start'
+		cla
+		set fitLoker = 1
+		gt 'loker', 'start'
 	end
 
 	if razdtumbler = 1 and sport > 0:
 		act 'Go to the gym':
-		cla
-		gt 'fit','raz'
+			cla
+			gt 'fit', 'raz'
 		end
 
 		act 'Go to the dance studio.':
-		cla
-		gt 'danceclass'
+			cla
+			gt 'danceclass'
 		end
 	end
 
 	if razdtumbler = 0 or sport = 0:
 		act 'Exit of the locker room':
-		cla
-		gt 'fit','start'
+			cla
+			gt 'fit', 'start'
 		end
 	end
-=======
-if begsec = 0: act 'Enroll in section running': gt'fit','1'
-
-if begsec > 0 and razdtumbler = 1 and sport > 0: act 'Go to section': gt'beg','start'
-if begsec > 0 and razdtumbler = 1 and sport > 0 and beg>=20 and week=6: act '<B>Competitions on the run</B>': gt'beg1','start'
-
-     act 'take a shower 15 min':
-     cla
-     *clr
-     set minut = minut + 15
-     set sweat = -3
-     set horny = horny + 1
-     set hapri = 0
-     set mop = 1
-     dynamic $showerdin
-     '<center><img src="pics/dush.jpg" ></center>'
-     'You got into the bathroom and turned on the shower. Soaped and washed the body in the shower.'
-     act 'Get out of the shower':gt'fit','razd'
-     end
-     
-     act 'mirror':
-     cla
-     set fitMir = 1
-     gt'mirror','start'
-     end
-     
-     act 'cabinet':
-     cla
-     set fitLoker = 1
-     gt'loker','start'
-     end
-     
-     if razdtumbler = 1 and sport > 0:
-         act 'Go to the gym':
-		 cla
-		 gt'fit','raz'
-		 end
-		 
-		 act 'Go to the dance studio.':
-		 cla
-		 gt'danceclass'
-		 end
-     end
-     
-     if razdtumbler = 0 or sport = 0:
-         act 'Get out of the locker room':
-		 cla
-		 gt'fit','start'
-		 end
-     end
->>>>>>> 350_fit
 end
 
-<<<<<<< 350_fit
 if $ARGS[0] = 'raz':
-=======
-if $ARGS[0]='raz':
->>>>>>> 350_fit
-cla
-*clr
-<<<<<<< 350_fit
-set minut += 5
-'<center><B><font color = maroon>Fitness Center</font></B></center>'
-'<center><img src="images\etogame\fit.jpg"></center>'
-'In the fitness center a lot of different programs for the physical development of the organism.'
-clr
-gs 'stat'
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-=======
-set minut = minut + 5
-'<center><B><font color=maroon>fitness center</font></B></center>'
-'<center><img src="pic/fit.jpg" ></center>'
-'In the fitness center are a lot of different programs for the physical development of the organism.'
-clr
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
->>>>>>> 350_fit
-LCOLOR = rgb(106,90,205)
-
-set razdtumbler = 0
-<<<<<<< 350_fit
-set sportzalrand = rand(0,20)
-
-	act 'Aerobics (Squeegee fat)':
 	cla
 	*clr
-	set minut += 120
-	set fat -= 10
-	set reakt += RAND(1,3)
-	set manna -= 5
-	set sweat += 3
-	if sportzalrand = 0: gt 'zal','0'
-	if sportzalrand = 1: gt 'zal','1'
-	if sportzalrand = 2: gt 'zal','2'
-	if sportzalrand = 3: gt 'zal','3'
-	'<center><img src="images\etogame\fit1.jpg"></center>'
-	'You are very vigorously the exercises for the music ebbs fat.'
-	act 'Leave': gt 'fit','razd'
+	set minut += 5
+	'<center><b><font color="maroon">Fitness Center</font></b></center>'
+	'<center><img src="images/etogame/fit.jpg"></center>'
+	'In the fitness center a lot of different programs for the physical development of the organism.'
+	clr
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
+	set razdtumbler = 0
+	set sportzalrand = rand(0, 20)
+
+	act 'Aerobics (Squeegee fat)':
+		cla
+		*clr
+		set minut += 120
+		set fat -= 10
+		set reakt += rand(1, 3)
+		set manna -= 5
+		set sweat += 3
+
+		if sportzalrand = 0:gt 'zal', '0'
+		if sportzalrand = 1:gt 'zal', '1'
+		if sportzalrand = 2:gt 'zal', '2'
+		if sportzalrand = 3:gt 'zal', '3'
+
+		'<center><img src="images/etogame/fit1.jpg"></center>'
+		'You are very vigorously the exercises for the music ebbs fat.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
 	act 'Trenazhorka (in force)':
-	cla
-	*clr
-	set minut += 120
-	set stren += RAND(1,3)
-	set fat -= 1
-	set manna -= 5
-	set sweat += 3
-	if sportzalrand = 0: gt 'zal','0'
-	if sportzalrand = 1: gt 'zal','1'
-	if sportzalrand = 2: gt 'zal','2'
-	if sportzalrand = 3: gt 'zal','3'
-	'<center><img src="images\etogame\fit2.jpg"></center>'
-	'Did you do with iron for strength.'
-	act 'Leave': gt 'fit','razd'
+		cla
+		*clr
+		set minut += 120
+		set stren += rand(1, 3)
+		set fat -= 1
+		set manna -= 5
+		set sweat += 3
+
+		if sportzalrand = 0:gt 'zal', '0'
+		if sportzalrand = 1:gt 'zal', '1'
+		if sportzalrand = 2:gt 'zal', '2'
+		if sportzalrand = 3:gt 'zal', '3'
+
+		'<center><img src="images/etogame/fit2.jpg"></center>'
+		'Did you do with iron for strength.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
 	act 'Trenazhorka (endurance)':
-	cla
-	*clr
-	set minut += 120
-	set vital += RAND(1,3)
-	set manna -= 5
-	set fat -= 2
-	set sweat += 3
-	if sportzalrand = 0: gt 'zal','0'
-	if sportzalrand = 1: gt 'zal','1'
-	if sportzalrand = 2: gt 'zal','2'
-	if sportzalrand = 3: gt 'zal','3'
-	'<center><img src="images\etogame\fit3.jpg"></center>'
-	'Trainers were you doing on the development of endurance.'
-	act 'Leave': gt 'fit','razd'
+		cla
+		*clr
+		set minut += 120
+		set vital += rand(1, 3)
+		set manna -= 5
+		set fat -= 2
+		set sweat += 3
+
+		if sportzalrand = 0:gt 'zal', '0'
+		if sportzalrand = 1:gt 'zal', '1'
+		if sportzalrand = 2:gt 'zal', '2'
+		if sportzalrand = 3:gt 'zal', '3'
+
+		'<center><img src="images/etogame/fit3.jpg"></center>'
+		'Trainers were you doing on the development of endurance.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
 	act 'Tennis testing of protection (skill)':
-	cla
-	*clr
-	set minut += 120
-	set agil += RAND(1,3)
-	set fat -= 5
-	set manna -= 5
-	set sweat += 3
-	set TenisDef += 1
-	if sportzalrand = 0: gt 'zal','0'
-	if sportzalrand = 1: gt 'zal','1'
-	if sportzalrand = 2: gt 'zal','2'
-	if sportzalrand = 3: gt 'zal','3'
-	'<center><img src="images\etogame\fit4.jpg"></center>'
-	'You do tennis practicing defensive actions.'
-	act 'Leave': gt 'fit','razd'
+		cla
+		*clr
+		set minut += 120
+		set agil += rand(1, 3)
+		set fat -= 5
+		set manna -= 5
+		set sweat += 3
+		set TenisDef += 1
+
+		if sportzalrand = 0:gt 'zal', '0'
+		if sportzalrand = 1:gt 'zal', '1'
+		if sportzalrand = 2:gt 'zal', '2'
+		if sportzalrand = 3:gt 'zal', '3'
+
+		'<center><img src="images/etogame/fit4.jpg"></center>'
+		'You do tennis practicing defensive actions.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
 	act 'Tennis working out attacks (velocity)':
-	cla
-	*clr
-	set minut += 120
-	set speed += RAND(1,3)
-	set manna -= 5
-	set fat -= 5
-	set sweat += 3
-	set TenisAt += 1
-	if sportzalrand = 0: gt 'zal','0'
-	if sportzalrand = 1: gt 'zal','1'
-	if sportzalrand = 2: gt 'zal','2'
-	if sportzalrand = 3: gt 'zal','3'
-	'<center><img src="images\etogame\fit4.jpg"></center>'
-	'You do practicing tennis attacking actions.'
-	act 'Leave': gt 'fit','razd'
+		cla
+		*clr
+		set minut += 120
+		set speed += rand(1, 3)
+		set manna -= 5
+		set fat -= 5
+		set sweat += 3
+		set TenisAt += 1
+
+		if sportzalrand = 0:gt 'zal', '0'
+		if sportzalrand = 1:gt 'zal', '1'
+		if sportzalrand = 2:gt 'zal', '2'
+		if sportzalrand = 3:gt 'zal', '3'
+
+		'<center><img src="images/etogame/fit4.jpg"></center>'
+		'You do practicing tennis attacking actions.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
-	act 'Section kickboxing': gt 'fit','kik'
-=======
-set sportzalrand=rand(0,20)
-
-     act 'aerobics (Squeegee fat)':
-     cla
-     *clr
-     set minut = minut + 120
-     set fat = fat - 10
-     set reakt = reakt + RAND (1,3)
-     set manna = manna - 5
-     set sweat = sweat + 3
-     if sportzalrand=0:gt'zal','0'
-	 if sportzalrand=1:gt'zal','1'
-	 if sportzalrand=2:gt'zal','2'
-	 if sportzalrand=3:gt'zal','3'
-     '<center><img src="pic/fit1.jpg" ></center>'
-     'You are very energetic exercises to music for eviction fat.'
-     act 'Get_Away':gt'fit','razd'
-     end
-     
-     act 'Trenazhorka (effect on)':
-     cla
-     *clr
-     set minut = minut + 120
-     set stren = stren + RAND (1,3)
-     set fat = fat - 1
-     set manna = manna - 5
-     set sweat = sweat + 3
-     if sportzalrand=0:gt'zal','0'
-	 if sportzalrand=1:gt'zal','1'
-	 if sportzalrand=2:gt'zal','2'
-	 if sportzalrand=3:gt'zal','3'
-     '<center><img src="pic/fit2.jpg" ></center>'
-     'Did you do with iron for strength development.'
-     act 'Get_Away':gt'fit','razd'
-     end
-     
-     act 'Trenazhorka (endurance)':
-     cla
-     *clr
-     set minut = minut + 120
-     set vital = vital + RAND (1,3)
-     set manna = manna - 5
-     set fat = fat - 2
-     set sweat = sweat + 3
-     if sportzalrand=0:gt'zal','0'
-	 if sportzalrand=1:gt'zal','1'
-	 if sportzalrand=2:gt'zal','2'
-	 if sportzalrand=3:gt'zal','3'
-     '<center><img src="pic/fit3.jpg" ></center>'
-     'Did you do on trenazhore for development of endurance.'
-     act 'Get_Away':gt'fit','razd'
-     end
-     
-     act 'Tennis working out protection(Skill)':
-     cla
-     *clr
-     set minut = minut + 120
-     set agil = agil + RAND (1,3)
-     set fat = fat - 5
-     set manna = manna - 5
-     set sweat = sweat + 3
-     set TenisDef = TenisDef + 1
-     if sportzalrand=0:gt'zal','0'
-	 if sportzalrand=1:gt'zal','1'
-	 if sportzalrand=2:gt'zal','2'
-	 if sportzalrand=3:gt'zal','3'
-     '<center><img src="pic/fit4.jpg" ></center>'
-     'You engaged in practicing tennis protective actions.'
-     act 'Get_Away':gt'fit','razd'
-     end
-     
-     act 'Tennis working off attacks (speed)':
-     cla
-     *clr
-     set minut = minut + 120
-     set speed = speed + RAND (1,3)
-     set manna = manna - 5
-     set fat = fat - 5
-     set sweat = sweat + 3
-     set TenisAt = TenisAt + 1
-     if sportzalrand=0:gt'zal','0'
-	 if sportzalrand=1:gt'zal','1'
-	 if sportzalrand=2:gt'zal','2'
-	 if sportzalrand=3:gt'zal','3'
-     '<center><img src="pic/fit4.jpg" ></center>'
-     'You engaged in practicing tennis attacking actions.'
-     act 'Get_Away':gt'fit','razd'
-     end
-
-     act 'section kickboxing':gt'fit','kik'
->>>>>>> 350_fit
-
+	act 'Section kickboxing':gt 'fit', 'kik'
 end
 
-
-
-<<<<<<< 350_fit
 if $ARGS[0] = 'kik':
-=======
-if $ARGS[0]='kik':
->>>>>>> 350_fit
-cla
-*clr
-<<<<<<< 350_fit
-set minut += 5
-'<center><B><font color = maroon>Kickboxing Section</font></B></center>'
-'<center><img src="images\etogame\kik.jpg"></center>'
-=======
-set minut = minut + 5
-'<center><B><font color=maroon>section kickboxing</font></B></center>'
-'<center><img src="pic/kik.jpg" ></center>'
->>>>>>> 350_fit
-''
-clr
-<<<<<<< 350_fit
-gs 'stat'
-fcolor = rgb(0,0,0)
-bcolor = rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
-gs 'razrKik'
-	act 'Testing jabs on pear':
 	cla
 	*clr
-	set minut += 120
-	set speed += RAND(1,3)
-	set manna -= 5
-	set fat -= 4
-	set sweat += 3
-	set Jab += RAND(1,3)
-	'<center><img src="images\etogame\kik1.jpg"></center>'
-	'You practiced on pear jab, straight punches with long step forward. These strikes are not so powerful as the police, but they are faster.'
-	act 'Leave': gt 'fit','razd'
+	set minut += 5
+	'<center><b><font color="maroon">Kickboxing Section</font></b></center>'
+	'<center><img src="images/etogame/kik.jpg"></center>'
+	''
+	clr
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
+	gs 'razrKik'
+
+	act 'Testing jabs on pear':
+		cla
+		*clr
+		set minut += 120
+		set speed += rand(1, 3)
+		set manna -= 5
+		set fat -= 4
+		set sweat += 3
+		set Jab += rand(1, 3)
+		'<center><img src="images/etogame/kik1.jpg"></center>'
+		'You practiced on pear jab, straight punches with long step forward. These strikes are not so powerful as the police, but they are faster.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
 	act 'Testing power beats on a pear':
-	cla
-	*clr
-	set minut += 120
-	set stren += RAND(1,3)
-	set manna -= 5
-	set fat -= 4
-	set sweat += 3
-	set Punch += RAND(1,3)
-	'<center><img src="images\etogame\kik1.jpg"></center>'
-	'You practiced on pear powerful force capable of hitting an opponent shake. These impacts are powerful, but they are hard to get.'
-	act 'Leave': gt 'fit','razd'
+		cla
+		*clr
+		set minut += 120
+		set stren += rand(1, 3)
+		set manna -= 5
+		set fat -= 4
+		set sweat += 3
+		set Punch += rand(1, 3)
+		'<center><img src="images/etogame/kik1.jpg"></center>'
+		'You practiced on pear powerful force capable of hitting an opponent shake. These impacts are powerful, but they are hard to get.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
 	act 'Testing of kicks':
-	cla
-	*clr
-	set minut += 120
-	set stren += RAND(1,3)
-	set manna -= 5
-	set fat -= 4
-	set sweat += 3
-	set Kik += RAND(1,3)
-	'<center><img src="images\etogame\kik1.jpg"></center>'
-	'You practiced on pear powerful kicks able to cut down an opponent. These impacts are powerful, but are very difficult to hit.'
-	act 'Leave': gt 'fit','razd'
+		cla
+		*clr
+		set minut += 120
+		set stren += rand(1, 3)
+		set manna -= 5
+		set fat -= 4
+		set sweat += 3
+		set Kik += rand(1, 3)
+			'<center><img src="images/etogame/kik1.jpg"></center>'
+		'You practiced on pear powerful kicks able to cut down an opponent. These impacts are powerful, but are very difficult to hit.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
 	act 'Testing of protection':
-	cla
-	*clr
-	set minut += 120
-	set agil += RAND(1,3)
-	set manna -= 5
-	set fat -= 4
-	set sweat += 3
-	set KikDef += RAND(1,3)
-	'<center><img src="images\etogame\kik1.jpg"></center>'
-	'You practiced defense movements.'
-	act 'Leave': gt 'fit','razd'
+		cla
+		*clr
+		set minut += 120
+		set agil += rand(1, 3)
+		set manna -= 5
+		set fat -= 4
+		set sweat += 3
+		set KikDef += rand(1, 3)
+		'<center><img src="images/etogame/kik1.jpg"></center>'
+		'You practiced defense movements.'
+
+		act 'Leave':gt 'fit', 'razd'
 	end
 
 	act 'Sparing (training bout in the ring)':
-	cla
-	*clr
-	set round = 0
-	'You need to choose a rival for sparring'
-		act 'Rival':
-		set minut += 120
-		set manna -= 5
-		set fat -= 4
-		set sweat += 3
-		set strenV = RAND(10,20)
-		set speedV = RAND(10,20)
-		set agilV = RAND(10,20)
-		set reactV = RAND(10,20)
-		set vitalV = RAND(10,20)
-		set intelV = 10
-		set willV = 10
-		!Навыки
-		set JabV = RAND(5,20)
-		set PunchV = RAND(5,20)
-		set KikV = RAND(5,20)
-		set KikDefV = RAND(5,20)
-		!Параметры
-		set healthV = vitalV * 10 + strenV * 5
-		set $nameV = 'Sparring partner'
-		set formula = 3
-		set sparing = 1
-		gt 'kikbox','start'
-		end
+		cla
+		*clr
+		set round = 0
+		'You need to choose a rival for sparring'
 
+		act 'Rival':
+			set minut += 120
+			set manna -= 5
+			set fat -= 4
+			set sweat += 3
+			set strenV = rand(10, 20)
+			set speedV = rand(10, 20)
+			set agilV = rand(10, 20)
+			set reactV = rand(10, 20)
+			set vitalV = rand(10, 20)
+			set intelV = 10
+			set willV = 10
+			!!skills
+			set JabV = rand(5, 20)
+			set PunchV = rand(5, 20)
+			set KikV = rand(5, 20)
+			set KikDefV = rand(5, 20)
+			!!parameters
+			set healthV = vitalV * 10 + strenV * 5
+			set $nameV = 'Sparring partner'
+			set formula = 3
+			set sparing = 1
+			gt 'kikbox', 'start'
+		end
 	end
 
 	if week >= 5:
-	'You can spend an amateur fight.'
+		'You can spend an amateur fight.'
+
 		act 'Amateur fight':
-		set round = 0
-		set minut += 120
-		set manna -= 5
-		set fat -= 4
-		set sweat += 3
-		set razrand = RAND(0,1)
+			set round = 0
+			set minut += 120
+			set manna -= 5
+			set fat -= 4
+			set sweat += 3
+			set razrand = rand(0, 1)
+
 			if razradKik + razrand = 0:
-			set strenV = RAND(10,20)
-			set speedV = RAND(10,20)
-			set agilV = RAND(10,20)
-			set reactV = RAND(10,20)
-			set vitalV = RAND(10,20)
-			set intelV = 10
-			set willV = 10
-			!Навыки
-			set JabV = RAND(10,30)
-			set PunchV = RAND(10,30)
-			set KikV = RAND(10,30)
-			set KikDefV = RAND(10,30)
-			!Параметры
-			set healthV = vitalV * 10 + strenV * 5
-			set $nameV = 'Rival without discharge'
-			set formula = 3
-			set amateur = 1
+				set strenV = rand(10, 20)
+				set speedV = rand(10, 20)
+				set agilV = rand(10, 20)
+				set reactV = rand(10, 20)
+				set vitalV = rand(10, 20)
+				set intelV = 10
+				set willV = 10
+				!!skills
+				set JabV = rand(10, 30)
+				set PunchV = rand(10, 30)
+				set KikV = rand(10, 30)
+				set KikDefV = rand(10, 30)
+				!!parameters
+				set healthV = vitalV * 10 + strenV * 5
+				set $nameV = 'Rival without discharge'
+				set formula = 3
+				set amateur = 1
 			end
 
 			if razradKik + razrand = 1:
-			set strenV = RAND(15,25)
-			set speedV = RAND(15,25)
-			set agilV = RAND(15,25)
-			set reactV = RAND(15,25)
-			set vitalV = RAND(15,25)
-			set intelV = 10
-			set willV = 10
-			!Навыки
-			set JabV = RAND(15,35)
-			set PunchV = RAND(15,35)
-			set KikV = RAND(15,35)
-			set KikDefV = RAND(15,35)
-			!Параметры
-			set healthV = vitalV * 10 + strenV * 5
-			set $nameV = 'Rival c third discharge'
-			set formula = 3
-			set amateur = 1
+				set strenV = rand(15, 25)
+				set speedV = rand(15, 25)
+				set agilV = rand(15, 25)
+				set reactV = rand(15, 25)
+				set vitalV = rand(15, 25)
+				set intelV = 10
+				set willV = 10
+				!!skills
+				set JabV = rand(15, 35)
+				set PunchV = rand(15, 35)
+				set KikV = rand(15, 35)
+				set KikDefV = rand(15, 35)
+				!!parameters
+				set healthV = vitalV * 10 + strenV * 5
+				set $nameV = 'Rival c third discharge'
+				set formula = 3
+				set amateur = 1
 			end
 
 			if razradKik + razrand = 2:
-			set strenV = RAND(20,30)
-			set speedV = RAND(20,30)
-			set agilV = RAND(20,30)
-			set reactV = RAND(20,30)
-			set vitalV = RAND(20,30)
-			set intelV = 10
-			set willV = 10
-			!Навыки
-			set JabV = RAND(30,50)
-			set PunchV = RAND(30,50)
-			set KikV = RAND(30,50)
-			set KikDefV = RAND(30,50)
-			!Параметры
-			set healthV = vitalV * 10 + strenV * 5
-			set $nameV = 'Rival co second discharge'
-			set formula = 3
-			set amateur = 1
+				set strenV = rand(20, 30)
+				set speedV = rand(20, 30)
+				set agilV = rand(20, 30)
+				set reactV = rand(20, 30)
+				set vitalV = rand(20, 30)
+				set intelV = 10
+				set willV = 10
+				!!skills
+				set JabV = rand(30, 50)
+				set PunchV = rand(30, 50)
+				set KikV = rand(30, 50)
+				set KikDefV = rand(30, 50)
+				!!parameters
+				set healthV = vitalV * 10 + strenV * 5
+				set $nameV = 'Rival co second discharge'
+				set formula = 3
+				set amateur = 1
 			end
 
 			if razradKik + razrand = 3:
-			set strenV = RAND(30,40)
-			set speedV = RAND(30,40)
-			set agilV = RAND(30,40)
-			set reactV = RAND(30,40)
-			set vitalV = RAND(30,40)
-			set intelV = 10
-			set willV = 10
-			!Навыки
-			set JabV = RAND(40,60)
-			set PunchV = RAND(40,60)
-			set KikV = RAND(40,60)
-			set KikDefV = RAND(40,60)
-			!Параметры
-			set healthV = vitalV * 10 + strenV * 5
-			set $nameV = 'Rival c first discharge'
-			set formula = 3
-			set amateur = 1
+				set strenV = rand(30, 40)
+				set speedV = rand(30, 40)
+				set agilV = rand(30, 40)
+				set reactV = rand(30, 40)
+				set vitalV = rand(30, 40)
+				set intelV = 10
+				set willV = 10
+				!!skills
+				set JabV = rand(40, 60)
+				set PunchV = rand(40, 60)
+				set KikV = rand(40, 60)
+				set KikDefV = rand(40, 60)
+				!!parameters
+				set healthV = vitalV * 10 + strenV * 5
+				set $nameV = 'Rival c first discharge'
+				set formula = 3
+				set amateur = 1
 			end
 
 			if razradKik + razrand = 4:
-			set strenV = RAND(40,60)
-			set speedV = RAND(40,60)
-			set agilV = RAND(40,60)
-			set reactV = RAND(40,60)
-			set vitalV = RAND(40,60)
-			set intelV = 10
-			set willV = 10
-			!Навыки
-			set JabV = RAND(60,80)
-			set PunchV = RAND(60,80)
-			set KikV = RAND(60,80)
-			set KikDefV = RAND(60,80)
-			!Параметры
-			set healthV = vitalV * 10 + strenV * 5
-			set $nameV = 'Rival CCM'
-			set formula = 3
-			set amateur = 1
+				set strenV = rand(40, 60)
+				set speedV = rand(40, 60)
+				set agilV = rand(40, 60)
+				set reactV = rand(40, 60)
+				set vitalV = rand(40, 60)
+				set intelV = 10
+				set willV = 10
+				!!skills
+				set JabV = rand(60, 80)
+				set PunchV = rand(60, 80)
+				set KikV = rand(60, 80)
+				set KikDefV = rand(60, 80)
+				!!parameters
+				set healthV = vitalV * 10 + strenV * 5
+				set $nameV = 'Rival CCM'
+				set formula = 3
+				set amateur = 1
 			end
 
 			if razradKik + razrand >= 5:
-			set strenV = RAND(60,100)
-			set speedV = RAND(60,100)
-			set agilV = RAND(60,100)
-			set reactV = RAND(60,100)
-			set vitalV = RAND(60,100)
-			set intelV = 10
-			set willV = 10
-			!Навыки
-			set JabV = RAND(80,110)
-			set PunchV = RAND(80,110)
-			set KikV = RAND(80,110)
-			set KikDefV = RAND(80,110)
-			!Параметры
-			set healthV = vitalV * 10 + strenV * 5
-			set $nameV = 'Rival MS'
-			set formula = 3
-			set amateur = 1
+				set strenV = rand(60, 100)
+				set speedV = rand(60, 100)
+				set agilV = rand(60, 100)
+				set reactV = rand(60, 100)
+				set vitalV = rand(60, 100)
+				set intelV = 10
+				set willV = 10
+				!!skills
+				set JabV = rand(80, 110)
+				set PunchV = rand(80, 110)
+				set KikV = rand(80, 110)
+				set KikDefV = rand(80, 110)
+				!!parameters
+				set healthV = vitalV * 10 + strenV * 5
+				set $nameV = 'Rival MS'
+				set formula = 3
+				set amateur = 1
 			end
-		gt 'kikbox','start'
+
+			gt 'kikbox', 'start'
 		end
 	end
-=======
-gs'stat'
-fcolor=rgb(0,0,0)
-bcolor=rgb(255,255,255)
-LCOLOR = rgb(106,90,205)
-gs'razrKik'
-     act 'Testing jabs on pear':
-     cla
-     *clr
-     set minut = minut + 120
-     set speed = speed + RAND (1,3)
-     set manna = manna - 5
-     set fat = fat - 4
-     set sweat = sweat + 3
-     set Jab = Jab + RAND (1,3)
-     '<center><img src="pic/kik1.jpg" ></center>'
-     'You practiced on pear jab, long. These strikes are not as powerful as the power, but they will.'
-     act 'Get_Away':gt'fit','razd'
-     end
-     
-     act 'Testing of power punches on pear':
-     cla
-     *clr
-     set minut = minut + 120
-     set stren = stren + RAND (1,3)
-     set manna = manna - 5
-     set fat = fat - 4
-     set sweat = sweat + 3
-     set Punch = Punch + RAND (1,3)
-     '<center><img src="pic/kik1.jpg" ></center>'
-     'You practiced on pear powerful force capable of hitting an opponent to shake. These attacks are powerful, but they are hard to get.'
-     act 'Get_Away':gt'fit','razd'
-     end
-     
-     act 'Driving range legs':
-     cla
-     *clr
-     set minut = minut + 120
-     set stren = stren + RAND (1,3)
-     set manna = manna - 5
-     set fat = fat - 4
-     set sweat = sweat + 3
-     set Kik = Kik + RAND (1,3)
-     '<center><img src="pic/kik1.jpg" ></center>'
-     'You practiced on pear powerful kicks can knock an opponent. These attacks are powerful, but are very difficult to get.'
-     act 'Get_Away':gt'fit','razd'
-     end
-     
-     act 'Testing of protection':
-     cla
-     *clr
-     set minut = minut + 120
-     set agil = agil + RAND (1,3)
-     set manna = manna - 5
-     set fat = fat - 4
-     set sweat = sweat + 3
-     set KikDef = KikDef + RAND (1,3)
-     '<center><img src="pic/kik1.jpg" ></center>'
-     'You practiced defense movements.'
-     act 'Get_Away':gt'fit','razd'
-     end
-     
-     act 'Sparing (training fight in the ring)':
-     cla
-     *clr
-     set round = 0
-     'You need to choose his opponent for sparring'
-         act 'rival':
-		 set minut = minut + 120
-		 set manna = manna - 5
-		 set fat = fat - 4
-		 set sweat = sweat + 3
-		 set strenV = RAND (10,20)
-		 set speedV = RAND (10,20)
-		 set agilV = RAND (10,20)
-		 set reactV = RAND (10,20)
-		 set vitalV = RAND (10,20)
-		 set intelV = 10
-		 set willV = 10
-		 !skills
-		 set JabV = RAND (5,20)
-		 set PunchV = RAND (5,20)
-		 set KikV = RAND (5,20)
-		 set KikDefV = RAND (5,20)
-		 !parameters
-		 set healthV = vitalV*10 + strenV*5
-		 set $nameV = 'Sparing partner'
-		 set formula = 3
-		 set sparing = 1
-         gt'kikbox','start'
-		 end
-     
-     end
-     
-     if week >= 5:
-     'You can spend amateur fight.'
-         act 'amateur fight':
-         set round = 0
-		 set minut = minut + 120
-		 set manna = manna - 5
-		 set fat = fat - 4
-		 set sweat = sweat + 3
-		 set razrand = RAND (0,1)
-		     if razradKik + razrand = 0:
-			 set strenV = RAND (10,20)
-			 set speedV = RAND (10,20)
-			 set agilV = RAND (10,20)
-			 set reactV = RAND (10,20)
-			 set vitalV = RAND (10,20)
-			 set intelV = 10
-			 set willV = 10
-			 !skills
-			 set JabV = RAND (10,30)
-			 set PunchV = RAND (10,30)
-			 set KikV = RAND (10,30)
-			 set KikDefV = RAND (10,30)
-			 !parameters
-			 set healthV = vitalV*10 + strenV*5
-			 set $nameV = 'Rival without discharge'
-			 set formula = 3
-			 set amature = 1
-			 end
-			 
-			 if razradKik + razrand = 1:
-			 set strenV = RAND (15,25)
-			 set speedV = RAND (15,25)
-			 set agilV = RAND (15,25)
-			 set reactV = RAND (15,25)
-			 set vitalV = RAND (15,25)
-			 set intelV = 10
-			 set willV = 10
-			 !skills
-			 set JabV = RAND (15,35)
-			 set PunchV = RAND (15,35)
-			 set KikV = RAND (15,35)
-			 set KikDefV = RAND (15,35)
-			 !parameters
-			 set healthV = vitalV*10 + strenV*5
-			 set $nameV = 'rival c The third level'
-			 set formula = 3
-			 set amature = 1
-			 end
-			 
-			 if razradKik + razrand = 2:
-			 set strenV = RAND (20,30)
-			 set speedV = RAND (20,30)
-			 set agilV = RAND (20,30)
-			 set reactV = RAND (20,30)
-			 set vitalV = RAND (20,30)
-			 set intelV = 10
-			 set willV = 10
-			 !skills
-			 set JabV = RAND (30,50)
-			 set PunchV = RAND (30,50)
-			 set KikV = RAND (30,50)
-			 set KikDefV = RAND (30,50)
-			 !parameters
-			 set healthV = vitalV*10 + strenV*5
-			 set $nameV = 'rival cof the second category'
-			 set formula = 3
-			 set amature = 1
-			 end
-			 
-			 if razradKik + razrand = 3:
-			 set strenV = RAND (30,40)
-			 set speedV = RAND (30,40)
-			 set agilV = RAND (30,40)
-			 set reactV = RAND (30,40)
-			 set vitalV = RAND (30,40)
-			 set intelV = 10
-			 set willV = 10
-			 !skills
-			 set JabV = RAND (40,60)
-			 set PunchV = RAND (40,60)
-			 set KikV = RAND (40,60)
-			 set KikDefV = RAND (40,60)
-			 !parameters
-			 set healthV = vitalV*10 + strenV*5
-			 set $nameV = 'rival c first rank'
-			 set formula = 3
-			 set amature = 1
-			 end
-			 
-			 if razradKik + razrand = 4:
-			 set strenV = RAND (40,60)
-			 set speedV = RAND (40,60)
-			 set agilV = RAND (40,60)
-			 set reactV = RAND (40,60)
-			 set vitalV = RAND (40,60)
-			 set intelV = 10
-			 set willV = 10
-			 !skills
-			 set JabV = RAND (60,80)
-			 set PunchV = RAND (60,80)
-			 set KikV = RAND (60,80)
-			 set KikDefV = RAND (60,80)
-			 !parameters
-			 set healthV = vitalV*10 + strenV*5
-			 set $nameV = 'rival CCM'
-			 set formula = 3
-			 set amature = 1
-			 end
-			 
-			 if razradKik + razrand >= 5:
-			 set strenV = RAND (60,100)
-			 set speedV = RAND (60,100)
-			 set agilV = RAND (60,100)
-			 set reactV = RAND (60,100)
-			 set vitalV = RAND (60,100)
-			 set intelV = 10
-			 set willV = 10
-			 !skills
-			 set JabV = RAND (80,110)
-			 set PunchV = RAND (80,110)
-			 set KikV = RAND (80,110)
-			 set KikDefV = RAND (80,110)
-			 !parameters
-			 set healthV = vitalV*10 + strenV*5
-			 set $nameV = 'rival MS'
-			 set formula = 3
-			 set amature = 1
-			 end
-         gt'kikbox','start'
-		 end
-     end
->>>>>>> 350_fit
-
 end
 
-<<<<<<< 350_fit
 if $ARGS[0] = '1':
-=======
-if $ARGS[0]='1':
->>>>>>> 350_fit
-cla
-*clr
-<<<<<<< 350_fit
-set minut += 5
-=======
-set minut = minut + 5
->>>>>>> 350_fit
-Set begsec = 1
-'You signed up for the run section'
-<<<<<<< 350_fit
-act 'Leave': gt 'fit','razd'
-end
-=======
-act 'Get_Away':gt'fit','razd'
+	cla
+	*clr
+	set minut += 5
+	set begsec = 1
+	'You signed up for the run section'
+
+	act 'Leave':gt 'fit', 'razd'
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 350_fit
 --- fit ---------------------------------
 

@@ -1,41 +1,26 @@
 # dachamy
 $metka = $ARGS[0]
 $loc = $CURLOC
-<<<<<<< 386_dachamy
-'<center><H4>Cottage</H4></center>'
-'<center><img src="images\etogame\dachamy.jpg"></center>'
-=======
-'<center><H4>dacha</H4></center>'
-'<center><img src="etogame/dachamy.jpg" ></center>'
->>>>>>> 386_dachamy
+'<center><h4>Cottage</h4></center>'
+'<center><img src="images/etogame/dachamy.jpg"></center>'
 'Your favorite summer residence.'
 clr
-<<<<<<< 386_dachamy
 gs 'stat'
 gs 'time'
-act 'Go into the house': gt 'dachain'
+
+act 'Go into the house':gt 'dachain'
+
 if hour < 23 and hour >= 7:
 	act 'Inspect garden':
 		cla
 		minut += 5
-		if etoexhib < 16: gt 'dachaogr0'
-		if etoexhib = 16: gt 'dachaogr'
-		end
+
+		if etoexhib < 16:gt 'dachaogr0'
+		if etoexhib = 16:gt 'dachaogr'
 	end
-act 'Exit the alley': minut += 15 & gt 'dachi'
-=======
-gs'stat'
-gs'time'
-act 'Go to the house':gt'dachain'
-if hour <23 and hour=>7:
-	 act 'inspect the garden':
-		 cla
-		 minut+=5
-		 if etoexhib<16:gt'dachaogr0'
-		 if etoexhib=16: gt'dachaogr'
-		 end
-	 end
-act 'Get off at the mall':minut+=15&gt'dachi'
->>>>>>> 386_dachamy
+end
+
+act 'Exit the alley':minut += 15 & gt 'dachi'
+
 --- dachamy ---------------------------------
 
