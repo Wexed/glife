@@ -76,18 +76,18 @@ if SVqw = 2:
 			end
 			if TPmainQW = 1:
 				if StasikSex > 0 and StVaGang = 0:
-				!Света дала Стасу, тот не считает ее шлюхой, и хочет продолжать отношения
+				!Light gave Stas, he did not consider her a whore, and wants to continue the relationship
 				''
 
 				end
 				if StasikSex = 0:
-				!Света отказала Стасу, Стас не доволен и идет ва банк
+				!Light refused Stas, Stas is not happy and is all in the bank
 				''
 
 				end
 			end
 			if StVaGang > 0:
-			!И Стас и Валера считают Свету шлюхой
+			!Stas and Valera believe whore Light
 			''
 
 			end
@@ -95,6 +95,54 @@ if SVqw = 2:
 		end
 	end
 
+	  if TPmainQW=1 and StasikSex>0 and StVaGang=0:
+		'In view of Stas clearly glimpsed joy, when he sees you. in_a_low_voice, to not hear his colleagues are busy, it offers you to continue your relationship and start dating.'
+		 if bfa >= 1: 'you think, that your current boyfriend is unlikely to please, you accept this offer. Stas, of_course, very nice, but you first need to understand their current relationship.'
+		 if bfa < 1:
+		     act 'agree':
+			 'You answered Stas consent, to which he beamed and promised to call you back shortly.'
+			 TPmainQW=2
+			 $boy='Stas'
+			 boybodyrand = 1
+			 $boybody = 'high'
+			 boybodrand = 1
+			 $boybod = 'thin'
+			 boyfacerand = 3
+			 $boyface = 'blond'
+			 dick=15
+			 silavag=1
+			 harakBoy=1
+			 finance = 1
+			 vneshBoy=1
+			 $boyClo = 'dressed in jeans and a sweater.'
+			 set figurBoy = RAND (0,2)
+			 set titBoy = RAND (0,2)
+			 set haerBoy = RAND (0,3)
+			 izvrat = 0
+			 gs'boyfrend','start'
+			 stopboy = 0
+			 bfa=70
+			 boyonceA = 1
+			 cla
+			 gs'stat'
+			 act 'GO_OUT':gt'clener','start'
+		     end
+		 end
+		 
+		 act 'I need to think':
+		 'You answered Stas, you will find it very much, but you are not ready to give an answer, and ask him a little-just wait. Stas frowns, but accepts your answer.'
+		 cla
+		 act 'GO_OUT':gt'clener','start'
+		 end
+		
+		 act 'Contribute':
+		 TPmainQW=2
+		 'You quite sharply denied Stas, what he is offended: "Oh well! I-thought, we have that-something more, than an occasional census."'
+		 cla
+		 gs'stat'
+		 act 'GO_OUT':gt'clener','start'
+		 end
+	 end
 
 end
 --- torgpred ---------------------------------
