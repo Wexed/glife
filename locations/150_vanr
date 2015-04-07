@@ -174,7 +174,7 @@ if klisma = 1 and klismaday ! day:
 		'<center><img src="images/picV/klisma.jpg"></center>'
 		'You give yourself an enema and clean your intestines. Your ass is now ready for anal sex.'
 
-		act 'Exit':gt 'vanr'
+		act 'Exit':gt $curloc
 	end
 end
 
@@ -210,7 +210,7 @@ if vibrator = 1 and vibratorIN = 1:
 	end
 end
 
-if analplug = 1 and analplugin = 0 and klismaday1= 1:
+if analplug = 1 and analplugin = 0 and klismaday1= 1 and plugday ! daystart:
 	act 'Insert a butt plug (0:05)':
 		cla
 		*clr

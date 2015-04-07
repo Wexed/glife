@@ -183,59 +183,60 @@ act 'watch':
 
 			if horny < 70:
 				act 'Remove his hands':
-				cls
-				dom += 1
-				gs 'stat'
-				!!'<center><img src="qwest/alter/ev2/seepornHand.jpg"></center>'
-				'You angrily removes his hands from his priests Zhendosa.'
+					cls
+					dom += 1
+					gs 'stat'
+					!!'<center><img src="qwest/alter/ev2/seepornHand.jpg"></center>'
+					'You angrily removes his hands from his priests Zhendosa.'
 
-				act 'Exit':gt 'gorodok'
+					act 'Exit':gt 'gorodok'
+				end
 			end
+
+			if horny >= 70:
+				act 'Pretend that nothing is happening':
+					cls
+					sub += 1
+					evgenqw = 2
+					gs 'stat'
+					!!'<center><img src="qwest/alter/ev2/seepornHand.jpg"></center>'
+					'You sit on the couch red as a lobster enjoying a nice touch to his priest.'
+
+					act 'Exit':gt 'gorodok'
+				end
+			end
+
+			exit
 		end
 
-		if horny >= 70:
-			act 'Pretend that nothing is happening':
-				cls
-				sub += 1
-				evgenqw = 2
-				gs 'stat'
-				!!'<center><img src="qwest/alter/ev2/seepornHand.jpg"></center>'
-				'You sit on the couch red as a lobster enjoying a nice touch to his priest.'
+		if evgenqw = 0 and evgenrand = 0:
+			cls
+			gs 'stat'
+			'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos looking at porn asks you "And you did that <<$name>> ever?"'
 
-				act 'Exit':gt 'gorodok'
+			if horny < 70:
+				act 'Jerk dick':
+					cls
+					dom += 1
+					gs 'stat'
+					!!'<center><img src="qwest/alter/ev2/seepornHand.jpg"></center>'
+					'You sent Zhendosa on dick with such conversations.'
+
+					act 'Exit':gt 'gorodok'
+				end
 			end
-		end
 
-		exit
-	end
+			if horny >= 70:
+				act 'Be silent':
+					cls
+					sub += 1
+					evgenqw = 1
+					gs 'stat'
+					!!'<center><img src="qwest/alter/ev2/seepornHand.jpg"></center>'
+					'You swallowed and said nothing eyeing porn. Mishan chuckled "And she asks how flushed. It turns out the girls also like porn."'
 
-	if evgenqw = 0 and evgenrand = 0:
-		cls
-		gs 'stat'
-		'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos looking at porn asks you "And you did that <<$name>> ever?"'
-
-		if horny < 70:
-			act 'Jerk dick':
-				cls
-				dom += 1
-				gs 'stat'
-				!!'<center><img src="qwest/alter/ev2/seepornHand.jpg"></center>'
-				'You sent Zhendosa on dick with such conversations.'
-
-				act 'Exit':gt 'gorodok'
-			end
-		end
-
-		if horny >= 70:
-			act 'Be silent':
-				cls
-				sub += 1
-				evgenqw = 1
-				gs 'stat'
-				!!'<center><img src="qwest/alter/ev2/seepornHand.jpg"></center>'
-				'You swallowed and said nothing eyeing porn. Mishan chuckled "And she asks how flushed. It turns out the girls also like porn."'
-
-				act 'Exit':gt 'gorodok'
+					act 'Exit':gt 'gorodok'
+				end
 			end
 
 			exit

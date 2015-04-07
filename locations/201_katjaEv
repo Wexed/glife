@@ -38,63 +38,65 @@ $din_katja_kiss = {
 				if KatjaLust < katjalustrand:
 					'You´re a little touched each other breast and Katia moved away from you.'
 
-						act 'Further':gt 'KatjaHomeTalk'
+					act 'Further':gt 'KatjaHomeTalk'
 
-						if dom > 0:
-							act 'grab her':
-								cls
-								minut += 5
-								horny += 10
-								dom -= 1
-								KatjaDom -= 5
-								KatjaHorny -= 10
-								KatjaLust += 1
-								gs 'stat'
-								'<center><img src="images/qwest/alter/katja/grab.jpg"></center>'
-								'You grabbed Katja without letting it wriggle.'
-
-								if dom < KatjaDom:
-									'Katja firmly took your hands and took them away, giving you understand that you have already completed.'
-
-									act 'Say goodbye and go home':minut += 15 & gt 'gorodok'
-								else
-									'Katja froze in your hands while you stroked her body and kissed her neck.'
-
-									act 'Licking her breast':
-										cls
-										minut += 5
-										horny += 10
-										KatjaDom -= 1
-										KatjaHorny += 10
-										KatjaLust += 1
-										gs 'stat'
-										'<center><img src="images/qwest/alter/katja/tits.jpg"></center>'
-										'You got not big but firm breasts Katja from under their clothes and began to lick his tongue. Katja closed her eyes in pleasure and bit her lip.'
-
-										if npcSex[14] = 0:
-											'After a while Katja cleaned your hands away.'
-
-											act 'Further':gt 'KatjaHomeTalk'
-										end
-
-										if npcSex[14] > 0:dynamic $d_katja_sex
-									end
-								end
-							end
-						end
-					else
-						'Katja started stronger stroking your chest and you feel as it removes your bra trying to get to your breasts.'
-
-						act 'let her':
+					if dom > 0:
+						act 'grab her':
 							cls
 							minut += 5
 							horny += 10
-							KatjaDom += 1
-							KatjaHorny += 10
+							dom -= 1
+							KatjaDom -= 5
+							KatjaHorny -= 10
 							KatjaLust += 1
 							gs 'stat'
-							'<center><img src="images/qwest/alter/katja/tits.jpg"></center>'
-							'Katja bared your breasts and touched her with his fingers, then she bowed her head and began to lick your nipple.'
+							'<center><img src="images/qwest/alter/katja/grab.jpg"></center>'
+							'You grabbed Katja without letting it wriggle.'
+
+							if dom < KatjaDom:
+								'Katja firmly took your hands and took them away, giving you understand that you have already completed.'
+
+								act 'Say goodbye and go home':minut += 15 & gt 'gorodok'
+							else
+								'Katja froze in your hands while you stroked her body and kissed her neck.'
+
+								act 'Licking her breast':
+									cls
+									minut += 5
+									horny += 10
+									KatjaDom -= 1
+									KatjaHorny += 10
+									KatjaLust += 1
+									gs 'stat'
+									'<center><img src="images/qwest/alter/katja/tits.jpg"></center>'
+									'You got not big but firm breasts Katja from under their clothes and began to lick his tongue. Katja closed her eyes in pleasure and bit her lip.'
+
+									if npcSex[14] = 0:
+										'After a while Katja cleaned your hands away.'
+
+										act 'Further':gt 'KatjaHomeTalk'
+									end
+
+									if npcSex[14] > 0:dynamic $d_katja_sex
+								end
+							end
+						end
+					end
+				else
+					'Katja started stronger stroking your chest and you feel as it removes your bra trying to get to your breasts.'
+
+					act 'Let her':
+						cls
+						minut += 5
+						horny += 10
+						KatjaDom += 1
+						KatjaHorny += 10
+						KatjaLust += 1
+						gs 'stat'
+						'<center><img src="images/qwest/alter/katja/tits.jpg"></center>'
+						'Katja bared your breasts and touched her with his fingers, then she bowed her head and began to lick your nipple.'
+
+						if npcSex[14] = 0:
 							'Lick your breasts while Katja stood up and turned to start cleaning the room.'
 
 							act 'Further':gt 'KatjaHomeTalk'

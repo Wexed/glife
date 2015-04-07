@@ -32,7 +32,9 @@ $din_gboy_go_to_disco = {
 	act 'Go to the disco':
 		cls
 		minut += 120
-		dance += 1
+
+		if dance < 50 and agil >= dance:dance += 1
+
 		manna += 10
 		gs 'stat'
 		'<<$nameBoyfrend[numnpc]>> paid an entrance fee and you came along to the disco. Together with her boyfriend you went to the dance floor and started dancing together.'
@@ -102,6 +104,7 @@ $din_gboy_go_to_disco = {
 
 										act 'Hit in the face with his fist Gopnik':
 											cls
+											gs 'stat'
 
 											if speed >= 50:
 												zub += 1
@@ -118,6 +121,7 @@ $din_gboy_go_to_disco = {
 
 										act 'Hooligan kick Jodan':
 											cls
+											gs 'stat'
 
 											if speed >= 90:
 												'You charge a good kick in the face hooligan. Head Gopnik strongly swayed and he grabbed his face. "Shit! Fucking bitch, You broke my nose, I now you´ll break the whole fucking mouth, bitch!" Your guy at this point punched hooligan with a broken nose and he will fly away for a couple of meters down to the dance floor. Two other goparey hung on your guy trying to unscrew his hands.'
@@ -139,6 +143,7 @@ $din_gboy_go_to_disco = {
 
 										act 'Hooligan kick in the balls':
 											cls
+											gs 'stat'
 
 											if speed >= 70:
 												bollrand = rand(0, 1)

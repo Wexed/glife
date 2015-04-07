@@ -75,6 +75,8 @@ if vokzalVork >= 1:
 			gs 'stat'
 			'<center><img src="images/etogame/clener1.jpg"></center>'
 			'You took inventory, poured water into a bucket and began to wash the floor in the ladies'' room, and then began to scour bowls.'
+			dynamic $d_vokzal_vera_talk
+
 			act 'Leave':minut += 1 & gt 'vokzalGin'
 		end
 	end
@@ -130,7 +132,7 @@ if poezddalsled = 1:
 	'Platform fussy run hucksters vtyuhivat their goods train passengers. On the part of all this fuss watches Police.'
 
 	if tovarL > 0:
- 		act 'Vtyuhivat their goods passengers.':gt 'vokzaltorg'
+		act 'Vtyuhivat their goods passengers.':gt 'vokzaltorg'
 	end
 end
 

@@ -41,8 +41,17 @@ if GorSlut > 0:
 		!!steep
 		if numnpc ! 14:
 			if npcPol[numnpc] = 0:'Are you trying to talk to the guy, but <<$npcName[numnpc]>> dismisses you. "Look, I´m busy right now. Come back later or never."' !!Guy
-			if npcPol[numnpc] > 0:'Are you trying to talk to a girl, but <<$npcName[numnpc]>> makes squeamish grimassy "Go away!"' !!Girl
+
+			if npcPol[numnpc] > 0:
+				!girl
+				if AlbFrend >= 1 and numnpc = 23:
+					'<<$npcName[npcnum]>> with a smile communicates with you.'
+				else
+					'You are trying to talk to a girl, but <<$npcName[npcnum]>> makes squeamish grimassy "Get out of here!"'
+				end
+			end
 		end
+
 		if numnpc = 14:'You chat with Katja and she brings all your conversation to the rumors about you and your reputation. Rumor has it that you <<$gnikname>>.' !!Katja Meynold
 	end
 
