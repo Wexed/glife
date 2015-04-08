@@ -1,4 +1,3 @@
-# sexshop
 if $ARGS[0] = 'start':
 cla
 *clr
@@ -14,10 +13,10 @@ $locM = $CURLOC
 'Lubricant - 300 rubles'
 'Dildo - 800 rubles'
 'Vibrator - 1300 rubles'
-'Strap 1,200 rubles'
+'Strapon 1,200 rubles'
 'Butt plug 1,200 rubles'
 pl
-'In the basement are located the private booths for viewing porn movies (50 rubles 15 minutes).'
+'In the basement are the private booths for viewing porn movies (50 rubles 15 minutes).'
 clr
 gs 'stat'
 fcolor = rgb(0,0,0)
@@ -33,12 +32,12 @@ act 'QUIT':
 	if SUB >= 100 and analplug = 1 and dildo = 1 and vnesh > 26 and Peter < 1:
 	set Peterrand = RAND(0,100)
 		if Peterrand > 50 :
-		'Are you interested in looking at the middle-aged man, apparently he was the owner of this store'
-			act 'Zainteresovatsya owner of the store' :
+		'You see an interesting looking middle-aged man, apparently he is the owner of this store'
+			act 'Introduce yourself owner of the store' :
 			cla
 			*clr
 			'<center><img src="images\peter\peter.jpg"></center>'
-			'I´m Peter, I´m watching you for a long time. I often see you here. I think it will be interesting together ...'
+			'I´m Peter, I´ve been watching you for a long time. I often see you here. I think it will be interesting...'
 			act 'Go with Peter': gt 'Peterroom','start'
 				act 'QUIT':
 				cla
@@ -54,8 +53,8 @@ act 'QUIT':
 
 
 	if gloryhole >= 20 and pornstudio = 0:
-		'You notice the corner of his eye, that the seller is trying to get your attention'
-		act 'Approach, to learn what was the matter': gt 'sexshop','porn'
+		'You notice out of the corner your eye, that the seller is trying to get your attention'
+		act 'Approach, to learn what we wants': gt 'sexshop','porn'
 	end
 
 	if money >= 300:
@@ -69,7 +68,7 @@ act 'QUIT':
 			set money -= portion * 300
 			set minut += 5
 			'<center><img src="images\etogame\kassa.jpg"></center>'
-			'You bought a lubricant and paid the money to the cashier.'
+			'You bought some lubricant and paid the cashier.'
 			end
 		act 'Move away from the counter': gt 'sexshop','start'
 		end
@@ -82,7 +81,7 @@ act 'QUIT':
 		set dildo = 1
 		set money -= 800
 		'<center><img src="images\etogame\kassa.jpg"></center>'
-		'You bought a dildo and get paid in cash.'
+		'You bought a dildo and paid the cashier.'
 		act 'Move away from the counter': gt 'sexshop','start'
 		end
 	end
@@ -94,19 +93,19 @@ act 'QUIT':
 		set vibrator = 1
 		set money -= 1300
 		'<center><img src="images\etogame\kassa.jpg"></center>'
-		'You bought a vibrator and get paid in cash.'
+		'You bought a vibrator and paid the cashier.'
 		act 'Move away from the counter': gt 'sexshop','start'
 		end
 	end
 	if money >= 1200 and strapon = 0:
-		act 'Buy a strap 1200 rubles':
+		act 'Buy a strapon 1200 rubles':
 		cla
 		*clr
 		set minut += 15
 		set strapon = 1
 		set money -= 1200
 		'<center><img src="images\etogame\kassa.jpg"></center>'
-		'You bought a strap-on and paid the money to the cashier.'
+		'You bought a strapon and paid the cashier.'
 		act 'Move away from the counter': gt 'sexshop','start'
 		end
 	end
@@ -119,18 +118,18 @@ act 'QUIT':
 		set analplug = 1
 		set money -= 1200
 		'<center><img src="images\etogame\kassa.jpg"></center>'
-		'You bought a butt plug and get paid in cash.'
+		'You bought a butt plug and paid the cashier.'
 		act 'Move away from the counter': gt 'sexshop','start'
 		end
 	end
 
 	if money >= 1000:
 		if hooker[1] = 0:
-			act 'Inspect clothes prostitutes. Number 1':
+			act 'Inspect the clothes for prostitutes. Number 1':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker1.jpg"></center>'
-			'Clothing prostitutes.'
+			'Clothing for prostitutes.'
 			'Costs 1000 rubles.'
 			act 'Leave': gt 'sexshop','start'
 				act 'Buy':
@@ -144,11 +143,11 @@ act 'QUIT':
 			end
 		end
 		if hooker[2] = 0:
-			act 'Inspect clothes prostitutes. Number 2':
+			act 'Inspect the clothes for prostitutes. Number 2':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker2.jpg"></center>'
-			'Clothing prostitutes.'
+			'Clothing for prostitutes.'
 			'Costs 1000 rubles.'
 			act 'Leave': gt 'sexshop','start'
 				act 'Buy':
@@ -162,11 +161,11 @@ act 'QUIT':
 			end
 		end
 		if hooker[3] = 0:
-			act 'Inspect clothes prostitutes. Number 3':
+			act 'Inspect the clothes for prostitutes. Number 3':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker3.jpg"></center>'
-			'Clothing prostitutes.'
+			'Clothing for prostitutes.'
 			'Costs 1000 rubles.'
 			act 'Leave': gt 'sexshop','start'
 				act 'Buy':
@@ -180,11 +179,11 @@ act 'QUIT':
 			end
 		end
 		if hooker[4] = 0:
-			act 'Inspect clothes prostitutes. Number 4':
+			act 'Inspect the clothes for prostitutes. Number 4':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker4.jpg"></center>'
-			'Clothing prostitutes.'
+			'Clothing for prostitutes.'
 			'Costs 1000 rubles.'
 			act 'Leave': gt 'sexshop','start'
 				act 'Buy':
@@ -198,7 +197,7 @@ act 'QUIT':
 			end
 		end
 		if hooker[5] = 0:
-			act 'Inspect clothes prostitutes. Number 5':
+			act 'Inspect the clothes for prostitutes. Number 5':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker5.jpg"></center>'
@@ -216,11 +215,11 @@ act 'QUIT':
 			end
 		end
 				if hooker[201] = 0:
-			act 'Inspect clothes prostitutes. Number 201':
+			act 'Inspect the clothes for prostitutes. Number 201':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker201.jpg"></center>'
-			'Clothing prostitutes.'
+			'Clothing for prostitutes.'
 			'Costs 1000 rubles.'
 			act 'Leave': gt 'sexshop','start'
 				act 'Buy':
@@ -234,11 +233,11 @@ act 'QUIT':
 			end
 		end
 		if hooker[202] = 0:
-			act 'Inspect clothes prostitutes. Number 202':
+			act 'Inspect the clothes for prostitutes. Number 202':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker202.jpg"></center>'
-			'Clothing prostitutes.'
+			'Clothing for prostitutes.'
 			'Costs 1000 rubles.'
 			act 'Leave': gt 'sexshop','start'
 				act 'Buy':
@@ -252,11 +251,11 @@ act 'QUIT':
 			end
 		end
 		if hooker[203] = 0:
-			act 'Inspect clothes prostitutes. Number 203':
+			act 'Inspect the clothes for prostitutes. Number 203':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker203.jpg"></center>'
-			'Clothing prostitutes.'
+			'Clothing for prostitutes.'
 			'Costs 1000 rubles.'
 			act 'Leave': gt 'sexshop','start'
 				act 'Buy':
@@ -270,7 +269,7 @@ act 'QUIT':
 			end
 		end
 		if hooker[204] = 0:
-			act 'Inspect clothes prostitutes. Number 204':
+			act 'Inspect the clothes for prostitutes. Number 204':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker204.jpg"></center>'
@@ -288,11 +287,11 @@ act 'QUIT':
 			end
 		end
 		if hooker[205] = 0:
-			act 'Inspect clothes prostitutes. Number 205':
+			act 'Inspect the clothes for prostitutes. Number 205':
 			cla
 			*clr
 			'<center><img src="images\clothes\hooker205.jpg"></center>'
-			'Clothing prostitutes.'
+			'Clothing for prostitutes.'
 			'Costs 1000 rubles.'
 			act 'Leave': gt 'sexshop','start'
 				act 'Buy':
@@ -315,7 +314,7 @@ if $ARGS[0] = 'podval':
 cla
 *clr
 set minut += 5
-'<center><B><font color = maroon>Basement with cubicles for watching movies</font></B></center>'
+'<center><B><font color = maroon>A basement with cubicles for watching porn movies</font></B></center>'
 '<center><img src="images\etogame\gloryholeBooths1.jpg"></center>'
 ''
 clr
@@ -381,7 +380,7 @@ if cumpussy > 0 or cumbelly > 0 or cumass > 0 or  cumanus > 0:
 	set sweat -= 1
 	set minut += 15
 	'<center><img src="images\pics\wash5.jpg"></center>'
-	'You carefully washed sperm with yourself.'
+	'You carefully washed the sperm off yourself.'
 	act 'Exit': gt 'sexshop','toi'
 	end
 end
@@ -396,7 +395,7 @@ if cumlip > 0 or cumface > 0:
 	set sweat -= 1
 	set minut += 15
 	'<center><img src="images\etogame\facesp.jpg"></center>'
-	'You carefully washed sperm from her face.'
+	'You carefully washed the sperm from your face.'
 	act 'Exit': gt 'sexshop','toi'
 	end
 end
@@ -408,7 +407,7 @@ if cumfrot > 0:
 	set sweat -= 1
 	set minut += 15
 	!'<center><img src="images\etogame\facesp.jpg"></center>'
-	'You erase traces of semen from the clothes.'
+	'You wash the traces of semen from your clothes.'
 	act 'Exit': gt 'sexshop','toi'
 	end
 end
@@ -436,7 +435,7 @@ cla
 set minut += 5
 '<center><B><font color = maroon>Booth movies</font></B></center>'
 '<center><img src="images\etogame\ghBooths.jpg"></center>'
-'Small cabinet with a TV on the wall, bill acceptor and two holes in the walls at waist level.'
+'Small closett with a TV on the wall, bill acceptor and two holes in the walls at waist level.'
 if ghnow > 0: 'You served <<ghnow>> cocks.'
 clr
 gs 'stat'
@@ -447,15 +446,15 @@ LCOLOR = rgb(106,90,205)
 act 'Get out of the booth': gt 'sexshop','podval'
 
 	if money >= 50 and hour < 23:
-		act '50 rubles a stick machine':
+		act 'Stick 50 rubles in the machine':
 		cla
 		set money -= 50
 		set minut += 15
-		'Once you have paid the money earned TV on the wall showing porn.'
+		'Once you have paid the money the TV on the wall showing porn.'
 		set ghrand = RAND(0,10)
 			set horny += 5
 			set manna += 5
-			'You sat on a chair and watched porn, he began to have a little exciting.'
+			'You sat in a chair and watched porn, you began to get a little excited.'
 			act 'The movie ended': gt 'sexshop','pip'
 
 			if horny >= 50:
@@ -463,14 +462,14 @@ act 'Get out of the booth': gt 'sexshop','podval'
 				cla
 				set horny += 10
 				set manna += 10
-				'You caress her pussy fingers and enjoy the pleasant sensation between her legs.'
+				'You caress your pussy with your fingers and enjoy the pleasant sensation between your legs.'
 					if horny >= 100:
 					set orgasm += 1
 					set horny = 0
 					set manna += 15
 					set willpower += 15
 					set mastr += 1
-					'Gradually spread over the pleasurable sensations throughout the body and covers you orgasm.'
+					'Gradually the pleasurable sensations spread throughout the body and you orgasm.'
 					end
 				act 'The movie ended': gt 'sexshop','pip'
 				end
@@ -478,7 +477,7 @@ act 'Get out of the booth': gt 'sexshop','podval'
 
 
 			if ghrand >= 10 - (cumlip * 2):
-				'You hear in the next stall turn on the TV.'
+				'You hear the TV turn on in the next stall.'
 
 				act 'Stick a finger in the hole (to serve the stranger)':
 				cla
@@ -491,8 +490,8 @@ act 'Get out of the booth': gt 'sexshop','podval'
 				if fingerRand = 2: '<center><img src="images\etogame\ghFinger2.jpg"></center>'
 				if fingerRand = 3: '<center><img src="images\etogame\ghFinger3.jpg"></center>'
 				if fingerRand = 4: '<center><img src="images\etogame\ghFinger4.jpg"></center>'
-				'You poked fingers in the hole showing that you are ready to serve member.'
-				'Stranger slipped into the hole 300 rubles, and then out of the hole seemed his cock.'
+				'You poke your finger in the hole showing that you are ready to serve the stranger.'
+				'The Stranger slipped 300 rubles into the hole, and then his cock stuck out of the hole.'
 					act 'Sucking dick':
 					cla
 					*clr
@@ -542,7 +541,7 @@ act 'Get out of the booth': gt 'sexshop','podval'
 					if ghprand = 35: '<center><img src="images\picV\gloryhole35.jpg"></center>'
 					if ghprand = 36: '<center><img src="images\picV\gloryhole36.jpg"></center>'
 					if ghprand = 37: '<center><img src="images\picV\gloryhole37.jpg"></center>'
-					'You took the cock in her mouth and began to suck him, treating him with her lips struggling.'
+					'You take the cock in your mouth and began to suck him, jerking his cock with your struggling lips.'
 						if horny >= 100:
 						set VAF += 1
 						set orgasm += 1
@@ -550,9 +549,9 @@ act 'Get out of the booth': gt 'sexshop','podval'
 						set manna += 15
 						set willpower += 15
 						set lip += 1
-						'<B>Suddenly you started sucking dick you finish yourself. Between the legs blazing fire and waves of pleasure covered body, you moaned but did not release a member of his mouth continued to suck.</B>'
+						'<B>Suddenly as you are sucking dick you orgasm yourself. Between your legs blazing fire and waves of pleasure fill your body, you moan but continue to suck.</B>'
 						end
-					'Finally the stranger began to cum in your mouth filling it with vigorous sperm. Once you´ve licked all the sperm from a member of the wall, a man came out of the booth.'
+					'Finally the stranger began to cum in your mouth filling it with a huge amount of sperm. Once you´ve licked all the sperm from a his cock, the man leaves the booth.'
 					act 'Wipe your face': gt 'sexshop','pip'
 					end
 				end
@@ -565,7 +564,7 @@ if $ARGS[0] = 'porn':
 cla
 *clr
 set minut += 5
-'In general, you have a noble blowjob, everyone knows that. Do not you want to earn extra money in the porn business actress? Pay there is certainly better than here, and cocks, maybe even more if they work. Well? Other proposals will not be!'
+'In general, you give a great blowjob, everyone knows that. Do you want to earn extra money in the porn business as an actress? The pay there is certainly better than here, and cocks, maybe even more. Well? Other options will not be as good !'
 	act 'Agree':
 	cla
 	*clr
@@ -587,7 +586,7 @@ set minut += 10
 gs 'stat'
 '<center><img src="images\img\centr\shkend.jpg"></center>'
 'In the store you can see Kendra, trying on latex clothes.'
-'"Who do we have here, my favorite litter, come to me and I have already very excited choosing a toy, now we are testing something on the spot" Kendra laughed, sitting down on the table and opening your legs.'
+'"Who do we have here, my favorite bitch, come to me and I am already very excited  to choose a toy, now we can test something on the spot" Kendra laughs, sitting down on the table and opening your legs.'
 act 'Away from her': gt 'sexshop','start'
 if DOM > 10: act 'First deserve': gt 'sexshop','kendra4'
 	act 'Serve Kendra':
@@ -597,10 +596,10 @@ if DOM > 10: act 'First deserve': gt 'sexshop','kendra4'
 	!set girl += 1
 	set lesbian += 1
 	'<center><img src="images\img\centr\shkend1.jpg"></center>'
-	'You quickly throw off clothes and knelt before the current Kendra pussy and lick her host. As long as you carefully suck Kendra yells and praises your tongue, saying that more than one tab is not pleased her as yours.'
-	'"Now take anything from toys" says Kendra'
-	act 'Mark Dildo': gt 'sexshop','kendra1'
-	act 'Give her strapon': gt 'sexshop','kendra2'
+	'You quickly throw off clothes and knelt before her pussy and lick her eagerly. As long as you carefully suck Kendra as squeals and praises your tongue, saying that no tounge has pleased her much as yours.'
+	'"Now pick anything from the toys" says Kendra'
+	act 'Give her a Dildo': gt 'sexshop','kendra1'
+	act 'Give her a Strapon': gt 'sexshop','kendra2'
 	end
 end
 
@@ -611,10 +610,10 @@ set pipirand = rand(0,3)
 set minut += 10
 gs 'stat'
 '<center><img src="images\img\centr\shkend2.jpg"></center>'
-'You take a dildo, and licking the pussy insert Kendra. While you with one hand oruduete dildo in her pussy, the second caress her clit trying to bring herself to orgasm. Kendra meanders sitting on the table carefully podmahivaya your movements to the beat.'
+'You take a dildo, and licking her pussy insert into Kendra. While you with one hand fucks the dildo in her pussy, the second caress her clit trying to bring her to orgasm. Kendra writhes sitting on the table carefully adjusting your movements to the beat.'
 	if pipirand > 0:
 	set orgasm += 1
-	'When Kendra starts sodragatsya whole body orgasm, you also covers the wave of orgasm. Slightly recovering himself, Kendra looks at you, "And yet you are beautiful litter, even committed odovremeno with me"'
+	'Then Kendra starts spasming as her whole body orgasms, you also feel yoru self crest the wave of orgasm. Slightly recovering yourself, Kendra looks at you, "You are a beautiful Bitch, totaly committed to serving me."'
 	act 'Finish': gt 'sexshop','start'
 	end
 
@@ -624,10 +623,10 @@ gs 'stat'
 		*clr
 		set sweat += 1
 		'<center><img src="images\img\centr\shkend4.jpg"></center>'
-		'Suddenly, when you were ready to cum, Kendra began writing her urine was flowing through the dildo already have flowed through your hand.'
-		'"Damn," you cried out and were about to throw a dildo.'
+		'Suddenly, when she is ready to cum, Kendra begin pissin, her urine flowing allong the dildo and your coating your hand.'
+		'"Damn," you cried out and were about to drop the dildo.'
 		'"Let´s finish up, slut," cried Kendra'
-		act 'Send it': gt 'sexshop','kendra3'
+		act 'Leave Her': gt 'sexshop','kendra3'
 			act 'Continue':
 			cla
 			*clr
@@ -635,7 +634,7 @@ gs 'stat'
 			set SUB += 2
 			set horny = 0
 			'<center><img src="images\img\centr\shkend3.jpg"></center>'
-			'You dutifully continued to wield a dildo, still stroking her clitoris, but excitement is already gone. Her urine dripping from a dildo on your hand and now the hand and stomach and thighs, everything was in her urine.'
+			'You dutifully continue to thrust the dildo, still stroking her clit, but the excitement is already gone. Her urine dripping from the dildo on your hand and now your stomach and thighs, your are totally covered in her urine.'
 			'Finally she finished, "And now Carney me, and then I become dirty." commanded Kendra'
 			act 'Send it': gt 'sexshop','kendra3'
 				act 'Lick':
@@ -643,9 +642,9 @@ gs 'stat'
 				*clr
 				set SUB += 2
 				'<center><img src="images\img\centr\shkend5.jpg"></center>'
-				'You dutifully moved closer to her and began to slowly lick the urine from her thighs and pussy.'
-				'"Hold still active nipple" Customized you Kendra. You began to lick faster, with difficulty restraining retching from urine taste in the mouth.'
-				'"That´s clever, come to me often, have fun" with these words Kendra dressed and gone, leaving you sitting on the floor in a puddle of urine.'
+				'You dutifully move closer to her pussy and began to slowly lick the urine from her thighs and pussy.'
+				'"Keep going you slut," Kendra orders you. You began to lick faster, eeping from retching from urine taste in the mouth with difficulty.'
+				'"That´s clever, come see me often. Have fun." With these words Kendra dresses and leaves, leaving you sitting on the floor in a puddle of her urine.'
 				act 'Leave': gt 'sexshop','start'
 				end
 			end
@@ -659,8 +658,8 @@ cla
 set minut += 10
 gs 'stat'
 '<center><img src="images\img\centr\shkend8.jpg"></center>'
-'Kendra strap dress and looking at you asking, "Well, that beauty in which you insert hole?".'
-	act 'In the vagina':
+'Kendra slides on the strapon and looking at you asks, "Well, beauty in which you hole do you wnat it?".'
+	act 'In the pussy':
 	cla
 	*clr
 	set sex += 1
@@ -668,12 +667,12 @@ gs 'stat'
 	set orgasm += 1
 	set horny = 0
 	'<center><img src="images\img\centr\shkend10.jpg"></center>'
-	'Kendra sits in a chair and you jump up to the top of her strap-on entering their pussy. You are riding on a strap, and Kendra podmahivaet bottom you trying to shove it as far as possible. Neskolko minutes through such jumps orgasm covers you, and you slide with Kendra.'
-	'"That´s clever, come to me often, have fun" with these words Kendra got dressed and went'
+	'Kendra sits in a chair and you jump on top of her strap-on, slding it into your pussy. You ride the strapon, and Kendra drives up from he bottom you trying to shove it as far into your pussy as possible. Several minutes pass and such thrust force you to orgasm, and you slide off the chair with Kendra.'
+	'"That´s clever, come see me often. Have fun." With these words Kendra dresses and leaves'
 	act 'Leave': gt 'sexshop','start'
 	end
 
-	act 'In Anus':
+	act 'In the ass':
 	cla
 	*clr
 	set anal += 1
@@ -681,8 +680,8 @@ gs 'stat'
 	anus += 1
 	set horny = 0
 	'<center><img src="images\img\centr\shkend9.jpg"></center>'
-	'You jump up on the table and spreads his legs, gently introduces Kendra strap you in the anus and gives your ass neskolkosekund used to, then it begins to move. Strap-on slides inside your ass and you will soon become a nice, seeing that you enjoy the process of Kendra begins to slowly accelerate, and you lozhite hand on his crotch and fingers massiruete clitoris, after a few minutes you orgasm covers you whole body shudder convulsively bows down and Kendra cuddle so that you strap is included in the entire length of the anus, you have dark eyes and you are off.'
-	'When you come to a Kendra is already dressed, "Well, you have nifiga a orgasm, it will be necessary to find a double strap want to see that you two will trunks" with these words Kendra left.'
+	'You jump up on the table and spreads your legs, Kendra gently slides in the strapon into your aas and gives your ass time to adjust to it.  Then she begins to thrust, the strapon slides inside your ass and you soon start to moan.  Seeing that you enjoy the process, Kendra begins to slowly accelerate, and you slide yoru hand to your pussy and finger your clit.  After a few minutes you orgasm, as your hole body convulsies and shuders you sldie down cuddle and cuddle Kendra so that the strapon is buired all the way in your ass, you close your eyes and drift off.'
+	'When you come to,  Kendra is already dressed, "Well, you orgasmed slut, I will have to find a double didloed strapon, I want to see what you will do with two shafts buried in you" with that Kendra leaves.'
 	act 'Leave': gt 'sexshop','start'
 	end
 end
@@ -695,17 +694,17 @@ set rape += 1
 cla
 *clr
 '<center><img src="images\img\centr\shkend6.jpg"></center>'
-'"Oh damn, I´m now going to teach obedience" with these words Kendra jumped up and threw you to the table on which sat a moment ago more themselves. Falling on the table you swipe back, and while you´re writhing in pain on the table, Kendra wore a strap, and pressed his hands to the table your hips nachila push it to you in the anus, even neudosuzhivshis lubricate it. For your back pain was added pain of rupture threesome anus. Kendra fucked with force your anus saying that you litter and voting rights you have.'
-'When she finally tired, you just brushed the floor from the table, you fell with a thud on the floor.'
+'"Oh damn, now going to teach obedience," with these words Kendra jumps up and throws you on to the table taht she sat on a moment ago. Falling on the table you swipe back, and while you´re writhing in pain on the table, Kendra slides on a strapon.  Pressing your hands to the table your hips are forced back and she pushes it into your ass, with out any lubricant on it. Added pain to the pain  of yoru burnign ass your asshole is torn open. Kendra fucks with you with force  into your ass calling you a worthless Bitch fit only to be used.'
+'When she finally tires, you just slump to the floor from the table and land with a thud.'
 '"On your knees slut," she hissed.'
-	act 'To kneel':
+	act 'Kneel':
 	cla
 	*clr
 	'<center><img src="images\img\centr\shkend7.jpg"></center>'
-	'You scrambled to his knees, his back ached terribly, and it seems from the anus dripping blood.'
-	'"Suck" commanded Kendra substituting strap to your face. Have you looked at the strap, which were traces of your blood.'
-	'"Yes suck you already." Kendra cried and vskhvatila your hair, you reflexively opened his mouth something to scream, but Kendra pushed him strapon before. She fucked you in the mouth with the same ostervineniem munutu ago that you tore the anus.'
-	'When she finally calmed down and let go of your hair, you have no way to hit the floor, Kendra leaned over you and said, "Remember you litter, what you say and do that, I will say on the street naked cancer stand, will stand, and thank all of you who fuck, and now learn the lesson, and I have to go "after she got dressed and left.'
+	'You scrambled to your knees, your backside aching terribly, and it seems dripping blood.'
+	'"Suck" commands Kendra pushing the strapon to your face. You look at the strapon, coated in traces of your blood.'
+	'"Yes suck already." Kendra cried and grabs your hair, you reflexively opened his mouth to scream, but Kendra pushes in the strapon before you cna get a word out. She fucks you in the mouth with the same frevor she used a few minutes ago on your ass.'
+	'When she finally calms down and let go of your hair, you option but to fall to the floor, Kendra leanes over you and says, "Remember you Bitch, you do what I say, or I will sit you on the street naked on all fours, I  will stand, and let whoever want to fuck you,until you learn your lesson.  I have to go," she gets dressed and leaves.'
 	act 'Leave': gt 'sexshop','start'
 	end
 end
@@ -718,11 +717,11 @@ set orgasm += 1
 set horny = 0
 set picrand = rand(11,12)
 '<center><img src="images\img\centr\shkend<<picrand>>.jpg "></center>'
-'Kendra looked surprised at you until you threw off her clothes.'
-'Undressed you turned to her ass and sticking out his ass "Well look, you will finish to orgasm can try strapon"'
-if picrand = 11: 'Kendra knelt down and began to lick your pussy, her tongue slid over sexual sponges, a sensitive clitoris and drooping into the vagina a few minutes of her effort, you left off.'
-if picrand = 12: 'Kendra knelt down and her tongue stuck on the move you in getting inside the anus, you had oschushenie you in the ass snake crawled and twisted it all storrony, fingers it penetrated into the vagina for a few minutes because of her tongue snaked in your ass and pussy Palchikov diligently massaging you have experienced orgasm.'
-'"Well, I will fulfill your desires?" Kendra said, catching his breath. "Now my full proof."'
+'Kendra looks surprised at you until you tear off her clothes.'
+'Naked you turned to her and stick out your ass "Well look, you bring me to orgasm and we can try strapon"'
+if picrand = 11: 'Kendra kneels down and begins to lick your pussy, her tongue slides all over your sex, your sensitive clit and dipping into the vagina a few minutes of her effort, you left off.'
+if picrand = 12: 'Kendra kneels down and her tongue sticks out tryign to sldie into your ass, you writhe as she her tounge saneks and twists inside your ass. Her fingers penetrating your pussy for a few minutes, and the feeling of her tounge in oyur ass and her fingers in your pussy brign you to a shuddering orgasm.'
+'"Well, I will try to fulfill your desires?" Kendra says, catching her breath. "Now my turn."'
 act 'Give her strapon': gt 'sexshop','kendra2'
 if DOM > 25: act '"Perebesh"': gt 'sexshop','start'
 end
@@ -732,18 +731,16 @@ cla
 *clr
 set minut += 5
 '<center><img src="images\img\centr\shprod.jpg"></center>'
-'The store is right for you to begin to offer the seller and try what that miniskirt "Girl you is very you will only try on"'
+'The cashier is right infortn of you offering to help and holdign a miniskirt "Girl this is very you, will you try it on"'
 act 'Refuse': gt 'sexshop','start'
 	act 'Try':
 	cla
 	*clr
 	set picrand = 47
 	'<center><img src="images\img\centr\shprod1.jpg"></center>'
-	'You wear a skirt out of the booth and vydya napravlyuetes the mirror, you do not have panties and skirt on so short that looks more like a belt did not cover anything and all your charms visible from all directions.'
-	'Approaching the mirror you are considering this so-called skirt seller kneels behind you and starts praising naglazhivat your ass skirt, his hands already wander around your hips and lips as close to your buttocks says that when they touch on your skin, word soon cease and remain just the touch of his lips to your skin, closer to prilizhayuschiesya pussy.'
-	act 'Push him': gt 'sexshop','start'
+	'You wear the skirt out of the booth and pose in the mirror, you do not have panties on and the skirt is so short that looks more like a belt and does not cover anything.  All your charms are visible from all directions.'
+	'Approaching the mirror you are considering this so-called skirt, and the cashier kneels behind you and starts praising your ass in that skirt, his hands already wander around your hips and he get his lips as close to your butt as he can, he says that he wants to kiss on your skin.  Words soon cease and just the touch of his lips to your skin remains, closer and closer to your pussy.'
+	act 'Push him away': gt 'sexshop','start'
 	act 'Let him': gt 'sex','kuni'
 	end
 end
---- sexshop ---------------------------------
-
