@@ -46,7 +46,7 @@ gs 'family'
 
 if hour >= 16 and hour <= 20 and indorf = 0:
 
-     if artomvbrosvid=1 and artomhakday!daystart and mothervideotalk=0:
+     if artomvbrosvid=1 and artomhakday!daystart and motherQW < 2 and mothervideotalk=0:
      cls
      BJvideoPublic=1
      manna=0
@@ -55,50 +55,63 @@ if hour >= 16 and hour <= 20 and indorf = 0:
      '<center><img src="qwest/alter/mother.jpg" ></center>'
      'Mom backed hips hands В« I then tossed a video with you ....... I never smacked you ....yes see in vain ... You realize that maybe this video is not only my? What about you now will speak.. What about you ... about all our family ... I guess you need to teach you a lesson. Volodya!В»'
      
-         if momslut<2:
-			 act'Beg to do nothing.':
-			 cls
-			 mothervideotalk=2
-			 minut+=5
+		act'Beg to do nothing.':
+			cls
+			mothervideotalk=2
+			minut+=5
 			 sub+=50
 			 gs'stat'
 			 '<center><B><font color=maroon>mom</font></B></center>'
              '<center><img src="qwest/alter/mother.jpg" ></center>'
 			 'you burst into tears:В«mammy !forgive! This will never happen again! I made вЂ‹вЂ‹a fool that `s what I `ll never..never_...В» You weep and kneel. Mother looks at you and shakes his head out.'
 			 act 'move_away':gt $curloc
-			 end
+		end
 		 
-			 act'to_be_silent.':
+		act'to_be_silent.':
 			 cls
 			 mothervideotalk=3
 			 minut+=5
-			 dom+=10
+			 sub+=10
 			 spank+=1
 			 gs'stat'
 			 '<center><img src="qwest/alter/artom/spank.jpg" ></center>'
-			 'You stand staring at the floor. And what can I say?
-	Mother takes you by the hand and leads into the room : В« Take off your pants and bend over!В» You shake my head. В« Volodya - keep it!В»Stepfather grabs you and keeps .mother pulls your underwear takes the belt and starts to flog you. Gritting her teeth . Lifting his head as you see through the open door behind it to watch your brother and sister.
-	'
+			 'You stand staring at the floor. And what can I say?'
+			 'Mother takes you by the hand and leads into the room : В« Take off your pants and bend over!В» You shake my head. В« Volodya - keep it!В»Stepfather grabs you and keeps .mother pulls your underwear takes the belt and starts to flog you. Gritting her teeth . Lifting his head as you see through the open door behind it to watch your brother and sister.'
 			 act 'move_away':gt $curloc
-			 end
-		 end
+		end
      
-         if momslut>=2:
-			 act'threaten':
-			 cls
-			 mothervideotalk=1
-			 minut+=5
-			 gs'stat'
-			 '<center><B><font color=maroon>mom</font></B></center>'
-             '<center><img src="qwest/alter/mother.jpg" ></center>'
-			 'В« Come on -come_on - call the father! I`ll tell you what his daughter! And who went!В»
-Mother is looking at you and spit on the floor leaves.'
-			 act 'move_away':gt $curloc
-			 end
+         if motherQW>=2:
+
 		 end
      
      exit
      end
+	 
+	if artomvbrosvid=1 and artomhakday!daystart and motherQW >= 2 and mothervideotalk=0:
+    cls
+    BJvideoPublic=1
+    manna=0
+    gs'stat'
+    '<center><B><font color=maroon>mom</font></B></center>'
+    '<center><img src="qwest/alter/mother.jpg" ></center>'
+	'Mom backed hips hands "What's this about a video of you? How could you be this careless? You DO realize this is going to reflect badly on the entire family..."'
+
+		act'apologize':
+			cls
+			mothervideotalk=1
+			minut+=5
+			mother -= 40
+			gs'stat'
+			'<center><B><font color=maroon>mom</font></B></center>'
+            '<center><img src="qwest/alter/mother.jpg" ></center>'
+			!placeholder I guess, I'm sure I can come up with something better
+			'"I don't know what to say, mom... I'm sorry"'
+			'Mother shakes her head, glaring at you, and walks away'
+			 act 'move_away':gt $curloc
+		end
+	
+	exit
+	end
 
 	if schoolprogul > 2 and SchoolAtestat = 0:
 	cls

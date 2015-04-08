@@ -53,10 +53,35 @@ if $loc = 'gschool':
 		set beg += RAND(2,5)
 		gs 'stat'
 		'You ran for an hour on the field chasing a ball with my brother and his friends.'
+		ivrand=rand(0,1)
 		act 'Move away': gt $loc, $metka
-		end
-	end
-end
+             if ivrand=0 and seepornofut=0:
+             'Boys whispering among themselves discussing something.'
+                 act 'You are talking about here?':
+                 cls
+                 gs'stat'
+                 'boys hesitated, so much so, nothing.'
+                     if dom>0:
+                     'You`re a bit pressed on them "Are you as malyshnya, sekretiki what that you." One of the boys immediately split "Yes."'
+                     act 'move_away':gt $loc, $metka
+                         act 'take me':
+						 cls
+						 gs'stat'
+						 'you asked, what would you also have to look porn. Guys nemnog oposmuschalis, but agreed.'
+						 act 'Go watch porn':minut+=5&gt'seeporn'
+						 end
+                     else
+                     act 'move_away':gt $loc, $metka
+                     end
+                 end
+                 
+             end
+             if ivrand=0 and seepornofut>=1:
+             'Guys poshushukavshis together tell you "Sveta, go look porn?"'
+             act 'Go watch porn':minut+=5&gt'seeporn'
+             end
+         end
+     end
 end
 --- brother ---------------------------------
 

@@ -36,7 +36,7 @@ $din_gboy_go_to_disco = {
 		diskoIvRand = rand(0,100)
 		if discofirsttime = 0: diskoIvRand = 0
 
-		if diskoIvRand >= 90:
+		if diskoIvRand >= 80:
 			diskoIvTipeRand = rand(0,1)
 
 			if diskoIvTipeRand = 0:
@@ -50,6 +50,7 @@ $din_gboy_go_to_disco = {
 						dom += 1
 						gs 'stat'
 						'You escape from the clutches of steel Gopnik. <<$nameBoyfrend[numnpc]>> drunk kid pushed and immediately went to the dance floor buddies Gopnik. Bazaar started. Gopnik began to show your boyfriend that he bykuet.'
+						
 						tiprand = rand(0,100)
 
 						if tiprand <= 70:
@@ -1126,7 +1127,7 @@ if hour < 20:
 	end
 end
 
-if hour >= 20:
+if hour >= 20 and hour < 23:
 	if otnBoyFrend[numnpc]<80:
 		'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
 		act 'Go home': gt 'gorodok'
@@ -1164,6 +1165,10 @@ if hour >= 20:
 		end
 
 	end
+end
+if hour>=23:
+	 '<<$nameBoyfrend[numnpc]>> offered to take you home.'
+	 act 'go home':gt'gorodok'
 end
 --- Gnpc2 ---------------------------------
 

@@ -15,6 +15,51 @@ if otnBoyFrend[numnpc] >= 80: 'You have a great relationship.'
 ''
 ''
 
+if preg=1 and pregtime<=80 and pregTalk[numnpc]=0 and gnpcSex[numnpc]=1:
+     act 'tell a guy, you have flown away.':
+     cls
+     gs'stat'
+     'You said the guy, that become pregnant by him. He just did not come out of the eye orbits.'
+         if $father=$nameBoyfrend[numnpc]:
+         'The guy thought. "Listen, I`m not ready to be a father, and even marry you." He handed you 5five thousand. "money, and let us part."'
+             act 'Throw a guy and take the money':
+			 cls
+			 dom+=5
+			 pregTalk[numnpc]=1
+			 otnBoyFrend[numnpc]=0
+			 money+=5000
+			 gs'stat'
+			 'You covered the rage and you sent the guy on the dick. At still snatched the bill from him and left.'
+			 act 'Get_Away':gt $loc, $metka
+			 end
+			 
+			 act 'Throw a guy throwing him the money in the face':
+			 cls
+			 dom+=10
+			 pregTalk[numnpc]=1
+			 otnBoyFrend[numnpc]=0
+			 gs'stat'
+			 'You covered the rage and you sent the guy on the dick and tossed him the money in the face. And then went.'
+			 act 'Get_Away':gt $loc, $metka
+			 end
+			 
+			 
+         else
+         'The guy was troubled "Yes you ohuel slut! Someone held up her pussy, and now will be with me grandmother swing? Fuck you on the dick!"'
+             act 'quit Man':
+			 cls
+			 dom+=10
+			 pregTalk[numnpc]=1
+			 otnBoyFrend[numnpc]=0
+			 gs'stat'
+			 'You covered the rage and you sent the guy on the dick. And then went.'
+			 act 'Get_Away':gt $loc, $metka
+			 end
+         end
+     
+     end
+end
+
 if GboyBalabol[numnpc] = 1:
 	act 'Blame the guy that he yap':
 	cls
@@ -60,8 +105,11 @@ if hapri = 1: otnBoyFrend[numnpc] += 1
 if mop = 2: otnBoyFrend[numnpc] += 1
 if mop = 3: otnBoyFrend[numnpc] += 2
 if mop = 4: otnBoyFrend[numnpc] += 3
+if sweat > 0:otnBoyFrend[numnpc] -= 5
 if ski > 0 or glamur > 0: otnBoyFrend[numnpc] += 2
 minut += 15
+!number of meetings
+boytimes[numnpc] += 1
 gs 'stat'
 'You walk through the square with a guy and fun to hang out.'
 	if kotovLoveQW > 0:
@@ -146,7 +194,7 @@ gboyrand = RAND(0,1)
 				end
 				if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc]>0:
 				'You drank beer with a guy, and plenty of fun.'
-				act 'Дальше': gt 'Gnpc2'
+				act 'Further': gt 'Gnpc2'
 				end
 			end
 		end

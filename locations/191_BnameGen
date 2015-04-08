@@ -59,7 +59,14 @@ if bnrand = 15:$bname3 = 'Serge'
 
 if $bname = $bname3 or $bname2 = $bname3: jump 'markodinnamesec'
 
-dick = RAND(12,25)
+raspredickrand = RAND(0,10)
+if raspredickrand = 0:
+dick = RAND(8,13)
+elseif raspredickrand = 10:
+dick = RAND(18,25)
+else
+dick = RAND(13,17)
+end
 silavag = RAND(0,2)
 --- BnameGen ---------------------------------
 
