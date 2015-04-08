@@ -468,6 +468,7 @@ if fatdel > 0:
 	act 'Take fat burners':
 	cla
 	*clr
+    if fat > salo: fat = salo
 	set fatdel -= 1
 	set fat -= 25
 	if fat < 0: fat = 0
@@ -536,6 +537,7 @@ if vitamin > 0:
 		act 'Drink Vitamins':
 		cla
 		*clr
+		if fat > salo: fat = salo
 		set minut += 5
 		vitaminday = day
 		vitamin -= 1
@@ -662,6 +664,7 @@ if zoo >= 6:
 						end
 					end
 				if harakHusb = 2:
+				!Again, this is just fucked up
 					'"Her dog you absolutely ohrenel, go find yourself on the street bitch and then you froze otpihni it" the husband says.'
 					'"I can not, try myself," you reply.'
 					if izvratH = 0:

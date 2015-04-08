@@ -206,9 +206,12 @@ if analplug = 1 and analplugin = 0 and klismaday1= 1:
 	act 'Insert a butt plug (0:05)':
 	cla
 	*clr
+	plugday=daystart
 	set minut += 5
 	set analplugIN = 1
-	if anus < 30: set anus += 5
+    if anus < 10:set anus = anus + 5
+    if anus >= 10 and anus<20:anus+=rand(1,2)
+    if anus >= 20 and anus<30:anus+=rand(0,1)
 	'<center><img src="images\etogame\analplug.jpg"></center>'
 	if butpluguse > 0: 'You bend over and easily insert the anal plug.'
 	if butpluguse = 0: set butpluguse = 1 & '"I do this not even touch, and why I bought it!" you thought. Then still decided to take a closer look. Feel, smell, in general, that ordinary gag. "Oh, was not," you think, "Wow priest ever to develop, it will have great adventures, you could even say a huge and thick adventures with crimson heads, uh, that I got carried away." You scratched thin fingers unusually hairy head. Then you sent peg his ass, it was a bit painful when rastyagivatsya anus started taking a foreign object, but as soon as the widest part plunged into the murky depths of anal, it became easier and almost gag herself flew to the end, and got put on the manufacturer place.'
@@ -256,6 +259,21 @@ if husband > 0 and husbanday > 0 and huspolday ! day:
 	'You take a rag and start cleaning the apartment.'
 	act 'Leave': gt 'vanr'
 	end
+end
+
+if pregtest>0:
+     act 'Do a pregnancy test':
+     pregtest-=1
+     cla
+     gs'stat'
+		if preg=1:
+		'The test showed the two strips. you are pregnant.'
+		!'father - <<$father>>.'
+		else:
+		'The test showed one band.'
+		end
+     act 'further': gt $curloc
+     end
 end
 --- vanr ---------------------------------
 
