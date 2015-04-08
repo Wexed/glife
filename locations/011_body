@@ -5,10 +5,10 @@ if analplugIN = 0:
 	if anus > 5 and anus <= 10:anpic = 2 & set $anus = 'Your <a href="exec:view''images/body/2.jpg''">anus</a> has the shape of an asterisk.'
 	if anus > 10 and anus <= 15:anpic = 3 & set $anus = 'Your <a href="exec:view''images/body/3.jpg''">anus</a> is now slightly parted, has it has been used quite often.'
 	if anus > 15 and anus <= 25:anpic = 4 & set $anus = 'Your <a href="exec:view''images/body/4.jpg''">anus</a> look like a wide hole, one would definetely think the only thing you were doing was anal sex.'
-	if anus > 25 and anus <= 35:anpic = 5 & set $anus = 'Your <a href="exec:view''images/body/5.jpg''">anus</a> does not close anymore, you could put a fist through it and it wouldn''t stretch at all.'
-	if anus > 35:anpic = 6 & set $anus = 'Your <a href="exec:view''images/body/6.jpg''">anus</a> is almost completely destroyed and is a shapeless hole.' & $anustipe = 'destroyed'
+	if anus > 25 and anus <= 35:anpic = 5 & set $anus = 'Your <a href="exec:view''images/body/5.jpg''">anus</a> doesn''t fully close on its own anymore. You could put a fist through it and it wouldn''t stretch at all.'
+	if anus > 35:anpic = 6 & set $anus = 'Your <a href="exec:view''images/body/6.jpg''">anus</a> is almost completely wrecked. Even with conscious effort it''s hard to close it.' & $anustipe = 'destroyed'
 else
-	$anus = 'In your <a href="exec:view''picb/analplug.jpg''">anus</a> you have a butt plug inserted.'
+	$anus = 'Your <a href="exec:view''picb/analplug.jpg''">anus</a> is currently filled with your butt plug.'
 end
 
 !!'<a href="exec:view''images/body/1.jpg''">anus</a>'
@@ -191,13 +191,13 @@ if glaraz > 3:set glaraz = 3
 if glaraz = 0:set $glaza = 'You have little <<$glacol>> eyes <<$resnic>> and <<$brow>>.<<$glass>>.'
 if glaraz = 1:set $glaza = 'You have a medium-sized <<$glacol>> eyes <<$resnic>> and <<$brow>>.<<$glass>>.'
 if glaraz = 2:set $glaza = 'You have large <<$glacol>> eyes <<$resnic>> and <<$brow>>.<<$glass>>.'
-if glaraz = 3:set $glaza = 'You have a huge <<$glacol>> eyes <<$resnic>> and <<$brow>>. They almost look like they''re out of an anime.<<$glass>>'
+if glaraz = 3:set $glaza = 'You have a huge <<$glacol>> eyes that almost look like they''re out of anime, <<$resnic>> and <<$brow>>.<<$glass>>'
 
-if mop = 0:set $mop = '<b><font color="red">Your make-up is smeared all over your face</font></b>'
+if mop = 0:set $mop = '<b><font color="red">Your makeup is smeared all over your face</font></b>'
 if mop = 1:set $mop = 'You''re not wearing any kind of makeup'
-if mop = 2:set $mop = 'Your makeup is very light, just a very few touch-up here and there'
+if mop = 2:set $mop = 'Your makeup is very light, just a very few touch-ups here and there'
 if mop = 3:set $mop = 'You have "everyday"-like makeup applied'
-if mop = 4:set $mop = 'You have thick makeup, which is definitely flashy during the day'
+if mop = 4:set $mop = 'You have thick makeup, possible a bit too flashy for daytime wear'
 
 if leghair <= 0:set legkoef = 3 & set $leghair = 'You have smooth legs.'
 if leghair > 0 and leghair <= 2:set legkoef = 0 & set $leghair = 'You do not see with our eyes but rough to the touch bristles on his feet.'
@@ -207,9 +207,9 @@ if leghair > 5:set legkoef = 0 & set $leghair = 'Do you have long hair standing 
 if pirsG = 1:$pirsG = 'There are several piercings hanging from your vaginas lips.'
 if pirsG = 0:$pirsG = ''
 
-if lobok <= 0:set lobkoef = 3 & set $lobok = 'You have a smoothly <a href="exec:view ''images/body/pussy.jpg''">shaved pubis</a>. <<$pirsG>>'
-if lobok > 0 and lobok <= 2:set lobkoef = 0 & set $lobok = 'One can see now, that you haven''t <a href="exec:view ''images/body/spussy.jpg''">shaved yourself</a> in a while now. <<$pirsG>>'
-if lobok > 2:set lobkoef = 0 & set $lobok = 'It''s like a jungle <a href="exec="view ''images/body/hpussy.jpg''">down there</a>! You should definitely shave yourself soon. <<$pirsG>>'
+if lobok <= 0:set lobkoef = 3 & set $lobok = 'You have a smoothly <a href="exec:view ''images/body/pussy.jpg''">shaved mound</a>. <<$pirsG>>'
+if lobok > 0 and lobok <= 2:set lobkoef = 0 & set $lobok = 'You have a light but visible thatch of hair above your <a href="exec:view ''images/body/spussy.jpg''">crotch</a>. <<$pirsG>>'
+if lobok > 2:set lobkoef = 0 & set $lobok = 'You have a thick, full delta of <a href="exec="view ''images/body/hpussy.jpg''">pubic hair</a>. <<$pirsG>>'
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 set bodytipe = bedra - talia
@@ -275,8 +275,8 @@ if vnesh = -10:set $vnesh = 'Your looks is even worse than terrible. It''s terri
 if vnesh < 5 and vnesh> - 10:set $vnesh = 'Your looks is terrible. People try to avoid looking and talking to you.'
 if vnesh >= 5 and vnesh < 15:set $vnesh = 'You''re a wallflower. Barely anyone notices you.'
 if vnesh >= 15 and vnesh < 30:set $vnesh = 'You have good looks. Men and women like to take a glance at you.'
-if vnesh >= 30 and vnesh < 50:set $vnesh = 'You have a simply stunning appearence. Other girls are abit jealous and guys constantly check you out.'
-if vnesh >= 50:set $vnesh = 'Your appearence is divine! Noone is able to take his or her eyes off of you.'
+if vnesh >= 30 and vnesh < 50:set $vnesh = 'You have a simply stunning appearence. Other girls are a bit jealous and guys constantly check you out.'
+if vnesh >= 50:set $vnesh = 'Your appearence is divine! No one is able to take his or her eyes off of you.'
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!BODY

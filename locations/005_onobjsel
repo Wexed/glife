@@ -265,7 +265,7 @@ $objstatistika = {
 	!!!
 	if girl > 0:pl 'You have <<girl>> girls.'
 	if lesbian > 0:pl 'You do lecbiyskim sex <<lesbian>> times.'
-	if sexfuta > 0:pl 'You <<sexfuta>> had sex with chlenodevkoy.'
+	if sexfuta > 0:pl 'You've had sex with tgirls <<sexfuta>> times.'
 }
 
 $din_cheat_hapri = {
@@ -763,8 +763,14 @@ $objface = {
 		if hcol = 2 and hairlength > 260 and hairlength <= 400:view 'images/body/hairstyles/lng/braids/hcol2.jpg'
 		if hcol = 3 and hairlength > 260 and hairlength <= 400:view 'images/body/hairstyles/lng/braids/hcol3.jpg'
 	end
+	!!! Maruda Hair Mod
+
+	if shorthair=1:view 'images/body/SHcol<<hcol>>.jpg'
+
+	if glass = 1:view 'images/body/nerd.jpg'
+	if glass = 2:view 'images/body/hcolglass<<hcol>>.jpg'
+	
 }
-!!! Maruda Hair Mod
 
 $objbody = {
 	if musle >= salo:
