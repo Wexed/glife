@@ -18,7 +18,7 @@ if $ARGS[0] = 'start':
 		set minut += 5
 		gt 'down'
 	end
-	
+
 	if ski = 1 and money >= 500  and mop > 1 and sweat < 1 or glamur = 1 and money >= 500 and mop > 1 and sweat < 1:
 		'You can feel his eyes all over your body, but eventually he nods and lets you inside.'
 
@@ -71,6 +71,7 @@ if $ARGS[0] = 'toi':
 		cla
 		Set minut += rand(10, 30)
 		'Finally there''s a free booth for you.'
+		set vnesh += 1
 
 		act 'WC':gt 'club', 'tou'
 	end
@@ -253,7 +254,7 @@ if $ARGS[0] = 'dance':
 								act 'Go to the dance floor':gt 'club', 'dance'
 							end
 
-							act 'Go to Vip-room with the guy. "':xgt 'sex', 'var'
+							act 'Go to Vip-room with the guy':xgt 'sex', 'var'
 						end
 
 						if dansexclub = 0:
@@ -582,7 +583,7 @@ if $ARGS[0] = 'bar':
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand16.jpg"></center>'
-			'You can see a drunken girl spreading her legs on one of the bar stools, she''s not wearing any panties and the bloke next to her takes the opportunity and fingers the girl.' 
+			'You can see a drunken girl spreading her legs on one of the bar stools, she''s not wearing any panties and the bloke next to her takes the opportunity and fingers the girl.'
 			'You''re too drunk to continue partying here. The security has to escort you out.'
 
 			act 'Leave':gt 'down'
@@ -658,6 +659,7 @@ if $ARGS[0] = 'bar':
 			exit
 		end
 	end
+
 	if money >= 300:
 		act 'Buy some booze (300 rubles)':
 			cla
@@ -730,6 +732,7 @@ if $ARGS[0] = 'sex':
 
 					act 'Stand up':gt 'club', 'toi'
 				end
+
 				exit
 			end
 
@@ -754,24 +757,24 @@ if $ARGS[0] = 'sex':
 
 			act 'Stand up':gt 'club', 'toi'
 		end
-		end
+	end
 
-		act 'Doggy-Style':
-			cla
-			*clr
-			set sex += 1
-			set guy += 1
-			set horny += SUB
-			set vagina += 1
-			'<center><img src="images/picV/clubSex.jpg"></center>'
-			'You turn around and kneel on the toilet seat. "Fuck me", you say and present your ass and pussy to him.'
-			'You don''t have to tell him twice, he grabs your hips, positions his cock infront of your pussy and with a strong push he enters your vagina. You moan with pleasure and you are surprised by the sheer force he used to enter you.'
-			'He grunts heavy as he fucks you like the bitch in heat that you are. He continues with force and speed, if he''s slowing down, you can''t notice it, but it doesn''t take long and both of you are reaching the state of orgasm.'
-			'You look at him, "Don''t you dare to cum inside.". Inbetween his grunts he nods and a few seconds later he cums outside of you, you are relived that he at least acts a bit like a gentleman.'''
-			gs 'orgazm', 'start'
+	act 'Doggy-Style':
+		cla
+		*clr
+		set sex += 1
+		set guy += 1
+		set horny += SUB
+		set vagina += 1
+		'<center><img src="images/picV/clubSex.jpg"></center>'
+		'You turn around and kneel on the toilet seat. "Fuck me", you say and present your ass and pussy to him.'
+		'You don''t have to tell him twice, he grabs your hips, positions his cock infront of your pussy and with a strong push he enters your vagina. You moan with pleasure and you are surprised by the sheer force he used to enter you.'
+		'He grunts heavy as he fucks you like the bitch in heat that you are. He continues with force and speed, if he''s slowing down, you can''t notice it, but it doesn''t take long and both of you are reaching the state of orgasm.'
+		'You look at him, "Don''t you dare to cum inside.". In between his grunts he nods and a few seconds later he cums outside of you, you are relived that he at least acts a bit like a gentleman.'
+		gs 'orgazm', 'start'
 
-			act 'Stand up':gt 'club', 'toi'
-		end
+		act 'Stand up':gt 'club', 'toi'
+	end
 end
 
 if $ARGS[0] = 'bar0':
@@ -1043,4 +1046,3 @@ if $ARGS[0] = 'vip':
 end
 
 --- club ---------------------------------
-

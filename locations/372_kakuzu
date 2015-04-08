@@ -168,6 +168,7 @@ if $ARGS[0] = 'mansion1':
 
 					if spellfire2L < 100:
 						'You diligently spell for an hour, but could not grasp it.'
+
 						act 'Move away':gt 'kakuzu', 'mansion1'
 					end
 
@@ -196,6 +197,7 @@ if $ARGS[0] = 'mansion1':
 					if spellfire3L >= 100:
 						set spellfire3 = 1
 						'Finally you will able to study the spell.'
+
 						act 'Move away':gt 'kakuzu', 'mansion1'
 					end
 				end
@@ -312,6 +314,7 @@ if $ARGS[0] = 'mansion1':
 					end
 				end
 			end
+
 			if magik >= 9 and spellele4 = 0:
 				act 'Dance study thousands of birds (1:00)':
 					cla
@@ -367,6 +370,7 @@ if $ARGS[0] = 'mansion1':
 
 					if spellertL < 100:
 						'You diligently spell for an hour, but could not grasp it.'
+
 						act 'Move away':gt 'kakuzu', 'mansion1'
 					end
 
@@ -421,7 +425,6 @@ if $ARGS[0] = 'mansion1':
 						act 'Move away':gt 'kakuzu', 'mansion1'
 					end
 				end
-
 			end
 
 			if magik >= 9 and spellert4 = 0:
@@ -581,110 +584,110 @@ if $ARGS[0] = 'mansion1':
 			end
 		end
 
-		if stihia = 5:
-			if magik >= 6 and spellwater1 = 0:
-				act 'Creek study manna (1:00)':
-					cla
-					set manna -= 1000
-					set minut += 60
-					set spellwaterL += rand(1, 10)
+	if stihia = 5:
+		if magik >= 6 and spellwater1 = 0:
+			act 'Creek study manna (1:00)':
+				cla
+				set manna -= 1000
+				set minut += 60
+				set spellwaterL += rand(1, 10)
 
-					if spellwaterL < 100:
-						'You diligently spell for an hour, but could not grasp it.'
+				if spellwaterL < 100:
+					'You diligently spell for an hour, but could not grasp it.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
+				end
 
-					if spellwaterL >= 100:
-						set spellwater1 = 1
-						'Finally you will able to study the spell.'
+				if spellwaterL >= 100:
+					set spellwater1 = 1
+					'Finally you will able to study the spell.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
 				end
 			end
+		end
 
-			if magik >= 7 and spellwater2 = 0:
-				act 'Flooding study (1:00)':
-					cla
-					set manna -= 1000
-					set minut += 60
-					set spellwater2L += rand(1, 10)
+		if magik >= 7 and spellwater2 = 0:
+			act 'Flooding study (1:00)':
+				cla
+				set manna -= 1000
+				set minut += 60
+				set spellwater2L += rand(1, 10)
 
-					if spellwater2L < 100:
-						'You diligently spell for an hour, but could not grasp it.'
+				if spellwater2L < 100:
+					'You diligently spell for an hour, but could not grasp it.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
+				end
 
-					if spellwater2L >= 100:
-						set spellwater2 = 1
-						'Finally you will able to study the spell.'
+				if spellwater2L >= 100:
+					set spellwater2 = 1
+					'Finally you will able to study the spell.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
 				end
 			end
+		end
 
-			if magik >= 8 and spellwater3 = 0:
-				act 'Water bubble study (1:00)':
-					cla
-					set manna -= 1000
-					set minut += 60
-					set spellwater3L += rand(1, 10)
+		if magik >= 8 and spellwater3 = 0:
+			act 'Water bubble study (1:00)':
+				cla
+				set manna -= 1000
+				set minut += 60
+				set spellwater3L += rand(1, 10)
 
-					if spellwater3L < 100:
-						'You diligently spell for an hour, but could not grasp it.'
+				if spellwater3L < 100:
+					'You diligently spell for an hour, but could not grasp it.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
+				end
 
-					if spellwater3L >= 100:
-						set spellwater3 = 1
-						'Finally you will able to study the spell.'
+				if spellwater3L >= 100:
+					set spellwater3 = 1
+					'Finally you will able to study the spell.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
 				end
 			end
+		end
 
-			if magik >= 9 and spellwater4 = 0:
-				act 'Water study shark missile (1:00)':
-					cla
-					set manna -= 1000
-					set minut += 60
-					set spellwater4L += rand(1, 10)
+		if magik >= 9 and spellwater4 = 0:
+			act 'Water study shark missile (1:00)':
+				cla
+				set manna -= 1000
+				set minut += 60
+				set spellwater4L += rand(1, 10)
 
-					if spellwater4L < 100:
-						'You diligently spell for an hour, but could not grasp it.'
+				if spellwater4L < 100:
+					'You diligently spell for an hour, but could not grasp it.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
+				end
 
-					if spellwater4L >= 100:
-						set spellwater4 = 1
-						'Finally you will able to study the spell.'
+				if spellwater4L >= 100:
+					set spellwater4 = 1
+					'Finally you will able to study the spell.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
 				end
 			end
+		end
 
-			if magik >= 10 and spellwater5 = 0:
-				act 'Study the Great Flood (1:00)':
-					cla
-					set manna -= 1000
-					set minut += 60
-					set spellwater5L += rand(1, 10)
+		if magik >= 10 and spellwater5 = 0:
+			act 'Study the Great Flood (1:00)':
+				cla
+				set manna -= 1000
+				set minut += 60
+				set spellwater5L += rand(1, 10)
 
-					if spellwater5L < 100:
-						'You diligently spell for an hour, but could not grasp it.'
+				if spellwater5L < 100:
+					'You diligently spell for an hour, but could not grasp it.'
 
-						act 'Move away':gt 'kakuzu', 'mansion1'
-					end
+					act 'Move away':gt 'kakuzu', 'mansion1'
+				end
 
-					if spellwater5L >= 100:
-						set spellwater5 = 1
+				if spellwater5L >= 100:
+					set spellwater5 = 1
 						'Finally you will able to study the spell.'
 
 						act 'Move away':gt 'kakuzu', 'mansion1'
@@ -698,4 +701,3 @@ if $ARGS[0] = 'mansion1':
 end
 
 --- kakuzu ---------------------------------
-

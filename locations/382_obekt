@@ -18,17 +18,16 @@ act 'Penetrate to the construction site':
 
 	if ObjektOpen = 0:
 		if ObjektBil = 0:ObjektBil = 1
-		'Construction guarded very carefully, just not be able to enter.'
+			'Construction guarded very carefully, just not be able to enter.'
 
-		act 'Leave':gt $curloc
-	else
-		gt 'obekt2'
+			act 'Leave':gt $curloc
+		else
+			gt 'obekt2'
+		end
 	end
-end
 
-!!if ObjektBil = 1:end
+	!!if ObjektBil = 1:end
 
-act 'Go on the road':minut += 15 & nroad = 16 & gt 'road'
+	act 'Go on the road':minut += 15 & nroad = 16 & gt 'road'
 
 --- obekt ---------------------------------
-

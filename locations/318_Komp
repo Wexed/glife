@@ -27,7 +27,7 @@ if $ARGS[0] = 'start':
 
 		act 'Pay online bank account':
 			cla
-			intinp = input ("How much money to put on the internet? (h = 10 rubles).")
+			intinp = input ("How much money to put on the internet? (h = 10 rubles)")
 
 			if intinp <= 0 or intinp * 10 > karta:'Invalid amount.'
 
@@ -98,6 +98,7 @@ if $ARGS[0] = 'sale':
 				if obkvsdam = 2: set predsumm = 9000
 				if obkvsdam=2:set predsumm=10000
 				'Want to stay in your apartment for a month (<<predsumm>> rubles).'
+
 				act 'Rent':
 					set sdaday = day
 					set sdamonth = month + 1
@@ -177,18 +178,18 @@ if $ARGS[0] = 'remont':
 		if remvanr = 0:
 			act 'Renovate the bathroom (50,000 rubles)':
 				if money >= 50000:
-				cla
-				set remvanr = 1
-				set money -= 50000
-				'You pay for repairs and you did it the same, just Dzhumshut Ravshan and wizards.'
-			else
-				cla
-				'Unfortunately, you will not have enough money.'
-			end
+					cla
+					set remvanr = 1
+					set money -= 50000
+					'You pay for repairs and you did it the same, just Dzhumshut Ravshan and wizards.'
+				else
+					cla
+					'Unfortunately, you will not have enough money.'
+				end
 
-			act 'Exit':gt 'Komp', 'remont'
+				act 'Exit':gt 'Komp', 'remont'
+			end
 		end
-	end
 
 		if remkuhr = 0:
 			act 'Renovate a kitchen (50,000 rubles)':
@@ -244,7 +245,7 @@ if $ARGS[0] = 'porno':
 		if horny >= 50:act 'Proceed':dynamic $pornomastr
 	}
 
-	act 'Watch porn on':
+	act 'Watch porn':
 		cla
 		'<center><img src="images/etogame/porno.jpg"></center>'
 		gt 'Komp', 'porno'
@@ -390,6 +391,7 @@ if $ARGS[0] = 'foto':
 
 				act 'Finish':gt 'Komp', 'foto'
 			end
+
 			if fotsearchrand > 7:
 				set shantfoto -= 1
 				set gerofotorand = rand(0, 100)
@@ -484,4 +486,3 @@ end
 if $ARGS[0] = 'fin':gt $locM, $metkaM
 
 --- Komp ---------------------------------
-

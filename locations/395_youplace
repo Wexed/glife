@@ -36,16 +36,16 @@ if karta >= 1500000 and placeMansion = 0:
 	end
 end
 
-	if karta >= 500000 and placeMansion = 1:
-		act 'Pay for water, electricity and building foundations (500, 000 rubles)':
-			cls
-			karta -= 500000
-			placeMansion = 2
-			minut += 5
-			gs 'stat'
-			'You paid for a supply of communications to the site and zero cycle'
+if karta >= 500000 and placeMansion = 1:
+	act 'Pay for water, electricity and building foundations (500,000 rubles)':
+		cls
+		karta -= 500000
+		placeMansion = 2
+		minut += 5
+		gs 'stat'
+		'You paid for a supply of communications to the site and zero cycle'
 
-			act 'Leave':gt $curloc
+		act 'Leave':gt $curloc
 	end
 end
 
@@ -128,7 +128,7 @@ if karta >= 150000 and placeMansion = 3 and ymanrem[3] = 2:
 end
 
 if karta >= 250000 and placeMansion = 3 and ymanrem[4] = 0:
-	act 'Pay for repairs sleeping (250, 000 rubles)':
+	act 'Pay for repairs sleeping (250,000 rubles)':
 		cls
 		karta -= 250000
 		ymanrem[4] = 1
@@ -362,4 +362,3 @@ if karta >= 250000 and placeMansion = 3 and ymanrem[12] = 1:
 end
 
 --- youplace ---------------------------------
-

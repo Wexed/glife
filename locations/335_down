@@ -43,7 +43,7 @@ if shantpopala > 0:
 	'"No...what? What the hell is going on? I don''t know what you''re talking about!", you try to explain.'
 	'"Don''t lie to use you stupid bitch.", as he said that, he hits you on your head and you pass out.'
 	'You wake up somewhere out of town, you''re tied up and naked. You look down on yourself and notice traces of cum on your body, it also seems like that cum is flowing from your ass and your pussy.'
-	'You notice that the blokes, who captured you sit next to you and seem to have a break, some of them are smoking.' 
+	'You notice that the blokes, who captured you sit next to you and seem to have a break, some of them are smoking.'
 	'"Oh, she is finally awake, then the next fuck-cycle will be far more fun.", one of the men said, as he noticed you moving. Some of them are starting to get a evil grin on their face.'
 	'They got up and came back at you, barely a minute later you wished your were still knocked out, as these jackasses had their ways with. You tried to resist, but the tape hindered you from moving. Not long after, everything faded to black and you lost you consciousness again.'
 	'You feel groggy as you wake up, but it feels like someone is grapping you by the hair and shouts at you. "Let this be a lesson for you, bitch.", he shouts, then kicks you into the stomach and leaves. As you collapse on the ground holding your stomach in pain, you take a glimpse at the street and see the assholes driving away in their black jeep. The mainroad is about 200m away, you crawl most of the way there, but soon you can walk again and eventually you find your way back to one of the mainstreets.'
@@ -56,33 +56,16 @@ end
 if car > 0 and cardrive = 2:'In the parking stands your <a href="exec:GS ''carF'', ''start''"><<$car>></a>.'
 if hour >= 8 and hour <= 22:'A kiosk is selling <a href="exec:dynamic $kiosksig">cigarettes</a>.'
 
-if BuyHous['Down'] >= 1 and houserent['Down'] ! 1:
-	act '<b>GO HOME</b>':
-		$HouseLocation = 'down'
-		gorand = rand(0, 100)
-		if loh > 0 and gopdolg > 0 and hour >= 20 and gorand >= 80:
-		gt 'gopnew', 'start'
-		exit
-		end
-		if opusk > 0 and hour >= 20 and gorand >= 80 and gopopusday ! day:
-		gt 'gopnew', 'start'
-		exit
-		end
-	gt 'korr'
-	end
-end
-	act 'Wait':
+act 'Wait':
 	cla
 	waiting = input ("How long would you like to wait? (Not more than 120 minutes)")
-		if waiting <= 0 or waiting > 120:
-		set minut += 15
-		end
-		if waiting > 0 and waiting <= 120:
-		set minut += waiting
-		end
+
+	if waiting <= 0 or waiting > 120:set minut += 15
+	if waiting > 0 and waiting <= 120:set minut += waiting
+
 	act 'Take a look at the clock':gt curloc
-	end
-	
+end
+
 act 'Take a cab':
 	cla
 	*clr
@@ -91,21 +74,21 @@ act 'Take a cab':
 	'"The drive will cost you <b>250 rubles</b>", the driver says.'
 	set minut += 5
 
-	if $loc!'street':
+	if $loc ! 'street':
 		act 'Go to the Residential Area':
 			set $loc = 'street'
 			dynamic $taxi
 		end
 	end
 
-	if $loc!'down':
+	if $loc ! 'down':
 		act 'Go to the City Center':
 			set $loc = 'down'
 			dynamic $taxi
 		end
 	end
 
-	if $loc!'Nord':
+	if $loc ! 'Nord':
 		act 'Go to the Northern Area':
 			set $loc = 'Nord'
 			dynamic $taxi
@@ -134,7 +117,9 @@ if hour >= 9 and hour <= 20:
 end
 
 if hour >= 8 and hour <= 22:'Infront of the expensive <a href="exec:gt ''restoran'', ''start''">Restaurant</a> are luxury cars parking.'
+
 'A shop for <a href="exec:gt ''sexshop'', ''start''">sex toys</a> is open for perverts from all around the city.'
+
 if hour >= 6 and hour <= 23:'Diner <a href="exec:gt ''burger'', ''start''">Bystroeshka</a>.'
 if bordel > 0 and hour >= 20 or bordel > 0 and hour <= 3:'Inside the courtyard is the entrance to the <a href="exec:gt ''bordel''">brothel</a>.'
 if pornstudio >= 1 and hour > 5:'At the <a href="exec:gt ''pornstudio'', ''start''">Porn Studio</a>, a variety of naughty movies are created'
@@ -144,8 +129,8 @@ if week < 6 and hour >= 9 and hour <= 18:'You can see the most important <a href
 if week < 6 and hour >= 8 and hour <= 17:'In the largest skyscraper is a huge <a href="exec:gt ''office'', ''start''">Project Organization</a> located.'
 if hour >= 8 and hour <= 22:'At the <a href="exec:gt ''agentned''">Real Estate Agency</a> you can buy or rent an apartment.'
 !!if beg >= 50 and begmon ! month and hour >= 6 and hour <= 23:'Start at <a href="exec:gt ''beg1'', ''start''">running competition</a>'
+!!end
 
 dynamic $din_street_cum
 
 --- down ---------------------------------
-

@@ -51,9 +51,9 @@ if $ARGS[0] = 'start':
 			set BonusAtakV = 0
 			set BonusDefV = 0
 			!!Programme of Action
-		set program = 0
-		set jugoFight = 2
-		gt 'fight', 'start'
+			set program = 0
+			set jugoFight = 2
+			gt 'fight', 'start'
 		end
 	end
 
@@ -191,158 +191,158 @@ if $ARGS[0] = 'karin':
 
 				if bedraDoun <= 0:set bedraDoun = 40
 					act 'Enjoy your stupidity.':gt 'lab', 'karin'
+				end
 			end
 		end
-	end
 
-	if IvanPodstavaQW = 2 and poverKAR = 0 and softKAR = 0:
-		act 'Ask for help with Ivan Karin':
-			cla
-			gs 'stat'
-			'You explained the situation and asked her to Karin assistance. Karin said thoughtfully. "I do not think there is any physical evidence of the guilt of Ivan. Necessary is achieved recognition. I think it would be possible to capture and interrogate. Or drink his cunning truth serum and interrogate. Anyway it is necessary to remove it all on video."'
-
-			act 'Military solution':
-				cls
-				poverKAR = 1
+		if IvanPodstavaQW = 2 and poverKAR = 0 and softKAR = 0:
+			act 'Ask for help with Ivan Karin':
+				cla
 				gs 'stat'
-				'<center><img src="images/picPRE/karinPRE.jpg"></center>'
-				'You have decided to achieve recognition Ivan force. Karin told you. You go to the apartment of Ivan. There vstretishsya with Juugo. It will help resolve the issue. Just see if he will go to the second level of the press, he was distraught. At the second level of the press he turns into a monster.'
+				'You explained the situation and asked her to Karin assistance. Karin said thoughtfully. "I do not think there is any physical evidence of the guilt of Ivan. Necessary is achieved recognition. I think it would be possible to capture and interrogate. Or drink his cunning truth serum and interrogate. Anyway it is necessary to remove it all on video."'
+
+				act 'Military solution':
+					cls
+					poverKAR = 1
+					gs 'stat'
+					'<center><img src="images/picPRE/karinPRE.jpg"></center>'
+					'You have decided to achieve recognition Ivan force. Karin told you. You go to the apartment of Ivan. There vstretishsya with Juugo. It will help resolve the issue. Just see if he will go to the second level of the press, he was distraught. At the second level of the press he turns into a monster.'
+
+					act 'Leave':gt 'lab', 'karin'
+				end
+
+				act 'Tricky decision':
+					cls
+					softKAR = 1
+					gs 'stat'
+					'<center><img src="images/picPRE/karinPRE.jpg"></center>'
+					'You have decided to achieve recognition Ivan cunning. Karin told you. You go to the apartment of Ivan. There we meet with you and obtyapaem owners.'
+
+					act 'Leave':gt 'lab', 'karin'
+				end
+			end
+		end
+
+		if poverKAR = 2:
+			act 'Approach to Karin about attacks apartments Ivan':
+				cla
+				poverKAR = 3
+				'You came to Karin and she sighed. "Yes, failed. Juugo caught a bullet in his head and his strength went up to the next level, it has cured, made almost invulnerable, but finally deprived of his mind. Juugo not only gained recognition for Ivan, and not just kill him, he blew part of the entrance his attack. But there are pluses. Cops think it was a gas explosion. But now you have to either pay the debt or goes to jail. "'
+
+				act 'Leave':gt 'lab', 'karin'
+			end
+		end
+
+		if karinday ! day:
+			act 'Develop intelligence (1:00)':
+				cla
+				set intel += rand(3, 6)
+				set minut += 60
+				set karinday = day
+				'Did you do with Karin developing his intellect.'
 
 				act 'Leave':gt 'lab', 'karin'
 			end
 
-			act 'Tricky decision':
-				cls
-				softKAR = 1
-				gs 'stat'
-				'<center><img src="images/picPRE/karinPRE.jpg"></center>'
-				'You have decided to achieve recognition Ivan cunning. Karin told you. You go to the apartment of Ivan. There we meet with you and obtyapaem owners.'
+			act 'Will develop (1:00)':
+				cla
+				set will += rand(3, 6)
+				set minut += 60
+				set karinday = day
+				'Did you do with Karin developing his intellect.'
 
 				act 'Leave':gt 'lab', 'karin'
 			end
 		end
-	end
 
-	if poverKAR = 2:
-		act 'Approach to Karin about attacks apartments Ivan':
-			cla
-			poverKAR = 3
-			'You came to Karin and she sighed. "Yes, failed. Juugo caught a bullet in his head and his strength went up to the next level, it has cured, made almost invulnerable, but finally deprived of his mind. Juugo not only gained recognition for Ivan, and not just kill him, he blew part of the entrance his attack. But there are pluses. Cops think it was a gas explosion. But now you have to either pay the debt or goes to jail. "'
+		if spelltuman = 0 and magik >= 1:
+			act 'Learn technique fog (1:00)':
+				cla
+				set minut += 60
+				set spelltuman = 1
+				'You learned the technique call fog in battle.'
 
-			act 'Leave':gt 'lab', 'karin'
-		end
-	end
-
-	if karinday ! day:
-		act 'Develop intelligence (1:00)':
-			cla
-			set intel += rand(3, 6)
-			set minut += 60
-			set karinday = day
-			'Did you do with Karin developing his intellect.'
-
-			act 'Leave':gt 'lab', 'karin'
+				act 'Leave':gt 'lab', 'karin'
+			end
 		end
 
-		act 'Will develop (1:00)':
-			cla
-			set will += rand(3, 6)
-			set minut += 60
-			set karinday = day
-			'Did you do with Karin developing his intellect.'
+		if spellklon = 0 and magik >= 1:
+			act 'Learn technique protection cloning (1:00)':
+				cla
+				set minut += 60
+				set spellklon = 1
+				'You learned the technique of substitution clone themselves in battle.'
 
-			act 'Leave':gt 'lab', 'karin'
+				act 'Leave':gt 'lab', 'karin'
+			end
 		end
-	end
 
-	if spelltuman = 0 and magik >= 1:
-		act 'Learn technique fog (1:00)':
-			cla
-			set minut += 60
-			set spelltuman = 1
-			'You learned the technique call fog in battle.'
+		if spellstun = 0 and magik >= 2:
+			act 'Learn technique paralysis (1:00)':
+				cla
+				set minut += 60
+				set spellstun = 1
+				'You learned the technique of paralyzing the enemy.'
 
-			act 'Leave':gt 'lab', 'karin'
+				act 'Leave':gt 'lab', 'karin'
+			end
 		end
-	end
 
-	if spellklon = 0 and magik >= 1:
-		act 'Learn technique protection cloning (1:00)':
-			cla
-			set minut += 60
-			set spellklon = 1
-			'You learned the technique of substitution clone themselves in battle.'
+		if spellwind = 0 and magik >= 2:
+			act 'Learn mist blowing (1:00)':
+				cla
+				set minut += 60
+				set spellwind = 1
+				'You learned the technique of blowing mist.'
 
-			act 'Leave':gt 'lab', 'karin'
+				act 'Leave':gt 'lab', 'karin'
+			end
 		end
-	end
 
-	if spellstun = 0 and magik >= 2:
-		act 'Learn technique paralysis (1:00)':
-			cla
-			set minut += 60
-			set spellstun = 1
-			'You learned the technique of paralyzing the enemy.'
+		if spellklon2 = 0 and magik >= 2:
+			act 'Learn triple cloning (1:00)':
+				cla
+				set minut += 60
+				set spellklon2 = 1
+				'You learned the technique Troynova cloning.'
 
-			act 'Leave':gt 'lab', 'karin'
+				act 'Leave':gt 'lab', 'karin'
+			end
 		end
-	end
 
-	if spellwind = 0 and magik >= 2:
-		act 'Learn mist blowing (1:00)':
-			cla
-			set minut += 60
-			set spellwind = 1
-			'You learned the technique of blowing mist.'
+		if spellenergo = 0 and magik >= 3:
+			act 'Learn energoschit (1:00)':
+				cla
+				set minut += 60
+				set spellenergo = 1
+				'You learned the technique energoschita.'
 
-			act 'Leave':gt 'lab', 'karin'
+				act 'Leave':gt 'lab', 'karin'
+			end
 		end
-	end
 
-	if spellklon2 = 0 and magik >= 2:
-		act 'Learn triple cloning (1:00)':
-			cla
-			set minut += 60
-			set spellklon2 = 1
-			'You learned the technique Troynova cloning.'
+		if spellinit = 0 and magik >= 3:
+			act 'Learn technique deceleration time (1:00)':
+				cla
+				set minut += 60
+				set spellinit = 1
+				'You learned the technique of time dilation.'
 
-			act 'Leave':gt 'lab', 'karin'
+				act 'Leave':gt 'lab', 'karin'
+			end
 		end
-	end
 
-	if spellenergo = 0 and magik >= 3:
-		act 'Learn energoschit (1:00)':
-			cla
-			set minut += 60
-			set spellenergo = 1
-			'You learned the technique energoschita.'
+		if magik >= 4 and spellhel = 0:
+			!!'With this level of magic I can not teach you anymore.'
+				act 'Learn the technique of treatment (1:00)':
+				cla
+				set minut += 60
+				set spellhel = 1
+				'You learned the technique of treatment.'
 
-			act 'Leave':gt 'lab', 'karin'
+				act 'Leave':gt 'lab', 'karin'
+			end
 		end
-	end
-
-	if spellinit = 0 and magik >= 3:
-		act 'Learn technique deceleration time (1:00)':
-			cla
-			set minut += 60
-			set spellinit = 1
-			'You learned the technique of time dilation.'
-
-			act 'Leave':gt 'lab', 'karin'
-		end
-	end
-
-	if magik >= 4 and spellhel = 0:
-		!!'With this level of magic I can not teach you anymore.'
-		act 'Learn the technique of treatment (1:00)':
-			cla
-			set minut += 60
-			set spellhel = 1
-			'You learned the technique of treatment.'
-
-			act 'Leave':gt 'lab', 'karin'
-		end
-	end
 
 	if magik >= 5 and spellavtoklon = 0:
 		act 'Learn technique avtoklonirovaniya (1:00)':
@@ -368,4 +368,3 @@ if $ARGS[0] = 'karin':
 end
 
 --- lab ---------------------------------
-

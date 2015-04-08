@@ -145,6 +145,7 @@ if $ARGS[0] = 'start':
 	if dayA > 10 and harakBoy = 2:
 		if haerBoyA ! hcol:
 			bfA = bfA - 5
+
 			if haerBoyA = 0:set $meetcol = '<<$boyA>> tells you that you would go black hair.'
 			if haerBoyA = 1:set $meetcol = '<<$boyA>> tells you that you would have gone blond hair color.'
 			if haerBoyA = 2:set $meetcol = '<<$boyA>> tells you that you would have gone red hair.'
@@ -160,6 +161,7 @@ if $ARGS[0] = 'start':
 	if dayA > 20 and harakBoy = 1:
 		if haerBoyA ! hcol:
 			bfA = bfA - 5
+
 			if haerBoyA = 0:set $meetcol = '<<$boyA>> tells you that you would go black hair.'
 			if haerBoyA = 1:set $meetcol = '<<$boyA>> tells you that you would have gone blond hair color.'
 			if haerBoyA = 2:set $meetcol = '<<$boyA>> tells you that you would have gone red hair.'
@@ -175,6 +177,7 @@ if $ARGS[0] = 'start':
 	if dayA > 30 and harakBoy = 0:
 		if haerBoyA ! hcol:
 			bfA = bfA - 5
+
 			if haerBoyA = 0:set $meetcol = '<<$boyA>> tells you that you would go black hair.'
 			if haerBoyA = 1:set $meetcol = '<<$boyA>> tells you that you would have gone blond hair color.'
 			if haerBoyA = 2:set $meetcol = '<<$boyA>> tells you that you would have gone red hair.'
@@ -300,8 +303,10 @@ if $ARGS[0] = 'start':
 
 		act 'Kiss on the lips.':
 			cla
+
 			if cumlip = 0:
 				'<center><img src="images/etogame/kiss1.jpg"></center>'
+
 				if harakBoyA = 0:'You framed to kiss her lips and <<$boyA>> a little embarrassed kissed you.'
 				if harakBoyA = 1:set bfa += 2 & 'You framed for a kiss lips <<$boyA>> quickly kissed you.'
 				if harakBoyA = 2:set bfa -= 1 & 'You framed for a kiss lips <<$boyA>> juicy kiss you, pressing his lips to your firm <<$meetlip>>.'
@@ -345,6 +350,7 @@ if $ARGS[0] = 'start':
 
 			if giftDayA = dayA:
 				set bfa -= 3
+
 				if harakBoyA = 0:'<<$boyA>> looks upset.'
 				if harakBoyA = 1:'<<$boyA>> looks offended.'
 				if harakBoyA = 2:'<<$boyA>> looks angry.'
@@ -576,4 +582,3 @@ if $ARGS[0] = 'a':
 end
 
 --- meet ---------------------------------
-

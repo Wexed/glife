@@ -1,23 +1,23 @@
 # bass
-if $ARGS[0] = 'start':
-	cla
-	*clr
-	set minut += 5
-	'<center><b><font color="maroon">Pool</font></b></center>'
-	'<center><img src="images/etogame/bass.jpg"></center>'
-	clr
-	gs 'stat'
-	fcolor = rgb(0, 0, 0)
-	bcolor = rgb(255, 255, 255)
-	lcolor = rgb(106, 90, 205)
-	'Entrance to the pool is worth 100 rubles, you must have a swimsuit.'
+	if $ARGS[0] = 'start':
+		cla
+		*clr
+		set minut += 5
+		'<center><b><font color="maroon">Pool</font></b></center>'
+		'<center><img src="images/etogame/bass.jpg"></center>'
+		clr
+		gs 'stat'
+		fcolor = rgb(0, 0, 0)
+		bcolor = rgb(255, 255, 255)
+		lcolor = rgb(106, 90, 205)
+		'Entrance to the pool is worth 100 rubles, you must have a swimsuit.'
 
-	act 'QUIT':set minut += 5 & gt 'down'
+		act 'Leave':set minut += 5 & gt 'down'
 
-	if db >= 1 and bikini > 0 and Goraday ! day:act 'Search ZHoru':Goraday = day & gt 'klofdomhouse', 'ev42'
+		if db >= 1 and bikini > 0 and Goraday ! day:act 'Search ZHoru':Goraday = day & gt 'klofdomhouse', 'ev42'
 
-	if money >= 100 and bikini > 0:
-		act 'To pay 100 rubles per 1 hour in the pool':
+		if money >= 100 and bikini > 0:
+			act 'To pay 100 rubles per 1 hour in the pool':
 			cla
 			set minut += 5
 			set money -= 100
@@ -33,6 +33,7 @@ if $ARGS[0] = 'a':
 	'<center><b><font color="maroon">Pool</font></b></center>'
 
 	if magik < 4:'<center><img src="images/etogame/bass.jpg"></center>'
+
 	if magik >= 4 and kisameQW = 0:
 		'<center><img src="images/etogame/bass1.jpg"></center>'
 		'In pool floats hefty athlete, he swims with mad speed and clearly feels like a fish in water, he come to the shore to the edge of the pool and in one motion jumps right in front of you. Looking at you, he greedily smiling showing you a range of white teeth.'
@@ -132,6 +133,7 @@ if $ARGS[0] = 'a':
 			act 'Out of the water':gt 'bass', 'start'
 		end
 	end
+
 	act 'Swim (1:00)':
 		cla
 		*clr
@@ -159,4 +161,3 @@ if $ARGS[0] = 'a':
 end
 
 --- bass ---------------------------------
-

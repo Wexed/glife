@@ -111,9 +111,10 @@ if $ARGS[0] = 'forman':
 
 	if hour < 23:
 		act 'Sit at a table near the stage and watch striptease':gt 'stripclub', 'stol'
-			if money >= 1000:
-				act 'Order a lap dance (1,000 rubles)':gt 'stripclub', 'privat'
-			end
+
+		if money >= 1000:
+			act 'Order a lap dance (1,000 rubles)':gt 'stripclub', 'privat'
+		end
 
 		if money >= 5000:
 			act 'Order a special show (5,000 rubles)':
@@ -204,6 +205,7 @@ end
 if $ARGS[0] = 'forwoman':
 	cla
 	*clr
+	stripguy = 0
 	set minut += 5
 	'<center><b><font color="maroon">Strip Club</font></b></center>'
 	'<center><img src="images/etogame/stripclub1.jpg"></center>'
@@ -263,6 +265,7 @@ if $ARGS[0] = 'stolW':
 	*clr
 	clr
 	gs 'stat'
+	stripguy = 0
 	'<center><img src="images/picVA/stripW.jpg"></center>'
 	'On stage act and inflated athletic guys, girls squeal and shoved them money in the heat.'
 
@@ -342,6 +345,7 @@ if $ARGS[0] = 'stpr1':
 	'The room includes two girls with a strap, and begin to fuck each other.'
 
 	act 'Finish':gt 'stripclub', 'forman'
+
 	act 'Join':
 		cla
 		*clr
@@ -445,4 +449,3 @@ if $ARGS[0] = 'stpr4':
 end
 
 --- stripclub ---------------------------------
-

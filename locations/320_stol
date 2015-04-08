@@ -5,12 +5,9 @@ if $ARGS[0] = 'start':
 	gs 'stat'
 	'Oddments drawer.'
 
-	if Stolprezik > 0:'In the drawer are <<Stolprezik>> condoms'
-	if Stoltabletki > 0:'In the drawer are <<Stoltabletki>> birth control pills'
-	if Stollubri > 0:'In the drawer is lubricant, enough for <<Stollubri>> uses.'
-	!!if prezik > 0:'Packing condoms, it <<prezik>> pc.'
-	!!if tabletki > 0:'Birth control pills <<tabletki>> pc.'
-	!!if lubri > 0:'Lubricant, enough for <<lubri>> time.'
+	if prezik > 0:'Packing condoms, it <<prezik>> pc.'
+	if tabletki > 0:'Birth control pills <<tabletki>> pc.'
+	if lubri > 0:'Lubricant, enough for <<lubri>> time.'
 	if krem > 0:'Sunblock <<krem>>'
 	if abonement > 0:'Subscription is valid for <<abonement>> Occupation'
 	if dildo > 0:'Realistic Dildo'
@@ -59,10 +56,9 @@ if $ARGS[0] = 'fin':
 	gt $locM, $metkaM
 
 	!'if housr = 1 and housrA = 1:
-		set housrA = 0
-		gt 'sitr'
+	set housrA = 0
+	gt 'sitr'
 	end'!
 end
 
 --- stol ---------------------------------
-

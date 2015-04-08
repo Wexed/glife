@@ -51,9 +51,7 @@ if $ARGS[0] = 'start':
 				end
 			end
 
-			if vidage >= 20:
-				'You asked about the work of a model, but the photographer you said "I´m sorry, but you look like a pretty mature woman, we also need young girls." this way you have indicated that you look too old for this business.'
-			end
+			if vidage >= 20:'You asked about the work of a model, but the photographer you said "I´m sorry, but you look like a pretty mature woman, we also need young girls." this way you have indicated that you look too old for this business.'
 
 			act 'Leave':gt 'foto', 'start'
 		end
@@ -96,6 +94,7 @@ if $ARGS[0] = 'model':
 				set modelpayfin = 9 * modelpay / 2
 				set money += modelpayfin
 				set modelfoto += 1
+				modelfotoTipe[1] += 1
 				*clr
 				'<center><img src="images/etogame/model1.jpg"></center>'
 				'You dressed up in sexy clothes and three hours spent taking various poses for a photographer.'
@@ -119,6 +118,7 @@ if $ARGS[0] = 'model':
 				set modelpayfin = 6 * modelpay
 				set money += modelpayfin
 				set modelfoto += 1
+				modelfotoTipe[2] += 1
 				*clr
 				'<center><img src="images/etogame/model2.jpg"></center>'
 				'You dressed up in sexy clothes and three hours spent taking various poses for a photographer.'
@@ -142,6 +142,7 @@ if $ARGS[0] = 'model':
 				set modelpayfin = 9 * modelpay / 2
 				set money += modelpayfin
 				set modelfoto += 1
+				modelfotoTipe[3] += 1
 				*clr
 				'<center><img src="images/etogame/model3.jpg"></center>'
 				'You dressed up in sexy clothes and three hours spent taking various poses for a photographer.'
@@ -165,6 +166,7 @@ if $ARGS[0] = 'model':
 				set modelpayfin = 6 * modelpay
 				set money += modelpayfin
 				set modelfoto += 1
+				modelfotoTipe[4] += 1
 				*clr
 				'<center><img src="images/etogame/model4.jpg"></center>'
 				'You dressed up in sexy clothes and three hours spent taking various poses for a photographer.'
@@ -189,6 +191,7 @@ if $ARGS[0] = 'model':
 				set modelpayfin = 5 * 3 * modelpay / 2
 				set money += modelpayfin
 				set modelfoto += 1
+				modelfotoTipe[5] += 1
 				*clr
 				'<center><img src="images/etogame/model5.jpg"></center>'
 				'You undressed and three hours spent taking various poses for a photographer and poking holes in different dildos.'
@@ -215,6 +218,7 @@ if $ARGS[0] = 'model':
 				set money += modelpayfin
 				set modelfoto += 1
 				set girl += 1
+				modelfotoTipe[6] += 1
 				*clr
 				'<center><img src="images/etogame/model6.jpg"></center>'
 				'You undressed and three hours spent taking various poses with another girl before Pictured petting orgasms and lust.'
@@ -239,6 +243,7 @@ if $ARGS[0] = 'model':
 				set modelpayfin = 3 * modelpay
 				set money += modelpayfin
 				set modelfoto += 1
+				modelfotoTipe[7] += 1
 				'<center><img src="images/etogame/fotograph.jpg"></center>'
 				'Photographer said what poses you should take, you are trying to fully implement his instructions and took the most candid poses horny females.'
 				'You filmed naked 3:00 and earned <<modelpayfin>> rubles.'
@@ -342,4 +347,3 @@ if $ARGS[0] = 'blackm':
 end
 
 --- foto ---------------------------------
-

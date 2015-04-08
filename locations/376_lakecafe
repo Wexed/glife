@@ -71,6 +71,7 @@ if $ARGS[0] = 'main':
 				*clr
 
 				act 'Get up from the table':set minut += 20 & gt 'lakecafe', 'main'
+
 				'<center><img src="images/pics/food.jpg"></center>'
 				set minut += 30
 				set health += 10
@@ -79,8 +80,8 @@ if $ARGS[0] = 'main':
 				set willpower += 5
 
 				if energy >= 30:
-					set fat += 5
-					'You can no longer have.'
+						set fat += 5
+						'You can no longer have.'
 				end
 
 				if energy >= 20 and energy < 30:
@@ -107,7 +108,6 @@ if $ARGS[0] = 'main':
 
 	if LCwork2 >= 1 and LCwork2day ! day and hour = 18:
 		act 'Help in the kitchen':gt 'LCwork', 'Kitchen'
-
 	end
 
 	act 'Leave':set minut += 2 & gt 'nord'
@@ -185,7 +185,6 @@ if $ARGS[0] = 'barmensha':
 				'<center><img src="images/LakeCafe/LakeBarmensha.jpg"></center>'
 
 				if LCworkwork2 < 1:
-
 					'You ask about the work of Eugene. She tells you that her sister needed help in the kitchen, come in 18 hours you need to work half an hour, during which you will be paid 175 rubles.'
 					set LCworkwork2 = 1
 					set LCwork2 = 1
@@ -238,4 +237,3 @@ if $ARGS[0] = 'barmensha':
 end
 
 --- lakecafe ---------------------------------
-

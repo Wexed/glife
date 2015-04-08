@@ -9,11 +9,12 @@ if $ARGS[0] = 'start':
 	'Also in the works eatery <a href="exec:gt ''butoilet''">WC</a> to visitors.'
 
 	if BistroBoss > 0:'<a href="exec:gt ''burgerBoss''">The Cabinet of the Director</a> Anatoly Chubais'
-		clr
-		gs 'stat'
-		fcolor = rgb(0, 0, 0)
-		bcolor = rgb(255, 255, 255)
-		lcolor = rgb(106, 90, 205)
+
+	clr
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
 
 	act 'Leave':
 		cla
@@ -67,7 +68,8 @@ if $ARGS[0] = 'start':
 			'You went to the office of the owner. He appeared in his place, dealing with your papers. Anatoly Borisovich looked at you and said, "Well? Are there any news?"'
 
 			act 'Exit':gt 'burger', 'start'
-				if money >= 650000:
+
+			if money >= 650000:
 				act 'To repay the debt (650,000 rubles)':
 					cls
 					money -= 650000
@@ -147,7 +149,6 @@ if $ARGS[0] = 'start':
 
 			if vnesh >= 20 and posuda >= 7 and bistroQW < 10:
 				if bistroQW = 1:$bistrotext = 'From the office of the owner came out and saw Bystroezhki you smiled. "<<$name>>. My offer still stands. It pays to go to a restaurant?"'
-
 				if bistroQW = 0:bistroQW = 1 & $bistrotext = 'From the office of the owner came Bystroezhki and nearly bumped into you.
 
 				- Oh, sorry. How could I not see such a charming girl.
@@ -363,7 +364,7 @@ if $ARGS[0] = 'start':
 								IvanPodstavaQW = 1
 								NoBistroWork = 1
 								gs 'stat'
-								'Coming out of the office, you saw that in the corridor outside the cooler worth Ivan and talking on the cell phone. Seeing you, he waved his hand to you. You came up and gave the envelope to Ivan. He quickly picked it up and put it in his jacket pocket. After that, you nodded. You can go. You want to give him the keys to the cabinet Chubais, but Ivan shook his head and closing his hand tube told you. "Leave the keys while at home. Come tomorrow, we shall discuss the details of your new appointment.'
+								'Coming out of the office, you saw that in the corridor outside the cooler worth Ivan and talking on the cell phone. Seeing you, he waved his hand to you. You came up and gave the envelope to Ivan. He quickly picked it up and put it in his jacket pocket. After that, you nodded. You can go. You want to give him the keys to the cabinet Chubais, but Ivan shook his head and closing his hand tube told you. "Leave the keys while at home. Come tomorrow, we shall discuss the details of your new appointment."'
 
 								act 'Leave':gt 'burger', 'start'
 							end
@@ -376,7 +377,7 @@ if $ARGS[0] = 'start':
 							IvanPodstavaQW = 1
 							NoBistroWork = 1
 							gs 'stat'
-							'Coming out of the office, you saw that in the corridor outside the cooler worth Ivan and talking on the cell phone. Seeing you, he waved his hand to you. You came up and gave the envelope to Ivan. He quickly picked it up and put it in his jacket pocket. After that, you nodded. You can go. You want to give him the keys to the cabinet Chubais, but Ivan shook his head and closing his hand tube told you. "Leave the keys while at home. Come tomorrow, we shall discuss the details of your new appointment.'
+							'Coming out of the office, you saw that in the corridor outside the cooler worth Ivan and talking on the cell phone. Seeing you, he waved his hand to you. You came up and gave the envelope to Ivan. He quickly picked it up and put it in his jacket pocket. After that, you nodded. You can go. You want to give him the keys to the cabinet Chubais, but Ivan shook his head and closing his hand tube told you. "Leave the keys while at home. Come tomorrow, we shall discuss the details of your new appointment."'
 
 							act 'Leave':gt 'burger', 'start'
 						end
@@ -391,11 +392,12 @@ if $ARGS[0] = 'start':
 
 					act 'Leave':gt 'burger', 'start'
 				end
-			exit
-		end
 
-		if bistroQW = 50:
-			'During operation, you learned that Chubais is away on business affairs and his manager replaces Ivan. When you are ready to go to work from the office manager came out and Ivan came to you in a conspiratorial tone said. "Well <<$name>>, you obviously do not want to work for those pennies? Come to me, spec. Spec work for. Salary."'
+				exit
+			end
+
+			if bistroQW = 50:
+				'During operation, you learned that Chubais is away on business affairs and his manager replaces Ivan. When you are ready to go to work from the office manager came out and Ivan came to you in a conspiratorial tone said. "Well <<$name>>, you obviously do not want to work for those pennies? Come to me, spec. Spec work for. Salary."'
 
 				act 'Go to the manager´s office':
 					cls
@@ -477,6 +479,7 @@ if $ARGS[0] = 'start':
 							end
 						end
 					end
+
 					exit
 				end
 			end
@@ -591,14 +594,15 @@ if $ARGS[0] = 'start':
 
 			if bistroQW = 57 and BistroBoss = 0 or bistroQW >= 65 and BistroBoss = 0 and soplakTimes = 3:
 				BistroBoss = 1
+
 				if soplakTimes = 3:soplakTimes = 4
+
 				'When you have finished, seemed on the verge of bystroezhki Anatoly Borisovich, he nodded to you "Hello <<$name>>, you´re done, come to me."'
 
 				act 'Leave':gt 'burger', 'start'
 
 				exit
 			end
-
 
 			act 'Leave':gt 'burger', 'start'
 		end
@@ -623,4 +627,3 @@ if $ARGS[0] = 'start':
 end
 
 --- burger ---------------------------------
-

@@ -5,7 +5,7 @@ if $ARGS[0] = 'start':
 	set minut += 5
 	'<center><b><font color="maroon">Fitness Center</font></b></center>'
 	'<center><img src="images/etogame/fit.jpg"></center>'
-	'Subscribe to the 30 classes worth 3000 ruble'
+	'Subscribe to the 30 classes worth 3,000 ruble'
 	'Be sure to come to class in sportswear.'
 
 	if abonement > 0:'Subscription is valid for <<abonement>> Occupation'
@@ -20,10 +20,10 @@ if $ARGS[0] = 'start':
 		cla
 		set minut += 5
 		gt 'down'
-	end
+		end
 
-	if money >= 3000:
-		act 'Buy a subscription (3,000 rubles)':
+		if money >= 3000:
+			act 'Buy a subscription (3,000 rubles)':
 			cla
 			set money -= 3000
 			set abonement += 30
@@ -113,13 +113,13 @@ if $ARGS[0] = 'razd':
 
 	if razdtumbler = 1 and sport > 0:
 		act 'Go to the gym':
-			cla
-			gt 'fit', 'raz'
-		end
+		cla
+		gt 'fit', 'raz'
+	end
 
-		act 'Go to the dance studio.':
-			cla
-			gt 'danceclass'
+	act 'Go to the dance studio.':
+		cla
+		gt 'danceclass'
 		end
 	end
 
@@ -304,7 +304,7 @@ if $ARGS[0] = 'kik':
 		set fat -= 4
 		set sweat += 3
 		set Kik += rand(1, 3)
-			'<center><img src="images/etogame/kik1.jpg"></center>'
+		'<center><img src="images/etogame/kik1.jpg"></center>'
 		'You practiced on pear powerful kicks able to cut down an opponent. These impacts are powerful, but are very difficult to hit.'
 
 		act 'Leave':gt 'fit', 'razd'
@@ -504,4 +504,3 @@ if $ARGS[0] = '1':
 end
 
 --- fit ---------------------------------
-

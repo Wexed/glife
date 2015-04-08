@@ -58,8 +58,6 @@ if $ARGS[0] = 'Time':
 	end
 end
 
-
-
 if $ARGS[0] = '1':
 	cla
 
@@ -68,6 +66,7 @@ if $ARGS[0] = '1':
 	if numbud = 2:set bud3 = 1 & set numbud = 3
 	if numbud = 1:set bud2 = 1 & set numbud = 2
 	if numbud = 0:set bud1 = 1 & set numbud = 1
+
 	gt 'budilnik', 'start'
 end
 
@@ -180,11 +179,13 @@ end
 
 if $ARGS[0] = 'Reset':
 	cla
+
 	set bud1 = 0
 	set bud2 = 0
 	set bud3 = 0
 	set bud4 = 0
 	set numbud = 0
+
 	gt 'budilnik', 'start'
 end
 
@@ -199,4 +200,3 @@ if $ARGS[0] = 'fin':
 end
 
 --- budilnik ---------------------------------
-

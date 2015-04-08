@@ -72,203 +72,201 @@ if $ARGS[0] = 'start':
 		'<<$striptalk>>'
 
 		act 'Move away':gt $curloc, 'start'
-}
+	}
 
-$stripohr = {
-	cls
-	gs 'stat'
-	'Hefty bored guard at the door. Seeing you it lazily throws "Hello <<$name>>."'
+	$stripohr = {
+		cls
+		gs 'stat'
+		'Hefty bored guard at the door. Seeing you it lazily throws "Hello <<$name>>."'
 
-	act 'Move away':gt $curloc, 'start'
-}
+		act 'Move away':gt $curloc, 'start'
+	}
 
-$striptoilet2 = {
-	cls
-	gs 'stat'
-	'You rinsed the razor blade which will be enough for <<stanok>> time.'
+	$striptoilet2 = {
+		cls
+		gs 'stat'
+		'You rinsed the razor blade which will be enough for <<stanok>> time.'
 
-	if leghair > 0 and stanok > 0:
-		act 'Shave your legs (0:15)':
-			cla
-			*clr
-			set minut += 15
-			set leghair = -5
-			set horny += 5
-			set stanok -= 1
-			'<center><img src="images/pics/shave.jpg"></center>'
-			'You lathered up and shaved hair with them.'
-
-			act 'Postpone machine':dynamic $striptoilet2
-		end
-	end
-
-	if lobok > 0 and stanok > 0:
-		act 'Shave pubis (0:15)':
-			cla
-			*clr
-			set minut += 15
-			set lobok = -5
-			set horny += 5
-			set stanok -= 1
-			'<center><img src="images/pics/shave3.jpg"></center>'
-			'You lathered pubis, then shaved all the hair from it.'
-
-			act 'Postpone machine':dynamic $striptoilet2
-		end
-	end
-
-	act 'Out of the shower and get dressed':dynamic $striptoilet
-}
-
-$striptoilet = {
-	cls
-	'<center><img src="images/LakeCafe/Toilet.jpg"></center>'
-	'Dirty and smelly toilet that seems to have never been cleaned'
-	gs 'stat'
-
-	if tanga = 1:
-		act 'Remove Underwear':
-			cla
-			set tanga = 0
-			dynamic $striptoilet
-		end
-	end
-	act 'Look in the mirror':
-		cla
-		gs 'portmirror'
-		set $goto1 = 'stwork'
-		set $goto2 = ''
-		dynamic $portmirror
-
-		act 'Move away from the mirror':
-			cla
-			dynamic $striptoilet
-		end
-	end
-
-	if mop ! 1:
-		act 'Wash off makeup':
-			cla
-			*clr
-			minut += 5
-			mop = 1
-			'<center><img src="images/etogame/mop.jpg"></center>'
-			'You flushed makeup.'
-
-			act 'Exit':dynamic $striptoilet
-		end
-	end
-	act 'Take a shower (0:15)':
-		cla
-		*clr
-		set minut += 15
-		set sweat = -3
-		set horny += 1
-		set hapri = 0
-		set mop = 1
-		set cumpussy = 0
-		set cumbelly = 0
-		set cumass = 0
-		set cumanus = 0
-		set cumlip = 0
-		set cumface = 0
-		set cumanus =0
-		'<center><img src="images/pics/dush.jpg"></center>'
-		'You got into the bathroom and turned on the shower. Lathered body and washed off in the shower.'
-
-		if leghair > 0 and stanok > 0 or lobok > 0 and stanok > 0:
-			act 'Get razor':dynamic $striptoilet2
-		end
-
-		if horny >= 90:
-			act 'Send shower pussy':
+		if leghair > 0 and stanok > 0:
+			act 'Shave your legs (0:15)':
 				cla
 				*clr
-				set horny = 0
-				set minut += 30
-				set mastr += 1
-				set orgasm += 1
-				set manna += 15
-				set willpower += 15
-				'<center><img src="images/pics/wash2.jpg"></center>'
-				'You sent a shower pussy and tight jet of warm water began to caress you. Soon you will feel like a warm wave covers your entire body and you began to shudder in orgasm.'
+				set minut += 15
+				set leghair = -5
+				set horny += 5
+				set stanok -= 1
+				'<center><img src="images/pics/shave.jpg"></center>'
+				'You lathered up and shaved hair with them.'
 
-				act 'Get out and get dressed':dynamic $striptoilet
+				act 'Postpone machine':dynamic $striptoilet2
 			end
 		end
 
-		if horny >= 40 and hormy < 90:
-			act 'Send shower pussy':
+		if lobok > 0 and stanok > 0:
+			act 'Shave pubis (0:15)':
 				cla
 				*clr
+				set minut += 15
+				set lobok = -5
 				set horny += 5
-				set minut += 30
-				set manna += 10
-				set willpower += 10
-				'<center><img src="images/pics/wash2.jpg"></center>'
-				'You sent a shower pussy and tight jet of warm water began to caress you. First you were very nice, but after a while, even as it was painful. Excitation of sleep and you stop masturbating.'
+				set stanok -= 1
+				'<center><img src="images/pics/shave3.jpg"></center>'
+				'You lathered pubis, then shaved all the hair from it.'
 
-				act 'Get out and get dressed':dynamic $striptoilet
+				act 'Postpone machine':dynamic $striptoilet2
 			end
 		end
 
 		act 'Out of the shower and get dressed':dynamic $striptoilet
-	end
+	}
 
-	if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
-		act 'Wash up (0:15)':
+	$striptoilet = {
+		cls
+		'<center><img src="images/LakeCafe/Toilet.jpg"></center>'
+		'Dirty and smelly toilet that seems to have never been cleaned'
+		gs 'stat'
+
+		if tanga = 1:
+			act 'Remove Underwear':
+				cla
+				set tanga = 0
+				dynamic $striptoilet
+			end
+		end
+
+		act 'Look in the mirror':
+			cla
+			gs 'portmirror'
+			set $goto1 = 'stwork'
+			set $goto2 = ''
+			dynamic $portmirror
+
+			act 'Move away from the mirror':
+				cla
+				dynamic $striptoilet
+			end
+		end
+
+		if mop ! 1:
+			act 'Wash off makeup':
+				cla
+				*clr
+				minut += 5
+				mop = 1
+				'<center><img src="images/etogame/mop.jpg"></center>'
+				'You flushed makeup.'
+
+				act 'Exit':dynamic $striptoilet
+			end
+		end
+
+		act 'Take a shower (0:15)':
 			cla
 			*clr
+			set minut += 15
+			set sweat = -3
+			set horny += 1
+			set hapri = 0
+			set mop = 1
 			set cumpussy = 0
 			set cumbelly = 0
 			set cumass = 0
-			set cumanus =0
+			set cumanus = 0
 			set cumlip = 0
 			set cumface = 0
-			set sweat -= 1
-			set minut += 15
-			'<center><img src="images/pics/wash5.jpg"></center>'
-			'You carefully washed sperm with yourself.'
+			set cumanus =0
+			'<center><img src="images/pics/dush.jpg"></center>'
+			'You got into the bathroom and turned on the shower. Lathered body and washed off in the shower.'
 
-			act 'Exit':dynamic $striptoilet
+			if leghair > 0 and stanok > 0 or lobok > 0 and stanok > 0:
+				act 'Get razor':dynamic $striptoilet2
+			end
 
+			if horny >= 90:
+				act 'Send shower pussy':
+					cla
+					*clr
+					set horny = 0
+					set minut += 30
+					set mastr += 1
+					set orgasm += 1
+					set manna += 15
+					set willpower += 15
+					'<center><img src="images/pics/wash2.jpg"></center>'
+					'You sent a shower pussy and tight jet of warm water began to caress you. Soon you will feel like a warm wave covers your entire body and you began to shudder in orgasm.'
+
+					act 'Get out and get dressed':dynamic $striptoilet
+				end
+			end
+
+			if horny >= 40 and hormy < 90:
+				act 'Send shower pussy':
+					cla
+					*clr
+					set horny += 5
+					set minut += 30
+					set manna += 10
+					set willpower += 10
+					'<center><img src="images/pics/wash2.jpg"></center>'
+					'You sent a shower pussy and tight jet of warm water began to caress you. First you were very nice, but after a while, even as it was painful. Excitation of sleep and you stop masturbating.'
+
+					act 'Get out and get dressed':dynamic $striptoilet
+				end
+			end
+
+			act 'Out of the shower and get dressed':dynamic $striptoilet
+		end
+
+		if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
+			act 'Wash up (0:15)':
+				cla
+				*clr
+				set cumpussy = 0
+				set cumbelly = 0
+				set cumass = 0
+				set cumanus =0
+				set cumlip = 0
+				set cumface = 0
+				set sweat -= 1
+				set minut += 15
+				'<center><img src="images/pics/wash5.jpg"></center>'
+				'You carefully washed sperm with yourself.'
+
+				act 'Exit':dynamic $striptoilet
 			end
 		end
 
 		if cumlip > 0 or cumface > 0:
 			act 'Wash cum off face (0:15)':
-				cla
-				*clr
-				set cumlip = 0
-				set cumface = 0
-				set sweat -= 1
-				set minut += 15
-				'<center><img src="images/etogame/facesp.jpg"></center>'
-				'You carefully washed sperm from her face.'
+			cla
+			*clr
+			set cumlip = 0
+			set cumface = 0
+			set sweat -= 1
+			set minut += 15
+			'<center><img src="images/etogame/facesp.jpg"></center>'
+			'You carefully washed sperm from her face.'
 
-				act 'Exit':dynamic $striptoilet
-			end
+			act 'Exit':dynamic $striptoilet
 		end
+	end
 
-		if cumfrot > 0:
-			act 'Wipe the cum from clothing (0:15)':
-				cla
-				*clr
-				set cumfrot = 0
-				set sweat -= 1
-				set minut += 15
-				!!'<center><img src="images/etogame/facesp.jpg"></center>'
-				'You erase traces of semen from the clothes.'
+	if cumfrot > 0:
+		act 'Wipe the cum from clothing (0:15)':
+			cla
+			*clr
+			set cumfrot = 0
+			set sweat -= 1
+			set minut += 15
+			!!'<center><img src="images/etogame/facesp.jpg"></center>'
+			'You erase traces of semen from the clothes.'
 
-				act 'Exit':dynamic $striptoilet
-			end
+			act 'Exit':dynamic $striptoilet
 		end
+	end
 
-		act 'Off the toilet':gt $curloc, 'start'
-
+	act 'Off the toilet':gt $curloc, 'start'
 	}
-
 end
 
 --- stwork ---------------------------------
-

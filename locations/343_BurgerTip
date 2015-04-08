@@ -117,208 +117,207 @@ $burger_work_din = {
 						'<center><img src="images/qwest/sosed/bossBJ.jpg"></center>'
 						'Vashie thin fingers lowered pants with the chief, and his standing member mound protruded through the panties. You kissed briefs in place mound feeling firm flesh through the fabric. Then playfully took in his mouth dick right through the panties and began to fondle.'
 						dynamic $boss_din_bj
-					end
+						end
 
-					dynamic $boss_din_bj
+						dynamic $boss_din_bj
+					end
 				end
 			end
+
+			exit
 		end
 
-		exit
-	end
+		if burand = 1:
+			cls
+			gs 'stat'
+			'<center><img src="images/qwest/sosed/work5.jpg"></center>'
 
-	if burand = 1:
-		cls
-		gs 'stat'
-		'<center><img src="images/qwest/sosed/work5.jpg"></center>'
+			if PSBBtimes = 1:
+				bosstiprand = rand(0, 3)
 
-		if PSBBtimes = 1:
-			bosstiprand = rand(0, 3)
+				if bosstiprand = 0:
+					TerminalPapper = 1
+					DayTerminalPapper = day
+					'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, take these documents to the North area, in a storage terminal, then you can be free today."'
 
-			if bosstiprand = 0:
-				TerminalPapper = 1
-				DayTerminalPapper = day
-				'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, take these documents to the North area, in a storage terminal, then you can be free today."'
-
-				act 'Leave':gt 'down'
-			end
-
-			if bosstiprand = 1:
-				'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, I´ll leave up for lunch. But now bring up products, you accept the products instead of me."'
-
-				act 'Take products':
-					cls
-					gs 'stat'
-					'To the rear entrance truck arrived with food. To you approached the driver with the instruments of acceptance. You signed the documents and ordered the baggage handlers to unload the car.'
-
-					if PSBBtimes = 1:dynamic $dinBistroWork
-					if PSBBtimes = 2:dynamic $dinBistroWork2
+					act 'Leave':gt 'down'
 				end
-			end
 
-			!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-			if bosstiprand = 2:
-				BankPapper = 1
-				dayBankPapper = day
-				'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, run to the bank with these documents. How otneseshsya documents can be free today."'
+				if bosstiprand = 1:
+					'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, I´ll leave up for lunch. But now bring up products, you accept the products instead of me."'
 
-				act 'Leave':gt 'down'
-			end
-
-			if bosstiprand = 3:
-				'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, call programmer who have part-time, my PC is broken"'
-
-				act 'Call programmer':
-					cls
-					gs 'stat'
-
-					if sosedQW = 0:'Soon entered the office of a young, tall guy with a big bag. He asked that broke, you showed him the chief of the computer and the guy sat down at the computer fix. Soon he graduated and earned a computer.'
-
-					if sosedQW > 0 and sosedKnowWork > 0:
-						sosedKnowWork = 1
-						'Soon the office entered Timothy, your neighbor. He asked that broke, you showed him the chief of the computer and the guy sat down at the computer fix. Soon he graduated and earned a computer.'
-					end
-
-					if sosedQW > 0 and sosedKnowWork = 0:
-						sosedKnowWork = 1
-						'Soon the office entered Timothy, your neighbor. He was surprised to see you. You chatted cheerfully, Timothy is working part-time in bystroezhke, repairing office equipment, charges cartridges.'
-					end
-
-					if PSBBtimes = 1:dynamic $dinBistroWork
-					if PSBBtimes = 2:dynamic $dinBistroWork2
-				end
-			end
-		end
-
-		!!!!!!!!!!!!!!!!!!!!!!!
-		!!!!!!!!!!!!!!!!!!!!!!!
-		if PSBBtimes = 2:
-			bosstiprand = rand(0, 3)
-
-			if bosstiprand = 0:
-				'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, I have to leave early today, here´s a print, well, so far." Anatoly Borisovich then left the office.'
-				bburand = rand(0, 10)
-
-				if bburand = 0:
-					'To your office went senior manager Ivan.'
-					dynamic $din_Ivan_work
-
-					if kompromatLife = 0 or kompromatBlackMail > 1:
-						'Ivan grinned "I need shtampulki on here these papers." You took the seal and stamp on paper Ivan.'
+					act 'Take products':
+						cls
+						gs 'stat'
+						'To the rear entrance truck arrived with food. To you approached the driver with the instruments of acceptance. You signed the documents and ordered the baggage handlers to unload the car.'
 
 						if PSBBtimes = 1:dynamic $dinBistroWork
 						if PSBBtimes = 2:dynamic $dinBistroWork2
 					end
 				end
 
-				if bburand = 1:
-					'To your office assistant manager went Sergei.'
-					'Sergei looked you carnivorous eyes "Anatoly Borisovich at?" You said no.'
+				!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+				if bosstiprand = 2:
+					BankPapper = 1
+					dayBankPapper = day
+					'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, run to the bank with these documents. How otneseshsya documents can be free today."'
 
-					if sergeyPQW = 1:'Pimply young man chuckled and sat on the edge of the table. "<<$name>>, you´re dynamite. Cafe I invested for you, and you with me here and so cost.''s No nice of you."'
+					act 'Leave':gt 'down'
+				end
 
-					if sergeyPQW = 0:
-						'Pimply kid sat on the edge of the table "Svetsik you cool the girl can descend to something?"'
+				if bosstiprand = 3:
+					'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, call programmer who have part-time, my PC is broken"'
 
-						act 'No! And do not even think about it!':
-							cls
-							gs 'stat'
-							'You have rejected this rookie and he jumped up from the table left his office.'
+					act 'Call programmer':
+						cls
+						gs 'stat'
+
+						if sosedQW = 0:'Soon entered the office of a young, tall guy with a big bag. He asked that broke, you showed him the chief of the computer and the guy sat down at the computer fix. Soon he graduated and earned a computer.'
+
+						if sosedQW > 0 and sosedKnowWork > 0:
+							sosedKnowWork = 1
+							'Soon the office entered Timothy, your neighbor. He asked that broke, you showed him the chief of the computer and the guy sat down at the computer fix. Soon he graduated and earned a computer.'
+						end
+
+						if sosedQW > 0 and sosedKnowWork = 0:
+							sosedKnowWork = 1
+							'Soon the office entered Timothy, your neighbor. He was surprised to see you. You chatted cheerfully, Timothy is working part-time in bystroezhke, repairing office equipment, charges cartridges.'
+						end
+
+						if PSBBtimes = 1:dynamic $dinBistroWork
+						if PSBBtimes = 2:dynamic $dinBistroWork2
+					end
+				end
+			end
+
+			!!!!!!!!!!!!!!!!!!!!!!!
+			!!!!!!!!!!!!!!!!!!!!!!!
+			if PSBBtimes = 2:
+				bosstiprand = rand(0, 3)
+
+				if bosstiprand = 0:
+					'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, I have to leave early today, here´s a print, well, so far." Anatoly Borisovich then left the office.'
+					bburand = rand(0, 10)
+
+					if bburand = 0:
+						'To your office went senior manager Ivan.'
+						dynamic $din_Ivan_work
+
+						if kompromatLife = 0 or kompromatBlackMail > 1:
+							'Ivan grinned "I need shtampulki on here these papers." You took the seal and stamp on paper Ivan.'
 
 							if PSBBtimes = 1:dynamic $dinBistroWork
 							if PSBBtimes = 2:dynamic $dinBistroWork2
 						end
-
-						act 'Come on.':
-							cls
-							gs 'stat'
-							'<center><img src="images/qwest/sosed/work7.jpg"></center>'
-							'Sergei delighted and promised to go after you left. Working time has come to an end and re-entered the office Sergei. "Come on."'
-
-							act 'Go.':
-								cls
-								minut += 60
-								horny += 15
-								water = 24
-								energy = 24
-								salo += 2
-								fat += 20
-								gs 'stat'
-								'<center><img src="images/qwest/sosed/kafe2.jpg"></center>'
-								'You went with Sergei and logged in located not far from bystroezhki cafe. Sergei ordered drinks and food and you sat down at the table. Order soon earned and you began to eat and drink wine. Soon you´re a bit tipsy and the conversation flowed naturally. Sergei called the waitress and paid with her. You went out with his partner, and pimply he suddenly hugged you "<<$name>>, went to me."'
-
-								act 'Refuse.':
-									cls
-									minut += 15
-									sergeyPQW = 1
-									gs 'stat'
-									!!'<center><img src="images/qwest/sosed/kafe2.jpg"></center>'
-									'You refused molestation obsessive brat and left.'
-
-									act 'Leave.':gt 'down'
-								end
-							end
-						end
-
-						exit
 					end
 
-					if PSBBtimes = 1:dynamic $dinBistroWork
-					if PSBBtimes = 2:dynamic $dinBistroWork2
-				end
+					if bburand = 1:
+						'To your office assistant manager went Sergei.'
+						'Sergei looked you carnivorous eyes "Anatoly Borisovich at?" You said no.'
 
-				if bburand = 2:
-					'To your office came GlavBukh Lena.'
-					'Lena looked disapprovingly you "Chef at home?" You said that he was gone. Lena lipped gone.'
+						if sergeyPQW = 1:'Pimply young man chuckled and sat on the edge of the table. "<<$name>>, you´re dynamite. Cafe I invested for you, and you with me here and so cost.''s No nice of you."'
 
-					if PSBBtimes = 1:dynamic $dinBistroWork
-					if PSBBtimes = 2:dynamic $dinBistroWork2
-				end
+						if sergeyPQW = 0:
+							'Pimply kid sat on the edge of the table "Svetsik you cool the girl can descend to something?"'
 
-				if bburand = 3:
-					'To your office came personnel manager Vic.'
-					'Vick you smiled "Chef at home?" You replied that he was gone. Vick said he would call the next time left.'
+							act 'No! And do not even think about it!':
+								cls
+								gs 'stat'
+								'You have rejected this rookie and he jumped up from the table left his office.'
 
-					if PSBBtimes = 1:dynamic $dinBistroWork
-					if PSBBtimes = 2:dynamic $dinBistroWork2
-				end
-
-				if bburand > 3:
-					'Allotted time you sat in the office alone, bored and expanding solitaire on the computer.'
-
-					if PSBBtimes = 1:dynamic $dinBistroWork
-					if PSBBtimes = 2:dynamic $dinBistroWork2
-				end
-
-			end
-
-			!!!!!!!!!!!!!!!!!!!!!!!!!
-			!!!!!!!!!!!!!!!!!!!!!!!!!
-			if bosstiprand = 1:
-				'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, went along with me, have fun."'
-
-				act 'Go with Anatoly Borisovich':
-					cls
-					gs 'stat'
-					BurMestoRand = rand(0, 1)
-					'<center><img src="images/maggot/car.jpg"></center>'
-
-					if BurMestoRand = 0:
-						'You got in the car to Anatoly Borisovich and you went to the residential area of ​​the city. Soon the car stopped near the sauna. Chubais said with a smile. "I made room for us."'
-
-						act 'Go to the sauna':
-							cls
-							gs 'stat'
-
-							if SaunaWhore > 0:
-								BuSWworkEnd = 1
-								'You are logged in to the sauna and suddenly faced with mother at the entrance, which provided you work in the sauna. She said with surprise, "<<$name>>, what the hell, are you now indvidualka? Slugger I work, and even dare to come here?" Anatoly Borisovich wondered, "What´s going on here, then you know the <<$name>>?" Nurse laughed, "Do I know <<$name>> Yes her pussy real goldmine! Of course I know it, I have it working as a prostitute." Anatoly Borisovich blushed, "How? <<$name>>? You´re just a whore?" You began to mutter, trying to come up with on the fly how do you otmazatsya. Anatoly Borisovich shook his head. "I was wrong about you, <<$name>>." After that, he went silently out of the sauna and you heard his car left. Nurse continued to laugh at you "<<$name>>, you´re a whore, and if you manage to still Okrut decent guy, if your past will come up, then you no self-respecting man, to live is not. Consider it a free lesson to you."'
-
-								act 'Leave':gt 'street'
+								if PSBBtimes = 1:dynamic $dinBistroWork
+								if PSBBtimes = 2:dynamic $dinBistroWork2
 							end
 
-							if SaunaWhore = 0:
-								'You are logged in to the sauna and Chubais held you in luxurious rooms which he made. He quickly began to undress and you too undressed. Then he walked up to you. "<<$name>>, I suck."'
+							act 'Come on.':
+								cls
+								gs 'stat'
+								'<center><img src="images/qwest/sosed/work7.jpg"></center>'
+								'Sergei delighted and promised to go after you left. Working time has come to an end and re-entered the office Sergei. "Come on."'
+
+								act 'Go.':
+									cls
+									minut += 60
+									horny += 15
+									water = 24
+									energy = 24
+									salo += 2
+									fat += 20
+									gs 'stat'
+									'<center><img src="images/qwest/sosed/kafe2.jpg"></center>'
+									'You went with Sergei and logged in located not far from bystroezhki cafe. Sergei ordered drinks and food and you sat down at the table. Order soon earned and you began to eat and drink wine. Soon you´re a bit tipsy and the conversation flowed naturally. Sergei called the waitress and paid with her. You went out with his partner, and pimply he suddenly hugged you "<<$name>>, went to me."'
+
+									act 'Refuse.':
+										cls
+										minut += 15
+										sergeyPQW = 1
+										gs 'stat'
+										!!'<center><img src="images/qwest/sosed/kafe2.jpg"></center>'
+										'You refused molestation obsessive brat and left.'
+
+										act 'Leave.':gt 'down'
+									end
+								end
+							end
+
+							exit
+						end
+
+						if PSBBtimes = 1:dynamic $dinBistroWork
+						if PSBBtimes = 2:dynamic $dinBistroWork2
+					end
+
+					if bburand = 2:
+						'To your office came GlavBukh Lena.'
+						'Lena looked disapprovingly you "Chef at home?" You said that he was gone. Lena lipped gone.'
+
+						if PSBBtimes = 1:dynamic $dinBistroWork
+						if PSBBtimes = 2:dynamic $dinBistroWork2
+					end
+
+					if bburand = 3:
+						'To your office came personnel manager Vic.'
+						'Vick you smiled "Chef at home?" You replied that he was gone. Vick said he would call the next time left.'
+
+						if PSBBtimes = 1:dynamic $dinBistroWork
+						if PSBBtimes = 2:dynamic $dinBistroWork2
+					end
+
+					if bburand > 3:
+						'Allotted time you sat in the office alone, bored and expanding solitaire on the computer.'
+
+						if PSBBtimes = 1:dynamic $dinBistroWork
+						if PSBBtimes = 2:dynamic $dinBistroWork2
+					end
+				end
+
+				!!!!!!!!!!!!!!!!!!!!!!!!!
+				!!!!!!!!!!!!!!!!!!!!!!!!!
+				if bosstiprand = 1:
+					'Came out of the office Anatoly Borisovich and walked up to you. "<<$name>>, went along with me, have fun."'
+
+					act 'Go with Anatoly Borisovich':
+						cls
+						gs 'stat'
+						BurMestoRand = rand(0, 1)
+						'<center><img src="images/maggot/car.jpg"></center>'
+
+						if BurMestoRand = 0:
+							'You got in the car to Anatoly Borisovich and you went to the residential area of ​​the city. Soon the car stopped near the sauna. Chubais said with a smile. "I made room for us."'
+
+							act 'Go to the sauna':
+								cls
+								gs 'stat'
+
+								if SaunaWhore > 0:
+									BuSWworkEnd = 1
+									'You are logged in to the sauna and suddenly faced with mother at the entrance, which provided you work in the sauna. She said with surprise, "<<$name>>, what the hell, are you now indvidualka? Slugger I work, and even dare to come here?" Anatoly Borisovich wondered, "What´s going on here, then you know the <<$name>>?" Nurse laughed, "Do I know <<$name>> Yes her pussy real goldmine! Of course I know it, I have it working as a prostitute." Anatoly Borisovich blushed, "How? <<$name>>? You´re just a whore?" You began to mutter, trying to come up with on the fly how do you otmazatsya. Anatoly Borisovich shook his head. "I was wrong about you, <<$name>>." After that, he went silently out of the sauna and you heard his car left. Nurse continued to laugh at you "<<$name>>, you´re a whore, and if you manage to still Okrut decent guy, if your past will come up, then you no self-respecting man, to live is not. Consider it a free lesson to you."'
+
+									act 'Leave':gt 'street'
+								end
+
+								if SaunaWhore = 0:
+									'You are logged in to the sauna and Chubais held you in luxurious rooms which he made. He quickly began to undress and you too undressed. Then he walked up to you. "<<$name>>, I suck."'
 
 								act 'Further':
 									cls
@@ -340,7 +339,7 @@ $burger_work_din = {
 										'Anatoly Borisovich put a condom on the penis and lay down on the bench pulling your hand to yourself. You have thrown a leg over the boss stomach and sat on top of him, then you took his hard hand and sent it into my pussy.'
 										dynamic $sexstart3
 										'You heard Anatoly Borisovich groaned and twitched a few times, he took you with ebya and you saw that sperm filled condom.'
-										set sweat = -3
+										sweat = -3
 										'Then you went into the shower to wash. Coming out of the shower, you saw that Anatoly Borisovich already dressed. "<<$name>>, I´ve got to run." He kissed you and left.'
 
 										act 'Leave':gt 'street'
@@ -920,4 +919,3 @@ $din_Ivan_work4 = {
 }
 
 --- BurgerTip ---------------------------------
-

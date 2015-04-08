@@ -104,6 +104,7 @@ if dungeonMark = 2:
 			if DMN[1] = 6 and DMN[2] = 8 and DMN[3] = 5 and DMN[4] = 5:jump 'markanotherrand'
 			if DMN[1] = 9 and DMN[2] = 8 and DMN[3] = 8 and DMN[4] = 1:jump 'markanotherrand'
 			if DMN[1] = 5 and DMN[2] = 5 and DMN[3] = 3 and DMN[4] = 1:jump 'markanotherrand'
+
 			i = 0
 			numdmr = 0
 			:markdnm
@@ -136,14 +137,14 @@ end
 if dungeonMark = 3:
 	'<center><img src="images/picPRE/dunPRE3.jpg"></center>'
 	'The room in which the middle stands a stone dais on which are various dusty bottles.'
-	'Scrawled on the wall of what is <a href="exec:dynamic $dundincif ">signs</a>.'
+	'Scrawled on the wall of what is <a href="exec:dynamic $dundincif">signs</a>.'
 
 	act 'Leave the room':minut += 5 & dungeonMark = 2 & gt $curloc
 end
 
 if dungeonMark = 4:
 	'<center><img src="images/picPRE/dunPRE4.jpg"></center>'
-	'Small room in which there are what that <a href="exec:dynamic $dundinboch ">Drums</a>.'
+	'Small room in which there are what that <a href="exec:dynamic $dundinboch">Drums</a>.'
 
 	act 'Leave the room':minut += 5 & dungeonMark = 2 & gt $curloc
 
@@ -170,10 +171,9 @@ if dungeonMark = 5:
 	'<center><img src="images/picPRE/dunPRE5.jpg"></center>'
 	'The room in which the middle, sitting on a stone throne cobwebbed skeleton.'
 
-	if svitokRTS = 0:'In the hands of a skeleton lying <a href="exec:dynamic $dundinsvitok ">scroll</a>.'
+	if svitokRTS = 0:'In the hands of a skeleton lying <a href="exec:dynamic $dundinsvitok">scroll</a>.'
 
 	act 'Leave the room':minut += 5 & dungeonMark = 2 & gt $curloc
 end
 
 --- dangeon ---------------------------------
-

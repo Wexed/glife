@@ -19,6 +19,7 @@ gs 'stat'
 $pubhotdi = {
 	if publichot < 30:payrand = 0 & 'Nobody even paid any attention to your movements on the stage.'
 	if publichot >= 30 and publichot < 60:payrand = 0 & 'A couple of people looked at you but no more than that, you tip no one has.'
+
 	if publichot >= 60 and publichot < 70:
 		payrand = rand(0, 1)
 
@@ -277,7 +278,7 @@ if hour >= 15 or hour <= 2:
 			if stpredmet = 0:mop = 0 & stripdancesum += 1
 
 			hapri = 0
-			publichot += rand(stripdance/20, stripdance/5)+ rand(poledance/20, poledance/5)
+			publichot += rand(stripdance / 20, stripdance / 5)+ rand(poledance / 20, poledance / 5)
 
 			if publichotstart = publichot:publichot -= rand(5, 10) & publichotstart = publichot
 
@@ -332,7 +333,6 @@ if hour >= 15 or hour <= 2:
 			end
 		end
 	end
-
 else
 	'Working time is over. Time to go home.'
 end
@@ -416,4 +416,3 @@ if $ARGS[0] = 'pr3':
 end
 
 --- stwork2 ---------------------------------
-

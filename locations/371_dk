@@ -16,7 +16,7 @@ if $ARGS[0] = 'start':
 		act 'Go to the House of Culture':gt 'dk', 'holl'
 	end
 
-	if avtoskul >= 1 and avtoskul < 11 and skulday ! day and week >= 6 and money >= 1000:
+	if avtoskul >= 1 and avtoskul < 11 and skulday ! day and week >= 6 and money >= 1000 and age >= 18:
 		act 'Driver Training class cost 1, 000 rubles (2:00)':
 			cla
 			*clr
@@ -53,28 +53,29 @@ if $ARGS[0] = 'holl':
 	'Massage lessons - 5,000 rubles per session.'
 	'Personal growth course - 1,000 rubles per session.'
 
-	!' act 'Зайти к медиуму':
+	!' act 'Go to a medium':
 		cla
 		*clr
 		Set minut += 30
 		killobj
 		addobj 'Back'
 		'You did not understand, if anything happened, and mixed feelings came from the charlatan.'
+
 		act 'Leave':gt 'dk', 'holl'
-		end'!
+	end'!
 
-		if money >= 1000:
-			act 'Personal Growth class cost 1,000 rubles (1:00)':
-				cls
-				money -= 1000
-				dom += 5
-				minut += 60
-				gs 'stat'
-				'You are in for an hour with other visitors and played up leading different life situations and learn to be a winner in life situations, to defend their interests. After the course, you feel that your dominance grew.'
+	if money >= 1000:
+		act 'Personal Growth class cost 1,000 rubles (1:00)':
+			cls
+			money -= 1000
+			dom += 5
+			minut += 60
+			gs 'stat'
+			'You are in for an hour with other visitors and played up leading different life situations and learn to be a winner in life situations, to defend their interests. After the course, you feel that your dominance grew.'
 
-				act 'Leave':gt 'dk', 'holl'
-			end
+			act 'Leave':gt 'dk', 'holl'
 		end
+	end
 
 	if secrDiplom = 0 and sekrObu > 0:set sekrObuA = sekrObu - 1 & 'Trained on the Secretary-General <<sekrObuA>> 30 days of'
 
@@ -91,7 +92,7 @@ if $ARGS[0] = 'holl':
 				deystrand = rand(0, 10)
 
 				if deystrand >= 8:
-					'After time spent Alexei turned to you "Today I can not Svetsik, a lot of work, I suck quick.'
+					'After time spent Alexei turned to you "Today I can not Svetsik, a lot of work, I suck quick."'
 
 					act 'Get on your knees and take in the mouth':
 						cls
@@ -298,7 +299,7 @@ if $ARGS[0] = 'holl':
 			end
 		end
 
-		if avtoskul = 0 and money >= 30000 and prava = 0:
+		if avtoskul = 0 and money >= 30000 and prava = 0 and age >= 18:
 			act 'Driver Training course costs 30,000 rubles':
 				cla
 				set money -= 30000
@@ -353,7 +354,7 @@ if $ARGS[0] = 'holl':
 			end
 		end
 
-		if avtoskul >= 1 and avtoskul < 11 and skulday ! day:
+		if avtoskul >= 1 and avtoskul < 11 and skulday ! day and age >= 18:
 			act 'Learn from the right (2:00)':
 				cla
 				*clr
@@ -369,7 +370,7 @@ if $ARGS[0] = 'holl':
 			end
 		end
 
-		if avtoskul >= 11 and skulday ! day:
+		if avtoskul >= 11 and skulday ! day and age >= 18:
 			act 'Pass on the right (2:00)':
 				cla
 				*clr
@@ -406,4 +407,3 @@ if $ARGS[0] = 'holl':
 end
 
 --- dk ---------------------------------
-

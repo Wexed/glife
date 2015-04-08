@@ -29,6 +29,7 @@ if TerminalPapper = 1 and DayTerminalPapper = day:
 		act 'Leave':minut += 5 & gt 'nord'
 	end
 end
+
 if money >= 100:
 	act 'Buy small items (100 rubles)':
 		cls
@@ -61,11 +62,11 @@ if money >= 100:
 					act 'Leave':minut+=5&gt $curloc
 				end
 			end
-		end     
+		end
 
 		act 'Leave':minut += 5 & gt $curloc
 	end
-	 
+
 	if YouCanGar > 0:
 		act 'Buy small items for the car storage (100 rubles)':
 			cls
@@ -99,11 +100,10 @@ if money >= 100:
 					end
 				end
 			end
-				 
-			act 'Leave':minut += 5 & gt $curloc
+
+			act 'Leave':minut += 5 & gt 'nord'
 		end
 	end
 end
 
 --- Terminal ---------------------------------
-
