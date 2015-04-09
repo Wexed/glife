@@ -1,90 +1,29 @@
 # QwestDisdock
-<<<<<<< 460_QwestDisdock
-!в локацию stat на любое место
+!!in location stat at any place
 if qwestonce = 0:
-set qwestonce = 1
-!ADDQST 'qwest\qwest.qsp'
-=======
-
-!in location stat at any place
-if qwestonce=0:
-set qwestonce=1
-!ADDQST 'qwest/qwest.qsp'
->>>>>>> 460_QwestDisdock
+	set qwestonce = 1
+	!!ADDQST 'qwest/qwest.qsp'
 end
 
-<<<<<<< 460_QwestDisdock
-!ссылка на переход
-!расположена в локации park  массив luna
-if vladimirQW = 0 and hour >= 9 and hour <= 20 and week > 5: '<a href="exec: GT ''qwloc''">Near the fence strong man stands and looks at you</a>.'
+!!reference to a transition
+!!located in the location park  array luna
+if vladimirQW = 0 and hour >= 9 and hour <= 20 and week > 5:'<a href="exec:gt ''qwloc''">Near the fence strong man stands and looks at you</a>.'
+!!in location korr
+if vladimirday ! day and vladimirQW = 20 and hour = 16:'<a href="exec:gt ''qwloc2''">The phone rings</a>.'
+!!in location telefon array start
+if vladimirday ! day and vladimirQW = 20 and hour = 16:gt 'qwloc2'
+!!in location restoran array start
+if vladimirday = day and vladimirQW = 21 and hour = 20:gt 'qwmeet'
+!!in location korr
+if vladimirday ! day and vladimirQW = 25 and hour = 16 and week = 6:'<a href="exec:gt ''qwloc3''">The phone rings</a>.'
+!!in location telefon array start
+if vladimirday ! day and vladimirQW = 25 and hour = 16 and week = 6:gt 'qwloc3'
+!!street
+if vladimirday = day and vladimirQW = 30 and hour >= 16 and week = 6:'<a href="exec:gt ''qwmeet2''">Before your porch worth audit and near stolidly worth waiting for you driver Glory</a>.'
 
-!в локацию korr
-if vladimirday ! day and vladimirQW = 20 and hour = 16: '<a href="exec: GT ''qwloc2''">The phone rings</a>.'
+!!down
+if izoldaWQ >= 1:'<a href="exec:gt ''qwIzoldaApp''">Flat Isolde</a>.'
+!!nord
+if slavaQW >= 1:'<a href="exec:gt ''qwBarPolet''">Bar "Flight"</a>.'
 
-!в локацию telefon массив start
-if vladimirday ! day and vladimirQW = 20 and hour = 16: gt 'qwloc2'
-
-!в локацию restoran массив start
-
-if vladimirday = day and vladimirQW = 21 and hour = 20: gt 'qwmeet'
-
-!в локацию korr
-if vladimirday ! day and vladimirQW = 25 and hour = 16 and week = 6: '<a href="exec: GT ''qwloc3''">The phone rings</a>.'
-
-!в локацию telefon массив start
-if vladimirday ! day and vladimirQW = 25 and hour = 16 and week = 6: gt 'qwloc3'
-=======
-!reference to a transition
-!located in the location park  array luna
-if vladimirQW=0 and hour >= 9 and hour <= 20 and week>5:'<a href="exec:GT ''qwloc''">Near the fence stands a strong man and looks at you</a>.'
-
-
-!in location korr
-if vladimirday!day and vladimirQW=20 and hour = 16:'<a href="exec:GT ''qwloc2''">The phone rings</a>.'
-
-
-!in location telefon array start 
-if vladimirday!day and vladimirQW=20 and hour = 16:gt 'qwloc2'
-
-
-!in location restoran array start
-
-if vladimirday=day and vladimirQW=21 and hour = 20:gt 'qwmeet'
-
-
-!in location korr
-if vladimirday!day and vladimirQW=25 and hour = 16 and week=6:'<a href="exec:GT ''qwloc3''">The phone rings</a>.'
-
-
-!in location telefon array start 
-if vladimirday!day and vladimirQW=25 and hour = 16 and week=6:gt 'qwloc3'
->>>>>>> 460_QwestDisdock
-
-!street
-<<<<<<< 460_QwestDisdock
-if vladimirday = day and vladimirQW = 30 and hour >= 16 and week = 6: '<a href="exec: GT ''qwmeet2''">Before your porch worth audit and near stolidly worth waiting for you driver Glory</a>.'
-
-!down
-if izoldaWQ >= 1: '<a href="exec: GT ''qwIzoldaApp''">Flat Isolde</a>.'
-=======
-if vladimirday=day and vladimirQW=30 and hour >= 16 and week=6:'<a href="exec:GT ''qwmeet2''">Before your entrance stands Audi and around the phlegmatic worth waiting for your driver Glory</a>.'
-
-
-!down
-if izoldaWQ>=1:'<a href="exec:GT ''qwIzoldaApp''">apartment Isolde</a>.'
->>>>>>> 460_QwestDisdock
-
-!nord
-<<<<<<< 460_QwestDisdock
-if slavaQW >= 1: '<a href="exec: GT ''qwBarPolet''">Bar "Flight"</a>.'
-=======
-if slavaQW>=1:'<a href="exec:GT ''qwBarPolet''">bar "flight"</a>.'
-
-
-
-
-
-
->>>>>>> 460_QwestDisdock
 --- QwestDisdock ---------------------------------
-

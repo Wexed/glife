@@ -1,14 +1,15 @@
 # FSgame
-<<<<<<< 438_FSgame
 minut += 1
 gs 'stat'
 gs 'FSstat'
-'<center><B>Hotel room</B></center>'
+'<center><b>Hotel room</b></center>'
 ''
-	if FSmedkit > 0:
+
+if FSmedkit > 0:
 	'First aid kits <<FSmedkit>> pieces'
-		if FSHP < 100:
-			act 'Treated':
+
+	if FSHP < 100:
+		act 'Treated':
 			cls
 			FShour += 1
 			FSHP = 100
@@ -16,107 +17,29 @@ gs 'FSstat'
 			minut += 1
 			gs 'stat'
 			'You heal health through kits.'
-			act 'Further': gt $curloc
-			end
+
+			act 'Further':gt $curloc
 		end
 	end
+end
 
-	act 'Laze':
+act 'Laze':
 	cls
 	FShour += 1
 	minut += 1
 	gs 'stat'
 	'You lounged in the apartment, lounging on the couch and thinking how you vykruchivatsya of the situation.'
-	act 'Further': gt $curloc
-	end
 
+	act 'Further':gt $curloc
+end
 
-	act 'Leave the room':
+act 'Leave the room':
 	cls
 	FShour += 1
 	minut += 1
 	gs 'stat'
-	!'You left the room.'
+	!!'You left the room.'
 	gt 'FSroom'
-	end
-=======
-minut+=1
-gs'stat'
-gs'FSstat'
-'<center><B>The room at the hotel</B></center>'
-''
-     if FSmedkit>0:
-     'kits <<FSmedkit>> pcs'
-         if FSHP<100:
-             act 'treated':
-             cls
-             FShour+=1
-             FSHP=100
-             FSmedkit-=1
-             minut+=1
-             gs'stat'
-             'You cured with the help of health kits.'
-             act 'further':gt $curloc
-             end
-         end
-     end
-     
-     act 'laze':
-     cls
-	 FShour+=1
-	 minut+=1
-	 gs'stat'
-	 'You lounged in the apartment, lounging on the couch and thinking, as you vykruchivatsya of the situation.'
-	 act 'further':gt $curloc
-     end
-     
-     
-     act 'Exit the room':
-     cls
-	 FShour+=1
-	 minut+=1
-	 gs'stat'
-	 !'You left the room.'
-	 gt 'FSroom'
-     end
+end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 438_FSgame
 --- FSgame ---------------------------------
-

@@ -1,20 +1,4 @@
 # avtonorm
-
-<<<<<<< 448_avtonorm
-if car = 1: set normhour = 20
-if car = 2: set normhour = 20
-if car = 3: set normhour = 20
-if car = 4: set normhour = 20
-if car = 5: set normhour = 20
-if car = 6: set normhour = 20
-if car = 7: set normhour = 20
-if car = 8: set normhour = 20
-if car = 9: set normhour = 15
-if car = 10: set normhour = 18
-if car = 11: set normhour = 15
-
-if car >= 95: set normhour = 50
-=======
 if car = 1:set normhour = 20
 if car = 2:set normhour = 20
 if car = 3:set normhour = 20
@@ -26,29 +10,17 @@ if car = 8:set normhour = 20
 if car = 9:set normhour = 15
 if car = 10:set normhour = 18
 if car = 11:set normhour = 15
-
 if car >= 95:set normhour = 50
->>>>>>> 448_avtonorm
-
-
 
 if wrek = 0:
-set normneed = tehcar - teh
-<<<<<<< 448_avtonorm
-set normrem = normneed * normhour
-=======
-set normrem = normneed*normhour
->>>>>>> 448_avtonorm
+	set normneed = tehcar - teh
+	set normrem = normneed * normhour
 end
-if wrek = 1:
-set normneed = tehcar - teh
-<<<<<<< 448_avtonorm
-set normremK = (normneed * normhour)*70
-set normrem = (normneed * normhour)+ normremK
-=======
-set normremK = (normneed*normhour)*70
-set normrem = (normneed*normhour)+ normremK
->>>>>>> 448_avtonorm
-end
---- avtonorm ---------------------------------
 
+if wrek = 1:
+	set normneed = tehcar - teh
+	set normremK = (normneed * normhour)*70
+	set normrem = (normneed * normhour)+ normremK
+end
+
+--- avtonorm ---------------------------------

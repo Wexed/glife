@@ -1,29 +1,29 @@
 # dom_gor
-ACT 'On the street':
+act 'On the street':
 	cls
 	if sick <= 72 and nude = 0:
 	xgt 'gorodok'
 	elseif nude = 0:
-	'<B><font color=red>You are too ill to take to the streets.</font></B>'
+	'<b><font color="red">You are too ill to take to the streets.</font></b>'
 	xgt $curloc
 	else
-	'<B><font color=red>YOU HAVE TO GET DRESSED.</font></B>'
+	'<b><font color="red">YOU HAVE TO GET DRESSED.</font></b>'
 	xgt $curloc
 	end
 
-END
+end
 $metkaM = $ARGS[0]
 	$locM = $CURLOC
 
-	'<center><B><font color = maroon>Your room</font></B></center>'
-	'<center><img src="images\etogame\kom_gor.jpg"></center>'
-	'Your room in a hostel. The room is small, there is only the minimum necessary. 2 sleepers, <a href="exec:GT ''gor_mirror'',''start''">mirror</a>, <a href="exec:GT ''gor_exh'',''pos1''">hanger</a>, <a href="exec:GT ''loker'',''start''">cupboard</a> for things and a small TV.'
+	'<center><b><font color="maroon">Your room</font></b></center>'
+	'<center><img src="images/etogame/kom_gor.jpg"></center>'
+	'Your room in a hostel. The room is small, there is only the minimum necessary. 2 sleepers, <a href="exec:gt ''gor_mirror'', ''start''">mirror</a>, <a href="exec:gt ''gor_exh'', ''pos1''">hanger</a>, <a href="exec:gt ''loker'', ''start''">cupboard</a> for things and a small TV.'
 	clr
 	gs 'stat'
 	gs 'time'
-	fcolor = rgb(0,0,0)
-	bcolor = rgb(255,255,255)
-	LCOLOR = rgb(106,90,205)
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
 
 if cloth_vid = 2 and teachlevel > 20 and parkrunday ! day and hour < 21 and hour > 6:
 	act 'Jogging on the Square (1:00)':
@@ -37,52 +37,52 @@ if cloth_vid = 2 and teachlevel > 20 and parkrunday ! day and hour < 21 and hour
 		 set fat = fat - 8
 		 set speed = speed + 1
 		 set sweat = sweat + 3
-		 '<center><img src="images\pic\parkbeg.jpg" ></center>'
+		 '<center><img src="images/pic/parkbeg.jpg"></center>'
 		 'You did a few laps around the park. Out of breath, sweaty and tired.'
-		 parkrand = RAND (0,10)
-			 if parkrand >4 and beguch<3:
+		 parkrand = rand (0, 10)
+			 if parkrand > 4 and beguch < 3:
 				 'In the park you met a disciple of the school and asked to go for a run with you.'
 					 act 'run together':
 					 cla
 					 *clr
-					 beguch+=1
-					 '<center><img src="images\etogame\stop.jpg" ></center>'
+					 beguch += 1
+					 '<center><img src="images/etogame/stop.jpg"></center>'
 					 'You run with the pupil sometimes stopping and chatting with ease.'
-					 'Disciple: - Svetlana, you are so beautiful, you are all so fond of! You: - Hmm, thank you!'
-					 act 'complete a run':gt'gskver'
+					 'Disciple:- Svetlana, you are so beautiful, you are all so fond of! You:- Hmm, thank you!'
+					 act 'complete a run':gt 'gskver'
 					 end
 			 end
-			 if parkrand >4 and beguch>=3 and beguch<6:
+			 if parkrand >4 and beguch >= 3 and beguch < 6:
 				 'In the park you met a disciple of the school and asked to go for a run with you.'
 					 act 'run together':
 					 cla
 					 *clr
-					 beguch+=1
-					 '<center><img src="images\etogame\stop2.jpg" ></center>'
+					 beguch += 1
+					 '<center><img src="images/etogame/stop2.jpg"></center>'
 					 'Have you stopped to do stretching exercises muscles.'
-					 'Disciple: - Ahh if our girls would be at least a little like you! You: - You just got used to them, get to know them!'
-					 act 'complete a run':gt'gskver'
+					 'Disciple:- Ahh if our girls would be at least a little like you! You:- You just got used to them, get to know them!'
+					 act 'complete a run':gt 'gskver'
 					 end
 			 end
-			 if parkrand >4 and beguch>=6 and beguch<9:
+			 if parkrand >4 and beguch >= 6 and beguch < 9:
 				 'In the park you met a disciple of the school and asked to go for a run with you.'
 					 act 'run together':
 					 cla
 					 *clr
-					 beguch+=1
-					 horny+=3
-					 '<center><img src="images\etogame\stop3.jpg" ></center>'
+					 beguch += 1
+					 horny += 3
+					 '<center><img src="images/etogame/stop3.jpg"></center>'
 					 'You run with the pupil sometimes stopping and chatting with ease.'
 					 *nl
-					 'Disciple: - Svetlana, can I take a picture of you! You are: - What are you going to do then with my photo, and the wretch!'
-					 'Disciple: - No, no, I will not forgive her masturbate! You: - Aha! I did not say that!'
-					 'Student: - Im sorry, was a bad idea. You: - Yes, Im kidding! Fotkay, just me then do not forget to copy.'
+					 'Disciple:- Svetlana, can I take a picture of you! You are:- What are you going to do then with my photo, and the wretch!'
+					 'Disciple:- No, no, I will not forgive her masturbate! You:- Aha! I did not say that!'
+					 'Student:- Im sorry, was a bad idea. You:- Yes, Im kidding! Fotkay, just me then do not forget to copy.'
 					 *nl
 					 'You picked up a background, stood in a pose and you photographed.'
-					 act 'complete a run':gt'gskver'
+					 act 'complete a run':gt 'gskver'
 					 end
 			 end
-		 act 'complete a run':gt'gskver'
+		 act 'complete a run':gt 'gskver'
 	end
 end
 
@@ -96,7 +96,7 @@ end
 			son = 29
 			end
 			'I relax lying on the couch.'
-		act 'stretch':gt'dom_gor'
+		act 'stretch':gt 'dom_gor'
 		end
 	end
 
@@ -104,11 +104,11 @@ end
 		act 'Sleep in a bed':
 			cla
 			*clr
-			'<center><img src="images\pics\son.jpg"></center>'
-		 cloth_vid=0
-			if analplugIN = 1: set analplugIN = 0 & 'Before going to bed you remove the butt plug.'
-			if vibratorIN = 1: set vibratorIN = 0 & 'Before going to bed you remove the vibrator.'
-			if mop > 1: set mop = 0 & set vidageday -= 1 & 'Cosmetics smeared face, you think that looks bad for sleeping with makeup, skin ages faster from it.'
+			'<center><img src="images/pics/son.jpg"></center>'
+		 cloth_vid = 0
+			if analplugIN = 1:set analplugIN = 0 & 'Before going to bed you remove the butt plug.'
+			if vibratorIN = 1:set vibratorIN = 0 & 'Before going to bed you remove the vibrator.'
+			if mop > 1:set mop = 0 & set vidageday -= 1 & 'Cosmetics smeared face, you think that looks bad for sleeping with makeup, skin ages faster from it.'
 			set tanga = 1
 			set health += 5
 			set hapri = 0
@@ -126,13 +126,13 @@ end
 	end
 
 	if eda > 0:
-	'In the refrigerator stored food that´s good for <B><<eda>></B> servings.'
+	'In the refrigerator stored food that´s good for <b><<eda>></b> servings.'
 	end
 	if edaD = 0 and eda = 0:
-	'<B><font color = red>The fridge is almost empty, nothing to eat at all.</font></B>'
+	'<b><font color="red">The fridge is almost empty, nothing to eat at all.</font></b>'
 	end
 	if edaD > 0:
-	'The refrigerator is kept healthy meal that´s good for <B><<edaD>></B> servings.'
+	'The refrigerator is kept healthy meal that´s good for <b><<edaD>></b> servings.'
 	end
 	if eda >= 1:
 		act 'Have meal (1:00)':
@@ -142,7 +142,7 @@ end
 			minut += 60
 			gs 'stat'
 			frost = 0
-			!set edahot = 0
+			!!set edahot = 0
 			set health += 10
 			set manna += 20
 			if water < 20:
@@ -161,7 +161,7 @@ end
 				fat += 1
 				'You gladly ate.'
 				end
-			act 'Get up from the table': gt 'dom_gor'
+			act 'Get up from the table':gt 'dom_gor'
 			end
 	end
 
@@ -170,7 +170,7 @@ end
 		cla
 		*clr
 		frost = 0
-		'<center><img src="images\pics\food.jpg"></center>'
+		'<center><img src="images/pics/food.jpg"></center>'
 		set minut += 30
 		set health += 10
 		set manna += 20
@@ -193,10 +193,10 @@ end
 		'You gladly drank a cup of tea.'
 		set water += 20
 		end
-		act 'Get up from the table': gt 'dom_gor'
+		act 'Get up from the table':gt 'dom_gor'
 		end
 	end
 
-	if gor_dorm > 0: act 'In a shared bathroom': gt 'etoexhib','pos41'
+	if gor_dorm > 0:act 'In a shared bathroom':gt 'etoexhib', 'pos41'
 --- dom_gor ---------------------------------
 

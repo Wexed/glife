@@ -1,829 +1,434 @@
 # carF1
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car':
-=======
-if $ARGS[0]='car':
->>>>>>> 456_carF1
-$metka = $ARGS[0]
-$loc = $CURLOC
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-clr
-'<center><B>2107</B></center>'
-'<center><img src="images\picar\car.jpg"></center>'
-
-	act 'Sit in the lounge':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	cla
 	*clr
-	'<center><img src="images\picar\salon.jpg"></center>'
-	act 'Leave': gt 'carF1','car'
+	gs 'stat'
+	set minut += 5
+	clr
+	'<center><b>2107</b></center>'
+	'<center><img src="images/picar/car.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-gs'stat'
-set minut = minut + 5
-clr
-'<center><B>VAZ 2107</B></center>'
-'<center><img src="picar/car.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car2':
-=======
-if $ARGS[0]='car2':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-<<<<<<< 456_carF1
-'<center><B>2115</B></center>'
-'<center><img src="images\picar\car2.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon2.jpg"></center>'
-	act 'Leave': gt 'carF1','car2'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>2115</b></center>'
+	'<center><img src="images/picar/car2.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon2.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car2'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><B>VAZ 2115</B></center>'
-'<center><img src="picar/car2.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon2.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car2'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car3':
-=======
-if $ARGS[0]='car3':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-<<<<<<< 456_carF1
-'<center><B>2113</B></center>'
-'<center><img src="images\picar\car3.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon3.jpg"></center>'
-	act 'Leave': gt 'carF1','car3'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>2113</b></center>'
+	'<center><img src="images/picar/car3.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon3.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car3'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><B>VAZ 2113</B></center>'
-'<center><img src="picar/car3.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon3.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car3'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car4':
-=======
-if $ARGS[0]='car4':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-<<<<<<< 456_carF1
-'<center><B>2114</B></center>'
-'<center><img src="images\picar\car4.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon4.jpg"></center>'
-	act 'Leave': gt 'carF1','car4'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>2114</b></center>'
+	'<center><img src="images/picar/car4.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon4.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car4'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><B>VAZ 2114</B></center>'
-'<center><img src="picar/car4.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon4.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car4'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car5':
-=======
-if $ARGS[0]='car5':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-'<center><B>VAZ 2119</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car5.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon5.jpg"></center>'
-	act 'Leave': gt 'carF1','car5'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>VAZ 2119</b></center>'
+	'<center><img src="images/picar/car5.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon5.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car5'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car5.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon5.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car5'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car6':
-=======
-if $ARGS[0]='car6':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-<<<<<<< 456_carF1
-'<center><B>VAZ Kalina</B></center>'
-'<center><img src="images\picar\car6.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon6.jpg"></center>'
-	act 'Leave': gt 'carF1','car6'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>VAZ Kalina</b></center>'
+	'<center><img src="images/picar/car6.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon6.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car6'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><B>Kalina VAZ</B></center>'
-'<center><img src="picar/car6.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon6.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car6'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car7':
-=======
-if $ARGS[0]='car7':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-<<<<<<< 456_carF1
-'<center><B>VAZ Pryor</B></center>'
-'<center><img src="images\picar\car7.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon7.jpg"></center>'
-	act 'Leave': gt 'carF1','car7'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>VAZ Pryor</b></center>'
+	'<center><img src="images/picar/car7.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon7.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car7'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><B>WHA PRIORA</B></center>'
-'<center><img src="picar/car7.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon7.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car7'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car8':
-=======
-if $ARGS[0]='car8':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-<<<<<<< 456_carF1
-'<center><B>Chevrolet Niva</B></center>'
-'<center><img src="images\picar\car8.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon8.jpg"></center>'
-	act 'Leave': gt 'carF1','car8'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>Chevrolet Niva</b></center>'
+	'<center><img src="images/picar/car8.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon8.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car8'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><B>Chevrolet NIVA</B></center>'
-'<center><img src="picar/car8.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon8.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car8'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car9':
-=======
-if $ARGS[0]='car9':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-'<center><B>UAZ HUNTER</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car9.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon9.jpg"></center>'
-	act 'Leave': gt 'carF1','car9'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>UAZ HUNTER</b></center>'
+	'<center><img src="images/picar/car9.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon9.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car9'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car9.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon9.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car9'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car10':
-=======
-if $ARGS[0]='car10':
->>>>>>> 456_carF1
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-'<center><B>UAZ Patriot</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car10.jpg"></center>'
-
-	act 'Sit in the lounge':
 	cla
 	*clr
-	'<center><img src="images\picar\salon10.jpg"></center>'
-	act 'Leave': gt 'carF1','car10'
+	gs 'stat'
+	set minut += 5
+	clr
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	'<center><b>UAZ Patriot</b></center>'
+	'<center><img src="images/picar/car10.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon10.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car10'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car10.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon10.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car10'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car95':
-=======
-if $ARGS[0]='car95':
->>>>>>> 456_carF1
-$metka = $ARGS[0]
-$loc = $CURLOC
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-'<center><B>Mitsubishi l200</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car95.jpg"></center>'
-
-	act 'Sit in the lounge':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	cla
 	*clr
-	'<center><img src="images\picar\salon95.jpg"></center>'
-	act 'Leave': gt 'carF1','car95'
+	gs 'stat'
+	set minut += 5
+	clr
+	'<center><b>Mitsubishi l200</b></center>'
+	'<center><img src="images/picar/car95.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon95.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car95'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car95.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon95.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car95'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car96':
-=======
-if $ARGS[0]='car96':
->>>>>>> 456_carF1
-$metka = $ARGS[0]
-$loc = $CURLOC
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-'<center><B>Audi Q7</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car96.jpg"></center>'
-
-	act 'Sit in the lounge':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	cla
 	*clr
-	'<center><img src="images\picar\salon96.jpg"></center>'
-	act 'Leave': gt 'carF1','car96'
+	gs 'stat'
+	set minut += 5
+	clr
+	'<center><b>Audi Q7</b></center>'
+	'<center><img src="images/picar/car96.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon96.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car96'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car96.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon96.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car96'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car97':
-=======
-if $ARGS[0]='car97':
->>>>>>> 456_carF1
-$metka = $ARGS[0]
-$loc = $CURLOC
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-'<center><B>Cadillac Escalade</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car97.jpg"></center>'
-
-	act 'Sit in the lounge':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	cla
 	*clr
-	'<center><img src="images\picar\salon97.jpg"></center>'
-	act 'Leave': gt 'carF1','car97'
+	gs 'stat'
+	set minut += 5
+	clr
+	'<center><b>Cadillac Escalade</b></center>'
+	'<center><img src="images/picar/car97.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon97.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car97'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car97.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon97.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car97'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car98':
-=======
-if $ARGS[0]='car98':
->>>>>>> 456_carF1
-$metka = $ARGS[0]
-$loc = $CURLOC
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-'<center><B>Porsche Cayenne</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car98.jpg"></center>'
-
-	act 'Sit in the lounge':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	cla
 	*clr
-	'<center><img src="images\picar\salon98.jpg"></center>'
-	act 'Leave': gt 'carF1','car98'
+	gs 'stat'
+	set minut += 5
+	clr
+	'<center><b>Porsche Cayenne</b></center>'
+	'<center><img src="images/picar/car98.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon98.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car98'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car98.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon98.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car98'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-
-
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car99':
-=======
-if $ARGS[0]='car99':
->>>>>>> 456_carF1
-$metka = $ARGS[0]
-$loc = $CURLOC
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-'<center><B>BMW X6</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car99.jpg"></center>'
-
-	act 'Sit in the lounge':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	cla
 	*clr
-	'<center><img src="images\picar\salon99.jpg"></center>'
-	act 'Leave': gt 'carF1','car99'
+	gs 'stat'
+	set minut += 5
+	clr
+	'<center><b>BMW X6</b></center>'
+	'<center><img src="images/picar/car99.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon99.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car99'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car99.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon99.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car99'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
 
-
-<<<<<<< 456_carF1
 if $ARGS[0] = 'car100':
-=======
-if $ARGS[0]='car100':
->>>>>>> 456_carF1
-$metka = $ARGS[0]
-$loc = $CURLOC
-cla
-*clr
-<<<<<<< 456_carF1
-gs 'stat'
-set minut += 5
-=======
-gs'stat'
-set minut = minut + 5
->>>>>>> 456_carF1
-clr
-'<center><B>Mercedes-Benz S 600</B></center>'
-<<<<<<< 456_carF1
-'<center><img src="images\picar\car100.jpg"></center>'
-
-	act 'Sit in the lounge':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	cla
 	*clr
-	'<center><img src="images\picar\salon100.jpg"></center>'
-	act 'Leave': gt 'carF1','car100'
+	gs 'stat'
+	set minut += 5
+	clr
+	'<center><b>Mercedes-Benz S 600</b></center>'
+	'<center><img src="images/picar/car100.jpg"></center>'
+
+	act 'Sit in the lounge':
+		cla
+		*clr
+		'<center><img src="images/picar/salon100.jpg"></center>'
+
+		act 'Leave':gt 'carF1', 'car100'
 	end
 
 	act 'Leave':
-	cla
-	if cartraid = 1: gt 'autosalonF','start'
-	if cartraid = 2: gt 'autotraidF','manager'
+		cla
+
+		if cartraid = 1:gt 'autosalonF', 'start'
+		if cartraid = 2:gt 'autotraidF', 'manager'
 	end
-=======
-'<center><img src="picar/car100.jpg" ></center>'
-
-     act 'Sit in the salon':
-     cla
-     *clr
-     '<center><img src="picar/salon100.jpg" ></center>'
-     act 'Get_Away':gt'carF1','car100'
-     end
-
-     act 'Get_Away':
-     cla
-     if cartraid = 1:gt'autosalonF','start'
-     if cartraid = 2:gt'autotraidF','manager'
-     end
->>>>>>> 456_carF1
 end
---- carF1 ---------------------------------
 
+--- carF1 ---------------------------------

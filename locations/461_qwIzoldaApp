@@ -1,202 +1,115 @@
 # qwIzoldaApp
-<<<<<<< 461_qwIzoldaApp
 minut += 15
 gs 'stat'
 
 if hour >= 16 and izoldaday ! day:
-izoldaday = day
-'<center><B><font color = maroon>Isolda</font></B></center>'
-'<center><img src="images\qwest\kolan\izolda.jpg"></center>'
-'Door you opened Isolde. "Hello <<$name>>, come on."'
+	izoldaday = day
+	'<center><b><font color="maroon">Isolda</font></b></center>'
+	'<center><img src="images/qwest/kolan/izolda.jpg"></center>'
+	'Door you opened Isolde. "Hello <<$name>>, come on."'
 
-act 'Leave': gt 'down'
+	act 'Leave':gt 'down'
+
 	act 'Enter the apartment':
-	cla
-	minut += 30
-	izoldaWQ += 1
-	gs 'stat'
-		if izoldaWQ < 5:
-		'You went to the apartment and Isolde you spent in the kitchen. There she poured tea, and you yourself. You sat at the table and began to chat about all sorts of trivia.'
-		end
+		cla
+		minut += 30
+		izoldaWQ += 1
+		gs 'stat'
+
+		if izoldaWQ < 5:'You went to the apartment and Isolde you spent in the kitchen. There she poured tea, and you yourself. You sat at the table and began to chat about all sorts of trivia.'
 		if izoldaWQ >= 5 and izoldaSex = 0:
-		'Isolde suggested that you drink wine. You agreed and went to the kitchen. Isolde opened a bottle of wine and poured two glasses. You drank it.'
+			'Isolde suggested that you drink wine. You agreed and went to the kitchen. Isolde opened a bottle of wine and poured two glasses. You drank it.'
+
 			if izoldaWQ >= 10 and izoldaSex = 0:
-			'Soon you both drunk and Isolde invited you to go to the lounge to relax.'
+				'Soon you both drunk and Isolde invited you to go to the lounge to relax.'
+
 				act 'Go Isolde':
-				cls
-				girl += 1
-				lesbian += 1
-				izoldaSex = 1
-				horny += 10
-				gs 'stat'
-				'<center><img src="images\qwest\kolan\izoldasex.jpg"></center>'
-				'The room suddenly Isolde you kissed and hugged her gently.'
-					act 'Tselovatsya Isolde':
 					cls
+					girl += 1
+					lesbian += 1
+					izoldaSex = 1
 					horny += 10
 					gs 'stat'
-					'<center><img src="images\qwest\kolan\izoldasex1.jpg"></center>'
-					'Isolde´s head gently slipped from your lips to your breasts and began to caress them.'
-						act '...':
+					'<center><img src="images/qwest/kolan/izoldasex.jpg"></center>'
+					'The room suddenly Isolde you kissed and hugged her gently.'
+
+					act 'Tselovatsya Isolde':
 						cls
 						horny += 10
 						gs 'stat'
-						'<center><img src="images\qwest\kolan\izoldasex2.jpg"></center>'
-						'Isolde you dropped on the couch and gently kisses covering section. Once you lay down on her back, she began to lick your pussy.'
-							act '...':
+						'<center><img src="images/qwest/kolan/izoldasex1.jpg"></center>'
+						'Isolde´s head gently slipped from your lips to your breasts and began to caress them.'
+
+						act '...':
 							cls
-							horny = 0
-							orgasm += 1
+							horny += 10
 							gs 'stat'
-							'<center><img src="images\qwest\kolan\izoldasex3.jpg"></center>'
-							'Blonde turned and climbed on you without stopping to lick your pussy. She throw the leg over you up her sweaty and expiring juices crack for sex. You started to caress her clitoris tongue and kiss her luscious lips, finally you both shook orgasm.'
-								act 'Leave': gt 'down'
+							'<center><img src="images/qwest/kolan/izoldasex2.jpg"></center>'
+							'Isolde you dropped on the couch and gently kisses covering section. Once you lay down on her back, she began to lick your pussy.'
+
+							act '...':
+								cls
+								horny = 0
+								orgasm += 1
+								gs 'stat'
+								'<center><img src="images/qwest/kolan/izoldasex3.jpg"></center>'
+								'Blonde turned and climbed on you without stopping to lick your pussy. She throw the leg over you up her sweaty and expiring juices crack for sex. You started to caress her clitoris tongue and kiss her luscious lips, finally you both shook orgasm.'
+
+								act 'Leave':gt 'down'
 							end
 						end
 					end
 				end
 			end
 		end
+
 		if izoldaSex > 0:
-		'Isolde offer you a drink of wine and you have gone with her to the kitchen, drinking a bottle she took you by the hand and led her into the room.'
+			'Isolde offer you a drink of wine and you have gone with her to the kitchen, drinking a bottle she took you by the hand and led her into the room.'
+
 			act 'Go Isolde':
-			cls
-			lesbian += 1
-			izoldaSex += 1
-			horny += 10
-			gs 'stat'
-			'<center><img src="images\qwest\kolan\izoldasex.jpg"></center>'
-			'The room suddenly Isolde you kissed and hugged her gently.'
-				act 'Tselovatsya Isolde':
 				cls
+				lesbian += 1
+				izoldaSex += 1
 				horny += 10
 				gs 'stat'
-				'<center><img src="images\qwest\kolan\izoldasex1.jpg"></center>'
-				'Isolde´s head gently slipped from your lips to your breasts and began to caress them.'
-					act '...':
+				'<center><img src="images/qwest/kolan/izoldasex.jpg"></center>'
+				'The room suddenly Isolde you kissed and hugged her gently.'
+
+				act 'Tselovatsya Isolde':
 					cls
 					horny += 10
 					gs 'stat'
-					'<center><img src="images\qwest\kolan\izoldasex2.jpg"></center>'
-					'Isolde you dropped on the couch and gently kisses covering section. Once you lay down on her back, she began to lick your pussy.'
-						act '...':
+					'<center><img src="images/qwest/kolan/izoldasex1.jpg"></center>'
+					'Isolde´s head gently slipped from your lips to your breasts and began to caress them.'
+
+					act '...':
 						cls
-						horny = 0
-						orgasm += 1
+						horny += 10
 						gs 'stat'
-						'<center><img src="images\qwest\kolan\izoldasex3.jpg"></center>'
-						'Blonde turned and climbed on you without stopping to lick your pussy. She throw the leg over you up her sweaty and expiring juices crack for sex. You started to caress her clitoris tongue and kiss her luscious lips, finally you both shook orgasm.'
-							act 'Leave': gt 'down'
+						'<center><img src="images/qwest/kolan/izoldasex2.jpg"></center>'
+						'Isolde you dropped on the couch and gently kisses covering section. Once you lay down on her back, she began to lick your pussy.'
+
+						act '...':
+							cls
+							horny = 0
+							orgasm += 1
+							gs 'stat'
+							'<center><img src="images/qwest/kolan/izoldasex3.jpg"></center>'
+							'Blonde turned and climbed on you without stopping to lick your pussy. She throw the leg over you up her sweaty and expiring juices crack for sex. You started to caress her clitoris tongue and kiss her luscious lips, finally you both shook orgasm.'
+
+							act 'Leave':gt 'down'
 						end
 					end
 				end
 			end
 		end
-	act 'Leave': gt 'down'
+
+		act 'Leave':gt 'down'
 	end
 else
-'You rang the bell but no one answered you.'
-act 'Leave': gt 'down'
-=======
-minut+=15
-gs'stat' 
+	'You rang the bell but no one answered you.'
 
-if hour>=16 and izoldaday!day:
-izoldaday=day
-'<center><B><font color=maroon>Isolde</font></B></center>'
-'<center><img src="qwest/kolan/izolda.jpg" ></center>'
-'The door you opened Isolde. "Hello World, Come."'
-
-
-act 'Get_Away':gt'down'
-     act 'Log in to the apartment':
-     cla
-     minut+=30
-     izoldaWQ+=1
-     gs'stat' 
-         if izoldaWQ<5:
-         'You went to the apartment and Isolde escort you to the kitchen. There she poured tea. You sat at the table and began to talk about all sorts of trivia.'
-         end
-         if izoldaWQ>=5 and izoldaSex=0:
-         'Isolde offer you a drink of wine. You agreed and went to the kitchen. Isolde opened a bottle of wine and poured by the glass. You drank it.'
-             if izoldaWQ>=10 and izoldaSex=0:
-             'Soon you both got drunk and Isolde invited you to go to the gym to relax.'
-                 act 'Go with Isolde':
-                 cls
-                 girl+=1
-                 lesbian+=1
-                 izoldaSex=1
-                 horny+=10
-                 gs'stat' 
-                 '<center><img src="qwest/kolan/izoldasex.jpg" ></center>'
-                 'The room suddenly Isolde you kissed and hugged her gently.'
-                     act 'Tselovatsya Isolde':
-                     cls
-                     horny+=10
-                     gs'stat' 
-                     '<center><img src="qwest/kolan/izoldasex1.jpg" ></center>'
-                     'Isolde`s head gently slipped from your lips to your breasts and began to fondle them.'
-                         act '...':
-						 cls
-						 horny+=10
-						 gs'stat' 
-						 '<center><img src="qwest/kolan/izoldasex2.jpg" ></center>'
-						 'Isolde you dropped on the couch and gently kisses section covering. after, as you lay on your back, she began to lick your pussy.'
-							 act '...':
-							 cls
-							 horny=0
-							 orgasm+=1
-							 gs'stat' 
-							 '<center><img src="qwest/kolan/izoldasex3.jpg" ></center>'
-							 'The blonde turned and climbed on you without stopping to lick your pussy. She throw the leg over his sweaty you up and expiring juices crack for fondling. You began to caress her clitoris tongue and kiss her luscious lips, Finally you both shook orgasm.'
-								 act 'Get_Away':gt'down'
-							 end
-						 end
-                     end
-                 end
-             end
-         end
-         if izoldaSex>0:
-         'Isolde offer you a drink of wine and you have been with her in the kitchen, drinking a bottle she took you by the hand and led into the room.'
-			 act 'Go with Isolde':
-			 cls
-			 lesbian+=1
-			 izoldaSex+=1
-			 horny+=10
-			 gs'stat' 
-			 '<center><img src="qwest/kolan/izoldasex.jpg" ></center>'
-			 'The room suddenly Isolde you kissed and hugged her gently.'
-				 act 'Tselovatsya Isolde':
-				 cls
-				 horny+=10
-				 gs'stat' 
-				 '<center><img src="qwest/kolan/izoldasex1.jpg" ></center>'
-				 'Isolde`s head gently slipped from your lips to your breasts and began to fondle them.'
-					 act '...':
-					 cls
-					 horny+=10
-					 gs'stat' 
-					 '<center><img src="qwest/kolan/izoldasex2.jpg" ></center>'
-					 'Isolde you dropped on the couch and gently kisses section covering. after, as you lay on your back, she began to lick your pussy.'
-						 act '...':
-						 cls
-						 horny=0
-						 orgasm+=1
-						 gs'stat' 
-						 '<center><img src="qwest/kolan/izoldasex3.jpg" ></center>'
-						 'The blonde turned and climbed on you without stopping to lick your pussy. She throw the leg over his sweaty you up and expiring juices crack for fondling. You began to caress her clitoris tongue and kiss her luscious lips, Finally you both shook orgasm.'
-							 act 'Get_Away':gt'down'
-						 end
-					 end
-				 end
-			 end
-         end
-     act 'Get_Away':gt'down'
-     end
-else
-'You rang the bell but no one opened to you.'
-act 'Get_Away':gt'down'
->>>>>>> 461_qwIzoldaApp
+	act 'Leave':gt 'down'
 end
---- qwIzoldaApp ---------------------------------
 
+--- qwIzoldaApp ---------------------------------

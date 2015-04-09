@@ -1,5 +1,4 @@
 # zaprF
-<<<<<<< 451_zaprF
 if $ARGS[0] = 'start':
 	cla
 	*clr
@@ -8,21 +7,20 @@ if $ARGS[0] = 'start':
 	clr
 	$metka = $ARGS[0]
 	$loc = $CURLOC
-
-	'<center><B>Gas Station</B></center>'
-	*nl
-	'<center><img src="images\etogame\zapr.jpg"></center>'
-
+	'<center><b>Gas Station</b></center>'
+	'<center><img src="images/etogame/zapr.jpg"></center>'
 	'Announcement, in connection with the features of the device gas stations, all cars to refuel a full tank.'
 	'Cost of 1 liter of petrol 30 rubles.'
 
 	if car > 0:
-		if cardrive = 6 or cardrive = 21: 'On refueling costs your <a href="exec: GS ''carF'',''start''"><<$car>></a>.'
+		if cardrive = 6 or cardrive = 21:'On refueling costs your <a href="exec:GS ''carF'', ''start''"><<$car>></a>.'
 	end
 
 	set zprbenz = 40 - benz
-	if benz < 40 and car > 0 and cardrive = 6:
+
+	if benz < 40 and car > 0 and cardrive = 6 or benz < 40 and car > 0 and cardrive = 21:
 		set zprbenz = 40 - benz
+
 		if zprbenz * 30 <= money:
 			act 'Fill petrol':
 				cla
@@ -30,11 +28,13 @@ if $ARGS[0] = 'start':
 				set benz = 40
 				set zprpay = zprbenz * 30
 				set money -= zprpay
-				'<center><B>Gas Station</B></center>'
-				*nl
-				'<center><img src="images\etogame\zapr1.jpg"></center>'
+				'<center><b>Gas Station</b></center>'
+
+				if pol > 0:'<center><img src="images/etogame/zapr1.jpg"></center>'
+
 				'You have filled a full tank and paid <<zprpay>> rubles.'
-				act 'Remove gun': gt 'zaprF','start'
+
+				act 'Remove gun':gt 'zaprF', 'start'
 			end
 		else
 			'You do not have enough money at the gas station.'
@@ -47,7 +47,8 @@ if $ARGS[0] = 'start':
 			set kanistra += 1
 			set money -= 150
 			'You bought a canister of gasoline. (It is automatically added to the trunk)'
-			act 'Remove gun': gt 'zaprF','start'
+
+			act 'Remove gun':gt 'zaprF', 'start'
 		end
 	end
 
@@ -62,61 +63,6 @@ if $ARGS[0] = 'start':
 			gt 'gorodok'
 		end
 	end
-=======
-if $ARGS[0]='start':
-cla
-*clr
-gs'stat'
-set minut = minut + 5
-clr
-$metka = $ARGS[0]
-$loc = $CURLOC
-'<center><B>AZS</B></center>'
-'<center><img src="pic/zapr.jpg" ></center>'
-'advert, in connection with the features of the device gas stations, all cars are filled up to a full tank.'
-'cost 1 liter of gasoline 30 rubles.'
-if car > 0:
-	 if cardrive = 6 or cardrive = 21:'At the gas station stands <a href="exec:GS ''carF'',''start''">your <<$car>></a>.'
-	 end
-set zprbenz = 40 - benz
-if benz < 40 and car > 0 and cardrive = 6 or benz < 40 and car > 0 and cardrive = 21:
-	 set zprbenz = 40 - benz
-	 if zprbenz*30 <= money:
-		 act 'fill petrol':
-			 cla
-			 *clr
-			 set benz = 40
-			 set zprpay = zprbenz*30
-			 set money = money - zprpay
-			 if pol > 0:'<center><img src="pic/zapr1.jpg" ></center>'
-			 'You have filled a full tank and paid <<zprpay>> rubles.'
-			 act 'remove gun':gt 'zaprF','start'
-			 end
-		 else
-			 'You do not have enough money at the gas station.'
-		 end
-	 end
-if car > 0:
-	 act 'Buy canister 5liters of gasoline 150 RUB':
-		 cla
-		 set kanistra = kanistra + 1
-		 set money = money - 150
-		 'You bought a canister of gasoline. (it is automatically added to the trunk)'
-		 act 'remove gun':gt 'zaprF','start'  
-		 end
-	 end
-     act 'Get_Away':
-	     if cardrive = 6:
-		 gt'nord'
-		 elseif cardrive = 21:
-		 gt'gorodok'
-		 elseif litltown=0:
-		 gt'nord'
-		 elseif litltown=1:
-		 gt'gorodok'
-		 end
-	 end
->>>>>>> 451_zaprF
 end
---- zaprF ---------------------------------
 
+--- zaprF ---------------------------------

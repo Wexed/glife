@@ -1,344 +1,168 @@
 # KGOLexpa
-<<<<<<< 426_KGOLexpa
-KGOLneedExpNextLvl=(KGOLlvl * 10)*KGOLlvl
+KGOLneedExpNextLvl = (KGOLlvl * 10) * KGOLlvl
 KGOLneedExp = KGOLneedExpNextLvl - KGOLexp
-if KGOLneedExp <= 0 and KGOLlvl > KGOLlvlr: KGOLlvlr = KGOLlvl & KGOLpoint += 10 & KGOLspellpoint += 1 & KGOLlvl += 1 & KGOLexp = 0
+
+if KGOLneedExp <= 0 and KGOLlvl > KGOLlvlr:KGOLlvlr = KGOLlvl & KGOLpoint += 10 & KGOLspellpoint += 1 & KGOLlvl += 1 & KGOLexp = 0
 
 $KGOLatk = {
-KGOLzasV = RAND(KGOLspeedV/4, KGOLspeedV)
-KGOLataka = RAND(KGOLspeed/2, KGOLspeed * 2)
-if KGOLataka >= KGOLzasV:
-	if KGOLataka >= KGOLzasV * 2:
-	KGHPnpow = RAND(KGOLpower/2, KGOLpower)
-	KGHPV -= KGHPnpow
-	'<font color = green>CRETE <<KGHPnpow>></font>'
-	else
-	KGHPnpow = RAND(KGOLpower/10, KGOLpower/4)
-	KGHPntpow = KGHPnpow - KGOLbronaV
-	if KGHPntpow <= 0: KGHPntpow = 1
-	KGHPV -= KGHPnpow
-	'<font color = blue>Contact with <<KGHPnpow>></font>'
-	end
-else
-'<font color = red><<$KGname>> dodged your attack</font>'
-=======
-KGOLneedExpNextLvl=(KGOLlvl*10)*KGOLlvl
-KGOLneedExp=KGOLneedExpNextLvl-KGOLexp
-if KGOLneedExp<=0 and KGOLlvl>KGOLlvlr:KGOLlvlr=KGOLlvl&KGOLpoint+=10&KGOLspellpoint+=1&KGOLlvl+=1&KGOLexp=0
+	KGOLzasV = rand(KGOLspeedV / 4, KGOLspeedV)
+	KGOLataka = rand(KGOLspeed / 2, KGOLspeed * 2)
 
-$KGOLatk={
-KGOLzasV=RAND(KGOLspeedV/4,KGOLspeedV)
-KGOLataka=RAND(KGOLspeed/2,KGOLspeed*2)
-if KGOLataka>=KGOLzasV:
-     if KGOLataka>=KGOLzasV*2:
-     KGHPnpow=RAND(KGOLpower/2,KGOLpower)
-     KGHPV-=KGHPnpow
-     '<font color=green>CRETE <<KGHPnpow>></font>'
-     else
-     KGHPnpow=RAND(KGOLpower/10,KGOLpower/4)
-     KGHPntpow=KGHPnpow-KGOLbronaV
-     if KGHPntpow<=0:KGHPntpow=1
-     KGHPV-=KGHPnpow
-     '<font color=blue>hit <<KGHPnpow>></font>'
-     end
-else
-'<font color=red><<$KGname>> dodged your attack</font>'
->>>>>>> 426_KGOLexpa
-end
+	if KGOLataka >= KGOLzasV:
+		if KGOLataka >= KGOLzasV * 2:
+			KGHPnpow = rand(KGOLpower / 2, KGOLpower)
+			KGHPV -= KGHPnpow
+			'<font color="green">CRETE <<KGHPnpow>></font>'
+		else
+			KGHPnpow = rand(KGOLpower / 10, KGOLpower / 4)
+			KGHPntpow = KGHPnpow - KGOLbronaV
+
+			if KGHPntpow <= 0:KGHPntpow = 1
+
+			KGHPV -= KGHPnpow
+			'<font color="blue">Contact with <<KGHPnpow>></font>'
+		end
+	else
+		'<font color="red"><<$KGname>> dodged your attack</font>'
+	end
 }
-<<<<<<< 426_KGOLexpa
+
 $KGOLatkPoison = {
-KGOLzasV = RAND(KGOLspeedV/4, KGOLspeedV)
-KGOLataka = RAND(KGOLspeed/2, KGOLspeed * 2)
-if KGOLataka >= KGOLzasV:
-poison += KGOLspell4 + 1
-	if KGOLataka >= KGOLzasV * 2:
-	KGHPnpow = RAND(KGOLpower/2, KGOLpower)
-	KGHPV -= KGHPnpow
-	'<font color = green>CRETE <<KGHPnpow>></font>'
+	KGOLzasV = rand(KGOLspeedV / 4, KGOLspeedV)
+	KGOLataka = rand(KGOLspeed / 2, KGOLspeed * 2)
+
+	if KGOLataka >= KGOLzasV:
+		poison += KGOLspell4 + 1
+
+		if KGOLataka >= KGOLzasV * 2:
+			KGHPnpow = rand(KGOLpower / 2, KGOLpower)
+			KGHPV -= KGHPnpow
+			'<font color="green">CRETE <<KGHPnpow>></font>'
+		else
+			KGHPnpow = rand(KGOLpower/10, KGOLpower/4)
+			KGHPntpow = KGHPnpow - KGOLbronaV
+
+		if KGHPntpow <= 0:KGHPntpow = 1
+			KGHPV -= KGHPnpow
+			'<font color="blue">Contact with <<KGHPnpow>></font>'
+		end
 	else
-	KGHPnpow = RAND(KGOLpower/10, KGOLpower/4)
-	KGHPntpow = KGHPnpow - KGOLbronaV
-	if KGHPntpow <= 0: KGHPntpow = 1
-	KGHPV -= KGHPnpow
-	'<font color = blue>Contact with <<KGHPnpow>></font>'
+		'<font color="red"><<$KGname>> dodged your attack</font>'
 	end
-else
-'<font color = red><<$KGname>> dodged your attack</font>'
-=======
-$KGOLatkPoison={
-KGOLzasV=RAND(KGOLspeedV/4,KGOLspeedV)
-KGOLataka=RAND(KGOLspeed/2,KGOLspeed*2)
-if KGOLataka>=KGOLzasV:
-poison+=KGOLspell4+1
-     if KGOLataka>=KGOLzasV*2:
-     KGHPnpow=RAND(KGOLpower/2,KGOLpower)
-     KGHPV-=KGHPnpow
-     '<font color=green>CRETE <<KGHPnpow>></font>'
-     else
-     KGHPnpow=RAND(KGOLpower/10,KGOLpower/4)
-     KGHPntpow=KGHPnpow-KGOLbronaV
-     if KGHPntpow<=0:KGHPntpow=1
-     KGHPV-=KGHPnpow
-     '<font color=blue>hit <<KGHPnpow>></font>'
-     end
-else
-'<font color=red><<$KGname>> dodged your attack</font>'
->>>>>>> 426_KGOLexpa
-end
 }
-<<<<<<< 426_KGOLexpa
+
 $KGOLatkFB = {
-KGHPV -= KGOLpower
-'<font color = green>Faerbol inflicts damage <<KGOLpower>> U</font>'
+	KGHPV -= KGOLpower
+	'<font color="green">Faerbol inflicts damage <<KGOLpower>> U</font>'
 }
+
 $KGOLatkV = {
-KGOLzas = RAND(KGOLspeed/4, KGOLspeed)
-KGOLatakaV = RAND(KGOLspeedV/2, KGOLspeedV * 2)
-if KGOLatakaV >= KGOLzas:
-	if KGOLatakaV >= KGOLzas * 2:
-	KGHPnpow = RAND(KGOLpowerV/2, KGOLpowerV)
-	KGHP -= KGHPnpow
-	'<font color = red>CRETE <<KGHPnpow>></font>'
+	KGOLzas = rand(KGOLspeed/4, KGOLspeed)
+	KGOLatakaV = rand(KGOLspeedV/2, KGOLspeedV * 2)
+
+	if KGOLatakaV >= KGOLzas:
+		if KGOLatakaV >= KGOLzas * 2:
+			KGHPnpow = rand(KGOLpowerV / 2, KGOLpowerV)
+			KGHP -= KGHPnpow
+			'<font color="red">CRETE <<KGHPnpow>></font>'
+		else
+			KGHPnpow = rand(KGOLpowerV/10, KGOLpowerV/4)
+			KGHPntpow = KGHPnpow - KGOLbrona
+
+			if KGHPntpow <= 0:KGHPntpow = 1
+
+			KGHP -= KGHPnpow
+			'<font color="brown">Contact with <<KGHPnpow>></font>'
+		end
 	else
-	KGHPnpow = RAND(KGOLpowerV/10, KGOLpowerV/4)
-	KGHPntpow = KGHPnpow - KGOLbrona
-	if KGHPntpow <= 0: KGHPntpow = 1
-	KGHP -= KGHPnpow
-	'<font color = brown>Contact with <<KGHPnpow>></font>'
+		'<font color="green">You dodged the attack</font>'
 	end
-else
-'<font color = green>You dodged the attack</font>'
-=======
-$KGOLatkFB={
-KGHPV-=KGOLpower
-'<font color=green>Faerbol deals damage <<KGOLpower>> Power</font>'
-}
-$KGOLatkV={
-KGOLzas=RAND(KGOLspeed/4,KGOLspeed)
-KGOLatakaV=RAND(KGOLspeedV/2,KGOLspeedV*2)
-if KGOLatakaV>=KGOLzas:
-     if KGOLatakaV>=KGOLzas*2:
-     KGHPnpow=RAND(KGOLpowerV/2,KGOLpowerV)
-     KGHP-=KGHPnpow
-     '<font color=red>CRETE <<KGHPnpow>></font>'
-     else
-     KGHPnpow=RAND(KGOLpowerV/10,KGOLpowerV/4)
-     KGHPntpow=KGHPnpow-KGOLbrona
-     if KGHPntpow<=0:KGHPntpow=1
-     KGHP-=KGHPnpow
-     '<font color=brown>hit <<KGHPnpow>></font>'
-     end
-else
-'<font color=green>You dodged the attack</font>'
->>>>>>> 426_KGOLexpa
-end
 }
 
-<<<<<<< 426_KGOLexpa
 $KGOLrise = {
-cls
-'<center><B>increasing the screen layer</B></center>'
-'Power <<KGOLstren>>, speed and evasion <<KGOLspeed>>, endurance <<KGOLvital>>Intelligence <<KGOLintel>>'
-'Improve skills points available <<KGOLpoint>>'
-if KGOLpoint > 0:
-	act 'Force':
-	KGOLstren += 1
-	KGOLpoint -= 1
-	dynamic $KGOLrise
+	cls
+	'<center><b>increasing the screen layer</b></center>'
+	'Power <<KGOLstren>>, speed and evasion <<KGOLspeed>>, endurance <<KGOLvital>>Intelligence <<KGOLintel>>'
+	'Improve skills points available <<KGOLpoint>>'
+
+	if KGOLpoint > 0:
+		act 'Force':
+			KGOLstren += 1
+			KGOLpoint -= 1
+			dynamic $KGOLrise
 	end
 
-	act 'Speed ​​/Dodge':
-	KGOLspeed += 1
-	KGOLpoint -= 1
-	dynamic $KGOLrise
+		act 'Speed ​​/Dodge':
+			KGOLspeed += 1
+			KGOLpoint -= 1
+			dynamic $KGOLrise
+		end
+
+		act 'Endurance':
+			KGOLvital += 1
+			KGOLpoint -= 1
+			dynamic $KGOLrise
+		end
+
+		act 'Intelligence':
+			KGOLintel += 1
+			KGOLpoint -= 1
+			dynamic $KGOLrise
+		end
 	end
 
-	act 'Endurance':
-	KGOLvital += 1
-	KGOLpoint -= 1
-	dynamic $KGOLrise
-	end
-
-	act 'Intelligence':
-	KGOLintel += 1
-	KGOLpoint -= 1
-	dynamic $KGOLrise
-	end
-=======
-$KGOLrise={
-cls
-'<center><B>Screen improve</B></center>'
-'power <<KGOLstren>>,speed and dodge <<KGOLspeed>>,endurance <<KGOLvital>>,intelligence <<KGOLintel>>'
-'Improve the skills of the available points <<KGOLpoint>>'
-if KGOLpoint>0:
-     act 'power':
-     KGOLstren+=1
-     KGOLpoint-=1
-     dynamic $KGOLrise
-     end
-     
-     act 'speed/dodge':
-     KGOLspeed+=1
-     KGOLpoint-=1
-     dynamic $KGOLrise
-     end
-     
-     act 'endurance':
-     KGOLvital+=1
-     KGOLpoint-=1
-     dynamic $KGOLrise
-     end
-     
-     act 'intelligence':
-     KGOLintel+=1
-     KGOLpoint-=1
-     dynamic $KGOLrise
-     end
->>>>>>> 426_KGOLexpa
-end
-
-<<<<<<< 426_KGOLexpa
-act 'Exit the screen improve': gt 'KGOLgame'
+	act 'Exit the screen improve':gt 'KGOLgame'
 }
+
 $KGOLrise2 = {
-cls
-'<center><B>Screen skills</B></center>'
-'Available skill points increase <<KGOLspellpoint/4>>'
-''
-if KGOLspellpoint >= 4:
-if KGOLklass = 1:
-!воин
-'Powerful punch Skill =<<KGOLspell>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Multiple blow Skill =<<KGOLspell2>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell2 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Increased armor Skill =<<KGOLspell3>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell3 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-elseif KGOLklass = 2:
-!вор
-'Sneaky blow Skill =<<KGOLspell4>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell4 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Poison Blade, Skill =<<KGOLspell5>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell5 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Invisibility Skill =<<KGOLspell6>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell6 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-elseif KGOLklass = 3:
-!маг
-'Faerbol, Skill =<<KGOLspell7>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell7 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Dropping, Skill =<<KGOLspell8>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell8 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Circle of fire, Skill =<<KGOLspell9>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell9 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-elseif KGOLklass = 4:
-!жрец
-'Hit, Skill =<<KGOLspell10>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell10 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Treatment Skill =<<KGOLspell11>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell11 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Obkast, Skill =<<KGOLspell12>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell12 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-elseif KGOLklass = 5:
-!лучник
-'Powerful shot, Skill =<<KGOLspell13>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell13 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Triple shot, Skill =<<KGOLspell14>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell14 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Regen mana Skill =<<KGOLspell15>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell15 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-else
-!варвар
-'Thunderbolt, Skill =<<KGOLspell16>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell16 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Stan Skill =<<KGOLspell17>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell17 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-'Recovery, Skill =<<KGOLspell18>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell18 += 1 & dynamic $KGOLrise2 ">Attach a skill point</a>'
-=======
-act 'Exit the screen improve':gt'KGOLgame'
-}
-$KGOLrise2={
-cls
-'<center><B>screen skills</B></center>'
-'Increase skill points available <<KGOLspellpoint/4>>'
-''
-if KGOLspellpoint>=4:
-if KGOLklass=1:
-!warrior
-'powerful blow, skill=<<KGOLspell>>. <a href="exec:KGOLspellpoint-=4&KGOLspell+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'multiple punch, skill=<<KGOLspell2>>. <a href="exec:KGOLspellpoint-=4&KGOLspell2+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'increase armor, skill=<<KGOLspell3>>. <a href="exec:KGOLspellpoint-=4&KGOLspell3+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-elseif KGOLklass=2:
-!thief
-'sneaky punch, skill=<<KGOLspell4>>. <a href="exec:KGOLspellpoint-=4&KGOLspell4+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'Poison Blade, skill=<<KGOLspell5>>. <a href="exec:KGOLspellpoint-=4&KGOLspell5+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'invisibility, skill=<<KGOLspell6>>. <a href="exec:KGOLspellpoint-=4&KGOLspell6+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-elseif KGOLklass=3:
-!magician
-'Faerbol, skill =<<KGOLspell7>>. <a href="exec:KGOLspellpoint-=4&KGOLspell7+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'Dropping, skill=<<KGOLspell8>>. <a href="exec:KGOLspellpoint-=4&KGOLspell8+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'circle of fire, skill=<<KGOLspell9>>. <a href="exec:KGOLspellpoint-=4&KGOLspell9+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-elseif KGOLklass=4:
-!priest
-'blow magic, skill=<<KGOLspell10>>. <a href="exec:KGOLspellpoint-=4&KGOLspell10+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'treatment, skill=<<KGOLspell11>>. <a href="exec:KGOLspellpoint-=4&KGOLspell11+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'Obkast, skill=<<KGOLspell12>>. <a href="exec:KGOLspellpoint-=4&KGOLspell12+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-elseif KGOLklass=5:
-!archer
-'powerful shot, skill=<<KGOLspell13>>. <a href="exec:KGOLspellpoint-=4&KGOLspell13+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'triple shot, skill=<<KGOLspell14>>. <a href="exec:KGOLspellpoint-=4&KGOLspell14+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'regen mana, skill=<<KGOLspell15>>. <a href="exec:KGOLspellpoint-=4&KGOLspell15+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-else
-!barbarian
-'thunderous, skill=<<KGOLspell16>>. <a href="exec:KGOLspellpoint-=4&KGOLspell16+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'camp, skill=<<KGOLspell17>>. <a href="exec:KGOLspellpoint-=4&KGOLspell17+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
-'recovery, skill=<<KGOLspell18>>. <a href="exec:KGOLspellpoint-=4&KGOLspell18+=1&dynamic $KGOLrise2 ">To invest in the skill point</a>'
->>>>>>> 426_KGOLexpa
-end
-end
-<<<<<<< 426_KGOLexpa
-act 'Exit the screen skills': gt 'KGOLgame'
-=======
-act 'Exit the screen skills':gt'KGOLgame'
->>>>>>> 426_KGOLexpa
+	cls
+	'<center><b>Screen skills</b></center>'
+	'Available skill points increase <<KGOLspellpoint/4>>'
+	''
+	if KGOLspellpoint >= 4:
+		if KGOLklass = 1:
+			!!warrior
+			'Powerful punch Skill =<<KGOLspell>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Multiple blow Skill =<<KGOLspell2>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell2 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Increased armor Skill =<<KGOLspell3>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell3 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+		elseif KGOLklass = 2:
+			!!thief
+			'Sneaky blow Skill =<<KGOLspell4>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell4 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Poison Blade, Skill =<<KGOLspell5>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell5 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Invisibility Skill =<<KGOLspell6>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell6 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+		elseif KGOLklass = 3:
+			!!magican
+			'Faerbol, Skill =<<KGOLspell7>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell7 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Dropping, Skill =<<KGOLspell8>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell8 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Circle of fire, Skill =<<KGOLspell9>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell9 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+		elseif KGOLklass = 4:
+			!!priest
+			'Hit, Skill =<<KGOLspell10>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell10 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Treatment Skill =<<KGOLspell11>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell11 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Obkast, Skill =<<KGOLspell12>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell12 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+		elseif KGOLklass = 5:
+			!!archer
+			'Powerful shot, Skill =<<KGOLspell13>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell13 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Triple shot, Skill =<<KGOLspell14>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell14 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Regen mana Skill =<<KGOLspell15>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell15 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+		else
+			!!barbarian
+			'Thunderbolt, Skill =<<KGOLspell16>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell16 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Stan Skill =<<KGOLspell17>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell17 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+			'Recovery, Skill =<<KGOLspell18>>. <a href="exec:KGOLspellpoint -= 4 & KGOLspell18 += 1 & dynamic $KGOLrise2">Attach a skill point</a>'
+		end
+	end
+
+	act 'Exit the screen skills':gt 'KGOLgame'
 }
 
 
-<<<<<<< 426_KGOLexpa
 $KGOLatkKGOLspell2 = {
-:multiloop
-KGLOloop -= 1
-dynamic $KGOLatk
-if KGLOloop > 0: jump 'multiloop'
-}
-=======
-$KGOLatkKGOLspell2={
-:multiloop
-KGLOloop-=1
-dynamic $KGOLatk
-if KGLOloop>0:jump'multiloop'
+	:multiloop
+	KGLOloop -= 1
+	dynamic $KGOLatk
+
+	if KGLOloop > 0:jump 'multiloop'
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 426_KGOLexpa
 --- KGOLexpa ---------------------------------
-

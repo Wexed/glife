@@ -1,9 +1,9 @@
 # avt3
-*PL 'Game rules are very simple: toss a coin 1,000 rubles and you pull the lever. Jackpot of 10 million rubles.'
-*P '<center><img src="images\casino\avt.jpg"></center>'
-ACT 'Pull the lever':
+*PL 'Game rules are very simple:toss a coin 1, 000 rubles and you pull the lever. Jackpot of 10 million rubles.'
+*P '<center><img src="images/casino/avt.jpg"></center>'
+act 'Pull the lever':
 		if money >= 1000:
-			x_10 = rand(1,1000)
+			x_10 = rand(1, 1000)
 			money = money - 1000
 			if x_10 = 1000:
 				set money += 10000000
@@ -30,10 +30,10 @@ ACT 'Pull the lever':
 				gt 'avt3'
 		end
 
-END
-ACT 'Back to the Hall':
+end
+act 'Back to the Hall':
 	gt 'igravt'
-END
+end
 clr
 gs 'stat'
 set minut += 10

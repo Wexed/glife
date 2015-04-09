@@ -18,7 +18,7 @@ pl 'BakaG Homework System <a href="exec:dynamic $options_BakaGHomework"><<$BakaG
 pl 'Don´t use condoms <a href="exec:dynamic $options_NoCondomUse"><<$NoCondomUse>></a>'
 pl 'Disable STD system <a href="exec:dynamic $options_NoSTD"><<$NoSTD>></a>'
 pl 'Reminder System <a href="exec:dynamic $options_ReminderSystem"><<$ReminderSystem>></a>'
-pl '    Remind me when my supplies go below <a href="exec:dynamic $options_RSN"><<ReminderNumber>></a>'
+pl ' Remind me when my supplies go below <a href="exec:dynamic $options_RSN"><<ReminderNumber>></a>'
 pl 'Show stats as <a href="exec:dynamic $options_ShowStatsAs"><<$ShowStatsAs>></a>'
 }
 $options_BakaGHomework = {
@@ -79,7 +79,7 @@ dynamic $options_start
 }
 $options_ShowStatsAs = {
 ShowStatsAs += 1
-if ShowStatsAs > 3: ShowStatsAs = 0
+if ShowStatsAs > 3:ShowStatsAs = 0
 dynamic $options_start
 }
 --- menu_options ---------------------------------

@@ -4,10 +4,10 @@ if $args[0] = 'pos1':
 	*clr
 	minut += 10
 	gs 'stat'
-	'<center><B><font color = maroon>commandant hostel</font></B></center>'
-	'<center><img src="images\etogame\comendant.jpg"></center>'
+	'<center><b><font color="maroon">commandant hostel</font></b></center>'
+	'<center><img src="images/etogame/comendant.jpg"></center>'
 	'Commandant ulybchiv hostel and friendly.'
-		act 'Become acquainted': gt 'comendant','pos2'
+		act 'Become acquainted':gt 'comendant', 'pos2'
 	end
 
 	if $args[0] = 'pos2':
@@ -16,16 +16,16 @@ if $args[0] = 'pos1':
 	minut += 5
 	gor_dorm = 1
 	gs 'stat'
-	'<center><B><font color = maroon>commandant hostel</font></B></center>'
-	'<center><img src="images\etogame\comendant.jpg"></center>'
-	'You: - Good afternoon! I am in the direction of the school, so all the necessary documents.'
+	'<center><b><font color="maroon">commandant hostel</font></b></center>'
+	'<center><img src="images/etogame/comendant.jpg"></center>'
+	'You:- Good afternoon! I am in the direction of the school, so all the necessary documents.'
 	'...'
 	'- Yes, it seems all right. Welcome to our town. My name is Peter, you can simply Petya.'
 	'- <<$name>>.'
 	'- So will teach, well, this is lucky to get such a tomboy charming teacher.'
 	'- Thank you.'
 	'- So, here are your keys, the room number on the key fob. Kitchen and bathroom at the end of the corridor, although the water often disable the utility. If there are problems, please contact me.'
-		act 'In the room': gt 'dom_gor'
+		act 'In the room':gt 'dom_gor'
 	end
 
 	if $args[0] = 'pos3':
@@ -34,9 +34,9 @@ if $args[0] = 'pos1':
 	minut += 5
 	gor_dorm = 3
 	gs 'stat'
-	'<center><B><font color = maroon>commandant hostel</font></B></center>'
-	'<center><img src="images\etogame\comendant_what.jpg"></center>'
-	'You: - Hello! It´s just a mess, you saw in what condition the pipe in the bathroom. Because the water turned off and that the pipes from nothing left.'
+	'<center><b><font color="maroon">commandant hostel</font></b></center>'
+	'<center><img src="images/etogame/comendant_what.jpg"></center>'
+	'You:- Hello! It´s just a mess, you saw in what condition the pipe in the bathroom. Because the water turned off and that the pipes from nothing left.'
 	'...'
 	'- Ooh, what you say.'
 	'- Yes, I myself checked the riser, and I can show you come on.'
@@ -44,7 +44,7 @@ if $args[0] = 'pos1':
 	'- Hmm, I hope ...'
 	'- I immediately take measures, thank you. Sorry for the inconvenience.'
 	'(Hmm, strange type)'
-		act 'In the room': gt 'dom_gor'
+		act 'In the room':gt 'dom_gor'
 	end
 --- comendant ---------------------------------
 

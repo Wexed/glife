@@ -1,138 +1,62 @@
 # FSfight
-<<<<<<< 440_FSfight
 minut += 1
 gs 'stat'
 'Your health <<FSHP>>.'
 '<<$FSnameV>>Health <<FSHPV>>'
 
-!конец боя
+!!end of the fight
 if FSHP <= 0:
-FSloss += 1
-'You lost the fight'
-act 'Leave': gt 'FSgame'
-=======
-minut+=1
-gs'stat'
-'Cheers <<FSHP>>.'
-'<<$FSnameV>>, health <<FSHPV>>'
+	FSloss += 1
+	'You lost the fight'
 
-!end of the fight
-if FSHP<=0:
-FSloss+=1
-'You lost the fight'
-act 'Get_Away':gt'FSgame'
->>>>>>> 440_FSfight
-exit
+	act 'Leave':gt 'FSgame'
+
+	exit
 end
-<<<<<<< 440_FSfight
+
 if FSHPV <= 0:
-FSWin += 1
-'<<$FSnameV>> fell. You win the fight.'
-'You got <<FSPrizeM>> coins and <<FSPrizeExp>> experience'
-act 'Disengage': gt 'FSgame'
-=======
-if FSHPV<=0:
-FSWin+=1
-'<<$FSnameV>> down. You win the fight.'
-'you got <<FSPrizeM>> coins and <<FSPrizeExp>> experience'
-act 'Out of combat':gt'FSgame'
->>>>>>> 440_FSfight
-exit
+	FSWin += 1
+	'<<$FSnameV>> fell. You win the fight.'
+	'You got <<FSPrizeM>> coins and <<FSPrizeExp>> experience'
+
+	act 'Disengage':gt 'FSgame'
+
+	exit
 end
-<<<<<<< 440_FSfight
-!инициатива
-KGOLiniV = RAND(FSreaktV/2, FSreaktV * 2)
-KGOLini = RAND(FSreakt/2, FSreakt * 2)
+
+!!initiative
+KGOLiniV = rand(FSreaktV / 2, FSreaktV * 2)
+KGOLini = rand(FSreakt / 2, FSreakt * 2)
+
 if KGOLini = KGOLiniV:
-hodrand = RAND(0,1)
-if hodrand = 0: KGOLini = 1 & KGOLiniV = 0
-if hodrand = 1: KGOLini = 0 & KGOLiniV = 1
+	hodrand = rand(0, 1)
+
+	if hodrand = 0:KGOLini = 1 & KGOLiniV = 0
+	if hodrand = 1:KGOLini = 0 & KGOLiniV = 1
 end
-if KGOLini > KGOLiniV: KGOLiniSUM += 1
-if KGOLini < KGOLiniV: KGOLiniSUM -= 1
-if KGOLiniSUM > 3: KGOLini = 0 & KGOLiniV = 1 & KGOLiniSUM = 0
-if KGOLiniSUM<-3: KGOLini = 1 & KGOLiniV = 0 & KGOLiniSUM = 0
-!ходы
+
+if KGOLini > KGOLiniV:KGOLiniSUM += 1
+if KGOLini < KGOLiniV:KGOLiniSUM -= 1
+if KGOLiniSUM > 3:KGOLini = 0 & KGOLiniV = 1 & KGOLiniSUM = 0
+if KGOLiniSUM < -3:KGOLini = 1 & KGOLiniV = 0 & KGOLiniSUM = 0
+
+!!moves
 if KGOLini > KGOLiniV:
-'Now your turn'
+	'Now your turn'
+
 	act 'Attack':
-	cls
-	''
-	dynamic $FSatk
-	act 'Further': gt $curloc
+		cls
+		''
+		dynamic $FSatk
+
+		act 'Further':gt $curloc
 	end
 else
-'Now opponents'
-'<<$FSnameV>> attacks you'
+	'Now opponents'
+	'<<$FSnameV>> attacks you'
 	dynamic $FSatkV
-	act 'Further': gt $curloc
-end
-=======
-!initiative
-KGOLiniV=RAND(FSreaktV/2,FSreaktV*2)
-KGOLini=RAND(FSreakt/2,FSreakt*2)
-if KGOLini=KGOLiniV:
-hodrand=RAND(0,1)
-if hodrand=0:KGOLini=1&KGOLiniV=0
-if hodrand=1:KGOLini=0&KGOLiniV=1
-end
-if KGOLini>KGOLiniV:KGOLiniSUM+=1
-if KGOLini<KGOLiniV:KGOLiniSUM-=1
-if KGOLiniSUM>3:KGOLini=0&KGOLiniV=1&KGOLiniSUM=0
-if KGOLiniSUM<-3:KGOLini=1&KGOLiniV=0&KGOLiniSUM=0
-!moves
-if KGOLini>KGOLiniV:
-'Now your turn'
-     act 'attack':
-     cls
-     ''
-     dynamic $FSatk
-     act 'further':gt $curloc
-     end
-else
-'Now move the enemy'
-'<<$FSnameV>> attacks you'
-     dynamic $FSatkV
-	 act 'further':gt $curloc
+
+	act 'Further':gt $curloc
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 440_FSfight
 --- FSfight ---------------------------------
-

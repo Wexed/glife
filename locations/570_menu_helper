@@ -16,8 +16,8 @@ clr
 pl '<a href="exec:dynamic $helper_meeting">GO BACK</a>'
 if $ARGS[0] = 'vladimir':
 	pl '<b>Can I meet him in my current state?</b>'
-	if vnesh > 10: pl 'Yes you can'
-	if vnesh <= 10: pl 'You need to be more attractive'&pl '<a href="exec: dynamic $helper_stats, ''attractiveness''">How can I be more attractive?</a>'
+	if vnesh > 10:pl 'Yes you can'
+	if vnesh <= 10:pl 'You need to be more attractive' & pl '<a href="exec:dynamic $helper_stats, ''attractiveness''">How can I be more attractive?</a>'
 	nl
 	pl '<b>Where to I meet him?</b>'
 	pl 'In the park near the attractions.'
@@ -26,8 +26,8 @@ if $ARGS[0] = 'vladimir':
 end
 if $ARGS[0] = 'kate':
 	pl '<b>Can I meet her in my current state?</b>'
-	if vnesh >= 14: pl 'Yes you can'
-	if vnesh < 14: pl 'You need to be more attractive to get further with her'&pl '<a href="exec: dynamic $helper_stats, ''attractiveness''">How can I be more attractive?</a>'
+	if vnesh >= 14:pl 'Yes you can'
+	if vnesh < 14:pl 'You need to be more attractive to get further with her' & pl '<a href="exec:dynamic $helper_stats, ''attractiveness''">How can I be more attractive?</a>'
 	nl
 	pl '<b>Where to I meet her?</b>'
 	pl 'At the lake while tanning.'
@@ -74,7 +74,7 @@ if $ARGS[0] = 'attractiveness':
 	pl 'How old you look'
 	pl 'If you have less teeth'
 	pl 'If you have a disease'
-	!'pl '<a href="exec:dynamic $helper_stats_info, ''''">If you wear cosmetics</a>'
+	!!'pl '<a href="exec:dynamic $helper_stats_info, ''''">If you wear cosmetics</a>'
 	pl '<a href="exec:dynamic $helper_stats_info, ''''">Your eyelashes</a>'
 	pl '<a href="exec:dynamic $helper_stats_info, ''''">Your eyes</a>'
 	pl '<a href="exec:dynamic $helper_stats_info, ''''">Your body type</a>'
@@ -94,10 +94,10 @@ if $ARGS[0] = 'attractiveness':
 end
 if $ARGS[0] = 'str':
 	pl '<b>Where can I increase it?</b>'
-	if stren < 30: pl 'Watch swimmers at the pool but you can only do it if your strength is less than 30'
-	if stren < 30: pl 'Swim at the lake but you can only do it if your strength is less than 30'
-	if stren < 40: pl 'Give Kisame a blowjob at the pool but you can only do it if your strength is less than 40'
-	if stren < 40: pl 'Swim at the pool but you can only do it if your strength is less than 40'
+	if stren < 30:pl 'Watch swimmers at the pool but you can only do it if your strength is less than 30'
+	if stren < 30:pl 'Swim at the lake but you can only do it if your strength is less than 30'
+	if stren < 40:pl 'Give Kisame a blowjob at the pool but you can only do it if your strength is less than 40'
+	if stren < 40:pl 'Swim at the pool but you can only do it if your strength is less than 40'
 	pl 'In fitness center while learning poledancing'
 	pl 'In fitness center while training force'
 	pl 'In fitness center, kickboxing section while training power punches'
@@ -115,18 +115,18 @@ if $ARGS[0] = 'dance':
 end
 if $ARGS[0] = 'striptease':
 	pl '<b>Can I increase it in my current state?</b>'
-	if dance >= 100: pl 'Yes you can'
-	if dance < 100: pl 'You need to be better at <a href="exec: dynamic $helper_stats, ''dance''">dancing</a>'
+	if dance >= 100:pl 'Yes you can'
+	if dance < 100:pl 'You need to be better at <a href="exec:dynamic $helper_stats, ''dance''">dancing</a>'
 	nl
 	pl '<b>Where can I increase it?</b>'
 	pl 'In fitness center if you have enough dancing skill'
 end
 if $ARGS[0] = 'poledance':
 	pl '<b>Can I increase it in my current state?</b>'
-	if dance >= 100 and stripdance >= 100 and stren >= 80: pl 'Yes you can'
-	if dance < 100: pl 'You need to be better at <a href="exec: dynamic $helper_stats, ''dance''">dancing</a>'
-	if stripdance < 100: pl 'You need to be better at <a href="exec: dynamic $helper_stats, ''striptease''">striptease</a>'
-	if stren < 80: pl 'You need to have more <a href="exec: dynamic $helper_stats, ''str''">strength</a>'
+	if dance >= 100 and stripdance >= 100 and stren >= 80:pl 'Yes you can'
+	if dance < 100:pl 'You need to be better at <a href="exec:dynamic $helper_stats, ''dance''">dancing</a>'
+	if stripdance < 100:pl 'You need to be better at <a href="exec:dynamic $helper_stats, ''striptease''">striptease</a>'
+	if stren < 80:pl 'You need to have more <a href="exec:dynamic $helper_stats, ''str''">strength</a>'
 	nl
 	pl '<b>Where can I increase it?</b>'
 	pl 'In fitness center if you have enough striptease skill, dancing skill and strength'
@@ -184,17 +184,17 @@ clr
 pl '<a href="exec:dynamic $helper_job">GO BACK</a>'
 if $ARGS[0] = 'cafe':
 	pl '<b>Can I get the job in my current state?</b>'
-	if vnesh >= 5 and work = 0: pl 'Yes you can'
-	if vnesh < 5: pl 'You need to be more attractive to get the job'&pl '<a href="exec: dynamic $helper_stats, ''attractiveness''">How can I be more attractive?</a>'
-	if work = 1: pl 'You are already working somewhere'
+	if vnesh >= 5 and work = 0:pl 'Yes you can'
+	if vnesh < 5:pl 'You need to be more attractive to get the job' & pl '<a href="exec:dynamic $helper_stats, ''attractiveness''">How can I be more attractive?</a>'
+	if work = 1:pl 'You are already working somewhere'
 	nl
 	pl '<b>How can I get the job?</b>'
 	pl 'Just go to the cafe at residental and talk to the boss'
 end
 if $ARGS[0] = 'poli':
 	pl '<b>Can I get the job in my current state?</b>'
-	if katjob > 0: pl 'Yes you can'
-	if katjob = 0: pl 'You need to get <a href="exec: dynamic $helper_person, ''kate''">Kate</a> to talk about her job'
+	if katjob > 0:pl 'Yes you can'
+	if katjob = 0:pl 'You need to get <a href="exec:dynamic $helper_person, ''kate''">Kate</a> to talk about her job'
 end
 if $ARGS[0] = 'cleaner':
 	pl '<b>How can I get the job?</b>'
@@ -206,8 +206,8 @@ if $ARGS[0] = 'cleaner':
 end
 if $ARGS[0] = 'strip':
 	pl '<b>Can I get the job in my current state?</b>'
-	if stripdance > 0: pl 'Yes you can'
-	if stripdance = 0: pl 'You need to learn <a href="exec: dynamic $helper_stats, ''striptease''">striptease</a>'
+	if stripdance > 0:pl 'Yes you can'
+	if stripdance = 0:pl 'You need to learn <a href="exec:dynamic $helper_stats, ''striptease''">striptease</a>'
 	nl
 	pl '<b>How can I get the job?</b>'
 	pl 'Just go to the stripclub and talk to the manager'

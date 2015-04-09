@@ -1,139 +1,70 @@
 # qwpaluba
-<<<<<<< 469_qwpaluba
 minut += 30
 energy = 21
 water = 21
 gs 'stat'
-'<center><B><font color = maroon>The boat</font></B></center>'
-'<center><img src="images\qwest\vladimir\kater2.jpg"></center>'
+'<center><b><font color="maroon">The boat</font></b></center>'
+'<center><img src="images/qwest/vladimir/kater2.jpg"></center>'
 'You brought the tray on the deck and put it on the table in front of men. Vladimir began pouring a glass of vodka and showed you sit on a chair inviting. Isolde came and also brought a variety of eatables on the tray.'
 'You all but Glory sat at a table on the deck and after Vladimir vodka poured the glasses. Nicholas raised a toast "For the ladies present here."'
 'All drank the stack and returned to their conversations. Vladimir floor vote in what is explained Nicholas. And frankly Vitaly sgaretu lounged smoking and staring at your feet.'
 'Isolde stood leaning his hands on the gunwale and considered neighborhood. Glory led boat on the river.'
 
-	act 'Approach to Isolde':
+act 'Approach to Isolde':
 	cls
 	izoldaWQ = 1
 	minut += 15
 	gs 'stat'
-	'<center><B><font color = maroon>Isolda</font></B></center>'
-	'<center><img src="images\qwest\kolan\izolda.jpg"></center>'
+	'<center><b><font color="maroon">Isolda</font></b></center>'
+	'<center><img src="images/qwest/kolan/izolda.jpg"></center>'
 	'Glory began to make a turn that would return to the place from where you left. You clung to a rail next to Isolde, that would not fall, Nicholas shouted "Banzai, be careful, do not you carry firewood."'
 	'Once you have chatted boat lined with Isolde about trifles. She called you my address in the city center and invited to come to anything like it.'
 	'The boat finally dropped the course and began to stick to the shore where you set sail for a walk.'
-	act 'Disembark': gt 'qwbereg'
-	end
 
-	act 'Approach to Glory':
+	act 'Disembark':gt 'qwbereg'
+end
+
+act 'Approach to Glory':
 	cls
 	minut += 15
 	gs 'stat'
-	'<center><B><font color = maroon>Glory</font></B></center>'
-	'<center><img src="images\qwest\kim\001.jpg"></center>'
+	'<center><b><font color="maroon">Glory</font></b></center>'
+	'<center><img src="images/qwest/kim/001.jpg"></center>'
 	'Glory grinned when he saw you. "Hold on tight, I´m going to turn." You clung to railings and Asian rider banked on the river boat turning. Nicholas shouted "Banzai, be careful, do not you carry firewood."'
 	'The driver smiled, "I can not help myself, I love speed. Do you like speed?"'
-		act 'Not very':
+
+	act 'Not very':
 		cla
 		slavaQW = 1
 		'(You) - Not really.'
 		'(Glory) - You just do not feel it yet. What would you love to feel the speed it should be. I hang out in the evenings in the northern region, near the bar, "Flight", come back.'
 		'The boat finally dropped the course and began to stick to the shore where you set sail for a walk.'
-		act 'Disembark': gt 'qwbereg'
-		end
 
-		act 'Yes.':
+		act 'Disembark':gt 'qwbereg'
+	end
+
+	act 'Yes.':
 		cla
 		slavaQW = 1
 		'(You) - Yes.'
 		'(Glory) - In the evening, I hung out in the northern region, in the bar, "Flight", come back, I´ll show you what real speed.'
 		'The boat finally dropped the course and began to stick to the shore where you set sail for a walk.'
-		act 'Disembark': gt 'qwbereg'
-		end
-	end
 
-	act 'Talk with Vitali':
+		act 'Disembark':gt 'qwbereg'
+	end
+end
+
+act 'Talk with Vitali':
 	cls
 	minut += 15
 	gs 'stat'
-	'<center><B><font color = maroon>Vitali</font></B></center>'
-	'<center><img src="images\qwest\marafet\001.jpg"></center>'
+	'<center><b><font color="maroon">Vitali</font></b></center>'
+	'<center><img src="images/qwest/marafet/001.jpg"></center>'
 	'You started talking with Vitali, he acknowledged that working with the police to the rank of captain. At this time, the boat banked sharply and began to go on the turn, you are not expecting such slid from the couch and grabbed the Vitali that would not fall. Nicholas shouted "Banzai, be careful, do not you carry firewood."'
 	'Vitaliy you grabbed that you would not have fallen to the floor. After the boat leveled network it helped you on the couch, and his hands slid over your body and stopped by the ass. Then he took his hands with a sigh and poured vodka.'
 	'The boat finally dropped the course and began to stick to the shore where you set sail for a walk.'
-	act 'Disembark': gt 'qwbereg'
-	end
-=======
-minut+=30
-energy=21
-water=21
-gs'stat'
-'<center><B><font color=maroon>boat</font></B></center>'
-'<center><img src="qwest/vladimir/kater2.jpg" ></center>'
-'You brought a tray on the deck and set it on the table in front of men. Vladimir started to pour a glass of vodka and showed you sit down on a chair inviting. Isolde came and also brought a variety of eatables on a tray.'
-'You all but Glory sat at a table on the deck . Nicholas raised a toast "For the ladies present here."' 
-'All drank a pile and went back to their conversations. Vladimir in a floor vote that is explained Nicholas. And frankly Vitaly bummed sgaretu smoking and staring at your feet.' 
-'Isolde stood leaning his hands on the gunwale and this neighborhood. Glory drove the boat on the river.' 
 
-	 act 'To approach Isolde':
-	 cls
-	 izoldaWQ=1
-	 minut+=15
-	 gs'stat' 
-	 '<center><B><font color=maroon>Isolde</font></B></center>'
-	 '<center><img src="qwest/kolan/izolda.jpg" ></center>'
-	 'Glory began to perform a U-turn that would come back to the place where you left. You clutched the railing beside Isolde, that would not fall, Nicholas cried "Banzai, careful, do not you carry firewood."'
-	 'After the boat lined chat with you about all sorts of trivia Isolde. She called you my address in the city center and invited as a call on her.'
-	 'The boat finally dropped the course and began to stick to the coast where you set sail for a walk.'
-	 act 'To go ashore':gt'qwbereg'
-	 end
-	 
-	 act 'Approach to Glory':
-	 cls
-	 minut+=15
-	 gs'stat' 
-	 '<center><B><font color=maroon>glory</font></B></center>'
-	 '<center><img src="qwest/kim/001.jpg" ></center>'
-	 'Glory grinned seeing you. "Hold on tight, I now turn to go." You clutched the handrails and Asian rider banked on a river boat turning. Nicholas cried "Banzai, careful, do not you carry firewood."'
-	 'The driver smiled "I can not help myself, love speed. Do you love speed?"'
-	     act 'not very':
-	     cla
-	     slavaQW=1
-	     '(Do_You) - not very.'
-	     '(glory) - You just do not feel it yet. What would you love to feel the speed it should be. In the evenings, near the bar "flight", We go there.'
-	     'The boat finally dropped the course and began to stick to the coast where you set sail for a walk.'
-	     act 'To go ashore':gt'qwbereg'
-	     end
-	     
-	     act 'Yes_I_Am.':
-	     cla
-	     slavaQW=1
-	     '(Do_You) - Yes_I_Am.'
-	     '(glory) - In the evenings, bar "flight", We go there, I`ll show you, what real speed.'
-	     'The boat finally dropped the course and began to stick to the coast where you set sail for a walk.'
-	     act 'To go ashore':gt'qwbereg'
-	     end
-	 end
-	 
-	 act 'Talk Vitali':
-	 cls
-	 minut+=15
-	 gs'stat' 
-	 '<center><B><font color=maroon>Vitali</font></B></center>'
-	 '<center><img src="qwest/marafet/001.jpg" ></center>'
-	 'You started talking with Vitali, he acknowledged that working with the police in the rank of captain. At this time, you are not expecting such slipped from the couch and grabbed the Vitali that would not fall. Nicholas cried "Banzai, careful, do not you carry firewood."'
-	 'Vitaly grabbed you that you would not have fallen to the floor. After the boat leveled it helped you network on the sofa, and his hands slid over your body and stopped by the pope. Then he sighed and removed his hands and poured vodka.'
-	 'The boat finally dropped the course and began to stick to the coast where you set sail for a walk.'
-	 act 'To go ashore':gt'qwbereg'
-	 end
- 
- 
- 
- 
- 
- 
- 
- 
- 
->>>>>>> 469_qwpaluba
+	act 'Disembark':gt 'qwbereg'
+end
+
 --- qwpaluba ---------------------------------
-

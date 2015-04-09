@@ -1,44 +1,24 @@
 # qwloc4
-<<<<<<< 465_qwloc4
 gs 'stat'
 'You pick up the phone and a male voice said, "Hello <<$name>>, is Vladimir, can converge to something?"'
 
-	act 'Oh, I have a lot of things, I just can not today.':
+act 'Oh, I have a lot of things, I just can not today.':
 	cla
 	vladimirday = day
 	'(You) - Oh, I have a lot of things, I just can not segdnya.'
 	'(Vladimir) - Okay. Then I´ll call you tomorrow at 4 pm.'
-	act 'Hang up.': gt 'korr'
-	end
 
-	act 'I do not mind.':
+	act 'Hang up.':gt 'korr'
+end
+
+act 'I do not mind.':
 	cla
 	vladimirQW = 40
 	vladimirday = day
 	'(You) - I do not mind.'
 	'(Vladimir) - Wonderful. Now for you to come my driver and drive Thank you.'
-	act 'Hang up.': gt 'korr'
-	end
-=======
-gs'stat'
-'You raised a tube and a male voice said "Hello World, Vladimir is, Can we go somewhere else?"'
 
-	 act 'oh, I have a lot to do, Today I can not get.':
-	 cla
-	 vladimirday=day
-	 '(Do_You) - oh, I have a lot to do, I just can not segdnya.'
-	 '(Vladimir) - Fair_Enough. Then I `ll call you tomorrow 4 pm.'
-	 act 'hang Up.':gt 'korr'
-	 end
-	 
-	 act 'I do not mind.':
-	 cla
-	 vladimirQW=40
-	 vladimirday=day
-	 '(Do_You) - I do not mind.'
-	 '(Vladimir) - That`S_Great. Now for you to come my driver take you and Glory.'
-	 act 'hang Up.':gt 'korr'
-	 end
->>>>>>> 465_qwloc4
+	act 'Hang up.':gt 'korr'
+end
+
 --- qwloc4 ---------------------------------
-

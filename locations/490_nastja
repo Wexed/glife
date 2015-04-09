@@ -1,171 +1,179 @@
 # nastja
-<<<<<<< 490_nastja
-	if $args[0] = 'pos1':
+if $ARGS[0] = 'pos1':
 	cla
 	*clr
 	set minut += 5
 	gs 'stat'
-	'<center><img src="images\etogame\nastja.jpg"></center>'
+	'<center><img src="images/etogame/nastja.jpg"></center>'
 	'Girl smiling at you in return! What is she cute!'
-		act 'Come to meet you.':
+
+	act 'Come to meet you.':
 		cla
 		*clr
 		set minut += 5
 		gs 'stat'
-		'<center><img src="images\etogame\nastja.jpg"></center>'
-		'You: - Hi! I <<$name>>! Nevozrazhaesh if I sit down? (Funny, thought you acquainted with the girl in the restaurant, just like in the good old days.)'
-		'Girl: - Hi! I Nastya. Of course, keep me company!'
-			act '- Why do you sit alone, even in a restaurant?':
+		'<center><img src="images/etogame/nastja.jpg"></center>'
+		'You:- Hi! I <<$name>>! Nevozrazhaesh if I sit down? (Funny, thought you acquainted with the girl in the restaurant, just like in the good old days.)'
+		'Girl:- Hi! I Nastya. Of course, keep me company!'
+
+		act '- Why do you sit alone, even in a restaurant?':
 			cla
 			*clr
 			set nastjaqw = 1
 			set minut += 60
 			gs 'stat'
-			'<center><img src="images\etogame\nastja.jpg"></center>'
-			'Nastya: - The same question I ask and you!'
-			'You: - Well, I have a pretty rough life! Have to be independent.'
-			'Nastya: - So I have the same story. Oh, you´d know ...'
+			'<center><img src="images/etogame/nastja.jpg"></center>'
+			'Nastya:- The same question I ask and you!'
+			'You:- Well, I have a pretty rough life! Have to be independent.'
+			'Nastya:- So I have the same story. Oh, you´d know ...'
 			'(You talked for an hour with Nastya, she was surprisingly pleasant conversationalist. Before leaving, you exchanged phone numbers and agreed on Saturdays selected somewhere together.)'
-				act 'Leave': gt 'restoran', 'zal'
-			end
+
+			act 'Leave':gt 'restoran', 'zal'
 		end
-		act 'Leave': gt 'restoran', 'zal'
 	end
+	act 'Leave':gt 'restoran', 'zal'
+end
 
-	if $args[0] = 'pos4':
-		cla
-		*clr
-		set minut += 30
-		gs 'stat'
-		'<center><img src="images\etogame\tel_talk.jpg"></center>'
-		'Any time you hear beeps. Finally at the end of the call.'
-		' '
-		'You: - Nastya, a greeting! This <<$name>>. Remember me, we met in a restaurant?'
-		'Nastya: - Hi, <<$name>>! Well, of course I do!'
-		'You: - How about we go out together?'
-		'Nastya: - Yes, with pleasure. Come on in half an hour I´ll come after you.'
-		'(You give yourself up. Finally, Nastya comes up to you in a taxi and go to the beginning of the offers in the cafe.)'
-		act 'Go to cafe': gt 'nastja', 'pos5'
-	end
+if $ARGS[0] = 'pos4':
+	cla
+	*clr
+	set minut += 30
+	gs 'stat'
+	'<center><img src="images/etogame/tel_talk.jpg"></center>'
+	'Any time you hear beeps. Finally at the end of the call.'
+	' '
+	'You:- Nastya, a greeting! This <<$name>>. Remember me, we met in a restaurant?'
+	'Nastya:- Hi, <<$name>>! Well, of course I do!'
+	'You:- How about we go out together?'
+	'Nastya:- Yes, with pleasure. Come on in half an hour I´ll come after you.'
+	'(You give yourself up. Finally, Nastya comes up to you in a taxi and go to the beginning of the offers in the cafe.)'
+	act 'Go to cafe':gt 'nastja', 'pos5'
+end
 
-	if $args[0] = 'pos5':
-		cla
-		*clr
-		set minut += 60
-		nastjaqw = 2
-		gs 'stat'
-		'<center><img src="images\etogame\1party0.jpg"></center>'
-		'You arrive at a karaoke cafe "Mast".'
-		'Nastya: - I like it here, and you can sing and beautiful views of the river. Let´s choose a table on the veranda, I love to sit in the fresh air!'
-		'You occupy a table with a beautiful view of the waterfront.'
-		'Nastya: - <<$name>>, choose what we drink!'
-		act 'Champagne!': gt 'nastja', 'pos6'
-		act 'And let´s vodka!': gt 'nastja', 'pos7'
+if $ARGS[0] = 'pos5':
+	cla
+	*clr
+	set minut += 60
+	nastjaqw = 2
+	gs 'stat'
+	'<center><img src="images/etogame/1party0.jpg"></center>'
+	'You arrive at a karaoke cafe "Mast".'
+	'Nastya:- I like it here, and you can sing and beautiful views of the river. Let´s choose a table on the veranda, I love to sit in the fresh air!'
+	'You occupy a table with a beautiful view of the waterfront.'
+	'Nastya:- <<$name>>, choose what we drink!'
 
-		act 'I do not drink alcohol.': gt 'nastja', 'pos8'
-	end
+	act 'Champagne!':gt 'nastja', 'pos6'
+	act 'And let´s vodka!':gt 'nastja', 'pos7'
+	act 'I do not drink alcohol.':gt 'nastja', 'pos8'
+end
 
-	if $args[0] = 'pos6':
-		cla
-		*clr
-		minut += 5
-		gs 'stat'
-		'<center><img src="images\etogame\1shamp0.jpg"></center>'
-		'You bring salads and champagne. Nice chatting with you Nastya. It turns out you have a lot in common. Anastasia says that she likes to be the center of attention.'
-		'Yes, it outfit on it is really very frank! With her figure to attract attention not be easy.'
-		'Meanwhile ends is the second bottle of champagne and you decently hopped thinking whether to tell her about his sexual escapades.'
-		act 'Modestly silent and listen only to Nastya.': gt 'nastja', 'pos9'
+if $ARGS[0] = 'pos6':
+	cla
+	*clr
+	minut += 5
+	gs 'stat'
+	'<center><img src="images/etogame/1shamp0.jpg"></center>'
+	'You bring salads and champagne. Nice chatting with you Nastya. It turns out you have a lot in common. Anastasia says that she likes to be the center of attention.'
+	'Yes, it outfit on it is really very frank! With her figure to attract attention not be easy.'
+	'Meanwhile ends is the second bottle of champagne and you decently hopped thinking whether to tell her about his sexual escapades.'
 
-		act 'Tell us about your very best sex.': gt 'nastja', 'pos10'
+	act 'Modestly silent and listen only to Nastya.':gt 'nastja', 'pos9'
+	act 'Tell us about your very best sex.':gt 'nastja', 'pos10'
+	act 'Share everything that happened to you, since you became a girl.':gt 'nastja', 'pos10'
+end
 
-		act 'Share everything that happened to you, since you became a girl.': gt 'nastja', 'pos10'
-	end
+if $ARGS[0] = 'pos7':
+	cla
+	*clr
+	minut += 5
+	gs 'stat'
+	'<center><img src="images/etogame/1party.jpg"></center>'
+	'You bring salads, starters and vodka. You will have fun chatting with Nastya. It turns out you have a lot in common. Anastasia says that she likes to be the center of attention. Like when men look at her. And sometimes she is, as it were, by chance, showing them more than I should!'
+	'Yes, it outfit on it is really very frank! With her figure to attract attention not be easy.'
+	'Meanwhile, a carafe of vodka is half empty and you decently hopped think to tell whether her about his sexual escapades.'
 
-	if $args[0] = 'pos7':
-		cla
-		*clr
-		minut += 5
-		gs 'stat'
-		'<center><img src="images\etogame\1party.jpg"></center>'
-		'You bring salads, starters and vodka. You will have fun chatting with Nastya. It turns out you have a lot in common. Anastasia says that she likes to be the center of attention. Like when men look at her. And sometimes she is, as it were, by chance, showing them more than I should!'
-		'Yes, it outfit on it is really very frank! With her figure to attract attention not be easy.'
-		'Meanwhile, a carafe of vodka is half empty and you decently hopped think to tell whether her about his sexual escapades.'
-		act 'Tell us about your very best sex.': gt 'nastja', 'pos10'
+	act 'Tell us about your very best sex.':gt 'nastja', 'pos10'
+	act 'Share everything that happened to you, since you became a girl.':gt 'nastja', 'pos11'
+end
 
-		act 'Share everything that happened to you, since you became a girl.': gt 'nastja', 'pos11'
-	end
+if $ARGS[0] = 'pos8':
+	cla
+	*clr
+	minut += 5
+	gs 'stat'
+	'<center><img src="images/etogame/1shamp0.jpg"></center>'
+	'Nastya:- Really? Sorry ... Well Well arrange evening tea (smiling at you). You brought salads, tea and sweets. Nice chatting with you Nastya. Anastasia says that her father powerful man in town. Childhood that she gets everything she wants. But, at the same time, it has always attracted "simple pleasures, " she likes to be the center of attention and interaction with people.'
+	'Yes, it outfit on it is really very frank! With her figure to attract attention not be easy.'
+	'You had a wonderful time. Leaving the cafe Nastya insisted that he would pay the bill herself. You went out and waiting for a taxi. Nastya suddenly notices opposite horizontal bars cafes and happily tells you:'
+	'-She asks, I did not hang a hundred years on the bar, went some fun!'
 
-	if $args[0] = 'pos8':
-		cla
-		*clr
-		minut += 5
-		gs 'stat'
-		'<center><img src="images\etogame\1shamp0.jpg"></center>'
-		'Nastya: - Really? Sorry ... Well Well arrange evening tea (smiling at you). You brought salads, tea and sweets. Nice chatting with you Nastya. Anastasia says that her father powerful man in town. Childhood that she gets everything she wants. But, at the same time, it has always attracted "simple pleasures," she likes to be the center of attention and interaction with people.'
-		'Yes, it outfit on it is really very frank! With her figure to attract attention not be easy.'
-		'You had a wonderful time. Leaving the cafe Nastya insisted that he would pay the bill herself. You went out and waiting for a taxi. Nastya suddenly notices opposite horizontal bars cafes and happily tells you:'
-		'-She asks, I did not hang a hundred years on the bar, went some fun!'
-		act 'Go for Nastya.':
+	act 'Go for Nastya.':
 		cla
 		*clr
 		horny += 30
 		minut += 60
 		gs 'stat'
-		'<center><img src="images\etogame\1turnik.jpg"></center>'
+		'<center><img src="images/etogame/1turnik.jpg"></center>'
 		'On the bar engaged in local yard boy. Nastya jokingly pushed him right on his high kabluchischah grabs the horizontal bar, spectators and hangs so that her breasts right in front of the poor boy with round eyes. Then she straightens up on straight arms and leg lifts so that the guy opens his mouth involuntarily.'
 		'Finally, she jumps off the horizontal bar. And smacking the boy´s cheek and giggling, takes you by the hand and ran towards the taxi drove up.'
 		'Now it is clear in the center of any attention she likes to be!'
-		act 'Went home': gt 'street'
-		end
-	end
 
-	if $args[0] = 'pos9':
+		act 'Went home':gt 'street'
+	end
+end
+
+if $ARGS[0] = 'pos9':
 	cla
 	*clr
 	minut += 5
 	gs 'stat'
-	'<center><img src="images\etogame\nastja.jpg"></center>'
+	'<center><img src="images/etogame/nastja.jpg"></center>'
 	'You had a wonderful time. Leaving the cafe Nastya insisted that he would pay the bill herself. You went out and waiting for a taxi.'
 	'Nastya:-<<$name>>, listen I want the toilet, I quickly the race for the fence, and you have to guard, okay?'
-	'You are: - Why is it so difficult, I want, let´s go back to the cafe?'
-	'Nastya: - No, no, all I can not! - With these words she runs for garages.'
-		act 'Wait girlfriend':
+	'You are:- Why is it so difficult, I want, let´s go back to the cafe?'
+	'Nastya:- No, no, all I can not! - With these words she runs for garages.'
+
+	act 'Wait girlfriend':
 		cls
 		minut += 5
 		gs 'stat'
-		'<center><img src="images\etogame\1shamp3.jpg"></center>'
+		'<center><img src="images/etogame/1shamp3.jpg"></center>'
 		'As luck would turn out because tubby little man and goes in your favor.'
-			act 'Warn girlfriend':
+
+		act 'Warn girlfriend':
 			cls
 			minut += 5
 			gs 'stat'
 			'You warn Nastya and she hid quietly finishes his business.'
 			'- Thank you, <<$name>>! I´ll go to guard.'
-				act 'Go write for the fences':
+
+			act 'Go write for the fences':
 				cls
 				minut += 5
-			gs 'stat'
-				'<center><img src="images\etogame\1shamp1.jpg"></center>'
+				gs 'stat'
+				'<center><img src="images/etogame/1shamp1.jpg"></center>'
 				'You quietly do their business, when suddenly I heard loud voices.'
 				'- Wai what nut, what a beauty!'
 				'- Hey, what are you doing girl, we´re a den sweep! Are you at home can not piss.'
 				' '
 				'About horror, turning you see two janitors migrant workers! Where did Anastasia looked!'
-				'<center><img src="images\etogame\1shamp4.jpg"></center>'
+				'<center><img src="images/etogame/1shamp4.jpg"></center>'
 				'- Oh, oh, oh! Do not look, please! - And only you can say, clumsily trying to pull her panties. But the excitement your hands are shaking and it would be convenient if you are bent. While showing her crotch guest workers.'
-					act 'Dress and panties leaning vypyachena ass!':
+
+				act 'Dress and panties leaning vypyachena ass!':
 					cls
 					horny += 50
 					minut += 60
 					gs 'stat'
-					'<center><img src="images\etogame\1shamp2.jpg"></center>'
+					'<center><img src="images/etogame/1shamp2.jpg"></center>'
 					'- Ohh - distributed by the janitors.'
-						act 'Run out and leave with Nastya taxi.': gt 'street'
-					end
+
+					act 'Run out and leave with Nastya taxi.':gt 'street'
 				end
 			end
+		end
 
-			act 'Peep that will':
+		act 'Peep that will':
 			cls
 			horny += 30
 			minut += 60
@@ -173,775 +181,236 @@
 			'You do not warn Nastya and peasant skirted you goes beyond the fences, behind which hid Nastya. Minute pause. And suddenly.'
 			'- Ooh, girl, you should be ashamed. - I hear the voice of happy peasant cunning.'
 			'- Chtooo! Shame on you! Immediately turn away! - Babbles Nastya bare-ass, trying to pull her panties.'
-			'<center><img src="images\etogame\1shamp2.jpg"></center>'
-			'A minute later she comes out red as a lobster. And you said smiling: - Count up, I was some guy with a naked booty caught.'
-				act 'Get in a cab and went home': gt 'street'
-			end
+			'<center><img src="images/etogame/1shamp2.jpg"></center>'
+			'A minute later she comes out red as a lobster. And you said smiling:- Count up, I was some guy with a naked booty caught.'
+
+			act 'Get in a cab and went home':gt 'street'
 		end
 	end
+end
 
-	if $args[0] = 'pos10':
-		cla
-		*clr
-		minut += 5
-		gs 'stat'
-		'<center><img src="images\etogame\1shamp0.jpg"></center>'
-		'Nastia you tell about their sexual experiences. It can be seen that the theme of her much interested. Nastya tells you that it is always brought up in severity. And intimacy with a man she has ever had.'
-		'And somehow to throw their sexual energy, it is sometimes fun that engaged Wirth.'
-		'You had a wonderful time. Leaving the cafe Nastya insisted that he would pay the bill herself. You went out and waiting for a taxi.'
-		'- I figured out how quickly we catch a ride! Look! - Said Nastya drunk.'
-		act 'Look at Nastya.':
-=======
-     if $args[0]='pos1':
-	 cla
-	 *clr	
-	 minut+=5  
-	 gs'stat'
-	 '<center><img src="etogame/nastja.jpg" ></center>'
-	 'Girl smiling in response to you! What is it cute!'
-		 act 'come to meet.':
-         cla
-         *clr
-          minut+=5 
-          gs'stat'
-		 '<center><img src="etogame/nastja.jpg" ></center>'
-		 'Do_You: - hello! I Light! Nevozrazhaesh if I sit? (That`S_Funny, think you, Seeking a woman in a restaurant, just like in the good old days.)'
-		 'girl: - hello! I Nastya. Of_Course, me company!'
-			 act '- And why are you sitting alone, also in the restaurant?':
-			 cla
-			 *clr
-			 nastjaqw = 1	
-			 set minut=minut+60 
-			 gs'stat'
-			 '<center><img src="etogame/nastja.jpg" ></center>'
-			 'Nastya: - The same question I ask and you!'
-			 'Do_You: - well, I have a pretty rough life! Have to be independent.'
-			 'Nastya: - So I have the same story. oh, you`d know...'
-			 '(You have talked for an hour with Nastya, it was surprisingly pleasant companion. Before leaving-something together.)'
-			     act'Get_Away':gt 'restoran', 'zal'
-			 end
-		 end
-		 act'Get_Away':gt 'restoran', 'zal'
-	 end
-
-	if $args[0]='pos4':
-		cla
-		*clr	
-		set minut=minut+30
-		gs'stat'
-		'<center><img src="etogame/tel_talk.jpg" ></center>'
-		'what-While you hear beeps. Finally.'
-		' '
-		'Do_You: - Nastya, greeting! This Light. remember me, we met in a restaurant?'
-		'Nastya: - hello, Sveta! well, of_course, remember!'
-		'Do_You: - How about where to go-something together?'
-		'Nastya: - Yes_I_Am, with pleasure. Come on in half an hour.'
-		'(You bring myself up. At_Last, Nastya comes up to you in a taxi and go to the beginning of the offers in the cafe.)'
-		!'You see Nastya. Her gray-blue eyes, long blond hair and sexy plump lips. Everyone thinks Nastya, just beautiful and you agree with them. She is a good student and is constantly looking for-something new in life. She has quite a strong character, You `ve seen how she argued with those who were older or more of its. Also, who, as it considers, below its status.'
-		!'however, this does not prevent her from making friends, whom she had a whole sea.'
-		act'Go to the cafe':gt 'nastja', 'pos5'
-	 end 
-
-	 if $args[0]='pos5':
-		cla
-		*clr	
-		set minut=minut+60
-		nastjaqw = 2
-		gs'stat'
-		'<center><img src="etogame/1party0.jpg" ></center>'
-		'You are coming to karaoke-cafe "mast".'
-		'Nastya: - I like it here, and can sing and a beautiful view of the river. Let`s choose a table on the veranda, I like to sit in the open air!'
-		'You take a table with a beautiful view of the waterfront.'
-		'Nastya: - Sveta, choose what we drink!'
-		act'champagne!':gt 'nastja', 'pos6'
-		act 'And let`s vodka!':gt 'nastja', 'pos7'
-		
-		act'I do not drink alcohol.':gt 'nastja', 'pos8'
-	 end
-
-	if $args[0]='pos6':
-		cla
-		*clr	
-		minut+=5
-		gs'stat'
-		'<center><img src="etogame/1shamp0.jpg" ></center>'
-		'You bring salads and champagne. You sweet deal with Nastya. It turns out you have a lot in common. Nastya says, she likes to be the center of attention.'
-		'Yes_I_Am, so her outfit really frank! With its figure to attract attention not be easy.'
-		'Meanwhile ends is the second bottle of champagne and you, decently hopped, Do you think to tell her about his sexual adventures.'
-		act'Modestly silent and listen only Nastya.':gt 'nastja', 'pos9'
-		
-		act'Tell us about your very best sex.':gt 'nastja', 'pos10'
-		
-		act'lay out everything, what happened to you, since you became a girl.':gt 'nastja', 'pos10'
-	 end  
-
-	if $args[0]='pos7':
-		cla
-		*clr	
-		minut+=5
-		gs'stat'
-		'<center><img src="etogame/1party.jpg" ></center>'
-		'You bring salads, snacks and vodka. You have fun chatting with Nastya. It turns out you have a lot in common. Nastya says, she likes to be the center of attention. Like when men look at her. And sometimes she, how-if by chance, shows them more than they should!'
-		'Yes_I_Am, so her outfit really frank! With its figure to attract attention not be easy.'
-		'Meanwhile, decently hopped, Do you think to tell her about his sexual adventures.'
-		act'Tell us about your very best sex.':gt 'nastja', 'pos10'
-		
-		act'lay out everything, what happened to you, since you became a girl.':gt 'nastja', 'pos11'
-	 end  
-
-	 if $args[0]='pos8':
-		cla
-		*clr	
-		minut+=5
-		gs'stat'
-		'<center><img src="etogame/1shamp0.jpg" ></center>'
-		'Nastya: - The_Truth? It_Is_A_Pity... Well Well arrange evening tea (smiling at you). You brought salads, tea and sweets. You sweet deal with Nastya. Nastya says, that her father was a powerful man in the city. That she has received from childhood all, he wants. but, at the same time, it has always attracted "simple pleasures", She likes to be the center of attention and interaction with people.'
-		'Yes_I_Am, so her outfit really frank! With its figure to attract attention not be easy.'
-		'You had a great time. Leaving the cafe insisted Nastya, that paid the bills itself. You went out and waiting for a taxi. Nastya suddenly notices horizontal bars in front of the cafe and happily tells you:'
-		'-Sveta, I`m not a hundred years hung on the bar, go have some fun!'
-		 act'Go for Nastya.':
-		 cla
-		 *clr
-		 horny+=30
-		 minut+=60
-		 gs'stat'
-		 '<center><img src="etogame/1turnik.jpg" ></center>'
-		 'On the bar is engaged in the local yard boy. Nastya jokingly pushed him, directly to their high kabluchischah grabs the horizontal bar, tightened and hangs so, that her chest is in front of a poor boy with round eyes. Then she straightens up on straight arms and leg lifts so, the guy opens his mouth involuntarily.'
-		 'At_Last, it jumps from a horizontal bar. And smacking the boy on the cheek and giggled, takes you by the hand and ran toward the taxi drove up.'
-		 'Now it is clear in the center of the attention she likes to be!'	
-		 act 'Went home': gt 'street'
-		 end	
-	 end
-
-	 if $args[0]='pos9':
-	 cla
-	 *clr	
-	 minut+=5
-	 gs'stat'
-	 '<center><img src="etogame/nastja.jpg" ></center>'
-	 'You had a great time. Leaving the cafe insisted Nastya, that paid the bills itself. You went out and waiting for a taxi.'
-	 'Nastya: -Sveta, Listen I want to use the toilet, I quickly sprint for fence, to guard me and you, ok?'
-	 'Do_You: - Why is it so difficult, I also want to, let`s go back to the cafe?'
-	 'Nastya: - No, not everything I can no longer! - With these words she runs for garages.'
-		 act 'wait for girlfriend':
-		 cls
-		 minut+=5
-		 gs'stat'
-		 '<center><img src="etogame/1shamp3.jpg" ></center>'
-		 'As luck from-the turning leaves and pot-bellied little man goes in your favor.'
-			 act 'warn friend':
-			 cls
-			 minut+=5
-		     gs'stat'
-			 'You warn Nastya and she hid, calmly finishes his business.'
-			 '- Thank_U, Sveta! I`ll go to guard.'
-				 act 'Go write for the fences':
-				 cls
-				 minut+=5
-		         gs'stat'
-				 '<center><img src="etogame/1shamp1.jpg" ></center>'
-				 'You are quietly doing their business, when suddenly a loud voice.'
-				 '- Vai a nut, what a beauty!'
-				 '- hey, girl what are you doing, we`re a den sweep! Are you at home can not piss.'
-				 ' '
-				 'About horror, turned you see two janitors-migrant_workers! Where did Nastya looked!'
-				 '<center><img src="etogame/1shamp4.jpg" ></center>'
-				 '- oh, oh, oh! Do not look, you`re_welcome! - only and can tell you, clumsily trying to pull her panties. But the excitement your hands are shaking and it would be more convenient, if you tilt. While showing her crotch guest workers.'
-					 act 'Dress and panties leaning vypyachena ass!':
-					 cls
-					 horny+=50
-					 minut+=60
-					 gs'stat'
-					 '<center><img src="etogame/1shamp2.jpg" ></center>'
-					 '- ooo - distributed by janitors.'
-						 act 'Run out and leave in a taxi with Nastya.': gt 'street'
-					 end
-				 end
-			 end
-			 
-			 act 'Peep that will':
-			 cls
-			 horny+=30
-			 minut+=60
-			 gs'stat'
-			 'You do not warn Nastya and peasant skirted you set behind fences, behind which hid Nastya. minute pause. And suddenly.'
-			 '- ooo, girl, shame on you. - hear the voice of contented peasant cunning.'
-			 '- chtoo! Shame on you! immediately turn away! - Nastya babbles with bare ass, trying to pull her panties.'
-			 '<center><img src="etogame/1shamp2.jpg" ></center>'
-			 'A minute later she goes, red as a lobster. And you said smiling: - Count, I was there a-that guy with a naked booty caught.'
-				act 'Sit in a taxi and went home': gt 'street'
-			 end	
-		end
-	 end
-	 
-	if $args[0]='pos10':
-		cla
-		*clr	
-		minut+=5
-		gs'stat'
-		'<center><img src="etogame/1shamp0.jpg" ></center>'
-		'You tell Nastya about their sexual experiences. one_can_see, that this topic is much interested in it. Anastasia tells you, that it is always brought up in severity. And intimacy with a man she was not yet.'
-		'And as to-then throw your sexual energy, she sometimes amused, that is engaged Wirth.'
-		'You had a great time. Leaving the cafe insisted Nastya, that paid the bills itself. You went out and waiting for a taxi.'
-		'- And I came up with, as we hurry to catch a ride! Look! - said drunken Nastya.'
-		act'Look at Nastya.':
->>>>>>> 490_nastja
-		cla
-		*clr
-<<<<<<< 490_nastja
-		horny += 40
-		minut += 60
-		gs 'stat'
-		'<center><img src="images\etogame\1avtostop.jpg"></center>'
-		'C that, she rips off her dress and begins to vote in shorts and heels.'
-		'Crazy, you think. Fortunately, on the road so no one seemed to. And Nastya chill and getting your adrenaline rush wears dress.'
-		'Now it is clear in the center of any attention she likes to be!'
-		'Meanwhile, taxi rides.'
-		act 'Went home': gt 'street'
-		end
-	end
-
-	if $args[0] = 'pos11':
+if $ARGS[0] = 'pos10':
 	cla
 	*clr
 	minut += 5
 	gs 'stat'
-	'<center><img src="images\etogame\1party2.jpg"></center>'
+	'<center><img src="images/etogame/1shamp0.jpg"></center>'
+	'Nastia you tell about their sexual experiences. It can be seen that the theme of her much interested. Nastya tells you that it is always brought up in severity. And intimacy with a man she has ever had.'
+	'And somehow to throw their sexual energy, it is sometimes fun that engaged Wirth.'
+	'You had a wonderful time. Leaving the cafe Nastya insisted that he would pay the bill herself. You went out and waiting for a taxi.'
+	'- I figured out how quickly we catch a ride! Look! - Said Nastya drunk.'
+
+	act 'Look at Nastya.':
+		cla
+		*clr
+		horny += 40
+		minut += 60
+		gs 'stat'
+		'<center><img src="images/etogame/1avtostop.jpg"></center>'
+		'C that, she rips off her dress and begins to vote in shorts and heels.'
+		'Crazy, you think. Fortunately, on the road so no one seemed to. And Nastya chill and getting your adrenaline rush wears dress.'
+		'Now it is clear in the center of any attention she likes to be!'
+		'Meanwhile, taxi rides.'
+
+		act 'Went home':gt 'street'
+	end
+end
+
+if $ARGS[0] = 'pos11':
+	cla
+	*clr
+	minut += 5
+	gs 'stat'
+	'<center><img src="images/etogame/1party2.jpg"></center>'
 	'Nastia you tell about their sexual experiences. It can be seen that the theme of her much interested. Nastya tells you that it is always brought up in severity. And intimacy with a man she has ever had.'
 	'And somehow to throw their sexual energy, it is sometimes fun that engaged Wirth.'
 	'You drank so much, that I could hardly get up from the table. Leaving the cafe Nastya insisted that he would pay the bill herself. You went out and stand embraced.'
 	'- <<$name>>, went for a walk along the shore. - Offered Nastya.'
-		act 'Down to the river.':
+
+	act 'Down to the river.':
 		cls
 		horny += 50
 		minut += 60
 		gs 'stat'
 		'- Hey, let´s refresh, all summer I have never bathed! - Squeals Nastya he ran into the cold water.'
-		'<center><img src="images\etogame\1party3.jpg"></center>'
+		'<center><img src="images/etogame/1party3.jpg"></center>'
 		'- Oh, Momma, it´s cold!.'
 		'You continue to rage and tear each groomsman dress staying in one, wet underwear.'
-			act 'Further':
+
+		act 'Further':
 			cls
 			gs 'stat'
-			'<center><img src="images\etogame\1party4.jpg"></center>'
+			'<center><img src="images/etogame/1party4.jpg"></center>'
 			'- Oh, she asks, and suddenly someone is watching us!.'
 			'- Then Let´s enjoy it! - With these words, you tear off the livchik and circling it above his head.'
-				act 'Further':
+
+			act 'Further':
 				cls
 				gs 'stat'
-				'<center><img src="images\etogame\1party5.jpg"></center>'
+				'<center><img src="images/etogame/1party5.jpg"></center>'
 				' '
 				'Cool and a little sober, you manage to get dressed up and went out to the road to hail a cab.'
-					act 'Wait for a taxi':
+
+				act 'Wait for a taxi':
 					cla
 					*clr
 					'While waiting for a taxi, you Nastya weaken sat on the curb ...'
-					'<center><img src="images\etogame\1party6.jpg"></center>'
+					'<center><img src="images/etogame/1party6.jpg"></center>'
 					'- Get up, young lady, it´s time to go home! - Suddenly sounded in his ear. It turns out that while waiting for a taxi, I fell asleep. Added a piquant situation that my legs were spread wide. Should be considered cabbie horoshenechko between my legs. Damn Nastya did not even brought my legs together!'
 					'I, red with shame and hops sit in a taxi with Nastya.'
-					act 'Went home': gt 'street'
-					end
+
+					act 'Went home':gt 'street'
 				end
 			end
 		end
 	end
+end
 
-	if $args[0] = 'pos12':
-		cla
-		*clr
-		minut += 10
-		manna += 100
-		nastjaqw = 3
-		gs 'stat'
-		'<center><img src="images\etogame\tel_talk.jpg"></center>'
-		'Any time you hear beeps. Finally at the end of the call.'
-		' '
-		'You: - Nastya, hello! How are you?'
-		'Nastya: - Hi, <<$name>>! Wow we´re in last Saturday walked. I remembered all week. Let´s Put on a swimsuit and plateshko shorter, go down to the beach to sunbath. Tam.Nu meet all kisses, bye-bye!'
-		'You: - Ok, I´ll gladly come!'
-		act 'Hangup': gt 'telefon', 'fin'
-	end
+if $ARGS[0] = 'pos12':
+	cla
+	*clr
+	minut += 10
+	manna += 100
+	nastjaqw = 3
+	gs 'stat'
+	'<center><img src="images/etogame/tel_talk.jpg"></center>'
+	'Any time you hear beeps. Finally at the end of the call.'
+	' '
+	'You:- Nastya, hello! How are you?'
+	'Nastya:- Hi, <<$name>>! Wow we´re in last Saturday walked. I remembered all week. Let´s Put on a swimsuit and plateshko shorter, go down to the beach to sunbath. Tam.Nu meet all kisses, bye-bye!'
+	'You:- Ok, I´ll gladly come!'
 
-	if $args[0] = 'pos13':
-		cla
-		*clr
-		minut += 30
-		manna += 30
-		nastjaday = day
-		gs 'stat'
-		'<center><img src="images\etogame\tel_talk.jpg"></center>'
-		'Any time you hear beeps. Finally at the end of the call.'
-		' '
-		'You: - Nastya, a greeting! What´s new?'
-		'Nastya: - Hello, <<$name>>!'
-		'(You chatted as much as half an hour. Nastya also said that loves to be photographed. Would have been nice to buy the camera down and go with her out into the countryside.'
-		act 'Hangup': gt 'telefon', 'fin'
-	end
+	act 'Hangup':gt 'telefon', 'fin'
+end
 
-	if $args[0] = 'pos14':
-		cla
-		*clr
-		minut += 30
-		manna += 30
-		nastjaday = day
-		nastjaqw = 4
-		gs 'stat'
-		'<center><img src="images\etogame\2hello.jpg"></center>'
-		'You see, Nastya. Her short dresses with exciting cut that you even thought, "How is she does not hesitate to go out then."'
-		'Nastya: - Well, finally, I´m tired of waiting already! Went to change into swimsuits.'
-		act 'Going to the beach cabin': gt 'nastja', 'pos15'
-	end
+if $ARGS[0] = 'pos13':
+	cla
+	*clr
+	minut += 30
+	manna += 30
+	nastjaday = day
+	gs 'stat'
+	'<center><img src="images/etogame/tel_talk.jpg"></center>'
+	'Any time you hear beeps. Finally at the end of the call.'
+	' '
+	'You:- Nastya, a greeting! What´s new?'
+	'Nastya:- Hello, <<$name>>!'
+	'(You chatted as much as half an hour. Nastya also said that loves to be photographed. Would have been nice to buy the camera down and go with her out into the countryside.'
 
-	if $args[0] = 'pos15':
-		cla
-		*clr
-		minut += 10
-		gs 'stat'
-		'<center><img src="images\etogame\2bcabin.jpg"></center>'
-		'You come to the beach huts.'
-		'Nastya: - Yeah. It´s not like Vivaldi. - Says Nastya looking at dilapidated cabins.'
-		'You: - Okay, go get changed, I´ll wait for you. I even wore a swimsuit at home.'
-		act 'Nastya wait': gt 'nastja', 'pos16'
-	end
+	act 'Hangup':gt 'telefon', 'fin'
+end
 
-	if $args[0] = 'pos16':
-		cla
-		*clr
-		minut += 10
-		horny += 10
-		gs 'stat'
-		'<center><img src="images\etogame\2bgirl.jpg"></center>'
-		'While waiting for Nastia, you decide to explore the beach and bathing people. You notice where begins nudist beach is out of the water naked girl. And she has such a delicious form that looks all the male part of the beach were fixed on her. You imagine yourself in the place of this girl. And the thoughts, be naked in front of a crowd, you´re a little excited.'
-		'Nastya: - I´m ready! Hey, where are you staring. - You hear a voice behind Nastia. You turn around and look at the girl Nastya specify. You see the first surprise, then, sly smile and a twinkle in her eyes. It is evident that it is a sight too much.'
-		'You: - disguised? Come choose a comfortable place to sunbathe.'
-		act 'Choose a location': gt 'nastja', 'pos17'
-	end
+if $ARGS[0] = 'pos14':
+	cla
+	*clr
+	minut += 30
+	manna += 30
+	nastjaday = day
+	nastjaqw = 4
+	gs 'stat'
+	'<center><img src="images/etogame/2hello.jpg"></center>'
+	'You see, Nastya. Her short dresses with exciting cut that you even thought, "How is she does not hesitate to go out then."'
+	'Nastya:- Well, finally, I´m tired of waiting already! Went to change into swimsuits.'
 
-	if $args[0] = 'pos17':
-		cla
-		*clr
-		minut += 60
-		manna += 100
-		gs 'stat'
-		'<center><img src="images\etogame\2bimbos.jpg"></center>'
-		'You have the time. Sunbathe, swim, drink milkshakes that Nastya picked up from home. Photograph on lake background. And potehonku start to get tired.'
-		'Nastya: - This girl who bathed naked. You would be able to so, take and undress in front of strangers? - With a smile asks you Nastya. Turns me so I always what you dreamed this, but shy and afraid that think about.'
-		act 'Interested in': gt 'nastja', 'pos19'
-		act 'Not interested': gt 'nastja', 'pos18'
-		end
+	act 'Going to the beach cabin':gt 'nastja', 'pos15'
+end
 
-	if $args[0] = 'pos18':
-		cla
-		*clr
-		minut += 20
-		gs 'stat'
-		'<center><img src="images\etogame\2bend.jpg"></center>'
-		'You: - I do not think that it´s okay to show her body to strangers. In addition, dangerous, may think that you are easily accessible and start to molest or rape. Besides, now all phones with a good camera can take pictures and put it on the Internet.'
-		'Nastya: - Yeah, maybe you´re right. It´s just a fantasy.'
-		'You have talked to various women´s issues and zasobiralis home.'
-		act 'Home': gt 'street'
-	end
+if $ARGS[0] = 'pos15':
+	cla
+	*clr
+	minut += 10
+	gs 'stat'
+	'<center><img src="images/etogame/2bcabin.jpg"></center>'
+	'You come to the beach huts.'
+	'Nastya:- Yeah. It´s not like Vivaldi. - Says Nastya looking at dilapidated cabins.'
+	'You:- Okay, go get changed, I´ll wait for you. I even wore a swimsuit at home.'
 
-	if $args[0] = 'pos19':
-		cla
-		*clr
-		minut += 10
-		manna += 100
-		horny += 30
-		gs 'stat'
-		'<center><img src="images\etogame\2btalk.jpg"></center>'
-		'You: - I also fantasized on the subject. It´s very exciting when you watch. Of course, there is a risk that someone will respond correctly, some naoret grandmother. Or phone sfotkayte and then lay out in the internet. But, really want to try.'
-		'Nastya: - I have an idea, now check how we are brave. You see guys play ball, went to play with them ... topless?'
-		'You look around the sides. Around full of people. Including men and boys. You and admired before, but that would be bare-chested. You even blushed a little. But Nastya already untied the strap in his bathing suit. Nowhere to retreat.'
-		act 'Bare breasts': gt 'nastja', 'pos20'
-	end
+	act 'Nastya wait':gt 'nastja', 'pos16'
+end
 
-	if $args[0] = 'pos20':
-		cla
-		*clr
-		minut += 20
-		manna += 30
-		gs 'stat'
-		'<center><img src="images\etogame\2bvolley.jpg"></center>'
-		'Nastia you are standing in the midst of the beach with bare chest. You literally nape feel chained to you views.'
-		'"- Where are you looking at, dog!" - Sounds somewhere nearby. "Biff!" A woman bet a peasant magazine over the cap. Apparently someone so admired the views that he forgot about his wife.'
-		'Nastya: - Well, nothing terrible has happened. Went to play.'
-		'You play ball with the guys and girls. Any inconvenience, except that ridiculous bouncing breasts during the game. To the delight of the boys and girls envy.'
-		act 'Finish the game': gt 'nastja', 'pos21'
-	end
+if $ARGS[0] = 'pos16':
+	cla
+	*clr
+	minut += 10
+	horny += 10
+	gs 'stat'
+	'<center><img src="images/etogame/2bgirl.jpg"></center>'
+	'While waiting for Nastia, you decide to explore the beach and bathing people. You notice where begins nudist beach is out of the water naked girl. And she has such a delicious form that looks all the male part of the beach were fixed on her. You imagine yourself in the place of this girl. And the thoughts, be naked in front of a crowd, you´re a little excited.'
+	'Nastya:- I´m ready! Hey, where are you staring. - You hear a voice behind Nastia. You turn around and look at the girl Nastya specify. You see the first surprise, then, sly smile and a twinkle in her eyes. It is evident that it is a sight too much.'
+	'You:- disguised? Come choose a comfortable place to sunbathe.'
 
-	if $args[0] = 'pos21':
-		cla
-		*clr
-		minut += 20
-		nastjaqw = 5
-		gs 'stat'
-		'<center><img src="images\etogame\2bslp.jpg"></center>'
-		'Plenty enough of you return to your seat and lying, no one is shy, spreading his arms and showing off her body to everyone.'
-		'Nastya: - <<$name>>, imagine how all these louts want us now. Language and would like to show. Hee-hee.'
-		'You have a little lie on the beach and decided it´s time to get ready.'
-		act 'Home': gt 'street'
-	end
-	if $args[0] = 'pos22':
-		cla
-		*clr
-		minut += 10
-		manna += 100
-		nastjaqw = 6
-		gs 'stat'
-		'<center><img src="images\etogame\tel_talk.jpg"></center>'
-		'Any time you hear beeps. Finally, at the other end to the challenge.'
-		'Nastya: - Hello? (you hear the sad voice Nasty)'
-		'You: - Nastya, hello! How are you? Why are you so sad?'
-		'Nastya: - Hi! Yeah, so, trouble at work.'
-		'You: - Well, come to me, open a bottle of wine, and you tell me everything. What have you there at work.'
-		'Nastya: - Thank you, <<$name>>! I´m coming!'
-		act 'Hangup': gt 'nastja', 'pos23'
-	end
+	act 'Choose a location':gt 'nastja', 'pos17'
+end
 
-	if $args[0] = 'pos23':
-		cla
-		*clr
-		minut += 30
-		nastjaday = day
-		gs 'stat'
-		'<center><img src="images\etogame\nast_home.jpg"></center>'
-		'After half an hour the doorbell rings.'
-		'You see, Nastya. Without makeup and in casual clothes, she looks like this cute.'
-		'You Nastya conveniently arranged in the hall on the couch, open a bottle of wine and start telling each other their secrets.'
-		'From the conversation, you will learn that everyone thinks Nastia just beautiful and you agree with them. It is good to learn and always looking for something new in life. She has quite a strong character, you have seen how she argued with those who were older or stronger than her. Also, she´s a little spoiled and descent applies to all who she considers below her status. However, this does not prevent her from making friends, whom she had a whole sea.'
-		'You also learned that the present can not last long at any work place. First, it is easy to pass the interview and willingly take it, and then fired under various pretexts, or she leaves, saying that "this job is not for me."'
+if $ARGS[0] = 'pos17':
+	cla
+	*clr
+	minut += 60
+	manna += 100
+	gs 'stat'
+	'<center><img src="images/etogame/2bimbos.jpg"></center>'
+	'You have the time. Sunbathe, swim, drink milkshakes that Nastya picked up from home. Photograph on lake background. And potehonku start to get tired.'
+	'Nastya:- This girl who bathed naked. You would be able to so, take and undress in front of strangers? - With a smile asks you Nastya. Turns me so I always what you dreamed this, but shy and afraid that think about.'
 
-		'You: - It is not clear what you can not work, because the location is excellent!'
-		'Nastya: - Yes, but ...'
-		act 'Further': gt 'nastja', 'pos24'
-	end
+	act 'Interested in':gt 'nastja', 'pos19'
+	act 'Not interested':gt 'nastja', 'pos18'
+end
 
-	if $args[0] = 'pos24':
-		cla
-		*clr
-		minut += 120
-		energy -= 20
-		set manna += 10
-		set willpower += 10
-		alko += 2
-		set water += 5
-		set son += 5
-		set horny += rand(10,30)
-		gs 'stat'
-		'<center><img src="images\etogame\wines.jpg"></center>'
-		'Meanwhile, you drank all the wine.'
-		'You: - It is necessary to have a snack. Let´s order pizza cook reluctantly.'
-		'(You call to order a pizza and order a large hot pizza.)'
-		''
-		'(You can see that Nastya second thought about something and suddenly her eyes light up in flames.)'
-		'Nastya: - <<$name>>, let´s listen to fun. I saw this on the internet. Girl orders pizza, and she throws a towel over his naked body, such as the shower ran. Well, when paying the towel "accidentally" slips down. I´ve been dreaming of this, but one would not be home nizachto risnula. And you are not afraid.'
-		act 'Agree': gt 'nastja', 'pos26'
-		act 'Refuse': gt 'nastja','pos25'
-	end
+if $ARGS[0] = 'pos18':
+	cla
+	*clr
+	minut += 20
+	gs 'stat'
+	'<center><img src="images/etogame/2bend.jpg"></center>'
+	'You:- I do not think that it´s okay to show her body to strangers. In addition, dangerous, may think that you are easily accessible and start to molest or rape. Besides, now all phones with a good camera can take pictures and put it on the Internet.'
+	'Nastya:- Yeah, maybe you´re right. It´s just a fantasy.'
+	'You have talked to various women´s issues and zasobiralis home.'
 
-	if $args[0] = 'pos25':
-		cla
-		*clr
-		minut += 30
-		energy += 20
-		money -= 100
-		gs 'stat'
-		'<center><img src="images\etogame\nast_home.jpg"></center>'
-		'Nastya: - Hmm, bore you <<$name>>!'
-		'You have half an hour to chat to, eat pizza delivered and accompanying Nastia to the taxi.'
-		act 'Home': gt 'korr'
-	end
+	act 'Home':gt 'street'
+end
 
-	if $args[0] = 'pos26':
-		cla
-		*clr
-		minut += 10
-		gs 'stat'
-		'<center><img src="images\etogame\nast_home.jpg"></center>'
-		'You: - Ahaha! I do not even know! Come on. And who will pay? You or me? Hee-hee.'
-		'Nastya: - Come on, we both towels, and there as go!'
+if $ARGS[0] = 'pos19':
+	cla
+	*clr
+	minut += 10
+	manna += 100
+	horny += 30
+	gs 'stat'
+	'<center><img src="images/etogame/2btalk.jpg"></center>'
+	'You:- I also fantasized on the subject. It´s very exciting when you watch. Of course, there is a risk that someone will respond correctly, some naoret grandmother. Or phone sfotkayte and then lay out in the internet. But, really want to try.'
+	'Nastya:- I have an idea, now check how we are brave. You see guys play ball, went to play with them ... topless?'
+	'You look around the sides. Around full of people. Including men and boys. You and admired before, but that would be bare-chested. You even blushed a little. But Nastya already untied the strap in his bathing suit. Nowhere to retreat.'
 
-		'(Doorbell rings)'
-		'While you are discussing their shameless plan, the provider has already come. You look at Nastya, she had not completely naked and standing in his underwear. You also only one towel.'
+	act 'Bare breasts':gt 'nastja', 'pos20'
+end
 
-		act 'Go open': gt 'nastja','pos27'
-		act 'View with a smile on Nastya': gt 'nastja','pos29'
-	end
+if $ARGS[0] = 'pos20':
+	cla
+	*clr
+	minut += 20
+	manna += 30
+	gs 'stat'
+	'<center><img src="images/etogame/2bvolley.jpg"></center>'
+	'Nastia you are standing in the midst of the beach with bare chest. You literally nape feel chained to you views.'
+	'"- Where are you looking at, dog!" - Sounds somewhere nearby. "Biff!" A woman bet a peasant magazine over the cap. Apparently someone so admired the views that he forgot about his wife.'
+	'Nastya:- Well, nothing terrible has happened. Went to play.'
+	'You play ball with the guys and girls. Any inconvenience, except that ridiculous bouncing breasts during the game. To the delight of the boys and girls envy.'
 
-	if $args[0] = 'pos27':
-		cla
-		*clr
-		minut += 10
-		horny += rand(10,20)
-		gs 'stat'
-		'<center><img src="images\etogame\2_del.jpg"></center>'
-		'You asked who was there, and you answered "pizza delivery."'
-		'There stood the affable young man and held a pizza.'
-		'It seems he was not embarrassed that you were in a towel.'
-		'How did it throw the towel to look casually slip in your head. You understand that the young man is waiting for payment, and the money you have in your wallet. This is you chance, you go to the purse, and report trebuyumuyu amount relax towel, just holding his hand. Nasty nowhere to be seen, but it seems to you that you hear almost inaudible chuckle. When you turn to the front door, you notice that raznozchik curiously looks into the depths of the apartment, but seeing you immediately opeshivaet.'
-		act 'Giving money': gt 'nastja','pos28'
-	end
+	act 'Finish the game':gt 'nastja', 'pos21'
+end
 
-	if $args[0] = 'pos28':
-		cla
-		*clr
-		minut += 10
-		horny += rand(30,50)
-		exhibi += 2
-		gs 'stat'
-		'<center><img src="images\etogame\towel.jpg"></center>'
-		'You give money and at this point the towel fall to the ground. "Oh," cries out and stretch you money but boy stands as vkopanaya and stare at your body. Then you bend to pick up the towel and open view of your ass. Finally, one hand holding a towel, and the other holding the money. You say goodbye to raznozchikom.'
-		'- Oh, oh, oh, excuse me, how can this be!'
-		'- Nothing, heh. It happens. You have a beautiful body ... heh.'
-		act 'Close the door': gt 'nastja','pos30'
-	end
+if $ARGS[0] = 'pos21':
+	cla
+	*clr
+	minut += 20
+	nastjaqw = 5
+	gs 'stat'
+	'<center><img src="images/etogame/2bslp.jpg"></center>'
+	'Plenty enough of you return to your seat and lying, no one is shy, spreading his arms and showing off her body to everyone.'
+	'Nastya:- <<$name>>, imagine how all these louts want us now. Language and would like to show. Hee-hee.'
+	'You have a little lie on the beach and decided it´s time to get ready.'
 
-	if $args[0] = 'pos29':
-		cla
-		*clr
-		minut += 10
-		horny += rand(10,30)
-		exhibi += 1
-		gs 'stat'
-		'<center><img src="images\etogame\2_nast_del.jpg"></center>'
-		'Nastia you smile. She blushed a deep breath and ran to open the door.'
-		'- Good day, your ... pizza! (From behind Nastia you glance at raznozchika. Muzhichok taken aback and sneak looks at luxury young body.)'
-		'- Oh yeah, I finally satisfy his hunger. (Said as possible sexier Nastya and licked. Withheld and you burst out laughing.)'
-		'Raznozchik another two minutes, counting two bills stretched staring at the wall with his chest, then another tried to say something, but he said nothing. Finally Nastya, saying thank you, shut the door almost nipping his nose.'
-		act 'Pop!': gt 'nastja','pos30'
-	end
+	act 'Home':gt 'street'
+end
 
-	if $args[0] = 'pos30':
-		cla
-		*clr
-		minut += 30
-		energy += 20
-		gs 'stat'
-		'<center><img src="images\etogame\2_towel.jpg"></center>'
-		'- Ahaha, damn, pipets!!!.'
-		'(You Nastya screaming through raving about done)'
-		if exhibi = 2: '- <<$name>> I lifted the camera, do not be afraid of your face is not visible there.'
-		if exhibi = 1: '- <<$name>>, I put the phone to record all filmed.'
-		'You have talked about their experiences. Revised video. How else can you come up to mischief.'
-		'Looks like you both naked in public, it caused a huge surge of adrenaline.'
-		'You had a fantastic time and agreed with Nastya will call the next day.'
-		act 'Further': gt 'korr'
-	end
-
-	if $args[0] = 'pos31':
-		cla
-		*clr
-		minut += 10
-		manna += 100
-		nastjaqw = 7
-		gs 'stat'
-		'<center><img src="images\etogame\tel_talk.jpg"></center>'
-		'Any time you hear beeps. Finally at the end of the call.'
-		'Nastya: - Hello, <<$name>>, hello! I have the news, remember our video raznozchikom pizza?'
-		'You: - This will not forget!'
-		'Nastya: - So I showed it to my friend photos, sorry could not resist, he said he would buy it from me for good money.'
-		'You: - Come on, cool.'
-		'Nastya: - Said, "remove another, persons will be more expensive," although I am categorically against the person show!'
-		'You: - I.'
-		'Nastya: - Well, there will be ideas, call, hee-hee!'
-		'You: - Bye-bye.'
-		act 'Hangup': gt 'korr'
-	end
-=======
-		horny+=40
-		minut+=60
-		gs'stat'
-		'<center><img src="etogame/1avtostop.jpg" ></center>'
-		'C So saying.'
-		'crazy, do you think. Fortunately, on the road so no one seemed. Nastya cooled and getting your adrenaline pumping dress dress.'	
-		'Now it is clear in the center of the attention she likes to be!'
-		'Meanwhile.'
-		act 'Went home': gt 'street'
-		end	
-	end
-	
-	 if $args[0]='pos11':
-	 cla
-	 *clr	
-	 minut+=5
-	 gs'stat'
-	 '<center><img src="etogame/1party2.jpg" ></center>'
-	 'You tell Nastya about their sexual experiences. one_can_see, that this topic is much interested in it. Anastasia tells you, that it is always brought up in severity. And intimacy with a man she was not yet.'
-	 'And as to-then throw your sexual energy, she sometimes amused, that is engaged Wirth.'
-	 'Thank you so very drunk, that barely rises from-the table. Leaving the cafe insisted Nastya, that paid the bills itself. You went out and standing arm in arm.'
-	 '- light, went for a walk along the beach. - suggested Nastya.'
-		 act'Down to the river.':
-		 cls
-		 horny+=50
-		 minut+=60
-		 gs'stat'
-		 '- her, let`s refresh, I have all summer had never bathed! - squeals Nastya ran into cold water.'
-		 '<center><img src="etogame/1party3.jpg" ></center>'
-		 '- oh, Momma, as a cold!.'
-		 'You continue to rage and tear each groomsman dress staying in one, wet underwear.'
-			 act 'further':
-			 cls
-			 gs'stat'
-			 '<center><img src="etogame/1party4.jpg" ></center>'
-			  '- oh, Sveta, and suddenly behind us who-some watches?!.'
-			 '- Then Let`s enjoy it! - With these words.'
-				 act 'further':
-				 cls
-				 gs'stat'
-				 '<center><img src="etogame/1party5.jpg" ></center>'
-				 ' '	
-				 'Cool and a little sobered, you manage to get dressed and went out to the road to call a taxi.'
-					 act 'wait for a taxi':
-					 cla
-					 *clr
-					 'While waiting for a taxi, you Nastya exhausted sat on the curb...'
-					 '<center><img src="etogame/1party6.jpg" ></center>'
-					 '- Get up girl, it`s time to go home! - Suddenly there was over the ear. It_turns_out, while waiting for a taxi, I fell asleep. Piquant situation is Daubal, my legs were spread wide open. Should be considered a taxi driver horoshenechko between my legs. Damn Nastya and not even brought my legs together!'
-					 'I, red with shame and hops, I sit in a taxi with Nastya.'
-					 act 'Went home': gt 'street'
-					 end
-				 end
-			 end
-		end	
-	end
-	
-	if $args[0]='pos12':
-		cla
-		*clr	
-		minut+=10
-		manna+=100
-		nastjaqw=3
-		gs'stat'
-		'<center><img src="etogame/tel_talk.jpg" ></center>'
-		'what-While you hear beeps. Finally.'
-		' '
-		'Do_You: - Nastya, hi! How is it going? '
-		'Nastya: - hello, Sveta! It`s great we`re on the last Saturday walked. I remembered all week. Let`s Put on a swimsuit and shorter plateshko, go to the beach sunbath. meet there.Well all, whole, as_long_as-as_long_as!'
-		'Do_You: - ok, I`m happy to come!'
-		act'Hang up':gt 'telefon', 'fin'
-	 end
-	 
-	 if $args[0]='pos13':
-		cla
-		*clr	
-		minut+=30
-		manna+=30
-		nastjaday=day
-		gs'stat'
-		'<center><img src="etogame/tel_talk.jpg" ></center>'
-		'what-While you hear beeps. Finally.'
-		' '
-		'Do_You: - Nastya, greeting! what`s new?'
-		'Nastya: - hello, Sveta!'
-		'(You chatted entire floor-hours. Nastya also told, that loves to be photographed. It would be nice to buy the camera down and go with her where-something of the nature of.'
-		act'Hang up':gt 'telefon', 'fin'
-	 end
-	 
-	 if $args[0]='pos14':
-		cla
-		*clr	
-		minut+=30
-		manna+=30
-		nastjaday=day
-		nastjaqw = 4
-		gs'stat'
-		'<center><img src="etogame/2hello.jpg" ></center>'
-		'You see Nastya. Her short dresses with exciting neckline, that you even thought: "She does not hesitate to go out this."'
-		'Nastya: - well, at_last-then, I have been waiting for you! Go change clothes in swimwear.'
-		act'Going to the beach huts':gt 'nastja', 'pos15'
-	 end
-
-	if $args[0]='pos15':
-		cla
-		*clr	
-		minut+=10
-		gs'stat'
-		'<center><img src="etogame/2bcabin.jpg" ></center>'
-		'You go to a beach cabin.'
-		'Nastya: - yeah. It`s not like Vivaldi. - Nastya says looking at the dilapidated cabins.'
-		'Do_You: - Fair_Enough, go change clothes, I `ll wait for you. I even wore a swimsuit at home.'
-		act'Nastya wait':gt 'nastja', 'pos16'
-	 end
-	 
-	 if $args[0]='pos16':
-		cla
-		*clr	
-		minut+=10
-		horny+=10
-		gs'stat'
-		'<center><img src="etogame/2bgirl.jpg" ></center>'
-		'While waiting for Nastya, you decide to explore the beach and bathing people. you notice, where begins nudist beach from the water comes out completely naked girl. And she has such a delicious form, that the views of all the men of the beach were fixed on her. Can you imagine yourself in the place of this girl. And the thoughts, be naked in front of a crowd, you are excited little.'
-		'Nastya: - I`m ready! hey, where are you staring. - you hear a voice behind Nasty. You turn around and look at the girl Nastya specify. You see , and then, sly smile and a twinkle in her eyes. one_can_see, that she also liked this show.'
-		'Do_You: - dressed? Come choose a comfortable place, to sunbathe.'
-		act'select a place':gt 'nastja', 'pos17'
-	 end 
-	 
-	 if $args[0]='pos17':
-		cla
-		*clr	
-		minut+=60
-		manna+=100
-		gs'stat'
-		'<center><img src="etogame/2bimbos.jpg" ></center>'
-		'You have a good time. zagarat, swim, drink milkshakes, Nastya who picked up from home. Photograph on the background of the lake. And potehonku getting tired.'
-		'Nastya: - This girl, who bathed naked. You could be so, take and undress in front of strangers? - with a smile. I was so Turns, I`m always about something this dream, but shy and afraid, what about think.'
-		 act'interested':gt 'nastja', 'pos19'
-		 act'not interested':gt 'nastja', 'pos18'
-		 end
-	 
-	 if $args[0]='pos18':
-		cla
-		*clr	
-		minut+=20
-		gs'stat'
-		'<center><img src="etogame/2bend.jpg" ></center>'
-		'Do_You: - I do not think, it`s okay, show her body to strangers. Besides dangerous, might think, you`re easily available and start molesting or rape. Besides, can take a picture and put it on the Internet.'
-		'Nastya: - Yes_I_Am, maybe you`re right. It`s just a fantasy.'
-		'You talked to various women`s issues and zasobiralis home.'
-		 act'home':gt 'street'
-	 end
-	 
-	 if $args[0]='pos19':
-		cla
-		*clr	
-		minut+=10
-		manna+=100
-		horny+=30
-		gs'stat'
-		'<center><img src="etogame/2btalk.jpg" ></center>'
-		'Do_You: - I, also fantasized on this topic. This is a very exciting, When looking at you. Of_Course, there is a risk, that someone-anything wrong react, what-a grandmother naorС‘t. Or phone sfotkatsya and then lay out on the Internet. but, try like.'
-		'Nastya: - I have an idea, Now we will check how bold. You see guys play ball, go play with them... topless?'
-		'You look around. Around full of people. Including men and boys. On you and before that admired, and what will be bare-chested. You even blushed a little. but, Nastya has unleashed a strap in his bathing suit. nowhere to retreat.'
-		act'bare chest':gt 'nastja', 'pos20'
-	 end
-
-	 if $args[0]='pos20':
-		cla
-		*clr	
-		minut+=20
-		manna+=30
-		gs'stat'
-		'<center><img src="etogame/2bvolley.jpg" ></center>'
-		'Nastya you stand in the middle of the beach with bare chest. You literally feel the occiput, that you are chained views.'
-		'"- where stared, dog!" - hear where-nearby. "Biff!" Which-byot peasant woman on the magazine cap. apparently something-who so admired views, that he forgot about his wife.'
-		'Nastya: - here you go, nothing terrible has happened. went to play.'
-		'You play ball with the guys and girls. any inconvenience, Is that funny bouncing breasts while playing. To the delight of the boys and girls envy.'
-		act'finish the game':gt 'nastja', 'pos21'
-	 end
-	 
-	 if $args[0]='pos21':
-		cla
-		*clr	
-		minut+=20
-		nastjaqw=5
-		gs'stat'
-		'<center><img src="etogame/2bslp.jpg" ></center>'
-		'Plenty enough of you go back to his place and lay, no one is embarrassed, spread out his hands and showing off her body to everyone.'
-		'Nastya: - Sveta, imagine how all these dorks want us now. So I want to show language. hee-hee.'
-		'You have a little lie on the beach and decided to, that time would have to be collected.'
-		act'home':gt 'street'
-	 end
->>>>>>> 490_nastja
 --- nastja ---------------------------------
-
