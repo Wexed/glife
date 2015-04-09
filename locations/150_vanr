@@ -101,7 +101,7 @@ if tanga = 1:
 end'!
 
 if tampon > 0 and mesec > 0 and isprok = 0:
-	act 'Change a tampon':
+	act 'Use a tampon (0:05)':
 		cla
 		*clr
 		set tampon -= 1
@@ -109,36 +109,33 @@ if tampon > 0 and mesec > 0 and isprok = 0:
 		set minut += 5
 		set manna -= 5
 		'<center><img src="images/pics/wash3.jpg"></center>'
-		'You change a tampon.'
+		'You use a tampon.'
 
-		act 'Exit':gt 'vanr'
+		act 'Finish':gt 'vanr'
 	end
 end
 
-if cumpussy > 0 and clrbelo > 0 or cumbelly > 0 and clrbelo > 0 or cumass > 0 and clrbelo > 0:
-	act 'Wash up (0:05)':
+!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
+!!Washing off cosmetics also removes cum from face
+!!clrbelo: Amount of clean panties available
+if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+	act 'Quick wash (0:15)':
 		cla
 		*clr
-		set cumpussy = 0
-		set cumbelly = 0
-		set cumass = 0
-		set cumlip = 0
-		set cumface = 0
-		set cumanus = 0
-		set cumfrot = 0
+		dynamic $showerdin
 		set sweat -= 1
-		set minut += 5
+		set minut += 15
 		set clrbelo -= 1
 		set dirtbelo += 1
 		'<center><img src="images/pics/wash5.jpg"></center>'
-		'You carefully wash the sperm off yourself.'
+		'You gave yourself a catlick, thus removing any traces of cum.'
 
-		act 'Exit':gt 'vanr'
+		act 'Finish':gt 'vanr'
 	end
 end
 
 if cumlip > 0 or cumface > 0:
-	act 'Wash cum off your face (0:05)':
+	act 'Clean your face from sperm (0:05)':
 		cla
 		*clr
 		set mop = 1
@@ -147,22 +144,25 @@ if cumlip > 0 or cumface > 0:
 		set sweat -= 1
 		set minut += 5
 		'<center><img src="images/etogame/facesp.jpg"></center>'
-		'You carefully wash the sperm off your face.'
+		'You clean your face and got rid of any trace of cum.'
 
-		act 'Exit':gt 'vanr'
+		act 'Finish':gt 'vanr'
 	end
 end
+
 
 if mop ! 1:
-	act 'Wash off cosmetics':
+	act 'Wash off cosmetics (0:15)':
 		cla
 		set mop = 1
+		set cumface = 0
 		set minut += 15
-		'You wash the makeup from your face.'
+		'You washed off your makeup.'
 
-		act 'Exit':gt 'vanr'
+		act 'Finish':gt 'vanr'
 	end
 end
+!!
 
 if klisma = 1 and klismaday ! day:
 	act 'Give yourself an enema (0:05)':
@@ -174,12 +174,12 @@ if klisma = 1 and klismaday ! day:
 		'<center><img src="images/picV/klisma.jpg"></center>'
 		'You give yourself an enema and clean your intestines. Your ass is now ready for anal sex.'
 
-		act 'Exit':gt $curloc
+		act 'Finish':gt $curloc
 	end
 end
 
 if vibrator = 1 and vibratorIN = 0:
-	act 'Insert the vibrator (0:05)':
+	act 'Insert the vibrator in your vagina (0:05)':
 		cla
 		*clr
 		set minut += 5
@@ -188,9 +188,9 @@ if vibrator = 1 and vibratorIN = 0:
 		if vagina < 30:set vagina += 2
 
 		'<center><img src="images/etogame/vibrator.jpg"></center>'
-		'You bend over the sink and insert the vibrator in your pussy.'
+		'You bend over the sink and inserted the vibrator in your pussy.'
 
-		act 'Exit':gt 'vanr'
+		act 'Finish':gt 'vanr'
 	end
 end
 
@@ -206,7 +206,7 @@ if vibrator = 1 and vibratorIN = 1:
 		'<center><img src="images/etogame/vibrator.jpg"></center>'
 		'You bend over the sink and take the vibrator out of your pussy.'
 
-		act 'Exit':gt 'vanr'
+		act 'Finish':gt 'vanr'
 	end
 end
 
@@ -223,8 +223,8 @@ if analplug = 1 and analplugin = 0 and klismaday1= 1 and plugday ! daystart:
 		if anus >= 20 and anus < 30:anus += rand(0, 1)
 		'<center><img src="images/etogame/analplug.jpg"></center>'
 
-		if butpluguse > 0:'You bend over and easily insert the butt plug.'
-		if butpluguse = 0:set butpluguse = 1 & '"I do this not even touch, and why I bought it!" you thought. Then still decided to take a closer look. Feel, smell, in general, that ordinary gag. "Oh, was not, " you think, "Wow priest ever to develop, it will have great adventures, you could even say a huge and thick adventures with crimson heads, uh, that I got carried away." You scratched thin fingers unusually hairy head. Then you sent peg his ass, it was a bit painful when rastyagivatsya anus started taking a foreign object, but as soon as the widest part plunged into the murky depths of anal, it became easier and almost gag herself flew to the end, and got put on the manufacturer place.'
+		if butpluguse > 0:'You bent over and inserted the butt plug.'
+		if butpluguse = 0:set butpluguse = 1 & '"If I don''t use it then why did I buy it!" you thought. You decided to take a closer look while thinking, "It is necessary to start developing my ass so I could have great adventures someday, you could even say a huge and thick adventures with crimson heads, uh, now I got carried away." You scratched your head. Then you directed it in your ass, it was a bit painful at first, but as soon as the widest part was plunged into the murky depths of your anus it became easier to push it all the way.'
 
 		act 'Exit':gt $curloc
 	end
@@ -240,10 +240,9 @@ if analplug = 1 and analplugin = 1:
 		if anus < 30:set anus += 1
 
 		'<center><img src="images/etogame/analplug.jpg"></center>'
+		'You bent over and took out the butt plug.' !!0.2.6: Removed unneccessary var check
 
-		if butpluguse > 0:'You bend over and pull the butt plug out.'
-
-		act 'Exit':gt $curloc
+		act 'Finish':gt $curloc
 	end
 end
 

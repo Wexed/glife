@@ -74,7 +74,7 @@ if canpar = 0:
 end
 
 if tampon > 0 and mesec > 0 and isprok = 0:
-	act 'Change a tampon (0:05)':
+	act 'Use a tampon (0:05)':
 		cla
 		*clr
 		set tampon -= 1
@@ -83,36 +83,41 @@ if tampon > 0 and mesec > 0 and isprok = 0:
 		set manna -= 5
 		gs 'stat'
 		'<center><img src="images/pics/wash3.jpg"></center>'
-		'You change a tampon.'
+		'You use a tampon.'
 
-		act 'End':gt $curloc
+		act 'Finish':gt $curloc
 	end
 end
 
+!!0.2.6 extension: Washing off cosmetics also removes cum from face
 if mop ! 1:
-	act 'wash off cosmetics (0:15)':
+	act 'Wash off cosmetics (0:15)':
 		cla
 		set mop = 1
+		set cumface = 0
 		set minut += 15
 		gs 'stat'
 		'<center><img src="images/pic/facesp.jpg"></center>'
-		'You have washed off cosmetics.'
+		'You washed off your makeup.'
 
-		act 'End_Up':gt $curloc
+		act 'Finish':gt $curloc
 	end
 end
 
+!!0.2.6 extensionRemoved sweat =- 1 when cum is wiped off clothes
 if cumfrot > 0:
-	act 'Scour sperm from clothes':
+	act 'Wipe the cum off your clothes (0:10)':
 		cla
+		*clr
 		set cumfrot = 0
-		set minut += 15
+		set minut += 10
 		gs 'stat'
 		'<center><img src="images/pic/frotsp.jpg"></center>'
-		'You zamyli semen stains on your clothes.'
+		'You remove traces of cum from your clothes.'
 
-		act 'End_Up':gt $curloc
+		act 'Finish':gt $curloc
 	end
 end
+!!
 
 --- Gadbana ---------------------------------

@@ -97,7 +97,7 @@ end
 
 
 if tampon > 0 and mesec > 0 and isprok = 0:
-	act 'Change a tampon':
+	act 'Use a tampon (0:05)':
 		cla
 		*clr
 		set tampon -= 1
@@ -106,37 +106,42 @@ if tampon > 0 and mesec > 0 and isprok = 0:
 		set manna -= 5
 		gs 'stat'
 		'<center><img src="images/pics/wash3.jpg"></center>'
-		'You change a tampon.'
+		'You use a tampon.'
 
 		act 'Finish':gt $curloc
 	end
 end
 
+!!0.2.6 extension: Removed sweat =- 1 when cum is wiped off clothes
+!!Washing off cosmetics also removes cum from face
 if mop ! 1:
-	act 'Wash off cosmetics':
+	act 'Wash off cosmetics (0:15)':
 		cla
 		set mop = 1
+		set cumface = 0
 		set minut += 15
 		gs 'stat'
 		'<center><img src="images/etogame/facesp.jpg"></center>'
-		'You flushed makeup.'
+		'You washed off your makeup.'
 
 		act 'Finish':gt $curloc
 	end
 end
 
 if cumfrot > 0:
-	act 'Scour sperm from clothing (0:15)':
+	act ''Wipe the cum off your clothes (0:10)':
 		cla
+		*clr
 		set cumfrot = 0
-		set minut += 15
+		set minut += 10
 		gs 'stat'
 		'<center><img src="images/etogame/frotsp.jpg"></center>'
-		'You zamyli semen stains on their clothes.'
+		'You remove traces of cum from your clothes.'
 
 		act 'Finish':gt $curloc
 	end
 end
+!!
 
 if leghair > 0 and stanok > 0:
 	act 'Shave your legs (0:15)':
@@ -169,6 +174,7 @@ if lobok > 0 and stanok > 0:
 		act 'postpone machine':gt $curloc
 	end
 end
+
 if analplug = 1 and analplugin = 0 and klismaday1= 1 and plugday ! daystart:
 	act 'Insert a butt plug (0:05)':
 		cla
@@ -181,10 +187,10 @@ if analplug = 1 and analplugin = 0 and klismaday1= 1 and plugday ! daystart:
 		if anus >= 10 and anus < 20:anus += rand(1, 2)
 		if anus >= 20 and anus < 30:anus += rand(0, 1)
 
-		'<center><img src="pic/analplug.jpg"></center>'
+		'<center><img src="images/pic/analplug.jpg"></center>'
 
-		if butpluguse > 0:'You tilt and habitual movement inserted itself anal plug.'
-		if butpluguse = 0:set butpluguse = 1 & 'You tried to relax as much as possible the ass and began to insert the plug itself, biting her lip from feeling, your ass is about to burst you gently pushed in the thickest part of his ass and finally plug into place.'
+		if butpluguse > 0:'You bent over and inserted the butt plug.'
+		if butpluguse = 0:set butpluguse = 1 & '"If I don''t use it then why did I buy it!" you thought. You decided to take a closer look while thinking, "It is necessary to start developing my ass so I could have great adventures someday, you could even say a huge and thick adventures with crimson heads, uh, now I got carried away." You scratched your head. Then you directed it in your ass, it was a bit painful at first, but as soon as the widest part was plunged into the murky depths of your anus it became easier to push it all the way.'
 
 		act 'Leave':gt $curloc
 	end
@@ -199,25 +205,24 @@ if analplug = 1 and analplugin = 1:
 
 		if anus < 30:set anus += 1
 
-		'<center><img src="pic/analplug.jpg"></center>'
+		'<center><img src="images/etogame/analplug.jpg"></center>'
+		'You bent over and took out the butt plug.' !!0.2.6: Removed unneccessary var check
 
-		if butpluguse > 0:'You bent down and removed from the habitual movement itself anal plug.'
-
-		act 'Leave':gt $curloc
+		act 'Finish':gt $curloc
 	end
 end
 
 if klisma = 1 and klismaday ! day:
-	act 'Make yourself an enema (0:05)':
+	act 'Give yourself an enema (0:05)':
 		cla
 		*clr
 		set minut += 5
 		set klismaday = day
 		set klismaday1 = 1
-		'<center><img src="picV/klisma.jpg"></center>'
-		'You have set yourself an enema and clean the intestines, now your ass ready for anal sex.'
+		'<center><img src="images/picV/klisma.jpg"></center>'
+		'You put yourself an enema and clean intestines, now your ass is ready for anal sex.'
 
-		act 'Leave':gt $curloc
+		act 'Finish':gt $curloc
 	end
 end
 

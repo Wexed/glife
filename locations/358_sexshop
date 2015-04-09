@@ -509,56 +509,57 @@ if $ARGS[0] = 'toi':
 		end	
 	end
 
-	if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
-		act 'Wash up (0:15)':
+	!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
+	!!Removed sweat =- 1 when cum is wiped off clothes
+	!!clrbelo: Amount of clean panties available
+	if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+		act 'Quick wash (0:15)':
 			cla
 			*clr
-			set cumpussy = 0
-			set cumbelly = 0
-			set cumass = 0
-			set cumanus =0
-			set cumlip = 0
-			set cumface = 0
+			$showerdin
 			set sweat -= 1
 			set minut += 15
+			set clrbelo -= 1
+			set dirtbelo += 1
 			'<center><img src="images/pics/wash5.jpg"></center>'
-			'You carefully washed the sperm off yourself.'
+			'You gave yourself a catlick, thus removing any traces of cum.'
 
-			act 'Exit':gt 'sexshop', 'toi'
+			act 'Finish':gt 'sexshop', 'toi'
 		end
 	end
 
 	if cumlip > 0 or cumface > 0:
-		act 'Wash cum off face (0:15)':
+		act 'Clean your face from sperm (0:05)':
 			cla
 			*clr
 			set mop = 1
 			set cumlip = 0
 			set cumface = 0
 			set sweat -= 1
-			set minut += 15
+			set minut += 5
 			'<center><img src="images/etogame/facesp.jpg"></center>'
-			'You carefully washed the sperm from your face.'
+			'You clean your face and got rid of any trace of cum.'
 
-			act 'Exit':gt 'sexshop', 'toi'
+			act 'Finish':gt 'sexshop', 'toi'
 		end
 	end
 
 	if cumfrot > 0:
-		act 'Wipe the cum from clothing (0:15)':
+		act 'Wipe the cum off your clothes (0:10)':
 			cla
+			*clr
 			set cumfrot = 0
-			set sweat -= 1
-			set minut += 15
-			!!'<center><img src="images/etogame/facesp.jpg"></center>'
-			'You wash the traces of semen from your clothes.'
+			set minut += 10
+			!!'<center><img src="images/etogame/frotsp.jpg"></center>'
+			'You remove traces of cum from your clothes.'
 
 			act 'Exit':gt 'sexshop', 'toi'
 		end
 	end
+	!!
 
 	if tampon > 0 and mesec > 0 and isprok = 0:
-		act 'Change a tampon':
+		act 'Use a tampon (0:05)':
 			cla
 			*clr
 			set tampon -= 1
@@ -566,7 +567,7 @@ if $ARGS[0] = 'toi':
 			set minut += 5
 			set manna -= 5
 			'<center><img src="images/pics/wash3.jpg"></center>'
-			'You change a tampon.'
+			'You use a tampon.'
 
 			act 'Finish':gt 'sexshop', 'toi'
 		end

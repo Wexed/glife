@@ -142,15 +142,20 @@ $din_vokzalg_toilet_deyst = {
 		end
 	end
 
-	if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
-		act 'Wash up (0:15)':
+	!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
+	!!Removed sweat =- 1 when cum is wiped off clothes
+	!!clrbelo: Amount of clean panties available
+	if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+		act 'Quick wash (0:15)':
 			cla
 			*clr
 			dynamic $showerdin
 			set sweat -= 1
 			set minut += 15
+			set clrbelo -= 1
+			set dirtbelo += 1
 			'<center><img src="images/pics/wash5.jpg"></center>'
-			'You carefully washed sperm with yourself.'
+			'You gave yourself a catlick, thus removing any traces of cum.'
 
 			if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
 			if vokzalToilet = 2:act 'Finish':dynamic $din_vokzalg_toilet_m
@@ -158,16 +163,16 @@ $din_vokzalg_toilet_deyst = {
 	end
 
 	if cumlip > 0 or cumface > 0:
-		act 'Wash cum off face (0:15)':
+		act 'Clean your face from sperm (0:05)':
 			cla
 			*clr
 			set mop = 1
 			set cumlip = 0
 			set cumface = 0
 			set sweat -= 1
-			set minut += 15
+			set minut += 5
 			'<center><img src="images/pic/facesp.jpg"></center>'
-			'You carefully washed sperm from your face.'
+			'You clean your face and got rid of any trace of cum.'
 
 			if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
 			if vokzalToilet = 2:act 'Finish':dynamic $din_vokzalg_toilet_m
@@ -175,22 +180,22 @@ $din_vokzalg_toilet_deyst = {
 	end
 
 	if cumfrot > 0:
-		act 'Wipe the cum from clothing (0:15)':
+		act 'Wipe the cum off your clothes (0:10)':
 			cla
 			*clr
 			set cumfrot = 0
-			set sweat -= 1
-			set minut += 15
+			set minut += 10
 			'<center><img src="images/pic/frotsp.jpg"></center>'
-			'You erase traces of semen from the clothes.'
+			'You remove traces of cum from your clothes.'
 
 			if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
 			if vokzalToilet = 2:act 'Finish':dynamic $din_vokzalg_toilet_m
 		end
 	end
+	!!
 
 	if tampon > 0 and mesec > 0 and isprok = 0:
-		act 'Change a tampon (0:05':
+		act 'Use a tampon (0:05)':
 			cla
 			*clr
 			set tampon -= 1
@@ -198,7 +203,7 @@ $din_vokzalg_toilet_deyst = {
 			set minut =+ 5
 			set manna -= 5
 			'<center><img src="images/pics/wash3.jpg"></center>'
-			'You changed a tampon.'
+			'You use a tampon.'
 
 			if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
 			if vokzalToilet = 2:act 'Finish':dynamic $din_vokzalg_toilet_m
@@ -290,7 +295,7 @@ $din_vokzalg_podbros = {
 		cls
 		gs 'stat'
 		'<center><h4>Station</h4></center>'
-		'<center><img src="qwest/alter/vokzal.jpg"></center>'
+		'<center><img src="images/qwest/alter/vokzal.jpg"></center>'
 		'You went to one side with a girl and got a purse that would share the money. You divided the money on a flat and gave half girl, thrusting the remaining money in your pocket. At this point, a man came up to you, lost wallet. He took the wallet out of your hands. He counted the money and said that the purse is not enough large sum of money. Then he asked, what would you show him your money.'
 
 		act 'Show money':dynamic $din_vokazalg_podbros2

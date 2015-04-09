@@ -217,22 +217,22 @@ if $ARGS[0] = 'start':
 			act 'Out of the shower and get dressed':dynamic $striptoilet
 		end
 
-		if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
-			act 'Wash up (0:15)':
+		!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
+		!!Removed sweat =- 1 when cum is wiped off clothes
+		!!clrbelo: Amount of clean panties available
+		if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+			act 'Quick wash (0:15)':
 				cla
 				*clr
-				set cumpussy = 0
-				set cumbelly = 0
-				set cumass = 0
-				set cumanus =0
-				set cumlip = 0
-				set cumface = 0
+				dynamic $showerdin
 				set sweat -= 1
 				set minut += 15
+				set clrbelo -= 1
+				set dirtbelo += 1
 				'<center><img src="images/pics/wash5.jpg"></center>'
-				'You carefully washed sperm with yourself.'
+				'You gave yourself a catlick, thus removing any traces of cum.'
 
-				act 'Exit':dynamic $striptoilet
+				act 'Finish':dynamic $striptoilet
 			end
 		end
 
@@ -240,30 +240,31 @@ if $ARGS[0] = 'start':
 			act 'Wash cum off face (0:15)':
 			cla
 			*clr
+			set mop = 1
 			set cumlip = 0
 			set cumface = 0
 			set sweat -= 1
 			set minut += 15
 			'<center><img src="images/etogame/facesp.jpg"></center>'
-			'You carefully washed sperm from her face.'
+			'You clean your face and got rid of any trace of cum.'
 
-			act 'Exit':dynamic $striptoilet
+			act 'Finish':dynamic $striptoilet
 		end
 	end
 
 	if cumfrot > 0:
-		act 'Wipe the cum from clothing (0:15)':
+		act 'Wipe the cum off your clothes (0:10)':
 			cla
 			*clr
 			set cumfrot = 0
-			set sweat -= 1
-			set minut += 15
-			!!'<center><img src="images/etogame/facesp.jpg"></center>'
-			'You erase traces of semen from the clothes.'
+			set minut += 10
+			!!'<center><img src="images/etogame/frotsp.jpg"></center>'
+			'You remove traces of cum from the clothes.'
 
-			act 'Exit':dynamic $striptoilet
+			act 'Finish':dynamic $striptoilet
 		end
 	end
+	!!
 
 	act 'Off the toilet':gt $curloc, 'start'
 	}
