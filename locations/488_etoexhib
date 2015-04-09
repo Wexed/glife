@@ -927,6 +927,9 @@ if $ARGS[0] = 'pos25':
 		act 'Further':gt 'etoexhib', 'pos25'
 	end
 
+	act 'Get out into the corridor':gt 'etoexhib', 'pos24'
+end	
+
 if $ARGS[0] = 'pos26':
 	cla
 	*clr
@@ -1038,7 +1041,7 @@ if $ARGS[0] = 'pos27':
 			set minut += 60
 			set manna -= 5
 
-			if ofclo = 1 and mop = 1 or ofclo = 1 and mop = 2 and teachlevel < 70:teachlevel += 1
+			if ofclo = 1 and mop = 1 or ofclo = 1 and mop = 2:teachlevel += 1
 			if mop = 4:teachlevel -= 1
 
 			money += 150
@@ -1228,9 +1231,12 @@ if $ARGS[0] = 'pos38':
 		'<center><b><font color="maroon">Library</font></b></center>'
 		'<center><img src="images/etogame/ptu_ups.jpg"></center>'
 		'You have become a casual witness as librarian lighted his seductive crotch. But in the hall were people wondering it intentionally or accidentally?'
+
 		act 'Further':gt 'etoexhib', 'pos38'
-		act 'In the corridor':gt 'etoexhib', 'pos23'
 	end
+
+	act 'In the corridor':gt 'etoexhib', 'pos23'
+end
 
 if $ARGS[0] = 'pos39':
 	cla

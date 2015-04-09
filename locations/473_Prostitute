@@ -303,7 +303,7 @@ killvar '<<$ARGS[0]>>_ModuliSobyty'
 if $ARGS[0] = '' or $ARGS[1] = '':EXIT
 !!----------
 if $ARGS[1] = '---' or lcase($ARGS[1]) = 'separator':
-	dynamic "$otg_Меню_<<$ARGS[0]>>[] = '-:-'"
+	dynamic "$otg_Menyu_<<$ARGS[0]>>[] = '-:-'"
 
 	EXIT
 end
@@ -356,10 +356,10 @@ if $ARGS[0] = '' or $ARGS[1] = '':EXIT
 !!----------
 ARGS[10] = dyneval("Result = arrsize('otg_Menyu_<<$ARGS[0]>>')")
 
-if dyneval("$Result = $otg_Меню_<<$ARGS[0]>>[<<ARGS[10]>>-1]") = '-:-':EXIT
+if dyneval("$Result = $otg_Menyu_<<$ARGS[0]>>[<<ARGS[10]>>-1]") = '-:-':EXIT
 !!----------
 dynamic "
-	$otg_Меню_<<$ARGS[0]>>_parameters['<<ARGS[10]>>y'] = '<<replace($ARGS[1], '''', '''''')>>'
+	$otg_Menyu_<<$ARGS[0]>>_parameters['<<ARGS[10]>>y'] = '<<replace($ARGS[1], '''', '''''')>>'
 "
 --- Menu.AddCondition ---------------------------------
 
@@ -367,10 +367,10 @@ dynamic "
 if $ARGS[0] = '' or $ARGS[1] = '':EXIT
 !!----------
 ARGS[10] = dyneval("Result = arrsize('otg_Menyu_<<$ARGS[0]>>')")
-if dyneval("$Result = $otg_Меню_<<$ARGS[0]>>[<<ARGS[10]>>-1]") = '-:-':EXIT
+if dyneval("$Result = $otg_Menyu_<<$ARGS[0]>>[<<ARGS[10]>>-1]") = '-:-':EXIT
 !!----------
 dynamic "
-	$otg_Меню_<<$ARGS[0]>>_parameters['<<ARGS[10]>>_M'] = '<<replace($ARGS[1], '''', '''''')>>'
+	$otg_Menyu_<<$ARGS[0]>>_parameters['<<ARGS[10]>>_M'] = '<<replace($ARGS[1], '''', '''''')>>'
 "
 
 --- Menu.AddModule ---------------------------------
@@ -382,11 +382,11 @@ if $ARGS[0] = '' or $ARGS[1] = '':EXIT
 $ARGS[1] = lcase(trim($ARGS[1]))
 !!----------
 if $ARGS[1] = 'when you select':
-	dynamic "$otg_Меню_<<$ARGS[0]>>_МодулиСобытий['<<$ARGS[1]>>'] = '<<replace($ARGS[2], '''', '''''')>>'"
+	dynamic "$otg_Menyu_<<$ARGS[0]>>_ModuliSobyty['<<$ARGS[1]>>'] = '<<replace($ARGS[2], '''', '''''')>>'"
 elseif $ARGS[1] = 'selecting processing after':
-	dynamic "$otg_Меню_<<$ARGS[0]>>_МодулиСобытий['<<$ARGS[1]>>'] = '<<replace($ARGS[2], '''', '''''')>>'"
+	dynamic "$otg_Menyu_<<$ARGS[0]>>_ModuliSobyty['<<$ARGS[1]>>'] = '<<replace($ARGS[2], '''', '''''')>>'"
 elseif $ARGS[1] = 'failure of the choice':
-	dynamic "$otg_Меню_<<$ARGS[0]>>_МодулиСобытий['<<$ARGS[1]>>'] = '<<replace($ARGS[2], '''', '''''')>>'"
+	dynamic "$otg_Menyu_<<$ARGS[0]>>_ModuliSobyty['<<$ARGS[1]>>'] = '<<replace($ARGS[2], '''', '''''')>>'"
 end
 
 --- Menu.AddEvent ---------------------------------
@@ -411,13 +411,13 @@ if ARGS[11] < ARGS[10]:
 
 		$ARGS[0] = $<<$otg_Menu_Current>>_parameters['<<ARGS[11]+1>>y']
 		if $ARGS[0] = '':
-			$otg_Меню_Вызываемое[] = $<<$otg_Menu_Current>>[<<ARGS[11]>>]
+			$otg_Menyu_Vyzyvaemoe[] = $<<$otg_Menu_Current>>[<<ARGS[11]>>]
 
 			otg_Menu_Compliance[] = <<ARGS[11]+1>>
 		else
 			if dyneval($ARGS[0]) <> 0:
 
-				$otg_Меню_Вызываемое[] = $<<$otg_Menu_Current>>[<<ARGS[11]>>]
+				$otg_Menyu_Vyzyvaemoe[] = $<<$otg_Menu_Current>>[<<ARGS[11]>>]
 
 				otg_Menu_Compliance[] = <<ARGS[11]+1>>
 			end
@@ -433,9 +433,9 @@ end
 
 otg_Menu_Time = 0
 dynamic "
-	<<$otg_Menu_Current>>_Выбрали = 0
-	<<$otg_Menu_Current>>_ВыбранныйПункт = 0
-	<<$otg_Menu_Current>>_Время = MSECSCOUNT
+	<<$otg_Menu_Current>>_selected = 0
+	<<$otg_Menu_Current>>_VybrannyyPunkt = 0
+	<<$otg_Menu_Current>>_time = MSECSCOUNT
 
 "
 !!----------
@@ -443,14 +443,14 @@ menu 'otg_Menyu_Vyzyvaemoe'
 !!----------
 dynamic "
 
-	if <<$otg_Menu_Current>>_Выбрали = 0:
-		<<$otg_Menu_Current>>_Время = MSECSCOUNT-<<$otg_Menu_Current>>_Время
-		$ARGS[0] = $<<$otg_Menu_Current>>_МодулиСобытий['failure of the choice']
+	if <<$otg_Menu_Current>>_selected = 0:
+		<<$otg_Menu_Current>>_time = MSECSCOUNT-<<$otg_Menu_Current>>_time
+		$ARGS[0] = $<<$otg_Menu_Current>>_ModuliSobyty['failure of the choice']
 
 		if $ARGS[0]<>'':dynamic $ARGS[0]
 	else
 
-		$ARGS[0] = $<<$otg_Menu_Current>>_МодулиСобытий['selecting processing after']
+		$ARGS[0] = $<<$otg_Menu_Current>>_ModuliSobyty['selecting processing after']
 		if $ARGS[0]<>'':dynamic $ARGS[0], $<<$otg_Menu_Current>>_parameters[str(<<$otg_Menu_Current>>_ВыбранныйПункт)+'_Z']"+dyneval("$Result = $<<$otg_Menu_Current>>_parameters[str(<<$otg_Menu_Current>>_ВыбранныйПункт)+'_P']")+"
 
 	end
@@ -461,14 +461,14 @@ killvar 'otg_Menyu_Vyzyvaemoe'
 killvar 'otg_Menu_Compliance'
 !!----------
 
-Result = dyneval("Result = otg_Меню_<<$ARGS[0]>>_Выбрали")
+Result = dyneval("Result = otg_Menyu_<<$ARGS[0]>>_selected")
 
 --- Menu.Call ---------------------------------
 
 # Menu.Chosen
 
 if $ARGS[0] = '':EXIT
-Result = dyneval("Result = otg_Меню_<<$ARGS[0]>>_Выбрали")
+Result = dyneval("Result = otg_Menyu_<<$ARGS[0]>>_selected")
 
 --- Menu.Chosen ---------------------------------
 
@@ -477,7 +477,7 @@ Result = dyneval("Result = otg_Меню_<<$ARGS[0]>>_Выбрали")
 if $ARGS[0] = '':
 	Result = otg_Menu_Time
 else
-	Result = dyneval("Result = otg_Меню_<<$ARGS[0]>>_Время")
+	Result = dyneval("Result = otg_Menyu_<<$ARGS[0]>>_time")
 
 end
 --- Menu.Time ---------------------------------
@@ -488,34 +488,4 @@ if $ARGS[0] = '':EXIT
 
 GS 'Menu.Create', $ARGS[0]
 --- Menu.Destroy ---------------------------------
-
-# Menu.{Processing}
-ARGS[0] = otg_Menu_Compliance[ARGS[0]-1]
-!!----------
-if ARGS[0] = 0:EXIT
-!!----------
-$ARGS[0] = dyneval("$Result = $<<$otg_Menu_Current>>_parameters['<<ARGS[0]>>_F']")
-$ARGS[1] = dyneval("$Result = $<<$otg_Menu_Current>>_parameters['<<ARGS[0]>>_M']")
-!!----------
-dynamic "
-	if $ARGS[1]<>'' or ($ARGS[0]<>'' and LOC $ARGS[0]):
-		<<$otg_Menu_Current>>_Время = MSECSCOUNT-<<$otg_Menu_Current>>_Время
-		otg_Menu_Time = <<$otg_Menu_Current>>_Время
-		<<$otg_Menu_Current>>_Выбрали = -1
-		<<$otg_Menu_Current>>_ВыбранныйПункт = <<ARGS[0]>>
-		!!----------
-		$ARGS[3] = $<<$otg_Menu_Current>>_МодулиСобытий['when you select']
-		if $ARGS[3]<>'':dynamic $ARGS[3], $<<$otg_Menu_Current>>_parameters['<<ARGS[0]>>_Z']"+dyneval("$Result = $<<$otg_Menu_Current>>_parameters['<<ARGS[0]>>_P']")+"
-		!!----------
-		if $ARGS[1]<>'':
-			dynamic $ARGS[1]"+dyneval("$Result = $<<$otg_Menu_Current>>_parameters['<<ARGS[0]>>_P']")+"
-		else
-			GS $ARGS[0]"+dyneval("$Result = $<<$otg_Menu_Current>>_parameters['<<ARGS[0]>>_P']")+"
-		end
-	else
-		MSG 'Location ''<<$ARGS[0]>>'' not found!'
-	end
-", $ARGS[0], $ARGS[1]
-
---- Menu.{Processing} ---------------------------------
 

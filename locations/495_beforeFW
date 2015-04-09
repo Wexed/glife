@@ -144,11 +144,11 @@ act 'Fight on his hands':
 		if varrand = 0:crouch = 1 & $text = 'Stand your opponent on all fours, and you catch him from behind.'
 
 		if varrand = 1:crouch = 0 & $text = 'You get up on all fours, and your opponent to catch him from behind.'
-
-		'Refferi stopped you and commanded <<$text>>'
-
-		act 'Follow the instructions referees':gt 'FightCrouch'
 	end
+
+	'Refferi stopped you and commanded <<$text>>'
+
+	act 'Follow the instructions referees':gt 'FightCrouch'
 end
 
 --- beforeFW ---------------

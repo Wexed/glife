@@ -4,13 +4,13 @@ if $ARGS[0] = 'start':
 	clr
 	gs 'stat'
 	gs 'portmirror'
-	set $goto1 = 'mirror'
-	set $goto2 = 'fin'
+	set $gt1 = 'mirror'
+	set $gt2 = 'fin'
 	dynamic $portmirror
 
 	act 'Move away from the mirror':
 		cla
-		gt '<<$goto1>>', '<<$goto2>>'
+		gt '<<$gt1>>', '<<$gt2>>'
 	end
 end
 

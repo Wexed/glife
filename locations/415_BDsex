@@ -202,7 +202,7 @@ if $ARGS[0] = 'sex3':
 	!!to top
 	minut += 10
 	gs 'stat'
-	picrand = rand(1, 6)
+	picrand = rand(1, 5)
 	'<center><img src="images/pics/vagcow<<picrand>>.jpg"></center>'
 	pose = 0
 	gs 'BDsex', 'org'
@@ -506,7 +506,7 @@ if $ARGS[0] = 'end':
 
 		if finance = 0:'<<$boy>> you are evicted from the apartment.'
 
-		if GoToGuy = 0:
+		if gtGuy = 0:
 			act 'Leave':
 				gorand = rand(0, 2)
 
@@ -516,10 +516,10 @@ if $ARGS[0] = 'end':
 			end
 		end
 
-		if GoToGuy > 0:
+		if gtGuy > 0:
 			act 'Leave':
-				if GoToGuy = 1:GoToGuy = 0 & gt 'nord'
-				if GoToGuy = 2:GoToGuy = 0 & gt 'street'
+				if gtGuy = 1:gtGuy = 0 & gt 'nord'
+				if gtGuy = 2:gtGuy = 0 & gt 'street'
 			end
 		end
 end

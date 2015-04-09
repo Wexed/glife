@@ -15,14 +15,14 @@ $KGOLstat = {
 	if KGOLneedExp > 0:pl 'Total experiment <<KGOLexp>>, it is necessary to next level <<KGOLneedExp>> experience'
 	if KGOLneedExp <= 0:pl '<a href="exec:dynamic $KGOLrise"><font color="red">You need to increase the level.</font></a>'
 	pl 'Power <<KGOLstren>>, speed and evasion <<KGOLspeed>>, endurance <<KGOLvital>>Intelligence <<KGOLintel>>, armor protection <<KGOLbrona>>, the bonus damage from weapons <<KGOLwpower>>'
-	nl
+	pl ''
 	pl '<center>Exodus</center>'
 	pl '<<$KGOLset>>'
 	pl '<<$KGOLset2>>'
 	pl '<<$KGOLset3>>'
 	pl '<<$KGOLset4>>'
 	pl '<<$KGOLset5>>'
-	nl
+	pl ''
 	pl '<center>Equipment</center>'
 	if KGOLpotionH > 0:pl 'Health potions <<KGOLpotionH>> pieces. <a href="exec:KGOLpotionH -= 1 & KGHP += 100 & gs ''stat'' & gt $curloc"><font color="red">Drink.</font></a>'
 	if KGOLpotionM > 0:pl 'Mana potions <<KGOLpotionM>> pieces. <a href="exec:KGOLpotionM -= 1 & KGManna += 100 & gs ''stat'' & gt $curloc"><font color="red">Drink.</font></a>'
