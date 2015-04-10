@@ -39,6 +39,7 @@ $din_predlog_dima_bj = {
 					cumlip += 1
 					cumface += 1
 					cumfrot += 1
+					dimasexday=daystart
 					gs 'stat'
 					'<center><img src="images\qwest\alter\Ev\cocksucker4.jpg"></center>'
 					'You sit on his haunches before Dima panting, all your face smeared with snot, tears, and saliva. Suddenly a member of Dima flies jet of sperm and hits you on the face, then another and another jet. Your whole face is covered with a layer of mucus in which all mixed up. Dima member removes his pants and says, "It was not bad. It will be necessary to repeat as anything. Well, until I see you again." Dima turns and going to the disco leaving you alone.'
@@ -77,6 +78,16 @@ $din_predlog_dima_bj = {
 			'<center><img src="images\qwest\alter\npc<<numnpc>>.jpg"></center>'
 			'You cracked the face Dima and he clutched his cheek. "Well, get out a fool. And do not come near me."'
 			act 'Leave': gt $loc, $metka
+			end
+			
+			act 'And you will not tell anyone?':
+			cls
+			dom+=1
+			gs'stat'
+			'<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+			'<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			'You asked Dima "And you will not tell anyone?" Dima smiled at you "No, You `ll be my Devchenka."'
+			dynamic $din_predlog_dima_bj
 			end
 		dynamic $din_predlog_dima_bj
 		end
@@ -133,19 +144,19 @@ $din_predlog_dima_bj = {
 			gs 'stat'
 			'<center><img src="images\qwest\alter\npc4.jpg"></center>'
 			'You grin skazale Igor that he would kill. Igor blushed and knelt "<<$name>>, I beg you as a slave, on his knees, just one kiss!"'
-			if dom >= 10:
-				act 'You can kiss my feet':
-							cls
-							dom += 5
-							IgorLove += 20
-							gs 'stat'
-							'<center><img src="images\qwest\alter\Ev\leg.jpg"></center>'
-							'You smiled looking at Igor top to the bottom and was told that he can kiss your foot. Igor kissed your foot and began to lick your toes, tickling you with his tongue. Igor took his tiny pisyun and began to masturbate on her knees in front of you and licking your feet, finally he came to the ground.'
-							act 'Leave': gt $loc, $metka
-							end
-			end
+				if dom >= 10:
+					act 'You can kiss my feet':
+						cls
+						dom += 5
+						IgorLove += 20
+						gs 'stat'
+						'<center><img src="images\qwest\alter\Ev\leg.jpg"></center>'
+						'You smiled looking at Igor top to the bottom and was told that he can kiss your foot. Igor kissed your foot and began to lick your toes, tickling you with his tongue. Igor took his tiny pisyun and began to masturbate on her knees in front of you and licking your feet, finally he came to the ground.'
+						act 'Leave': gt $loc, $metka
+						end
+					end
 
-			act 'Kiss':
+					act 'Kiss':
 						cls
 						IgorLove += 10
 						gs 'stat'
@@ -153,8 +164,8 @@ $din_predlog_dima_bj = {
 						'You kissed Igor, Igor kissed your lips passionately but gently.'
 						act 'Leave': gt $loc, $metka
 						end
-			end
-			end
+					end
+				end
 
 				act 'Kiss':
 				cls

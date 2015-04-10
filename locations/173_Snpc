@@ -10,7 +10,6 @@ grupTipe[numnpc]
 gs 'dinnpc'
 
 
-
 gs 'stat'
 '<center><B><font color = maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
 '<center><img src="images\qwest\alter\npc<<numnpc>>.jpg "></center>'
@@ -32,15 +31,19 @@ if KatjaHorny >= 20 and KatjaHorny < 40: 'Katya in the eyes jump merry twinkle.'
 if KatjaHorny >= 40 and KatjaHorny < 60: 'Katya has a faint blush on her cheeks and she looks at you mischievously.'
 if KatjaHorny >= 60 and KatjaHorny < 80: 'Kate blushed and languid looks at you.'
 if KatjaHorny >= 80: 'Katya all red as a lobster and her chest heaving from deep breathing.'
+'KatjaLust - <<KatjaLust>>'
+'KatjaSlut - <<KatjaSlut>>'
+'KatjaDom - <<KatjaDom>>'
+'KatjaMastr - <<KatjaMastr>>'
 end
 ''
 ''
 !act 'Move away': gt $locM, $metkaM
-!реакция на сперму
+!reaction to sperm
 gs 'cumreaction'
-!издевательства
+!bullying
 gs 'izdevat'
-!крутыши
+!Krutyshi
 gs 'krutishi'
 
 if numnpc = 23 and albinaQWdance > 0 and AlbinaBlokDance = 0 and ZvezdEnd = 0:
@@ -58,33 +61,35 @@ AlbEnemy = 1
 'Albina angrily glared "Oh, you bitch! Said at me taken in head to write. Well, you´ll regret it."'
 end
 
-!болталка с Котовым
-gs 'kotovtalker'
+!Shoutbox with Kotov
+if numnpc=9:gs'kotovtalker'
 !!!!!!!!!!!!!!!!!!!!!!!!!гопота!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if grupTipe[numnpc] = 4:
 	if $loc = 'gdkin':
 		if GorSlut < 2:
-			if npcPol[numnpc] = 0:
-			'<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something dumb like.'
-			else
-			'<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something dumb like.'
+			if numnpc ! 9:
+				if npcPol[numnpc] = 0:
+				'<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something dumb like.'
+				else
+				'<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something dumb like.'
+				end
+
+				act 'Drink beer':
+				cls
+				minut += 5
+				grupNPC[numnpc] += 5
+				alko += 1
+				salo += 1
+				fat += 2
+				energy += 10
+				gs 'stat'
+				'You drank beer in the company of friends.'
+				act 'Move away': gt $loc, $metka
+				end
+
+
+				act 'Refuse': grupNPC[numnpc] -= 5 & gt $loc, $metka
 			end
-
-			act 'Drink beer':
-			cls
-			minut += 5
-			grupNPC[numnpc] += 5
-			alko += 1
-			salo += 1
-			fat += 2
-			energy += 10
-			gs 'stat'
-			'You drank beer in the company of friends.'
-			act 'Move away': gt $loc, $metka
-			end
-
-
-			act 'Refuse': grupNPC[numnpc] -= 5 & gt $loc, $metka
 		end
 		if GorSlut >= 2:
 			if npcPol[numnpc] = 0:
@@ -113,16 +118,16 @@ end
 		if $loc = 'gdkin': act 'Move away': gt $loc, $metka
 		exit
 		end
-		!если порядочная
+		!if decent
 		gs 'nogorslut'
-		!если не порядочная
+		!if not respectable
 		gs 'yesgorslut'
 	if $loc!'gdkin': dynamic $din_sekondparturok
 	if $loc = 'gdkin': act 'Move away': gt $loc, $metka
 	end
 
 
-	!!!!!!!!!!!!!!!!!!!АРТЕМ ЧЕБОТАРЕВ БОТАН!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!Artem CHEBOTAREV Botha!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	if numnpc = 2:
 		if dom > 0 and artomLernQW = 0:
 		act 'You could not pull me in a little school?':
@@ -141,9 +146,27 @@ end
 			end
 		end
 	end
+	!!!!!!!!!!!!!!!!!!!JULIA mil bot!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	if numnpc=12:
+	    if dom>0 and JuliaMilLernQW=0 and grupNPC[numnpc]>=80:
+	        act 'You could not pull my little study?':
+			cls
+			if $loc='gdkin':minut+=5
+			grupNPC[numnpc]+=5
+			sub+=1
+			JuliaMilLernQW=1
+			gs'stat'
+			'<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+			'<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			if GorSlut<1:'You came to Julia and asked you to pull up a little learning, She thought agreed.'
+			if GorSlut>=1:'You came to Julia and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
+			if $loc!'gdkin':dynamic $din_sekondparturok
+			if $loc='gdkin':act 'move_away':gt $loc, $metka
+			end
+	    end
+	end
 
-
-	!!!!!!!!!!!!!!!КАТЯ МЕЙНОЛЬД!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!Katya MEYNOLD!!!!!!!!!!!!!!!!!!!!!!!
 	if numnpc = 14 and meynoldQW = 1:
 		act 'Thank you for what you took away from the disco.':
 		cls
@@ -196,9 +219,46 @@ end
 			end
 		end
 	end
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 if numnpc=14 and meynoldQW>1 and mop>1:
+	     if $loc!'gdkin':
+	     !school
+	         if KatjaHorny>=50:
+	         
+	         end
+	         if KatjaHorny<50:
+	         end
+	     end
+	     if $loc='gdkin':
+	     !at the disco
+	     	 if KatjaHorny>=50:
+	         end
+	         if KatjaHorny<50:
+	         end
+	     end
+	 end
+	 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 !!!!!!!!!!!!!!!!!!!Natasha Belova Botha!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 if numnpc=16:
+	     if dom>0 and NatBelLernQW=0 and grupNPC[numnpc]>=80:
+	         act 'You could not pull my little study?':
+			 cls
+			 if $loc='gdkin':minut+=5
+			 grupNPC[numnpc]+=5
+			 sub+=1
+			 NatBelLernQW=1
+			 gs'stat'
+			 '<center><B><font color=maroon><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></B></center>'
+			 '<center><img src="qwest/alter/npc/<<numnpc>>.jpg" ></center>'
+			 if GorSlut<1:'You came to Natasha and asked you to pull up a little learning, She thought agreed.'
+			 if GorSlut>=1:'You came to Natasha and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
+			 if $loc!'gdkin':dynamic $din_sekondparturok
+			 if $loc='gdkin':act 'move_away':gt $loc, $metka
+			 end
+	     end
+	 end
 
-if $loc!'gdkin': dynamic $din_sekondparturok
-if $loc = 'gdkin': act 'Move away': gt $loc, $metka
+
+if $loc!'gdkin':dynamic $din_sekondparturok
+if $loc='gdkin':act 'move_away':gt $loc, $metka
 --- Snpc ---------------------------------
 

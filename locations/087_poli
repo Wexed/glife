@@ -16,7 +16,7 @@ if $ARGS[0] = 'start':
 	'Doctors appointments costs 1,000.'
 	'VD testing cost 1,000.'
 	*nl
-	'Abortion at the woman´s request can be made up to 84 days of pregnancy. The cost of abortion is 8,000.'
+	'Abortion at the woman´s request can be made up to 84 days of pregnancy. The cost of abortion is 20,000.'
 	*nl
 	'Be warned, abortions are dangerous to health. There is always a risk of complications and the possibility of sterility.'
 	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6: act 'Exit to replace': gt 'poli','beginwork'
@@ -198,15 +198,23 @@ if $ARGS[0] = 'start':
 	!'Abortion on a woman´s request can be made up to 84 days of pregnancy. The cost of abortion 8,000 rubles'
 	!'Warn abortions are dangerous to health. There is always a risk of complications and the possibility of not getting pregnant in the future.'
 
-	if money >= 8000 and preg = 1 and pregtime < 84:
-		act 'Abortion 8,000 rubles':
+	if money >= 20000 and preg = 1 and pregtime < 84:
+		act 'Abortion 20,000 rubles':
 			cla
 			Set vidage += 1
 			Set abort += 1
-			Set money -= 8000
+			Set money -= 20000
 			Set abortrand = RAND(0,10)
 			if abortrand < 10: Set preg = 0
-			if abortrand = 10: Set preg = 2
+			Set abortrand = RAND (0,10)
+				if age>18:
+				if abortrand < 10:Set preg = 0
+				if abortrand = 10:Set preg = 2
+				end
+				if age<18:
+				if abortrand < 4:Set preg = 0
+				if abortrand >= 5:Set preg = 2
+				end
 			Set pregtime = 0
 			pregtalk = 0
 			!'<center><img src="images\etogame\abort.jpg"></center>'
@@ -297,6 +305,100 @@ if $ARGS[0] = 'start':
 	end
 
 	if katjob > 0: act 'Visit the chief doctor': gt 'poli','glavdoc'
+	
+	if zub>0:
+         act'Go to the dentist':
+         cls
+         zubpay=zub*30000
+         gs'stat'
+         'The dentist looked at you and said, prosthetics that will cost <<zubpay>> rubles'
+         act'Get away from the clinic':gt'street'
+             if money>=zubpay:
+                 act'pay for prosthetics':
+                 cls
+                 money-=zubpay
+                 minut+=60
+                 zub=0
+                 gs'stat'
+                 'You paid prosthetics and dentist within an hour completely put in order your teeth.'
+                 act'Get away from the clinic':gt'street'
+                 end
+             end
+         end
+     end
+	
+	if anus>5:
+         act'Go to the proctologist':
+         cls
+         minut+=15
+         if analplugIN!0:analplugIN = 0
+         gs'stat'
+         '<center><img src="picb/<<anpic>>.jpg" ></center>'
+         'You`ve come to the office to the proctologist. He immediately asked you to undress from the waist down and tilt.'
+             if anus <= 15:
+             'The doctor examined your anus and said "Well , slightly distended anus, but no abnormalities."'
+             end
+             if anus > 15 and anus <= 25:
+             'The doctor examined your anus and said "You stretched anus and sphincter. I would rekkomendoval procedures, 1000 rubles per session, This will help decrease the anus to normal size."'
+             end
+             if anus > 25 and anus<=35:
+             'The doctor examined your anus and said "You have greatly distended anus, most likely your sphincter is not able to keep the intestinal gas. I would rekkomendoval procedures, 1000 rubles per session, This will help decrease the anus to normal size."'
+             end
+             if anus > 35:
+             'The doctor examined your anus and said "oh my God! You need to be careful with his booty obraschatsya, you have the same here now fall intestine. I would rekkomendoval procedures, 1000 rubles per session, This will help decrease the anus to normal size."'
+             end
+             
+             if money>=1000 and anus > 15 and proktologday!day:
+                 act'Checkout procedure':
+                 cls
+                 money-=1000
+                 minut+=60
+                 proktologday=day
+                 anus-=5
+                 gs'stat'
+                 '<center><img src="picb/<<anpic>>.jpg" ></center>'
+                 'You paid for the procedure and the doctor an hour tinkering in your ass causing her to order.'
+                 act'Get away from the clinic':gt'street'
+                 end
+             end
+             act'Get away from the clinic':gt'street'
+         end
+     end
+	
+	if glass>0:
+         act'Go to the optometrist':
+         cls
+         gs'stat'
+         'Optometrist examined you and said that you can do laser vision correction  100 thousand. But from reading books eyesight can deteriorate again.'
+         if glass=1:'Doctor looking at you add ,Of course you can buy glasses that will be better to look at you. 8 thousand.'
+         act'Get away from the clinic':gt'street'
+             if money>=100000 and glass!0:
+                 act'Pay for laser correction':
+                 cls
+                 money-=100000
+                 minut+=60
+                 blizoruk=0
+                 glass=0
+                 gs'stat'
+                 'You paid for laser correction.'
+                 act'Get away from the clinic':gt'street'
+                 end
+             end
+             if glass=1:
+                 if money>=8000:
+					 act'Buy Points':
+					 cls
+					 money-=8000
+					 minut+=60
+					 glass=2
+					 gs'stat'
+					 'You bought a new, more stylish glasses.'
+					 act'Get away from the clinic':gt'street'
+					 end
+				 end
+             end
+         end
+     end
 end
 
 

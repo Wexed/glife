@@ -158,6 +158,7 @@ if fatdel > 0:
 	act 'consume fat burners':
 	cla
 	*clr
+    if fat>salo:fat=salo
 	set fatdel -= 1
 	set fat -= 25
 	if fat < 0: fat = 0
@@ -198,6 +199,7 @@ if vitamin > 0:
 		act 'drink Vitamins':
 		cla
 		*clr
+		if fat > salo: fat = salo
 		set minut += 5
 		vitaminday = day
 		vitamin -= 1

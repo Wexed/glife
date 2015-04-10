@@ -1,6 +1,6 @@
 # sister
 sisterAge = age + 3
-!модель Megan Vale Валентина Азарова
+!model Megan Vale Valentina Azarov
 
 gs 'stat'
 '<center><B><font color = maroon>Ann</font></B></center>'
@@ -17,14 +17,14 @@ if cumlip > 1 or cumface > 0 or cumfrot > 0:
 end
 
 if SiSonWork = 1:
-!на работе
+!at work
 '<<$name>> does not bother me, I do not see buyers.'
 act 'Move away': SiSonWork = 0 & SiSgdk = 0 & gt $loc, $metka
 exit
 end
 
 if SiSgdk = 1:
-!Возле клуба с друзьями
+!Outside the club with friends
 
 	if sister < 40:
 	'"What do you want? Wali come on!" Anya told you chuckle under her friends.'
@@ -84,5 +84,14 @@ act 'Move away': SiSonWork = 0 & SiSgdk = 0 & gt $loc, $metka
 end
 
 act 'Move away': SiSonWork = 0 & SiSgdk = 0 & gt $loc, $metka
+if SisterKnowMastr>0 and sisterQW=0:
+cls
+sisterQW=1
+gs'stat'
+'<center><B><font color=maroon>Anya</font></B></center>'
+'<center><img src="qwest/alter/sister.jpg" ></center>'
+'Anya looks at you and laughs "Well Sveta, and you give! I come into the room, and she`d play. Man himself Establishments, whether that."'
+act 'move_away':SiSonWork=0&SiSgdk=0&gt $loc, $metka
+end
 --- sister ---------------------------------
 
