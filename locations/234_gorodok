@@ -34,7 +34,7 @@ if NosovRevenge = 2 and daynosovrevenge + 1 >= daystart:
 	'<center><img src="images/qwest/alter/npc/1.jpg" ></center>'
 	'Near the house "Well slut. If you do not want that to video became public, Now let`s go and talk to me."'
 
-	act 'Go to the Dimka':
+	act 'Go to Dimka':
 		cls
 		NosovRevenge = 3
 		minut += 30
@@ -74,6 +74,10 @@ if StoryLine = 1 and ParHomeBlock = 0:'Your home is in one of the houses, it''s 
 'The <a href="exec:minut += 15 & gt ''vokzalG''">Train Station</a>.'
 'The <a href="exec:minut += 15 & gt ''gpoli''">Clinic</a>.'
 
+!!!CV edition
+if hour >= 8 and hour <= 20: 'The <a href="exec: minut += 15 & gt ''gaptek'',''start''">Drugstore</a>.'
+if hour >= 8 and hour <= 17: '<a href="exec: minut += 3 & gt ''barbershop'',''start''">The local barbershop</a>'
+!!!
 if hour >= 8 and hour <= 22:'A kiosk selling <a href="exec:dynamic $kiosksig">cigarettes.</a>'
 
 '<a href="exec:gt ''zaprF'', ''start''">Gas Station</a>'

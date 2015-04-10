@@ -1,36 +1,20 @@
 # cards
-<<<<<<< 542_cards
-*PL '<right><img src="images\casino\zalcart.jpg"></right>'
-*P 'In the hall a lot of free games tables in Blackjack and Casino Wars.'
-=======
-*PL '<right><img src="casino/zalcart.jpg" ></right>'
-*P 'In the hall are plenty of free tables for blackjack games and Casino Wars.'
->>>>>>> 542_cards
-ACT 'To the table game Blackjack':
-	gt 'bldzh'
-END
-<<<<<<< 542_cards
-ACT 'To the table games in Casino War':
-=======
-ACT 'For table games Casino War':
->>>>>>> 542_cards
-	gt 'kazvar'
-END
-ACT 'Back in the hall':
-	gt 'hall'
-END
+*pl '<right><img src="images/casino/zalcart.jpg"></right>'
+*p 'In the hall a lot of free games tables in Blackjack and Casino Wars.'
+
+act 'To the table game Blackjack':gt 'bldzh'
+act 'To the table games in Casino War':gt 'kazvar'
+act 'Back in the hall':gt 'hall'
+
 clr
-<<<<<<< 542_cards
 gs 'stat'
 set minut += 10
-
-!СИМВОЛЫ
-! ♥
-! ♠
-! ♦
-! ♣
-
-!КОЛОДА КАРТ
+!!SYMBOLS
+!! ♥
+!! ♠
+!! ♦
+!! ♣
+!!deck of cards
 $suit[1] = 'peak'
 $symbol[1] = '♠'
 $suit[2] = 'Clubs'
@@ -67,54 +51,7 @@ points[12] = 10
 $number[13] = 'King'
 points[13] = 10
 $number[14] = 'Ace'
-=======
-gs'stat'
-set minut=minut + 10
 
-!SYMBOLS
-! в™Ґ
-! в™ 
-! в™¦
-! в™Ј
-
-!deck of cards
-$suit[1] = 'peak'
-$symbol[1] = 'в™ '
-$suit[2] = 'clubs'
-$symbol[2] = 'в™Ј'
-$suit[3] = 'worms'
-$symbol[3] = 'в™Ґ'
-$suit[4] = 'tambourine'
-$symbol[4] = 'в™¦' 
-
-$number[1] = 'ace '
-points[1] = 11
-$number[2] = 'deuce '
-points[2] = 2
-$number[3] = 'three '
-points[3] = 3
-$number[4] = 'four '
-points[4] = 4
-$number[5] = 'five '
-points[5] = 5
-$number[6] = 'six '
-points[6] = 6
-$number[7] = 'seven '
-points[7] = 7
-$number[8] = 'eight '
-points[8] = 8
-$number[9] = 'nine '
-points[9] = 9
-$number[10] = 'ten '
-points[10] = 10
-$number[11] = 'Jack '
-points[11] = 10
-$number[12] = 'lady '
-points[12] = 10
-$number[13] = 'king '
-points[13] = 10
-$number[14] = 'ace '
->>>>>>> 542_cards
 points[14] = 11
---- cards ---------------------------------
 
+--- cards ---------------------------------

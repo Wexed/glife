@@ -29,19 +29,26 @@ if divan = 1:set $divan = 'luxury <a href="exec:gt ''divan'', ''start''">a leath
 
 if komp = 0:set $komp = ''
 if komp = 1:set $komp = 'with a <a href="exec:gt ''Komp'', ''start''">computer</a> on top of it.'
-
+!!!Probably CV edition
+if selfPornvidDVD = 0: set $selfPornvidDVD = ''
+if selfPornvidDVD > 0: set $selfPornvidDVD = 'You have <a href="exec:Dynamic $selfPorno_Take"><<selfPornvidDVD>></a> of your amateur porn videos available.'
+!!!
 if remsitr = 0:set $zal = 'A cramped room' & set $zal2 = 'faded wall'
 if remsitr = 1:set $zal = 'A modern, bright room' & set $zal2 = 'papered walls with light'
 
 if stol = 0:set $stol = 'decrepit <a href="exec:gt ''stol'', ''start''">table</a>'
 if stol = 1:set $stol = 'new <a href="exec:gt ''stol'', ''start''">table</a>'
 
+if mishka > 0:'On a shelf is <<mishka>> teddy bear'
+!!!Probably CV edition
+'<<$zal>>, <<$divan>> stands next to the <<$zal2>>. In front of the sofa is <<$TV>>. In front of the window is a <<$stol>> <<$komp>> <<$selfPornvidDVD>>'
+!!!
 
 if obruch > 0:'<br>A hula hoop stands in corner of the room. '
 if skak > 0:'A jump rope is on a shelf. '
 if bookYog > 0:'A yoga mat is rolled up in a corner. '
 '<<$zal>>, <<$divan>> stands next to the <<$zal2>>. In front of the sofa is <<$TV>>. In front of the window is a <<$stol>> <<$komp>> <<$selfPornvidDVD>>'
-if mishka > 0:'On a shelf is <<mishka>> teddy bear'
+
 *nl
 
 sports = 0
@@ -117,7 +124,11 @@ if husband > 0 and husbandrink ! 10 and husbandrinkday ! day:
 	end
 end
 
-gs 'subkid'
+!!!CV edition
+!gs 'subkid'
+if numkid = 1: '<a href="exec: gt ''kid'',''start''">Your child</a>'
+if numkid > 1: '<a href="exec: gt ''kid'',''start''">Your children</a>'
+!!!
 
 if student > 0 and kursovik < 100:
 	act 'Write kursovik (1:00)':
@@ -136,6 +147,7 @@ if student > 0 and kursovik < 100:
 	end
 end
 
+act 'Go out to the balcony': gt 'balkon','start'
 if zoo >= 6:
 	if husband > 0 and husbandrink ! 10:
 		if week > 5 or week < 6 and hour > 17:
@@ -496,6 +508,25 @@ if dildo > 0 and horny >= 50:
 		end
 	end
 end
+
+!!!Probably CV edition
+$selfPorno_Take = {
+	'You have <<selfPornvidDVD>> of your amateur porn videos available'
+	if selfPornvidDVD > 0 and bag > 0:
+		act 'Take one':
+			set selfPornvidDVD -= 1
+			set selfPornvidDVDCarry +=1
+		end
+	end
+	if selfPornvidDVDCarry > 0:
+		act 'Put one back':
+			set selfPornvidDVD +=1
+			set selfPornvidDVDCarry -=1
+		end
+	end
+	act 'Back': gt 'sitr'
+}
+!!!
 
 !'if $ARGS [0] ='guest':
 	gs 'stat'

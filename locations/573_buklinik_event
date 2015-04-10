@@ -1,5 +1,5 @@
 # buklinik_event
-if $args[0] = 'pos1':
+if $ARGS[0] = 'pos1':
 	cla
 	*clr
 	minut += 30
@@ -19,7 +19,7 @@ if $args[0] = 'pos1':
 	act 'Get out into the corridor':gt 'buklinik', 'holl'
 	end
 
-	if $args[0] = 'pos2':
+	if $ARGS[0] = 'pos2':
 	cla
 	*clr
 	bumtolik = 7
@@ -41,7 +41,7 @@ if $args[0] = 'pos1':
 	act 'Try to get away':gt 'buklinik_event', 'pos3'
 	end
 
-	if $args[0] = 'pos3':
+	if $ARGS[0] = 'pos3':
 	cla
 	*clr
 	manna -= 20
@@ -61,7 +61,7 @@ if $args[0] = 'pos1':
 	act 'Look at the door':gt 'buklinik_event', 'pos4'
 	end
 
-	if $args[0] = 'pos4':
+	if $ARGS[0] = 'pos4':
 	cla
 	*clr
 	gs 'stat'
@@ -79,7 +79,7 @@ if $args[0] = 'pos1':
 	act '- Okay, I get it.':gt 'buklinik', 'holl'
 	end
 
-	if $args[0] = 'pos5':
+	if $ARGS[0] = 'pos5':
 	cla
 	*clr
 	manna -= 5
@@ -94,7 +94,7 @@ if $args[0] = 'pos1':
 
 	act 'Get out into the corridor':gt 'buklinik', 'holl'
 	end
-	if $args[0] = 'pos6':
+	if $ARGS[0] = 'pos6':
 	cla
 	*clr
 	gs 'stat'
@@ -104,7 +104,7 @@ if $args[0] = 'pos1':
 	act 'spacing plates':gt 'buklinik_event', 'pos7'
 	end
 
-	if $args[0] = 'pos7':
+	if $ARGS[0] = 'pos7':
 	cla
 	*clr
 	buklinikDay = day
@@ -120,7 +120,7 @@ if $args[0] = 'pos1':
 	act 'Finish':gt 'buklinik', 'olga2'
 	end
 
-	if $args[0] = 'pos8':
+	if $ARGS[0] = 'pos8':
 	cla
 	*clr
 	if bumtolik = 8:bumtolik = 9
@@ -133,7 +133,7 @@ if $args[0] = 'pos1':
 	act 'Finish':gt 'buklinik', 'olga2'
 	end
 
-	if $args[0] = 'pos9':
+	if $ARGS[0] = 'pos9':
 	cla
 	*clr
 	buklinikDay = day
@@ -151,7 +151,7 @@ if $args[0] = 'pos1':
 	act 'I have no idea':gt 'buklinik', 'olga2'
 	end
 
-	if $args[0] = 'pos10':
+	if $ARGS[0] = 'pos10':
 	cla
 	*clr
 	bumtolik = 10
@@ -171,5 +171,5 @@ if $args[0] = 'pos1':
 
 	act 'Finish':gt 'buklinik', 'olga2'
 	end
---- buklinik_event ---------------------------------
 
+--- buklinik_event ---------------------------------

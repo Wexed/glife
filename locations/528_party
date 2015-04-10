@@ -1,512 +1,274 @@
 # party
-<<<<<<< 528_party
 if $ARGS[0] = 'start':
-cla
-	if vikavecher = 1:
-	gt 'party','first'
-	end
-	if vikavecher > 1:
-	gt 'party','evening'
-	end
-=======
-if $ARGS[0]='beginning':
-cla
-     if vikavecher = 1:
-     gt'party','the_first' 
-     end
-     if vikavecher > 1:
-     gt'party','evening'  
-     end
->>>>>>> 528_party
+	cla
+
+	if vikavecher = 1:gt 'party', 'first'
+	if vikavecher > 1:gt 'party', 'evening'
 end
 
-<<<<<<< 528_party
 if $ARGS[0] = 'first':
-=======
-if $ARGS[0]='the_first':
->>>>>>> 528_party
-cla
-Set vikavecher = 2
-<<<<<<< 528_party
-'You have come to the party with Vika. The party was held in the male dormitory, the company of beautiful girls and guys were drinking, dancing to the music and fun.'
-wait 1000
-'Are you politely said hello, but of particular interest to you, nobody showed'
-	act 'Be overmodest':
 	cla
-	Set час = 23
-	'You modestly sat in a corner, that would not interfere with other fun. To you started glued what that small, long-haired guy. The other guys he was called explicitly for a laugh and otherwise as a fairy and did not call.'
-	clr
-	Set fairy = 1
-	gs 'stat'
-	act 'Leave': gt 'Lok'
+	set vikavecher = 2
+	'You have come to the party with Vika. The party was held in the male dormitory, the company of beautiful girls and guys were drinking, dancing to the music and fun.'
+	wait 1000
+	'Are you politely said hello, but of particular interest to you, nobody showed'
+
+	act 'Be overmodest':
+		cla
+		set h = 23
+		'You modestly sat in a corner, that would not interfere with other fun. To you started glued what that small, long-haired guy. The other guys he was called explicitly for a laugh and otherwise as a fairy and did not call.'
+		clr
+		set fairy = 1
+		gs 'stat'
+
+		act 'Leave':gt 'Lok'
 	end
 
 	act 'Cheerful':
-	cla
-	Set час = 23
-	'You drank vodka together with all and struck up a conversation gradually. You dovlno strongly opyaneli and started dancing with sex. What is a little boy with a gentle girlish face and long blond hair trying to provide you clumsy attentions. The other guys he was called explicitly for a laugh and was referred to as a fairy. Gradually you kick in the trash and bran.'
-	'You woke up in a strange room, lying on his stomach, thank god clothes, then no you are not drunk ripped.'
-	Set fairy = 2
-	if джинсы = 2: '<center><img src="images\picparty\jeanscum.jpg"></center>'
-	if джинсы ! 2: '<center><img src="images\picparty\skirtcum.jpg"></center>'
-	'What´s this? Damn! What that bastard, you dragged into another room and obkonchal your ass.'
-	act 'Leave': gt 'Lok'
-	end
-=======
-'You came to the party with Vika. The party was held in the male dorm, company from devchenok and guys were drinking, dancing to the music and fun.'
-wait 1000
-'Are you politely greeted, but of particular interest to you '
-     act 'modest':
-     cla
-     Set h = 23
-     'You humbly sat in a corner, that would not interfere with other fun. To get you started glued a little something, long-haired kid. The other guys he was called explicitly for a laugh and another as a fairy and not called.'
-     clr
-     Set fairy = 1
-     gs'stat'
-     act 'Get_Away':gt 'loka'
-     end
-     
-     act 'hilarious':
-     cla
-     Set h = 23
-     'You drank vodka together with all and gradually began a conversation. You dovlno strongly opyaneli and started dancing with sex!. What is a little boy with a gentle girlish face and long blond hair trying to provide you with the clumsy attentions. The other guys he was called explicitly for a laugh and was referred to as Fairy. Gradually you kick in the trash and Cuts.'
-     'You woke up in a strange room, lying on his stomach, Glory to God in clothes, then no you are not drunk ripped.'
-     Set fairy = 2
-     if jeans = 2:'<center><img src="picparty/jeanscum.jpg" ></center>'
-     if jeans ! 2:'<center><img src="picparty/skirtcum.jpg" ></center>'
-     'what is that? Damn! What a bastard, dragged you into another room and obkonchal your ass.'
-     act 'Get_Away':gt 'loka'
-     end
->>>>>>> 528_party
+		cla
+		set h = 23
+		'You drank vodka together with all and struck up a conversation gradually. You dovlno strongly opyaneli and started dancing with sex. What is a little boy with a gentle girlish face and long blond hair trying to provide you clumsy attentions. The other guys he was called explicitly for a laugh and was referred to as a fairy. Gradually you kick in the trash and bran.'
+		'You woke up in a strange room, lying on his stomach, thank god clothes, then no you are not drunk ripped.'
+		set fairy = 2
 
+		if jeans = 2:'<center><img src="images/picparty/jeanscum.jpg"></center>'
+		if jeans ! 2:'<center><img src="images/picparty/skirtcum.jpg"></center>'
+
+		'What´s this? Damn! What that bastard, you dragged into another room and obkonchal your ass.'
+
+		act 'Leave':gt 'Lok'
+	end
 end
 
-<<<<<<< 528_party
 if $ARGS[0] = 'evening':
-cla
-'You have come to the party, a lot of beautiful girls and guys, drink, dance and hang out.'
-	act 'Sit modestly':
 	cla
-	Set час = 23
-	Set zrand = RAND(50,100)
-		if vnesh < zrand:
+	'You have come to the party, a lot of beautiful girls and guys, drink, dance and hang out.'
+
+	act 'Sit modestly':
 		cla
-		'You modestly sat watching the whole party opened others.'
-		act 'Leave': gt 'Lok'
-		end
-		if vnesh >= zrand:
+		set h = 23
+		set zrand = rand(50, 100)
+
+		if vnesh < zrand:
+			cla
+			'You modestly sat watching the whole party opened others.'
+		act 'Leave':gt 'Lok'
+	end
+
+	if vnesh >= zrand:
 		cla
 		'You modestly modestly sat in a corner, but a guy came up to you and started to talk to you.'
-		act 'Snub and go': gt 'Lok'
-			act 'Keep the conversation':
-			cla
-			wait 1000
-			'Party ends and your new friend offers you to spend'
-			act 'Refuse': gt 'Lok'
-				act 'Go with a guy':
-				Set newboy = 1
-				gs 'boy'
-				gs 'boyopred'
-				gt 'Lok'
-				end
 
+		act 'Snub and go':gt 'Lok'
+			act 'Keep the conversation':
+				cla
+				wait 1000
+				'Party ends and your new friend offers you to spend'
+
+				act 'Refuse':gt 'Lok'
+
+				act 'Go with a guy':
+					set newboy = 1
+					gs 'boy'
+					gs 'boyopred'
+					gt 'Lok'
+				end
 			end
 		end
 	end
+
 	act '<<$name>>':
-	cla
-	Set час = 23
-	Set horny -= 10
-	'You have fun, dance and Bukhaev.'
-	Set itrand = RAND(1,10)
-	if itrand = 1: xgt 'party','total'
-	if itrand = 2: xgt 'party','itog2'
-	if itrand = 3: xgt 'party','itog3'
-	if itrand = 4: xgt 'party','itog4'
-	if itrand = 5: xgt 'party','itog5'
-	if itrand = 6: xgt 'party','itog6'
-	if itrand = 7: xgt 'party','itog7'
-	if itrand = 8: xgt 'party','itog8'
-	if itrand = 9: xgt 'party','itog9'
-	if itrand = 10: xgt 'party','itog10'
-	end
-=======
-if $ARGS[0]='evening':
-cla
-'You`ve come to the party, a lot of guys and devchenok, drink, dance and hang out.'
-     act 'modestly sit':
-     cla
-     Set h = 23
-     Set zrand = RAND (50,100)
-         if vnesh < zrand:
-         cla
-         'You humbly sat watching the whole party as open other.'
-         act 'Get_Away':gt 'loka'
-         end
-         if vnesh >= zrand:
-         cla
-         'You modestly modestly sitting in the corner, but you guy came up and began to talk to you.'
-         act 'Otshit and go':gt 'loka'
-             act 'keep the conversation':
-             cla
-             wait 1000
-             'The party ends and your new friend offers you spend'
-             act 'unsubscribe':gt 'loka'
-                 act 'Go to guy':
-                 Set newboy = 1
-                 gs 'boy'
-                 gs 'boyopred'
-                 gt 'loka'
-                 end
-              
-             end
-         end
-     end
-     act 'light':
-     cla
-     Set h = 23
-     Set horny = horny - 10
-     'you have fun, thumps and dance.'
-     Set itrand = RAND (1,10)
-     if itrand = 1:xgt'party','result'
-     if itrand = 2:xgt'party','result2'
-     if itrand = 3:xgt'party','result3'
-     if itrand = 4:xgt'party','result4'
-     if itrand = 5:xgt'party','result5'
-     if itrand = 6:xgt'party','result6'
-     if itrand = 7:xgt'party','result7'
-     if itrand = 8:xgt'party','result8'
-     if itrand = 9:xgt'party','result9'
-     if itrand = 10:xgt'party','result10'
-     end
->>>>>>> 528_party
-end
-
-<<<<<<< 528_party
-if $ARGS[0] = 'total':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog.jpg"></center>'
-'Gradually you distribute alcohol as hell and you start to feel sick, you end vechereniki spent hugging the toilet.'
-act 'Leave': gt 'Lok'
-=======
-if $ARGS[0]='result':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog.jpg" ></center>'
-'Gradually you distribute alcohol as hell and you start to feel sick, end vechereniki you spent in the arms of the toilet.'
-act 'Get_Away':gt 'loka'
->>>>>>> 528_party
-end
-
-<<<<<<< 528_party
-if $ARGS[0] = 'itog2':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog2.jpg"></center>'
-'You danced and hooligans, you had the idea to dance with Vika, ended your dance light lesbian show with savory lingering kisses.'
-act 'Leave': gt 'Lok'
-	act 'Vika leave an empty room':
-	cla
-	Set $girl = 'Vetch'
-	if vikasex = 0: Set vikasex = 1 & Set sexf += 1
-	gt 'lesb','start'
-	end
-=======
-if $ARGS[0]='result2':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog2.jpg" ></center>'
-'You danced and hooligans, you got the idea to dance with Vika, ended your dance light lesbian show with savory lingering kiss.'
-act 'Get_Away':gt 'loka'
-     act 'Vika leave an empty room':
-     cla
-     Set $girl = 'vetch'
-     if vikasex = 0:Set vikasex = 1&Set sexf = sexf + 1
-     gt'lesb','beginning'
-     end
->>>>>>> 528_party
-end
-
-<<<<<<< 528_party
-if $ARGS[0] = 'itog3':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog3.jpg"></center>'
-'You nakiryalis and slept in the next room with a few hardcore sex.'
-act 'Leave': gt 'Lok'
-=======
-if $ARGS[0]='result3':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog3.jpg" ></center>'
-'You nakiryalis and slept in the next room with several sex!.'
-act 'Get_Away':gt 'loka'
->>>>>>> 528_party
-end
-
-<<<<<<< 528_party
-if $ARGS[0] = 'itog4':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog4.jpg"></center>'
-'You get opyaneli and began to molest girls, how come you and do not understand, but you have exposed breasts and Vic kiss and lick your nipples in front of everyone.'
-act 'Leave': gt 'Lok'
-	act 'Vika leave an empty room':
-	cla
-	Set $girl = 'Vetch'
-	if vikasex = 0: Set vikasex = 1 & Set sexf += 1
-	gt 'lesb','start'
-	end
-=======
-if $ARGS[0]='result4':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog4.jpg" ></center>'
-'You get opyaneli and began to molest girls, how come you yourself do not understand, but you have exposed breasts and kiss and lick Vic your nipples in front of everyone.'
-act 'Get_Away':gt 'loka'
-     act 'Vika leave an empty room':
-     cla
-     Set $girl = 'vetch'
-     if vikasex = 0:Set vikasex = 1&Set sexf = sexf + 1
-     gt'lesb','beginning'
-     end
->>>>>>> 528_party
-end
-
-<<<<<<< 528_party
-if $ARGS[0] = 'itog5':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog5.jpg"></center>'
-if throat > 10: Set money += 100 & 'Fun and drinking, you had an argument about the girl that will be able to shove down your throat it a whole banana, not great wisdom that you have done with success and at the table. The girl gave you 100 rubles.'
-if throat <= 10: Set money -= 100 & 'Fun and drinking, you had an argument about the girl that will be able to shove down your throat myself a banana, you have choked on a half a banana and lost the argument. Then you gave 100 rubles.'
-act 'Leave': gt 'Lok'
-=======
-if $ARGS[0]='result5':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog5.jpg" ></center>'
-if throat > 10:Set money = money + 100&'Fun and drinking you argued with sex that will be able to shove down your throat myself a banana, not great wisdom, what you have done with success and at the table. Devchenka gave you 100 rubles.'
-if throat <= 10:Set money = money - 100&'Fun and drinking you argued with sex that will be able to shove down your throat myself a banana, you suppress a further half a banana and lost the dispute. Then you gave 100 rubles.'
-act 'Get_Away':gt 'loka'
->>>>>>> 528_party
-end
-
-<<<<<<< 528_party
-if $ARGS[0] = 'itog6':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog6.jpg"></center>'
-'You all evening molested girl with big breasts begging her to kiss her breasts. By evening, the two of you got drunk in the trash and then you climbed her face in his chest and began kissing them.'
-act 'Leave': gt 'Lok'
-=======
-if $ARGS[0]='result6':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog6.jpg" ></center>'
-'You all evening molested the girl with big breasts begging her to kiss her breasts. In the evening .'
-act 'Get_Away':gt 'loka'
->>>>>>> 528_party
-end
-
-<<<<<<< 528_party
-if $ARGS[0] = 'itog7':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog7.jpg"></center>'
-'Natreskavshis in zyuzyu you bared her breasts and started licking her nipples.'
-act 'Leave': gt 'Lok'
-=======
-if $ARGS[0]='result7':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog7.jpg" ></center>'
-'Natreskavshis in zyuzyu you bared her breasts and began to lick her nipples.'
-act 'Get_Away':gt 'loka'
->>>>>>> 528_party
-end
-
-<<<<<<< 528_party
-if $ARGS[0] = 'itog8':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog8.jpg"></center>'
-'You ran with Vika Vika became sex with what that guy is not known. You were lying next fun chatting with her until Vika tore drunk in the trash is not familiar guy.'
-act 'Leave': gt 'Lok'
-	act 'Caress Vic':
-	cla
-	Set $girl = 'Vetch'
-	Set sex += 1
-	if vikasex = 0: Set vikasex = 1 & Set sexf += 1
-	*clr
-	'<center><img src="images\picvag\tri.jpg"></center>'
-	'You kiss and fondle breasts Vicki, she is very excited and you have decided to give her to lick your pussy.'
-	Set horny += 60
-	if horny < 100: 'You started to get tired of licking and wanted to continue'
-	if horny >= 100: Set horny = 0 & 'Muscles of the vagina began to decline sharply, the entire abdomen as if covered hot wave of pleasure, you scream from a powerful orgasm.'
-	wait 3000
-	'The guy pulls his dick out of Vicki and lifting it inserts his penis into her mouth.'
-		act 'Watch':
 		cla
+		set h = 23
+		set horny -= 10
+		'You have fun, dance and Bukhaev.'
+		set itrand = rand(1, 10)
+
+		if itrand = 1:xgt 'party', 'total'
+		if itrand = 2:xgt 'party', 'itog2'
+		if itrand = 3:xgt 'party', 'itog3'
+		if itrand = 4:xgt 'party', 'itog4'
+		if itrand = 5:xgt 'party', 'itog5'
+		if itrand = 6:xgt 'party', 'itog6'
+		if itrand = 7:xgt 'party', 'itog7'
+		if itrand = 8:xgt 'party', 'itog8'
+		if itrand = 9:xgt 'party', 'itog9'
+		if itrand = 10:xgt 'party', 'itog10'
+	end
+end
+
+if $ARGS[0] = 'total':
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog.jpg"></center>'
+	'Gradually you distribute alcohol as hell and you start to feel sick, you end vechereniki spent hugging the toilet.'
+
+	act 'Leave':gt 'Lok'
+end
+
+if $ARGS[0] = 'itog2':
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog2.jpg"></center>'
+	'You danced and hooligans, you had the idea to dance with Vika, ended your dance light lesbian show with savory lingering kisses.'
+
+	act 'Leave':gt 'Lok'
+
+	act 'Vika leave an empty room':
+		cla
+		set $girl = 'Vetch'
+
+		if vikasex = 0:set vikasex = 1 & set sexf += 1
+
+		gt 'lesb', 'start'
+	end
+end
+
+if $ARGS[0] = 'itog3':
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog3.jpg"></center>'
+	'You nakiryalis and slept in the next room with a few hardcore sex.'
+
+	act 'Leave':gt 'Lok'
+end
+
+if $ARGS[0] = 'itog4':
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog4.jpg"></center>'
+	'You get opyaneli and began to molest girls, how come you and do not understand, but you have exposed breasts and Vic kiss and lick your nipples in front of everyone.'
+
+	act 'Leave':gt 'Lok'
+
+	act 'Vika leave an empty room':
+		cla
+		set $girl = 'Vetch'
+
+		if vikasex = 0:set vikasex = 1 & set sexf += 1
+
+		gt 'lesb', 'start'
+	end
+end
+
+if $ARGS[0] = 'itog5':
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog5.jpg"></center>'
+
+	if throat > 10:set money += 100 & 'Fun and drinking, you had an argument about the girl that will be able to shove down your throat it a whole banana, not great wisdom that you have done with success and at the table. The girl gave you 100 rubles.'
+	if throat <= 10:set money -= 100 & 'Fun and drinking, you had an argument about the girl that will be able to shove down your throat myself a banana, you have choked on a half a banana and lost the argument. Then you gave 100 rubles.'
+
+	act 'Leave':gt 'Lok'
+end
+
+if $ARGS[0] = 'itog6':
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog6.jpg"></center>'
+	'You all evening molested girl with big breasts begging her to kiss her breasts. By evening, the two of you got drunk in the trash and then you climbed her face in his chest and began kissing them.'
+
+	act 'Leave':gt 'Lok'
+end
+
+if $ARGS[0] = 'itog7':
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog7.jpg"></center>'
+	'Natreskavshis in zyuzyu you bared her breasts and started licking her nipples.'
+
+	act 'Leave':gt 'Lok'
+end
+
+if $ARGS[0] = 'itog8':
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog8.jpg"></center>'
+	'You ran with Vika Vika became sex with what that guy is not known. You were lying next fun chatting with her until Vika tore drunk in the trash is not familiar guy.'
+
+	act 'Leave':gt 'Lok'
+
+	act 'Caress Vic':
+		cla
+		set $girl = 'Vetch'
+		set sex += 1
+
+		if vikasex = 0:set vikasex = 1 & set sexf += 1
+
 		*clr
-		'<center><img src="images\picvag\tri4.jpg"></center>'
-		'Vick guy cums in her mouth. Vicki peremazanny lips in semen and it stretches to you that would have kissed her.'
-			act 'Kissing with Vika':
+		'<center><img src="images/picvag/tri.jpg"></center>'
+		'You kiss and fondle breasts Vicki, she is very excited and you have decided to give her to lick your pussy.'
+		set horny += 60
+
+		if horny < 100:'You started to get tired of licking and wanted to continue'
+		if horny >= 100:set horny = 0 & 'Muscles of the vagina began to decline sharply, the entire abdomen as if covered hot wave of pleasure, you scream from a powerful orgasm.'
+
+		wait 3000
+		'The guy pulls his dick out of Vicki and lifting it inserts his penis into her mouth.'
+
+		act 'Watch':
 			cla
 			*clr
-			Set cumlip += 1
-			'<center><img src="images\picvag\tri3.jpg"></center>'
-			'You´re kissing licking each other´s cum.'
-			act 'Leave': gt 'Lok'
+			'<center><img src="images/picvag/tri4.jpg"></center>'
+			'Vick guy cums in her mouth. Vicki peremazanny lips in semen and it stretches to you that would have kissed her.'
+
+			act 'Kissing with Vika':
+				cla
+				*clr
+				set cumlip += 1
+				'<center><img src="images/picvag/tri3.jpg"></center>'
+				'You´re kissing licking each other´s cum.'
+
+				act 'Leave':gt 'Lok'
 			end
 		end
 
 		act 'Suck together with Vika':
-		cla
-		*clr
-		Set sexm += 1
-		Set oral += 1
-		Set cumface += 1
-		'<center><img src="images\picvag\tri2.jpg"></center>'
-		'You fucked by dick together with Vika finally ends Perrin you on the face.'
-			act 'Kissing with Vika':
 			cla
 			*clr
-			Set cumlip += 1
-			'<center><img src="images\picvag\tri3.jpg"></center>'
-			'You´re kissing licking each other´s cum.'
-			act 'Leave': gt 'Lok'
+			set sexm += 1
+			set oral += 1
+			set cumface += 1
+			'<center><img src="images/picvag/tri2.jpg"></center>'
+			'You fucked by dick together with Vika finally ends Perrin you on the face.'
+
+			act 'Kissing with Vika':
+				cla
+				*clr
+				set cumlip += 1
+				'<center><img src="images/picvag/tri3.jpg"></center>'
+				'You´re kissing licking each other´s cum.'
+
+				act 'Leave':gt 'Lok'
 			end
 		end
 	end
-=======
-if $ARGS[0]='result8':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog8.jpg" ></center>'
-'You ran with Vika and Vika became sex with some sort of unknown guy. You lay beside fun chatting with Vika until it tore up drunk in the trash is not familiar guy.'
-act 'Get_Away':gt 'loka'
-     act 'caress Vic':
-     cla
-     Set $girl = 'vetch'
-     Set sex = sex + 1
-     if vikasex = 0:Set vikasex = 1&Set sexf = sexf + 1
-     *clr
-     '<center><img src="picvag/tri.jpg" ></center>'
-     'You kiss and caress his chest Wiki, she is very nervous and you decide to give it a lick your pussy.'
-     Set horny = horny + 60
-     if horny < 100:'You started to get tired of licking and wanted to continue'
-     if horny >= 100:Set horny = 0&'The muscles of the vagina began to decline sharply, the entire abdomen as if covered hot wave of pleasure, you shout from the powerful orgasm.'
-     wait 3000
-     'The guy pulls his penis out of Vicki and lifting it inserts his penis into her mouth.'
-         act 'watch':
-         cla
-         *clr
-         '<center><img src="picvag/tri4.jpg" ></center>'
-         'The guy cums in her mouth Vick. Lips Wiki peremazanny in semen and she reaches out to you that would kiss her.'
-             act 'Kissing with Vika':
-             cla
-             *clr
-             Set cumlip = cumlip + 1
-             '<center><img src="picvag/tri3.jpg" ></center>'
-             'You`re kissing licking each other cum.'
-             act 'Get_Away':gt 'loka'
-             end
-         end
-         
-         act 'Suck together with Vika':
-         cla
-         *clr
-         Set sexm = sexm + 1
-         Set oral = oral + 1
-         Set cumface = cumface + 1
-         '<center><img src="picvag/tri2.jpg" ></center>'
-         'You aspirated member together with Vika, Perrin finally cums on the face you.'
-             act 'Kissing with Vika':
-             cla
-             *clr
-             Set cumlip = cumlip + 1
-             '<center><img src="picvag/tri3.jpg" ></center>'
-             'You`re kissing licking each other cum.'
-             act 'Get_Away':gt 'loka'
-             end
-         end
-     end
->>>>>>> 528_party
 end
 
-<<<<<<< 528_party
 if $ARGS[0] = 'itog9':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog9.jpg"></center>'
-'Girls love to have fun, you two had a drunken girlfriends lesbian show right at the party. Caressing, kissing and squeezing each other in front of everyone.'
-act 'Leave': gt 'Lok'
-=======
-if $ARGS[0]='result9':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog9.jpg" ></center>'
-'Little girls love to party, you with two girlfriends made вЂ‹вЂ‹a drunken lesbian show right at the party. caressing, squeezing and kissing each other in front of everyone.'
-act 'Get_Away':gt 'loka'
->>>>>>> 528_party
+	cla
+	set repa += 1
+	'<center><img src="images/picparty/itog9.jpg"></center>'
+	'Girls love to have fun, you two had a drunken girlfriends lesbian show right at the party. Caressing, kissing and squeezing each other in front of everyone.'
+
+	act 'Leave':gt 'Lok'
 end
 
-<<<<<<< 528_party
 if $ARGS[0] = 'itog10':
-cla
-Set repa += 1
-'<center><img src="images\picparty\itog10.jpg"></center>'
-'You got drunk and danced with what that guy who you dirty paw tits.'
-act 'Leave': gt 'Lok'
-	act 'Touch for pants':
 	cla
-	Set repa += 1
-	Set sexm += 1
-	gs 'boy'
-	gt 'BJ','start'
+	set repa += 1
+	'<center><img src="images/picparty/itog10.jpg"></center>'
+	'You got drunk and danced with what that guy who you dirty paw tits.'
+
+	act 'Leave':gt 'Lok'
+
+	act 'Touch for pants':
+		cla
+		set repa += 1
+		set sexm += 1
+		gs 'boy'
+		gt 'BJ', 'start'
 	end
 end
-=======
-if $ARGS[0]='result10':
-cla
-Set repa = repa + 1
-'<center><img src="picparty/itog10.jpg" ></center>'
-'You got drunk and danced with what that guy, that muddy paw you for boobs.'
-act 'Get_Away':gt 'loka'
-     act 'Touch for fly':
-     cla
-     Set repa = repa + 1
-     Set sexm = sexm + 1
-     gs 'boy'
-     gt 'BJ','beginning'
-     end
-end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 528_party
 --- party ---------------------------------
-

@@ -161,10 +161,10 @@ if hcol = 2:pl 'At the moment your hair is red, make it <a href="exec:set hcol =
 if hcol = 3:pl 'At the moment your hair is blonde, make it <a href="exec:set hcol = 0 & dynamic $cheats_hair">Black</a>, <a href="exec:set hcol = 1 & dynamic $cheats_hair">Brown</a>, <a href="exec:set hcol = 2 & dynamic $cheats_hair">Red</a>'
 pl
 pl 'Change the length of your hair (10mm = 1cm):'
-pl 
+pl
 if hairlength < 600:
 	pl 'Add <a href="exec:set hairlength += 1 & dynamic $cheats_hair">1mm</a> - <a href="exec:set hairlength += 5 & dynamic $cheats_hair">5mm</a> - <a href="exec:set hairlength += 10 & dynamic $cheats_hair">10mm</a> - <a href="exec:set hairlength += 20 & dynamic $cheats_hair">20mm</a> - <a href="exec:set hairlength += 25 & dynamic $cheats_hair">25mm</a> - <a href="exec:set hairlength += 50 & dynamic $cheats_hair">50mm</a> - <a href="exec:set hairlength += 100 & dynamic $cheats_hair">100mm</a> - <a href="exec:set hairlength += 200 & dynamic $cheats_hair">200mm</a>'
-else 
+else
 	pl 'Add 1mm - 5mm - 10mm - 20mm - 25mm - 50mm - 100mm - 200mm'
 end
 if hairlength > 600:
@@ -242,7 +242,7 @@ if hbraids >= 1:
 	set hpingripw = 0
 	set hbangs = 0
 	set hpigtail = 0
-end	
+end
 }
 $dex_cheat_money = {
 MONY = input ("How much money you want?")
@@ -613,7 +613,7 @@ pl '<a href="exec:dynamic $dex_cheat">Back to DeX cheat menu</a>
 <<fat>> - fat - similar to the stat "salo", but fat only affects you and your appearence, if you use Karen''s spell. But it still keep track of everything you do.
 <<salo>> - salo - similar to the stat "fat", but salo affects the appearence, if you <b>DID NOT</b> use the spell at Karen''s
 <<musle>> - musle
-<<dick>> - dick - Length of the dick of your current sex-partner 
+<<dick>> - dick - Length of the dick of your current sex-partner
 <<energy>> - energy - Your level of hunger - Higher = better
 <<water>> - water - Your level thirst - Higher = better
 <<son>> - son - How well you are rested - Higher = better
@@ -622,7 +622,7 @@ pl '<a href="exec:dynamic $dex_cheat">Back to DeX cheat menu</a>
 <<speed>> - speed - Your level Speed
 <<agil>> - agil = agilbuf
 <<agilbuf>> - agilbuf = agil, but used in stat calculation
-<<vital>> - vital = vitalbuf 
+<<vital>> - vital = vitalbuf
 <<vitalbuf>> - vitalbuf = vital, but used in stat calculation
 <<intel>> - intel - Your level of Intelligence
 <<will>> - will - Your current Will level - DO NOT confuse with will power
@@ -892,4 +892,3 @@ set kid += 1
 set $kidname[numkid] = 'Test Child<<numkid>>'
 }
 --- dexcheats ---------------------------------
-

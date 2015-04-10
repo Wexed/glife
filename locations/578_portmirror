@@ -1,9 +1,8 @@
-# gor_mirror
-if $ARGS[0] = 'start':
+# portmirror
+$portmirror = {
 	cla
-	clr
+	*clr
 	!!! Maruda Hair Mod
-	gs 'stat'
 	!!if hcol = 0 and curly <= 0:'<center><img src="images/body/hcol.jpg"></center>'
 	!!if hcol = 1 and curly <= 0:'<center><img src="images/body/hcol1.jpg"></center>'
 	!!if hcol = 2 and curly <= 0:'<center><img src="images/body/hcol2.jpg"></center>'
@@ -38,7 +37,6 @@ if curly <= 0 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <
 	if hcol = 2 and hairlength > 400:'<center><img src="images/body/hairstyles/vlng/normal/hcol2.jpg"></center>'
 	if hcol = 3 and hairlength > 400:'<center><img src="images/body/hairstyles/vlng/normal/hcol3.jpg"></center>'
 end
-	
 if curly >= 1 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
 	if hcol = 0 and hairlength > 80 and hairlength <= 160:'<center><img src="images/body/hairstyles/med/curly/hcol0.jpg"></center>'
 	if hcol = 1 and hairlength > 80 and hairlength <= 160:'<center><img src="images/body/hairstyles/med/curly/hcol1.jpg"></center>'
@@ -58,7 +56,7 @@ if curly >= 1 and hbangs <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <
 	if hcol = 3 and hairlength > 400:'<center><img src="images/body/hairstyles/vlng/curly/hcol3.jpg"></center>'
 end
 
-if hbangs >= 1 and curly <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:	
+if hbangs >= 1 and curly <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <= 0 and hbraids <= 0:
 	if hcol = 0 and hairlength > 30 and hairlength <= 80:'<center><img src="images/body/hairstyles/short/bangs/hcol0.jpg"></center>'
 	if hcol = 1 and hairlength > 30 and hairlength <= 80:'<center><img src="images/body/hairstyles/short/bangs/hcol1.jpg"></center>'
 	if hcol = 2 and hairlength > 30 and hairlength <= 80:'<center><img src="images/body/hairstyles/short/bangs/hcol2.jpg"></center>'
@@ -80,7 +78,7 @@ if hbangs >= 1 and curly <= 0 and hpingripw = 0 and hscrunchw = 0 and hpigtail <
 	if hcol = 2 and hairlength > 400:'<center><img src="images/body/hairstyles/vlng/bangs/hcol2.jpg"></center>'
 	if hcol = 3 and hairlength > 400:'<center><img src="images/body/hairstyles/vlng/bangs/hcol3.jpg"></center>'
 end
-	
+
 if curly >= 1 and hbangs >= 1 and hpingripw = 0 and hscrunchw <= 0 and hpigtail <= 0 and hbraids <= 0:
 	if hcol = 0 and hairlength > 80 and hairlength <= 160:'<center><img src="images/body/hairstyles/med/curly-bangs/hcol0.jpg"></center>'
 	if hcol = 1 and hairlength > 80 and hairlength <= 160:'<center><img src="images/body/hairstyles/med/curly-bangs/hcol1.jpg"></center>'
@@ -166,7 +164,7 @@ if hpingripw = 1 and hbangs = 0 and curly <= 0 and hscrunchw = 0 and hpigtail <=
 	if hcol = 1 and hairlength > 160 and hairlength <= 260:'<center><img src="images/body/hairstyles/medlo/buns/hcol1.jpg"></center>'
 	if hcol = 2 and hairlength > 160 and hairlength <= 260:'<center><img src="images/body/hairstyles/medlo/buns/hcol2.jpg"></center>'
 	if hcol = 3 and hairlength > 160 and hairlength <= 260:'<center><img src="images/body/hairstyles/medlo/buns/hcol3.jpg"></center>'
-	if hcol = 0 and hairlength > 260 and hairlength <= 400:'<center><img src="images/body/hairstyles/lng/buns/hcol0l.jpg"></center>'
+	if hcol = 0 and hairlength > 260 and hairlength <= 400:'<center><img src="images/body/hairstyles/lng/buns/hcol0.jpg"></center>'
 	if hcol = 1 and hairlength > 260 and hairlength <= 400:'<center><img src="images/body/hairstyles/lng/buns/hcol1.jpg"></center>'
 	if hcol = 2 and hairlength > 260 and hairlength <= 400:'<center><img src="images/body/hairstyles/lng/buns/hcol2.jpg"></center>'
 	if hcol = 3 and hairlength > 260 and hairlength <= 400:'<center><img src="images/body/hairstyles/lng/buns/hcol3.jpg"></center>'
@@ -292,80 +290,145 @@ if hbraids >= 1 and curly <= 0 and hbangs <= 0 and hpingripw = 0 and hscrunchw =
 	if hcol = 2 and hairlength > 260 and hairlength <= 400:'<center><img src="images/body/hairstyles/lng/braids/hcol2.jpg"></center>'
 	if hcol = 3 and hairlength > 260 and hairlength <= 400:'<center><img src="images/body/hairstyles/lng/braids/hcol3.jpg"></center>'
 end
-	
-	!!! Maruda Hair Mod
+
 	'<<$hair>> <<$mop>> <<$skin>> <<$vnesh>>'
+	if daystart < 10 and StoryLine = 0:'In the mirror, you looked quite strange woman´s face which is exactly copied all your actions. You hardly get to accept the idea that it is now is you.'
+	if daystart >= 10 and daystart < 30 and StoryLine = 0:'From the mirror looks at you a woman´s face, to which you have become accustomed to, but sometimes, no, no and yes flash the idea that it is not your face.'
 	if kosmetica > 0:'Cosmetics <<kosmetica>>'
 	if kosmetica = 0:'You have no makeup.'
 
-		if hapri = 0:
-		act 'coiffured':
-		cla
+	if lipbalm > 0:'Lip Balm <<lipbalm>>'
+	if lipbalm = 0:'You have no lip balm left.'
+
+	if hapri = 0 and AutoHapri = 1:
 		set minut += 3
 		set hapri = 1
-		act 'View results':gt 'gor_mirror', 'start'
+		'You brush your hair'
+	end
+
+	if mop = 1 and kosmetica > 0 and AutoMakeup = 1:
+		set mop = AutoMakeupType
+		if kosmetica < 3 and mop = 4:set mop = 3
+		if kosmetica < 2 and mop = 3:set mop = 2
+		if kosmetica < 1 and mop ! 1:
+			set mop = 1
+			'You have no make-up left'
+		else
+			if mop = 2:
+				'Applied light make-up'
+				set minut -= 3
+				set kosmetica -= 1
+			end
+
+			if mop = 3:
+				'Applied natural make-up'
+				set minut -= 5
+				set kosmetica -= 2
+			end
+
+			if mop = 4:
+				'Applied heavy make-up'
+				set minut -= 10
+				set vidageday -= 1
+				set kosmetica -= 3
+			end
 		end
+	end
+
+	if lipbalm > 0 and lipbalmstat <= 0 and AutoLipBalm = 1:
+		set minut -= 10
+		set lipbalm -= 1
+		set lipkoef += rand(5, 15)
+		if lipkoef > 50:
+			set lipkoef = 0
+			set lip += 1
 		end
 
-		if mop = 1 and kosmetica > 0:
+		set lipbalmstat += 8
+		'You smeared lip moisturizing balm'
+	end
+
+	if hapri = 0:
+		act 'Brush your hair':
+			cla
+			set minut += 3
+			set hapri = 1
+			act 'View results':dynamic $portmirror
+		end
+	end
+
+	if mop = 1 and kosmetica > 0:
 		act 'Apply makeup':
-		cla
-		*clr
-		'<center><img src="images/etogame/mop.jpg"></center>'
-		act 'light make-up':
-		cla
-		set minut += 3
-		set kosmetica -= 1
-		set mop = 2
-		'You legonechko summed eyes and lips a little tint.'
-		act 'View results':gt 'gor_mirror', 'start'
-		end
+			cla
+			*clr
+			'<center><img src="images/etogame/mop.jpg"></center>'
+			act 'Light make-up':
+				cla
+				set minut += 3
+				set kosmetica -= 1
+				set mop = 2
+				set recmop = mop
+				'You legonechko summed eyes and lips a little tint.'
+				act 'View results':dynamic $portmirror
+			end
 
-		if kosmetica >= 2:
-					act 'normal makeup':
+			if kosmetica >= 2:
+				act 'Natural makeup':
 					cla
 					set minut += 5
 					set kosmetica -= 2
 					set mop = 3
+					set recmop = mop
 					'You lipstick, summed up his eyes and eyelids.'
-					act 'View results':gt 'gor_mirror', 'start'
-					end
-		end
+					act 'View results':dynamic $portmirror
+				end
+			end
 
-		if kosmetica >= 3:
-					act 'calling makeup':
+			if kosmetica >= 3:
+				act 'Heavy makeup':
 					cla
 					set minut += 10
 					set kosmetica -= 3
 					set vidageday -= 1
 					set mop = 4
-					'You heavily nakrasili eyes, eyelids and mascara, lip contour nakrasili pencil and lipstick.'
-					act 'View results':gt 'gor_mirror', 'start'
-					end
-		end
-		end
-		end
-
-		if lipbalm > 0 and lipbalmstat <= 0:
-			act 'Smear lip balm moisturizing':
-			cla
-			set minut += 10
-			lipbalm -= 1
-		set lipkoef += rand(5, 15)
-				if lipkoef > 50:
-				set lipkoef = 0
-				set lip += 1
+					set recmop = mop
+					'You densely nakrasili eyes, eyelids and mascara, lip contour nakrasili pencil and lipstick.'
+					act 'View results':dynamic $portmirror
 				end
-			lipbalmstat += 8
-			'You smeared lip moisturizing balm.'
-		act 'View results':gt 'gor_mirror', 'start'
-		end
-		end
-
-		act 'Move away from the mirror':
-		cla
-		gt 'dom_gor'
+			end
 		end
 	end
---- gor_mirror ---------------------------------
 
+	if lipbalm > 0 and lipbalmstat <= 0:
+		act 'Smear lip balm moisturizing':
+			cla
+			set minut += 10
+			set lipbalm -= 1
+			set lipkoef += rand(5, 15)
+			if lipkoef > 50:
+				set lipkoef = 0
+				set lip += 1
+			end
+
+			set lipbalmstat += 8
+			'You smeared lip moisturizing balm.'
+			act 'View results':dynamic $portmirror
+		end
+	end
+
+	act 'Move away from the mirror':
+		cla
+		if $gt2 = '':
+			if $gt1 = 'stwork':dynamic $striptoilet
+			if $gt1 = 'kafedinamic':dynamic $kafetualet
+			if $gt1 = 'vokzalGin':
+				if vokzalToilet = 1:dynamic $din_vokzalg_toilet_f
+				if vokzalToilet = 2:dynamic $din_vokzalg_toilet_m
+			end
+			if $gt1 ! 'stwork' and $gt1 ! 'kafedinamic' and $gt1 ! 'vokzalGin':gt '<<$gt1>>'
+		else
+			gt '<<$gt1>>', '<<$gt2>>'
+		end
+	end
+}
+--- portmirror ---------------------------------

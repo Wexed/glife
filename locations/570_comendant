@@ -1,5 +1,5 @@
 # comendant
-if $args[0] = 'pos1':
+if $ARGS[0] = 'pos1':
 	cla
 	*clr
 	minut += 10
@@ -10,7 +10,7 @@ if $args[0] = 'pos1':
 		act 'Become acquainted':gt 'comendant', 'pos2'
 	end
 
-	if $args[0] = 'pos2':
+	if $ARGS[0] = 'pos2':
 	cla
 	*clr
 	minut += 5
@@ -28,7 +28,7 @@ if $args[0] = 'pos1':
 		act 'In the room':gt 'dom_gor'
 	end
 
-	if $args[0] = 'pos3':
+	if $ARGS[0] = 'pos3':
 	cla
 	*clr
 	minut += 5
@@ -46,5 +46,5 @@ if $args[0] = 'pos1':
 	'(Hmm, strange type)'
 		act 'In the room':gt 'dom_gor'
 	end
---- comendant ---------------------------------
 
+--- comendant ---------------------------------

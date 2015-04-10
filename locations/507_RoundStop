@@ -1,47 +1,18 @@
-<<<<<<< 507_RoundStop
+# RoundStop
 gs 'fightStat'
-
 stoper = 0
 
-if crouch = 1 and croonce = 0:
-	crouch = 0 & croonce = 1
-end
-
-if crouch = 0 and croonce = 0:
-	crouch = 1 & croonce = 1
-end
+if crouch = 1 and croonce = 0:crouch = 0 & croonce = 1
+if crouch = 0 and croonce = 0:crouch = 1 & croonce = 1
 
 croonce = 0
 
-if crouch = 1:
-	$text='Stand your opponent on all fours, and you catch him from behind.'
-end
+if crouch = 1:$text = 'Stand your opponent on all fours, and you catch him from behind.'
 
-if crouch = 0:
-	$text='You get up on all fours, and your opponent to catch him from behind.'
-end
+if crouch = 0:$text = 'You get up on all fours, and your opponent to catch him from behind.'
 
-=======
-# RoundStop
-gs'fightStat'
-
-stoper=0
-if crouch=1 and croonce=0:crouch=0&croonce=1
-if crouch=0 and croonce=0:crouch=1&croonce=1
-croonce=0
-if crouch=1:$text='Stand your opponent on all fours, and you catch him from behind.'
-if crouch=0:$text='You get up on all fours, and your opponent to catch him from behind.'
->>>>>>> 507_RoundStop
 'The referee raises you with an opponent and commands. <<$text>>'
 
-<<<<<<< 507_RoundStop
-act 'Follow the instructions referees':
-	gt 'FightCrouch'
-end
-=======
-     act 'Follow the instructions referees':
-     gt'FightCrouch'
-     end
---- RoundStop ---------------------------------
+act 'Follow the instructions referees':gt 'FightCrouch'
 
->>>>>>> 507_RoundStop
+--- RoundStop ---------------------------------

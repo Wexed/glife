@@ -1,204 +1,110 @@
 # rate
-<<<<<<< 556_rate
-*PL '<right><img src="images\casino\stavkaru.jpg"></right>'
-*NL
-*P 'What will be put?'
-ACT 'Red / Black':
+*pl '<right><img src="images/casino/stavkaru.jpg"></right>'
+*nl
+*p 'What will be put?'
+
+act 'Red / Black':
 	cla
+
 	act 'Red':
-		кч = 1
-		gt 'RESULTS'
-=======
-*PL '<right><img src="casino/stavkaru.jpg" ></right>'
-*NL
-*P 'What will bet?'
-ACT 'red / black':
-	cla
-	act 'red':
-		kh=1
+		kh = 1
 		gt 'result'
->>>>>>> 556_rate
+
 	end
+
 	act 'Black':
-<<<<<<< 556_rate
-		кч = 2
-		gt 'RESULTS'
+		kh = 2
+		gt 'result'
 	end
+end
 
-END
-ACT 'Even / Odd':
+act 'Even / Odd':
 	cla
+
 	act 'Even':
-		чнч = 1
-		gt 'RESULTS'
+		chnch = 1
+		gt 'result'
 	end
+
 	act 'Odd':
-		чнч = 2
-		gt 'RESULTS'
+		chnch = 2
+		gt 'result'
 	end
+end
 
-END
-ACT 'Small / Large':
+act 'Small / Large':
 	cla
-	act 'Small: 1-18':
-		мб = 1
-		gt 'RESULTS'
-	end
-	act 'Large: 19-36':
-		мб = 2
-		gt 'RESULTS'
-	end
 
-END
-ACT 'Dozen':
-=======
-		kh=2
+	act 'Small:1-18':
+		mb = 1
 		gt 'result'
 	end
-	
-END
-ACT 'even / odd':
+
+	act 'Large:19-36':
+		mb = 2
+		gt 'result'
+	end
+end
+
+act 'Dozen':
 	cla
-	act 'even':
-		chnch=1
+
+	act 'first dozen:1-12':
+		du = 1
 		gt 'result'
 	end
-	act 'odd':
-		chnch=2
+
+	act 'Two Dozen:13-24':
+		du = 2
 		gt 'result'
 	end
-	
-END
-ACT 'small / big':
+
+	act 'third dozen:25-36':
+		du = 3
+		gt 'result'
+	end
+end
+
+act 'Series':
 	cla
-	act 'small: 1-18':
-		mb=1
+
+	act 'first row:1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34':
+		series = 1
 		gt 'result'
-	end
-	act 'big: 19-36':
-		mb=2
-		gt 'result'
-	end
-	
-END
-ACT 'dozen':
->>>>>>> 556_rate
-	cla
-	act 'first dozen: 1-12':
-<<<<<<< 556_rate
-		дю = 1
-		gt 'RESULTS'
-	end
-	act 'Two Dozen: 13-24':
-		дю = 2
-		gt 'RESULTS'
-=======
-		du=1
-		gt 'result'
-	end
-	act 'the second dozen: 13-24':
-		du=2
-		gt 'result'
->>>>>>> 556_rate
-	end
-	act 'third dozen: 25-36':
-<<<<<<< 556_rate
-		дю = 3
-		gt 'RESULTS'
 	end
 
-
-END
-ACT 'Series':
-=======
-		du=3
+	act 'second row 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35':
+		series = 2
 		gt 'result'
-	end
-	
-	
-END
-ACT 'series':
->>>>>>> 556_rate
-	cla
-	act 'first row: 1,4,7,10,13,16,19,22,25,28,31,34':
-<<<<<<< 556_rate
-		ряд = 1
-		gt 'RESULTS'
-	end
-	act 'second row 2,5,8,11,14,17,20,23,26,29,32,35':
-		ряд = 2
-		gt 'RESULTS'
-=======
-		series=1
-		gt 'result'
-	end
-	act 'second row: 2,5,8,11,14,17,20,23,26,29,32,35':
-		series=2
-		gt 'result'
->>>>>>> 556_rate
-	end
-	act 'third row: 3,6,9,12,15,18,21,24,27,30,33,36':
-<<<<<<< 556_rate
-		ряд = 3
-		gt 'RESULTS'
 	end
 
-
-END
-ACT 'Number':
-	чи = input 'Enter a number from 0-36'
-	if чи < 0 and чи > 36:
-		msg 'Said that it was only from 0 to 36'
-=======
-		series=3
+	act 'third row:3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36':
+		series = 3
 		gt 'result'
 	end
-	
-	
-END
-ACT 'number':
+end
+
+act 'Number':
 	chi = input 'Enter a number from 0-36'
-	if chi<0 and chi>36:
-		msg 'It was said that only by 0 prior_to 36'
->>>>>>> 556_rate
+
+	if chi < 0 and chi > 36:
+		msg 'Said that it was only from 0 to 36'
 		gt 'rate'
 	end
-<<<<<<< 556_rate
-	gt 'RESULTS'
 
-END
-ACT 'Nothing':
-=======
 	gt 'result'
-	
-END
-ACT 'It`S_Nothing':
->>>>>>> 556_rate
-	gt 'amrul'
-END
-<<<<<<< 556_rate
-кч = 0
-чнч = 0
-мб = 0
-дю = 0
-ряд = 0
-чи = 100
-=======
-kh=0
-chnch=0
-mb=0
-du=0
-series=0
-chi=100
->>>>>>> 556_rate
+end
 
+act 'Nothing':gt 'amrul'
+
+kh = 0
+chnch = 0
+mb = 0
+du = 0
+series = 0
+chi = 100
 clr
-<<<<<<< 556_rate
 gs 'stat'
 set minut += 5
-=======
-gs'stat'
-set minut=minut + 5
->>>>>>> 556_rate
---- rate ---------------------------------
 
+--- rate ---------------------------------

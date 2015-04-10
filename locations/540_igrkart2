@@ -1,355 +1,198 @@
 # igrkart2
 clr
-<<<<<<< 540_igrkart2
 gs 'stat'
 set minut += 5
-=======
-gs'stat'
-set minut=minut + 5
->>>>>>> 540_igrkart2
 
 if turn1 = 0:
-	CLA
-<<<<<<< 540_igrkart2
-	'<right><img src="images\casino\stavkacw.jpg"></right>'
+	cla
+	'<right><img src="images/casino/stavkacw.jpg"></right>'
 	' Please give me your bets, gentlemen.'
-	ACT 'IPod':
+
+	act 'IPod':
 		deal = input 'Enter the amount'
+
 		if money < deal:
 			msg 'You have enough money'
-=======
-	'<right><img src="casino/stavkacw.jpg" ></right>'
-	' Please tender, gentlemen.'
-	ACT 'make a bet':
-		deal = input 'enter the amount'
-		if money<deal:
-			msg 'You do not have enough money'
->>>>>>> 540_igrkart2
 			gt 'igrkart2'
 		end
-<<<<<<< 540_igrkart2
+
 		if deal < 0:
 			msg 'Wrong, try again.'
-=======
-		if deal<0:
-			msg 'wrong, try again.'
->>>>>>> 540_igrkart2
 			gt 'igrkart1'
 		end
-<<<<<<< 540_igrkart2
+
 		if deal > 1000:
 			msg 'The maximum rate of 1000 rubles.'
-=======
-		if deal>1000:
-			msg 'maximum rate 1000 rubles.'
->>>>>>> 540_igrkart2
 			gt 'igrkart1'
 		end
-<<<<<<< 540_igrkart2
+
 		set money -= deal
-=======
-		set money = money - deal
->>>>>>> 540_igrkart2
+
 		turn1 = 1
-		GT 'igrkart2'
-	END
-<<<<<<< 540_igrkart2
-	ACT 'Move away from the table':
-=======
-	ACT 'Away from the table':
->>>>>>> 540_igrkart2
-		GT 'kazvar'
-	END
+		gt 'igrkart2'
+	end
+
+	act 'Move away from the table':gt 'kazvar'
 end
 
-<<<<<<< 540_igrkart2
+
 if turn1 = 1:
-	CLA
-	'<right><img src="images\casino\stavkacw.jpg"></right>'
+	cla
+	'<right><img src="images/casino/stavkacw.jpg"></right>'
 	nich = 0
-	ACT 'Put another draw':
+
+	act 'Put another draw':
 		if money < deal:
 			msg 'You have enough money'
 			turn1 = 2
 			nich = 0
-=======
-if turn1=1:
-	CLA
-	'<right><img src="casino/stavkacw.jpg" ></right>'
-	nich=0
-	ACT 'Put another draw':
-		if money<deal:
-			msg 'You do not have enough money'
-			turn1=2
-			nich=0
->>>>>>> 540_igrkart2
 			gt 'igrkart2'
 		end
-<<<<<<< 540_igrkart2
+
 		set money -= deal
 		turn1 = 2
 		nich = 1
-=======
-		set money=money-deal
-		turn1=2
-		nich=1
->>>>>>> 540_igrkart2
 		gt 'igrkart2'
 	end
-<<<<<<< 540_igrkart2
-	ACT 'Continue without an additional rate':
+
+	act 'Continue without an additional rate':
 		turn1 = 2
 		nich = 0
-=======
-	ACT 'Continue without additional rate':
-		turn1=2
-		nich=0
->>>>>>> 540_igrkart2
 		gt 'igrkart2'
 	end
 end
 
-<<<<<<< 540_igrkart2
 if turn1 = 2:
-	CLA
-	'<right><img src="images\casino\cartcw.jpg"></right>'
+	cla
+	'<right><img src="images/casino/cartcw.jpg"></right>'
 	' The dealer deals the cards:'
 	'...'
-	suit = RAND(1,4)
-	number = RAND(1,13)
-=======
-if turn1=2:
-	CLA
-	'<right><img src="casino/cartcw.jpg" ></right>'
-	' The dealer deals the cards:'
-	'...'
-	suit = RAND (1,4)
-	number = RAND (1,13)
->>>>>>> 540_igrkart2
+	suit = rand(1, 4)
+	number = rand(1, 13)
 	$di_card[1] = $number[number] + $suit[suit]
 	di_points = points[number]
-<<<<<<< 540_igrkart2
 	di_poi = number
-	suit = RAND(1,4)
-	number = RAND(2,14)
+	suit = rand(1, 4)
+	number = rand(2, 14)
 	$pl_card[1] = $number[number] + $suit[suit]
 	pl_points = points[number]
 	pl_poi = number
 	wait 1000
 	'Map of dealer:'
 	'  <<$di_card[1]>>'
-=======
-	di_poi=number
-	suit = RAND (1,4) 
-	number = RAND (2,14) 
-	$pl_card[1] = $number[number] + $suit[suit] 
-	pl_points = points[number] 
-	pl_poi=number 
-	wait 1000
-	'Map dealer:'
-	'  <<$di_card[1]>>'
->>>>>>> 540_igrkart2
+
 	'__________________________'
 	'Player Maps:'
-<<<<<<< 540_igrkart2
+
 	'  <<$pl_card[1]>>'
+
 	if di_poi > pl_poi:
 		' '
 		'Casinos won'
+
 		act 'You lost':
 			turn1 = 0
-=======
-	'  <<$pl_card[1]>>'
-	if di_poi>pl_poi:
-		' '
-		'casino won'
-		act 'you lost':
-			turn1=0
->>>>>>> 540_igrkart2
 			gt 'igrkart2'
 		end
 	end
-<<<<<<< 540_igrkart2
+
 	if di_poi < pl_poi:
 		' '
 		'You won'
-		act 'You have won <<2*deal>> rub.':
+		act 'You have won (<<2 * deal>> rubles)':
 			set money += 2 * deal
 			turn1 = 0
-=======
-	if di_poi<pl_poi:
-		' '
-		'you won'
-		act 'you won <<2*deal>> RUB.':
-			set money=money+2*deal
-			turn1=0
->>>>>>> 540_igrkart2
 			gt 'igrkart2'
 		end
 	end
-<<<<<<< 540_igrkart2
+
 	if di_poi = pl_poi:
 		if nich = 1:
 			' '
 			'You won'
-			act 'You have won <<11*deal>> rub.':
+
+			act 'You have won (<<11 * deal>> rubles)':
 				set money += 11 * deal
 				turn1 = 0
-=======
-	if di_poi=pl_poi:
-		if nich=1:
-			' '
-			'you won'
-			act 'you won <<11*deal>> RUB.':
-				set money=money+11*deal
-				turn1=0
->>>>>>> 540_igrkart2
 				gt 'igrkart2'
 			end
 		else
-<<<<<<< 540_igrkart2
 			turn1 = 3
-=======
-			turn1=3
->>>>>>> 540_igrkart2
 			gt 'igrkart2'
 		end
 	end
 end
 
-<<<<<<< 540_igrkart2
 if turn1 = 3:
 	act 'Continue to play':
 		if money < deal:
 			msg 'You have enough money'
-=======
-if turn1=3:
-	act 'continue to play':
-		if money<deal:
-			msg 'You do not have enough money'
->>>>>>> 540_igrkart2
 			gt 'igrkart2'
 		end
-<<<<<<< 540_igrkart2
+
 		set money -= deal
-		CLA
-		'<right><img src="images\casino\cartcw.jpg"></right>'
+		cla
+		'<right><img src="images/casino/cartcw.jpg"></right>'
 		' The dealer deals the cards:'
 		'...'
-		suit = RAND(1,4)
-		number = RAND(1,13)
-=======
-		set money=money-deal
-		CLA
-		'<right><img src="casino/cartcw.jpg" ></right>'
-		' The dealer deals the cards:'
-		'...'
-		suit = RAND (1,4)
-		number = RAND (1,13)
->>>>>>> 540_igrkart2
+		suit = rand(1, 4)
+		number = rand(1, 13)
 		$di_card[2] = $number[number] + $suit[suit]
 		di_points = points[number]
-<<<<<<< 540_igrkart2
 		di_poi = number
-		suit = RAND(1,4)
-		number = RAND(2,14)
-=======
-		di_poi=number
-		suit = RAND (1,4)
-		number = RAND (2,14) 
->>>>>>> 540_igrkart2
+		suit = rand(1, 4)
+		number = rand(2, 14)
 		$pl_card[2] = $number[number] + $suit[suit]
 		pl_points = points[number]
-<<<<<<< 540_igrkart2
 		pl_poi = number
 		wait 1000
 		'Map of dealer:'
 		'  <<$di_card[1]>>'
 		'  <<$di_card[2]>>'
-=======
-		pl_poi=number
-		wait 1000
-		'Map dealer:'
-		'  <<$di_card[1]>>'
-		'  <<$di_card[2]>>'
->>>>>>> 540_igrkart2
 		'__________________________'
 		'Player Maps:'
-<<<<<<< 540_igrkart2
 		'  <<$pl_card[1]>>'
 		'  <<$pl_card[2]>>'
+
 		if di_poi > pl_poi:
 			' '
 			'Casinos won'
+
 			act 'You lost':
 				turn1 = 0
-=======
-		'  <<$pl_card[1]>>'
-		'  <<$pl_card[2]>>'
-		if di_poi>pl_poi:
-			' '
-			'casino won'
-			act 'you lost':
-				turn1=0
->>>>>>> 540_igrkart2
 				gt 'igrkart2'
 			end
 		end
-<<<<<<< 540_igrkart2
+
 		if di_poi < pl_poi:
 			' '
 			'You won'
-			act 'You have won <<4*deal>> rub.':
+
+			act 'You have won (<<4 * deal>> rubles)':
 				set money += 4 * deal
 				turn1 = 0
-=======
-		if di_poi<pl_poi:
-			' '
-			'you won'
-			act 'you won <<4*deal>> RUB.':
-				set money=money+4*deal
-				turn1=0
->>>>>>> 540_igrkart2
 				gt 'igrkart2'
 			end
 		end
-<<<<<<< 540_igrkart2
+
 		if di_poi = pl_poi:
 			' '
 			'Again draw'
-			act 'Pick up <<3*deal>> rub.':
+
+			act 'Pick up (<<3 * deal>> rubles)':
 				set money += 3 * deal
 				turn1 = 0
-=======
-		if di_poi=pl_poi:
-			' '
-			'again draw'
-			act 'pick_up <<3*deal>> RUB.':
-				set money=money+3*deal
-				turn1=0
->>>>>>> 540_igrkart2
 				gt 'igrkart2'
 			end
-<<<<<<< 540_igrkart2
 		end
-=======
-		end	
->>>>>>> 540_igrkart2
 	end
+
 	act 'Pick up half your bet':
-<<<<<<< 540_igrkart2
-		if deal mod 2 = 1:
-			deal = deal + 1
-		end
+		if deal mod 2 = 1:deal = deal + 1
+
 		set money += deal/2
-=======
-		if deal mod 2=1:
-			deal=deal+1
-		end
-		set money=money+deal/2
->>>>>>> 540_igrkart2
 		gt 'igrkart2'
 	end
 end
---- igrkart2 ---------------------------------
 
+--- igrkart2 ---------------------------------
