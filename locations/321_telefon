@@ -285,12 +285,12 @@ if $ARGS[0] = 'boyA':
 							act 'Set up a time.':
 								cla
 								meetday = daystart
-								meethour = input ("Set up a time to get picked up. It is now <<hour>> o'clock.")
+								meethour = input ("Set up a time to get picked up. It is now <<hour>> o''clock.")
 
 								if meethour <= hour or meethour > 23:meethour = 20
 
-								'(You) -How about <<meethour>> o'clock?'
-								'(<<$boyA>>) - Okay <<$sveta>>, see you at <<meethour>> o'clock.'
+								'(You) -How about <<meethour>> o''clock?'
+								'(<<$boyA>>) - Okay <<$sveta>>, see you at <<meethour>> o''clock.'
 
 								act 'Hang up.':gt 'telefon', 'fin'
 							end
@@ -337,7 +337,7 @@ if $ARGS[0] = 'boyA':
 			act 'Sorry, I''m working today.':
 				cla
 				'(You) - Oh, sorry, I''m working today.'
-				'(<<$boyA>>) - Okay, I'll call tomorrow.'
+				'(<<$boyA>>) - Okay, I''ll call tomorrow.'
 
 				act 'Hang up.':gt 'telefon', 'fin'
 			end
@@ -353,11 +353,11 @@ if $ARGS[0] = 'boyA':
 
 			act 'Call time.':
 				cla
-				meethour = input ("Set up a time to get picked up. It is now <<hour>> o'clock.")
+				meethour = input ("Set up a time to get picked up. It is now <<hour>> o''clock.")
 
 				if meethour <= hour or meethour > 23:meethour = 20
 
-				'(You) - How about <<meethour>> o'clock?.'
+				'(You) - How about <<meethour>> o''clock?.'
 				'(<<$boyA>>) - Okay <<$sveta>>, see you at <<meethour>> o''clock.'
 
 				act 'Hang up.':gt 'telefon', 'fin'
@@ -370,7 +370,7 @@ if $ARGS[0] = 'boyA':
 			'(You) - I''m busy today. Call tomorrow.'
 
 			if bfa <= 0:set bfa = 0 & '(<<$boyA>>) - damn, you''ve fucked me, come on dick.'
-			if bfa > 0:'(<<$boyA>>) -  Okay, I'll call tomorrow.'
+			if bfa > 0:'(<<$boyA>>) -  Okay, I''ll call tomorrow.'
 
 			act 'Hang up.':gt 'telefon', 'fin'
 		end
