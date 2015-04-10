@@ -20,7 +20,7 @@ for iname in sorted(os.listdir( idir )):
     # make sure there's a line at the end of file
     # (why wouldn't there be one? WINDOWS!
     if text[-1] != u'\n':
-        text += u'\n'
+        text += u'\n\n'
 
     ofile.write(text)
     ifile.close()
