@@ -43,7 +43,7 @@ $regular_items = {
 			end
 		end
 
-		act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, ''[left:<b>'' + lekarstvo + ''</b>]'', ''')>>':
+		act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, ''[left:<b>'' + lekarstvo + ''</b>]'', '''')>>':
 			cla
 			*clr
 			portion = input ("How many packages you want to buy?")
