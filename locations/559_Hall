@@ -1,0 +1,105 @@
+# hall
+*pl '<right><img src="images/casino/zdcasino.jpg"></right>'
+*pl 'You entered the foyer of the building of a giant casino.'
+*pl 'You can go:'
+
+act 'Get out of the casino':gt 'casino'
+
+usehtml = 1
+*clear
+clr
+gs 'stat'
+set minut += 5
+picrand = rand(0, 2)
+
+if picrand = 0:'<right><img src="images/casino/hcasino1.jpg"></right>'
+if picrand = 1:'<right><img src="images/casino/hcasino2.jpg"></right>'
+if picrand = 2:'<right><img src="images/casino/hcasino3.jpg"></right>'
+
+'By <a href="exec:gt ''headwaiter''">the head waiter</a>'
+'In the Hall <a href="exec:gt ''igravt''">slot machines</a>'
+'In room games <a href="exec:gt ''roulette''">Roulette</a>'
+'In room games <a href="exec:gt ''cards''">Cards</a>'
+!!'In <a href="exec:gt ''restaurant''">restaurant</a>'
+!!'In <a href="exec:gt ''bar''">bar</a>'
+!!'In <a href="exec:gt ''theater''">Theatre</a>'
+'K <a href="exec:gt ''hotel''">Hotel</a>'
+
+--- Hall ---------------------------------
+
+# $menu_skills
+dynamic $objskills
+
+--- $menu_skills ---------------------------------
+
+# $menu_descrip
+dynamic $objdescrip
+
+--- $menu_descrip ---------------------------------
+
+# $menu_statistika
+dynamic $objstatistika
+
+--- $menu_statistika ---------------------------------
+
+# $menu_mobila
+dynamic $objmobila
+
+--- $menu_mobila ---------------------------------
+
+# $menu_magic
+dynamic $objmagic
+
+--- $menu_magic ---------------------------------
+
+# $menu_face
+dynamic $objface
+
+--- $menu_face ---------------------------------
+
+# $menu_body
+dynamic $objbody
+
+--- $menu_body ---------------------------------
+
+# $menu_clothes
+dynamic $objclothes
+
+--- $menu_clothes ---------------------------------
+
+# $menu_tattoos
+dynamic $objtattoos
+
+--- $menu_tattoos ---------------------------------
+
+# $menu_pirs
+dynamic $objpirsing
+
+--- $menu_pirs ---------------------------------
+
+# $menu_obnovit
+	gs 'stat'
+
+--- $menu_obnovit ---------------------------------
+
+# $menu_bloknot
+	dynamic $objbloknot
+--- $menu_bloknot ---------------------------------
+
+# $menu_avariya
+	dynamic $objavariya
+--- $menu_avariya ---------------------------------
+
+# $menu_addoldmenu
+	dynamic $objoldmenu
+--- $menu_addoldmenu ---------------------------------
+
+# $menu_automatica
+	gs 'automatics'
+	dynamic $automatica
+--- $menu_automatica ---------------------------------
+
+# $menu_helper
+	gs 'menu_helper'
+	dynamic $helper_start
+--- $menu_helper ---------------------------------

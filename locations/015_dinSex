@@ -28,7 +28,7 @@ $universalklient = {
 					if torgklirand = 0:clientPRyes = 0
 
 					if torgklirand = 1:
-						'Client grins and offers <<KlientMON*100>> per job.'
+						'Client grins and offers <<KlientMON * 100>> per job.'
 
 						act 'Agree':
 							cla
@@ -62,7 +62,7 @@ $dinprostable = {
 	if vidage >= 18 and vidage < 20:vnpr += 10
 	if vidage < 18:vnpr += 15
 	if vnesh = -10:vnpr -= 100
-	if vnesh < 5 and vnesh>-10:vnpr -= 10
+	if vnesh < 5 and vnesh > -10:vnpr -= 10
 	if vnesh >= 5 and vnesh < 15:vnpr -= 5
 	if vnesh >= 15 and vnesh < 30:vnpr += 1
 	if vnesh >= 30 and vnesh < 50:vnpr += 5
@@ -82,8 +82,8 @@ $dinprostable = {
 	if sweat > 0:vnpr -= 10
 	if hapri = 0:vnpr -= 1
 	if lip = 4:vnpr += 1
-	!maximum 40
-	!minimum -161
+	!!maximum 40
+	!!minimum -161
 }
 
 $dinklient = {
@@ -102,7 +102,7 @@ $dinklient = {
 	end
 }
 
-$din_prost_bj       = {
+$din_prost_bj = {
 	act 'Get into the client machine':
 		vidageday -= 5
 		set $nameV = 'stranger'
@@ -202,7 +202,7 @@ $venerasiak = {
 
 $veneradinitog = {
 	if tipvenerarand >= 8:
-		!herpes
+		!!herpes
 		set gerprand = rand(0, 100)
 
 		if gerprand > 90:
@@ -214,7 +214,7 @@ $veneradinitog = {
 	end
 
 	if tipvenerarand = 7:
-		!syphilis
+		!!syphilis
 		venerarand = rand(0, 100)
 
 		if venerarand > 95:
@@ -227,7 +227,7 @@ $veneradinitog = {
 	end
 
 	if tipvenerarand >= 5 and tipvenerarand < 7:
-		!gonorrhea/triper
+		!!gonorrhea/triper
 
 		venerarand = rand(0, 100)
 
@@ -241,7 +241,7 @@ $veneradinitog = {
 	end
 
 	if tipvenerarand < 5:
-		!candidiasis/thrush
+		!!candidiasis/thrush
 
 		venerarand = rand(0, 100)
 
@@ -268,7 +268,7 @@ $sexstart2 = {
 	frost = 0
 
 	if mesec > 0:
-		!Menstruation makes orgasm impossible
+		!!Menstruation makes orgasm impossible
 		set horny = 0
 		set manna -= 10
 		set willpower -= 10
@@ -276,25 +276,25 @@ $sexstart2 = {
 	end
 
 	if mesec <= 0 and vagina > 0:
-		!No Menstruatsion
-		!horny - excitement
-		!vagina - vagina elasticity
-		!silavag - male skill:0-clumsy, 1-middle, 2-stud
-		!dick - his penis size
-		!orgazm - what kind of orgasm
-		!0 - very painful, 1 - hurts, 2 - unpleasant, 3 - so-so, 4 - little orgasm, 5 - orgasm
+		!!No Menstruatsion
+		!!horny - excitement
+		!!vagina - vagina elasticity
+		!!silavag - male skill:0-clumsy, 1-middle, 2-stud
+		!!dick - his penis size
+		!!orgazm - what kind of orgasm
+		!!0 - very painful, 1 - hurts, 2 - unpleasant, 3 - so-so, 4 - little orgasm, 5 - orgasm
 		set smazka = horny / 10
 		set prinat = smazka + vagina
 
 		if dick >= prinat * 2:
-			!member of the critical features more years
+			!!member of the critical features more years
 			if silavag = 0:set orgazm = 0
 			if silavag = 1:set orgazm = 1
 			if silavag = 2:set orgazm = 2
 		end
 
-		if dick < prinat*2 and dick > prinat:
-			!member more options gg
+		if dick < prinat * 2 and dick > prinat:
+			!!member more options gg
 			if silavag = 0:
 				if horny >= 100:set orgazm = 5
 				if horny >= 90 and horny < 100:set orgazm = 4
@@ -324,7 +324,7 @@ $sexstart2 = {
 		end
 
 		if dick <= prinat and dick >= vagina:
-			!Member fewer opportunities gg
+			!!Member fewer opportunities gg
 			if silavag = 0:
 				if horny >= 80:set orgazm = 5
 				if horny >= 60 and horny < 80:set orgazm = 4
@@ -367,7 +367,7 @@ $sexstart2 = {
 			end
 		 end
 
-		if oragazm=5:
+		if oragazm = 5:
 			preOrg += 1
 
 			if razeba < 4:
@@ -402,7 +402,7 @@ $sexstart2 = {
 				end
 
 				if silavag < 2:
-					orgrand=rand(0, 100)
+					orgrand = rand(0, 100)
 
 					if orgrand > preOrg:oragazm = 4
 				end
@@ -439,12 +439,13 @@ $sexstart2 = {
 		end
 
 		if orgazm = 3:
-			set manna  += 5
+			set manna += 5
 			set willpower += 5
 			'You are startled by the feeling when your pussy is stretched as <<$boy>> entered. It feels good when his <<dick>> centimeter dick fucks your pussy.'
 		end
 
 		if orgazm = 4:
+			!set horny += 10
 			set manna += 10
 			set willpower += 10
 			'You are startled by the feeling when your pussy is stretched as <<$boy>> entered. It feels good when his <<dick>> centimeter dick fucks your pussy. (! Pritnoe gradually grow warm and throbbing in the lower abdomen, and then feeling a little decrease and remain until the end. !)'
@@ -455,6 +456,7 @@ $sexstart2 = {
 			set manna += 15
 			set willpower += 15
 			set orgasm += 1
+			vaginalOrgasm += 1
 			'You flinched from a pleasant feeling when your pussy is stretched by his dick. It feels good when his <<dick>> centimeter dick fucks your pussy. (! Pritnoe gradually grow warm and throbbing in the lower abdomen, then descend to the feeling you and your entire body covered hot waves of orgasm !), you scream with pleasure.'
 		end
 
@@ -485,7 +487,7 @@ $sexstart3 = {
 	frost = 0
 
 	if mesec > 0:
-		!periods, orgasm is not possible
+		!!periods, orgasm is not possible
 		set horny = 0
 		set manna -= 10
 		set willpower -= 10
@@ -493,25 +495,25 @@ $sexstart3 = {
 	end
 
 	if mesec <= 0 and vagina > 0:
-		!no monthly
-		!horny - excitement
-		!vagina - the elasticity of the vagina
-		!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
-		!dick - penis Man
-		!orgazm - Total coefficient of pleasure
-		!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
+		!!no monthly
+		!!horny - excitement
+		!!vagina - the elasticity of the vagina
+		!!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
+		!!dick - penis Man
+		!!orgazm - Total coefficient of pleasure
+		!!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
 		set smazka = horny / 10
 		set prinat = smazka + vagina
 
 		if dick >= prinat * 2:
-			!member of the critical features more years
+			!!member of the critical features more years
 			if silavag = 0:set orgazm = 0
 			if silavag = 1:set orgazm = 1
 			if silavag = 2:set orgazm = 2
 		end
 
-		if dick < prinat*2 and dick > prinat:
-			!member more options gg
+		if dick < prinat * 2 and dick > prinat:
+			!!member more options gg
 			if silavag = 0:
 				if horny >= 100:set orgazm = 5
 				if horny >= 90 and horny < 100:set orgazm = 4
@@ -541,7 +543,7 @@ $sexstart3 = {
 		end
 
 		if dick <= prinat and dick >= vagina:
-			!Member fewer opportunities gg
+			!!Member fewer opportunities gg
 			if silavag = 0:
 				if horny >= 80:set orgazm = 5
 				if horny >= 60 and horny < 80:set orgazm = 4
@@ -656,14 +658,14 @@ $sexstart3 = {
 		end
 
 		if orgazm = 3:
-			!set horny += 5
+			!!set horny += 5
 			set manna += 5
 			set willpower += 5
 			'You startled by the feeling that your pussy is stretched when sat on and felt like a member of <<$boy>> has entered into you. Between the legs gets a little nice when you jump on strong <<dick>> centimeter penis.'
 		end
 
 		if orgazm = 4:
-			!set horny += 10
+			!!set horny += 10
 			set manna += 10
 			set willpower += 10
 			'You startled by the feeling that your pussy is stretched when sat on and felt like a member of <<$boy>> has entered into you. Between the legs gets a little nice when you jump on strong <<dick>> centimeter penis. Pritnoe gradually grow warm and throbbing in the lower abdomen, and then feeling a little decrease and remain until the end.'
@@ -674,6 +676,7 @@ $sexstart3 = {
 			set manna += 15
 			set willpower += 15
 			set orgasm += 1
+			vaginalOrgasm += 1
 			'You flinched from a pleasant feeling when your pussy rastyagivatsya start taking a dick. Between the legs becomes very warm and pleasant, when you jump on the strong <<dick>> centimeter penis. Pritnoe gradually grow warm and throbbing in the lower abdomen, then descend to the feeling you and your entire body covered hot waves of orgasm, you involuntarily scream with pleasure writhing on elde.'
 		end
 
@@ -704,7 +707,7 @@ $sexstart4 = {
 	frost = 0
 
 	if mesec > 0:
-		!periods, orgasm is not possible
+		!!periods, orgasm is not possible
 		set horny = 0
 		set manna = manna - 10
 		set willpower = willpower - 10
@@ -712,26 +715,26 @@ $sexstart4 = {
 	end
 
 	if mesec <= 0 and vagina > 0:
-		!no monthly
-		!horny - excitement
-		!vagina - the elasticity of the vagina
-		!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
-		!dick - penis Man
-		!orgazm - Total coefficient of pleasure
-		!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
+		!!no monthly
+		!!horny - excitement
+		!!vagina - the elasticity of the vagina
+		!!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
+		!!dick - penis Man
+		!!orgazm - Total coefficient of pleasure
+		!!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
 
 		set smazka = horny / 10
 		set prinat = smazka + vagina
 
 		if dick >= prinat * 2:
-			!member of the critical features more years
+			!!member of the critical features more years
 			if silavag = 0:set orgazm = 0
 			if silavag = 1:set orgazm = 1
 			if silavag = 2:set orgazm = 2
 		end
 
 		if dick < prinat * 2 and dick > prinat:
-			!member more options gg
+			!!member more options gg
 			if silavag = 0:
 				if horny >= 100:set orgazm = 5
 				if horny >= 90 and horny < 100:set orgazm = 4
@@ -761,7 +764,7 @@ $sexstart4 = {
 		end
 
 		if dick <= prinat and dick >= vagina:
-			!Member fewer opportunities gg
+			!!Member fewer opportunities gg
 				if silavag = 0:
 				if horny >= 80:set orgazm = 5
 				if horny >= 60 and horny < 80:set orgazm = 4
@@ -878,14 +881,14 @@ $sexstart4 = {
 		end
 
 		if orgazm = 3:
-			!set horny = horny + 5
+			!!set horny = horny + 5
 			set manna += 5
 			set willpower += 5
 			'You flinched from feeling, your pussy stretched, when <<$boy>> You entered. Between the legs becomes a little nice, when strong <<dick>> inch dick fuck your pussy.'
 		end
 
 		if orgazm = 4:
-			!set horny = horny + 10
+			!!set horny = horny + 10
 			set manna += 10
 			set willpower += 10
 			'You flinched from feeling, your pussy stretched, when <<$boy>> You entered. Between the legs becomes a little nice, when strong <<dick>> inch dick fuck your pussy. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of. '
@@ -920,10 +923,10 @@ $sexstart4 = {
 
 	if vagina < dick:vagina += 1
 
-	!sex+=1
+	!!sex += 1
 }
 $sexudo = {
-	set protect    = 0
+	set protect = 0
 	set vidageday -= 1
 	frost = 0
 
@@ -934,7 +937,7 @@ $sexudo = {
 	end
 
 	if mesec > 0:
-		!periods, orgasm is not possible
+		!!periods, orgasm is not possible
 		set horny = 0
 		set manna -= 10
 		set willpower -= 10
@@ -942,25 +945,25 @@ $sexudo = {
 	end
 
 	if mesec <= 0 and vagina > 0:
-		!no monthly
-		!horny - arousal
-		!vagina - elasticy of the vagina
-		!silavag - skill man 0-sad sack, 1-middle pleasant 2-stud
-		!dick - рenis man
-		!orgazm - Total coefficient of pleasure
-		!0 - very painful, 1 - it hurts, 2 - not nice, 3 - so-so, 4 - needoorgazm 5 - orgasm
+		!!no monthly
+		!!horny - arousal
+		!!vagina - elasticy of the vagina
+		!!silavag - skill man 0-sad sack, 1-middle pleasant 2-stud
+		!!dick - рenis man
+		!!orgazm - Total coefficient of pleasure
+		!!0 - very painful, 1 - it hurts, 2 - not nice, 3 - so-so, 4 - needoorgazm 5 - orgasm
 		set smazka = horny / 10
 		set prinat = smazka + vagina
 
 		if dick >= prinat * 2:
-			!member of the critical features more years
+			!!member of the critical features more years
 			if silavag = 0:set orgazm = 0
 			if silavag = 1:set orgazm = 1
 			if silavag = 2:set orgazm = 2
 		end
 
-		if dick < prinat*2 and dick > prinat:
-			!member more options gg
+		if dick < prinat * 2 and dick > prinat:
+			!!member more options gg
 			if silavag = 0:
 				if horny >= 100:set orgazm = 5
 				if horny >= 90 and horny < 100:set orgazm = 4
@@ -990,7 +993,7 @@ $sexudo = {
 		end
 
 		if dick <= prinat and dick >= vagina:
-			!Member fewer opportunities gg
+			!!Member fewer opportunities gg
 			if silavag = 0:
 				if horny >= 80:set orgazm = 5
 				if horny >= 60 and horny < 80:set orgazm = 4
@@ -1014,7 +1017,6 @@ $sexudo = {
 		end
 
 		if dick <= prinat and dick < vagina:
-
 			if silavag = 0:
 				if horny >= 100:set orgazm = 5
 				if horny >= 90 and horny < 100:set orgazm = 4
@@ -1034,7 +1036,7 @@ $sexudo = {
 			end
 		end
 
-		if oragazm=5:
+		if oragazm = 5:
 			preOrg += 1
 
 			if razeba < 4:
@@ -1111,14 +1113,14 @@ $sexudo = {
 		end
 
 		if orgazm = 3:
-			!set horny += 5
+			!!set horny += 5
 			set manna += 5
 			set willpower += 5
 			'You startled by the feeling that your pussy is stretched when <<$boy>> you entered. Between the legs becomes a little pleased when strong <<dick>> centimeter dick fucks your pussy.'
 		end
 
 		if orgazm = 4:
-			!set horny += 10
+			!!set horny += 10
 			set manna += 10
 			set willpower += 10
 			'You startled by the feeling that your pussy is stretched when <<$boy>> you entered. Between the legs becomes a little pleased when strong <<dick>> centimeter dick fucks your pussy. Pritnoe gradually grow warm and throbbing in the lower abdomen, and then feeling a little decrease and remain until the end.'
@@ -1129,6 +1131,7 @@ $sexudo = {
 			set manna += 15
 			set willpower += 15
 			set orgasm += 1
+			vaginalOrgasm += 1
 			'You flinched from a pleasant feeling when your pussy rastyagivatsya start taking a dick. Between the legs becomes very warm and pleasant, when strong <<dick>> centimeter dick fuck your pussy. Pritnoe gradually grow warm and throbbing in the lower abdomen, then descend to the feeling you and your entire body covered hot waves of orgasm, you involuntarily scream with pleasure writhing on elde.'
 		end
 
@@ -1159,11 +1162,11 @@ $sexcum = {
 	frost = 0
 
 	if protect ! 1:
-		!Unprotected sex
+		!!Unprotected sex
 		set finrand = rand(0, 1)
 
 		if finrand = 0:
-			!Inside
+			!!Inside
 			set cumpussy += 1
 			'<<$boy>> groaned and you feel a jet of sperm fill your pussy.'
 
@@ -1176,7 +1179,7 @@ $sexcum = {
 		end
 
 		if finrand = 1:
-			!Out
+			!!Out
 
 			if pose = 0:
 				set cumbelly += 1
@@ -1187,13 +1190,24 @@ $sexcum = {
 				set cumass += 1
 				'<<$boy>> groaned and after pulling out came on your ass.'
 			end
+
+			narrand = rand(0, 100)
+
+			if narrand = 0:gs 'preg'
 		end
 	end
 
 	if protect = 1:
 		set protect = 0
 		'<<$boy>> groaned and you realized that he had came in the condom.'
+		prezrand = rand(0, 100)
+
+		if prezrand = 0:
+			'Pulling out of you dick <<$boy>> said "Hmm, condom burst"'
+			gs'preg'
+		end
 	end
+
 	set pose = 0
 }
 
@@ -1202,21 +1216,21 @@ $analsex = {
 
 	if analplugin = 1:
 		!!!WD:No Anal Lube if Anal Plug
-		!analpluginbonus = 10
-		lubonus    = 10
+		!!analpluginbonus = 10
+		lubonus = 10
 		!!!
 		analplugin = 0
 		'<<$boy>> has pulled out of your ass plug'
 	end
 
-	if dick >=anus:set anus += 3
+	if dick >= anus:set anus += 3
 
 	'<<$boy>> began to massage your anus with his fingers.'
 
 	!!!WD: Replaced
-	!if lubri > 0:
+	!!if lubri > 0:
 	!!!
-	if (lubonus = 0 and lubri > 0):
+	if lubonus = 0 and lubri > 0:
 	!!!
 		lubri -= 1
 		lubonus += rand(1, 5)
@@ -1256,7 +1270,7 @@ $analsex = {
 			if anal >= 10 and orgasm > 0:
 				manna += 20
 
-				if agape < 1 and lubonus = 0:agape = 1
+				if agape < 1 and lubonus = 0:agape = 1 & agapetime = totminut
 
 				'You moan in pleasure while his dick moves inside your ass.'
 			end
@@ -1264,19 +1278,19 @@ $analsex = {
 	end
 
 	lubonus = 0
-	'Through some time <<$boy>> groaned and you feel like your ass fills a pleasant warmth.'
+	!!'Through some time <<$boy>> groaned and you feel like your ass fills a pleasant warmth.'
 	anal += 1
 }
-$analsex2={
+$analsex2 = {
 	frost = 0
 
-	if analplugin=1:
+	if analplugin = 1:
 		!!!WD:No Anal Lube if Anal Plug
-		!analpluginbonus = 10
-		lubonus    = 10
+		!!analpluginbonus = 10
+		lubonus = 10
 		!!!
-		analplugin=0
-		'You moan in pleasure while his dick moves inside your ass.'
+		analplugin = 0
+		'<<$boy>> pulled your butt plug out of your narrow and tight ass, '
 	end
 
 	if dick >= anus:set anus += 3
@@ -1284,7 +1298,7 @@ $analsex2={
 	'<<$boy>> began to massage your anus with his fingers.'
 
 	!!!WD: Replaced
-	!if lubri > 0:
+	!!if lubri > 0:
 	!!!
 	if lubonus = 0 and lubri > 0:
 	!!!
@@ -1298,16 +1312,18 @@ $analsex2={
 
 	'<<$boy>> pulled his fingers out of your ass and you felt his hard cock near your hole.'
 
+	!!!WD: Added lubonus
 	if anus + lubonus + 10 < dick:'You screamed and bit your lip from a sharp pain when his <<dick>> centimeter dick entered your ass.'
-	if anus + lubbonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
+	if anus + lubonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
+	!!!
 
 	'<<$boy>> stopped for a moment, giving your ass time to adjust to his cock in it, and then started to slowly move, stretching your anus.'
 
 	if anus + lubonus + 2 < dick:
 		if mop > 1:set mop = 0
 
-		horny-=20
-		manna-=20
+		horny -= 20
+		manna -= 20
 
 		if agape < 3:agape = 3
 
@@ -1335,19 +1351,19 @@ $analsex2={
 	end
 
 	lubonus = 0
-	!'Through some time <<$boy>> groaned and you feel like your ass fills a pleasant warmth.'
-	!anal+=1
+	!!'Through some time <<$boy>> groaned and you feel like your ass fills a pleasant warmth.'
+	!!anal += 1
 }
 
-$analsexrude={
+$analsexrude = {
 	frost = 0
 
-	if analplugin=1:
+	if analplugin = 1:
 		!!!WD:No Anal Lube if Anal Plug
-		!analpluginbonus = 10
-		lubonus    = 10
+		!!analpluginbonus = 10
+		lubonus = 10
 		!!!
-		analplugin=0
+		analplugin = 0
 		'You moan in pleasure while his dick moves inside your ass.'
 	end
 
@@ -1359,8 +1375,8 @@ $analsexrude={
 
 	'<<$boy>> pulled his fingers out of your priests and you feel his hard cock ran into your hole.'
 
-	if anus + lobonus + 10 < dick:'You screamed and bit your lip from a sharp pain when his <<dick>> centimeter dick entered your ass.'
-	if anus + lobonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
+	if anus + lubonus + 10 < dick:'You screamed and bit your lip from a sharp pain when his <<dick>> centimeter dick entered your ass.'
+	if anus + lubonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
 
 	'<<$boy>> stopped for a moment, giving your ass time to adjust to his cock in it, and then started to slowly move, stretching your anus.'
 
@@ -1403,4 +1419,3 @@ $analsexrude={
 }
 
 --- dinSex ---------------------------------
-

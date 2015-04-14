@@ -3,9 +3,9 @@ gs 'dinSex'
 gs 'dinBoroda'
 
 $d_read_porn = {
-	act'Read porn magazine':
+	act 'Read porn magazine':
 		cls
-		'<center><img src="images/qwest/alter/porn.jpg" ></center>'
+		'<center><img src="images/qwest/alter/porn.jpg"></center>'
 
 		if pornMagazine = 1:
 			'skukota, this magazine you`ve memorized by heart, think it`s time to buy a new one.'
@@ -27,11 +27,11 @@ $sitr_tread_d = {
 	*clr
 	set minut += 15
 	set treadmillday = day
-	set agil  += 2
+	set agil += 2
 	set sweat += 1
-	set beg   += 1
+	set beg += 1
 	set manna -= 1
-	set fat   -= 2
+	set fat -= 2
 
 	'<center><img src="images/etogame/fit3.jpg"></center>'
 	'You''ve spent fifteen minutes running in the treadmill.'
@@ -63,7 +63,7 @@ $sitryogd = {
 	set will += 1
 	set manna += 5
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/bookYog.jpg"></center>'
+	!!'<center><img src="images/etogame/bookYog.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/yoga_dressed.jpg"></center>'
 	if nude = 1 and tanga = 1:'<center><img src="images/community/yoga_underwear.jpg"></center>'
@@ -85,7 +85,7 @@ $sitrskakd = {
 	set manna -= 1
 	set fat -= 1
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/skak.jpg"></center>'
+	!!'<center><img src="images/etogame/skak.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/rope_dressed.jpg"></center>'
 	if nude = 1 and tanga = 0:'<center><img src="images/community/rope_naked.jpg"></center>'
@@ -107,7 +107,7 @@ $sitrpressd = {
 	set manna -= 1
 	set fat -= 1
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/press.jpg"></center>'
+	!!'<center><img src="images/etogame/press.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/abdominal_dressed.jpg"></center>'
 	if nude = 1 and tanga = 1:'<center><img src="images/community/abdominal_underwear.jpg"></center>'
@@ -122,24 +122,23 @@ $sitrpressd = {
 $sitrpushd = {
 	cla
 	*clr
-	set minut  += 15
+	set minut += 15
 	set pushday = day
-	set stren  += 1
-	set sweat  += 1
-	set manna  -= 1
-	set fat    -= 1
+	set stren += 1
+	set sweat += 1
+	set manna -= 1
+	set fat -= 1
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/push.jpg"></center>'
+	!!'<center><img src="images/etogame/push.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/push_dressed.jpg"></center>'
 	if nude = 1 and tanga = 1:'<center><img src="images/community/push_underwear.jpg"></center>'
 	if nude = 1 and tanga = 0:'<center><img src="images/community/push_naked.jpg"></center>'
 	!!!
-
 	'You do push-ups for fifteen minutes, developing your strength.'
-
 	pushnum = rand(stren / 10, stren / 5)
 	'<br>You managed to do <<pushnum>> push-ups. Your previous record is <<pushrecord>>.'
+
 	if pushrecord < pushnum:pushrecord = pushnum & 'This is a new record!'
 
 	act 'Exit':gt $curloc
@@ -154,7 +153,7 @@ $gladbelo = {
 	set manna -= 10
 	set elektro += 10
 	!!!WD: Community extension
-	!'<center><img src="images/etogame/belo.jpg"></center>'
+	!!'<center><img src="images/etogame/belo.jpg"></center>'
 
 	if nude = 0:'<center><img src="images/community/iron_dressed.jpg"></center>'
 	if nude = 1 and tanga = 1:'<center><img src="images/community/iron_underwear.jpg"></center>'
@@ -176,12 +175,12 @@ $showerdin = {
 	set cumanus = 0
 }
 
-!WD: Kioks event replaced with new code from Przemar!Przemar:** KIOSK ** ver 02
-!Przemar:IMAGE NEEDED 'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles'
-!WD:set  "SUB >= 15" for act - Will need balancing / playtesting
+!!WD: Kioks event replaced with new code from Przemar!Przemar:** KIOSK ** ver 02
+!!Przemar:IMAGE NEEDED 'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles'
+!!WD:set "SUB >= 15" for act - Will need balancing / playtesting
 $kiosksig = {
 	cls
-	gs'stat'
+	gs 'stat'
 	'<center><img src="images/community/kiosk.jpg"></center>'
 	'A pack of cigarettes costs 50 rubles.'
 	*pl
@@ -189,11 +188,11 @@ $kiosksig = {
 	if money >= 50:
 		if hour >= 12 and hour <= 15:
 			'<center><img src="images/community/queue.jpg"></center>'
-			'There''s a long queue infron of the kiosk.'
+			'There''s a long queue infront of the kiosk.'
 
 			act 'Wait in line and buy cigarettes (30 Minutes)':
 				minut += 30
-				siga  += 20
+				siga += 20
 				money -= 50
 				gt $curloc
 
@@ -203,10 +202,10 @@ $kiosksig = {
 			if exhibi >= 4:
 				act 'Flash both your tits and your pussy':
 					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
+					gs 'stat'
+					minut += 10
+					siga += 20
+					money -= 50
 
 					if kioskflash = 0:
 						set exhibi += 1
@@ -222,10 +221,10 @@ $kiosksig = {
 			if exhibi >= 3:
 				act 'Flash your pussy':
 					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
+					gs 'stat'
+					minut += 10
+					siga += 20
+					money -= 50
 
 					if kioskflash = 0:
 						set exhibi += 1
@@ -244,10 +243,10 @@ $kiosksig = {
 			if exhibi >= 2:
 				act 'Flash your tits':
 					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
+					gs 'stat'
+					minut += 10
+					siga += 20
+					money -= 50
 
 					if kioskflash = 0:
 						set exhibi += 1
@@ -264,12 +263,12 @@ $kiosksig = {
 			if SUB >= 15:
 				act 'Suggest to blow someone infront of you':
 					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
+					gs 'stat'
+					minut += 10
+					siga += 20
+					money -= 50
 					throat += 1
-					bj     += 1
+					bj += 1
 
 					if cumlip = 0:
 						'<center><img src="images/community/kiosk_blowjob.jpg"></center>'
@@ -293,11 +292,11 @@ $kiosksig = {
 							act 'Go away and buy cigarettes':gt $curloc
 						end
 					else
-						!Przemar:IMAGE NEEDED
+						!!Przemar:IMAGE NEEDED
 						'<center><img src="images/community/Image_needed.png"></center>'
 						'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles.'
 						minut += 240
-						siga  += 20
+						siga += 20
 						money -= 200
 
 						act 'Leave':gt $curloc
@@ -306,7 +305,7 @@ $kiosksig = {
 			end
 		else
 			act 'Buy a pack of cigarettes':
-				siga  += 20
+				siga += 20
 				money -= 50
 				minut += 5
 				gt $curloc
@@ -321,11 +320,10 @@ $kiosksig = {
 	exit
 }
 
-
 $budilnik = {
-	'<b><center><font size=4><font color="black"> Clock</font></center></b>'
+	'<b><center><font size = 4><font color="black"> Clock</font></center></b>'
 	'Clock wound <<alarm1>> hours <<alarm2>> minutes'
-	'<b><center><font size=3><font color="black"> Hours Minutes</font></center></b>'
+	'<b><center><font size = 3><font color="black"> Hours Minutes</font></center></b>'
 	'<center><a href="exec:set alarm1 = 01 & gt $curloc">01</a> <a href="exec:set alarm1 = 02 & gt $curloc">02</a><a href="exec:set alarm1 = 03 & gt $curloc">03</a><a href="exec:set alarm1 = 04 & gt $curloc">04</a><a href="exec:set alarm1 = 05 & gt $curloc">05</a></center>'
 	'<center><a href="exec:set alarm1 = 06 & gt $curloc">06</a> <a href="exec:set alarm1 = 07 & gt $curloc">07</a><a href="exec:set alarm1 = 08 & gt $curloc">08</a><a href="exec:set alarm1 = 09 & gt $curloc">09</a><a href="exec:set alarm1 = 10 & gt $curloc">10</a><a href="exec:set alarm2 = 00 & gt $curloc">00</a><a href="exec:set alarm2 = 05 & gt $curloc">05 ( 3)<a href="exec:set alarm2 = 10 & gt $curloc">10</a><a href="exec:set alarm2 = 15 & gt $curloc">15</a></center>'
 	'<center><a href="exec:set alarm1 = 11 & gt $curloc">11</a> <a href="exec:set alarm1 = 12 & gt $curloc">12</a><a href="exec:set alarm1 = 13 & gt $curloc">13</a><a href="exec:set alarm1 = 14 & gt $curloc">14</a><a href="exec:set alarm1 = 15 & gt $curloc">15</a><a href="exec:set alarm2 = 20 & gt $curloc">20</a><a href="exec:set alarm2 = 25 & gt $curloc">25 ( 3)<a href="exec:set alarm2 = 30 & gt $curloc">30</a><a href="exec:set alarm2 = 35 & gt $curloc">35</a></center>'
@@ -464,7 +462,7 @@ $margoroomdi3 = {
 				cls
 				minut += 15
 				horny += 60
-				anus  += 5
+				anus += 5
 				gs 'stat'
 				'<center><img src="images/zoo/margo5.jpg"></center>'
 				'First one paeets, then two, three and so the whole entire hand. She quickly found herself in the depths of ass. It´s incredible. I still had no hand in its entirety. And so it happened. Margarita penetrated deeper and deeper and I was in seventh heaven. Supple ass took a hand. Was incredibly good. She massaged me inside like a real iskusstnitsa, causing me to moan loudly and wagging his ass with pleasure.'
@@ -567,7 +565,7 @@ $butikreiqdi = {
 	'Starting to turn my head, you nobody unnoticed, but your actions have attracted prodovtsa, dealer young girl in a shirt with a little too narrow logotpom Boutique enough that her shirt was so testnovata and had to unbutton the top button (MDA-YOU think whether it is men´s boutique shirt obtyag would be understandable, but in the female? for what and what the administration is thinking?) coming to you a little bit inconsistent and quickly asked:'
 	'Seller:I can help you or what?'
 
-	act 'No, thank you':gt 'butik','start'
+	act 'No, thank you':gt 'butik', 'start'
 	act 'Silently leave':gt 'down'
 
 	act 'Staring at her breasts':
@@ -633,8 +631,8 @@ $butikreiqdi = {
 
 								act 'Extort taken in head? What do you want?':
 									cls
-									minut         += 5
-									QWdogReiq      = 2
+									minut += 5
+									QWdogReiq = 2
 									QWdogreiqTimer = 7
 									gs 'stat'
 									'Decided to blackmail me? Clitoris with one hand plucking another rented? And how much do you want? Viciously proiznositi you:think yourself a damn how much it wants.'
@@ -660,9 +658,9 @@ $butikreiqdi = {
 
 						act 'Do you like me?':
 							cls
-							minut   += 5
-							orgasm  += 1
-							horny    = 0
+							minut += 5
+							orgasm += 1
+							horny = 0
 							lesbian += 1
 
 							if RimmaSex = 0:RimmaSex = 1 & girl += 1
@@ -682,8 +680,8 @@ $butikreiqdi = {
 
 							act 'Exit out of the dressing':
 								cls
-								minut         += 5
-								QWdogReiq      = 2
+								minut += 5
+								QWdogReiq = 2
 								QWdogreiqTimer = 7
 								gs 'stat'
 								'Rima took you to the door.'
@@ -720,9 +718,9 @@ $polactdog = {
 	cls
 	streetdogday = day
 
-	!if QWdogReiq = 0:QWdogReiq = 1 & QWdogreiqTimer = 7
+	!!if QWdogReiq = 0:QWdogReiq = 1 & QWdogreiqTimer = 7
 
-	zoo   += 1
+	zoo += 1
 	minut += 10
 	gs 'stat'
 	'<center><img src="images/zoo/first.jpg"></center>'
@@ -732,9 +730,9 @@ $polactdog = {
 
 	act 'Send a member of the vagina':
 		cls
-		minut  += 10
+		minut += 10
 		orgasm += 3
-		horny   = 0
+		horny = 0
 		vagina += 3
 		gs 'stat'
 		'<center><img src="images/zoo/vag.jpg"></center>'
@@ -742,7 +740,7 @@ $polactdog = {
 
 		act '....':
 			cls
-			minut    += 10
+			minut += 10
 			cumpussy += 1
 			gs 'stat'
 			'<center><img src="images/zoo/vag2.jpg"></center>'
@@ -755,17 +753,17 @@ $polactdog = {
 
 	act 'Send dick in the ass':
 		cls
-		minut  += 10
+		minut += 10
 		orgasm += 3
-		horny   = 0
-		anus   += 3
+		horny = 0
+		anus += 3
 		gs 'stat'
 		'<center><img src="images/zoo/anal.jpg"></center>'
 		'Kneeling in the excited state, a member of the Dog came into the ass. Anus was ajar because of the uncomfortable position and strongly relaxed muscles and his cock slipped inside ass very easily. Sharp rhythmic movements dostovlyaet both pain and pleasure, orgasm followed orgasm. But then he went completely sharp movement in the anus sphincter tightly wraps it, thereby sealing the anus completely.'
 
 		act '....':
 			cls
-			minut   += 10
+			minut += 10
 			cumanus += 1
 			gs 'stat'
 			'<center><img src="images/zoo/anal2.jpg"></center>'
@@ -793,7 +791,7 @@ $youriqwest = {
 	act 'Go with Yuri':
 		cls
 		jouryQwNo = 0
-		minut    += 30
+		minut += 30
 		gs 'stat'
 		'You walked down the street with Yuri, came to the metro, where you went in the car and drove in silence with him in the northern part of the city. Coming out of the subway Yuri led you in the direction of new buildings, all the way you walked in silence and Yuri looked tense. Finally you come to a new nine-story, Yuri opened the front door and you walked in the entrance. Yuri called the elevator and you have arrived at his pad.'
 
@@ -826,23 +824,23 @@ $youriqwest = {
 
 						act 'Squat down and take in the mouth':
 							cls
-							guy     += 1
+							guy += 1
 							jourySex = 1
-							bj      += 1
-							minut   += 10
+							bj += 1
+							minut += 10
 							gs 'stat'
 							'<center><img src="images/qwest/youri/bjdance.jpg"></center>'
 							'Little hand caressed member Yuri you squatted in front of him and your face was right on standing against the member. You cupped his purple head <<$liptalk>> and started to suck dick. Your lips slid across the smooth and hot cock sucking it. Yuri was moaning and looked down into your eyes. Finally, he choked hissed, "Come to bed."'
-							gs 'oral','0'
+							gs 'oral', '0'
 
 							act 'Go to bed':
 								cls
-								minut      += 10
-								set $nameV  = 'Yuri'
-								$boy        = $nameV
-								set dick    = 18
+								minut += 10
+								set $nameV = 'Yuri'
+								$boy = $nameV
+								set dick = 18
 								set silavag = 2
-								pose        = 1
+								pose = 1
 								gs 'stat'
 								'<center><img src="images/qwest/youri/sex.jpg"></center>'
 								'The bed Yuri helped you to undress and put you on all fours ready to enter you.'
@@ -854,7 +852,7 @@ $youriqwest = {
 								act 'Moan':
 									cls
 									minut += 10
-									pose   = 1
+									pose = 1
 									gs 'stat'
 									'<center><img src="images/qwest/youri/sex1.jpg"></center>'
 									'Yuri is not paying attention, the fact that you fell on the bed feeding continued to thrust his cock in you.'
@@ -883,18 +881,18 @@ $youriqwest = {
 												cls
 												minut += 10
 												horny += 10
-												bj    += 1
+												bj += 1
 												gs 'stat'
 												'<center><img src="images/qwest/youri/shower1.jpg"></center>'
 												'Yuri put you in the bathroom on his haunches and put his still soft dick in your mouth. You started to suck cock, which rose directly in your mouth, filling it. Soon the cock was like a steel and Yuri began to moan. Finally he took a member of your mouth and prepared to stop.'
-												gs 'oral','0'
+												gs 'oral', '0'
 
 												act 'Substitute person':
 													cls
-													minut   += 10
-													horny   += 10
+													minut += 10
+													horny += 10
 													cumface += 1
-													facial  += 1
+													facial += 1
 													gs 'stat'
 													'<center><img src="images/qwest/youri/shower2.jpg"></center>'
 													'Cum Yuri slapped you in the face, but it was not much and the flow soon stopped.'
@@ -933,170 +931,4 @@ $youriqwest = {
 	end
 }
 
-$meet_boyfriend ={
-	set streetrand = RAND(0,100)
-
-	if streetrand >= 10 and bfa < 1:
-		set vnerand = RAND(0,300)
-
-		if vnerand <= vnesh:
-			gs 'boy'
-			'<br>A guy walks up to you. He''s a <<$boybody>> <<$boybod>> <<$boyface>>, <<$boyClo>>'
-			'The guy introduces himself as <<$boy>> and asks for your number.'
-
-			act 'Give him your phone number':
-				cla
-				gs 'boyfrend','start'
-				set stopboy = 0
-				'<<$boyA>> recorded your phone and left.'
-				act 'Complete walk': gt $loc
-			end
-		end
-	end
-}
-
-$vladimir_driver={
-	if vladimirday = day and vladimirQW = 30 and hour >= 16 and week = 6: '<a href="exec: GT ''qwmeet2''">Before your porch worth audit and near stolidly worth waiting for you driver Glory</a>.'
-	if vladimirday = day and vladimirQW = 40 and hour >= 16 and week = 6: '<a href="exec: GT ''qwmeet3''">Before your porch worth audit and near stolidly worth waiting for you driver Glory</a>.'
-}
-
-!Przemar: ** KIOSK ** ver 02
-!Przemar: IMAGE NEEDED 'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles'
-!WD: Set  "SUB >= 15" for act - Will need balancing / playtesting
-$kiosksig = {
-	cls
-	gs'stat'
-	'<center><img src="images\community\kiosk.jpg"></center>'
-	'A pack of cigarettes costs 50 rubles.'
-	*pl
-
-	if money >= 50:
-		if hour >= 12 and hour <= 15:
-			'<center><img src="images\community\queue.jpg"></center>'
-			'There''s a long queue infron of the kiosk.'
-
-			act 'Wait in line and buy cigarettes (30 Minutes)':
-				minut += 30
-				siga  += 20
-				money -= 50
-				gt $curloc
-				act 'Leave': gt $curloc
-			end
-
-			if exhibi >= 4:
-				act 'Flash both your tits and your pussy':
-					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
-					if kioskflash = 0:
-						set exhibi += 1
-						set kioskflash = 1
-					end
-					'<center><img src="images\community\flash_tits_pus.jpg"></center>'
-					'The people infront of you are shocked, as they see you flashing your tits and your pussy. As a small thank you, some of them let you move further up in the queue.'
-					act 'Buy and leave': gt $curloc
-				end
-			end
-
-			if exhibi >= 3:
-				act 'Flash your pussy':
-					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
-					if kioskflash = 0:
-						set exhibi += 1
-						set kioskflash = 1
-					end
-					if lobok >= 2:'<center><img src="images\community\flash_hairy.jpg"></center>'
-					if lobok <= 2:'<center><img src="images\community\flash_nohairy.jpg"></center>'
-					'The people infront of you are shocked, as they see you flashing your pussy. As a small thank you, some of them let you move further up in the queue.'
-					act 'Buy and leave': gt $curloc
-				end
-			end
-
-			if exhibi >= 2:
-				act 'Flash your tits':
-					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
-					if kioskflash = 0:
-						set exhibi += 1
-						set kioskflash = 1
-					end
-					'<center><img src="images\community\flash_tits.jpg"></center>'
-					'The people infront of you are shocked, as they see you flashing your tits. As a small thank you, some of them let you move further up in the queue.'
-					act 'Buy and leave': gt $curloc
-				end
-			end
-
-			if SUB >= 15:
-				act 'Suggest to blow someone infront of you':
-					cls
-					gs'stat'
-					minut  += 10
-					siga   += 20
-					money  -= 50
-					throat += 1
-					bj     += 1
-
-					if cumlip = 0:
-						'<center><img src="images\community\kiosk_blowjob.jpg"></center>'
-						'A man agreed to your suggestion and let''s you move infront of him.'
-
-						act 'Cum on face':
-							cls
-							'<center><img src="images\body\cumface.jpg"></center>'
-							'The man cums on your face.'
-							cumface += 1
-							act 'Go away and buy cigarettes': gt $curloc
-						end
-
-						act 'Cum in mouth':
-							cls
-							'<center><img src="images\etogame\cumlip.jpg"></center>'
-							'The man cums inside your mouth.'
-							cumlip += 1
-							act 'Go away and buy cigarettes': gt $curloc
-						end
-
-					!if cumlip = 1:
-					else
-
-						!Przemar: IMAGE NEEDED
-						'<center><img src="images\community\Image_needed.png"></center>'
-						'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles.'
-						minut += 240
-						siga  += 20
-						money -= 200
-						act 'Leave': gt $curloc
-					end
-				end
-			end
-
-		!if money >= 50 and hour > 15 or hour < 12:
-		else
-			act 'Buy a pack of cigarettes':
-				siga  += 20
-				money -= 50
-				minut += 5
-				gt $curloc
-			end
-		end
-
-	!if money < 50
-	else
-
-		'Not enough money to buy cigarettes.'
-	end
-
-	act 'Leave': gt $curloc
-	exit
-}
 --- dina ---------------------------------
-
