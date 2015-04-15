@@ -28,7 +28,7 @@ $universalklient = {
 					if torgklirand = 0:clientPRyes = 0
 
 					if torgklirand = 1:
-						'Client grins and offers <<KlientMON * 100>> per job.'
+						'The client grins and offers <<KlientMON * 100>> per job.'
 
 						act 'Agree':
 							cla
@@ -88,7 +88,7 @@ $dinprostable = {
 
 $dinklient = {
 	if clientPRyes = 1:
-		'Client you head nods and opens the door of his car.'
+		'The client nods his head and opens the door of his car.'
 
 		if klient_needs = 0:dynamic $din_prost_bj
 		if klient_needs = 1:dynamic $din_prost_sex
@@ -103,7 +103,7 @@ $dinklient = {
 }
 
 $din_prost_bj = {
-	act 'Get into the client machine':
+	act 'Get into the client"s car':
 		vidageday -= 5
 		set $nameV = 'stranger'
 		set $boy = 'Client'
@@ -115,7 +115,7 @@ $din_prost_bj = {
 }
 
 $din_prost_sex = {
-	act 'Get into the client machine':
+	act 'Get into the client"s car':
 		vidageday -= 10
 		set $nameV = 'stranger'
 		set $boy = 'Client'
@@ -128,7 +128,7 @@ $din_prost_sex = {
 }
 
 $din_prost_anal = {
-	act 'Get into the client machine':
+	act 'Get into the client"s car':
 		vidageday -= 20
 		gs 'boy'
 		set prosti = 2
@@ -141,18 +141,18 @@ $din_prost_anal = {
 $dinrandbj = {
 	tperbjran = rand(0, 3)
 
-	if tperbjran = 0:$tperbj = 'You cupped his <<$liptalk>> <<dick>> centimeter member.'
-	if tperbjran = 1:$tperbj = 'You cupped his <<$liptalk>> purple head <<dick>> centimeter member'
-	if tperbjran = 2:$tperbj = 'You spent your <<$liptalk>> on the head <<dick>> centimeter member and absorbed it into his mouth'
-	if tperbjran = 3:$tperbj = '<<dick>> centimeter dick rested you in your <<$liptalk>>you have slightly opened them and let the dick in your mouth.'
+	if tperbjran = 0:$tperbj = 'Your <<$liptalk>> wraps around his <<dick>> centimeter member'
+	if tperbjran = 1:$tperbj = 'Your <<$liptalk>> clasps his  purple head <<dick>> centimeter member'
+	if tperbjran = 2:$tperbj = 'You held your <<$liptalk>> on the head of his <<dick>> centimeter member and pulled into your mouth'
+	if tperbjran = 3:$tperbj = 'The <<dick>> centimeter dick rested in your <<$liptalk>>, you have slightly opened them and let the dick in your mouth.'
 	if tperbjran = 4:$tperbj = ''
 	if tperbjran = 5:$tperbj = ''
 
 	tperbjran2 = rand(0, 2)
 
-	if tperbjran2 = 0:$tperbj2 = 'Your mouth is filled quickly turned slightly salty and hard cock which you started to suck.'
-	if tperbjran2 = 1:$tperbj2 = 'In your mouth went hard and hot cock sucking you started'
-	if tperbjran2 = 2:$tperbj2 = 'Hard cock filling your whole mouth, cupping his lips every move you to absorb his throat.'
+	if tperbjran2 = 0:$tperbj2 = 'Your mouth quickly turned and was filled by a slightly salty and hard cock which you started to suck.'
+	if tperbjran2 = 1:$tperbj2 = 'The <<dick>> cock inside your mouth went hard and hot and you started sucking'
+	if tperbjran2 = 2:$tperbj2 = 'The Hard cock around your <<$liptalk>> is filling your whole mouth and with every move it"s going down your throat.'
 	if tperbjran2 = 3:$tperbj2 = ''
 	if tperbjran2 = 4:$tperbj2 = ''
 	if tperbjran2 = 5:$tperbj2 = ''
@@ -163,21 +163,21 @@ $dinrandbj = {
 $dinrandswallow = {
 	tperswalrand = rand(0, 2)
 
-	if tperswalrand = 0:$tperswal = 'Suddenly your mouth shot a jet of viscous semen.'
-	if tperswalrand = 1:$tperswal = 'Cock twitched and jet of sperm flew between your lips into your mouth.'
-	if tperswalrand = 2:$tperswal = 'Your mouth filled with sperm when dick between your lips began to finish.'
+	if tperswalrand = 0:$tperswal = 'Suddenly your mouth is shot with a jet of viscous semen.'
+	if tperswalrand = 1:$tperswal = 'The cock twitched and jets of sperm flew between your lips into your mouth.'
+	if tperswalrand = 2:$tperswal = 'Your mouth has been filled with sperm when your lips began to close between the dick.'
 
 	tperswalrand2 = rand(0, 2)
 
-	if tperswalrand2 = 0:$tperswal2 = 'Your mouth quickly filled with warm sperm and you feel its sharp taste.'
-	if tperswalrand2 = 1:$tperswal2 = 'Cum filled your mouth and began to run down your <<$liptalk2>>'
-	if tperswalrand2 = 2:$tperswal2 = 'Hot seed quickly filled mouth making your working experience the whole gamut and sharp tart taste of sperm.'
+	if tperswalrand2 = 0:$tperswal2 = 'Your mouth is quickly filled with warm sperm and you feel it"s sharp taste.'
+	if tperswalrand2 = 1:$tperswal2 = 'Your mouth is filled with cum and began to run down your <<$liptalk2>>'
+	if tperswalrand2 = 2:$tperswal2 = 'Hot seed quickly filled your mouth making you experience the whole scale and sharp tart taste of sperm.'
 
 	tperswalrand3 = rand(0, 2)
 
-	if tperswalrand3 = 0:$tperswal3 = 'You gulped and swallowed the sperm located in your working her mouth. In the mouth, the taste of semen left and felt her scent.'
-	if tperswalrand3 = 1:$tperswal3 = 'You swallow warm cum fills your mouth and licked her <<$liptalk3>> licking the remnants of the seed with them.'
-	if tperswalrand3 = 2:$tperswal3 = 'You swallowed viscous semen filling your mouth working, and then licked.'
+	if tperswalrand3 = 0:$tperswal3 = 'You gulped and swallowed the sperm located in your mouth. In the mouth, the taste of semen stayed and felt his scent.'
+	if tperswalrand3 = 1:$tperswal3 = 'You swallow the warm cum that fills your mouth and licks the remnants of the seed with your <<$liptalk3>>.'
+	if tperswalrand3 = 2:$tperswal3 = 'You swallow the viscous semen that is filling your mouth, and then licks.'
 
 	'<<$tperswal>> <<$tperswal2>> <<$tperswal3>>'
 }
