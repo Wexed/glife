@@ -26,7 +26,7 @@ counter = 1
 
 oname = None
 firstline = ifile.readline().replace(u'\ufeff','')
-match = re.search(ur'^#\s\$?(\w+)$', firstline)
+match = re.search(ur'^#\s\$?([_.\w]+)$', firstline)
 if match:
     oname = os.path.join(odir, match.group(1))
     counter += 1
@@ -36,7 +36,7 @@ ofile = io.open(oname, 'w', encoding='utf-8')
 ofile.write(firstline)
 
 for line in ifile:
-    match = re.search(ur'^#\s\$?(\w+)$', line)
+    match = re.search(ur'^#\s\$?([_.\w]+)$', line)
     if match:
         ofile.close()
         oname = os.path.join(odir, match.group(1))
