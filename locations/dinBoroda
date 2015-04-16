@@ -1,11 +1,10 @@
 # dinBoroda
 $borodachNo = {
-	act 'I have enough.':
+	act 'I had enough.':
 		cla
 		minut += 15
 		gs 'stat'
-		'You refused to drink and steel This collection of leave. The guard began to persuade you as well stay with him and continue.'
-
+                'You refused to drink and began to leave. The guard began to persuade you to stay with him and continue. '
 		if SUB < 10:act 'Leave':dom += 1 & gt 'clener', 'start'
 		dynamic $borodachDrink
 	end
@@ -16,7 +15,7 @@ $borodachNo2 = {
 		cla
 		minut += 15
 		gs 'stat'
-		'This collection of you started but Sasha became persuade you as well stay with him and continue.'
+		'You gather your things and began to leave, yet Sasha began to persuade you to stay with him and continue.'
 
 		if DOM > 0 and horny < 50:act 'Leave':dom += 1 & gt 'clener', 'start'
 		dynamic $borodachSex
@@ -28,7 +27,7 @@ $borodachDrink = {
 		minut += 15
 		horny += 20
 		gs 'stat'
-		'You drank some more and eating curds realized that sharply drunk. Hand guard is not looking caressed your ass.'
+		'You drank and ate some more cheeses, you just realized that you are sharply drunk. The Hand of the guard does not stopping caressing your ass.'
 		dynamic $borodachNo2
 		dynamic $borodachSex
 	end
@@ -43,8 +42,8 @@ $borodachSex = {
 		minut += 5
 		horny += 5
 		gs 'stat'
-		'You are relaxed and began to enjoy hands caressing you. Sasha has openly embraced and started kissing you.'
-		'His hands slid under your clothes unbuttoning and removing it. Soon he got to your chest and began to suck your nipples.'
+		'You ease down and began to enjoy hands caressing you. Sasha has openly embraced and started kissing you.'
+		'His hands slid under your clothes, unbuttoning and removing it. Soon he got to your chest and began to suck your nipples.'
 
 		act 'Lie down on the sofa.':
 			cls
@@ -60,7 +59,7 @@ $borodachSex = {
 			set dick = 15
 			set silavag = 0
 			'<center><img src="images/picV/vag.jpg"></center>'
-			'<<$nameV>> put you on the sofa, spread your legs and pull out my hands <<dick>> centimeter dick fingers began to caress your pussy getting ready to enter her.'
+			'<<$nameV>> put you on the sofa, spread your legs and pullled out his <<dick>> centimeter dick, fingers began to caress your pussy, preparing to be entered.'
 			gs 'orgazm', 'start'
 
 			act 'Leave':gt 'street'
@@ -75,7 +74,7 @@ $ohrhj = {
 		horny += dom
 		gs 'stat'
 		hj += 1
-		'You started stroking his cock her soft handles. Soon Sasha groaned, "I finish soon."'
+		'You started stroking his cock with your delicate hands. Quickly Sasha groaned, "I will finish soon."'
 		dynamic $ohrbj
 		dynamic $ohrhjcum
 		dynamic $ohrsex
@@ -83,21 +82,21 @@ $ohrhj = {
 }
 
 $ohrhjcum = {
-	act 'Masturbate him further.':
+	act 'Masturbate him more.':
 		cls
 		minut += 15
 		horny += dom
 		borodachSexDay = day
 		gs 'stat'
 		'<center><img src="images/qwest/ohrannik/hjcum.jpg"></center>'
-		'Sasha groaned and his cock began to fly jet of sperm in your palm.'
+		'Sasha groaned and his cock began to ejaculate a jet of sperm in your palm.'
 
 		act 'Leave':gt 'street'
 	end
 }
 
 $ohrbj = {
-	act 'To take by mouth.':
+	act 'Suck Him.':
 		cls
 		minut += 15
 		horny += 5
@@ -105,20 +104,16 @@ $ohrbj = {
 		bj += 1
 		picrand = rand(0, 4)
 
-		if picrand = 0:'<center><img src="images/qwest/ohrannik/bj.jpg"></center>'
-		if picrand = 1:'<center><img src="images/qwest/ohrannik/bj1.jpg"></center>'
-		if picrand = 2:'<center><img src="images/qwest/ohrannik/bj2.jpg"></center>'
-		if picrand = 3:'<center><img src="images/qwest/ohrannik/bj3.jpg"></center>'
-		if picrand = 4:'<center><img src="images/qwest/ohrannik/bj4.jpg"></center>'
-
-		'You clasped 15 centimeter, strong and warm his dick <<$liptalk>> and began to suck the head caressing tongue and lips treating solid phallus. Sasha groaned, "I´m going to come."'
+                '<center><img src="images/qwest/ohrannik/bj<<picrand>>.jpg"></center>'
+		
+		'You wrapped your <<$liptalk>> around his strong and warm 15 centimeter and quickly began to suck the head, caressing with the tongue and lips. Sasha groaned, "I´m going to come."'
 		dynamic $ohrbjcum
 		dynamic $ohrsex
 	end
 }
 
 $ohrbjcum = {
-	act 'Embrace even stronger lips.':
+	act 'Grip even harder the lips.':
 		cls
 		minut += 15
 		horny += 5 + vaf
@@ -126,13 +121,9 @@ $ohrbjcum = {
 		gs 'stat'
 		picrand = rand(0, 4)
 
-		if picrand = 0:'<center><img src="images/qwest/ohrannik/bjcum.jpg"></center>'
-		if picrand = 1:'<center><img src="images/qwest/ohrannik/bjcum1.jpg"></center>'
-		if picrand = 2:'<center><img src="images/qwest/ohrannik/bjcum2.jpg"></center>'
-		if picrand = 3:'<center><img src="images/qwest/ohrannik/bjcum3.jpg"></center>'
-		if picrand = 4:'<center><img src="images/qwest/ohrannik/bjcum4.jpg"></center>'
-
-		'You redouble their efforts processing your hard cock <<$liptalk>>. Hot jet hit you in the mouth, then another and another. You continued to suck ignoring the fact that you have a mouth full of vigorous sperm. Finally stream dried up.'
+		'<center><img src="images/qwest/ohrannik/bjcum<<picrand>>.jpg"></center>'
+	
+		'You redouble your efforts sucking the hard cock with your <<$liptalk>>. Hot sperm hits your mouth, then again and again. You continued to suck ignoring the fact that you have a mouth full of vigorous sperm. Finally the stream dried up.'
 		gs 'oral', '0'
 
 		act 'Swallow sperm.':
@@ -144,10 +135,9 @@ $ohrbjcum = {
 			gs 'stat'
 			picrand = rand(0, 2)
 
-			if picrand = 0:'<center><img src="images/qwest/ohrannik/swallow.jpg"></center>'
-			if picrand = 1:'<center><img src="images/qwest/ohrannik/swallow1.jpg"></center>'
-			if picrand = 2:'<center><img src="images/qwest/ohrannik/swallow2.jpg"></center>'
-			'You have opened my mouth filled with sperm and obliznuvshis swallowed it.'
+			'<center><img src="images/qwest/ohrannik/swallow<<picrand>>.jpg"></center>'
+
+			'You have opened your mouth filling with sperm that you swallowed it.'
 
 			act 'Leave':gt 'street'
 		end
@@ -162,7 +152,7 @@ $ohrbjcum = {
 			borodachSexDay = day
 			gs 'stat'
 			'<center><img src="images/qwest/ohrannik/spit.jpg"></center>'
-			'You have opened my mouth filled with sperm cum spat into the sink.'
+			'You have opened your mouth filling with sperm, that you spat into the sink.'
 
 			act 'Leave':gt 'street'
 		end
@@ -183,7 +173,7 @@ $ohrsex = {
 		set dick = 15
 		set silavag = 0
 		'<center><img src="images/picV/vag.jpg"></center>'
-		'<<$nameV>> put you on the sofa, spread your legs and pull out my hands <<dick>> centimeter dick fingers began to caress your pussy getting ready to enter her.'
+		'<<$nameV>> put you on the sofa, spread your legs and pull out his <<dick>> centimeter dick. Fingers began to caress your pussy, preparing her to be entered.'
 		gs 'orgazm', 'start'
 
 		act 'Leave':gt 'street'
