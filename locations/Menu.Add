@@ -17,7 +17,7 @@ if $ARGS[2] <> '':$ARGS[2] = ':' + replace($ARGS[2], '''', '''''')
 if $ARGS[3] <> '':$ARGS[3] = replace($ARGS[3], '''', '''''')
 !!----------
 dynamic "
-	$<<$ARGS[0]>>[] = '<<$ARGS[1]>>Menu.{Processing}<<$ARGS[2]>>'
+	$<<$ARGS[0]>>[] = '<<$ARGS[1]>>Menu.Processing<<$ARGS[2]>>'
 	$<<$ARGS[0]>>_parameters[str(arrsize('<<$ARGS[0]>>'))+'_Z'] = '<<$ARGS[1]>>'
 	$<<$ARGS[0]>>_parameters[str(arrsize('<<$ARGS[0]>>'))+'_F'] = '<<$ARGS[3]>>'
 "

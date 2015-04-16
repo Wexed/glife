@@ -26,9 +26,9 @@ counter = 1
 
 oname = None
 firstline = ifile.readline().replace(u'\ufeff','')
-match = re.search(ur'^#\s\$?([_.\w]+)$', firstline)
+match = re.search(ur'^#\s(\$?[_.\w]+)$', firstline)
 if match:
-    oname = os.path.join(odir, match.group(1))
+    oname = os.path.join(odir, match.group(1).replace("$","_") )
     counter += 1
 assert oname, "file is in the wrong format, must start with a location name"
 
@@ -36,10 +36,10 @@ ofile = io.open(oname, 'w', encoding='utf-8')
 ofile.write(firstline)
 
 for line in ifile:
-    match = re.search(ur'^#\s\$?([_.\w]+)$', line)
+    match = re.search(ur'^#\s(\$?[_.\w]+)$', line)
     if match:
         ofile.close()
-        oname = os.path.join(odir, match.group(1))
+        oname = os.path.join(odir, match.group(1).replace("$","_") )
         counter += 1
         ofile = io.open(oname, 'w', encoding='utf-8')
     ofile.write(line)
