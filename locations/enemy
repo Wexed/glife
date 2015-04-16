@@ -4,20 +4,19 @@
 !!in this block is selected on the basis of the variable program enemy attacks
 if $ARGS[0] = 'start':
 	cla
+	if program = 0: xgt 'enemy', 'fighter' 
+	if program = 1:	xgt 'enemy', 'fighter2' 
+	if program = 2: xgt 'enemy', 'fighter3' 
+	if program = 3: xgt 'enemy', 'fighter4' 
+	if program = 4: xgt 'enemy', 'fighter5' 
 
-	if program = 0:xgt 'enemy', 'fighter' !!!Action Programme simple attacker fizuhoy
-	if program = 1:	xgt 'enemy', 'fighter2' !!Action Programme fizuha and knives
-	if program = 2:xgt 'enemy', 'fighter3' !!Action Programme fizuha, knives, it_mists
-	if program = 3:xgt 'enemy', 'fighter4' !!Action Programme fizuha, knives, it_mists, clones
-	if program = 4:xgt 'enemy', 'fighter5' !!Action Programme fizuha, knives, it_mists, clones, paralysis
-
-	if program = 5:xgt 'enemy', 'kisame' !!Action Programme Kisame
-	if program = 6:xgt 'enemy', 'tobi' !!Action Programme Toby
-	if program = 7:xgt 'enemy', 'gedomazo' !!Action Programme Toby
-	if program = 8:xgt 'enemy', 'gun' !!program of action firearms
-	if program = 9:xgt 'enemy', 'sasori' !!Action Programme Sasori
-	if program = 10:xgt 'enemy', 'konan' !!Action Programme Conan
-	if program = 11:xgt 'enemy', 'hidan' !!Action Programme Hidan
+	if program = 5:xgt 'enemy', 'kisame' 
+	if program = 6:xgt 'enemy', 'tobi' 
+	if program = 7:xgt 'enemy', 'gedomazo' 
+	if program = 8:xgt 'enemy', 'gun' 
+	if program = 9:xgt 'enemy', 'sasori' 
+	if program = 10:xgt 'enemy', 'konan' 
+	if program = 11:xgt 'enemy', 'hidan' 
 end
 
 if $ARGS[0] = 'hidan':
