@@ -22,7 +22,7 @@ ofile = io.open(oname, 'w', encoding='utf-16', newline='\r\n')
 
 for location in root.iter('Location'):
     iname = location.attrib['name']
-    iname = iname.strip(' $')
+    iname = iname.replace("$","_")
 
     try:
         ifile = io.open(os.path.join(idir,iname), 'rt', encoding='utf-8')
