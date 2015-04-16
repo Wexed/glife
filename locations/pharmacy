@@ -1,0 +1,155 @@
+# pharmacy
+$regular_items = {
+	act 'Buy <b>fat burners</b> (1500 rubles) <<iif(fatdel>0,''[left:<b>''+fatdel+''</b>]'','''')>>':
+		if money >= 1500:
+			cla
+			*clr
+			set fatdel += 1
+			set money -= 1500
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You bought a fat burning capsule and paid the money to the cashier.'
+		else
+			'You do not have enough money.'
+		end
+		act 'Move away from the counter': gt 'pharmacy','start'
+	end
+
+	act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo>0,''[left:<b>''+lekarstvo+''</b>]'','''')>>':
+		cla
+		*clr
+		portion = input ("How many packages you want to buy?")
+		if portion*500 <= money:
+			set lekarstvo+= portion * 10
+			set money -= portion * 500
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You bought drugs and paid the money to the cashier.'
+		else
+			'You do not have enough money.'
+		end
+		act 'Move away from the counter': gt 'pharmacy','start'
+	end
+
+	act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin>0,''[left:<b>''+vitamin+''</b>]'','''')>>':
+		cla
+		*clr
+		portion = input ("How many packages you want to buy?")
+		if portion*500 <= money:
+			set vitamin+= portion * 20
+			set money -= portion * 500
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You bought vitamins and paid the money to the cashier.'
+		else
+			'You do not have enough money.'
+		end
+		act 'Move away from the counter': gt 'pharmacy','start'
+	end
+
+	act 'Buy <b>moisturizing lip balm</b> (1000 rubles) <<iif(lipbalm>0,''[left:<b>''+lipbalm+''</b>]'','''')>>':
+		if money >= 1000:
+			cla
+			*clr
+			set lipbalm+= 25
+			set money -= 1000
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You bought some lip balm and paid the money to the cashier.'
+		else
+			'You do not have enough money.'
+		end
+		act 'Move away from the counter': gt 'pharmacy','start'
+	end
+
+	act 'Buy <b>ointment for corns</b> (600 rubles) <<iif(mosolmaz>0,''[left:<b>''+mosolmaz+''</b>]'','''')>>':
+		if money >= 600:
+			cla
+			*clr
+			set money -= 600
+			mosolmaz += 10
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You bought tablets and paid the money to the cashier.'
+		else
+			'You do not have enough money.'
+		end
+		act 'Move away from the counter': gt 'pharmacy','start'
+	end
+
+	if money >= 1500 and KandidNapr = 1:
+		act 'Buy <b>pills from yeast</b> (1500 rubles)':
+			cla
+			*clr
+			set money -= 1500
+			Kandidoz = 0
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You bought tablets and paid the money to the cashier.'
+			'Immediately about cash you drank tablet.'
+			act 'Move away from the counter': gt 'pharmacy','start'
+		end
+	end
+}
+
+if $ARGS[0] = 'start':
+	cla
+	*clr
+	set minut += 5
+	'<center><B><font color = maroon>Pharmacy</font></B></center>'
+	*nl
+	'<center><img src="images\community\pharmacy.jpg"></center>'
+
+	clr
+	gs 'stat'
+	gs 'time'
+
+	act 'Buy <b>condoms</b> (100 rubles) <<iif(prezik>0,''[left:<b>''+prezik+''</b>]'','''')>>':
+		cla
+		*clr
+		portion = input ("How many packages you want to buy?")
+		if portion*100 <= money:
+			set prezik += portion * 5
+			set money -= portion * 100
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You bought condoms and paid the money to the cashier.'
+		else
+			'You do not have enough money.'
+		end
+
+		act 'Move away from the counter': gt 'pharmacy','start'
+	end
+
+	act 'Buy <b>birth control pills</b> (500 rubles) <<iif(tabletki>0,''[left:<b>''+tabletki+''</b>]'','''')>>':
+		cla
+		*clr
+		portion = input ("How many packages you want to buy?")
+		if portion*500 <= money:
+			set tabletki += portion * 28
+			set money -= portion * 500
+			'<center><img src="images\etogame\kassa.jpg"></center>'
+			'You bought the pill and get paid in cash.'
+		else
+			'You do not have enough money.'
+		end
+
+		act 'Move away from the counter': gt 'pharmacy','start'
+	end
+
+	if klisma = 0:
+		act 'Buy <b>enema</b> (500 rubles)':
+			if money >= 500:
+				cla
+				*clr
+				set klisma = 1
+				set money -= 500
+				'<center><img src="images\etogame\kassa.jpg"></center>'
+				'You bought an enema and paid the money to the cashier.'
+			else
+				'You do not have enough money.'
+			end
+			act 'Move away from the counter': gt 'pharmacy','start'
+		end
+	end
+
+	dynamic $regular_items
+
+end
+
+act 'Quit': gt $loc
+--- pharmacy ---------------------------------
+
