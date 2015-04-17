@@ -25,6 +25,8 @@ for name in os.listdir("locations"):
     for match in re.finditer(r"images.+?[.](gif|jpg|png)", text, flags=re.U):
         imgfile = match.group().encode("utf-8")
         images.append(imgfile)
+    
+    ifile.close()
 
 
 for image in images:
