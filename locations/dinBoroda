@@ -4,7 +4,7 @@ $borodachNo = {
 		cla
 		minut += 15
 		gs 'stat'
-                'You refused to drink and began to leave. The guard began to persuade you to stay with him and continue. '
+                'You refused to drink and started to leave. The guard began to persuade you to stay with him and continue. '
 		if SUB < 10:act 'Leave':dom += 1 & gt 'clener', 'start'
 		dynamic $borodachDrink
 	end
@@ -15,7 +15,7 @@ $borodachNo2 = {
 		cla
 		minut += 15
 		gs 'stat'
-		'You gather your things and began to leave, yet Sasha began to persuade you to stay with him and continue.'
+		'You gather your things and started to leave, yet Sasha began to persuade you to stay with him and continue.'
 
 		if DOM > 0 and horny < 50:act 'Leave':dom += 1 & gt 'clener', 'start'
 		dynamic $borodachSex
