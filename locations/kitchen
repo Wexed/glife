@@ -19,7 +19,7 @@ act 'Eat Meal (0:30)':
 
 	if energy >= 30:
 		set fat += 5
-		'You can no longer have.'
+		'You can no longer eat.'
 	end
 
 	if energy >= 20 and energy < 30:
@@ -321,7 +321,7 @@ act 'Drink':
 	cla
 	set minut += 5
 
-	if water >= 20:'Water in you no longer climbs.'
+	if water >= 20:'You don''t need any more water.'
 
 	if water < 20:
 		'You gladly drank a glass of water.'
@@ -354,7 +354,7 @@ if lekarstvo > 0:
 			if lekrand = 7:'<center><img src="images/inBed/lekr8.jpg"></center>'
 			if lekrand = 8:'<center><img src="images/inBed/lekr9.jpg"></center>'
 
-			'You drank the pill'
+			'You took a pill'
 
 			act 'Move away':gt 'kitchen'
 		end
@@ -362,9 +362,9 @@ if lekarstvo > 0:
 end
 
 if vitamin > 0:
-	'You have <<vitamin>> vitaminok.'
+	'You have <<vitamin>> vitamines.'
 	if vitaminday ! day:
-		act 'Drink Vitamins (0:05)':
+		act 'Take Vitamins (0:05)':
 			cla
 			*clr
 			set minut += 5
@@ -375,7 +375,7 @@ if vitamin > 0:
 
 			if skinvan = 20:set skinvan = 0 & set skin += 1
 
-			'You drank Vitaminki'
+			'You took some vitamins'
 
 			act 'Move away':gt 'kitchen'
 

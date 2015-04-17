@@ -1,8 +1,27 @@
 # pharmacy
 !!!0.2.6 addition: Optimized flow of the code, updated descriptions - now lists everything the drugstore has to sell
 $regular_items = {
+    if money >= 100:
+		act 'Buy <b>condoms</b> (100 rubles) <<iif(prezik > 0, "[left:<b>" + prezik + "</b>]", "")>>':
+            cla
+            *clr
+			portion = input ("How many packages you want to buy?")
+
+			if portion * 100 <= money:
+				set prezik += portion * 5
+				set money -= portion * 100
+				'<center><img src="images/etogame/kassa.jpg"></center>'
+				'You bought condoms and paid the money to the cashier.'
+			else
+				'You do not have enough money.'
+			end
+
+			act 'Move away from the counter':gt 'pharmacy', 'start'
+		end
+	end
+
 	if money >= 200:
-		act 'Buy a pregnancy test (200 rubles)':
+		act 'Buy a <b>pregnancy test</b> (200 rubles) <<iif(pregtest > 0, "[left:<b>" + pregtest + "</b>]", "")>>':
 			cla
 			*clr
 			set money -= 200
@@ -15,7 +34,9 @@ $regular_items = {
 	end
 
 	if money >= 500:
-		act 'Buy birth control pills (500 rubles)':
+		act 'Buy birth control pills (500 rubles) <<iif(tabletki > 0, "[left:<b>" + tabletki + "</b>]", "")>>':
+            cla
+            *clr
 			portion = input ("How many packages you want to buy?")
 
 			if portion * 500 > money:'You do not have enough money.'
@@ -43,7 +64,7 @@ $regular_items = {
 			end
 		end
 
-		act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, ''[left:<b>'' + lekarstvo + ''</b>]'', '''')>>':
+		act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, "[left:<b>" + lekarstvo + "</b>]", "")>>':
 			cla
 			*clr
 			portion = input ("How many packages you want to buy?")
@@ -60,7 +81,7 @@ $regular_items = {
 			act 'Move away from the counter':gt 'pharmacy', 'start'
 		 end
 
-		act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin > 0, ''[left:<b>'' + vitamin + ''</b>]'', '''')>>':
+		act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin > 0, "[left:<b>" + vitamin + "</b>]", "")>>':
 			cla
 			*clr
 			portion = input ("How many packages you want to buy?")
@@ -79,7 +100,7 @@ $regular_items = {
 	end
 
 	if money >= 600:
-		act 'Buy <b>ointment for corns</b> (600 rubles) <<iif(mosolmaz > 0, ''[left:<b>'' + mosolmaz + ''</b>]'', '''')>>':
+		act 'Buy <b>ointment for corns</b> (600 rubles) <<iif(mosolmaz > 0, "[left:<b>" + mosolmaz + "</b>]", "")>>':
 			cla
 			*clr
 			set money -= 600
@@ -93,7 +114,7 @@ $regular_items = {
 	end
 
 	if money >= 1000:
-		act 'Buy <b>moisturizing lip balm</b> (1,000 rubles) <<iif(lipbalm > 0, ''[left:<b>'' + lipbalm + ''</b>]'', '''')>>':
+		act 'Buy <b>moisturizing lip balm</b> (1,000 rubles) <<iif(lipbalm > 0, "[left:<b>" + lipbalm + "</b>]", "")>>':
 			cla
 			*clr
 			set lipbalm += 25
@@ -106,7 +127,7 @@ $regular_items = {
 	end
 
 	if money >= 1500:
-		act '<b>Buy fat burners</b> (1,500 rubles) <<iif(fatdel > 0, ''[left:<b>'' + fatdel + ''</b>]'', '''')>>':
+		act '<b>Buy fat burners</b> (1,500 rubles) <<iif(fatdel > 0, "[left:<b>" + fatdel + "</b>]", "")>>':
 			cla
 			*clr
 			set fatdel += 1
@@ -131,6 +152,8 @@ $regular_items = {
 			end
 		end
 	end
+
+
 }
 
 if $ARGS[0] = 'start':
@@ -153,66 +176,6 @@ if $ARGS[0] = 'start':
 	clr
 	gs 'stat'
 	gs 'time'
-
-	if money >= 100:
-		act 'Buy <b>condoms</b> (100 rubles) <<iif(prezik > 0, ''[left:<b>'' + prezik + ''</b>]'', '''')>>':
-			portion = input ("How many packages you want to buy?")
-
-			if portion * 100 <= money:
-				set prezik += portion * 5
-				set money -= portion * 100
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You bought condoms and paid the money to the cashier.'
-			else
-				'You do not have enough money.'
-			end
-
-			act 'Move away from the counter':gt 'pharmacy', 'start'
-		end
-	end
-
-	if money >= 200:
-		act 'Buy a <b>pregnancy test</b> (200 rubles) <<iif(pregtest > 0, ''[left:<b>'' + pregtest + ''</b>]'', '''')>>':
-			cla
-			*clr
-			set money -= 200
-			pregtest += 2
-			'<center><img src="images/pic/kassa.jpg"></center>'
-			'You bought two pregnancy tests and paid the money to the cashier.'
-
-			act 'Move away from the counter':gt 'pharmacy', 'start'
-		end
-	end
-
-	if money >= 500:
-		act 'Buy birth control pills (500 rubles) <<iif(tabletki > 0, ''[left:<b>'' + tabletki + ''</b>]'', '''')>>':
-			portion = input ("How many packages you want to buy?")
-
-			if portion * 500 <= money:
-				set tabletki += portion * 28
-				set money -= portion * 500
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You bought the pills and paid the money to the cashier.'
-			else
-				'You do not have enough money.'
-			end
-
-			act 'Move away from the counter':gt 'pharmacy', 'start'
-		end
-
-		if klisma = 0:
-			act 'Buy <b>enema</b> (500 rubles)':
-				cla
-				*clr
-				set klisma = 1
-				set money -= 500
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You bought an enema and paid the money to the cashier.'
-
-				act 'Move away from the counter':gt 'pharmacy', 'start'
-			end
-		end
-	end
 
 	dynamic $regular_items
 end
