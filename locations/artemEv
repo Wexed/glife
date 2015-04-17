@@ -39,7 +39,7 @@ $din_artem_leghump = {
 		artempower -= 1
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/artomHump.jpg"></center>'
-		'You got my clothes on all fours in front of Artem and framed him his ass. Artem began stroking your ass hands for a while he hesitated and you turned around. Artem took penis and began to rub them on your backside. You feel as through clothes between your buns moving solid barrel member. Artem groaned and flew jet of sperm you on the ass. You turned around and see what Artem pytaetsya cum in hand, but the sperm of his overexcited member still shatters you on clothing. After he finished fussing Artem "Svetulechka sorry, I did not want to stain you, I´m all erase." He began to wash semen stains on your clothes. After some time on the clothes were only wet spots.'
+		'You got my clothes on all fours in front of Artem and framed him his ass. Artem began stroking your ass hands for a while he hesitated and you turned around. Artem took penis and began to rub them on your backside. You feel as through clothes between your buns moving solid barrel member. Artem groaned and flew jet of sperm you on the ass. You turned around and see what Artem pytaetsya cum in hand, but the sperm of his overexcited member still shatters you on clothing. After he finished fussing Artem "<<$name>> sorry, I did not want to stain you, I''m all erase." He began to wash semen stains on your clothes. After some time on the clothes were only wet spots.'
 
 		act 'Go home':cumfrot = 0 & gt 'gorodok'
 	end
@@ -98,12 +98,10 @@ $din_artem_lern = {
 						'You smiled slightly and Artem brought her face to him. Artem approached you and kissed you. You started kissing. Finally ending kiss Artem said sheepishly. "<<$name>>, I like you very nravishsya."'
 
 						if artemLernQW >= 20 and leghumpArtem = 0:
-							'Artem muttered sheepishly. "Svetulya. I really want you, maybe we could ... you know ... Can I touch your ass?"'
+							'Artem muttered sheepishly. "<<$name>>. I really want you, maybe we could ... you know ... Can I touch your ass?"'
 							dynamic $din_artem_leghump
-						end
-
-						if leghumpArtem >= 1:
-							'Artem said sheepishly. "Svetulya, you´re so wonderful. I liked it so much last time. Can we play one more time?"'
+						elseif leghumpArtem >= 1:
+							'Artem said sheepishly. "<<$name>>, you''re so wonderful. I liked it so much last time. Can we play one more time?"'
 							dynamic $din_artem_leghump
 							dynamic $din_artem_leghump2
 						end
@@ -111,11 +109,9 @@ $din_artem_lern = {
 
 						act 'Go home':gt 'gorodok'
 					end
-				end
-
-				if GorSlut >= 2:
+				elseif GorSlut >= 2:
 					if artemBJQW = 0:
-						'After classes, Artem looked at you, "<<$name>>, everyone at school is talking about what you cocksucker. I think it will be fair if you have me otsosesh for what I´m helping you."'
+						'After classes, Artem looked at you, "<<$name>>, everyone at school is talking about what you cocksucker. I think it will be fair if you have me otsosesh for what I''m helping you."'
 						dynamic $din_artem_bj
 
 						act 'No':
@@ -128,19 +124,15 @@ $din_artem_lern = {
 
 							act 'Go home':gt 'gorodok'
 						end
-					end
-
-					if artemBJQW > 0:
+					elseif artemBJQW > 0:
 						'Artem unbuttoned pants and pulled out a member of his pants. "On <<$name>>, suck."'
 						dynamic $din_artem_bj
 					end
 				end
 
 				exit
-			end
-
-			if artemLernQW >= 10 and artemQW = 0:
-				'Artyom stumbles as if he wants you to say something, but not solved. But then mustered determination asks. "<<$name>>, I like you. Can I kiss you?"'
+			elseif artemLernQW >= 10 and artemQW = 0:
+				'Artem stumbles as if he wants you to say something, but not solved. But then mustered determination asks. "<<$name>>, I like you. Can I kiss you?"'
 
 				act 'Kiss Artem':
 					cls
@@ -184,7 +176,7 @@ if kotovLoveQW > 0 and artemVitokQW = 0:
 			sub += 10
 			artemVitokQW = 1
 			gs 'stat'
-			'You said Vit''ka fork out from Artem. And Witek slightly wilted, but went up to Artem and lightly punched him in the shoulder with his fist "Slysh motherfucker. If I even suspect that it will be something out of a hint, I love you so otpizzhu that you mother dear know. You have me in a wheelchair the chair will be sitting for the rest of life and piss blood. Do you understand? " Artem nodded repulsed rubbing his shoulder, "Yes, yes. All clear." Thereafter Witek turned and went the other way. You scared Artyom went to his home.'
+			'You said Vit''ka fork out from Artem. And Witek slightly wilted, but went up to Artem and lightly punched him in the shoulder with his fist "Slysh motherfucker. If I even suspect that it will be something out of a hint, I love you so otpizzhu that you mother dear know. You have me in a wheelchair the chair will be sitting for the rest of life and piss blood. Do you understand? " Artem nodded repulsed rubbing his shoulder, "Yes, yes. All clear." Thereafter Witek turned and went the other way. You scared Artem went to his home.'
 			dynamic $din_artem_lern
 		end
 	end
@@ -203,7 +195,7 @@ end
 
 if fedorKozlovQW >= 10 and FedorArtemTalk = 0:
 	FedorArtemTalk = 1
-	'To you with Artem suitable Fedor. "Artem, you would go to the library ..., <<$name>> my girl." Artem blushed "Fed, but nothing we just teach lessons together, I light tightens on tuition. She has come to the Institute, by the way!" You also inserted mot that Artyom for you with just one and only lessons you learn together, nothing between you is not. Fyodor sighed and said, "Well, I do not like it all, yeah figs with him. <<$name>> I believe you." After that Fedor oteshel from you.'
+	'To you with Artem suitable Fedor. "Artem, you would go to the library ..., <<$name>> my girl." Artem blushed "Fed, but nothing we just teach lessons together, I light tightens on tuition. She has come to the Institute, by the way!" You also inserted mot that Artem for you with just one and only lessons you learn together, nothing between you is not. Fyodor sighed and said, "Well, I do not like it all, yeah figs with him. <<$name>> I believe you." After that Fedor oteshel from you.'
 	dynamic $din_artem_lern
 	exit
 end

@@ -10,35 +10,31 @@ if artemhomemark = 0:
 	act 'Leave':minut += 15 & gt 'gorodok'
 
 	if week < 6:
-		if hour < 16 and hour >= 7:'Artem not at home.'
-
-		if hour >= 16 and hour < 20:
+		if hour < 16 and hour >= 7:
+			'Artem not at home.'
+		elseif hour >= 16 and hour < 20:
 			'The door you opened Artem and invited to enter.'
 
 			act 'Login':artemhomemark = 1 & gt $curloc
+		elseif hour >= 20 or hour < 7:
+			'Too late, that would go to visit.'
 		end
-
-		if hour >= 20 or hour < 7:'Too late, that would go to visit.'
-
-	end
-
-	if week >= 6:
-		if hour < 10:'Too early time, that would go to visit.'
-		if hour >= 10 and hour < 20:
+	elseif week >= 6:
+		if hour < 10:
+			'Too early time, that would go to visit.'
+		elseif hour >= 10 and hour < 20:
 			'The door you opened Artem and invited to enter.'
 
 			act 'Login':artemhomemark = 1 & gt $curloc
+		elseif hour >= 20 or hour < 5:
+			'Too late, that would go to visit.'
 		end
-
-		if hour >= 20 or hour < 5:'Too late, that would go to visit.'
 	end
-end
-
-if artemhomemark = 1:
+elseif artemhomemark = 1:
 	if arthakQW = 1 and artemhakday ! daystart:
 		!!tell_a_lie
 		DimaRudeBlock = 1
-		'Artem tells you "There are no words - well.I was ready to do anything for you .I think after that I saw our relationship will move to another plane. A record pobudet let me - so that your head is not climbed all sorts of nonsense. And now ON KNEES BITCH! Exhaustion - it`s the least you can do that I have not used this entry."Artem very disappointed and angry.It seems he began to despise you.'
+		'Artem tells you "There are no words - well.I was ready to do anything for you .I think after that I saw our relationship will move to another plane. A record pobudet let me - so that your head is not climbed all sorts of nonsense. And now ON KNEES BITCH! Exhaustion - it''s the least you can do that I have not used this entry."Artem very disappointed and angry.It seems he began to despise you.'
 
 		act 'On your knees':
 			cls
@@ -53,10 +49,10 @@ if artemhomemark = 1:
 			'<center><img src="images/qwest/alter/artom/facefuck.jpg"></center>'
 			'After these words, you choke, you are sick and flow snot, tears and saliva, Artem not stand for a long time and ends you right in the throat. You choking convulsively swallow sperm.'
 
-			act 'Breath':
+			act 'Breathe':
 				cls
 				gs 'stat'
-				'Artem takes you by the hand and says "I think that this bitch what are you showed not mind to devote my friend into the secrets of the female body." You shakes his head. "Well then .. And if you `re obedient bitch - I promise - that no one is going to show her and eventually destroy. So do not speak and go."'
+				'Artem takes you by the hand and says "I think that this bitch what are you showed not mind to devote my friend into the secrets of the female body." You shakes his head. "Well then .. And if you ''re obedient bitch - I promise - that no one is going to show her and eventually destroy. So do not speak and go."'
 
 				act 'To escape and run away':
 					artemblok = 1
@@ -70,9 +66,9 @@ if artemhomemark = 1:
 					minut += 15
 					gs 'stat'
 					'<center><img src="images/qwest/alter/artom/2.jpg"></center>'
-					'You go to the garage with Artem. In the garage you see Pete Klyueva.
-					Artem:"Look who I have here. As I promised you Svetochka kindly agreed to teach us all the secrets of the female body. Anatomy lessons will be held on Mondays. And today`s lesson we will start with the vagina ...!"
-					Artem:"Stretch ka pussy. I can imagine what else you got up with Nosov!"'
+					'You go to the garage with Artem. In the garage you see Pete Klyueva.'
+					'Artem:"Look who I have here. As I promised you <<$name>> kindly agreed to teach us all the secrets of the female body. Anatomy lessons will be held on Mondays. And today''s lesson we will start with the vagina ...!"'
+					'Artem:"Stretch ka pussy. I can imagine what else you got up with Nosov!"'
 
 					act 'stretch':
 						cls
@@ -80,13 +76,13 @@ if artemhomemark = 1:
 						vagina += 3
 						gs 'stat'
 						'<center><img src="images/qwest/alter/artom/fist.jpg"></center>'
-						'Artem :"Here Petruchio see what her capacious pussy. Yes stronger Do not be afraid - I know what you`re capable!"
-						You stretch even further.
-						Artem:"And not to be unfounded zasun a hand."
-						Have you tried but did not get:" Give Vaseline please .Does not work." Artem gets what that oil and throws you "For such a whore ." You lubricate the hands of those that have and shove it in yourself.Oddly but you chustvuete excited that start from these humiliations.
-						Artem:"That`s how come there -here until the end of!"
-						You do not have to say anything .
-						Under the comments guys "Bring it on! come_on!" you end exhausted and lie down on the floor.'
+						'Artem :"Here Petruchio see what her capacious pussy. Yes stronger Do not be afraid - I know what you''re capable!"'
+						'You stretch even further.'
+						'Artem:"And not to be unfounded zasun a hand."'
+						'Have you tried but did not get:" Give Vaseline please .Does not work." Artem gets what that oil and throws you "For such a whore ." You lubricate the hands of those that have and shove it in yourself.Oddly but you chustvuete excited that start from these humiliations.'
+						'Artem:"That''s how come there -here until the end of!"'
+						'You do not have to say anything .'
+						'Under the comments guys "Bring it on! come_on!" you end exhausted and lie down on the floor.'
 
 						act 'Open your eyes':
 							cls
@@ -103,12 +99,12 @@ if artemhomemark = 1:
 							artemblok = 1
 							gs 'stat'
 							'<center><img src="images/qwest/alter/artom/doublebj.jpg"></center>'
-							'You open your eyes and see how Peter and Artem surrounded you masturbate their cocks.
-							Artem:"That stared - Get direct their work - you know how it is good. Petya now you enjoy all the pleasures of professional blow job!"
-							You remove the hand from the vagina and begins to suck alternately guys and they end up on your face.
-							Do_You:" You erase record?"
-							Artem :"Erase ... but not today ... we Petka at you a lot of plans. Do not roar.
-							It will be our little secret. Fair_Enough - until next week."'
+							'You open your eyes and see how Peter and Artem surrounded you masturbate their cocks.'
+							'Artem:"That stared - Get direct their work - you know how it is good. Petya now you enjoy all the pleasures of professional blow job!"'
+							'You remove the hand from the vagina and begins to suck alternately guys and they end up on your face.'
+							'Do_You:" You erase record?"'
+							'Artem :"Erase ... but not today ... we Petka at you a lot of plans. Do not roar.'
+							'It will be our little secret. Fair_Enough - until next week."'
 
 							act 'Leave':gt 'garmassiv'
 						end
@@ -123,9 +119,7 @@ if artemhomemark = 1:
 			artemhakday = daystart
 			gt 'gorodok'
 		end
-	end
-
-	if arthakQW = 2 and artemhakday ! daystart:
+	elseif arthakQW = 2 and artemhakday ! daystart:
 		arthakQW = 7
 		!!the_truth
 		DimaRudeBlock = 1
@@ -141,13 +135,11 @@ if artemhomemark = 1:
 		artcooldown += 1
 
 		if artcooldown >= 10:artcooldown = 0 & artQW = 1 & gt 'artemev2'
-	end
-
-	if artQW = 3 and artemkissday ! daystart:
+	elseif artQW = 3 and artemkissday ! daystart:
 		!!wanker Artem
 		'Artem hugs you and kisses'
 
-		act 'tselovatsya':
+		act 'Kiss':
 			cls
 			minut += 5
 			horny += 10
@@ -175,7 +167,7 @@ if artemhomemark = 1:
 
 					gs 'stat'
 					'<center><img src="images/qwest/alter/artom/hj.jpg"></center>'
-					'You got a reluctant member of Artyom of his pants and began to gently move the skin up and down then revealing crimson head then closing it. Artem soon broke down and finished in your hands. You went to the bathroom and washed his hands.'
+					'You got a reluctant member of Artem of his pants and began to gently move the skin up and down then revealing crimson head then closing it. Artem soon broke down and finished in your hands. You went to the bathroom and washed his hands.'
 
 					if lernHome > 0:
 						act 'Teach lessons':artemhomemark = 2 & gt $curloc
@@ -183,9 +175,7 @@ if artemhomemark = 1:
 						act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 					end
 				end
-			end
-
-			if horny >= 50:
+			elseif horny >= 50:
 				act 'Wank Artem':
 					cls
 					minut += 15
@@ -207,18 +197,15 @@ if artemhomemark = 1:
 				end
 			end
 		end
-	end
-
-	if artQW >= 2 and artQW <= 3 and artemtimes >= 30 and Suspeh >= 90:
+	elseif artQW >= 2 and artQW <= 3 and artemtimes >= 30 and Suspeh >= 90:
 		artQW = 10
 		gt 'artemev2'
-	end
-
-	if artQW = 4:!refused Artem
-		if artQW = 20 and artemkissday ! daystart:
+	elseif artQW = 4:
+		!refused Artem
+	elseif artQW = 20 and artemkissday ! daystart:
 			'Artem hugs you and kisses'
 
-			act 'tselovatsya':
+			act 'Kiss':
 				cls
 				artemkissday = daystart
 				minut += 5
@@ -233,9 +220,7 @@ if artemhomemark = 1:
 					else
 						act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 					end
-				end
-
-				if horny >= 30:
+				elseif horny >= 30:
 					act 'Wank Artem':
 						cls
 						minut += 15
@@ -265,9 +250,9 @@ if artemhomemark = 1:
 
 						gs 'stat'
 						'<center><img src="images/qwest/alter/artom/bj.jpg"></center>'
-						'You keep kissing and unbutton the dress so it was convenient .Take it out and put it on his chest. You feel his caresses excite you.
-						continuing to kiss , you put his hand into his pants and felt his cock is ready to fight. You unbutton his pants and start to unbutton his shirt . You take the hand of his cock and start stroking it .Your excitement is growing with every second you take a cock in her mouth and start sucking vigorously .
-						"I want you ..." Hear the voice of Artem.'
+						'You keep kissing and unbutton the dress so it was convenient .Take it out and put it on his chest. You feel his caresses excite you.'
+						'continuing to kiss , you put his hand into his pants and felt his cock is ready to fight. You unbutton his pants and start to unbutton his shirt . You take the hand of his cock and start stroking it .Your excitement is growing with every second you take a cock in her mouth and start sucking vigorously.'
+						'"I want you ..." Hear the voice of Artem.'
 
 					if mesec > 0:
 						if artemanal > 0:
@@ -289,16 +274,14 @@ if artemhomemark = 1:
 									act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 								end
 							end
-						end
-
-						if artemsex >= 10 and artemanal = 0:
+						elseif artemsex >= 10 and artemanal = 0:
 							act 'I have my period':
 								cls
 								minut += 5
 								gs 'stat'
 								'<center><img src="images/qwest/alter/artom/2.jpg"></center>'
-								'You: "I''d love to but I started ... red days.. Well"
-								A.blushing and strongly: "Or maybe try in the ass?"'
+								'You: "I''d love to but I started ... red days.. Well"'
+								'Artem blushing and strongly: "Or maybe try in the ass?"'
 
 								act 'Unsubscribe and to continue to suck':
 									cls
@@ -307,10 +290,10 @@ if artemhomemark = 1:
 									cumlip += 1
 									gs 'stat'
 									'<center><img src="images/qwest/alter/artom/bjcum.jpg"></center>'
-									'You looked at him wide-eyed "I understand that you are bolder - but not too much you want?I went home."
-									Artem:"Sorry! Please do not go." He grabs you by the hand and starts to kiss them gradually rising higher. You melts from his kisses kneel and take a cock in her mouth and starts to suck . With one hand. Artem is discharged into your mouth and you will quickly swallow all.
-									Artem: "Forgive me - I`ll never never talk about it ..."
-									You: "Well , when I`m ready and in the mood."'
+									'You looked at him wide-eyed "I understand that you are bolder - but not too much you want?I went home."'
+									'Artem:"Sorry! Please do not go." He grabs you by the hand and starts to kiss them gradually rising higher. You melts from his kisses kneel and take a cock in her mouth and starts to suck . With one hand. Artem is discharged into your mouth and you will quickly swallow all.'
+									'Artem: "Forgive me - I''ll never never talk about it ..."'
+									'You: "Well , when I''m ready and in the mood."'
 
 
 									if lernHome > 0:
@@ -327,10 +310,10 @@ if artemhomemark = 1:
 									artemanal += 1
 									gs 'stat'
 									'<center><img src="images/qwest/alter/artom/anal.jpg"></center>'
-									'You: "Yes, but first you need to clean yourself ... in short it is necessary to do an enema. You have?"
-									Artem: "Yes."
-									Artem brings enema .You go to the bathroom and make yourself an enema.
-									Having come into the room you get cancer and you say:"So now need grease or petroleum jelly -Do you have? Look in the medicine cabinet."'
+									'You: "Yes, but first you need to clean yourself ... in short it is necessary to do an enema. You have?"'
+									'Artem: "Yes."'
+									'Artem brings enema .You go to the bathroom and make yourself an enema.'
+									'Having come into the room you get cancer and you say:"So now need grease or petroleum jelly -Do you have? Look in the medicine cabinet."'
 									dynamic $analsexrude
 
 									if lernHome > 0:
@@ -342,7 +325,7 @@ if artemhomemark = 1:
 							end
 						end
 					else
-						act 'Otdatsya':
+						act 'Surrender':
 							cls
 							minut += 5
 							sexa += 1
@@ -356,11 +339,12 @@ if artemhomemark = 1:
 							dynamic $sexstart2
 							dynamic $sexcum
 
-							if artemsex = 0:artemsex = 1 & '"Here you are the man"-Say you smile.
-
-							Artem:"Light ... I ... my I love you ...."
-							In response. '
-
+							if artemsex = 0:
+								artemsex = 1
+								'"Here you are the man"-Say you smile.'
+								'Artem:"<<$nickname>> ... I ... my I love you ...."'
+								'In response. '
+							end
 							if lernHome > 0:
 								act 'Teach lessons':artemhomemark = 2 & gt $curloc
 							else
@@ -373,22 +357,22 @@ if artemhomemark = 1:
 						cls
 						minut += 5
 
-						if horny < 90:$timeorgart = 'In swallow all his sperm and carefully lick dick.'
-
-						if horny >= 90:
-							$timeorgart = 'Without removing a member from the mouth you bring themselves to orgasm. During orgasm you swallow all his sperm and carefully lick dick.'
+						if horny < 90:
+							$timeorgart = 'In swallow all his sperm and carefully lick dick.'
+						elseif horny >= 90:
 							horny = 0
 							orgasm += 1
+							$timeorgart = 'Without removing a member from the mouth you bring themselves to orgasm. During orgasm you swallow all his sperm and carefully lick dick.'
 						end
 
 						swallow += 1
 						cumlip += 1
 						gs 'stat'
 						'<center><img src="images/qwest/alter/artom/bjcum.jpg"></center>'
-						'You accelerate the pace of not paying attention to the words of one hand caressing herself.
-						"Now I finish"-Artem said. <<$timeorgart>>
-						You:"Did you like it?"
-						Artem:"Very much. It was really cool"'
+						'You accelerate the pace of not paying attention to the words of one hand caressing herself.'
+						'"Now I finish"-Artem said. <<$timeorgart>>'
+						'You:"Did you like it?"'
+						'Artem:"Very much. It was really cool"'
 
 						if lernHome > 0:
 							act 'Teach lessons':artemhomemark = 2 & gt $curloc
@@ -407,17 +391,17 @@ if artemhomemark = 1:
 			minut += 15
 			gs 'stat'
 			'<center><img src="images/qwest/alter/artom/2.jpg"></center>'
-			'You:"Artem we`re more than friends?"
-			Artem: "Of course."
-			You: "Could you help me with one simple fact is not? After all, well versed in computers?".
-			Artem:"Certainly help. tell."
-			You: "Promise? Well. It stores it on your computer. Could you hack it and destroy this computer record. Just do not see it pozhalusta!"
-			Artem :"Okay. And that on the record?"'
+			'You:"Artem we''re more than friends?"'
+			'Artem: "Of course."'
+			'You: "Could you help me with one simple fact is not? After all, well versed in computers?"'
+			'Artem:"Certainly help. tell."'
+			'You: "Promise? Well. It stores it on your computer. Could you hack it and destroy this computer record. Just do not see it pozhalusta!"'
+			'Artem :"Okay. And that on the record?"'
 
 			act 'Lie':
 				cls
 				minut += 5
-				artomhakday = daystart
+				artemhakday = daystart
 				arthakQW = 1
 				gs 'stat'
 				'<center><img src="images/qwest/alter/artom/2.jpg"></center>'
@@ -433,11 +417,11 @@ if artemhomemark = 1:
 			act 'Tell the truth':
 				cls
 				minut += 5
-				artomhakday = daystart
+				artemhakday = daystart
 				arthakQW = 2
 				gs 'stat'
 				'<center><img src="images/qwest/alter/artom/2.jpg"></center>'
-				'"It seemed to me that I love him and he took off like I`m doing him a blow job - now he is blackmailing me this." you said Artem downcast eyes.'
+				'"It seemed to me that I love him and he took off like I''m doing him a blow job - now he is blackmailing me this." you said Artem downcast eyes.'
 
 				if lernHome > 0:
 					act 'Teach lessons':artemhomemark = 2 & gt $curloc
@@ -468,9 +452,7 @@ if artemhomemark = 1:
 			act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 		end
 	end
-end
-
-if artemhomemark = 2:
+elseif artemhomemark = 2:
 	minut += 60
 	grupNPC[2] += 10
 	lernHome = 0

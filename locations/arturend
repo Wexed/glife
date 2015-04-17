@@ -24,21 +24,15 @@ act 'Brush up':
 
 		if arturgift = 0:
 			kosmetitka += 20
-			'Arthur gave you a portable set of cosmetics.'
-		end
-
-		if arturgift = 1:
+			'Arthur gave you a portable of cosmetics.'
+		elseif arturgift = 1:
 			kosmetica += 20
-			'Arthur gave you a set of cosmetics.'
-		end
-
-		if arturgift = 2:
+			'Arthur gave you a of cosmetics.'
+		elseif arturgift = 2:
 			money += 1000
 			'Arthur said "uh, I did not have time to look for a gift for you, a thousand, itself buy, what do you like."'
 		end
-	end
-
-	if bag = 0:
+	elseif bag = 0:
 		bag = 1
 		'He gave you a handbag.'
 	end

@@ -24,9 +24,9 @@ $uderdin = {
 	dynamic $endurdin
 	endur -= ken
 	endurE -= kene
-	Aktiv = (strenw / 2) + agilw + rand(0, lustw) + KoefUder
+	Aktiv = (strenW / 2) + agilW + rand(0, lustW) + KoefUder
 	Aktiv = Aktiv * endur / endurMax
-	Passiv = (((strenwE + (agilwE / 2)) * koefE) / 100) + rand (0, lustwE) + KoefProtE
+	Passiv = (((strenWE + (agilWE / 2)) * koefE) / 100) + rand (0, lustWE) + KoefProtE
 	Passiv = Passiv * endurE / endurMaxE
 }
 
@@ -36,9 +36,9 @@ $uderdinE = {
 	dynamic $endurdin
 	endur -= ken
 	endurE -= kene
-	Aktiv = (strenwE / 2) + agilwE + rand(0, lustwE) + KoefUdere
+	Aktiv = (strenWE / 2) + agilWE + rand(0, lustWE) + KoefUdere
 	Aktiv = Aktiv * endurE / endurMaxE
-	Passiv = (((strenw + (agilw / 2)) * koef) / 100) + rand(0, lustw) + KoefProt
+	Passiv = (((strenW + (agilW / 2)) * koef) / 100) + rand(0, lustW) + KoefProt
 	Passiv = Passiv * endur / endurMaxE
 }
 
@@ -48,9 +48,9 @@ $brosdin = {
 	dynamic $endurdin
 	endur -= ken
 	endurE -= kene
-	Aktiv = strenw + (agilw / 2) + rand(0, lustw) + KoefBros
+	Aktiv = strenW + (agilW / 2) + rand(0, lustW) + KoefBros
 	Aktiv = Aktiv * endur / endurMax
-	Passiv = (((strenwE / 2) + agilwE) * koefE / 100) + rand(0, lustwE) + KoefProtE
+	Passiv = (((strenWE / 2) + agilWE) * koefE / 100) + rand(0, lustWE) + KoefProtE
 	Passiv = Passiv * endurE / endurMaxE
 }
 
@@ -60,9 +60,9 @@ $brosdinE = {
 	dynamic $endurdin
 	endur -= ken
 	endurE -= kene
-	Aktiv = strenwE + (agilwE / 2) + rand(0, lustwE) + KoefBrosE
+	Aktiv = strenWE + (agilWE / 2) + rand(0, lustWE) + KoefBrosE
 	Aktiv = Aktiv * endurE / endurMaxE
-	Passiv = (((strenw / 2) + agilw) * koef / 100) + rand(0, lustw) + KoefProt
+	Passiv = (((strenW / 2) + agilW) * koef / 100) + rand(0, lustW) + KoefProt
 	Passiv = Passiv * endur / endurMax
 
 }
@@ -71,14 +71,14 @@ point = 0
 pointE = 0
 $nameE = $nikname[i]
 $nameA = $nikname[a]
-strenw = musle[a] / 10
-strenwE = musle[i] / 10
-agilw = flex[a] / 10
-agilwE = flex[i] / 10
+strenW = musle[a] / 10
+strenWE = musle[i] / 10
+agilW = flex[a] / 10
+agilWE = flex[i] / 10
 lustMax = wipo[a]
 lustMaxE = wipo[i]
-lustw = lustMax
-lustwe = lustMaxe
+lustW = lustMax
+lustWE = lustMaxe
 Brosok = Bteh[a] / 10
 BrosokE = Bteh[i] / 10
 Uder = Uteh[a] / 10
@@ -100,19 +100,15 @@ Kz = 0
 KuE =0
 KbE= 0
 KzE = 0
-if strenw > strenwE:
+if strenW > strenWE:
 	point += 1
-	lustw += 1
+	lustW += 1
 	crouch = 1
-end
-
-if strenw < strenwE:
+elseif strenW < strenWE:
 	pointE += 1
-	lustwE += 1
+	lustWE += 1
 	crouch = 0
-end
-
-if strenw = strenwE:
+elseif strenW = strenWE:
 		varrand = rand(0, 1)
 
 		if varrand = 0:crouch = 1
@@ -131,24 +127,18 @@ if crouch = 1:
 		if enrand = 0:
 			pointE += 1
 			jump 'markfight'
-		end
-
-		if enrand = 1:
+		elseif enrand = 1:
 			point += 2
 			endurE -= 1
 			jump 'markfight1'
 		end
-	end
-
-	if arand = 1:
+	elseif arand = 1:
 		endur -= 1
 
 		if enrand = 0:
 			point += 1
 			jump 'markfight2'
-		end
-
-		if enrand = 1:
+		elseif enrand = 1:
 			pointE += 1
 			endurE -= 1
 			jump 'markfight3'
@@ -163,25 +153,19 @@ else
 			point += 1
 			endurE -= 2
 			jump 'markfightE'
-		end
-
-		if enrand = 1:
+		elseif enrand = 1:
 			pointE += 1
 			endurE -= 1
 			jump 'markfightE1'
 		end
-	end
-
-	if arand = 1:
+	elseif arand = 1:
 		endur -= 1
 
 		if enrand = 0:
 			pointE += 2
 			endurE -= 2
 			jump 'markfightE2'
-		end
-
-		if enrand = 1:
+		elseif enrand = 1:
 			point += 1
 			endurE -= 1
 			jump 'markfightE3'
@@ -195,8 +179,8 @@ koefE = 90
 rMin -= 1
 stoper += 1
 
-if endur <= 0 or lustw <= 0:jump 'markSubLoss'
-if endurE <= 0 or lustwE <= 0:jump 'markSubWin'
+if endur <= 0 or lustW <= 0:jump 'markSubLoss'
+if endurE <= 0 or lustWE <= 0:jump 'markSubWin'
 
 if stoper < 3:
 	if rMin > 0:
@@ -210,44 +194,36 @@ if stoper < 3:
 				Ku += 1
 				stoper = 0
 				jump 'markfight2'
-			end
-
-			if Aktiv < Passiv:
+			elseif Aktiv < Passiv:
 				pointE += 1
 				KzE += 1
 				stoper = 0
 				jump 'markfight3'
+			elseif Aktiv = Passiv:
+				jump 'markfight'
 			end
-
-			if Aktiv = Passiv:jump 'markfight'
-		end
-
-		if arand = 1:
+		elseif arand = 1:
 			dynamic $brosdin
 
 			if Aktiv > Passiv:
 				point += 2
-				lustw += 1
+				lustW += 1
 				Kb += 1
 				stoper = 0
 				jump 'markfight1'
-			end
-
-			if Aktiv < Passiv:
+			elseif Aktiv < Passiv:
 				pointE += 1
 				KzE += 1
 				stoper = 0
 				jump 'markfight3'
+			elseif Aktiv = Passiv:
+				jump 'markfight'
 			end
-
-			if Aktiv = Passiv:jump 'markfight'
 		end
 	else
 		jump 'markRoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	pointE += 1
 	jump 'markRoundStop'
 end
@@ -258,8 +234,8 @@ koefE = 85
 rMin -= 1
 stoper += 1
 
-if endur <= 0 or lustw <= 0:jump 'markSubLoss'
-if endurE <= 0 or lustwE <= 0:jump 'markSubWin'
+if endur <= 0 or lustW <= 0:jump 'markSubLoss'
+if endurE <= 0 or lustWE <= 0:jump 'markSubWin'
 
 if stoper < 3:
 	if rMin > 0:
@@ -270,22 +246,18 @@ if stoper < 3:
 			Ku += 1
 			stoper = 0
 			jump 'markfight2'
-		end
-
-		if Aktiv < Passiv:
+		elseif Aktiv < Passiv:
 			pointE += 1
 			KzE += 1
 			stoper = 0
 			jump 'markfight3'
+		elseif Aktiv = Passiv:
+			jump 'markfight1'
 		end
-
-		if Aktiv = Passiv:jump 'markfight1'
 	else
 		jump 'markRoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	pointE += 1
 	jump 'markRoundStop'
 end
@@ -297,8 +269,8 @@ lustE -= 1
 rMin -= 1
 stoper += 1
 
-if endur <= 0 or lustw <= 0:jump 'markSubLoss'
-if endurE <= 0 or lustwE <= 0:jump 'markSubWin'
+if endur <= 0 or lustW <= 0:jump 'markSubLoss'
+if endurE <= 0 or lustWE <= 0:jump 'markSubWin'
 
 if stoper < 3:
 	if rMin > 0:
@@ -307,12 +279,10 @@ if stoper < 3:
 
 		if Aktiv >= Passiv:
 			point += 1
-			lustwE -= 1
+			lustWE -= 1
 			Ku += 1
 			jump 'markfight2'
-		end
-
-		if Aktiv < Passiv:
+		elseif Aktiv < Passiv:
 			pointE += 1
 			KzE += 1
 			stoper = 0
@@ -321,9 +291,7 @@ if stoper < 3:
 	else
 		jump 'markRoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	point += 3
 	jump 'markRoundStop'
 end
@@ -334,8 +302,8 @@ koefE = 100
 rMin -= 1
 stoper += 1
 
-if endur <= 0 or lustw <= 0:jump 'markSubLoss'
-if endurE <= 0 or lustwE <= 0:jump 'markSubWin'
+if endur <= 0 or lustW <= 0:jump 'markSubLoss'
+if endurE <= 0 or lustWE <= 0:jump 'markSubWin'
 
 if stoper < 3:
 	if rMin > 0:
@@ -349,27 +317,21 @@ if stoper < 3:
 				Ku += 1
 				stoper = 0
 				jump 'markfight2'
-			end
-
-			if Aktiv <= Passiv:
+			elseif Aktiv <= Passiv:
 				pointE += 1
 				KzE += 1
 				jump 'markRoundStop'
 			end
-		end
-
-		if arand = 1:
+		elseif arand = 1:
 			dynamic $brosdin
 
 			if Aktiv > Passiv:
 				point += 2
-				lustw += 1
+				lustW += 1
 				Kb += 1
 				stoper = 0
 				jump 'markfight1'
-			end
-
-			if Aktiv <= Passiv:
+			elseif Aktiv <= Passiv:
 				pointE += 1
 				KzE += 1
 				jump 'markRoundStop'
@@ -378,9 +340,7 @@ if stoper < 3:
 	else
 		jump 'markRoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	pointE += 1
 	jump 'markRoundStop'
 end
@@ -391,8 +351,8 @@ koefE = 100
 rMin -= 1
 stoper += 1
 
-if endur <= 0 or lustw <= 0:jump 'markSubLoss'
-if endurE <= 0 or lustwE <= 0:jump 'markSubWin'
+if endur <= 0 or lustW <= 0:jump 'markSubLoss'
+if endurE <= 0 or lustWE <= 0:jump 'markSubWin'
 
 if stoper < 3:
 	if rMin > 0:
@@ -406,44 +366,36 @@ if stoper < 3:
 				KuE += 1
 				stoper = 0
 				jump 'markfightE1'
-			end
-
-			if Aktiv < Passiv:
+			elseif Aktiv < Passiv:
 				point += 1
 				Kz += 1
 				stoper = 0
 				jump 'markfightE3'
+			elseif Aktiv = Passiv:
+				jump 'markfightE'
 			end
-
-			if Aktiv = Passiv:jump 'markfightE'
-		end
-
-		if deystrand = 1:
+		elseif deystrand = 1:
 			dynamic $brosdinE
 
 			if Aktiv > Passiv:
 				pointE += 2
-				lustwE += 1
+				lustWE += 1
 				KbE += 1
 				stoper = 0
 				jump 'markfightE2'
-			end
-
-			if Aktiv < Passiv:
+			elseif Aktiv < Passiv:
 				point += 1
 				Kz += 1
 				stoper = 0
 				jump 'markfightE3'
+			elseif Aktiv = Passiv:
+				jump 'markfightE'
 			end
-
-			if Aktiv = Passiv:jump 'markfightE'
 		end
 	else
 		jump 'markRoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	point += 1
 	jump 'markRoundStop'
 end
@@ -455,8 +407,8 @@ lust -= 1
 rMin -= 1
 stoper += 1
 
-if endur <= 0 or lustw <= 0:jump 'markSubLoss'
-if endurE <= 0 or lustwE <= 0:jump 'markSubWin'
+if endur <= 0 or lustW <= 0:jump 'markSubLoss'
+if endurE <= 0 or lustWE <= 0:jump 'markSubWin'
 
 if stoper < 3:
 	if rMin > 0:
@@ -465,12 +417,10 @@ if stoper < 3:
 
 		if Aktiv >= Passiv:
 			pointE += 1
-			lustw -= 1
+			lustW -= 1
 			KuE += 1
 			jump 'markfightE1'
-		end
-
-		if Aktiv < Passiv:
+		elseif Aktiv < Passiv:
 			point += 1
 			Kz += 1
 			stoper = 0
@@ -479,9 +429,7 @@ if stoper < 3:
 	else
 		jump 'markRoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	pointE += 3
 	jump 'markRoundStop'
 end
@@ -492,8 +440,8 @@ koefE = 100
 rMin -= 1
 stoper += 1
 
-if endur <= 0 or lustw <= 0:jump 'markSubLoss'
-if endurE <= 0 or lustwE <= 0:jump 'markSubWin'
+if endur <= 0 or lustW <= 0:jump 'markSubLoss'
+if endurE <= 0 or lustWE <= 0:jump 'markSubWin'
 
 if stoper < 3:
 	if rMin > 0:
@@ -504,22 +452,18 @@ if stoper < 3:
 			KuE += 1
 			stoper = 0
 			jump 'markfightE1'
-		end
-
-		if Aktiv < Passiv:
+		elseif Aktiv < Passiv:
 			point += 1
 			Kz += 1
 			stoper = 0
 			jump 'markfightE3'
+		elseif Aktiv = Passiv:
+			jump 'markfightE2'
 		end
-
-		if Aktiv = Passiv:jump 'markfightE2'
 	else
 		jump 'markRoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	point += 1
 	jump 'markRoundStop'
 end
@@ -530,8 +474,8 @@ koefE = 100
 rMin -= 1
 stoper += 1
 
-if endur <= 0 or lustw <= 0:jump 'markSubLoss'
-if endurE <= 0 or lustwE <= 0:jump 'markSubWin'
+if endur <= 0 or lustW <= 0:jump 'markSubLoss'
+if endurE <= 0 or lustWE <= 0:jump 'markSubWin'
 
 if stoper < 3:
 	if rMin > 0:
@@ -545,27 +489,21 @@ if stoper < 3:
 				KuE += 1
 				stoper = 0
 				jump 'markfightE1'
-			end
-
-			if Aktiv <= Passiv:
+			elseif Aktiv <= Passiv:
 				point += 1
 				Kz += 1
 				jump 'markRoundStop'
 			end
-		end
-
-		if deystrand = 1:
+		elseif deystrand = 1:
 			dynamic $brosdinE
 
 			if Aktiv > Passiv:
 				pointE += 2
-				lustwE += 1
+				lustWE += 1
 				KbE += 1
 				stoper = 0
 				jump 'markfightE2'
-			end
-
-			if Aktiv <= Passiv:
+			elseif Aktiv <= Passiv:
 				point += 1
 				Kz += 1
 				jump 'markRoundStop'
@@ -574,9 +512,7 @@ if stoper < 3:
 	else
 		jump 'markRoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	point += 1
 	jump 'markRoundStop'
 end
@@ -604,16 +540,18 @@ rMin = 8
 stoper = 0
 
 if round = Formula + 1:
-	if point > pointE:resultFight = 1
-	if point<pointE:resultFight=3
-	if point=pointE:resultFight=2
+	if point > pointE:
+		resultFight = 1
+	elseif point < pointE:
+		resultFight=3
+	elseif point = pointE:
+		resultFight=2
+	end
 
 	jump 'markEndFight'
-end
-
-if round < Formula + 1:
-	endur += lustw * 25 / 100
-	endurE += lustwe *25 / 100
+elseif round < Formula + 1:
+	endur += lustW * 25 / 100
+	endurE += lustWE *25 / 100
 
 	if crouch = 1 and croonce = 0:crouch = 0 & croonce = 1
 	if crouch = 0 and croonce = 0:crouch = 1 & croonce = 1
@@ -652,9 +590,7 @@ if resultFight = 0:
 	SubWin[a] += 1
 	loss[i] += 1
 	SubLoss[i] += 1
-end
-
-if resultFight = 1:
+elseif resultFight = 1:
 	wipo[a] += 1
 	rating[a] += 1
 	rating[i] -= 3
@@ -675,9 +611,7 @@ if resultFight = 1:
 	$spisok[i] += '<<$nameA>> <<win[a]>>-<<loss[a]>>-<<draw[a]>> <<SubWin[a]>>/<<SubLoss[a]>> vs <<$nameE>> <<win[i]>>-<<loss[i]>>-<<draw[i]>> <<SubWin[i]>>/<<SubLoss[i]>> <font color=red>defeat</font>'
 	win[a] += 1
 	loss[i] += 1
-end
-
-if resultFight = 2:
+elseif resultFight = 2:
 	rating[a] -= 1
 	rating[i] -= 1
 
@@ -687,9 +621,7 @@ if resultFight = 2:
 	$spisok[i] += '<<$nameA>> <<win[a]>>-<<loss[a]>>-<<draw[a]>> <<SubWin[a]>>/<<SubLoss[a]>> vs <<$nameE>> <<win[i]>>-<<loss[i]>>-<<draw[i]>> <<SubWin[i]>>/<<SubLoss[i]>> <font color=black>draw</font>'
 	draw[a] += 1
 	draw[i] += 1
-end
-
-if resultFight = 3:
+elseif resultFight = 3:
 	wipo[i] += 1
 	rating[a] -= 3
 	rating[i] += 1
@@ -710,9 +642,7 @@ if resultFight = 3:
 	$spisok[i] += '<<$nameA>> <<win[a]>>-<<loss[a]>>-<<draw[a]>> <<SubWin[a]>>/<<SubLoss[a]>> vs <<$nameE>> <<win[i]>>-<<loss[i]>>-<<draw[i]>> <<SubWin[i]>>/<<SubLoss[i]>> <font color=green>victory</font>'
 	win[i] += 1
 	loss[a] += 1
-end
-
-if resultFight = 4:
+elseif resultFight = 4:
 	wipo[i] += 2
 	wipo[a] -= 1
 	rating[a] -= 5

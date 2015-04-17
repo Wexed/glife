@@ -10,7 +10,7 @@ if arturKnow = 0:
 		minut += 2
 		gs 'stat'
 		'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
-		'You took a tangerine from the hands of Caucasian, He smiled and said you "You`re so beautiful devushka. Wai. sponges persik. Come to eat barbecue, I`ll take this chacha!"'
+		'You took a tangerine from the hands of Caucasian, He smiled and said you "You''re so beautiful devushka. Wai. sponges persik. Come to eat barbecue, I''ll take this chacha!"'
 
 		act 'Turn_Down':
 			cls
@@ -21,7 +21,7 @@ if arturKnow = 0:
 
 			gs 'stat'
 			'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
-			'You started to refuse and backs away from loving Caucasian. He "Wai, zachem offend? Nothing bad will not Tiebei, mom swear! Hochish, I `ll give tebe <<$arturgift>>"'
+			'You started to refuse and backs away from loving Caucasian. He "Wai, zachem offend? Nothing bad will not Tiebei, mom swear! Hochish, I ''ll give tebe <<$arturgift>>"'
 
 			act 'Leave':gt 'Grinok'
 
@@ -37,25 +37,19 @@ if arturKnow = 0:
 			end
 		end
 	end
-end
-
-if arturKnow > 0:
+elseif arturKnow > 0:
 	if arturday ! day:
 		'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
 		'Arthur smiled kindly and handed you a tangerine. "Come to eat barbecue, chacha drink!"'
 
 		act 'Go to Arthur':gt 'arturHome'
-	end
-
-	if arturday = day:
+	elseif arturday = day:
 		if arturblowday ! day:
 			'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
-			'Arthur smiled kindly and handed you a tangerine. "Wai, work to do, I`m_sorry. Unless by rapid."'
+			'Arthur smiled kindly and handed you a tangerine. "Wai, work to do, I''m_sorry. Unless by rapid."'
 
 			act 'Go to Arthur':gt 'arturkiosk'
-		end
-
-		if arturblowday = day:
+		elseif arturblowday = day:
 			'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
 			'Arthur smiled amiably you. "Wai, work to do, I''m_sorry."'
 		end

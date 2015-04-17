@@ -1,30 +1,30 @@
 # authors3
-*pl 'Rules of the game are very simple:toss a coin 1000 rubles and pull lever. jackpot 10 million. rubles.'
-*p '<center><img src="images/casino/avt.jpg"></center>'
+clr
+minut += 10
+gs 'stat'
+'<center><img src="images/casino/avt.jpg"></center>'
+'Rules of the game are very simple:toss a coin 1000 rubles and pull lever. jackpot 10 million. rubles.'
 
-act 'pull the lever':
+
+act 'Pull the lever':
 	if money >= 1000:
-		x_10 = rand(1, 1000)
+		clr
 		money -= 1000
+		x_10 = rand(1, 1000)
 
 		if x_10 = 1000:
-			set money += 10000000
+			money += 10000000
 			msg 'You won the jackpot! Congratulations!'
-		end
-
-		if x_10 < 1000 and x_10 >= 990:
-			set money += 2000
+		elseif x_10 < 1000 and x_10 >= 990:
+			money += 2000
 			msg 'Congratulations, you win 2000 rubles'
-		end
-
-		if x_10 >= 850 and x_10 < 990:
-			set money += 1000
+		elseif x_10 >= 850 and x_10 < 990:
+			money += 1000
 			msg 'congratulations, you win 1000 rubles'
+		elseif x_10 < 850:
+			msg 'Alas you lose, try again'
 		end
 
-		if x_10 < 850:msg 'Alas you lose, try again'
-
-		clr
 		gt 'authors3'
 	else
 		msg 'And how are you going to play without money? Come back when you find the necessary amount'
@@ -33,9 +33,5 @@ act 'pull the lever':
 end
 
 act 'Back to the hall':gt 'igravt'
-
-clr
-gs 'stat'
-set minut += 10
 
 --- authors3 ---------------------------------

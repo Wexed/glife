@@ -4,29 +4,28 @@ if $ARGS[0] = 'start':
 	$loc = $CURLOC
 	cla
 	*clr
-
+	minut += 5
+	cartraid = 1
 	gs 'stat'
-	set minut += 5
-	set cartraid = 1
 	'<center><b>Auto Show</b></center>'
 	'<center><img src="images/etogame/manager.jpg"></center>'
 	'List of vehicles for sale'
-	'<a href="exec:GS ''carF1'', ''car''">2107</a>. - New price 200,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car2''">2115</a>. - New price 310,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car3''">2113</a>. - New price 290,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car4''">2114</a>. - New price 300,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car5''">VAZ 2110</a>. - New price 350,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car6''">VAZ Kalina</a>. - New price 400,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car7''">WHA Pryor</a>. - New price 450,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car8''">Chevrolet Niva</a>. - New price 500,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car9''">UAZ HUNTER</a>. - New price 500,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car10''">UAZ Patriot</a>. - New price 600,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car95''">Mitsubishi l200</a>. - New price 1,000,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car96''">Audi Q7</a>. - New price 5,000,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car97''">Cadillac Escalade</a>. - New price 2,000,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car98''">Porsche Cayenne</a>. - New price 5,000,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car99''">BMW X6</a>. - New price 4,500,000 rubles'
-	'<a href="exec:GS ''carF1'', ''car100''">Mercedes-Benz S 600</a>. - New price 8,000,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car''">2107</a>. - New price 200,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car2''">2115</a>. - New price 310,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car3''">2113</a>. - New price 290,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car4''">2114</a>. - New price 300,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car5''">VAZ 2110</a>. - New price 350,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car6''">VAZ Kalina</a>. - New price 400,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car7''">WHA Pryor</a>. - New price 450,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car8''">Chevrolet Niva</a>. - New price 500,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car9''">UAZ HUNTER</a>. - New price 500,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car10''">UAZ Patriot</a>. - New price 600,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car95''">Mitsubishi l200</a>. - New price 1,000,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car96''">Audi Q7</a>. - New price 5,000,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car97''">Cadillac Escalade</a>. - New price 2,000,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car98''">Porsche Cayenne</a>. - New price 5,000,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car99''">BMW X6</a>. - New price 4,500,000 rubles'
+	'<a href="exec:gs ''carF1'', ''car100''">Mercedes-Benz S 600</a>. - New price 8,000,000 rubles'
 
 	act 'Talk to the manager':gt 'autosalonF', 'manager1'
 	act 'Leave':gt 'Nord'
@@ -38,11 +37,10 @@ if $ARGS[0] = 'manager1':
 	cla
 	*clr
 	gs 'stat'
-	set minut += 5
+	minut += 5
 	'<center><b>Auto Show</b></center>'
 	'<center><img src="images/etogame/manager.jpg"></center>'
 	'In the bank <<karta>> rubles'
-	*nl
 	'The manager smiled and said affably. To purchase, you must have the right and enough cash in the bank, we do not work for cash. As it is impossible to have two cars, I am sorry, but this new law antiprobkovy City Hall.'
 
 	act 'Leave':gt 'Nord'
@@ -51,14 +49,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy VAZ 2107 (200,000 rubles)':
 					cla
 					*clr
-					set karta -= 200000
-					set $car = '2107'
-					set car = 1
-					set benz = 3
-					set cardrive = 8
-					set teh = 200
-					set tehcar = 200
-					set wrek = 0
+					karta -= 200000
+					$car = '2107'
+					car = 1
+					benz = 3
+					cardrive = 8
+					teh = 200
+					tehcar = 200
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -69,14 +67,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy VAZ 2115 (310,000 rubles)':
 					cla
 					*clr
-					set karta -= 310000
-					set $car = '2115'
-					set car = 2
-					set benz = 3
-					set cardrive = 8
-					set teh = 300
-					set tehcar = 300
-					set wrek = 0
+					karta -= 310000
+					$car = '2115'
+					car = 2
+					benz = 3
+					cardrive = 8
+					teh = 300
+					tehcar = 300
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -88,14 +86,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy VAZ 2113 (290,000 rubles)':
 					cla
 					*clr
-					set karta -= 290000
-					set $car = '2113'
-					set car = 3
-					set benz = 3
-					set cardrive = 8
-					set teh = 290
-					set tehcar = 290
-					set wrek = 0
+					karta -= 290000
+					$car = '2113'
+					car = 3
+					benz = 3
+					cardrive = 8
+					teh = 290
+					tehcar = 290
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -106,14 +104,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy VAZ 2114 (300,000 rubles)':
 					cla
 					*clr
-					set karta -= 300000
-					set $car = '2114'
-					set car = 4
-					set benz = 3
-					set cardrive = 8
-					set teh = 300
-					set tehcar = 300
-					set wrek = 0
+					karta -= 300000
+					$car = '2114'
+					car = 4
+					benz = 3
+					cardrive = 8
+					teh = 300
+					tehcar = 300
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -124,14 +122,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy VAZ 2110 (350,000 rubles)':
 					cla
 					*clr
-					set karta -= 350000
-					set $car = 'VAZ 2110'
-					set car = 5
-					set benz = 3
-					set cardrive = 8
-					set teh = 350
-					set tehcar = 350
-					set wrek = 0
+					karta -= 350000
+					$car = 'VAZ 2110'
+					car = 5
+					benz = 3
+					cardrive = 8
+					teh = 350
+					tehcar = 350
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -142,14 +140,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy VAZ Kalina (400,000 rubles)':
 					cla
 					*clr
-					set karta -= 400000
-					set $car = 'VAZ Kalina'
-					set car = 6
-					set benz = 3
-					set cardrive = 8
-					set teh = 400
-					set tehcar = 400
-					set wrek = 0
+					karta -= 400000
+					$car = 'VAZ Kalina'
+					car = 6
+					benz = 3
+					cardrive = 8
+					teh = 400
+					tehcar = 400
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -160,14 +158,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy VAZ Priora (450,000 rubles)':
 					cla
 					*clr
-					set karta -= 450000
-					set $car = 'VAZ PRIORA'
-					set car = 7
-					set benz = 3
-					set cardrive = 8
-					set teh = 450
-					set tehcar = 450
-					set wrek = 0
+					karta -= 450000
+					$car = 'VAZ PRIORA'
+					car = 7
+					benz = 3
+					cardrive = 8
+					teh = 450
+					tehcar = 450
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -178,14 +176,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy Chevrolet Niva (500,000 rubles)':
 					cla
 					*clr
-					set karta -= 500000
-					set $car = 'Chevrolet Niva'
-					set car = 8
-					set benz = 3
-					set cardrive = 8
-					set teh = 500
-					set tehcar = 500
-					set wrek = 0
+					karta -= 500000
+					$car = 'Chevrolet Niva'
+					car = 8
+					benz = 3
+					cardrive = 8
+					teh = 500
+					tehcar = 500
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -196,14 +194,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy UAZ Hunter (500,000 rubles)':
 					cla
 					*clr
-					set karta -= 500000
-					set $car = 'UAZ HUNTER'
-					set car = 9
-					set benz = 3
-					set cardrive = 8
-					set teh = 300
-					set tehcar = 300
-					set wrek = 0
+					karta -= 500000
+					$car = 'UAZ HUNTER'
+					car = 9
+					benz = 3
+					cardrive = 8
+					teh = 300
+					tehcar = 300
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -214,14 +212,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy UAZ Patriot (600,000 rubles)':
 					cla
 					*clr
-					set karta -= 600000
-					set $car = 'UAZ PATRIOT'
-					set car = 10
-					set benz = 3
-					set cardrive = 8
-					set teh = 400
-					set tehcar = 400
-					set wrek = 0
+					karta -= 600000
+					$car = 'UAZ PATRIOT'
+					car = 10
+					benz = 3
+					cardrive = 8
+					teh = 400
+					tehcar = 400
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -232,14 +230,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy Mitsubishi l200 (1,000,000 rubles)':
 					cla
 					*clr
-					set karta -= 1000000
-					set $car = 'Mitsubishi l200'
-					set car = 95
-					set benz = 3
-					set cardrive = 8
-					set teh = 2000
-					set tehcar = 2000
-					set wrek = 0
+					karta -= 1000000
+					$car = 'Mitsubishi l200'
+					car = 95
+					benz = 3
+					cardrive = 8
+					teh = 2000
+					tehcar = 2000
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -250,14 +248,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy Audi Q7 (5,000,000 rubles)':
 					cla
 					*clr
-					set karta -= 5000000
-					set $car = 'Audi Q7'
-					set car = 96
-					set benz = 3
-					set cardrive = 8
-					set teh = 5000
-					set tehcar = 5000
-					set wrek = 0
+					karta -= 5000000
+					$car = 'Audi Q7'
+					car = 96
+					benz = 3
+					cardrive = 8
+					teh = 5000
+					tehcar = 5000
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -268,14 +266,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy Cadillac Escalade (2,000,000 rubles)':
 					cla
 					*clr
-					set karta -= 2000000
-					set $car = 'Cadillac Escalade'
-					set car = 97
-					set benz = 3
-					set cardrive = 8
-					set teh = 4000
-					set tehcar = 4000
-					set wrek = 0
+					karta -= 2000000
+					$car = 'Cadillac Escalade'
+					car = 97
+					benz = 3
+					cardrive = 8
+					teh = 4000
+					tehcar = 4000
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'autosalonF', 'manager'
@@ -286,14 +284,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy Porsche Cayenne (5,000,000 rubles)':
 					cla
 					*clr
-					set karta -= 5000000
-					set $car = 'Porsche Cayenne'
-					set car = 98
-					set benz = 3
-					set cardrive = 8
-					set teh = 3000
-					set tehcar = 3000
-					set wrek = 0
+					karta -= 5000000
+					$car = 'Porsche Cayenne'
+					car = 98
+					benz = 3
+					cardrive = 8
+					teh = 3000
+					tehcar = 3000
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -304,14 +302,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy BMW X6 (4,500,000 rubles)':
 					cla
 					*clr
-					set karta -= 4500000
-					set $car = 'BMW X6'
-					set car = 99
-					set benz = 3
-					set cardrive = 8
-					set teh = 4000
-					set tehcar = 4000
-					set wrek = 0
+					karta -= 4500000
+					$car = 'BMW X6'
+					car = 99
+					benz = 3
+					cardrive = 8
+					teh = 4000
+					tehcar = 4000
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'
@@ -322,14 +320,14 @@ if $ARGS[0] = 'manager1':
 				act 'Buy Mercedes-Benz S 600 (8,000,000 rubles)':
 					cla
 					*clr
-					set karta -= 8000000
-					set $car = 'Mercedes-Benz S 600'
-					set car = 100
-					set benz = 3
-					set cardrive = 8
-					set teh = 8000
-					set tehcar = 8000
-					set wrek = 0
+					karta -= 8000000
+					$car = 'Mercedes-Benz S 600'
+					car = 100
+					benz = 3
+					cardrive = 8
+					teh = 8000
+					tehcar = 8000
+					wrek = 0
 					'You transferred money manager and you receive a key. She said that your car is already on the street. Gasoline little and she recommends that you refuel.'
 
 					act 'Leave':gt 'Nord'

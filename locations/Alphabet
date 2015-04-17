@@ -1,17 +1,17 @@
 # Alphabet
 act 'In the corridor':gt 'floor'
 
-'<center><b>dorm room</b></center>'
-'<center><img src="images/etogame/obskom.jpg"></center>'
 clr
 gs 'stat'
+'<center><b>Dorm room</b></center>'
+'<center><img src="images/etogame/obskom.jpg"></center>'
 'Narrow room with a single window, wooden floor, three <a href="exec:gt ''Beds'', ''choice''">beds</a>, small <a href="exec:gt ''table''">table</a> and a few chairs. At the entrance stands the old <a href="exec:gt ''cupboard''">wardrobe</a> to which to attach the old <a href="exec:gt ''zerkaloO''">mirror</a>.'
 
-if palto = 1:'At the entrance hangs a simple Chinese women´s down jacket'
-if palto = 2:'At the entrance hangs a woman´s coat'
-if palto = 3:'At the entrance hangs a dear lady´s coat'
-if daystart = 0:Set daystart = 1
-if house = 1 and student = 0:Set house = 0 & 'You are being evicted from their dormitory if right now you find yourself through the computer place to stay, you will remain without a roof over your head at the first exit from the hostel.'
+if palto = 1:'At the entrance hangs a simple Chinese women''s down jacket'
+if palto = 2:'At the entrance hangs a woman''s coat'
+if palto = 3:'At the entrance hangs a dear lady''s coat'
+if daystart = 0:daystart = 1
+if house = 1 and student = 0:house = 0 & 'You are being evicted from their dormitory if right now you find yourself through the computer place to stay, you will remain without a roof over your head at the first exit from the hostel.'
 
 act 'roommate Vic':
 	cla
@@ -20,16 +20,16 @@ act 'roommate Vic':
 	'Vick sits on her bed and as always paints her nails.'
 
 	act 'Room':gt 'Alphabet'
-		if h < 23:
+		if hour < 23:
 			act 'Chat with Vika (1:00)':
 			cla
-			set h += 1
-			set Vika += 5
-			set kosmskill += 1
+			hour += 1
+			Vika += 5
+			kosmskill += 1
 
-			if repa < 30:set repa += 1
+			if repa < 30:repa += 1
 
-			set talkrand = rand(0, 18)
+			talkrand = rand(0, 18)
 
 			if talkrand = 0:'You started talking with Vika, she tells you about the boys she met, about parties, about cosmetics.'
 			if talkrand = 1:'Wick says she was in a cafe and invited her to dance even then the guy who paid her bill.'
@@ -57,7 +57,7 @@ act 'roommate Vic':
 		if Vika > 10:
 			cla
 
-			if vikavecher = 0:set vikavecher = 1
+			if vikavecher = 0:vikavecher = 1
 
 			'Vic tells you that the party is planned, as well, and always on Fridays. You can go there with Vika'
 
@@ -68,20 +68,18 @@ act 'roommate Vic':
 		if Vika > 10 and Vzaem = 0:
 			act 'Borrow from Wiki 1000 rubles':
 				cla
-				set money += 1000
-				set Vzaem = 1
+				money += 1000
+				Vzaem = 1
 				'Vick fumbled in her purse and gave you 1000 rubles in debt'
 
 				act 'Room':gt 'Alphabet'
 			end
-		end
-
-		if Vika > 10 and Vzaem = 1 and money >= 1000:
+		elseif Vika > 10 and Vzaem = 1 and money >= 1000:
 			act 'Giving Vick debt (1,000 rubles)':
 				cla
-				set money -= 1000
-				set Vzaem = 0
-				set Vika += 5
+				money -= 1000
+				Vzaem = 0
+				Vika += 5
 				'You gave Vick 1000 rubles taken you in debt'
 
 				act 'Room':gt 'Alphabet'
@@ -91,8 +89,8 @@ act 'roommate Vic':
 		if vikasex > 0 and Vika > 20:
 			act 'Offer fun':
 				cla
-				set h += 1
-				set $girl = 'Vetch'
+				hour += 1
+				$girl = 'Vetch'
 				gt 'lesb', 'start'
 			end
 		end
@@ -107,14 +105,14 @@ act 'roommate Galya':
 
 	act 'Room':gt 'Alphabet'
 
-	if h < 23:
+	if hour < 23:
 		act 'Engage with Galya (1:00)':
 			cla
-			set h += 1
-			set intel += 1
-			set Gala += 5
+			hour += 1
+			intel += 1
+			Gala += 5
 
-			if repa > 1:set repa -= 1
+			if repa > 1:repa -= 1
 
 			'You overlaid textbooks and began to prepare together with Galya.'
 
@@ -122,22 +120,20 @@ act 'roommate Galya':
 		end
 
 		if Gala > 10 and Gzaem = 0:
-			act 'Borrow from Ghali (1,000 rubles)':
+			act 'Borrow Ghali money (1,000 rubles)':
 				cla
-				set money += 1000
-				set Gzaem = 1
+				money += 1000
+				Gzaem = 1
 				'Galya rummaged in my purse and gave you 1000 rubles in debt'
 
 				act 'Room':gt 'Alphabet'
 			end
-		end
-
-		if Gala > 10 and Gzaem = 1 and money >= 1000:
-			act 'Giving Gala  debt (1,000 rubles)':
+		elseif Gala > 10 and Gzaem = 1 and money >= 1000:
+			act 'Giving Gala debt (1,000 rubles)':
 				cla
-				set money -= 1000
-				set Gzaem = 0
-				set Gala += 5
+				money -= 1000
+				Gzaem = 0
+				Gala += 5
 				'You gave Gale 1000 rubles taken you in debt'
 
 				act 'Room':gt 'Alphabet'
@@ -146,11 +142,14 @@ act 'roommate Galya':
 	end
 end
 
-!!act 'Test':
-!!set newboy = 1
-!!gs 'boy'
-!!gs 'boyopred'
-!!act 'Room':gt 'Alphabet'
-!!end
+!'
+act 'Test':
+	newboy = 1
+	gs 'boy'
+	gs 'boyopred'
+
+	act 'Room':gt 'Alphabet'
+end
+'!
 
 --- Alphabet ---------------------------------

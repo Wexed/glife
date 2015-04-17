@@ -1,40 +1,35 @@
 # amrul
-*pl 'You leaned over the table.'
-*p '<center><img src="images/casino/amrul.jpg"></center>'
-
-act 'IPod':
-	st_1 = input 'Enter the amount'
-
-	if money < st_1:
-		msg 'You have enough money'
-		gt 'roulette'
-	end
-
-	if st_1 < 0:
-		msg 'Wrong, try again'
-		gt 'amrul'
-	end
-
-	if st_1 > 1000:
-		msg 'The maximum rate of 1000 rubles'
-		gt 'amrul'
-	end
-
-	set money -= st_1
-	gt 'rate'
-end
-
-act 'move away from the table':gt 'roulette'
-
+clr
+minut += 5
 kh = 0
 chnch = 0
 mb = 0
 du = 0
-series = 0
+a_row = 0
 chi = 100
 x_rul = 100
-clr
 gs 'stat'
-set minut += 5
+'<center><img src="images/casino/amrul.jpg"></center>'
+'You leaned over the table.'
+
+act 'Make a bet':
+	st_1 = input 'Enter the amount'
+
+	if money < st_1:
+		msg 'You have enough money'
+		gt 'tape_measure'
+	elseif st_1 < 0:
+		msg 'Wrong, try again'
+		gt 'amrul'
+	elseif st_1 > 1000:
+		msg 'The maximum rate of 1000 rubles'
+		gt 'amrul'
+	end
+
+	money -= st_1
+	gt 'the_bet'
+end
+
+act 'Move away from the table':gt 'tape_measure'
 
 --- amrul ---------------------------------

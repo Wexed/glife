@@ -20,9 +20,7 @@ $d_art_facefuck = {
 
 		if tipsexart = 0:dynamic $d_artlick
 		if tipsexart = 1:dynamic $d_artchik
-	end
-
-	if artfacefucktimes >= 4:
+	elseif artfacefucktimes >= 4:
 		tipsexart = rand(0, 1)
 
 		if tipsexart = 0:dynamic $d_art_bed
@@ -78,9 +76,7 @@ $d_art_bed = {
 			if artrand = 0:dynamic $d_art_sexdog
 			if artrand = 1:dynamic $d_art_anal
 			if artrand = 2:dynamic $d_art_fist
-		end
-
-		if artfucktimes >= 4:
+		elseif artfucktimes >= 4:
 			artrand = rand(0, 2)
 
 			if artrand = 0:dynamic $d_art_sexdog_cum
@@ -98,9 +94,9 @@ $d_art_bedmiss = {
 		'<center><img src="images/qwest/alter/artur/bedmiss.jpg"></center>'
 		'Arthur puts you on the bed and pushes your legs.'
 
-		if artfucktimes < 4:dynamic $d_art_sexmiss
-
-		if artfucktimes >= 4:
+		if artfucktimes < 4:
+			dynamic $d_art_sexmiss
+		elseif artfucktimes >= 4:
 			artrand = rand(0, 1)
 
 			if artrand = 0:dynamic $d_art_sexmiss_cum
@@ -212,11 +208,11 @@ $d_art_anal_cum = {
 		act 'further':
 			cls
 			minut += 5
-			gs 'stat'
-			'<center><img src="images/qwest/alter/artur/analcreampi.jpg"></center>'
 			lubonus = 0
 			cumanus += 1
-			'REPAIRED through time <<$boy>> groaned and you feel like your ass fills heat.'
+			gs 'stat'
+			'<center><img src="images/qwest/alter/artur/analcreampi.jpg"></center>'
+			'In a little while through time <<$boy>> groaned and you feel like your ass fills heat.'
 
 			act 'further':gt 'arturend'
 		end

@@ -5,29 +5,19 @@ $d_albina_home_start = {
 	if tipalbevrand = 0:
 		'Albina offers to play a video game.'
 		dynamic $d_albina_home_game
-	end
-
-	if tipalbevrand = 1:
+	elseif tipalbevrand = 1:
 		'Albina offers with her fun trying on dresses.'
 		dynamic $d_albina_home_dressing
-	end
-
-	if tipalbevrand = 2:
+	elseif tipalbevrand = 2:
 		'Albina offers chat.'
 		dynamic $d_albina_home_chat
-	end
-
-	if tipalbevrand = 3:
+	elseif tipalbevrand = 3:
 		'Albina offers a glass of wine.'
 		dynamic $d_albina_home_vine
-	end
-
-	if tipalbevrand = 4:
+	elseif tipalbevrand = 4:
 		'Albina offers .'
 		dynamic $d_albina_home_dressing
-	end
-
-	if tipalbevrand = 5:
+	elseif tipalbevrand = 5:
 		'Albina offers .'
 		dynamic $d_albina_home_dressing
 	end
@@ -46,7 +36,7 @@ $d_albina_home_game = {
 		'Albina has included the game and you started to play with her.'
 
 		if albsexday!daystart:
-			'Albina winking at you "Svetsik, and let`s play on the desire, if I win, I`ll do something with you, and if you win, you can do with me anything"'
+			'Albina winking at you "<<$name>>, and let''s play on the desire, if I win, I''ll do something with you, and if you win, you can do with me anything"'
 
 			act 'Oh':gt $curloc
 
@@ -54,23 +44,19 @@ $d_albina_home_game = {
 				cls
 				albsexday = daystart
 
-				if react < 25:albplay = 0
-
-				if react >= 25 and react < 50:
+				if react < 25:
+					albplay = 0
+				elseif react >= 25 and react < 50:
 					tipalbrand = rand(1, 100)
 
 					if tipalbrand < 75:albplay = 0
 					if tipalbrand >= 75:albplay = 1
-				end
-
-				if react >= 50 and react < 75:
+				elseif react >= 50 and react < 75:
 					tipalbrand = rand(1, 100)
 
 					if tipalbrand < 50:albplay = 0
 					if tipalbrand >= 50:albplay = 1
-				end
-
-				if react >= 75:
+				elseif react >= 75:
 					tipalbrand = rand(1, 100)
 
 					if tipalbrand < 40:albplay = 0
@@ -81,7 +67,7 @@ $d_albina_home_game = {
 				'<center><img src="images/qwest/alter/albina/game.jpg"></center>'
 
 				if albplay = 0:
-					'Albina easily beat you and laughing as the villain of the vaudeville slapped you on the ass palm "Arise cancer Svetsik! Be my bitch."'
+					'Albina easily beat you and laughing as the villain of the vaudeville slapped you on the ass palm "Arise cancer <<$name>>! Be my bitch."'
 					tipdesrand = rand(0, 1)
 
 					if tipdesrand = 0:dynamic $d_albina_vag_strapon
@@ -92,9 +78,7 @@ $d_albina_home_game = {
 					dynamic $d_albina_akt_anal
 				end
 			end
-		end
-
-		if albsexday = daystart:
+		elseif albsexday = daystart:
 			act 'rest':gt $curloc
 		end
 
@@ -109,13 +93,11 @@ $d_albina_home_dressing = {
 		willpower += 20
 		gs 'stat'
 		'<center><img src="images/qwest/alter/albina/dressing.jpg"></center>'
-		'You and Albina opened her huge closet and start the fun kopatsya in rags. She was just a bottomless closet full of clothes and a wide range of you for an hour trying on with different outfits Albina.'
+		'You and Albina opened her huge cloand start the fun kopatsya in rags. She was just a bottomless clofull of clothes and a wide range of you for an hour trying on with different outfits Albina.'
 
 		if albsexday!daystart:
 			act 'rest':gt $curloc
-		end
-
-		if albsexday = daystart:
+		elseif albsexday = daystart:
 			act 'rest':gt $curloc
 		end
 	end
@@ -133,16 +115,14 @@ $d_albina_home_chat = {
 
 		if albsexday!daystart:
 			act 'rest':gt $curloc
-		end
-
-		if albsexday = daystart:
+		elseif albsexday = daystart:
 			act 'rest':gt $curloc
 		end
 	end
 }
 
 $d_albina_home_vine = {
-	act 'wine':
+	act 'Drink wine':
 		cls
 		minut += 60
 		manna += 100
@@ -154,9 +134,7 @@ $d_albina_home_vine = {
 
 		if albsexday!daystart:
 			act 'rest':gt $curloc
-		end
-
-		if albsexday = daystart:
+		elseif albsexday = daystart:
 			act 'rest':gt $curloc
 		end
 	end
@@ -218,7 +196,7 @@ $d_albina_akt_vag = {
 		straponVagAkt += 1
 		gs 'stat'
 		'<center><img src="images/qwest/alter/albina/straponakt.jpg"></center>'
-		'You started to peck Albina threesome pussy and she moaned and spit on his back strapon, Finally you`re just tired and stopped.'
+		'You started to peck Albina threesome pussy and she moaned and spit on his back strapon, Finally you''re just tired and stopped.'
 
 		act 'rest':gt $curloc
 	end
@@ -236,7 +214,7 @@ $d_albina_akt_anal = {
 		straponVagAkt += 1
 		gs 'stat'
 		'<center><img src="images/qwest/alter/albina/straponaktanal.jpg"></center>'
-		'You started to peck Albina threesome in the ass and she moaned and spit on his back strapon, Finally you`re just tired and stopped.'
+		'You started to peck Albina threesome in the ass and she moaned and spit on his back strapon, Finally you''re just tired and stopped.'
 
 		act 'rest':gt $curloc
 	end
