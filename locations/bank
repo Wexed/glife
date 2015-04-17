@@ -1,22 +1,22 @@
 # bank
 if $ARGS[0] = 'start':
 	cla
-	*clr
-	set minut += 5
-	'<center><b><font color="maroon">Bank</font></b></center>'
-	'<center><img src="images/etogame/bank.jpg"></center>'
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">Bank</font></b></center>'
+	'<center><img src="images/etogame/bank.jpg"></center>'
 
 	if karta > 0:'In the bank <<karta>> rubles'
 
 	if BankPapper = 1 and dayBankPapper = day:
 		act 'Giving documents':
 			cls
-			set minut += 15
+			minut += 15
 			BankPapper = 2
 			gs 'stat'
 			'You went to the office and gave the documents to the manager.'
@@ -28,14 +28,14 @@ if $ARGS[0] = 'start':
 	if money > 0:
 		act 'Deposit money':
 			cla
-			set minut += 5
+			minut += 5
 			kartaIN = input ("How much money you want to deposit into the account?")
 
 			if kartaIN <= 0 or kartaIN > money:
 				'Not correct operation.'
 			else
-				set karta += kartaIN
-				set money -= kartaIN
+				karta += kartaIN
+				money -= kartaIN
 				'You put on the account <<kartaIN>> rubles, now on your account <<karta>> rubles.'
 			end
 
@@ -46,14 +46,14 @@ if $ARGS[0] = 'start':
 	if karta > 0:
 		act 'Withdrawing money':
 			cla
-			set minut += 5
+			minut += 5
 			kartaOUT = input ("How much do you want to withdraw from account?")
 
 			if kartaOUT <= 0 or kartaOUT > karta:
 				'Not correct operation.'
 			else
-				set karta -= kartaOUT
-				set money += kartaOUT
+				karta -= kartaOUT
+				money += kartaOUT
 				'You debited <<kartaOUT>> rubles, now on your account <<karta>> rubles.'
 			end
 
@@ -61,7 +61,7 @@ if $ARGS[0] = 'start':
 		end
 	end
 
-	act 'Exit':gt 'down'
+	act 'Leave':gt 'down'
 end
 
 --- bank ---------------------------------

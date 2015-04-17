@@ -1,98 +1,93 @@
 # boyfrend
 if $ARGS[0] = 'start':
 	if bfA = 0 and stopboy = 0:
-		set stopboy = 1
+		stopboy = 1
 		gs 'boyfrend', 'A'
-	end
-
-	if bfA > 0 and bfB = 0 and stopboy = 0:
-		set stopboy = 1
+	elseif bfA > 0 and bfB = 0 and stopboy = 0:
+		stopboy = 1
 		gs 'boyfrend', 'B'
-	end
-
-	if bfA > 0 and bfB > 0 and bfC = 0 and stopboy = 0:
-		set stopboy = 1
+	elseif bfA > 0 and bfB > 0 and bfC = 0 and stopboy = 0:
+		stopboy = 1
 		gs 'boyfrend', 'C'
+	elseif bfA > 0 and bfB > 0 and bfC > 0 and stopboy = 0:
+		'Hmm, you are already three boyfriend, why do you need a fourth?'
 	end
-
-	if bfA > 0 and bfB > 0 and bfC > 0 and stopboy = 0:'Hmm, you are already three boyfriend, why do you need a fourth?'
 end
 
 if $ARGS[0] = 'A':
-	!!set stopboy = 0
-	Set $boyA = $boy
-	set boybodyrandA = boybodyrand
-	Set $boybodyA = $boybody
-	set boybodrandA = boybodrand
-	Set $boybodA = $boybod
-	set boyfacerandA = boyfacerand
-	set $boyfaceA = $boyface
-	set dickA = dick
-	set silaVagA = silaVag
-	set financeA = finance
-	set vneshBoyA = vneshBoy
-	set $boyCloA = $boyClo
-	set figurBoyA = figurBoy
-	set titBoyA = titBoy
-	set haerBoyA = haerBoy
-	set harakBoyA = harakBoy
-	set boydayA = day
-	set bfA = 1
-	set daya = 0
-	set boyonceA = 0
-	set izvratA = izvrat
-	set giftDayA = 0
-	set giftNumA = 0
-	set love = 0
+	!!stopboy = 0
+	$boyA = $boy
+	boybodyrandA = boybodyrand
+	$boybodyA = $boybody
+	boybodrandA = boybodrand
+	$boybodA = $boybod
+	boyfacerandA = boyfacerand
+	$boyfaceA = $boyface
+	dickA = dick
+	silaVagA = silaVag
+	financeA = finance
+	vneshBoyA = vneshBoy
+	$boyCloA = $boyClo
+	figurBoyA = figurBoy
+	titBoyA = titBoy
+	haerBoyA = haerBoy
+	harakBoyA = harakBoy
+	boydayA = day
+	bfA = 1
+	daya = 0
+	boyonceA = 0
+	izvratA = izvrat
+	giftDayA = 0
+	giftNumA = 0
+	love = 0
 end
 
-
 if $ARGS[0] = 'B':
-	!!set stopboy = 0
-	Set $boyB = $boy
-	set boybodyrandB = boybodyrand
-	Set $boybodyB = $boybody
-	set boybodrandB = boybodrand
-	Set $boybodB = $boybod
-	set boyfacerandB = boyfacerand
-	set $boyfaceB = $boyface
-	set dickB = dick
-	set silaVagB = silaVag
-	set financeB = finance
-	set vneshBoyB = vneshBoy
-	set $boyCloB = $boyClo
-	set figurBoyB = figurBoy
-	set titBoyB = titBoy
-	set haerBoyB = haerBoy
-	set harakBoyB = harakBoy
-	set boydayB = day
-	set bfB = 1
-	set dayb = 0
-	set boyonceB = 0
+	!!stopboy = 0
+	$boyB = $boy
+	boybodyrandB = boybodyrand
+	$boybodyB = $boybody
+	boybodrandB = boybodrand
+	$boybodB = $boybod
+	boyfacerandB = boyfacerand
+	$boyfaceB = $boyface
+	dickB = dick
+	silaVagB = silaVag
+	financeB = finance
+	vneshBoyB = vneshBoy
+	$boyCloB = $boyClo
+	figurBoyB = figurBoy
+	titBoyB = titBoy
+	haerBoyB = haerBoy
+	harakBoyB = harakBoy
+	boydayB = day
+	bfB = 1
+	dayb = 0
+	boyonceB = 0
 end
 
 if $ARGS[0] = 'C':
-	!!set stopboy = 0
-	Set $boyC = $boy
-	set boybodyrandC = boybodyrand
-	Set $boybodyC = $boybody
-	set boybodrandC = boybodrand
-	Set $boybodC = $boybod
-	set boyfacerandC = boyfacerand
-	set $boyfaceC = $boyface
-	set dickC = dick
-	set silaVagC = silaVag
-	set financeC = finance
-	set vneshBoyC = vneshBoy
-	set $boyCloC = $boyClo
-	set figurBoyC = figurBoy
-	set titBoyC = titBoy
-	set haerBoyC = haerBoy
-	set harakBoyC = harakBoy
-	set boydayC = day
-	set bfC = 1
-	set dayc = 0
-	set boyonceC = 0
+	!!stopboy = 0
+	$boyC = $boy
+	boybodyrandC = boybodyrand
+	$boybodyC = $boybody
+	boybodrandC = boybodrand
+	$boybodC = $boybod
+	boyfacerandC = boyfacerand
+	$boyfaceC = $boyface
+	dickC = dick
+	silaVagC = silaVag
+	financeC = finance
+	vneshBoyC = vneshBoy
+	$boyCloC = $boyClo
+	figurBoyC = figurBoy
+	titBoyC = titBoy
+	haerBoyC = haerBoy
+	harakBoyC = harakBoy
+	boydayC = day
+	bfC = 1
+	dayc = 0
+	boyonceC = 0
 end
 
 --- boyfrend ---------------------------------

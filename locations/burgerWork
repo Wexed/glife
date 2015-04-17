@@ -2,36 +2,32 @@
 $dinBistroWork = {
 	act 'Dinner':
 		cls
+		minut += 30
+		health += 10
+		manna += 5
+		willpower += 5
 		gs 'stat'
 		'<center><img src="images/pics/food.jpg"></center>'
-		set minut += 30
-		set health += 10
-		set manna += 5
-		set willpower += 5
 		'You took bystroezhke food and sat at a table for dinner.'
 
 		if energy >= 30:
-			set fat += 8
-			'You can no longer have.'
-		end
-
-		if energy >= 20 and energy < 30:
-			set fat += 6
-			set energy += 10
+			fat += 8
+			'You can no longer eat.'
+		elseif energy >= 20 and energy < 30:
+			fat += 6
+			energy += 10
 			'You pushed through the power of a meal.'
-		end
-
-		if energy < 20:
-			set energy += 20
-			set fat += 4
+		elseif energy < 20:
+			energy += 20
+			fat += 4
 			'You gladly ate the food.'
 		end
 
-		if water >= 20:'Tea in you no longer climbs.'
-
-		if water < 20:
+		if water >= 20:
+			'You don''t need any more tea.'
+		elseif water < 20:
+			water += 20
 			'You gladly drank a mug of tea.'
-			set water += 20
 		end
 
 		gs 'stat'
@@ -47,14 +43,10 @@ $dinBistroWork2 = {
 		if kompromatBlackMail >= 6 and ivanFilmBJ > 0:
 			kobl = 0
 			kobl2 = 2
-		end
-
-		if kompromatBlackMail >= 6 and ivanFilmBJ = 0:
+		elseif kompromatBlackMail >= 6 and ivanFilmBJ = 0:
 			kobl = 0
 			kobl2 = 2
-		end
-
-		if kompromatBlackMail < 6:
+		elseif kompromatBlackMail < 6:
 			kobl = 0
 			kobl2 = 1
 		end
@@ -80,9 +72,7 @@ $dinBistroWork2 = {
 				end
 
 				dynamic $din_Ivan_work4
-			end
-
-			if komblrand = 1:
+			elseif komblrand = 1:
 				'After work, you are going to leave bystroezhki, but you came Ivan. "Where are you going, baby? And how to suck my candy?"'
 
 				act 'Agree':
@@ -100,9 +90,7 @@ $dinBistroWork2 = {
 				end
 
 				dynamic $din_Ivan_work4
-			end
-
-			if komblrand = 2:
+			elseif komblrand = 2:
 				'After work, you are going to leave bystroezhki, but you came Ivan. "Where are you going, baby? And how to suck my candy?"'
 
 				act 'Agree':
@@ -149,7 +137,7 @@ $dinBistroWork2 = {
 				dynamic $din_Ivan_work4
 			end
 
-			if komblrand = 3:''
+			!!if komblrand = 3:''
 
 			exit
 		end
@@ -164,19 +152,19 @@ $dinBistroWork3 = {
 		PSBBtimes = 2
 		minut += 30
 		minut += 60 * 3
+		!!gs 'BurgerTip'
 		gs 'stat'
 		'<center><img src="images/qwest/sosed/work.jpg"></center>'
-		!!gs 'BurgerTip'
+
 		'You sat down and started on the computer to prepare the contract.'
 		dynamic $burger_work_din
 		dynamic $dinBistroWork2
 	end
 }
 
-gs 'BurgerTip'
-
 if hour < 10:hour = 10 & minut = 0 & PersSecWorkTimes += 1
 
+gs 'BurgerTip'
 gs 'stat'
 '<center><img src="images/qwest/sosed/work.jpg"></center>'
 'You sit in front of his office cabinet Chubais.'
@@ -186,31 +174,26 @@ if hour < 17:
 		cls
 		PSBBtimes = 1
 		minut += 60 * 2
+		!!gs 'BurgerTip'
 		gs 'stat'
 		'<center><img src="images/qwest/sosed/work.jpg"></center>'
-		!!gs 'BurgerTip'
 		'You sat at the table and began to prepare the agreement on the computer.'
 
 		if TerminalPapper = 1:
 			TerminalPapper = 0
 			kosiakBU += 1
-			'Chubais gave you dressing for what you are not carried documents in a storage terminal and disrupted supplies.'
-		end
-
-		if TerminalPapper = 2:
+			'Anatoly Borisovich gave you dressing for what you are not carried documents in a storage terminal and disrupted supplies.'
+		elseif TerminalPapper = 2:
 			TerminalPapper = 0
 			'Anatoly Borisovich thanked you for what you just delivered documents to storage terminal.'
 		end
-
-		if BankPapper = 2:
-			BankPapper = 0
-			'Anatoly Borisovich thanked you for what you just delivered the documents to the bank.'
-		end
-
 		if BankPapper = 1:
 			BankPapper = 0
 			kosiakBU += 1
 			'Anatoly Borisovich chastised you for what you did not take the documents to the bank.'
+		elseif BankPapper = 2:
+			BankPapper = 0
+			'Anatoly Borisovich thanked you for what you just delivered the documents to the bank.'
 		end
 
 		if BuSWworkEnd = 1 or kompromatBlackMail = 1:
@@ -224,7 +207,7 @@ if hour < 17:
 				PersSecWorkTimes = 0
 				money += Pay
 				gs 'stat'
-				'You wrote a statement of resignation and quickly signed his boss, he was counted out to you <<pay>> rubles your paycheck and said, "It´s over <<$name>>, get out of here."'
+				'You wrote a statement of resignation and quickly signed his boss, he was counted out to you <<pay>> rubles your paycheck and said, "It''s over <<$name>>, get out of here."'
 
 				act 'Leave':gt 'down'
 			end

@@ -1,8 +1,13 @@
 # burger
 if $ARGS[0] = 'start':
 	cla
+	clr
 	*clr
-	set minut += 5
+	minut += 5
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
 	'<center><b><font color="maroon">Diner Bystroeshka</font></b></center>'
 	'<center><img src="images/etogame/burger.jpg"></center>'
 	'The most nutritious food in the county, and sing a couple of kilograms dial reads bright advertising on the wall.'
@@ -10,15 +15,9 @@ if $ARGS[0] = 'start':
 
 	if BistroBoss > 0:'<a href="exec:gt ''burgerBoss''">The Cabinet of the Director</a> Anatoly Chubais'
 
-	clr
-	gs 'stat'
-	fcolor = rgb(0, 0, 0)
-	bcolor = rgb(255, 255, 255)
-	lcolor = rgb(106, 90, 205)
-
 	act 'Leave':
 		cla
-		set minut += 5
+		minut += 5
 		gt 'down'
 	end
 
@@ -27,34 +26,30 @@ if $ARGS[0] = 'start':
 			cla
 			*clr
 			'<center><img src="images/pics/food.jpg"></center>'
-			set minut += 30
-			set health += 10
-			set money -= 100
-			set manna += 5
-			set willpower += 5
+			minut += 30
+			health += 10
+			money -= 100
+			manna += 5
+			willpower += 5
 
 			if energy >= 30:
-				set fat += 8
-				'You can no longer have.'
-			end
-
-			if energy >= 20 and energy < 30:
-				set fat += 6
-				set energy += 10
+				fat += 8
+				'You can no longer eat.'
+			elseif energy >= 20 and energy < 30:
+				fat += 6
+				energy += 10
 				'You pushed through the power of a meal.'
-			end
-
-			if energy < 20:
-				set energy += 20
-				set fat += 4
+			elseif energy < 20:
+				energy += 20
+				fat += 4
 				'You gladly ate the food.'
 			end
 
-			if water >= 20:'Tea in you no longer climbs.'
-
-			if water < 20:
+			if water >= 20:
+				'You don''t need any more tea.'
+			elseif water < 20:
+				water += 20
 				'You gladly drank a mug of tea.'
-				set water += 20
 			end
 
 			act 'Get up from the table':gt 'burger', 'start'
@@ -67,7 +62,7 @@ if $ARGS[0] = 'start':
 			gs 'stat'
 			'You went to the office of the owner. He appeared in his place, dealing with your papers. Anatoly Borisovich looked at you and said, "Well? Are there any news?"'
 
-			act 'Exit':gt 'burger', 'start'
+			act 'Leave':gt 'burger', 'start'
 
 			if money >= 650000:
 				act 'To repay the debt (650,000 rubles)':
@@ -77,7 +72,7 @@ if $ARGS[0] = 'start':
 					gs 'stat'
 					'Did you get the money and counted 650, 000 Arkady Borisovich. He counted the money and promised that no prosecution will be no more.'
 
-					act 'Exit':gt 'burger', 'start'
+					act 'Leave':gt 'burger', 'start'
 				end
 			end
 
@@ -90,7 +85,7 @@ if $ARGS[0] = 'start':
 					gs 'stat'
 					'You showed record recognition on camera Arkady Borisovich where Ivan confessed and promised to return the money. Arkady Borisovich took you record and said that the further he will understand and take a statement from the police.'
 
-					act 'Exit':gt 'burger', 'start'
+					act 'Leave':gt 'burger', 'start'
 				end
 			end
 		end
@@ -105,15 +100,13 @@ if $ARGS[0] = 'start':
 
 			act 'Accept work':
 				cla
-				set posuda = 1
+				posuda = 1
 				'You agreed to work.'
 
-				act 'Exit':gt 'burger', 'start'
+				act 'Leave':gt 'burger', 'start'
 			end
 		end
-	end
-
-	if posuda >= 3 and posudaA = 0:
+	elseif posuda >= 3 and posudaA = 0:
 		act 'Go to the manager':
 			cla
 			'You went to the office of the Manager. The girl told the manager that you are not running bad and offered you another part-time job. You can wash the floors in the morning, from 8 to 9-. 1:00 cleaning floors and is now 100 rubles immediately on hand.'
@@ -122,56 +115,55 @@ if $ARGS[0] = 'start':
 
 			act 'Agree to work':
 				cla
-				set posudaA = 1
+				posudaA = 1
 				'You agreed to work.'
 
-				act 'Exit':gt 'burger', 'start'
+				act 'Leave':gt 'burger', 'start'
 			end
 		end
-	end
-
-	if posuda >= 1 and posudaday ! day and NoBistroWork = 0 and PersSecWork = 0:
+	elseif posuda >= 1 and posudaday ! day and NoBistroWork = 0 and PersSecWork = 0:
 		act 'Wash the dishes for 100 rubles (1:00)':
 			cla
 			*clr
-			set posudaday = day
-			set minut += 60
-			set posuda += 1
-			set manna -= 15
-			set money += 100
-			set sweat += 1
+			posudaday = day
+			minut += 60
+			posuda += 1
+			manna -= 15
+			money += 100
+			sweat += 1
 
 			if bistroQW = 10:bistroQW = 0
 
 			'<center><img src="images/pics/dirt.jpg"></center>'
-			!!'<<bistroQW>>'
 			'You are within an hour washed the dirty dishes from the food residue and grease. After that you were given 100 rubles for his work.'
 
 			if vnesh >= 20 and posuda >= 7 and bistroQW < 10:
-				if bistroQW = 1:$bistrotext = 'From the office of the owner came out and saw Bystroezhki you smiled. "<<$name>>. My offer still stands. It pays to go to a restaurant?"'
-				if bistroQW = 0:bistroQW = 1 & $bistrotext = 'From the office of the owner came Bystroezhki and nearly bumped into you.
-
-				- Oh, sorry. How could I not see such a charming girl.
-				- Do not worry - you responded with a smile.
-				- Can you meet? I Anatoly Borisovich.
-				- <<$name>>.
-				Anatoly took your hand and kissed it.
-				-Would you like to dine out, and not in that hole?'
-				'<<$bistrotext>>'
+				if bistroQW = 1:
+					'From the office of the owner came out and saw Bystroezhki you smiled. "<<$name>>. My offer still stands. It pays to go to a restaurant?"'
+				elseif bistroQW = 0:
+					bistroQW = 1
+					'From the office of the owner came Bystroezhki and nearly bumped into you.'
+					'- Oh, sorry. How could I not see such a charming girl.'
+					'- Do not worry - you responded with a smile.'
+					'- Can you meet? I Anatoly Borisovich.'
+					'- <<$name>>.'
+					'Anatoly took your hand and kissed it.'
+					'-Would you like to dine out, and not in that hole?'
+				end
 
 				act 'Refuse':gt 'burger', 'start'
 
 				act 'Agree':
 					cls
 					bistroQW = 10
-					'"Let´s go first to the shop, pick up your gorgeous dress. And then the restaurant is not allowed in with anything." Said Anatoly seeing you on the street to his car.'
+					'"Let''s go first to the shop, pick up your gorgeous dress. And then the restaurant is not allowed in with anything." Said Anatoly seeing you on the street to his car.'
 
 					act 'Get in the car':
 						cls
 						minut += 15
+						bistroQW = 20
 						gs 'stat'
 						'<center><img src="images/maggot/car.jpg"></center>'
-						bistroQW = 20
 						'Anatoly Ehav in the car to take you by the hand and not let go until the very end of the road.'
 						'After you have gone in a very expensive boutique with a French name.'
 						'Anatoly said that you picked up the dress.'
@@ -192,15 +184,15 @@ if $ARGS[0] = 'start':
 							act 'Give blowjob':
 								cls
 								minut += 15
-								gs 'stat'
 								bistroQW = 50
 								bj += 1
 								guy += 1
 								swallow += 1
 								cumlip += 1
 								dress[24] = 1
-								set dressH[24] = 160
-								set dressB[24] = bedra
+								dressH[24] = 160
+								dressB[24] = bedra
+								gs 'stat'
 								'<center><img src="images/maggot/bj.jpg"></center>'
 								'You went down and squatted in front of Anatoly, he unbuttoned his pants and pulled out his penis. You leaned over his hard cock and kissed him, feeling his warmth. Glib tongue cock licking and sucking his struchek relish in her big wet mouth and you started to suck his dick.'
 								'Soon Anatoly groaned and you feel like in your mouth spurt of warm liquid. You are not distracted from the steel blowjob swallow cum, trying not to choke. Anatoly straightened clothes and left.'
@@ -212,7 +204,7 @@ if $ARGS[0] = 'start':
 									minut += 15
 									gs 'stat'
 									'<center><img src="images/maggot/car.jpg"></center>'
-									'Whew, Svetsik. I that tired. Let´s go to a restaurant like some other time. Chubais told you and taking you by the hand led him to his car. You quickly get to your home and Anatoly said goodbye to you.'
+									'Whew, <<$name>>. I that tired. Let''s go to a restaurant like some other time. Chubais told you and taking you by the hand led him to his car. You quickly get to your home and Anatoly said goodbye to you.'
 
 									act 'Out of the car':gt 'street'
 								end
@@ -233,8 +225,8 @@ if $ARGS[0] = 'start':
 									!!swallow += 1
 									!!cumlip += 1
 									dress[24] = 1
-									set dressH[24] = 160
-									set dressB[24] = bedra
+									dressH[24] = 160
+									dressB[24] = bedra
 									gs 'stat'
 									'<center><img src="images/maggot/pr.jpg"></center>'
 									'You looked up startled and looked at Anatoly Chubais and immediately you feel like a hot head of his cock rested you on the lips. Anatoly began to move his cock your lips. "Do not be shy baby, it oblizni his tongue."'
@@ -255,7 +247,7 @@ if $ARGS[0] = 'start':
 											!!cumlip += 1
 											gs 'stat'
 											'<center><img src="images/maggot/pr2.jpg"></center>'
-											'You continued to lick dick and Anatoly Borisovich taking you behind your head pushed closer to the penis. You feel like you are on the lips rested member. Your wet lips parted and hot and firm flesh became a member of your mouth filling it completely. "That´s it baby, suck it now." said Anatoly Borisovich start moving your hips and slowly fuck your mouth. You cupped his lips tightly member and began to feel like skin on the penis moves along the rod.'
+											'You continued to lick dick and Anatoly Borisovich taking you behind your head pushed closer to the penis. You feel like you are on the lips rested member. Your wet lips parted and hot and firm flesh became a member of your mouth filling it completely. "That''s it baby, suck it now." said Anatoly Borisovich start moving your hips and slowly fuck your mouth. You cupped his lips tightly member and began to feel like skin on the penis moves along the rod.'
 
 											act 'Sucking dick':
 												cls
@@ -287,7 +279,7 @@ if $ARGS[0] = 'start':
 															minut += 15
 															gs 'stat'
 															'<center><img src="images/maggot/car.jpg"></center>'
-															'You came out of the boutique with Anatoly Borisovich. "Whew, Svetsik. I that tired. Let´s go to a restaurant like some other time." Chubais told you and taking you by the hand led him to his car. You quickly get to your home and Anatoly said goodbye to you.'
+															'You came out of the boutique with Anatoly Borisovich. "Whew, <<$name>>. I that tired. Let''s go to a restaurant like some other time." Chubais told you and taking you by the hand led him to his car. You quickly get to your home and Anatoly said goodbye to you.'
 
 															act 'Out of the car':gt 'street'
 														end
@@ -304,14 +296,14 @@ if $ARGS[0] = 'start':
 									cls
 									dom += 5
 									'You grinned and said, "Thank you very much, " Anatoly flushed and said emphatically, "You know what I mean." then he unbuttoned his pants and pulled out a member risen.'
-									'You laughed, "That´s it, I understand perfectly, you can carry this dress myself, if you think I´m laying for each bellied, fat cat, who thinks he saddled his fate and fancies himself the king of the world and brutal macho, so not par my brain baby, and its fledgling shove back into the socket until it fell out, and then I look out there in the nest next to the chick, a couple of balls hatched not because you looked, I help them hatch knee. In general, sebi away in horror, Casanova unfinished. "'
-									'Antaloy erupted and began to threaten "Yes I am, I´ll fire you!"'
-									'You laughed in his face, "Oh scared, all right shudder fired and then he´ll be here this rag to wash the dishes."'
+									'You laughed, "That''s it, I understand perfectly, you can carry this dress myself, if you think I''m laying for each bellied, fat cat, who thinks he saddled his fate and fancies himself the king of the world and brutal macho, so not par my brain baby, and its fledgling shove back into the socket until it fell out, and then I look out there in the nest next to the chick, a couple of balls hatched not because you looked, I help them hatch knee. In general, sebi away in horror, Casanova unfinished. "'
+									'Antaloy erupted and began to threaten "Yes I am, I''ll fire you!"'
+									'You laughed in his face, "Oh scared, all right shudder fired and then he''ll be here this rag to wash the dishes."'
 									'Anatoly pale, flushed and hissing angrily jumped out of the fitting followed by your loud laughter.'
 
 									act 'Leave':
 										cla
-										set minut += 5
+										minut += 5
 										gt 'down'
 									end
 								end
@@ -321,21 +313,17 @@ if $ARGS[0] = 'start':
 				end
 
 				exit
-			end
-
-			if bistroQW = 20:
+			elseif bistroQW = 20:
 				bisrand = rand(0, 10)
 
 				if bisrand = 10:'From the office of the owner came Bystroezhki Anatoly Borisovich and see you turned away from the arrogant mien.'
-			end
-
-			if bistroQW = 56:
-				'When you´re finished you suddenly approached manager Ivan. "Okay <<$name>>. Sorry. I was wrong about you. I do not know what I was bitten by a fly. We just want people to post Assistant Manager. I think you come near. Nature you have. Well? Do you agree?"'
+			elseif bistroQW = 56:
+				'When you''re finished you suddenly approached manager Ivan. "Okay <<$name>>. Sorry. I was wrong about you. I do not know what I was bitten by a fly. We just want people to post Assistant Manager. I think you come near. Nature you have. Well? Do you agree?"'
 
 				act 'Yes.':
 					cls
 					gs 'stat'
-					'You agreed with the proposal to become assistant manager Ivan. Ivan immediately beamed with happiness. "Well then, you first work assignments, here´s the keys to the cabinet Borisych. Leave them while at home. Go to his office, open the safe and take it from there envelope. Do not forget to close only after themselves safe. How Come take an envelope to me. understood everything? Act! "'
+					'You agreed with the proposal to become assistant manager Ivan. Ivan immediately beamed with happiness. "Well then, you first work assignments, here''s the keys to the cabinet Borisych. Leave them while at home. Go to his office, open the safe and take it from there envelope. Do not forget to close only after themselves safe. How Come take an envelope to me. understood everything? Act! "'
 
 					act 'I changed my mind.':
 						cls
@@ -354,8 +342,8 @@ if $ARGS[0] = 'start':
 
 						act 'Look in the envelope':
 							cls
-							gs 'stat'
 							$burgerIvanText = 'And looked into the envelope. Then you close the safe and headed to the exit.'
+							gs 'stat'
 							'You looked at the envelope and saw there a thick wad of money. Vskidku, that about half a million. From what you see you even whistled.'
 
 							act 'Envelope attributed to Ivan':
@@ -394,20 +382,18 @@ if $ARGS[0] = 'start':
 				end
 
 				exit
-			end
-
-			if bistroQW = 50:
+			elseif bistroQW = 50:
 				'During operation, you learned that Chubais is away on business affairs and his manager replaces Ivan. When you are ready to go to work from the office manager came out and Ivan came to you in a conspiratorial tone said. "Well <<$name>>, you obviously do not want to work for those pennies? Come to me, spec. Spec work for. Salary."'
 
-				act 'Go to the manager´s office':
+				act 'Go to the manager''s office':
 					cls
 					minut += 15
-					gs 'stat'
 					bistroQW = 55
 					!!bj += 1
 					!!guy += 1
 					!!swallow += 1
 					!!cumlip += 1
+					gs 'stat'
 					'<center><img src="images/maggot/bj1.jpg"></center>'
 					'You went into the office and closed the pre Ivan the front door of the castle, and sat down in a chair in front of you at ease lounging in it. You went to the manager and waited for what he would do, he sneered and deftly grabbed you by the hand pulling yourself.'
 
@@ -419,9 +405,9 @@ if $ARGS[0] = 'start':
 						act 'Take by mouth':
 							cls
 							minut += 3
-							gs 'stat'
 							bj += 1
 							guy += 1
+							gs 'stat'
 							'<center><img src="images/maggot/bj3.jpg"></center>'
 							'Still standing in front of Ivan you even more bent and gently licked his tongue member, then again and again. Finally you lips wrapped around his cock and began to suck his cock absorbing into your hot mouth until the very end, utykayas nose at every movement in curly pubis that tickle your nose.'
 							'Ivan finally broke down and without warning began to cum in your mouth. Jet of hot liquid hit you in the mouth, you have opened wide-eyed, but you continued to suck dick spewing seed finally you had a mouth full of semen already and you could not contain it and it has emerged on your lips member Ivan.'
@@ -448,7 +434,7 @@ if $ARGS[0] = 'start':
 							bistroQW = 56
 							gs 'stat'
 							'<center><img src="images/maggot/bj1.jpg"></center>'
-							'You escaped from the hands of Ivan was not expecting such a reaction. He glared at you, "I mean Borisych suck, and his deputy squeamish?" You were taken aback by these words. How does he know about what happened in the fitting room. Apparently on your face that is reflected Ivan chuckled. "Yes Borisitch raskazal himself about it. If you calculated, but the fact that you manage Okrut Borisitch, then nothing. Did you tell him something and not really needed. And I´m offering you a decent zarobotok. So, be a good boy and show me that knows your mouth. "'
+							'You escaped from the hands of Ivan was not expecting such a reaction. He glared at you, "I mean Borisych suck, and his deputy squeamish?" You were taken aback by these words. How does he know about what happened in the fitting room. Apparently on your face that is reflected Ivan chuckled. "Yes Borisitch raskazal himself about it. If you calculated, but the fact that you manage Okrut Borisitch, then nothing. Did you tell him something and not really needed. And I''m offering you a decent zarobotok. So, be a good boy and show me that knows your mouth. "'
 
 							act 'Perebesh!':dom += 1 & gt 'burger', 'start'
 
@@ -456,9 +442,9 @@ if $ARGS[0] = 'start':
 								cls
 								bistroQW = 55
 								minut += 3
-								gs 'stat'
 								bj += 1
 								guy += 1
+								gs 'stat'
 								'<center><img src="images/maggot/bj3.jpg"></center>'
 								'Still standing in front of Ivan you even more bent and gently licked his tongue member, then again and again. Finally you lips wrapped around his cock and began to suck his cock absorbing into your hot mouth until the very end, utykayas nose at every movement in curly pubis that tickle your nose.'
 								'Ivan finally broke down and without warning began to cum in your mouth. Jet of hot liquid hit you in the mouth, you have opened wide-eyed, but you continued to suck dick spewing seed finally you had a mouth full of semen already and you could not contain it and it has emerged on your lips member Ivan.'
@@ -482,12 +468,10 @@ if $ARGS[0] = 'start':
 
 					exit
 				end
-			end
+			elseif bistroQW = 55:
+				'To you and Ivan approached the manager said "I''ll see you in my office."'
 
-			if bistroQW = 55:
-				'To you and Ivan approached the manager said "I´ll see you in my office."'
-
-				act 'Go to the manager´s office':
+				act 'Go to the manager''s office':
 					cls
 					bistroQW = 60
 					'You went into the office, Ivan sat at the table and motioned you under the table. You understand that Ivan wants, what would you crawled under the table.'
@@ -495,11 +479,11 @@ if $ARGS[0] = 'start':
 					act 'Crawl under the table':
 						cls
 						minut += 3
-						gs 'stat'
 						bj += 1
 						swallow += 1
 						cumlip += 1
 						money += 1500
+						gs 'stat'
 						'<center><img src="images/maggot/bjud.jpg"></center>'
 						'You crawled under the table and pulled out Ivan in front of your face his penis. You cupped his mouth and began to suck trying to incorporate it into your mouth as deeply as possible. Under the table was cramped and uncomfortable to suck, but you have coped and buccal a few minutes in your mouth poured semen Ivan you started quickly swallow, that would not ispachkatsya.'
 						'Thereafter, as Ivan and for the first time took a half thousand and handed to you.'
@@ -507,12 +491,10 @@ if $ARGS[0] = 'start':
 						act 'Leave':gt 'burger', 'start'
 					end
 				end
-			end
-
-			if bistroQW = 60:
+			elseif bistroQW = 60:
 				'Ivan that is nowhere to be seen and he has not approached you, you had the idea to check his office.'
 
-				act 'Go to the manager´s office':
+				act 'Go to the manager''s office':
 					cls
 					bistroQW = 65
 					'You came to the office, but it was closed, you came to the deputy manager and told you with a chuckle, "What <<$name>>? Without a" tea stick "does not work? I know all about you and our general manager. But it was not until the end of the week. And if you do not want me to tell others how you earn a living, then you go to the office and serve me. "'
@@ -563,9 +545,7 @@ if $ARGS[0] = 'start':
 						act 'Scream at full throat and run':bistroQW = 61 & gt 'burger', 'start'
 					end
 				end
-			end
-
-			if bistroQW >= 65 and soplakTimes ! 3:
+			elseif bistroQW >= 65 and soplakTimes ! 3:
 				'To you came pimply deputy manager and taking his hand led him into his office.'
 				'In office, he sat on a chair pulled out dick and put you in front of him on all fours.'
 
@@ -590,14 +570,12 @@ if $ARGS[0] = 'start':
 				end
 
 				exit
-			end
-
-			if bistroQW = 57 and BistroBoss = 0 or bistroQW >= 65 and BistroBoss = 0 and soplakTimes = 3:
+			elseif bistroQW = 57 and BistroBoss = 0 or bistroQW >= 65 and BistroBoss = 0 and soplakTimes = 3:
 				BistroBoss = 1
 
 				if soplakTimes = 3:soplakTimes = 4
 
-				'When you have finished, seemed on the verge of bystroezhki Anatoly Borisovich, he nodded to you "Hello <<$name>>, you´re done, come to me."'
+				'When you have finished, seemed on the verge of bystroezhki Anatoly Borisovich, he nodded to you "Hello <<$name>>, you''re done, come to me."'
 
 				act 'Leave':gt 'burger', 'start'
 
@@ -606,18 +584,16 @@ if $ARGS[0] = 'start':
 
 			act 'Leave':gt 'burger', 'start'
 		end
-	end
-
-	if posudaA >= 1 and posudaAday ! day and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
+	elseif posudaA >= 1 and posudaAday ! day and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
 		act 'Wash the floor for 100 rubles(1:00)':
 			cla
 			*clr
-			set posudaAday = day
-			set minut += 60
-			set posuda += 1
-			set manna -= 15
-			set money += 100
-			set sweat += 1
+			posudaAday = day
+			minut += 60
+			posuda += 1
+			manna -= 15
+			money += 100
+			sweat += 1
 			'<center><img src="images/etogame/clener1.jpg"></center>'
 			'You within the hour namyvali floor eatery. After that you were given 100 rubles for his work.'
 

@@ -1,13 +1,13 @@
 # balkon2
-!!!!!КУРИТЬ на балконе!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 if $ARGS[0] = 'kurit':
 	cla
-	*clr
-	set minut += 10
-	set vikureno += 1
-	set siga -= 1
-	set son += 1
 	clr
+	*clr
+	minut += 10
+	vikureno += 1
+	siga -= 1
+	son += 1
 	gs 'stat'
 	'<center><img src="images/etogame/kurit.jpg"></center>'
 	'<center>You lit a cigarette...</center>'
@@ -15,35 +15,35 @@ if $ARGS[0] = 'kurit':
 	act 'Throw a cigarette butt...':gt 'balkon', 'start'
 end
 
-!!!!!Сосед демонстрировать тело!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if $ARGS[0] = 'demo1':
 	cla
-	*clr
 	clr
-	gs 'stat'
+	*clr
 	horny += rand(30, 50)
-	set minut += 5
-	set sosedBalDay = day
+	minut += 5
+	sosedBalDay = day
+
+	if exhibi = 2:exhibi = 3
+
+	gs 'stat'
+	'<center><font size="5" color="maroon"><b>Balcony</b></font></center>'
 
 	if tanga = 1:'<center><img src="images/community/balcony_underwear3.jpg"></center>'
 	if tanga = 0:'<center><img src="images/community/balcony_naked3.jpg"></center>'
 
 	'<center>You defiantly posing on the balcony, to the delight of the neighbor. He eagerly looking at you furiously masturbate. 5 minutes later he came and went to his apartment.</center>'
 
-	if exhibi = 2:exhibi = 3
-
 	act 'Further':gt 'balkon', 'start'
 end
 
-!!!!!Сосед палец!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if $ARGS[0] = 'palec1':
 	cla
-	*clr
 	clr
-	gs 'stat'
+	*clr
 	horny += rand(10, 30)
-	set minut += 1
-	set sosedBalDay = day
+	minut += 1
+	sosedBalDay = day
+	gs 'stat'
 
 	if tanga = 1:'<center><img src="images/community/fuckyou_underwear.jpg"></center>'
 	if tanga = 0:'<center><img src="images/community/fuckyou_naked.jpg"></center>'
@@ -53,27 +53,29 @@ if $ARGS[0] = 'palec1':
 	act 'Further':gt 'balkon', 'start'
 end
 
-!!!!!смотреть вниз!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if $ARGS[0] = 'niz':
 	cla
-	*clr
 	clr
-
+	*clr
 	gs 'stat'
 
-	'<center><font size="5" color="maroon"><b>Balcony</b></font></center>'
-
 	if alcohol < 12:
+		!!!Probably CV edition
 		if nude = 0:'<center><img src="images/community/balcony_dressed2.jpg"></center>'
 		if nude = 1 and tanga = 1:'<center><img src="images/community/balcony_underwear2.jpg"></center>'
 		if nude = 1 and tanga = 0:'<center><img src="images/community/balcony_naked2.jpg"></center>'
-
-		if siga >= 1:act 'Have a cigarette':gt 'balkon2', 'kurit'
+		!!!
 
 		act 'Enjoy the view':
 			cla
 			*clr
-			'<center><img src="images/etogame/bal1.jpg"></center>'
+
+			if hour >=8 and hour <= 19:
+				'<center><img src="images/etogame/bal1.jpg"></center>'
+			else
+				'<center><img src="images/etogame/bal2.jpg"></center>'
+			end
+
 			'<center>You look at the panorama from your private balcony.</center>'
 
 			act 'Further':gt 'balkon', 'start'
@@ -87,8 +89,8 @@ end
 
 if $ARGS[0] = 'sosed':
 	cla
-	*clr
 	clr
+	*clr
 	gs 'stat'
 	'<center><font size="5" color="maroon"><b>Balcony</b></font></center>'
 	'<center><img src="images/etogame/sosed.jpg"></center>'
@@ -98,17 +100,18 @@ if $ARGS[0] = 'sosed':
 	act 'Show pervert thumb':gt 'balkon2', 'palec1'
 end
 
+!!1Probably CV edition
 if $ARGS[0] = 'masopt':
 	cla
 	*clr
 	clr
 	gs 'stat'
-	set minut += 15
-	set mastr += 1
-	set manna += 15
-	set willpower += 15
-	set horny = 0
-	set orgasm += 1
+	minut += 15
+	mastr += 1
+	manna += 15
+	willpower += 15
+	horny = 0
+	orgasm += 1
 	'<center><img src="images/community/balcony_dildo.jpg"></center>'
 
 	if dildo = 1:
@@ -117,8 +120,8 @@ if $ARGS[0] = 'masopt':
 		act 'Yes':
 			cla
 			*clr
-			set vagina += rand(0, 2)
-			set badildo = rand(1, 2)
+			vagina += rand(0, 2)
+			badildo = rand(1, 2)
 
 			if badildo = 1:'<center><img src="images/community/balcony_dildo1.jpg"></center>'
 			if badildo = 2:'<center><img src="images/community/balcony_dildo2.jpg"></center>'
@@ -131,10 +134,10 @@ if $ARGS[0] = 'masopt':
 		act 'Yes, on my ass':
 			cla
 			*clr
-			set minut += 10
-			set analorgasm += 1
-			set anal += 1
-			set anus += rand(0, 2)
+			minut += 10
+			analorgasm += 1
+			anal += 1
+			anus += rand(0, 2)
 			'<center><img src="images/community/balcony_anal1.gif"></center>'
 			'<center>I feel that my whole ass is burning</center>'
 
@@ -151,7 +154,7 @@ if $ARGS[0] = 'masopt':
 	act iif(dildo = 1, 'No', 'Finger'):
 		cla
 		*clr
-		set vagina += rand(0, 1)
+		vagina += rand(0, 1)
 		gt 'balkon2', 'finger'
 	end
 end
@@ -181,13 +184,13 @@ if $ARGS[0] = 'finger':
 				'<center><img src="images/community/balcony_mas1-4.jpg"></center>'
 				if exhibi >= 0:
 
-					if exhibi = 1:set exhibi = 2
+					if exhibi = 1:exhibi = 2
 					'<center>You look around to see if you have an audience.</center>'
 
-					set visit = rand(0, 0)
+					visit = rand(0, 0)
 
 					if visit = 0:
-						set vagina += 1
+						vagina += 1
 						'<center>You can''t see anyone.</center>'
 
 						act 'insert fingers':gt 'balkon2', 'finger_solo'
@@ -259,5 +262,6 @@ if $ARGS[0] = 'finger_solo':
 		end
 	end
 end
+!!!
 
 --- balkon2 ---------------------------------

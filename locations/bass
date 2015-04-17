@@ -1,26 +1,26 @@
 # bass
 	if $ARGS[0] = 'start':
 		cla
-		*clr
-		set minut += 5
-		'<center><b><font color="maroon">Pool</font></b></center>'
-		'<center><img src="images/etogame/bass.jpg"></center>'
 		clr
+		*clr
+		minut += 5
 		gs 'stat'
 		fcolor = rgb(0, 0, 0)
 		bcolor = rgb(255, 255, 255)
 		lcolor = rgb(106, 90, 205)
+		'<center><b><font color="maroon">Pool</font></b></center>'
+		'<center><img src="images/etogame/bass.jpg"></center>'
 		'Entrance to the pool is worth 100 rubles, you must have a swimsuit.'
 
-		act 'Leave':set minut += 5 & gt 'down'
+		act 'Leave':minut += 5 & gt 'down'
 
 		if db >= 1 and bikini > 0 and Goraday ! day:act 'Search ZHoru':Goraday = day & gt 'klofdomhouse', 'ev42'
 
 		if money >= 100 and bikini > 0:
 			act 'To pay 100 rubles per 1 hour in the pool':
 			cla
-			set minut += 5
-			set money -= 100
+			minut += 5
+			money -= 100
 			gt 'bass', 'a'
 		end
 	end
@@ -29,7 +29,7 @@ end
 if $ARGS[0] = 'a':
 	cla
 	*clr
-	set minut += 5
+	minut += 5
 	'<center><b><font color="maroon">Pool</font></b></center>'
 
 	if magik < 4:'<center><img src="images/etogame/bass.jpg"></center>'
@@ -41,13 +41,13 @@ if $ARGS[0] = 'a':
 		act 'Watch for swimmers':
 			cla
 			*clr
-			set kisameQW = 1
-			set minut += 60
-			set sweat = -3
-			set manna += 5
-			set willpower += 5
+			kisameQW = 1
+			minut += 60
+			sweat = -3
+			manna += 5
+			willpower += 5
 
-			if stren < 30:set stren += 1
+			if stren < 30:stren += 1
 
 			'<center><img src="images/qwest/kisame.jpg"></center>'
 			'Athlete put on a towel and walked up to you. He smiled and said "Hi sweetie My name is Kisame just for you Kitty!"'
@@ -55,7 +55,7 @@ if $ARGS[0] = 'a':
 			act 'Hi! I <<$name>>.':
 				cla
 				'(You) - Hi! I <<$name>>.'
-				'(Plavec) - Svetsik can swim together?'
+				'(Plavec) - <<$name>> can swim together?'
 				'Kisame without waiting grabs you by the waist and powerful jump jumps to the middle of the pool.'
 
 				act 'Next.':gt 'kisameQW', 'start'
@@ -71,43 +71,39 @@ if $ARGS[0] = 'a':
 				act 'Next.':gt 'kisameQW', 'start'
 			end
 		end
-	end
-
-	if kisameQW = 1 and KisameDead < 1:
+	elseif kisameQW = 1 and KisameDead < 1:
 		'<center><img src="images/qwest/kisameV.jpg"></center>'
 		'Seeing you akulopodobny Kisame smiling "Hi baby. Want me to fill your hot mouth his shark-seed?"'
 
 		act 'Attack (Kisame mag10)':
 			cla
-			set horny += 10
-			set $nameV = 'Kisame'
+			horny += 10
+			$nameV = 'Kisame'
 			!!stats
-			set strenV = 300
-			set speedV = 100
-			set agilV = 100
-			set reactV = 100
-			set vitalV = 200
-			set intelV = 100
-			set willV = 50
+			strenV = 300
+			speedV = 100
+			agilV = 100
+			reactV = 100
+			vitalV = 200
+			intelV = 100
+			willV = 50
 			!!skills
-			set magikV = 10
-			set boxingV = 100
-			set shootV = 100
+			magikV = 10
+			boxingV = 100
+			shootV = 100
 			!!parameters
-			set healthV = vitalV * 10 + strenV * 5
-			set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
-			set willpowerV = willV * 10
-			set BonusAtakV = 0
-			set BonusDefV = 0
+			healthV = vitalV * 10 + strenV * 5
+			mannaV = intelV * magikV + magikV * 100 + vitalV * 10
+			willpowerV = willV * 10
+			BonusAtakV = 0
+			BonusDefV = 0
 			!!Programme of Action
-			set program = 5
-			!!!!!!!!!!!!!!!!!!!!
-			!!!!!!!!!!!!!!!!!!!!
-			set KisaFight = 1
-			set klonV = 5
-			set defenceV = 800
+			program = 5
+			KisaFight = 1
+			klonV = 5
+			defenceV = 800
 
-			if spellavtoklon = 1:set klon = 3
+			if spellavtoklon = 1:klon = 3
 
 			gt 'fight', 'start'
 		end
@@ -115,18 +111,18 @@ if $ARGS[0] = 'a':
 		act 'Make him a blowjob under water':
 			cla
 			*clr
-			set minut += 60
-			set horny += 100
-			set sweat = -3
-			set manna += 5
-			set willpower += 5
+			minut += 60
+			horny += 100
+			sweat = -3
+			manna += 5
+			willpower += 5
 
-			if stren < 40:set stren += 1
-			if KisameSex = 0:set KisameSex = 1 & Set guy += 1
+			if stren < 40:stren += 1
+			if KisameSex = 0:KisameSex = 1 & Set guy += 1
 
-			set bj += 1
-			set swallow += 1
-			set SUB += 1
+			bj += 1
+			swallow += 1
+			SUB += 1
 			'<center><img src="images/qwest/kisameBJ.jpg"></center>'
 			'You downcast eyes, Kisame smiled even wider and dragged you into the water. His strong hands pressed your face to his groin and you wrapped around his dick lips quite quickly Kisame finished your mouth.'
 
@@ -137,22 +133,22 @@ if $ARGS[0] = 'a':
 	act 'Swim (1:00)':
 		cla
 		*clr
-		set cumpussy = 0
-		set cumbelly = 0
-		set cumass = 0
-		set cumanus =0
-		set cumlip = 0
-		set cumface = 0
-		set cumfrot = 0
-		set minut += 60
-		set sweat = -3
-		set manna += 5
-		set willpower += 5
+		cumpussy = 0
+		cumbelly = 0
+		cumass = 0
+		cumanus =0
+		cumlip = 0
+		cumface = 0
+		cumfrot = 0
+		minut += 60
+		sweat = -3
+		manna += 5
+		willpower += 5
 
-		if stren < 40:set stren += 1
+		if stren < 40:stren += 1
 
 		'<center><img src="images/pics/swim.jpg"></center>'
-		'You iskupnulis in the pool, the water refreshes and invigorates.'
+		'You swim in the pool, the water refreshes and invigorates.'
 
 		act 'Out of the water':gt 'bass', 'start'
 	end

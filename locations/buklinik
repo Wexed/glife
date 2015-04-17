@@ -1,9 +1,10 @@
 # buklinik
 if $ARGS[0] = 'start':
 	cla
-	*clr
-	set minut += 5
 	clr
+	*clr
+	minut += 5
+
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -27,9 +28,9 @@ end
 
 if $ARGS[0] = 'holl':
 	cla
-	*clr
-	set minut += 5
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -59,9 +60,9 @@ end
 
 if $ARGS[0] = 'registr':
 	cla
-	*clr
-	set minut += 15
 	clr
+	*clr
+	minut += 15
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -71,7 +72,7 @@ if $ARGS[0] = 'registr':
 	'In registature sit two women in white coats.'
 
 	if bumtolik = 4:'You:- Hello, my name is <<$name>>, I am with the work. Girl named Olga gave me this card, said that you need employees.'
-	'Registrar:- Hello! We are very pleased to see you. But I´m afraid you refuse, the fact is that we need volunteers, ie your work will not be paid. A job to be very complicated. Will have to take care of the elderly and the homeless to feed and clothe.'
+	'Registrar:- Hello! We are very pleased to see you. But I''m afraid you refuse, the fact is that we need volunteers, ie your work will not be paid. A job to be very complicated. Will have to take care of the elderly and the homeless to feed and clothe.'
 
 
 	act 'I knew you, I have to think':gt 'nord'
@@ -80,22 +81,19 @@ end
 
 if $ARGS[0] = 'registr2':
 	cla
-	*clr
-	set minut += 15
 	clr
+	*clr
+	minut += 15
+	bumtolik = 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
 	'<center><b>Mercy Clinic. desk</b></center>'
 	'<center><img src="images/etogame/bukli_reg.jpg"></center>'
-	bumtolik = 5
-
 	'You:- Well, I think I can handle it. Where do I start?'
 	'Registrar:- I am happy to hear that. Fill out the form. And me, store copies of your passport and if there is documentation of education diploma courses, all that is, perhaps, in the future, you can find paid work.'
-
 	'(You fill out the form)'
-
 	'Registator:- Well, there you have a membership card. The corridor the first door on the right, get to the warehouse, where she will meet Olga show you everything.'
 
 
@@ -104,9 +102,9 @@ end
 
 if $ARGS[0] = 'registr3':
 	cla
-	*clr
-	set minut += 15
 	clr
+	*clr
+	minut += 15
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -120,9 +118,9 @@ end
 
 if $ARGS[0] = 'sklad':
 	cla
-	*clr
-	set minut += 5
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -138,9 +136,9 @@ end
 
 if $ARGS[0] = 'olga':
 	cla
-	*clr
-	set minut += 5
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -162,9 +160,9 @@ end
 
 if $ARGS[0] = 'sec':
 	cla
-	*clr
-	set minut += 15
 	clr
+	*clr
+	minut += 15
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -179,9 +177,7 @@ if $ARGS[0] = 'sec':
 		'Jeanne:- Wow! And you young <<$name>> bold. Very pleased to meet you!'
 		'You:- Thank you, mutually.'
 		act 'To the head':gt 'buklinik', 'dir'
-	end
-
-	if bumtolik > 5:
+	elseif bumtolik > 5:
 		'- Hello, <<$name>>!'
 		act 'In the corridor':gt 'buklinik', 'holl'
 	end
@@ -190,7 +186,7 @@ end
 if $ARGS[0] = 'dir':
 	cla
 	*clr
-	set minut += 15
+	minut += 15
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
@@ -219,7 +215,7 @@ end
 if $ARGS[0] = 'shower':
 	cla
 	*clr
-	set minut += 15
+	minut += 15
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
@@ -235,9 +231,9 @@ end
 
 if $ARGS[0] = 'stol':
 	cla
-	*clr
-	set minut += 15
 	clr
+	*clr
+	minut += 15
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -252,9 +248,9 @@ end
 
 if $ARGS[0] = 'spal':
 	cla
-	*clr
-	set minut += 15
 	clr
+	*clr
+	minut += 15
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -273,9 +269,9 @@ end
 
 if $ARGS[0] = 'olga2':
 	cla
-	*clr
-	set minut += 15
 	clr
+	*clr
+	minut += 15
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -284,12 +280,14 @@ if $ARGS[0] = 'olga2':
 	'<center><img src="images/etogame/bukli_olga.jpg"></center>'
 	'(Olga - groomed and cute brunette with a kind smile.)'
 
-		if bumtolik > 5:'- Hello, <<$name>>!'
-		if buklinikDay = day:'- Today there is no more work, we can relax.'
-	!! if bumtolik = 7 and buklinikDay ! day:'- Света, нам нужно помощь <a href="exec:gt ''buklinik_event'', ''pos6''">накормить нуждающихся</a>.'
+	if bumtolik > 5:'- Hello, <<$name>>!'
+	if buklinikDay = day:'- Today there is no more work, we can relax.'
+	if bumtolik = 7 and buklinikDay ! day:'- <<$name>>, We need help <a href="exec:gt ''buklinik_event'', ''pos6''">feed the needy</a>.'
+	if bumtolik >= 8 and buklinikDay ! day: '- <<$name>>, here is the address of one <a href="exec:GT ''buklinik_event'',''pos8''">elderly man</a>, go see him help with the housework.'
+	if bumtolik = 9 and buklinikDay ! day: '- <<$name>>, Need help persuade a wino not wander the streets, and come to live with <a href="exec:GT ''buklinik_event'',''pos9''">to_us</a>.'
 	if bumtolik = 5:
 		bumtolik = 6
-		'Olga:- Continue along the corridor beds, showers and a dining room where guests can eat for free. See there is nothing special. Well, that´s all. At the reception we sit two girls - Regina and Karina, you´ve seen them.'
+		'Olga:- Continue along the corridor beds, showers and a dining room where guests can eat for free. See there is nothing special. Well, that''s all. At the reception we sit two girls - Regina and Karina, you''ve seen them.'
 		'We were still coming the other volunteers, but you yourself to meet them at the meeting.'
 		'You can look around here, if that appeals to me.'
 	end

@@ -3,17 +3,18 @@ $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><b><font color="maroon">Your bedroom</font></b></center>'
-'<center><img src="images/qwest/alter/<<$loc>>.jpg"></center>'
 clr
-set minut += 1
+minut += 1
 gs 'stat'
 fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
+'<center><b><font color="maroon">Your bedroom</font></b></center>'
+'<center><img src="images/qwest/alter/<<$loc>>.jpg"></center>'
 'Small room in which hardly squeezed <a href="exec:gt ''loker'', ''start''">cabinet</a>, your <a href="exec:gt ''bedPar''">bed</a>, <a href="exec:gt ''stolPar''">desk</a> bed and sisters.'
-if tanga = 0:tanga = 1
 gs 'family'
+
+if tanga = 0:tanga = 1
 
 act 'Leave the room':gt 'korrPar'
 
@@ -21,16 +22,16 @@ if student > 0 and kursovik < 100:
 	act 'Write coursework (1:00)':
 		cla
 		*clr
-		set minut += 60
-		set kursovik += rand(intel / 20, intel / 10)
+		minut += 60
+		kursovik += rand(intel / 20, intel / 10)
 
-		if kursovik > 100:set kursovik = 100
+		if kursovik > 100:kursovik = 100
 
-		set manna -= 10
+		manna -= 10
 		'<center><img src="images/etogame/study.jpg"></center>'
 		'You sat on the course work and prepared her for <<kursovik>> percent.'
 
-		act 'Exit':gt $curloc
+		act 'Leave':gt $curloc
 	end
 end
 
@@ -48,22 +49,20 @@ if card > 0:
 	 act 'Take a deck of cards':gt 'card'
 end
 
-if dur > 0:
-	'You have hidden <<dur>> doses pale lady'
-end
+if dur > 0:'You have hidden <<dur>> doses pale lady'
 
 if dur > 0 and narkday ! day:
 	act 'Nyuhnut pale lady 5 min':
 		cla
 		*clr
-		set minut += 5
-		set narkday = day
-		set health = vital * 10 + stren * 5
-		set willpower = intel * 5 + will * 5
-		set manna = intel * magik + magik * 100 + vital * 10 + rikudo
-		set horny = 100
-		set nark += 10
-		set dur -= 1
+		minut += 5
+		narkday = day
+		health = vital * 10 + stren * 5
+		willpower = intel * 5 + will * 5
+		manna = intel * magik + magik * 100 + vital * 10 + rikudo
+		horny = 100
+		nark += 10
+		dur -= 1
 		'<center><img src="images/pic/dur.jpg"></center>'
 		'You otsypali dose of powder and its nyuhnuli, then you feel just fine.'
 

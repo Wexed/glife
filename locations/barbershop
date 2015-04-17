@@ -3,7 +3,7 @@
 $pokraska = {
 	clr
 	cla
-	set money -= 750
+	money -= 750
 	'You ask the barber, if he could dye your hair.'
 	'"Sure.", he says.'
 	'"Which colour would like to have your hair dyed in?"'
@@ -19,8 +19,8 @@ $pokraska = {
 			act 'Sit down':
 				cla
 				*clr
-				set minut += 45
-				set hcol = 0
+				minut += 45
+				hcol = 0
 				'Not even an hour later everything seems to have dried up.'
 				'He removes the dryer hood. "And we''re all done."'
 				'You stand up from the chair and pay him 750 rubles.'
@@ -41,8 +41,8 @@ $pokraska = {
 			act 'Sit down':
 				cla
 				*clr
-				set minut += 45
-				set hcol = 1
+				minut += 45
+				hcol = 1
 				'45 minutes later, everything should be dried up.'
 				'He removes the dryer hood. "And we''re all done."'
 				'You stand up from the chair and pay him 750 rubles.'
@@ -63,8 +63,8 @@ $pokraska = {
 			act 'Sit down':
 				cla
 				*clr
-				set minut += 45
-				set hcol = 2
+				minut += 45
+				hcol = 2
 				'45 minutes later, everything should be dried up.'
 				'He removes the dryer hood. "And we''re all done."'
 				'You stand up from the chair and pay him 750 rubles.'
@@ -84,8 +84,8 @@ $pokraska = {
 			act 'Sit down':
 				cla
 				*clr
-				set minut += 45
-				set hcol = 3
+				minut += 45
+				hcol = 3
 				'About an hour later, everything should be dried up.'
 				'He removes the dryer hood. "And we''re all done."'
 				'You stand up from the chair and pay him 750 rubles.'
@@ -99,9 +99,9 @@ $pokraska = {
 }
 
 $zavivka = {
-	set minut += 20
-	set curly += 10
-	set money -= 300
+	minut += 20
+	curly += 10
+	money -= 300
 	'You have your hair curled'
 	gs 'stat'
 	gt 'barbershop', 'start'
@@ -110,7 +110,7 @@ $zavivka = {
 $cuthair = {
 	cla
 	*clr
-	set money -= 500
+	money -= 500
 	'You approach the barber and ask, "Hi, I would like to get my hair cut."'
 	'"Of course, at which length do you want to have your hair at?", he asks you.'
 
@@ -124,8 +124,8 @@ $cuthair = {
 			act 'Sit down':
 				cla
 				*clr
-				set minut += 30
-				set hairlength = 10
+				minut += 30
+				hairlength = 10
 				'About half an hour later he is done and what''s left from you former hairstyle is a very short buzzcut.'
 				'You stand up and pay him at the counter.'
 
@@ -150,10 +150,10 @@ $cuthair = {
 					act 'Yes':
 						cla
 						*clr
-						set minut += 20
-						set hairlength = 31
-						set hbangs = 1
-						set hapri = 1
+						minut += 20
+						hairlength = 31
+						hbangs = 1
+						hapri = 1
 						'20 minutes later, he is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 						'You stand up and pay him at the counter.'
 
@@ -163,9 +163,9 @@ $cuthair = {
 					act 'No':
 						cla
 						*clr
-						set minut += 20
-						set hairlength = 31
-						set hapri = 1
+						minut += 20
+						hairlength = 31
+						hapri = 1
 						'20 minutes later, he is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 						'You stand up and pay the barber at the counter.'
 
@@ -174,9 +174,9 @@ $cuthair = {
 				else
 					cla
 					*clr
-					set minut += 20
-					set hairlength = 31
-					set hapri = 1
+					minut += 20
+					hairlength = 31
+					hapri = 1
 					'20 minutes later, he is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 					'You stand up and pay him at the counter.'
 
@@ -202,10 +202,10 @@ $cuthair = {
 					act 'Yes':
 						cla
 						*clr
-						set minut += 20
-						set hairlength = 81
-						set hbangs = 1
-						set hapri = 1
+						minut += 20
+						hairlength = 81
+						hbangs = 1
+						hapri = 1
 						'20 minutes later, he is done cutting your hair. Your new hairstyle goes down to you chin-line and you have a fringe, covering your forehead.'
 						'You stand up and pay him at the counter.'
 
@@ -215,9 +215,9 @@ $cuthair = {
 					act 'No':
 						cla
 						*clr
-						set minut += 30
-						set hairlength = 81
-						set hapri = 1
+						minut += 30
+						hairlength = 81
+						hapri = 1
 						'20 minutes later, he is done cutting your hair.'
 						'You stand up and pay him at the counter.'
 
@@ -226,9 +226,9 @@ $cuthair = {
 				else
 					cla
 					*clr
-					set minut += 20
-					set hairlength = 31
-					set hapri = 1
+					minut += 20
+					hairlength = 31
+					hapri = 1
 					'20 minutes later, he is done cutting your hair.'
 					'You stand up and pay him at the counter.'
 
@@ -254,10 +254,10 @@ $cuthair = {
 					act 'Yes':
 						cla
 						*clr
-						set minut += 20
-						set hairlength = 161
-						set hbangs = 1
-						set hapri = 1
+						minut += 20
+						hairlength = 161
+						hbangs = 1
+						hapri = 1
 						'20 minutes later, he is done cutting your hair. Your hair now goes just to your shoulders and you have a fringe, covering your forehead.'
 						'You stand up and pay him at the counter.'
 
@@ -267,9 +267,9 @@ $cuthair = {
 					act 'No':
 						cla
 						*clr
-						set minut += 30
-						set hairlength = 161
-						set hapri = 1
+						minut += 30
+						hairlength = 161
+						hapri = 1
 						'30 minutes later, he is done cutting your hair. Your hair is now just slightly longer, than your shoulders.'
 						'You stand up and pay him at the counter.'
 
@@ -278,9 +278,9 @@ $cuthair = {
 				else
 					cla
 					*clr
-					set minut += 20
-					set hairlength = 161
-					set hapri = 1
+					minut += 20
+					hairlength = 161
+					hapri = 1
 					'20 minutes later, he is done cutting your hair. Your hair is now just slightly longer, than your shoulders.'
 					'You stand up and pay him at the counter.'
 
@@ -306,10 +306,10 @@ $cuthair = {
 					act 'Yes':
 						cla
 						*clr
-						set minut += 20
-						set hairlength = 261
-						set hbangs = 1
-						set hapri = 1
+						minut += 20
+						hairlength = 261
+						hbangs = 1
+						hapri = 1
 						'20 minutes later, he is done cutting your hair. He cut your hair back to about the height of where your bra sits, in addition he made you a fringe, which covers your forehead, as requested.'
 						'You stand up and pay him at the counter.'
 
@@ -319,9 +319,9 @@ $cuthair = {
 					act 'No':
 						cla
 						*clr
-						set minut += 20
-						set hairlength = 261
-						set hapri = 1
+						minut += 20
+						hairlength = 261
+						hapri = 1
 						'20 minutes later, he is done cutting your hair. She cut your hair back to about the line where your bra sits.'
 						'You stand up and pay him at the counter.'
 
@@ -330,9 +330,9 @@ $cuthair = {
 				else
 					cla
 					*clr
-					set minut += 20
-					set hairlength = 261
-					set hapri = 1
+					minut += 20
+					hairlength = 261
+					hapri = 1
 					'20 minutes later, he is done cutting your hair. She cut your hair back to about the line where your bra sits.'
 					'You stand up and pay him at the counter.'
 
@@ -358,10 +358,10 @@ $cuthair = {
 					act 'Yes':
 						cla
 						*clr
-						set minut += 20
-						set hairlength = 401
-						set hbangs = 1
-						set hapri = 1
+						minut += 20
+						hairlength = 401
+						hbangs = 1
+						hapri = 1
 						'20 minutes later, he is done cutting your hair. He just cuts the tips of your, barely making it any shorter and as requested, he cut you a nice fringe, which now covers your forehead.'
 						'You stand up and pay the barber at the counter.'
 
@@ -371,9 +371,9 @@ $cuthair = {
 					act 'No':
 						cla
 						*clr
-						set minut += 20
-						set hairlength = 401
-						set hapri = 1
+						minut += 20
+						hairlength = 401
+						hapri = 1
 						'20 minutes later, he is done cutting your hair.'
 						'You stand up and pay the barber at the counter.'
 
@@ -382,9 +382,9 @@ $cuthair = {
 				else
 					cla
 					*clr
-					set minut += 20
-					set hairlength = 401
-					set hapri = 1
+					minut += 20
+					hairlength = 401
+					hapri = 1
 					'20 minutes later, he is done cutting your hair.'
 					'You stand up and pay him at the counter.'
 
@@ -427,12 +427,12 @@ if $ARGS[0] = 'start':
 		cls
 		'The barber shop is closed at the moment, you should probably come back, when he''s in'
 
-		act 'Leave':set minut += 2 & gt 'gorodok'
+		act 'Leave':minut += 2 & gt 'gorodok'
 
 		exit
 	end
 
-	act 'Leave':set minut += 2 & gt 'gorodok'
+	act 'Leave':minut += 2 & gt 'gorodok'
 end
 
 if money >= 60:

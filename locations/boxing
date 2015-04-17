@@ -9,9 +9,9 @@ if weapon = 0:
 end
 
 if weapon > 0:
-	if weaponTipe = 1:set $weap = 'sword'
-	if weaponTipe = 2:set $weap = 'mace'
-	if weaponTipe = 3:set $weap = 'ax'
+	if weaponTipe = 1:$weap = 'sword'
+	if weaponTipe = 2:$weap = 'mace'
+	if weaponTipe = 3:$weap = 'ax'
 
 	act 'Strike <<$weap>>':
 		cla
@@ -28,12 +28,10 @@ if kunai > 0:
 		knife = input ("How to throw a knife?")
 
 		if knife > kunai:
-			set knife = kunai
-			set kunai = 0
-		end
-
-		if knife <= kunai:
-			set kunai -= knife
+			knife = kunai
+			kunai = 0
+		elseif knife <= kunai:
+			kunai -= knife
 		end
 
 		'<font color="green">You are flashed <<knife>> knives.</font>'

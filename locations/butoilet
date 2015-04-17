@@ -1,18 +1,18 @@
 # butoilet
-set minut += 5
-'<center><b><font color="maroon">WC</font></b></center>'
-'<center><img src="images/etogame/PublicToilet.jpg"></center>'
-''
+minut += 5
 clr
 gs 'stat'
 fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
+'<center><b><font color="maroon">WC</font></b></center>'
+'<center><img src="images/etogame/PublicToilet.jpg"></center>'
+''
 
 if tanga = 1:
 	act 'Remove Underwear':
 		cla
-		set tanga = 0
+		tanga = 0
 		gt $curloc
 	end
 end
@@ -22,8 +22,8 @@ act 'Off the toilet':gt 'burger', 'start'
 act 'Look in the mirror':
 	cla
 	gs 'portmirror'
-	set $gt1 = $curloc
-	set $gt2 = ''
+	$gt1 = $curloc
+	$gt2 = ''
 	dynamic $portmirror
 
 	act 'Move away from the mirror':
@@ -35,15 +35,22 @@ end
 !!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
 !!Removed sweat =- 1 when cum is wiped off clothes
 !!clrbelo: Amount of clean panties available
-if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
 	act 'Quick wash (0:15)':
 		cla
 		*clr
+
+		if clrbelo > 0 and tanga = 1:
+			clrbelo -= 1
+			dirtbelo += 1
+		elseif clrbelo <= 0 and tanga = 1:
+			tanga = 0
+			dirtbelo += 1
+		end
+	
 		dynamic $showerdin
-		set sweat -= 1
-		set minut += 15
-		set clrbelo -= 1
-		set dirtbelo += 1
+		sweat -= 1
+		minut += 15
 		'<center><img src="images/pics/wash5.jpg"></center>'
 		'You gave yourself a catlick, thus removing any traces of cum.'
 
@@ -55,11 +62,11 @@ if cumlip > 0 or cumface > 0:
 	act 'Clean your face from sperm (0:05)':
 		cla
 		*clr
-		set mop = 1
-		set cumlip = 0
-		set cumface = 0
-		set sweat -= 1
-		set minut += 5
+		mop = 1
+		cumlip = 0
+		cumface = 0
+		sweat -= 1
+		minut += 5
 		'<center><img src="images/etogame/facesp.jpg"></center>'
 		'You clean your face and got rid of any trace of cum.'
 
@@ -71,8 +78,8 @@ if cumfrot > 0:
 	act 'Wipe the cum off your clothes (0:10)':
 		cla
 		*clr
-		set cumfrot = 0
-		set minut += 10
+		cumfrot = 0
+		minut += 10
 		!!'<center><img src="images/etogame/frotsp.jpg"></center>'
 		'You remove traces of semen from the clothes.'
 
@@ -85,10 +92,10 @@ if tampon > 0 and mesec > 0 and isprok = 0:
 	act 'Use a tampon (0:05)':
 		cla
 		*clr
-		set tampon -= 1
-		set isprok = 1
-		set minut += 5
-		set manna -= 5
+		tampon -= 1
+		isprok = 1
+		minut += 5
+		manna -= 5
 		'<center><img src="images/pics/wash3.jpg"></center>'
 		'You use a tampon.'
 

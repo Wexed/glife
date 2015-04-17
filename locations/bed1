@@ -1,9 +1,11 @@
 # bed1
 if $ARGS[0] = 'start':
 	cla
-	set shour = 24 - hour
 	clr
+	shour = 24 - hour
 	gs 'stat'
+	shour = 24 - hour
+	stimer = 24 - timer
 
 	if nude = 0:'<center><img src="images/pics/bed.jpg"></center>'
 	if nude = 1:'<center><img src="images/pics/son.jpg"></center>'
@@ -12,16 +14,13 @@ if $ARGS[0] = 'start':
 
 	if mop ! 1:'<b><font color="red">Need to wash off makeup before going to bed.</font></b>'
 
-	set shour = 24 - hour
-	set stimer = 24 - timer
-
 	!! Service on 7 = 17, time 20 = 4
 
 	act 'Set Alarm Clock':gt 'budilnik', 'start'
 
-	if son > 10:'You are not tired.'
-
-	if son < 10:
+	if son > 10:
+		'You are not tired.'
+	elseif son < 10:
 		act 'Undress and go to bed':gt 'bed2'
 	end
 
@@ -29,12 +28,12 @@ if $ARGS[0] = 'start':
 		act 'Masturbating using dildo':
 			cla
 			*clr
-			set horny = 0
-			set minut += 30
-			set mastr += 1
-			set orgasm += 1
-			set manna += 15
-			set willpower += 15
+			horny = 0
+			minut += 30
+			mastr += 1
+			orgasm += 1
+			manna += 15
+			willpower += 15
 			'<center><img src="images/pics/mastr.gif"></center>'
 			'You phallus stuck to the floor and planted her wet pussy on him, jumping on the artificial active member you will quickly feel the excitement and orgasm you covered.'
 
@@ -53,11 +52,9 @@ end
 if $ARGS[0] = 'sogn':
 	cla
 	*clr
-	set horny += 10
-	set minut += 10
+	horny += 10
+	minut += 10
 	dogday = day
-	cla
-	*clr
 	'You undressed and lay down on the bed <<$namesob>> brazenly jumped into bed and began to lick your pussy'
 	'<center><img src="images/zoo/2.jpg"></center>'
 
@@ -71,17 +68,17 @@ if $ARGS[0] = 'sog1':
 			if hour > 22 or hour < 7:
 				cla
 				*clr
-				set minut += 30
+				minut += 30
 				'<center><img src="images/zoo/z1.jpg"></center>'
 				'You undressed and lay down on the bed <<$namesob>> brazenly jumped into bed and began to lick your pussy.'
 
 				if harakHusb = 0:
-					set zoo += 1
-					set horny = 0
-					set orgasm += 1
-					'"What´s he doing dear, stop him, " cries the husband'
+					zoo += 1
+					horny = 0
+					orgasm += 1
+					'"What''s he doing dear, stop him, " cries the husband'
 					'"I can not, try myself, " you reply.'
-					set husband -= 1
+					husband -= 1
 					'<<$husName>> trying to shove the dog, but he growls and snarls. "I can not get it to drive away what to do dear?" he asks.'
 					'"Think of something." you reply, already slightly moaning with pleasure. <<$husName>> starts to rush through the room, periodically coming to the dog, but hearing his growl off. While <<$husName>> pacing the room dog began to jump on you.'
 					'"Oh my God, that he was going to do?" shrieked <<$husName>>, Seeing the dog attempts to jump on you.'
@@ -96,72 +93,66 @@ if $ARGS[0] = 'sog1':
 
 						if izvratH = 0:
 							'"Oh my God, I can not look at it, " cried the husband slammed the door and ran. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. My husband came back, and you still were cancer and dog sperm flowed from your pussy.'
-							'"I´ll take him now on euthanasia, " said <<$husName>>'
-						end
-
-						if izvratH = 1:
-							'"Well get off of her, " shouts <<$husName>> at the dog, but close to it does not fit. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him and your husband decided that your movement is an attempt to free you cheered "Yes Svetsik so can get more wiggle lose it." Soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. Husband looked at you standing cancer hips peremazanymi canine semen flowing out of your pussy.'
-							'"I´ll take him now on euthanasia, " said <<$husName>>'
+							'"I''ll take him now on euthanasia, " said <<$husName>>'
+						elseif izvratH = 1:
+							'"Well get off of her, " shouts <<$husName>> at the dog, but close to it does not fit. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him and your husband decided that your movement is an attempt to free you cheered "Yes <<$name>> so can get more wiggle lose it." Soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. Husband looked at you standing cancer hips peremazanymi canine semen flowing out of your pussy.'
+							'"I''ll take him now on euthanasia, " said <<$husName>>'
 						end
 
 						act 'Allow':
-							set sobaka = 0
-							set zoo = 0
+							sobaka = 0
+							zoo = 0
 							gt 'bedr'
 						end
 
 						act 'Not authorized':
 							cla
-							'"No, dear, he is not guilty, he has the instincts, I´ll take it for mating and he will calm down, " you said.'
+							'"No, dear, he is not guilty, he has the instincts, I''ll take it for mating and he will calm down, " you said.'
 							'"Well dear, whatever you say."'
 
 							act 'Finish':gt 'bedr'
 						end
 					end
-				end
+				elseif harakHusb = 1:
+					'"Her dog you absolutely ohrenel, go find yourself on the street bitch and then you froze otpihni it" the husband says.'
+					'"I can not, try myself, " you reply.'
 
-				if harakHusb = 1:
-				'"Her dog you absolutely ohrenel, go find yourself on the street bitch and then you froze otpihni it" the husband says.'
-				'"I can not, try myself, " you reply.'
-
-				if izvratH = 0:
-					'<<$husName>> tries ottoschit dog but he growls and grins, then he goes to the bath and what that brings old sheets, throwing her to the dog picks up the ends and picks up dog is in improvezirovannom bag.'
-					'"I´ll take him now on euthanasia, " said <<$husName>>'
-
-					act 'Allow':
-						set sobaka = 0
-						set zoo = 0
-						gt 'sitr'
-					end
-
-					act 'Not authorized':
-						cla
-						'"No, dear, he is not guilty, he has the instincts, I´ll take it for mating and he will calm down, " you said.'
-						'"Okay, look itself, your dog."'
-						act 'Finish':gt 'bedr'
-					end
-				end
-
-				if izvratH = 1:
-					set zoo += 1
-					set bj += 1
-					set swallow += 1
-					set cumlip += 1
-					'"Can not or do not want, " said <<$husName>> smiling and continues to sit and watch as the dog you licks.'
-					'"It probably does not want" you reply and deliberately pushes the legs wider. <<$husName>> looks like you moan until the dog licks you, and suddenly gets up and pulls out his dick brings to your mouth.'
-
-					act 'Take by mouth':
-						cla
-						*clr
-						'<center><img src="images/zoo/z3.jpg"></center>'
-						'You grab his cock and takes his mouth to suck, soon begins to cover you and you end sodragayas whole body in a second <<$husName>> ends up in your mouth. You swallow sperm and continue to suck his dick fading. Soused dog began naprygivat at you with intent nedvuhslyslennymi.'
-						'"But this is too much" said <<$husName>> and tried ottoschit dog, but he growls and grins, then he goes into the tub and what that brings an old sheet, threw it at the dog picks up the ends and picks up dog is in the bag improvezirovannom.'
-						'"I´ll take him now on euthanasia, " said <<$husName>>'
+					if izvratH = 0:
+						'<<$husName>> tries ottoschit dog but he growls and grins, then he goes to the bath and what that brings old sheets, throwing her to the dog picks up the ends and picks up dog is in improvezirovannom bag.'
+						'"I''ll take him now on euthanasia, " said <<$husName>>'
 
 						act 'Allow':
-							set sobaka = 0
-							set zoo = 0
+							sobaka = 0
+							zoo = 0
 							gt 'sitr'
+						end
+
+						act 'Not authorized':
+							cla
+							'"No, dear, he is not guilty, he has the instincts, I''ll take it for mating and he will calm down, " you said.'
+							'"Okay, look itself, your dog."'
+							act 'Finish':gt 'bedr'
+						end
+					elseif izvratH = 1:
+						zoo += 1
+						bj += 1
+						swallow += 1
+						cumlip += 1
+						'"Can not or do not want, " said <<$husName>> smiling and continues to sit and watch as the dog you licks.'
+						'"It probably does not want" you reply and deliberately pushes the legs wider. <<$husName>> looks like you moan until the dog licks you, and suddenly gets up and pulls out his dick brings to your mouth.'
+
+						act 'Take by mouth':
+							cla
+							*clr
+							'<center><img src="images/zoo/z3.jpg"></center>'
+							'You grab his cock and takes his mouth to suck, soon begins to cover you and you end sodragayas whole body in a second <<$husName>> ends up in your mouth. You swallow sperm and continue to suck his dick fading. Soused dog began naprygivat at you with intent nedvuhslyslennymi.'
+							'"But this is too much" said <<$husName>> and tried ottoschit dog, but he growls and grins, then he goes into the tub and what that brings an old sheet, threw it at the dog picks up the ends and picks up dog is in the bag improvezirovannom.'
+							'"I''ll take him now on euthanasia, " said <<$husName>>'
+
+							act 'Allow':
+								sobaka = 0
+								zoo = 0
+								gt 'sitr'
 							end
 
 							act 'Not authorized':
@@ -172,7 +163,7 @@ if $ARGS[0] = 'sog1':
 								act 'Jerk dog':
 									cla
 									*clr
-									set husband -= 1
+									husband -= 1
 									'<center><img src="images/zoo/z6.jpg"></center>'
 									'You take the dog dick in hand and begin to masturbate after a few minutes you dog cums in her palm.'
 
@@ -182,11 +173,11 @@ if $ARGS[0] = 'sog1':
 								act 'Suck dog':
 									cla
 									*clr
-									set swallow += 1
-									set husband -= 40
+									swallow += 1
+									husband -= 40
 									'<center><img src="images/zoo/z7.jpg"></center>'
 									'You loshite dog on the floor and take his cock in my mouth, my husband looks at you with disgust as you sucking dog in a couple of minutes dog diluted into your mouth and you swallow sperm.'
-									'"Well, you´re a pervert, " the husband says with obvious distaste.'
+									'"Well, you''re a pervert, " the husband says with obvious distaste.'
 
 									act 'Finish':gt 'bedr'
 								end
@@ -195,32 +186,28 @@ if $ARGS[0] = 'sog1':
 							end
 						end
 					end
-				end
-
-				if harakHusb = 2:
+				elseif harakHusb = 2:
 					'"Her dog you absolutely ohrenel, go find yourself on the street bitch and then you froze otpihni it" the husband says.'
 					'"I can not, try myself, " you reply.'
 
 					if izvratH = 0:
-						set manna -= 15
-						set willpower -= 15
+						manna -= 15
+						willpower -= 15
 						'<<$husName>> tries ottoschit dog but he growls and grins, then he smashes the dog leg in the ribs and he screeched flies into a corner, had not dog up as a husband begins to kick harder, seeing his condition, you scored in the corner and covering his head with hands close eyes. A few minutes later the dog stops.'
 						'"What are you hiding there shalt here, and then krovischi from your skunk" said <<$husName>>. Opening her eyes you see a dead dog in a pool of blood.'
-						'"Well, what froze shalt say to you, I do this on the trash Dogmeat´ll take." he takes the dog, wrap in sheets and make it in the trash. And you have some time to scour the blood from the floor.'
+						'"Well, what froze shalt say to you, I do this on the trash Dogmeat''ll take." he takes the dog, wrap in sheets and make it in the trash. And you have some time to scour the blood from the floor.'
 
 						act 'Finish':
-							set sobaka = 0
-							set zoo = 0
+							sobaka = 0
+							zoo = 0
 							gt 'bedr'
 						end
-					end
-
-					if izvratH = 1:
-						set zoo += 1
-						set bj += 1
-						set swallow += 1
-						set cumlip += 1
-						set SUB += 1
+					elseif izvratH = 1:
+						zoo += 1
+						bj += 1
+						swallow += 1
+						cumlip += 1
+						SUB += 1
 						'"What do you mean I can not, that you like the way he licks you, " shouts <<$husName>>.'
 						'"No, of course you do not, " you begin to make excuses.'
 						'"And I see you taschishsya whore, you all are flowing, or think I do not see, and if you like it so thank him, " he says, and seeing your not knowing look continues, "Well, what are hatched suck him alive."'
@@ -234,18 +221,18 @@ if $ARGS[0] = 'sog1':
 							act 'Allow':
 								cla
 								*clr
-								set suprdolg += 1
-								set sex += 1
-								set anal += 1
+								suprdolg += 1
+								sex += 1
+								anal += 1
 								'<center><img src="images/zoo/z5.jpg"></center>'
-								'You obediently spreads her legs and her husband comes to you in the pussy, he hews suck you until you have a dog, but you do not dostovlyaet pleasure. Soon her husband cums and gets "A dog that is not yet finished, something you´re not trying, as well, cup your point."'
+								'You obediently spreads her legs and her husband comes to you in the pussy, he hews suck you until you have a dog, but you do not dostovlyaet pleasure. Soon her husband cums and gets "A dog that is not yet finished, something you''re not trying, as well, cup your point."'
 
 								act 'Substitute ass':
 									cla
 									*clr
-									set analorgasm += 1
-									set orgasm += 1
-									set horny = 0
+									analorgasm += 1
+									orgasm += 1
+									horny = 0
 									'<center><img src="images/zoo/z8.jpg"></center>'
 									'You go up to her knees and dog immediately jumps on you. prevent kneel. With one hand you Spreading buttocks, and a second guide member currently in his ass, fingering hole dog quickly enters and taken to peck your anus. Husband looked at it a little and throwing "Go otmoyus from whores" out. Left with a dog for a single you start podmahivat him and soon oschuzaete tide excitation seems sex dog surpasses her husband, his cock in your ass moves so deftly that comes after the excitement orgasm, and you fall on korachki no longer able to stand, dog makes several movements and spewing his seed you in the ass. After graduating he leaves satisfied.'
 
@@ -258,21 +245,19 @@ if $ARGS[0] = 'sog1':
 			else
 				gt 'bed1', 'sogn'
 			end
+		elseif husband = 0 or husbandrink = 10:
+			gt 'bed1', 'sogn'
 		end
-
-		if husband = 0 or husbandrink = 10:gt 'bed1', 'sogn'
 	end
 end
 
 if $ARGS[0] = 'sog2':
 	cla
 	*clr
-	set horny += 10
-	set minut += 10
-	cla
-	*clr
-	'You take the term <<$namesob>> and start it nadrachivat'
+	horny += 10
+	minut += 10
 	'<center><img src="images/zoo/sog.jpg"></center>'
+	'You take the term <<$namesob>> and start it nadrachivat'
 
 	act 'Take by mouth':gt 'bed1', 'sog3'
 	act 'Spread her legs ':gt 'bed1', 'sog4'
@@ -281,12 +266,10 @@ end
 if $ARGS[0] = 'sog3':
 	cla
 	*clr
-	set horny += 10
-	set minut += 10
-	cla
-	*clr
-	'You greedily swallow dick <<$namesob>>'
+	horny += 10
+	minut += 10
 	'<center><img src="images/zoo/sog1.jpg"></center>'
+	'You greedily swallow dick <<$namesob>>'
 
 	act 'Spread her legs ':gt 'bed1', 'sog4'
 end
@@ -294,19 +277,17 @@ end
 if $ARGS[0] = 'sog4':
 	cla
 	*clr
-	set minut += 10
-	set orgasm += 1
-	set horny = 0
-	set minut += 5
-	set zoo += 1
-	set swallow += 1
-	set vagina += 1
-	set throat += 1
-	set cumpussy += 1
-	cla
-	*clr
-	'You push the legs and <<$namesob>> fuck you in your pussy'
+	minut += 10
+	orgasm += 1
+	horny = 0
+	minut += 5
+	zoo += 1
+	swallow += 1
+	vagina += 1
+	throat += 1
+	cumpussy += 1
 	'<center><img src="images/zoo/sog2.jpg"></center>'
+	'You push the legs and <<$namesob>> fuck you in your pussy'
 	'Finally dog ​​ends up in you'
 
 	act 'Hug the dog and sleep':gt 'bed2', 'dosip'
@@ -317,12 +298,15 @@ if $ARGS[0] = 'fin':
 	gt $locM, $metkaM
 	!!savegame 'avtosave.sav'
 
-	!'if housr = 1 and housrA = 1:
-	if nude = 0:set $nude = 'In the corridor'
-	if nude = 1:set $nude = 'Get dressed'
-	set housrA = 0
-	gt 'bedr'
-	end'!
+	!'
+	if housr = 1 and housrA = 1:
+		if nude = 0:$nude = 'In the corridor'
+		if nude = 1:$nude = 'Get dressed'
+
+		housrA = 0
+		gt 'bedr'
+	end
+	'!
 end
 
 --- bed1 ---------------------------------

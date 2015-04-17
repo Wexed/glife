@@ -114,7 +114,6 @@ if Formula = 0:Formula = 3
 '<center><img src="images/pic/fight/bef.jpg"></center>'
 'you and <<$nameE>> greeted each other.'
 'Referee required to start a fight on his hands.'
-!!picture
 
 act 'Fight on his hands':
 	cls
@@ -124,26 +123,22 @@ act 'Fight on his hands':
 	if strenw > strenwE:
 		point += 1
 		lustw += 1
+		crouch = 1
 		$text = 'Stand your opponent on all fours, and you catch him from behind.'
 		'You won the fight on his hands.'
-		crouch = 1
-	end
-
-	if strenw < strenwE:
+	elseif strenw < strenwE:
 		pointE += 1
 		lustwE += 1
+		crouch = 0
 		$text = 'You get up on all fours, and your opponent to catch him from behind.'
 		'You lost the battle on his hands.'
-		crouch = 0
-	end
-
-	if strenw = strenwE:
-		'Quest on hand ended in a draw. The referee tossed the coin, that would determine the winner.'
+	elseif strenw = strenwE:
 		varrand = rand(0, 1)
 
 		if varrand = 0:crouch = 1 & $text = 'Stand your opponent on all fours, and you catch him from behind.'
 
 		if varrand = 1:crouch = 0 & $text = 'You get up on all fours, and your opponent to catch him from behind.'
+		'Quest on hand ended in a draw. The referee tossed the coin, that would determine the winner.'
 	end
 
 	'Refferi stopped you and commanded <<$text>>'
