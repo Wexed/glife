@@ -1,9 +1,11 @@
+#!/usr/bin/env python
+
 import io
 import os
 import re
 
-path = os.getcwd()
-print path
+#path = os.getcwd()
+#print path
 
 startpattern = """images/"""
 imgFormats = ['jpg','gif']
@@ -13,13 +15,18 @@ lines = infile.readlines()
 
 images = []
 
-for line in lines:
-    for fmt in imgFormats:
-        if fmt in line:
-            imgs = re.findall(startpattern + '.*\.' + fmt, line)
-            for img in imgs:
-                images.append(img)
+for name in os.listdir("locations"):
+    ifile = io.open(
+        os.path.join("locations", name),
+        mode='rt',
+        encoding='utf-8'
+    )
+    text = ifile.read()
+    for match in re.finditer(r"images.+?[.](gif|jpg|png)", text, flags=re.U):
+        imgfile = match.group().encode("utf-8")
+        images.append(imgfile)
+
 
 for image in images:
-    if not os.path.isfile(os.path.join(path, image)):
+    if not re.search(r"[<$]", image) and not os.path.isfile(image):
         print "Image not found:", image
