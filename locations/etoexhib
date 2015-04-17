@@ -12,7 +12,7 @@ if $ARGS[0] = 'pos1':
 		cla
 		*clr
 		'<center><img src="images/etogame/solar8.jpg"></center>'
-		'You locked the door and stripped naked, arranging yourself in the solarium lying on your stomach.'
+		'You locked the door and stripped naked, arranging yourself in the solarium ,lying on your stomach.'
 
 		act 'Next':
 			cla
@@ -95,14 +95,14 @@ if $ARGS[0] = 'pos2':
 	minut += 5
 	gs 'stat'
 	'<center><img src="images/etogame/1dachi.jpg"></center>'
-	'You walked through the alleys. Basically,this society is not very populated. Occasionally there are gardeners picking around the region. You hear the clank of a saw somewhere onn the outskirts of the forest. At the end of the alley is an artificial reservoir. There are some areas with houses for sale.'
+	'You walked through the alleys. Basically,this society is not very populated. Occasionally there are gardeners picking around the region. You hear the clank of a saw somewhere in the outskirts of the forest. At the end of the alley is an artificial reservoir. There are some areas with houses for sale.'
 
-	if etoexhib = 0:'You do not know anybody here and the truckers do not developed have any opinion about you.'
+	if etoexhib = 0:'You do not know anybody here and the truckers do not developed any opinion about you.'
 
 	act 'Go to the forest':gt 'etoexhib', 'pos3'
 	act 'Go down to the lake':gt 'etoexhib', 'pos16'
 
-	if etoexhib = 10:'Start at <a href="exec:gt ''etoexhib'', ''pos9''">clang saws</a>.'
+	if etoexhib = 10:'Follow the sound of <a href="exec:gt ''etoexhib'', ''pos9''">saws clanging</a>.'
 
 	act 'Leave':gt 'dachi'
 	act 'Leave':gt 'dachi'
@@ -121,7 +121,7 @@ if $ARGS[0] = 'pos3':
 		cla
 		*clr
 		'<center><img src="images/etogame/1fores.jpg"></center>'
-		'Livstvenny forest.'
+		'Greenwood forest.'
 		'You can see the mushroom picker far way from you.'
 
 		act 'Get his attention':gt 'etoexhib', 'pos4'
@@ -131,7 +131,7 @@ if $ARGS[0] = 'pos3':
 		cla
 		*clr
 		'<center><img src="images/etogame/1fores.jpg"></center>'
-		'Livstvenny forest.'
+		'Greenwood forest.'
 
 		act 'Undress':gt 'etoexhib', 'pos5'
 	end
@@ -156,7 +156,7 @@ if $ARGS[0] = 'pos4':
 
 		gs 'stat'
 		'<center><img src="images/etogame/2fores.jpg"></center>'
-		'Smiling, you show the mushroom-picker your pussy. He stands in his tracks and stares at you, not knowing what is happening.'
+		'Smiling, you show the mushroom-picker your pussy. He stops in his tracks and stares at you, not knowing wha''s happening.'
 
 		act 'Leave':gt 'dachi'
 	end
@@ -172,7 +172,7 @@ if $ARGS[0] = 'pos5':
 
 	gs 'stat'
 	'<center><img src="images/etogame/3fores.jpg"></center>'
-	'you stripped down naked and went for a walk in the woods. Your heart was pounding in the chest. Fresh air, gentle warm breeze caresses me. Summer ... sun warms me. When it was, I thought that freeze quickly, but baking hot summer sun prompted that I´m wrong. Thought at all. I is not lost. Clothing left on earth, and if I do not find you! Here are collected only pickers. But if I povstechayu them? Which is a shame! Stumbled on a good clearing. The wind died.'
+	'you stripped down naked and went for a walk in the woods. Your heart was pounding in the chest. Fresh air, gentle warm breeze caresses your body... Summer arrives the sun warms you. When it was, I thought that freeze quickly, but baking hot summer sun prompted that I´m wrong. Thought at all. I is not lost. Clothing left on earth, and if I do not find you! Here are collected only pickers. But if I povstechayu them? Which is a shame! Stumbled on a good clearing. The wind died.'
 
 	act 'Next':
 		cla
@@ -261,9 +261,9 @@ if $ARGS[0] = 'pos8':
 			gs 'stat'
 			'<center><img src="images/etogame/kuzmich.jpg"></center>'
 			etoexhib = 10
-			'You:-Hello! <<$name>>, I´m your new neighbor, we are familiar with.'
+			'<font color="magenta"> You:-Hello! <<$name>>, I´m your new neighbor, we are familiar with</font> .'
 			'Neighbour:- Hello. I´m all Kuzmich. So be neighbors.'
-			'You:- Can you help me, you know my whole garden was overgrown with weeds. And so I would like to bring it up.'
+			'<font color="magenta"> You:- Can you help me, you know my whole garden was overgrown with weeds. And so I would like to bring it up</font>.'
 			'Kuzmich:- Well, hire local men. They´ll all plowed. Bestolku still stagger through the alleys.'
 
 			act 'Leave':gt 'dachi'
@@ -318,7 +318,7 @@ if $ARGS[0] = 'pos10':
 	gs 'stat'
 	'<center><img src="images/etogame/dachabust.jpg"></center>'
 	'You went out into the garden and going to work, asked:'
-	'- Well, boys? How´s it going?'
+	'<font color="magenta"> - Well, boys? How´s it going?</font> '
 	'- Normally, the hostess. We make the best possible way.'
 
 	act 'Leave':gt 'dachamy'
@@ -335,7 +335,7 @@ if $ARGS[0] = 'pos11':
 	'<center><img src="images/etogame/dachaex.jpg"></center>'
 	'You pretend to hang clothes to dry. You can see that through the mall on the site to swarm your neighbor Kuzmich and stole glances at you. Lightly knotted robe is not able to hide your appetizing forms. But, you do not hide them, and give your neighbor enjoy the beauty.'
 
-	act 'Go to home':gt 'dachamy'
+	act 'Go home':gt 'dachamy'
 end
 
 if $ARGS[0] = 'pos12':
@@ -367,7 +367,7 @@ if $ARGS[0] = 'pos12':
 			temp = day
 			gs 'stat'
 			'<center><img src="images/etogame/dachabust3.jpg"></center>'
-			'You:- While all do, do not get anything.'
+			'<font color="magenta">You:- While all do, do not get anything</font>.'
 
 			act 'Leave':gt 'dachi'
 		end
@@ -395,7 +395,7 @@ if $ARGS[0] = 'pos13':
 	'<center><img src="images/etogame/dachagang.jpg"></center>'
 	'You get up in the middle of the vegetable garden and begin to undress.'
 	'The guys eyes on the forehead climb from such a spectacle.'
-	'- Boys, you did a good job and deserve a reward!'
+	'- <font color="magenta"> Boys, you did a good job and deserve a reward!</font>'
 
 	act 'Undress completely':
 		cla
@@ -403,7 +403,7 @@ if $ARGS[0] = 'pos13':
 		gs 'stat'
 		'<center><img src="images/etogame/dachagang1.jpg"></center>'
 		'You stripped naked and stand podmanivaya to his guys.'
-		'- Well, I do 100% percent discount?'
+		'- <font color="magenta"> Well, I do 100% percent discount?</font>'
 
 		act 'Surrender':
 			cla
@@ -519,7 +519,7 @@ if $ARGS[0] = 'pos16':
 	'<center><img src="images/etogame/lake.jpg"></center>'
 
 	if temper >= 20 and bikini > 0 and hour >= 6 and hour <= 20:
-		act 'Bathe in a bathing suit':
+		act 'Swim with a swimsuit':
 			cla
 			*clr
 			set cumpussy = 0
@@ -538,7 +538,7 @@ if $ARGS[0] = 'pos16':
 			'<center><img src="images/pics/swim.jpg"></center>'
 			'You iskupnulis in the lake, the water refreshes and invigorates.'
 
-			act 'Out of the water':gt 'etoexhib', 'pos16'
+			act 'Get out of the water':gt 'etoexhib', 'pos16'
 		end
 	end
 
@@ -561,9 +561,9 @@ if $ARGS[0] = 'pos16':
 			if stren < 30:set stren += 1
 
 			'<center><img src="images/etogame/lakenude.jpg"></center>'
-			'You swam in the lake completely naked, water refreshes and invigorates.'
+			'You swim in the lake completely naked, the water refreshes and invigorates you.'
 
-			act 'Out of the water':gt 'etoexhib', 'pos16'
+			act 'Get out of the water':gt 'etoexhib', 'pos16'
 		end
 	end
 
@@ -589,7 +589,7 @@ if $ARGS[0] = 'pos17':
 		act 'Sign in here':money -= 25 & minut += 15 & gt 'etoexhib', 'pos18'
 	end
 
-	act 'Back to the train station':gt 'gorodok'
+	act 'Go back to the train station':gt 'gorodok'
 end
 
 if $ARGS[0] = 'pos18':
@@ -692,7 +692,7 @@ if $ARGS[0] = 'pos18':
 			act 'Next':gt 'etoexhib', 'pos18'
 		end
 	else
-		'Club closes. The lights go on, the music fades and all begin to diverge.'
+		'The Club closes, The lights go off, the music fades and everyone begins to diverge.'
 	end
 
 	act 'Go outside':gt 'etoexhib', 'pos17'
@@ -887,8 +887,8 @@ if $ARGS[0] = 'pos23':
 	end
 
 	act 'Account Director':gt 'etoexhib', 'pos28'
-	act 'Go in library':gt 'etoexhib', 'pos38'
-	act 'The toilet':gt 'etoexhib', 'pos39'
+	act 'Go in the library':gt 'etoexhib', 'pos38'
+	act 'Go to The toilet':gt 'etoexhib', 'pos39'
 	act 'Go inside the hall':gt 'etoexhib', 'pos19'
 end
 
@@ -1054,7 +1054,7 @@ if $ARGS[0] = 'pos27':
 	end
 
 	if hour >= 16:
-		act 'Finish the lesson':
+		act 'Finish your lesson':
 			cla
 			'The lesson ends and the students rush to leave the classroom.'
 
@@ -1066,7 +1066,7 @@ if $ARGS[0] = 'pos27':
 		end
 	end
 
-	act 'Get out of class':gt 'etoexhib', 'pos24'
+	act 'Get out of the class':gt 'etoexhib', 'pos24'
 end
 
 if $ARGS[0] = 'pos28':
@@ -1401,7 +1401,7 @@ if $ARGS[0] = 'pos53':
 			if krem > 0:
 				set krem -= 1
 				set tan += 3
-				'You put the sunblock on your body and lied down to sunbathe.'
+				'You put the sunblock on your body and lied down on the roof to sunbathe.'
 			end
 
 			act 'Get Up':gt 'etoexhib', 'pos53'
