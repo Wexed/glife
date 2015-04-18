@@ -1,0 +1,28 @@
+# $stock_item
+!! generic function to be used to stock items in stores
+!! see # pharmacy for an example of use
+
+count = ARGS[0]
+$item = $ARGS[1]
+price = ARGS[2]
+$variable_name = $ARGS[3]
+$location = $ARGS[4]
+dynamic 'in_inventory = <<$variable_name>>'
+
+*pl 'You have <<in_inventory>> <b><<$item>></b>'
+$template = "
+    act 'Buy <<count>> <b><<$item>></b> (<<price>> rubles)':
+        if money < price:
+            $message = '<font color=""red"">You do not have enough money.</font>'
+        else
+            set <<$variable_name>> += <<count>>
+            set money -= price
+            $message = '<font color=""blue"">You bought <<count>> <b><<$item>></b>.</font>'
+        end
+        gt $location, $message
+    end
+"
+
+dynamic $template
+
+--- $stock_item ---------------------------------
