@@ -1,5 +1,5 @@
 # cafe3
-if $ARGS[0] = 'house':
+if $ARGS[0] = 'a_house':
 	cla
 	*clr
 	money += 100
@@ -87,105 +87,80 @@ if $ARGS[0] = '0':
 	$nameV = $boy
 	minut += 15
 	gs 'stat'
-	set deyst = rand(1, 100)
+	deyst = rand(1, 100)
 
 	if deyst < 70:
 		:vag
 		'<<$boy>> puts you on the bed and undressed.'
-		set deysts = rand(1, 3)
+		deysts = rand(1, 3)
 
 		if deysts = 1:
-			set guy += 1
-			set sex += 1
+			guy += 1
+			sex += 1
 			vagina += 1
-			'<<$boy>> pushes your legs and enters you.'
-			set picrand = rand(1, 5)
-
-			if picrand = 1:'<center><img src="pics/vagmis.jpg" ></center>'
-			if picrand = 2:'<center><img src="pics/vagmis2.jpg" ></center>'
-			if picrand = 3:'<center><img src="pics/vagmis3.jpg" ></center>'
-			if picrand = 4:'<center><img src="pics/vagmis4.jpg" ></center>'
-			if picrand = 5:'<center><img src="pics/vagmis5.jpg" ></center>'
+			picrand = rand(1, 5)
+			'<center><img src="images/pics/vagmis<<picrand>>.jpg"></center>'
 
 			pose = 0
 			gs 'orgasm', 'start'
 
+			'<<$boy>> pushes your legs and enters you.'
 			!!'Dick like a hammer hammer inside you, you are very nice and you are ready to finish.'
-			act 'Leave':gt 'street'
-		end
 
-		if deysts = 2:
-			'<<$boy>> cancer puts you and enters you'
-			set guy += 1
-			set sex += 1
+			act 'Leave':gt 'street'
+		elseif deysts = 2:
+			guy += 1
+			sex += 1
 			vagina += 1
-			set cumass += 1
+			cumass += 1
+			'<<$boy>> cancer puts you and enters you'
 			!!'<<$boy>> pushes your legs and enters you.'
-			set picrand = rand(1, 5)
-			'<center><img src="images/pics/vagdog<<picrand>>.jpg"></center>'
+			picrand = rand(1, 5)
+
 			pose = 1
 			gs 'orgasm', 'start'
 
 			act 'Leave':gt 'street'
-		end
-
-		if deysts = 3:
+		elseif deysts = 3:
+			guy += 1
+			sex += 1
+			cumass += 1
 			'<<$boy>> lays down on the bed and puts you over the top, you feel his penis enters you'
-			set guy += 1
-			set sex += 1
-			set cumass += 1
 			'His cock went in you and you started to jump on his elde.'
-			set picrand = rand(1, 5)
+			picrand = rand(1, 5)
 			'<center><img src="images/pics/vagcow<<picrand>>.jpg"></center>'
 			pose = 0
 			gs 'orgasm', 'start'
 
 			act 'Leave':gt 'street'
 		end
-	end
-
-	if deyst >= 70 and deyst < 85:
+	elseif deyst >= 70 and deyst < 85:
 		'<<$boy>> tells you that he wants you to suck it'
 
 		act 'Refuse':gt 'cafe3', '0'
 
 		act 'Take by mouth':
+			guy += 1
+			bj += 1
+			throat += 1
+			vaf += 1
+			picrand = rand(1, 10)
+			'<center><img src="images/pics/bj<<picrand>>.jpg"></center>'
 			'<<$boy>> pulls his dick'
-			set guy += 1
-			set bj += 1
-			set throat += 1
-			set vaf += 1
 			'You took his penis in her mouth and began to suck.'
-			set picrand = rand(1, 10)
-
-			if picrand = 1:'<center><img src="images/pics/bj.jpg"></center>'
-			if picrand = 2:'<center><img src="images/pics/bj2.jpg"></center>'
-			if picrand = 3:'<center><img src="images/pics/bj3.jpg"></center>'
-			if picrand = 4:'<center><img src="images/pics/bj4.jpg"></center>'
-			if picrand = 5:'<center><img src="images/pics/bj5.jpg"></center>'
-			if picrand = 6:'<center><img src="images/pics/bj6.jpg"></center>'
-			if picrand = 7:'<center><img src="images/pics/bj7.jpg"></center>'
-			if picrand = 8:'<center><img src="images/pics/bj8.jpg"></center>'
-			if picrand = 9:'<center><img src="images/pics/bj9.jpg"></center>'
-			if picrand = 10:'<center><img src="images/pics/bj10.jpg"></center>'
-
-			'<<$boy>> moans and that´s to finish.'
-			*clr
+			'<<$boy>> moans and that''s to finish.'
 
 			act 'Remove the member of his mouth':
+				*clr
 				cla
-				set bjrand = rand(1, 100)
+				bjrand = rand(1, 100)
 
 				if bjrand < 50 and vaf > 100:'You have time to take out of his mouth and a member <<$boy>> commits past you.'
-				if bjrand >= 50 or vaf <= 100:set cumface += 1 & '<<$boy>> ends up on your face.'
+				if bjrand >= 50 or vaf <= 100:cumface += 1 & '<<$boy>> ends up on your face.'
 
-				set picrand = rand(1, 5)
+				picrand = rand(1, 5)
 
-				if picrand = 1 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial.jpg"></center>'
-				if picrand = 2 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial2.jpg"></center>'
-				if picrand = 3 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial3.jpg"></center>'
-				if picrand = 4 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial4.jpg"></center>'
-				if picrand = 5 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial5.jpg"></center>'
+				if bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial<<picrand>>.jpg"></center>'
 
 				'You try to wipe off the face of the sperm, but the sperm erased bad.'
 
@@ -193,32 +168,23 @@ if $ARGS[0] = '0':
 			end
 
 			act 'Suck on':
+				*clr
 				cla
-				set vaf += 1
+				vaf += 1
+
+				picrand = rand(1, 10)
+				'<center><img src="images/pics/cum<<picrand>>.jpg"></center>'
 				'You feel like a hot jet of sperm hits you in the throat. You have a mouth full of sperm.'
-				set picrand = rand(1, 10)
-
-				if picrand = 1:'<center><img src="images/pics/cum.jpg"></center>'
-				if picrand = 2:'<center><img src="images/pics/cum2.jpg"></center>'
-				if picrand = 3:'<center><img src="images/pics/cum3.jpg"></center>'
-				if picrand = 4:'<center><img src="images/pics/cum4.jpg"></center>'
-				if picrand = 5:'<center><img src="images/pics/cum5.jpg"></center>'
-				if picrand = 6:'<center><img src="images/pics/cum6.jpg"></center>'
-				if picrand = 7:'<center><img src="images/pics/cum7.jpg"></center>'
-				if picrand = 8:'<center><img src="images/pics/cum8.jpg"></center>'
-				if picrand = 9:'<center><img src="images/pics/cum9.jpg"></center>'
-				if picrand = 10:'<center><img src="images/pics/cum10.jpg"></center>'
-
-				act 'swallow':
+				act 'Swallow':
 					cla
-					set vaf += 2
-					set cumlip += 1
+					vaf += 2
+					cumlip += 1
 					'<<$boy>> looks like you swallow sperm.'
 
 					act 'Leave':gt 'street'
 				end
 
-				act 'spit out':
+				act 'Spit out':
 					cla
 					'You go into the bathroom and there spits cum'
 
@@ -227,37 +193,24 @@ if $ARGS[0] = '0':
 			end
 		!!act 'Leave':gt 'street'
 		end
-	end
-
-	if deyst >= 85:
+	elseif deyst >= 85:
 		'<<$boy>> tells you that he wants you in the ass otimet'
 
 		act 'Refuse':gt 'cafe3', '0'
 
 		act 'Agree':
 			cla
-			'<<$boy>> puts you cancer and lubricates your ass somehow cream. You feel like that it boils down to you in tight anus.'
-			'Sharp pain in the anus smenyaetsya easy to treat. <<$boy>> you fucked in the ass smoothly, that would not break anything.'
-			set guy += 1
-			set anal += 1
+			guy += 1
+			anal += 1
 			anus += 1
 
-			if lubri > 0:set lubri = lubri - 1
+			if lubri > 0:lubri = lubri - 1
 
-			set cumass += 1
-			set picrand = rand(1, 10)
-
-			if picrand = 1:'<center><img src="images/pics/anal.jpg"></center>'
-			if picrand = 2:'<center><img src="images/pics/anal2.jpg"></center>'
-			if picrand = 3:'<center><img src="images/pics/anal3.jpg"></center>'
-			if picrand = 4:'<center><img src="images/pics/anal4.jpg"></center>'
-			if picrand = 5:'<center><img src="images/pics/anal5.jpg"></center>'
-			if picrand = 6:'<center><img src="images/pics/anal6.jpg"></center>'
-			if picrand = 7:'<center><img src="images/pics/anal7.jpg"></center>'
-			if picrand = 8:'<center><img src="images/pics/anal8.jpg"></center>'
-			if picrand = 9:'<center><img src="images/pics/anal9.jpg"></center>'
-			if picrand = 10:'<center><img src="images/pics/anal10.jpg"></center>'
-
+			cumass += 1
+			picrand = rand(1, 10)
+			'<center><img src="images/pics/anal<<picrand>>.jpg"></center>'
+			'<<$boy>> puts you cancer and lubricates your ass somehow cream. You feel like that it boils down to you in tight anus.'
+			'Sharp pain in the anus smenyaetsya easy to treat. <<$boy>> you fucked in the ass smoothly, that would not break anything.'
 			'You feel like your anus is filled with what that warm liquid. You bring yourself up in the bathroom and get dressed.'
 
 			act 'Leave':gt 'street'
@@ -265,7 +218,7 @@ if $ARGS[0] = '0':
 	end
 end
 
-if $ARGS[0] = 'WC':
+if $ARGS[0] = 'wc':
 	cla
 	$nameV = $boy
 	dynamic $venerasiak
@@ -273,15 +226,14 @@ if $ARGS[0] = 'WC':
 
 	act 'Refuse':
 		cla
+		guy += 1
+		sex += 1
+		cumass += 1
+		vagina += 1
+		'<center><img src="images/pics/vagtualet.jpg"></center>'
 		'You abandoned your hot lover but is not confused, he turned you back to him and bent.'
 		'You feel that <<$boy>> bared your ass and something solid upiraetsya your vagina'
-		set guy += 1
-		set sex += 1
-		set cumass += 1
-		vagina += 1
 		'You fuck cancer in the outhouse.'
-		'<center><img src="images/pics/vagtualet.jpg"></center>'
-		pose = 1
 		gs 'orgazm', 'start'
 
 		act 'Leave':gt 'street'
@@ -289,42 +241,27 @@ if $ARGS[0] = 'WC':
 
 	act 'Take by mouth':
 		cla
-		set vaf += 1
+		vaf += 1
+		guy += 1
+		bj+= 1
+		throat += 1
+		picrand = rand(1, 10)
+		'<center><img src="images/pics/bj<<picrand>>.jpg"></center>'
 		'<<$boy>> pulls his dick'
-		set guy += 1
-		set bj+= 1
-		set throat += 1
 		'You took his penis in her mouth and began to suck.'
-		set picrand = rand(1, 10)
-
-		if picrand = 1:'<center><img src="images/pics/bj.jpg"></center>'
-		if picrand = 2:'<center><img src="images/pics/bj2.jpg"></center>'
-		if picrand = 3:'<center><img src="images/pics/bj3.jpg"></center>'
-		if picrand = 4:'<center><img src="images/pics/bj4.jpg"></center>'
-		if picrand = 5:'<center><img src="images/pics/bj5.jpg"></center>'
-		if picrand = 6:'<center><img src="images/pics/bj6.jpg"></center>'
-		if picrand = 7:'<center><img src="images/pics/bj7.jpg"></center>'
-		if picrand = 8:'<center><img src="images/pics/bj8.jpg"></center>'
-		if picrand = 9:'<center><img src="images/pics/bj9.jpg"></center>'
-		if picrand = 10:'<center><img src="images/pics/bj10.jpg"></center>'
-
-		'<<$boy>> moans and that´s to finish.'
+		'<<$boy>> moans and that''s to finish.'
 
 		act 'Remove the member of his mouth':
 			cla
 			*clr
-			set bjrand = rand(1, 100)
+			bjrand = rand(1, 100)
 
 			if bjrand < 50 and vaf < 100:'You have time to take out of his mouth and a member <<$boy>> commits past you.'
-			if bjrand >= 50 or vaf >= 100:set cumface += 1 & '<<$boy>> ends up on your face.'
+			if bjrand >= 50 or vaf >= 100:cumface += 1 & '<<$boy>> ends up on your face.'
 
-			set picrand = rand(1, 5)
+			picrand = rand(1, 5)
 
-			if picrand = 1 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial.jpg"></center>'
-			if picrand = 2 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial2.jpg"></center>'
-			if picrand = 3 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial3.jpg"></center>'
-			if picrand = 4 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial4.jpg"></center>'
-			if picrand = 5 and bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial5.jpg"></center>'
+			if bjrand >= 50 or repa = 6:'<center><img src="images/pics/facial<<picrand>>.jpg"></center>'
 
 			act 'Leave':gt 'street'
 		end
@@ -332,32 +269,21 @@ if $ARGS[0] = 'WC':
 		act 'Suck on':
 			cla
 			*clr
-			set vaf += 2
+			vaf += 2
+			picrand = rand(1, 10)
+			'<center><img src="images/pics/cum<<picrand>>.jpg"></center>'
 			'You feel like a hot jet of sperm hits you in the throat. You have a mouth full of sperm.'
-			set picrand = rand(1, 10)
-
-			if picrand = 1:'<center><img src="images/pics/cum.jpg"></center>'
-			if picrand = 2:'<center><img src="images/pics/cum2.jpg"></center>'
-			if picrand = 3:'<center><img src="images/pics/cum3.jpg"></center>'
-			if picrand = 4:'<center><img src="images/pics/cum4.jpg"></center>'
-			if picrand = 5:'<center><img src="images/pics/cum5.jpg"></center>'
-			if picrand = 6:'<center><img src="images/pics/cum6.jpg"></center>'
-			if picrand = 7:'<center><img src="images/pics/cum7.jpg"></center>'
-			if picrand = 8:'<center><img src="images/pics/cum8.jpg"></center>'
-			if picrand = 9:'<center><img src="images/pics/cum9.jpg"></center>'
-			if picrand = 10:'<center><img src="images/pics/cum10.jpg"></center>'
-
-			act 'swallow':
+			act 'Swallow':
 				cla
-				set vaf += 1
-				set cumlip += 1
+				vaf += 1
+				cumlip += 1
 				swallow += 1
 				'<<$boy>> looks like you swallow sperm.'
 
 				act 'Leave':gt 'street'
 			end
 
-			act 'spit out':
+			act 'Spit out':
 				cla
 				'You go into the bathroom and there spits cum'
 
@@ -367,42 +293,26 @@ if $ARGS[0] = 'WC':
 	end
 end
 
-if $ARGS[0] = 'kampashka':
+if $ARGS[0] = 'kompashka':
 	cla
 	dynamic $venerasiak
-	'You edete somewhere with the guys on the car. You´re drunk and you pat on the back seat just two guys. Finally, the machine stops and you take out of the car.'
+	picrand = rand(1, 15)
+	'<center><img src="images/pics/gang<<picrand>>.jpg"></center>'
+	'You edete somewhere with the guys on the car. You''re drunk and you pat on the back seat just two guys. Finally, the machine stops and you take out of the car.'
 	'Undress you, and you feel like you are part of a member, you are trying to say something, at this point you inserted with cock in her mouth.'
-	set picrand = rand(1, 15)
-
-	if picrand = 1:'<center><img src="images/pics/gang.jpg"></center>'
-	if picrand = 2:'<center><img src="images/pics/gang2.jpg"></center>'
-	if picrand = 3:'<center><img src="images/pics/gang3.jpg"></center>'
-	if picrand = 4:'<center><img src="images/pics/gang4.jpg"></center>'
-	if picrand = 5:'<center><img src="images/pics/gang5.jpg"></center>'
-	if picrand = 6:'<center><img src="images/pics/gang6.jpg"></center>'
-	if picrand = 7:'<center><img src="images/pics/gang7.jpg"></center>'
-	if picrand = 8:'<center><img src="images/pics/gang8.jpg"></center>'
-	if picrand = 9:'<center><img src="images/pics/gang9.jpg"></center>'
-	if picrand = 10:'<center><img src="images/pics/gang10.jpg"></center>'
-	if picrand = 11:'<center><img src="images/pics/gang11.jpg"></center>'
-	if picrand = 12:'<center><img src="images/pics/gang12.jpg"></center>'
-	if picrand = 13:'<center><img src="images/pics/gang13.jpg"></center>'
-	if picrand = 14:'<center><img src="images/pics/gang14.jpg"></center>'
-	if picrand = 15:'<center><img src="images/pics/gang15.jpg"></center>'
-
 	'You ripped into all the cracks, and even more than once. Heavily drunk and you can not concentrate and remember details. What that vague feeling throughout the body, hands, members. Then you dovezli and thrown at the entrance.'
-	set guy += 3
-	set sex += 1
-	set bj+= 1
-	set anal += 1
-	set throat += 1
-	set cumlip += 1
-	set cumface += 1
-	set cumbutt += 1
-	set cumass += 1
-	set cumpussy += 1
-	set rape += 1
-	set gang += 1
+	guy += 3
+	sex += 1
+	bj+= 1
+	anal += 1
+	throat += 1
+	cumlip += 1
+	cumface += 1
+	cumbutt += 1
+	cumass += 1
+	cumpussy += 1
+	rape += 1
+	gang += 1
 	vagina += 1
 	anus += 1
 
@@ -415,13 +325,13 @@ if $ARGS[0] = 'coffee':
 	$nameV = $boy
 	minut += 30
 	gs 'stat'
-	'<<$boy>> agree to your proposal. You brought him home, there´s a long embraced and continued to snuggle on the bed. <<$boy>> you entered with full force.'
-	set picrand = rand(1, 5)
+	picrand = rand(1, 5)
 	'<center><img src="images/pics/vagmis<<picrand>>.jpg"></center>'
+	'<<$boy>> agree to your proposal. You brought him home, there''s a long embraced and continued to snuggle on the bed. <<$boy>> you entered with full force.'
 	pose = 0
 	gs 'orgasm', 'start'
-	set guy += 1
-	set sex += 1
+	guy += 1
+	sex += 1
 	vagina += 1
 
 	act 'Wash':gt 'Vanr'

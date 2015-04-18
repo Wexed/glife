@@ -1,6 +1,9 @@
 # croupier1
-*pl '<right><img src="images/casino/crupbd.jpg"></right>'
-*p '- How can I help you?'
+clr
+minut += 5
+gs 'stat'
+'<right><img src="images/casino/crupbd.jpg"></right>'
+'- How can I help you?'
 
 act 'Ask rules':
 	msg 'Do you know how to play blackjack? Well then listen.
@@ -13,13 +16,10 @@ act 'Ask rules':
 
 	(i.e. 9 = 9 8 = 8 etc.)
 	After bidding the dealer deals the cards. But note that in our casino maximum rate is 1000 rubles. You two and one currently. Next you can gather additionally card or say enough, then the dealer will begin to gather additionally card itself. So in the end who has the most points he won. Returns 1 to 1.
-	That´s all. Enjoy the game'
+	That''s all. Enjoy the game'
 	gt 'croupier1'
 end
 
 act 'Move away from the dealer':gt 'bldzh'
-clr
-gs 'stat'
-set minut += 5
 
 --- croupier1 ---------------------------------

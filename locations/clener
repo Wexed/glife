@@ -2,20 +2,18 @@
 if $ARGS[0] = 'start':
 	cla
 	*clr
-	set minut += 5
-	'<center><b><font color="maroon">office building</font></b></center>'
-	'<center><img src="images/etogame/clener.jpg"></center>'
-	'On the walls there are different ads, one of which says:"Cleaner Wanted".'
-	'Above one of the doors a sign says, Jacob Solomonovich Schneersohn, tailor, 7:00--15:00'
+	minut += 5
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">office building</font></b></center>'
+	'<center><img src="images/etogame/clener.jpg"></center>'
+	'On the walls there are different ads, one of which says:"Cleaner Wanted".'
+	'Above one of the doors a sign says, Jacob Solomonovich Schneersohn, tailor, 7:00--15:00'
 
-	act 'Leave':gt 'street'
-
-	if SVqw >= 1:
+	if svQW >= 1:
 		if hour >= 8 and hour <= 16 and week < 6:
 			'The door to the<a href="exec:gt ''torgpred''">Trade Mission</a> is open.'
 		else
@@ -48,7 +46,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if borodachQW > 0 and borodachSex = 0 and hour >= 19:'The security guard, Sasha, nods at you.'
-	if borodachQW > 0 and borodachSex > 0 and hour >= 19:'The security guard, Sasha, smiles and says:"Hi Svetsik!"'
+	if borodachQW > 0 and borodachSex > 0 and hour >= 19:'The security guard, Sasha, smiles and says:"Hi <<$name>>!"'
 
 	if borodachQW > 0 and hour >= 19:
 		act 'Approach Sasha':
@@ -56,7 +54,7 @@ if $ARGS[0] = 'start':
 			minut += 5
 			gs 'stat'
 
-			if borodachSexDay = day:'You approach the security guard and say hello. You chat with him a bit, then Sasha was going to crawl and you´re away without becoming disturb him.'
+			if borodachSexDay = day:'You approach the security guard and say hello. You chat with him a bit, then Sasha was going to crawl and you''re away without becoming disturb him.'
 
 			if borodachSexDay ! day:
 				'You approach the security guard and say hello. He winks at you, I stashed the bubble here, as you look at the cult of mass leisure?'
@@ -88,8 +86,9 @@ if $ARGS[0] = 'start':
 							cls
 							minut += 15
 							horny += 10
-							gs 'stat'
 							borodachTimes += 1
+							gs 'stat'
+
 							picrand = rand(0, 2)
 
 							if picrand = 0:'<center><img src="images/qwest/ohrannik/hj.jpg"></center>'
@@ -124,9 +123,9 @@ if $ARGS[0] = 'start':
 				borodachQW = 2
 				'You laughed at the security guard, he smiled and put aside crosswords. "I love you there is no longer seen. Cleaning lady work?"'
 				'You nodded, "yes, moonlighting, then pay that kind of money that would not call it work."'
-				'(Guard) - by the way I´m Sasha, and you?'
+				'(Guard) - by the way I''m Sasha, and you?'
 				'(You) - My World.'
-				'(Sasha) - Very nice. I´ve got a bottle and have zakus, sostavish business?'
+				'(Sasha) - Very nice. I''ve got a bottle and have zakus, sostavish business?'
 
 				act 'Sorry, I have to go':gt 'clener', 'start'
 
@@ -147,7 +146,7 @@ if $ARGS[0] = 'start':
 							horny += 10
 							gs 'stat'
 							'(You) - Hey! What are you doing?'
-							'"C´mon, I accidentally." Sasha began to mutter pouring more vodka. "Let´s have a drink."'
+							'"C''mon, I accidentally." Sasha began to mutter pouring more vodka. "Let''s have a drink."'
 
 							if horny < 50:dynamic $borodachNo
 
@@ -173,12 +172,10 @@ if $ARGS[0] = 'start':
 		act 'Go to the tailor':
 			cla
 			*clr
-			'Elderly Jew makes a pattern at the table, he´s a bit down glasses and looking at you on top of the points.'
-
-			act 'Leave':gt 'clener', 'start'
+			'Elderly Jew makes a pattern at the table, he''s a bit down glasses and looking at you on top of the points.'
 
 			if portnoyQW > 0:
-				'Aah Svetochka, come, come again cut down?'
+				'Aah <<$name>>, come, come again cut down?'
 
 				if money >= 500:
 					act 'Wear clothes to take in 500 rubles':
@@ -191,21 +188,17 @@ if $ARGS[0] = 'start':
 
 						act 'Leave':gt 'clener', 'start'
 					end
-				end
 
-				if money >= 500:
 					act 'Take in different clothes':gt 'portnoi1', 'start'
 					act 'Take in all the clothes':gt 'portnoi2'
 				end
-			end
-
-			if portnoyQW = 0:
+			else
 				'Hello young lady. I am Solomonovich Jacob, for you simply Yasha. And what is your name?'
 
-				act '<<$name>>':
+				act 'Tell him your name':
 					cla
 					portnoyQW = 1
-					'(You) - Lights up.'
+					'(You) - <<$name>>'
 					'(Yasha) - What pgekgasnoe name. <<$name>>, come, sit here on this chair. Any way than I can be useful to you?'
 
 					act 'Can you tailor my clothes?':
@@ -235,6 +228,7 @@ if $ARGS[0] = 'start':
 					end
 				end
 			end
+			act 'Leave':gt 'clener', 'start'
 		end
 	end
 
@@ -247,10 +241,10 @@ if $ARGS[0] = 'start':
 
 			act 'Agree to work':
 				cla
-				set clenerT = 1
+				clenerT = 1
 				'You agreed to work.'
 
-				act 'Exit':gt 'clener', 'start'
+				act 'Leave':gt 'clener', 'start'
 			end
 		end
 	end
@@ -264,10 +258,10 @@ if $ARGS[0] = 'start':
 
 			act 'Agree to work':
 				cla
-				set clener = 2
+				clener = 2
 				'You agreed to work.'
 
-				act 'Exit':gt 'clener', 'start'
+				act 'Leave':gt 'clener', 'start'
 			end
 		end
 	end
@@ -276,32 +270,26 @@ if $ARGS[0] = 'start':
 		act 'Mop the floor in the office (1:00)':
 			cla
 			*clr
-			!!set clenday = day
-			set minut += 60
-			set clener += 1
-			set manna -= 15
-			set money += 100
-			set sweat += 2
+			clenday = day
+			minut += 60
+			clener += 1
+			manna -= 15
+			money += 100
+			sweat += 2
 			'<center><img src="images/etogame/clener1.jpg"></center>'
 
 			if clener < 5:
 				if hour >= 9 and hour <= 16:'You fill a bucket of water and go to the office with a mop. The office staff keeps out of the way while you clean the floor.'
-			end
-
-			if clener >= 5 and clener < 10:
+			elseif clener >= 5 and clener < 10:
 				if hour >= 9 and hour <= 16:
 					jouryQw += 1
 					'You fill a bucket of water and go to the office with a mop. The office staff keeps out of the way while you clean the floor. One of the office workers, a man with blond hair and a red face looks at you and tries to hide it, but you feel his burning gaze.'
 				end
-			end
-
-			if clener >= 10:
+			elseif clener >= 10:
 				if hour >= 9 and hour <= 16 and jouryQw < 7:
 					jouryQw += 1
 					'You fill a bucket of water and go to the office with a mop. The office staff keeps out of the way while you clean the floor. One of the office workers, a man with blond hair and a red face looks at you and tries to hide it, but you feel his burning gaze.'
-				end
-
-				if jouryQw = 7 and hour >= 9 and hour <= 16:
+				elseif jouryQw = 7 and hour >= 9 and hour <= 16:
 					cls
 					gs 'stat'
 					'<center><img src="images/etogame/clener1.jpg"></center>'
@@ -313,7 +301,7 @@ if $ARGS[0] = 'start':
 						jouryQwNo = 1
 						'After the work performed you come to the commandant of the building Boris Ivanovich. He gave you 100 rubles for the work.'
 
-						act 'Exit':gt 'clener', 'start'
+						act 'Leave':gt 'clener', 'start'
 					end
 
 					act 'Yes':
@@ -322,7 +310,7 @@ if $ARGS[0] = 'start':
 						gs 'stat'
 						'Yuri said that he now exits and greet you at the entrance to the building.'
 						'After the work performed you come to the commandant of the building Boris Ivanovich. He gave you 100 rubles for the work.'
-						'Code you are out of the commandant at the entrance to the building was already waiting for you, Yuri. He´s pretty strong emotions and it seems as if he swallowed scrap. Not knowing what to say, he blurted out, "Maybe we´ll go to me, the movie´s look, drink champagne, we´ll talk."'
+						'Code you are out of the commandant at the entrance to the building was already waiting for you, Yuri. He''s pretty strong emotions and it seems as if he swallowed scrap. Not knowing what to say, he blurted out, "Maybe we''ll go to me, the movie''s look, drink champagne, we''ll talk."'
 
 						act 'No':jouryQwNo = 1 & gt 'clener', 'start'
 
@@ -340,7 +328,7 @@ if $ARGS[0] = 'start':
 
 			'After the work performed you come to the commandant of the building Boris Ivanovich. He gave you 100 rubles for the work.'
 
-			act 'Exit':gt 'clener', 'start'
+			act 'Leave':gt 'clener', 'start'
 		end
 	end
 
@@ -348,16 +336,16 @@ if $ARGS[0] = 'start':
 		act 'Clean toilets (1:00)':
 			cla
 			*clr
-			set clendayT = day
-			set minut += 60
-			set clenerT += 1
-			set manna -= 25
-			set money += 100
-			set sweat += 3
+			clendayT = day
+			minut += 60
+			clenerT += 1
+			manna -= 25
+			money += 100
+			sweat += 3
 			'<center><img src="images/etogame/clener2.jpg"></center>'
 
 			if jouryQw > 7 and hour >= 9 and hour <= 16 and jourySex > 0 and jouryResult = 0:
-				'You entered the booth and began to scrub the toilet bowl. In tulet slammed the door and somebody came in, you looked out of the booth and saw George. He, too, saw you and came to you. "<<$name>>, do not come to me in the office, well, you know, the team does not understand what I´m meeting with the cleaner."'
+				'You entered the booth and began to scrub the toilet bowl. In tulet slammed the door and somebody came in, you looked out of the booth and saw George. He, too, saw you and came to you. "<<$name>>, do not come to me in the office, well, you know, the team does not understand what I''m meeting with the cleaner."'
 
 				act 'You make me ashamed?':
 					cla
@@ -370,7 +358,7 @@ if $ARGS[0] = 'start':
 						'Such behavior has offended you and Yuri you without hesitation sent him. He turned and walked out of the closet.'
 						'You washed the floor in the toilet and kicked all the toilets and urinals to shine. After that you were given 100 rubles for his work.'
 
-						act 'Exit':gt 'clener', 'start'
+						act 'Leave':gt 'clener', 'start'
 					end
 
 					act 'Okay.':
@@ -380,7 +368,7 @@ if $ARGS[0] = 'start':
 						'Jury sees you only hole drya its members. But you put up with it and agreed to go to his home. Yuri nodded in satisfaction and walked out of the toilet.'
 						'You washed the floor in the toilet and kicked all the toilets and urinals to shine. After that you were given 100 rubles for his work.'
 
-						act 'Exit':gt 'clener', 'start'
+						act 'Leave':gt 'clener', 'start'
 					end
 				end
 
@@ -388,7 +376,7 @@ if $ARGS[0] = 'start':
 			end
 
 			if StasikValera > 0 and SVqw = 0:
-				'You nadraivali toilet to shine in this moment heard the toilet as someone walked in, turned around you saw a man. Suddenly you´ve learned it, it Stasik, with him and his friend Valera you met at the beach. Stasik also apparently recognize you and come up to you, "Hi Svetsik thou is a cleaner work?"'
+				'You nadraivali toilet to shine in this moment heard the toilet as someone walked in, turned around you saw a man. Suddenly you''ve learned it, it Stasik, with him and his friend Valera you met at the beach. Stasik also apparently recognize you and come up to you, "Hi <<$name>> thou is a cleaner work?"'
 
 				act 'I earn the money needed.':
 					cls
@@ -401,7 +389,7 @@ if $ARGS[0] = 'start':
 						SVqw = 1
 						gs 'stat'
 						'<center><img src="images/etogame/clener2.jpg"></center>'
-						'You asked about the details of Stas. Stasik you said "It´s very simple. In northern, central and residential areas are supermarkets. Thou shalt come to our office to take a job to work, then go to all these stores and arrange our products there charges according assignment. At the checkout take receipt confirming that that you were at work. Thereafter yavlyaeshsya you to our office and we will pay you compensation. 500 rubles. works you will have a few hours. Labour I´m not asking. So what? "'
+						'You asked about the details of Stas. Stasik you said "It''s very simple. In northern, central and residential areas are supermarkets. Thou shalt come to our office to take a job to work, then go to all these stores and arrange our products there charges according assignment. At the checkout take receipt confirming that that you were at work. Thereafter yavlyaeshsya you to our office and we will pay you compensation. 500 rubles. works you will have a few hours. Labour I''m not asking. So what? "'
 
 						act 'Not interested':gt 'clener', 'start'
 
@@ -422,9 +410,11 @@ if $ARGS[0] = 'start':
 
 			'You washed the floor in the toilet and kicked all the toilets and urinals to shine. After that you were given 100 rubles for his work.'
 
-			act 'Exit':gt 'clener', 'start'
+			act 'Leave':gt 'clener', 'start'
 		end
 	end
+
+	act 'Leave':gt 'street'
 end
 
 --- clener ---------------------------------

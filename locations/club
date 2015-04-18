@@ -2,20 +2,20 @@
 if $ARGS[0] = 'start':
 	$sexloc = $CURLOC
 	cla
-	*clr
-	set minut += 5
-	'<center><b><font color="maroon">Night club</font></b></center>'
-	'<center><img src="images/etogame/club.jpg"></center>'
-	'The entrance area of the club is full of young people. The entrance itself is guarded by the heavy and strong type of men, who check everyones passport. A Ticket costs 500 rubles.'
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">Night club</font></b></center>'
+	'<center><img src="images/etogame/club.jpg"></center>'
+	'The entrance area of the club is full of young people. The entrance itself is guarded by the heavy and strong type of men, who check everyones passport. A Ticket costs 500 rubles.'
 
 	act 'Leave the club':
 		cla
-		set minut += 5
+		minut += 5
 		gt 'down'
 	end
 
@@ -24,8 +24,8 @@ if $ARGS[0] = 'start':
 
 		act 'Enter the club (500 rubles)':
 			cla
-			set minut += 5
-			set money -= 500
+			minut += 5
+			money -= 500
 			frost = 0
 			gt 'club', 'inside'
 		end
@@ -36,17 +36,17 @@ end
 
 if $ARGS[0] = 'inside':
 	cla
-	*clr
-	set minut += 5
-	'<center><b><font color="maroon">Night club</font></b></center>'
-	'<center><img src="images/etogame/club9.jpg"></center>'
-	'<a href="exec:gt ''club'', ''vip''">Vip-room.</a>'
-	'The music here is loud and the bass bumping. You can see a laser show at the stage and on the poorly lit dancefloor you see the people dancing, like there''s no tomorrow.'
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">Night club</font></b></center>'
+	'<center><img src="images/etogame/club9.jpg"></center>'
+	'<a href="exec:gt ''club'', ''vip''">Vip-room.</a>'
+	'The music here is loud and the bass bumping. You can see a laser show at the stage and on the poorly lit dancefloor you see the people dancing, like there''s no tomorrow.'
 
 	if hour <= 3 or hour >= 15:
 		act 'WC':gt 'club', 'toi'
@@ -56,8 +56,8 @@ if $ARGS[0] = 'inside':
 
 	act 'Leave the club':
 		cla
-		set drunk = 0
-		set minut += 5
+		drunk = 0
+		minut += 5
 		gt 'down'
 	end
 end
@@ -69,27 +69,27 @@ if $ARGS[0] = 'toi':
 
 	act 'Wait in line':
 		cla
-		Set minut += rand(10, 30)
+		minut += rand(10, 30)
 		'Finally there''s a free booth for you.'
-		set vnesh += 1
+		vnesh += 1
 
 		act 'WC':gt 'club', 'tou'
 	end
 
 	act 'Go to the mens toilet':
 		cla
-		Set acta += 1
+		acta += 1
 		'You slip unnoticed into the mens toilet room.'
 
 		act 'Go into a free booth':
-			set randbj = rand(1, 100)
+			randbj = rand(1, 100)
 
 			if TQuest = 0 and horny < 50:gt 'club', 'tou'
-			if TQuest = 0 and horny >= 50:gt 'Klub2', 'WC'
-			if TQuest = 1:gt 'Klub2', 'tualet1'
-			if TQuest = 2:gt 'Klub2', 'tualet2'
+			if TQuest = 0 and horny >= 50:gt 'The_Club2', 'wc'
+			if TQuest = 1:gt 'The_Club2', 'wc1'
+			if TQuest = 2:gt 'The_Club2', 'wc2'
 			if TQuest >= 3 and randbj < 60:gt 'club', 'tou'
-			if TQuest >= 3 and randbj >= 60:gt 'Klub2', 'tualet1'
+			if TQuest >= 3 and randbj >= 60:gt 'The_Club2', 'wc1'
 		end
 	end
 
@@ -98,23 +98,23 @@ end
 
 if $ARGS[0] = 'tou':
 	cla
-	*clr
-	set minut += 5
-	'<center><b><font color="maroon">WC</font></b></center>'
-	'<center><img src="images/etogame/club3.jpg"></center>'
-	''
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">WC</font></b></center>'
+	'<center><img src="images/etogame/club3.jpg"></center>'
+	''
 
 	act 'Get off the toilet':gt 'club', 'inside'
 
 	if tanga = 1:
 		act 'Remove your underwear':
 			cla
-			set tanga = 0
+			tanga = 0
 			gt 'club', 'toi'
 		end
 	end
@@ -122,8 +122,8 @@ if $ARGS[0] = 'tou':
 	act 'Look into the mirror':
 		cla
 		gs 'portmirror'
-		set $gt1 = 'club'
-		set $gt2 = 'tou'
+		$gt1 = 'club'
+		$gt2 = 'tou'
 		dynamic $portmirror
 
 		act 'Move away from the mirror':
@@ -135,15 +135,22 @@ if $ARGS[0] = 'tou':
 	!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
 	!!Removed sweat =- 1 when cum is wiped off clothes
 	!!clrbelo: Amount of clean panties available
-	if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+	if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
 		act 'Quick wash (0:15)':
 			cla
 			*clr
+
+			if clrbelo > 0 and tanga = 1:
+				clrbelo -= 1
+				dirtbelo += 1
+			elseif clrbelo = 0 and tanga = 1:
+				tanga = 0
+				dirtbelo += 1
+			end
+
 			dynamic $showerdin
-			set sweat -= 1
-			set minut += 15
-			set clrbelo -= 1
-			set dirtbelo += 1
+			sweat -= 1
+			minut += 15
 			'<center><img src="images/pics/wash5.jpg"></center>'
 			'You gave yourself a catlick, thus removing any traces of cum.'
 
@@ -155,11 +162,11 @@ if $ARGS[0] = 'tou':
 		act 'Clean your face from sperm (0:05)':
 			cla
 			*clr
-			set mop = 1
-			set cumlip = 0
-			set cumface = 0
-			set sweat -= 1
-			set minut += 5
+			mop = 1
+			cumlip = 0
+			cumface = 0
+			sweat -= 1
+			minut += 5
 			'<center><img src="images/etogame/facesp.jpg"></center>'
 			'You clean your face and got rid of any trace of cum.'
 
@@ -171,8 +178,8 @@ if $ARGS[0] = 'tou':
 		act 'Wipe the cum off your clothes (0:10)':
 			cla
 			*clr
-			set cumfrot = 0
-			set minut += 10
+			cumfrot = 0
+			minut += 10
 			'<center><img src="images/etogame/frotsp.jpg"></center>'
 			'You use a tissue and a bit of water to remove cum stains in your clothes. '
 
@@ -185,10 +192,10 @@ if $ARGS[0] = 'tou':
 		act 'Use a tampon (0:05)':
 			cla
 			*clr
-			set tampon -= 1
-			set isprok = 1
-			set minut += 5
-			set manna -= 5
+			tampon -= 1
+			isprok = 1
+			minut += 5
+			manna -= 5
 			'<center><img src="images/pics/wash3.jpg"></center>'
 			'You use the tampon.'
 
@@ -199,40 +206,40 @@ end
 
 if $ARGS[0] = 'dance':
 	cla
+	clr
 	*clr
+	gs 'stat'
 	'<center><b><font color="maroon">The dance floor</font></b></center>'
 	'<center><img src="images/etogame/club9.jpg"></center>'
 	'The club is filled to the brink with people. Most of which are dancing on the dancefloor.'
-	clr
-	gs 'stat'
 
-	act 'Exit':gt 'club', 'inside'
+	act 'Leave':gt 'club', 'inside'
 
 	if hour <= 3 or hour >= 16:
 		act 'Dance (0:30)':
 			cla
 			*clr
-			set minut += 30
-			set fat -= 1
-			set dance += 1
-			set manna += 10
-			set willpower += 10
-			set clrand = rand(0, 100)
+			minut += 30
+			fat -= 1
+			dance += 1
+			manna += 10
+			willpower += 10
+			clrand = rand(0, 100)
 			frost = 0
 			'<center><img src="images/etogame/club4.jpg"></center>'
 			'On the dance floor very closely, you can put a hand on his shoulder one guy to make a couple of steps and pressed her chest already to another, and in the dance, how much one can do in dance.'
 
 			if vnesh >= clrand:
-				set horny += 1
+				horny += 1
 				gs 'boy'
 				'While you''re dancing you feel that someone is groping your ass, you turn around and see <<$boybody>> <<$boybod>> <<$boyface>>. He''s <<$boyClo>>'
 
 				act 'Dance with him':
 					cla
 					*clr
-					set minut += 30
-					set dance += 1
-					set horny += 1 + SUB
+					minut += 30
+					dance += 1
+					horny += 1 + SUB
 					'<center><img src="images/etogame/club8.jpg"></center>'
 					'You continue to dance with the guy on the dancefloor, but he doesn''t stop touching your. It somehow gets you excited, when a random guy is touching you in public.'
 
@@ -242,23 +249,21 @@ if $ARGS[0] = 'dance':
 
 					act 'Kiss':
 						cla
-						set minut += 15
-						set horny += 1 + SUB
-						set dansexclub = rand(0, 1)
+						minut += 15
+						horny += 1 + SUB
+						dansexclub = rand(0, 1)
 
 						if dansexclub = 1:
 							'You''re passionately kissing the guy, while he''s continously groping you, always dedicating one of his hands to either your tits or your ass. "Why don''t we go to the VIP-Area. There we''ll have a bit more privacy.", he says inbetween kisses.'
-							set picrand = 38
+							picrand = 38
 
 							if horny < 70:
 								act 'Go to the dance floor':gt 'club', 'dance'
 							end
 
 							act 'Go to Vip-room with the guy':xgt 'sex', 'var'
-						end
-
-						if dansexclub = 0:
-							'You''re passionately kissing the guy, while he''s continously groping you, always dedicating one of his hands to either your tits or your ass. "Let´s go to the toilet.", he says with a smile.'
+						elseif dansexclub = 0:
+							'You''re passionately kissing the guy, while he''s continously groping you, always dedicating one of his hands to either your tits or your ass. "Let''s go to the toilet.", he says with a smile.'
 
 							if horny < 70:
 								act 'Go to the dance floor':gt 'club', 'dance'
@@ -274,16 +279,14 @@ if $ARGS[0] = 'dance':
 					*clr
 					'<center><img src="images/img/centr/dancelezb.jpg"></center>'
 					'While you''re dancing you a hand groping your ass. You turn around to see who touched your, but you''re surprised to see women smiling at you, she seems to be biting her lips.'
-					set dansexclub = rand(0, 1)
+					dansexclub = rand(0, 1)
 
 					if dansexclub = 0:
-						act '"Let´s go to the toilet, to have fun."':gt 'club', 'lezbsort'
-					end
+						act '"Let''s go to the toilet, to have fun."':gt 'club', 'lezbsort'
+					elseif dansexclub = 1:
+						picrand = rand(13, 17)
 
-					if dansexclub = 1:
-						set picrand = rand(13, 17)
-
-						act '"Let´s go to VIP-Room, to have fun."':xgt 'lezbsex', 'var'
+						act '"Let''s go to VIP-Room, to have fun."':xgt 'lezbsex', 'var'
 					end
 
 					act 'Send it':gt 'club', 'inside'
@@ -296,24 +299,24 @@ if $ARGS[0] = 'dance':
 		act 'Go up to the DJ (0:30)':
 			cla
 			*clr
-			set minut += 30
+			minut += 30
 			'<center><img src="images/etogame/club7.jpg"></center>'
 
 			if alexeyQW = 0:'The DJ does not pay you any attention.'
-			if alexeyQW > 0 and alexeySex = 0:'Alexei looks up and smiles at you, he recognizes you from the vocal school.'
-
-			if alexeyQW > 0 and alexeySex > 0:
+			if alexeyQW > 0 and alexeySex = 0:
+				'Alexei looks up and smiles at you, he recognizes you from the vocal school.'
+			elseif alexeyQW > 0 and alexeySex > 0:
 				'As Alexei sees you, he invites you into his DJ booth.'
 
 				act 'Go into the booth':
 					cls
-					set minut += 30
+					minut += 30
 					gs 'stat'
 					'<center><img src="images/etogame/club7.jpg"></center>'
 					'Alexei barely talks to you as he''s only paying attention to the music.'
 
 					if alexeyClubSex = 3 and sashaClubQW = 0:
-						set sashaClubQW = 1
+						sashaClubQW = 1
 						'Into the booth came a man, who seems to be somewhere in forties. He has a large belly, has a bald head and is wearing glasses. Alexei greeted him and introduced you to him, his name is Alexander E. and he''s the owner of the club.'
 						'Alexander had a small talk with Alexei, then he left again.'
 
@@ -333,23 +336,8 @@ if $ARGS[0] = 'dance':
 							bj += 1
 							minut += 10
 							gs 'stat'
-							picrand = rand(0, 13)
-
-							if picrand = 0:'<center><img src="images/qwest/alexey/bj.jpg"></center>'
-							if picrand = 1:'<center><img src="images/qwest/alexey/bj1.jpg"></center>'
-							if picrand = 2:'<center><img src="images/qwest/alexey/bj2.jpg"></center>'
-							if picrand = 3:'<center><img src="images/qwest/alexey/bj3.jpg"></center>'
-							if picrand = 4:'<center><img src="images/qwest/alexey/bj4.jpg"></center>'
-							if picrand = 5:'<center><img src="images/qwest/alexey/bj5.jpg"></center>'
-							if picrand = 6:'<center><img src="images/qwest/alexey/bj6.jpg"></center>'
-							if picrand = 7:'<center><img src="images/qwest/alexey/bj7.jpg"></center>'
-							if picrand = 8:'<center><img src="images/qwest/alexey/bj8.jpg"></center>'
-							if picrand = 9:'<center><img src="images/qwest/alexey/bj9.jpg"></center>'
-							if picrand = 10:'<center><img src="images/qwest/alexey/bj10.jpg"></center>'
-							if picrand = 11:'<center><img src="images/qwest/alexey/bj11.jpg"></center>'
-							if picrand = 12:'<center><img src="images/qwest/alexey/bj12.jpg"></center>'
-							if picrand = 13:'<center><img src="images/qwest/alexey/bj13.jpg"></center>'
-
+							picrand = rand(1, 14)
+							'<center><img src="images/qwest/alexey/bj<<picrand>>.jpg"></center>'
 							'You kneel down and wrap your <<$liptalk>> around his cock and you begin to suck on it. Alexei helped by moving his hips back and forth, you notice his moving is in sync to the beat of the music he''s playing. After a few minutes he groans, "You better swallow it all, I don''t want anyone to clean up our mess."'
 							gs 'oral', '0'
 
@@ -360,23 +348,8 @@ if $ARGS[0] = 'dance':
 								swallow += 1
 								cumlip += 1
 								gs 'stat'
-								picrand = rand(0, 13)
-
-								if picrand = 0:'<center><img src="images/qwest/alexey/bjcum.jpg"></center>'
-								if picrand = 1:'<center><img src="images/qwest/alexey/bjcum1.jpg"></center>'
-								if picrand = 2:'<center><img src="images/qwest/alexey/bjcum2.jpg"></center>'
-								if picrand = 3:'<center><img src="images/qwest/alexey/bjcum3.jpg"></center>'
-								if picrand = 4:'<center><img src="images/qwest/alexey/bjcum4.jpg"></center>'
-								if picrand = 5:'<center><img src="images/qwest/alexey/bjcum5.jpg"></center>'
-								if picrand = 6:'<center><img src="images/qwest/alexey/bjcum6.jpg"></center>'
-								if picrand = 7:'<center><img src="images/qwest/alexey/bjcum7.jpg"></center>'
-								if picrand = 8:'<center><img src="images/qwest/alexey/bjcum8.jpg"></center>'
-								if picrand = 9:'<center><img src="images/qwest/alexey/bjcum9.jpg"></center>'
-								if picrand = 10:'<center><img src="images/qwest/alexey/bjcum10.jpg"></center>'
-								if picrand = 11:'<center><img src="images/qwest/alexey/bjcum11.jpg"></center>'
-								if picrand = 12:'<center><img src="images/qwest/alexey/bjcum12.jpg"></center>'
-								if picrand = 13:'<center><img src="images/qwest/alexey/bjcum13.jpg"></center>'
-
+								picrand = rand(1, 14)
+								'<center><img src="images/qwest/alexey/bjcum<<picrand>>.jpg"></center>'
 								'Streams of sperm hit you in the mouth and began to run down your <<$liptalk>>. Alexei wiped his dick on your <<$liptalk>> and put it away in his pants.'
 								'You began greedily to swallow his warm cum and use your finger to collect the drips, that escaped your mouth, then lick your finger clean. Once you''ve swallowed every last drop, you stand up again and thank him for this tasty snack.'
 
@@ -394,15 +367,15 @@ end
 
 if $ARGS[0] = 'bar':
 	cla
+	clr
 	*clr
-	set minut += 5
+	minut += 5
+	gs 'stat'
 	'<center><b><font color="maroon">bar</font></b></center>'
 	'<center><img src="images/etogame/club10.jpg"></center>'
 	'You have to squeeze yourself through the crowd to get to the bar. On your way, random guys try to lay their hands around you, try to convince you into dancing or drinking with them, some even try to grope your tits or ass and some play the white knight and try to get your attention by protecting you.'
-	clr
-	gs 'stat'
 
-	if vnesh > 14:set barsexrand = rand(0, 10)
+	if vnesh > 14:barsexrand = rand(0, 10)
 	if barsexrand = 1:gt 'club', 'bar0'
 	if barsexrand = 2:gt 'club', 'bar1'
 
@@ -421,9 +394,7 @@ if $ARGS[0] = 'bar':
 			act 'Try to go home':gt 'street'
 
 			exit
-		end
-
-		if temp = 6:
+		elseif temp = 6:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club2.jpg"></center>'
@@ -433,9 +404,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 7:
+		elseif temp = 7:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand4.jpg"></center>'
@@ -445,9 +414,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 8:
+		elseif temp = 8:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club5.jpg"></center>'
@@ -457,9 +424,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 9:
+		elseif temp = 9:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand6.jpg"></center>'
@@ -469,9 +434,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 10:
+		elseif temp = 10:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand7.jpg"></center>'
@@ -481,9 +444,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 11:
+		elseif temp = 11:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand8.jpg"></center>'
@@ -493,9 +454,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 12:
+		elseif temp = 12:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand9.jpg"></center>'
@@ -505,9 +464,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 13:
+		elseif temp = 13:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand10.jpg"></center>'
@@ -517,9 +474,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 14:
+		elseif temp = 14:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand11.jpg"></center>'
@@ -529,9 +484,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 15:
+		elseif temp = 15:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand12.jpg"></center>'
@@ -541,9 +494,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 16:
+		elseif temp = 16:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club13.jpg"></center>'
@@ -553,9 +504,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 17:
+		elseif temp = 17:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club14.jpg"></center>'
@@ -565,9 +514,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 18:
+		elseif temp = 18:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand15.jpg"></center>'
@@ -577,9 +524,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 19:
+		elseif temp = 19:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand16.jpg"></center>'
@@ -589,9 +534,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 20:
+		elseif temp = 20:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/picKav/ivrand17.jpg"></center>'
@@ -601,9 +544,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 21:
+		elseif temp = 21:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club21.jpg"></center>'
@@ -612,9 +553,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 22:
+		elseif temp = 22:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club22.jpg"></center>'
@@ -623,9 +562,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 23:
+		elseif temp = 23:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club23.jpg"></center>'
@@ -634,9 +571,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp = 24:
+		elseif temp = 24:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club24.jpg"></center>'
@@ -646,9 +581,7 @@ if $ARGS[0] = 'bar':
 			act 'Leave':gt 'down'
 
 			exit
-		end
-
-		if temp > 24:
+		elseif temp > 24:
 			horny += 5
 			gs 'stat'
 			'<center><img src="images/etogame/club25.jpg"></center>'
@@ -661,19 +594,19 @@ if $ARGS[0] = 'bar':
 	end
 
 	if money >= 300:
-		act 'Buy some booze (300 rubles)':
+		act 'Buy a drink (300 rubles)':
 			cla
 			*clr
-			set minut += 30
-			set fat += 1
-			set manna += 10
-			set willpower += 10
+			minut += 30
+			fat += 1
+			manna += 10
+			willpower += 10
 			alko += 2
-			set water += 5
-			set energy += 5
-			set son += 5
-			set horny += rand(10, 50)
-			set money -= 300
+			water += 5
+			energy += 5
+			son += 5
+			horny += rand(10, 50)
+			money -= 300
 			frost = 0
 			'<center><img src="images/etogame/club6.jpg"></center>'
 			'You found a free bar stool and sat down on it. You ordered the barkeeper to mix you a cocktail and a few moments later, you sipping on a sweet one.'
@@ -685,23 +618,23 @@ end
 
 if $ARGS[0] = 'sex':
 	cla
+	clr
 	*clr
 	dynamic $venerasiak
-	set minut += 5
+	minut += 5
+	gs 'stat'
+	$nameV = 'Stranger'
+	dick = rand(10, 18)
 	'<center><b><font color="maroon">toilet stall</font></b></center>'
 	'<center><img src="images/etogame/sex.jpg"></center>'
-	clr
-	gs 'stat'
-	set $nameV = 'Stranger'
-	set dick = rand(10, 18)
 	'You went with the guy to the mens toilet and he dragged you into one of the free booths. He started to caress your breats and pussy, then helped you getting rid of the clothes.'
 
 	act 'Give him a blowjob':
 		cla
 		*clr
-		set bj += 1
-		set guy += 1
-		set horny += VAF
+		bj += 1
+		guy += 1
+		horny += VAF
 		'<center><img src="images/picV/clubBJ.jpg"></center>'
 		gs 'oral', 'start'
 
@@ -712,9 +645,7 @@ if $ARGS[0] = 'sex':
 			if harakBoy = 0:
 				'<center><img src="images/picV/hand.jpg"></center>'
 				'You take his cock and point it away from you. He groans as he cums and most of his cum gets splattered onto the floor, with a few drips covering your hand.'
-			end
-
-			if harakBoy = 1:
+			elseif harakBoy = 1:
 				act 'Point his cock at the floor':
 					cla
 					'<center><img src="images/picV/hand.jpg"></center>'
@@ -725,8 +656,8 @@ if $ARGS[0] = 'sex':
 
 				act 'Let him cum on your face':
 					cla
-					set facial += 1
-					set cumface += 1
+					facial += 1
+					cumface += 1
 					'<center><img src="images/picV/clubFacial1.jpg"></center>'
 					'You grabed his cock and point his "gun" at your face. He groans as he cums and you can feel hot streams of semen covering your face.'
 
@@ -734,12 +665,10 @@ if $ARGS[0] = 'sex':
 				end
 
 				exit
-			end
-
-			if harakBoy = 2:
-				set facial += 1
-				set cumface += 1
-				set SUB += 1
+			elseif harakBoy = 2:
+				facial += 1
+				cumface += 1
+				SUB += 1
 				'<center><img src="images/picV/clubFacial.jpg"></center>'
 				'The bloke grabs your hair and cums on your face. You quickly close your eyes, but it''s too late, a few drips of semen make it into your eyes. It hurts a bit.'
 			end
@@ -750,8 +679,8 @@ if $ARGS[0] = 'sex':
 		act 'Swallow his cum':
 			cla
 			*clr
-			set swallow += 1
-			set cumlip += 1
+			swallow += 1
+			cumlip += 1
 			'<center><img src="images/picV/clubSwallow.jpg"></center>'
 			'The guy came in your mouth, you can feel his hot and salty semen pouring into it. Without hesistation you swallow it, you can''t tell why, but somehow you start to enjoy the taste of fresh, warm sperm.'
 
@@ -762,10 +691,10 @@ if $ARGS[0] = 'sex':
 	act 'Doggy-Style':
 		cla
 		*clr
-		set sex += 1
-		set guy += 1
-		set horny += SUB
-		set vagina += 1
+		sex += 1
+		guy += 1
+		horny += SUB
+		vagina += 1
 		'<center><img src="images/picV/clubSex.jpg"></center>'
 		'You turn around and kneel on the toilet seat. "Fuck me", you say and present your ass and pussy to him.'
 		'You don''t have to tell him twice, he grabs your hips, positions his cock infront of your pussy and with a strong push he enters your vagina. You moan with pleasure and you are surprised by the sheer force he used to enter you.'
@@ -798,8 +727,8 @@ if $ARGS[0] = 'bar0':
 		act 'Strip her':
 			cla
 			*clr
-			set lesbian += 1
-			set girl += 1
+			lesbian += 1
+			girl += 1
 			'<center><img src="images/img/centr/bar2.jpg"></center>'
 			'You remove her top and begin to caress and kiss her breasts. You suck on her nipples while your hand unbuttons her pants and slip your hand in to get a feel for her pussy. You are a bit surprised to find an already moistened pussy.'
 
@@ -813,7 +742,7 @@ if $ARGS[0] = 'bar0':
 				act 'Switch positions':
 					cla
 					*clr
-					set horny = 0
+					horny = 0
 					'<center><img src="images/img/centr/bar4.jpg"></center>'
 					'You stand up and she goes down on you, starting to lick your flower and sticking two fingers into your now wet cunt. She''s very skilled with her tongue and it takes her only minutes to make you cum.'
 					'You''re blissfully smiling at her. "Thank you.", you say to her..'
@@ -824,9 +753,7 @@ if $ARGS[0] = 'bar0':
 						'Now that the adrenalin fades away again, both you begin to blush as you notice, that the people around you stare at you. Both of you quickly dress-up again and go parted ways.'
 
 						act 'Leave':gt 'club', 'inside'
-					end
-
-					if dildo > 0:
+					elseif dildo > 0:
 						act 'Get dildo':
 							cla
 							*clr
@@ -837,8 +764,8 @@ if $ARGS[0] = 'bar0':
 							act 'Give her one':
 								cla
 								*clr
-								set horny = 0
-								set orgasm += 1
+								horny = 0
+								orgasm += 1
 								'<center><img src="images/img/centr/bar6.jpg"></center>'
 								'You both stand up and use a dildo to move it in and out of each others pussy. She moves close to you and begins kissing you. Your feelings are overflowing and both of you come together at the same time.'
 								'Now that the adrenalin fades away again, both you begin to blush as you notice, that the people around you stare at you. Both of you quickly dress-up again and go parted ways.'
@@ -869,7 +796,7 @@ if $ARGS[0] = 'bar1':
 		act 'Tell him to lick you':
 			cla
 			*clr
-			set kuni += 1
+			kuni += 1
 			'<center><img src="images/img/centr/barkuni.jpg"></center>'
 			'"Sure", you say with a witty smile, "Why don''t you lick my pussy?" You stand up, remove your panties and bend over the stool. "Go on, what are you waiting for.", you tell him.'
 			'He kneels down and begins to move his tongue between your folds. You immediately begin to moan softly. You close your eyes and admit to yourself, that he''s not half bad at it.'
@@ -888,8 +815,8 @@ if $ARGS[0] = 'bar2':
 	cla
 	*clr
 	dynamic $venerasiak
-	set bj += 1
-	set guy += 1
+	bj += 1
+	guy += 1
 	'<center><b><font color="maroon">Bar</font></b></center>'
 	'<center><img src="images/img/centr/barminet.jpg"></center>'
 	'You bend over, unbutton his pants and take out his cock. You bite your lips in anticipation and start to suck on it with your <<$liptalk>>. He''s moaning and smiling at the fact, that a random girl at a club is giving him a header.'
@@ -899,7 +826,7 @@ if $ARGS[0] = 'bar2':
 	act 'Continue to suck':
 		cla
 		*clr
-		set cumlip += 1
+		cumlip += 1
 		'<center><img src="images/img/centr/barcum.jpg"></center>'
 		'You suck his cock for a few minutes and not long after, he grabs and holds your head and presses you against his crotch as he cums inside your mouth. You gag a few seconds, then feel his hot cum flowing into you and you swallow every drip of his semen.'
 		'He takes his cock out and a few drips of cum land on your chin. You use your fingers to clean it up, then lick them clean. Both of you smile at each other and he eventually thank you, zips-up his pants and moves away.'
@@ -911,8 +838,8 @@ end
 if $ARGS[0] = 'bar3':
 	cla
 	*clr
-	set sex += 1
-	set cumpussy += 1
+	sex += 1
+	cumpussy += 1
 	'<center><b><font color="maroon">Bar</font></b></center>'
 	'<center><img src="images/img/centr/barsex.jpg"></center>'
 	'You remove your panties and sit down sideways on one of the stools. The guy unzips his cock and quickly enters your pussy. Both of you start to moan in pleasure and he kisses your neck gently. About ten minutes later of rough fucking he cums on your ass check and you pull up your panties, still breathing heavy.'
@@ -924,36 +851,34 @@ if $ARGS[0] = 'rape':
 	cla
 	*clr
 	dynamic $venerasiak
-	set SUB += 5
-	set rape += 1
+	SUB += 5
+	rape += 1
 	'<center><b><font color="maroon">Bar</font></b></center>'
-	set barraperand = rand(0, 1)
+	barraperand = rand(0, 1)
 
 	if barraperand = 0:
-		set bj += 1
+		bj += 1
 		'<center><img src="images/img/centr/barminet.jpg"></center>'
 		'The guy notices you being heavily drunk and you couldn''t resits anything right now. He orders you to unbutton his pants, take out his cock and begin to suck on it. He grabs your hair and forces your to deepthroat it.'
 
 		act 'Further':
-			set barraperand1 = rand(0, 1)
+			barraperand1 = rand(0, 1)
 
 			if barraperand1 = 0:
 				cla
 				*clr
-				set cumlip += 1
-				set cumface += 1
+				cumlip += 1
+				cumface += 1
 				'<center><b><font color="maroon">Bar</font></b></center>'
 				'<center><img src="images/img/centr/barcum.jpg"></center>'
 				'A few minutes later he is finally done and pushes your head against his crotch, forcing you to swallow his cum. You can''t help but to enjoy the tase of his semen in your mouth.'
 
 				act 'Leave':gt 'club', 'inside'
-			end
-
-			if barraperand1 = 1:
+			elseif barraperand1 = 1:
 				cla
 				*clr
-				set sex += 1
-				set cumpussy += 1
+				sex += 1
+				cumpussy += 1
 				'<center><b><font color="maroon">Bar</font></b></center>'
 				'<center><img src="images/img/centr/barsex.jpg"></center>'
 				'The bloke takes his cock out of your mouth, tells you postion yourself in the stool and then he begins to fuck you roughly. As you''re drunk you barely register anmything, but you catch yourself moaning heavy. Not even ten minutes laters he takes his cock out of your pussy and cums on your ass.'
@@ -961,11 +886,9 @@ if $ARGS[0] = 'rape':
 				act 'Leave':gt 'club', 'inside'
 			end
 		end
-	end
-
-	if barraperand = 1:
-		set sex += 1
-		set cumpussy += 1
+	elseif barraperand = 1:
+		sex += 1
+		cumpussy += 1
 		'<center><img src="images/img/centr/barsex.jpg"></center>'
 		'You are trying to send it, but your tongue drunk guy is braided and seeing that you are not able to resist, pulls out his cock turns you on a stool and saliva-moistened member enters your vagina, it tears you to force shoving his dick as deep as possible, and finally finishing the leaves.'
 
@@ -977,9 +900,9 @@ if $ARGS[0] = 'lezbsort':
 	cla
 	*clr
 	dynamic $venerasiak
-	set girl += 1
-	set lesbian += 1
-	set minut += 10
+	girl += 1
+	lesbian += 1
+	minut += 10
 	'<center><b><font color="maroon">WC</font></b></center>'
 	'<center><img src="images/img/centr/lezbsort.jpg"></center>'
 	'She follows you into the womens bathroom and you lure her into one of the empty booths.'
@@ -992,8 +915,8 @@ end
 if $ARGS[0] = 'lezbsort1':
 	cla
 	*clr
-	set minut += 10
-	set horny = 0
+	minut += 10
+	horny = 0
 	'<center><b><font color="maroon">WC</font></b></center>'
 	'<center><img src="images/img/centr/sortukuni.jpg"></center>'
 	'You remove her pants and sit down on the toilet. She happily does as you told her. She spreads her legs and you begin to lick her cunt furiously. She moans heavily and plays with her erect nipples. Some time later you make cum.'
@@ -1006,8 +929,8 @@ end
 if $ARGS[0] = 'lezbsort2':
 	cla
 	*clr
-	set minut += 10
-	set horny = 0
+	minut += 10
+	horny = 0
 	'<center><b><font color="maroon">WC</font></b></center>'
 	'<center><img src="images/img/centr/sortkuni.jpg"></center>'
 	'You sit donw on the toilet and move your feet up. "Lick it", you tell her. She seductively bites her lips and happily follows your orders. The woman parts your pussy lips and begins to lick your cunt. Every so often she switches between licking your pink flesh and your flower. She doesn''t stop until you cry out in pleasure and cum.'
@@ -1023,26 +946,24 @@ if $ARGS[0] = 'vip':
 
 		if money >= 10000:
 			act 'Buy a VIP-Card (10,000 rubles)':
-				set money -= 10000
-				set vipcart = 10
-				set vipday = day
+				money -= 10000
+				vipcart = 10
+				vipday = day
 				gt 'vipclub', 'start'
 			end
 		end
-	end
-
-	act 'Leave him be and go away':gt 'club', 'inside'
-
-	if vipcart > 0 and vipday ! day:
+	elseif vipcart > 0 and vipday ! day:
 		act 'Go to the VIP-Area':
-			set vipcart -= 1
-			set vipday = 1
-			set vipday = day
+			vipcart -= 1
+			vipday = 1
+			vipday = day
 			gt 'vipclub', 'start'
 		end
 	end
 
 	if vipday = day:act 'Go back the main area':gt 'vipclub', 'inside'
+
+	act 'Leave him be and go away':gt 'club', 'inside'
 end
 
 --- club ---------------------------------

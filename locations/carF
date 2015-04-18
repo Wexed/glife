@@ -22,51 +22,15 @@ if $ARGS[0] = 'start':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
 	cla
-	*clr
-	gs 'stat'
-	set minut += 1
 	clr
+	*clr
+	minut += 1
+	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
 	'<center><b><<$car>></b></center>'
-
-	if car = 1:'<center><img src="images/picar/car.jpg"></center>'
-	if car = 2:'<center><img src="images/picar/car2.jpg"></center>'
-	if car = 3:'<center><img src="images/picar/car3.jpg"></center>'
-	if car = 4:'<center><img src="images/picar/car4.jpg"></center>'
-	if car = 5:'<center><img src="images/picar/car5.jpg"></center>'
-	if car = 6:'<center><img src="images/picar/car6.jpg"></center>'
-	if car = 7:'<center><img src="images/picar/car7.jpg"></center>'
-	if car = 8:'<center><img src="images/picar/car8.jpg"></center>'
-	if car = 9:'<center><img src="images/picar/car9.jpg"></center>'
-	if car = 10:'<center><img src="images/picar/car10.jpg"></center>'
-	if car = 11:'<center><img src="images/picar/car11.jpg"></center>'
-	if car = 12:'<center><img src="images/picar/car12.jpg"></center>'
-	if car = 13:'<center><img src="images/picar/car13.jpg"></center>'
-	if car = 14:'<center><img src="images/picar/car14.jpg"></center>'
-	if car = 15:'<center><img src="images/picar/car15.jpg"></center>'
-	if car = 16:'<center><img src="images/picar/car16.jpg"></center>'
-	if car = 17:'<center><img src="images/picar/car17.jpg"></center>'
-	if car = 18:'<center><img src="images/picar/car18.jpg"></center>'
-	if car = 19:'<center><img src="images/picar/car19.jpg"></center>'
-	if car = 20:'<center><img src="images/picar/car20.jpg"></center>'
-	if car = 21:'<center><img src="images/picar/car21.jpg"></center>'
-	if car = 22:'<center><img src="images/picar/car22.jpg"></center>'
-	if car = 23:'<center><img src="images/picar/car23.jpg"></center>'
-	if car = 24:'<center><img src="images/picar/car24.jpg"></center>'
-	if car = 25:'<center><img src="images/picar/car25.jpg"></center>'
-	if car = 26:'<center><img src="images/picar/car26.jpg"></center>'
-	if car = 27:'<center><img src="images/picar/car27.jpg"></center>'
-	if car = 28:'<center><img src="images/picar/car28.jpg"></center>'
-	if car = 29:'<center><img src="images/picar/car29.jpg"></center>'
-	if car = 30:'<center><img src="images/picar/car30.jpg"></center>'
-	if car = 95:'<center><img src="images/picar/car95.jpg"></center>'
-	if car = 96:'<center><img src="images/picar/car96.jpg"></center>'
-	if car = 97:'<center><img src="images/picar/car97.jpg"></center>'
-	if car = 98:'<center><img src="images/picar/car98.jpg"></center>'
-	if car = 99:'<center><img src="images/picar/car99.jpg"></center>'
-	if car = 100:'<center><img src="images/picar/car100.jpg"></center>'
+	'<center><img src="images/picar/car<<car>>.jpg"></center>'
 
 	act 'Move away from the machine':dynamic $enddrive
 
@@ -76,8 +40,8 @@ if $ARGS[0] = 'start':
 		if benz <= 35:
 			act 'Pour canister into the tank':
 				cla
-				set benz += 5
-				set kanistra -= 1
+				benz += 5
+				kanistra -= 1
 				'You filled canister of gasoline in the tank.'
 
 				act 'Move away':gt 'carF', 'start'
@@ -92,57 +56,21 @@ if $ARGS[0] = 'salon':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
 	cla
+	clr
 	*clr
 	gs 'stat'
-	set minut += 1
-	clr
+	minut += 1
+
 	'<center><b><<$car>></b></center>'
-
-	if car = 1:'<center><img src="images/picar/salon.jpg"></center>'
-	if car = 2:'<center><img src="images/picar/salon2.jpg"></center>'
-	if car = 3:'<center><img src="images/picar/salon3.jpg"></center>'
-	if car = 4:'<center><img src="images/picar/salon4.jpg"></center>'
-	if car = 5:'<center><img src="images/picar/salon5.jpg"></center>'
-	if car = 6:'<center><img src="images/picar/salon6.jpg"></center>'
-	if car = 7:'<center><img src="images/picar/salon7.jpg"></center>'
-	if car = 8:'<center><img src="images/picar/salon8.jpg"></center>'
-	if car = 9:'<center><img src="images/picar/salon9.jpg"></center>'
-	if car = 10:'<center><img src="images/picar/salon10.jpg"></center>'
-	if car = 11:'<center><img src="images/picar/salon11.jpg"></center>'
-	if car = 12:'<center><img src="images/picar/salon12.jpg"></center>'
-	if car = 13:'<center><img src="images/picar/salon13.jpg"></center>'
-	if car = 14:'<center><img src="images/picar/salon14.jpg"></center>'
-	if car = 15:'<center><img src="images/picar/salon15.jpg"></center>'
-	if car = 16:'<center><img src="images/picar/salon16.jpg"></center>'
-	if car = 17:'<center><img src="images/picar/salon17.jpg"></center>'
-	if car = 18:'<center><img src="images/picar/salon18.jpg"></center>'
-	if car = 19:'<center><img src="images/picar/salon19.jpg"></center>'
-	if car = 20:'<center><img src="images/picar/salon20.jpg"></center>'
-	if car = 21:'<center><img src="images/picar/salon21.jpg"></center>'
-	if car = 22:'<center><img src="images/picar/salon22.jpg"></center>'
-	if car = 23:'<center><img src="images/picar/salon23.jpg"></center>'
-	if car = 24:'<center><img src="images/picar/salon24.jpg"></center>'
-	if car = 25:'<center><img src="images/picar/salon25.jpg"></center>'
-	if car = 26:'<center><img src="images/picar/salon26.jpg"></center>'
-	if car = 27:'<center><img src="images/picar/salon27.jpg"></center>'
-	if car = 28:'<center><img src="images/picar/salon28.jpg"></center>'
-	if car = 29:'<center><img src="images/picar/salon29.jpg"></center>'
-	if car = 30:'<center><img src="images/picar/salon30.jpg"></center>'
-	if car = 95:'<center><img src="images/picar/salon95.jpg"></center>'
-	if car = 96:'<center><img src="images/picar/salon96.jpg"></center>'
-	if car = 97:'<center><img src="images/picar/salon97.jpg"></center>'
-	if car = 98:'<center><img src="images/picar/salon98.jpg"></center>'
-	if car = 99:'<center><img src="images/picar/salon99.jpg"></center>'
-	if car = 100:'<center><img src="images/picar/salon100.jpg"></center>'
-
+	'<center><img src="images/picar/salon<<car>>.jpg"></center>'
 	'Gasoline - <<benz>>l, fuel tank capacity of 40 liters.'
 
-	if teh <= 0:set teh = 0 & set wrek = 1
-	if wrek = 1 or teh <= 0:set $teh = 'Car will not start, it needs repairs.'
-	if teh >= tehcar * 75 / 100 and wrek = 0:set $teh = 'Machine in excellent condition.'
-	if teh < tehcar * 75 / 100 and teh >= tehcar * 50 / 100 and wrek = 0:set $teh = 'When moving the machine you have any noises'
-	if teh < tehcar * 50 / 100 and teh >= tehcar * 25 / 100 and wrek = 0:set $teh = 'Car crash and barely rides.'
-	if teh < tehcar * 25 / 100 and wrek = 0:set $teh = 'As this bowl can still go, is a mystery even to the designers.'
+	if teh <= 0:teh = 0 & wrek = 1
+	if teh <= 0 or wrek = 1:$teh = 'Car will not start, it needs repairs.'
+	if teh >= tehcar * 75 / 100 and wrek = 0:$teh = 'Machine in excellent condition.'
+	if teh < tehcar * 75 / 100 and teh >= tehcar * 50 / 100 and wrek = 0:$teh = 'When moving the machine you have any noises'
+	if teh < tehcar * 50 / 100 and teh >= tehcar * 25 / 100 and wrek = 0:$teh = 'Car crash and barely rides.'
+	if teh < tehcar * 25 / 100 and wrek = 0:$teh = 'As this bowl can still go, is a mystery even to the designers.'
 
 	'<<$teh>>'
 
@@ -157,29 +85,22 @@ if $ARGS[0] = 'salon':
 
 	if benz > 0 and wrek = 0 and prava > 0:
 		if teh >= tehcar * 75/100 and wrek = 0:
-			set wrekrand = rand(0, 1000)
+			wrekrand = rand(0, 1000)
 
-			if wrekrand = 1000:set wrek = 1
-		end
+			if wrekrand = 1000:wrek = 1
+		elseif teh < tehcar*75/100 and teh >= tehcar * 50/100 and wrek = 0:
+			wrekrand = rand(0, 100)
 
-		if teh < tehcar*75/100 and teh >= tehcar * 50/100 and wrek = 0:
-			set wrekrand = rand(0, 100)
+			if wrekrand = 100:wrek = 1
+		elseif teh < tehcar*50/100 and teh >= tehcar * 25/100 and wrek = 0:
+			wrekrand = rand(0, 100)
 
-			if wrekrand = 100:set wrek = 1
-		end
+			if wrekrand >= 80:wrek = 1
+		elseif teh < tehcar*25/100 and wrek = 0:
+			wrekrand = rand(0, 100)
 
-		if teh < tehcar*50/100 and teh >= tehcar * 25/100 and wrek = 0:
-			set wrekrand = rand(0, 100)
-
-			if wrekrand >= 80:set wrek = 1
-		end
-
-		if teh < tehcar*25/100 and wrek = 0:
-			set wrekrand = rand(0, 100)
-
-			if wrekrand >= 40:set wrek = 1
-		end
-		if wrek = 1:
+			if wrekrand >= 40:wrek = 1
+		elseif wrek = 1:
 			'Something clattered loudly and the engine stalled.'
 
 			act 'Fuck':gt 'carF', 'salon'
@@ -191,7 +112,7 @@ if $ARGS[0] = 'salon':
 			if dpsrand <= alko:
 				'Policeman stops you, he looks at your condition and requests to breath into a tube. You breathe and instrument panel lights red lamochka.'
 				'Traffic police snorts and writes something in his cell, and then shows you. There is written sms with the number 50000'
-				'Or let´s make the report. Now operates divestment forever for driving not sober.'
+				'Or let''s make the report. Now operates divestment forever for driving not sober.'
 
 				if money >= 50000:
 					act 'Give a bribe (50,000 rubles)':
@@ -213,9 +134,7 @@ if $ARGS[0] = 'salon':
 
 				exit
 			end
-		end
-
-		if alko >= 10:
+		elseif alko >= 10:
 			avarand = rand(0, 100)
 
 			if avarand >= 50:
@@ -234,10 +153,10 @@ if $ARGS[0] = 'salon':
 				if cardrive ! 3:
 					act 'Go to town':
 						cla
-						set minut += 75
-						set benz -= 1
-						set teh -= rand(3, 6)
-						set cardrive = 3
+						minut += 75
+						benz -= 1
+						teh -= rand(3, 6)
+						cardrive = 3
 						'You are more than an hour drive on the highway that would get here before the city.'
 						dynamic $enddrive
 					end
@@ -246,10 +165,10 @@ if $ARGS[0] = 'salon':
 				if cardrive ! 21:
 					act 'Go to the gas station':
 						cla
-						set minut += 15
-						set benz -= 1
-						set teh -= rand(1, 3)
-						set cardrive = 21
+						minut += 15
+						benz -= 1
+						teh -= rand(1, 3)
+						cardrive = 21
 						'You get 15 minutes to the destination.'
 						dynamic $enddrive
 					end
@@ -261,15 +180,15 @@ if $ARGS[0] = 'salon':
 					cla
 
 					if cardrive >= 20:
-						set minut += 60
-						set benz -= 1
-						set teh -= rand(1, 3)
-						set cardrive = 18
+						minut += 60
+						benz -= 1
+						teh -= rand(1, 3)
+						cardrive = 18
 					else
-						set minut += 15
-						set benz -= 1
-						set teh -= rand(1, 3)
-						set cardrive = 18
+						minut += 15
+						benz -= 1
+						teh -= rand(1, 3)
+						cardrive = 18
 					end
 
 					'You drive to the town.'
@@ -280,10 +199,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 1:
 				act 'Go to the residential area':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 1
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 1
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -292,10 +211,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 2:
 				act 'Go to city center':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 2
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 2
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -304,10 +223,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 3:
 				act 'Go to the northern area':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 3
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 3
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -316,10 +235,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 4:
 				act 'Go to the lake':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 4
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 4
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -328,10 +247,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 5:
 				act 'Go to the park':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 5
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 5
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -340,10 +259,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 6:
 				act 'Go to the gas station':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 6
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 6
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -352,10 +271,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 7:
 				act 'Go to the car wash':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 7
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 7
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -364,10 +283,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 8:
 				act 'Go to a car dealership':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 8
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 8
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -376,10 +295,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 9:
 				act 'Go to the car market':
 					cla
-					set minut += 15
-					set benz -= 1
-					set teh -= rand(1, 3)
-					set cardrive = 9
+					minut += 15
+					benz -= 1
+					teh -= rand(1, 3)
+					cardrive = 9
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -388,10 +307,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 12:
 				act 'Go on to':
 					cla
-					set minut += 60
-					set benz -= 1
-					set teh -= rand(2, 5)
-					set cardrive = 12
+					minut += 60
+					benz -= 1
+					teh -= rand(2, 5)
+					cardrive = 12
 					'You get 15 minutes to the destination.'
 					dynamic $enddrive
 				end
@@ -400,10 +319,10 @@ if $ARGS[0] = 'salon':
 			if cardrive ! 20:
 				act 'Go to town':
 					cla
-					set minut += 75
-					set benz -= 1
-					set teh -= rand(3, 6)
-					set cardrive = 20
+					minut += 75
+					benz -= 1
+					teh -= rand(3, 6)
+					cardrive = 20
 					'You eat more than an hour on the highway to the town.'
 					dynamic $enddrive
 				end
@@ -415,9 +334,9 @@ if $ARGS[0] = 'salon':
 				numberRoad = input("In which city will stop (from 0 to 20)")
 
 				if numberRoad >= 0 and numberRoad <= 20:
-					set cardrive = 19
-					set nroad = numberRoad
-					set ncarroad = numberRoad
+					cardrive = 19
+					nroad = numberRoad
+					ncarroad = numberRoad
 				end
 
 				xgt 'carF', 'salon'
@@ -425,11 +344,11 @@ if $ARGS[0] = 'salon':
 
 			act 'To drive on the track (1:00)':
 				cla
-				set minut += 60
-				set benz -= 4
-				set teh -= rand(2, 6)
-				set manna += 20
-				set wipo += 10
+				minut += 60
+				benz -= 4
+				teh -= rand(2, 6)
+				manna += 20
+				wipo += 10
 				'You go to the track and having fun Likhachev, then turn back.'
 
 				act 'Finish':xgt 'carF', 'salon'

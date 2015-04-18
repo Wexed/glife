@@ -1,6 +1,9 @@
 # croupier
-*pl '- How can I help you?'
-*p '<right><img src="images/casino/crup.jpg"></right>'
+clr
+minut += 5
+gs 'stat'
+'<right><img src="images/casino/crup.jpg"></right>'
+'- How can I help you?'
 
 act 'Ask rules':
 	msg 'The rules are very simple.
@@ -17,10 +20,6 @@ act 'Ask rules':
 	gt 'croupier'
 end
 
-act 'Move away from the dealer':gt 'roulette'
-
-clr
-gs 'stat'
-set minut += 5
+act 'Move away from the dealer':gt 'tape_measure'
 
 --- croupier ---------------------------------
