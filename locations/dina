@@ -3,18 +3,18 @@ gs 'dinSex'
 gs 'dinBoroda'
 
 $d_read_porn = {
-	act 'Read porn magazine':
+	act 'Read the porn magazine':
 		cls
 		'<center><img src="images/qwest/alter/porn.jpg"></center>'
 
 		if pornMagazine = 1:
-			'skukota, this magazine you`ve memorized by heart, think it`s time to buy a new one.'
+			'<font color="magenta">Boring</font>, you''ve memorized this magazine by heart, you think that is time to buy a new one.'
 		else
 			pornMagazine -= 1
 			horny += 10
 			minut += 5
 			gs 'stat'
-			'You pornozhurnal flipping through reading stories and looking at pictures, sly excitement begins to cover you.'
+			'You are flipping through the porno magazine, reading the stories and looking at the pictures and a small excitement begins to cover your body.'
 		end
 
 		act 'Go_Out':gt $curloc
@@ -114,7 +114,7 @@ $sitrpressd = {
 	if nude = 1 and tanga = 0:'<center><img src="images/community/abdominal_naked.jpg"></center>'
 	!!!
 
-	'You do abdominal exercises for fifteen minutes, developing your endurance.'
+	'You do a series of abdominal exercises for fifteen minutes, developing your endurance.'
 
 	act 'Exit':gt $curloc
 }
@@ -188,7 +188,7 @@ $kiosksig = {
 	if money >= 50:
 		if hour >= 12 and hour <= 15:
 			'<center><img src="images/community/queue.jpg"></center>'
-			'There''s a long queue infront of the kiosk.'
+			'There''s a long line in front of the kiosk.'
 
 			act 'Wait in line and buy cigarettes (30 Minutes)':
 				minut += 30
@@ -212,7 +212,7 @@ $kiosksig = {
 						set kioskflash = 1
 					end
 					'<center><img src="images/community/flash_tits_pus.jpg"></center>'
-					'The people infront of you are shocked, as they see you flashing your tits and your pussy. As a small thank you, some of them let you move further up in the queue.'
+					'The people in front of you are shocked, as they see you flashing your tits and your pussy. As a small thank you, some of them let you move further up in the queue.'
 
 					act 'Buy and leave':gt $curloc
 				end
@@ -234,7 +234,7 @@ $kiosksig = {
 					if lobok >= 2:'<center><img src="images/community/flash_hairy.jpg"></center>'
 					if lobok <= 2:'<center><img src="images/community/flash_nohairy.jpg"></center>'
 
-					'The people infront of you are shocked, as they see you flashing your pussy. As a small thank you, some of them let you move further up in the queue.'
+					'The people in front of you are shocked, as they see you flashing your pussy. As a small thank you, some of them let you move further up in the queue.'
 
 					act 'Buy and leave':gt $curloc
 				end
@@ -254,14 +254,14 @@ $kiosksig = {
 					end
 
 					'<center><img src="images/community/flash_tits.jpg"></center>'
-					'The people infront of you are shocked, as they see you flashing your tits. As a small thank you, some of them let you move further up in the queue.'
+					'The people in front of you are shocked, as they see you flashing your tits. As a small thank you, some of them let you move further up in the queue.'
 
 					act 'Buy and leave':gt $curloc
 				end
 			end
 
 			if SUB >= 15:
-				act 'Suggest to blow someone infront of you':
+				act 'Suggest to blow someone in front of you':
 					cls
 					gs 'stat'
 					minut += 10
@@ -294,7 +294,7 @@ $kiosksig = {
 					else
 						!!Przemar:IMAGE NEEDED
 						'<center><img src="images/community/Image_needed.png"></center>'
-						'Man punched you and say " Go away bitch your mouth full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles.'
+						'Man punched you and say " Go away bitch your mouth is full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles.'
 						minut += 240
 						siga += 20
 						money -= 200
@@ -312,7 +312,7 @@ $kiosksig = {
 			end
 		end
 	else
-		'Not enough money to buy cigarettes.'
+		'You don''t have enough money to buy cigarettes.'
 	end
 
 	act 'Leave':gt $curloc
@@ -337,7 +337,7 @@ $margoroomdiDush = {
 	QWdogreiqTimer = 7
 	QWdogReiq = 2
 	gs 'stat'
-	'You undress and go to the track for Margarita in shower.There not really had time to Pick up the bathroom as Marguerite in pilas in your lips with a kiss.'
+	'You undress and started following Margarita into the shower.You didn''t really had the time for a bath since Margarita pulls yours lips for a kiss.'
 
 	act 'Lick my nipples':
 		cls
@@ -349,7 +349,7 @@ $margoroomdiDush = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo2.jpg"></center>'
-		'Margarita took the swollen nipples on alternate SG in his mouth, he began to lick them and their sharp little teeth biting'
+		'Margaret has taken your swollen nipples into her mouth. She began to lick them and their sharp little edges'
 
 		act 'Hold it':gt 'korr'
 	end
@@ -364,9 +364,9 @@ $margoroomdiDush = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo3.jpg"></center>'
-		'Margarita kneels and nachenaet his tongue oblizovat vagina of her actions in the body run by a pleasant body wave.'
+		'Margaret kneels down and starts to lick your vagina, From her tongue your body is runned through by a pleasant body wave.'
 
-		if horny >= 90:horny = 0 & orgasm += 1 & 'You covered orgasm.'
+		if horny >= 90:horny = 0 & orgasm += 1 & 'You have an orgasm.'
 
 		act 'Hold it':gt 'korr'
 	end
@@ -379,9 +379,9 @@ $margoroomdiDush = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo4.jpg"></center>'
-		'nimble and agile tongue Margarita began oblizovat anus, causing a pleasant languor all in the body, it seemed a little margarita hole she slowly inserted a finger into her ass and began to make rhythmic movements.'
+		'Margo quickly began to lick your ass, causing a pleasant sensation all in the body, To margarita this was not enough, so she slowly inserted a finger into her ass and began to make rhythmic movements.'
 
-		if horny >= 99:horny = 0 & orgasm += 1 & 'You covered orgasm.'
+		if horny >= 99:horny = 0 & orgasm += 1 & 'You have an orgasm.'
 
 		act 'Hold it':gt 'korr'
 
@@ -395,7 +395,7 @@ $margoroomdiDush = {
 				'<center><img src="images/zoo/margo5.jpg"></center>'
 				'First one paeets, then two, three and so the whole entire hand. She quickly found herself in the depths of ass. It´s incredible. I still had no hand in its entirety. And so it happened. Margarita penetrated deeper and deeper and I was in seventh heaven. Supple ass took a hand. Was incredibly good. She massaged me inside like a real iskusstnitsa, causing me to moan loudly and wagging his ass with pleasure.'
 
-				if horny >= 90:horny = 0 & orgasm += 1 & 'You covered orgasm.'
+				if horny >= 90:horny = 0 & orgasm += 1 & 'You have an orgasm.'
 
 				act 'Hold it':gt 'korr'
 			end
@@ -407,7 +407,7 @@ $margoroomdi3 = {
 	cls
 	minut += 15
 	gs 'stat'
-	'You undress and go to the track for Margarita in shower.There not really had time to Pick up the bathroom as Marguerite in pilas in your lips with a kiss.'
+	'You start to undress and go to the shower following Margaret. You do not have time to really get into the bath as Margaret pulls your lips with a kiss.'
 
 	act 'Lick my nipples':
 		cls
@@ -419,7 +419,7 @@ $margoroomdi3 = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo2.jpg"></center>'
-		'Margarita took your swollen nipples into his mouth on the next, taking them to lick and nibble on their sharp little teeth'
+		'Margaret took your swollen nipples into his mouth on the next, taking them to lick and nibble on their sharp little teeth'
 
 		act 'Walk into a room':dynamic $margoroomdi2
 	end
@@ -434,7 +434,7 @@ $margoroomdi3 = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo3.jpg"></center>'
-		'Margarita kneels and nachenaet his tongue oblizovat vagina of her actions in the body run by a pleasant body wave.'
+		'Margaret kneels and nachenaet his tongue oblizovat vagina of her actions in the body run by a pleasant body wave.'
 
 		if horny >= 90:horny = 0 & orgasm += 1 & 'You covered orgasm.'
 
@@ -562,25 +562,25 @@ $butikreiqdi = {
 	cls
 	minut += 5
 	gs 'stat'
-	'Starting to turn my head, you nobody unnoticed, but your actions have attracted prodovtsa, dealer young girl in a shirt with a little too narrow logotpom Boutique enough that her shirt was so testnovata and had to unbutton the top button (MDA-YOU think whether it is men´s boutique shirt obtyag would be understandable, but in the female? for what and what the administration is thinking?) coming to you a little bit inconsistent and quickly asked:'
-	'Seller:I can help you or what?'
+	'Starting to turn your head, you think nobody noticed, but your actions have attracted the saleswoman. The seller is a young girl in a little too narrow shirt with the logo of the Botique, not enough that her shirt was so tight, she had to unbutton the top button (Fashion-YOU think whether it is men´s boutique shirt would be understandable, but in the female? what is and what for the administration is thinking?) she came up to you a little bit inconsistent and quickly asked:'
+	'Seller:Can i help you with anything?'
 
 	act 'No, thank you':gt 'butik', 'start'
 	act 'Silently leave':gt 'down'
 
-	act 'Staring at her breasts':
+	act 'Stare at her breasts':
 		cls
 		minut += 5
 		horny += 50
 		gs 'stat'
-		'Seeing that the saleswoman novichik and you will most likely her first client decided on it poizgolyatsya.Vy only opened his mouth to say that what some harsh sentence, his eyes rested on his chest. Bra compartment jacketed successfully emphasized breasts, and although there was visible only upper chest, your imagination has completed everything for you. (Interesting and what her nipples? Neozhidonno flashed in the brain)'
-		'yes, goaorite YOU give me a few minutes of your time.'
-		'Your words made vpechetlenie on saleswoman she was embarrassed and blushed slightly.'
-		'YES, YES, YES-set against it:what exactly the color of the dress, the neckline of the dress form, you freer dress or turnover pocherknut YOU want your ideal figure?'
-		'Stop, stop, you say:first I Quam to contact YOU are all the same person and not an impersonal suschesstvo? Your words made the girl vpechetlenie, ord yavna flattered by your words.'
-		'Irina-says the girl, and then poprovlyaetsya:shopper Rima.'
-		'I can call you Rima? Ask you-and I´m <<$name>>.'
-		'Yes, of course as you see fit, and meets Rima you smiling shyly.'
+		'Seeing that the novice saleswoman and that you are most likely her first client, you decided to go for it.You only opened your mouth to say some harsh sentence, your eyes rested on her chest. The Bra together with the shirt successfully emphasized breasts, and even though it was visible only the upper part of the chest, your imagination has completed everything for you. (<font color="magenta">You wonder how her nipples are?</font> the thought surprinsingly flashed in your brain)'
+		'<font color="magenta">Yes, You can give me a few minutes of your time.</font> You said.'
+		'Your words made an impression on the saleswoman, she was embarrassed and blushed slightly.'
+		'<font color="#FF8732">Yes, yes, yes - frequently it is: what is the dress color you like? shape neckline of the dress? you want more freedom to dress? or turn? you want to highlight your perfect figure?</font>'
+		'<font color="magenta">Stop, stop, - you're still a person and not an impersonal being, firstly tell me, how would you like me to address you?</font> Your words made an impression on the girl, she yavna flattered by your words. '
+		'<font color="#FF8732">Irina</font> - says the girl, and then corects: <font color="#FF8732"> Saleswoman Rimma.</font>'
+		'<font color="magenta">I can call you Rima?</font> You ask - <font color="magenta">I´m <<$name>></font>.'
+		'<font color="#FF8732">Yes, of course as you see fit </font>, responds Rimma ,smiling shyly.'
 
 		act 'Choose a dress with Rimma':
 			cls
@@ -589,21 +589,21 @@ $butikreiqdi = {
 
 			if hapri = 1 and mop > 1 and leghair <= 0 and sweat <= 0 and curly > 0 and glamur > 0:
 				'You choose things evaluate them together with Rimma and just hang out.'
-				'Rima, where fitting? Suddenly ask you'
-				'Come-Rima herself as invisible barrier between you gone:the seller by the buyer.'
+				'<font color="magenta">Rima, where is the dressing room?</font> - You ask suddenly.'
+				'<font color="#FF8732">Come with me</font> - Rima didn''t notice that the invisible barrier between you is lost: the seller and the buyer.'
 
-				act 'Go into the fitting room':
+				act 'Go inside the dressing room':
 					cls
 					minut += 5
 					gs 'stat'
-					'You together with Rimma went into the dressing room.'
+					'You and Rimma went together into the dressing room.'
 
-					act 'You do not like it.':
+					act 'You did not like the dress.':
 						cls
 						minut += 5
 						gs 'stat'
-						'As a result, spending time in an empty head you left butik.V 2 thoughts:Rima and her body imeeno mysterious and curious observer.'
-						'You go home again suddenly feel eyes on me'
+						'As a result, you are spending time iwhile you head wonder in two thoughts:Rima, and her mysterious and curious body.'
+						'As you go home suddenly again you feel eyes on you'
 
 						act 'Ignore':gt 'down'
 
@@ -650,11 +650,11 @@ $butikreiqdi = {
 						end
 					end
 
-					act 'Remove panties before Rima.':
+					act 'take the panties off in front of Rima.':
 						cls
 						minut += 5
 						gs 'stat'
-						'You have removed her panties before Rimma and noticed how her cheeks glowed and quickened breathing.'
+						'You have removed your panties in front Rimma and noticed how her cheeks glowed, and breathing quickned.'
 
 						act 'Do you like me?':
 							cls
@@ -668,37 +668,37 @@ $butikreiqdi = {
 							rimmaday = day
 							gs 'stat'
 							'<center><img src="images/zoo/primer.jpg"></center>'
-							'Rima, do you like me? Quiet you ask a question'
-							'yes, very Rimma meets with excitation'
-							'Then I lick you require-'
-							'Rimma kneels down and begins to kiss not very skillfully body, starting with belly kiss her timid steel turn into a more confident, and covering potsuluyaim oblizovaya Language, Rima reached holmika.Potselovav wet crotch and oblizov it Rimma it slightly prikusla.ot surprises the body flowed sweet languor.'
-							'-smell what you smell, Rimma for a few seconds looked up from petting.'
-							'After spending the right palm gently on the pubis Rimma fingers spread wet sponge, poked his tongue and ran inside.'
-							'Soft reciprocating action of the tongue on the clitoris vyzyvli Rima, mild spasmodic vozbuzhdenie.Neozhidanno Rima has become the language on nadavlevat klitor.Telo already weakly subordinate in the brain stoyalla only one program not to moan for the whole store.'
-							'Your body suddenly became sotresat wave spasms, with the last spasm came Orgazm.Slabo moan you knelt.'
-							'You are in the light of prostration, and the body in a pleasant languor.'
+							'<font color="magenta">Rima, do you like me? </font> ou asked quietly'
+							'<font color="#FF8732">yes, very much </font> Rimma answers with excitation'
+							'<font color="magenta">Then lick me </font> you demand'
+							'Rimma kneels down and begins to kiss you body, not very skillfully at the beginning, starting with timidly kissing your belly that turned into a more confident licking and covering all of your body.Rima achieved making you pussy very wet.She starts Kissing and licking your crotch little by little bit it. The unexpectedness made the body flow into a sweet languor. '
+							'Odour which you smell, Rimma for a few seconds looked up from petting.'
+							'After putting the right palm gently on the pubis, Rimma fingers spread you wet lips, poking her tongue and run it inside.'
+							'A Soft reciprocating action of the tongue and on the clitoris excited you and caused a mild spasm. Rima suddenly begun to tongue prss on your clitoris.The body is already weak and no longer obey the brain,only trying to not moan fot he whole store.'
+							'Suddenly, Your body began to shake and was covered in soft wave of spasms, with the last spasm you came.You let a loud moan out while you knelt down.'
+							'You are in a easy prostration, and the body on a pleasant stasis.'
 
-							act 'Exit out of the dressing':
+							act 'Exit out of the dressing room':
 								cls
 								minut += 5
 								QWdogReiq = 2
 								QWdogreiqTimer = 7
 								gs 'stat'
 								'Rima took you to the door.'
-								'<<$name>>, you liked it, Rima asked, blushing.'
-								'What do you think? Gone to me, you crave continue.'
-								'No, I can `t wait for parents, telling you it looks Rima Rastroenie'
-								'Then meet next week?-Ozvuchevaete Offer'
-								'let´s Rima looks very happy.'
-								'You go home, suddenly behind a woman´s voice:'
-								'Goodnight-priznesla stranger.'
-								'Looking closely you recognize her girl with a vacant lot.'
-								'Hi-fun answered you is you zamnoy all day watching?'
-								'Yes, she smiled in response, I saw you in the boutique, go unresolved and there´s decided to wait for you outside.'
-								'but why wait? Ask your urgent problem'
-								'now too late to meet me next week and talk vyzhydyusche girl looking at you'
-								'let´s you easily agreed-way I´m <<$name>>'
-								'Margarita had the girl'
+								'<font color="#FF8732"><<$name>>, you liked it? </font> Rima asked, blushing.'
+								'<font color="magenta">What do you think? I crave for more, Do you want to continue?</font>'
+								'<font color="#FF8732">No, I can''t,i have waiting parents at home </font> = Rimma teels you looking upset '
+								'<font color="magenta">Then how about next week?</font> you offer'
+								'<font color="#FF8732">let''s do it </font> Rima looks very happy.'
+								'You go home, suddenly you hear a woman´s voice behind you:'
+								'<font color="#808000">Goodnight</font>- said the strange stranger.'
+								'Looking closely you recognize her as girl with a vacant lot.'
+								'<font color="magenta">Hi</font>-you cheerfully answered, <font color="magenta">it was you that was observing me the entire time ?</font>'
+								'<font color="#808000">Yes</font>, she smiled in response,<font color="#808000"> I saw you in the boutique, but i didn''t dare to approach you that time, so i decided to wait outside for you.</font>'
+								'<font color="magenta">But why did you wait?</font>'
+								'<font color="#808000">Now it''s too late, Meet me next week so we can talk</font> - awaiting you response while she is looking at you'
+								'<font color="magenta">Let''s meet them </font> - you easily agreed -<font color="magenta">By way I´m <<$name>></font>'
+								'<font color="#808000">Margarita </font>'
 
 								act 'Leave':gt 'down'
 							end
@@ -706,7 +706,7 @@ $butikreiqdi = {
 					end
 				end
 			else
-				'YOU Rimma perereberaete dress, but could not go nahodite.Vy, Rima is not a lot you sad goodbye'
+				'You and rimma search for a dress,but couldn''t find.You leave and rimma is a little sad saying goodbye to you'
 
 				act 'Leave':gt 'down'
 			end

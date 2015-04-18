@@ -5,17 +5,17 @@ If month = 1 and pogodaday ! day:
 
 	if temper <= 0:
 	set osadki = rand(0, 10)
-		if osadki < painweather:set $osadki = 'Clear.'
-		if osadki >= painweather:set $osadki = 'Goes fluffy snow.'
+		if osadki < painweather:set $osadki = 'The sky is Clear.'
+		if osadki >= painweather:set $osadki = 'It''s Snowing fluffy snowflakes.'
 	end
 
 	if temper > 0:
 		set osadki = rand(0, 10)
-		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		if osadki >= painweather:set $osadki = 'Wet snow falls, which immediately melts forming slush.'
+		if osadki < painweather:set $osadki = 'The sky is clear, the snow begins to melt and some places forming brown slush.'
+		if osadki >= painweather:set $osadki = 'It''s Snowing a wet snow, which immediately melts forming brown slush in the gutters.'
 	end
 
-	set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is snow lying on the street, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 2 and pogodaday ! day:
@@ -24,17 +24,17 @@ If month = 2 and pogodaday ! day:
 
 	if temper <= 0:
 		set osadki = rand(0, 10)
-			if osadki < painweather:set $osadki = 'Cloudy and windy.'
-			if osadki >= painweather:set $osadki = 'It´s snowing.'
+			if osadki < painweather:set $osadki = 'The sky is cloudy and windy.'
+			if osadki >= painweather:set $osadki = 'It''s Snowing.'
 	end
 
 	if temper > 0:
 		set osadki = rand(0, 10)
-		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		if osadki >= painweather:set $osadki = 'Wet snow falls, which immediately melts forming slush.'
+		if osadki < painweather:set $osadki = 'The sky is Clear, the snow begins to melt and some places forming brown slush.'
+		if osadki >= painweather:set $osadki = 'It''s Snowing wet snow, which immediately melts forming brown slush in the gutters.'
 	end
 
-	set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is snow lying on the street, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 3 and pogodaday ! day:
@@ -44,17 +44,17 @@ If month = 3 and pogodaday ! day:
 	if temper <= 0:
 		set osadki = rand(0, 10)
 
-		if osadki < painweather:set $osadki = 'Clear and cloudless.'
-		if osadki >= painweather:set $osadki = 'It´s snowing.'
+		if osadki < painweather:set $osadki = 'The sky is clear and cloudless.'
+		if osadki >= painweather:set $osadki = 'It''s Snowing.'
 	end
 
 	if temper > 0:
 		set osadki = rand(0, 10)
-		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		if osadki >= painweather:set $osadki = 'Wet snow falls, which immediately melts forming slush.'
+		if osadki < painweather:set $osadki = 'It''s Snowing a clear snow that begins to melt some places forming slush.'
+		if osadki >= painweather:set $osadki = 'It''s Snowing a wet snow, which immediately melts forming slush.'
 	end
 
-	set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is snow lying on the street, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 4 and pogodaday ! day:
@@ -63,13 +63,13 @@ If month = 4 and pogodaday ! day:
 	set osadki = rand(0, 10)
 
 	if osadki < painweather:
-		if hour >= 7 and hour <= 20:set $osadki = 'Clear.'
-		if hour < 7 or hour > 20:set $osadki = 'Clear.'
+		if hour >= 7 and hour <= 20:set $osadki = 'The sky is Clear.'
+		if hour < 7 or hour > 20:set $osadki = 'The sky is Clear.'
 	end
 
-	if osadki >= painweather:set $osadki = 'Rain.'
+	if osadki >= painweather:set $osadki = 'it''s Raining.'
 
-	set $pogoda = 'On the street the snow melts, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is snow lying on the street, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 5 and pogodaday ! day:
@@ -77,10 +77,10 @@ If month = 5 and pogodaday ! day:
 	set temper = rand(7, 25)
 	set osadki = rand(0, 10)
 
-	if osadki < painweather:set $osadki = 'Clear.'
-	if osadki >= painweather:set $osadki = 'Rain.'
+	if osadki < painweather:set $osadki = 'The sky is Clear.'
+	if osadki >= painweather:set $osadki = 'It''s Raining.'
 
-	set $pogoda = 'From puddles in the street rastaevshego snow, dirt and debris all around seem after winter, something where new grass pleases the eye with its greenery, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'On the street there is puddles of melted snow, dirt and debris all around after winter, and something pleases the eye, the new grass with its greenery, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 6 and pogodaday ! day:
@@ -88,10 +88,10 @@ If month = 6 and pogodaday ! day:
 	set temper = rand(15, 35)
 	set osadki = rand(0, 10)
 
-	if osadki < painweather:set $osadki = 'Clear.'
-	if osadki >= painweather:set $osadki = 'Rain.'
+	if osadki < painweather:set $osadki = 'The sky is Clear.'
+	if osadki >= painweather:set $osadki = 'It''s Raining.'
 
-	set $pogoda = 'On the street the green grass, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is new grass on the street, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 7 and pogodaday ! day:
@@ -99,10 +99,10 @@ If month = 7 and pogodaday ! day:
 	set temper = rand(20, 40)
 	set osadki = rand(0, 10)
 
-	if osadki < painweather:set $osadki = 'Clear.'
-	if osadki >= painweather:set $osadki = 'Warm rain comes.'
+	if osadki < painweather:set $osadki = 'The sky is Clear.'
+	if osadki >= painweather:set $osadki = 'It''s raining gently.'
 
-	set $pogoda = 'Green grass on the street, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is Green grass on the street, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 8 and pogodaday ! day:
@@ -110,10 +110,10 @@ If month = 8 and pogodaday ! day:
 	set temper = rand(20, 35)
 	set osadki = rand(0, 10)
 
-	if osadki < painweather:set $osadki = 'Clear.'
-	if osadki >= painweather:set $osadki = 'Warm rain comes.'
+	if osadki < painweather:set $osadki = The sky is'Clear.'
+	if osadki >= painweather:set $osadki = 'It''s coming a gently rain.'
 
-	set $pogoda = 'Outdoors green grass, where some are already visible yellowing leaves, temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is green grass outdoors, where some of them is already showing yellowing leaves, temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 9 and pogodaday ! day:
@@ -121,10 +121,10 @@ If month = 9 and pogodaday ! day:
 	set temper = rand(10, 30)
 	set osadki = rand(0, 10)
 
-	if osadki < painweather:set $osadki = 'Clear.'
-	if osadki >= painweather:set $osadki = 'Rain.'
+	if osadki < painweather:set $osadki = 'The sky is Clear.'
+	if osadki >= painweather:set $osadki = 'It''s Raining.'
 
-	set $pogoda = 'Street zhuhnet grass, visible yellow leaves, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is faded grass on the street, with visible yellow leaves, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 10 and pogodaday ! day:
@@ -132,10 +132,10 @@ If month = 10 and pogodaday ! day:
 	set temper = rand(2, 20)
 	set osadki = rand(0, 10)
 
-	if osadki < painweather:set $osadki = 'Clear.'
-	if osadki >= painweather:set $osadki = 'Goes cold rain.'
+	if osadki < painweather:set $osadki = 'The sky is Clear.'
+	if osadki >= painweather:set $osadki = 'It''s falling a cold rain.'
 
-	set $pogoda = 'On the street faded grass, falling yellow leaves, mud and puddles around, temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is faded grass on the street, with falling yellow leaves, mud and puddles around, temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 11 and pogodaday ! day:
@@ -144,18 +144,18 @@ If month = 11 and pogodaday ! day:
 
 	if temper <= 0:
 	set osadki = rand(0, 10)
-		if osadki < painweather:set $osadki = 'Clear and cloudless.'
-		if osadki >= painweather:set $osadki = 'It´s snowing.'
+		if osadki < painweather:set $osadki = 'The sky is Clear and cloudless.'
+		if osadki >= painweather:set $osadki = 'It''s snowing.'
 	end
 
 	if temper > 0:
 		set osadki = rand(0, 10)
 
-		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		if osadki >= painweather:set $osadki = 'Cold rain.'
+		if osadki < painweather:set $osadki = 'the sky is Clear and the snow begins to melt in some places forming a brown slush.'
+		if osadki >= painweather:set $osadki = 'It''s falling a Cold rain.'
 	end
 
-	set $pogoda = 'The street is dirty and thin snow cover, temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'The street is dirty and covered in thin snow, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 If month = 12 and pogodaday ! day:
@@ -165,24 +165,24 @@ If month = 12 and pogodaday ! day:
 	set osadki = rand(0, 10)
 
 	if osadki < painweather:set $osadki = 'Cloudy and windy.'
-	if osadki >= painweather:set $osadki = 'Goes fluffy snow.'
+	if osadki >= painweather:set $osadki = 'Snowing fluffy snow.'
 	end
 
 	if temper > 0:
 		set osadki = rand(0, 10)
 
-		if osadki < painweather:set $osadki = 'Clear the snow begins to melt some places forming slush.'
-		if osadki >= painweather:set $osadki = 'Wet snow falls, which immediately melts forming slush.'
+		if osadki < painweather:set $osadki = 'The sky is Clear and the snow begins to melt in some places forming a brownslush.'
+		if osadki >= painweather:set $osadki = 'It''s falling a wet snow, which immediately melts forming slush.'
 	end
 
-	set $pogoda = 'On the street there is snow, the temperature <<temper>> degrees Celsius. <<$osadki>>'
+	set $pogoda = 'There is snow on the street, the temperature is <<temper>> degrees Celsius. <<$osadki>>'
 end
 
 pl '<<$pogoda>>'
 
 if osadki >= painweather and umbrella = 0 and mop > 1:
 	set mop = 0
-	'You do not have an umbrella and on the moisture flowed your cosmetics.'
+	'You do not have an umbrella, and the humidity made your cosmetics flow.'
 end
 
 if osadki >= painweather and umbrella = 0 and hapri = 1:
@@ -190,11 +190,11 @@ if osadki >= painweather and umbrella = 0 and hapri = 1:
 
 	if curly > 0:set curly -= 1
 
-	'You do not have an umbrella and on the moisture your hair has deteriorated.'
+	'You do not have an umbrella, and the moisture made your hair deteriorate.'
 end
 
 if isprok = 0 and mesec > 0 and preg = 0:
-	'<b><font color="red">You have the blood flowing in the legs and staining the linen clothes.</font></b>'
+	'<b><font color="red">You have the blood flowing down your legs and staining the linen clothes.</font></b>'
 
 	if clrbelo > 0:set clrbelo -= 1
 
