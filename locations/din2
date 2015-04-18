@@ -16,9 +16,11 @@ $d_read_book = {
 
 		if f_book <= 0 and fantasybook <= 0 and w_book = 0 and womanbook = 0:'You scratch your head looking at already read the book "Eh, even read nothing, a walk or something on the market for a new book?"'
 
-		if f_book > 0:if fantasybook <= 0:fantasybook = 5 & f_book -= 1
+		if f_book > 0:
+			if fantasybook <= 0:fantasybook = 5 & f_book -= 1
 
-		if f_book > 0:'You still <<f_book>> do not read fantasy novels.'
+			'You still <<f_book>> do not read fantasy novels.'
+		end
 
 		if fantasybook > 0:
 			act 'Read fantasy book. There are <<fantasybook * 100>> more pages to read (1:00)':
@@ -56,12 +58,12 @@ $d_read_book = {
 
 		if w_book > 0:
 			if womanbook <= 0:womanbook = 5 & w_book -= 1
+
+			'You still <<w_book>> not read the novel female.'
 		end
 
-		if w_book > 0:'You still <<w_book>> not read the novel female.'
-
 		if womanbook > 0:
-			act 'Read Women`s Novel. There are <<womanbook * 100>> more pages to read (1:00)':
+			act 'Read Women''s Novel. There are <<womanbook * 100>> more pages to read (1:00)':
 				cls
 				womanbook -= 1
 
@@ -103,19 +105,29 @@ $d_read_book = {
 $d_slut_horny = {
 	you_slut += 1
 
-	if you_slut < 10:
-	end
+	!!if you_slut < 10:end
 
-	if you_slut >= 10 and you_slut < 20:horny += 1
-	if you_slut >= 20 and you_slut < 30:horny += 2
-	if you_slut >= 30 and you_slut < 40:horny += 3
-	if you_slut >= 40 and you_slut < 50:horny += 4
-	if you_slut >= 50 and you_slut < 60:horny += 5
-	if you_slut >= 60 and you_slut < 70:horny += 6
-	if you_slut >= 70 and you_slut < 80:horny += 7
-	if you_slut >= 80 and you_slut < 90:horny += 8
-	if you_slut >= 90 and you_slut < 100:horny += 9
-	if you_slut >= 100:horny += 10
+	if you_slut >= 10 and you_slut < 20:
+		horny += 1
+	elseif you_slut >= 20 and you_slut < 30:
+		horny += 2
+	elseif you_slut >= 30 and you_slut < 40:
+		horny += 3
+	elseif you_slut >= 40 and you_slut < 50:
+		horny += 4
+	elseif you_slut >= 50 and you_slut < 60:
+		horny += 5
+	elseif you_slut >= 60 and you_slut < 70:
+		horny += 6
+	elseif you_slut >= 70 and you_slut < 80:
+		horny += 7
+	elseif you_slut >= 80 and you_slut < 90:
+		horny += 8
+	elseif you_slut >= 90 and you_slut < 100:
+		horny += 9
+	elseif you_slut >= 100:
+		horny += 10
+	end
 }
 
 --- din2 ---------------------------------

@@ -91,9 +91,7 @@ $dinklient = {
 		if klient_needs = 0:dynamic $din_prost_bj
 		if klient_needs = 1:dynamic $din_prost_sex
 		if klient_needs = 2:dynamic $din_prost_anal
-	end
-
-	if clientPRyes = 0:
+	elseif clientPRyes = 0:
 		'Client meticulously examined you and said, "No, fuck." After that, he started the car and drove away.'
 
 		act 'Leave':gt 'prostitute', 'start'
@@ -150,7 +148,7 @@ $dinrandbj = {
 
 	if tperbjran2 = 0:$tperbj2 = 'Your mouth quickly turned and was filled by a slightly salty and hard cock, which you started to suck.'
 	if tperbjran2 = 1:$tperbj2 = 'The <<dick>> cock inside your mouth went hard and hot, and you started sucking'
-	if tperbjran2 = 2:$tperbj2 = 'The hard cock around your <<$liptalk>> is filling your whole mouth and with every move it''s going down your throat.'
+	if tperbjran2 = 2:$tperbj2 = 'The hard cock around your <<$liptalk>> is filling your whole mouth and with every move it"s going down your throat.'
 	if tperbjran2 = 3:$tperbj2 = ''
 	if tperbjran2 = 4:$tperbj2 = ''
 	if tperbjran2 = 5:$tperbj2 = ''
@@ -167,7 +165,7 @@ $dinrandswallow = {
 
 	tperswalrand2 = rand(0, 2)
 
-	if tperswalrand2 = 0:$tperswal2 = 'Your mouth is quickly filled with warm sperm and you feel its sharp taste.'
+	if tperswalrand2 = 0:$tperswal2 = 'Your mouth is quickly filled with warm sperm and you feel it"s sharp taste.'
 	if tperswalrand2 = 1:$tperswal2 = 'Your mouth is filled with cum and began to run down your <<$liptalk2>>'
 	if tperswalrand2 = 2:$tperswal2 = 'Hot seed quickly filled your mouth making you experience the whole scale and sharp tart taste of sperm.'
 
@@ -272,7 +270,7 @@ $sexstart2 = {
 		!!silavag - male skill:0-clumsy, 1-middle, 2-stud
 		!!dick - his penis size
 		!!orgazm - what kind of orgasm
-		!!0 - very painful, 1 - hurts, 2 - unpleasant, 3 - so-so, 4 - little orgasm, 5 - orgasm
+		!!0 - very painful, 1 - hurts, 2 - unpleasant, 3 - so-so, 4 - little orgasm, 5 - orgasm, 6- little orgasm
 		smazka = horny / 10
 		prinat = smazka + vagina
 
@@ -396,9 +394,7 @@ $sexstart2 = {
 			manna -= 5
 			willpower -= 5
 			'You winced at the sudden pain when <<$boy>> entered, it hurted but it gradually become quite tolerable. You are trying to get aroused while his <<dick>> centimeter dick fucks your pussy, but you did not succeed.'
-		end
-
-		if orgazm = 3:
+		elseif orgazm = 3:
 			manna += 5
 			willpower += 5
 			'You are startled by feeling that your pussy is stretching when <<$boy>> entered you. It feels good when his <<dick>> centimeter dick fucks your pussy.'
@@ -529,7 +525,9 @@ $sexstart3 = {
 				elseif silavag < 2:
 					oragazm = 4
 				end
-			elseif razeba = 4:
+			end
+
+			if razeba = 4:
 				if silavag = 2:
 					orgrand = rand(0, 100)
 
@@ -639,7 +637,7 @@ $sexstart4 = {
 			if silavag = 0:orgazm = 0
 			if silavag = 1:orgazm = 1
 			if silavag = 2:orgazm = 2
-		elseif dick < prinat*2 and dick > prinat:
+		elseif dick < prinat * 2 and dick > prinat:
 			!!member more options gg
 			if silavag = 0:
 				if horny >= 100:orgazm = 5
@@ -718,7 +716,7 @@ $sexstart4 = {
 
 					if orgrand > preOrg:oragazm = 4
 				end
-			if razeba >= 5:
+			elseif razeba >= 5:
 				if silavag = 2:
 					orgrand = rand(0, 50)
 
@@ -738,7 +736,7 @@ $sexstart4 = {
 			manna -= 15
 			willpower -= 15
 			'You groaned in pain when <<$boy>> penetrated, tears flowed from your eyes, and between the legs you had a feeling as if you drove a red-hot rod into your pussy. You cry and moan while a strong <<dick>> centimeter dick fucks your pussy.'
-		if orgazm = 1:
+		elseif orgazm = 1:
 			if vgape < 2:vgape = 2
 
 			vgapetime = totminut
@@ -824,7 +822,7 @@ $sexudo = {
 			if silavag = 0:orgazm = 0
 			if silavag = 1:orgazm = 1
 			if silavag = 2:orgazm = 2
-		elseif dick < prinat*2 and dick > prinat:
+		elseif dick < prinat * 2 and dick > prinat:
 			!!member more options gg
 			if silavag = 0:
 				if horny >= 100:orgazm = 5
@@ -991,6 +989,7 @@ $sexcum = {
 			!!Inside
 			cumpussy += 1
 			'<<$boy>> groaned and you feel a jet of sperm fill your pussy.'
+
 			gs 'preg'
 			manna -= 15
 			willpower -= 15
@@ -1037,7 +1036,7 @@ $analsex = {
 		lubonus = 10
 		!!!
 		analplugin = 0
-		'<<$boy>> has pulled out your butt plug'
+		'<<$boy>> has pulled out your ass plug'
 	end
 
 	if dick >= anus:anus += 3
@@ -1177,7 +1176,7 @@ $analsexrude = {
 		lubonus = 10
 		!!!
 		analplugin = 0
-		'<<$boy>> pulled your butt plug out of your ass.'
+		'You moan in pleasure while his dick moves inside your ass.'
 	end
 
 	if dick >= anus:anus += 3
@@ -1187,10 +1186,10 @@ $analsexrude = {
 	if anus >= 10:'He started to stretch your anus with three fingers.'
 
 	'<<$boy>> pulled his fingers out of your priests and you feel his hard cock ran into your hole.'
-	!!!CV: Added lubonus
+
 	if anus + lubonus + 10 < dick:'You screamed and bit your lip from a sharp pain when his <<dick>> centimeter dick entered your ass.'
 	if anus + lubonus + 10 >= dick:'You moaned when his <<dick>> centimeter dick entered your ass.'
-	!!!
+
 	'<<$boy>> stopped for a moment, giving your ass time to adjust to his cock in it, and then started to slowly move, stretching your anus.'
 
 	if anus + lubonus + 2 < dick:
@@ -1222,7 +1221,7 @@ $analsexrude = {
 			end
 		end
 	end
- 
+
 	lubonus = 0
 	cumanus += 1
 	'Through some time <<$boy>> groaned and you feel like your ass fills a pleasant warmth.'

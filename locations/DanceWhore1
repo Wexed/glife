@@ -1,8 +1,8 @@
 # DanceWhore1
 minut += 5
+dick = rand(10, 26)
 gs 'stat'
 'Man took you by the hand and led him into the room. When the man turned on the light in the room, you will see that it is a great sleeper.'
-dick = rand(10, 26)
 
 act 'Squat':
 	cls
@@ -31,15 +31,13 @@ act 'Squat':
 				manna = 0
 				horny = 0
 				'You began frantically to relax the throat when a member was a member of you. Do you drool ran down, snot and tears constantly covered vomiting spasms.'
-			end
-
-			if throat >= dick / 2 and throat < dick:
+			elseif throat >= dick / 2 and throat < dick:
 				manna /= 2
 				horny /= 2
 				'You relaxed throat and began to enter into a member of your throat to the ground. You snot and tears flowed from it and began to choke you.'
+			elseif throat >= dick:
+				'You are totally relaxed throat and every time a member logged in to the base of your throat hit you balls furry chin.'
 			end
-
-			if throat >= dick:'You are totally relaxed throat and every time a member logged in to the base of your throat hit you balls furry chin.'
 
 			tipdarand = rand(0, 1)
 
@@ -56,9 +54,7 @@ act 'Squat':
 					'You began frantically swallow cum until a member has not finished pour the seed into your mouth.'
 					dynamic $din_go_to_home_dance
 				end
-			end
-
-			if tipdarand = 1:
+			elseif tipdarand = 1:
 				'The man took a member of your mouth and began to masturbate in front of your face it.'
 
 				act 'Close your eyes':
@@ -73,9 +69,7 @@ act 'Squat':
 				end
 			end
 		end
-	end
-
-	if tipdarand = 1:
+	elseif tipdarand = 1:
 		'The man took a member of your mouth and put your cancer.'
 
 		act 'Substitute ass':
@@ -89,9 +83,7 @@ act 'Squat':
 			dynamic $analsex
 			dynamic $din_go_to_home_dance
 		end
-	end
-
-	if tipdarand = 2:
+	elseif tipdarand = 2:
 		'The man took a member of your mouth and put you on the back.'
 
 		act 'Lie on your back.':

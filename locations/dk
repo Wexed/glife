@@ -1,9 +1,9 @@
 # dk
 if $ARGS[0] = 'start':
 	cla
-	*clr
-	set minut += 5
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -17,13 +17,13 @@ if $ARGS[0] = 'start':
 	end
 
 	if avtoskul >= 1 and avtoskul < 11 and skulday ! day and week >= 6 and money >= 1000 and age >= 18:
-		act 'Driver Training class cost 1, 000 rubles (2:00)':
+		act 'Driver Training class (1,000 rubles) (2:00)':
 			cla
 			*clr
 			money -= 1000
-			set skulday = day
-			set avtoskul += 1
-			set minut += 120
+			skulday = day
+			avtoskul += 1
+			minut += 120
 			'<center><img src="images/etogame/dk2.jpg"></center>'
 			'You studied by modern methods driving.'
 
@@ -36,9 +36,9 @@ end
 
 if $ARGS[0] = 'holl':
 	cla
-	*clr
-	set minut += 5
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -53,16 +53,18 @@ if $ARGS[0] = 'holl':
 	'Massage lessons - 5,000 rubles per session.'
 	'Personal growth course - 1,000 rubles per session.'
 
-	!' act 'Go to a medium':
+	!'
+	act 'Go to a medium':
 		cla
 		*clr
-		Set minut += 30
+		minut += 30
 		killobj
 		addobj 'Back'
 		'You did not understand, if anything happened, and mixed feelings came from the charlatan.'
 
 		act 'Leave':gt 'dk', 'holl'
-	end'!
+	end
+	'!
 
 	if money >= 1000:
 		act 'Personal Growth class cost 1,000 rubles (1:00)':
@@ -77,7 +79,7 @@ if $ARGS[0] = 'holl':
 		end
 	end
 
-	if secrDiplom = 0 and sekrObu > 0:set sekrObuA = sekrObu - 1 & 'Trained on the Secretary-General <<sekrObuA>> 30 days of'
+	if secrDiplom = 0 and sekrObu > 0:sekrObuA = sekrObu - 1 & 'Trained on the Secretary-General <<sekrObuA>> 30 days of'
 
 	if hour >= 9 and hour <= 17 and week < 6:
 		if vokalday ! day and alexeySex > 0 and alexeyVopros = 2:
@@ -92,7 +94,7 @@ if $ARGS[0] = 'holl':
 				deystrand = rand(0, 10)
 
 				if deystrand >= 8:
-					'After time spent Alexei turned to you "Today I can not Svetsik, a lot of work, I suck quick."'
+					'After time spent Alexei turned to you "Today I can not <<$name>>, a lot of work, I suck quick."'
 
 					act 'Get on your knees and take in the mouth':
 						cls
@@ -101,23 +103,8 @@ if $ARGS[0] = 'holl':
 						bj += 1
 						minut += 10
 						gs 'stat'
-						picrand = rand(0, 13)
-
-						if picrand = 0:'<center><img src="images/qwest/alexey/bj.jpg"></center>'
-						if picrand = 1:'<center><img src="images/qwest/alexey/bj1.jpg"></center>'
-						if picrand = 2:'<center><img src="images/qwest/alexey/bj2.jpg"></center>'
-						if picrand = 3:'<center><img src="images/qwest/alexey/bj3.jpg"></center>'
-						if picrand = 4:'<center><img src="images/qwest/alexey/bj4.jpg"></center>'
-						if picrand = 5:'<center><img src="images/qwest/alexey/bj5.jpg"></center>'
-						if picrand = 6:'<center><img src="images/qwest/alexey/bj6.jpg"></center>'
-						if picrand = 7:'<center><img src="images/qwest/alexey/bj7.jpg"></center>'
-						if picrand = 8:'<center><img src="images/qwest/alexey/bj8.jpg"></center>'
-						if picrand = 9:'<center><img src="images/qwest/alexey/bj9.jpg"></center>'
-						if picrand = 10:'<center><img src="images/qwest/alexey/bj10.jpg"></center>'
-						if picrand = 11:'<center><img src="images/qwest/alexey/bj11.jpg"></center>'
-						if picrand = 12:'<center><img src="images/qwest/alexey/bj12.jpg"></center>'
-						if picrand = 13:'<center><img src="images/qwest/alexey/bj13.jpg"></center>'
-
+						picrand = rand(1, 14)
+						'<center><img src="images/qwest/alexey/bj<<picrand>>.jpg"></center>'
 						'You kneel before him and clasped his dick <<$liptalk>> began to suck. Alexei helped hips almost peck you in the mouth. Finally he groaned "Catch huesoska their rations if that is on the floor, lick will make."'
 						gs 'oral', '0'
 
@@ -128,23 +115,8 @@ if $ARGS[0] = 'holl':
 							swallow += 1
 							cumlip += 1
 							gs 'stat'
-							picrand = rand(0, 13)
-
-							if picrand = 0:'<center><img src="images/qwest/alexey/bjcum.jpg"></center>'
-							if picrand = 1:'<center><img src="images/qwest/alexey/bjcum1.jpg"></center>'
-							if picrand = 2:'<center><img src="images/qwest/alexey/bjcum2.jpg"></center>'
-							if picrand = 3:'<center><img src="images/qwest/alexey/bjcum3.jpg"></center>'
-							if picrand = 4:'<center><img src="images/qwest/alexey/bjcum4.jpg"></center>'
-							if picrand = 5:'<center><img src="images/qwest/alexey/bjcum5.jpg"></center>'
-							if picrand = 6:'<center><img src="images/qwest/alexey/bjcum6.jpg"></center>'
-							if picrand = 7:'<center><img src="images/qwest/alexey/bjcum7.jpg"></center>'
-							if picrand = 8:'<center><img src="images/qwest/alexey/bjcum8.jpg"></center>'
-							if picrand = 9:'<center><img src="images/qwest/alexey/bjcum9.jpg"></center>'
-							if picrand = 10:'<center><img src="images/qwest/alexey/bjcum10.jpg"></center>'
-							if picrand = 11:'<center><img src="images/qwest/alexey/bjcum11.jpg"></center>'
-							if picrand = 12:'<center><img src="images/qwest/alexey/bjcum12.jpg"></center>'
-							if picrand = 13:'<center><img src="images/qwest/alexey/bjcum13.jpg"></center>'
-
+							picrand = rand(1, 14)
+							'<center><img src="images/qwest/alexey/bjcum<<picrand>>.jpg"></center>'
 							'Jet of sperm hit you in the mouth and began to run down your <<$liptalk>>. Alexei wiped his dick on your <<$liptalk>> and put it away in his pants.'
 							'You began diligently to swallow warm, stinky sperm and semen to collect the remains of spilled from his chin. Once you swallow a seed, you licked his lips and rose up from the floor were about to leave.'
 
@@ -164,9 +136,7 @@ if $ARGS[0] = 'holl':
 					end
 				end
 			end
-		end
-
-		if money >= 500 and vokalday ! day and alexeySex > 0 and alexeyVopros = 1:
+		elseif money >= 500 and vokalday ! day and alexeySex > 0 and alexeyVopros = 1:
 			act 'Singing lesson cost 500 rubles':
 				cls
 				money -= 500
@@ -178,9 +148,7 @@ if $ARGS[0] = 'holl':
 
 				act 'Leave':gt 'dk', 'holl'
 			end
-		end
-
-		if money >= 500 and vokalday ! day and alexeySex > 0 and alexeyVopros = 0:
+		elseif money >= 500 and vokalday ! day and alexeySex > 0 and alexeyVopros = 0:
 			act 'Singing lesson cost 500 rubles':
 				cls
 				alexeyQW += 1
@@ -191,7 +159,7 @@ if $ARGS[0] = 'holl':
 				'You could not help smiling at the memory as you dragged the carcass of his teacher sleeping with his back, where he was snoring peacefully.'
 				'Alexei open smile came up to you. "<<$name>>. We can now proceed in two ways. Now we both forget that between us and that it would not continue to learn as in what happened, or we can vstrechatsya. Vstrechatsya If we, as a true gentleman, I will not charge you fee, but will be very hard to invite you to come and visit. Choose. "'
 
-				act 'Let´s forget that between us that it was.':
+				act 'Let''s forget that between us that it was.':
 					cls
 					money -= 500
 					alexeyVopros = 1
@@ -203,30 +171,34 @@ if $ARGS[0] = 'holl':
 				act 'If you do not napivatsya so, then we could try again.':
 					cls
 					alexeyVopros = 2
-					'You playfully smiled and told him that you do not mind him vstrechatsya if it will not be so napivatsya. Alexei smiled with relief. "That´s good. And now engaged." The remaining time you have dedicated classes.'
+					'You playfully smiled and told him that you do not mind him vstrechatsya if it will not be so napivatsya. Alexei smiled with relief. "That''s good. And now engaged." The remaining time you have dedicated classes.'
 
 					act 'Leave':gt 'dk', 'holl'
 				end
 			end
-		end
-
-		if money >= 500 and vokalday ! day and alexeySex = 0:
+		elseif money >= 500 and vokalday ! day and alexeySex = 0:
 			act 'Singing lesson cost 500 rubles (1:00)':
 				cls
 				minut += 60
-				set money -= 500
+				money -= 500
 				alexeyQW += 1
 				vokal += 1
 				vokalday = day
 				gs 'stat'
 				!!'<center><img src="images/etogame/dk2.jpg"></center>'
 
-				if alexeyQW = 1:'You entered the office where he was man with long hair pulled back in a ponytail. He looked at you confident look and well-modulated voice said. "Come on girl, you´re on the vocals?" You nodded his head and gave him 500 rubles. He put them in his pocket and inserted introduced "I´m Alex, and you?" You answered him saying that your name is <<$name>>. After that, the man began to deal with you. You did not notice as an hour passed. You went out and the man politely said goodbye to you.'
-				if alexeyQW = 2:horny += 10 & 'Alexei met you and pick up the money began to deal with you when you have something that did not work, he touched his hand to explain is the face. Not knowing for what, you is a little excited.'
-				if alexeyQW >= 3 and alexeyQW < 7:horny += 10 & 'Alexei met you and pick up the money began to deal with you when you have something that did not work, he touched his hand to explain is the face. Not knowing for what, you is a little excited. After training, he politely said goodbye to you.'
-				if alexeyQW >= 7:horny += 20 & 'Alexei met you and pick up the money began to deal with you when you have something that did not work, he touched his hand to explain is the face. Not knowing for what, you is exciting. Alexei looked at you as if you´ve seen right through and sometimes you just smiled easily.'
-
-				if alexeyQW = 10 and alexeyVQW = 0:
+				if alexeyQW = 1:
+					'You entered the office where he was man with long hair pulled back in a ponytail. He looked at you confident look and well-modulated voice said. "Come on girl, you''re on the vocals?" You nodded his head and gave him 500 rubles. He put them in his pocket and inserted introduced "I''m Alex, and you?" You answered him saying that your name is <<$name>>. After that, the man began to deal with you. You did not notice as an hour passed. You went out and the man politely said goodbye to you.'
+				elseif alexeyQW = 2:
+					horny += 10
+					'Alexei met you and pick up the money began to deal with you when you have something that did not work, he touched his hand to explain is the face. Not knowing for what, you is a little excited.'
+				elseif alexeyQW >= 3 and alexeyQW < 7:
+					horny += 10
+					'Alexei met you and pick up the money began to deal with you when you have something that did not work, he touched his hand to explain is the face. Not knowing for what, you is a little excited. After training, he politely said goodbye to you.'
+				elseif alexeyQW >= 7 and alexeyQW < 10:
+					horny += 20
+					'Alexei met you and pick up the money began to deal with you when you have something that did not work, he touched his hand to explain is the face. Not knowing for what, you is exciting. Alexei looked at you as if you''ve seen right through and sometimes you just smiled easily.'
+				elseif alexeyQW = 10 and alexeyVQW = 0:
 					'Even during the lessons you caught his teacher smell of alcohol. After classes, you came to Alex and offered you go to somewhere together.'
 
 					act 'Go with Alexei':
@@ -241,7 +213,7 @@ if $ARGS[0] = 'holl':
 							minut += 120
 							gs 'stat'
 							'Alexei lives in a studio apartment, all the decoration which says that he was a bachelor, a musician and a rare wino. Lying on the floor of the bottle, in the room are huge concert speakers occupying floor kamnaty worth what that equipment. Alexei put you on the sofa and brought alcohol with a snack. He sat on Odal from you on an armchair. And you started drinking. Lech helpful, simple, cheerful guy with a rich biography and interesting outlook on life, you have been very pleased with him obschatsya but Alex quickly tipsy and frankly looked drunk.'
-							'He looked at you and said intelligent look "Well <<$name>>, you do not just agreed to come to visit me? I think it´s time to go to the main action. Come to me."'
+							'He looked at you and said intelligent look "Well <<$name>>, you do not just agreed to come to visit me? I think it''s time to go to the main action. Come to me."'
 							'You think to yourself, what is he still arrogant, but did not expect to get up and not solid legs went to the chair where he sat Lech.'
 							'When you come to a chair Alex brazenly took dick out of his pants and winked at you, "Well, do not be shy, everything on your own."'
 
@@ -260,26 +232,26 @@ if $ARGS[0] = 'holl':
 								act 'Unclothed':
 									cls
 									minut += 10
-									set $nameV = 'Alexey'
+									$nameV = 'Alexey'
 									$boy = $nameV
-									set dick = 20
-									set silavag = 2
+									dick = 20
+									silavag = 2
 									pose = 1
 									gs 'stat'
 									'<center><img src="images/qwest/alexey/sex.jpg"></center>'
 									'Hardly you undressed as Alesya practically force pulled you on the bed and put the cancer.'
 									dynamic $sexstart
-									'Alexei slapped you in the ass with his hand and said, "I see people at once, you´re a real slut, and your place is cancer or kneeling with by a dick in your mouth. You´re the one that you want."'
+									'Alexei slapped you in the ass with his hand and said, "I see people at once, you''re a real slut, and your place is cancer or kneeling with by a dick in your mouth. You''re the one that you want."'
 									dynamic $sexstart2
 									'During sex Alex stuck somehow smeared cream finger in the ass and began to move it there. Soon he took his dick out of your pussy and stuck to them stared you in the ass.'
 
 									act 'Moan':
 										cls
 										minut += 10
-										set $nameV = 'Alexey'
+										$nameV = 'Alexey'
 										$boy = $nameV
-										set dick = 20
-										set silavag = 2
+										dick = 20
+										silavag = 2
 										pose = 1
 										gs 'stat'
 										'<center><img src="images/qwest/alexey/anal.jpg"></center>'
@@ -300,10 +272,10 @@ if $ARGS[0] = 'holl':
 		end
 
 		if avtoskul = 0 and money >= 30000 and prava = 0 and age >= 18:
-			act 'Driver Training course costs 30,000 rubles':
+			act 'Book a driver training course (30,000 rubles)':
 				cla
-				set money -= 30000
-				set avtoskul = 1
+				money -= 30000
+				avtoskul = 1
 				!!'<center><img src="images/etogame/dk2.jpg"></center>'
 				'You paid the money in cash and can now learn every day on the right within 2 hours.'
 
@@ -312,10 +284,10 @@ if $ARGS[0] = 'holl':
 		end
 
 		if secrDiplom = 0 and sekrObu = 0 and money >= 15000:
-			act 'Secretarial course cost 15,000 rubles':
+			act 'Book a secretarial course (15,000 rubles)':
 				cla
-				set money -= 15000
-				set sekrObu = 1
+				money -= 15000
+				sekrObu = 1
 				!!'<center><img src="images/etogame/dk2.jpg"></center>'
 				'You paid the money in cash and can now learn every day at the secretary within 2 hours. 10 training days total.'
 
@@ -327,26 +299,24 @@ if $ARGS[0] = 'holl':
 			act 'Learn from the Secretary (2:00)':
 				cla
 				*clr
-				set secrday = day
-				set sekrObu += 1
-				set minut += 120
+				secrday = day
+				sekrObu += 1
+				minut += 120
 				'<center><img src="images/etogame/kurs.jpg"></center>'
 				'You went into the office with computers, mostly student in such courses are women. In class the teacher came and started to tell you the intricacies of the Secretary and the basics of working in the office programs.'
 
-				if cumfrot > 0:set horny += 10 & 'You nervously fumble on a chair trying to hide the stain of semen on her ass, but it seems out worse. You started to pay attention to the other student.'
+				if cumfrot > 0:horny += 10 & 'You nervously fumble on a chair trying to hide the stain of semen on her ass, but it seems out worse. You started to pay attention to the other student.'
 
 				act 'Leave':gt 'dk', 'holl'
 			end
-		end
-
-		if sekrObu >= 11 and secrday ! day:
+		elseif sekrObu >= 11 and secrday ! day:
 			act 'Get Secretary diploma':
 				cla
 				*clr
-				set secrday = day
-				set sekrObu = 0
-				set minut += 15
-				set secrDiplom = 1
+				secrday = day
+				sekrObu = 0
+				minut += 15
+				secrDiplom = 1
 				'<center><img src="images/etogame/kurs.jpg"></center>'
 				'You went into the office with computers, mostly student in such courses are women. In class the teacher came and started to tell you the intricacies of the Secretary and the basics of working in the office programs.'
 
@@ -358,9 +328,9 @@ if $ARGS[0] = 'holl':
 			act 'Learn from the right (2:00)':
 				cla
 				*clr
-				set skulday = day
-				set avtoskul += 1
-				set minut += 120
+				skulday = day
+				avtoskul += 1
+				minut += 120
 				'<center><img src="images/etogame/dk2.jpg"></center>'
 				'You studied by modern methods driving.'
 
@@ -368,16 +338,14 @@ if $ARGS[0] = 'holl':
 
 				act 'Leave':gt 'dk', 'holl'
 			end
-		end
-
-		if avtoskul >= 11 and skulday ! day and age >= 18:
+		elseif avtoskul >= 11 and skulday ! day and age >= 18:
 			act 'Pass on the right (2:00)':
 				cla
 				*clr
-				set minut += 120
-				set avtoskul = 0
-				set prava = 1
-				set minut += 120
+				minut += 120
+				avtoskul = 0
+				prava = 1
+				minut += 120
 				'<center><img src="images/etogame/dk3.jpg"></center>'
 				'You went with traffic cops within 2 hours of the city, he was satisfied and did not find what pridratsya.'
 				'You gave ready-law.'
@@ -389,12 +357,12 @@ if $ARGS[0] = 'holl':
 		if money >= 5000 and masash < 10 and masashshoolday ! day:
 			act 'Learn massage (5,000 rubles)':
 				cla
-				set masashshoolday = day
-				set money -= 5000
-				set masash += 1
-				set minut += 120
+				masashshoolday = day
+				money -= 5000
+				masash += 1
+				minut += 120
 				gs 'stat'
-				'You two o´clock studied massage'
+				'You two o''clock studied massage'
 
 				if masash = 10:'You are issued a certificate of course completion masseurs.'
 

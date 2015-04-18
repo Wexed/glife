@@ -4,8 +4,8 @@ $d_salf = {
 	salfetka -= 1
 	pl '<a href="exec:gs ''stat''"><b>Throw out tissue</b></a>'
 
-	if cumface > 0:pl '<a href="exec:cumface = 0 & gs ''stat''"><b>Wipe your face</b></a>'
-	if cumfrot > 0:pl '<a href="exec:cumfrot = 0 & gs ''stat''"><b>Wipe clothing</b></a>'
+	if cumface > 0:pl '<a href="exec:cumface -= 1 & gs ''stat''"><b>Wipe your face</b></a>'
+	if cumfrot > 0:pl '<a href="exec:cumfrot -= 1 & gs ''stat''"><b>Wipe clothing</b></a>'
 	if mop ! 1:pl '<a href="exec:mop = 1 & gs ''stat''"><b>Wipe cosmetics</b></a>'
 }
 
@@ -27,7 +27,7 @@ $d_bag = {
 	if kosmetitka > 0 and mop ! 1:pl 'You have portable makeup bag. Cometic applications left <<kosmetitka>>.'
 	if greben > 0 and hapri = 0:pl 'You have a hairbrush. <a href="exec:hapri = 1 & gs ''stat''"><b>Brush your hair</b></a>'
 	if greben > 0 and hapri = 1:pl 'You have a hairbrush.'
-	if prezik > 0:pl 'You have <<prezik>> condoms. <a href="exec:prezik = 0& gs ''stat''"><b>Throw away</b></a>'
+	if prezik > 0:pl 'You have <<prezik>> condoms. <a href="exec:prezik = 0 & gs ''stat''"><b>Throw away</b></a>'
 	if tabletki > 0:pl 'You have <<tabletki>> birth control pills. <a href="exec:tabletki = 0 & gs ''stat''"><b>Throw away</b></a>'
 	if bottle > 0:pl 'You have a bottle of water. <a href="exec:bottle = 0 & water = 20 & cumlip = 0 & gs ''stat''"><b>Drink</b></a>'
 	if buterbrod > 0:pl 'You have a sandwich. <a href="exec:buterbrod = 0 & energy += 20 & cumlip = 0 & salo += 1 & gs ''stat''"><b>Eat</b></a>'

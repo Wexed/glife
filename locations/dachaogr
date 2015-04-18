@@ -1,5 +1,4 @@
 # dachaogr
-*clr
 $metka = $ARGS[0]
 $loc = $CURLOC
 $metkaBed = $ARGS[0]
@@ -8,23 +7,23 @@ $metkaP = $ARGS[0]
 $locP = $CURLOC
 $metkaFight = $ARGS[0]
 $locFight = $CURLOC
+*clr
+gs 'stat'
+gs 'time'
+!'
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
+'!
 '<center><h4>Garden</h4></center>'
 
 if month > 4 and month < 10:
 	'<center><img src="images/etogame/vspah.jpg"></center>'
 	'Well-kept garden.'
-end
-
-if month <= 4 or month >= 10:
+elseif month <= 4 or month >= 10:
 	'<center><img src="images/etogame/vspah.jpg"></center>'
 	'Not for planting season'
 end
-
-gs 'stat'
-!!fcolor = rgb(0, 0, 0)
-!!bcolor = rgb(255, 255, 255)
-!!lcolor = rgb(106, 90, 205)
-gs 'time'
 
 act 'Leave':
 	minut = minut + 5

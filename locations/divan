@@ -1,17 +1,16 @@
 # divan
 if $ARGS[0] = 'start':
-	cla
-
 	$divmastr = {
 		cls
-		'<center><img src="images/pics/divmas.jpg"></center>'
-		set minut += 15
-		sweat += 1
-		set horny += rand(1, 5)
 
-		if divanmastr = 0:divanmastr = 1 & set mastr += 1
+		minut += 15
+		sweat += 1
+		horny += rand(1, 5)
+
+		if divanmastr = 0:divanmastr = 1 & mastr += 1
 
 		gs 'stat'
+		'<center><img src="images/pics/divmas.jpg"></center>'
 		'You lay down on the sofa and began to fondle her one-handed chest with a finger of the other hand you started rubbing and stroking a small bump between his legs that responded to the touch of pleasant languor covering your entire body.'
 
 		if horny >= 100:orgasm += 1 & horny = 0 & 'Suddenly a nice cramp brought your body and you covered powerful orgasm from which you groan.'
@@ -21,6 +20,7 @@ if $ARGS[0] = 'start':
 		if horny >= 75:act 'Proceed':dynamic $divmastr
 	}
 
+	cla
 	clr
 	gs 'stat'
 	'<center><img src="images/pics/divan.jpg"></center>'
@@ -30,8 +30,8 @@ if $ARGS[0] = 'start':
 		cla
 		waiting = input ("How many minutes to wait? (Not more than 120 minutes)")
 
-		if waiting <= 0 or waiting > 120:set minut += 15
-		if waiting > 0 and waiting <= 120:set minut += waiting
+		if waiting <= 0 or waiting > 120:minut += 15
+		if waiting > 0 and waiting <= 120:minut += waiting
 
 		act 'Get off the couch':gt 'divan', 'fin'
 	end
@@ -47,9 +47,9 @@ if $ARGS[0] = 'start':
 		act 'Read a book (0:30)':
 			cla
 			*clr
+			minut += 30
+			horny += 5
 			'<center><img src="images/pics/book.jpg"></center>'
-			set minut += 30
-			set horny += 5
 			'You are reading a book.'
 
 			act 'Put the book':gt 'divan', 'start'
@@ -70,10 +70,12 @@ if $ARGS[0] = 'fin':
 	cla
 	gt $locM, $metkaM
 
-	!'if housr = 1 and housrA = 1:
-		set housrA = 0
+	!'
+	if housr = 1 and housrA = 1:
+		housrA = 0
 		gt 'sitr'
-	end'!
+	end
+	'!
 end
 
 --- divan ---------------------------------

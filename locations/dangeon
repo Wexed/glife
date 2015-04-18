@@ -29,10 +29,10 @@ $dundincif = {
 
 $dundinboch = {
 	cls
-	gs 'stat'
 
 	if openstateDM2 = 0:openstateDM2 = 1
 
+	gs 'stat'
 	'Chimes hear soon reconcile those who quarrel.'
 
 	act 'Move away from the barrel':gt $curloc
@@ -40,9 +40,9 @@ $dundinboch = {
 
 $dundinsvitok = {
 	cls
-	gs 'stat'
 	svitokRTS = 1
 	heart += 1
+	gs 'stat'
 	'You picked up the scroll and he crumbled. As if you breathed in the wind. You listen to the feelings and understand that you have something changed. You feel like somewhere, as if in another dimension another beating heart belongs to you, which will die for you in battle.'
 
 	act 'Move away':gt $curloc
@@ -56,17 +56,13 @@ if dungeonMark = 0:
 
 	act 'Get out of the dungeon':minut += 5 & gt 'obekt2'
 	act 'Enter the door':minut += 5 & dungeonMark = 1 & gt $curloc
-end
-
-if dungeonMark = 1:
+elseif dungeonMark = 1:
 	'<center><img src="images/picPRE/dunPRE1.jpg"></center>'
 	'Quite large and deserted room in which there is nothing but a bunch of bones in the corner.'
 
-	act 'Exit':minut += 5 & dungeonMark = 0 & gt $curloc
+	act 'Leave':minut += 5 & dungeonMark = 0 & gt $curloc
 	act 'Go deep into':minut += 5 & dungeonMark = 2 & gt $curloc
-end
-
-if dungeonMark = 2:
+elseif dungeonMark = 2:
 	if svitokRTS = 1:exit
 
 	'<center><img src="images/picPRE/dunPRE2.jpg"></center>'
@@ -132,17 +128,13 @@ if dungeonMark = 2:
 	end
 
 	if openstateDM2 = 2:act 'Sign in third room':minut += 5 & dungeonMark = 5 & gt $curloc
-end
-
-if dungeonMark = 3:
+elseif dungeonMark = 3:
 	'<center><img src="images/picPRE/dunPRE3.jpg"></center>'
 	'The room in which the middle stands a stone dais on which are various dusty bottles.'
 	'Scrawled on the wall of what is <a href="exec:dynamic $dundincif">signs</a>.'
 
 	act 'Leave the room':minut += 5 & dungeonMark = 2 & gt $curloc
-end
-
-if dungeonMark = 4:
+elseif dungeonMark = 4:
 	'<center><img src="images/picPRE/dunPRE4.jpg"></center>'
 	'Small room in which there are what that <a href="exec:dynamic $dundinboch">Drums</a>.'
 
@@ -165,9 +157,7 @@ if dungeonMark = 4:
 			gt $curloc
 		end
 	end
-end
-
-if dungeonMark = 5:
+elseif dungeonMark = 5:
 	'<center><img src="images/picPRE/dunPRE5.jpg"></center>'
 	'The room in which the middle, sitting on a stone throne cobwebbed skeleton.'
 

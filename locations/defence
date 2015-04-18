@@ -1,98 +1,97 @@
 # defence
 if defence <= 0:
-	set defence = 0
-	set defenceM = 0
-	set defenceW = 0
-	set defenceActPar = 0
-	set defenceActParM = 0
-	set defenceAct = 0
-	set defenceActM = 0
-	set defAtk = 0
-	set defAtkM = 0
+	defence = 0
+	defenceM = 0
+	defenceW = 0
+	defenceActPar = 0
+	defenceActParM = 0
+	defenceAct = 0
+	defenceActM = 0
+	defAtk = 0
+	defAtkM = 0
 end
 
 if defenceV <= 0:
-	set defenceV = 0
-	set defenceMV = 0
-	set defenceWV = 0
-	set defenceActParV = 0
-	set defenceActParMV = 0
-	set defenceActV = 0
-	set defenceActMV = 0
-	set defAtkV = 0
-	set defAtkMV = 0
+	defenceV = 0
+	defenceMV = 0
+	defenceWV = 0
+	defenceActParV = 0
+	defenceActParMV = 0
+	defenceActV = 0
+	defenceActMV = 0
+	defAtkV = 0
+	defAtkMV = 0
 end
 
 if defenceAct > 0:
-	set defence += defenceActPar
-	set defenceAct -= 1
-	set defActParK = defenceActPar/100
-	set manna -= defActParK
+	defence += defenceActPar
+	defenceAct -= 1
+	defActParK = defenceActPar/100
+	manna -= defActParK
 	'<b><font color="green">Regeneration consumes Protection <<defActParK>> units manna.</font></b>'
 end
 
 if defenceActM > 0:
-	set defenceM += defenceActParM
-	set defenceActM -= 1
-	set defActParKM = defenceActParM/100
-	set manna -= defActParKM
+	defenceM += defenceActParM
+	defenceActM -= 1
+	defActParKM = defenceActParM/100
+	manna -= defActParKM
 	'<b><font color="green">Regeneration consumes magical protection <<defActParKM>> units of manna.</font></b>'
 end
 
 if defenceActV > 0:
-	set defenceV += defenceActParV
-	set defenceActV -= 1
-	set mannaV -= (defenceActParV / 100)
+	defenceV += defenceActParV
+	defenceActV -= 1
+	mannaV -= (defenceActParV / 100)
 end
 
 if defenceActMV > 0:
-	set defenceMV += defenceActParMV
-	set defenceActMV -= 1
-	set mannaV -= (defenceActParMV / 100)
+	defenceMV += defenceActParMV
+	defenceActMV -= 1
+	mannaV -= (defenceActParMV / 100)
 end
 
 if defAtk > 0:
-	set defAtk -= 1
+	defAtk -= 1
 	'<b><font color="green">Your defense is attacking the enemy.</font></b>'
 	gs 'atakB', 'atak'
 end
 
 if defAtkV > 0:
-	set defAtkV -= 1
+	defAtkV -= 1
 	'<b><font color="red">Protection of the enemy attacks you.</font></b>'
 	gs 'atakB1', 'atak'
 end
 
 if defAtkM > 0:
-	set defAtkM -= 1
+	defAtkM -= 1
 
 	if defenceMV <= 0 and unmaterialV = 0:
-		set defDamM = rand(defenceActParM/2, defenceActParM)
-		set mannaV -= defDamM
-		set defence += defDamM
+		defDamM = rand(defenceActParM/2, defenceActParM)
+		mannaV -= defDamM
+		defence += defDamM
 		'<b><font color="green">Your defense absorbed <<defDamM>> mana from an enemy, this manna went to strengthen your defenses.</font></b>'
 	end
 
 	if defenceMV > 0:
-		set defenceMV += defenceActParM
+		defenceMV += defenceActParM
 		'<b><font color="green">Your defense caused <<defenceActParM>> points of damage protection from damage enemy mana.</font></b>'
 	end
-
 	if unmaterialV > 0:'<b><font color="green">Your defense is trying to absorb the manna but it does not work, the enemy is not material.</font></b>'
 end
 
 if defAtkMV > 0:
-	set defAtkMV -= 1
+	defAtkMV -= 1
 
 	if defenceM <= 0 and unmaterial = 0:
-		set defDamMV = rand(defenceActParMV/2, defenceActParMV)
-		set manna -= defDamMV
-		set defenceV += defDamMV
+		defDamMV = rand(defenceActParMV/2, defenceActParMV)
+		manna -= defDamMV
+		defenceV += defDamMV
 		'<b><font color="red">Protection of the enemy swallow <<defDamMV>> manna from you and this manna went to strengthen the defense.</font></b>'
 	end
 
 	if defenceM > 0:
-		set defenceM += defenceActParMV
+		defenceM += defenceActParMV
 		'<b><font color="red">Protection against your magic damage inflicted damage <<defenceActParMV>> units.</font></b>'
 	end
 
@@ -100,5 +99,5 @@ if defAtkMV > 0:
 end
 
 --- defence ---------------------------------
-# ----------
---- ---------- ---------------------------------
+
+
