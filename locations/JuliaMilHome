@@ -22,9 +22,7 @@ if lernHome ! 0:
 
 		act 'rest':gt $curloc
 	end
-end
-
-if lernHome = 0:
+elseif lernHome = 0:
 	'Julia is sitting on her bed.'
 
 	if eatJulMilDay!daystart:
@@ -33,9 +31,9 @@ if lernHome = 0:
 		act 'Go to the kitchen with Julia':
 			cls
 			minut += 15
-			set fat += 3
-			set energy += 10
-			set water += 20
+			fat += 3
+			energy += 10
+			water += 20
 			eatJulMilDay = daystart
 			gs 'stat'
 			'<center><img src="images/qwest/alter/npc/12.jpg"></center>'
@@ -44,7 +42,7 @@ if lernHome = 0:
 			act 'rest':gt $curloc
 		end
 
-		act 'unsubscribe':
+		act 'Refuse':
 			cls
 			eatJulMilDay = daystart
 			gt $curloc
@@ -75,9 +73,9 @@ if lernHome = 0:
 						'<center><img src="images/qwest/alter/npc/12.jpg"></center>'
 						'You began to discuss sexual topics with Julia'
 
-						if SexTalkJulia = 1:'Suddenly.'
-
-						if SexTalkJulia = 2:
+						if SexTalkJulia = 1:
+							'Suddenly.'
+						elseif SexTalkJulia = 2:
 							'Julia while talking boasted that no longer a virgin.'
 
 							act 'inquire details':
@@ -92,9 +90,7 @@ if lernHome = 0:
 							end
 
 							exit
-						end
-
-						if SexTalkJulia = 3:
+						elseif SexTalkJulia = 3:
 							'Julia while talking again remembered his adventures in the camp.'
 
 							act 'inquire details':
@@ -103,18 +99,16 @@ if lernHome = 0:
 								horny += 10
 								gs 'stat'
 								'<center><img src="images/qwest/alter/ev2/otrad.jpg"></center>'
-								'Julia smiled mysteriously and began to tell "Well. But I still managed to sleep with Vovka before leaving the camp. We afternoon when no one was in the bedroom waded along with Vovka, he again began to harass me. Then I undressed and lay on the bed, terribly afraid that will hurt again, but it was well tolerated, Only in the beginning was a bit painful, but it quickly passed. Although I was unable to be stimulated, I was afraid, Now that the detachment somebody logs in and sees us. but there were. After that. He is from the city, I have his telefonchik. But it`s not really him vstrechatsya."'
+								'Julia smiled mysteriously and began to tell "Well. But I still managed to sleep with Vovka before leaving the camp. We afternoon when no one was in the bedroom waded along with Vovka, he again began to harass me. Then I undressed and lay on the bed, terribly afraid that will hurt again, but it was well tolerated, Only in the beginning was a bit painful, but it quickly passed. Although I was unable to be stimulated, I was afraid, Now that the detachment somebody logs in and sees us. but there were. After that. He is from the city, I have his telefonchik. But it''s not really him vstrechatsya."'
 
 								act 'rest':gt $curloc
 							end
 
 							exit
-						end
+						elseif SexTalkJulia = 4:
+							'Julia embarrassed and tells you "You''re such a funny girl <<$nickname>>. I''m with you myself am feeling absolutely no compulsion." She suddenly tilts her face to your wants and kiss you.'
 
-						if SexTalkJulia = 4:
-							'Julia embarrassed and tells you "You`re such a funny girl Light. I`m with you myself am feeling absolutely no compulsion." She suddenly tilts her face to your wants and kiss you.'
-
-							act 'Tselovatsya Julia':
+							act 'Kiss Julia':
 								cls
 								minut += 5
 								horny += 20
