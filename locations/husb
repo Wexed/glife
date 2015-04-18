@@ -5,16 +5,26 @@ if $ARGS[0] = 'start':
 
 	if week < 6:
 		if hour > 22 or hour < 7:'Your husband <<$husName>> lying in bed opens his eyes. "What do you want? Night already, go to sleep."'
-			if hour = 7:'<<$husName>> sitting at the kitchen table.'
-			if hour = 17:'<<$husName>> sitting at the kitchen table.'
-			if hour > 17 and hour <= 22:'<<$husName>> sitting on a couch and watching television.'
-		else
-			if hour > 22 or hour < 7:'Your husband <<$husName>> lying in bed opens his eyes. "What do you want? Night already, go to sleep."'
-			if hour = 7:'<<$husName>> sitting at the kitchen table.'
-			if hour > 7 and hour < 17:'<<$husName>> sitting on a couch and watching television.'
-			if hour = 17:'<<$husName>> sitting at the kitchen table.'
-			if hour > 17 and hour <= 22:'<<$husName>> sitting on a couch and watching television.'
+		elseif hour = 7:
+			'<<$husName>> sitting at the kitchen table.'
+		elseif hour = 17:
+			'<<$husName>> sitting at the kitchen table.'
+		elseif hour > 17 and hour <= 22:
+			'<<$husName>> sitting on a couch and watching television.'
 		end
+	else
+		if hour > 22 or hour < 7:
+			'Your husband <<$husName>> lying in bed opens his eyes. "What do you want? Night already, go to sleep."'
+		elseif hour = 7:
+			'<<$husName>> sitting at the kitchen table.'
+		elseif hour > 7 and hour < 17:
+			'<<$husName>> sitting on a couch and watching television.'
+		elseif hour = 17:
+			'<<$husName>> sitting at the kitchen table.'
+		elseif hour > 17 and hour <= 22:
+			'<<$husName>> sitting on a couch and watching television.'
+		end
+	end
 
 	act 'Leave':gt $loc, $metka
 

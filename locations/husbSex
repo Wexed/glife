@@ -1,46 +1,43 @@
 # husbSex
 if $ARGS[0] = 'room':
+	clr
+	minut += 60
+	$nameV = $husName
+	dick = husDick
+	silavag = silavagH
+	husbandsexday += 1
+	suprdolg += 1
+	sexrand = rand(0, 3)
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
 	'<center><b><font color="maroon">Bedroom</font></b></center>'
 
 	if rembedr = 0:'<center><img src="images/etogame/bedr.jpg"></center>'
 	if rembedr = 1:'<center><img src="images/etogame/bedr2.jpg"></center>'
 
-	clr
-	set minut += 60
-	fcolor = rgb(0, 0, 0)
-	bcolor = rgb(255, 255, 255)
-	lcolor = rgb(106, 90, 205)
-	set $nameV = $husName
-	set dick = husDick
-	set silavag = silavagH
-	set husbandsexday += 1
-	set suprdolg += 1
 	'You went with her husband in the bedroom.'
 	'<<$husName>> grabs you and rudely pushes you to your starting passionately kiss you and try to steal your clothes.'
-	set sexrand = rand(0, 3)
-	'Finally <<$husName>> won in an unequal battle with your bra straps and you section.'
-	if Husbdolgday ! day:set husbdolgrand = rand(1, 100)
 
-	if husbdolg > 95:
-		set Husbdolgday = day
-		set sexrand = 4
-		set husbdolg = 1
+	'Finally <<$husName>> won in an unequal battle with your bra straps and you section.'
+
+	if husbdolg = 0:
 		cla
 		*clr
+		sexrand = 4
+		husbdolg = 1
 		'<center><img src="images/img/hasb/d0.jpg"></center>'
-		'Only <<$husName>> climbed on you going to get in, someone stole it from you, and you will see two men in the room. One stood by the bed holding your husband´s hair, the second slightly to the side with a gun in his hand.'
+		'Only <<$husName>> climbed on you going to get in, someone stole it from you, and you will see two men in the room. One stood by the bed holding your husband''s hair, the second slightly to the side with a gun in his hand.'
 		'"What a moron to pay you?" he asked what kept her husband.'
 		'"I said I would do anything, I have no money now, but a month later I would do anything, " replied <<$husName>>.'
 		'"This had to think about when you sit down at the table, and we need the money now, " continued the bandit.'
-		'"But where I´ll take them now, face or what?" pleaded <<$husName>>.'
+		'"But where I''ll take them now, face or what?" pleaded <<$husName>>.'
 		'"Do not give birth to himself, we now have them in all your swirls look for holes, and you have 100, 000, " said the bandit.'
 
 		if harakHusb < 2:
-			'"Do not touch her, I´ll bring you all, tomorrow everything will be back" said <<$husName>>.'
+			'"Do not touch her, I''ll bring you all, tomorrow everything will be back" said <<$husName>>.'
 			'"Come again tomorrow, but tomorrow and not touch, and look for today, but beautiful, open your mouth, but on wider-that would be just two instead of" neigh bandit.'
-		end
-
-		if harakHusb = 2:
+		elseif harakHusb = 2:
 			'"Not the boys, well, for it is not a sin and the debt write off, look what Kral." said <<$husName>>.'
 			if vnesh < 15:'"Oh nah, what stole, she only wash the floors in a public toilet" replied the bandit.'
 			if vnesh >= 15 and vnesh < 30:'"Well, never mind such popolzovavshis possible, but at a discount does not pull" replied the bandit.'
@@ -53,9 +50,9 @@ if $ARGS[0] = 'room':
 			act 'Offer money':
 				cla
 
-				if money >= 100000 and husbdolg = 1:set money -= 100000 & set husbdolg = 2
-				if money + stolmoney >= 100000 and husbdolg = 1:set money += stolmoney - 100000 & set husbdolg = 2 & set stolmoney = 0
-				if money + stolmoney + karta >= 100000 and husbdolg = 1:set money += stolmoney + karta - 100000 & set husbdolg = 2 & set stolmoney = 0 & set karta = 0
+				if money >= 100000 and husbdolg = 1:money -= 100000 & husbdolg = 2
+				if money + stolmoney >= 100000 and husbdolg = 1:money += stolmoney - 100000 & husbdolg = 2 & stolmoney = 0
+				if money + stolmoney + karta >= 100000 and husbdolg = 1:money += stolmoney + karta - 100000 & husbdolg = 2 & stolmoney = 0 & karta = 0
 
 				'"I have money, I shall repay the debt" you said.'
 				'"Good for you, but for the cost will still have to pay, " said the bandit grinning.'
@@ -77,9 +74,7 @@ if $ARGS[0] = 'room':
 		end
 
 		act 'I do not want to let another':husband -= 1 & gt 'husbsex', 'variant'
-	end
-
-	if sexrand = 1:
+	elseif sexrand = 1:
 		'"<<$name>>, cup your ass."'
 
 		act 'Anal':
@@ -89,17 +84,13 @@ if $ARGS[0] = 'room':
 		end
 
 		act 'Oh nafig, come on another':husband -= 1 & gt 'husbsex', 'variant'
-	end
-
-	if sexrand = 2:
-		'"Lie down and spread your Svetsik Lyashko."'
+	elseif sexrand = 2:
+		'"Lie down and spread your <<$name>> Lyashko."'
 
 		act 'Spread her legs ':gt 'husbsex', 'miss'
 		act 'I do not want to let another':husband -= 1 & gt 'husbsex', 'variant'
-	end
-
-	if sexrand = 3:
-		'"Arise Svetsik crustaceans."'
+	elseif sexrand = 3:
+		'"Arise <<$name>> crustaceans."'
 
 		act 'Doggy-Style':gt 'husbsex', 'dog'
 		act 'I do not want to let another':husband -= 1 & gt 'husbsex', 'variant'
@@ -109,11 +100,11 @@ end
 if $ARGS[0] = 'dolg':
 	cla
 	*clr
-	set minut += 30
-	set guy += 2
-	set sex += 1
-	set anal += 1
-	set bj += 1
+	minut += 30
+	guy += 2
+	sex += 1
+	anal += 1
+	bj += 1
 	'<center><img src="images/img/hasb/d1.jpg"></center>'
 	'Bandits got their members and tried to push you in the mouth both at once, you tried to open his mouth as wide as possible, but the second term so really not fit, you end up with spit on the case and began to suck them one by one. Soon they got tired and hurl you to bed, she began to talk to who you first shove.'
 
@@ -132,10 +123,10 @@ if $ARGS[0] = 'dolg':
 		if harakHusb = 2 and izvratH = 1:
 			cla
 			*clr
-			set picrand = 18
+			picrand = 18
 			'<center><img src="images/img/hasb/d2.jpg"></center>'
 			'They began to twirl you all they want, each several times pereprobaval all your holes. Sometime you glanced at her husband.'
-			'He stood aside and watched you masturbate currently a member. In the end, he could not resist and went to bed, as well, you want to, but it´s my bitch and I´ll fuck her too. The bandits did not object.'
+			'He stood aside and watched you masturbate currently a member. In the end, he could not resist and went to bed, as well, you want to, but it''s my bitch and I''ll fuck her too. The bandits did not object.'
 			act 'Further':gt 'paysex', 'var'
 		end
 
@@ -147,51 +138,47 @@ end
 if $ARGS[0] = 'dolgend':
 	cla
 	*clr
-	set cumpussy = 0
-	set cumbelly = 0
-	set cumass = 0
-	set cumanus = 0
-	set cumlip = 0
-	set cumface = 0
-	set cumanus = 0
-	set leghair = -5
-	set lobok = -5
-	set sweat = -3
-	set hapri = 1
-	set mop = 3
+	cumpussy = 0
+	cumbelly = 0
+	cumass = 0
+	cumanus = 0
+	cumlip = 0
+	cumface = 0
+	cumanus = 0
 	gs 'stat'
 	'<center><img src="images/img/hasb/d3.jpg"></center>'
 	'When it was over, they took you to the bathroom and ordered to put himself in order, then led into the bedroom.'
 
 	if vnesh >= 15 and husbdolg = 1:
 		cla
-		set husbdolg = 0
-		set workDolg += 100000
-		'"Well, babe, we´re gone c debts husband kind work" said one grinning.'
+		husbdolg = 2
+		workDolg += 100000
+		'"Well, babe, we''re gone c debts husband kind work" said one grinning.'
 
 		act 'Go':
 			cla
-			'You have come to the sauna. Bandits have been dragged into what that room and started to explain. "You´re going to live here and work until not rasplatishsya debt. All clear? Try that buzz or escape, all we´ll bullet to the head and stabbed in the woods bury, truncated?"'
+			leghair = -5
+			lobok = -5
+			sweat = -3
+			hapri = 1
+			mop = 3
+			'You have come to the sauna. Bandits have been dragged into what that room and started to explain. "You''re going to live here and work until not rasplatishsya debt. All clear? Try that buzz or escape, all we''ll bullet to the head and stabbed in the woods bury, truncated?"'
 			'You frightened nodded, realizing that they are not joking.'
 
 			act 'Look around':gt 'saunaroom'
 		end
 
 		exit
-	end
-
-	if vnesh >= 15 and husbdolg = 0:
+	elseif vnesh >= 15 and husbdolg = 2:
 		cla
-		set husbdolg = 0
-		set saunaWorkWhore = 1
+		husbdolg = 3
+		saunaWorkWhore = 1
 		'"Well babe, worked well, there is a desire to work more come to the sauna, where a job for you there, " said one grinning.'
 
 		act 'Finish':gt 'bedr'
 	end
 
 	if vnesh < 15:'"How frights not comb it frights remain" one said, looking at you. "Okay, go away, and you brought the money tomorrow, and then tomorrow we will be to fuck you." said second your husband.'
-
-	set husbdolg = 0
 
 	act 'Finish':gt 'bedr'
 end
@@ -217,8 +204,8 @@ end
 if $ARGS[0] = 'minet':
 	*clr
 	gs 'brosok'
-	set bj += 1
-	set minut += 30
+	bj += 1
+	minut += 30
 	'<center><img src="images/picV/bj.jpg"></center>'
 	'Her husband <<husDick>> centimeter member held you on the lips.'
 	if bj = 1:'You thought, "Damn, I rolled, I sit in front of a man, and he told me in the mouth by a dick pokes."'
@@ -227,8 +214,8 @@ if $ARGS[0] = 'minet':
 	act 'Continue to suck.':
 		cla
 		*clr
-		set swallow += 1
-		set cumlip += 1
+		swallow += 1
+		cumlip += 1
 		husband += 1
 		'<center><img src="images/picV/swallow.jpg"></center>'
 		'Hot jet of sperm hit you in the mouth. You started to swallow cum, and <<$husName>> continued to cum in your mouth. Finally the flow of hot liquid with a pungent taste stopped.'
@@ -242,20 +229,18 @@ if $ARGS[0] = 'minet':
 	act 'Remove the mouth.':
 		cla
 		*clr
-		set tiprand = rand(0, 1)
-
-		if tiprand = 1:
-			husband -= 1
-			'<center><img src="images/picV/hand.jpg"></center>'
-			'You remove a member from his mouth and <<$husName>> you finished in the palm.'
-		end
+		tiprand = rand(0, 1)
 
 		if tiprand = 0:
-			set facial += 1
-			set cumface += 1
+			facial += 1
+			cumface += 1
 			husband += 1
 			'<center><img src="images/picV/facial.jpg"></center>'
 			'You took out a member and at this point <<$husName>> is dead right on your face, covering it with warm and sticky cum.'
+		elseif tiprand = 1:
+			husband -= 1
+			'<center><img src="images/picV/hand.jpg"></center>'
+			'You remove a member from his mouth and <<$husName>> you finished in the palm.'
 		end
 
 		act 'Leave.':
@@ -263,16 +248,15 @@ if $ARGS[0] = 'minet':
 			gt 'vanr'
 		end
 	end
-
 end
 
 if $ARGS[0] = 'hand':
 	*clr
 	gs 'brosok'
-	set DOM += 1
-	set hj += 1
-	set minut += 30
-	set horny += DOM
+	DOM += 1
+	hj += 1
+	minut += 30
+	horny += DOM
 	'<center><img src="images/picV/hand1.jpg"></center>'
 	'You got it <<husDick>> centimeter penis and began to caress her arms around his arms, moving the skin on the crimson head.'
 	'Soon, your skillful movements husband finished you in her hands, covering them with warm and sticky sperm.'
@@ -285,21 +269,21 @@ end
 
 if $ARGS[0] = 'kuni':
 	*clr
-	set kunday = day
+	kunday = day
 	gs 'brosok'
-	set DOM += 1
-	set kuni += 1
-	set minut += 30
-	set horny += DOM + (silaVag * 2 + 5)
+	DOM += 1
+	kuni += 1
+	minut += 30
+	horny += DOM + (silaVag * 2 + 5)
 	'<center><img src="images/picV/kuni.jpg"></center>'
 	'You undressed and lay on the bed, saying that the guy you caressed his tongue.'
 	'<<$husName>> lay down between your legs and began to work the tongue on your pussy.'
 
 	if horny >= 90:
-		set horny = 0
-		set manna += 15
-		set willpower += 15
-		set orgasm += 1
+		horny = 0
+		manna += 15
+		willpower += 15
+		orgasm += 1
 		'Man of skillful actions you covered orgasm.'
 	else
 		'Actions husband though they were exciting, but they started to bore you.'
@@ -314,10 +298,10 @@ end
 if $ARGS[0] = 'strapon':
 	*clr
 	gs 'brosok'
-	set DOM += 5
-	set pegging += 1
-	set minut += 30
-	set horny += DOM
+	DOM += 5
+	pegging += 1
+	minut += 30
+	horny += DOM
 	'<center><img src="images/picV/pegging.jpg"></center>'
 	'You got out of the drawer and put his strap. <<$husName>> got cancer on the bed.'
 	'Greased lubricated anus husband and stuck him in the strap. While you fuck his ass, he groaned, and finally finished. You remove the strap from him and went to the bathroom.'
@@ -331,37 +315,38 @@ end
 if $ARGS[0] = 'anal':
 	*clr
 	gs 'brosok'
-	set anal += 1
+	anal += 1
+	minut += 30
 
 	if analplugin = 1 :
 		'<center><img src="images/picV/dog2.jpg"></center>'
 		analpluginbonus = 10
 		analplugin = 0
+		cumass += 1
+		minut += 3
+		cumanus += 1
+		if anus < husDick:anus += 1
 
-		if anus < 16:'<<$husName>> has pulled out of your narrow and tight ass plug'
+		horny += ((anus - husDick) * 3)
+		'<center><img src="images/picV/dog2.jpg"></center>'
 
+		if anus < 16:'<<$husName>> has pulled out of your narrow and tight butt plug'
 		if anus >= 16:'<<$husName>>pulled out of your ass juices dripping feverish stopper and you feel as hard cock rested in your hole.'
 
-		if anus + analpluginbonus < husDick:'You screamed and bit his lip from a sharp pain when it <<husDick>> member centimeter apart your ass you entered.'
-		if anus + analpluginbonus >= husDick:'You groaned when his feelings of overcrowding <<husDick>> member centimeter apart your ass you entered.'
+		if anus + analpluginbonus < husDick:
+			'You screamed and bit his lip from a sharp pain when it <<husDick>> member centimeter apart your ass you entered.'
+		elseif anus + analpluginbonus >= husDick:
+			'You groaned when his feelings of overcrowding <<husDick>> member centimeter apart your ass you entered.'
+		end
 
 		'Finally <<$husName>> grabbed you tight ass and drove for your aching ass dick up to the finished balls inside you.'
-		cumass += 1
-		!!WD:match time with no Anal Plug
-		set minut += 30
-		!!
-		set cumanus += 1
 
-		if anus < husDick:set anus += 1
-
-		set horny += ((anus - husDick) * 3)
-
-		if horny < 1 :set horny = 1
-
-		if horny >= 100 :
+		if horny < 1:
 			horny = 1
-			set orgasm += 1
-			set analorgasm += 1
+		elseif horny >= 100 :
+			horny = 1
+			orgasm += 1
+			analorgasm += 1
 			'In anus blazing fire and waves of pleasure swept body, you were moaning and impale themselves on the ass dick.'
 		end
 
@@ -371,17 +356,15 @@ if $ARGS[0] = 'anal':
 		end
 	end
 
-	if husDick < anus:set anus += 1
+	if husDick < anus:anus += 1
 	'<center><img src="images/picV/dog2.jpg"></center>'
 
 	if lubri = 0:
-		set lubonus = 2
+		lubonus = 2
 		'Lubricant and you do not have <<$husName>> spitting on his fingers became saliva to lubricate your ass.'
-	end
-
-	if lubri > 0:
-		set lubri -= 1
-		set lubonus = 10
+	elseif lubri > 0:
+		lubri -= 1
+		lubonus = 10
 		'You got out of the box with a tube of lube and handed it to the guy, he squeezed a little on the palm and rubbed your anus.'
 	end
 
@@ -398,33 +381,27 @@ if $ARGS[0] = 'anal':
 	'<<$husName>> stopped for a moment giving your ass to adjust to the protruding member in it, and then started to drive them all the more insistent.'
 
 	if anus + lubonus + 2 < husDick:
-		if mop > 1:set mop = 0
+		if mop > 1:mop = 0
 		'You cried and clutched his teeth into the pillow when <<husDick>> centimeter cock began to fuck your ass on full force.'
+	elseif anus + lubonus + 2 >= husDick:
+		'You started to moan rhythmically in time with the movements member inside you.'
 	end
-
-	if anus + lubonus + 2 >= husDick:'You started to moan rhythmically in time with the movements member inside you.'
 
 	'Finally <<$husName>> grabbed you tight ass and drove for your aching ass dick up to the finished balls inside you.'
 
 	if klismaday ! day:
 		husband -= 1
-		'<<$husName>> took out a member of your ass and see on your dick shit said, "Damn. Svetsik my ass before sex."'
-	end
-
-	if klismaday = day:
+		'<<$husName>> took out a member of your ass and see on your dick shit said, "Damn. <<$name>> my ass before sex."'
+	elseif klismaday = day:
 		husband += 5
 		'<<$husName>> took out a member of you and kissed you went to the bathroom.'
 	end
 
-	set minut += 30
-
-	!!WD:Duplicate
-	!!if anus < husDick:set anus += 1
-	!!
+	if anus < husDick:anus += 1
 
 	act 'Go to the bathroom.':
 		cla
-		set lubonus = 0
+		lubonus = 0
 		gt 'vanr'
 	end
 end
@@ -433,12 +410,12 @@ if $ARGS[0] = 'miss':
 	*clr
 	husband += 1
 	gs 'brosok'
-	set sex += 1
-	set minut += 30
-	set pose = 0
-	set $nameV = $husName
-	set dick = husDick
-	set silavag = silavagH
+	sex += 1
+	minut += 30
+	pose = 0
+	$nameV = $husName
+	dick = husDick
+	silavag = silavagH
 	'<center><img src="images/picV/vag.jpg"></center>'
 	'<<$husName>> spread your legs and began to fondle her fingers pussy.'
 	gs 'orgazm', 'start'
@@ -453,12 +430,12 @@ if $ARGS[0] = 'dog':
 	*clr
 	husband += 1
 	gs 'brosok'
-	set sex += 1
-	set minut += 30
-	set pose = 1
-	set $nameV = $husName
-	set dick = husDick
-	set silavag = silavagH
+	sex += 1
+	minut += 30
+	pose = 1
+	$nameV = $husName
+	dick = husDick
+	silavag = silavagH
 	'<center><img src="images/picV/dog1.jpg"></center>'
 	'<<$husName>> poctavil you cancer and spread your bread before you enter.'
 	gs 'orgazm', 'start'

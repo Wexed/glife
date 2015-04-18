@@ -3,38 +3,35 @@ if $ARGS[0] = 'start':
 	$sexloc = $CURLOC
 	$metkaM = $ARGS[0]
 	$locM = $CURLOC
-
+	minut += 5
+	gs 'stat'
 	'<center><b>Bedroom</b></center>'
 	'<center><img src="images/img/centr/hozspaln.jpg"></center>'
-	set minut += 5
-	gs 'stat'
 
 	act 'In the corridor':gt 'house'
 
 	if week < 6 and hour > 8 and hour < 20 and tanwork = 1:
 		act 'Get out':
-			set minut += 60
+			minut += 60
 			gs 'stat'
-			set housespalrand = rand(0, 4)
+			housespalrand = rand(0, 4)
 
-			if nikslut = 1 and hour > 17 and hour < 20 and housespalrand = 0 and niksexday ! day:
+			if hour > 17 and hour < 20 and housespalrand = 0 and nikslut = 1 and niksexday ! day:
 				cla
 				*clr
-				set niksexday = day
-				set money += 2000
-				set SUB += 1
-				set guy += 1
-				set picrand = 23
+				niksexday = day
+				money += 2000
+				SUB += 1
+				guy += 1
+				picrand = 23
 				'<center><img src="images/img/centr/niks1.jpg"></center>'
 				'Nicholas and another man discussing something, you saw Nicholas beckons you to come and taking out a member of the inserts it into your mouth, you dutifully start sucking. The second man also joins.'
 
 				act 'Sex':xgt 'sexdvoe', 'var'
-			end
-
-			if hour < 14 and housespalrand = 0 and houserab = 1:
+			elseif hour < 14 and housespalrand = 0 and houserab = 1:
 				cla
 				*clr
-				set SUB += 3
+				SUB += 3
 				'<center><img src="images/img/centr/gosps1.jpg"></center>'
 				'Mistress orders you to undress and lie down on the bed, you dutifully perform, she pulls out a dildo and puts you in the pussy, in a few minutes you covering orgasm. It looks like you squirm on the bed ending.'
 				'"Well, the cat was hungry, go feed you." she said putting on your collar'
