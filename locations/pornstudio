@@ -11,20 +11,20 @@ if $ARGS[0] = 'start':
 	act 'Leave':gt 'down'
 
 	if hour >= 9 and hour <= 22:
-		'Manager´s office opened.'
+		'The Manager´s office opened.'
 
 		act 'Go to the manager':gt 'pornstudio', 'man'
-		act 'Visit the Assistant queries manager':gt 'pornstudio', 'pomman'
+		act 'Visit the manager assistant':gt 'pornstudio', 'pomman'
 
-		if bomzQW = 1 and week = 4 and workDisk = 0:act 'Arrive at the expense of':dynamic $workbomzdi
+		if bomzQW = 1 and week = 4 and workDisk = 0:act 'Arrive for work':dynamic $workbomzdi
 
 		if workDisk = 1 and week = 5:
-			act 'Take a drive':
+			act 'Take the disk':
 				cls
 				minut += 5
 				gs 'stat'
 				workDisk = 2
-				'You are given a disk, and specify whether you remember all the instructions. You nod your head and head to the exit with the disc. Moving away from the studio near you heard someone else came out of a nearby building and headed for you. "Avoid deserted places, maybe blow over" you had hoped, and went on.'
+				'You are given a disk, and specify whether you remember all the instructions. You nod with your head and goes for the exit with the disc. Moving away from the studio near you heard someone else came out of a nearby building and head for you. <font color="magenta"> "Avoid deserted places, maybe this will blow over"</font> you had hoped, and went on.'
 
 				act 'Leave':gt 'down'
 			end
@@ -38,12 +38,12 @@ if $ARGS[0] = 'start':
 				gs 'stat'
 
 				if konvert = 0:
-					'Starting kopatsya in things you struck terror. No envelope. You all again ransacked, but no envelope.'
-					'-WHAT! But how could this happen! You know, in what you got dibs?!'
-					'You stand and you can not squeeze out a single word. Sounds like your situation is really deplorable.'
-					'Manager grabs the phone and explains the situation to the other party. After listening to a couple of minutes, he hung up.'
-					'So-so - he said - his boss was in a good mood, so I have good news. You have a week. Until next Friday evening you shall bring into the studio 200000. If you bring - we leave, but more than an actress you work with us you can not.'
-					'Otherwise, the consequences will be grim.'
+					'Starting to dig in your things you are struckd in terror. No envelope. You search everything again, but you didn''t find the envelope.'
+					'-WHAT!! But how could you let this happen! You know in what you have gotten into?!'
+					'You stand there not squeezing out a single word. Sounds like your situation is really deplorable.'
+					'The Manager grabs the phone explaining the situation to the other party. After listening to a couple of minutes, he hung up.'
+					'<font color="#0D42C0"> So-so</font>  - he said - <font color="#0D42C0"> his boss was in a good mood, so I have good news. You have a week. Until next Friday evening you shall bring into the studio 200000. If you bring - we separate. You can not work as an actress with us anymore.</font>'
+					'<font color="#0D42C0">Otherwise, there will be consequences.</font>'
 					workDolg = 200000
 					workDolgDay = 7
 				else
@@ -57,33 +57,33 @@ if $ARGS[0] = 'start':
 		end
 
 		if workDolg > 0 and money >= workDolg:
-			act 'To repay the debt':
+			act 'Repay your debt':
 				cls
 				minut += 5
 				gs 'stat'
 				workDisk = 0
 				money -= workDolg
 				workDolg = 0
-				'You gave the money owed to the studio.'
+				'You gave the money that you owed to the studio.'
 
 				act 'Leave':gt 'down'
 			end
 		end
 
 		if pfilmNO = 1 and pfilmNoVenera = 1 and Venera = 0:
-			act 'Show help about sexually transmitted diseases cured':
+			act 'Show the certificate about STD''s cured':
 				cls
 				minut += 5
 				pfilmNoVenera = 0
 				pfilmNO = 0
 				gs 'stat'
-				'You gave a certificate of sexually transmitted diseases cured and you promised to consider your reinstatement as a porn actress.'
+				'You gave a certificate that your sexually transmitted diseases is cured.They promised to consider your reinstatement as a porn actress.'
 
 				act 'Leave':gt 'down'
 			end
 		end
 	else
-		'Porn studio closed'
+		'The Porn studio is closed'
 	end
 end
 
@@ -94,10 +94,10 @@ if $ARGS[0] = 'pomman':
 	*clr
 	gs 'stat'
 	set minut += 5
-	'Young guy knocks on the computer keys in a small office.'
-	'"How can I help you?".'
+	'There is a young guy tapping on the computer keys in a small office.'
+	'<font color="#0D42C0"> "How can I help you?".</font> '
 
-	if pfilmSTOP = 0:act 'What rating views from my video?':gt 'pornstudio', 'myvid'
+	if pfilmSTOP = 0:act <font color="magenta">'What rating views from my video?'</font>:gt 'pornstudio', 'myvid'
 
 	act 'Leave':gt 'pornstudio', 'start'
 end

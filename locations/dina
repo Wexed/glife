@@ -17,7 +17,7 @@ $d_read_porn = {
 			'You are flipping through the porno magazine, reading the stories and looking at the pictures and a small excitement begins to cover your body.'
 		end
 
-		act 'Go_Out':gt $curloc
+		act 'Get Out':gt $curloc
 	end
 }
 
@@ -212,7 +212,7 @@ $kiosksig = {
 						set kioskflash = 1
 					end
 					'<center><img src="images/community/flash_tits_pus.jpg"></center>'
-					'The people in front of you are shocked, as they see you flashing your tits and your pussy. As a small thank you, some of them let you move further up in the queue.'
+					'The people in front of you are shocked, as they see you flashing your tits and your pussy. As a small thank you, some of them let you move further up in the line.'
 
 					act 'Buy and leave':gt $curloc
 				end
@@ -234,7 +234,7 @@ $kiosksig = {
 					if lobok >= 2:'<center><img src="images/community/flash_hairy.jpg"></center>'
 					if lobok <= 2:'<center><img src="images/community/flash_nohairy.jpg"></center>'
 
-					'The people in front of you are shocked, as they see you flashing your pussy. As a small thank you, some of them let you move further up in the queue.'
+					'The people in front of you are shocked, as they see you flashing your pussy. As a small thank you, some of them let you move further up in the line.'
 
 					act 'Buy and leave':gt $curloc
 				end
@@ -254,7 +254,7 @@ $kiosksig = {
 					end
 
 					'<center><img src="images/community/flash_tits.jpg"></center>'
-					'The people in front of you are shocked, as they see you flashing your tits. As a small thank you, some of them let you move further up in the queue.'
+					'The people in front of you are shocked, as they see you flashing your tits. As a small thank you, some of them let you move further up in the line.'
 
 					act 'Buy and leave':gt $curloc
 				end
@@ -272,9 +272,9 @@ $kiosksig = {
 
 					if cumlip = 0:
 						'<center><img src="images/community/kiosk_blowjob.jpg"></center>'
-						'A man agreed to your suggestion and let''s you move in front of him.'
+						'A man agrees to your suggestion and let you move in front of him.'
 
-						act 'Cum on face':
+						act 'Cum on your face':
 							cls
 							'<center><img src="images/body/cumface.jpg"></center>'
 							'The man cums on your face.'
@@ -283,7 +283,7 @@ $kiosksig = {
 							act 'Go away and buy cigarettes':gt $curloc
 						end
 
-						act 'Cum in mouth':
+						act 'Cum on your mouth':
 							cls
 							'<center><img src="images/etogame/cumlip.jpg"></center>'
 							'The man cums inside your mouth.'
@@ -294,7 +294,7 @@ $kiosksig = {
 					else
 						!!Przemar:IMAGE NEEDED
 						'<center><img src="images/community/Image_needed.png"></center>'
-						'Man punched you and say " Go away bitch your mouth is full of sperm " at this rate you needed to wait 4 hours and paid 200 rubles.'
+						'Man punched you and say <font color="#0D42C0"> " Go away bitch, your mouth is full of sperm "</font> - in this case you are needed to wait 4 hours and pays 200 rubles.'
 						minut += 240
 						siga += 20
 						money -= 200
@@ -337,9 +337,9 @@ $margoroomdiDush = {
 	QWdogreiqTimer = 7
 	QWdogReiq = 2
 	gs 'stat'
-	'You undress and started following margaret into the shower.You didn''t really had the time for a bath since Margaret pulls yours lips for a kiss.'
+	'You undress and starts to follow Margaret into the shower.You didn''t really had time for a bath since Margaret pulls yours lips for a kiss.'
 
-	act 'Lick my nipples':
+	act '<font color="magenta">Lick my nipples</font>':
 		cls
 		minut += 15
 		horny += 50
@@ -351,10 +351,10 @@ $margoroomdiDush = {
 		'<center><img src="images/zoo/margo2.jpg"></center>'
 		'Margaret has taken your swollen nipples into her mouth. She began to lick them and their sharp little edges'
 
-		act 'Hold it':gt 'korr'
+		act 'Carry her out':gt 'korr'
 	end
 
-	act 'Lick my vagina':
+	act '<font color="magenta">Lick my pussy</font>':
 		cls
 		minut += 15
 		horny += 20
@@ -364,14 +364,14 @@ $margoroomdiDush = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo3.jpg"></center>'
-		'Margaret kneels down and starts to lick your vagina, From her tongue your body is runned through by a pleasant body wave.'
+		'Margaret kneels down and starts to lick your pussy. Her tongue makes your body get crossed through by a pleasant body wave.'
 
 		if horny >= 90:horny = 0 & orgasm += 1 & 'You have an orgasm.'
 
-		act 'Hold it':gt 'korr'
+		act 'Carry her out':gt 'korr'
 	end
 
-	act 'Lick my ass':
+	act '<font color="magenta">Lick my ass</font>':
 		cls
 		minut += 15
 		horny += 20
@@ -379,25 +379,25 @@ $margoroomdiDush = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo4.jpg"></center>'
-		'Margo quickly began to lick your ass, causing a pleasant sensation all in the body, To Margaret this was not enough, so she slowly inserted a finger into her ass and began to make rhythmic movements.'
+		'Margo quickly began to lick your ass, causing a pleasant sensation all over the body, To Margaret this was not enough, so she slowly inserted a finger into your ass and began to make rhythmic movements.'
 
 		if horny >= 99:horny = 0 & orgasm += 1 & 'You have an orgasm.'
 
-		act 'Hold it':gt 'korr'
+		act 'Carry her out':gt 'korr'
 
 		if anus > 15 and horny > 0:
-			act 'Stick me in the ass hand':
+			act '<font color="magenta">Stick your hand in the ass</font>':
 				cls
 				minut += 15
 				horny += 60
 				anus += 5
 				gs 'stat'
 				'<center><img src="images/zoo/margo5.jpg"></center>'
-				'First one paeets, then two, three and so the whole entire hand. She quickly found herself in the depths of ass. It´s incredible. I still had no hand in its entirety. And so it happened. Margaret penetrated deeper and deeper and I was in seventh heaven. Supple ass took a hand. Was incredibly good. She massaged me inside like a real iskusstnitsa, causing me to moan loudly and wagging his ass with pleasure.'
+				'First she inserts one finger, then two, three and so on,eventually she shoved her entire hand completely. She quickly found herself in the depths of your ass. It''s unbelievable. Margaret penetrated deeper and deeper and you were in the seventh heaven.That is incredibly good. Your ass accepted her flexible hand. She starts massaging inside you like a real mistress, causing you to moan loudly and wagging your ass with pleasure.'
 
 				if horny >= 90:horny = 0 & orgasm += 1 & 'You have an orgasm.'
 
-				act 'Hold it':gt 'korr'
+				act 'Carry her out':gt 'korr'
 			end
 		end
 	end
@@ -407,7 +407,7 @@ $margoroomdi3 = {
 	cls
 	minut += 15
 	gs 'stat'
-	'You start to undress and go to the shower following Margaret. You do not have time to really get into the bath as Margaret pulls your lips with a kiss.'
+	'You start to undress and go to the shower following Margaret. You do not have time to really get into the bath since Margaret pulls your lips with a kiss.'
 
 	act 'Lick my nipples':
 		cls
@@ -434,9 +434,9 @@ $margoroomdi3 = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo3.jpg"></center>'
-		'Margaret kneels and nachenaet his tongue oblizovat vagina of her actions in the body run by a pleasant body wave.'
+		'Margaret kneels down and starts to lick your pussy. Her tongue makes your body get crossed through by a pleasant body wave.'
 
-		if horny >= 90:horny = 0 & orgasm += 1 & 'You covered orgasm.'
+		if horny >= 90:horny = 0 & orgasm += 1 & 'You have an orgasm.'
 
 		act 'Walk into a room':dynamic $margoroomdi2
 	end
@@ -451,9 +451,9 @@ $margoroomdi3 = {
 		lesbian += 1
 		gs 'stat'
 		'<center><img src="images/zoo/margo4.jpg"></center>'
-		'nimble and agile tongue Margaret began oblizovat anus, causing a pleasant languor all in the body, it seemed a little Margaret hole she slowly inserted a finger into her ass and began to make rhythmic movements.'
+		'Margo quickly began to lick your ass, causing a pleasant sensation all over the body, To Margaret this was not enough, so she slowly inserted a finger into your ass and began to make rhythmic movements.'
 
-		if horny >= 99:horny = 0 & orgasm += 1 & 'You covered orgasm.'
+		if horny >= 99:horny = 0 & orgasm += 1 & 'You have an orgasm.'
 
 		act 'Walk into a room':dynamic $margoroomdi2
 
@@ -465,9 +465,9 @@ $margoroomdi3 = {
 				anus += 5
 				gs 'stat'
 				'<center><img src="images/zoo/margo5.jpg"></center>'
-				'First one paeets, then two, three and so the whole entire hand. She quickly found herself in the depths of ass. It´s incredible. I still had no hand in its entirety. And so it happened. Margaret penetrated deeper and deeper and I was in seventh heaven. Supple ass took a hand. Was incredibly good. She massaged me inside like a real iskusstnitsa, causing me to moan loudly and wagging his ass with pleasure.'
+				'First she inserts one finger, then two, three and so on,eventually she shoved her entire hand completely. She quickly found herself in the depths of your ass. It''s unbelievable. Margaret penetrated deeper and deeper and you were in the seventh heaven.That is incredibly good. Your ass accepted her flexible hand. She starts massaging inside you like a real mistress, causing you to moan loudly and wagging your ass with pleasure.'
 
-				if horny >= 90:horny = 0 & orgasm += 1 & 'You covered orgasm.'
+				if horny >= 90:horny = 0 & orgasm += 1 & 'You have anorgasm.'
 
 				act 'Walk into a room':dynamic $margoroomdi2
 			end
