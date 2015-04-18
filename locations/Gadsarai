@@ -3,7 +3,7 @@ $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><h4>cottage</h4></center>'
+'<center><h4>Cottage</h4></center>'
 '<center><img src="images/qwest/gadukino/sarai.jpg"></center>'
 'Old barn that holds tools. Sitting near the barn <a href="exec:gt ''pirat''">dog named Pirate</a>'
 clr
@@ -18,11 +18,11 @@ act 'Picking in the barn':
 	gs 'stat'
 	poiskrand = rand(0, 5)
 
-	if card > 0 and poiskrand = 0 or poiskrand > 0:'In the locker old magazines Health, Equipment Youth and dusty yellowed books.'
-
-	if card = 0 and poiskrand = 0:
+	if card > 0 and poiskrand = 0 or poiskrand > 0:
+		'In the locker old magazines Health, Equipment Youth and dusty yellowed books.'
+	elseif card = 0 and poiskrand = 0:
 		card = 1
-		'"Hmm, what`s this?" think you`ve found a deck of cards.'
+		'"Hmm, what''s this?" think you''ve found a deck of cards.'
 	end
 
 	act 'Put in place':gt $curloc
@@ -35,5 +35,7 @@ end
 if horny >= 50:
 	act 'Masturbate':gt 'selfplay'
 end
+
+if piratHorny >= 20 and piratfrend >= 10:gt 'pirat'
 
 --- Gadsarai ---------------------------------

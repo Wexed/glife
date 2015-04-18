@@ -1,7 +1,7 @@
 # Gaddvor
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><h4>yard</h4></center>'
+'<center><h4>Yard</h4></center>'
 '<center><img src="images/qwest/gadukino/dvor.jpg"></center>'
 'Yard with Seat, hut and outbuildings enclosed fence.'
 clr
@@ -15,8 +15,8 @@ act '<b>Go to the village</b>':minut += 5 & gt 'gadukino'
 
 if hour >= 17 and hour < 20:
 	if mitkaday!daystart:'Not far from the hut shies <a href="exec:gt ''mitka''">Mitka kingpin</a>'
+elseif hour >= 20:
+	'Not far from the village hut sits kampashka <a href="exec:gt ''mitkabuh''">youth</a>'
 end
-
-if hour >= 20:'Not far from the village hut sits kampashka <a href="exec:gt ''mitkabuh''">youth</a>'
 
 --- Gaddvor ---------------------------------

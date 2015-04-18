@@ -4,8 +4,9 @@ gs 'stat'
 
 act 'Leave':gt 'Grinok'
 
-if pornMagazine > 1:'You already have a magazine and once again hang around near the tray with a similar item you have no desire to.'
-if pornMagazine = 1:
+if pornMagazine > 1:
+	'You already have a magazine and once again hang around near the tray with a similar item you have no desire to.'
+elseif pornMagazine = 1:
 	'You read his magazine to the holes and it would be good to buy a new.'
 
 	if money >= 500:
@@ -21,9 +22,9 @@ if pornMagazine = 1:
 			act 'Leave':gt 'Grinok'
 		end
 	end
+elseif pornMagazine = 0:
+	'In the stunned look at magazines where sfotografirovanny half-naked girls, men with erect members ready and then how they can work together to engage in.'
 end
-
-if pornMagazine = 0:'In the stunned look at magazines where sfotografirovanny half-naked girls, men with erect members ready and then how they can work together to engage in.'
 
 if TimesBuyPorno = 0:
 	'Sold with interest and looks at you expectantly.'
@@ -51,8 +52,8 @@ if TimesBuyPorno = 0:
 
 		act 'Leave':gt 'Grinok'
 	end
+elseif TimesBuyPorno > 0:
+	'Seller is suitable to you "Looking to buy a magazine? Only 500 rubles.".'
 end
-
-if TimesBuyPorno > 0:'Seller is suitable to you "Looking to buy a magazine? Only 500 rubles.".'
 
 --- Gpornmark ---------------------------------

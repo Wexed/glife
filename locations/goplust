@@ -1,11 +1,7 @@
 # goplust
-VasanLust = rand(0, 100)
-BerezaLust = rand(0, 100)
-VitekLust = rand(0, 100)
-KotilLust = rand(0, 100)
-UdmurtLust = rand(0, 100)
-SeriLust = rand(0, 100)
 GLust = 0
+
+VasanLust = rand(0, 100)
 
 if VasanLust >= 50 and VasanTut = 1:
 	VasanTut = 2
@@ -17,6 +13,8 @@ elseif VasanTut = 0:
 	$gopV = ''
 end
 
+BerezaLust = rand(0, 100)
+
 if BerezaLust >= 60 and BerezaTut = 1:
 	BerezaTut = 2
 	GLust += 1
@@ -26,6 +24,8 @@ elseif BerezaLust < 95 and BerezaTut = 1:
 elseif BerezaTut = 0:
 	$gopB = ''
 end
+
+VitekLust = rand(0, 100)
 
 if VitekLust >= 60 and VitekTut = 1:
 	VitekTut = 2
@@ -37,6 +37,8 @@ elseif VitekTut = 0:
 	$gopVi = ''
 end
 
+KotilLust = rand(0, 100)
+
 if KotilLust >= 70 and KostilTut = 1:
 	KostilTut = 2
 	GLust += 1
@@ -47,6 +49,8 @@ elseif KostilTut = 0:
 	$gopK = ''
 end
 
+UdmurtLust = rand(0, 100)
+
 if UdmurtLust >= 80 and UdmurtTut = 1:
 	UdmurtTut = 2
 	GLust += 1
@@ -56,6 +60,8 @@ elseif UdmurtLust < 90 and UdmurtTut = 1:
 elseif UdmurtTut = 0:
 	$gopU = ''
 end
+
+SeriLust = rand(0, 100)
 
 if SeriLust >= 90 and SeriTut = 1:
 	SeriTut = 2

@@ -26,11 +26,11 @@ if mother_go = 1 and hour = 16:
 			gs 'stat'
 			'<center><img src="images/qwest/alter/placer/momslut.jpg" ></center>'
 
-			if momslut >= 1:'You climbed on the boxes and looked through the small window. Behind the glass you noticed, your mom does blowjob cafe owner. You have come to see, Mom enthusiastically sucks dick swallowing it up to the eggs.'
-
-			if momslut=0:
+			if momslut >= 1:
+				'You climbed on the boxes and looked through the small window. Behind the glass you noticed, your mom does blowjob cafe owner. You have come to see, Mom enthusiastically sucks dick swallowing it up to the eggs.'
+			elseif momslut=0:
 				momslut = 1
-				'You climbed on the boxes and looked through the small window. Behind the glass as you notice what that woman squatting in front of a man . And then before you came, it`s your mom does blowjob cafe owner. You surprise goggled, and my mother .'
+				'You climbed on the boxes and looked through the small window. Behind the glass as you notice what that woman squatting in front of a man . And then before you came, it''s your mom does blowjob cafe owner. You surprise goggled, and my mother .'
 			end
 
 			act 'Leave':gt'vokzalG'
@@ -50,11 +50,13 @@ if mother_go = 1 and hour = 16:
 else
 	if hour >= 8 and hour <= 20:
 		'<center><img src="images/qwest/alter/gkafe2.jpg"></center>'
-		'Zadripannoe small, station cafe. Since your mom works here, then you are fed free.'
+		'Little bedraggled, station cafe.'
+
+		if StoryLine > 0:'Zadripannoe small, station cafe. Since your mom works here, then you are fed free.'
 
 		if week < 6:
-			if hour >= 6 and hour < 16 and StoryLine > 0:'The cafe bar for your worth <a href="exec:gt ''mother''">Mom</a>.'
-				'The cafe at the counter should your <a href="exec:GT ''mother''">mom</a>.'
+			if hour >= 6 and hour < 16 and StoryLine > 0:
+				'The cafe bar for your worth <a href="exec:gt ''mother''">Mom</a>.'
 			else
 				'The bar should cafe owner <a href="exec:GT ''motherkafeboss''">glory</a>'
 			end
@@ -64,53 +66,57 @@ else
 			cla
 			*clr
 			frost = 0
+			minut += 30
+			health += 10
+			manna += 5
+			willpower += 5
 			'<center><img src="images/pics/food.jpg"></center>'
-			set razvrand = rand(1, 10)
-			set minut += 30
-			set health += 10
-			set manna += 5
-			set willpower += 5
 
 			if energy >= 30:
-				set fat += 5
-				'You can no longer have.'
-			end
-
-			if energy >= 20 and energy < 30:
-				set fat += 3
-				set energy += 10
+				fat += 5
+				'You can no longer eat.'
+			elseif energy >= 20 and energy < 30:
+				fat += 3
+				energy += 10
 				'You pushed through the power of a meal.'
-			end
-
-			if energy < 20:
-				set energy += 20
-				set fat += 1
+			elseif energy < 20:
+				energy += 20
+				fat += 1
 				'You gladly ate the food.'
 			end
 
-			if water >= 20:'Tea in you no longer climbs.'
-
-			if water < 20:
+			if water >= 20:
+				'You don''t need any more tea.'
+			elseif water < 20:
+				water += 20
 				'You gladly drank a mug of tea.'
-				set water += 20
 			end
 
-			if razvrand > 7 and hour > 16 and hour < 20 and age < 18 and dyadyamishaevent = 0 and gorodokwhore >= 2:
+			razvrand = rand(1, 10)
+
+			if razvrand > 7 and hour > 16 and hour < 20 and age < 18 and dyadyamishaevent = 0 and GorSlut >= 2:
+				''
 				'For your table approached adult man and said:'
 				'-Girl, do you want some candy? At home I have a pack of sweets'
 
 				act 'Agree':gt 'gevent', '1'
+			elseif razvrand > 7 and hour > 16 and hour < 20 and dyadyamishaevent = 1 and dmishaday ! day:
+				''
+				'Past your table is going to release an adult male, where you will find Uncle Misha, who lives in the house next door, who see you, suddenly stops and tells you:'
+				'Oh, <<$name>>, hello. I learned? I_See_It, what yes. Listen_Up, here it is... We are your stepfather as it repaired the car late, and then lay down with me to overthrow ryumashki, and I stayed at the apartment of his luggage with tools. Help him to return? I`ll give a money for ice cream.'
+
+				act 'agree':gt 'gevent', '1-1'
 			end
 
 			act 'Get up from the table':gt 'gkafe'
 		end
 	else
 		'<center><img src="images/qwest/alter/gkafe.jpg"></center>'
-		'Zadripannoe small, station cafe.'
+		'Little bedraggled, station cafe.'
 		'The cafe is not working.'
 	end
 end
 
-act 'Exit':gt 'vokzalG'
+act 'Leave':gt 'vokzalG'
 
 --- gkafe ---------------------------------

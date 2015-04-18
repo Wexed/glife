@@ -1,7 +1,9 @@
 # gargazel
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><h4>garage</h4></center>'
+clr
+gs 'stat'
+'<center><h4>Garage</h4></center>'
 
 if father_go = 1 and hour >= 16 and hour < 21:
 	'<center><img src="images/pic/gargazel.jpg"></center>'
@@ -10,9 +12,6 @@ else
 	'<center><img src="images/pic/gargazel_empty.jpg"></center>'
 	'Large garage in which to store the gazelle stepfather. Now the garage is closed on the lock.'
 end
-
-clr
-gs 'stat'
 
 act 'Leave':minut += 5 & gt 'garmassiv'
 
@@ -47,9 +46,9 @@ end
 if YouCanGar > 0:
 	'In the garage there is stored <<GarTorgItem>> One unit of product, with a total capacity 100 One_unit. To, that would be able to sell the product out of the garage, you have to transfer it to your room.'
 
-	if tovarL >= 30:'Home and so all culled product, transfer nowhere.'
-
-	if tovarL < 30:
+	if tovarL >= 30:
+		'Home and so all culled product, transfer nowhere.'
+	elseif tovarL < 30:
 		perenGarTov = 30-tovarL
 		'I could move out of the garage <<perenGarTov>> One unit of the goods in the room.'
 

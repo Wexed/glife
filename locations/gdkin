@@ -5,23 +5,24 @@ $din_kotov_love = {
 		gs 'stat'
 		'<center><b><font color="maroon"><<$npcName[9]>> <<$npcSurName[9]>></font></b></center>'
 		'<center><img src="images/qwest/alter/npc9.jpg"></center>'
-		'To you and the guy fits Witek. "Che garbage? Who´s that bloke?" Witek takes for male breast and angrily said, "Well, ka sebal horrified by my heifer, and now the mug smashed into smithereens. Understood?"'
+		'To you and the guy fits Witek. "Che garbage? Who''s that bloke?" Witek takes for male breast and angrily said, "Well, ka sebal horrified by my heifer, and now the mug smashed into smithereens. Understood?"'
 
 		if DPgrup = 1:
 			fightboyrand = rand(0, 10)
 
-			if fightboyran <= 5:'Frightened man began to speak. "Come on you, I did not know. Already leaving." Witek pushed Man "Get out of here until I´m good."'
-
-			if fightboyran > 5 and fightboyran < 10:
+			if fightboyrand <= 5:
+				'Frightened man began to speak. "Come on you, I did not know. Already leaving." Witek pushed Man "Get out of here until I''m good."'
+			elseif fightboyrand > 5 and fightboyrand < 10:
 				'The guy pushes Victor "Get your hands off, deer!" Witek suddenly gets very fast and powerful kick.'
 				'Man falls from hitting the dance floor. Witek approaches him and grabbing breast lifts his feet, and then shoves the boy to the wall. "Well, Cho motherfucker? Still need? Or is it okay?" Man holding a broken person mutters "Everything, everything, I got it!"'
+			elseif fightboyrand >= 10:
+				'The guy has Vit''ka silence in the face with his fist. Witek recoils from the guy and then gets fast and powerful kick. Fight begins, hitting fly from both sides, suddenly a guy misses a very powerful supply by Vic and flying away to the wall falls to the floor. Witek runs up to him and thrusts into enemy lying a couple of powerful blows. The guy is no longer resisting, apparently he lost consciousness.'
 			end
-
-			if fightboyran >= 10:'The guy has Vit''ka silence in the face with his fist. Witek recoils from the guy and then gets fast and powerful kick. Fight begins, hitting fly from both sides, suddenly a guy misses a very powerful supply by Vic and flying away to the wall falls to the floor. Witek runs up to him and thrusts into enemy lying a couple of powerful blows. The guy is no longer resisting, apparently he lost consciousness.'
+		elseif DPgrup = 2:
+			'Rams kid starts with Vic "Hey, who are you in life?" Witek markedly sviripeet and to help him fit drugany. For the kid in turn, also pulled the boys. Nachinaetsya disassembly. After some time, both groups disagree peacefully.'
+		elseif DPgrup = 3:
+			'Man throws up his hands "Sorry young man. Did not know." Witek repels man "Topal city bloke here until I''m good."'
 		end
-
-		if DPgrup = 2:'Rams kid starts with Vic "Hey, who are you in life?" Witek markedly sviripeet and to help him fit drugany. For the kid in turn, also pulled the boys. Nachinaetsya disassembly. After some time, both groups disagree peacefully.'
-		if DPgrup = 3:'Man throws up his hands "Sorry young man. Did not know." Witek repels man "Topal city bloke here until I´m good."'
 
 		act 'Go to Witek':numnpc = 9 & gt 'Snpc'
 
@@ -70,33 +71,23 @@ $din_dance_vrp = {
 		if DPtipe = 1:
 			'Guy dancing with you holding your waist with his hands.'
 			dynamic $din_reverse_reakt_dance
-		end
-
-		if DPtipe = 2:
+		elseif DPtipe = 2:
 			'Drunk guy pushes you to indulge. You feel like your soft breasts literally flattened breasts of Man.'
 			dynamic $din_reakt_dance
 		end
-	end
-
-	if DPgrup = 2:
+	elseif DPgrup = 2:
 		if DPtipe = 1:
 			'The guy is pretty enough to unleash your waist and his hands slide your hips.'
 			dynamic $din_reakt_dance
-		end
-
-		if DPtipe = 2:
+		elseif DPtipe = 2:
 			'Pyany guy grabs your ass and squeezes her much, his head tilted to your face and it bites into your <<$liptalk3>> kiss.'
 			dynamic $din_reakt_dance
 		end
-	end
-
-	if DPgrup = 3:
+	elseif DPgrup = 3:
 		if DPtipe = 1:
 			'Man very confident and elegantly leads you to dance, hold your waist with his strong hands.'
 			dynamic $din_reverse_reakt_dance
-		end
-
-		if DPtipe = 2:
+		elseif DPtipe = 2:
 			'Tipsy man despite his advanced views hugs your waist and his hands down to you on the ass.'
 			dynamic $din_reakt_dance
 		end
@@ -139,25 +130,22 @@ $din_vibor_tipe_dance = {
 		'<center><img src="images/etogame/club_dance.jpg"></center>'
 
 		if DPgrup = 1:
-			if DPtipe = 1:'The guy told you in the dance "My name is <<$bname>>. What´s your name?" You answered "<<$name>>." The song ends and the guy offers to sit with him and chat.'
-			if DPtipe = 2:'The guy told you in the dance "My name is <<$bname>>. What´s your name?" You answered "<<$name>>." All dancing drunk guy crushed your body and now his face flushed with excitement. He offers to leave the club on the street, get some fresh air, socialize.'
+			if DPtipe = 1:
+				'The guy told you in the dance "My name is <<$bname>>. What''s your name?" You answered "<<$name>>." The song ends and the guy offers to sit with him and chat.'
+			elseif DPtipe = 2:
+				'The guy told you in the dance "My name is <<$bname>>. What''s your name?" You answered "<<$name>>." All dancing drunk guy crushed your body and now his face flushed with excitement. He offers to leave the club on the street, get some fresh air, socialize.'
+			end
 
 			act 'Go with a guy':gt 'EvBoyBuh'
-		end
-
-		if DPgrup = 2:
+		elseif DPgrup = 2:
 			if DPtipe = 1:
 				'The entire dance guy grabs your ass and he is clearly excited when he pressed against you, you feel something hard in his pants. Finally zakanchivaetsya song and the guy offers to go out, plunk.'
 				act 'Go thump':gt 'EvgopBuh'
-			end
-
-			if DPtipe = 2:
+			elseif DPtipe = 2:
 				'The entire dance guy grabs your ass, breasts and kissed you, he clearly excited when he pressed against you, you feel something hard in his pants. Finally zakanchivaetsya song and the guy offers to go out, plunk.'
 				act 'Go thump':gt 'EvgopBuh'
 			end
-		end
-
-		if DPgrup = 3:
+		elseif DPgrup = 3:
 			if DPtipe = 1:
 				'All male dance was confident and elegant, finally the song was over and the man offers to go out for some fresh air and talk.'
 
@@ -165,16 +153,14 @@ $din_vibor_tipe_dance = {
 					cls
 					gs 'stat'
 					'<center><img src="images/etogame/dk_night.jpg"></center>'
-					'You went out with a man. He walked up to you and bit his arm around her waist. "My name is <<$bname>>. What´s your name?" You answered "<<$name>>." The man continued, "<<$name>>, I´m in your town on a business trip. Lives in the hotel from the city itself. Virtually nothing in your town do not know. Come to my hotel. Take whiskey, balls, sit down and have a chat."'
+					'You went out with a man. He walked up to you and bit his arm around her waist. "My name is <<$bname>>. What''s your name?" You answered "<<$name>>." The man continued, "<<$name>>, I''m in your town on a business trip. Lives in the hotel from the city itself. Virtually nothing in your town do not know. Come to my hotel. Take whiskey, balls, sit down and have a chat."'
 
 					act 'Go to the hotel':gt 'EvOtelMan'
 
 					dynamic $din_dance_otkaz
 				end
-			end
-
-			if DPtipe = 2:
-				'The entire dance tipsy man molested you when the dance ended and he whispered in your ear. "My name is <<$bname>>. What´s your name?" You answered "<<$name>>." The man continued, "<<$name>>, I´m not a local, I live in a hotel, let´s now take a taxi and go to me."'
+			elseif DPtipe = 2:
+				'The entire dance tipsy man molested you when the dance ended and he whispered in your ear. "My name is <<$bname>>. What''s your name?" You answered "<<$name>>." The man continued, "<<$name>>, I''m not a local, I live in a hotel, let''s now take a taxi and go to me."'
 
 				act 'Go to the hotel':gt 'EvOtelMan'
 			end
@@ -188,64 +174,79 @@ $din_vibor_tipe_dance = {
 
 $din_otbor_dance_pertner = {
 	!!the creation of a partner to dance
-	gs 'BnameGen'
-	DaPaTipeRand = rand(0, 100)
+	sozboyrand = rand(1, 300)
+	if sozboyrand > boynum:
+		gs 'BnameGen'
+		DaPaTipeRand = rand(0, 100)
 
-	if DaPaTipeRand < 70:
-		!!ordinary local boy
-		DrunkDPTrand = rand(0, 100)
+		if DaPaTipeRand < 70:
+			!!ordinary local boy
+			bmtimeTipe = 0
+			DrunkDPTrand = rand(0, 100)
 
-		if DrunkDPTrand < 70:
-			DPtipe = 1
-			DPgrup = 1
-			$din_disc_dance = 'It suits you the guy in jeans and a t-shirt, and offers dance.'
-			$din_disc_dance2 = 'Next to you dancing guy in jeans and a T-shirt.'
+			if DrunkDPTrand < 70:
+				DPtipe = 1
+				DPgrup = 1
+				$din_disc_dance = 'It suits you the guy in jeans and a t-shirt, and offers dance.'
+				$din_disc_dance2 = 'Next to you dancing guy in jeans and a T-shirt.'
+			elseif DrunkDPTrand >= 70:
+				DPtipe = 2
+				DPgrup = 1
+				$din_disc_dance = 'It suits you drunk guy in jeans and a t-shirt, and offers dance.'
+				$din_disc_dance2 = 'Next to you dancing drunk guy in jeans and a T-shirt.'
+			end
+		elseif DaPaTipeRand >= 70 and DaPaTipeRand < 90:
+			!!local gopar
+			bmtimeTipe = 1
+			DrunkDPTrand = rand(0, 100)
+
+			if DrunkDPTrand < 50:
+				DPtipe = 1
+				DPgrup = 2
+				$din_disc_dance = 'It suits you guy dressed in sweatpants and a sweatshirt and the same offers to dance.'
+				$din_disc_dance2 = 'Next to you dancing guy in sweatpants and sweatshirts.'
+			elseif DrunkDPTrand >= 50:
+				DPtipe = 2
+				DPgrup = 2
+				$din_disc_dance = 'It suits you drunk guy dressed in sweatpants and sweatshirts same and takes you arms around his waist offering dance.'
+				$din_disc_dance2 = 'Next to you dancing drunk guy in sweatpants and sweatshirts.'
+			end
+		elseif DaPaTipeRand >= 90:
+			!!traveling_expenses
+			bmtimeTipe = 2
+			DrunkDPTrand = rand(0, 100)
+
+			if DrunkDPTrand < 90:
+				DPtipe = 1
+				DPgrup = 3
+				$din_disc_dance = 'To you fit man in a decent jacket, trousers with arrows, expensive shoes, and offers dance.'
+				$din_disc_dance2 = 'Next to you dancing man in a decent jacket, trousers with arrows, expensive shoes.'
+			elseif DrunkDPTrand >= 90:
+				DPtipe = 2
+				DPgrup = 3
+				$din_disc_dance = 'It suits you drunk man in a decent jacket, trousers with arrows, expensive shoes, and offers dance.'
+				$din_disc_dance2 = 'Near you drunk man dancing in a decent jacket, trousers with arrows, expensive shoes.'
+			end
+		end
+		gs 'boymass'
+	elseif sozboyrand <= boynum:
+		Tboynum = sozboyrand
+
+		if bmTip[Tboynum] = 0:
+			$niknameboy = 'The boy'
+			rudeboy = 1
+			$text = 'It suits you the guy in jeans and T-shirt, and invites you to dance. Appearance guy seems familiar to you, apparently you have danced with him.'
+		elseif bmTip[Tboynum] = 1:
+			$niknameboy = 'Gopnik'
+			rudeboy = 2
+			$text = 'It suits you the guy dressed in sweatpants and sweatshirts same and offers dance. Appearance guy seems familiar to you, apparently you have danced with him.'
+		elseif bmTip[Tboynum] = 2:
+			$niknameboy = 'The man'
+			rudeboy = 0
+			$text = 'For you fit man in a decent jacket, pants with arrows, expensive shoes, and invites you to dance. Ethnicity men seem familiar to you, apparently you have danced with him.'
 		end
 
-		if DrunkDPTrand >= 70:
-			DPtipe = 2
-			DPgrup = 1
-			$din_disc_dance = 'It suits you drunk guy in jeans and a t-shirt, and offers dance.'
-			$din_disc_dance2 = 'Next to you dancing drunk guy in jeans and a T-shirt.'
-		end
-	end
-
-	if DaPaTipeRand >= 70 and DaPaTipeRand < 90:
-		!!local gopar
-		DrunkDPTrand = rand(0, 100)
-
-		if DrunkDPTrand < 50:
-			DPtipe = 1
-			DPgrup = 2
-			$din_disc_dance = 'It suits you guy dressed in sweatpants and a sweatshirt and the same offers to dance.'
-			$din_disc_dance2 = 'Next to you dancing guy in sweatpants and sweatshirts.'
-		end
-
-		if DrunkDPTrand >= 50:
-			DPtipe = 2
-			DPgrup = 2
-			$din_disc_dance = 'It suits you drunk guy dressed in sweatpants and sweatshirts same and takes you arms around his waist offering dance.'
-			$din_disc_dance2 = 'Next to you dancing drunk guy in sweatpants and sweatshirts.'
-		end
-	end
-
-	if DaPaTipeRand >= 90:
-		!!traveling_expenses
-		DrunkDPTrand = rand(0, 100)
-
-		if DrunkDPTrand < 90:
-			DPtipe = 1
-			DPgrup = 3
-			$din_disc_dance = 'To you fit man in a decent jacket, trousers with arrows, expensive shoes, and offers dance.'
-			$din_disc_dance2 = 'Next to you dancing man in a decent jacket, trousers with arrows, expensive shoes.'
-		end
-
-		if DrunkDPTrand >= 90:
-			DPtipe = 2
-			DPgrup = 3
-			$din_disc_dance = 'It suits you drunk man in a decent jacket, trousers with arrows, expensive shoes, and offers dance.'
-			$din_disc_dance2 = 'Near you drunk man dancing in a decent jacket, trousers with arrows, expensive shoes.'
-		end
+		gt 'BMloc'
 	end
 }
 
@@ -253,7 +254,7 @@ $din_too_drunk_dance = {
 	if StoryLine = 1 and BeInSchool > 0:
 		cls
 		gs 'stat'
-		'It suits you Katja Meynold "<<$name>>, so that you get drunk? Let´s go home, I´ll take you."'
+		'It suits you Katja Meynold "<<$name>>, so that you get drunk? Let''s go home, I''ll take you."'
 
 		act 'Go with Katja':
 			cls
@@ -275,6 +276,7 @@ $din_too_drunk_dance = {
 
 $metka = $ARGS[0]
 $loc = $CURLOC
+boynumBlock = 0
 gs 'stat'
 fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
@@ -300,10 +302,14 @@ if hour >= 20 and hour <= 23:
 
 		exit
 	end
-	!!if soniaPS>=1 and hour<=21 and meynoldQW=0 and BeInSchool>0:
-	!!''
-	!!exit
-	!!end
+
+	!'
+	if soniaPS >= 1 and hour <= 21 and meynoldQW = 0 and BeInSchool > 0:
+		''
+		exit
+	end
+	'!
+
 	act 'Dance one':
 		cls
 		'<center><img src="images/etogame/club_dance.jpg"></center>'
@@ -311,6 +317,7 @@ if hour >= 20 and hour <= 23:
 		!!fat -= 1
 
 		if dance < 50 and agil >= dance:dance += 1
+
 		manna += 10
 		willpower += 10
 		frost = 0
@@ -320,7 +327,7 @@ if hour >= 20 and hour <= 23:
 			if GorSlut < 2:GorSlut = 2
 
 			manna -= 100
-			'It suits you and the guy starts to stick, suddenly he sees you cum. The guy jumps on you "thanked, vaflersha. Lads estimate, this chick all in Concha peremazanna." To you guys still see fit. "Yeah sure. Hey nipple unsuccessfully vysmarkalas what?" You cheeks blush with shame and you´re heading for the exit.'
+			'It suits you and the guy starts to stick, suddenly he sees you cum. The guy jumps on you "thanked, vaflersha. Lads estimate, this chick all in Concha peremazanna." To you guys still see fit. "Yeah sure. Hey nipple unsuccessfully vysmarkalas what?" You cheeks blush with shame and you''re heading for the exit.'
 
 			act 'Leave':gt 'gdk'
 
@@ -328,12 +335,12 @@ if hour >= 20 and hour <= 23:
 		end
 
 		if alko >= 4:
-			'You´re drunk in the trash and try to dance, but the floor out from under my feet and you dance instead of just drunkenly Mota regularly bumping into other people.'
+			'You''re drunk in the trash and try to dance, but the floor out from under my feet and you dance instead of just drunkenly Mota regularly bumping into other people.'
 			dynamic $din_too_drunk_dance
 		elseif alko < 4 and alko > 0:
-			'You´re drunk and fun skip on the dance floor without paying attention to others, and even the music.'
+			'You''re drunk and fun skip on the dance floor without paying attention to others, and even the music.'
 		else
-			'The music is quite old, but catchy. And you´ll have fun circling dance, paying no attention to anyone.'
+			'The music is quite old, but catchy. And you''ll have fun circling dance, paying no attention to anyone.'
 		end
 
 		if alko < 4:
@@ -341,8 +348,8 @@ if hour >= 20 and hour <= 23:
 
 			if verprigrand <= dance:
 				dynamic $din_otbor_dance_pertner
-				'<<$din_disc_dance2>>'
 				gs 'stat'
+				'<<$din_disc_dance2>>'
 
 				act 'Dance with a guy':
 					cls
@@ -366,18 +373,18 @@ if hour >= 20 and hour <= 23:
 
 	act 'Standing at the wall':
 		cls
-		'<center><img src="images/etogame/club_yaho.jpg"></center>'
 		minut += 5
 		!!fat -= 1
 		manna -= 5
 		frost = 0
 		gs 'stat'
+		'<center><img src="images/etogame/club_yaho.jpg"></center>'
 
 		if cumface > 0 or cumfrot > 0:
 			if GorSlut < 2:GorSlut = 2
 
 			manna -= 100
-			'It suits you and the guy starts to stick, suddenly he sees you cum. The guy jumps on you "thanked, vaflersha. Lads estimate, this chick all in Concha peremazanna." To you guys still see fit. "Yeah sure. Hey nipple unsuccessfully vysmarkalas what?" You cheeks blush with shame and you´re heading for the exit.'
+			'It suits you and the guy starts to stick, suddenly he sees you cum. The guy jumps on you "thanked, vaflersha. Lads estimate, this chick all in Concha peremazanna." To you guys still see fit. "Yeah sure. Hey nipple unsuccessfully vysmarkalas what?" You cheeks blush with shame and you''re heading for the exit.'
 
 			act 'Leave':gt 'gdk'
 
@@ -389,7 +396,7 @@ if hour >= 20 and hour <= 23:
 			dynamic $din_too_drunk_dance
 
 		elseif alko < 4 and alko > 0:
-			'You´re drunk, and standing at the wall watching the dancing.'
+			'You''re drunk, and standing at the wall watching the dancing.'
 		else
 			'You are standing at a modest stenochki watching dancing.'
 		end
@@ -409,8 +416,8 @@ if hour >= 20 and hour <= 23:
 
 				if verprigrand <= verodance:
 					dynamic $din_otbor_dance_pertner
-					'<<$din_disc_dance>>'
 					gs 'stat'
+					'<<$din_disc_dance>>'
 
 					act 'Dance':
 						cls
@@ -434,8 +441,10 @@ if hour >= 20 and hour <= 23:
 		end
 	end
 
-	if hour < 20:'Club closes. The lights go on, the music fades and all begin to diverge.'
+elseif hour < 20:
+	'Club closes. The lights go on, the music fades and all begin to diverge.'
+end
 
-	act 'Go outside':gt 'gdk'
+act 'Go outside':gt 'gdk'
 
 --- gdkin ---------------------------------

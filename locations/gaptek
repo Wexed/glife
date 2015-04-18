@@ -1,171 +1,416 @@
 # gaptek
 if $ARGS[0] = 'start':
-	cla
-	*clr
-	gs 'aptek'
-	gs 'stat'
-	gs 'time'
-	set minut += 5
-	'<center><B><font color="maroon">Drugstore</font></B></center>'
-	*nl
-	'<center><img src="images/etogame/aptek.jpg"></center>'
-	*nl
+	if hour >= 8 and hour <= 20:
+		cla
+		clr
+		*clr
+		minut += 5
+		gs 'stat'
+		gs 'time'
 
-	if StoryLine = 1:
-		'Behind the counter, as always, sits aunt Luda. "Hi Svetulechka. How are you?"'
-	else
-		gt 'aptek', 'start'
-	end
+		'<center><B><font color="maroon">Drugstore</font></B></center>'
+		'<center><img src="images/etogame/aptek.jpg"></center>'
+		'Condoms - 100 rubles'
+		'Pregnancy test - 200 rubles'
 
-	if motherQW >= 2:
-		act 'Garden':
-			cla
-			gaogorodrand = rand(1, 20)
+		if StoryLine > 0:'Lubricant - 300 rubles'
 
-			if motherQW = 2 and (gaogorod + gaogorodrand < 40):
-				if gaptekfirst = 0:
-					set gaptekfirst = 1
-					minut += 5
-					'You are considering showcases c drugs and are considering how to talk to my aunt. She notices your confusion and releasing the last buyer contacts you.'
-					'- <<$name>>, what are you doing here trash? It should be what?'
-					'- Yes, as if looking for a vegetable garden.'
-					'- Niece, you´re not wrong store? We´ve got a pharmacy, you know - it is to laugh.'
-					'- Know aunts. Mom asked you to buy everything for the garden.'
-					'- Mom, so ... Horticultural ...'
-					'She gravely examines you and brings the shop window with contraceptives.'
-					'- Here we have all "for the garden." Choose.'
-				else
+		'Birth control pills - 500 rubles'
+		'Medicine - 500 rubles'
+		'Vitamins - 500 rubles'
+
+		if klisma = 0:'Enema - 500 rubles'
+
+		'Ointment for corns - 600 rubles'
+		'Moisturizing Lip Balm - 1000 rubles'
+		'Fat burners - 1500 rubles'
+
+		if KandidNapr = 1:'Cure pills for yeast infection - 1,500 rubles'
+
+		if StoryLine = 1:'Behind the counter, as always, sits aunt Luda. "Hi <<$name>>. How are you?"'
+
+		if motherQW >= 2:
+			act 'garden':
+				cla
+				cls
+				gaogorodrand = rand(1, 20)
+				gs 'stat'
+				'<center><b><font color="maroon">Pharmacy</font></b></center>'
+				'<center><img src="images/pic/aptek.jpg"></center>'
+				if motherQW = 2 and gaogorod + gaogorodrand < 40:
+					if gaptekfirst = 0:
+						gaptekfirst = 1
+						minut += 5
+						'You are considering showcases c drugs and are considering how to talk to my aunt. She notices your confusion and releasing the last buyer contacts you.'
+						'- <<$name>>, what are you doing here trash? It should be what?'
+						'- Yes, as if looking for a vegetable garden.'
+						'- Niece, you''re not wrong store? We''ve got a pharmacy, you know - it is to laugh.'
+						'- Know aunts. Mom asked you to buy everything for the garden.'
+						'- Mom, so ... Horticultural ...'
+						'She gravely examines you and brings the shop window with contraceptives.'
+						'- Here we have all "for the garden." Choose.'
+					else
+						if gaprezikday ! day or gatabletkiday ! day:
+							minut += rand(5,15)
+							'You wait until the last buyer leaves from the pharmacy, and then speak to my aunt.'
+							'- Aunts, my mom would have it ... for a vegetable garden ...'
+							'- Yes, I have understood, you go here, trash - she grins.'
+							'- Thank you, aunty.'
+							'- But not for that, and tell Natasha that she has time to finish with gardens.'
+						elseif gaprezikday = day or gatabletkiday = day:
+							minut += rand(5, 15)
+							'You have decided to wait until my aunt is free, but every minute shoppers at the pharmacy became more and more. You just wasted your time.'
+						end
+					end
+				elseif motherQW = 2 and (gaogorod + gaogorodrand >= 40):
+					gt 'motherQW', 'motherQW_3'
+				elseif motherQW >= 3 and galubri = 0:
 					if gaprezikday ! day or gatabletkiday ! day:
-						minut += rand(5,15)
-						'You wait until the last buyer leaves from the pharmacy, and then speak to my aunt.'
-						'- Aunts, my mom would have it ... for a vegetable garden ...'
-						'- Yes, I have understood, you go here, trash - she grins.'
-						'- Thank you, aunty.'
-						'- But not for that, and tell Natasha that she has time to finish with gardens.'
-					end
-
-					if gaprezikday = day or gatabletkiday = day:
 						minut += rand(5, 15)
-						'You have decided to wait until my aunt is free, but every minute shoppers at the pharmacy became more and more. You just wasted your time.'
+						oluuosegunrand = rand(1, 10)
+
+						if oluuosegunrand = 10 and oluuosegunday ! day:
+							gt 'motherQW', 'olu'
+						elseif oluuosegunrand < 10 or oluuosegunday = day:
+							'You waited in line and approached the counter, nodding to the desired display case.'
+						end
+					elseif gaprezikday = day and gatabletkiday = day:
+						minut += rand(5, 15)
+						'You waited in line and approached the counter, nodding to the desired display case. "All sold out, light, - said my aunt. And with malice added almost in a whisper, - Have your ebaryam wait until tomorrow."'
+					end
+				elseif motherQW >= 3 and galubri = 1:
+					if gaprezikday ! day or gatabletkiday ! day or galubriday ! day:
+						minut += rand(5, 15)
+						oluuosegunrand=rand(1, 10)
+
+						if oluuosegunrand = 10 and oluuosegunday ! day:
+							gt 'motherQW', 'olu'
+						elseif oluuosegunrand < 10 or oluuosegunday = day:
+							'You waited in line and approached the counter.'
+						end
+					elseif gaprezikday = day and gatabletkiday = day and galubriday = day:
+						minut += rand(5, 15)
+						'You waited in line and approached the counter. "All sold out, light, - said my aunt. And with malice added almost in a whisper, - Have your ebaryam wait until tomorrow."'
 					end
 				end
 			end
+		end
 
-			if motherQW = 2 and (gaogorod + gaogorodrand >= 40):gt 'motherQW', 'motherQW_3'
+		if money >= 100:
+			if motherQW >= 2 and gaptekfirst = 1 and gaprezikday ! day:
+				act 'Buy <b>condoms</b> (100 rubles) <<iif(prezik > 0, ''[left:<b>'' + prezik + ''</b>]'', '''')>>':
+					cla
+					*clr
+					portion = input("How many packages you want to buy? (One package contains 5 condoms)")
 
-			if motherQW >= 3 and galubri = 0:
-				if gaprezikday ! day or gatabletkiday ! day:
-					minut += rand(5, 15)
-					oluuosegunrand = rand(1, 10)
-
-					if oluuosegunrand = 10 and oluuosegunday ! day:gt 'motherQW', 'olu'
-					if oluuosegunrand < 10 or oluuosegunday = day:'You waited in line and approached the counter, nodding to the desired display case.'
-				end
-
-				if gaprezikday = day and gatabletkiday = day:
-					minut += rand(5, 15)
-					'You waited in line and approached the counter, nodding to the desired display case. "All sold out, light, - said my aunt. And with malice added almost in a whisper, - Have your ebaryam wait until tomorrow."'
-				end
-			end
-
-			if motherQW >= 3 and galubri = 1:
-				if gaprezikday ! day or gatabletkiday ! day or galubriday ! day:
-					minut += rand(5, 15)
-					oluuosegunrand=rand(1, 10)
-
-					if oluuosegunrand = 10 and oluuosegunday ! day:gt 'motherQW', 'olu'
-					if oluuosegunrand < 10 or oluuosegunday = day:'You waited in line and approached the counter.'
-				end
-
-				if gaprezikday = day and gatabletkiday = day and galubriday = day:
-					minut += rand(5, 15)
-					'You waited in line and approached the counter. "All sold out, light, - said my aunt. And with malice added almost in a whisper, - Have your ebaryam wait until tomorrow."'
-				end
-			end
-
-			if money >= 100 and gaprezikday ! day:
-				act 'Buy <b>condoms</b> (100 rubles)':
-					portion = input("How many packages you want to buy?")
-
+					if portion <= 0:portion = 1
 					if portion > 2 and motherQW < 3:portion = 2 & '"Then 2 packages until I have enough. It is better not to buy a lot at once, and then Aunt may become suspicious."'
-					if portion > 5 and motherQW >= 3:portion = 5 & '"<<$name>>, rubber goods factory does not have time to deliver products."'
-					if portion * 100 > money:'You do not have enough money.'
+					if portion > 5 and motherQW >= 3:portion = 5 & '"<<$name>>, rublesber goods factory does not have time to deliver products."'
 
 					if portion * 100 <= money:
-						set prezik = prezik + portion * 5
-						set money = money - portion * 100
-						'You bought condoms and paid the money to the cashier.'
+						prezik += portion * 5
+						minut += 5 + (portion / 5)
+						money -= portion * 100
 						gaprezikday = day
-
-						delact 'Buy <b>condoms</b> (100 rubles)'
+						'<center><img src="images/etogame/kassa.jpg"></center>'
+						'You bought condoms and paid the money to the cashier.'
 
 						if motherQW < 3:gaogorod = gaogorod + portion
+					else
+						'You do not have enough money.'
 					end
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
+				end
+			elseif Storyline = 0:
+				act 'Buy condoms (100 rubles) <<iif(prezik > 0, ''[left:<b>'' + prezik + ''</b>]'', '''')>>':
+					cla
+					*clr
+					portion = input ("How many packages you want to buy? (One package contains 5 condoms)")
+
+					if portion <= 0:portion = 1
+
+					if portion*100 <= money:
+						prezik = prezik + portion*5
+						minut += 5 + (portion / 5)
+						money -= portion * 100
+						'<center><img src="images/etogame/kassa.jpg"></center>'
+						'You bought condoms and paid the money to the cashier.'
+					else
+						'You do not have enough money.'
+					end
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
 				end
 			end
+		end
 
-			if money >= 500 and gatabletkiday ! day:
-				act 'Buy <b>birth control pills</b> (500 rubles)':
+		if money >= 200:
+			if motherQW >= 2 and gaptekfirst = 1:
+				act 'Buy  <b>pregnancy tests</b> (200 rubles) <<iif(pregtest > 0, ''[left:<b>'' + pregtest + ''</b>]'', '''')>>':
+					cla
+					*clr
+					portion = input("How many packages you want to buy? (One package contains two testers)")
+						if portion <= 0:portion = 1
+
+					if portion * 200 <= money:
+						pregtest += portion * 2
+						minut += 5 + (portion / 5)
+						money -= portion * 200
+						'<center><img src="images/etogame/kassa.jpg"></center>'
+						'You bought pregnancy tests and paid the money to the cashier.'
+
+					else
+						'You do not have enough money.'
+					end
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
+				end
+			elseif Storyline = 0:
+				act 'Buy <b>pregnancy tests</b> (200 rubles) <<iif(pregtest > 0, ''[left:<b>'' + pregtest + ''</b>]'', '''')>>':
+					cla
+					*clr
+					portion = input("How many packages you want to buy? (One package contains two testers)")
+
+					if portion <= 0:portion = 1
+
+					if portion * 200 <= money:
+						pregtest += portion * 2
+						minut += 5 + (portion / 5)
+						money -= portion * 200
+						'<center><img src="images/etogame/kassa.jpg"></center>'
+						'You bought pregnancy tests and paid the money to the cashier.'
+					else
+						'You do not have enough money.'
+					end
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
+				end
+			end
+		end
+
+		if money >= 300:
+			if galubri = 1 and motherQW >= 2 and gaptekfirst = 1 and galubriday ! day:
+				act 'Buy <b>lubricant</b> (300 rubles) <<iif(lubri > 0, ''[left:<b>'' + lubri + ''</b>]'', '''')>>':
+					cla
+					*clr
+					portion = input ("How many packages you want to buy? (One tube lasts for 5 uses)")
+
+					if portion <= 0:portion = 1
+					if portion > 10:portion = 10 & '"<<$nickname>>, I sell only 10 pieces, no longer brought, I`m_sorry."'
+					if portion * 300 <= money:
+						lubri += portion * 5
+						minut += 5 + (portion / 5)
+						money -= portion * 300
+						galubriday = day
+						'<center><img src="images/etogame/kassa.jpg"></center>'
+						'You bought some lubricant and paid the money to the cashier.'
+					else
+						'You do not have enough money.'
+					end
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
+				end
+		end
+
+		if money >= 500:
+			if gatabletkiday ! day:
+				act 'Buy <b>birth control pills</b> (500 rubles) <<iif(tabletki > 0, ''[left:<b>'' + tabletki + ''</b>]'', '''')>>':
+
+				portion = input ("How many packages you want to buy?")
+
+				if portion < 0 or (portion > 1 and motherQW < 3):portion = 1 & '"First package I still have enough. It is better not to buy a lot at once, and then Aunt may become suspicious."'
+
+				if portion * 500 <= money:
+					tabletki += portion * 28
+					minut += 5 + (portion / 5)
+					money -= portion * 500
+					gatabletkiday = day
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought some lubricant and paid the money to the cashier.'
+				else
+					'You do not have enough money.'
+				end
+
+				act 'Move away from the counter':gt 'gaptek', 'start'
+			elseif StoryLine = 0:
+				act 'Buy <b>birth control pills</b> (500 rubles) <<iif(tabletki > 0, ''[left:<b>'' + tabletki + ''</b>]'', '''')>>':
 					portion = input ("How many packages you want to buy?")
 
-					if portion > 1 and motherQW < 3: portion = 1 & '"First package I still have enough. It is better not to buy a lot at once, and then Aunt may become suspicious."'
-					if portion * 500 > money: 'You do not have enough money.'
+					if portion < 0:portion = 1
 
 					if portion * 500 <= money:
-						set tabletki += portion * 28
-						set money -= portion * 500
-						'You bought the pills and paid the money to the cashier.'
-						gatabletkiday = day
-
-						delact 'Buy <b>birth control pills</b> (500 rubles)'
-
-						if motherQW < 3:gaogorod = gaogorod + portion
+						tabletki += portion * 28
+						minut += 5 + (portion / 5)
+						money -= portion * 500
+						'<center><img src="images/etogame/kassa.jpg"></center>'
+						'You bought some lubricant and paid the money to the cashier.'
+					else
+						'You do not have enough money.'
 					end
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
 				end
 			end
 
-			if money >= 500 and klisma = 0:
+			if klisma = 0 and motherQW >= 2 and gaptekfirst = 1:
 				act 'Buy <b>enema</b> (500 rubles)':
-					set klisma = 1
-					set money -= 500
+					cla
+					*clr
+					klisma = 1
+					minut += 5
+					money -= 500
+					'<center><img src="images/etogame/kassa.jpg"></center>'
 					'You bought an enema and paid the money to the cashier.'
-					delact 'Buy <b>enema</b> (500 rubles)'
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
+				end
+			elseif klisma = 0 and StoryLine = 0:
+				act 'Buy <b>enema</b> (500 rubles)':
+					cla
+					*clr
+					klisma = 1
+					minut += 5
+					money -= 500
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought an enema and paid the money to the cashier.'
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
 				end
 			end
 
-			if galubri = 1 and money >= 300 and galubriday ! day:
-				act 'Buy lubricant 300 rubles':
-					portion = input("How many tubes you want to buy?")
+			act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, ''[left:<b>'' + lekarstvo + ''</b>]'', '''')>>':
+				cla
+				*clr
+				portion = input("How many packages you want to buy? (One package contains 10 pills)")
 
-					if portion > 2:portion = 2 & '"<<$name>>, can sell only 2 pieces, no longer brought, I am sorry."'
-					if portion * 300 > money:'You do not have enough money.'
+				if portion <= 0:portion = 1
 
-					if portion * 300 <= money:
-						set lubri = lubri + portion * 5
-						set money = money - portion * 300
-						'You bought <<portion>> Tub. lubricant and get paid aunt.'
-						galubriday = day
-
-						delact'Buy <b>lubricant</b> (300 rubles)'
-					end
+				if portion * 500 <= money:
+					money -= portion * 500
+					minut += 5 + (portion / 5)
+					lekarstvo += portion * 10
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought drugs and paid the money to the cashier.'
+				else
+					'You do not have enough money.'
 				end
-			end
 
-			act 'Move away from the counter': gt 'gaptek', 'start'
+				act 'Move away from the counter':gt 'aptek', 'start'
+			 end
+
+			act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin > 0, ''[left:<b>'' + vitamin + ''</b>]'', '''')>>':
+				cla
+				*clr
+				portion = input("How many packages you want to buy? (One package contains 20 pills)")
+
+				if portion <= 0:portion = 1
+
+				if portion * 500 <= money:
+					vitamin += portion * 20
+					minut += 5 + (portion / 5)
+					money -= portion * 500
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought vitamins and paid the money to the cashier.'
+				else
+					'You do not have enough money.'
+				end
+
+				act 'Move away from the counter':gt 'aptek', 'start'
+			end
 		end
-	end
 
-	dynamic $regular_items
+		if money >= 600:
+			act 'Buy <b>ointment for corns</b> (600 rubles) <<iif(mosolmaz > 0, ''[left:<b>'' + mosolmaz + ''</b>]'', '''')>>':
+				cla
+				*clr
+				portion = input("How many packages you want to buy? (One package contains 10 treatments)")
 
-	if hour>20:
+				if portion <= 0:portion = 1
+
+				if money >= portion * 600:
+					money -= portion * 600
+					minut += 5 + (portion / 5)
+					mosolmaz += portion * 10
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought some oinment packages and paid the money to the cashier.'
+				else
+					'You do not have enough money.'
+				end
+
+				act 'Move away from the counter':gt 'aptek', 'start'
+			 end
+		end
+
+		if money >= 1000:
+			act 'Buy <b>moisturizing lip balm</b> (1,000 rubles) <<iif(lipbalm > 0, ''[left:<b>'' + lipbalm + ''</b>]'', '''')>>':
+				cla
+				*clr
+				portion = input("How many lip balms you want to buy? (One lip balm is good enough for 25 uses)")
+
+				if portion <= 0:portion = 1
+
+				if portion * 1000 <= money:
+					lipbalm += portion * 25
+					minut += 5 + (portion / 5)
+					money -= portion * 1000
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought some lip balm and paid the money to the cashier.'
+				else
+					'You do not have enough money.'
+				end
+
+				act 'Move away from the counter':gt 'aptek', 'start'
+			end
+		end
+
+		if money >= 1500:
+			act '<b>Buy fat burners</b> (1,500 rubles) <<iif(fatdel > 0, ''[left:<b>'' + fatdel + ''</b>]'', '''')>>':
+				cla
+				*clr
+				portion = input("How many fat burners you want to buy?")
+
+				if portion <= 0:portion = 1
+
+				if portion * 1500 <= money:
+					fatdel += portion
+					minut += 5 + (portion / 5)
+					money -= portion * 1500
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought some fat burning capsules and paid the money to the cashier.'
+				else
+					'You do not have enough money.'
+				end
+
+				act 'Move away from the counter':gt 'aptek', 'start'
+			end
+
+			if KandidNapr = 1:
+				act 'Buy cure pills for yeast infection (1,500 rubles)':
+					cla
+					*clr
+					minut += 10
+					money -= 1500
+					Kandidoz = 0
+					'<center><img src="images/pic/kassa.jpg"></center>'
+					'You bought tablets and paid the money to the cashier.'
+					'Immediately about cash you swallow the tablet.'
+
+					act 'Move away from the counter':gt 'aptek', 'start'
+				end
+			end
+		end
+
+		act 'Leave':gt 'gorodok'
+	elseif hour < 8 or hour > 20:
 		cla
 		*clr
-		'<center><B><font color=maroon>Drugstore</font></B></center>'
-		'<center><img src="images/etogame/aptek.jpg"></center>'
+		'<center><b><font color=maroon>Pharmacy</font></b></center>'
+		'<center><img src="images\etogame\aptek.jpg" ></center>'
 		'Pharmacy is closed'
 	end
 
-	act 'Leave': gt $loc
+	act 'Leave':gt 'gorodok'
 end
 
 --- gaptek ---------------------------------

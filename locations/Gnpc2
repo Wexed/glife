@@ -3,24 +3,21 @@ $din_gboy_end_to_disco = {
 	!!:markgoondisco
 	discofirsttime += 1
 	gs 'stat'
-	gdeystboyrand = rand(0, 1)
 
 	if gnpcSex[numnpc] = 0:
+		gdeystboyrand = rand(0, 1)
+
 		if gdeystboyrand = 0:
 			'<<$nameBoyfrend[numnpc]>> offered to go to his home.'
 			dynamic $din_gboy_go_to_boyhome
 
 			act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
-		end
-
-		if gdeystboyrand = 1:
+		elseif gdeystboyrand = 1:
 			'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
 
 			act 'go home':gt 'gorodok'
 		end
-	end
-
-	if gnpcSex[numnpc] > 0:
+	elseif gnpcSex[numnpc] > 0:
 		'<<$nameBoyfrend[numnpc]>> offered to go to his home.'
 		dynamic $din_gboy_go_to_boyhome
 
@@ -49,7 +46,7 @@ $din_gboy_go_to_disco = {
 				'You dance with her boyfriend, to you suited drunk kid in sweatpants and sweatshirts.'
 
 				if GorSlut < 3:
-					'Gopnik pushes your guy to the side and grabs you by the waist. "Let´s dance, chikulya."'
+					'Gopnik pushes your guy to the side and grabs you by the waist. "Let''s dance, chikulya."'
 
 					act 'Leave':
 						cls
@@ -61,15 +58,11 @@ $din_gboy_go_to_disco = {
 						if tiprand <= 70:
 							'<<$nameBoyfrend[numnpc]>> managed to get out of the winner of the fight verbally, accusing Gopnik that he began to molest his girlfriend. But the evening was spoiled and finally <<$nameBoyfrend[numnpc]>> offered to leave the disco.'
 							act 'Go home':gt 'gorodok'
-						end
-
-						if tiprand > 70 and tiprand < 90:
+						elseif tiprand > 70 and tiprand < 90:
 							otnBoyFrend[numnpc] -= 20
 							'Gopnik quickly downloaded your guy and lit it on the headstock. <<$nameBoyfrend[numnpc]>> Gopnik gave all the money and apologized for a long time before them. whereupon <<$nameBoyfrend[numnpc]>> suggested that you spend.'
 							act 'Go home':gt 'gorodok'
-						end
-
-						if tiprand >= 90:
+						elseif tiprand >= 90:
 							'Discussions quickly escalated into a fight and three Gopnik began to beat your guy in the middle of the disco.'
 
 							act 'Watch the fight by':
@@ -87,9 +80,7 @@ $din_gboy_go_to_disco = {
 								if stren < 90:
 									'You tried to push Gopnik, but someone pushed you and you will fly away from fighting a few meters from all force crashed to the floor. Gopari meanwhile pulled your guy beaten on the street where the money away, removed his shoes, and threw him into the bushes. You helped her boyfriend to his feet and carried him home. His face was covered in blood and bruises began to swim.'
 									act 'Go home':gt 'gorodok'
-								end
-
-								if stren >= 90:
+								elseif stren >= 90:
 									'You Gopnik pushed with all his strength, and he flew away from you. But the second Gopnik turned to you and you saw how he punches you in the face.'
 
 									if agil < 90:
@@ -97,9 +88,7 @@ $din_gboy_go_to_disco = {
 										gs 'stat'
 										'In my head rang and you realize that you are lying on the floor. Severe pain in the teeth and mouth full of salty liquid. You spit on the floor and saw that you knocked out a tooth. Gopari meanwhile pulled your guy beaten on the street where the money away, removed his shoes, and threw him into the bushes. You helped her boyfriend to his feet and carried him home. His face was covered in blood and bruises began to swim.'
 										act 'Go home':gt 'gorodok'
-									end
-
-									if agil >= 90:
+									elseif agil >= 90:
 										'You abruptly removed his head to the side and cut the air Gopnik fist near your head.'
 
 										act 'Hit in the face with his fist Gopnik':
@@ -111,9 +100,7 @@ $din_gboy_go_to_disco = {
 												gs 'stat'
 												'You hit Gopnik and hit him right on the nose. The guy yelled, "Oh, you bitch!" and lashed out at you. In my head rang and you realize that you are lying on the floor. Severe pain in the teeth and mouth full of salty liquid. You spit on the floor and saw that you knocked out a tooth. Gopari meanwhile pulled your guy beaten on the street where the money away, removed his shoes, and threw him into the bushes. You helped her boyfriend to his feet and carried him home. His face was covered in blood and bruises began to swim.'
 												act 'Go home':gt 'gorodok'
-											end
-
-											if speed < 50:
+											elseif speed < 50:
 												'You tried to hit hooligan punched in the face, but your blow was too slow. Gopnik pushed you and you flew away from him for a few meters and with a sweep crashed on the floor. Gopari meanwhile pulled your guy beaten on the street where the money away, removed his shoes, and threw him into the bushes. You helped her boyfriend to his feet and carried him home. His face was covered in blood and bruises began to swim.'
 												act 'Go home':gt 'gorodok'
 											end
@@ -124,18 +111,16 @@ $din_gboy_go_to_disco = {
 											gs 'stat'
 
 											if speed >= 90:
-												'You charge a good kick in the face hooligan. Head Gopnik strongly swayed and he grabbed his face. "Shit! Fucking bitch, You broke my nose, I now you´ll break the whole fucking mouth, bitch!" Your guy at this point punched hooligan with a broken nose and he will fly away for a couple of meters down to the dance floor. Two other goparey hung on your guy trying to unscrew his hands.'
+												'You charge a good kick in the face hooligan. Head Gopnik strongly swayed and he grabbed his face. "Shit! Fucking bitch, You broke my nose, I now you''ll break the whole fucking mouth, bitch!" Your guy at this point punched hooligan with a broken nose and he will fly away for a couple of meters down to the dance floor. Two other goparey hung on your guy trying to unscrew his hands.'
 
-												act 'Grab one of Gopnik´s face':
+												act 'Grab one of Gopnik''s face':
 													cls
 													gs 'stat'
 													GopWin[numnpc] += 1
-													'You nails clutching hooligan in the face and began to scratch his skin and ripping it. Gopnik does not break down and cry with unhooked from your guy. Your guy meanwhile rid of one of Gopnik manages to punch a second, then again and again. Gopnik fell on the floor like a sack. Gopnik with scarred muzzle pounced on your guy, but without success, blood flooded his eyes and your guy punched him in the face of what Gopnik flopped down on his ass. In the meantime, began to rise to his feet one of Gopnik. "Okay, motherfucker, piss with your bitch We´ll still find it!"'
+													'You nails clutching hooligan in the face and began to scratch his skin and ripping it. Gopnik does not break down and cry with unhooked from your guy. Your guy meanwhile rid of one of Gopnik manages to punch a second, then again and again. Gopnik fell on the floor like a sack. Gopnik with scarred muzzle pounced on your guy, but without success, blood flooded his eyes and your guy punched him in the face of what Gopnik flopped down on his ass. In the meantime, began to rise to his feet one of Gopnik. "Okay, motherfucker, piss with your bitch We''ll still find it!"'
 													act 'Go home':gt 'gorodok'
 												end
-											end
-
-											if speed < 90:
+											elseif speed < 90:
 												'You tried to kick hooligan Jodan but he managed to push you before you even have time to do something. You flew away from him for a few meters and with a sweep crashed on the floor. Gopari meanwhile pulled your guy beaten on the street where the money away, removed his shoes, and threw him into the bushes. You helped her boyfriend to his feet and carried him home. His face was covered in blood and bruises began to swim.'
 												act 'Go home':gt 'gorodok'
 											end
@@ -151,22 +136,18 @@ $din_gboy_go_to_disco = {
 												if bollrand = 0:
 													'You got the balls Gonick and he flopped down on his knees howling pinching sore hands. Two other Gopnik hung on your guy trying to unscrew his hands.'
 
-													act 'Grab one of Gopnik´s face':
+													act 'Grab one of Gopnik''s face':
 														cls
 														gs 'stat'
 														GopWin[numnpc] += 1
-														'You nails clutching hooligan in the face and began to scratch his skin and ripping it. Gopnik does not break down and cry with unhooked from your guy. Your guy meanwhile rid of one of Gopnik manages to punch a second, then again and again. Gopnik fell on the floor like a sack. Gopnik with scarred muzzle pounced on your guy, but without success, blood flooded his eyes and your guy punched him in the face of what Gopnik flopped down on his ass. In the meantime, began to rise to his feet one of Gopnik. "Okay, motherfucker, piss with your bitch We´ll still find it!"'
+														'You nails clutching hooligan in the face and began to scratch his skin and ripping it. Gopnik does not break down and cry with unhooked from your guy. Your guy meanwhile rid of one of Gopnik manages to punch a second, then again and again. Gopnik fell on the floor like a sack. Gopnik with scarred muzzle pounced on your guy, but without success, blood flooded his eyes and your guy punched him in the face of what Gopnik flopped down on his ass. In the meantime, began to rise to his feet one of Gopnik. "Okay, motherfucker, piss with your bitch We''ll still find it!"'
 														act 'Go home':gt 'gorodok'
 													end
-												end
-
-												if bollrand = 1:
+												elseif bollrand = 1:
 													'You tried to kick hooligan between his legs but he ducked and shoved you. You flew away from him for a few meters and with a sweep crashed on the floor. Gopari meanwhile pulled your guy beaten on the street where the money away, removed his shoes, and threw him into the bushes. You helped her boyfriend to his feet and carried him home. His face was covered in blood and bruises began to swim.'
 													act 'Go home':gt 'gorodok'
 												end
-											end
-
-											if speed < 70:
+											elseif speed < 70:
 												'You tried to kick hooligan between his legs but he ducked and shoved you. You flew away from him for a few meters and with a sweep crashed on the floor. Gopari meanwhile pulled your guy beaten on the street where the money away, removed his shoes, and threw him into the bushes. You helped her boyfriend to his feet and carried him home. His face was covered in blood and bruises began to swim.'
 												act 'Go home':gt 'gorodok'
 											end
@@ -184,21 +165,17 @@ $din_gboy_go_to_disco = {
 						DPtipe = 2
 						gs 'BnameGen'
 						gs 'stat'
-						'You danced with Gopnik. <<$nameBoyfrend[numnpc]>> approached him and grabbed his shoulder. "Hey you! That´s my girl!" For your guy approached couple Gopnik and steel grind with him, but failing to come to you and to the hooligan dancing with you. soon <<$nameBoyfrend[numnpc]>> spat and sending you to the dick left the disco. Gopnik suggested you plunk him.'
+						'You danced with Gopnik. <<$nameBoyfrend[numnpc]>> approached him and grabbed his shoulder. "Hey you! That''s my girl!" For your guy approached couple Gopnik and steel grind with him, but failing to come to you and to the hooligan dancing with you. soon <<$nameBoyfrend[numnpc]>> spat and sending you to the dick left the disco. Gopnik suggested you plunk him.'
 
 						act 'Go thump':gt 'EvgopBuh'
 					end
-				end
-
-				if GorSlut >= 3:
+				elseif GorSlut >= 3:
 					otnBoyFrend[numnpc] = 0
-					'Gopnik looks at you and then starts laughing "hear potsik. What´re you dance with her? Same <<$name>> <<$gnikname>>. Take her into the bushes, but Nava her mouth. You know how it is sweet smacked when sucks dick. "Red with the words you Gopnik and embarrassed. <<$nameBoyfrend[numnpc]>> Gopnik began to run into, "What did you say? Come again!" By hooligan immediately approached his friends. "Hears the boy. Bykuy not. Svetku For all the boys in the neighborhood knows that she <<$gnikname>>." <<$nameBoyfrend[numnpc]>> looks at you with surprise. "What is truth?" Boys laugh "Well, you and the brake." <<$nameBoyfrend[numnpc]>> beats you hand over his face, "Fuck you on the dick, slut!" whereupon <<$nameBoyfrend[numnpc]>> leaves the dance floor.'
+					'Gopnik looks at you and then starts laughing "hear potsik. What''re you dance with her? Same <<$name>> <<$gnikname>>. Take her into the bushes, but Nava her mouth. You know how it is sweet smacked when sucks dick. "Red with the words you Gopnik and embarrassed. <<$nameBoyfrend[numnpc]>> Gopnik began to run into, "What did you say? Come again!" By hooligan immediately approached his friends. "Hears the boy. Bykuy not. <<$name>> For all the boys in the neighborhood knows that she <<$gnikname>>." <<$nameBoyfrend[numnpc]>> looks at you with surprise. "What is truth?" Boys laugh "Well, you and the brake." <<$nameBoyfrend[numnpc]>> beats you hand over his face, "Fuck you on the dick, slut!" whereupon <<$nameBoyfrend[numnpc]>> leaves the dance floor.'
 
 					act 'rubbing cheek':gt 'gdkin'
 				end
-			end
-
-			if diskoIvTiperand = 1:
+			elseif diskoIvTiperand = 1:
 				'<<$nameBoyfrend[numnpc]>> said he wanted a beer and invited you to go with him to drink beer.'
 
 				act 'And refuse to dance one':
@@ -211,16 +188,16 @@ $din_gboy_go_to_disco = {
 					'Your guy came from a disco that would buy a beer and drink it in the meantime you continue to dance.'
 
 					if GorSlut >= 3:
-						'It suits you guy "Heh. I´ve been observing how <<$gnikname>> <<$name>> fun with a guy. He still does not know who you are? Can I tell him?"'
+						'It suits you guy "Heh. I''ve been observing how <<$gnikname>> <<$name>> fun with a guy. He still does not know who you are? Can I tell him?"'
 
 						act 'Send it':
 							cls
 							dom += 1
 							otnBoyFrend[numnpc] = 0
 							gs 'stat'
-							'You will send the guy to go to hell and he´s not a good smile stepped aside. At this point, you came <<$nameBoyfrend[numnpc]>> and asked, "What this guy should have been?" You lied to him on the move "To dance like, I turned him down." Then a guy came up to you and your guy to talk withdrawn. After a while, you came <<$nameBoyfrend[numnpc]>> and said "I´ll throw. turns you real damn, I´m out of a garbage found that would waste their time on such a whore!"'
+							'You will send the guy to go to hell and he''s not a good smile stepped aside. At this point, you came <<$nameBoyfrend[numnpc]>> and asked, "What this guy should have been?" You lied to him on the move "To dance like, I turned him down." Then a guy came up to you and your guy to talk withdrawn. After a while, you came <<$nameBoyfrend[numnpc]>> and said "I''ll throw. turns you real damn, I''m out of a garbage found that would waste their time on such a whore!"'
 
-							act 'move away':gt 'gdkin'
+							act 'Move away':gt 'gdkin'
 						end
 
 						act 'Ask him not to tell':
@@ -234,23 +211,23 @@ $din_gboy_go_to_disco = {
 								dom += 1
 								otnBoyFrend[numnpc] = 0
 								gs 'stat'
-								'You will send the guy to go to hell and he´s not a good smile stepped aside. At this point, you came <<$nameBoyfrend[numnpc]>> and asked, "What this guy should have been?" You lied to him on the move "To dance like, I turned him down." Then a guy came up to you and your guy to talk withdrawn. After a while, you came <<$nameBoyfrend[numnpc]>> and said "I´ll throw. turns you real damn, I´m out of a garbage found that would waste their time on such a whore!"'
+								'You will send the guy to go to hell and he''s not a good smile stepped aside. At this point, you came <<$nameBoyfrend[numnpc]>> and asked, "What this guy should have been?" You lied to him on the move "To dance like, I turned him down." Then a guy came up to you and your guy to talk withdrawn. After a while, you came <<$nameBoyfrend[numnpc]>> and said "I''ll throw. turns you real damn, I''m out of a garbage found that would waste their time on such a whore!"'
 
-								act 'move away':gt 'gdkin'
+								act 'Move away':gt 'gdkin'
 							end
 
 							act 'Agree':
 								cls
 								sub += 1
 								gs 'stat'
-								'You agreed and the guy said you go to the toilet. You immediately depressed. Toilet in the club was something of a thoroughfare, someone out there smoking, someone defecate in booths half door was not. The guy took you to the men´s room. When you opened the door there, they saw that some drunk guys standing at the threshold of smoke. In one of the booths heard as someone pukes. Boys bewildered looked at you, "Baby, you do not mistake? This male toilet." The guy who brought you smiled "She´s with me." He turned his head to you, "Well that cocksucker. Bury in his mouth." You looked at the guys and asked, "What right here or what?" Boys laughed "C´mon. Smuschaeshsya What are you?"'
+								'You agreed and the guy said you go to the toilet. You immediately depressed. Toilet in the club was something of a thoroughfare, someone out there smoking, someone defecate in booths half door was not. The guy took you to the men''s room. When you opened the door there, they saw that some drunk guys standing at the threshold of smoke. In one of the booths heard as someone pukes. Boys bewildered looked at you, "Baby, you do not mistake? This male toilet." The guy who brought you smiled "She''s with me." He turned his head to you, "Well that cocksucker. Bury in his mouth." You looked at the guys and asked, "What right here or what?" Boys laughed "C''mon. Smuschaeshsya What are you?"'
 
 								act 'Send it':
 									cls
 									dom += 1
 									otnBoyFrend[numnpc] = 0
 									gs 'stat'
-									'You will send the guy to go to hell and he´s not a good smile stepped aside. At this point, you came <<$nameBoyfrend[numnpc]>> and asked, "What this guy should have been?" You lied to him on the move "To dance like, I turned him down." Then a guy came up to you and your guy to talk withdrawn. After a while, you came <<$nameBoyfrend[numnpc]>> and said "I´ll throw. turns you real damn, I´m out of a garbage found that would waste their time on such a whore!"'
+									'You will send the guy to go to hell and he''s not a good smile stepped aside. At this point, you came <<$nameBoyfrend[numnpc]>> and asked, "What this guy should have been?" You lied to him on the move "To dance like, I turned him down." Then a guy came up to you and your guy to talk withdrawn. After a while, you came <<$nameBoyfrend[numnpc]>> and said "I''ll throw. turns you real damn, I''m out of a garbage found that would waste their time on such a whore!"'
 
 									act 'Move away':gt 'gdkin'
 								end
@@ -264,12 +241,12 @@ $din_gboy_go_to_disco = {
 									swallow += 1
 									gs 'stat'
 									'<center><img src="images/qwest/alter/Ev/public.jpg"></center>'
-									'You squatted man unbuttoned his pants and pulled out his standing member. Other boys were smoked and watched the scene. You opened your mouth and licked maroon penis, then cupped her own <<$liptalk>> and took the cock in her mouth. Boys started laughing komentirovat what they see, "Look how vaflersha smacked." Another echoed, "Where did you just find a cocksucker" Once someone know you "So it´s <<$name>> <<$surname>>. Damn it down and out." You blushed and burned with shame sucking dick in front of other guys. Finally the guy started to cum in your mouth and you try as quickly as possible to swallow sperm. Cock finally went limp and he tucked in his pants. You got up from the floor and began to wipe his mouth, feeling out of your mouth smells like sperm. One of the guys chuckled, "Hey star blowjob, suck, and I have."'
+									'You squatted man unbuttoned his pants and pulled out his standing member. Other boys were smoked and watched the scene. You opened your mouth and licked maroon penis, then cupped her own <<$liptalk>> and took the cock in her mouth. Boys started laughing komentirovat what they see, "Look how vaflersha smacked." Another echoed, "Where did you just find a cocksucker" Once someone know you "So it''s <<$name>> <<$surname>>. Damn it down and out." You blushed and burned with shame sucking dick in front of other guys. Finally the guy started to cum in your mouth and you try as quickly as possible to swallow sperm. Cock finally went limp and he tucked in his pants. You got up from the floor and began to wipe his mouth, feeling out of your mouth smells like sperm. One of the guys chuckled, "Hey star blowjob, suck, and I have."'
 
 									act 'Slip out of the closet':
 										cls
 										gs 'stat'
-										'You are trying not to pay attention to the guys slipped back out of the closet on the floor. <<$nameBoyfrend[numnpc]>> have been looking for you, he came up to you and asked, "Where are you gone? everywhere you here I am looking for." You sovreali first thing that came to mind, "went to the toilet." <<$nameBoyfrend[numnpc]>> asked "A mouth that wipe?"'
+										'You are trying not to pay attention to the guys slipped back out of the cloon the floor. <<$nameBoyfrend[numnpc]>> have been looking for you, he came up to you and asked, "Where are you gone? everywhere you here I am looking for." You sovreali first thing that came to mind, "went to the toilet." <<$nameBoyfrend[numnpc]>> asked "A mouth that wipe?"'
 
 										act 'suggest leave':
 											cls
@@ -286,7 +263,7 @@ $din_gboy_go_to_disco = {
 											cls
 											otnBoyFrend[numnpc] = 0
 											gs 'stat'
-											'You continued to dance with her boyfriend and suddenly saw how out of toilet boys who witnessed how you make a blowjob. They also see you and guffawed, noisily discussing something. <<$NameBoyfrend[numnpc]>> puzzled look at them, "What are they?" The boys shouted to him, "until you wandered somewhere, your teen in the men´s toilet sucks dicks!" <<$NameBoyfrend[numnpc]>> came up to them, "You bazaar?" Boys started to tell him how you just suck dick in front of them. <<$NameBoyfrend[numnpc]>> came up to you and slapped you podschechinu "Get the fuck out whore! And so I did not see you anymore!"'
+											'You continued to dance with her boyfriend and suddenly saw how out of toilet boys who witnessed how you make a blowjob. They also see you and guffawed, noisily discussing something. <<$NameBoyfrend[numnpc]>> puzzled look at them, "What are they?" The boys shouted to him, "until you wandered somewhere, your teen in the men''s toilet sucks dicks!" <<$NameBoyfrend[numnpc]>> came up to them, "You bazaar?" Boys started to tell him how you just suck dick in front of them. <<$NameBoyfrend[numnpc]>> came up to you and slapped you podschechinu "Get the fuck out whore! And so I did not see you anymore!"'
 
 											act 'Move away':gt 'gdkin'
 										end
@@ -294,16 +271,14 @@ $din_gboy_go_to_disco = {
 								end
 							end
 						end
-					end
-
-					if GorSlut < 3:
+					elseif GorSlut < 3:
 						'While your guy went for a beer came to you what that guy is not familiar with you and began to dance.'
 
 						act 'Dance':
 							cls
 							otnBoyFrend[numnpc] -= 20
 							gs 'stat'
-							'You danced with unfamiliar guy and at this moment entered the hall <<$nameBoyfrend[numnpc]>> he came up to you and pulled you by the hand dragged from another guy. "You do something ohrenela? To retreat is impossible, and you´ve found someone!" He was offended at you and walked away from the disco.'
+							'You danced with unfamiliar guy and at this moment entered the hall <<$nameBoyfrend[numnpc]>> he came up to you and pulled you by the hand dragged from another guy. "You do something ohrenela? To retreat is impossible, and you''ve found someone!" He was offended at you and walked away from the disco.'
 
 							act 'Move away':gt 'gdkin'
 						end
@@ -345,7 +320,7 @@ $din_gboy_go_to_disco = {
 						'<<$nameBoyfrend[numnpc]>> you tenderly embraced and began to kiss your lips.'
 
 						if gnpcSex[numnpc] > 0:
-							'<<$nameBoyfrend[numnpc]>> whispered in your ear, "Svetsik can Let us than anything right here?"'
+							'<<$nameBoyfrend[numnpc]>> whispered in your ear, "<<$name>> can Let us than anything right here?"'
 
 							act 'jerk guy':
 								cls
@@ -357,7 +332,7 @@ $din_gboy_go_to_disco = {
 								sub += 1
 								gs 'stat'
 								'<center><img src="images/qwest/alter/Ev/hj.jpg"></center>'
-								'You got him hard and hot cock out of his pants and took his hand. You started kissing a guy at the same time masturbate his penis. Finally the guy strangled groan and you´ll see how his cock off sperm.'
+								'You got him hard and hot cock out of his pants and took his hand. You started kissing a guy at the same time masturbate his penis. Finally the guy strangled groan and you''ll see how his cock off sperm.'
 
 								act 'Further':
 									cls
@@ -388,7 +363,7 @@ $din_gboy_go_to_disco = {
 								'<center><img src="images/qwest/alter/Ev/cocksucker.jpg"></center>'
 								'You squatted in front of the guy and brought her face to his cock.'
 								dynamic $dinrandbj
-								'Soon <<$nameBoyfrend[numnpc]>> groaned "Svetsik, I´m going to come."'
+								'Soon <<$nameBoyfrend[numnpc]>> groaned "<<$name>>, I''m going to come."'
 
 								act 'suck on':
 									cls
@@ -422,9 +397,7 @@ $din_gboy_go_to_disco = {
 									end
 								end
 							end
-						end
-
-						if gnpcSex[numnpc] = 0:
+						elseif gnpcSex[numnpc] = 0:
 							'You feel like your guy hands caress your breasts.'
 
 							act 'Stop':
@@ -438,7 +411,7 @@ $din_gboy_go_to_disco = {
 								minut += 3
 								gs 'stat'
 								'<center><img src="images/qwest/alter/Ev/tits.jpg"></center>'
-								'<<$nameBoyfrend[numnpc]>> pulls your breast size <<tits>> outside and begins to knead your breasts and kiss them. Guy takes your hand and puts it on the groin, you feel that he´s got a hard cock.'
+								'<<$nameBoyfrend[numnpc]>> pulls your breast size <<tits>> outside and begins to knead your breasts and kiss them. Guy takes your hand and puts it on the groin, you feel that he''s got a hard cock.'
 
 								act 'Caress his cock through his pants':
 									cls
@@ -464,7 +437,7 @@ $din_gboy_go_to_disco = {
 										end
 									end
 
-									act 'Going to the guy´s pants':
+									act 'Going to the guy''s pants':
 										cls
 										horny += 10
 										minut += 3
@@ -483,7 +456,7 @@ $din_gboy_go_to_disco = {
 												sub += 1
 												gs 'stat'
 												'<center><img src="images/qwest/alter/Ev/hj.jpg"></center>'
-												'You got him hard and hot cock out of his pants and took his hand. You started kissing a guy at the same time masturbate his penis. Finally the guy strangled groan and you´ll see how his cock off sperm.'
+												'You got him hard and hot cock out of his pants and took his hand. You started kissing a guy at the same time masturbate his penis. Finally the guy strangled groan and you''ll see how his cock off sperm.'
 
 												act 'Further':
 													cls
@@ -515,7 +488,7 @@ $din_gboy_go_to_disco = {
 											'<center><img src="images/qwest/alter/Ev/cocksucker.jpg"></center>'
 											'You squatted in front of the guy and brought her face to his cock.'
 											dynamic $dinrandbj
-											'Soon <<$nameBoyfrend[numnpc]>> groaned "Svetsik, I´m going to come."'
+											'Soon <<$nameBoyfrend[numnpc]>> groaned "<<$name>>, I''m going to come."'
 
 											act 'suck on':
 												cls
@@ -659,15 +632,20 @@ $din_gboy_go_to_disco = {
 						end
 					end
 				end
+			elseif diskoIvTiperand = 2:
+				''
+			elseif diskoIvTiperand = 3:
+				''
 			end
 
-			if diskoIvTiperand = 2:''
-			if diskoIvTiperand = 3:''
 			exit
 		end
 
-		if kissBoyFrend[numnpc] > 0:''
-		if kissBoyFrend[numnpc] = 0:''
+		if kissBoyFrend[numnpc] > 0:
+			''
+		elseif kissBoyFrend[numnpc] = 0:
+			''
+		end
 
 		dynamic $din_gboy_end_to_disco
 
@@ -683,7 +661,7 @@ $din_gboy_tits = {
 		minut += 3
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/tits.jpg"></center>'
-		'<<$nameBoyfrend[numnpc]>> pulls your breast size <<tits>> outside and begins to knead your breasts and kiss them. Guy takes your hand and puts it on the groin, you feel that he´s got a hard cock.'
+		'<<$nameBoyfrend[numnpc]>> pulls your breast size <<tits>> outside and begins to knead your breasts and kiss them. Guy takes your hand and puts it on the groin, you feel that he''s got a hard cock.'
 
 		act 'Caress his cock through his pants':
 			cls
@@ -706,7 +684,7 @@ $din_gboy_tits = {
 				end
 			end
 
-			act 'Going to the guy´s pants':
+			act 'Going to the guy''s pants':
 				cls
 				horny += 10
 				minut += 3
@@ -725,7 +703,7 @@ $din_gboy_tits = {
 						sub += 1
 						gs 'stat'
 						'<center><img src="images/qwest/alter/Ev/hj.jpg"></center>'
-						'You got him hard and hot cock out of his pants and took his hand. You started kissing a guy at the same time masturbate his penis. Finally the guy strangled groan and you´ll see how his cock off sperm.'
+						'You got him hard and hot cock out of his pants and took his hand. You started kissing a guy at the same time masturbate his penis. Finally the guy strangled groan and you''ll see how his cock off sperm.'
 
 						act 'Go home':gt 'gorodok'
 					end
@@ -754,7 +732,7 @@ $din_gboy_tits = {
 					'<center><img src="images/qwest/alter/Ev/cocksucker.jpg"></center>'
 					'You squatted in front of the guy and brought her face to his cock.'
 					dynamic $dinrandbj
-					'Soon <<$nameBoyfrend[numnpc]>> groaned "Svetsik, I´m going to come."'
+					'Soon <<$nameBoyfrend[numnpc]>> groaned "<<$name>>, I''m going to come."'
 
 					act 'Suck on':
 						cls
@@ -832,6 +810,7 @@ $din_gboy_tits = {
 							dynamic $sexstart
 							dynamic $analsex
 							'Finally the guy dies and you feel like something warm fills your ass.'
+
 							act 'Leave.':gt 'gorodok'
 						end
 					end
@@ -1018,8 +997,8 @@ $din_gboy_go_to_boyhome = {
 		cls
 		minut += 15
 		gs 'stat'
-		boyhouserand = rand(0, 2)
 		'<<$nameBoyfrend[numnpc]>> led you to his home. You came to a small two-story house, in which there were several apartments and <<$nameBoyfrend[numnpc]>> guide you to your apartment. He opened the door with a key and let you.'
+		boyhouserand = rand(0, 2)
 
 		if boyhouserand = 0:
 			'Man at home there was no one and he suggested you go to the gym and see Vidic.'
@@ -1053,9 +1032,7 @@ $din_gboy_go_to_boyhome = {
 						'You got up from the couch and a scandal guy claiming that you are not so and it from you only need one. <<$nameBoyfrend[numnpc]>> embarrassed and blushing began bubnet apology.'
 						act 'Go home':gt 'gorodok'
 					end
-				end
-
-				if boyvideorand > 0:
+				elseif boyvideorand > 0:
 					'Started Hollywood thriller in which the protagonist smashed everything around him while he managed to not even scratched. In the film, killed his best friend, after which the hero on his knees beside the body screaming NO! in the rain. Finally got to the main hero and villain after a hard fight killed them, ended the film as expected explosion in the background from which the hero escaped.'
 					boyprirand = rand(0, 2)
 
@@ -1092,14 +1069,11 @@ $din_gboy_go_to_boyhome = {
 					end
 				end
 			end
-		end
-
-		if boyhouserand = 1:
+		elseif boyhouserand = 1:
 			'<center><img src="images/qwest/alter/groped.jpg"></center>'
 			'Man at home there was no one and he suggested that you go to his room. In his room, a guy sat next to you and started stroking your knee.'
 			dynamic $din_gboy_knee
-		end
-		if boyhouserand = 2:
+		elseif boyhouserand = 2:
 			'<center><img src="images/qwest/alter/groped.jpg"></center>'
 			'Man at home were parents and he quickly walks you to your room. In his room, a guy sat next to you and started stroking your knee.'
 			dynamic $din_gboy_knee
@@ -1128,71 +1102,53 @@ if hour < 20:
 	if otnBoyFrend[numnpc] < 80:
 		'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
 		act 'Go home':gt 'gorodok'
-	end
-
-	if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
+	elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
 		gdeystboyrand = rand(0, 1)
 
 		if gdeystboyrand = 0:
 			'<<$nameBoyfrend[numnpc]>> offered to go to his home.'
 			dynamic $din_gboy_go_to_boyhome
 			act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
-		end
-
-		if gdeystboyrand = 1:
+		elseif gdeystboyrand = 1:
 			'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
 			act 'Go home':gt 'gorodok'
 		end
-	end
-
-	if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
+	elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
 		'<<$nameBoyfrend[numnpc]>> offered to go to his home.'
 		dynamic $din_gboy_go_to_boyhome
 		act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
 	end
-end
-
-if hour >= 20 and hour < 23:
+elseif hour >= 20 and hour < 23:
 	if otnBoyFrend[numnpc] < 80:
 		'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
 		act 'Go home':gt 'gorodok'
-	end
-
-	if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
+	elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
 		tipgbrand = rand(0, 1)
 
 		if tipgbrand = 0:
 			'<<$nameBoyfrend[numnpc]>> offered to go to the disco.'
 			dynamic $din_gboy_go_to_disco
 			act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
-		end
-
-		if tipgbrand = 1:
+		elseif tipgbrand = 1:
 			'<<$nameBoyfrend[numnpc]>> offered to go to his home.'
 			dynamic $din_gboy_go_to_boyhome
 			act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
 		end
-	end
-
-	if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
+	elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
 		gdeystboyrand = rand(0, 1)
 
 		if gdeystboyrand = 0:
 			'<<$nameBoyfrend[numnpc]>> offered to go to his home.'
 			dynamic $din_gboy_go_to_boyhome
 			act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
-		end
-
-		if gdeystboyrand = 1:
+		elseif gdeystboyrand = 1:
 			'<<$nameBoyfrend[numnpc]>> offered to go to the disco.'
 			dynamic $din_gboy_go_to_disco
 			act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
 		end
 
 	end
-end
-
-if hour >= 23:
+elseif hour >= 23:
 	'<<$nameBoyfrend[numnpc]>> offered to take you home.'
 
 	act 'go home':gt 'gorodok'

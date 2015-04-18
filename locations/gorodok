@@ -3,10 +3,12 @@ $metka = $ARGS[0]
 $loc = $CURLOC
 $metkaStreet = $ARGS[0]
 $locStreet = $CURLOC
-litltown = 1
-
 cla
 *clr
+litltown = 1
+alkoblock = 0
+boynumBlock = 0
+music_on = 0
 
 '<center><h4>The Village</h4></center>'
 '<center><img src="images/etogame/gorodok.jpg"></center>'
@@ -32,7 +34,7 @@ if NosovRevenge = 2 and daynosovrevenge + 1 >= daystart:
 	gs'stat'
 	'<center><b><font color="maroon"><<$npcName[1]>> <<$npcSurName[1]>></font></b></center>'
 	'<center><img src="images/qwest/alter/npc/1.jpg" ></center>'
-	'Near the house "Well slut. If you do not want that to video became public, Now let`s go and talk to me."'
+	'Near the house "Well slut. If you do not want that to video became public, Now let''s go and talk to me."'
 
 	act 'Go to Dimka':
 		cls
@@ -47,15 +49,15 @@ if NosovRevenge = 2 and daynosovrevenge + 1 >= daystart:
 	exit
 end
 
-set gorodokwhorerand = rand(1, 5)
+gorodokwhorerand = rand(1, 5)
 
-if gorodokwhore >= 2 and gorodokwhore < 6 and gorodokwhorerand >= 4:'You catch yourself on people´s views, some are trying to find you in someone, and maybe learn. Occasionally you hear people chuckle. Looks like someone found out about your adventures.'
-if gorodokwhore >= 6 and gorodokwhore < 10 and gorodokwhorerand >= 4:'People look at you with a grin, someone makes vulgar gestures towards you some hints on your adventures.'
-if gorodokwhore >= 10 and gorodokwhorerand >= 4:'All around you will recognize whore. Some came by and slap you on the ass. Grandmother on the benches name-calling you whore.'
+if GorSlut = 3 and gorodokwhorerand >= 4:'You catch yourself on people''s views, some are trying to find you in someone, and maybe learn. Occasionally you hear people chuckle. Looks like someone found out about your adventures.'
+if GorSlut = 4 and gorodokwhorerand >= 4:'People look at you with a grin, someone makes vulgar gestures towards you some hints on your adventures.'
+if GorSlut >= 5 and gorodokwhorerand >= 4:'All around you will recognize whore. Some came by and slap you on the ass. Grandmother on the benches name-calling you whore.'
 
-set gorodokstreetsexrand = rand(1, 20)
+gorodokstreetsexrand = rand(1, 20)
 
-if gorodokwhore > 5 and gorodokstreetsexrand = 20:
+if GorSlut > 5 and gorodokstreetsexrand = 20:
 	'To you a guy came up and offered to move into the bushes to get laid for a hundred'
 
 	act 'Agree':gt 'gevent', '5'
@@ -65,7 +67,7 @@ gs 'stat'
 gs 'time'
 
 if car > 0 and cardrive = 20:
-	set cardrive = 20
+	cardrive = 20
 	'In the parking stands <a href="exec:gs ''carF'', ''start''">your <<$car>></a>.'
 end
 
@@ -74,8 +76,8 @@ if StoryLine = 1 and ParHomeBlock = 0:'Your home is in one of the houses, it''s 
 'The <a href="exec:minut += 15 & gt ''vokzalG''">Train Station</a>.'
 'The <a href="exec:minut += 15 & gt ''gpoli''">Clinic</a>.'
 
+if hour >= 8 and hour <= 20: 'The <a href="exec: minut += 15 & gt ''gaptek'',''start''">Pharmacy</a>.'
 !!!CV edition
-if hour >= 8 and hour <= 20: 'The <a href="exec: minut += 15 & gt ''gaptek'',''start''">Drugstore</a>.'
 if hour >= 8 and hour <= 17: '<a href="exec: minut += 3 & gt ''barbershop'',''start''">The local barbershop</a>'
 !!!
 if hour >= 8 and hour <= 22:'A kiosk selling <a href="exec:dynamic $kiosksig">cigarettes.</a>'
@@ -91,9 +93,9 @@ if hour >= 8 and hour <= 20:'The only major store in town is the <a href="exec:g
 'Small city <a href="exec:gt ''gskver'', ''park''">park</a>, in which people are going'
 'Aside from residential buildings is <a href="exec:minut += 5 & gt ''garmassiv''">Garage array</a>'
 
-if ArtemBeInHome > 0 and artemblok = 0:'apartment <a href="exec:minut += 15 & gt ''artemhome''">Artem Chebotarev</a>'
+if ArtemBeInHome > 0 and artemblok = 0:'Apartment <a href="exec:minut += 15 & gt ''artemhome''">Artem Chebotarev</a>'
 if DimaBeHomeOnce = 1 and DimaRudeBlock = 0:'Private house in which he lives <a href="exec:minut += 15 & gt ''dimaGoHome2''">Dimka Nosov</a>'
-if katjaFirstKiss >= 1:'Private house in which he lives <a href="exec:minut += 15 & gt ''KatjaHome''">Katja Meynold</a>'
+if katjaFirstKiss >= 1:'Private house in which <a href="exec:minut += 15 & gt ''KatjaHome''">Katja Meynold</a> lives.'
 
 if BeInNatBelHome = 1:
 	if hour >= 18 and hour <= 20 and week < 6 or hour >= 8 and hour <= 20 and week >= 6:'The house where the apartment <a href="exec:minut += 15 & gt ''NatBelHome''">Natasha Belova</a>'
@@ -107,12 +109,17 @@ if beinalbinahome > 0:'Luxurious mansion in which he lives <a href="exec:minut +
 
 'Urban development enterprise <a href="exec:minut += 15 & gt ''Gshveyfab''">Garment factory named Paris Commune</a>'
 
+if workPTU > 2:act '<b>Go to the hostel</b>':gt 'etoexhib', 'pos40'
+
 act 'Wait':
 	cla
 	waiting = input ("How long would you like to wait? (Not more than 120 minutes)")
 
-	if waiting <= 0 or waiting > 120:set minut += 15
-	if waiting > 0 and waiting <= 120:set minut += waiting
+	if waiting <= 0 or waiting > 120:
+		minut += 15
+	elseif waiting > 0 and waiting <= 120:
+		minut += waiting
+	end
 
 	act 'Take a look at the clock':gt $curloc
 end
@@ -128,14 +135,12 @@ if StoryLine = 1 and hour >= 8 and hour < 23:
 				sosedknow = 1
 				sosedday = day
 				gs 'stat'
-				'Suddenly "Sveta." You turn around and see a neighbor Uncle Misha, he looks at your face with surprise "It`s that on your face?" You blush and hesitate, Stra hand to wipe off the face of sperm. he grins "Well, all clear." and goes on about his business.'
+				'Suddenly "<<$name>>." You turn around and see a neighbor Uncle Misha, he looks at your face with surprise "It''s that on your face?" You blush and hesitate, Stra hand to wipe off the face of sperm. he grins "Well, all clear." and goes on about his business.'
 
 				act 'further':gt curloc
 
 				exit
-			end
-
-			if sosedknow > 0:
+			elseif sosedknow > 0:
 				sosedday = day
 				'Once again you are confronted face to face with Uncle Misha, your neighbor, he chuckled looking at you "Well."'
 

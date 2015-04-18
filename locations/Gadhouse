@@ -3,7 +3,7 @@ $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><H4>cottage</H4></center>'
+'<center><H4>Cottage</H4></center>'
 '<center><img src="images/qwest/gadukino/izba.jpg"></center>'
 'Simple village hut. In a small room is <a href="exec:gt ''loker'', ''start''">cupboard</a> and <a href="exec:gt ''bedPar''">bed</a> where you can sleep. In a large room is <a href="exec:gt ''tvPar''">tv_set</a>. TV stands next to an ancient <a href="exec:gt ''mirror'', ''start''">trellis</a>'
 clr
@@ -12,45 +12,38 @@ fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
 
-act 'Go outside':
-	minut += 5
-	gt 'Gaddvor'
-end
+act 'Go outside':minut += 5 & gt 'Gaddvor'
 
 act 'Eat':
 	cla
 	*clr
-	gs 'stat'
 	frost = 0
-	'<center><img src="images/pics/food.jpg"></center>'
-	set minut += 30
-	set health += 10
-	set manna += 20
+	minut += 30
+	health += 10
+	manna += 20
 	wipo += 5
 	salo += 1
+	gs 'stat'
+	'<center><img src="images/pics/food.jpg"></center>'
 
 	if energy >= 30:
-		set fat += 5
-		'You can no longer have.'
-	end
-
-	if energy >= 20 and energy < 30:
-		set fat += 3
-		set energy += 10
+		fat += 5
+		'You can no longer eat.'
+	elseif energy >= 20 and energy < 30:
+		fat += 3
+		energy += 10
 		'You pushed through the power of a meal.'
-	end
-
-	if energy < 20:
-		set energy += 20
-		!!set fat = fat + 1
+	elseif energy < 20:
+		energy += 20
+		!!fat = fat + 1
 		'You gladly ate cooked food.'
 	end
 
-	if water >= 20:'Tea in you no longer climbs.'
-
-	if water < 20:
+	if water >= 20:
+		'You don''t need any more tea.'
+	elseif water < 20:
+		water += 20
 		'You gladly drank a cup of tea.'
-		set water += 20
 	end
 
 	gs 'stat'

@@ -24,7 +24,7 @@ if preg = 1 and pregtime <= 80 and pregTalk[numnpc] = 0 and gnpcSex[numnpc] = 1:
 		'You said the guy, that become pregnant by him. He just did not come out of the eye orbits.'
 
 		if $father = $nameBoyfrend[numnpc]:
-			'The guy thought. "Listen, I`m not ready to be a father, and even marry you." He handed you 5five thousand. "money, and let us part."'
+			'The guy thought. "Listen, I''m not ready to be a father, and even marry you." He handed you 5five thousand. "money, and let us part."'
 
 			act 'Throw a guy and take the money':
 				cls
@@ -73,9 +73,13 @@ if GboyBalabol[numnpc] = 1:
 		'You accused guy that he blabbed about your relationship now and all surrounding believe that you <<$gnikname>>'
 		reaktrand = rand(0, 2)
 
-		if reaktrand = 0:'<<$nameBoyfrend[numnpc]>> it began to apologize, he accidentally drunk one friend said, and he blabbed all bitch. <<$nameBoyfrend[numnpc]>> vowed that more of this does not happen again.'
-		if reaktrand = 1:'<<$nameBoyfrend[numnpc]>> began to soothe you, say nothing terrible happened, chat and forget.'
-		if reaktrand = 2:'<<$nameBoyfrend[numnpc]>> said with a grin. Yes Relax, you is the real <<$gnikname>>, that this fact?'
+		if reaktrand = 0:
+			'<<$nameBoyfrend[numnpc]>> it began to apologize, he accidentally drunk one friend said, and he blabbed all bitch. <<$nameBoyfrend[numnpc]>> vowed that more of this does not happen again.'
+		elseif reaktrand = 1:
+			'<<$nameBoyfrend[numnpc]>> began to soothe you, say nothing terrible happened, chat and forget.'
+		elseif reaktrand = 2:
+			'<<$nameBoyfrend[numnpc]>> said with a grin. Yes Relax, you is the real <<$gnikname>>, that this fact?'
+		end
 
 		act 'quit Man':
 			cls
@@ -112,14 +116,13 @@ act 'Walking through the square':
 	if ski > 0 or glamur > 0:otnBoyFrend[numnpc] += 2
 
 	minut += 15
-	!!number of meetings
 	boytimes[numnpc] += 1
 	gs 'stat'
 	'You walk through the square with a guy and fun to hang out.'
 
 	if kotovLoveQW > 0:
 		otnBoyFrend[numnpc] = 0
-		'Suddenly you see is what you go to a meeting Witek Kotov he comes to the guy and silently slap in his face. <<$nameBoyfrend[numnpc]>> falls to the ground. Witek naklonyaetsya over him "Hey you fucker, it´s my girls, see you again with her, living in the woods to bury you understand?" The guy nods his head and says that he understood.'
+		'Suddenly you see is what you go to a meeting Witek Kotov he comes to the guy and silently slap in his face. <<$nameBoyfrend[numnpc]>> falls to the ground. Witek naklonyaetsya over him "Hey you fucker, it''s my girls, see you again with her, living in the woods to bury you understand?" The guy nods his head and says that he understood.'
 
 		act 'Leave':gt $loc, $metka
 
@@ -151,9 +154,7 @@ act 'Walking through the square':
 					'You watched the movie a couple of hours sitting in a chair next to the guy.'
 
 					act 'Go to the exit':gt 'Gnpc2'
-				end
-
-				if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
+				elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
 					'You have been watching a movie and suddenly felt a hand on my knee Man.'
 
 					act 'Remove his hands':
@@ -174,18 +175,14 @@ act 'Walking through the square':
 
 						act 'Go to the exit':gt 'Gnpc2'
 					end
-				end
-
-				if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
+				elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
 					'You have been watching the movies, and <<$nameBoyfrend[numnpc]>> put his hand on your foot and began to stroke your knee. Movie finally ended. In the hall lights went on and the screen went titles.'
 
 					act 'Go to the exit':gt 'Gnpc2'
 				end
 			end
 		end
-	end
-
-	if gboyrand = 1:
+	elseif gboyrand = 1:
 		'<<$nameBoyfrend[numnpc]>> suggested to drink beer in the park.'
 
 		act 'Apologize and leave':otnBoyFrend[numnpc] -= 5 & gt $loc, $metka
@@ -213,15 +210,11 @@ act 'Walking through the square':
 					'You drank beer with a guy, and plenty of fun.'
 
 					act 'Further':gt 'Gnpc2'
-				end
-
-				if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
+				elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
 					'You drank beer with a guy, and plenty of fun.'
 
 					act 'Further':gt 'Gnpc2'
-				end
-
-				if otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
+				elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
 					'You drank beer with a guy, and plenty of fun.'
 
 					act 'Further':gt 'Gnpc2'

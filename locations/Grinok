@@ -1,12 +1,12 @@
 # Grinok
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><h4>market</h4></center>'
-'<center><img src="images/pic/Grinok.jpg"></center>'
-'Located near the small market <a href="exec:minut += 3 & gt ''vokzalG''">station</a>'
 clr
 gs 'stat'
 gs 'time'
+'<center><h4>market</h4></center>'
+'<center><img src="images/pic/Grinok.jpg"></center>'
+'Located near the small market <a href="exec:minut += 3 & gt ''vokzalG''">station</a>'
 
 if hour >= 12 and hour <= 18:
 	'In the market the sellers of goods and beckoning shoppers.'
@@ -44,9 +44,7 @@ if hour >= 12 and hour <= 18:
 						gt $curloc
 					end
 				end
-			end
-
-			if rinevtip = 1:
+			elseif rinevtip = 1:
 				tovpayrand = rand(2, 5)
 				tovpay = tovpayrand * 100
 				'You see that sell for Vitaminki <<tovpay>> rubles'
@@ -60,9 +58,7 @@ if hour >= 12 and hour <= 18:
 						gt $curloc
 					end
 				end
-			end
-
-			if rinevtip = 2:
+			elseif rinevtip = 2:
 				tovpayrand = rand(2, 8)
 				tovpay = tovpayrand * 10
 				'You see that sell condoms <<tovpay>> rubles'
@@ -76,9 +72,7 @@ if hour >= 12 and hour <= 18:
 						gt $curloc
 					end
 				end
-			end
-
-			if rinevtip = 3:
+			elseif rinevtip = 3:
 				tovpayrand = rand(5, 10)
 				tovpay = tovpayrand * 100
 				'You see that sell lip balm for <<tovpay>> rubles'
@@ -92,9 +86,7 @@ if hour >= 12 and hour <= 18:
 						gt $curloc
 					end
 				end
-			end
-
-			if rinevtip = 4:
+			elseif rinevtip = 4:
 				tovpayrand = rand(1, 5)
 				tovpay = tovpayrand * 1000
 				'You see that sell for handbag <<tovpay>> rubles'
@@ -109,27 +101,21 @@ if hour >= 12 and hour <= 18:
 							gt $curloc
 						end
 					end
+				elseif bag > 0:
+					'Hmm, you already have a bag, why do you need another.'
 				end
-
-				if bag > 0:'Hmm, you already have a bag, why do you need another.'
-			end
-
-			if rinevtip = 5:
+			elseif rinevtip = 5:
 				if pornmarkonce = 0:pornmarkonce = 1
 				'Strolling on the market you accidentally wander into the far corner where they sell porn.'
 
 				act 'come_Up':gt 'Gpornmark'
-			end
-
-			if rinevtip = 6:
+			elseif rinevtip = 6:
 				if arturKnow = 0:
 					'Suddenly you hail "Hey devyushka, want tangerine skyushat?"'
 
-					act 'look':gt 'arturRinok'
-				end
-
-				if arturKnow > 0:
-					'Suddenly you hail "Hey Svetsik, come here, skyushay tangerine."'
+					act 'Look':gt 'arturRinok'
+				elseif arturKnow > 0:
+					'Suddenly you hail "Hey <<$name>>, come here, skyushay tangerine."'
 
 					act 'Go to Artur':gt 'arturRinok'
 				end
@@ -153,7 +139,7 @@ if hour >= 12 and hour <= 18:
 		cls
 		minut += 15
 		gs 'stat'
-		'On the counter is a very entertaining fantasy book, which costs only 150 rubles and more are women`s novels in paperback standing 300 rubles.'
+		'On the counter is a very entertaining fantasy book, which costs only 150 rubles and more are women''s novels in paperback standing 300 rubles.'
 
 		if money >= 150:
 			act 'Buy fantasy book (150 rubles)':

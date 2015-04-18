@@ -8,39 +8,39 @@ gs 'time'
 'Ordinary school where local children learn.'
 
 
-act 'Exit':gt 'gorodok'
+act 'Leave':gt 'gorodok'
 
 if zverRageQW = 1:
 	cls
 	zverRageQW = 2
 	gs'stat'
 	gs'time'
-	'You came to the school yard after school, vnezpno someone you flunked powerful Pendel in the ass, you dumbfounded turned and saw Christina Zverev contorted with rage face. She yelled at you "you ohuel, whether that bitch, about me any garbage chat? I`ll now break mug!"'
-	set $nameV = 'Christina'
+	'You came to the school yard after school, vnezpno someone you flunked powerful Pendel in the ass, you dumbfounded turned and saw Christina Zverev contorted with rage face. She yelled at you "you ohuel, whether that bitch, about me any garbage chat? I''ll now break mug!"'
+	$nameV = 'Christina'
 	!!stats
-	set strenV = 100
-	set speedV = 90
-	set agilV = 90
-	set reactV = 90
-	set vitalV = 120
-	set intelV = 50
-	set willV = 50
+	strenV = 100
+	speedV = 90
+	agilV = 90
+	reactV = 90
+	vitalV = 120
+	intelV = 50
+	willV = 50
 	!!skills
-	set magikV = 100
-	set boxingV = 40
-	set shootV = 100
+	magikV = 100
+	boxingV = 40
+	shootV = 100
 	!!parameters
-	set healthV = vitalV * 10 + strenV * 5
-	set mannaV = intelV * 10 + magikV * 10
-	set willpowerV = willV * 10
-	set BonusAtakV = 0
-	set BonusDefV = 0
+	healthV = vitalV * 10 + strenV * 5
+	mannaV = intelV * 10 + magikV * 10
+	willpowerV = willV * 10
+	BonusAtakV = 0
+	BonusDefV = 0
 	!!Programme of Action
-	set program = 0
-	set ZverevaFight = 1
+	program = 0
+	ZverevaFight = 1
 
-	if spellavtoklon = 1:set klon = 3
-	if spellbefshild = 1:set defence = 500
+	if spellavtoklon = 1:klon = 3
+	if spellbefshild = 1:defence = 500
 
 	round = 0
 
@@ -51,7 +51,7 @@ end
 
 if day = 29 and month = 12 and year = 2010 and StoryLine = 1:
 	if hour = 14:
-		'Near the school are already well-dressed girls and boys in your class. Someone called you "Sveta, you did not hand over a thousand for the new year"'
+		'Near the school are already well-dressed girls and boys in your class. Someone called you "<<$name>>, you did not hand over a thousand for the new year"'
 
 		if money >= 1000:act 'Go to a party (1,000 rubles)':money -= 1000 & gt 'sny'
 	end
@@ -65,9 +65,13 @@ if week = 6 and schoolSorev = 2 and hour = 10:
 		gs 'stat'
 		'You came to the athletes and he wrote you. After this athlete finished all the preparations for the competition and the guys went to a stratum. The guys went over and as expected won the Ivan Prokhorov. After the guys finished the turn girls.'
 
-		if swinbeggor = 0:'Ready to start Christina Zvereva, one of the girls in your class. She scoff at you, "You´ll never beat me."'
-		if swinbeggor = 1:'Ready to start Christina Zvereva, one of the girls in your class. She looks at you angrily, "You beat me once, but now you will not work."'
-		if swinbeggor = 2:'Ready to start Christina Zvereva, one of the girls in your class. She looks at you with hatred "Again came bitch? Never mind, this time I´ll do it!"'
+		if swinbeggor = 0:
+			'Ready to start Christina Zvereva, one of the girls in your class. She scoff at you, "You''ll never beat me."'
+		elseif swinbeggor = 1:
+			'Ready to start Christina Zvereva, one of the girls in your class. She looks at you angrily, "You beat me once, but now you will not work."'
+		elseif swinbeggor = 2:
+			'Ready to start Christina Zvereva, one of the girls in your class. She looks at you with hatred "Again came bitch? Never mind, this time I''ll do it!"'
+		end
 
 		act 'Go to start':
 			cls
@@ -77,9 +81,9 @@ if week = 6 and schoolSorev = 2 and hour = 10:
 			gs 'stat'
 			'<center><img src="images/etogame/begsor.jpg"></center>'
 			'Girls, on the 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
-			set begplus = beg + speed + vital + rand(1, 20)
-			set begminus = salo + rand(1, 20)
-			set begresult = begplus - begminus
+			begplus = beg + speed + vital + rand(1, 20)
+			begminus = salo + rand(1, 20)
+			begresult = begplus - begminus
 
 			if begresult <= 0:'You barely managed to reach the finish line, what place is really there, of course you are the last.'
 			if begresult > 0 and begresult < 70:'You are not bad ran for dilettante course, as ranked last 8th place.'
@@ -89,31 +93,27 @@ if week = 6 and schoolSorev = 2 and hour = 10:
 			if begresult >= 100 and begresult < 110:'You fought hard, but only managed to take 4th place.'
 			if begresult >= 110 and begresult < 120:'You fought hard and managed to take 3rd place. Fizruk congratulates you on your success.'
 			if begresult >= 120 and begresult < 130:'You fought hard and managed to take 2nd place. Fizruk congratulates you in hurry.'
-			if begresult >= 130:Set swinbeggor += 1 & dom += 1 & 'You fought hard and managed to take 1st place. Fizruk congratulate you on winning the competition.'
+			if begresult >= 130:swinbeggor += 1 & dom += 1 & 'You fought hard and managed to take 1st place. Fizruk congratulate you on winning the competition.'
 
-			set beg += 1
-			set fat -= 10
+			beg += 1
+			fat -= 10
 
 			if swinbeggor = 3 and razradbeg = 1:
 				razradbeg = 2
 				grupNPC[18] = 0
 				zverevaQW = 1
 				'You won the three competitions and urban Fizruk announces you that he and you are handed pohadataystvoval 2nd sports category on the run. Christina Zvereva stands apart clenched his hands into fists and hatred looks at you.'
-			end
-
-			if swinbeggor = 1 and begresult >= 130:
+			elseif swinbeggor = 2 and begresult >= 130:
 				grupNPC[18] = 0
 				'At the finish line worth Christina Zvereva and trying to catch her breath, she was not able to overtake you, and came second. Christina tries not to look you in the eye.'
-			end
-
-			if swinbeggor = 2 and begresult >= 130:
+			elseif swinbeggor = 1 and begresult >= 130:
 				grupNPC[18] = 0
 				'At the finish line worth Christina Zvereva and trying to catch her breath, she was not able to overtake you, and came second. Christina through her teeth growls at you, "That bitch!"'
 			end
 
 			gs 'stat'
 
-			act 'Exit':gt 'gorodok'
+			act 'Leave':gt 'gorodok'
 		end
 	end
 end
@@ -135,9 +135,9 @@ if week = 6 and schoolSorev = 1 and hour = 10:
 			gs 'stat'
 			'<center><img src="images/etogame/begsor.jpg"></center>'
 			'Girls, on the 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
-			set begplus = beg + speed + vital + rand(1, 20)
-			set begminus = salo + rand(1, 20)
-			set begresult = begplus - begminus
+			begplus = beg + speed + vital + rand(1, 20)
+			begminus = salo + rand(1, 20)
+			begresult = begplus - begminus
 
 			if begresult <= 0:'You barely managed to reach the finish line, what place is really there, of course you are the last.'
 			if begresult > 0 and begresult < 10:'You are not bad ran for dilettante course, as ranked last 8th place.'
@@ -147,9 +147,9 @@ if week = 6 and schoolSorev = 1 and hour = 10:
 			if begresult >= 40 and begresult < 50:'You fought hard, but only managed to take 4th place.'
 			if begresult >= 50 and begresult < 60:'You fought hard and managed to take 3rd place. Fizruk congratulates you on your success.'
 			if begresult >= 60 and begresult < 70:'You fought hard and managed to take 2nd place. Fizruk congratulates you in hurry.'
-			if begresult >= 70:Set swinbeg += 1 & dom += 1 & 'You fought hard and managed to take 1st place. Fizruk congratulate you on winning the competition.'
-			set beg += 1
-			set fat -= 10
+			if begresult >= 70:swinbeg += 1 & dom += 1 & 'You fought hard and managed to take 1st place. Fizruk congratulate you on winning the competition.'
+			beg += 1
+			fat -= 10
 
 			if swinbeg = 3 and razradbeg = 0:
 				razradbeg = 1
@@ -158,7 +158,7 @@ if week = 6 and schoolSorev = 1 and hour = 10:
 
 			gs 'stat'
 
-			act 'Exit':gt 'gorodok'
+			act 'Leave':gt 'gorodok'
 		end
 	end
 end
@@ -173,7 +173,7 @@ if hour <= 8 and week < 6 and StoryLine > 0 and SchoolAtestat = 0 and kanikuli =
 		gs 'stat'
 		'Your class was built on a ruler and a teacher to congratulate you on the successful completion of the school.'
 
-		act 'Exit':gt 'gorodok'
+		act 'Leave':gt 'gorodok'
 
 		act 'Go to the prom':
 			cls
@@ -183,7 +183,7 @@ if hour <= 8 and week < 6 and StoryLine > 0 and SchoolAtestat = 0 and kanikuli =
 			!!gee gee, no normal outlet
 			'At graduation all get drunk in the asshole. You almost do not remember anything, only that bathed in the fountain as a paratrooper.'
 
-			act 'Exit':gt 'gorodok'
+			act 'Leave':gt 'gorodok'
 		end
 	end
 end
@@ -237,7 +237,7 @@ if hour >= 16 and GorSlut >= 3 and SchoolGossip > 0 and afterschoolday ! day:
 					'<center><img src="images/qwest/alter/Ev/toiletBJcum.jpg"></center>'
 					'Finally a member of the discharge of semen in your mouth. Looking at it as follows sperm from your mouth remaining guys started to cum on your face. You closed your eyes and obediently waited until the boys did not stop to stop. Finally they ended up laughing at you and walked away.'
 
-					act 'Exit':gt $curloc
+					act 'Leave':gt $curloc
 				end
 			end
 		end
@@ -249,15 +249,10 @@ end
 if JuliaMilLernQW >= 1 and hour = 16 and week < 6 and kanikuli = 0:'In the school yard strolls <a href="exec:minut += 1 & gt ''JuliaMilGo''">Julia Milov</a>'
 if NatBelLernQW >= 1 and hour = 16 and week < 6 and kanikuli = 0:'In the school yard strolls <a href="exec:minut += 1 & gt ''NatBelGo''">Natasha Belova</a>'
 if artemLernQW >= 1 and hour = 16 and week < 6 and kanikuli = 0 and artemVitokQW ! 2:'In the school yard you already waiting <a href="exec:minut += 15 & gt ''artemEv''">Artem Chebotarev</a>'
-if week = 1 and kanikuli = 0 and arthakQW >= 10 and apmeetday ! daystart and hour >= 16:gt'artgar'
+if week = 1 and kanikuli = 0 and arthakQW >= 10 and apmeetday ! daystart and hour >= 16:gt 'artgar'
 if hour = 16 and albinaCarday ! day and week < 6 and kanikuli = 0:
-	if DanceWhore > 0 or AlbinaLast > 0 or AlbinaBlokDance > 0:
-		!!'You see standing in the school yard and BMW X5 <a href="exec:minut += 15 & gt ''albinaEv''">Albina Barlovskuyu</a> sitting behind the wheel'
-	end
-
-	if AlbFrend >= 1 and albrideday ! daystart:
-		'Near a large black SUV parked near the school stands <a href="exec:minut += 15 & gt ''albinaRide''">Albina Barlovskaya</a>'
-	end
+	!!if DanceWhore > 0 or AlbinaLast > 0 or AlbinaBlokDance > 0:'You see standing in the school yard and BMW X5 <a href="exec:minut += 15 & gt ''albinaEv''">Albina Barlovskuyu</a> sitting behind the wheel'
+	if AlbFrend >= 1 and albrideday ! daystart:'Near a large black SUV parked near the school stands <a href="exec:minut += 15 & gt ''albinaRide''">Albina Barlovskaya</a>'
 end
 
 if hour = 16 and week < 6 and kanikuli = 0 and katjaMeynoldday ! day and meynoldQW >= 2:'In the school yard stroll <a href="exec:minut += 15 & gt ''katjaEv''">Katja Meynold</a>'
@@ -267,7 +262,7 @@ if fedorKozlovQW >= 10 and hour = 16 and week < 6 and kanikuli = 0:'Far away fro
 if strelaDay ! day and strelaQW = 1 and hour = 16:
 	cls
 	gs 'stat'
-	'To school drove Mitsubishi Pajero and BMW. Of the cars went out strong, inflated guys in leather jackets and tracksuits. They came to the meeting Kotov, Auburn and Shulga. They talked about something and came here from school Fedor Kozlov with a swollen face, bruised. Kotov you waved a hand "<<$name>>, come here, you´re a witness."'
+	'To school drove Mitsubishi Pajero and BMW. Of the cars went out strong, inflated guys in leather jackets and tracksuits. They came to the meeting Kotov, Auburn and Shulga. They talked about something and came here from school Fedor Kozlov with a swollen face, bruised. Kotov you waved a hand "<<$name>>, come here, you''re a witness."'
 
 	act 'Start at the arrow':gt 'strela'
 

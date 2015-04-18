@@ -25,11 +25,11 @@ $din_beg_gor_sec = {
 			gs 'stat'
 			'You bought a ticket for 30 visits section running.'
 
-			act 'Exit':gt 'gdksport'
+			act 'Leave':gt 'gdksport'
 		end
 	end
 
-	act 'Exit':gt 'gdksport'
+	act 'Leave':gt 'gdksport'
 }
 
 $din_dance_gor_sec = {
@@ -45,17 +45,17 @@ $din_dance_gor_sec = {
 			gs 'stat'
 			'You bought a ticket for 10 visits dance section.'
 
-			act 'Exit':gt 'gdksport'
+			act 'Leave':gt 'gdksport'
 		end
 	end
 
-	act 'Exit':gt 'gdksport'
+	act 'Leave':gt 'gdksport'
 }
 
 $din_voll_gor_sec = {
 	cls
 	gs 'stat'
-	'Aboniment section volleyball costs 300 rubles for 10 days.'
+	'Aboniment section volleyball costs 300 rubles for 30 days.'
 
 	if money >= 300 and gsAboVolley <= 0:
 		act 'Buy a subscription for 300 rubles volleyball':
@@ -65,11 +65,11 @@ $din_voll_gor_sec = {
 			gs 'stat'
 			'You bought a ticket for 30 visits section volleyball.'
 
-			act 'Exit':gt 'gdksport'
+			act 'Leave':gt 'gdksport'
 		end
 	end
 
-	act 'Exit':gt 'gdksport'
+	act 'Leave':gt 'gdksport'
 }
 
 $metkaM = $ARGS[0]
@@ -84,17 +84,20 @@ lcolor = rgb(106, 90, 205)
 '<center><img src="images/qwest/alter/gdksport.jpg"></center>'
 'The house work culture section <a href="exec:dynamic $din_beg_gor_sec">Racing</a>, <a href="exec:dynamic $din_dance_gor_sec">Dance</a> and <a href="exec:dynamic $din_voll_gor_sec">Volleyball</a>. Subscribe to 30 visits costs 100 rubles.'
 
-if kotovLoveQW > 0 and hour = 16:'Do you see how the club is included <a href="exec:minut += 3 & gt ''kotovEv''">Vitek Kotov</a> with a large sports bag'
-if grupNPC[3] >= 80 and hour = 17 and ivansportday ! day:'Do you see how the club included <a href="exec:minut += 3 & gt ''IvanEv''">Ivan Prokhorov</a> with a large sports bag'
+if kotovLoveQW > 0 and hour = 16:
+	'Do you see how the club is included <a href="exec:minut += 3 & gt ''kotovEv''">Vitek Kotov</a> with a large sports bag'
+elseif grupNPC[3] >= 80 and hour = 17 and ivansportday ! day:
+	'Do you see how the club included <a href="exec:minut += 3 & gt ''IvanEv''">Ivan Prokhorov</a> with a large sports bag'
+end
 if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 	!!event does not have to start over because they do not
 	cls
 	fedorKozlovQW = 1
-	gs 'stat'
 	numnpc = 5
+	gs 'stat'
 	'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 	'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-	'The club you unexpectedly met Fedor Kozlov in your class. He smiled affably you "Hello <<$name>>. Hmm ... Here is the deal ... I have an extra ticket to the movies. Let´s go together."'
+	'The club you unexpectedly met Fedor Kozlov in your class. He smiled affably you "Hello <<$name>>. Hmm ... Here is the deal ... I have an extra ticket to the movies. Let''s go together."'
 
 	act 'Refuse':
 		cls
@@ -134,7 +137,7 @@ if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 				gs 'stat'
 				'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 				'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-				'You refused to meet with him to Fedor and was invited to stay friends. Fedor visibly upset and silently carried you home.'
+				'You refused to meet with him to Fedor and was invited to stay friends. Fedor visibly upand silently carried you home.'
 
 				act 'Leave':gt 'gorodok'
 			end
@@ -155,7 +158,7 @@ if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 	exit
 end
 
-act 'Exit':gt 'gdk'
+act 'Leave':gt 'gdk'
 
 if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 	act 'Change clothes in the locker room':gt 'loker', 'start'
@@ -164,10 +167,10 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 				cls
 				dynamic $showerdin
 				minut += 15
-				set horny += 1
-				set hapri = 1
-				set mop = 1
-				set sweat = -3
+				horny += 1
+				hapri = 1
+				mop = 1
+				sweat = -3
 
 				if frost > 0:frost = 0
 
@@ -176,7 +179,7 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 
 				if kotovVSprohorov = 1:
 					kotovVSprohorov = 2
-					'You entered the women´s shower and turning the water began to lather your body washcloth. Suddenly, the door creaked and you remember that you forgot to close it. You looked back and saw that standing in the doorway Ivan Prokhorov and treat you. "Hi Svetsik. Can I join? And then the men´s shower place." Ivan smiled after these words.'
+					'You entered the women''s shower and turning the water began to lather your body washcloth. Suddenly, the door creaked and you remember that you forgot to close it. You looked back and saw that standing in the doorway Ivan Prokhorov and treat you. "Hi <<$name>>. Can I join? And then the men''s shower place." Ivan smiled after these words.'
 
 					act 'expel Ivan':
 						cls
@@ -231,10 +234,10 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 										horny += 20
 										$boy = 'Ivan'
 										dick = 17
+										lubonus = 2
 										gs 'stat'
 										'<center><img src="images/qwest/alter/ev/shover2.jpg"></center>'
 										'You bent over and felt the hand of Ivan stroking your ass and anus.'
-										lubonus = 2
 										dynamic $analsex
 										'Ivan pulls a member of your buttocks and you feel like you are on the back and buttocks land warm trickle of sperm.'
 
@@ -248,7 +251,7 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 					exit
 				end
 
-				'You entered the women´s shower and began soaping his body washcloth. After washed soap and washed hair with shampoo. Rinse off the shampoo you become completely clean. After showering you comb your hair and dressed.'
+				'You entered the women''s shower and began soaping his body washcloth. After washed soap and washed hair with shampoo. Rinse off the shampoo you become completely clean. After showering you comb your hair and dressed.'
 
 				act 'Get out of the shower':gt $locM, $metkaM
 			end
@@ -261,14 +264,14 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 		if sport > 0:
 			act 'Train with Zvezdushkami':
 				cls
-				set minut += 120
-				set fat -= 5
+				minut += 120
+				fat -= 5
 				if agil < 50: agil += rand(1, 3)
 				if agil >= 50 and agil < 80: agil += rand(0, 2)
 				if agil >= 80:agil += rand(0,1)
 
-				set manna -= 5
-				set sweat += 3
+				manna -= 5
+				sweat += 3
 				dancePRO += rand(1, 3)
 				gs 'stat'
 				'<center><img src="images/etogame/fit1.jpg"></center>'
@@ -276,16 +279,14 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 				if dancePRO < 20:
 					sub += 1
 					'You train together with sex of "Zvezdushek", you get bad and Albina constantly yelling at you and calling them bowlegged kolkhoz.'
-				end
-
-				if dancePRO >= 20 and dancePRO < 40:
+				elseif dancePRO >= 20 and dancePRO < 40:
 					sub += 1
 					'You train together with sex of "Zvezdushek" you sometimes get something, but most movements by Albina constantly yelling at you and calling them bowlegged kolkhoz.'
-				end
-
-				if dancePRO >= 40 and dancePRO < 60:'You train together with sex of "Zvezdushek" you dance with sex getting in the general rhythm, but not happy Albina "<<$name>>, very sluggish, more life."'
-				if dancePRO >= 60 and dancePRO < 80:'You train together with sex of "Zvezdushek" you normally get all but Albina regularly you niggles "<<$name>>, you are not at the funeral, raise your head and smile!"'
-				if dancePRO >= 80:
+				elseif dancePRO >= 40 and dancePRO < 60:
+					'You train together with sex of "Zvezdushek" you dance with sex getting in the general rhythm, but not happy Albina "<<$name>>, very sluggish, more life."'
+				elseif dancePRO >= 60 and dancePRO < 80:
+					'You train together with sex of "Zvezdushek" you normally get all but Albina regularly you niggles "<<$name>>, you are not at the funeral, raise your head and smile!"'
+				elseif dancePRO >= 80:
 					'You dance beautifully and Albina you start to put an example to other girl.'
 					stardance += 1
 
@@ -293,15 +294,13 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 						if otkazDanceWhore > 0 and AlbinaLast > 0:
 							AlbinaBlokDance = 1
 							'After training Albina withdraws you aside and starts berating. "You roundnose Kolhoz. Because of you I am losing customers. So fuck off, you are no longer uchavstvuesh in the team."'
-						end
-
-						if otkazDanceWhore > 0 and AlbinaLast = 0:
+						elseif otkazDanceWhore > 0 and AlbinaLast = 0:
 							AlbinaLast = 1
 							otkazDanceWhore = 0
 
 							if AlbFather = 0:AlbFather = 1
 
-							'After training Albina withdraws you aside and starts berating. "I know you´re young and stupid, but I explain to you in the first and last time. Again swept me with clients fly from Zvezdushek miserably. Entertain men is part of the business."'
+							'After training Albina withdraws you aside and starts berating. "I know you''re young and stupid, but I explain to you in the first and last time. Again swept me with clients fly from Zvezdushek miserably. Entertain men is part of the business."'
 						end
 
 						if DanceWhoreT > 0:
@@ -309,11 +308,9 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 
 							if AlbFather = 0:AlbFather = 1
 
-							'Albina after training beckons you to her. "Good <<$name>>. Communicating with men of the business. Main keep his mouth shut. You´re doing fine, doing well. Stick with me and you will have all the money, cars and apartments."'
+							'Albina after training beckons you to her. "Good <<$name>>. Communicating with men of the business. Main keep his mouth shut. You''re doing fine, doing well. Stick with me and you will have all the money, cars and apartments."'
 						end
-					end
-
-					if stardance >= 10:
+					elseif stardance >= 10:
 						stardance = 0
 						albpayrand = rand(1, 5)
 						'Albina gathered girls. Today small halturka planned. Each will receive <<albpayrand*1000>> per job. The matter for a couple of hours.'
@@ -336,45 +333,31 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 									kolvomanparty = 1
 									danceWhorePay = rand(3, 8)
 									'You see how a man came to Albina in a decent suit and began about something with her to talk quietly.'
-								end
-
-								if wealthmanrand = 1:
+								elseif wealthmanrand = 1:
 									kolvomanparty = 2
 									danceWhorePay = rand(5, 10)
 									'You see how to Albina approached by two guys and started about something to talk to her.'
-								end
-
-								if wealthmanrand = 2:
+								elseif wealthmanrand = 2:
 									kolvomanparty = 1
 									danceWhorePay = rand(4, 9)
 									'You see how to Albina came Caucasian and became what it is talking to her gesticulating.'
-								end
-
-								if wealthmanrand = 3:
+								elseif wealthmanrand = 3:
 									kolvomanparty = 2
 									danceWhorePay = rand(6, 12)
 									'You see how to Albina came two Caucasians and become about something to talk to her.'
-								end
-
-								if wealthmanrand = 4:
+								elseif wealthmanrand = 4:
 									kolvomanparty = 3
 									danceWhorePay = rand(8, 14)
 									'You see how to Albina came three Caucasians and became what it is talking to her.'
-								end
-
-								if wealthmanrand = 5:
+								elseif wealthmanrand = 5:
 									kolvomanparty = 1
 									danceWhorePay = rand(5, 10)
 									'You see as a Negro came Albina and became about something to talk to her.'
-								end
-
-								if wealthmanrand = 6:
+								elseif wealthmanrand = 6:
 									kolvomanparty = 2
 									danceWhorePay = rand(7, 15)
 									'You see how to Albina approached two blacks and became what it is talking to her.'
-								end
-
-								if wealthmanrand = 7:
+								elseif wealthmanrand = 7:
 									kolvomanparty = 3
 									danceWhorePay = rand(10, 20)
 									'You see how to Albina approached three blacks and became what it is talking to her.'
@@ -426,9 +409,9 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 
 									exit
 								end
+							elseif vnesh < 13:
+								'After dancing Albina talked with some sort of men and what is agreed.'
 							end
-
-							if vnesh < 13:'After dancing Albina talked with some sort of men and what is agreed.'
 
 							act 'Drive back':
 								cls
@@ -453,33 +436,34 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 				cla
 				*clr
 				gsAboDance -= 1
-				set minut += 120
-				set fat -= 5
+				minut += 120
+				fat -= 5
 
 				if agil< 50:agil += rand(1, 3)
 				if agil >= 50 and agil < 80:agil += rand(0, 2)
 				if agil >= 80:agil += rand(0, 1)
 
-				set manna -= 5
-				set sweat += 3
+				manna -= 5
+				sweat += 3
 
 				if dance < agil:dance += rand(5, 15)
 
 				gs 'stat'
 				'<center><img src="images/etogame/fit1.jpg"></center>'
-				if dance < 100:'You studied modern dance club, which is very popular in discos.'
+				if dance < 100:
+					'You studied modern dance club, which is very popular in discos.'
 
-				if dance < agil:
-					'You have to string up, but your agility and helps you hone some of what dance moves.'
-				else
-					'You do not have enough dexterity, that would successfully repeat all the movements.'
-				end
+					if dance < agil:
+						'You have to string up, but your agility and helps you hone some of what dance moves.'
+					else
+						'You do not have enough dexterity, that would successfully repeat all the movements.'
+					end
 
-				!place for use in events
-				dancegevrand = rand(0, 1)
+					!place for use in events
+					dancegevrand = rand(0, 1)
 
-				if dancegevrand = 0:'It seems you see, that is <a href="exec:gt ''danceGev''">interesting</a>.'
-				if dance >= 100:
+					if dancegevrand = 0:'It seems you see, that is <a href="exec:gt ''danceGev''">interesting</a>.'
+				elseif dance >= 100:
 					'Podcherpnut you tried something new in modern club dancing, but you all already know it.'
 
 					if albinaQWdance > 0:
@@ -489,18 +473,18 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 						if dancegevrand = 0:'It seems you see, that is <a href="exec:gt ''danceGev''">interesting</a>.'
 					end
 
-					if albinaQWdance = 0 and StoryLine > 0:
+					elseif albinaQWdance = 0 and StoryLine > 0:
 						'When the training is over you noticed how the room got a few girls and Albina Barlovskaya. Albina odnoklasnitsa you, but you almost nothing about her know.'
 
 						act 'Say hello to Albina':
 							cls
-							gs 'stat'
 							numnpc = 23
+							gs 'stat'
 							'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 							'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-							'You are greeted with Albina. She raised an eyebrow haughtily. "And it´s you.''s Your name there? Oh yeah <<$name>>. Did you? Zanimaeshsya Dancing?" You nodded confirming the obvious. Albina dismissive laugh. "Well, how´s it going?" You said coldly Albina "Not bad." Albina gave you look arrogant "Not bad? Well, maybe in comparison with other local bowlegged and not bad. But I doubt that you can dance on a more or less professional level."'
+							'You are greeted with Albina. She raised an eyebrow haughtily. "And it''s you.''s Your name there? Oh yeah <<$name>>. Did you? Zanimaeshsya Dancing?" You nodded confirming the obvious. Albina dismissive laugh. "Well, how''s it going?" You said coldly Albina "Not bad." Albina gave you look arrogant "Not bad? Well, maybe in comparison with other local bowlegged and not bad. But I doubt that you can dance on a more or less professional level."'
 
-							act 'I do not care.':
+							act 'I do not care':
 								cls
 								numnpc = 23
 								dom += 1
@@ -508,12 +492,12 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 								gs 'stat'
 								'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 								'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-								'You said scornfully as possible that you do not care and turned away from Albina. She said with a giggle. "Girls. Let´s train."'
+								'You said scornfully as possible that you do not care and turned away from Albina. She said with a giggle. "Girls. Let''s train."'
 
 								act 'Leave':gt 'gdk'
 							end
 
-							act 'I know how to dance.':
+							act 'I know how to dance':
 								cls
 								numnpc = 23
 								!!dom += 1
@@ -521,11 +505,11 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 								gs 'stat'
 								'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
 								'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-								'Albina you already began to annoy his arrogance. And you told her firmly that you know how to dance. Albina turned to the girls who came to her and said. "Girls. Let´s train." Then she turned to you and said with a slight grin. "You can sit and watch as the dance pros. Itself will understand everything"'
+								'Albina you already began to annoy his arrogance. And you told her firmly that you know how to dance. Albina turned to the girls who came to her and said. "Girls. Let''s train." Then she turned to you and said with a slight grin. "You can sit and watch as the dance pros. Itself will understand everything"'
 
 								act 'Leave':gt 'gdk'
 
-								act 'Watch.':
+								act 'Watch':
 									cls
 									minut += 15
 									gs 'stat'
@@ -533,13 +517,13 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 
 									act 'Leave':gt 'gdk'
 
-									act 'Ask for them in the community.':
+									act 'Ask for them in the community':
 										cls
 										minut += 15
 										gs 'stat'
 										'You are asked to dance group. Albina grinned "Can you? We then have all worked. Though vprchem. Show how you know how to dance." Albina included music and girls gathered to look at your dance.'
 
-										act 'Dance.':
+										act 'Dance':
 											cls
 											minut += 5
 											gs 'stat'
@@ -575,15 +559,19 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 				cla
 				*clr
 				gsAboBeg -= 1
-				set minut += 120
-				set speed += rand(1, 3)
-				set manna -= 5
-				set fat -= 5
-				set sweat += 3
-				set beg += rand(3, 6)
+				minut += 120
+				speed += rand(1, 3)
+				manna -= 5
+
+				if salo > 0:salo -= 1
+
+				fat -= 5
+				sweat += 3
+				beg += rand(3, 6)
 				gs 'stat'
 				'<center><img src="images/etogame/parkbeg.jpg"></center>'
 				'You do run for two hours.'
+
 				act 'Leave':gt 'gdksport'
 			end
 		else
@@ -598,30 +586,29 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 					cla
 					*clr
 					gsAboVolley -= 1
-					set minut += 120
+					minut += 120
 
 					if alko <= 0:
-						set speed += rand(1, 3)
+						volleyboll += 1
+						speed += rand(1, 3)
+						beg += rand(1, 2)
 
 						if agil < 50:agil += rand(1, 3)
 						if agil >= 50 and agil < 80:agil += rand(0, 2)
-						if agil > 80:agil += rand(0, 1)
+						if agil >= 80:agil += rand(0, 1)
 						if stren < 10:stren += rand(1, 3)
 						if stren >= 10 and stren < 20:stren += rand(1, 2)
 						if stren >= 20 and stren < 30:stren += 1
-						if stren >=30 and stren < 40:stren += rand(0, 1)
+						if stren >= 30 and stren < 40:stren += rand(0, 1)
 						if vital < 10:vital += rand(1, 3)
 						if vital >= 10 and vital < 20:vital += rand(1, 2)
 						if vital >= 20 and vital < 30:vital += 1
 						if vital >= 30 and vital < 40:vital += rand(0, 1)
-
-						set beg += rand(1, 2)
-						volleyboll += 1
 					end
 
-					set manna -= 5
-					set fat -= 5
-					set sweat += 3
+					manna -= 5
+					fat -= 5
+					sweat += 3
 					gs 'stat'
 					'<center><img src="images/qwest/alter/gdksport.jpg"></center>'
 					if alko <= 0:'At the beginning of the workout you ran a few laps around the room. After you press the jog and do abdominal exercises. Then began to practice reception and feeding the ball.'
@@ -630,52 +617,54 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 					act 'Leave':gt 'gdksport'
 					act 'Go to coaching':gt 'Voltrener'
 				end
-			end
-
-			if week = 5:
+			elseif week = 5:
 				act 'Section volleyball ticket is valid for <<gsAboVolley>> visits':
 					cla
 					*clr
 					gsAboVolley -= 1
-					set minut += 120
+					minut += 120
 
 					if alko <= 0:
-					set speed += rand(1, 2)
-					agil += rand(1, 2)
+						speed += rand(1, 2)
+						agil += rand(1, 2)
 
-					if stren < 40:stren += rand(1, 2)
-					if vital < 40:vital += rand(1, 2)
+						if stren < 40:stren += rand(1, 2)
+						if vital < 40:vital += rand(1, 2)
 
-					set beg += rand(1, 2)
-					volleyboll += 1
-					dom += 1
-				end
-
-				set manna -= 5
-				set fat -= 5
-				set sweat += 3
-				gs 'stat'
-				'<center><img src="images/qwest/alter/gdksport.jpg"></center>'
-				'Fridays are usually held as the game in which to discover strengths and talented athletes.'
-
-				if alko <= 0
-					if volleyboll < 25:'You are absolutely lousy play and constantly mistaken. Finally nerves coach not stand up and it removes you from the field.'
-					if volleyboll >= 25 and volleyboll < 50:'You do not play very much. Sometimes make blunders. Coach is angry, but tolerates your antics.'
-					if volleyboll >= 50 and volleyboll < 75:'You play well on the field and rarely wrong. Coach looks pleased you.'
-					if volleyboll >= 75:
-						'You play great on the field, easily replaying their rivals. Coach looks pleased with your game.'
-						volevrand = rand(0, 1)
-
-						if volevrand = 0:
-							if andGevknow = 0:$nameAndGev = 'Some guy'
-							if andGevknow > 0:$nameAndGev = 'Andrew'
-
-
-							'During the game you pushed <a href="exec:gt ''volAndGev''"><<$nameAndGev>></a>.'
-						end
+						beg += rand(1, 2)
+						volleyboll += 1
+						dom += 1
 					end
 
-					if alko > 0:'You took to the field, but failed to recapture myach, intoxication does not focus. The coach sees your status and remove you from the game.'
+					manna -= 5
+					fat -= 5
+					sweat += 3
+					gs 'stat'
+					'<center><img src="images/qwest/alter/gdksport.jpg"></center>'
+					'Fridays are usually held as the game in which to discover strengths and talented athletes.'
+
+					if alko <= 0:
+						if volleyboll < 25:
+							'You are absolutely lousy play and constantly mistaken. Finally nerves coach not stand up and it removes you from the field.'
+						elseif volleyboll >= 25 and volleyboll < 50:
+							'You do not play very much. Sometimes make blunders. Coach is angry, but tolerates your antics.'
+						elseif volleyboll >= 50 and volleyboll < 75:
+							'You play well on the field and rarely wrong. Coach looks pleased you.'
+						elseif volleyboll >= 75:
+							'You play great on the field, easily replaying their rivals. Coach looks pleased with your game.'
+							volevrand = rand(0, 1)
+
+							if volevrand = 0:
+								if andGevknow = 0:$nameAndGev = 'Some guy'
+								if andGevknow > 0:$nameAndGev = 'Andrew'
+
+								'During the game you pushed <a href="exec:gt ''volAndGev''"><<$nameAndGev>></a>.'
+							end
+						end
+					elseif alko > 0:
+						'You took to the field, but failed to recapture myach, intoxication does not focus. The coach sees your status and remove you from the game.'
+					end
+
 					act 'Leave':gt 'gdksport'
 					act 'Go to coaching':gt 'Voltrener'
 				end
@@ -692,17 +681,17 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 					cla
 					*clr
 					volkomday = day
-					set minut += 120
-					set speed += rand(1, 3)
+					minut += 120
+					speed += rand(1, 3)
 					agil += rand(1, 3)
 
 					if stren < 50:stren += rand(1, 3)
 					if vital < 50:vital += rand(1, 3)
 
-					set manna -= 5
-					set fat -= 5
-					set sweat += 3
-					set beg += rand(1, 2)
+					manna -= 5
+					fat -= 5
+					sweat += 3
+					beg += rand(1, 2)
 					volleyboll += 1
 					trenerepa += 1
 					dom += 1
@@ -714,8 +703,7 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 					act 'Leave':gt 'gdksport'
 					act 'Go to coaching':gt 'Voltrener'
 				end
-			end
-			if week = 6 and sorevday ! day:
+			elseif week = 6 and sorevday ! day:
 				act 'Check out the competition with a team':
 					cla
 					*clr
@@ -724,17 +712,17 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 
 					volltime = 0
 					sorevday = day
-					set minut += 180
-					set speed += rand(1, 3)
+					minut += 180
+					speed += rand(1, 3)
 					agil += rand(1, 3)
 
 					if stren < 60:stren += rand(1, 3)
 					if vital < 60:vital += rand(1, 3)
 
-					set manna -= 5
-					set fat -= 5
-					set sweat += 3
-					set beg += rand(1, 2)
+					manna -= 5
+					fat -= 5
+					sweat += 3
+					beg += rand(1, 2)
 					volleyboll += rand(1, 3)
 					dom += 1
 					trenerepa += 2
