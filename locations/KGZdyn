@@ -24,9 +24,9 @@ $KGZvihod = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 0
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the apartment carefully trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -36,9 +36,9 @@ $KGZvihod = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 2
 		KGZbatl = 0
+		gs 'stat'
 		'You cautiously went to the store with smashed storefronts trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -48,9 +48,9 @@ $KGZvihod = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 3
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the hospital carefully, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -60,9 +60,9 @@ $KGZvihod = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 4
 		KGZbatl = 0
+		gs 'stat'
 		'You gingerly walked down the street, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -74,9 +74,9 @@ $KGZvihod2 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 1
 		KGZbatl = 0
+		gs 'stat'
 		'You carefully went into the street trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -86,9 +86,9 @@ $KGZvihod2 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		!!KGZplace = 2
 		KGZbatl = 0
+		gs 'stat'
 		'Noiselessly you started searching the store looking for food.'
 		KGZsupoisk = rand(0, 100)
 
@@ -111,9 +111,9 @@ $KGZvihod3 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 1
 		KGZbatl = 0
+		gs 'stat'
 		'You carefully went into the street trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -123,9 +123,9 @@ $KGZvihod3 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		!!KGZplace = 2
 		KGZbatl = 0
+		gs 'stat'
 		'Noiselessly you started searching the hospital looking kit.'
 		KGZsupoisk = rand(0, 100)
 
@@ -148,9 +148,9 @@ $KGZvihod4 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 1
 		KGZbatl = 0
+		gs 'stat'
 		'You carefully went into the street trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -160,9 +160,9 @@ $KGZvihod4 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 5
 		KGZbatl = 0
+		gs 'stat'
 		'You carefully went hunting store trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -172,9 +172,9 @@ $KGZvihod4 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 6
 		KGZbatl = 0
+		gs 'stat'
 		'You cautiously went to the police station trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -184,9 +184,9 @@ $KGZvihod4 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 7
 		KGZbatl = 0
+		gs 'stat'
 		'You cautiously went to the hardware store trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -197,15 +197,15 @@ $KGZvihod4 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			!!KGZplace = 2
 			KGZbatl = 1
 			KGZcopcar = 1
+			bullet += 10
+			gs 'stat'
 			'Noiselessly you started searching the police car.'
 
 			if KGZgun = 0:KGZgun = 1 & 'You have found a pistol'
 
-			bullet += 10
 			'You found 10t ammunition for the gun.'
 
 			act 'Further':gt $curloc
@@ -216,9 +216,9 @@ $KGZvihod4 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 8
 		KGZbatl = 0
+		gs 'stat'
 		'You cautiously walked towards the highway trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -230,9 +230,9 @@ $KGZvihod5 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 4
 		KGZbatl = 0
+		gs 'stat'
 		'You carefully went into the street trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -242,15 +242,15 @@ $KGZvihod5 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		!!KGZplace = 2
 		KGZbatl = 0
-		'Noiselessly you started searching the hunting store.'
-
-	if KGZgun2 = 0:KGZgun2 = 1 & 'You found a shotgun'
-
 		bulletrand = rand(3, 20)
 		bullet2 += bulletrand
+		gs 'stat'
+		'Noiselessly you started searching the hunting store.'
+
+		if KGZgun2 = 0:KGZgun2 = 1 & 'You found a shotgun'
+
 		'You have found <<bulletrand>>to be shotgun cartridges.'
 
 		act 'Further':gt $curloc
@@ -262,9 +262,9 @@ $KGZvihod6 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 4
 		KGZbatl = 0
+		gs 'stat'
 		'You carefully went into the street trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -274,15 +274,15 @@ $KGZvihod6 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		!!KGZplace = 2
 		KGZbatl = 0
+		bulletrand = rand(3, 20)
+		bullet += bulletrand
+		gs 'stat'
 		'Noiselessly you started searching the police station.'
 
 		if KGZgun = 0:KGZgun = 1 & 'You have found a pistol'
 
-		bulletrand = rand(3, 20)
-		bullet += bulletrand
 		'You have found <<bulletrand>>be ammo for the gun.'
 
 		act 'Further':gt $curloc
@@ -296,24 +296,22 @@ $KGZvihod6 = {
 				cls
 				KGZhour += 1
 				minut += 1
-				gs 'stat'
 				KGZcopdoor = 1
 				KGZbatl = 0
+				bullet3 += 500
+				KGZdead = KGZday * 10
+				gs 'stat'
 				'Noiselessly you started searching the police station.'
 
 				if KGZgun3 = 0:KGZgun3 = 1 & 'You found Machine'
 
-				bullet3 += 500
 				'You have found 500 tons of ammunition for machine.'
-				KGZdead = KGZday * 10
 				'The noise from the grinder ran dead and attacked you.'
 
 				act 'Srazhatsya':KGZdist = rand(5, 8) & gt 'KGZfight'
 			end
 		end
-	end
-
-	if KGZcopdoor = 1:
+	elseif KGZcopdoor = 1:
 		'Armory room is empty, just a bunch of dead on the floor, according to a recent fight with you.'
 
 		if KGZratia = 0:
@@ -321,9 +319,9 @@ $KGZvihod6 = {
 				cls
 				KGZhour += 1
 				minut += 1
-				gs 'stat'
 				KGZratia = 1
 				KGZbatl = 1
+				gs 'stat'
 				'You have found a radio. Including it you heard the voice repeating the same phrase. "Everyone who hears me. Safe Haven is 10m kilometer highway. Go to Fort Bragg."'
 
 				act 'Further':gt $curloc
@@ -337,9 +335,9 @@ $KGZvihod7 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 4
 		KGZbatl = 0
+		gs 'stat'
 		'You carefully went into the street trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -349,9 +347,9 @@ $KGZvihod7 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		!!KGZplace = 2
 		KGZbatl = 0
+		gs 'stat'
 		'Noiselessly you started searching the hardware store.'
 
 		if KGZweapon < 2:
@@ -392,9 +390,9 @@ $KGZvihod8 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 4
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the boulevard carefully trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -404,9 +402,9 @@ $KGZvihod8 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 9
 		KGZbatl = 0
+		gs 'stat'
 		'Noiselessly you went to the gas station.'
 
 		act 'Further':gt $curloc
@@ -417,10 +415,10 @@ $KGZvihod8 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			KGZplace = 10
 			KGZplaceA = 1
 			KGZbatl = 0
+			gs 'stat'
 			'Noiselessly you went toward Fort Bragg.'
 
 			act 'Further':gt $curloc
@@ -433,9 +431,9 @@ $KGZvihod9 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 8
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the highway carefully, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -446,9 +444,9 @@ $KGZvihod9 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			KGZbenzin = 1
 			KGZbatl = 0
+			gs 'stat'
 			'Noiselessly you poured gasoline from the column.'
 
 			act 'Further':gt $curloc
@@ -464,9 +462,9 @@ $KGZvihod10 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplaceA += 1
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the highway carefully, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -476,9 +474,9 @@ $KGZvihod10 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplaceA -= 1
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the highway carefully, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -489,9 +487,9 @@ $KGZvihod10 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			KGZbatl = 0
 			KGZplace = 200
+			gs 'stat'
 			'You have gone off the highway into the woods.'
 
 			act 'Further':gt $curloc
@@ -507,13 +505,13 @@ $KGZvihod11 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 
 		if KGZfortQW = 0:KGZfortQW = 1
 
 		KGZplace = 12
 		KGZbatl = 0
 		KGZdead = rand(KGZday * 20, KGZday * 30)
+		gs 'stat'
 		'You ran into a fort surrounded on all sides dead.'
 
 		act 'Srazhatsya':KGZdist = rand(5, 12) & gt 'KGZfight'
@@ -523,10 +521,10 @@ $KGZvihod11 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplaceA = 9
 		KGZplace = 10
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the highway carefully, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -536,10 +534,10 @@ $KGZvihod11 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplaceA = 11
 		KGZplace = 10
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the highway carefully, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -550,10 +548,10 @@ $KGZvihod11 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			KGZplace = 13
 			KGZbatl = 0
 			KGZdead = rand(KGZday * 20, KGZday * 30)
+			gs 'stat'
 			'You ran to the warehouse surrounded on all sides dead.'
 
 			act 'Srazhatsya':KGZdist = rand(5, 12) & gt 'KGZfight'
@@ -563,10 +561,10 @@ $KGZvihod11 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			KGZplace = 14
 			KGZbatl = 0
 			KGZdead = rand(KGZday * 20, KGZday * 30)
+			gs 'stat'
 			'You ran into the hospital surrounded on all sides dead.'
 
 			act 'Srazhatsya':KGZdist = rand(5, 12) & gt 'KGZfight'
@@ -576,10 +574,10 @@ $KGZvihod11 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			KGZplace = 15
 			KGZbatl = 0
 			KGZdead = rand(KGZday * 20, KGZday * 30)
+			gs 'stat'
 			'You ran into the hospital surrounded on all sides dead.'
 
 			act 'Srazhatsya':KGZdist = rand(5, 12) & gt 'KGZfight'
@@ -589,10 +587,10 @@ $KGZvihod11 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			KGZplace = 16
 			KGZbatl = 0
 			KGZdead = rand(KGZday * 20, KGZday * 30)
+			gs 'stat'
 			'You ran into the hospital surrounded on all sides dead.'
 
 			act 'Srazhatsya':KGZdist = rand(5, 12) & gt 'KGZfight'
@@ -606,9 +604,9 @@ $KGZvihod13 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 11
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -618,9 +616,9 @@ $KGZvihod13 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		!!KGZplace = 2
 		KGZbatl = 0
+		gs 'stat'
 		'Noiselessly you started searching the dark warehouse.'
 		udacharand = rand(0, 1)
 
@@ -628,9 +626,7 @@ $KGZvihod13 = {
 			KGZsuprand = rand(1, 3)
 			KGZsup += KGZsuprand
 			'You have found the diet <<KGZsuprand>> days'
-		end
-
-		if udacharand = 0:
+		elseif udacharand = 0:
 			KGZdead = rand(KGZday * 5, KGZday * 10)
 			'On the box seemed barely visible in the dark and dead with uterine howling toward you.'
 
@@ -648,9 +644,9 @@ $KGZvihod14 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 11
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -660,18 +656,16 @@ $KGZvihod14 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		!!KGZplace = 2
 		KGZbatl = 0
+		gs 'stat'
 		'Noiselessly you started searching the dark infirmary.'
 		udacharand = rand(0, 1)
 
 		if udacharand = 1:
 			KGZmedkit += 1
 			'You have found a first aid kit'
-		end
-
-		if udacharand = 0:
+		elseif udacharand = 0:
 			KGZdead = rand(KGZday * 5, KGZday * 10)
 			'On the box seemed barely visible in the dark and dead with uterine howling toward you.'
 
@@ -689,9 +683,9 @@ $KGZvihod15 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 11
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -701,15 +695,13 @@ $KGZvihod15 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		!!KGZplace = 2
 		KGZbatl = 0
+		gs 'stat'
 
 		if KGZfortOru = 1:
 			'In Munitions nothing useful.'
-		end
-
-		if KGZfortOru = 0:
+		elseif KGZfortOru = 0:
 			KGZfortOru = 1
 			'In Munitions you find ammunition for machine 300 pieces and 10 grenades.'
 			KGZgranade += 10
@@ -727,9 +719,9 @@ $KGZvihod16 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 11
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -740,12 +732,12 @@ $KGZvihod16 = {
 			cls
 			KGZhour += 1
 			minut += 1
-			gs 'stat'
 			!!KGZplace = 2
 			KGZbatl = 0
+			gs 'stat'
 
 			if KGZgruzBenz = 1:
-				'You sat in the cab on the driver´s seat and brought the truck.'
+				'You sat in the cab on the driver''s seat and brought the truck.'
 
 				act 'Go':
 					cls
@@ -798,31 +790,29 @@ $KGZvihod16 = {
 							act 'Srazhatsya':KGZdist = rand(5, 10) & gt 'KGZfight'
 						end
 					end
-					end
 				end
-
-				if KGZgruzBenz = 0:
-					KGZgruzBenzMark = 1
-					'Heck, empty tank truck, standing next column, you only need to fill.'
-				end
-
-				act 'Get out of the cab':gt $curloc
+			elseif KGZgruzBenz = 0:
+				KGZgruzBenzMark = 1
+				'Heck, empty tank truck, standing next column, you only need to fill.'
 			end
-		end
 
-		if KGZgruzBenzMark = 1:
-			act 'Exit at Fort Bragg':
-				cls
-				KGZhour += 1
-				minut += 1
-				gs 'stat'
-				KGZbatl = 0
-				KGZgruzBenz = 1
-				'You carefully tucked truck gasoline.'
-
-				act 'Further':gt $curloc
-			end
+			act 'Get out of the cab':gt $curloc
 		end
+	end
+
+	if KGZgruzBenzMark = 1:
+		act 'Exit at Fort Bragg':
+			cls
+			KGZhour += 1
+			minut += 1
+			KGZbatl = 0
+			KGZgruzBenz = 1
+			gs 'stat'
+			'You carefully tucked truck gasoline.'
+
+			act 'Further':gt $curloc
+		end
+	end
 }
 
 
@@ -831,9 +821,9 @@ $KGZvihod100 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 100
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 		KGZlocrand = rand(0, 100)
 
@@ -842,9 +832,7 @@ $KGZvihod100 = {
 			KGZlok = 1
 
 			act 'Enter the house':KGZplace = 101 & gt $curloc
-		end
-
-		if KGZlocrand >= 80 and KGZlok2 = 0:
+		elseif KGZlocrand >= 80 and KGZlok2 = 0:
 			KGZlok2 = 1
 			'You find a large supermarket where when it sold a variety of goods'
 			act 'Sign in to supermarket':KGZplace = 102 & gt $curloc
@@ -857,10 +845,10 @@ $KGZvihod100 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplaceA = 19
 		KGZplace = 10
 		KGZbatl = 0
+		gs 'stat'
 		'You went to the highway carefully, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -875,9 +863,9 @@ $KGZvihod102 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 100
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -887,8 +875,8 @@ $KGZvihod102 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
+		gs 'stat'
 		'You gently started to fumble in search of useful, trying not to stumble on the dead.'
 		udarand = rand(0, 100)
 
@@ -907,9 +895,9 @@ $KGZvihod200 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 10
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -919,9 +907,9 @@ $KGZvihod200 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 201
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -933,9 +921,9 @@ $KGZvihod201 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 200
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -945,9 +933,9 @@ $KGZvihod201 = {
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZbatl = 0
 		KGZplace = 202
+		gs 'stat'
 		'You went cautiously, trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
@@ -974,9 +962,7 @@ $KGZfizatk = {
 		else
 			'Ghoul irreversible no attention to your punch.'
 		end
-	end
-
-	if KGZweapon = 1:
+	elseif KGZweapon = 1:
 		KGZuspeh = rand(0, 100)
 			if KGZuspeh <= 50:
 				KGZdead -= 1
@@ -984,9 +970,7 @@ $KGZfizatk = {
 		else
 			'Ghoul irreversible no attention to your clubbing.'
 		end
-	end
-
-	if KGZweapon = 2:
+	elseif KGZweapon = 2:
 		KGZuspeh = rand(0, 100)
 
 		if KGZuspeh <= 70:
@@ -1155,9 +1139,9 @@ $KGZdeadmanatk = {
 	if KGZdist > 0:KGZdist -= 1
 
 	if KGZdead > 0 and KGZdist <= 2:
-		'<<KGZdead>> dead clutching at you, trying to tear.'
 		kgzuron = rand(KGZdead * 2, KGZdead * 5)
 		KGZHP -= kgzuron
+		'<<KGZdead>> dead clutching at you, trying to tear.'
 		'<b><font color="red">you have caused damage <<kgzuron>> units.</font></b>'
 	elseif KGZdist > 2 and KGZdead > 0:
 		'<<KGZdead>> The Dead wheezing and limping approach you.'
@@ -1170,15 +1154,15 @@ $KGZgranatk = {
 	'You threw a grenade into the Dead'
 
 	if KGZdist <= 5:
-		'Powerful explosion threw the dead in different directions'
 		KGZdist += rand(1, 5)
 		KGZdead -= rand(5, 20)
 		KGZHP -= rand(5, 20)
+		'Powerful explosion threw the dead in different directions'
 		'You hurt by a grenade'
 	elseif KGZdist <= 10:
-		'Powerful explosion threw the dead in different directions'
 		KGZdist += rand(1, 3)
 		KGZdead -= rand(3, 10)
+		'Powerful explosion threw the dead in different directions'
 	else
 		if KGZuspeh <= 5:
 			KGZdead -= 1

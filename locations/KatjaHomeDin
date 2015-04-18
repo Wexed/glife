@@ -9,8 +9,11 @@ $katja_shower_kiss_home = {
 	'<center><img src="images/qwest/alter/katja/showerkiss.jpg"></center>'
 	'Katja gently hugged you with one hand and kissed him on the lips, you feel her soft palm lay naked on your pubis and her thin finger fingering your clitoris began to caress him.'
 
-	if KatjaSlut >= 10:'Katja gently, but firmly puts you on the edge of the tub.'
-	if KatjaSlut < 10:'Katja gently caresses your clitoris with your fingers and her lips begin to kiss your neck, wading all below.'
+	if KatjaSlut >= 10:
+		'Katja gently, but firmly puts you on the edge of the tub.'
+	elseif KatjaSlut < 10:
+		'Katja gently caresses your clitoris with your fingers and her lips begin to kiss your neck, wading all below.'
+	end
 
 	act 'Sit on the edge of the tub':
 		cls
@@ -49,12 +52,15 @@ $katja_shower_kiss_home = {
 }
 
 $d_katjaSextalk = {
-	kattalkrand = rand(0, 3)
 	'Reddened Katja looks at you thoughtfully.'
+	kattalkrand = rand(0, 3)
 
 	if kattalkrand = 0:
-		if KatjaKnowBJ > 0:'- Sveta, tell, how are you sucking dick.'
-		if KatjaKnowBJ = 0:'- Sveta, and you took in the mouth guys?'
+		if KatjaKnowBJ > 0:
+			'- <<$name>>, tell, how are you sucking dick.'
+		elseif KatjaKnowBJ = 0:
+			'- <<$name>>, and you took in the mouth guys?'
+		end
 
 		if bj > 0:
 			act 'Tell how you were doing blowjob':
@@ -68,11 +74,12 @@ $d_katjaSextalk = {
 				act 'further':minut += 15 & gt 'KatjaHomeTalk'
 			end
 		end
-	end
-
-	if kattalkrand = 1:
-		if KatjaKnowSex > 0:'- Sveta, tell, how you fucked.'
-		if KatjaKnowSex = 0:'- Sveta, and you have fucked guys?'
+	elseif kattalkrand = 1:
+		if KatjaKnowSex > 0:
+			'- <<$name>>, tell, how you fucked.'
+		elseif KatjaKnowSex = 0:
+			'- <<$name>>, and you have fucked guys?'
+		end
 
 		if sex > 0:
 			act 'Share how you have sex':
@@ -86,11 +93,12 @@ $d_katjaSextalk = {
 				act 'further':minut += 15 & gt 'KatjaHomeTalk'
 			end
 		end
-	end
-
-	if kattalkrand = 2:
-		if KatjaKnowAnal > 0:'- Sveta, tell, how you took in the ass.'
-		if KatjaKnowAnal = 0:'- Sveta, and gave you guys in the ass?'
+	elseif kattalkrand = 2:
+		if KatjaKnowAnal > 0:
+			'- <<$name>>, tell, how you took in the ass.'
+		elseif KatjaKnowAnal = 0:
+			'- <<$name>>, and gave you guys in the ass?'
+		end
 
 		if anal > 0:
 			act 'Tell how you gave in the ass':
@@ -104,11 +112,12 @@ $d_katjaSextalk = {
 				act 'further':minut += 15 & gt 'KatjaHomeTalk'
 			end
 		end
-	end
-
-	if kattalkrand = 3:
-		if KatjaKnowMastr > 0:'- Sveta, tell, as you mastrubiruesh.'
-		if KatjaKnowMastr = 0:'- Sveta, and you mastrubiruesh?'
+	elseif kattalkrand = 3:
+		if KatjaKnowMastr > 0:
+			'- <<$name>>, tell, as you mastrubiruesh.'
+		elseif KatjaKnowMastr = 0:
+			'- <<$name>>, and you mastrubiruesh?'
+		end
 
 		if mastr > 0:
 			act 'Tell how you masturbate':
@@ -121,9 +130,7 @@ $d_katjaSextalk = {
 
 				if KatjaMastr = 0:
 					act 'further':minut += 15 & gt 'KatjaHomeTalk'
-				end
-
-				if KatjaMastr > 0:
+				elseif KatjaMastr > 0:
 					act 'further':
 						cls
 						KatjaLust += 5
@@ -155,12 +162,12 @@ $d_katjaSextalk = {
 		end
 	end
 
-	act 'Otazatsya to talk on such topics':
+	act 'Refuse to talk on such topics':
 		cls
 		dom += 1
 		KatjaDom -= 1
 		gs 'stat'
-		'You refused to speak with Katja on such topics. Katja was confused and looked down "Sorry, Sveta, I did not want to hurt you."'
+		'You refused to speak with Katja on such topics. Katja was confused and looked down "Sorry, <<$name>>, I did not want to hurt you."'
 
 		act 'further':minut += 15 & gt 'KatjaHomeTalk'
 	end
@@ -169,7 +176,7 @@ $d_katjaSextalk = {
 $d_katjahornykiss = {
 	'Katia brought his face to your, like_this, that you could feel her hot breath on her skin.'
 
-	act 'Bring your face close to hers.':
+	act 'Bring your face close to hers':
 		cls
 		gs 'stat'
 		'<center><img src="images7qwest/alter/npc/14.jpg"></center>'
@@ -207,9 +214,9 @@ $d_katjahornykiss = {
 					end
 				end
 			end
+		elseif KatjaHorny >= 50:
+			dynamic $din_katja_kiss
 		end
-
-		if KatjaHorny >= 50:dynamic $din_katja_kiss
 	end
 }
 

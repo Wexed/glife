@@ -9,7 +9,7 @@ if hour >= 8 and hour < 22:
 
 	if katalkinSexDay < daystart and katalkinSexOnce = 1:
 		if schtraf = 0:
-		'Katalkin looks at you with interest "Sit down Light. can tea?"'
+		'Katalkin looks at you with interest "Sit down <<$nickname>>. can tea?"'
 
 		act 'drink tea':
 			cls
@@ -17,15 +17,13 @@ if hour >= 8 and hour < 22:
 			katalkinNoexit = 0
 			gs 'stat'
 			'<center><img src="images/qwest/vokzal/katalkin.jpg"></center>'
-			'You sat down at the table and poured Katalkin you some tea. Captain himself sat down next to you and also began to drink tea. He almost rummage your body your lustful eyes. Captain whispers to you grabbing you for Lyashko "Well Sveta, can entertain?"'
+			'You sat down at the table and poured Katalkin you some tea. Captain himself sat down next to you and also began to drink tea. He almost rummage your body your lustful eyes. Captain whispers to you grabbing you for Lyashko "Well <<$name>>, can entertain?"'
 
 			act 'Put his hand on his pants':katsexetap = 1 & gt 'katalkinSex'
 			act 'Do not move':katsexetap = 0 & gt 'katalkinSex'
 		end
-	end
-
-	if schtraf > 0:
-		'Captain Katalkin smiling at you "Well Sveta, pay a fine or exhaust?"'
+	elseif schtraf > 0:
+		'Captain Katalkin smiling at you "Well <<$name>>, pay a fine or exhaust?"'
 
 		if money >= schtraf:
 			act 'Pay a fine':
@@ -43,13 +41,11 @@ if hour >= 8 and hour < 22:
 
 		act 'work':katsexetap = 0 & gt 'katalkinSex'
 		end
-	end
-
-	if katalkinSexDay = daystart and katalkinSexOnce = 1:
-		if schtraf = 0:'Katalkin sits in his papers and that is writing.'
-
-		if schtraf > 0:
-			'Katalkin grins "I think you`re completely fulfilled its fine."'
+	elseif katalkinSexDay = daystart and katalkinSexOnce = 1:
+		if schtraf = 0:
+			'Katalkin sits in his papers and that is writing.'
+		elseif schtraf > 0:
+			'Katalkin grins "I think you''re completely fulfilled its fine."'
 
 			act 'bye now':
 				cls
@@ -62,9 +58,7 @@ if hour >= 8 and hour < 22:
 				act 'Leave':minut += 1 & gt $curloc
 			end
 		end
-	end
-
-	if katalkinSexOnce = 0:
+	elseif katalkinSexOnce = 0:
 		if schtraf = 0:
 			'Katalkin looks at you with interest "Sit_down. can tea?"'
 
@@ -74,14 +68,12 @@ if hour >= 8 and hour < 22:
 				katalkinNoexit = 0
 				gs 'stat'
 				'<center><img src="images/qwest/vokzal/katalkin.jpg"></center>'
-				'You sat down at the table and poured Katalkin you some tea. Captain himself sat down next to you and also began to drink tea. He almost rummage your body your lustful eyes. And suddenly you feel like you captain put his hand on his leg and a little squeezing her feverishly began to mumble his face closer to your. "you`re cute, we police are people too."'
+				'You sat down at the table and poured Katalkin you some tea. Captain himself sat down next to you and also began to drink tea. He almost rummage your body your lustful eyes. And suddenly you feel like you captain put his hand on his leg and a little squeezing her feverishly began to mumble his face closer to your. "you''re cute, we police are people too."'
 
 				act 'Leave':minut += 1 & gt $curloc
 				act 'Do not move':katsexetap = 0 & gt 'katalkinSex'
 			end
-		end
-
-		if schtraf > 0:
+		elseif schtraf > 0:
 			'Captain Katalkin turned to you and said "In general you with fine <<schtraf>> rubles and you can go."'
 
 			if money >= schtraf:
@@ -131,22 +123,20 @@ if hour >= 8 and hour < 22:
 
 						act 'Leave':minut += 1 & gt 'vokzalGin'
 					end
+				elseif money < schtraf:
+					'You think to yourself, that out then you have no. As there is no required amount for payment of the fine.'
 				end
-
-				if money < schtraf:'You think to yourself, that out then you have no. As there is no required amount for payment of the fine.'
 
 				act 'smile at him':katsexetap = 0 & gt 'katalkinSex'
 			end
 		end
 	end
-end
-
-if hour >= 22:
+elseif hour >= 22:
 	'Captain Katalkin sitting at a table on which lay a variety of snacks and vodka worth. Next to him sat two more police.'
 
 	if katalkinSexOnce = 1:
 		if katGangMeet = 0:
-			'See you Katalkin captain waved his hand and you drunkenly said "Come here Sveta. I `ll introduce you to fucking guys."'
+			'See you Katalkin captain waved his hand and you drunkenly said "Come here <<$name>>. I ''ll introduce you to fucking guys."'
 
 			act 'Sit down':
 				cls
@@ -155,14 +145,12 @@ if hour >= 22:
 				katGangMeet = 1
 				gs 'stat'
 				'<center><img src="images/qwest/vokzal/katalkin.jpg"></center>'
-				'You sat down at a table with a drunken police campaign, you immediately poured vodka. Katalkin introduced you guys like Pasha and Sergei. "Well Svetsik, Let`s drink to familiarity."'
+				'You sat down at a table with a drunken police campaign, you immediately poured vodka. Katalkin introduced you guys like Pasha and Sergei. "Well <<$name>>, Let''s drink to familiarity."'
 
 				act 'A toast to familiarity':alko += 2 & minut += 5 & gt 'katalkinAlko'
 			end
-		end
-
-		if katGangMeet > 0:
-			'See you Katalkin captain waved his hand and you drunkenly said "Come here Sveta. Come buhnem."'
+		elseif katGangMeet > 0:
+			'See you Katalkin captain waved his hand and you drunkenly said "Come here <<$name>>. Come buhnem."'
 
 			act 'Sit down':
 				cls
@@ -175,9 +163,7 @@ if hour >= 22:
 				act 'drink a glass':alko += 2 & minut += 5 & gt 'katalkinAlko'
 			end
 		end
-	end
-
-	if katalkinSexOnce = 0:
+	elseif katalkinSexOnce = 0:
 		'IF THIS MESSAGE climbed it BAG'
 
 		if schtraf = 0:
@@ -194,9 +180,7 @@ if hour >= 22:
 				act 'Leave':minut += 1 & gt $curloc
 				act 'Do not move':katsexetap = 0 & gt 'katalkinSex'
 			end
-		end
-
-		if schtraf > 0:
+		elseif schtraf > 0:
 			'Katalkin drunken captain turned to you and said "In short pay fines <<schtraf>> rubles and you can get out."'
 
 			if money >= schtraf:
@@ -227,9 +211,7 @@ if hour >= 22:
 			end
 		end
 	end
-end
-
-if hour < 8:
+elseif hour < 8:
 	'The door is locked.'
 
 	act 'Leave':minut += 1 & gt 'vokzalGin'

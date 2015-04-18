@@ -1,20 +1,17 @@
 # kuhr
 act 'Go to the corridor':gt 'korr'
 
-$metkaM = $ARGS[0]
-$locM = $CURLOC
-
 $dirtarm = {
 	if fairy > 0:
 		cla
 		*clr
-		set waterhouse -= dirttarelka
-		set fairy -= 1
-		set minut += dirttarelka * 3
+		waterhouse -= dirttarelka
+		fairy -= 1
+		minut += dirttarelka * 3
+		cltarelka += dirttarelka
+		dirttarelka = 0
+		manna -= 5
 		gs 'stat'
-		set cltarelka += dirttarelka
-		set dirttarelka = 0
-		set manna -= 5
 		'<center><img src="images/pics/dirt.jpg"></center>'
 		'Using the dishwashing liquid you washed the dishes.'
 
@@ -27,15 +24,15 @@ $dirtarm = {
 $edagotd = {
 	cla
 	*clr
-	set minut += 60
-	gs 'stat'
-	set edahot += 1
-	set eda -= 1
-	set waterhouse -= 1
-	set kuhdrova = 0
+	minut += 60
+	edahot += 1
+	eda -= 1
+	waterhouse -= 1
+	kuhdrova = 0
 	musor += 1
-	set cltarelka -= 1
-	set manna -= 5
+	cltarelka -= 1
+	manna -= 5
+	gs 'stat'
 	'<center><img src="images/pics/cook.jpg"></center>'
 	'You prepare the meal.'
 
@@ -46,37 +43,32 @@ $edagotd = {
 $edahotd = {
 	cla
 	*clr
-	gs 'stat'
 	frost = 0
+	minut += 30
+	edahot = 0
+	dirttarelka += 1
+	health += 10
+	manna += 20
+	gs 'stat'
 	'<center><img src="images/pics/food.jpg"></center>'
-	set minut += 30
-	set edahot = 0
-	set dirttarelka += 1
-	set health += 10
-	set manna += 20
-
 	if energy >= 30:
-		set fat += 5
-		'You can no longer have.'
-	end
-
-	if energy >= 20 and energy < 30:
-		set fat += 3
-		set energy += 10
+		fat += 5
+		'You can no longer eat.'
+	elseif energy >= 20 and energy < 30:
+		fat += 3
+		energy += 10
 		'You pushed through the power of a meal.'
-	end
-
-	if energy < 20:
-		set energy += 20
-		!!set fat += 1
+	elseif energy < 20:
+		energy += 20
+		!!fat += 1
 		'You gladly ate cooked food.'
 	end
 
-	if water >= 20:'Tea in you no longer climbs.'
-
-	if water < 20:
+	if water >= 20:
+		'You don''t need any more tea.'
+	else
+		water += 20
 		'You gladly drank a mug of tea.'
-		set water += 20
 	end
 
 	act 'Get up from the table':gt $locM, $metkaM
@@ -100,7 +92,7 @@ $santehnikend3 = {
 	facial += 1
 	cumface += 1
 	if GrishaSex = 0:GrishaSex = 1 & guy += 1
-	if mop > 1:set mop = 0
+	if mop > 1:mop = 0
 	gs 'stat'
 	'<center><img src="images/qwest/grisha/bj2.jpg"></center>'
 	'You felt like you slapped in the face warm and viscous. Then another and another, covering your face with white seed. Cum began to drain from his face on the lips, chin and cheeks. Plumber finally dried out and stopped the flow of sperm. You could not open his eyes because they felt that they sperm from which matted eyelashes. Plumber chuckled and said. "Classy Vidocq. This slut." His words touched you and you feel like your cheeks flushed with shame. You have become washed sperm from the face, trying to unstick my eyes, but you turned only to smear her face. Finally you are able to open one eye and saw you standing over plumbing, he smirked buttoning his pants. Thereafter, a plumber turned and went to the exit from your apartment.'
@@ -171,7 +163,7 @@ $santehnikend = {
 	cla
 	*clr
 	kransloman = 0
-	set minut += 30
+	minut += 30
 	gs 'stat'
 	'<center><img src="images/img/house/s3.jpg"></center>'
 	'Half an hour later he said he was finished, and you have 1,500 rubles'
@@ -180,18 +172,14 @@ $santehnikend = {
 		'Do you lack the money'
 
 		if money + stolmoney >= 1500:'But in the table have a stash and you have enough.'
-	end
-
-	if money + stolmoney >= 1500:
+	elseif money + stolmoney >= 1500:
 		act 'Pay':
-			if money < 1500:set money += stolmoney & stolmoney = 0
+			if money < 1500:money += stolmoney & stolmoney = 0
 
-			set money -= 1500
+			money -= 1500
 			gt 'kuhr'
 		end
-	end
-
-	if money + stolmoney < 1500:
+	elseif money + stolmoney < 1500:
 		act 'I did not have enough money':
 			cls
 			gs 'stat'
@@ -203,11 +191,12 @@ $santehnikend = {
 		end
 	end
 
-		!'if shameless > 15:
+		!'
+		if shameless > 15:
 			act 'Offer other options (to make a blow)':
 				cla
 				*clr
-				set horny += 40
+				horny += 40
 				gs 'stat'
 				'<center><img src="images/img/house/s4.jpg"></center>'
 				'I do not have money, but you can take another form of payment? you say, dropping to her knees and starting to unbutton his pants. The guy obviously does not mind and watching your actions. You remove it even flaccid penis and tightly gripping his hand, start to kiss the head, gradually sucking it into his mouth.'
@@ -216,15 +205,16 @@ $santehnikend = {
 					if vnesh < 15:
 						cla
 						*clr
-						set guy += 1
-						set bj += 1
+						guy += 1
+						bj += 1
 						'<center><img src="images/img/house/s5.jpg"></center>'
 						'You diligently sucking his dick between his legs itched from all desires, you break off a couple of times to stop and go to the sex, but he took you by the head and continued to fuck your mouth, soon he came into your mouth and swallow once you come and pick it up again member, as he put his pants and silently walked to the door, to sleep with you, he was not even going. From rastrojstva you spat out semen on the floor, looks like you do not attract even plumbing.'
 
 						act 'Leave':gt 'korr'
+					elseif vnesh >= 15:
+						picrand = 90
+						gt 'sex', 'minet'
 					end
-
-					if vnesh >= 15:set picrand = 90 & gt 'sex', 'minet'
 				end
 			end
 		end
@@ -233,7 +223,7 @@ $santehnikend = {
 
 $santehnik1 = {
 	kransloman = 0
-	set minut += 20
+	minut += 20
 	gs 'stat'
 	'<center><img src="images/img/house/s0.jpg"></center>'
 	'You''ve reached the clock service repair. After 20 minutes, a plumber arrived.'
@@ -247,7 +237,7 @@ $santehnik1 = {
 $santehnik = {
 	cla
 	*clr
-	set kransloman = 0
+	kransloman = 0
 
 	if husband = 0 or husbandrink = 10:dynamic $santehnik1 & exit
 	if husband > 0 and week < 6 and hour < 17 and hour > 7:dynamic $santehnik1 & exit
@@ -255,7 +245,7 @@ $santehnik = {
 	if husband > 0 and husbandrink ! 10:
 		cla
 		*clr
-		set minut += 20
+		minut += 20
 		'<center><img src="images/img/house/s7.jpg"></center>'
 		'You told her husband about the crane and he called the clock service repair. After 20 minutes, a plumber arrived.'
 		'Husband walked him to the kitchen and the two of you began to observe his actions, you are sick of hearing about how the plumber raskazyvaet pads Chinese cranes and that people pushed into the sink, and you decided to leave the hall.'
@@ -263,8 +253,8 @@ $santehnik = {
 		act 'Leave':
 			cla
 			*clr
-			set minut += 20
-			set horny += 50
+			minut += 20
+			horny += 50
 			gs 'stat'
 			'<center><img src="images/img/house/s8.jpg"></center>'
 			'You went into the room and sat on the couch, soon came and sat down beside her husband. With one hand he odnyal you, and you ran second in her panties and began to massage your clitoris.'
@@ -291,29 +281,27 @@ $santehnik = {
 
 					act 'Do not stop':
 						cla
-						set orgasm += 1
-						set bj += 1
+						orgasm += 1
+						bj += 1
 						'You vskhvatili husband hips and continued to work his mouth, he jerked a couple of times trying to free himself, but you could not stop and just absorbed the deeper his cock. When he stopped twitching you omitted one hand to his crotch and just a couple of motions brought herself to orgasm. But the excitement did not sleep, you want even more, and his eyes watching plumbing more aroused you. You could not control myself.'
 
 						act 'Ride the husband':
 							cla
 							*clr
-							set orgasm += 1
-							set cumpussy += 1
-							set sex += 1
-							set suprdolg += 1
-							set husband += 1
-							set husbizvradd += 1
-							set horny = 0
+							orgasm += 1
+							cumpussy += 1
+							sex += 1
+							suprdolg += 1
+							husband += 1
+							husbizvradd += 1
+							horny = 0
 							'<center><img src="images/img/house/s12.jpg"></center>'
 							'You released a member of her husband''s mouth and quickly pushed him standing on the couch, and jumped on top of themselves, quickly planted a pussy on his dick. You jumped on it like crazy, ignoring the plumbing that all this time and stood in the doorway, watching you. When you were again close to orgasm you feel as sperm gushed into you, and making a few movements uvedayuschem already a member, you have reached orgasm, uttering a cry you limp and fell to the husband. He took you still quaking with myself wearing pants and walked out with a plumber in the hallway.'
 
 							act 'Leave':gt 'sitr'
 						end
 					end
-				end
-
-				if izvratH ! 0:
+				else
 					'Husband did not even try to stop you'
 
 					if horny < 80:
@@ -322,25 +310,23 @@ $santehnik = {
 								cla
 								'You released a member of her husband, and he quickly put it in his pants and with a plumber out into the corridor'
 								act 'Leave':gt 'sitr'
-							end
-
-							if harakHusb = 2:
+							elseif harakHusb = 2:
 								cla
-								set guy += 1
+								guy += 1
 								'You tried to spit from the mouth of a member, but you vskhvatil husband''s head and he started to fuck you in the mouth, talking with obnovremenno plumber "We''re a little busy, wait a minute, now zhenushku feed" he laughed, "How much do I owe you, " he continued.'
 								'"Fifteen hundred, " said the plumber.'
 								'"Well, you and the prices can agree that if you feed it too and disperse?" he asked.'
 								'"I do not know, blow it unless discount pull, but if it all to try, then yes, " replied the plumber.'
 								'"Do you know how to bargain, " said the husband, "Okay agreed, " he added, almost without thinking. Knowing the character of her husband decided that you would mind our own peril.'
 
-								act 'Serve both':set picrand = 43 & gt 'sexdvoe', 'var'
+								act 'Serve both':picrand = 43 & gt 'sexdvoe', 'var'
 							end
 						end
 					end
 
 					act 'Do not stop':
 						cla
-						set bj += 1
+						bj += 1
 						'You continued to suck ignoring watching you plumbing.'
 
 						if harakHusb = 0:'Husband tried not to look in the direction of plumbing, obviously embarrassed, but he did not hesitate to follow your every move.'
@@ -349,10 +335,10 @@ $santehnik = {
 
 						act 'Continue':
 							cla
-							set swallow += 1
-							set suprdolg += 1
-							set husband += 1
-							set horny += 20
+							swallow += 1
+							suprdolg += 1
+							husband += 1
+							horny += 20
 							'You continued to make her husband a blowjob, and soon a stream of hot liquid squirted into your mouth, swallowing sperm you licked the remnants of his semen from the penis. Husband cleaned dick in his pants and walked out into the hallway with a plumber. And you are left to sit on the floor exhausted from desire.'
 
 							act 'Leave':gt 'sitr'
@@ -365,30 +351,26 @@ $santehnik = {
 
 								if harakHusb = 0:
 									*clr
-									set houseslut += 1
-									set husband += 2
+									houseslut += 1
+									husband += 2
 									'<center><img src="images/img/house/s11.jpg"></center>'
 									'Husband a little swept the answer, then what would convince him, you have a loud voice continued, "Let him polizhet me while I caress you."'
 									'Plumber readily tensed, waiting for the reaction of her husband, "Well, if only polizhet then let them." said the husband. Plumbing had not persuade her husband was worth sit on the sofa, and you get on your knees and stuck out his ass as his tongue penetrated into your pussy. First husband glanced in his direction, but soon relaxed and finally when the guy started to wield a vengeance fingers in your hole, no sound, you have decided that he was not against you share with others.'
 
-									act 'Serve both':set picrand = 43 & gt 'sexdvoe', 'var'
-								end
-
-								if harakHusb = 1:
-									set husband -= 5
+									act 'Serve both':picrand = 43 & gt 'sexdvoe', 'var'
+								elseif harakHusb = 1:
+									husband -= 5
 									'"You do sbrendil that-be wife and I somehow shared plumber, cool pussy fool must think his head." shouted husband and removing member in his pants out of the room with the plumber.'
 
 									act 'Leave':gt 'sitr'
-								end
-
-								if harakHusb = 2:
+								elseif harakHusb = 2:
 									*clr
-									set houseslut += 1
-									set husband += 2
+									houseslut += 1
+									husband += 2
 									'<center><img src="images/img/house/s10.jpg"></center>'
 									'"That''s not for nothing that they say all women are whores, hey man this whore want to write out two, but then the repair free of charge, " said the husband. Plumber twice predlogat had not, he quickly approached and pulled out his dick Framed to your face, you clung to him and started to suck both alternately, and her husband stood komentirovat your actions "That sucked, fresh meat, do not forget about me, like this boy, swallowing deeper and deeper. "'
 
-									act 'Serve both':set picrand = 43 & gt 'sexdvoe', 'var'
+									act 'Serve both':picrand = 43 & gt 'sexdvoe', 'var'
 								end
 							end
 						end
@@ -399,22 +381,23 @@ $santehnik = {
 	end
 }
 
+$metkaM = $ARGS[0]
+$locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-set polomka = rand(1, 100)
+clr
+minut += 1
+housrA = 1
+elektro += 1
+gs 'stat'
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
 '<center><b><font color="maroon">Kitchen</font></b></center>'
 
 if remkuhr = 0:'<center><img src="images/etogame/kuhr.jpg"></center>'
 if remkuhr = 1:'<center><img src="images/etogame/kuhr2.jpg"></center>'
 
-clr
-gs 'stat'
-fcolor = rgb(0, 0, 0)
-bcolor = rgb(255, 255, 255)
-lcolor = rgb(106, 90, 205)
-set minut += 1
-set housrA = 1
-set elektro += 1
 
 if kransloman = 1:
 	cla
@@ -427,7 +410,12 @@ if kransloman = 1:
 	exit
 end
 
-if polomka > 99 and santehnikDolg = 0:set kransloman = 1 & gt 'kuhr'
+polomka = rand(1, 100)
+
+if polomka = 100 and santehnikDolg = 0:
+	kransloman = 1
+	gt 'kuhr'
+end
 
 if posudomashina > 0:
 	if dirttarelka > 0 and fairy >= dirttarelka:
@@ -478,8 +466,8 @@ if pranik > 0:
 		*clr
 		minut += 5
 		pranik -= 1
-		set health += 30
-		set manna += 100
+		health += 30
+		manna += 100
 		energy += 20
 		water += 20
 		fat += 50
@@ -493,35 +481,34 @@ if pranik > 0:
 end
 
 if edaD > 0:
+	'The refrigerator is kept healthy meal that will last for <b><<edaD>></b> servings.'
 	act 'Eat diet food (0:30)':
 		cla
 		*clr
 		frost = 0
+		minut += 30
+		health += 10
+		manna += 20
+		edaD -= 1
 		'<center><img src="images/pics/food.jpg"></center>'
-		set minut += 30
-		set health += 10
-		set manna += 20
-		set edaD -= 1
 
 		if energy >= 30:
-			'You can no longer have.'
-		end
-
-		if energy >= 20 and energy < 30:
-			set energy += 10
+			'You can no longer eat.'
+		elseif energy >= 20 and energy < 30:
+			energy += 10
 			'You pushed through the power of a meal.'
-		end
-
-		if energy < 20:
-			set energy += 20
+		elseif energy < 20:
+			energy += 20
 			'You gladly ate cooked food.'
 		end
 
-		if water >= 20:'Tea in you no longer climbs.'
+		if water >= 20:
+			'You don''t need any more tea.'
 
-		if water < 20:
+		else
+			water += 20
 			'You gladly drank a mug of tea.'
-			set water += 20
+
 		end
 
 		act 'Get up from the table':gt 'kuhr'
@@ -535,8 +522,8 @@ if fatdel > 0:
 
 		if fat > salo:fat = salo
 
-		set fatdel -= 1
-		set fat -= 25
+		fatdel -= 1
+		fat -= 25
 
 		if fat < 0:fat = 0
 
@@ -548,13 +535,14 @@ end
 
 act 'Drink water (0:05)':
 	cla
-	set minut += 5
+	minut += 5
 
-	if water >= 20:'Water in you no longer climbs.'
-
-	if water < 20:
+	if water >= 20:
+		'You don''t need any more water.'
+	else
+		water += 20
 		'You gladly drank a glass of water.'
-		set water += 20
+
 	end
 
 	act 'Get up from the table':gt 'kuhr'
@@ -565,8 +553,8 @@ if husband > 0 and husbanday > 0 and huseatday ! day and eda >= 2:
 		cla
 		*clr
 		husband += 5
-		set eda -= 2
-		set minut += 60
+		eda -= 2
+		minut += 60
 		huseatday = day
 		manna -= 25
 		'<center><img src="images/pics/cook.jpg"></center>'
@@ -583,22 +571,13 @@ if lekarstvo > 0:
 		act 'Take a pill':
 			cla
 			*clr
-			set minut += 5
+			minut += 5
 			lekarday = day
 			lekarstvo -= 1
-			sick -= sick * 20/100
-			set lekrand = rand(0, 8)
+			sick -= sick * 20 / 100
+			lekrand = rand(1, 9)
 
-			if lekrand = 0:'<center><img src="images/inBed/lekr1.jpg"></center>'
-			if lekrand = 1:'<center><img src="images/inBed/lekr2.jpg"></center>'
-			if lekrand = 2:'<center><img src="images/inBed/lekr3.jpg"></center>'
-			if lekrand = 3:'<center><img src="images/inBed/lekr4.jpg"></center>'
-			if lekrand = 4:'<center><img src="images/inBed/lekr5.jpg"></center>'
-			if lekrand = 5:'<center><img src="images/inBed/lekr6.jpg"></center>'
-			if lekrand = 6:'<center><img src="images/inBed/lekr7.jpg"></center>'
-			if lekrand = 7:'<center><img src="images/inBed/lekr8.jpg"></center>'
-			if lekrand = 8:'<center><img src="images/inBed/lekr9.jpg"></center>'
-
+			'<center><img src="images/inBed/lekr<<picrand>>.jpg"></center>'
 			'You took the pill'
 
 			act 'Move away':gt 'kuhr'
@@ -610,13 +589,13 @@ if vitamin > 0:
 	'You have <b><<vitamin>></b> vitamin drinks.'
 
 	if vitaminday ! day:
-		act 'Drink Vitamins':
+		act 'Take vitamins (0:05)':
 			cla
 			*clr
 
 			if fat > salo:fat = salo
 
-			set minut += 5
+			minut += 5
 			vitaminday = day
 			vitamin -= 1
 			frost = 0
@@ -625,11 +604,11 @@ if vitamin > 0:
 			if GerpesOnce = 1:Gerpes -= 2
 			if SifacOnce = 1 and Sifilis >= 10:Sifilis -= rand(0, 1)
 
-			set skinvan += 1
+			skinvan += 1
 
-			if skinvan = 20:set skinvan = 0 & set skin += 1
+			if skinvan = 20:skinvan = 0 & skin += 1
 
-			'You drank a vitamin drink.'
+			'You took some vitamins.'
 
 			act 'Move away':gt 'kuhr'
 		end
@@ -642,17 +621,17 @@ if zoo >= 6:
 			act 'Call <<$namesob>>':
 				cla
 				*clr
-				set minut += 30
+				minut += 30
 				'<center><img src="images/zoo/z1.jpg"></center>'
 				'You call the dog and that the move pushes his wet nose between your legs and lick accepted.'
 
 				if harakHusb = 0:
-					set zoo += 1
-					set horny = 0
-					set orgasm += 1
+					zoo += 1
+					horny = 0
+					orgasm += 1
+					husband -= 1
 					'"What''s he doing dear, stop him, " cries the husband'
 					'"I can not, try myself, " you reply.'
-					set husband -= 1
 					'<<$husName>> trying to shove the dog, but he growls and snarls. "I can not get it to drive away what to do dear?" he asks.'
 					'"Think of something." you reply, already slightly moaning with pleasure. <<$HusName>> begins to pace the room, periodically coming to the dog, but hearing his growl off. While <<$husName>> pacing the room dog began to jump on you.'
 					'"Oh my God, that he was going to do?" shrieked <<$husName>>, see attempts dog jump on you.'
@@ -668,16 +647,14 @@ if zoo >= 6:
 						if izvratH = 0:
 							'"Oh my God, I can not look at it, " cried the husband slammed the door and ran. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. My husband came back, and you still were cancer and dog sperm flowed from your pussy.'
 							'"I''ll take him now on euthanasia, " said <<$husName>>'
-						end
-
-						if izvratH = 1:
-							'"Well get off of her, " shouts <<$husName>> at the dog, but close to it does not fit. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him and your husband decided that your movement is an attempt to free you cheered "Yes Svetsik so can get more wiggle lose it." Soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. Husband looked at you standing cancer hips peremazanymi canine semen flowing out of your pussy.'
+						else
+							'"Well get off of her, " shouts <<$husName>> at the dog, but close to it does not fit. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him and your husband decided that your movement is an attempt to free you cheered "Yes <<$name>> so can get more wiggle lose it." Soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. Husband looked at you standing cancer hips peremazanymi canine semen flowing out of your pussy.'
 							'"I''ll take him now on euthanasia, " said <<$husName>>'
 						end
 
 						act 'Allow':
-							set sobaka = 0
-							set zoo = 0
+							sobaka = 0
+							zoo = 0
 							gt 'sitr'
 						end
 
@@ -689,9 +666,7 @@ if zoo >= 6:
 							act 'Finish':gt 'sitr'
 						end
 					end
-				end
-
-				if harakHusb = 1:
+				elseif harakHusb = 1:
 					'"Her dog you absolutely ohrenel, go find yourself on the street bitch and then you froze otpihni it" the husband says.'
 					'"I can not, try myself, " you reply.'
 
@@ -700,8 +675,8 @@ if zoo >= 6:
 						'"I''ll take him now on euthanasia, " said <<$husName>>'
 
 						act 'Allow':
-							set sobaka = 0
-							set zoo = 0
+							sobaka = 0
+							zoo = 0
 							gt 'sitr'
 						end
 
@@ -712,13 +687,11 @@ if zoo >= 6:
 
 							act 'Finish':gt 'sitr'
 						end
-					end
-
-					if izvratH = 1:
-						set zoo += 1
-						set bj += 1
-						set swallow += 1
-						set cumlip += 1
+					else
+						zoo += 1
+						bj += 1
+						swallow += 1
+						cumlip += 1
 						'"Can not or do not want, " said <<$husName>> smiling and continues to sit and watch as the dog licks you.'
 						'"It probably does not want" you reply and deliberately pushes the legs wider. <<$husName>> looks like you moan until the dog licks you, and suddenly gets up and pulls out his dick brings to your mouth.'
 
@@ -731,8 +704,8 @@ if zoo >= 6:
 							'"I''ll take him now on euthanasia, " said <<$husName>>'
 
 							act 'Allow':
-								set sobaka = 0
-								set zoo = 0
+								sobaka = 0
+								zoo = 0
 								gt 'sitr'
 							end
 
@@ -744,7 +717,7 @@ if zoo >= 6:
 								act 'Jerk dog':
 									cla
 									*clr
-									set husband -= 1
+									husband -= 1
 									'<center><img src="images/zoo/z6.jpg"></center>'
 									'You take the dog dick in hand and begin to masturbate after a few minutes you dog cums in her palm.'
 									act 'Finish':gt 'sitr'
@@ -753,8 +726,8 @@ if zoo >= 6:
 								act 'Suck dog':
 									cla
 									*clr
-									set swallow += 1
-									set husband -= 40
+									swallow += 1
+									husband -= 40
 									'<center><img src="images/zoo/z7.jpg"></center>'
 									'You loshite dog on the floor and take his cock in my mouth, my husband looks at you with disgust as you sucking dog in a couple of minutes dog diluted into your mouth and you swallow sperm.'
 									'"Well, you''re a pervert, " the husband says with obvious distaste.'
@@ -766,32 +739,28 @@ if zoo >= 6:
 							end
 						end
 					end
-				end
-
-				if harakHusb = 2:
+				elseif harakHusb = 2:
 					'"Her dog you absolutely ohrenel, go find yourself on the street bitch and then you froze otpihni it" the husband says.'
 					'"I can not, try myself, " you reply.'
 
 					if izvratH = 0:
-						set manna -= 15
-						set willpower -= 15
+						manna -= 15
+						willpower -= 15
 						'<<$HusName>> trying ottoschit dog, but he growls and grins, then he smashes the dog leg in the ribs and he screeched flies into a corner, did not have time to climb dog as man begins to kick harder, seeing his condition, you scored in angle and covering his head with hands close your eyes. A few minutes later the dog stops.'
 						'"What are you hiding there shalt here, and then krovischi from your skunk" said <<$husName>>. Opening her eyes you see a dead dog in a pool of blood.'
 						'"Well, what froze shalt say to you, I do this on the trash Dogmeat''ll take." he takes the dog, wrap in sheets and make it in the trash. And you have some time to scour the blood from the floor.'
 
 						act 'Finish':
-							set sobaka = 0
-							set zoo = 0
+							sobaka = 0
+							zoo = 0
 							gt 'sitr'
 						end
-					end
-
-					if izvratH = 1:
-						set zoo += 1
-						set bj += 1
-						set swallow += 1
-						set cumlip += 1
-						set SUB += 2
+					else
+						zoo += 1
+						bj += 1
+						swallow += 1
+						cumlip += 1
+						SUB += 2
 						'"What do you mean I can not, that you like the way he licks you, " shouts <<$husName>>.'
 						'"No, of course you do not, " you begin to make excuses.'
 						'"And I see you taschishsya whore, you all are flowing, or think I do not see, and if you like it so thank him, " he says, and seeing your not knowing look continues, "Well, what are hatched suck him alive."'
@@ -805,18 +774,18 @@ if zoo >= 6:
 							act 'Allow':
 								cla
 								*clr
-								set suprdolg += 1
-								set sex += 1
-								set anal += 1
+								suprdolg += 1
+								sex += 1
+								anal += 1
 								'<center><img src="images/zoo/z5.jpg"></center>'
 								'You obediently spreads her legs and her husband comes to you in the pussy, he hews suck you until you have a dog, but you do not dostovlyaet pleasure. Soon her husband cums and gets "A dog that is not yet finished, something you''re not trying, as well, cup your point."'
 
 								act 'Substitute ass':
 									cla
 									*clr
-									set analorgasm += 1
-									set orgasm += 1
-									set horny = 0
+									analorgasm += 1
+									orgasm += 1
+									horny = 0
 									'<center><img src="images/zoo/z8.jpg"></center>'
 									'You go up to her knees and dog immediately jumps on you. prevent kneel. With one hand you Spreading buttocks, and a second guide member currently in his ass, fingering hole dog quickly enters and taken to peck your anus. Husband looked at it a little and throwing "Go otmoyus from whores" out. Left with a dog for a single you start podmahivat him and soon oschuzaete tide excitation seems sex dog surpasses her husband, his cock in your ass moves so deftly that comes after the excitement orgasm, and you fall on korachki no longer able to stand, dog makes several movements and spewing his seed you in the ass. After graduating he leaves satisfied.'
 
@@ -830,9 +799,7 @@ if zoo >= 6:
 		else
 			act 'Call <<$namesob>>':gt 'soba', 'zoof27'
 		end
-	end
-
-	if husband = 0 or husbandrink = 10:
+	elseif husband = 0 or husbandrink = 10:
 		act 'Call <<$namesob>>':gt 'soba', 'zoof27'
 	end
 end
@@ -844,11 +811,11 @@ if dildo > 0 and horny >= 50:
 	act 'Masturbate':
 		cla
 		*clr
-		set minut += 30
-		set mastr += 1
-		set manna += 15
-		set willpower += 15
-		set vagina += 1
+		minut += 30
+		mastr += 1
+		manna += 15
+		willpower += 15
+		vagina += 1
 
 		if husband > 0 and husbandrink ! 10:
 			if week > 5 or week < 6 and hour > 16:
@@ -867,15 +834,13 @@ if dildo > 0 and horny >= 50:
 					'"Owned so often, less often in the ass, if you want to see?" you asked'
 
 					if izvratH = 0:
-						set husband -= 1
+						husband -= 1
 						'"I''ll wait outside the door until you''re done, " he said and left. You continued to satisfy themselves rapidly and soon finished.'
-						set horny = 0
-						set orgasm += 1
+						horny = 0
+						orgasm += 1
 
 						act 'Finish':gt 'kuhr'
-					end
-
-					if izvratH = 1:
+					else
 						'"Well, I do not know, " he stammered.'
 						'"So you want" you said'
 
@@ -890,9 +855,9 @@ if dildo > 0 and horny >= 50:
 							act 'Solve':
 								cla
 								*clr
-								set analorgasm += 1
-								set orgasm += 1
-								set horny = 0
+								analorgasm += 1
+								orgasm += 1
+								horny = 0
 								'<center><img src="images/img/hasb/m3.jpg"></center>'
 								'<<$husName>> gets dick and starts masturbating, it is not what you expected, and at first you even felt a little sad that he did not enter into you, and began to masturbate, but then you start it even start. Have you looked at her husband who masturbate looking at the way you drive the dildo his popkui be covered and you pleasure, you screamed and fell to the table, having experienced an orgasm, dildo still sticking out of your ass. <<$husName>> yarosno masturbate looking at you stretched out on the table, you took the dildo from ass and began to lick it, looking into the eyes of her husband, from such a spectacle he immediately discharged onto the floor. You are drawn to him sticking out his lips, in a second he had passionately kissed you.'
 
@@ -900,27 +865,23 @@ if dildo > 0 and horny >= 50:
 							end
 						end
 					end
-				end
-
-				if harakHusb = 1:
+				elseif harakHusb = 1:
 					'"That''s a number I mean you is not enough?" he asks.'
 					'"I''m sorry dear, but I really need, and you''ve been busy, " you reply, without stopping to masturbate.'
 					'"Well then, show me everything that you know how I''ll look, " he says.'
 					'"And how do I do it in the ass, too, to show?" you asked'
 
 					if izvratH = 0:
-						set husband += 1
-						set husbizvradd += 1
+						husband += 1
+						husbizvradd += 1
 						'"No, do not, and yet that''s enough, " he said, and sat down on a chair began to watch. You continued to satisfy themselves rapidly and soon finished in front of her husband. <<$husName>> stood up and began to applaud "Bravo and encore again?" he said laughing.'
 						'"For such a lovely audience anything, but only after the intermission, " you laughed. <<$husName>> helped you get down from the table.'
-						set horny = 0
-						set orgasm += 1
+						horny = 0
+						orgasm += 1
 
 						act 'Finish':gt 'kuhr'
-					end
-
-					if izvratH = 1:
-						set husband += 1
+					else
+						husband += 1
 						'"And how is it necessarily demonstrate" he said.'
 						'"Anything you want, " you said'
 
@@ -939,32 +900,28 @@ if dildo > 0 and horny >= 50:
 								'You enfold him some more flaccid penis and start sucking lips, continuing to drive the dildo his anus. When his cock finally firmed, <<$husName>> to stop you, "Well, now I''ll take this hole."'
 
 								act 'Substitute ass':
-									set picrand = 87
+									picrand = 87
 									gt 'sex', 'anal'
 								end
 							end
 						end
 					end
-				end
-
-				if harakHusb = 2:
+				elseif harakHusb = 2:
 					'"What hole itching?" he asks.'
 					'"I''m sorry dear, but I really need, and you''ve been busy, " you reply, without stopping to masturbate.'
 
 					if izvratH = 0:
-						set husband += 1
-						set husbizvradd += 1
+						husband += 1
+						husbizvradd += 1
 						'"Well then, open your mouth, " he said pulling member and rudely pushing it in your mouth, he held you by the hair and fucked in the mouth, saying something you did not stop masturbating. Soon he was tired of your mouth, "Now take out of this hole rubber stuff, now I''m going to fuck you"'
 
 						act 'Spread her legs ':
-							set picrand = 87
+							picrand = 87
 							gt 'sex', 'vag'
 						end
-					end
-
-					if izvratH = 1:
-						set SUB += 1
-						set husband += 1
+					else
+						SUB += 1
+						husband += 1
 						'"Insert this crap myself in the ass and mash, I''ll popolzuyut it, as long as pine Quick" he said, pulling member. You quickly rearrange the dildo from pussy anus and mouth open submissively.'
 
 						act 'Take by mouth':
@@ -974,23 +931,23 @@ if dildo > 0 and horny >= 50:
 							'You enfold him some more flaccid penis and start sucking lips, continuing to drive the dildo his anus. When his cock finally firmed, <<$husName>> stopped you "All cup your point, but this crap yourself in pussy shove, as if you were in a two-barrel fuck"'
 
 							act 'Substitute ass':
-								set picrand = 87
+								picrand = 87
 								gt 'sex', 'anal'
 							end
 						end
 					end
 				end
 			else
-				set horny = 0
-				set orgasm += 1
+				horny = 0
+				orgasm += 1
 				'<center><img src="images/pics/mastr.gif"></center>'
 				'You dildo stuck to the floor and planted her wet pussy on him, jumping on the artificial active member you will quickly feel the excitement and orgasm you covered.'
 
 				act 'Breath.':gt 'kuhr'
 			end
 		else
-			set horny = 0
-			set orgasm += 1
+			horny = 0
+			orgasm += 1
 			'<center><img src="images/pics/mastr.gif"></center>'
 			'You dildo stuck to the floor and planted her wet pussy on him, jumping on the artificial active member you will quickly feel the excitement and orgasm you covered.'
 

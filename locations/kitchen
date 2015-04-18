@@ -1,8 +1,8 @@
 # kitchen
+minut += 5
+gs 'stat'
 '<center><b>Kitchen</b></center>'
 '<center><img src="images/img/centr/kitchen.jpg"></center>'
-set minut += 5
-gs 'stat'
 
 act 'In the corridor':gt 'house'
 
@@ -11,34 +11,31 @@ act 'Eat Meal (0:30)':
 	*clr
 	gs 'stat'
 	frost = 0
+	minut += 30
+	edahot = 0
+	health += 10
+	manna += 20
 	'<center><img src="images/pics/food.jpg"></center>'
-	set minut += 30
-	set edahot = 0
-	set health += 10
-	set manna += 20
 
 	if energy >= 30:
-		set fat += 5
+		fat += 5
 		'You can no longer eat.'
-	end
-
-	if energy >= 20 and energy < 30:
-		set fat += 3
-		set energy += 10
+	elseif energy >= 20 and energy < 30:
+		fat += 3
+		energy += 10
 		'You pushed through the power of a meal.'
-	end
-
-	if energy < 20:
-		set energy += 20
-		set fat += 1
+	elseif energy < 20:
+		energy += 20
+		fat += 1
 		'You gladly ate cooked food.'
 	end
 
-	if water >= 20:'Tea in you no longer climbs.'
-
-	if water < 20:
+	if water >= 20:
+		'You don''t need any more tea.'
+	else
+		water += 20
 		'You gladly drank a mug of tea.'
-		set water += 20
+
 	end
 
 	act 'Get up from the table':gt 'kitchen'
@@ -46,12 +43,12 @@ end
 
 if tanwork = 1:
 	act 'Cook food (1:00)':
-		set minut += 60
-		set nikrand = rand(0, 5)
+		minut += 60
+		nikrand = rand(0, 5)
 
-		if vnesh > 20 and nikrand = 0 and hour >= 6 and hour <= 9 and week < 6 and niksexday ! day:
+		if week < 6 and hour >= 6 and hour <= 9 and nikrand = 0 and vnesh > 20 and niksexday ! day:
 			cla
-			set niksexday = day
+			niksexday = day
 			'The kitchen breakfast Tannin stepfather, Nikolai'
 
 			act 'Go about their business.':gt 'kitchen'
@@ -65,24 +62,24 @@ if tanwork = 1:
 				act 'Seduce':
 					cla
 					*clr
-					set niksex = 1
-					set nik += 1
+					niksex = 1
+					nik += 1
 					'<center><img src="images/img/centr/kitchensob.jpg"></center>'
 					'You bend down so that your bare ass appears before him in all its glory, and continue to do their work, pretending that he did not notice that the skirt rode up and you have a bare ass in the end when you once again that you drop or bend down for this without bending the legs, Nicholas walks up to you and hand you gently lays down on the buttocks.'
 
 					act 'Blow job':
 						cla
 						*clr
-						set nik += 2
-						set cumlip += 1
-						set bj += 1
-						set guy += 1
+						nik += 2
+						cumlip += 1
+						bj += 1
+						guy += 1
 						'<center><img src="images/img/centr/kitchenminet.jpg"></center>'
 						'You get up on his knees and his pants are releasing rastegnuv his huge cock. Licking you head bows his lips and sucking takes diligently trying to tighten it as far as possible, but do not pull out up to half, and finally he starts to cum in your mouth pouring jet of sperm, you hardly have time to swallow, but it does not end when she finally ended you carefully licked his dick from sperm, and removing it back into his pants stood up and turned to the stove without even looking at Nicholas. He put the plate around 1000 and went out.'
 
 						act 'Take the money':
-							set money += 1000
-							set nikslut = 1
+							money += 1000
+							nikslut = 1
 							gt 'kitchen'
 						end
 
@@ -92,48 +89,46 @@ if tanwork = 1:
 					act 'Anal':
 						cla
 						*clr
-						set guy += 1
-						set anal += 1
-						set nik += 5
-						set cumassin += 1
+						guy += 1
+						anal += 1
+						nik += 5
+						cumassin += 1
 						'<center><img src="images/img/centr/kitchenanal.jpg"></center>'
 						'Not turning to him you take a little oil and lubricate them anus, buttocks Spreading through your anus second rests his dick when he starts to enter you could barely hold back anything would not cry out in pain, his cock is too big for your ass. You only slightly moaning as his big dildo anus breaks you, although you want to scream in pain. Finally he cums and spills his seed inside your ass, it is so much that you have to stretch the buttocks strongly that, would not it all spilled out onto the floor. He lays down about 2000, and the plate comes out.'
 
 						act 'Take the money':
-							set money += 2000
-							set nikslut = 1
+							money += 2000
+							nikslut = 1
 							gt 'kitchen'
 						end
 
 						act 'Do not take money':gt 'kitchen'
 					end
 				end
-			end
-
-			if niksex = 1 and nikslut = 0 and niksvid = 0:
+			elseif niksex = 1 and nikslut = 0 and niksvid = 0:
 				cla
 				'He walks up to you and his hands immediately climbs under your skirt'
 
 				act 'Blow job':
 					cla
 					*clr
-					set bj += 1
-					set guy += 1
-					set nik += 1
-					set cumlip += 1
+					bj += 1
+					guy += 1
+					nik += 1
+					cumlip += 1
 					'<center><img src="images/img/centr/kitchenminet.jpg"></center>'
 					'You get up on his knees and his pants are releasing rastegnuv his huge cock. Licking you head bows his lips and sucking takes diligently trying to tighten it as far as possible, but not even half of dostoete, and finally he starts to cum in your mouth pouring jet of sperm, you hardly have time to swallow, but it does not end when she finally ended definitively you licked a member of sperm, and removing it back into his pants stood up and turned to the stove without even looking at Nicholas. He turns you to itself and stretches 1, 000 rubles.'
 
 					act 'Take the money':
-						set money += 1000
-						set nikslut = 1
+						money += 1000
+						nikslut = 1
 						gt 'kitchen'
 					end
 
 					act 'Do not take money':
 						cla
-						set niksvid = 1
-						'You look at the money at him and then stick in him a slap with the words, "I´m not a whore, and for the money do not fuck."'
+						niksvid = 1
+						'You look at the money at him and then stick in him a slap with the words, "I''m not a whore, and for the money do not fuck."'
 						'He looks at you a little dumbfounded, "Okay, " says Nicholas and out of the kitchen.'
 
 						act 'Back to business':gt 'kitchen'
@@ -143,46 +138,43 @@ if tanwork = 1:
 				act 'Anal':
 					cla
 					*clr
-					set nik += 2
-					set cumassin += 1
+					nik += 2
+					cumassin += 1
 					'<center><img src="images/img/centr/kitchenanal.jpg"></center>'
 					'Not turning to him you take a little oil and lubricate them anus, buttocks Spreading through your anus second rests his cock, he quickly comes into you and you will not hurt so much and even nice when his cock fucks your ass. You moan and diligently podmahivat him, he soon discharged you. He hands you a 2000 rubles.'
 
 					act 'Take the money':
-						set money += 2000
-						set nikslut = 1
+						money += 2000
+						nikslut = 1
 						gt 'kitchen'
 					end
 
 					act 'Do not take money':
-						cla
-						set niksvid = 1
-						'You look at the money at him and then stick in him a slap with the words, "I´m not a whore, and for the money do not fuck."'
+						niksvid = 1
+						'You look at the money at him and then stick in him a slap with the words, "I''m not a whore, and for the money do not fuck."'
 						'He looks at you a little dumbfounded, "Okay, " says Nicholas and out of the kitchen.'
 
 						act 'Back to business':gt 'kitchen'
 					end
 				end
-			end
-
-			if nikslut = 1:
+			elseif nikslut = 1:
 				cla
 				*clr
-				set SUB += 1
-				set nikslutrand = rand(0, 1)
+				SUB += 1
+				nikslutrand = rand(0, 1)
 
 				if nikslutrand = 0:
-					set bj += 1
-					set cumlip += 1
-					set money += 500
+					bj += 1
+					cumlip += 1
+					money += 500
 					'<center><img src="images/img/centr/kitchenminet.jpg"></center>'
 					'He walks up to you and put his hand on his shoulder otuskaet lap. Quickly realizing that he wants you open your mouth and suck obediently until he fills your mouth with his sperm, it leaves you 500 rubles. and leaves.'
 
 					if horny > 60:
 						cla
-						set orgasm += 1
-						set horny = 0
-						'You´re too excited to think that-about something other than sex, you have to take care of herself'
+						orgasm += 1
+						horny = 0
+						'You''re too excited to think that-about something other than sex, you have to take care of herself'
 
 						act 'Hand':
 							cla
@@ -204,20 +196,18 @@ if tanwork = 1:
 					end
 
 					act 'Back to business':gt 'kitchen'
-				end
-
-				if nikslutrand = 1:
-					set anal += 1
-					set cumass += 1
-					set money += 1000
+				else
+					anal += 1
+					cumass += 1
+					money += 1000
 					'<center><img src="images/img/centr/kitchenanal.jpg"></center>'
 					'He walks up to you and you lifted up her skirt spreads buttocks, you barely have time to lubricate the anus before he force pushes his dick in it, you stand in silence and wait until he finishes, to Nicholas vyterat your body on your ass and leave you 1000 rubles . leaves.'
 
 					if horny > 60:
 						cla
-						set orgasm += 1
-						set horny = 0
-						'You´re too excited to think that-about something other than sex, you have to take care of herself'
+						orgasm += 1
+						horny = 0
+						'You''re too excited to think that-about something other than sex, you have to take care of herself'
 
 						act 'Hand':
 							cla
@@ -254,8 +244,8 @@ if pranik > 0:
 		*clr
 		minut += 5
 		pranik -= 1
-		set health += 30
-		set manna += 100
+		health += 30
+		manna += 100
 		energy += 20
 		water += 20
 		fat += 50
@@ -273,29 +263,27 @@ if edaD > 0:
 		cla
 		*clr
 		frost = 0
+		minut += 30
+		health += 10
+		manna += 20
+		edaD -= 1
 		'<center><img src="images/pics/food.jpg"></center>'
-		set minut += 30
-		set health += 10
-		set manna += 20
-		set edaD -= 1
 
-		if energy >= 30:'You can no longer have.'
-
-		if energy >= 20 and energy < 30:
-			set energy += 10
+		if energy >= 30:
+			'You can no longer eat.'
+		elseif energy >= 20 and energy < 30:
+			energy += 10
 			'You pushed through the power of a meal.'
-		end
-
-		if energy < 20:
-			set energy += 20
+		elseif energy < 20:
+			energy += 20
 			'You gladly ate cooked food.'
 		end
 
-		if water >= 20:'Tea in you no longer climbs.'
-
-		if water < 20:
+		if water >= 20:
+			'You don''t need any more tea.'
+		else
+			water += 20
 			'You gladly drank a mug of tea.'
-			set water += 20
 		end
 
 		act 'Get up from the table':gt 'kitchen'
@@ -306,8 +294,8 @@ if fatdel > 0:
 	act 'Consume fat burners':
 		cla
 		*clr
-		set fatdel -= 1
-		set fat -= 25
+		fatdel -= 1
+		fat -= 25
 
 		if fat < 0:fat = 0
 
@@ -319,13 +307,14 @@ end
 
 act 'Drink':
 	cla
-	set minut += 5
+	minut += 5
 
-	if water >= 20:'You don''t need any more water.'
-
-	if water < 20:
+	if water >= 20:
+		'You don''t need any more water.'
+	else
+		water += 20
 		'You gladly drank a glass of water.'
-		set water += 20
+
 	end
 
 	act 'Get up from the table':gt 'kitchen'
@@ -338,22 +327,12 @@ if lekarstvo > 0:
 		act 'Take a pill':
 			cla
 			*clr
-			set minut += 5
+			minut += 5
 			lekarday = day
 			lekarstvo -= 1
 			sick -= sick * 20/100
-			set lekrand = rand(0, 8)
-
-			if lekrand = 0:'<center><img src="images/inBed/lekr1.jpg"></center>'
-			if lekrand = 1:'<center><img src="images/inBed/lekr2.jpg"></center>'
-			if lekrand = 2:'<center><img src="images/inBed/lekr3.jpg"></center>'
-			if lekrand = 3:'<center><img src="images/inBed/lekr4.jpg"></center>'
-			if lekrand = 4:'<center><img src="images/inBed/lekr5.jpg"></center>'
-			if lekrand = 5:'<center><img src="images/inBed/lekr6.jpg"></center>'
-			if lekrand = 6:'<center><img src="images/inBed/lekr7.jpg"></center>'
-			if lekrand = 7:'<center><img src="images/inBed/lekr8.jpg"></center>'
-			if lekrand = 8:'<center><img src="images/inBed/lekr9.jpg"></center>'
-
+			lekrand = rand(1, 9)
+			'<center><img src="images/inBed/lekr<<picrand>>.jpg"></center>'
 			'You took a pill'
 
 			act 'Move away':gt 'kitchen'
@@ -362,18 +341,18 @@ if lekarstvo > 0:
 end
 
 if vitamin > 0:
-	'You have <<vitamin>> vitamines.'
+	'You have <<vitamin>> vitaminok.'
 	if vitaminday ! day:
-		act 'Take Vitamins (0:05)':
+		act 'Drink Vitamins (0:05)':
 			cla
 			*clr
-			set minut += 5
-			set vitaminday = day
-			set vitamin -= 1
-			set frost = 0
-			set skinvan += 1
+			minut += 5
+			vitaminday = day
+			vitamin -= 1
+			frost = 0
+			skinvan += 1
 
-			if skinvan = 20:set skinvan = 0 & set skin += 1
+			if skinvan = 20:skinvan = 0 & skin += 1
 
 			'You took some vitamins'
 
@@ -383,17 +362,17 @@ if vitamin > 0:
 	end
 end
 
-set housekitrand = rand(0, 10)
+housekitrand = rand(0, 10)
 
-if nikslut = 1 and hour > 17 and hour < 20 and housekitrand > 8 and niksexday ! day:
+if hour > 17 and hour < 20 and housekitrand > 8 and nikslut = 1 and niksexday ! day:
 	cla
 	*clr
-	set SUB += 1
-	set guy += 1
-	set minut += 20
-	set niksexday = day
-	set money += 2000
-	set picrand = 36
+	SUB += 1
+	guy += 1
+	minut += 20
+	niksexday = day
+	money += 2000
+	picrand = 36
 	'<center><img src="images/img/th/s1.jpg"></center>'
 	'Nicholas went to the kitchen with another man "<<$name>>, feed us, " he said. You get all warmed up and began to wait when they will eat. When they finished Nicholas looked at you and said, "Thank you, everything was tasty <<$name>>, where the dessert?" You frantically began to think that they give for dessert, because you have not cooked anything. "Yes you wait" said Nikolai see your kitchen by throwing in search of dessert, "You do not understand, so let this dessert, " he said, slapping you on the ass. You sigh of relief, so this dessert you always at the ready. You get everything cleaned off the table and do not have got it.'
 

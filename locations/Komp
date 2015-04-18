@@ -2,22 +2,22 @@
 if $ARGS[0] = 'start':
 	cla
 	clr
+	elektro += 5
 	gs 'stat'
-	set elektro += 5
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'With the computer happily welcomes you start window.'
 
 	act 'Play Patience (0:15)':gt 'Komp', 'pasians'
 
 	if GameCD > 0:act 'Play Disopl':gt 'KGDstart'
-	if GameCD2 > 0:act 'Play Sunset Dead':gt 'KGZstart'
+	if GameCD2 > 0:act 'Play SunDead':gt 'KGZstart'
 	if GameCD3 > 0:act 'Play Albido':gt 'FSstart'
 
-	!!act 'Sunset Review of the Dead':gt 'KGZstart'
+	!!act 'SunReview of the Dead':gt 'KGZstart'
 
 	if internet > 0:
-		set internet = internetM / 60
-		'You´ve got <<internet>> hours of Internet'
+		internet = internetM / 60
+		'You''ve got <<internet>> hours of Internet'
 
 		act 'Browser':gt 'Komp', 'brows'
 	end
@@ -29,13 +29,13 @@ if $ARGS[0] = 'start':
 			cla
 			intinp = input ("How much money to put on the internet? (h = 10 rubles)")
 
-			if intinp <= 0 or intinp * 10 > karta:'Invalid amount.'
-
-			if intinp*10 <= karta:
-				set inttime = intinp * 10
-				set karta -= inttime
-				set internetM += intinp * 60
-				set internet = internetM / 60
+			if intinp <= 0 or intinp * 10 > karta:
+				'Invalid amount.'
+			elseif intinp * 10 <= karta:
+				inttime = intinp * 10
+				karta -= inttime
+				internetM += intinp * 60
+				internet = internetM / 60
 				'You paid <<inttime>> hours of Internet, you now have <<internet>> hours of the Internet. Your account was removed <<intinp>> rubles.'
 			end
 
@@ -51,8 +51,8 @@ end
 
 if $ARGS[0] = 'brows':
 	cla
-	*clr
 	clr
+	*clr
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'You entered into a search engine.'
@@ -76,52 +76,51 @@ end
 
 if $ARGS[0] = 'sale':
 	cla
-	*clr
-	set minut += 2
 	clr
+	*clr
+	minut += 2
+
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'You are logged in to the site for free ads.'
 
 	if obkvsdam = 0 and housrA = 1:
-		act 'Rent out your apartment':set obkvsdam = 1 & gt 'Komp', 'sale'
-	end
-
-	if obkvsdam > 0:
+		act 'Rent out your apartment':obkvsdam = 1 & gt 'Komp', 'sale'
+	elseif obkvsdam > 0:
 		act 'Check responses to your ad':
 			cla
-			if obkvsdam = 1:'No one has responded to your apartment ad'
-
-			if obkvsdam > 1:
-				if obkvsdam = 2: set predsumm = 7000
-				if obkvsdam = 2: set predsumm = 8000
-				if obkvsdam = 2: set predsumm = 9000
-				if obkvsdam=2:set predsumm=10000
+			if obkvsdam = 1:
+				'No one has responded to your apartment ad'
+			elseif obkvsdam > 1:
+				if obkvsdam = 2:predsumm = 7000
+				if obkvsdam = 2:predsumm = 8000
+				if obkvsdam = 2:predsumm = 9000
+				if obkvsdam = 2:predsumm = 10000
 				'Want to stay in your apartment for a month (<<predsumm>> rubles).'
 
 				act 'Rent':
-					set sdaday = day
-					set sdamonth = month + 1
-					set housr = 0
-					set money += predsumm
-					gt 'Komp', 'sale'
+					sdaday = day
+					sdamonth = month + 1
+					housr = 0
+					money += predsumm
+					gt 'Komp', 'start'
 				end
 			end
 
-			act 'Exit':gt 'Komp', 'start'
+			act 'Leave':gt 'Komp', 'start'
 		end
 	end
 
-	act 'Exit':gt 'Komp', 'start'
+	act 'Leave':gt 'Komp', 'start'
 end
 
 if $ARGS[0] = 'remont':
 	cla
-	*clr
-	set minut += 15
-	set internetM -= 60
-	set elektro += 3
 	clr
+	*clr
+	minut += 15
+	internetM -= 60
+	elektro += 3
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'You are logged in apartment repairs.'
@@ -131,15 +130,15 @@ if $ARGS[0] = 'remont':
 			act 'Refurbished bedrooms (50,000 rubles)':
 				if money >= 50000:
 					cla
-					set rembedr = 1
-					set money -= 50000
+					rembedr = 1
+					money -= 50000
 					'You pay for repairs and you did it the same, just Dzhumshut Ravshan and wizards.'
 				else
 					cla
 					'Unfortunately, you will not have enough money.'
 				end
 
-				act 'Exit':gt 'Komp', 'remont'
+				act 'Leave':gt 'Komp', 'remont'
 			end
 		end
 
@@ -147,15 +146,15 @@ if $ARGS[0] = 'remont':
 			act 'Renovate hall (50,000 rubles)':
 				if money >= 50000:
 					cla
-					set remsitr = 1
-					set money -= 50000
+					remsitr = 1
+					money -= 50000
 					'You pay for repairs and you did it the same, just Dzhumshut Ravshan and wizards.'
 				else
 					cla
 					'Unfortunately, you will not have enough money.'
 				end
 
-				act 'Exit':gt 'Komp', 'remont'
+				act 'Leave':gt 'Komp', 'remont'
 			end
 		end
 
@@ -163,15 +162,15 @@ if $ARGS[0] = 'remont':
 			act 'Repair corridor (50,000 rubles)':
 				if money >= 50000:
 					cla
-					set remkorr = 1
-					set money -= 50000
+					remkorr = 1
+					money -= 50000
 					'You pay for repairs and you did it the same, just Dzhumshut Ravshan and wizards.'
 				else
 					cla
 					'Unfortunately, you will not have enough money.'
 				end
 
-				act 'Exit':gt 'Komp', 'remont'
+				act 'Leave':gt 'Komp', 'remont'
 			end
 		end
 
@@ -179,15 +178,15 @@ if $ARGS[0] = 'remont':
 			act 'Renovate the bathroom (50,000 rubles)':
 				if money >= 50000:
 					cla
-					set remvanr = 1
-					set money -= 50000
+					remvanr = 1
+					money -= 50000
 					'You pay for repairs and you did it the same, just Dzhumshut Ravshan and wizards.'
 				else
 					cla
 					'Unfortunately, you will not have enough money.'
 				end
 
-				act 'Exit':gt 'Komp', 'remont'
+				act 'Leave':gt 'Komp', 'remont'
 			end
 		end
 
@@ -195,50 +194,54 @@ if $ARGS[0] = 'remont':
 			act 'Renovate a kitchen (50,000 rubles)':
 				if money >= 50000:
 					cla
-					set remkuhr = 1
-					set money -= 50000
+					remkuhr = 1
+					money -= 50000
 					'You pay for repairs and you did it the same, just Dzhumshut Ravshan and wizards.'
 				else
 					cla
 					'Unfortunately, you will not have enough money.'
 				end
 
-				act 'Exit':gt 'Komp', 'remont'
+				act 'Leave':gt 'Komp', 'remont'
 			end
 		end
 	end
 
-	act 'Exit':gt 'Komp', 'start'
+	act 'Leave':gt 'Komp', 'start'
 end
 
 if $ARGS[0] = 'porno':
 	cla
-	*clr
-	set minut += 15
-	set internetM -= 60
-	set manna += 5
-	set elektro += 3
-	set willpower += rand(5, 10)
-	set manna += rand(10, 50)
-	set horny += 5
 	clr
+	*clr
+	minut += 15
+	internetM -= 60
+	manna += 5
+	elektro += 3
+	willpower += rand(5, 10)
+	manna += rand(10, 50)
+	horny += 5
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'You went to a porn site.'
 
 	$pornomastr = {
 		cls
-		'<center><img src="images/pics/kompmas.jpg"></center>'
-		set minut += 15
+		minut += 15
 		sweat += 1
-		set horny += rand(10, 25)
+		horny += rand(10, 25)
 
-		if divanmastr = 0:divanmastr = 1 & set mastr += 1
+		if divanmastr = 0:divanmastr = 1 & mastr += 1
 
 		gs 'stat'
+		'<center><img src="images/pics/kompmas.jpg"></center>'
 		'You get comfortable in front of the computer with one hand and began to fondle her breasts, a finger of the other hand you started rubbing and stroking a small bump between his legs that responded to the touch of pleasant languor covering your entire body.'
 
-		if horny >= 100:orgasm += 1 & horny = 0 & 'Suddenly a nice cramp brought your body and you covered powerful orgasm from which you groan.'
+		if horny >= 100:
+			orgasm += 1
+			horny = 0
+			'Suddenly a nice cramp brought your body and you covered powerful orgasm from which you groan.'
+		end
 
 		act 'Finish':divanmastr = 0 & gt 'Komp', 'porno'
 
@@ -253,18 +256,19 @@ if $ARGS[0] = 'porno':
 
 	if horny >= 50:act 'Masturbate (0:15)':dynamic $pornomastr
 
-	act 'Exit':gt 'Komp', 'start'
+	act 'Leave':gt 'Komp', 'start'
 end
 
 if $ARGS[0] = 'pasians':
 	cla
-	*clr
-	set minut += 15
-	set manna += 5
-	set elektro += 3
-	set willpower += rand(5, 10)
-	set manna += rand(10, 50)
 	clr
+	*clr
+	minut += 15
+	manna += 5
+	elektro += 3
+	willpower += rand(5, 10)
+	manna += rand(10, 50)
+
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'You entertained for an hour unfolding of solitaire on the computer.'
@@ -275,12 +279,12 @@ end
 
 if $ARGS[0] = 'znak':
 	cla
-	*clr
-	set minut += 15
-	set internetM -= 60
-	set manna += 5
-	set elektro += 3
 	clr
+	*clr
+	minut += 15
+	internetM -= 60
+	manna += 5
+	elektro += 3
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'You are logged on to a dating site.'
@@ -291,46 +295,57 @@ if $ARGS[0] = 'znak':
 			cla
 			gs 'boy'
 			gs 'boyfrend', 'start'
-			set stopboy = 0
-			set harakBoyA = 0
+			stopboy = 0
+			harakBoyA = 0
 			'You wrote a guy named <<$boyA>>and talked with him and left him number hoping that he will call you.'
 
-			act 'Exit':gt 'Komp', 'start'
+			act 'Leave':gt 'Komp', 'start'
 		end
 
 		act 'To pick up a guy with a common character':
 			cla
 			gs 'boy'
 			gs 'boyfrend', 'start'
-			set stopboy = 0
-			set harakBoyA = 1
+			stopboy = 0
+			harakBoyA = 1
 			'You wrote a guy named <<$boyA>>and talked with him and left him number hoping that he will call you.'
 
-			act 'Exit':gt 'Komp', 'start'
+			act 'Leave':gt 'Komp', 'start'
 		end
 
 		act 'To pick up a guy with a strong character':
 			cla
 			gs 'boy'
 			gs 'boyfrend', 'start'
-			set stopboy = 0
-			set harakBoyA = 2
+			stopboy = 0
+			harakBoyA = 2
 			'You wrote a guy named <<$boyA>>and talked with him and left him number hoping that he will call you.'
 
-			act 'Exit':gt 'Komp', 'start'
+			act 'Leave':gt 'Komp', 'start'
 		end
 	end
 
-	act 'Exit':gt 'Komp', 'start'
+	if gor_dorm = 8:
+		act 'Pick of suitors for Eugenia':
+			cla
+			gor_dorm = 9
+
+			'You shoveled dozens of profiles, Before choosing a suitable in all respects candidates and sent them a letter with a proposal to meet.'
+			'Now we have to wait her turn, what_is-anything with them or not.'
+
+			act 'Leave':gt 'Komp', 'start'
+		end
+	end
+	act 'Leave':gt 'Komp', 'start'
 end
 
 if $ARGS[0] = 'kabtv':
 	cla
-	*clr
-	set minut += 15
-	set internetM -= 60
-	set elektro += 3
 	clr
+	*clr
+	minut += 15
+	internetM -= 60
+	elektro += 3
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'You are logged in to the website provider of cable TV.'
@@ -340,14 +355,12 @@ if $ARGS[0] = 'kabtv':
 
 		act 'Abandon cable TV':
 			cla
-			'You have disconnected cable channels, paying the current month'
 			kabel = 1
 			money -= 300
+			'You have disconnected cable channels, paying the current month'
 			gt 'Komp', 'kabtv'
 		end
-	end
-
-	if kabel = 0 and TV = 1:
+	elseif kabel = 0 and TV = 1:
 		'You do not have a cable TV'
 
 		act 'Connect cable TV':
@@ -355,27 +368,25 @@ if $ARGS[0] = 'kabtv':
 			'Unfortunately for viewing cable television requires a more modern TV'
 			gt 'Komp', 'kabtv'
 		end
-	end
-
-	if kabel = 0 and TV >= 2:
+	elseif kabel = 0 and TV >= 2:
 		'You do not have a cable TV'
 
 		act 'Connect Cable TV (300 rubles per month)':
 			cla
-			'You hooked up cable TV services'
 			kabel = 1
+			'You hooked up cable TV services'
 			gt 'Komp', 'kabtv'
 		end
 	end
 
-	act 'Exit':gt 'Komp', 'start'
+	act 'Leave':gt 'Komp', 'start'
 end
 
 if $ARGS[0] = 'foto':
 	cla
 	*clr
-	set internetM -= 60
-	set elektro += 3
+	internetM -= 60
+	elektro += 3
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 	'You are logged in to the social network "in the ass."'
@@ -383,8 +394,8 @@ if $ARGS[0] = 'foto':
 	if shantfoto > 0:
 		act 'Search':
 			cla
-			set minut += 60
-			set fotsearchrand = rand(0, 10)
+			minut += 60
+			fotsearchrand = rand(0, 10)
 
 			if fotsearchrand <= 7:
 				'You did not find anyone, maybe better luck later.'
@@ -393,9 +404,9 @@ if $ARGS[0] = 'foto':
 			end
 
 			if fotsearchrand > 7:
-				set shantfoto -= 1
-				set gerofotorand = rand(0, 100)
+				shantfoto -= 1
 				'You found the heroine a photo shoot'
+				gerofotorand = rand(0, 100)
 
 				if gerofotorand > 30:
 					'Judging by the photos on her page this poor girl and take her with nothing.'
@@ -404,14 +415,14 @@ if $ARGS[0] = 'foto':
 				end
 
 				if gerofotorand >= 5 and gerofotorand <= 30:
-					set shantsr += 1
+					shantsr += 1
 					'Judging by the photos on her page is non-existent girl from the middle classes. You send her photo and asked to be transferred to your account 5000.'
 
 					act 'Finish':gt 'Komp', 'foto'
 				end
 
 				if gerofotorand < 5:
-					set shantbog += 1
+					shantbog += 1
 					'Judging by the photos on her page is very secured lady. You send her photo and asked to be transferred to your account 30000.'
 
 					act 'Finish':gt 'Komp', 'foto'
@@ -426,27 +437,25 @@ end
 if $ARGS[0] = 'rabota':
 	cla
 	*clr
-	set minut += 60
-	set internetM -= 60
-	set komprabota = rand(0, 10)
+	minut += 60
+	internetM -= 60
+	komprabota = rand(0, 10)
 	gs 'stat'
 	'<center><img src="images/pics/komp.jpg"></center>'
 
 	if komprabota = 0:
 		'You found an ad:"Wanted girl model looks for advertising underwear, cash on filming zavershinii 2000 rubles."'
 
-		if vnesh < 30:'But you are under this description does not fit'
-
-		if vnesh >= 30:
+		if vnesh < 30:
+			'But you are under this description does not fit'
+		elseif vnesh >= 30:
 			act 'Go at':gt 'qjob', 'var1'
 		end
 
 		if hour < 20 and hour > 7:act 'Search more':gt 'Komp', 'rabota'
 
 		act 'Finish':gt 'Komp', 'brows'
-	end
-
-	if komprabota = 1:
+	elseif komprabota = 1:
 		'You found an ad:"Wanted girl model looks for advertising underwear, cash on filming zavershinii 2000 rubles."'
 
 		if vnesh < 30:'But you are under this description does not fit'
@@ -458,23 +467,19 @@ if $ARGS[0] = 'rabota':
 		if hour < 20 and hour > 7:act 'Search more':gt 'Komp', 'rabota'
 
 		act 'Finish':gt 'Komp', 'brows'
-	end
-
-	if komprabota > 1 and komprabota < 5:
+	elseif komprabota > 1 and komprabota < 5:
 		'You found an ad:"The artist is required naturschitsa, simpotichnoy appearance, cash 1, 000 rubles."'
 
-		if vnesh < 15:'But you are under this description does not fit'
-
-		if vnesh >= 15:
+		if vnesh < 15:
+			'But you are under this description does not fit'
+		elseif vnesh >= 15:
 			act 'Go at':gt 'qjob', 'var3'
 		end
 
 		if hour < 20 and hour > 7:act 'Search more':gt 'Komp', 'rabota'
 
 		act 'Finish':gt 'Komp', 'brows'
-	end
-
-	if komprabota > 4:
+	elseif komprabota > 4:
 		'You did not find anything suitable.'
 
 		if hour < 20 and hour > 7:act 'Search more':gt 'Komp', 'rabota'

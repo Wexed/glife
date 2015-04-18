@@ -19,7 +19,7 @@ $din_katja_kiss = {
 		gs 'katjaEvDin'
 		gs 'KatjaHomeDin'
 		'<center><img src="images/qwest/alter/katja/kiss.jpg"></center>'
-		'You brought her face to face Katie and felt her hot breath on his lips. Katja closed her eyes and touched his lips to your lips. In your mouth penetrated nimble tongue Katie that you started to suck, then your tongue went into Katin´s mouth and she very gently caressed it with his tongue and sucked. Katja finally pushed you to your flushed face and licked her lips.'
+		'You brought her face to face Katie and felt her hot breath on his lips. Katja closed her eyes and touched his lips to your lips. In your mouth penetrated nimble tongue Katie that you started to suck, then your tongue went into Katin''s mouth and she very gently caressed it with his tongue and sucked. Katja finally pushed you to your flushed face and licked her lips.'
 
 		if KatjaHorny >= 75:
 			'Katja handed his pen to your chest and gently held her finger on.'
@@ -36,7 +36,7 @@ $din_katja_kiss = {
 				katjalustrand = rand(0, 30)
 
 				if KatjaLust < katjalustrand:
-					'You´re a little touched each other breast and Katia moved away from you.'
+					'You''re a little touched each other breast and Katia moved away from you.'
 
 					act 'Further':gt 'KatjaHomeTalk'
 
@@ -75,9 +75,9 @@ $din_katja_kiss = {
 										'After a while Katja cleaned your hands away.'
 
 										act 'Further':gt 'KatjaHomeTalk'
+									elseif npcSex[14] > 0:
+										dynamic $d_katja_sex
 									end
-
-									if npcSex[14] > 0:dynamic $d_katja_sex
 								end
 							end
 						end
@@ -100,9 +100,9 @@ $din_katja_kiss = {
 							'Lick your breasts while Katja stood up and turned to start cleaning the room.'
 
 							act 'Further':gt 'KatjaHomeTalk'
+						elseif npcSex[14] > 0:
+							dynamic $d_katja_sex
 						end
-
-						if npcSex[14] > 0:dynamic $d_katja_sex
 					end
 
 					act 'Remove her hands':
@@ -192,16 +192,14 @@ act 'Go with Katja':
 					if katrand = 1:'You notice that Katja blushed and turned away from you.'
 					if katrand = 2:'Katja as if by accident puts his palm on your knee, then quickly removes it.'
 					if katrand = 3:'Katja smiles at you quite a silly smile, then turns away.'
-				end
-
-				if katjaLernQW = 5:
+				elseif katjaLernQW = 5:
 					'Katja thinks about something, then embarrassed and blushing asks you "<<$name>>, and you have kissed a boy?"'
 
 					act 'Yes':
 						cls
 						gs 'stat'
 						'<center><img src="images/qwest/alter/npc14.jpg"></center>'
-						'You smiled at Katja and said that of course you kissing boys. Katja shy even more. "You see the <<$name>>, I like this guy, he´s older than me, and I am afraid that when we start to kiss, I´ll do something wrong. Could you teach me how to kiss?"'
+						'You smiled at Katja and said that of course you kissing boys. Katja shy even more. "You see the <<$name>>, I like this guy, he''s older than me, and I am afraid that when we start to kiss, I''ll do something wrong. Could you teach me how to kiss?"'
 						dynamic $din_katja_kiss
 
 						act 'No':
@@ -220,7 +218,7 @@ act 'Go with Katja':
 						cls
 						gs 'stat'
 						'<center><img src="images/qwest/alter/npc14.jpg"></center>'
-						'You shook their heads and said they did not kiss. Katja shy even more. "You see the <<$name>>, I like this guy, he´s older than me, and I am afraid that when we start to kiss, I´ll do something wrong. Maybe we could try to kiss, what to learn?"'
+						'You shook their heads and said they did not kiss. Katja shy even more. "You see the <<$name>>, I like this guy, he''s older than me, and I am afraid that when we start to kiss, I''ll do something wrong. Maybe we could try to kiss, what to learn?"'
 						dynamic $din_katja_kiss
 
 						act 'No':
@@ -235,9 +233,7 @@ act 'Go with Katja':
 					end
 
 					exit
-				end
-
-				if katjaLernQW >= 6:
+				elseif katjaLernQW >= 6:
 					katjaDeystRand = rand(0, 2)
 
 					if katjaDeystRand = 0:
@@ -246,9 +242,7 @@ act 'Go with Katja':
 						act 'Say goodbye and go home':minut += 15 & KatjaHorny -= 5 & gt 'gorodok'
 
 						exit
-					end
-
-					if katjaDeystRand = 1:
+					elseif katjaDeystRand = 1:
 						if npcSex[14] = 1:
 							'Katja invited you to take a walk in the park.'
 
@@ -272,19 +266,15 @@ act 'Go with Katja':
 							act 'And refuse to go home':minut += 15 & KatjaHorny -= 5 & gt 'gorodok'
 
 							exit
-						end
-
-						if npcSex[14] = 0:
+						elseif npcSex[14] = 0:
 							KatjaHorny += 5
 							KatjaLust += 1
 							'Katja started chatting about boys, cosmetics and school with you.'
 
 							act 'Say goodbye and go home':minut += 15 & gt 'gorodok'
 						end
-					end
-
-					if katjaDeystRand = 2 and sweat > 0:
-						'Katja wrinkled her nose "Sveta, you`re all sweaty, go to the shower?"'
+					elseif katjaDeystRand = 2 and sweat > 0:
+						'Katja wrinkled her nose "<<$name>>, you''re all sweaty, go to the shower?"'
 
 						act 'Go to the shower':
 							cls
@@ -298,10 +288,10 @@ act 'Go with Katja':
 									cls
 									dynamic $showerdin
 									minut += 15
-									set horny += 1
-									set hapri = 1
-									set mop = 1
-									set sweat = -3
+									horny += 1
+									hapri = 1
+									mop = 1
+									sweat = -3
 
 									if frost > 0:frost = 0
 
@@ -323,10 +313,10 @@ act 'Go with Katja':
 									cls
 									dynamic $showerdin
 									minut += 15
-									set horny += 1
-									set hapri = 1
-									set mop = 1
-									set sweat = -3
+									horny += 1
+									hapri = 1
+									mop = 1
+									sweat = -3
 
 									if frost > 0:frost = 0
 
@@ -362,10 +352,8 @@ act 'Go with Katja':
 												end
 											end
 										end
-									end
-
-									if lobok > 0:
-										'Katja eyes slid over your body a little lingering on her breasts and pubic hair. Katja smiled "Svetulya, you got such vegetation, it is no longer fashionable, I`ll let sbreyu hair."'
+									elseif lobok > 0:
+										'Katja eyes slid over your body a little lingering on her breasts and pubic hair. Katja smiled "<<$name>>, you got such vegetation, it is no longer fashionable, I''ll let sbreyu hair."'
 
 										act 'Shave the hair between her legs':
 											cls
@@ -395,15 +383,13 @@ act 'Go with Katja':
 										end
 									end
 								end
-							end
-
-							if KatjaHorny < 50:
+							elseif KatjaHorny < 50:
 								dynamic $showerdin
 								minut += 15
-								set horny += 1
-								set hapri = 1
-								set mop = 1
-								set sweat = -3
+								horny += 1
+								hapri = 1
+								mop = 1
+								sweat = -3
 
 								if frost > 0:frost = 0
 
@@ -424,9 +410,7 @@ act 'Go with Katja':
 						act 'And refuse to go home':minut += 15 & KatjaHorny -= 5 & gt 'gorodok'
 
 						exit
-					end
-
-					if katjaDeystRand = 2 and sweat <= 0:
+					elseif katjaDeystRand = 2 and sweat <= 0:
 						dynamic $d_katjaSextalk
 						exit
 					end

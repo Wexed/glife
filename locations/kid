@@ -4,9 +4,9 @@ if $ARGS[0] = 'start':
 	gs 'stat'
 
 	if kid > 0:
-		set kidIteration = 1
-		set kidSelected = 0
-		!set kidLoops = 0
+		kidIteration = 1
+		kidSelected = 0
+		!kidLoops = 0
 		:loop
 		if polkid[kidIteration] = 0:
 			$kidPosPro[kidIteration] = 'her'
@@ -34,8 +34,8 @@ if $ARGS[0] = 'start':
 		end
 
 		''
-		set kidIteration += 1
-		!set kidLoops += 1
+		kidIteration += 1
+		!!kidLoops += 1
 
 		if kidIteration <= numkid:
 			jump 'loop'
@@ -49,5 +49,4 @@ if $ARGS[0] = 'start':
 end
 
 --- kid ---------------------------------
-
 

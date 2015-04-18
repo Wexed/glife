@@ -120,7 +120,7 @@ if KFOnLineReaga > 0:
 			cla
 			KGOLdonat = input("How much money do you want zadonatit?")
 
-			if KGOLdonat <= 0 or KGOLdonat < karta:
+			if KGOLdonat <= 0 or KGOLdonat > karta:
 				msg 'Not valid operation'
 			else
 				karta -= KGOLdonat
@@ -144,6 +144,6 @@ else
 	end
 end
 
-act 'Exit':gt 'Komp', 'start'
+act 'Leave':gt 'Komp', 'start'
 
 --- KGstart ---------------------------------

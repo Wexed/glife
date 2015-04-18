@@ -13,9 +13,10 @@ if alko < 6:
 	'You drank a glass of vodka with police. You will again pour into a glass of vodka.'
 
 	act 'drink a glass':alko += 2 & minut += 30 & gt $curloc
+elseif alko >= 6:
+	'You definitely tipsy and just sit on a chair.'
 end
 
-if alko >= 6:'You definitely tipsy and just sit on a chair.'
 !!if katGangbang = 0:end
 
 if katGangbang > 0:

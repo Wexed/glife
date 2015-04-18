@@ -12,9 +12,7 @@ if kutime > 0:
 
 		act 'further':gt $curloc
 	end
-end
-
-if kutime <= 0:
+elseif kutime <= 0:
 	'Finally the time of his release over and you have been released.'
 
 	act 'Leave':minut += 1 & gt $curloc

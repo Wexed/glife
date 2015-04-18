@@ -1,9 +1,11 @@
 # kotovtalker
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Vitek Cats!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!
+!!!Witek Cats!!!
+!!!!!!!!!!!!!!!!!
 if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 	if $loc = 'gdkin':
 		if alko < 2:
-			'<<$npcName[numnpc]>> - Svetsik Hey, let podbuhnem, and then do something dumb like.'
+			'<<$npcName[numnpc]>> - <<$nickname>> Hey, let podbuhnem, and then do something dumb like.'
 
 			act 'drink beer':
 				cls
@@ -20,8 +22,10 @@ if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 			end
 
 			act 'Refuse':grupNPC[numnpc] -= 5 & gt $loc, $metka
-		else
-			'<<$npcName[numnpc]>> - Svetsik Hey, let´s dance.'
+
+			exit
+		elseif alko >= 2:
+			'<<$npcName[numnpc]>> - <<$nickname>> Hey, let''s dance.'
 
 			act 'Refuse':grupNPC[numnpc] -= 5 & gt $loc, $metka
 
@@ -36,10 +40,10 @@ if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 				'You came to the dance floor and started dancing with Victor. Witek paw you in the ass with his strong hands, which are more like mites.'
 
 				if kotovLoveQW = 0:
-					if kotovQW < 5 or grupTipe[25] = 0:act 'Отойти':gt $loc, $metka
-
-					if kotovQW >= 5 and grupTipe[25] ! 0:
-						'The dance ends and Witek took you by the hand steers you to the wall. "Hears Svetsik, let´s muddy, you will be my type of chick. Anyone I unscrewed for you Bosko"'
+					if kotovQW < 5 or grupTipe[25] = 0:
+						act 'Move away':gt $loc, $metka
+					elseif kotovQW >= 5 and grupTipe[25] ! 0:
+						'The dance ends and Witek took you by the hand steers you to the wall. "Hears <<$name>>, let''s muddy, you will be my type of chick. Anyone I unscrewed for you Bosko"'
 
 						act 'Refuse':
 							cls
@@ -63,9 +67,7 @@ if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 							act 'Move away':gt $loc, $metka
 						end
 					end
-				end
-
-				if kotovLoveQW > 0:
+				elseif kotovLoveQW > 0:
 					'The dance ends and Witek took you by the hand removes the wall.'
 					'Witek hugs you "<<$name>>, come to my house."'
 
@@ -87,14 +89,12 @@ if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 		exit
 	end
 
-	'<<$npcName[numnpc]>> - Hey Svetsik, who will get. Tell me about you to anyone I wring your neck.'
+	'<<$npcName[numnpc]>> - Hey <<$name>>, who will get. Tell me about you to anyone I wring your neck.'
 	dynamic $din_sekondparturok
 
 	exit
-end
-
-if numnpc = 9 and kotovLoveQW > 0 and GorSlut > 0:
-	'Witek scowled and tells you "Slysh Svetsik, Th for garbage? We´re mutim, and then you tell me about what you <<$gnikname>>. Whole town already know the boys with me neigh district. You ohuevshaya bitch! "'
+elseif numnpc = 9 and kotovLoveQW > 0 and GorSlut > 0:
+	'Witek scowled and tells you "Slysh <<$name>>, Th for garbage? We''re mutim, and then you tell me about what you <<$gnikname>>. Whole town already know the boys with me neigh district. You ohuevshaya bitch! "'
 
 	act 'A scandal':
 		cls
@@ -113,7 +113,7 @@ if numnpc = 9 and kotovLoveQW > 0 and GorSlut > 0:
 			sub += 20
 			GorSlut = 0
 			gs 'stat'
-			'You have started to convince Victor that all this gossip, do not have no foundation. Witek frowned, "I´ll knock your teeth these talkers, if ever even what you hear about the garbage. Do not worry, I pozatykayu these yapping mouths."'
+			'You have started to convince Victor that all this gossip, do not have no foundation. Witek frowned, "I''ll knock your teeth these talkers, if ever even what you hear about the garbage. Do not worry, I pozatykayu these yapping mouths."'
 
 			if $loc = 'gschool':dynamic $din_sekondparturok
 			if $loc = 'gdkin':act 'Move away':gt $loc, $metka
@@ -125,7 +125,7 @@ end
 
 if $loc = 'gdkin':
 	if GorSlut < 2:
-		'<<$npcName[numnpc]>> - Hey Svetsik, let podbuhnem, and then do something as dumb.'
+		'<<$npcName[numnpc]>> - Hey <<$name>>, let podbuhnem, and then do something as dumb.'
 
 		act 'drink beer':
 			cls
@@ -141,10 +141,8 @@ if $loc = 'gdkin':
 			act 'move_away':gt $loc, $metka
 		end
 
-		act 'Opt out':grupNPC[numnpc] -= 5 & gt $loc, $metka
-	end
-
-	if GorSlut >= 2:
+		act 'Refuse':grupNPC[numnpc] -= 5 & gt $loc, $metka
+	elseif GorSlut >= 2:
 		'<<$npcName[numnpc]>> - Cho priperlas, vaflersha. Huytsa want to nap or something?'
 
 		act 'Leave':grupNPC[numnpc] -= 5 & gt $loc, $metka

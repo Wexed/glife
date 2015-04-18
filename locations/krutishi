@@ -3,14 +3,10 @@ if grupTipe[numnpc] = 3:
 	if npcPol[numnpc] = 0 and hapri = 0:
 		grupNPC[numnpc] -= 5
 		'<<$npcName[numnpc]>> with a smile looking at your messy hair.'
-	end
-
-	if npcPol[numnpc] = 1 and hapri = 0:
+	elseif npcPol[numnpc] = 1 and hapri = 0:
 		grupNPC[numnpc] -= 5
 		'<<$npcName[numnpc]>> with a smile looking at your messy hair.'
-	end
-
-	if npcPol[numnpc] = 0 and hapri > 0 and $loc = 'gdkin' and grupNPC[numnpc] >= 40:
+	elseif npcPol[numnpc] = 0 and hapri > 0 and $loc = 'gdkin' and grupNPC[numnpc] >= 40:
 		if glamur > 0 or ski > 0:
 			cla
 			'<<$npcName[numnpc]>> - Can dance?'
@@ -34,19 +30,14 @@ if grupTipe[numnpc] = 3:
 					gs 'stat'
 
 					if IgorLoverQW > 0 and IgorDominaQW = 0:
-						'Igor whispers to you "Svetulechka, I love you so much. Come to me."'
+						'Igor whispers to you "<<$name>>, I love you so much. Come to me."'
 
 						act 'Go to Igor':gt 'IgorEv'
-					end
-
-					if IgorLoverQW > 0 and IgorDominaQW > 0:
+					elseif IgorLoverQW > 0 and IgorDominaQW > 0:
 						'Igor whispers to you, "My lady, I love you so much. Come to me."'
 
 						act 'Go to Igor':gt 'IgorEv'
-					end
-
-
-					if IgorLoverQW = 0:
+					elseif IgorLoverQW = 0:
 						'During the dance, hands Igor descend on you ass and start to stroke.'
 
 						if DimaRudeQW > 0:
@@ -62,7 +53,7 @@ if grupTipe[numnpc] = 3:
 							act 'Refuse':
 								cls
 								gs 'stat'
-								'You refused to go with Igor on the street. Dimka came to you and asked you what´s happening. Igor shrugged, "Your cocksucker does not want me to suck." Dimka frowned, "she asks, he´s my best friend, because there would be nothing wrong if you otsosesh it." Boys took you by the hand and led him outside.'
+								'You refused to go with Igor on the street. Dimka came to you and asked you what''s happening. Igor shrugged, "Your cocksucker does not want me to suck." Dimka frowned, "she asks, he''s my best friend, because there would be nothing wrong if you otsosesh it." Boys took you by the hand and led him outside.'
 								dynamic $din_igor_dima_disco_bj
 							end
 
@@ -70,20 +61,18 @@ if grupTipe[numnpc] = 3:
 						end
 
 						if grupNPC[1] = 0:
-							'Igor whispers in your ear, "I told Dimka as you dumped it. Done, he sometimes behaves like a pig. Incidentally, Svetsik, go outside, get some air."'
+							'Igor whispers in your ear, "I told Dimka as you dumped it. Done, he sometimes behaves like a pig. Incidentally, <<$name>>, go outside, get some air."'
 							dynamic $din_igor__disco
 							exit
 						end
 
 						cla
-						'Igor whispers in your ear, "Come on out Svetsik. Breathe in the fresh air."'
+						'Igor whispers in your ear, "Come on out <<$name>>. Breathe in the fresh air."'
 						dynamic $din_igor__disco
 						exit
 					end
-				end
-
-				if numnpc = 1 and grupNPC[numnpc] >= 80 and DimaRudeQW > 0:
-					'After the dance Dimka holding your hand. "Let´s go outside."'
+				elseif numnpc = 1 and grupNPC[numnpc] >= 80 and DimaRudeQW > 0:
+					'After the dance Dimka holding your hand. "Let''s go outside."'
 
 					act 'Refuse':grupNPC[numnpc] -= 5 & gt $loc, $metka
 					act 'Dimka go to the street':
@@ -95,10 +84,8 @@ if grupTipe[numnpc] = 3:
 
 						dynamic $din_predlog_dima_bj
 					end
-				end
-
-				if numnpc = 1 and grupNPC[numnpc] >= 80 and DimaRudeQW = 0:
-					'After the dance Dimka holding your hand. "Let´s go outside, get some fresh air."'
+				elseif numnpc = 1 and grupNPC[numnpc] >= 80 and DimaRudeQW = 0:
+					'After the dance Dimka holding your hand. "Let''s go outside, get some fresh air."'
 
 					act 'Dimka go to the street':
 						cls

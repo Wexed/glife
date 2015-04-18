@@ -1,7 +1,7 @@
 # kisameQW
 if $ARGS[0] = 'start':
 	cla
-	set horny += 20
+	horny += 20
 	clr
 	gs 'stat'
 	'<center><img src="images/qwest/kisame1.jpg"></center>'
@@ -11,10 +11,10 @@ if $ARGS[0] = 'start':
 	act 'Trying to push him away':
 		cla
 		*clr
-		set horny += 60
-		set sweat = -3
-		set manna += 5
-		set willpower += 5
+		horny += 60
+		sweat = -3
+		manna += 5
+		willpower += 5
 		clr
 		gs 'stat'
 		'<center><img src="images/qwest/kisame2.jpg"></center>'
@@ -23,15 +23,15 @@ if $ARGS[0] = 'start':
 		act 'Submit':
 			cla
 			*clr
-			set horny += 60
-			set sweat = -3
-			set manna += 5
-			set willpower += 5
-			set guy += 1
-			set sex += 1
-			set vagina += 1
+			horny += 60
+			sweat = -3
+			manna += 5
+			willpower += 5
+			guy += 1
+			sex += 1
+			vagina += 1
 
-			if KisameSex = 0:set KisameSex = 1 & set guy += 1
+			if KisameSex = 0:KisameSex = 1 & guy += 1
 
 			clr
 			gs 'stat'
@@ -46,39 +46,37 @@ if $ARGS[0] = 'start':
 			cla
 			*clr
 			'<center><img src="images/qwest/kisameV.jpg"></center>'
-			set horny += 60
-			set $nameV = 'Kisame'
+			horny += 60
+			$nameV = 'Kisame'
 			!!stats
-			set strenV = 300
-			set speedV = 100
-			set agilV = 100
-			set reactV = 100
-			set vitalV = 200
-			set intelV = 100
-			set willV = 50
+			strenV = 300
+			speedV = 100
+			agilV = 100
+			reactV = 100
+			vitalV = 200
+			intelV = 100
+			willV = 50
 			!!skills
-			set magikV = 10
-			set boxingV = 100
-			set shootV = 100
+			magikV = 10
+			boxingV = 100
+			shootV = 100
 			!!parameters
-			set healthV = vitalV * 10 + strenV * 5
-			set mannaV = intelV * magikV + magikV * 100 + vitalV * 10
-			set willpowerV = willV * 10
-			set BonusAtakV = 0
-			set BonusDefV = 0
+			healthV = vitalV * 10 + strenV * 5
+			mannaV = intelV * magikV + magikV * 100 + vitalV * 10
+			willpowerV = willV * 10
+			BonusAtakV = 0
+			BonusDefV = 0
 			!!Programme of Action
-			set program = 5
-			!!!!!!!!!!!!!!!!!!!!
-			set kisamePic = 1
-			!!!!!!!!!!!!!!!!!!!!
-			set KisaFight = 1
-			set klonV = 5
-			!!set defenceV = 10000
-			if spellavtoklon = 1:set klon = 3
-			if spellbefshild = 1:set defence = 500
+			program = 5
+			kisamePic = 1
+			KisaFight = 1
+			klonV = 5
+			!!defenceV = 10000
+			if spellavtoklon = 1:klon = 3
+			if spellbefshild = 1:defence = 500
 
 			gt 'fight', 'start'
-			'You kicked in the face Kisame. He showed his teeth, and his appearance began to change through instantaneous he was already blue gills on the face and shark teeth. He whispered with a smile, "You wanna play baby? Let´s play!"'
+			'You kicked in the face Kisame. He showed his teeth, and his appearance began to change through instantaneous he was already blue gills on the face and shark teeth. He whispered with a smile, "You wanna play baby? Let''s play!"'
 
 			act 'Fight':gt 'fight', 'start'
 		end
@@ -87,11 +85,11 @@ end
 
 if $ARGS[0] = 'after':
 	cla
-	set horny += 20
+	horny += 20
 	clr
 	gs 'stat'
 	'<center><img src="images/qwest/kisameV.jpg"></center>'
-	'Kisame transformed lightning in senee akulopodobnoe creature. He smiled and said, "Thank you baby." With these words he slapped you on the ass and went to the men´s locker room.'
+	'Kisame transformed lightning in senee akulopodobnoe creature. He smiled and said, "Thank you baby." With these words he slapped you on the ass and went to the men''s locker room.'
 
 	act 'Find a swimsuit and go in the locker room':gt 'bass', 'start'
 end

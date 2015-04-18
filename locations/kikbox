@@ -1,17 +1,25 @@
 # kikbox
 if $ARGS[0] = 'start':
-	'<center><b>Round 1</b></center>'
-	*nl
-	'<center><img src="images/community/ring1.jpg"></center>'
-
-	act 'Start Fight':
-		gt 'kikbox', 'fight'
+	cla
+	if health <= 0:
+		'<b><font color = red>You lost by TKO</font></b>'
+		xgt'enderKik','loss'
+		exit
+	elseif healthV <= 0:
+		'<b><font color = green><<$nameV>> lost by TKO</font></b>'
+		xgt'enderKik','win'
+		exit
 	end
-end
 
-if $ARGS[0] = 'fight':
+	!!!CV extension
+	if round >= 1:
+		'<center><b>Round <<round>></b></center>'
+	*nl
+	'<center><img src="images/community/ring<<round>>.jpg"></center>'
+	!!!
+	cla
 	gs 'befKik'
-	'<b>======================== (ROUND <<round>>) ===========================</b>'
+	'<b>= = = = = = = = = = = = = (ROUND <<round>>) = = = = = = = = = = = = =</b>'
 	if minround = 1:'<b>the fight 0:30</b>'
 	if minround = 2:'<b>the fight 1:00</b>'
 	if minround = 3:'<b>the fight 1:30</b>'
@@ -19,9 +27,9 @@ if $ARGS[0] = 'fight':
 	if minround = 5:'<b>the fight 2:30</b>'
 	'<b><<$nameV>></b> Life <b><font color="red"><<healthV>></font></b>, Endurance <b><font color="green"><<staminaV>></font></b>'
 	'Your life <b><font color="red"><<health>></font></b>, Endurance <b><font color="green"><<stamina>></font></b>'
-	'<b>==========================================================</b>'
+	'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
 	'Your points <<pointKik>>Points opponent <<pointKikV>>'
-	'<b>==========================================================</b>'
+	'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
 	gs 'initKik'
 
 	if hod = 0:
@@ -30,13 +38,13 @@ if $ARGS[0] = 'fight':
 
 		act 'Apply fast Jeb':
 			cla
-			set damage = rand(stren/12, stren/8)
+			damage = rand(stren/12, stren/8)
 
-			if damage <= 0:set damage = 1
+			if damage <= 0:damage = 1
 
-			set koefatak = (speed + reakt + jab) * 2
-			set koefpop = koefatak * 20 / 100
-			set popad = rand(koefatak - koefpop, koefatak + koefpop)
+			koefatak = (speed + reakt + jab) * 2
+			koefpop = koefatak * 20 / 100
+			popad = rand(koefatak - koefpop, koefatak + koefpop)
 			'<font color="green">You deal with a quick jab step forward.</font>'
 			gs 'Kikatak', 'player'
 			xgt 'kikbox', 'sta'
@@ -44,14 +52,14 @@ if $ARGS[0] = 'fight':
 
 		act 'Apply power punch':
 			cla
-			set damkoef = stren * 20 / 100
-			set damage = rand(stren - damkoef, stren + damkoef)
+			damkoef = stren * 20 / 100
+			damage = rand(stren - damkoef, stren + damkoef)
 
-			if damage <= 0:set damage = 1
+			if damage <= 0:damage = 1
 
-			set koefatak = (speed + reakt + punch)
-			set koefpop = koefatak * 20 / 100
-			set popad = rand(koefatak - koefpop, koefatak + koefpop)
+			koefatak = (speed + reakt + punch)
+			koefpop = koefatak * 20 / 100
+			popad = rand(koefatak - koefpop, koefatak + koefpop)
 			'<font color="green">You apply a powerful punch.</font>'
 			gs 'Kikatak', 'player'
 			xgt 'kikbox', 'sta'
@@ -59,61 +67,55 @@ if $ARGS[0] = 'fight':
 
 		act 'Footed strike':
 			cla
-			set damkoef = stren * 20 / 100
-			set damage = rand((stren - damkoef) * 3, (stren + damkoef) * 3)
+			damkoef = stren * 20 / 100
+			damage = rand((stren - damkoef) * 3, (stren + damkoef) * 3)
 
-			if damage <= 0:set damage = 1
+			if damage <= 0:damage = 1
 
-			set koefatak = (speed + reakt + kik) / 2
-			set koefpop = koefatak * 20 / 100
-			set popad = rand(koefatak - koefpop, koefatak + koefpop)
+			koefatak = (speed + reakt + kik) / 2
+			koefpop = koefatak * 20 / 100
+			popad = rand(koefatak - koefpop, koefatak + koefpop)
 			'<font color="green">You apply a kick powerful.</font>'
 			gs 'Kikatak', 'player'
 			xgt 'kikbox', 'sta'
 		end
-	end
-
-	if hod = 1:
+	else
 		!!Enemy attacks
 		'<font color="red"><<$nameV>> attacks</font>'
-		set tiprand = rand(0, 2)
+		tiprand = rand(0, 2)
 
 		if tiprand = 0:
-			set damage = rand(strenV / 12, strenV / 8)
+			damage = rand(strenV / 12, strenV / 8)
 
-			if damage <= 0:set damage = 1
+			if damage <= 0:damage = 1
 
-			set koefatak = (speedV + reaktV + JabV) * 2
-			set koefpop = koefatak * 20 / 100
-			set popad = rand(koefatak - koefpop, koefatak + koefpop)
+			koefatak = (speedV + reaktV + JabV) * 2
+			koefpop = koefatak * 20 / 100
+			popad = rand(koefatak - koefpop, koefatak + koefpop)
 			'<font color="red"><<$nameV>> deals with quick jab step forward.</font>'
 			gs 'Kikatak', 'enemy'
 			xgt 'kikbox', 'sta'
-		end
+		elseif tiprand = 1:
+			damkoef = strenV * 20/100
+			damage = rand(strenV - damkoef, strenV + damkoef)
 
-		if tiprand = 1:
-			set damkoef = strenV * 20/100
-			set damage = rand(strenV - damkoef, strenV + damkoef)
+			if damage <= 0:damage = 1
 
-			if damage <= 0:set damage = 1
-
-			set koefatak = (speedV + reaktV + punchV)
-			set koefpop = koefatak * 20 / 100
-			set popad = rand(koefatak - koefpop, koefatak + koefpop)
+			koefatak = (speedV + reaktV + punchV)
+			koefpop = koefatak * 20 / 100
+			popad = rand(koefatak - koefpop, koefatak + koefpop)
 			'<font color="red"><<$nameV>> applies the power punch.</font>'
 			gs 'Kikatak', 'enemy'
 			xgt 'kikbox', 'sta'
-		end
+		elseif tiprand = 2:
+			damkoef = strenV * 20 / 100
+			damage = rand((strenV - damkoef) * 3, (strenV + damkoef) * 3)
 
-		if tiprand = 2:
-			set damkoef = strenV * 20 / 100
-			set damage = rand((strenV - damkoef) * 3, (strenV + damkoef) * 3)
+			if damage <= 0:damage = 1
 
-			if damage <= 0:set damage = 1
-
-			set koefatak = (speedV + reaktV + kikV) / 2
-			set koefpop = koefatak * 20 / 100
-			set popad = rand(koefatak - koefpop, koefatak + koefpop)
+			koefatak = (speedV + reaktV + kikV) / 2
+			koefpop = koefatak * 20 / 100
+			popad = rand(koefatak - koefpop, koefatak + koefpop)
 			'<font color="red"><<$nameV>> tries for a kick.</font>'
 			gs 'Kikatak', 'enemy'
 			xgt 'kikbox', 'sta'
@@ -123,70 +125,50 @@ end
 
 if $ARGS[0] = 'sta':
 	cla
-	set ionce = 0
-	'<b>==========================================================</b>'
+	ionce = 0
+	'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
 	if minround = 1:'<b>the fight 1:00</b>'
 	if minround = 2:'<b>the fight 1:30</b>'
 	if minround = 3:'<b>the fight 2:00</b>'
 	if minround = 4:'<b>the fight 2:30</b>'
 	if minround = 5:'<b>the fight 3:00</b>'
-	'<b>==========================================================</b>'
+	'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
 	'<b><<$nameV>></b> Life <b><font color="red"><<healthV>></font></b>, Endurance <b><font color="green"><<staminaV>></font></b>'
 	'Your life <b><font color="red"><<health>></font></b>, Endurance <b><font color="green"><<stamina>></font></b>'
-	'<b>==========================================================</b>'
-
-	if health <= 0:
-		'<b><font color="red">You lost by TKO</font></b>'
-		gt 'enderKik', 'lossKO'
-		exit
-	end
-
-	if healthV <= 0:
-		'<b><font color="green"><<$nameV>> lost by TKO</font></b>'
-		gt 'enderKik', 'winKO'
-		exit
-	end
+	'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
 
 	act 'Further':gt 'kikbox', 'fight'
 
 	if minround = 5:
 		cla
-		*clr
-
+		minround = 0
+		round += 1
 		'Rang the gong indicating the end of the round <<round>>.'
+		if round <= formula:
+			act 'Back to the corner':
+				cla
+				'<center><img src="images/community/kickboxing_corner.jpg"></center>'
+				'You try to rest as best as you can.'
 
-		set minround = 0
-		set round += 1
+				act 'In the ring':gt 'kikbox', 'start'
+			end
+		elseif round > formula and sparing = 0:
+			act 'Get out in the middle of announcing the winner':
+				cla
 
-		act 'Back to the corner':
-			cla
-			*clr
-			'<center><img src="images/community/kickboxing_corner.jpg"></center>'
-			'You try to rest as best as you can.'
-
-			act 'Prepare':
-				if round <= formula:
-					cla
-					*clr
-					'<center><b>Round <<round>></b></center>'
-					*nl
-					'<center><img src="images/community/ring<<round>>.jpg"></center>'
-
-					act 'In the ring':gt 'kikbox', 'fight'
-				else
-					if pointKik > pointKikV:
-						gt 'enderKik', 'win'
-					end
-
-					if pointKik < pointKikV:
-						gt 'enderKik', 'loss'
-					end
-
-					if pointKik = pointKikV:
-						gt 'enderKik', 'draw'
-					end
+				if pointKik > pointKikV:
+					'You won.'
+					gt 'enderKik', 'win'
+				elseif pointKik < pointKikV:
+					'You lost.'
+					gt 'enderKik', 'loss'
+				elseif pointKik = pointKikV:
+					'It''s a draw'
+					act 'Leave the ring':gt 'enderKik', 'draw'
 				end
 			end
+		elseif round > formula and sparing = 1:
+			act 'Leave the ring':gt'fit','start'
 		end
 	end
 end

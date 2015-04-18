@@ -148,9 +148,7 @@ else
 				'You managed to escape from the dead.'
 
 				act 'Leave':gt 'KGZgame'
-			end
-
-			if KGZdedrandrun = 1:
+			elseif KGZdedrandrun = 1:
 				KGZdist -= 5
 				KGZdead += rand(KGZdead, KGZdead * 5)
 				'You have stumbled upon other dead and now you have to fight with a lot of dead.'

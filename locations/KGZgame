@@ -78,16 +78,14 @@ if KGZplace = 0:
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 1
 		KGZbatl = 0
+		gs 'stat'
 		'You cautiously left the apartment trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
 	end
-end
-
-if KGZplace = 1:
+elseif KGZplace = 1:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Street</b></center>'
 	'On the street the broken machine, lie the corpses.'
@@ -113,9 +111,7 @@ if KGZplace = 1:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod
 	end
-end
-
-if KGZplace = 2:
+elseif KGZplace = 2:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Shop</b></center>'
 	'In store stale air from spoiled food and dead.'
@@ -141,9 +137,7 @@ if KGZplace = 2:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod2
 	end
-end
-
-if KGZplace = 3:
+elseif KGZplace = 3:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Hospital</b></center>'
 	'Hospital floor littered with papers and dead bodies of patients and physicians.'
@@ -169,9 +163,7 @@ if KGZplace = 3:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod3
 	end
-end
-
-if KGZplace = 4:
+elseif KGZplace = 4:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Boulevard</b></center>'
 	'On the boulevard cluster of abandoned and wrecked cars everywhere corpses.'
@@ -197,9 +189,7 @@ if KGZplace = 4:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod4
 	end
-end
-
-if KGZplace = 5:
+elseif KGZplace = 5:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Hunting Store</b></center>'
 	'In hunting stores all counters are flipped, things scattered on the floor and something where visible decaying corpses.'
@@ -220,9 +210,7 @@ if KGZplace = 5:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod5
 	end
-end
-
-if KGZplace = 6:
+elseif KGZplace = 6:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Police station</b></center>'
 	'At the police station the police corpses scattered on the floor, tables overturned and papers strewn all around.'
@@ -243,9 +231,7 @@ if KGZplace = 6:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod6
 	end
-end
-
-if KGZplace = 7:
+elseif KGZplace = 7:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Drugstore</b></center>'
 	'In store everything upside down and smells mertvyachinoy.'
@@ -266,9 +252,7 @@ if KGZplace = 7:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod7
 	end
-end
-
-if KGZplace = 8:
+elseif KGZplace = 8:
 	KGZdead = rand(KGZday * 2, KGZday * 4)
 	'<center><b>Route</b></center>'
 	'On the highway, a huge traffic jam of abandoned cars, where there are some broken machines and the dead bodies.'
@@ -294,9 +278,7 @@ if KGZplace = 8:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod8
 	end
-end
-
-if KGZplace = 9:
+elseif KGZplace = 9:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Threading</b></center>'
 	'At the gas station is a pair of abandoned cars. No electricity and speakers only work in manual mode.'
@@ -317,9 +299,7 @@ if KGZplace = 9:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod9
 	end
-end
-
-if KGZplace = 10:
+elseif KGZplace = 10:
 	KGZdead = rand(KGZday * 5, KGZday * 10)
 
 	if KGZplaceA = 20:KGZplace = 100 & gt $curloc
@@ -351,9 +331,7 @@ if KGZplace = 10:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod10
 	end
-end
-
-if KGZplace = 11:
+elseif KGZplace = 11:
 	KGZdead = rand(KGZday * 10, KGZday * 20)
 	'<center><b>Fort Bragg</b></center>'
 	'Fort Bragg is a small building surrounded by a fence.'
@@ -374,9 +352,7 @@ if KGZplace = 11:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod11
 	end
-end
-
-if KGZplace = 12:
+elseif KGZplace = 12:
 	if KGZdost = 0:KGZdost = 1
 
 	KGZdead = rand(KGZday * 10, KGZday * 20)
@@ -385,72 +361,68 @@ if KGZplace = 12:
 	'Provisions enough for <<KGZsup>> day'
 
 	if KGZfortQW > 0:'<a href="exec:dynamic $KGZvincent">Young tired man in the form of Ranger</a>, sits leaning on a sniper rifle.'
-		if KGZmedkit > 0:
-			'First aid kits <<KGZmedkit>> pieces'
+	if KGZmedkit > 0:
+		'First aid kits <<KGZmedkit>> pieces'
 
-			if KGZHP < 100:
-				act 'Treated':
-					cls
-					KGZhour += 1
-					KGZHP = 100
-					KGZmedkit -= 1
-					minut += 1
-					gs 'stat'
-					'You heal health through kits.'
+		if KGZHP < 100:
+			act 'Treated':
+				cls
+				KGZhour += 1
+				KGZHP = 100
+				KGZmedkit -= 1
+				minut += 1
+				gs 'stat'
+				'You heal health through kits.'
 
-					act 'Further':gt $curloc
-				end
+				act 'Further':gt $curloc
 			end
-		end
-
-		act 'Rest':
-			cls
-			KGZhour += 1
-			minut += 1
-			gs 'stat'
-			'You have settled on the convenient roof, not taking his eyes off the hatch which can climb dead.'
-
-			act 'Further':gt $curloc
-		end
-
-		act 'Exit to the fort':
-			cls
-			KGZhour += 1
-			minut += 1
-			gs 'stat'
-			KGZplace = 11
-			KGZbatl = 0
-			'You gently down into the hatch, trying not to stumble on the dead.'
-
-			act 'Further':gt $curloc
 		end
 	end
 
-	if KGZplace = 13:
-		KGZdead = rand(KGZday * 10, KGZday * 20)
-		'<center><b>Fort Bragg</b></center>'
-		'<center><b>Food Storage</b></center>'
-		'Stock dark and heard noises.'
+	act 'Rest':
+		cls
+		KGZhour += 1
+		minut += 1
+		gs 'stat'
+		'You have settled on the convenient roof, not taking his eyes off the hatch which can climb dead.'
 
-		if KGZbatl = 0:
-			'Wander around the warehouse <<KGZdead>> Dead'
-			KGZagr = rand(0, 10)
+		act 'Further':gt $curloc
+	end
 
-			if KGZagr <= 8:
-				'Sensing you dead immediately rush to the attack.'
+	act 'Exit to the fort':
+		cls
+		KGZhour += 1
+		minut += 1
+		KGZplace = 11
+		KGZbatl = 0
+		gs 'stat'
+		'You gently down into the hatch, trying not to stumble on the dead.'
 
-				act 'Srazhatsya':KGZdist = rand(2, 3) & gt 'KGZfight'
-			else
-				'Fortunately, you do not notice the dead.'
-				dynamic $KGZvihod13
-			end
+		act 'Further':gt $curloc
+	end
+elseif KGZplace = 13:
+	KGZdead = rand(KGZday * 10, KGZday * 20)
+	'<center><b>Fort Bragg</b></center>'
+	'<center><b>Food Storage</b></center>'
+	'Stock dark and heard noises.'
+
+	if KGZbatl = 0:
+		'Wander around the warehouse <<KGZdead>> Dead'
+		KGZagr = rand(0, 10)
+
+		if KGZagr <= 8:
+			'Sensing you dead immediately rush to the attack.'
+
+			act 'Srazhatsya':KGZdist = rand(2, 3) & gt 'KGZfight'
 		else
-			'The Walking Dead is not visible.'
+			'Fortunately, you do not notice the dead.'
 			dynamic $KGZvihod13
 		end
+	else
+		'The Walking Dead is not visible.'
+		dynamic $KGZvihod13
 	end
-
-if KGZplace = 14:
+elseif KGZplace = 14:
 	KGZdead = rand(KGZday * 10, KGZday * 20)
 	'<center><b>Fort Bragg</b></center>'
 	'<center><b>Infirmary</b></center>'
@@ -472,9 +444,7 @@ if KGZplace = 14:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod14
 	end
-end
-
-if KGZplace = 15:
+elseif KGZplace = 15:
 	KGZdead = rand(KGZday * 10, KGZday * 20)
 	'<center><b>Fort Bragg</b></center>'
 	'<center><b>Arms</b></center>'
@@ -496,9 +466,7 @@ if KGZplace = 15:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod15
 	end
-end
-
-if KGZplace = 16:
+elseif KGZplace = 16:
 	KGZdead = rand(KGZday * 10, KGZday * 20)
 	'<center><b>Fort Bragg</b></center>'
 	'<center><b>Garage</b></center>'
@@ -520,9 +488,7 @@ if KGZplace = 16:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod16
 	end
-end
-
-if KGZplace = 100:
+elseif KGZplace = 100:
 	KGZdead = rand(KGZday * 20, KGZday * 30)
 	'<center><b>City Koldkrik</b></center>'
 	'The city was destroyed and fires could be seen.'
@@ -543,9 +509,7 @@ if KGZplace = 100:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod100
 	end
-end
-
-if KGZplace = 101:
+elseif KGZplace = 101:
 	'<center><b>House</b></center>'
 	'This home is a safe place. The house is kept provision, which will be enough to <<KGZsup>> days'
 
@@ -581,16 +545,14 @@ if KGZplace = 101:
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 100
 		KGZbatl = 0
+		gs 'stat'
 		'You cautiously left the apartment trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc
 	end
-end
-
-if KGZplace = 102:
+elseif KGZplace = 102:
 	KGZdead = rand(KGZday * 5, KGZday * 10)
 	'<center><b>Supermarket</b></center>'
 	'At the supermarket, dark and heard noises.'
@@ -611,9 +573,7 @@ if KGZplace = 102:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod102
 	end
-end
-
-if KGZplace = 200:
+elseif KGZplace = 200:
 	KGZdead = rand(KGZday, KGZday * 2)
 	'<center><b>Forest</b></center>'
 	'In the dark forest and heard noises.'
@@ -634,9 +594,7 @@ if KGZplace = 200:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod200
 	end
-end
-
-if KGZplace = 201:
+elseif KGZplace = 201:
 	KGZdead = rand(KGZday, KGZday * 3)
 	'<center><b>Farm</b></center>'
 	'Large fenced farm fence.'
@@ -657,9 +615,7 @@ if KGZplace = 201:
 		'The Walking Dead is not visible.'
 		dynamic $KGZvihod201
 	end
-end
-
-if KGZplace = 202:
+elseif KGZplace = 202:
 	'<center><b>House</b></center>'
 	'This home is a safe place. The house is kept provision, which will be enough to <<KGZsup>> days'
 
@@ -695,9 +651,9 @@ if KGZplace = 202:
 		cls
 		KGZhour += 1
 		minut += 1
-		gs 'stat'
 		KGZplace = 201
 		KGZbatl = 0
+		gs 'stat'
 		'You cautiously left the apartment trying not to stumble on the dead.'
 
 		act 'Further':gt $curloc

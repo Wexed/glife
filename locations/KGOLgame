@@ -1,42 +1,44 @@
 # KGOLgame
-minut += 1
-gs 'stat'
-
-if KGOLset = 0:$KGOLset = 'On the head there is nothing'
-if KGOLset2 = 0:$KGOLset2 = 'Body simple clothes'
-if KGOLset3 = 0:$KGOLset3 = 'Simple shoes on his feet'
-if KGOLset4 = 0:$KGOLset4 = 'No gloves on hands'
-if KGOLset5 = 0:$KGOLset5 = 'No weapon'
-
 $KGOLstat = {
 	clr
-	pl '<<$KGOLname>> <<$KGOLrace>> <<$KGOLklass>> <<KGOLlvl>> level'
-	pl '<a href="exec:dynamic $KGOLstat2">Close Statistics</a>'
+	'<<$KGOLname>> <<$KGOLrace>> <<$KGOLklass>> <<KGOLlvl>> level'
+	'<a href="exec:dynamic $KGOLstat2">Close Statistics</a>'
+
 	if KGOLneedExp > 0:pl 'Total experiment <<KGOLexp>>, it is necessary to next level <<KGOLneedExp>> experience'
 	if KGOLneedExp <= 0:pl '<a href="exec:dynamic $KGOLrise"><font color="red">You need to increase the level.</font></a>'
-	pl 'Power <<KGOLstren>>, speed and evasion <<KGOLspeed>>, endurance <<KGOLvital>>Intelligence <<KGOLintel>>, armor protection <<KGOLbrona>>, the bonus damage from weapons <<KGOLwpower>>'
-	pl ''
-	pl '<center>Exodus</center>'
-	pl '<<$KGOLset>>'
-	pl '<<$KGOLset2>>'
-	pl '<<$KGOLset3>>'
-	pl '<<$KGOLset4>>'
-	pl '<<$KGOLset5>>'
-	pl ''
-	pl '<center>Equipment</center>'
+
+	'Power <<KGOLstren>>, speed and evasion <<KGOLspeed>>, endurance <<KGOLvital>>Intelligence <<KGOLintel>>, armor protection <<KGOLbrona>>, the bonus damage from weapons <<KGOLwpower>>'
+	''
+	'<center>Exodus</center>'
+	'<<$KGOLset>>'
+	'<<$KGOLset2>>'
+	'<<$KGOLset3>>'
+	'<<$KGOLset4>>'
+	'<<$KGOLset5>>'
+	''
+	'<center>Equipment</center>'
+
 	if KGOLpotionH > 0:pl 'Health potions <<KGOLpotionH>> pieces. <a href="exec:KGOLpotionH -= 1 & KGHP += 100 & gs ''stat'' & gt $curloc"><font color="red">Drink.</font></a>'
 	if KGOLpotionM > 0:pl 'Mana potions <<KGOLpotionM>> pieces. <a href="exec:KGOLpotionM -= 1 & KGManna += 100 & gs ''stat'' & gt $curloc"><font color="red">Drink.</font></a>'
 
-	pl '<center>PVE</center>'
-	pl 'Ratio <<KGOLWin>>, losses <<KGOLLoss>>'
-	pl '<center>PVP</center>'
-	pl 'Ratio <<KGOLpvpWin>>, losses <<KGOLpvpLoss>>'
+	'<center>PVE</center>'
+	'Ratio <<KGOLWin>>, losses <<KGOLLoss>>'
+	'<center>PVP</center>'
+	'Ratio <<KGOLpvpWin>>, losses <<KGOLpvpLoss>>'
 }
 
 $KGOLstat2 = {
 	gs 'stat'
 }
 
+minut += 1
+gs 'stat'
+
+if KGOLset= 0:$KGOLset = 'On the head there is nothing'
+if KGOLset2 = 0:$KGOLset2 = 'Body simple clothes'
+if KGOLset3 = 0:$KGOLset3 = 'Simple shoes on his feet'
+if KGOLset4 = 0:$KGOLset4 = 'No gloves on hands'
+if KGOLset5 = 0:$KGOLset5 = 'No weapon'
 KGHPMAX = KGOLvital * 10
 KGMannaMax = KGOLintel * 10
 
@@ -77,8 +79,8 @@ gs 'KGOLexpa'
 '<<$KGOLname>> <<$KGOLrace>> <<$KGOLklass>> <<KGOLlvl>> level'
 'Life <<KGHP>>, the manna <<KGManna>>'
 
-if KGHP < KGHPMAX:'You´ve got <<KGHP*100/KGHPMAX>>% of life'
-if KGManna < KGMannaMax:'You´ve got <<KGManna*100/KGMannaMax>>% of manna'
+if KGHP < KGHPMAX:'You''ve got <<KGHP*100/KGHPMAX>>% of life'
+if KGManna < KGMannaMax:'You''ve got <<KGManna*100/KGMannaMax>>% of manna'
 if KGOLhirka > 0:'Hirka can restore automatically <<KGOLhirka>> health units'
 if KGOLPrizeM > 0:'You have <<KGOLmoney>> coins'
 if KGOLneedExp <= 0:'<a href="exec:dynamic $KGOLrise"><font color="red">You need to increase the level.</font></a>'
@@ -98,89 +100,63 @@ act 'Approach the NPC':
 	if KGOLmqw = 12 and KGOLlvl >= 5:
 		KGOLmqw = 13
 		'(NPS) - <<$KGOLname>> you need to kill the royal 10t beetles. Reward 200 experience.'
-	end
-
-	if KGOLmqw = 13 and KGOLqwvip >= 10:
+	elseif KGOLmqw = 13 and KGOLqwvip >= 10:
 		KGOLqwvip = 0
 		KGOLmqw = 14
 		KGOLexp += 200
-		'(NPS) - <<$KGOLname>> congratulations, that´s a reward of 200 experience.'
-	end
-
-	if KGOLmqw = 10 and KGOLlvl >= 5:
+		'(NPS) - <<$KGOLname>> congratulations, that''s a reward of 200 experience.'
+	elseif KGOLmqw = 10 and KGOLlvl >= 5:
 		KGOLmqw = 11
 		'(NPS) - <<$KGOLname>> you need to kill toads 10t. Reward 100 experience.'
-	end
-
-	if KGOLmqw = 11 and KGOLqwvip >= 10:
+	elseif KGOLmqw = 11 and KGOLqwvip >= 10:
 		KGOLqwvip = 0
 		KGOLmqw = 12
 		KGOLexp += 100
-		'(NPS) - <<$KGOLname>> congratulations, that´s a reward of 100 experience.'
-	end
-
-	if KGOLmqw = 8:
+		'(NPS) - <<$KGOLname>> congratulations, that''s a reward of 100 experience.'
+	elseif KGOLmqw = 8:
 		KGOLmqw = 9
-		'(NPS) - <<$KGOLname>> you need to kill 30t young cacti. Then I´ll give you a helmet.'
-	end
-
-	if KGOLmqw = 9 and KGOLqwvip >= 30:
+		'(NPS) - <<$KGOLname>> you need to kill 30t young cacti. Then I''ll give you a helmet.'
+	elseif KGOLmqw = 9 and KGOLqwvip >= 30:
 		KGOLqwvip = 0
 		KGOLmqw = 10
-		KGOLset = 1
+		KGOL= 1
 		KGOLbrona += 2
-		$KGOLset = 'Helm of rough skin'
-		'(NPS) - <<$KGOLname>> congratulations, here´s your helmet.'
-	end
-
-	if KGOLmqw = 6:
+		$KGOL= 'Helm of rough skin'
+		'(NPS) - <<$KGOLname>> congratulations, here''s your helmet.'
+	elseif KGOLmqw = 6:
 		KGOLmqw = 7
-		'(NPS) - <<$KGOLname>> you need to kill wolves 25t toothless. Then I´ll give you mittens.'
-	end
-
-	if KGOLmqw = 7 and KGOLqwvip >= 25:
+		'(NPS) - <<$KGOLname>> you need to kill wolves 25t toothless. Then I''ll give you mittens.'
+	elseif KGOLmqw = 7 and KGOLqwvip >= 25:
 		KGOLqwvip = 0
 		KGOLmqw = 8
 		KGOLset4 = 1
 		KGOLbrona += 2
 		$KGOLset4 = 'Gauntlets of rough skin'
-		'(NPS) - <<$KGOLname>> congratulations, here´s your mittens.'
-	end
-
-	if KGOLmqw = 4:
+		'(NPS) - <<$KGOLname>> congratulations, here''s your mittens.'
+	elseif KGOLmqw = 4:
 		KGOLmqw = 5
 		'(NPS) - <<$KGOLname>> you need to kill 20t sundews. Then I will give you boots.'
-	end
-
-	if KGOLmqw = 5 and KGOLqwvip >= 20:
+	elseif KGOLmqw = 5 and KGOLqwvip >= 20:
 		KGOLqwvip = 0
 		KGOLmqw = 6
 		KGOLset3 = 1
 		KGOLbrona += 2
 		$KGOLset3 = 'Rugged Leather Boots'
 		'(NPS) - <<$KGOLname>> congratulations, here are your boots.'
-	end
-
-	if KGOLmqw = 2:
+	elseif KGOLmqw = 2:
 		KGOLmqw = 3
 		'(NPS) - <<$KGOLname>> you need to kill 10t rainbow beetles. Then I will give you armor.'
-	end
-
-	if KGOLmqw = 3 and KGOLqwvip >= 10:
+	elseif KGOLmqw = 3 and KGOLqwvip >= 10:
 		KGOLqwvip = 0
 		KGOLmqw = 4
 		KGOLset2 = 1
 		KGOLbrona += 10
 		$KGOLset2 = 'Simple armor'
-		'(NPS) - <<$KGOLname>> congratulations, here´s your armor.'
-	end
-
-	if KGOLmqw = 0:
+		'(NPS) - <<$KGOLname>> congratulations, here''s your armor.'
+	elseif KGOLmqw = 0:
 		KGOLmqw = 1
-		'(NPS) - <<$KGOLname>> you need to kill prey 5t colors. Then I´ll give you a weapon.'
-	end
-
-	if KGOLmqw = 1 and KGOLqwvip >= 5:
+		'(NPS) - <<$KGOLname>> you need to kill prey 5t colors. Then I''ll give you a weapon.'
+	elseif KGOLmqw = 1 and KGOLqwvip >= 5:
 		KGOLqwvip = 0
 		KGOLmqw = 2
 		KGOLset5 = 1
@@ -190,7 +166,7 @@ act 'Approach the NPC':
 		if KGOLklass = 2:$KGOLset5 = 'In the hands of ordinary daggers'
 		if KGOLklass = 3 or KGOLklass = 4:$KGOLset5 = 'In the hands of a simple staff'
 		if KGOLklass = 5:$KGOLset5 = 'In the hands of a simple bow'
-		'(NPS) - <<$KGOLname>> congratulations, here´s your gun.'
+		'(NPS) - <<$KGOLname>> congratulations, here''s your gun.'
 	end
 
 	act 'Leave':gt $curloc
@@ -234,7 +210,7 @@ if KGHP < KGHPMAX or KGManna < KGMannaMax:
 		minut += 60
 		KGHP = KGHPMAX
 		KGManna = KGMannaMax
-		'It was very sad. You´ve been sitting for an hour to regenerate your character. But free.'
+		'It was very sad. You''ve been sitting for an hour to regenerate your character. But free.'
 
 		act 'Leave':gt $curloc
 	end

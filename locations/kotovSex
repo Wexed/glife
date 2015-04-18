@@ -1,6 +1,6 @@
 # kotovSex
 $din_kotov_bj = {
-	act 'To take by mouth.':
+	act 'Take by mouth':
 		cls
 		minut += 5
 		bj += 1
@@ -14,10 +14,10 @@ $din_kotov_bj = {
 
 		gs 'stat'
 		'<center><img src="images/qwest/alter/ev/kotovBJ<<bjrand>>.jpg"></center>'
-		'You stroked his crotch and Vic felt his cock began to rise. Vitek quickly pulled off his pants and lay down on the bed. You get comfortable between his legs and wrapped his lips to his standing member began to suck. You sucked hard cock to the throat filling the entire mouth, tongue caressed the head and took a member of the cheek. Soon Witek groaned "<<$name>>, I´m going to come!"'
+		'You stroked his crotch and Vic felt his cock began to rise. Vitek quickly pulled off his pants and lay down on the bed. You get comfortable between his legs and wrapped his lips to his standing member began to suck. You sucked hard cock to the throat filling the entire mouth, tongue caressed the head and took a member of the cheek. Soon Witek groaned "<<$name>>, I''m going to come!"'
 
 		if kotovBJtimes > 5:
-			act 'Continue to suck.':
+			act 'Continue to suck':
 				cls
 				minut += 5
 				cumlip += 1
@@ -26,7 +26,7 @@ $din_kotov_bj = {
 				'<center><img src="images/qwest/alter/ev/kotovBJcum.jpg"></center>'
 				'You continued to suck and hot jet of sperm hit you in the mouth.'
 
-				act 'Sucking swallowing sperm.':
+				act 'Sucking swallowing sperm':
 					cls
 					minut += 5
 					swallow += 1
@@ -38,19 +38,19 @@ $din_kotov_bj = {
 				end
 
 				if kotovBJtimes > 10:
-					act 'Suck holding sperm in her mouth.':
+					act 'Suck holding sperm in your mouth':
 						cls
 						minut += 5
 						gs 'stat'
 						'<center><img src="images/qwest/alter/ev/kotovBJcum4.jpg"></center>'
 						'You suck dick cum that fills your mouth with sperm. Witek finally stops to finish and takes his cock out of your mouth.'
 
-						act 'Spit it out.':
+						act 'Spit it out':
 							cls
 							minut += 5
 							gs 'stat'
 							'<center><img src="images/qwest/alter/ev/gop8.jpg"></center>'
-							'Bytrenko you went to the bathroom and spit semen into the sink.'
+							'You quickly went to the bathroom and spit the cum into the sink.'
 
 							act 'Leave.':gt 'gorodok'
 						end
@@ -67,10 +67,8 @@ $din_kotov_bj = {
 
 								act 'Leave.':gt 'gorodok'
 							end
-						end
-
-						if kotovBJtimes > 15:
-							act 'Play with sperm.':
+						elseif kotovBJtimes > 15:
+							act 'Play with sperm':
 								cls
 								minut += 5
 								swallow += 1
@@ -87,7 +85,7 @@ $din_kotov_bj = {
 			end
 		end
 
-		act 'Remove the mouth.':
+		act 'Remove the mouth':
 			cls
 			minut += 5
 			gs 'stat'
@@ -95,7 +93,7 @@ $din_kotov_bj = {
 			'You remove a member from his mouth and start stroking his hand.'
 
 			if kotovBJtimes > 15:
-				act 'Direct face.':
+				act 'Direct face':
 					cls
 					minut += 5
 					cumface += 1
@@ -108,7 +106,7 @@ $din_kotov_bj = {
 				end
 			end
 
-			act 'Cum in her hands.':
+			act 'Cum in your hands':
 				cls
 				minut += 5
 				gs 'stat'
@@ -166,24 +164,24 @@ minut += 15
 gs 'stat'
 '<center><b><font color="maroon"><<$npcName[9]>> <<$npcSurName[9]>></font></b></center>'
 '<center><img src="images/qwest/alter/npc9.jpg"></center>'
-'Vitek began groping and kissing you. "In short Svetsik off your clothes."'
+'Vitek began groping and kissing you. "In short <<$name>> off your clothes."'
 
 if vagina = 0 and sex = 0:
 		if SchoolAtestat = 0:
-			act 'I´m still a girl.':
+			act 'I''m still a girl.':
 				cls
 				minut += 5
 				gs 'stat'
-				'You said Victor, you´re still a girl. He scratched his head, "That´s an ambush, but still not graduated from school. Well then take on canine or popets. Cheek If you take, I´ll fuck, will not tell anyone that you took in your mouth."'
+				'You said Victor, you''re still a girl. He scratched his head, "That''s an ambush, but still not graduated from school. Well then take on canine or popets. Cheek If you take, I''ll fuck, will not tell anyone that you took in your mouth."'
 				dynamic $din_kotov_bj
 				dynamic $din_kotov_anal
 			end
 		else
-			act 'I´m still a girl.':
+			act 'I''m still a girl.':
 				cls
 				minut += 5
 				gs 'stat'
-				'You said Victor, you´re still a girl. He grinned, "C´mon, garbage, you finished school, an adult now. Not well, of course you can take on canine or popets."'
+				'You said Victor, you''re still a girl. He grinned, "C''mon, garbage, you finished school, an adult now. Not well, of course you can take on canine or popets."'
 				dynamic $din_kotov_bj
 				dynamic $din_kotov_anal
 				dynamic $din_kotov_sex
@@ -204,7 +202,7 @@ if vagina = 0 and sex = 0:
 
 	if pirsA = 1 and KotovKnowPirsA = 0:
 		KotovKnowPirsA = 1
-		'Vitek suddenly looked you in the face. "And what `s that on your tongue?" You stuck out her tongue and showed post. Vitek grinned "heh, these_are, to suck dick better?" You frowned and called Victor vulgar. he grinned "Come Svetsik, I will not tell anyone, if you take the cheek."'
+		'Vitek suddenly looked you in the face. "And what ''s that on your tongue?" You stuck out her tongue and showed post. Vitek grinned "heh, these_are, to suck dick better?" You frowned and called Victor vulgar. he grinned "Come <<$name>>, I will not tell anyone, if you take the cheek."'
 end
 
 --- kotovSex ---------------------------------

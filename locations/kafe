@@ -1,62 +1,58 @@
 # kafe
 if $ARGS[0] = 'start':
-	cla
-	*clr
 	$metkaM = $ARGS[0]
 	$locM = $CURLOC
-	set minut += 1
-	'<center><b><font color="maroon">Cafe</font></b></center>'
-	'<center><img src="images/etogame/kafe.jpg"></center>'
-	'You see <a href="exec:gt ''kafe'', ''vlad''">the owner of the cafe</a> dealing with paperwork.'
-	'Lunch - 100 rubles'
+	cla
+	*clr
+	minut += 1
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
 	clr
 	gs 'stat'
+	'<center><b><font color="maroon">Cafe</font></b></center>'
+	'<center><img src="images/etogame/kafe.jpg"></center>'
+	'You see <a href="exec:gt ''kafe'', ''vlad''">the owner of the cafe</a> dealing with paperwork.'
+	'Lunch - 100 rubles'
 
 	if QWdogReiq = 3 and week = 7 and hour >= 12:
 		act 'Sit down at the table and wait for a Margarita':dynamic $margokafedin
 	end
 
-	!!act 'Agree':gt 'cafe3', 'WC'
+	!!act 'Agree':gt 'cafe3', 'wc'
 
 	if money >= 100:
 		act 'Eat (100 rubles)':
 			cla
 			*clr
 			frost = 0
+			minut += 30
+			health += 10
+			money -= 100
+			manna += 5
+			willpower += 5
 			'<center><img src="images/pics/food.jpg"></center>'
-			set razvrand = rand(1, 10)
-			set minut += 30
-			set health += 10
-			set money -= 100
-			set manna += 5
-			set willpower += 5
-
 			if energy >= 30:
-				set fat += 5
-				'You can no longer have.'
-			end
-
-			if energy >= 20 and energy < 30:
-				set fat += 3
-				set energy += 10
+				fat += 5
+				'You can no longer eat.'
+			elseif energy >= 20 and energy < 30:
+				fat += 3
+				energy += 10
 				'You pushed through the power of a meal.'
-			end
-
-			if energy < 20:
-				set energy += 20
-				set fat += 1
+			elseif energy < 20:
+				energy += 20
+				fat += 1
 				'You gladly ate the food.'
 			end
-
-			if water >= 20:'Tea in you no longer climbs.'
-
-			if water < 20:
+			if water >= 20:
+				'You don''t need any more tea.'
+			elseif water < 20:
+				water += 20
 				'You gladly drank a mug of tea.'
-				set water += 20
+
 			end
+
+			razvrand = rand(1, 10)
 
 			if razvrand > 5:
 				gs 'boy'
@@ -74,7 +70,7 @@ end
 if $ARGS[0] = 'vlad':
 	cla
 	*clr
-	set minut += 5
+	minut += 5
 	gs 'stat'
 	'<center><b><font color="maroon">Cafe</font></b></center>'
 	'<center><img src="images/etogame/kafe.jpg"></center>'
@@ -87,22 +83,22 @@ if $ARGS[0] = 'vlad':
 			act 'Provoke Givi':
 				cla
 				*clr
-				set Givisexday = 1
-				set GiviSex += 1
+				Givisexday = 1
+				GiviSex += 1
 				'<center><img src="images/etogame/kafe.jpg"></center>'
 				' You went behind the counter to Givi and asked about undermining.'
-				' "Wow, you Svetik he so bored!" said Givi K. unbuttoning his pants'
+				' "Wow, you <<$name>> he so bored!" said Givi K. unbuttoning his pants'
 
 				act 'To kneel':
 					cla
 					*clr
-					set bj += 1
-					set dick = 20
-					set harakBoy = 2
-					set minut += 30
-					set $nameV = 'Givi K.'
+					bj += 1
+					dick = 20
+					harakBoy = 2
+					minut += 30
+					$nameV = 'Givi K.'
 					$boy = 'Givi K.'
-					set SUB += 1
+					SUB += 1
 					'<center><img src="images/picVA/barbj.jpg"></center>'
 					'You bent down and hid from visitors to the high bar, knelt before Givi, he took a member.'
 					gs 'oral', 'start'
@@ -111,11 +107,11 @@ if $ARGS[0] = 'vlad':
 					act 'Continue to suck.':
 						cla
 						*clr
-						set swallow += 1
-						set cumlip += 1
+						swallow += 1
+						cumlip += 1
+						money += 500
 						'<center><img src="images/picV/swallow1.jpg"></center>'
 						'Hot jet of sperm hit you in the mouth. You started to swallow cum, and <<$nameV>> continued to cum in your mouth. Finally the flow of hot liquid with a pungent taste stopped.'
-						set money += 500
 						'Zahady-yet! - Says Givi gives you 500 rubles.'
 
 						act 'Leave':gt 'kafe', 'start'
@@ -123,15 +119,13 @@ if $ARGS[0] = 'vlad':
 				end
 			end
 		end
-	end
-
-	if workKafe > 0:
+	else
 		if GiviSex >= 2 and Givisexday < 1 and Venera < 4:
 			act 'Provoke Givi':
 				cla
 				*clr
-				set Givisexday = 1
-				set GiviSex += 1
+				Givisexday = 1
+				GiviSex += 1
 				'<center><img src="images/etogame/kafe.jpg"></center>'
 				' You went behind the counter to Givi and asked about undermining.'
 				' "Sverhurochnye want?" asked K. Givi and not interested in the answer took you by the hand'
@@ -139,14 +133,14 @@ if $ARGS[0] = 'vlad':
 				act 'To kneel':
 					cla
 					*clr
-					set smenaKafe += 1
-					set bj += 1
-					set dick = 20
-					set harakBoy = 2
-					set minut += 30
-					set $nameV = 'Givi K.'
-					$boy = 'Givi K.'
-					set SUB += 1
+					smenaKafe += 1
+					bj += 1
+					dick = 20
+					harakBoy = 2
+					minut += 30
+					$nameV = 'Givi Karapetovich'
+					$boy = 'Givi Karapetovich'
+					SUB += 1
 					'<center><img src="images/picVA/barbj.jpg"></center>'
 					'You bent down and hid from visitors to the high bar, knelt before Givi, he took a member.'
 					gs 'oral', 'start'
@@ -155,8 +149,8 @@ if $ARGS[0] = 'vlad':
 					act 'Continue to suck.':
 						cla
 						*clr
-						set swallow += 1
-						set cumlip += 1
+						swallow += 1
+						cumlip += 1
 						'<center><img src="images/picV/swallow1.jpg"></center>'
 						'Hot jet of sperm hit you in the mouth. You started to swallow cum, and <<$nameV>> continued to cum in your mouth. Finally the flow of hot liquid with a pungent taste stopped.'
 
@@ -168,27 +162,27 @@ if $ARGS[0] = 'vlad':
 
 		act 'Resign':
 			cla
-			set work = 0
-			set workKafe = 0
-			set pay = smenaKafe * 600
-			set money += pay
-			set smenaKafe = 0
-			'Givi K. sadly shook his head, "Okay, here´s your <<pay>> rubles and employment history. Go."'
+			work = 0
+			workKafe = 0
+			pay = smenaKafe * 600
+			money += pay
+			smenaKafe = 0
+			'Givi Karapetovich sadly shook his head, "Okay, here''s your <<pay>> rubles and employment history. Go."'
 
 			act 'Leave':gt 'kafe', 'start'
 		end
 	end
 
-	if workKafe > 0 and week > 1 and week < 5:'Wah, Svetsik. Zachem skipping?'
-	if workKafe > 0 and week > 4:'Wah, pryvet Svetsik!'
+	if workKafe > 0 and week > 1 and week < 5:'Wah, <<$name>>. Zachem skipping?'
+	if workKafe > 0 and week > 4:'Wah, pryvet <<$name>>!'
 	if givi = 1 and workKafe < 1:'Listen to you.'
 
 	if givi = 0:
-		set givi = 1
+		givi = 1
 		'Pryvet! I Givi K.. Hozain cafe. What do you want?'
 	end
 
-	if work = 0:
+	if (work = 0 and workKafe = 0 and cheatWork = 0) or (workKafe = 0 and cheatWork = 1):
 		act 'Apply for a job at the cafe.':
 			cla
 			'<br>You ask if Givi has any job openings at the cafe.'
@@ -202,9 +196,9 @@ if $ARGS[0] = 'vlad':
 
 				act 'Take the job':
 					cla
-					set work = 1
-					set workKafe = 1
-					set smenaKafe = 0
+					work = 1
+					workKafe = 1
+					smenaKafe = 0
 					'<br>You give Givi your work book. He takes it and reminds you. "Come to work every day, except Monday, somewhere between 11 to 12."'
 
 					act 'Leave':gt 'kafe', 'start'
@@ -221,29 +215,29 @@ end
 if $ARGS[0] = 'work':
 	cla
 	*clr
-	set minut += 5
+	minut += 5
 	gs 'stat'
+	smenaKafe += 1
 	'<center><b><font color="maroon">Cafe</font></b></center>'
 	'<center><img src="images/etogame/kafe.jpg"></center>'
-	set smenaKafe += 1
 	'You have replaced the cafe, Givi K. writes in a book that you came to work on time and stands behind the bar. The kitchen cook is a sturdy young caucasian, Ashot. Another waitress Irina is preparing for work. Tamara the dishwasher is cleaning the sink.'
 
 	act 'Start work':
 		cla
-		set minut = 0
-		set hour = 12
-		set Givi += rand(5, 10)
+		minut = 0
+		hour = 12
+		Givi += rand(5, 10)
 		gt 'kafe', 'workPred'
 	end
 
 	act 'Resign':
 		cla
-		set work = 0
-		set workKafe = 0
-		set pay = smenaKafe * 600
-		set money += pay
-		set smenaKafe = 0
-		'Givi K. sadly shakes his head, "Okay, here''s your <<pay>> rubles and employment history. Go."'
+		work = 0
+		workKafe = 0
+		pay = smenaKafe * 600
+		money += pay
+		smenaKafe = 0
+		'Givi Karapetovich sadly shakes his head, "Okay, here''s your <<pay>> rubles and employment history. Go."'
 
 		act 'Leave':gt 'kafe', 'start'
 	end
@@ -251,23 +245,21 @@ end
 
 if $ARGS[0] = 'workPred':
 	cla
+	clr
 	*clr
 	gs 'kafedinamic'
 	gs 'stat'
 	'<center><b><font color="maroon">Cafe</font></b></center>'
 	'<center><img src="images/etogame/kafe.jpg"></center>'
 	'Café work boils, the cook <a href="exec:dynamic $ashotdin">Ashot</a> is busy in the kitchen. Your workmate <a href="exec:dynamic $iradin">Ira</a> serves tables with visitors. The owner <a href="exec:dynamic $gividin">Givi K.</a> is standing behind the bar.'
-	clr
-	gs 'stat'
-
-	if Givi > 100:set Givi = 100
-	if Givi > 90 and GiviSex = 0:set Givi = 90
-
 	'<a href="exec:dynamic $kafetualet">Toilet</a>'
+
+	if Givi > 100:Givi = 100
+	if Givi > 90 and GiviSex = 0:Givi = 90
 
 	if IrinaSlut = 1 and hour = 22:
 		cls
-		set IrinaSlut = 2
+		IrinaSlut = 2
 		gs 'stat'
 		'<center><b><font color="maroon">Cafe</font></b></center>'
 		'<center><img src="images/etogame/kafe.jpg"></center>'
@@ -300,7 +292,7 @@ if $ARGS[0] = 'workPred':
 					gs 'stat'
 					'<center><img src="images/picKav/irinaslut2.jpg"></center>'
 					'You kneel before just Fucked in all holes and ass Ira began to lick her reddened hole licking sperm.'
-					'Ira moaned, "Oh, it´s so nice, and why I was afraid of this before?"'
+					'Ira moaned, "Oh, it''s so nice, and why I was afraid of this before?"'
 
 					act 'Swallow sperm and conduct Ira home':
 						cla
@@ -322,12 +314,12 @@ if $ARGS[0] = 'workPred':
 						'<center><img src="images/picKav/irinaslut3.jpg"></center>'
 						'You took a hands-il and his face lifted him, she readily opened her mouth where you spit, lick sperm transferred all Ire.'
 
-						act 'Tselovatsya':
+						act 'Kiss':
 							cls
 							sub += 1
 							gs 'stat'
 							'<center><img src="images/picKav/irinaslut4.jpg"></center>'
-							'You dug lips lips Ira and started her tselovatsya exchanging sperm in your mouths, finally you both swallowed his part of the semen'
+							'You dug lips lips Ira and started kissing her and exchanging sperm in your mouths, finally you both swallowed his part of the semen'
 
 							act 'Ira conduct home':
 								cla
@@ -362,19 +354,19 @@ if $ARGS[0] = 'workPred':
 	if hour < 22:
 		act 'Serve tables':
 			cls
-			set minut += 30
-			set manna -= 5
-			set znarand = rand(0, 300)
-			set chai = rand(0, vnesh + oficiant/2)
+			minut += 30
+			manna -= 5
+			znarand = rand(0, 300)
+			chai = rand(0, vnesh + oficiant/2)
 
-			if oficiant < 100:set oficiant += 1
-			if vital < 30:set vital += 1
+			if oficiant < 100:oficiant += 1
+			if vital < 30:vital += 1
 
-			set money += chai
+			money += chai
 
-			if chai = 0:set willpower -= 5 & set manna -= 15
+			if chai = 0:willpower -= 5 & manna -= 15
 
-			set manna -= 5
+			manna -= 5
 			gs 'stat'
 			'<center><img src="images/picKav/waitress_client.jpg"></center>'
 			'You serve a table at which visitors sat and receive <<chai>> rubles as tip.'
@@ -382,7 +374,7 @@ if $ARGS[0] = 'workPred':
 			act 'Move away':gt 'kafe', 'workPred'
 
 			if znarand > vnesh or bfA > 0:
-				set kaferand = rand(0, 100)
+				kaferand = rand(0, 100)
 
 				if kaferand = 0:
 					cls
@@ -394,17 +386,15 @@ if $ARGS[0] = 'workPred':
 
 					if daystart > 10 and sex > 0:
 						act 'Prisoedinitsa to girl':
-							set kafesexrand = 1
-							set picrand = 13
-							set guy += 2
-							set girl += 1
-							set gang += 1
+							kafesexrand = 1
+							picrand = 13
+							guy += 2
+							girl += 1
+							gang += 1
 							xgt 'sexdvanadva', 'var'
 						end
 					end
-				end
-
-				if kaferand = 1:
+				elseif kaferand = 1:
 					cls
 					gs 'stat'
 					'<center><img src="images/img/spaln/kafe2.jpg"></center>'
@@ -414,105 +404,60 @@ if $ARGS[0] = 'workPred':
 
 					if daystart > 10 and sex > 0:
 						act 'Succumb':
-							set kafesexrand = 1
-							set picrand = 17
-							set guy += 2
+							kafesexrand = 1
+							picrand = 17
+							guy += 2
 							xgt 'sexdvoe', 'var'
 						end
 					end
-				end
+				elseif kaferand = 2 and vnesh > 15:
+					cls
+					'<center><img src="images/picKav/waitress_client.jpg"></center>'
+					'At the table in a separate room sat a man. He looks at you appreciatively and says, "Girl, do not keep me company?" You notice the bulge in his trousers, he''s obviously got dick.'
 
-				if vnesh > 15:
-					if kaferand = 2:
+					act 'Leave':gt 'kafe', 'workPred'
+
+					act 'Sit down next to him':
 						cls
-						'<center><img src="images/picKav/waitress_client.jpg"></center>'
-						'At the table in a separate room sat a man. He looks at you appreciatively and says, "Girl, do not keep me company?" You notice the bulge in his trousers, he''s obviously got dick.'
+						'You sit down next to the client. And look at him waiting for what he would do. He takes your hand and puts it on his crotch.'
 
 						act 'Leave':gt 'kafe', 'workPred'
 
-						act 'Sit down next to him':
-							cls
-							'You sit down next to the client. And look at him waiting for what he would do. He takes your hand and puts it on his crotch.'
+						if horny >= 50 or bj > 0:
+							act 'Unbutton his pants':
+								cls
+								dick = rand(12, 21)
+								gs 'stat'
+								'<center><img src="images/picKav/waitress_work_2.jpg"></center>'
+								'You undo his pants and got warm and hard cock <<dick>> cm long, covered with veins and a small drop of crimson on the head.'
 
-							act 'Leave':gt 'kafe', 'workPred'
-
-							if horny >= 50 or bj > 0:
-								act 'Unbutton his pants':
+								act 'Masturbate him':
 									cls
-									dick = rand(12, 21)
+									boy += 1
+									hj += 1
+									money += 500
 									gs 'stat'
-									'<center><img src="images/picKav/waitress_work_2.jpg"></center>'
-									'You undo his pants and got warm and hard cock <<dick>> cm long, covered with veins and a small drop of crimson on the head.'
+									'<center><img src="images/picKav/waitress_work_hj.jpg"></center>'
+									'Clasping her fingers member you started to masturbate, a man fairly quickly groaned and discharged you in the palm. Then you wiped his penis tissue and he gave you 500 rubles for your work.'
 
-									act 'Masturbate him':
-										cls
-										boy += 1
-										hj += 1
-										money += 500
-										gs 'stat'
-										'<center><img src="images/picKav/waitress_work_hj.jpg"></center>'
-										'Clasping her fingers member you started to masturbate, a man fairly quickly groaned and discharged you in the palm. Then you wiped his penis tissue and he gave you 500 rubles for your work.'
-
-										act 'Leave':gt 'kafe', 'workPred'
-									end
-
-									act 'Suck his dick':
-										cls
-										boy += 1
-										bj += 1
-										gs 'stat'
-										'<center><img src="images/picKav/waitress_work_bj.jpg"></center>'
-										dynamic $dinrandbj
-
-										act 'Take the sperm in your mouth':
-											cls
-											cumlip += 1
-											money += 700
-											gs 'stat'
-											'<center><img src="images/picKav/waitress_work_bj2.jpg"></center>'
-											dynamic $dinrandswallow
-
-											act 'Leave':gt 'kafe', 'workPred'
-										end
-									end
+									act 'Leave':gt 'kafe', 'workPred'
 								end
-							end
-						end
-					end
 
-					if kaferand = 3:
-						cls
-						'<center><img src="images/picKav/waitress_client.jpg"></center>'
-						'At the table in a separate room sat a man. He looked appreciatively at you and said "- Girl, do not help? I have prepared for you a great tip, but accidentally dropped them under the table. And I myself have eaten too much so that they no longer will bend ..." while you notice how bristling fly on his trousers, he obviously got dick.'
-						act 'Leave':gt 'kafe', 'workPred'
-
-						act 'Crawl under the table':
-							cls
-							gs 'stat'
-							'<center><img src="images/picKav/waitress_work_3_1.jpg"></center>'
-							'- Well, now, - I replied.'
-							'In the end, with the tip and not a sin under the table slazit. Standing on all fours and climbing under the table, I do find there pyatisotrublevuyu paper. But when I reach out, what would it take, a man comes to the edge of the shoe bill. Then unzips his pants and pulls out of his pants member.'
-
-							act 'Leave':gt 'kafe', 'workPred'
-
-							if horny >= 50 or bj > 0:
-								act 'Suck':
+								act 'Suck his dick':
 									cls
+									boy += 1
 									bj += 1
-									guy += 1
 									gs 'stat'
-									'<center><img src="images/picKav/waitress_work_3_2.jpg"></center>'
-									'And knew that the free cheese ... just not lying under the table.'
-									'But I need these five hundred rubles, so I´m taking his cock hand and head straight into his mouth. The next five minutes, I carefully lick and chew it. Finally, the visitor made several short jerky movements hips starts to pour out hot cum into my mouth.'
+									'<center><img src="images/picKav/waitress_work_bj.jpg"></center>'
+									dynamic $dinrandbj
 
-									act '....':
+									act 'Take the sperm in your mouth':
 										cls
 										cumlip += 1
-										cumface += 1
-										money += 500
+										money += 700
 										gs 'stat'
-										'<center><img src="images/picKav/waitress_work_3_3.jpg"></center>'
-										'Filling my mouth to the brim, he took his foot off bills and I was finally able to pick it up.'
+										'<center><img src="images/picKav/waitress_work_bj2.jpg"></center>'
+										dynamic $dinrandswallow
 
 										act 'Leave':gt 'kafe', 'workPred'
 									end
@@ -520,9 +465,46 @@ if $ARGS[0] = 'workPred':
 							end
 						end
 					end
-				end
+				elseif kaferand = 3 and vnesh > 15:
+					cls
+					'<center><img src="images/picKav/waitress_client.jpg"></center>'
+					'At the table in a separate room sat a man. He looked appreciatively at you and said "- Girl, do not help? I have prepared for you a great tip, but accidentally dropped them under the table. And I myself have eaten too much so that they no longer will bend ..." while you notice how bristling fly on his trousers, he obviously got dick.'
+					act 'Leave':gt 'kafe', 'workPred'
 
-				if kaferand = 4:
+					act 'Crawl under the table':
+						cls
+						gs 'stat'
+						'<center><img src="images/picKav/waitress_work_3_1.jpg"></center>'
+						'- Well, now, - I replied.'
+						'In the end, with the tip and not a sin under the table slazit. Standing on all fours and climbing under the table, I do find there pyatisotrublevuyu paper. But when I reach out, what would it take, a man comes to the edge of the shoe bill. Then unzips his pants and pulls out of his pants member.'
+
+						act 'Leave':gt 'kafe', 'workPred'
+
+						if horny >= 50 or bj > 0:
+							act 'Suck':
+								cls
+								bj += 1
+								guy += 1
+								gs 'stat'
+								'<center><img src="images/picKav/waitress_work_3_2.jpg"></center>'
+								'And knew that the free cheese ... just not lying under the table.'
+								'But I need these five hundred rubles, so I''m taking his cock hand and head straight into his mouth. The next five minutes, I carefully lick and chew it. Finally, the visitor made several short jerky movements hips starts to pour out hot cum into my mouth.'
+
+								act '....':
+									cls
+									cumlip += 1
+									cumface += 1
+									money += 500
+									gs 'stat'
+									'<center><img src="images/picKav/waitress_work_3_3.jpg"></center>'
+									'Filling my mouth to the brim, he took his foot off bills and I was finally able to pick it up.'
+
+									act 'Leave':gt 'kafe', 'workPred'
+								end
+							end
+						end
+					end
+				elseif kaferand = 4:
 					cls
 					horny += 5
 					gs 'stat'
@@ -600,7 +582,7 @@ if $ARGS[0] = 'workPred':
 
 									if SergeaAndKatjaQW = 0:
 										SergeaAndKatjaQW = 1
-										'After blowjob guy introduced himself, "I Sergei and Katia it. Did not know what´s so hot waitresses work."'
+										'After blowjob guy introduced himself, "I Sergei and Katia it. Did not know what''s so hot waitresses work."'
 									end
 
 									act 'Leave':gt 'kafe', 'workPred'
@@ -608,9 +590,7 @@ if $ARGS[0] = 'workPred':
 							end
 						end
 					end
-				end
-
-				if kaferand = 5:
+				elseif kaferand = 5:
 					cls
 					horny += 5
 					gs 'stat'
@@ -618,9 +598,7 @@ if $ARGS[0] = 'workPred':
 					'Serving tables you accidentally noticed as what that girl ukratkoy member Fingering her boyfriend.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 6:
+				elseif kaferand = 6:
 					cls
 					horny += 5
 					gs 'stat'
@@ -628,9 +606,7 @@ if $ARGS[0] = 'workPred':
 					'Going into one of the stalls that you see sitting there a couple of girls and one of them on their knees licking vagina in another.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 7:
+				elseif kaferand = 7:
 					cls
 					horny += 5
 					gs 'stat'
@@ -638,9 +614,7 @@ if $ARGS[0] = 'workPred':
 					'Passing the dance floor where you messed around pyanaya youth saw as one drunken girl sat on his haunches began to suck cock.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 8:
+				elseif kaferand = 8:
 					cls
 					horny += 5
 					gs 'stat'
@@ -648,9 +622,7 @@ if $ARGS[0] = 'workPred':
 					'Walking past the bar you see as sort of a girl squatting sucks dick guy drinking beer ..'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 9:
+				elseif kaferand = 9:
 					cls
 					horny += 5
 					gs 'stat'
@@ -658,9 +630,7 @@ if $ARGS[0] = 'workPred':
 					'Going into one of the stalls you see that there is the cheerful company of young people and one of the beautiful girls fucked doggy style right in front of the table.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 10:
+				elseif kaferand = 10:
 					cls
 					horny += 5
 					gs 'stat'
@@ -668,9 +638,7 @@ if $ARGS[0] = 'workPred':
 					'On the dance floor fun girls lit.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 11:
+				elseif kaferand = 11:
 					cls
 					horny += 5
 					gs 'stat'
@@ -678,9 +646,7 @@ if $ARGS[0] = 'workPred':
 					'You see how the two drunken girls lick passionately unashamedly anyone.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 12:
+				elseif kaferand = 12:
 					cls
 					horny += 5
 					gs 'stat'
@@ -688,9 +654,7 @@ if $ARGS[0] = 'workPred':
 					'Do you see how drunk girl crawled under the table there losing something, she hiked skirt and no panties on my ass, so that almost all cafes can see all the content podyubochnogo space in detail.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 13:
+				elseif kaferand = 13:
 					cls
 					horny += 5
 					gs 'stat'
@@ -698,9 +662,7 @@ if $ARGS[0] = 'workPred':
 					'You see as a drunken couple sports, girl licks cock and the guy pouring champagne in her mouth.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 14:
+				elseif kaferand = 14:
 					cls
 					horny += 5
 					gs 'stat'
@@ -708,9 +670,7 @@ if $ARGS[0] = 'workPred':
 					'Do you happen to notice that a couple of fun chatting girls not only fun chatting, one of the girls put her hand into her panties and caresses her girlfriend there.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 15:
+				elseif kaferand = 15:
 					cls
 					horny += 5
 					gs 'stat'
@@ -718,9 +678,7 @@ if $ARGS[0] = 'workPred':
 					'Do you see how the dance floor dancing with a Negro girl lapaya her for all that is possible, but the girl apparently do not mind.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 16:
+				elseif kaferand = 16:
 					cls
 					horny += 5
 					gs 'stat'
@@ -728,9 +686,7 @@ if $ARGS[0] = 'workPred':
 					'Going into one of the stalls that you see guys play with girls cards on the strip and the girls obviously lose sitting in his underwear.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 17:
+				elseif kaferand = 17:
 					cls
 					horny += 5
 					gs 'stat'
@@ -738,9 +694,7 @@ if $ARGS[0] = 'workPred':
 					'You see two guys dancing with a girl in every way it lapaya and bullying her skirt on the girl reacts laugh without even trying to cover up how your sirloin from the eyes of the public around them.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 18:
+				elseif kaferand = 18:
 					cls
 					horny += 5
 					gs 'stat'
@@ -748,9 +702,7 @@ if $ARGS[0] = 'workPred':
 					'Do you see how the guy on the dance floor kiss with a girl and he ran his hand under her skirt practically fucks her fingers through the panties.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 19:
+				elseif kaferand = 19:
 					cls
 					horny += 5
 					gs 'stat'
@@ -758,9 +710,7 @@ if $ARGS[0] = 'workPred':
 					'You see like a stand alone drunk girl spread Lyashko and at least buhoy and cheerful young man fuck her pussy with his fingers.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 20:
+				elseif kaferand = 20:
 					cls
 					horny += 5
 					gs 'stat'
@@ -768,9 +718,7 @@ if $ARGS[0] = 'workPred':
 					'You see a guy hugs a drunken girl in the wood and took a mouthful of beer pouring it to her with a kiss until the second guy matzo her boobs.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 21:
+				elseif kaferand = 21:
 					cls
 					horny += 5
 					gs 'stat'
@@ -778,9 +726,7 @@ if $ARGS[0] = 'workPred':
 					'Going into the attic you see two guys at both ends pyalyut girl who champs sucking cock and ass podmahivaet trying to spread on the second-Man as deeply as possible.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 22:
+				elseif kaferand = 22:
 					cls
 					horny += 5
 					gs 'stat'
@@ -788,9 +734,7 @@ if $ARGS[0] = 'workPred':
 					'You see on the dance floor as one no longer young madam in revealing outfits dancing with a young guy to paw her.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 23:
+				elseif kaferand = 23:
 					cls
 					horny += 5
 					gs 'stat'
@@ -798,9 +742,7 @@ if $ARGS[0] = 'workPred':
 					'You see two young guys bent girl and depict sex with her under the leaping laughter and cheerful girl.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand = 24:
+				elseif kaferand = 24:
 					cls
 					horny += 5
 					gs 'stat'
@@ -808,10 +750,10 @@ if $ARGS[0] = 'workPred':
 					'Going into one of the stalls you see a man licking pussy what that cheeky person who is a Lyashko put her on his back and catching buzz smokes a cigarette.'
 
 					act 'Leave':gt 'kafe', 'workPred'
-				end
-
-				if kaferand >= 90 and opusk > 0 and pirsA = 0:
+				elseif kaferand >= 90 and opusk > 0 and pirsA = 0:
 					cls
+					pirsA = 1
+					pirsday = day
 					'<center><img src="images/body/pirs.jpg"></center>'
 					'Beckons you to one of the clients, you come to the table and notice that in front of you are the real criminals.'
 					'When you come to the table, the leader called you closer to him, and when you come, it is very hard and painful grabbed you by the neck.'
@@ -819,41 +761,35 @@ if $ARGS[0] = 'workPred':
 					'The leader turned to his mobsters said. Necessary to issue chlenososku. Tackle. At the same moment you grabbed strong arms and carried out of the cafe, there was thrown into the back seat of the jeep. And the jeep jumped up.'
 					'Drove you not very long, riding up to what that goal, jeep honked and gates opened soundlessly. Jeep pulled into the teritory cottages. Strong ''brother dragged you out of the car and dragged him to the basement.'
 					'The basement has all the tools were ready. You sat on a chair and a hefty tattooed bandyugan came to you with a clip and a pair of scissors, he pulled you out of the mouth and tongue pierced him with lightning speed needle. In a bleeding wound in the language he zasoval small bar.'
-					set pirsA = 1
-					set pirsday = day
-					'Hell, it´s very painful. You moan with his tongue hanging out, laughing bandyuki your pain. Finally your tongue pulled out of the clamp. How did you hurt. Bandits escorted you out cottages.'
+					'Hell, it''s very painful. You moan with his tongue hanging out, laughing bandyuki your pain. Finally your tongue pulled out of the clamp. How did you hurt. Bandits escorted you out cottages.'
 
 					act 'Go home':gt 'street'
-				end
-
-				if kaferand >= 8 and opusk > 0 and pirsA = 1 and hour >= 12 and hour <= 19:
+				elseif kaferand > 25 and opusk > 0 and pirsA = 1 and hour >= 12 and hour <= 19:
 					cls
 					'Mob boss beckons you to his table. You approached him with trembling knees.''He looks at you like a boa constrictor on the rabbit and says vaflersha, open your mouth. You open your mouth obediently and labeled and put out a tongue piercing.'
 					'The leader took you in the face and saw piercing gaze. All the same, good job guys. Okay vaflersha on, get under the table and entertain me.'
 
 					act 'Get under the table':
 						cla
+
+						if glavar = 0:glavar = 1 & guy += 1
+
+						bj += 1
+						cumface = cumface + 1
 						'<center><img src="images/pics/glavarBJ.jpg"></center>'
 						'You obediently crawl under the table and pulled out a member of the leader of his pants, dutifully caress his tongue and start sucking.'
 						'Ringleader as if the whole is made of stone, he did not flinch a muscle when he emptied his sperm reserve your mouth.'
+						horand = rand(1, 100)
 
-						if glavar = 0:set glavar = 1 & set guy += 1
+						if horand > horny:horny += 10 & 'You were not satisfied'
+						if horand <= horny:horny = 0 & orgasm += 1 & 'You covered orgasm'
 
-						bj += 1
-						set horand = rand(1, 100)
-
-						if horand > horny:set horny += 10 & 'You were not satisfied'
-						if horand <= horny:set horny = 0 & orgasm += 1 & 'You covered orgasm'
-
-						cumface = cumface + 1
 						'You swallow all his sperm and sucking him dry up.'
 
 						act 'return to work':gt 'kafe', 'workPred'
 					end
 				end
-			end
-
-			if znarand <= vnesh and bfA <= 0:
+			elseif znarand <= vnesh and bfA <= 0:
 				cls
 				gs 'boy'
 				'<center><img src="images/picKav/waitress_client.jpg"></center>'
@@ -862,7 +798,7 @@ if $ARGS[0] = 'workPred':
 
 				act 'No':
 					cla
-					set money += 10
+					money += 10
 					'Angry man left you 10 rubles tip and left.'
 
 					act 'Move away':gt 'kafe', 'workPred'
@@ -871,9 +807,9 @@ if $ARGS[0] = 'workPred':
 				if bfA <= 0 or bfB = 0 or bfC = 0:
 					act 'Yes':
 						cla
-						set money += 100
+						money += 100
 						gs 'boyfrend', 'start'
-						set stopboy = 0
+						stopboy = 0
 						'Man glad that you do not mind dating him. He introduced himself as <<$boy>> and asked for a phone number, promising to call you back tomorrow.'
 						'Then leave you a hundred rubles tip and left.'
 
@@ -889,11 +825,11 @@ if $ARGS[0] = 'workPred':
 			cla
 
 			if GiviSex = 0 and Givi < 90 or Vnesh < 0:
-				'Givi you nods his head, "Goodbye, Svetik."'
+				'Givi you nods his head, "Goodbye, <<$name>>."'
 
 				act 'Leave':
 					cla
-					set minut += 5
+					minut += 5
 					gt 'kafeend'
 				end
 			else
@@ -907,7 +843,7 @@ if $ARGS[0] = 'razvod':
 	cla
 	!!*clr
 	!!act 'Get up from the table':gt 'kafe', 'start'
-	set deyst = rand(0, 3)
+	deyst = rand(0, 3)
 
 	if deyst = 0:
 		'<<$boy>> has invited you to dance.'
@@ -917,9 +853,7 @@ if $ARGS[0] = 'razvod':
 		if horny < 75:
 			act 'Otshit':gt 'street'
 		end
-	end
-
-	if deyst = 1:
+	elseif deyst = 1:
 		'<<$boy>> asked permission to sit down at a table to you.'
 
 		act 'Drink':gt 'cafe2', 'booze'
@@ -927,18 +861,14 @@ if $ARGS[0] = 'razvod':
 		if horny < 75:
 			act 'Otshit':gt 'street'
 		end
-	end
-
-	if deyst = 2:
+	elseif deyst = 2:
 		'<<$boy>> has invited you to join the party on which he walks.'
 		act 'Agree':gt 'cafe2', 'kampashka'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
 		end
-	end
-
-	if deyst = 3:
+	elseif deyst = 3:
 		'<<$boy>> drunk in the trash and going to douse you have an incredible smell. "Hey baby, what time to pull? Come have fun in the outhouse."'
 
 		act 'Agree':gt 'cafe3', 'WC'

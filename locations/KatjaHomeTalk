@@ -5,7 +5,7 @@ gs 'stat'
 '<center><img src="images/qwest/alter/npc/14.jpg"></center>'
 
 if sweat > 0:
-	'Katja wrinkled her nose "Sveta, you`re all sweaty, go to the shower?"'
+	'Katja wrinkled her nose "<<$name>>, you''re all sweaty, go to the shower?"'
 
 	act 'Go to the shower':
 		cls
@@ -19,10 +19,10 @@ if sweat > 0:
 				cls
 				dynamic $showerdin
 				minut += 15
-				set horny += 1
-				set hapri = 1
-				set mop = 1
-				set sweat = -3
+				horny += 1
+				hapri = 1
+				mop = 1
+				sweat = -3
 
 				if frost > 0:frost = 0
 
@@ -37,10 +37,10 @@ if sweat > 0:
 				cls
 				dynamic $showerdin
 				minut += 15
-				set horny += 1
-				set hapri = 1
-				set mop = 1
-				set sweat = -3
+				horny += 1
+				hapri = 1
+				mop = 1
+				sweat = -3
 
 				if frost > 0:frost = 0
 
@@ -69,10 +69,8 @@ if sweat > 0:
 							act 'Get out of the shower':gt $curloc
 						end
 					end
-				end
-
-				if lobok > 0:
-					'Katja eyes slid over your body a little lingering on her breasts and pubic hair. Katja smiled "Svetulya, you got such vegetation, it is no longer fashionable, I`ll let sbreyu hair."'
+				elseif lobok > 0:
+					'Katja eyes slid over your body a little lingering on her breasts and pubic hair. Katja smiled "<<$name>>, you got such vegetation, it is no longer fashionable, I''ll let sbreyu hair."'
 
 					act 'Shave the hair between her legs ':
 						cls
@@ -95,15 +93,13 @@ if sweat > 0:
 					end
 				end
 			end
-		end
-
-		if KatjaHorny < 50:
+		elseif KatjaHorny < 50:
 			dynamic $showerdin
 			minut += 15
-			set horny += 1
-			set hapri = 1
-			set mop = 1
-			set sweat = -3
+			horny += 1
+			hapri = 1
+			mop = 1
+			sweat = -3
 
 			if frost > 0:frost = 0
 
@@ -134,13 +130,11 @@ else
 					dynamic $d_katjaSextalk
 					exit
 				end
-			end
-
-			if katjaPreg > 0 and knowKatjaPreg = 0:
+			elseif katjaPreg > 0 and knowKatjaPreg = 0:
 				if knowKatjaPreg = 0:
-					'Katja biting her lip without looking you in the eye, Finally typed determination and says "Sveta, i am pregnant."'
+					'Katja biting her lip without looking you in the eye, Finally typed determination and says "<<$name>>, i am pregnant."'
 
-					act 'from?':
+					act 'From whom?':
 						cls
 						minut += 5
 						knowKatjaPreg = 1
@@ -168,10 +162,8 @@ else
 				dynamic $d_katjahornykiss
 			end
 		end
-	end
-
-	if hour >= 20:
-		'Katja says, he wants to go to the disco.'
+	elseif hour >= 20:
+		'Katja says, she wants to go to the disco.'
 
 		if money >= 25:act 'Go to the disco':money -= 25 & minut += 15 & gt 'gdkin'
 	end

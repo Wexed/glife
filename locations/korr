@@ -36,29 +36,32 @@ $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
-set popolaini = 0
-set saunaYouRoom = 0
-set boycherdaksex = 0
-'<center><b><font color="maroon">Corridor</font></b></center>'
-
-if remkorr = 0:'<center><img src="images/etogame/korr.jpg"></center>'
-if remkorr = 1:'<center><img src="images/etogame/korr2.jpg"></center>'
-
 clr
-gs 'stat'
+popolaini = 0
+saunaYouRoom = 0
+boycherdaksex = 0
 bonusZ = 0
 music_on = 0
+minut += 1
+housrA = 1
+housrMir = 0
+elektro += 1
+gs 'stat'
 fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
-set minut += 1
-set housrA = 1
-set housrMir = 0
-set elektro += 1
+'<center><b><font color="maroon">Corridor</font></b></center>'
+
+if remkorr = 0:
+	'<center><img src="images/etogame/korr.jpg"></center>'
+	'In the hallway wallpaper which where moved away from the walls, and has long faded. A coat rack and a shelf for shoes are near the entrance. A wall-mounted <a href="exec:gt ''mirror'', ''start''">mirror</a> and a <a href="exec:gt ''telefon'', ''start''">phone</a> hang on the wall.'
+else
+	'<center><img src="images/etogame/korr2.jpg"></center>'
+	'Modern hall with stylish furniture, a wall-mounted <a href="exec:gt ''mirror'', ''start''">mirror</a>, and a <a href="exec:gt ''telefon'', ''start''">phone</a>'
+end
 
 if ring = 1:'<b><font color="red">The phone is ringing</font></b>'
-if remkorr = 0:'In the hallway wallpaper which where moved away from the walls, and has long faded. A coat rack and a shelf for shoes are near the entrance. A wall-mounted <a href="exec:gt ''mirror'', ''start''">mirror</a> and a <a href="exec:gt ''telefon'', ''start''">phone</a> hang on the wall.'
-if remkorr = 1:'Modern hall with stylish furniture, a wall-mounted <a href="exec:gt ''mirror'', ''start''">mirror</a>, and a <a href="exec:gt ''telefon'', ''start''">phone</a>'
+
 if suhbelo > 0:'Drying on the clothesline are <<suhbelo>> laundry items.'
 if umbrella > 0:'An umbrella hangs on a hook.'
 if palto > 0:'Hanging on the hook <<$palto>>.'
@@ -67,57 +70,43 @@ if krolik = 1:'Resting on the floor your rabbit <a href="exec:gt ''krol'', ''sta
 if popugai = 1:'In the cage sits your parrot <a href="exec:gt ''popu'', ''start''"><<$namepopu>></a>.'
 
 if parkday ! day and parkblackmail = 1:
+	parkblackmail = 2
+	parkday = day
 	'A heavy envelope has arrived in the mail. When you open it you can see pictures in it. Damn, it''s pictures of you where you are giving blowjobs to two guys in the park.'
 	'Small note says:'
 	'If you do not want to have these pictures posted on your porch and sent to your work, come to this address (address listed is a Studio)'
 	'PS, if you do not come today, these pictures will be hanging in your entryway tomorrow.'
-
-	set parkblackmail = 2
-	set parkday = day
-end
-
-if parkday ! day and parkblackmail = 2:
-	'Damn, your photos with sperm on your face and two dicks in your mouth are plastered around porch.'
-	set parkblackmail = 0
+elseif parkday ! day and parkblackmail = 2:
+	parkblackmail = 0
 	fotoyousuck = 1
+	'Damn, your photos with sperm on your face and two dicks in your mouth are plastered around porch.'
 end
 
 if bfA < 0:
-	'<b><font color="red">Your boyfried does not call you, he probably dumped you.</font></b>'
-	set bfA = 0
-end
-
-if bfA > 1 and boydayA ! day and hour >= 5 and hour < 20 and vnesh >= vneshBoyA:
-	set ring = 1
-	set ringA = 1
+	bfA = 0
+	'<b><font color="red">Your boyfriend <<$boyA>> does not call you, he probably dumped you.</font></b>'
+elseif bfA > 1 and boydayA ! day and hour >= 5 and hour < 20 and vnesh >= vneshBoyA:
+	ring = 1
+	ringA = 1
 	'<b><font color="red">The phone is ringing</font></b>'
 end
 
 if bfB > 1 and boydayB ! day and hour >= 5 and hour < 20 and vnesh >= vneshBoyB:
-	set ring = 1
-	set ringB = 1
+	ring = 1
+	ringB = 1
 	'<b><font color="red">The phone is ringing</font></b>'
+elseif bfB > 1 and boydayB ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyB:
+	bfB = 0
+	'<b><font color="red">Your boyfriend <<$boyB>> does not call you, he probably dumped you.</font></b>'
 end
 
 if bfC > 1 and boydayC ! day and hour >= 5 and hour < 20 and vnesh >= vneshBoyC:
-	set ring = 1
-	set ringC = 1
+	ring = 1
+	ringC = 1
 	'<b><font color="red">The phone is ringing</font></b>'
-end
-
-if bfA > 1 and boydayA ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyA:
-	'<b><font color="red">Your boyfried does not call you, he probably dumped you.</font></b>'
-	set bfA = 0
-end
-
-if bfB > 1 and boydayB ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyB:
-	'<b><font color="red">Your boyfried does not call you, he probably dumped you.</font></b>'
-	set bfB = 0
-end
-
-if bfC > 1 and boydayC ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyC:
-	'<b><font color="red">Your boyfried does not call you, he probably dumped you.</font></b>'
-	set bfC = 0
+elseif bfC > 1 and boydayC ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyC:
+	bfC = 0
+	'<b><font color="red">Your boyfriend <<$boyC>> does not call you, he probably dumped you.</font></b>'
 end
 
 if vladimirday ! day and vladimirQW = 20 and hour >= 15 and hour <= 17:'<a href="exec:gt ''qwloc2''"><font color="red"><b>The phone is ringing</b></font></a>.'
@@ -127,49 +116,43 @@ if QWdogreiqTimer = 0 and QWdogReiq = 2 and week = 7 and qwdogiventday ! day and
 
 if bfA = 1 or bfB = 1 or bfC = 1:
 	if bfA = 1 and boydayA ! day and hour > 5 and hour < 20 and ringA = 0:
-		if bfb = 1:set bfb = 0
-		if bfc = 1:set bfc = 0
+		if bfb = 1:bfb = 0
+		if bfc = 1:bfc = 0
 
 		if vnesh < vneshBoyA:
-			'Your boyfriend has not called you.'
-			set bfA = 0
-		end
-
-		if vnesh >= vneshBoyA:
-			set ring = 1
-			set ringA = 1
+			bfA = 0
+			'Your boyfriend <<$boyA>> has not called you.'
+		else
+			ring = 1
+			ringA = 1
 			'<b><font color="red">The phone is ringing</font></b>'
 		end
 	end
 
 	if bfB = 1 and boydayB ! day and hour > 5 and hour < 20 and ringB = 0:
-		if bfa = 1:set bfa = 0
-		if bfc = 1:set bfc = 0
+		if bfa = 1:bfa = 0
+		if bfc = 1:bfc = 0
 
 		if vnesh < vneshBoyB:
-			'<<$boyB>> did not call back.'
-			set bfB = 0
-		end
-
-		if vnesh >= vneshBoyB:
-			set ring = 1
-			set ringB = 1
+			bfB = 0
+			'Your boyfriend <<$boyB>> has not called you.'
+		else
+			ring = 1
+			ringB = 1
 			'<b><font color="red">The phone is ringing</font></b>'
 		end
 	end
 
 	if bfC = 1 and boydayC ! day and hour > 5 and hour < 20 and ringC = 0:
-		if bfa = 1:set bfa = 0
-		if bfb = 1:set bfb = 0
+		if bfa = 1:bfa = 0
+		if bfb = 1:bfb = 0
 
 		if vnesh < vneshBoyC:
-			'Your boyfriend has not called you.'
-			set bfC = 0
-		end
-
-		if vnesh >= vneshBoyC:
-			set ring = 1
-			set ringC = 1
+			'Your boyfriend <<$boyC>> has not called you.'
+			bfC = 0
+		else
+			ring = 1
+			ringC = 1
 			'<b><font color="red">The phone is ringing</font></b>'
 		end
 	end
@@ -208,9 +191,7 @@ if IvanPodstavaQW = 3 and hour >= 9 and hour <= 20:
 		'For you police patrol arrived and took you to court. You have managed to pay off its debt and you were released to reconcile the parties.'
 
 		act 'Get out of the courthouse':gt 'down'
-	end
-
-	if DolgRS > moneySUM:
+	else
 		DolgRS = 650000 - moneySUM - 60000
 		money = 0
 		karta = 0
@@ -246,12 +227,12 @@ if IvanPodstavaQW = 3 and hour >= 9 and hour <= 20:
 			stipuha =0
 			preg = 0
 			young_shop_work = 0
-			set student = 0
-			set kurs = 0
-			set semestr = 0
-			set abiturient = 0
-			set stipuha = 0
-			set lektor = 0
+			student = 0
+			kurs = 0
+			semestr = 0
+			abiturient = 0
+			stipuha = 0
+			lektor = 0
 			gs 'stat'
 
 			'Time dragged on too long. Your life and work was tedious and monotonous. You sewed quilted five years, had dinner in the dining room and went to sleep in the barracks surrounded by other women inmates. With your salary of 2, 000 rubles per month in 1000 listed on the debt repayment. But time does not stand still and still came an end to your suffering. You let go and gave 2,000 rubles. You took the train and came back to the city.'
@@ -275,7 +256,7 @@ if IvanPodstavaDay ! day and IvanPodstavaQW = 1 and hour >= 8 and hour <= 20:
 			minut += 60
 			IvanPodstavaQW = 2
 			gs 'stat'
-			'You opened the door to police wondering what they need from you. In the room were several men in uniform and with them several men in civilian clothes. Lean and skinny guy with stubble week and a pistol in a holster on a belt tied armpit said. "Understood, take your seats. Who will search in the apartment of the citizen who is accused of stealing." The investigator turned to you. "That´s a warrant for your arrest, this, this search warrant. Could you read it." Policemen full searched your apartment. Soon, one of them came out and said. Here are found the keys, according to the description it is just the keys to the office and the safe where the money was stolen. Witnesses signed the protocol that gave them the investigator. He frowned at you and nodded policeman, who started your hands behind your back and your wrists snap handcuffs.'
+			'You opened the door to police wondering what they need from you. In the room were several men in uniform and with them several men in civilian clothes. Lean and skinny guy with stubble week and a pistol in a holster on a belt tied armpit said. "Understood, take your seats. Who will search in the apartment of the citizen who is accused of stealing." The investigator turned to you. "That''s a warrant for your arrest, this, this search warrant. Could you read it." Policemen full searched your apartment. Soon, one of them came out and said. Here are found the keys, according to the description it is just the keys to the office and the safe where the money was stolen. Witnesses signed the protocol that gave them the investigator. He frowned at you and nodded policeman, who started your hands behind your back and your wrists snap handcuffs.'
 
 			act 'Go with the police':
 				cls
@@ -296,7 +277,7 @@ if IvanPodstavaDay ! day and IvanPodstavaQW = 1 and hour >= 8 and hour <= 20:
 					cls
 					minut += 60
 					gs 'stat'
-					'You were telling the investigator how everything was. As a manager Ivan Framed you. But the investigator listened to you in half an ear. Finally, he slammed his fist on the table and yelled at you, "I was not born yesterday, that would feed me such nonsense:If you will not cooperate, I´ll rot!" Policeman entered the room. The investigator nodded showing him you get her.'
+					'You were telling the investigator how everything was. As a manager Ivan Framed you. But the investigator listened to you in half an ear. Finally, he slammed his fist on the table and yelled at you, "I was not born yesterday, that would feed me such nonsense:If you will not cooperate, I''ll rot!" Policeman entered the room. The investigator nodded showing him you get her.'
 
 					act 'Go':gt 'kameraKPZ'
 				end
@@ -310,10 +291,11 @@ end
 if gopstop > 30:gt 'police', '1'
 
 if sick > 0 and doktorday ! day:
-	!'act 'Call a doctor':
+	!'
+	act 'Call a doctor':
 		cla
 		*clr
-		set minut += 15
+		minut += 15
 		doktorday = day
 		sick -= 5
 
@@ -323,7 +305,8 @@ if sick > 0 and doktorday ! day:
 		'Has come to you from the clinic and the doctor examined you. After examination, the doctor made a shot and you will become easier.'
 
 		act 'Move away':gt 'korr'
-	end'!
+	end
+	'!
 
 	act 'Call a doctor':doktorday = day & dynamic $polidin
 end
@@ -341,7 +324,7 @@ $ninel0 = {
 	act 'Pursue a doctorate in the bedroom and lay down':
 		cla
 		*clr
-		set ninelmet = 1
+		ninelmet = 1
 		'<center><img src="images/inBed/nadom0.jpg"></center>'
 		'The doctor sat on the edge of your bed and sprsil:'
 		'(Doctor) - On that complain of <<$name>>? Can I call you that?'
@@ -353,13 +336,13 @@ $ninel0 = {
 		act 'Undress':
 			cla
 			*clr
-			set minut += 5
-			set horny += 10
+			minut += 5
+			horny += 10
 			clr
 			gs 'stat'
 			'<center><img src="images/inBed/nadom1.jpg"></center>'
 			'You undressed and the doctor listened to your lungs for a long time. Her hands are cool and gentle touch and caress like a stethoscope ...'
-			'(Doctor) - Yes, wheezing ... Now open your mouth. That´s because - "ah-ah-ah" ...'
+			'(Doctor) - Yes, wheezing ... Now open your mouth. That''s because - "ah-ah-ah" ...'
 
 			act 'A-a-a':
 				cla
@@ -375,18 +358,18 @@ $ninel0 = {
 					'(Dr.) No, not so. Temperature should be measured rectally.'
 					'(You) - Uh-uh ...'
 					'(Doctor) - Do not be afraid, <<$name>>, is not painful.'
-					'(You) - Well if you´re sure ...'
-					'(Doctor) - I´m sure. Come on - lie down on his stomach and spread your hands buttocks.'
+					'(You) - Well if you''re sure ...'
+					'(Doctor) - I''m sure. Come on - lie down on his stomach and spread your hands buttocks.'
 
 					act 'Substitute ass':
 						cla
 						*clr
-						set minut += 10
-						set horny += 10
+						minut += 10
+						horny += 10
 						clr
 						gs 'stat'
 						'<center><img src="images/inBed/nadom2.jpg"></center>'
-						'You obediently roll over and substitute ass. Dr. lubricates your anus lubricated and deftly introduces a thermometer. You flinch, but not from pain and pleasure. Doctor leaves just stick a thermometer in your ass and slowly moves it back and forth and it´s very nice. You feel the growing excitement.'
+						'You obediently roll over and substitute ass. Dr. lubricates your anus lubricated and deftly introduces a thermometer. You flinch, but not from pain and pleasure. Doctor leaves just stick a thermometer in your ass and slowly moves it back and forth and it''s very nice. You feel the growing excitement.'
 
 						if horny >= 50:
 							act 'Moan with pleasure':
@@ -399,8 +382,8 @@ $ninel0 = {
 								act 'Roll over on his back':
 									cla
 									*clr
-									set minut += 15
-									set horny += 10
+									minut += 15
+									horny += 10
 									clr
 									gs 'stat'
 									'<center><img src="images/inBed/nadom5.jpg"></center>'
@@ -410,22 +393,23 @@ $ninel0 = {
 									act 'A blush of embarrassment':
 										cla
 										*clr
-										set horny += 15
-										!!set time += 15
 										clr
+										horny += 15
+										!!time += 15
+
 										gs 'stat'
 										'<center><img src="images/inBed/nadom6.jpg"></center>'
 										'You blush with embarrassment, but then fall below the hands of the doctor and she begins to caress your pussy'
 										'(You) - Doctor, what are you doing! - At the same time embarrassed, outraged and frightened screams you.'
-										'(Doctor) - Flying you, silly. I feel the magic in you, which means you´re one of us, and I can use his power quietly.'
-										'(You) - So you´re a magician, too?'
+										'(Doctor) - Flying you, silly. I feel the magic in you, which means you''re one of us, and I can use his power quietly.'
+										'(You) - So you''re a magician, too?'
 										'(Doctor) - Yes, only my special magic - Tantric. Heard of it?'
 										'(You) - No, I do not remember ...'
-										'(Doctor) - It´s magic, based on sensuality and sex. Roughly speaking, I can cast only when having sex.'
+										'(Doctor) - It''s magic, based on sensuality and sex. Roughly speaking, I can cast only when having sex.'
 										'(You) - So ..?'
 										'(Doctor) - That is, if we have sex with you - I heal you. Do you agree?'
 										'(You) - And what in return?'
-										'(Doctor) - Nothing - I´m doing it solely for my own satisfaction. I see you, have orgasms only if conjure.'
+										'(Doctor) - Nothing - I''m doing it solely for my own satisfaction. I see you, have orgasms only if conjure.'
 										'(You) - Then of course - I agree.'
 
 										act 'Surrender to the gentle hands Ninel':gt 'housecall', 'ninel2'
@@ -445,14 +429,14 @@ $ninel0 = {
 							act 'Doctor, what with me?':
 								cla
 								'(You scared) - Doctor, what with me?'
-								'(Dr.) Do you really flu. Now I´ll give you an injection of antibiotic and antipyretic, and you will feel better.'
+								'(Dr.) Do you really flu. Now I''ll give you an injection of antibiotic and antipyretic, and you will feel better.'
 
 								act 'Lie on your stomach and bare ass':
 									cla
 									*clr
-									set minut += 10
-									set sick -= 2
-									set lekar += 3
+									minut += 10
+									sick -= 2
+									lekar += 3
 									clr
 									gs 'stat'
 									'<center><img src="images/inBed/nadom4.jpg"></center>'
@@ -469,35 +453,35 @@ $ninel0 = {
 						act 'Doctor, what with me?':
 							cla
 							'(You scared) - Doctor, what with me?'
-							'(Doctor) - I´m afraid that you have angina, <<$name>>. I would advise you to inpatient treatment'
-							'(You) - What´s that - in the hospital, or what?'
+							'(Doctor) - I''m afraid that you have angina, <<$name>>. I would advise you to inpatient treatment'
+							'(You) - What''s that - in the hospital, or what?'
 							'(Doctor) - Yes'
 
 							act 'Refuse':
 								cla
 								*clr
 								'(You sobbing) - Oh, Doctor, I do not want to the hospital ...'
-								'(Doctor, thoughtfully) - Well ... I guess it is still possible. Then I´ll give you a couple of shots - to start ...'
+								'(Doctor, thoughtfully) - Well ... I guess it is still possible. Then I''ll give you a couple of shots - to start ...'
 								'(You) - Oh, thank you, doctor!'
 
 								act 'Lie on your stomach and bare ass':
 									cla
-									set minut += 15
-									set horny = 100
+									minut += 15
+									horny = 100
 									clr
 									gs 'stat'
 									'<center><img src="images/inBed/nadom9.jpg"></center>'
 									'The doctor made a few jabs you in the ass, and you suddenly enveloped incredible sexual arousal. Between her thighs you like the fire started, sweet pussy ached and flowed, grew heavy chest, nipples harden and solidify ...'
-									'(You) - Doctor, what´s happening? - Screams frightened and embarrassed you, but your voice treacherously breaks on voluptuous moan'
-									'(Doctor) - Yeah! I knew it - I can feel the magic in you, which means you´re one of us, and I can use his power quietly.'
-									'(You) - So you´re a magician too!.'
+									'(You) - Doctor, what''s happening? - Screams frightened and embarrassed you, but your voice treacherously breaks on voluptuous moan'
+									'(Doctor) - Yeah! I knew it - I can feel the magic in you, which means you''re one of us, and I can use his power quietly.'
+									'(You) - So you''re a magician too!.'
 									'(Doctor) - Yes, only my special magic - Tantric. Heard of it?'
 									'(You) - No, I do not remember ...'
-									'(Doctor) - It´s magic, based on sensuality and sex. Roughly speaking, I can cast only when having sex.'
+									'(Doctor) - It''s magic, based on sensuality and sex. Roughly speaking, I can cast only when having sex.'
 									'(You) - So ..?'
 									'(Doctor) - That is, if we have sex with you - I heal you. Do you agree?'
 									'(You) - And what in return?'
-									'(Doctor) - Nothing - I´m doing it solely for my own satisfaction. I see you, have orgasms only if conjure.'
+									'(Doctor) - Nothing - I''m doing it solely for my own satisfaction. I see you, have orgasms only if conjure.'
 									'(You) - Then of course - I agree.'
 
 									act 'Surrender to the gentle hands Ninel':gt 'housecall', 'ninel2'
@@ -516,7 +500,7 @@ $drPP = {
 	*clr
 	'You open the door. Standing in the doorway of an elderly bald man with a suitcase in hand meitsinskim.'
 	'(You) - Kha-kha ... Hello, Doctor'
-	'(Doctor) - Hello, sick - I´m Peter, your local therapist. Go back to bed - do not stand in the draft.'
+	'(Doctor) - Hello, sick - I''m Peter, your local therapist. Go back to bed - do not stand in the draft.'
 
 	act 'Hold a doctorate in the bedroom.':
 		cla
@@ -532,19 +516,19 @@ $drPP = {
 		act 'Undress':
 			cla
 			*clr
-			set minut += 5
+			minut += 5
 			clr
 			gs 'stat'
 			'<center><img src="images/inBed/drPP2.jpg"></center>'
 			'You undressed and Dr. vysnushival long your lungs '
-			'(Doctor) - So, sir. Now let´s look at the neck. Open your mouth wide and say "Ah-ah"'
+			'(Doctor) - So, sir. Now let''s look at the neck. Open your mouth wide and say "Ah-ah"'
 
 			act 'A-a-a':
 				cla
 				*clr
 				'<center><img src="images/inBed/drPP3.jpg"></center>'
 				'You opened your mouth and your doctor looked red sore throat'
-				'(Doctor) - Ay-ay-ay ... How is it you do that? Should be tempered, ill - tempered. Well, let´s measure your temperature.'
+				'(Doctor) - Ay-ay-ay ... How is it you do that? Should be tempered, ill - tempered. Well, let''s measure your temperature.'
 
 				act 'Put the thermometer armpit':
 					cla
@@ -554,13 +538,13 @@ $drPP = {
 
 					act 'Doctor, what with me?':
 						cla
-						'(Dr.) Do you have the flu, sick. Do not worry - I´ll give you a shot and you´ll feel better soon. Soak a couple of days in bed, drinketh drugs, and it becomes easier - to see me'
+						'(Dr.) Do you have the flu, sick. Do not worry - I''ll give you a shot and you''ll feel better soon. Soak a couple of days in bed, drinketh drugs, and it becomes easier - to see me'
 
 						act 'Substitute ass':
 							cla
 							*clr
-							set minut += 10
-							set sick -= 2
+							minut += 10
+							sick -= 2
 							lekarstvo += 3
 							gs 'stat'
 							'<center><img src="images/inBed/drPP5.jpg"></center>'
@@ -581,19 +565,14 @@ $drPP = {
 $polidin = {
 	cla
 	*clr
-
-	set minut += 15
-	set callrand = rand(0, 2)
-
-	if callrand = 0:'<center><img src="images/inBed/housecall.jpg"></center>'
-	if callrand = 1:'<center><img src="images/inBed/housecall1.jpg"></center>'
-	if callrand = 2:'<center><img src="images/inBed/housecall2.jpg"></center>'
-
+	minut += 15
+	callrand = rand(1, 3)
+	'<center><img src="images/inBed/housecall<<picrand>>.jpg"></center>'
 	'You dial the number several times clinics - there all the time busy.'
 
 	act 'Call again and again':
 		cla
-		'Finally, you´ve reached. Tired voice tube nurse replied:'
+		'Finally, you''ve reached. Tired voice tube nurse replied:'
 		'(Nurse) - Hello - reception ...'
 
 		act 'Hello ...':
@@ -604,16 +583,16 @@ $polidin = {
 			act 'Introduce':
 				cla
 				'(You) - Mi ... Kha-kha! Sorry ... <<$name>> <<$surname>>. Park Street apartment house 4 69 ... Aa-and-pchhi!'
-				'(Nurse) - It´s okay. Wait a minute.'
+				'(Nurse) - It''s okay. Wait a minute.'
 
 				act 'Wait':
 					cla
-					set minut += 5
+					minut += 5
 					clr
 					gs 'stat'
 					'You wait five minutes, occasionally coughing into the phone and finally hear:'
 					'(Nurse) - So - <<$name>> <<$surname>>. here is your card ... What are you worried?'
-					'(You) - Kha-kha-kha ... I´m sorry ... I have a fever and sore throat very. And cough and runny nose.'
+					'(You) - Kha-kha-kha ... I''m sorry ... I have a fever and sore throat very. And cough and runny nose.'
 					'(Nurse) - high temperature?'
 					'(You) - Yes, very - 39.2 ... Aa-pchhi!'
 					'(Nurse) - Right. Wait - the doctor will come to you.'
@@ -625,7 +604,7 @@ $polidin = {
 						act 'Is it possible to cause Ninel Pavlovna?':
 							cla
 							'(You) - Is it possible to cause Ninel Pavlovna? She regularly osmatrivat me.'
-							'(Nurse) - I´ll see if she is free.'
+							'(Nurse) - I''ll see if she is free.'
 							'(You) - Once again, thank you.'
 
 							act '...':gt 'housecall', 'ninel3'
@@ -635,32 +614,17 @@ $polidin = {
 					act 'Back to bed':
 						cla
 						*clr
-						set picrand = rand(0, 6)
-
-						if picrand = 0:'<center><img src="images/inBed/sick27.jpg"></center>'
-						if picrand = 1:'<center><img src="images/inBed/sick21.jpg"></center>'
-						if picrand = 2:'<center><img src="images/inBed/sick22.jpg"></center>'
-						if picrand = 3:'<center><img src="images/inBed/sick23.jpg"></center>'
-						if picrand = 4:'<center><img src="images/inBed/sick24.jpg"></center>'
-						if picrand = 5:'<center><img src="images/inBed/sick25.jpg"></center>'
-						if picrand = 6:'<center><img src="images/inBed/sick26.jpg"></center>'
-
-						set timerand = rand(0, 5)
-
-						if timerand = 0:set minut += 30
-						if timerand = 1:set minut += 60
-						if timerand = 2:set minut += 90
-						if timerand = 3:set minut += 120
-						if timerand = 4:set minut += 150
-						if timerand = 5:set minut += 180
-
+						picrand = rand(21, 27)
+						'<center><img src="images/inBed/sick21.jpg"></center>'
+						timerand = rand(1, 6)
+						minut += timerand * 30
 						'You are lying in bed, shivering in the chill and wrapped in a blanket. Time passes excruciatingly slow - you can not tell how much time passed before the doorbell rang.'
 
 						act 'Answer the door':
-							if ninel > 0 and sick <= 50:gt 'housecall', 'ninel1'
-
-							if ninel = 0 or sick > 50:
-								set doctrnd = rand(0, 1)
+							if ninel > 0 and sick <= 50:
+								gt 'housecall', 'ninel1'
+							elseif ninel = 0 or sick > 50:
+								doctrnd = rand(0, 1)
 
 								if doctrnd = 0:dynamic $drPP
 								if doctrnd = 1:gt 'housecall', 'ninel0'

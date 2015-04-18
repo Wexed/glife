@@ -4,7 +4,7 @@ gs 'stat'
 '<center><img src="images/qwest/alter/npc9.jpg"></center>'
 
 if kotovLoveQW > 0 and GorSlut > 0:
-	'Witek scowled and tells you "Slysh Svetsik, Th for garbage? We´re mutim, and then you tell me about you <<$gnikname>>. Whole town already know the boys with me neigh district. Ohuevshaya You bitch!"'
+	'Witek scowled and tells you "Slysh <<$name>>, Th for garbage? We''re mutim, and then you tell me about you <<$gnikname>>. Whole town already know the boys with me neigh district. Ohuevshaya You bitch!"'
 
 	act 'A scandal':
 		cls
@@ -22,7 +22,7 @@ if kotovLoveQW > 0 and GorSlut > 0:
 			sub += 20
 			GorSlut = 0
 			gs 'stat'
-			'You have started to convince Victor that all this gossip, do not have no foundation. Witek frowned, "I´ll knock your teeth these talkers, if ever even what you hear about the garbage. Do not worry, I pozatykayu these yapping mouths."'
+			'You have started to convince Victor that all this gossip, do not have no foundation. Witek frowned, "I''ll knock your teeth these talkers, if ever even what you hear about the garbage. Do not worry, I pozatykayu these yapping mouths."'
 
 			act 'Move away':gt $loc, $metka
 		end
@@ -33,14 +33,14 @@ end
 
 if $loc = 'gdksport':
 	if kotovKnowSport = 0:
-		'Vitek came up to you and hug her waist kissed. "Hi, Svetsik."'
+		'Vitek came up to you and hug her waist kissed. "Hi, <<$name>>."'
 
 		act 'What are you doing here?':
 			cls
 			gs 'stat'
 			'<center><b><font color="maroon"><<$npcName[9]>> <<$npcSurName[9]>></font></b></center>'
 			'<center><img src="images/qwest/alter/npc9.jpg"></center>'
-			'You asked Vic what he was doing. Witek snickered "You cho? Since I´ve been boxing for 11 years doing. Candidate Master of Sports is the second place in the championship held in the region."'
+			'You asked Vic what he was doing. Witek snickered "You cho? Since I''ve been boxing for 11 years doing. Candidate Master of Sports is the second place in the championship held in the region."'
 
 			act 'You drink, and even smoke!':
 				cls
@@ -48,31 +48,27 @@ if $loc = 'gdksport':
 				gs 'stat'
 				'<center><b><font color="maroon"><<$npcName[9]>> <<$npcSurName[9]>></font></b></center>'
 				'<center><img src="images/qwest/alter/npc9.jpg"></center>'
-				'Were you surprised Witek every day thumps and smokes as he combines with sports. Witek chuckled, "Ha. Coach says I have a talent. Kick like a cannon, and the reaction is great. It´s in my dad, who was a drunkard goner. 6t walker on the area and died of cirrhosis, but move into the jug could always so that flew from sneakers. course bluing slightly hampered, but what the fuck? tossed and I would drink and smoke, but in boxing, no dating and money, CCM is the ceiling. though I can wriggle inside, but the master of sports will not. I´ve on the region, took 2nd place, I beat the champion in the shit, he twice knocked down lying. And gave him the victory. So for me right now is boxing, so they do out of habit, but that would be in the form behave. "'
+				'Were you surprised Witek every day thumps and smokes as he combines with sports. Witek chuckled, "Ha. Coach says I have a talent. Kick like a cannon, and the reaction is great. It''s in my dad, who was a drunkard goner. 6t walker on the area and died of cirrhosis, but move into the jug could always so that flew from sneakers. course bluing slightly hampered, but what the fuck? tossed and I would drink and smoke, but in boxing, no dating and money, CCM is the ceiling. though I can wriggle inside, but the master of sports will not. I''ve on the region, took 2nd place, I beat the champion in the shit, he twice knocked down lying. And gave him the victory. So for me right now is boxing, so they do out of habit, but that would be in the form behave. "'
 
 				act 'Move away':gt $loc, $metka
 			end
 		end
-	end
-
-	if kotovKnowSport > 0:
-		'Vitek came up to you and hug her waist kissed. "Hi, Svetsik. Again I to practice."'
+	elseif kotovKnowSport > 0:
+		'Vitek came up to you and hug her waist kissed. "Hi, <<$name>>. Again I to practice."'
 
 		act 'Move away':gt $loc, $metka
 	end
-end
+elseif $loc = 'gskver':
+	'Witek you waving hand. "Come here <<$name>>."'
 
-if $loc = 'gskver':
-	'Witek you waving hand. "Come here Svetsik."'
-
-	act 'Sorry, I´m in a hurry':gt $loc, $metka
+	act 'Sorry, I''m in a hurry':gt $loc, $metka
 
 	act 'Step up':
 		cls
 		minut += 5
 		gs 'stat'
 		'<center><img src="images/qwest/alter/npc9.jpg"></center>'
-		'Witek pours beer into a plastic cup. "In short, <<$name>>, let´s have a cup pivasom."'
+		'Witek pours beer into a plastic cup. "In short, <<$name>>, let''s have a cup pivasom."'
 
 		act 'Drink beer':
 			cls
@@ -88,9 +84,9 @@ if $loc = 'gskver':
 				cls
 				gs 'stat'
 				'<center><img src="images/qwest/alter/npc9.jpg"></center>'
-				'Vitek came up to you and hugged, kissed her on the lips. "Slysh Svetsik, come to me."'
+				'Vitek came up to you and hugged, kissed her on the lips. "Slysh <<$name>>, come to me."'
 
-				if dom > 0:act 'Sorry, I´m in a hurry.':sub += 1 & gt $loc, $metka
+				if dom > 0:act 'Sorry, I''m in a hurry.':sub += 1 & gt $loc, $metka
 
 				act 'Go to Vit''ka.':
 					cls
@@ -99,12 +95,12 @@ if $loc = 'gskver':
 					'<center><img src="images/qwest/alter/npc9.jpg"></center>'
 					'You went through the square to the side where he lives Witek. Soon you with Vic came to a dilapidated house he opened the door and led you to the poor and not well-kept apartment in a room where clothes lying crumpled heaps on the floor was littered with empty bottles.'
 
-					act 'Next.':gt 'kotovSex'
+					act 'Next':gt 'kotovSex'
 				end
 			end
 		end
 
-		act 'Sorry, I´m in a hurry':gt $loc, $metka
+		act 'Sorry, I''m in a hurry':gt $loc, $metka
 	end
 end
 

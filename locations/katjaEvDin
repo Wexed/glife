@@ -9,8 +9,11 @@ $katja_shower_kiss = {
 	'<center><img src="images/qwest/alter/katja/showerkiss.jpg"></center>'
 	'Katja gently hugged you with one hand and kissed him on the lips, you feel her soft palm lay naked on your pubis and her thin finger fingering your clitoris began to caress him.'
 
-	if KatjaSlut >= 10:'Katja gently, but firmly puts you on the edge of the tub.'
-	if KatjaSlut < 10:'Katja gently caresses your clitoris with your fingers and her lips begin to kiss your neck, wading all below.'
+	if KatjaSlut >= 10:
+		'Katja gently, but firmly puts you on the edge of the tub.'
+	elseif KatjaSlut < 10:
+		'Katja gently caresses your clitoris with your fingers and her lips begin to kiss your neck, wading all below.'
+	end
 
 	act 'Sit on the edge of the tub':
 		cls
@@ -112,7 +115,7 @@ $d_katja_kuni = {
 		'You leaned Katja between his legs and began to lick her pussy, Katja moaned and closed her eyes enjoying your tongue, after a while Katja shivered and her pussy start to contract rhythmically, Katja clutched in your hair and not holding back moaning. Then she pushed your head away from you.'
 
 		if horny >= 50:
-			'Katja smiled at you "It was great Svetulya, Spread your legs."'
+			'Katja smiled at you "It was great <<$name>>, Spread your legs."'
 			dynamic $d_katja_kuni_p
 		else
 			act 'Say goodbye and go home':gt 'gorodok'
@@ -133,10 +136,10 @@ $d_katja_kuni_p = {
 
 		gs 'stat'
 		'<center><img src="images/qwest/alter/katja/kuni.jpg"></center>'
-		'Katja bowed his gololovu between your legs and you felt something like her tongue began to slide on your clitoris, You captured a pleasant bliss. After a while a nice fire in the bottom zhivyota sterpimy not become clogged and you`re in the throes of orgasm, after a while the feeling became too painful and you moved away from Katie.'
+		'Katja bowed his gololovu between your legs and you felt something like her tongue began to slide on your clitoris, You captured a pleasant bliss. After a while a nice fire in the bottom zhivyota sterpimy not become clogged and you''re in the throes of orgasm, after a while the feeling became too painful and you moved away from Katie.'
 
 		if KatjaHorny > 0:
-			'Katja smiled at you "It was great Svetulya, come on now you tell me."'
+			'Katja smiled at you "It was great <<$name>>, come on now you tell me."'
 			dynamic $d_katja_kuni
 		else
 			act 'Say goodbye and go home':gt 'gorodok'
