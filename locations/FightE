@@ -9,18 +9,14 @@ $resultUderDinE = {
 		'<<$nameE>> successfully captures you'
 
 		act '...':stoper = 0 & gt 'fightE1'
-	end
-
-	if Aktiv < Passiv:
+	elseif Aktiv < Passiv:
 		point += 1
 		Kz += 1
 		'<center><img src="images/pic/fight/fu1.jpg"></center>'
 		'<<$nameE>> you can not do anything and you turn.'
 
 		act '...':stoper = 0 & gt 'fightE3'
-	end
-
-	if Aktiv = Passiv:
+	elseif Aktiv = Passiv:
 		'<center><img src="images/pic/fight/f.jpg"></center>'
 		'You have two little turns and you are struggling without success.'
 
@@ -39,18 +35,14 @@ $resultBrosDinE = {
 		'<<$nameE>> successfully throws you'
 
 		act '...':stoper = 0 & gt 'fightE2'
-	end
-
-	if Aktiv < Passiv:
+	elseif Aktiv < Passiv:
 		point += 1
 		Kz += 1
 		'<center><img src="images/pic/fight/fu1.jpg"></center>'
 		'<<$nameE>> you can not do anything and you turn.'
 
 		act '...':stoper = 0 & gt 'fightE3'
-	end
-
-	if Aktiv = Passiv:
+	elseif Aktiv = Passiv:
 		'<center><img src="images/pic/fight/f.jpg"></center>'
 		'You have two little turns and you are struggling without success.'
 
@@ -79,23 +71,19 @@ if stoper < 3:
 			dynamic $uderdinE
 			dynamic $resultUderDinE
 			exit
-		end
-
-		if deystrand = 1:
+		elseif deystrand = 1:
 			dynamic $brosdinE
 			dynamic $resultBrosDinE
 			exit
 		end
 	else
-		'Refferi blows a whistle and throws you. End of round.'
+		'Referee blows a whistle and throws you. End of round.'
 
 		act 'up':gt 'RoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	point += 1
-	'Refferi blows a whistle and throws you. Time rivals to attack happened. You get one point.'
+	'Referee blows a whistle and throws you. Time rivals to attack happened. You get one point.'
 
 	act 'up':gt 'RoundStop'
 end

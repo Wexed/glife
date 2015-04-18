@@ -26,9 +26,7 @@ if crouch = 1:
 			'Opponent managed pressed to the floor and you can not perform a roll.'
 
 			act '...':gt 'fightfw'
-		end
-
-		if enrand = 1:
+		elseif enrand = 1:
 			point += 2
 			endurE -= 1
 			'<center><img src="images/pic/fight/crob.jpg"></center>'
@@ -49,9 +47,7 @@ if crouch = 1:
 			'Opponent is pressed to the floor and you will easily manage to fix it.'
 
 			act '...':gt 'fight2'
-		end
-
-		if enrand = 1:
+		elseif enrand = 1:
 			pointE += 1
 			endurE -= 1
 			'<center><img src="images/pic/fight/cronu.jpg"></center>'
@@ -60,7 +56,9 @@ if crouch = 1:
 			act '...':gt 'fight3'
 			end
 
-		if enrand = 2:''
+		elseif enrand = 2:
+			''
+		end
 	end
 else
  enrand = rand(0, 1)
@@ -81,9 +79,7 @@ else
 			'Opponent has no time to attempt a shot.'
 
 			act '...':gt 'fightE'
-		end
-
-		if enrand = 1:
+		elseif enrand = 1:
 			pointE += 1
 			endurE -= 1
 			'<center><img src="images/pic/fight/crou.jpg"></center>'
@@ -105,9 +101,7 @@ else
 			'Opponent easily captures and holds you throw.'
 
 			act '...':gt 'fightE2'
-		end
-
-		if enrand = 1:
+		elseif enrand = 1:
 			point += 1
 			endurE -= 1
 			'<center><img src="images/pic/fight/cronu.jpg"></center>'

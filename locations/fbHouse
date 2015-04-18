@@ -1,9 +1,10 @@
 # fbHouse
+cls
 gs 'stat'
 '<center><img src="images/qwest/alter/Ev/fbHouse.jpg"></center>'
 '<<$bname>> led you to your house and take you to your apartment. The apartment he put you on the couch and sat down next to you. <<$bname>> tilted towards your face'
 
-act 'tselovatsya':
+act 'Kiss':
 	cls
 	boy += 1
 	dick = rand(15, 25)
@@ -22,7 +23,7 @@ act 'tselovatsya':
 	horny += 10
 	gs 'stat'
 	'<center><img src="images/qwest/alter/Ev/fbhKiss.jpg"></center>'
-	'You started tselovatsya a man and he began to slowly undress you.'
+	'You started kissing a man and he began to slowly undress you.'
 
 	act 'Take by mouth':
 		cls
@@ -37,9 +38,7 @@ act 'tselovatsya':
 			pose = 1
 			$fbhactname = 'get cancer'
 			'<<$bname>> gently but firmly puts you on your feet and Tips'
-		end
-
-		if tiprand = 1:
+		else
 			pose = 0
 			$fbhactname = 'Lie on your back'
 			'<<$bname>> gently but firmly puts you on the back'
@@ -69,7 +68,7 @@ act 'tselovatsya':
 				minut += 5
 				gs 'stat'
 				'<center><img src="images/qwest/alter/Ev/fbhend.jpg"></center>'
-				'You began to brush up. <<$bname>> pretty dressed "I was glad to be with you even sit, but my business, I`m_sorry."'
+				'You began to brush up. <<$bname>> pretty dressed "I was glad to be with you even sit, but my business, I''m_sorry."'
 
 				act 'Leave':gt 'gorodok'
 			end

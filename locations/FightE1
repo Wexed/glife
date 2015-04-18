@@ -11,9 +11,7 @@ $resultUderDinE = {
 		'<<$nameE>> successfully keeps you'
 
 		act '...':gt 'fightE1'
-	end
-
-	if Aktiv < Passiv:
+	elseif Aktiv < Passiv:
 		point += 1
 		Kz += 1
 		'<center><img src="images/pic/fight/f2u2.jpg"></center>'
@@ -43,15 +41,13 @@ if stoper < 3:
 		dynamic $resultUderDinE
 		exit
 	else
-		'Refferi blows a whistle and throws you. End of round.'
+		'Referee blows a whistle and throws you. End of round.'
 
 		act 'up':gt 'RoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	pointE += 3
-	'Refferi blows a whistle and throws you. rival gets 3 points for successful retention.'
+	'Referee blows a whistle and throws you. rival gets 3 points for successful retention.'
 
 	act 'up':gt 'RoundStop'
 end

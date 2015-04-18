@@ -7,9 +7,7 @@ $resultUderDin = {
 		'You have successfully commit rival'
 
 		act '...':stoper = 0 & gt 'fight2'
-	end
-
-	if Aktiv <= Passiv:
+	elseif Aktiv <= Passiv:
 		pointE += 1
 		KzE += 1
 		'<center><img src="images/pic/fight/f3u2.jpg"></center>'
@@ -28,9 +26,7 @@ $resultBrosDin = {
 		'You have successfully throw the opponent'
 
 		act '...':stoper = 0 & gt 'fight1'
-	end
-
-	if Aktiv <= Passiv:
+	elseif Aktiv <= Passiv:
 		pointE + =1
 		KzE += 1
 		'<center><img src="images/pic/fight/f3u2.jpg"></center>'
@@ -68,17 +64,15 @@ if stoper < 3:
 			dynamic $resultBrosDin
 		end
 	else
-		'Refferi blows a whistle and throws you. End of round.'
+		'Referee blows a whistle and throws you. End of round.'
 
 		act 'up':gt 'RoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	pointE += 1
-	'Refferi blows a whistle and throws you. Your time to attack happened. <<$nameE>> receives one point.'
+	'Referee blows a whistle and throws you. Your time to attack happened. <<$nameE>> receives one point.'
 
-	act 'up':gt 'RoundStop'
+	act 'Get up':gt 'RoundStop'
 end
 
 --- fight3 ---------------------------------

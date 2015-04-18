@@ -7,18 +7,14 @@ $resultUderDin = {
 		'You have successfully commit rival'
 
 		act '...':stoper = 0 & gt 'fight2'
-	end
-
-	if Aktiv < Passiv:
+	elseif Aktiv < Passiv:
 		pointE += 1
 		KzE += 1
 		'<center><img src="images/pic/fight/f1u1.jpg"></center>'
 		'You can not do anything about my opponent flips.'
 
 		act '...':stoper = 0 & gt 'fight3'
-	end
-
-	if Aktiv = Passiv:
+	elseif Aktiv = Passiv:
 		'<center><img src="images/pic/fight/f1u2.jpg"></center>'
 		'You have two little turns and you are struggling without success.'
 
@@ -47,17 +43,15 @@ if stoper < 3:
 			dynamic $resultUderDin
 		end
 	else
-		'Refferi blows a whistle and throws you. End of round.'
+		'Referee blows a whistle and throws you. End of round.'
 
 		act 'up':gt 'RoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	pointE += 1
-	'Refferi blows a whistle and throws you. Your time to attack happened. <<$nameE>> receives one point.'
+	'Referee blows a whistle and throws you. Your time to attack happened. <<$nameE>> receives one point.'
 
-	act 'up':gt 'RoundStop'
+	act 'Get up':gt 'RoundStop'
 end
 
 --- fight1 ---------------------------------

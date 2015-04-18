@@ -25,23 +25,17 @@ $d_fbd_dormroom = {
 		if fbde <= 1:
 			'When you enter the room you will see, that here in the middle of a party, on the table there are bottles and snack, PTUshnik full walk. One of the guys got up to meet you "A, <<$bname>> Come, and introduced us to his girlfriend." <<$bname>> shook hands with the guys and introduced you after which you helped to sit down. Chairs was not enough and you sat down in the middle of the bed, sat on the one hand <<$bname>>, on the other hand are not familiar guy.'
 			dynamic $d_fbd_mass
-		end
-
-		if fbde = 2:
+		elseif fbde = 2:
 			'To the surprise of no one in the room and turned <<$bname>> quickly closed the door behind you and come to you hugged and kissed you.'
 			dynamic $d_fbd_regular
-		end
-
-		if fbde = 3:
+		elseif fbde = 3:
 			'The room was not familiar to you man. <<$bname>> greeted him and whispered something to him.'
 			tiprand = rand(1, 100)
 
 			if tiprand < 90:
 				'Not familiar guy changed his sneakers to boots and left the room saying goodbye.'
 				dynamic $d_fbd_regular
-			end
-
-			if tiprand >= 90:
+			elseif tiprand >= 90:
 				'Unfamiliar guy pulled out of the bag a bottle of vodka and a snack and you persistently sat on the bed, and the boys sat on both sides of you.'
 				dynamic $d_fbd_drunk
 			end
@@ -50,7 +44,7 @@ $d_fbd_dormroom = {
 }
 
 $d_fbd_regular = {
-	act 'tselovatsya':
+	act 'Kiss':
 		cls
 		boy += 1
 		dick = rand(15, 25)
@@ -69,10 +63,10 @@ $d_fbd_regular = {
 		horny += 10
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/fbdKiss.jpg"></center>'
-		'You started passionately tselovatsya a man and he began to slowly undress you.'
+		'You started passionately kissing a man and he began to slowly undress you.'
 		dynamic $d_fbd_blowhim
 
-		act 'continue tselovatsya':
+		act 'Continue kissing':
 			cls
 			minut += 5
 			horny += 10
@@ -83,14 +77,10 @@ $d_fbd_regular = {
 			if tiprand >= 80:
 				'<<$bname>> gently but firmly pressing on your shoulder tilt causing your face to his cock.'
 				dynamic $d_fbd_blowhim
-			end
-
-			if tiprand<80 and tiprand >= 40:
+			elseif tiprand<80 and tiprand >= 40:
 				'<<$bname>> took you by the shoulders and put it on the back'
 				dynamic $d_fbd_miss
-			end
-
-			if tiprand < 40:
+			elseif tiprand < 40:
 				'<<$bname>> you took the waist and put the cancer'
 				dynamic $d_fbd_dog
 			end
@@ -111,9 +101,7 @@ $d_fbd_blowhim = {
 		if tiprand = 0:
 			'<<$bname>> took you by the shoulders and put it on the back'
 			dynamic $d_fbd_miss
-		end
-
-		if tiprand = 1:
+		elseif tiprand = 1:
 			'<<$bname>> you took the waist and put the cancer'
 			dynamic $d_fbd_dog
 		end
@@ -137,14 +125,10 @@ $d_fbd_miss = {
 		if tiprand < 70:
 			dynamic $sexcum
 			dynamic $d_fbd_end
-		end
-
-		if tiprand >= 50 and tiprand < 70:
+		elseif tiprand >= 50 and tiprand < 70:
 			'<<$bname>> you took the waist and put the cancer'
 			dynamic $d_fbd_dog
-		end
-
-		if tiprand >= 70:
+		elseif tiprand >= 70:
 			'<<$bname>> suddenly came out of you and climbed nimbly on your chest'
 			dynamic $d_fbd_face
 		end
@@ -169,14 +153,10 @@ $d_fbd_dog = {
 			dynamic $sexcum
 			gs 'stat'
 			dynamic $d_fbd_end
-		end
-
-		if tiprand >= 50 and tiprand < 70:
+		elseif tiprand >= 50 and tiprand < 70:
 			'<<$bname>> You went out of your way and pressed, you had to lie on his stomach'
 			dynamic $d_fbd_anal
-		end
-
-		if tiprand >= 70:
+		elseif tiprand >= 70:
 			'<<$bname>> suddenly came out of you, put you on the back and climbed nimbly on your chest'
 			dynamic $d_fbd_face
 		end
@@ -212,9 +192,7 @@ $d_fbd_anal = {
 		if tiprand >= 70:
 			'<<$bname>> suddenly came out of you, put you on the back and climbed nimbly on your chest'
 			dynamic $d_fbd_face
-		end
-
-		if tiprand < 70:
+		elseif tiprand < 70:
 			cumass += 1
 			gs 'stat'
 			'<<$bname>> groaned and you felt something warm as it was the seed fill your ass.'
@@ -403,7 +381,7 @@ $d_fbd_threesome = {
 						cumlip += 1
 						gs 'stat'
 						'<center><img src="images/qwest/alter/Ev/fbdrcum.jpg"></center>'
-						'Suddenly you hit on the lips warm . The second guy started razryazhatsya your mouth. You`re standing on my knees smeared with sperm in the face and look up at the guys.'
+						'Suddenly you hit on the lips warm . The second guy started razryazhatsya your mouth. You''re standing on my knees smeared with sperm in the face and look up at the guys.'
 						dynamic $d_fbd_end
 					end
 				end

@@ -1,14 +1,14 @@
 # fbDorm
 gs 'stat'
 gs 'fbDormD'
-'<<$bname>> led you to ptushnoy hostel. "what, let`s go to my room."'
+'<<$bname>> led you to ptushnoy hostel. "what, let''s go to my room."'
 dynamic $d_fbd_start
 
 	act 'Ehmm... I changed my mind':
 		cls
 		minut += 5
 		gs 'stat'
-		'Seeing that <<$bname>> brought you to the hostel you decide to retreat until it`s too late. <<$bname>> began to persuade you, promising that everything will be fine, nobody knows.'
+		'Seeing that <<$bname>> brought you to the hostel you decide to retreat until it''s too late. <<$bname>> began to persuade you, promising that everything will be fine, nobody knows.'
 
 		if dom > 0:
 			'But you were adamant .'

@@ -10,9 +10,7 @@ $resultUderDin = {
 		'You have successfully hold rival'
 
 		act '...':gt 'fight2'
-	end
-
-	if Aktiv < Passiv:
+	elseif Aktiv < Passiv:
 		pointE += 1
 		KzE += 1
 		'<center><img src="images/pic/fight/f2u2.jpg"></center>'
@@ -45,17 +43,15 @@ if stoper < 3:
 			dynamic $resultUderDin
 		end
 	else
-		'Refferi blows a whistle and throws you. End of round.'
+		'Referee blows a whistle and throws you. End of round.'
 
 		act 'up':gt 'RoundEnd'
 	end
-end
-
-if stoper >= 3:
+elseif stoper >= 3:
 	point += 3
-	'Refferi blows a whistle and throws you. Your time to attack happened. For the successful holding you get immediately 3 points.'
+	'Referee blows a whistle and throws you. Your time to attack happened. For the successful holding you get immediately 3 points.'
 
-	act 'up':gt 'RoundStop'
+	act 'Get up':gt 'RoundStop'
 end
 
 --- fight2 ---------------------------------
