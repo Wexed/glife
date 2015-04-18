@@ -19,14 +19,14 @@ if $ARGS[0] = 'start':
 	set evrand = rand(0, 100)
 
 	if evrand >= 80 and skin > 0 and lesbiQW = 0:
-		'In the boutique you see a stylish and slender woman forty years.'
+		'In the boutique you see a stylish and slender woman ,with about forty years old.'
 
 		act 'Stare at the woman.':gt 'event', 'lesbi'
 	end
 
 	if QWdogreiqTimer = 0 and QWdogReiq = 1 and week = 7 and qwdogiventday ! day:
 		qwdogiventday = day
-		'Going into the boutique you start hanging on rassmatrevat veshlkah plate.Vzyav one you try on in passing it back and hang with mild grimassy brezglivosti.Neozhidanno attracts your attention One of the dresses, began to study it more closely kakoeto you feel a strange feeling as if you are looking for:'
+		'Going into the boutique you begin to consider picking dresses on hangers.By casually taking one you try it on in passing it on your back ,you hang with mild grim face.One of the dresses unexpectedly attracts your attention , as you began to study it more closely ,you feel a strange feeling as if you were being watched'
 
 		act 'Disregard':gt 'butik', 'start'
 		act 'Look around':dynamic $butikreiqdi
@@ -36,14 +36,14 @@ if $ARGS[0] = 'start':
 
 	if RimmaSex > 0:
 		if rimmaday ! day:
-			'Apartment <a href="exec:gt ''RimmaSexQW''">Rima</a> you smiled and bit his lip and started shooting eyes in your direction.'
+			'<a href="exec:gt ''RimmaSexQW''">Rima</a> smiled at you. She bits her lip and starts shooting her eyes in your direction.'
 		else
-			'Rima smiled at you and do business.'
+			'Rima smiled at you and continued to do her business.'
 		end
 	end
 
 	if palto < 3:
-		'The boutique sells fur coat for winter - 50,000 rubles'
+		'The boutique sells a fur coat for winter - 50,000 rubles'
 
 		if money >= 50000:
 			act 'Buy a fur coat (50,000 rubles)':
