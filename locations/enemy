@@ -1,15 +1,12 @@
 # enemy
-!!Calculation of the enemy''s attack
-
-!!in this block is selected on the basis of the variable program enemy attacks
+!!Calculation of the enemy`s attack
 if $ARGS[0] = 'start':
 	cla
-
-	if program = 0:xgt 'enemy', 'fighter'
-	if program = 1:xgt 'enemy', 'fighter2'
-	if program = 2:xgt 'enemy', 'fighter3'
-	if program = 3:xgt 'enemy', 'fighter4'
-	if program = 4:xgt 'enemy', 'fighter5'
+	if program = 0: xgt 'enemy', 'fighter'
+	if program = 1:	xgt 'enemy', 'fighter2'
+	if program = 2: xgt 'enemy', 'fighter3'
+	if program = 3: xgt 'enemy', 'fighter4'
+	if program = 4: xgt 'enemy', 'fighter5'
 
 	if program = 5:xgt 'enemy', 'kisame'
 	if program = 6:xgt 'enemy', 'tobi'
@@ -54,7 +51,7 @@ if $ARGS[0] = 'hidan':
 		'<b><font color="red"><<$nameV>> yells "You will die a blasphemer!" and throws you in his scythe trehlezviynuyu driving it by a line.</font></b>'
 
 		if klon > 0:klon = 0 & '<b><font color="red">Your clones turned into steam from the blow spit. <<$nameV>> yells "I IMMORTAL Ravager! And YOU SHIT!"</font></b>'
-		if tuman > 0:tuman = 0 & '<b><font color="red"><<$nameV>> yells "You''re pathetic in their vain attempts SPRYATATSYA FROM ME!"</font></b>'
+		if tuman > 0:tuman = 0 & '<b><font color="red"><<$nameV>> yells "You´re pathetic in their vain attempts SPRYATATSYA FROM ME!"</font></b>'
 
 		xgt 'atakA1', 'atak'
 		exit
@@ -202,12 +199,12 @@ if $ARGS[0] = 'tobi':
 	elseif unmaterialV <= 2 and IzanagiV = 0 and GedoMazo > 0 and TobiStena = 1:
 		mannaV += 6000
 		TobiStena = 2
-		'<b><font color="red"><<$nameV>> makes the magic sign and you feel like it''s magical energy increases sharply.</font></b>'
+		'<b><font color="red"><<$nameV>> makes the magic sign and you feel like it´s magical energy increases sharply.</font></b>'
 		xgt 'fight', 'sta'
 		exit
 	elseif stun > 0:
 		magweapbonusV = 2000
-		'<b><font color="red"><<$nameV>> triumphantly said, "Now you''re dead."</font></b>'
+		'<b><font color="red"><<$nameV>> triumphantly said, "Now you´re dead."</font></b>'
 		'<b><font color="red">He grabs you by the throat and lifts his hand in the air.</font></b>'
 		'<b><font color="red">His fingers like steel and they squeeze your throat with terrible force.</font></b>'
 		xgt 'atak', 'enemy'

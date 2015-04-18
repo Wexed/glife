@@ -5,7 +5,13 @@ $din_gop_double_bj = {
 		minut += 5
 		horny += 10
 		bj += 2
-		guy += 2
+		guy += 1
+
+		if boynumBlock = 0:guy += 1
+		if boynumBlock > 0 and bmTOTSEX[Tboynum] = 0:guy += 1
+
+		bmBJ[Tboynum] += 1
+		bmGANG[Tboynum] += 1
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/gop6.jpg"></center>'
 		'You obediently opened his mouth and the guys immediately inserted you both cocks into her mouth, stretching it to the limit. You started to suck two hard and hot cock in turn.'
@@ -31,7 +37,7 @@ $din_gop_end = {
 		manna -= 30
 
 		if GorSlut < 3:GorSlut = 3
-
+		bmGossip[Tboynum] = 3
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/gop8.jpg"></center>'
 		'You sit on a stump occurred stunned and out of your mouth dripping thin trailing jet sperm. You sluggish notice that the sperm gets into your clothing. Men poured vodka into cups and drank again. One chuckled looking at you "Very best cocksucker you found. Not bad she patted his lips elde me." Second laughed, "Look vaflersha sits struhnyu relishes." The third said thoughtfully, "We have to give the lads announced, so as not to zashkvarilis vaflersha."'
@@ -48,7 +54,7 @@ $din_gop_end2 = {
 		manna -= 30
 
 		if GorSlut < 4:GorSlut = 4
-
+		bmGossip[Tboynum] = 4
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/gop8.jpg"></center>'
 		'Your feet are tired and podgibayutsya, you do not stand up and sit down on the ground, out of your mouth dripping thin trailing jet sperm. You sluggish notice that the sperm gets into your clothing. Men poured vodka into cups and drank again. One chuckled looking at you "Klasnaya pacifier you found. Not bad she patted his lips elde me." Second laughed, "Look, bitch still a can not come." The third said thoughtfully, "We have to give the lads announced, so as not to zashkvarilis slut."'
@@ -65,7 +71,7 @@ gs 'stat'
 if GorSlut < 3:
 	'You went out with a guy from the club he led the club for you. There has flopped his two pals. On the ground, there was a bottle of vodka and plastic cups. The guy said "I <<$bname>> is <<$bname2>> and <<$bname3>>." You introduced "I <<$name>>." <<$bname2>> took a bottle and a plastic cup. He drunk, uncertain movements poured vodka into a glass, then handed the cup to you.'
 
-	act 'Drink.':
+	act 'Drink':
 		cls
 		minut += 5
 		alko += 2
@@ -146,7 +152,11 @@ if GorSlut < 3:
 					minut += 5
 					horny += 10
 					bj += 1
-					guy += 1
+
+					if boynumBlock = 0:guy += 1
+					if boynumBlock > 0 and bmTOTSEX[Tboynum] = 0:guy += 1
+
+					bmBJ[Tboynum] += 1
 					gs 'stat'
 					'<center><img src="images/qwest/alter/Ev/gop2.jpg"></center>'
 					'You covered apatite and you were sitting on a stump looking at cock. <<$bname>> taking a member of the hand you held them to her lips. You have opened my mouth, that would be indignant and immediately his cock slapped his crimson head of your wet tongue. Another second and his cock was in your mouth.'
@@ -227,24 +237,33 @@ if GorSlut < 3:
 					horny += 10
 					sex += 1
 					$boy = $bname
-					guy += 1
+
+					if boynumBlock = 0:guy += 1
+					if boynumBlock > 0 and bmTOTSEX[Tboynum] = 0:guy += 1
+
+					bmSEX[Tboynum] += 1
 					gs 'stat'
 					'<center><img src="images/qwest/alter/Ev/gopd.jpg"></center>'
 					'<<$bname>> bent you and you grabbed his hands for something that would not fall.'
 					dynamic $sexstart
 					dynamic $sexstart2
 					dynamic $sexcum
-					'Male member removed his pants and said, "Guys, you can use davalkoy."'
+					'Male removed the cock in his pants and said "Guys, you can use davalkoy."'
 
 					act 'Further':
 						cls
 						minut += 5
 						horny += 10
 						sex += 1
-						guy += 2
+						guy += 1
+
+						if boynumBlock = 0:guy += 1
+						if boynumBlock > 0 and bmTOTSEX[Tboynum] = 0:guy += 1
+
 						bj += 1
-						$boy = $bname3
 						cumlip += 1
+						$boy = $bname3
+						bmGANG[Tboynum] += 1
 						gs 'stat'
 						'<center><img src="images/qwest/alter/Ev/gopd2.jpg"></center>'
 						'<<$bname2>> come up to you and you saw him naked dick, though you tried to do something, but he grabbed you by the hair and then in your mouth was his cock. <<$bname3>> podeshel back to you and you feel his hands on your hips.'
@@ -258,9 +277,7 @@ if GorSlut < 3:
 			end
 		end
 	end
-end
-
-if GorSlut >= 3:
+elseif GorSlut >= 3:
 	'You went out with a guy from the club he led the club for you. There has flopped his two pals. On the ground, there was a bottle of vodka and plastic cups. The guy said "I <<$bname>> is <<$bname2>> and <<$bname3>>. Incidentally, I know that You are the light spot <<$gnikname>>. Shortly not pull the rubber, take on the canine."'
 	$din_gop_slut_triple_bj = {
 		act 'Squat':
@@ -268,7 +285,13 @@ if GorSlut >= 3:
 			minut += 5
 			horny += 10
 			bj += 3
-			guy += 3
+			guy += 2
+
+			if boynumBlock = 0:guy += 1
+			if boynumBlock > 0 and bmTOTSEX[Tboynum] = 0:guy += 1
+
+			bmBJ[Tboynum] += 1
+			bmGANG[Tboynum] += 1
 			sub += 1
 			gs 'stat'
 			'<center><img src="images/qwest/alter/Ev/gopdbj.jpg"></center>'
@@ -307,7 +330,7 @@ if GorSlut >= 3:
 			health -= 10
 			sub += 1
 			gs 'stat'
-			'You refused and the guy rassviripel. "What, are you a slut ohuel Yes I´m now eblische smash!" After these words, he shoots you in the stomach with his fist. You gasp in pain and doubled over. "What thing? Mind? Or you otpizdet and then shove a bottle in the ass?"'
+			'You refused and the guy was furious. "What, are you a slut ohuel Yes I''m now eblische smash!" After these words, he shoots you in the stomach with his fist. You gasp in pain and doubled over. "What thing? Mind? Or you otpizdet and then shove a bottle in the ass?"'
 			dynamic $din_gop_slut_triple_bj
 
 			if dom >= 5:
@@ -319,7 +342,7 @@ if GorSlut >= 3:
 					zub += 1
 					GorSlut = 2
 					gs 'stat'
-					'You guys spit searing his feet Vzlyad "Fuck you dick on the boy." Immediately rang in my head and realized that you are lying on the ground. Very much a toothache, you spit on the ground and saw that you´re bleeding on the ground and lay your tooth that you just knocked out. The guy jumped in beshensve to you, but he never dared to "Go here for dick, slut."'
+					'You guys spit searing his feet Vzlyad "Fuck you dick on the boy." Immediately rang in my head and realized that you are lying on the ground. Very much a toothache, you spit on the ground and saw that you''re bleeding on the ground and lay your tooth that you just knocked out. The guy jumped in beshensve to you, but he never dared to "Go here for dick, slut."'
 					act 'Leave':gt 'gdk'
 				end
 			end

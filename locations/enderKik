@@ -1,18 +1,19 @@
 # enderKik
+!!CV extension: Rewrite of the winning announcement
 if $ARGS[0] = 'win':
-	!!set KikWin = KikWin + 1
-	set pointKik = 0
-	set pointKikV = 0
-	set round = 0
-	set minround = 0
+	!!KikWin = KikWin + 1
+	pointKik = 0
+	pointKikV = 0
+	round = 0
+	minround = 0
 
-	if health < 10:set health = 10
+	if health < 10:health = 10
 
 	cla
 	*clr
 
 if profi = 1:
-	set profi = 0
+	profi = 0
 	'<center><img src="images/community/kickboxing_speaker.jpg"></center>'
 	'Time to the announcement ...'
 
@@ -20,8 +21,8 @@ if profi = 1:
 		if $ARGS[0] = 'win':
 			'<center><img src="images/community/kickboxing_win.jpg"></center>'
 			'Congratulations! You win!'
-			set KikWinPro += 1
-			set rikudo += 5
+			KikWinPro += 1
+			rikudo += 5
 		end
 
 		if $ARGS[0] = 'winKO':
@@ -29,27 +30,27 @@ if profi = 1:
 			'Congratulations! You win!'
 			'And it is a knockout!'
 
-			set KikWinPro += 1
-			set KikWinProKO += 1
-			set rikudo += 10
+			KikWinPro += 1
+			KikWinProKO += 1
+			rikudo += 10
 		end
 
 		if $ARGS[0] = 'loss':
 			'<center><img src="images/community/kickboxing_loss.jpg"></center>'
 			'You lose.'
-			set KikLossPro += 1
+			KikLossPro += 1
 		end
 
 		if $ARGS[0] = 'lossKO':
 			'<center><img src="images/community/kickboxing_loss_ko.jpg"></center>'
 			'Suddendly the room starts getting darker and darker ...'
-			set KikLossPro += 1
-			set KikLossProKO += 1
+			KikLossPro += 1
+			KikLossProKO += 1
 		end
 
 		if $ARGS[0] = 'draw':
 			'And it is a draw !'
-			set KikDrawPro += 1
+			KikDrawPro += 1
 		end
 
 		act 'Leave the ring':gt 'fit', 'razd'
@@ -57,7 +58,7 @@ if profi = 1:
 end
 
 if amateur = 1:
-	set amateur = 0
+	amateur = 0
 
 	'<center><img src="images/community/kickboxing_speaker.jpg"></center>'
 	'Time to the announcement ...'
@@ -71,11 +72,11 @@ if amateur = 1:
 			'<center><img src="images/community/kickboxing_win.jpg"></center>'
 			'Congratulations! You win!'
 
-			set KikWinAm += 1
-			set amateur = 0
-			set amatReit += 1
-			set money += 500 + kikmoney
-			set rikudo += 5
+			KikWinAm += 1
+			amateur = 0
+			amatReit += 1
+			money += 500 + kikmoney
+			rikudo += 5
 			'You handed over a prize of 500 rubles.'
 			gs 'razrKik'
 		end
@@ -91,10 +92,10 @@ if amateur = 1:
 
 			KikWinAm += 1
 			KikWinAmKO += 1
-			set amatReit += 1
-			set amateur = 0
-			set money += 500
-			set rikudo += 10
+			amatReit += 1
+			amateur = 0
+			money += 500
+			rikudo += 10
 			'You handed over a prize of 500 rubles.'
 		end
 
@@ -105,8 +106,8 @@ if amateur = 1:
 			'Time to the announcement ...'
 			'<center><img src="images/community/kickboxing_loss.jpg"></center>'
 			'You lose.'
-			set KikLossAm += 1
-			if amatReit > 0:set amatReit -= 1
+			KikLossAm += 1
+			if amatReit > 0:amatReit -= 1
 		end
 
 		if $ARGS[0] = 'lossKO':
@@ -116,9 +117,9 @@ if amateur = 1:
 			'Time to the announcement ...'
 			'<center><img src="images/community/kickboxing_loss_ko.jpg"></center>'
 			'Suddendly the room starts getting darker and darker ...'
-			set KikLossAm += 1
-			set KikLossAmKO += 1
-			if amatReit > 0:set amatReit -= 1
+			KikLossAm += 1
+			KikLossAmKO += 1
+			if amatReit > 0:amatReit -= 1
 		end
 
 		if $ARGS[0] = 'draw':
@@ -127,7 +128,7 @@ if amateur = 1:
 			'<center><img src="images/community/kickboxing_speaker.jpg"></center>'
 			'Time to the announcement ...'
 			'And it is a draw !'
-			set KikDrawAm += 1
+			KikDrawAm += 1
 		end
 
 		act 'Leave the ring':gt 'fit', 'razd'
@@ -135,7 +136,7 @@ if amateur = 1:
 end
 
 if sparing = 1:
-	set sparing = 0
+	sparing = 0
 
 	if $ARGS[0] = 'win':
 		'<center><img src="images/community/kickboxing_rival.jpg"></center>'
@@ -177,5 +178,6 @@ if sparing = 1:
 	exit
 
 end
+!!
 
 --- enderKik ---------------------------------

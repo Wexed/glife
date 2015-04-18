@@ -10,29 +10,21 @@ if resultFight = 0:
 	rating[1] += 2
 	rating[i] -= 5
 	!!You won the surrender
-end
-
-if resultFight = 1:
+elseif resultFight = 1:
 	wipo[1] += 1
 	rating[1] += 1
 	rating[i] -= 3
 	!!you won
-end
-
-if resultFight = 2:
+elseif resultFight = 2:
 	rating[1] -= 1
 	rating[i] -= 1
 	!!draw
-end
-
-if resultFight = 3:
+elseif resultFight = 3:
 	wipo[i] += 1
 	rating[1] -= 3
 	rating[i] += 1
 	!!you lost
-end
-
-if resultFight = 4:
+elseif resultFight = 4:
 	wipo[i] += 2
 	wipo[1] -= 1
 	rating[1] -= 5
@@ -44,13 +36,9 @@ act '...':gt $loc
 
 if Ku > Kb:
 	if Ku > Kz:Uteh[1] += 10
-end
-
-if Kb > Ku:
+elseif Kb > Ku:
 	if Kb > Kz:Bteh[1] += 10
-end
-
-if Kz > Kb:
+elseif Kz > Kb:
 	if Kz > Ku:Zteh[1] += 10
 end
 
@@ -82,9 +70,7 @@ if resultFight = 0:
 	SubWin[a] += 1
 	loss[i] += 1
 	SubLoss[i] += 1
-end
-
-if resultFight = 1:
+elseif resultFight = 1:
 	wipo[a] += 1
 	rating[a] += 1
 	rating[i] -= 3
@@ -103,9 +89,7 @@ if resultFight = 1:
 	$spisok[i] += '<<$nameA>> <<win[a]>>-<<loss[a]>>-<<draw[a]>> <<SubWin[a]>>/<<SubLoss[a]>> vs <<$nameE>> <<win[i]>>-<<loss[i]>>-<<draw[i]>> <<SubWin[i]>>/<<SubLoss[i]>> <font color="red">defeat</font>'
 	win[a] += 1
 	loss[i] += 1
-end
-
-if resultFight = 2:
+elseif resultFight = 2:
 	rating[a] -= 1
 	rating[i] -= 1
 	'<b>The result of the fight a draw</b>'
@@ -113,9 +97,7 @@ if resultFight = 2:
 	$spisok[i] += '<<$nameA>> <<win[a]>>-<<loss[a]>>-<<draw[a]>> <<SubWin[a]>>/<<SubLoss[a]>> vs <<$nameE>> <<win[i]>>-<<loss[i]>>-<<draw[i]>> <<SubWin[i]>>/<<SubLoss[i]>> <font color="black">draw</font>'
 	draw[a] += 1
 	draw[i] += 1
-end
-
-if resultFight = 3:
+elseif resultFight = 3:
 	wipo[i] += 1
 	rating[a] -= 3
 	rating[i] += 1
@@ -136,9 +118,7 @@ if resultFight = 3:
 	$spisok[i] += '<<$nameA>> <<win[a]>>-<<loss[a]>>-<<draw[a]>> <<SubWin[a]>>/<<SubLoss[a]>> vs <<$nameE>> <<win[i]>>-<<loss[i]>>-<<draw[i]>> <<SubWin[i]>>/<<SubLoss[i]>> <font color="green">victory</font>'
 	win[i] += 1
 	loss[a] += 1
-end
-
-if resultFight = 4:
+elseif resultFight = 4:
 	wipo[i] += 2
 	wipo[a] -= 1
 	rating[a] -= 5

@@ -4,7 +4,7 @@ $din_otel_man_end = {
 		cls
 		minut += 15
 		gs 'stat'
-		'Have you started to brush up. <<$bname>> stretched and rolled over on the bed. "It was great Svetsik."'
+		'Have you started to brush up. <<$bname>> stretched and rolled over on the bed. "It was great <<$name>>."'
 
 		if cumface > 0:cumface = 0 & 'You found napkins and wiped off the face of the sperm.'
 		if cumanus > 0:'Have you tried to wipe the cum with his buttocks, but how could you not wiped out of your anus still leaking sperm.'
@@ -18,9 +18,11 @@ $din_otel_man_blow = {
 	act 'Squat':
 		cls
 		bj += 1
-		guy += 1
+		if boynumBlock = 0:guy += 1
+		if boynumBlock > 0 and bmTOTSEX[Tboynum] = 0:guy += 1
 		sub += 1
 		minut += 10
+		bmBJ[Tboynum] += 1
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/bj.jpg"></center>'
 		'You squatted in front of the man and took his cock hand. Slightly moving the skin on the penis you licked the head. Your nimble tongue began to caress hot and hard cock male. <<$bname>> said "<<$name>>, I will soon be over."'
@@ -59,8 +61,9 @@ $din_otel_man_blow = {
 		act 'Substitute ass':
 			cls
 			minut += 30
-			$boy = $bname
 			cumanus += 1
+			$boy = $bname
+			bmANAL[Tboynum] += 1
 			gs 'stat'
 			'<center><img src="images/qwest/alter/Ev/anal.jpg"></center>'
 			dynamic $sexstart
@@ -73,6 +76,7 @@ $din_otel_man_blow = {
 			minut += 30
 			!!sex += 1
 			$boy = $bname
+			bmSEX[Tboynum] += 1
 			gs 'stat'
 			'<center><img src="images/qwest/alter/Ev/sex.jpg"></center>'
 			'You lay on your back. <<$bname>> lay on top and spread your legs.'
@@ -113,20 +117,18 @@ $din_otel_man_beforesex = {
 
 						act 'Leave':gt 'vokzalG'
 
-						end
 					end
 				end
+			elseif tiprandeom = 2:
+				'<center><img src="images/qwest/alter/Ev/otel.jpg"></center>'
+				'<<$bname>> interested, "Really? Are you a virgin? Piatihatki I will give you, if you show me your pussy"'
 
-				if tiprandeom = 2:
-					'<center><img src="images/qwest/alter/Ev/otel.jpg"></center>'
-					'<<$bname>> interested, "Really? Are you a virgin? Piatihatki I will give you, if you show me your pussy"'
-
-					if dom > 0:
-						act 'Not even hope':
+				if dom > 0:
+					act 'Not even hope':
 						cls
 						sub += 1
 						gs 'stat'
-						'You laughed and refused to man. <<$bname>> scratching his head, "Well then, can pososesh? Piatihatki I´ll give you."'
+						'You laughed and refused to man. <<$bname>> scratching his head, "Well then, can pososesh? Piatihatki I''ll give you."'
 
 						act 'Come on':
 							cls
@@ -147,13 +149,14 @@ $din_otel_man_beforesex = {
 					money += 500
 					gs 'stat'
 					'<center><img src="images/qwest/alter/Ev/kiska.jpg"></center>'
-					'You undressed and showed her pussy man. He considered with interest you. "Cool. Listen. I´ll give you five pieces if you let me be your first boyfriend."'
+					'You undressed and showed her pussy man. He considered with interest you. "Cool. Listen. I''ll give you five pieces if you let me be your first boyfriend."'
 
 					act 'Agree.':
 						cls
 						minut += 30
 						!!sex += 1
 						$boy = $bname
+						bmSEX[Tboynum] += 1
 						money += 5000
 						gs 'stat'
 						'<center><img src="images/qwest/alter/Ev/sex.jpg"></center>'
@@ -165,11 +168,11 @@ $din_otel_man_beforesex = {
 					end
 
 					if dom > 0:
-						act 'No, I´m going to stay a virgin until marriage':
+						act 'No, I''m going to stay a virgin until marriage':
 							cls
 							sub += 1
 							gs 'stat'
-							'You laughed and refused to man. <<$bname>> scratching his head, "Well then, can pososesh? Piatihatki I´ll give you."'
+							'You laughed and refused to man. <<$bname>> scratching his head, "Well then, can pososesh? Piatihatki I''ll give you."'
 
 							act 'Come on':
 								cls
@@ -190,13 +193,13 @@ $din_otel_man_beforesex = {
 	end
 
 	if dom >= 5 and StoryLine > 0:
-		act 'Breeding for loot.':
+		act 'Breeding for loot':
 			cls
 			sub += 1
 			minut += 5
 			gs 'stat'
 			'<center><img src="images/qwest/alter/Ev/otel.jpg"></center>'
-			'You looked at the clock. "Well, we had a good time, but perhaps I´ll go. And then swear the nurse will not give money for lunch then." <<$bname>> You smiled, "I´ll give you three, it will suffice you for lunch?"'
+			'You looked at the clock. "Well, we had a good time, but perhaps I''ll go. And then swear the nurse will not give money for lunch then." <<$bname>> You smiled, "I''ll give you three, it will suffice you for lunch?"'
 
 			act 'Agree to have sex for money.':
 				cls
@@ -204,6 +207,7 @@ $din_otel_man_beforesex = {
 				!!sex += 1
 				guy += 1
 				$boy = $bname
+				bmSEX[Tboynum] += 1
 				money += 3000
 				gs 'stat'
 				'<center><img src="images/qwest/alter/Ev/sex.jpg"></center>'
@@ -220,7 +224,7 @@ $din_otel_man_beforesex = {
 					sub += 1
 					gs 'stat'
 					'<center><img src="images/qwest/alter/Ev/otel.jpg"></center>'
-					'You laughed and denied the men said that blowjob is the maximum for which he can rely. <<$bname>> scratching his head, "No problem, I´ll give you Piatihatki."'
+					'You laughed and denied the men said that blowjob is the maximum for which he can rely. <<$bname>> scratching his head, "No problem, I''ll give you Piatihatki."'
 
 					act 'Come on':
 						cls
@@ -240,8 +244,12 @@ $din_otel_man_beforesex = {
 		cls
 		minut += 30
 		!!sex += 1
-		guy += 1
+
+		if boynumBlock = 0:guy += 1
+		if boynumBlock > 0 and bmTOTSEX[Tboynum] = 0:guy += 1
+
 		$boy = $bname
+		bmSEX[Tboynum] += 1
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/sex.jpg"></center>'
 		'<<$bname>> threw you on the bed and spread your legs.'
@@ -254,19 +262,18 @@ $din_otel_man_beforesex = {
 }
 music_on = 0
 minut += 15
+gs 'tboyopr'
 gs 'stat'
 
-if DPtipe = 1:'The man came to standing next to a club and Takser spoken.a with him a couple of phrases turned to you. "Svetsik go." You with the man got into a taxi and drove to the hotel quickly. Man led you to your room.'
-if DPtipe = 2:'The man came to standing next to a club and Takser spoken.a with him a couple of phrases turned to you. "Svetsik go." You with the man got into a taxi and drove to the hotel quickly. Man led you to your room.'
-
 if DPtipe = 1:
+	'A man walked up to standing next to the club and exchange a taxi driver with him a few words turned to you. "<<$name>> go." You with the man got into a taxi and quickly drove to the hotel. The man led you to your room.'
 	act 'Walk into the room':
 		cls
 		BeInOtel += 1
 		minut += 5
 		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/otel.jpg"></center>'
-		'The room was quite decent. The man went to the fridge and began to spread on the table. Misted bottle of whiskey servilat banking caviar, fruit plate. Laying everything on the table, the man tripped you a chair on which you sat. He sat in the chair next to you and poured whiskey glasses. "Well, let´s drink to Svetsik acquaintance. I´m so glad to have met such a beautiful and wonderful girl like you."'
+		'The room was quite decent. The man went to the fridge and began to spread on the table. Misted bottle of whiskey servilat banking caviar, fruit plate. Laying everything on the table, the man tripped you a chair on which you sat. He sat in the chair next to you and poured whiskey glasses. "Well, let''s drink to <<$name>> acquaintance. I''m so glad to have met such a beautiful and wonderful girl like you."'
 
 		act 'Have a drink':
 			cls
@@ -282,6 +289,7 @@ if DPtipe = 1:
 end
 
 if DPtipe = 2:
+	'A man walked up to standing next to the club and exchange a taxi driver with him a few words turned to you. "<<$name>> go." You with the man got into a taxi and quickly drove to the hotel. The man led you to your room.'
 	act 'Walk into the room':
 		cls
 		minut += 5
