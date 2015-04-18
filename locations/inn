@@ -1,15 +1,11 @@
 # inn
-act 'Come to the reception desk':gt 'rack'
-act 'To lift':gt 'Elevator'
-act 'Back in the hall':gt 'hall'
-
+clr
+minut = minut + 5
 nom_o[1] = 100
 nom_o[2] = 1000
 nom_o[3] = 10000
 nom_o[4] = 100000
-clr
 gs 'stat'
-set minut = minut + 5
 '<right><img src="images/casino/metrd.jpg"></right>'
 
 if tobiQW < 2000:'In the hotel lobby deserted and alone bored girl at the reception.'
@@ -26,12 +22,16 @@ if tobiQW = 2001:
 		'(Do_You) - not at all, but I have a parchment, in which the characters are written very similar.'
 		'(The_Man) - prelyubopytny! You can take a look?'
 		'(Do_You) - Well!'
-		'(The_Man) - ah yes, right word, it`s me. me, by_the_way, Plato called Aristarkhovich, and you?'
+		'(The_Man) - ah yes, right word, it''s me. me, by_the_way, Plato called Aristarkhovich, and you?'
 		'(Do_You) - You can simply Igor.'
 		'(Plato Aristarkhovich) - Come to my room, if you do not mind.'
 
 		act 'Go with a man':gt 'mqroom'
 	end
 end
+
+act 'Come to the reception desk':gt 'the_stand'
+act 'To lift':gt 'a_lift'
+act 'Back in the hall':gt 'hall'
 
 --- inn ---------------------------------

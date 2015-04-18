@@ -2,34 +2,30 @@
 !!by Master Set (blakarchont@gmail.com)
 !!HOME GAMES
 clr
+minut += 5
 gs 'stat'
-set minut += 5
 
 if turn = 0:
 	cla
 	'<right><img src="images/casino/stavkacw.jpg"></right>'
 	' Please give me your bets, gentlemen.'
 
-	act 'IPod':
+	act 'Make a bet':
+		money -= deal
+		turn = 1
 		deal = input 'Enter the amount'
 
 		if money < deal:
 			msg 'You have enough money'
 			gt 'igrkart1'
-		end
-
-		if deal < 0:
+		elseif deal < 0:
 			msg 'Wrong, try again.'
 			gt 'igrkart1'
-		end
-
-		if deal > 1000:
+		elseif deal > 1000:
 			msg 'The maximum rate of 1000 rubles.'
 			gt 'igrkart1'
 		end
 
-		set money -= deal
-		turn = 1
 		gt 'igrkart1'
 	end
 
@@ -55,11 +51,9 @@ if turn = 1:
 	$p_card[2] = $number[number] + $suit[suit]
 	p_points = p_points + points[number]
 
-	if p_points = 22:p_points = 21
-
-	wait 1000
-
-	if p_points < 21:
+	if p_points = 22:
+		p_points = 21
+	elseif p_points < 21:
 		'Map of dealer:'
 		'  <<$d_card[1]>>'
 		'__________________________'
@@ -76,9 +70,8 @@ if turn = 1:
 			turn = 2
 			gt 'igrkart1'
 		end
-	end
-
-	if p_points = 21:
+	elseif p_points = 21:
+		prise = deal * 3
 		'Map of dealer:'
 		'  <<$d_card[1]>>'
 		'__________________________'
@@ -86,10 +79,9 @@ if turn = 1:
 		'  <<$p_card[1]>>'
 		'  <<$p_card[2]>>'
 		'BLACK JACK!'
-		prise = deal * 3
 
 		act 'Pick up the win (<<prise>> rubles)':
-			set money += prise
+			money += prise
 			turn = 0
 			gt 'igrkart1'
 		end
@@ -126,9 +118,7 @@ if turn = 2:
 			gt 'igrkart1'
 		end
 
-	end
-
-	if p_points > 21:
+	elseif p_points > 21:
 		'Map of dealer:'
 		'  <<$d_card[1]>>'
 		'__________________________'
@@ -174,9 +164,7 @@ if turn = 22:
 			turn = 222
 			gt 'igrkart1'
 		end
-	end
-
-	if p_points > 21:
+	elseif p_points > 21:
 		'Map of dealer:'
 		'  <<$d_card[1]>>'
 		'__________________________'
@@ -203,7 +191,6 @@ if turn = 222:
 	number = rand(1, 13)
 	$p_card[5] = $number[number] + $suit[suit]
 	p_points = p_points + points[number]
-	wait 500
 
 	if p_points <= 21:
 		'Bank card:'
@@ -220,9 +207,7 @@ if turn = 222:
 			turn = 3
 			gt 'igrkart1'
 		end
-	end
-
-	if p_points > 21:
+	elseif p_points > 21:
 		'Map of dealer:'
 		'  <<$d_card[1]>>'
 		'__________________________'
@@ -242,7 +227,7 @@ if turn = 222:
 end
 
 
-!!Transoms Bank`s cards
+!!Transoms Bank''s cards
 if turn = 3:
 	cla
 	'<right><img src="images/casino/cartbde.jpg"></right>'
@@ -253,11 +238,9 @@ if turn = 3:
 	$d_card[2] = $number[number] + $suit[suit]
 	d_points = d_points + points[number]
 
-	if p_points = 22:p_points = 21
-
-	wait 500
-
-	if d_points >= 17:
+	if p_points = 22:
+		p_points = 21
+	elseif d_points >= 17:
 		'Bank cards:'
 		'  <<$d_card[1]>>'
 		'  <<$d_card[2]>>'
@@ -273,38 +256,32 @@ if turn = 3:
 				turn = 0
 				gt 'igrkart1'
 			end
-		end
-
-		if d_points = p_points:
+		elseif d_points = p_points:
 			'Draw'
 
 			act 'Take a bet':
-				set money += deal
+				money += deal
 				turn = 0
 				gt 'igrkart1'
 			end
-		end
-
-		if d_points < p_points:
+		elseif d_points < p_points:
 			'Player won'
 			prise = deal * 2
 
 			act 'Pick up the win (<<prise>> rubles).':
-				set money += prise
+				money += prise
 				turn = 0
 				gt 'igrkart1'
 			end
 		end
-	end
-
-	if d_points < 17:
+	elseif d_points < 17:
 		suit = rand(1, 4)
 		number = rand(1, 13)
 		$d_card[3] = $number[number] + $suit[suit]
 		d_points = d_points + points[number]
 
 		if d_points <= 21:
-			'The dealer´s cards:'
+			'The dealer''s cards:'
 			'  <<$d_card[1]>>'
 			'  <<$d_card[2]>>'
 			'  <<$d_card[3]>>'
@@ -320,32 +297,27 @@ if turn = 3:
 					turn = 0
 					gt 'igrkart1'
 				end
-			end
-
-			if d_points = p_points:
+			elseif d_points = p_points:
 				'Draw'
 
 				act 'Take a bet':
-					set money += deal
+					money += deal
 					turn = 0
 					gt 'igrkart1'
 				end
-			end
-
-			if d_points < p_points:
+			elseif d_points < p_points:
 				'Player won'
 				prise = deal * 2
 
 				act 'Pick up the win (<<prise>> rubles).':
-					set money += prise
+					money += prise
 					turn = 0
 					gt 'igrkart1'
 				end
 			end
-		end
-
-		if d_points > 21:
-			'The dealer´s cards:'
+		elseif d_points > 21:
+			prise = deal * 2
+			'The dealer''s cards:'
 			'  <<$d_card[1]>>'
 			'  <<$d_card[2]>>'
 			'  <<$d_card[3]>>'
@@ -353,10 +325,9 @@ if turn = 3:
 			'Busting!'
 			'__________________________'
 			'Player won'
-			prise = deal * 2
 
 			act 'Pick up the win (<<prise>> rubles)':
-				set money += prise
+				money += prise
 				turn = 0
 				gt 'igrkart1'
 			end

@@ -18,12 +18,19 @@ $tracklist_orochimaru[0] = 'music/orochimaru.mp3'
 if club = 1:
 	clubrand = rand(0, 5)
 
-	if clubrand = 0:$tracklist_club[0] = 'music/club.mp3'
-	if clubrand = 1:$tracklist_club[0] = 'music/club1.mp3'
-	if clubrand = 2:$tracklist_club[0] = 'music/club2.mp3'
-	if clubrand = 3:$tracklist_club[0] = 'music/club3.mp3'
-	if clubrand = 4:$tracklist_club[0] = 'music/club4.mp3'
-	if clubrand = 5:$tracklist_club[0] = 'music/club5.mp3'
+	if clubrand = 0:
+		$tracklist_club[0] = 'music/club.mp3'
+	elseif clubrand = 1:
+		$tracklist_club[0] = 'music/club1.mp3'
+	elseif clubrand = 2:
+		$tracklist_club[0] = 'music/club2.mp3'
+	elseif clubrand = 3:
+		$tracklist_club[0] = 'music/club3.mp3'
+	elseif clubrand = 4:
+		$tracklist_club[0] = 'music/club4.mp3'
+	elseif clubrand = 5:
+		$tracklist_club[0] = 'music/club5.mp3'
+	end
 end
 
 --- init_music ---------------------------------

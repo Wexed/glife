@@ -10,9 +10,7 @@ if grupTipe[numnpc] = -1 and GorSlut < 2:
 		if $loc ! 'gdkin':dynamic $din_sekondparturok
 		if $loc = 'gdkin':act 'Move away':gt $loc, $metka
 	end
-end
-
-if grupTipe[numnpc] = -1 and GorSlut >= 2:
+elseif grupTipe[numnpc] = -1 and GorSlut >= 2:
 	act 'Mock':
 		cls
 		sub += 1

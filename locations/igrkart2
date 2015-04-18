@@ -1,57 +1,53 @@
 # igrkart2
 clr
+minut += 5
 gs 'stat'
-set minut += 5
 
 if turn1 = 0:
 	cla
 	'<right><img src="images/casino/stavkacw.jpg"></right>'
 	' Please give me your bets, gentlemen.'
 
-	act 'IPod':
+	act 'Make a bet':
+		money -= deal
+		turn1 = 1
 		deal = input 'Enter the amount'
 
 		if money < deal:
 			msg 'You have enough money'
 			gt 'igrkart2'
-		end
-
-		if deal < 0:
+		elseif deal < 0:
 			msg 'Wrong, try again.'
 			gt 'igrkart1'
-		end
-
-		if deal > 1000:
+		elseif deal > 1000:
 			msg 'The maximum rate of 1000 rubles.'
 			gt 'igrkart1'
 		end
 
-		set money -= deal
-
-		turn1 = 1
 		gt 'igrkart2'
 	end
 
 	act 'Move away from the table':gt 'kazvar'
 end
 
-
 if turn1 = 1:
 	cla
-	'<right><img src="images/casino/stavkacw.jpg"></right>'
 	nich = 0
+	'<right><img src="images/casino/stavkacw.jpg"></right>'
 
 	act 'Put another draw':
+		turn1 = 2
+		nich = 1
+
 		if money < deal:
 			msg 'You have enough money'
 			turn1 = 2
 			nich = 0
 			gt 'igrkart2'
+		else
+			money -= deal
 		end
 
-		set money -= deal
-		turn1 = 2
-		nich = 1
 		gt 'igrkart2'
 	end
 
@@ -94,25 +90,21 @@ if turn1 = 2:
 			turn1 = 0
 			gt 'igrkart2'
 		end
-	end
-
-	if di_poi < pl_poi:
+	elseif di_poi < pl_poi:
 		' '
 		'You won'
 		act 'You have won (<<2 * deal>> rubles)':
-			set money += 2 * deal
+			money += 2 * deal
 			turn1 = 0
 			gt 'igrkart2'
 		end
-	end
-
-	if di_poi = pl_poi:
+	elseif di_poi = pl_poi:
 		if nich = 1:
 			' '
 			'You won'
 
 			act 'You have won (<<11 * deal>> rubles)':
-				set money += 11 * deal
+				money += 11 * deal
 				turn1 = 0
 				gt 'igrkart2'
 			end
@@ -125,13 +117,15 @@ end
 
 if turn1 = 3:
 	act 'Continue to play':
+		cla
+
 		if money < deal:
 			msg 'You have enough money'
 			gt 'igrkart2'
+		else
+			money -= deal
 		end
 
-		set money -= deal
-		cla
 		'<right><img src="images/casino/cartcw.jpg"></right>'
 		' The dealer deals the cards:'
 		'...'
@@ -145,7 +139,6 @@ if turn1 = 3:
 		$pl_card[2] = $number[number] + $suit[suit]
 		pl_points = points[number]
 		pl_poi = number
-		wait 1000
 		'Map of dealer:'
 		'  <<$di_card[1]>>'
 		'  <<$di_card[2]>>'
@@ -162,25 +155,21 @@ if turn1 = 3:
 				turn1 = 0
 				gt 'igrkart2'
 			end
-		end
-
-		if di_poi < pl_poi:
+		elseif di_poi < pl_poi:
 			' '
 			'You won'
 
 			act 'You have won (<<4 * deal>> rubles)':
-				set money += 4 * deal
+				money += 4 * deal
 				turn1 = 0
 				gt 'igrkart2'
 			end
-		end
-
-		if di_poi = pl_poi:
+		elseif di_poi = pl_poi:
 			' '
 			'Again draw'
 
 			act 'Pick up (<<3 * deal>> rubles)':
-				set money += 3 * deal
+				money += 3 * deal
 				turn1 = 0
 				gt 'igrkart2'
 			end
@@ -190,7 +179,7 @@ if turn1 = 3:
 	act 'Pick up half your bet':
 		if deal mod 2 = 1:deal = deal + 1
 
-		set money += deal/2
+		money += deal/2
 		gt 'igrkart2'
 	end
 end
