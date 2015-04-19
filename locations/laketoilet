@@ -1,30 +1,28 @@
 # laketoilet
-set LCtoiletiventrand = rand(1, 100)
-
 if $ARGS[0] = 'main':
 	cla
 	*clr
+	LCtoiletiventrand = rand(1, 100)
 
-	if hour < 4 and LCtoiletiventrand >= 83 and LCtoiletivent = 0:
+	if hour < 4 and LCtoiletiventrand >= 83:
 		'<center><img src="images/LakeCafe/ToiletSexStart.jpg"></center>'
 		'You went to the bathroom and saw a man in the corner drochaschego. It seems he did not see you.'
 
 		act 'Be company':
-			set LCtoiletivent = 1
 			gt 'LCporn', 'toiletsex'
 		end
 
 		act 'Off the toilet':gt 'lakecafe', 'main'
 	else
-		'<center><img src="images/LakeCafe/Toilet.jpg"></center>'
-		'Dirty and smelly toilet that seems to have never been cleaned'
 		clr
 		gs 'stat'
+		'<center><img src="images/LakeCafe/Toilet.jpg"></center>'
+		'Dirty and smelly toilet that seems to have never been cleaned'
 
 		if tanga = 1:
 			act 'Remove Underwear':
 				cla
-				set tanga = 0
+				tanga = 0
 				gt 'laketoilet', 'main'
 			end
 		end
@@ -32,8 +30,8 @@ if $ARGS[0] = 'main':
 		act 'Look in the mirror':
 			cla
 			gs 'portmirror'
-			set $gt1 = 'laketoilet'
-			set $gt2 = 'main'
+			$gt1 = 'laketoilet'
+			$gt2 = 'main'
 			dynamic $portmirror
 
 			act 'Move away from the mirror':
@@ -45,15 +43,22 @@ if $ARGS[0] = 'main':
 		!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
 		!!Removed sweat =- 1 when cum is wiped off clothes
 		!!clrbelo: Amount of clean panties available
-		if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+		if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
 			act 'Quick wash (0:15)':
 				cla
 				*clr
+
+				if clrbelo > 0 and tanga = 1:
+					clrbelo -= 1
+					dirtbelo += 1
+				elseif clrbelo = 0 and tanga = 1:
+					tanga = 0
+					dirtbelo += 1
+				end
+
 				dynamic $showerdin
-				set sweat -= 1
-				set minut += 15
-				set clrbelo -= 1
-				set dirtbelo += 1
+				sweat -= 1
+				minut += 15
 				'<center><img src="images/pics/wash5.jpg"></center>'
 				'You gave yourself a catlick, thus removing any traces of cum.'
 
@@ -65,11 +70,10 @@ if $ARGS[0] = 'main':
 			act 'Clean your face from sperm (0:05)':
 				cla
 				*clr
-				set mop = 1
-				set cumlip = 0
-				set cumface = 0
-				set sweat -= 1
-				set minut += 5
+				cumlip = 0
+				cumface = 0
+				sweat -= 1
+				minut += 5
 				'<center><img src="images/etogame/facesp.jpg"></center>'
 				'You clean your face and got rid of any trace of cum.'
 
@@ -81,12 +85,12 @@ if $ARGS[0] = 'main':
 			act 'Wipe the cum off your clothes (0:10)':
 				cla
 				*clr
-				set cumfrot = 0
-				set minut += 10
-				!!'<center><img src="images/etogame/frotsp.jpg"></center>'
+				cumfrot = 0
+				minut += 10
+				'<center><img src="images/pic/frotsp.jpg"></center>'
 				'You remove traces of cum from your clothes.'
 
-				act 'Finish':gt 'laketoilet', 'main'
+				act 'Finish':dynamic $kafetualet
 			end
 		end
 		!!
@@ -95,14 +99,14 @@ if $ARGS[0] = 'main':
 			act 'Use a tampon (0:05)':
 				cla
 				*clr
-				set tampon -= 1
-				set isprok = 1
-				set minut += 5
-				set manna -= 5
+				tampon -= 1
+				isprok = 1
+				minut += 5
+				manna -= 5
 				'<center><img src="images/pics/wash3.jpg"></center>'
 				'You use a tampon.'
 
-				act 'Finish':gt 'laketoilet', 'main'
+				act 'Finish':dynamic $kafetualet
 			end
 		end
 

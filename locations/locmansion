@@ -1,15 +1,15 @@
 # locmansion
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><h4>cottage settlement</h4></center>'
-'<center><img src="images/etogame/locmansion.jpg"></center>'
-'Elite settlement which can afford to live only the cream of society.'
 clr
 gs 'stat'
 gs 'time'
+'<center><h4>cottage settlement</h4></center>'
+'<center><img src="images/etogame/locmansion.jpg"></center>'
+'Elite settlement which can afford to live only the cream of society.'
 
 if car > 0 and cardrive = 19:
-	set cardrive = 19
+	cardrive = 19
 	'In the parking stands <a href="exec:GS ''carF'', ''start''">your <<$car>></a>.'
 end
 
