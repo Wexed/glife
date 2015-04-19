@@ -4,8 +4,8 @@ if $ARGS[0] = 'start':
 	clr
 	gs 'stat'
 	gs 'portmirror'
-	set $gt1 = 'mirror'
-	set $gt2 = 'fin'
+	$gt1 = 'mirror'
+	$gt2 = 'fin'
 	dynamic $portmirror
 
 	act 'Move away from the mirror':
@@ -19,28 +19,28 @@ if $ARGS[0] = 'fin':
 	gt $locM, $metkaM
 
 	!'if housr = 1 and housrA = 1 and housrMir = 0 and fitMir = 0 and saunaYouRoom = 0:
-		set housrA = 0
+		housrA = 0
 			gt 'korr'
 		end
 
 		if housr = 1 and housrA = 1 and housrMir = 1 and fitMir = 0 and saunaYouRoom = 0:
-			set housrA = 0
-			set housrMir = 0
+			housrA = 0
+			housrMir = 0
 			gt 'bedr'
 		end
 
 		if housrA = 0 and fitMir = 1 and saunaYouRoom = 0:
-			set fitMir = 0
+			fitMir = 0
 			gt 'fit', 'razd'
 		end
 
 		if housrA = 0 and stripMir = 1 and saunaYouRoom = 0:
-			set stripMir = 0
+			stripMir = 0
 			gt 'stwork', 'start'
 		end
 
 		if housrA = 0 and palMir = 1 and saunaYouRoom = 0:
-			set palMir = 0
+			palMir = 0
 			gt 'palatka', 'start'
 		end
 
@@ -50,17 +50,17 @@ if $ARGS[0] = 'fin':
 		end
 
 		if housrA = 0 and obMir = 1:
-			set obMir = 0
+			obMir = 0
 			gt 'obroom', 'start'
 		end
 
 		if housrA = 0 and borMir = 1:
-			set borMir = 0
+			borMir = 0
 			gt 'bordel', 'start'
 		end
 
 		if housrA = 0 and tanhouse1 = 1:
-			set tanhouse1 = 0
+			tanhouse1 = 0
 			gt 'spalnya'
 		end'!
 end

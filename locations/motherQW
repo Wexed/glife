@@ -1,31 +1,38 @@
 # motherQW
 if $ARGS[0] = 'motherQW_2':
-	gs 'stat'
-	cls
-	mother += rand(5, 10)
 	minut += 60
 	motherQW = 2
-	'You´re trying to talk with his mother and make peace. The whole half-hour conversation mainly consists of a fairly aggressive monologue your mom about morality, disease and future. At some point you get tired of all this.'
+	mother += rand(5, 10)
+	gs 'stat'
+	'<center><b><font color="maroon">Mama</font></b></center>'
+	'<center><img src="images/qwest/alter/mother.jpg"></center>'
+	'You''re trying to talk with his mother and make peace. The whole half-hour conversation mainly consists of a fairly aggressive monologue your mom about morality, disease and future. At some point you get tired of all this.'
 
 	act 'Wedge':
 		cla
+		cls
+		'<center><b><font color="maroon">Mama</font></b></center>'
+		'<center><img src="images/qwest/alter/mother.jpg"></center>'
 		'- All that you say, Mom, of course, is true and correct, but unless you are the not so?'
 		'She is flustered from your sentence, but quickly recovers.'
-		'- What do you mean? I´m not the same ...'
+		'- What do you mean? I''m not the same ...'
 		'- So, so. Such a whore! Even abruptly I will!'
-		'- <<$name>>! What are you currently pos ...'
+		'- <<$nickname>>! What are you currently pos ...'
 
 		act 'Continue to press':
 			cla
-			'- What did I allow myself? - You will quickly intercept of an initiative to prevent her finish. - Well, we´re adults, and are conducting an adult conversation about it is more than an adult theme. And forgive me, but I´ll say it all in plain text.'
-			'- <<$name>>! They did not break ...'
+			cls
+			'<center><b><font color="maroon">Mama</font></b></center>'
+			'<center><img src="images/qwest/alter/mother.jpg"></center>'
+			'- What did I allow myself? - You will quickly intercept of an initiative to prevent her finish. - Well, we''re adults, and are conducting an adult conversation about it is more than an adult theme. And forgive me, but I''ll say it all in plain text.'
+			'- <<$nickname>>! They did not break ...'
 			'- No, Mom, now you do not interrupt. I have half an hour listening to sermons! And from whom ?!'
-			'- <<$name>>! ..'
+			'- <<$nickname>>! ..'
 
-			if age = 15:'- What is the <<$name>> that <<$name>> ?! Mom, are you now <<motherAge>>, Ana <<sisterAge>>. Addition and subtraction are taught in the first grade. Yes, you were just as much as me, when you´re knocked up!'
-			if age > 15:'- What the <<$name>> that <<$name>> ?! Mom, are you now <<motherAge>>, Ana <<sisterAge>>. Addition and subtraction are taught in the first grade. Yes, you were even younger than me, when you´re knocked up!'
+			if age = 15:'- What is the <<$nickname>> that <<$nickname>> ?! Mom, are you now <<motherAge>>, Anjaa <<sisterAge>>. Addition and subtraction are taught in the first grade. Yes, you were just as much as me, when you''re knocked up!'
+			if age > 15:'- What the <<$nickname>> that <<$nickname>> ?! Mom, are you now <<motherAge>>, Anja <<sisterAge>>. Addition and subtraction are taught in the first grade. Yes, you were even younger than me, when you''re knocked up!'
 
-			'Unnerving silence. You, red as a lobster, trying to catch my breath, and your mother is sitting with his face all at the same time expressing human emotions simultaneously. Most likely she is trying to figure out what the hell´s going on here and why she listens to sermons from his daughter. Do you even think that once upon a time she just sat there and swore to your grandmother.'
+			'Unnerving silence. You, red as a lobster, trying to catch my breath, and your mother is sitting with his face all at the same time expressing human emotions simultaneously. Most likely she is trying to figure out what the hell''s going on here and why she listens to sermons from his daughter. Do you even think that once upon a time she just sat there and swore to your grandmother.'
 			'- But it was your father, - she says quietly.'
 			'- And so what?'
 			'- And the fact that I did it out of love and not to expose Mandu first comer of the gate!'
@@ -34,8 +41,11 @@ if $ARGS[0] = 'motherQW_2':
 
 			act 'Next':
 				cla
-				'- And this, my mother:I am in life I will not believe that it was unpleasant to fuck you and you´re doing it solely for the love of the father.'
-				'- <<$name>>! Do not swear!'
+				cls
+				'<center><b><font color="maroon">Mama</font></b></center>'
+				'<center><img src="images/qwest/alter/mother.jpg"></center>'
+				'- And this, my mother:I am in life I will not believe that it was unpleasant to fuck you and you''re doing it solely for the love of the father.'
+				'- <<$nickname>>! Do not swear!'
 				'- Okay, okay, had sex. With the rest of you probably agree.'
 				'- Nuu ... - she thinks for a moment, immersed in memories of his youth - yes, it was nice, of course, especially when the doors ...'
 				'- No comment - with malice notice you.'
@@ -49,23 +59,26 @@ if $ARGS[0] = 'motherQW_2':
 
 				act 'Leave':
 					cla
-					'- Wait, <<$name>>.'
+					cls
+					'<center><b><font color="maroon">Mama</font></b></center>'
+					'<center><img src="images/qwest/alter/mother.jpg"></center>'
+					'- Wait, <<$nickname>>.'
 					'- Mmm? - You turn in the doorway. Mother gesture tells you to sit back on the kitchen chair.'
 					'- Anka at least partially in the Bear went, but you''re just all in me, so that adventure to find his ass and ...'
-					'- Maaaam, we´ve just discussed it.'
+					'- Maaaam, we''ve just discussed it.'
 					'- Now you do not interrupt me, I do something else now. Do not want to, you know, that you any sore or baby from is not clear who currently work up.'
 
-					if prezik > 0 or tabletka > 0:'- Do not worry, I have everything. Gone to town and bought. End - again I will go.'
-					if prezik = 0 and tabletka = 0:' Nuuu ... I will go to the city, there is a pharmacy.'
+					if prezik > 0 or tabletki > 0:'- Do not worry, I have everything. Gone to town and bought. End - again I will go.'
+					if prezik = 0 and tabletki = 0:' Nuuu ... I will go to the city, there is a pharmacy.'
 
-					'- In the city means. You know, it´s better to buy everything in our pharmacy. And you easier, and I will be more easy for you.'
-					'- And how, tell me, please, ma´am, I´ll do it? Tell aunt Luda that I Gandon for balls need?'
+					'- In the city means. You know, it''s better to buy everything in our pharmacy. And you easier, and I will be more easy for you.'
+					'- And how, tell me, please, ma''am, I''ll do it? Tell aunt Luda that I Gandon for balls need?'
 					'- Fie on you! If Lyudka dig, you say, well, me for a vegetable garden, she will understand. Just do not buy a lot at once.'
 					'- Hmm, for the garden, of course. What does it mean ...'
 					'- No, docha! - Quickly interrupted her.'
 					'- Okay, okay.'
 					'You get up, run up and kiss your mother.'
-					'- You know, Mom, but you´re still my best.'
+					'- You know, Mom, but you''re still my best.'
 					'- Appreciate it, fool - with a smile she says.'
 
 					act 'Leave':gt 'korrPar'
@@ -76,19 +89,20 @@ if $ARGS[0] = 'motherQW_2':
 end
 
 if $ARGS[0] = 'motherQW_3':
+	minut += rand(20, 30)
+	motherQW = 3
 	gs 'stat'
 	'<center><b><font color="maroon">Drugstore</font></b></center>'
 	'<center><img src="images/etogame/aptek.jpg"></center>'
-	motherQW = 3
-	minut += rand(20, 30)
 	'You waited for the pharmacy will last buyer, and went up to my aunt.'
 	'- Aunts, I would have it ... my mom for a vegetable garden ...'
 	'- Well, of course my mother ...'
 
 	act 'Next':
 		cla
+		cls
 		'- I mean?'
-		'- And that you yourself do not understand. Light, I look like a fool?'
+		'- And that you yourself do not understand. <<$nickname>>, I look like a fool?'
 		'- No ...'
 
 		if gorslut=0:'- Then it is not necessary to make a fool of me. Natasha mare, of course, hardy, but she is not 16 years old, the new "garden" it is unlikely to be mastered.'
@@ -104,11 +118,12 @@ if $ARGS[0] = 'motherQW_3':
 end
 
 if $ARGS[0]='motherQW_4':
+	minut += 60
+	motherQW = 4
 	gs 'stat'
 	'<center><b><font color="maroon">Маmа</font></b></center>'
 	'<center><img src="images/qwest/alter/mother.jpg"></center>'
-	motherQW = 4
-	minut += 60
+
 	'You came home, and the mother immediately dragged you into the kitchen.'
 	'- Come on, tell me how you were turned.'
 	'Have you told her how Aunt first realized that you buy condoms for yourself how begged to help her with Olu, as you agreed, as a defeated pharmacy.'
@@ -124,7 +139,7 @@ if $ARGS[0]='motherQW_4':
 	'- On the ass.'
 	'- Oh you. But, remember. Second, your aunt - hitryuschie bitch. I doubt that she will now that the thread still offer me afraid, but still. And that will eventually suck to some bloke for discounts on items for her pharmacy.'
 	'- Has she offered you such?'
-	'- Yes, it was. I refused. And thirdly, the Light, I understand that you are young girl, and the money you need, but do not change the sex for money. It is better to be a slut or whore than a prostitute.'
+	'- Yes, it was. I refused. And thirdly <<$nickname>>, I understand that you are young girl, and the money you need, but do not change the sex for money. It is better to be a slut or whore than a prostitute.'
 	'- Hmmm ... Is there a difference?'
 	'- Yes. While you may not realize this, but there is.'
 	'- Well, remember that. And with the money aunt what to do?'
@@ -135,14 +150,12 @@ if $ARGS[0]='motherQW_4':
 end
 
 if $ARGS[0] = 'olu':
-	cls
-	gs 'stat'
 	'<center><b><font color="maroon">Drugstore</font></b></center>'
 	'<center><img src="images/etogame/aptek.jpg"></center>'
 
 	if tetyafirst = 0:
 		'Aunt as always stood behind the counter and advised some grandmother. Periodically, she kept looking at you, and something in her eyes seemed strange to you. Letting go of the last buyer, aunt went to the front door, closed it with a key and hung a sign, "Accounting." It was obvious that she was nervous.'
-		'- <<$name>>, I wanted to talk to you about something ... - finally she said.'
+		'- <<$nickname>>, I wanted to talk to you about something ... - finally she said.'
 		'- What is it?'
 		'- You see, I have right now in the life of such a situation ... there is one problem, though there is certainly not a problem, though ... I do not know who to ask ... even in a strange way to say this to you ...'
 		'- Aunt - interrupted you. - May be enough to pull the cat is tail ... I?'
@@ -158,14 +171,14 @@ if $ARGS[0] = 'olu':
 		'- Iiiiii ... you want me to ... help you with it ... that is tra ... - in your voice felt surprise.'
 		'- Well, you can not itself, can anyone of your friends agree - frightened she interrupted. - And certainly not for nothing.'
 		'- Aunts, you do in your mind ??? !!! Not only that, you ask me, so still and friends are invited to find ??? !!! It seems like even in the article is, "inducement to prostitution" !!'
-		'- Well, <<$name>>, well, I am sorry - almost in tears she said. - I do not want to lose this guy. I really thought he even hire prostitutes, but there are a whole bunch with them can be. Help me, I beg you.'
+		'- Well, <<$nickname>>, well, I am sorry - almost in tears she said. - I do not want to lose this guy. I really thought he even hire prostitutes, but there are a whole bunch with them can be. Help me, I beg you.'
 
 		act 'Agree':
 			cla
 			tetyafirst = 2
 			oluuosegunday = day
 			'- Well, aunt, figs with you, help you, tea is not a stranger. But going to be!'
-			'- Of course, of course, Svetulechka - happily she said. - Come home to me, are the keys.'
+			'- Of course, of course, <<$nickname>> - happily she said. - Come home to me, are the keys.'
 
 			act 'Go to my aunt home':gt 'motherQW', 'oluHome'
 		end
@@ -182,7 +195,7 @@ if $ARGS[0] = 'olu':
 		end
 	elseif tetyafirst = 1:
 		'You waited in line and approached the counter. Aunt leaned over to the window.'
-		'- Light, remember our conversation? Nuuu ... about Ola? - She said in a whisper.'
+		'- <<$nickname>>, remember our conversation? Nuuu ... about Ola? - She said in a whisper.'
 		'- Yes, aunts, remember.'
 		'- Well, that decided?'
 
@@ -191,7 +204,7 @@ if $ARGS[0] = 'olu':
 			tetyafirst = 2
 			oluuosegunday = day
 			'- Well, aunt, figs with you, help you, tea is not a stranger. But going to be!'
-			'- Of course, of course, Svetulechka - happily she said. - Come home to me, are the keys.'
+			'- Of course, of course, <<$nickname - happily she said. - Come home to me, are the keys.'
 
 			act 'Go to my aunt home':gt 'motherQW', 'oluHome'
 		end
@@ -204,9 +217,9 @@ if $ARGS[0] = 'olu':
 
 			act 'Move away from the counter':gt 'aptek', 'start'
 		end
-	elseif tetyafirst=2:
+	elseif tetyafirst = 2:
 		'You waited in line and approached the counter. Aunt leaned over to the window.'
-		'- Svetulechka, then how would it again ... need your help with Ola.'
+		'- <<$nickname>>, then how would it again ... need your help with Ola.'
 
 		act 'Agree':
 			cla
@@ -228,6 +241,7 @@ if $ARGS[0] = 'olu':
 end
 
 if $ARGS[0] = 'oluHome':
+	cla
 	cls
 	gs 'stat'
 	'<center><b><font color="maroon">Aunts apartment</font></b></center>'
@@ -239,9 +253,9 @@ if $ARGS[0] = 'oluHome':
 		minut += rand(5, 10)
 		'Taking off shoes, you began to look around the room in search of Olu. Quick search returned no results and you already thinking to leave, when suddenly felt that someone or something is behind you. Turning around, you saw a huge black man, carefully studying you. "Good Aunt security system, but ... Alarms and angry dog ​​rolled into one. And where he had just been hiding?" Flashed through your mind.'
 		'- Ty who? - Ebony asked in broken Russian.'
-		'- Yes, I like this ... Light ...'
-		'- Light? - The name was obviously nothing said. "Well, Aunt gives, could even prevent it."'
-		'- Yes, Light, niece aunt Luda, it is her apartment.'
+		'- Yes, I like this ... <<$nickname>> ...'
+		'- <<$nickname>>? - The name was obviously nothing said. "Well, Aunt gives, could even prevent it."'
+		'- Yes, <<$nickname>>, niece aunt Luda, it is her apartment.'
 		'Negros face, it was clear that he was trying to understand the meaning of your words. Apparently, he really knew Russian bad. Finally reached him the meaning of what was said.'
 		'- Ah, my darling your aunt. Good, good. And that need ti?'
 		'- Yes, I would like to say ... come to help her ... with you ... help her with you, - you remember school English lessons.'
@@ -249,9 +263,8 @@ if $ARGS[0] = 'oluHome':
 		'Realizing that Interracial communication in a mixture of Russian and English is hardly something to give you a nod indicated Olu pants and looked at him. At this time, a long time to think about the meaning of these actions Negro did not have, and show you the famous golivudskie smile, he pulled out his h ... pulled out his h ... got his m ...'
 
 		act 'Wake':
+			cla
 			cls
-			'<center><b><font color=maroon>Aunts apartment</font></b></center>'
-			'<center><img src="images/qwest/alter/motherQW/olu1.jpg"></center>'
 			minut += 30
 			guy += 1
 			anal += 1
@@ -264,6 +277,9 @@ if $ARGS[0] = 'oluHome':
 			if mop ! 1:mop = 0
 
 			hapri = 0
+			gs 'stat'
+			'<center><b><font color="maroon">Aunts apartment</font></b></center>'
+			'<center><img src="images/qwest/alter/motherQW/olu1.jpg"></center>'
 			'You woke up from a sharp pain. The ass was burning with fire, you were crying, screaming, trying to escape, but Olu gripped you and continued to fuck my monster. Your cries of his even more wound up.'
 			'In a few minutes you will have ceased to feel his ass, forces in attempts to break you no longer exists, and all that you could, so it izredko sob. Olu soon broke down and discharged you right in the ass.'
 			'Catching his breath, Ebony gently lifted you helped to get dressed and accompanied her to the door. Though strength is almost gone, anger was rife. Everything you wanted to at the time, so it is to strangle my aunt.'
@@ -276,7 +292,7 @@ if $ARGS[0] = 'oluHome':
 		if olusexrand <= 90:
 			minut += 5
 			'Taking off shoes, you went straight to the big room, where he found Ola.'
-			'- Hi, Light - Ebony smiled his smile golivudskie unchanged.'
+			'- Hi, <<$nickname>> - Ebony smiled his smile golivudskie unchanged.'
 			'- Well hello, my black friend - meaning of the phrase Olu clearly do not understand.'
 
 			if olufirst = 2:
@@ -289,28 +305,28 @@ if $ARGS[0] = 'oluHome':
 
 			act 'Next':
 				cls
-				picrand = rand(1, 3)
-				'<center><b><font color="maroon">Aunts apartment</font></b></center>'
-				'<center><img src="images/qwest/alter/motherQW/olu<<picrand>>.jpg"></center>'
 				minut + =30
 				guy += 1
 				anal += 1
 				anus += 10
 				sub += 1
 				cumanus = 1
+				oluDRand = rand(1, 10)
 
 				if lubri > 0:
 					agape = 1
 					agapetime = totminut
 					horny += 20
-				end
-
-				if lubri = 0:
+				elseif lubri = 0:
 					agape = 2
 					agapetime = totminut
 					horny += 10
 				end
 
+				gs 'stat'
+				picrand = rand(1, 3)
+				'<center><b><font color="maroon">Aunts apartment</font></b></center>'
+				'<center><img src="images/qwest/alter/motherQW/olu<<picrand>>.jpg"></center>'
 				'Olu undressed himself and helped you. You sucked his little monster, so he took the firing position. When it was done, you lay down on the sofa.'
 
 				if lubri > 0:'Ebony took you grease squeezed himself into the hands and fingers smeared your anus, and then his penis.'
@@ -322,9 +338,9 @@ if $ARGS[0] = 'oluHome':
 				'You were a little hurt, but at the same time nice when a member moved inside your ass.'
 				'The Negro groaned and you feel like you jet of sperm hit the inside of your body.'
 
-				if oluD = 0 and rand(1, 10) = 10:
+				if oluD = 0 and oluDRand = 10:
 					oluD = 1
-					'- By the way, Light, five adults and soon has to leave the city? - Olu asked after a while.'
+					'- By the way, <<$nickname>>, five adults and soon has to leave the city? - Olu asked after a while.'
 					'- Well, yes, most likely - sluggishly responded to you.'
 					'- In the city now learn my niece Demarcus.'
 					'- Well, not a niece and nephew, most likely. But what are you getting at?'
@@ -335,7 +351,6 @@ if $ARGS[0] = 'oluHome':
 				end
 
 				'Olu helped you get dressed and accompanied her to the door.'
-				lubri -= 1
 
 				act 'Back to aunt':gt 'motherQW', 'oluEnd'
 			end
@@ -362,7 +377,7 @@ if $ARGS[0] = 'oluHome':
 					'- Aunt?'
 					'- Aunt ...'
 					'You both giggled nervously.'
-					'- Light, give me 5 minutes, I will give myself up, and then go talk to my sister.'
+					'- <<$nickname>>, give me 5 minutes, I will give myself up, and then go talk to my sister.'
 
 					act 'Back to aunt':gt 'motherQW', 'oluEnd'
 				else
@@ -390,7 +405,7 @@ if $ARGS[0] = 'oluEnd':
 		'My aunt was talking to another customer, some guy full years under 40 who choose what brand zhiroszhigatelnye pills to take. Seeing you and your opinion, aunt stopped abruptly in mid-sentence, his face reflected fear. A guy looked at her blankly, followed the direction of her gaze. Behind him in your side turned the other buyers in the queue.'
 		'- Pray, aunt, - through clenched teeth you. - KILL fuck !!'
 		'The first dangerous moment realized just the same guy. Surprisingly agile for his physique, he jumped from the place where literally a fraction of a second you were trying to reach through the window counter aunt, and judiciously deciding that running, especially from an angry woman, much more effective than any pills, beat a hasty retreat from the pharmacy . Further recognition has come to the other customers, and they quickly began to leave the future place of fighting.'
-		'- Light, let s talk!'
+		'- <<$nickname>>, let s talk!'
 		'- AT THE FUNERAL OF YOUR TALKING !!'
 		'Are you trying to get to his aunt, but every time she managed to dodge and then increase the distance between you.'
 		'- The bastards ... BITCH ... creature ... scum ... SHEEP ... HATE ... - every word was accompanied by a cast of what was on hand at the aunt.'
@@ -408,9 +423,9 @@ if $ARGS[0] = 'oluEnd':
 			'"Elephant in the room" - perhaps the most gentle expression, which you could describe the state of the pharmacy.'
 			'You and aunt sat on the floor in different corners of the room and breathed heavily. You did not manage to get to it, though a few shots yet reached the goal, and Aunt wincing rubbing sore spots.'
 			'Behind the glass front door you notice the crowd of onlookers, who all this time watching the show. Among them you will even notice the police, do not even try to go inside and to separate you. Seeing you view a crowd of onlookers with the police quickly resolved.'
-			'- Svetulechka ... lets talk ... please ... - breathlessly said my aunt.'
+			'- <<$nickname>> ... lets talk ... please ... - breathlessly said my aunt.'
 			'- What the fuck ... talk - you threw a bottle of some kind of colorless liquid, but the strength you have left, so she broke at the feet of an aunt.'
-			'- Well, I am sorry ... Svetulechka ...'
+			'- Well, I am sorry ... <<$nickname>> ...'
 			'- What the hell, I am sorry, Aunt ?! Your ebyr nearly tore me apart! And you do not even warned me !!'
 			'- Would you ... agreed to help ... if ... know that?'
 			'- Yes ... No ... I do not know ...'
@@ -423,11 +438,11 @@ if $ARGS[0] = 'oluEnd':
 			if age < 18 and ssdostup = 0:'- Where do you take it? In the adult store I have not allowed. Besides, I do ofigela on its size and disconnected, and woke up when it was too late.'
 			if age >= 18 or ssdostup = 1:'- Yes, I even did not have time to understand. When I saw razmerchik, so we can say disconnected. And when I came it was too late. In addition, far away to the city to go.'
 
-			'- I see ... I am sorry again. Light, every day I am in town, so that I could bring you a little bit.'
+			'- I see ... I am sorry again. <<$nickname>>, every day I am in town, so that I could bring you a little bit.'
 			'- At least on this thank you, aunt.'
 			'- And Olu say that was more careful next time.'
 			'- What the hell next time ?! I look like a masochist ?!'
-			'- Well, Light, well, please - pleaded aunt. - I am alone with him could not do it. And not for just the same.'
+			'- Well, <<$nickname>>, well, please - pleaded aunt. - I am alone with him could not do it. And not for just the same.'
 			'- I have heard that.'
 			'- Remember when I said that I was willing to hire him, even the girls? Well, I would better pay you will, than someone else. Oh, please.'
 			'- Cool, man. If my mother a whore, then you just prison crying! The first call will not run, but if other things will not, then to hell with you, help you.'
@@ -440,7 +455,7 @@ if $ARGS[0] = 'oluEnd':
 			minut += rand(5, 10)
 			money += rand(500, 700)
 			'You ran to the pharmacy and waited until Aunt free.'
-			'- Thank you very much, <<$name>> - happily she said, and held out an envelope. - Here are a few, of course, but believe me, in all sincerity. I really appreciate your help.'
+			'- Thank you very much, <<$nickname>> - happily she said, and held out an envelope. - Here are a few, of course, but believe me, in all sincerity. I really appreciate your help.'
 
 			act 'Leave':gt 'gorodok'
 		else
@@ -449,7 +464,7 @@ if $ARGS[0] = 'oluEnd':
 			'You went to the pharmacy with his mother and aunt waited until cleared, and while buyers disperse.'
 			'- Well hello, madam Khrenova - start your mother.'
 			'- Natasha, are you talking about? - Tried to fool matted aunt.'
-			'- People, do not play. She guess where we are faced with <<$name>> or suggest?'
+			'- People, do not play. She guess where we are faced with <<$nickname>> or suggest?'
 			'- Itself ...'
 			'- Well, you are so quick-witted. Nail to you, sister, but in a good mood.'
 			'- Your daughter has already tried to ...'
@@ -459,7 +474,7 @@ if $ARGS[0] = 'oluEnd':
 			'- I see ...'
 			'- I can not hear!'
 			'- Yes, I have understood, I understood!'
-			'- That is wonderful, and now Light home. With you we still have to talk.'
+			'- That is wonderful, and now <<$nickname>> home. With you we still have to talk.'
 
 			act 'Go home':gt 'motherQW', 'motherQW_4'
 		end
