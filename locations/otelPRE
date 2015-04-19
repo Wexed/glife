@@ -1,19 +1,19 @@
 # otelPRE
-'<center><img src="images/picPRE/otelPRE.jpg"></center>'
-set minut += 30
+minut += 30
 clr
 gs 'statPRE'
 fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
-set money -= 3000
+money -= 3000
+'<center><img src="images/picPRE/otelPRE.jpg"></center>'
 'You uneventful found sparkling lights Hotels and putting the car went to the bar to get a room.'
 'Availability in a hotel was only a double room you have paid in full, what would you have settled inadvertently nobody.'
 
 act 'Up to the room.':
 	cla
 	*clr
-	set minut += 5
+	minut += 5
 	clr
 	gs 'statPRE'
 	'<center><img src="images/picPRE/otelPRE1.jpg"></center>'
@@ -22,7 +22,7 @@ act 'Up to the room.':
 	act 'Call the director.':
 		cla
 		*clr
-		set minut += 30
+		minut += 30
 		clr
 		gs 'statPRE'
 		'<center><img src="images/picPRE/otelPRE1.jpg"></center>'
@@ -31,7 +31,7 @@ act 'Up to the room.':
 		act 'Go to bed.':
 			cla
 			*clr
-			set minut += 600
+			minut += 600
 			clr
 			gs 'statPRE'
 			'<center><img src="images/picPRE/otelPRE1.jpg"></center>'
@@ -40,7 +40,7 @@ act 'Up to the room.':
 			act 'Open your eyes.':
 				cla
 				*clr
-				set minut += 5
+				minut += 5
 				clr
 				gs 'statPRE'
 				'<center><img src="images/picPRE/tobiPRE.jpg"></center>'
@@ -49,27 +49,27 @@ act 'Up to the room.':
 				act 'Who are you?':
 					cla
 					*clr
-					set minut += 5
+					minut += 5
 					clr
 					gs 'statPRE'
 					'<center><img src="images/picPRE/tobiPRE.jpg"></center>'
 					'"Who are you?" you asked puzzled. "Listen, man, do not look for problems currently on level ground, give the statue and close construction. This place belongs to us." stranger said in a firm voice.'
-					'You´re thinking, who is this, and what it all means. "I see no small show of force, we do not reach an agreement." the man said, and at this point you feel as if you saw a stranger through and felt a burning desire to give him a statue.'
+					'You''re thinking, who is this, and what it all means. "I see no small show of force, we do not reach an agreement." the man said, and at this point you feel as if you saw a stranger through and felt a burning desire to give him a statue.'
 
 					act 'Give him a statue':
 						cla
 						*clr
-						set minut += 5
+						minut += 5
 						clr
 						gs 'statPRE'
 						'<center><img src="images/picPRE/otelPRE1.jpg"></center>'
 						'You got out of bed and gave him a statue. The man picked it up, turned around and then his eyes like a whirlwind formed tightening it in your eyes the same as in the funnel. A few seconds and the man disappeared. You rubbed his eyes, "what the hell is going on here. Do I have dreamed it. No, I do not like a lunatic that would walk around the room in a dream, and the statue was gone." you pondered.'
-						'At this point, knock on the door. You came to the door and asked who was there. A woman´s voice from behind the door you said that the hotel receptionist and she wants to talk to you on an urgent matter.'
+						'At this point, knock on the door. You came to the door and asked who was there. A woman''s voice from behind the door you said that the hotel receptionist and she wants to talk to you on an urgent matter.'
 
 						act 'Answer the door':
 							cla
 							*clr
-							set minut += 5
+							minut += 5
 							clr
 							gs 'statPRE'
 							'<center><img src="images/picPRE/karinPRE.jpg"></center>'
@@ -79,7 +79,7 @@ act 'Up to the room.':
 							act 'Listen, comrade came here already on this issue.':
 								cla
 								*clr
-								set minut += 5
+								minut += 5
 								clr
 								gs 'statPRE'
 								'<center><img src="images/picPRE/karinPRE.jpg"></center>'
@@ -89,44 +89,44 @@ act 'Up to the room.':
 								act 'Share':
 									cla
 									*clr
-									set minut += 5
+									minut += 5
 									clr
 									gs 'statPRE'
 									'<center><img src="images/picPRE/karinPRE.jpg"></center>'
 									'"What is a man in a black cloak with red clouds and orange mask with one hole for the eyes. He already took the statue." you answered.'
-									'Girl´s face fell. "Curse. Ahead. Okay Michael, we will continue in another place. Juugo, Vyazhi it." said the girl at the door.'
+									'Girl''s face fell. "Curse. Ahead. Okay Michael, we will continue in another place. Juugo, Vyazhi it." said the girl at the door.'
 									'Came into the room a tall man.'
 
 									act 'Prepare to fight':
 										cla
 										*clr
-										set minut += 5
+										minut += 5
 										clr
 										gs 'statPRE'
 										'<center><img src="images/picPRE/jugoPRE.jpg"></center>'
 										'The man across the right side of his face was visible tattoo. Red hair stood on end.'
-										set $nameV = 'Juugo'
+										$nameV = 'Juugo'
 										!!stats
-										set strenV = 600
-										set speedV = 60
-										set agilV = 60
-										set reactV = 50
-										set vitalV = 200
-										set intelV = 50
-										set willV = 50
+										strenV = 600
+										speedV = 60
+										agilV = 60
+										reactV = 50
+										vitalV = 200
+										intelV = 50
+										willV = 50
 										!!skills
-										set magikV = 100
-										set boxingV = 100
-										set shootV = 100
+										magikV = 100
+										boxingV = 100
+										shootV = 100
 										!!parameters
-										set healthV = vitalV * 10 + strenV * 5
-										set mannaV = intelV * 10 + magikV * 10
-										set willpowerV = willV * 10
-										set BonusAtakV = 0
-										set BonusDefV = 0
+										healthV = vitalV * 10 + strenV * 5
+										mannaV = intelV * 10 + magikV * 10
+										willpowerV = willV * 10
+										BonusAtakV = 0
+										BonusDefV = 0
 										!!Programme of Action
-										set program = 0
-										set jugoFight = 1
+										program = 0
+										jugoFight = 1
 
 										act 'Fight':gt 'fight', 'start'
 									end
