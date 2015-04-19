@@ -9,20 +9,14 @@ $variable_name = $ARGS[3]
 $location = $ARGS[4]
 dynamic 'in_inventory = <<$variable_name>>'
 
-*pl 'You have <<in_inventory>> <b><<$item>></b>'
-$template = "
-    act 'Buy <<count>> <b><<$item>></b> (<<price>> rubles)':
-        if money < price:
-            $message = '<font color=""red"">You do not have enough money.</font>'
-        else
-            set <<$variable_name>> += <<count>>
-            set money -= price
-            $message = '<font color=""blue"">You bought <<count>> <b><<$item>></b>.</font>'
-        end
-        gt $location, $message
-    end
-"
+$buy_link = '<a' + iif(money >= price, ' href="exec: gs ''$buy_item'', <<count>>, ''<<$item>>'', <<price>>, ''<<$variable_name>>'', ''<<$location>>''">buy ','>buy ') + count + '</a>'
 
-dynamic $template
+$RESULT = '<tr>' + _
+'<td align="center"><<$item>></td>' + _
+'<td align="right">(you have <<in_inventory>>)</td>' + _
+'<td align="right"><<$buy_link>></td>' + _
+'<td align="left">for <<price>> rubles</td>' + _
+'</tr>'
 
 --- $stock_item ---------------------------------
+
