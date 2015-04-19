@@ -19,7 +19,7 @@ end
 
 if $ARGS[0] = 'voleybol':
 	cls
-	set minut += 1
+	minut += 1
 	'<center><img src="images/img/Lake/voleybol.jpg"></center>'
 	'You came to the volleyball court.'
 
@@ -29,10 +29,10 @@ if $ARGS[0] = 'voleybol':
 	act 'Play':
 		cla
 		*clr
-		set agil += 1
-		set react += 1
-		set speed += 1
-		set minut += 30
+		agil += 1
+		react += 1
+		speed += 1
+		minut += 30
 		'<center><img src="images/img/Lake/voleybol.jpg"></center>'
 		'You go up to the players and ask whether it is possible to join, you will be happy to take the team.'
 
@@ -41,30 +41,28 @@ if $ARGS[0] = 'voleybol':
 end
 
 if $ARGS[0] = 'zagarat':
-	set minut += 30
 	cls
+	minut += 30
+	sweat += 1
+	manna += 5
 	gs 'stat'
 	'<center><img src="images/img/Lake/nudezagarat.jpg"></center>'
-	set sweat += 1
-	set manna += 5
 
 	if krem = 0:
-		set tan += 1
+		tan += 1
 		'You went to the beach to sunbathe.'
-	end
-
-	if krem > 0:
-		set krem -= 1
-		set tan += 3
+	else
+		krem -= 1
+		tan += 3
 		'You smeared body sunblock and went to sunbathe.'
 	end
 
-	set nzagrand = rand(0, 100)
+	nzagrand = rand(0, 100)
 
-	if kat > 30 and katkey = 0 and nzagrand >= 60 and nzagrand < 70:gt 'Katlake', 'key'
+	if nzagrand >= 60 and nzagrand < 70 and kat > 30 and katkey = 0:gt 'Katlake', 'key'
+	if nzagrand >= 70 and nzagrand < 80 and kat = 0 and katday ! day:gt 'Katlake'
 	if nzagrand >= 80 and nzagrand < 90:gt 'Vnlake1'
 	if nzagrand >= 90:gt 'Vnlake2'
-	if katday ! day and kat = 0 and nzagrand >= 70 and nzagrand < 80:gt 'Katlake'
 
 	act 'Finish':gt 'Nudelake'
 end
@@ -72,18 +70,18 @@ end
 if $ARGS[0] = 'swim':
 	cla
 	*clr
-	set cumpussy = 0
-	set cumbelly = 0
-	set cumass = 0
-	set cumlip = 0
-	set cumface = 0
-	set cumfrot = 0
-	set minut += 60
-	set sweat = -3
-	set manna += 5
-	set willpower += 5
+	cumpussy = 0
+	cumbelly = 0
+	cumass = 0
+	cumlip = 0
+	cumface = 0
+	cumfrot = 0
+	minut += 60
+	sweat = -3
+	manna += 5
+	willpower += 5
 
-	if stren < 30:set stren += 1
+	if stren < 30:stren += 1
 
 	'<center><img src="images/img/Lake/nudeswim.jpg"></center>'
 	'You went for a swim.'
@@ -92,8 +90,8 @@ if $ARGS[0] = 'swim':
 end
 
 if $ARGS[0] = 'smotr':
-	set minut += 30
 	cls
+	minut += 30
 	gs 'stat'
 	'<center><img src="images/img/Lake/voleybol.jpg"></center>'
 	'You see how others play.'

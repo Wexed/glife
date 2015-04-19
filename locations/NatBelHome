@@ -22,9 +22,7 @@ if lernHome ! 0:
 
 		act 'rest':gt $curloc
 	end
-end
-
-if lernHome = 0:
+elseif lernHome = 0:
 	'Natasha is sitting on her bed.'
 
 	act 'Chat with Natasha':
@@ -36,13 +34,13 @@ if lernHome = 0:
 		'You talked to Natasha about any nonsense.'
 
 		if NatBelBestFrend = 1:'Natasha recognized, she lives in a very poor family. She has no father, and her mother works for a penny at a garment factory.'
-		if NatBelBestFrend >= 2:'Natasha envies, that other girls can smartly odevatsya and buy cosmetics, when she wears her mother`s things.'
+		if NatBelBestFrend >= 2:'Natasha envies, that other girls can smartly odevatsya and buy cosmetics, when she wears her mother''s things.'
 
 		act 'further':gt $curloc
 	end
 
 	if NatDolg <= 0 and money >= 2000 and natsub > 0:
-		'Natasha asked confused "Sveta, and you can take a couple of thousand?"'
+		'Natasha asked confused "<<$name>>, and you can take a couple of thousand?"'
 
 		act 'Give money Natasha':
 			cls
@@ -55,10 +53,8 @@ if lernHome = 0:
 
 			act 'further':gt $curloc
 		end
-	end
-
-	if NatBelBestFrend >= 3 and NatDolg = 0 and money >= 5000 and natsub = 0:
-		'Natasha looked down "Sveta, you are found money. Could you lend me 5000 rubles. I will give, parole."'
+	elseif NatBelBestFrend >= 3 and NatDolg = 0 and money >= 5000 and natsub = 0:
+		'Natasha looked down "<<$name>>, you are found money. Could you lend me 5000 rubles. I will give, parole."'
 
 		act 'Lend Natasha':
 			cls
@@ -73,12 +69,10 @@ if lernHome = 0:
 
 			act 'rest':gt $curloc
 		end
-	end
-
-	if NatDolg>0 and NatDolgDay > daystart:'Natasha promises you to repay the debt <<NatDolg>> rubles, through <<NatDolgDay-daystart>> days'
-
-	if NatDolg > 0 and NatDolgDay <= daystart:
-		'Natasha looks at the floor "Sveta, I have no money, that would give back to."'
+	elseif NatDolg>0 and NatDolgDay > daystart:
+		'Natasha promises you to repay the debt <<NatDolg>> rubles, through <<NatDolgDay-daystart>> days'
+	elseif NatDolg > 0 and NatDolgDay <= daystart:
+		'Natasha looks at the floor "<<$name>>, I have no money, that would give back to."'
 
 		act 'Forgive the debt Natasha':
 			cls
@@ -99,15 +93,15 @@ if lernHome = 0:
 				minut += 15
 				gs 'stat'
 				'<center><img src="images/qwest/alter/npc/16.jpg"></center>'
-				'You have decided not to lower the debt Natasha, and rolled her scandal, demanding the return of money. Natasha shrank together into a ball on his bed "Svetochka, sweet, forgive me. I am for you." Looking at you frightened Natasha came up with a couple of ideas, how you can use this chicken. And you evil hissed her "You`re my every last penny exhaust creature."'
+				'You have decided not to lower the debt Natasha, and rolled her scandal, demanding the return of money. Natasha shrank together into a ball on his bed "Svetochka, sweet, forgive me. I am for you." Looking at you frightened Natasha came up with a couple of ideas, how you can use this chicken. And you evil hissed her "You''re my every last penny exhaust creature."'
 
 				act 'on your knees! And open your mouth!':
 					cls
 					minut += 5
 					natotrab += 1
 					natsub += 1
-					gs 'stat'
 					!!natknee
+					gs 'stat'
 					'<center><img src="images/qwest/alter/ev2/natknee.jpg"></center>'
 					'You barked at Natasha, and she immediately obediently knelt down and opened her mouth.'
 
@@ -116,8 +110,8 @@ if lernHome = 0:
 						minut += 5
 						natsub += 1
 						NatDolg -= 500
-						gs 'stat'
 						!!natknee
+						gs 'stat'
 						'<center><img src="images/qwest/alter/ev2/natknee.jpg"></center>'
 						'You barked at Natasha, and she immediately obediently knelt down and opened her mouth. You have collected saliva and relish Natasha spat in the face, from what she jerked and squeezed her eyes shut. you smiled, "Fair_Enough, forgive." Natasha opened her eyes which did not get asked again and harchok "forgive?" you laughed "forgive 500 rubles of debt, fool. Now you will work until the entire debt is not extinguished."'
 
@@ -135,8 +129,8 @@ if lernHome = 0:
 				minut += 5
 				natotrab += 1
 				natsub += 1
-				gs 'stat'
 				!!natknee
+				gs 'stat'
 				'<center><img src="images/qwest/alter/ev2/natknee.jpg"></center>'
 				'You barked at Natasha, and she immediately obediently knelt down and opened her mouth.'
 
@@ -145,8 +139,8 @@ if lernHome = 0:
 					minut += 5
 					natsub += 1
 					NatDolg -= 500
-					gs 'stat'
 					!!natknee
+					gs 'stat'
 					'<center><img src="images/qwest/alter/ev2/natspit.jpg"></center>'
 					'You barked at Natasha, and she immediately obediently knelt down and opened her mouth. You have collected saliva and relish Natasha spat in the face, from what she jerked and squeezed her eyes shut.'
 
@@ -166,8 +160,8 @@ if lernHome = 0:
 						!!horny = 0
 						!!orgasm += 1
 						natlesb += 1
-						gs 'stat'
 						!!natknee
+						gs 'stat'
 						'<center><img src="images/qwest/alter/ev2/natlick.jpg"></center>'
 						'You were forced to undress and Natasha undressing alone stood in front of her face. "Now lick!". Natasha frightened started to work.'
 
@@ -181,8 +175,8 @@ if lernHome = 0:
 									natsub += 1
 									NatDolg -= 500
 									natpee += 1
-									gs 'stat'
 									!!natknee
+									gs 'stat'
 									'<center><img src="images/qwest/alter/ev2/natpee.jpg"></center>'
 									'You are angry at this bitch released urine stream in the face of Natasha. She closed her eyes and bowed face down, but not recoiled and silently doterpela flogging until the very end.'
 

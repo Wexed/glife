@@ -15,8 +15,11 @@ act 'Wait':
 	cla
 	waiting = input ("How long would you like to wait? (Not more than 120 minutes)")
 
-	if waiting <= 0 or waiting > 120:set minut += 15
-	if waiting > 0 and waiting <= 120:set minut += waiting
+	if waiting <= 0 or waiting > 120:
+		minut += 15
+	elseif waiting > 0 and waiting <= 120:
+		minut += waiting
+	end
 
 	act 'Take a look at the clock':gt curloc
 end
@@ -24,28 +27,28 @@ end
 act 'Take a cab':
 	cla
 	*clr
+	minut += 5
 	'<center><img src="images/etogame/taxi1.jpg"></center>'
 	'You caught a passing taxi.'
 	'"The drive will cost you <b>250 rubles</b>", the driver says.'
-	set minut += 5
 
 	if $loc ! 'street':
 		act 'Go to the Residential Area':
-			set $loc = 'street'
+			$loc = 'street'
 			dynamic $taxi
 		end
 	end
 
 	if $loc ! 'down':
 		act 'Go to the City Center':
-			set $loc = 'down'
+			$loc = 'down'
 			dynamic $taxi
 		end
 	end
 
 	if $loc ! 'Nord':
 		act 'Go to the Northern Area':
-			set $loc = 'Nord'
+			$loc = 'Nord'
 			dynamic $taxi
 		end
 	end
@@ -71,10 +74,13 @@ if hour >= 9 and hour <= 17 and week > 1:'<a href="exec:gt ''autosalonF'', ''sta
 if hour >= 9 and hour <= 20 and week < 7:'<a href="exec:gt ''autoservisF'', ''start''">Repair Shop</a>'
 if hour >= 9 and hour <= 17 and week > 1:'Used <a href="exec:gt ''autotraidF'', ''start''">Car Dealership</a>'
 if hour >= 9 and hour <= 17 and week < 6:'<a href="exec:gt ''dk'', ''start''">The House of Culture named after Lenin</a>'
+if hour >= 9 and hour <= 17 and week < 6 and bumtolik > 3:'<a href="exec:gt ''buklinik'', ''start''">Mercy clinic</a>'
 if hour >= 8 and hour <= 20:'The parking lot, which is engulfed in bright lights, belongs to a <a href="exec:gt ''shop'', ''start''">Supermarket</a>'
-if hour >= 12 and hour < 20:'Above the door to a basement room is a bright neon sign for a <a href="exec:gt ''pirsingsalon''">piercing parlor</a>'
+if hour >= 12 and hour <= 19:'Above the door to a basement room is a bright neon sign for a <a href="exec:gt ''pirsingsalon''">piercing parlor</a>'
 if tobiQW >= 1:'The old mansion, home to <a href="exec:gt ''kakuzu'', ''start''">Kakuzu</a>'
+
 'There is a huge building, with bright lights, which houses a <a href="exec:gt ''casino''">Casino</a> and a hotel.'
+
 if hour >= 14 or hour < 4:'Located far away from the buildings <a href="exec:gt ''lakecafe'', ''main''">barbecue</a>.'
 if jouryResult = 10:'In one of the building you can find <a href="exec:gt ''youry''">Georges</a> flat'
 if IvanKvartira > 0:'In one of these building is <a href="exec:gt ''ivanRoom''">Manager Ivans</a> apartment'
