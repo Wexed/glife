@@ -4,14 +4,14 @@ if $ARGS[0] = 'start':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 5
 	gs 'stat'
-	set minut += 5
 	'<center><img src="images/studia/studiа_0.jpg"></center>'
 
 	act 'Leave':gt 'down'
 
 	if hour >= 9 and hour <= 22:
-		'Manager´s office opened.'
+		'Manager''s office opened.'
 
 		act 'Go to the manager':gt 'pornstudio', 'man'
 		act 'Visit the Assistant queries manager':gt 'pornstudio', 'pomman'
@@ -22,15 +22,13 @@ if $ARGS[0] = 'start':
 			act 'Take a drive':
 				cls
 				minut += 5
-				gs 'stat'
 				workDisk = 2
+				gs 'stat'
 				'You are given a disk, and specify whether you remember all the instructions. You nod your head and head to the exit with the disc. Moving away from the studio near you heard someone else came out of a nearby building and headed for you. "Avoid deserted places, maybe blow over" you had hoped, and went on.'
 
 				act 'Leave':gt 'down'
 			end
-		end
-
-		if workDisk = 3 and week = 5:
+		elseif workDisk = 3 and week = 5:
 			act 'Give the envelope':
 				cls
 				minut += 5
@@ -38,14 +36,14 @@ if $ARGS[0] = 'start':
 				gs 'stat'
 
 				if konvert = 0:
+					workDolg = 200000
+					workDolgDay = 7
 					'Starting kopatsya in things you struck terror. No envelope. You all again ransacked, but no envelope.'
 					'-WHAT! But how could this happen! You know, in what you got dibs?!'
 					'You stand and you can not squeeze out a single word. Sounds like your situation is really deplorable.'
 					'Manager grabs the phone and explains the situation to the other party. After listening to a couple of minutes, he hung up.'
 					'So-so - he said - his boss was in a good mood, so I have good news. You have a week. Until next Friday evening you shall bring into the studio 200000. If you bring - we leave, but more than an actress you work with us you can not.'
 					'Otherwise, the consequences will be grim.'
-					workDolg = 200000
-					workDolgDay = 7
 				else
 					konvert = 0
 					money += 5000
@@ -60,10 +58,10 @@ if $ARGS[0] = 'start':
 			act 'To repay the debt':
 				cls
 				minut += 5
-				gs 'stat'
 				workDisk = 0
 				money -= workDolg
 				workDolg = 0
+				gs 'stat'
 				'You gave the money owed to the studio.'
 
 				act 'Leave':gt 'down'
@@ -92,8 +90,8 @@ if $ARGS[0] = 'pomman':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 5
 	gs 'stat'
-	set minut += 5
 	'Young guy knocks on the computer keys in a small office.'
 	'"How can I help you?".'
 
@@ -105,12 +103,12 @@ end
 if $ARGS[0] = 'myvid':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
+	minut += 5
 	gs 'stat'
-	set minut += 5
 
-	if film = 0:'"You have no videos."'
-
-	if film > 0:
+	if film = 0:
+		'"You have no videos."'
+	elseif film > 0:
 		'"Do you <<film>> videos. Their rating is still very low, quite simply, they are almost nobody is looking."'
 		'The guy whispers "By the way if you suddenly want to, I can contribute to their removal from the network - if you go down to the price."'
 
@@ -123,9 +121,9 @@ end
 if $ARGS[0] = 'myvid2':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
+	minut += 5
+	films_stop_payment = film * 40000
 	gs 'stat'
-	set minut += 5
-	set films_stop_payment = film * 40000
 	'So long as little video views, we are not very interested in them, and I can remove them. But will have to pay all the costs of the studio, about 40, 000 each. A total amount of <<films_stop_payment>>. In addition, site-hoster does not love these models, so that the more you do not get a job with us.'
 
 	if money >= films_stop_payment:act 'Agree':gt 'pornstudio', 'myvid3'
@@ -136,12 +134,12 @@ end
 if $ARGS[0] = 'myvid3':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
-	gs 'stat'
-	set minut += 5
-	set money -= films_stop_payment
-	set pfilmSTOP = 1
+	minut += 5
+	money -= films_stop_payment
+	pfilmSTOP = 1
 	$pfilmstory_new = 'In the porn industry you know the name' + $pfname + '. You starred in porn' + film + ' times. Shooting ceased all video seized.'
-	set film = 0
+	film = 0
+	gs 'stat'
 	'So, your video removed. Have a nice day.'
 
 	act 'Leave':gt 'pornstudio', 'start'
@@ -152,13 +150,13 @@ if $ARGS[0] = 'man':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 5
 	gs 'stat'
-	set minut += 5
 	'<center><img src="images/studia/studiа_0.jpg"></center>'
 	'Boss porn studio met you welcome and gestured you sit on the couch.'
 
 	if pfilmNO = 1:
-		'You´re blacklisted, you no decent studio will not have affairs, goodbye.'
+		'You''re blacklisted, you no decent studio will not have affairs, goodbye.'
 
 		act 'Leave':gt 'pornstudio', 'start'
 
@@ -179,9 +177,7 @@ if $ARGS[0] = 'man':
 		act 'Leave':gt 'pornstudio', 'start'
 
 		exit
-	end
-
-	if pfilmday >= daystart + 2:
+	elseif pfilmday >= daystart + 2:
 		pfilmNO = 1
 		'You did not come to the shooting. Plucked them. I paid a lot of dough assistants, actors, cameramen, plus rental studio, and you took it and threw me. No, with you I do not want to work and am submitting your name in the blacklist.'
 
@@ -206,14 +202,14 @@ if $ARGS[0] = 'man':
 		exit
 	elseif pfilm > 0 and hour = 12:
 		pfilmday = day
-		'What the dick? There´s only one waiting for you. Hurry honey inspection.'
+		'What the dick? There''s only one waiting for you. Hurry honey inspection.'
 
 		act 'Go for medical check-up':gt 'pf', 'doc'
 
 		exit
 	elseif pfilm > 0 and hour > 12:
 		pfilmday = day
-		'I told you not to be late? Said. Get out of here, I´m out for you a lot of money lost. Actors paid assistants, operator, doctor, and because of you slut, shooting all failed.'
+		'I told you not to be late? Said. Get out of here, I''m out for you a lot of money lost. Actors paid assistants, operator, doctor, and because of you slut, shooting all failed.'
 		'Either you come tomorrow and work for free, or get out and I know you do not want.'
 
 		act 'Himself worked for free moron':
@@ -226,11 +222,12 @@ if $ARGS[0] = 'man':
 			pfilmNOPAY = 1
 			gt 'pornstudio', 'start'
 		end
-	!!else
-		!!'Peter said on the phone, he covers up the phone for a second. "Listen, while not up to you, how come some other time."'
+	!'
+	else
+		'Peter said on the phone, he covers up the phone for a second. "Listen, while not up to you, how come some other time."'
 
-		!!act 'Leave':gt 'pornstudio', 'start'
-
+		act 'Leave':gt 'pornstudio', 'start'
+	'!
 		exit
 	end
 	if film = 0 and firstkasting = 0:
@@ -240,7 +237,7 @@ if $ARGS[0] = 'man':
 
 		act 'Yes':
 			cla
-			set minut += 5
+			minut += 5
 			gs 'stat'
 			'You have confirmed their desire to play in a porn movie. Boss nodded. All right. First you need to spend casting.'
 			'Razdentes, me see your body.'
@@ -288,10 +285,10 @@ if $ARGS[0] = 'man':
 
 									if $pfname <= 0:$pfname = '<<$name>> Huesoskina'
 
-									'<<$pfname>>, um, okay, go. Now listen, the composition of pornographic men have a permanent, all before shooting pass medical examination. You´ll also pass a medical examination. If you find any sign of a sexually transmitted disease, then dosvidaniya forever. This point is clear? Take care of health. I´m not going to jeopardize his actors.'
+									'<<$pfname>>, um, okay, go. Now listen, the composition of pornographic men have a permanent, all before shooting pass medical examination. You''ll also pass a medical examination. If you find any sign of a sexually transmitted disease, then dosvidaniya forever. This point is clear? Take care of health. I''m not going to jeopardize his actors.'
 									'We shoot films not so often. About once a month.'
 									''
-									'We´ll see. That we need.'
+									'We''ll see. That we need.'
 
 									act '.....':gt 'pornstudio', 'man'
 								end
@@ -302,7 +299,7 @@ if $ARGS[0] = 'man':
 			end
 		end
 	elseif film = 0 and firstkasting = 1 and pfilm = 0:
-		'So, you´re new girl, and we just have an order for a brand new girl. In the genre handdzhob. You´ll have to masturbate guy, and he would finish your chest. All this for 3000.'
+		'So, you''re new girl, and we just have an order for a brand new girl. In the genre handdzhob. You''ll have to masturbate guy, and he would finish your chest. All this for 3000.'
 
 		act 'Agree':
 			cla
@@ -316,7 +313,7 @@ if $ARGS[0] = 'man':
 		act 'I changed my mind':gt 'pornstudio', 'start'
 	elseif film > 0:
 		if daystart > pffilmday and pfilm = 0:
-			'Come on <<$pfname>>. So, let´s see what I can pick up for you.'
+			'Come on <<$pfname>>. So, let''s see what I can pick up for you.'
 			frand = rand(1, 6)
 			!!frand = 6
 
@@ -344,9 +341,7 @@ if $ARGS[0] = 'man':
 			if pffilmday-daystart > 0:
 				$talkpsno = 'Come back <<pffilmday-daystart>>days'
 				'Sorry <<$pfname>>, now there is no work for you. <<$talkpsno>>.'
-			end
-
-			if pffilmday-daystart = 0:
+			elseif pffilmday-daystart = 0:
 				$talkpsno = 'Come back tomorrow'
 				'Sorry <<$pfname>>, now there is no work for you. <<$talkpsno>>.'
 			end
@@ -359,63 +354,59 @@ if $ARGS[0] = 'man':
 
 	act 'Leave':gt 'pornstudio', 'start'
 
-	!'if week < 6 and pornstudio > 1 and pfilmA = 0 and pfilmB = 0:
-		set porand = rand(1, 3)
+	!'
+	if week < 6 and pornstudio > 1 and pfilmA = 0 and pfilmB = 0:
+		porand = rand(1, 3)
 
 		if porand < 3:
 			'Who needs an actress doing a blowjob. 1000 per hour. Filming will take 5 hours. Not necessarily immediately removed. Can come and shoot for an hour.'
 
 			act 'Agree':
-				Set pfilm = 1
-				gt 'the_film', 'film'
+				pfilm = 1
+				gt 'the_movie', 'film'
 			end
-		end
-
-		if porand = 3:
+		elseif porand = 3:
 			'Who needs an actress for the film, anal, classic, deep blowjob. 3000 per hour. Filming will take 10:00. Not necessarily immediately removed. Can come and shoot for an hour.'
 
 			act 'Agree':
-				Set pfilm = 2
-				gt 'the_film', 'film2'
+				pfilm = 2
+				gt 'the_movie', 'film2'
 			end
 		end
-	end
-
-	if week < 6 and hour >= 10 and pfilmA > 0:
+	elseif week < 6 and hour >= 10 and pfilmA > 0:
 		'You are not yet fully appeared in the film and you have to continue.'
 
 		act 'Go to the set':
-			Set pfilm = 1
-			gt 'the_film', 'film'
+			pfilm = 1
+			gt 'the_movie', 'film'
 		end
-	end
-
-	if week < 6 and hour >= 10 and pfilmB > 0:
+	elseif week < 6 and hour >= 10 and pfilmB > 0:
 		'You are not yet fully appeared in the film and you have to continue.'
 
 		act 'Go to the set':
-			Set pfilm = 2
-			gt 'the_film', 'film2'
+			pfilm = 2
+			gt 'the_movie', 'film2'
 		end
 	end
 
-	if actr = 1 and pfilmA = 0 and pfilmB = 0:'Now you have nothing to do in the studio, come Sunday'
-	if week = 6 and actr = 0:
+	if actr = 1 and pfilmA = 0 and pfilmB = 0:
+		'Now you have nothing to do in the studio, come Sunday'
+	elseif week = 6 and actr = 0:
 		act 'Try your luck at kastinge for starring':gt 'pornstudio', '2'
-	end
-	if week = 7 and actr = 1:
+	elseif week = 7 and actr = 1:
 		act 'Go to the shooting':gt 'pornstudio', '3'
 	end
 
 	if week < 6 and hour >= 22:
 		act 'Go home':gt 'down'
-	end '!
+	end
+	'!
 end
 
 if $ARGS[0] = '1':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
-	set minut += 5
+	minut += 5
 	clr
 	gs 'stat'
 	'<center><img src="images/studia/Pierre_1.jpg"></center>'
@@ -428,7 +419,7 @@ if $ARGS[0] = '1':
 		minut = minut + 60
 		'<center><img src="images/studia/Pierre_2.jpg"></center>'
 		'Peter smiled and said that the new actresses are always welcome, just terrible, of course, in the business do not take. On the first couple of auditions will take place, if you like the public - you can not take them.'
-		'I´ll tell you that here and how, but under one condition - you have to undress.'
+		'I''ll tell you that here and how, but under one condition - you have to undress.'
 
 		act 'Undress':
 			cla
@@ -466,7 +457,7 @@ if $ARGS[0] = '1':
 								cla
 								*clr
 								'<center><img src="images/studia/ment_0.jpg"></center>'
-								'Specifically for you - yet. We´ve got their contracts with the cops, maybe in the future you will be able to help us to keep them in power, but for now - I told you all have to try on the weekend.'
+								'Specifically for you - yet. We''ve got their contracts with the cops, maybe in the future you will be able to help us to keep them in power, but for now - I told you all have to try on the weekend.'
 
 								act 'Well like all realized':
 									cla
@@ -489,18 +480,12 @@ if $ARGS[0] = '2':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
 	clr
+	carraf = rand(10, 250)
 	gs 'stat'
-	set carraf = rand(10, 250)
 	castingrand = rand(1, 6)
 
-	if castingrand = 1:'<center><img src="images/studia/casting_1.jpg"></center>'
-	if castingrand = 2:'<center><img src="images/studia/casting_2.jpg"></center>'
-	if castingrand = 3:'<center><img src="images/studia/casting_3.jpg"></center>'
-	if castingrand = 4:'<center><img src="images/studia/casting_4.jpg"></center>'
-	if castingrand = 5:'<center><img src="images/studia/casting_5.jpg"></center>'
-	if castingrand = 6:'<center><img src="images/studia/casting_6.jpg"></center>'
-
-	'You spent eight o´clock in the casting producer was undressing in front and taking a variety of poses.'
+	'<center><img src="images/studia/casting_<<castingrand>>.jpg"></center>'
+	'You spent eight o''clock in the casting producer was undressing in front and taking a variety of poses.'
 	minut = minut + 120
 	gs 'stat'
 	minut = minut + 120
@@ -512,11 +497,9 @@ if $ARGS[0] = '2':
 
 	if vnesh < carrar:
 		'You have not taken the role, very sorry'
-	end
-
-	if vnesh >= carrar:
-		'Your role'
+	elseif vnesh >= carrar:
 		actr = 1
+		'Your role'
 	end
 
 	act 'Finish':
@@ -528,8 +511,8 @@ if $ARGS[0] = '3':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
 	clr
-	gs 'stat'
 	actr = 0
+	gs 'stat'
 	gt 'bdsm'
 end
 

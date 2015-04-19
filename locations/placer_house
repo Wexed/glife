@@ -3,15 +3,10 @@ alko += 10
 gs 'stat'
 'You come across a company apartment and continued there to drink and have fun.'
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if kol_man = 1:
 	dick = rand(12, 25)
 	$boy = 'guy'
-	'You started obnimatsya and tselovatsya Man, <<$ev_name>> also started to kiss him.'
+	'You started hugging and kissing a man, <<$ev_name>> also started to kiss him.'
 
 	act 'Sucking guy':
 		cls
@@ -48,14 +43,7 @@ if kol_man = 1:
 			act 'Leave':gt 'placer_end'
 		end
 	end
-end
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-if kol_man = 2:
+elseif kol_man = 2:
 	dick = rand(12, 25)
 	$boy = 'guy'
 	'The boys began to hug and kiss you with his girlfriend, <<$ev_name>> Man began to stroke between her legs and pulled out his cock.'
@@ -91,26 +79,19 @@ if kol_man = 2:
 			act 'Leave':gt 'placer_end'
 		end
 	end
-end
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-if kol_man = 3:
+elseif kol_man = 3:
 	$d_dozdat = {
 		act 'wait for girlfriend':
 			cls
 			minut += 5
 			gs 'stat'
+			cumface = 0
 
 			if Frend_num = 14:
 				'<center><img src="images/qwest/alter/placer/katjacum.jpg"></center>'
 				'Of the room came a tired but happy with Katja smeared in white mucus face.'
 			end
 
-			cumface = 0
 			'Together with a friend you have brought each other in order and steel This collection of home.'
 
 			act 'Leave':gt 'placer_end'
@@ -203,11 +184,11 @@ if kol_man = 3:
 			'<center><img src="images/qwest/alter/placer/bj.jpg"></center>'
 			'You sat on his haunches in front of a guy and he unbuttoned his pants pulled out his penis.'
 			dynamic $dinrandbj
-			tipsexrand = rand(0, 1)
 
 			act 'further':
 				cls
 				gs 'stat'
+				tipsexrand = rand(0, 1)
 
 				if tipsexrand = 0:
 					cumlip += 1
@@ -216,9 +197,7 @@ if kol_man = 3:
 					'<center><img src="images/qwest/alter/placer/swallow2.jpg"></center>'
 					dynamic $dinrandswallow
 					dynamic $d_girlfrend_end2
-				end
-
-				if tipsexrand = 1:
+				elseif tipsexrand = 1:
 					'<center><img src="images/qwest/alter/placer/bj.jpg"></center>'
 					'The guy whispered, "I want you"'
 
@@ -295,9 +274,7 @@ if kol_man = 3:
 					gs 'stat'
 					'Suddenly a guy who sucked you became close your mouth and smeared his cock cum to you on the lips and cheeks.'
 					dynamic $d_girlfrend_end
-				end
-
-				if sexrand = 1:
+				elseif sexrand = 1:
 					'Guys suddenly decided to change places.'
 
 					act 'further':
@@ -340,15 +317,13 @@ if kol_man = 3:
 						gs 'stat'
 						'Suddenly a guy who sucked you became close your mouth and smeared his cock cum to you on the lips and cheeks.'
 						dynamic $d_girlfrend_end
-					end
-
-					if sexrand = 1:
+					elseif sexrand = 1:
 						act 'further':
 							cls
+							dick = rand(15, 20)
 							gs 'stat'
 							'<center><img src="images/qwest/alter/placer/anal.jpg"></center>'
 							'The guy pulled out of your ass his limp dick and a guy who beat you you suck and joined up to your ass. '
-							dick = rand(15, 20)
 							dynamic $analsexrude
 							dynamic $d_girlfrend_end
 						end
@@ -374,14 +349,7 @@ if kol_man = 3:
 			end
 		end
 	end
-end
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-if kol_man >= 4:
+elseif kol_man >= 4:
 	'The boys began to embrace you and girlfriend.'
 
 	act 'engaged in sex':
@@ -410,26 +378,16 @@ if kol_man >= 4:
 		'<center><img src="images/qwest/alter/placer/dp.jpg"></center>'
 		dynamic $doublepenetration
 		dynamic $sexcum
-		'The second guy started to cum inside your priests filling her with his sperm'
 		cumanus += 1
 		gs 'stat'
-
+		'The second guy started to cum inside your priests filling her with his sperm'
 		act 'Leave':gt 'placer_end'
 	end
 end
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!if kol_man = 5:
 !!end
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 !!if kol_man = 6:
 !!end
 

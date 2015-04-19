@@ -4,9 +4,9 @@ if $ARGS[0] = 'boss':
 	$loc = $CURLOC
 	cla
 	*clr
-	gs 'stat'
-	set minut += 30
+	minut += 30
 	film += 1
+	gs 'stat'
 
 	if pfilm = 1:pfcash = 2000 & $filmtext = ' where you snimalilis as otdrachivali guy and he descended on your boobs.'
 	if pfilm = 2:pfcash = 3000 & $filmtext = ' where you snimalilis aspirated as a member of the guy and he goes down you in the mouth and face.'
@@ -20,9 +20,7 @@ if $ARGS[0] = 'boss':
 	if pfilmNOPAY = 0:
 		money += pfcash
 		'Peter you counted <<pfcash>> per shot in the film and wished good luck'
-	end
-
-	if pfilmNOPAY = 1:
+	elseif pfilmNOPAY = 1:
 		pfilmNOPAY = 0
 		'You have fulfilled his sentence and the film was made for free.'
 	end
@@ -46,8 +44,8 @@ if $ARGS[0] = 'doc':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 5
 	gs 'stat'
-	set minut += 5
 	'You went into the office where the doctor was waiting in a white robe. He quickly pulled on rubber gloves and briefly told you undress.'
 	'You removed the clothes and sat in the high gynecological chair legs apart. The doctor came up to you and started inspection. After inspection, he took a syringe and took you out of the vein blood samples.'
 	'Now after half an hour and will be ready tests, if you have at least something, they will show.'
@@ -60,18 +58,17 @@ if $ARGS[0] = 'lab':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 30
 	gs 'stat'
-	set minut += 30
 
 	if venera > 0:
-		'Your analysis showed a sexually transmitted disease. doctor told you and called Peter. Peter looked at the piece of paper with analyzes.'
-		'Well, it <<$pfname>>I think your career is over. Goodbye.'
 		pfilmNO = 1
 		pfilmNoVenera = 1
-
+		'Your analysis showed a sexually transmitted disease. doctor told you and called Peter. Peter looked at the piece of paper with analyzes.'
+		'Well, it <<$pfname>>I think your career is over. Goodbye.'
 		act 'Leave':gt 'pornstudio', 'start'
 	else
-		'Well Well, you´re clean. Go into the dressing room'
+		'Well Well, you''re clean. Go into the dressing room'
 
 		act 'Go to the dressing room':gt 'pf', 'grim'
 	end
@@ -82,18 +79,17 @@ if $ARGS[0] = 'grim':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 30
 	gs 'stat'
-	set minut += 30
-	'In the dressing room waiting for you already lean and withered as roach woman.'
 	hapri = 1
 	mop = 4
 	gs 'stat'
+	'In the dressing room waiting for you already lean and withered as roach woman.'
 
 	if pfilm > 3:'The first cases you put a powerful enema.'
 
 	'You put in front of the mirror, brushed and laid makeup.'
 	!!if the scene with anal, then enema.
-	!
 
 	act 'Go to the set':
 		if pfilm = 1:gt 'pf', '1'
@@ -111,9 +107,8 @@ if $ARGS[0] = '1':
 	$loc = $CURLOC
 	cla
 	*clr
-
+	minut += 30
 	gs 'stat'
-	set minut += 30
 
 	akrand = rand(1, 5)
 
@@ -130,6 +125,7 @@ if $ARGS[0] = '1':
 		cla
 		*clr
 		minut += 30
+		hj += 1
 		gs 'stat'
 
 		if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
@@ -138,7 +134,6 @@ if $ARGS[0] = '1':
 		if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
 		if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
 
-		hj += 1
 		'<center><img src="images/studia/hj.gif"></center>'
 		'<<$pakter>> lay on the bed and put his penis. You lay down beside him and took his penis in his hand. Smeared his chest and a member of the actor, you started it nadrachivat eldu.'
 
@@ -153,15 +148,15 @@ if $ARGS[0] = '1':
 				cla
 				*clr
 				minut += 5
-				set sweat = -3
-				set horny += 1
-				set mop = 1
-				set cumpussy = 0
-				set cumbelly = 0
-				set cumass = 0
-				set cumanus =0
-				set cumlip = 0
-				set cumface = 0
+				sweat = -3
+				horny += 1
+				mop = 1
+				cumpussy = 0
+				cumbelly = 0
+				cumass = 0
+				cumanus =0
+				cumlip = 0
+				cumface = 0
 				'<center><img src="images/pics/dush.jpg"></center>'
 				'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
 
@@ -176,8 +171,8 @@ if $ARGS[0] = '2':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 30
 	gs 'stat'
-	set minut += 30
 	akrand = rand(1, 5)
 
 	if akrand = 1:$pakter = 'Alexey'
@@ -193,6 +188,7 @@ if $ARGS[0] = '2':
 		cla
 		*clr
 		minut += 30
+		hj += 1
 		gs 'stat'
 
 		if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
@@ -201,7 +197,7 @@ if $ARGS[0] = '2':
 		if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
 		if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
 
-		hj += 1
+
 		'<center><img src="images/studia/hj.gif"></center>'
 		'<<$pakter>> lay on the bed and put his penis. You lay down beside him and took his penis in his hand. Smeared his chest and a member of the actor, you started it nadrachivat eldu.'
 
@@ -245,15 +241,15 @@ if $ARGS[0] = '2':
 							cla
 							*clr
 							minut += 5
-							set sweat = -3
-							set horny += 1
-							set mop = 1
-							set cumpussy = 0
-							set cumbelly = 0
-							set cumass = 0
-							set cumanus =0
-							set cumlip = 0
-							set cumface = 0
+							sweat = -3
+							horny += 1
+							mop = 1
+							cumpussy = 0
+							cumbelly = 0
+							cumass = 0
+							cumanus =0
+							cumlip = 0
+							cumface = 0
 							'<center><img src="images/pics/dush.jpg"></center>'
 							'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
 
@@ -271,8 +267,8 @@ if $ARGS[0] = '3':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 30
 	gs 'stat'
-	set minut += 30
 	akrand = rand(1, 5)
 
 	if akrand = 1:$pakter = 'Alexey'
@@ -288,6 +284,7 @@ if $ARGS[0] = '3':
 		cla
 		*clr
 		minut += 30
+		hj += 1
 		gs 'stat'
 
 		if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
@@ -296,7 +293,6 @@ if $ARGS[0] = '3':
 		if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
 		if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
 
-		hj += 1
 		'<center><img src="images/studia/hj.gif"></center>'
 		'<<$pakter>> lay on the bed and put his penis. You lay down beside him and took his penis in his hand. Smeared his chest and a member of the actor, you started it nadrachivat eldu.'
 
@@ -348,15 +344,15 @@ if $ARGS[0] = '3':
 								cla
 								*clr
 								minut += 5
-								set sweat = -3
-								set horny += 1
-								set mop = 1
-								set cumpussy = 0
-								set cumbelly = 0
-								set cumass = 0
-								set cumanus =0
-								set cumlip = 0
-								set cumface = 0
+								sweat = -3
+								horny += 1
+								mop = 1
+								cumpussy = 0
+								cumbelly = 0
+								cumass = 0
+								cumanus =0
+								cumlip = 0
+								cumface = 0
 								'<center><img src="images/pics/dush.jpg"></center>'
 								'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
 
@@ -375,8 +371,8 @@ if $ARGS[0] = '4':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 30
 	gs 'stat'
-	set minut += 30
 	akrand = rand(1, 5)
 
 	if akrand = 1:$pakter = 'Alexey'
@@ -392,13 +388,14 @@ if $ARGS[0] = '4':
 		cla
 		*clr
 		minut += 30
+		hj += 1
 		gs 'stat'
 		if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
 		if akrand = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
 		if akrand = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
 		if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
 		if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
-		hj += 1
+
 		'<center><img src="images/studia/hj.gif"></center>'
 		'<<$pakter>> lay on the bed and put his penis. You lay down beside him and took his penis in his hand. Smeared his chest and a member of the actor, you started it nadrachivat eldu.'
 
@@ -460,15 +457,15 @@ if $ARGS[0] = '4':
 									cla
 									*clr
 									minut += 5
-									set sweat = -3
-									set horny += 1
-									set mop = 1
-									set cumpussy = 0
-									set cumbelly = 0
-									set cumass = 0
-									set cumanus =0
-									set cumlip = 0
-									set cumface = 0
+									sweat = -3
+									horny += 1
+									mop = 1
+									cumpussy = 0
+									cumbelly = 0
+									cumass = 0
+									cumanus =0
+									cumlip = 0
+									cumface = 0
 									'<center><img src="images/pics/dush.jpg"></center>'
 									'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
 
@@ -488,8 +485,9 @@ if $ARGS[0] = '5':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 30
+	gang += 1
 	gs 'stat'
-	set minut += 30
 	akrand = rand(1, 5)
 
 	if akrand = 1:
@@ -503,30 +501,22 @@ if $ARGS[0] = '5':
 			$pakter2 = 'Sergey'
 			$pakter22 = 'Sergei'
 			if aksex2 = 0:aksex2 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'George'
 			$pakter22 = 'George'
 			if aksex3 = 0:aksex3 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'Ignat'
 			$pakter22 = 'Ignat'
 
 			if aksex4 = 0:aksex4 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Semen'
 			$pakter22 = 'Seed'
 
 			if aksex5 = 0:aksex5 = 1 & guy += 1
 		end
-	end
-
-	if akrand = 2:
+	elseif akrand = 2:
 		$pakter = 'Sergey'
 
 		if aksex2 = 0:aksex2 = 1 & guy += 1
@@ -538,31 +528,23 @@ if $ARGS[0] = '5':
 			$pakter22 = 'Alexei'
 
 			if aksex1 = 0:aksex1 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'George'
 			$pakter22 = 'George'
 
 			if aksex3 = 0:aksex3 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'Ignat'
 			$pakter22 = 'Ignat'
 
 			if aksex4 = 0:aksex4 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Semen'
 			$pakter22 = 'Seed'
 
 			if aksex5 = 0:aksex5 = 1 & guy += 1
 		end
-	end
-
-	if akrand = 3:
+	elseif akrand = 3:
 		$pakter = 'George'
 
 		if aksex3 = 0:aksex3 = 1 & guy += 1
@@ -574,31 +556,23 @@ if $ARGS[0] = '5':
 			$pakter22 = 'Alexei'
 
 			if aksex1 = 0:aksex1 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'Sergey'
 			$pakter22 = 'Sergei'
 
 			if aksex2 = 0:aksex2 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'Ignat'
 			$pakter22 = 'Ignat'
 
 			if aksex4 = 0:aksex4 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Semen'
 			$pakter22 = 'Seed'
 
 			if aksex5 = 0:aksex5 = 1 & guy += 1
 		end
-	end
-
-	if akrand = 4:
+	elseif akrand = 4:
 		$pakter = 'Ignat'
 
 		if aksex4 = 0:aksex4 = 1 & guy += 1
@@ -610,31 +584,23 @@ if $ARGS[0] = '5':
 			$pakter22 = 'Alexei'
 
 			if aksex1 = 0:aksex1 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'Sergey'
 			$pakter22 = 'Sergei'
 
 			if aksex2 = 0:aksex2 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'George'
 			$pakter22 = 'George'
 
 			if aksex3 = 0:aksex3 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Semen'
 			$pakter22 = 'Seed'
 
 			if aksex5 = 0:aksex5 = 1 & guy += 1
 		end
-	end
-
-	if akrand = 5:
+	elseif akrand = 5:
 		$pakter = 'Semen'
 
 		if aksex5 = 0:aksex5 = 1 & guy += 1
@@ -646,23 +612,17 @@ if $ARGS[0] = '5':
 			$pakter22 = 'Alexei'
 
 			if aksex1 = 0:aksex1 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'Sergey'
 			$pakter22 = 'Sergei'
 
 			if aksex2 = 0:aksex2 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'George'
 			$pakter22 = 'George'
 
 			if aksex3 = 0:aksex3 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Ignat'
 			$pakter22 = 'Ignat'
 
@@ -670,7 +630,6 @@ if $ARGS[0] = '5':
 		end
 	end
 
-	gang += 1
 	'On the site already bustling assistants installing lighting, so that there were no shadows.'
 	'Actors <<$pakter>> and <<$pakter2>> peppers before play dirty magazines that would lead them to a state of combat readiness.'
 
@@ -678,8 +637,8 @@ if $ARGS[0] = '5':
 		cla
 		*clr
 		minut += 10
-		gs 'stat'
 		bj += 2
+		gs 'stat'
 		'<center><img src="images/studia/tbj.gif"></center>'
 		'Cast members got started and you bash them in the face.'
 
@@ -725,15 +684,15 @@ if $ARGS[0] = '5':
 							cla
 							*clr
 							minut += 5
-							set sweat = -3
-							set horny += 1
-							set mop = 1
-							set cumpussy = 0
-							set cumbelly = 0
-							set cumass = 0
-							set cumanus =0
-							set cumlip = 0
-							set cumface = 0
+							sweat = -3
+							horny += 1
+							mop = 1
+							cumpussy = 0
+							cumbelly = 0
+							cumass = 0
+							cumanus =0
+							cumlip = 0
+							cumface = 0
 							'<center><img src="images/pics/dush.jpg"></center>'
 							'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
 
@@ -751,8 +710,10 @@ if $ARGS[0] = '6':
 	$loc = $CURLOC
 	cla
 	*clr
+	minut += 30
+	gang += 1
 	gs 'stat'
-	set minut += 30
+
 	akrand = rand(1, 5)
 
 	if akrand = 1:
@@ -767,31 +728,23 @@ if $ARGS[0] = '6':
 			$pakter22 = 'Sergei'
 
 			if aksex2 = 0:aksex2 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'George'
 			$pakter22 = 'George'
 
 			if aksex3 = 0:aksex3 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'Ignat'
 			$pakter22 = 'Ignat'
 
 			if aksex4 = 0:aksex4 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Semen'
 			$pakter22 = 'Seed'
 
 			if aksex5 = 0:aksex5 = 1 & guy += 1
 		end
-	end
-
-	if akrand = 2:
+	elseif akrand = 2:
 		$pakter = 'Sergey'
 
 		if aksex2 = 0:aksex2 = 1 & guy += 1
@@ -803,31 +756,23 @@ if $ARGS[0] = '6':
 			$pakter22 = 'Alexei'
 
 			if aksex1 = 0:aksex1 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'George'
 			$pakter22 = 'George'
 
 			if aksex3 = 0:aksex3 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'Ignat'
 			$pakter22 = 'Ignat'
 
 			if aksex4 = 0:aksex4 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Semen'
 			$pakter22 = 'Seed'
 
 			if aksex5 = 0:aksex5 = 1 & guy += 1
 		end
-	end
-
-	if akrand = 3:
+	elseif akrand = 3:
 		$pakter = 'George'
 
 		if aksex3 = 0:aksex3 = 1 & guy += 1
@@ -839,31 +784,23 @@ if $ARGS[0] = '6':
 			$pakter22 = 'Alexei'
 
 			if aksex1 = 0:aksex1 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'Sergey'
 			$pakter22 = 'Sergei'
 
 			if aksex2 = 0:aksex2 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'Ignat'
 			$pakter22 = 'Ignat'
 
 			if aksex4 = 0:aksex4 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Semen'
 			$pakter22 = 'Seed'
 
 			if aksex5 = 0:aksex5 = 1 & guy += 1
 		end
-	end
-
-	if akrand = 4:
+	elseif akrand = 4:
 		$pakter = 'Ignat'
 
 		if aksex4 = 0:aksex4 = 1 & guy += 1
@@ -875,31 +812,23 @@ if $ARGS[0] = '6':
 			$pakter22 = 'Alexei'
 
 			if aksex1 = 0:aksex1 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'Sergey'
 			$pakter22 = 'Sergei'
 
 			if aksex2 = 0:aksex2 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'George'
 			$pakter22 = 'George'
 
 			if aksex3 = 0:aksex3 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Semen'
 			$pakter22 = 'Seed'
 
 			if aksex5 = 0:aksex5 = 1 & guy += 1
 		end
-	end
-
-	if akrand = 5:
+	elseif akrand = 5:
 		$pakter = 'Semen'
 
 		if aksex5 = 0:aksex5 = 1 & guy += 1
@@ -911,23 +840,17 @@ if $ARGS[0] = '6':
 			$pakter22 = 'Alexei'
 
 			if aksex1 = 0:aksex1 = 1 & guy += 1
-		end
-
-		if akrand2 = 2:
+		elseif akrand2 = 2:
 			$pakter2 = 'Sergey'
 			$pakter22 = 'Sergei'
 
 			if aksex2 = 0:aksex2 = 1 & guy += 1
-		end
-
-		if akrand2 = 3:
+		elseif akrand2 = 3:
 			$pakter2 = 'George'
 			$pakter22 = 'George'
 
 			if aksex3 = 0:aksex3 = 1 & guy += 1
-		end
-
-		if akrand2 = 4:
+		elseif akrand2 = 4:
 			$pakter2 = 'Ignat'
 			$pakter22 = 'Ignat'
 
@@ -935,7 +858,6 @@ if $ARGS[0] = '6':
 		end
 	end
 
-	gang += 1
 	'On the site already bustling assistants installing lighting, so that there were no shadows.'
 	'Actors <<$pakter>> and <<$pakter2>> peppers before play dirty magazines that would lead them to a state of combat readiness.'
 
@@ -943,8 +865,8 @@ if $ARGS[0] = '6':
 		cla
 		*clr
 		minut += 10
-		gs 'stat'
 		bj += 2
+		gs 'stat'
 		'<center><img src="images/studia/tbj.gif"></center>'
 		'Cast members got started and you bash them in the face.'
 
@@ -1000,15 +922,15 @@ if $ARGS[0] = '6':
 								cla
 								*clr
 								minut += 5
-								set sweat = -3
-								set horny += 1
-								set mop = 1
-								set cumpussy = 0
-								set cumbelly = 0
-								set cumass = 0
-								set cumanus =0
-								set cumlip = 0
-								set cumface = 0
+								sweat = -3
+								horny += 1
+								mop = 1
+								cumpussy = 0
+								cumbelly = 0
+								cumass = 0
+								cumanus =0
+								cumlip = 0
+								cumface = 0
 								'<center><img src="images/pics/dush.jpg"></center>'
 								'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
 

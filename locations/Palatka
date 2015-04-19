@@ -3,22 +3,22 @@ if $ARGS[0] = 'start':
 	$sexloc = $CURLOC
 	$metkaM = $ARGS[0]
 	$locM = $CURLOC
+	palMir = 1
 	gs 'stat'
-	set palMir = 1
 	'<center><b><font color="maroon">tent</font></b></center>'
 	'<center><img src="images/img/military/palatka.jpg"></center>'
-	set palrand = rand(0, 10)
+	palrand = rand(0, 10)
 
 	if palrand = 0:gt 'Palatka', 'pal0'
 	if palrand = 1:gt 'Palatka', 'pal1'
 
 	'To your surprise quite spacious tent has a bed here, <a href="exec:gt ''mirror'', ''start''">mirror</a>, and even made improvizorovany <a href="exec:gt ''vann'', ''start''">shower</a>.'
 
-	act 'Exit':gt 'Military', 'start'
+	act 'Leave':gt 'Military', 'start'
 
 	act 'Sleep':
-		set hour += 8
-		set son = 24
+		hour += 8
+		son = 24
 		gt 'palatka', 'start'
 	end
 end
@@ -32,8 +32,8 @@ if $ARGS[0] = 'pal0':
 	act 'Send':gt 'palatka', 'start'
 
 	act 'Post':
-		set guy += 2
-		set picrand = 22
+		guy += 2
+		picrand = 22
 		xgt 'sexdvoe', 'var'
 	end
 end
@@ -47,8 +47,8 @@ if $ARGS[0] = 'pal1':
 	act 'Say thank you':gt 'palatka', 'start'
 
 	act 'Repay in full':
-		set guy += 1
-		set picrand = 43
+		guy += 1
+		picrand = 43
 		gt 'sex', 'minet'
 	end
 end

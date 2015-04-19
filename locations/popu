@@ -2,20 +2,20 @@
 if $ARGS[0] = 'start':
 	cla
 	*clr
-	set minut += 5
-	'<center><img src="images/zoo/parrot2.jpg"></center>'
-	'<center><<$namepopu>> sitting in his cell.</center>'
 	clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><img src="images/zoo/parrot2.jpg"></center>'
+	'<center><<$namepopu>> sitting in his cell.</center>'
 
 	act 'Leave':gt 'korr'
 
 	act 'Release window':
-		set popugai = 0
-		set minut += 10
+		popugai = 0
+		minut += 10
 		gt 'korr'
 	end
 end

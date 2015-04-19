@@ -4,20 +4,16 @@ gs 'stat'
 if piratfrend < 10:
 	'<center><img src="images/qwest/gadukino/pirat.jpg"></center>'
 	'Purebred dog named Pirate indifferently sitting near the barn.'
-end
+elseif piratfrend >= 10:
+	'<center><img src="images/qwest/gadukino/pirat.jpg"></center>'
 
-if piratfrend >= 10:
 	if piratHorny < 10:
 		'Purebred dog named Pirate wags his tail when your appearance.'
-	end
-
-	if piratHorny >= 10 and piratHorny < 20:
+	elseif piratHorny >= 10 and piratHorny < 20:
 		if piratsuka < 3:'Purebred dog named Pirate revolves around you wagging his tail and sniffing.'
 		if piratsuka >= 3:'<center><img src="images/qwest/gadukino/sniff.jpg"></center>'
 		if piratsuka >= 3:'Purebred dog named Pirate revolves around you wagging his tail and nuzzle you between the legs.'
-	end
-
-	if piratHorny >= 20:
+	elseif piratHorny >= 20:
 		pirand = rand(0, 1)
 
 		if piratsuka<3 or piratsuka >= 3 and pirand = 0:
@@ -35,7 +31,7 @@ if piratfrend >= 10:
 				act 'Leave':gt $curloc
 			end
 
-			act 'endure':
+			act 'Endure':
 				cls
 				piratHorny = 0
 				minut += 15
@@ -48,9 +44,7 @@ if piratfrend >= 10:
 
 				act 'Leave':gt $curloc
 			end
-		end
-
-		if piratsuka >= 3 and pirand = 1:
+		elseif piratsuka >= 3 and pirand = 1:
 			'Purebred dog named pirate stands on his hind legs and puts his front paws on your shoulder. You chustvuete like you in the ass rests like an awl member of the Pirate.'
 
 			act 'push Pirate':
@@ -65,7 +59,7 @@ if piratfrend >= 10:
 				act 'Leave':gt $curloc
 			end
 
-			act 'stand':
+			act 'Stand':
 				cls
 				!piratHorny = 0
 				minut += 15
@@ -102,7 +96,7 @@ end
 
 act 'Leave':minut += 5 & gt $loc
 
-act 'pat the Pirate':
+act 'Pat the Pirate':
 	cls
 
 	if piratfrend < 10:piratfrend += 1

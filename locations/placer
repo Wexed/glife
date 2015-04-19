@@ -1,7 +1,7 @@
 # placer
-!!$ev_name = 'Федор'
-!!$ev_name_a = 'Федора'
-!!$ev_name_om = 'Федором'
+!!$ev_name = 'Fedor'
+!!$ev_name_a = 'Fedor'
+!!$ev_name_om = 'Fedor'
 !!dick = 17
 !!silavag = 0
 !!gnpcSex[numnpc] - sex
@@ -18,7 +18,7 @@ $text_znak = ''
 know_status = 0
 !!identified reputation or not
 know_gor_slut = 0
-!!reset text
+!!retext
 $kol_man_text_no = ''
 plact = 0
 gs 'stat'
@@ -26,12 +26,17 @@ $textEvent = ''
 if place = 0:
 	!!street
 	if litltown = 1:$numplace = 'gorodok'
+elseif place = 1:
+	!!square
+	$numplace = 'gskver'
+elseif place = 2:
+	!!movie
+elseif place = 3:
+	!!home to the guy. preposition Vidic
+elseif place = 4:
+	!!disco in town
 end
 
-if place = 1:$numplace = 'gskver' !!square
-if place = 2:!!movie
-if place = 3:!!home to the guy. preposition Vidic
-if place = 4:!!disco in town
 gt 'placer_<<$numplace>>'
 
 --- placer ---------------------------------

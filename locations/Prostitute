@@ -5,13 +5,13 @@ if $ARGS[0] = 'start':
 	$metkaSex = $ARGS[0]
 	$locSex = $CURLOC
 	cla
+	clr
 	*clr
 	minut += 5
-	'<center><b><font color="maroon">Hooker</font></b></center>'
-	'<center><img src="images/etogame/park2.jpg"></center>'
-	clr
 	gs 'stat'
 	gs 'time'
+	'<center><b><font color="maroon">Hooker</font></b></center>'
+	'<center><img src="images/etogame/park2.jpg"></center>'
 
 	if hour >= 16 and hour <= 23:
 		if whoreQW = 2:'Prostitutes look at you with curiosity.'
@@ -26,10 +26,8 @@ if $ARGS[0] = 'start':
 
 				act 'Move away':gt 'prostitute', 'start'
 			end
-		end
-
-		if whoreQW = 0:
-			'Hey, you''re not one of us, would valyl from our point, and that the teeth will not collect.'
+		elseif whoreQW = 0:
+			'Hey, you´re not one of us, would valyl from our point, and that the teeth will not collect.'
 
 			act 'Fuck you!':
 				cla
@@ -72,7 +70,7 @@ if $ARGS[0] = 'start':
 				act 'I agree':
 					cla
 					whoreQW = 2
-					'You agreed. Prostitute told you that you need to buy the appropriate clothing in sex Shope. Then customers will immediately understand that you''re a prostitute.'
+					'You agreed. Prostitute told you that you need to buy the appropriate clothing in sex Shope. Then customers will immediately understand that you´re a prostitute.'
 
 					act 'Move away':gt 'prostitute', 'start'
 				end
@@ -89,14 +87,12 @@ if $ARGS[0] = 'start':
 					'No you are not interested.'
 
 					act 'Leave':gt 'prostitute', 'start'
-				end
-
-				if prosrand >= 20:
+				elseif prosrand >= 20:
 					'To you a car drove up.'
 					proseventrand = rand(0, 100)
 
 					if proseventrand <= 5:
-						'To you black jeep pulled up, opened the window and leaned out healthy brazen face. "Hey slut, it''s time to pay tribute. Shtukar Come here and get out on work."'
+						'To you black jeep pulled up, opened the window and leaned out healthy brazen face. "Hey slut, it´s time to pay tribute. Shtukar Come here and get out on work."'
 
 						if money >= 1000:
 							act 'Giving money':
@@ -106,9 +102,7 @@ if $ARGS[0] = 'start':
 
 								act 'Move away':gt 'prostitute', 'start'
 							end
-						end
-
-						if money < 1000:
+						elseif money < 1000:
 							act 'I have not earned much':
 								cla
 								money = 0
@@ -154,23 +148,17 @@ if $ARGS[0] = 'start':
 
 							gt 'fight', 'start'
 						end
-					end
-
-					if proseventrand > 5 and proseventrand <= 50:
+					elseif proseventrand > 5 and proseventrand <= 50:
 						klient_needs = 0
 						prosti = 0
 						KlientMON = rand(1, 10)
 						'The client wants to blow and asks how much it will cost.'
-					end
-
-					if proseventrand > 50 and proseventrand <= 75:
+					elseif proseventrand > 50 and proseventrand <= 75:
 						klient_needs = 1
 						prosti = 0
 						KlientMON = rand(3, 25)
 						'Client wants sex and asks how much it will cost.'
-					end
-
-					if proseventrand > 75 and proseventrand <= 95:
+					elseif proseventrand > 75 and proseventrand <= 95:
 						klient_needs = 2
 						prosti = 0
 						KlientMON = rand(5, 40)
@@ -202,9 +190,7 @@ if $ARGS[0] = 'start':
 								dynamic $universalklient
 							end
 						end
-					end
-
-					if proseventrand > 95:
+					elseif proseventrand > 95:
 						'To you approached a prostitute. "I hear you, slut, if you do not want problems, you have to pay Stella. Pyatihatnik Come here and get out on work."'
 
 						if money >= 500:
@@ -215,9 +201,7 @@ if $ARGS[0] = 'start':
 
 								act 'Move away':gt 'prostitute', 'start'
 							end
-						end
-
-						if money < 500:
+						elseif money < 500:
 							act 'I have not earned much':
 								cla
 								money = 0
@@ -273,3 +257,4 @@ if $ARGS[0] = 'start':
 end
 
 --- Prostitute ---------------------------------
+

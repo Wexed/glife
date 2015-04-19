@@ -1,6 +1,6 @@
 # parksvid
-set minut += 60
-set manna += 10
+minut += 60
+manna += 10
 gs 'stat'
 '<center><b>Park</b></center>'
 '<center><img src="images/img/parksvid/0.jpg"></center>'
@@ -8,42 +8,47 @@ gs 'stat'
 
 act 'Go for a walk':
 	if $telsob = 'Alla':
-		set alla += 1
+		alla += 1
 
 		if alla >= 20:
-			set parksvidrand = rand(0, 5)
-			if parksvidrand > 0 and parksvidrand < 3:gt 'parksvid', '1'
-			if parksvidrand >= 3:gt 'parksvid', '3'
+			parksvidrand = rand(0, 5)
+			if parksvidrand > 0 and parksvidrand < 3:
+				gt 'parksvid', '1'
+			else
+				gt 'parksvid', '3'
+			end
+		else
+			gt 'parksvid', '3'
 		end
-
-		if alla < 20:gt 'parksvid', '3'
-	end
-
-	if $telsob = 'Masha':
-		set masha += 1
+	elseif $telsob = 'Masha':
+		masha += 1
 
 		if masha >= 20:
-			set parksvidrand = rand(0, 10)
+			parksvidrand = rand(0, 10)
 
-			if parksvidrand > 0 and parksvidrand < 3:gt 'parksvid', '1'
-			if parksvidrand >= 3:gt 'parksvid', '3'
-
+			if parksvidrand > 0 and parksvidrand < 3:
+				gt 'parksvid', '1'
+			else
+				gt 'parksvid', '3'
 			end
 
-		if masha < 20:gt 'parksvid', '3'
-	end
-
-	if $telsob = 'Katia':
-		set kat += 1
+		else
+			gt 'parksvid', '3'
+		end
+	elseif $telsob = 'Katia':
+		kat += 1
 
 		if kat >= 20:
-			set parksvidrand = rand(0, 10)
+			parksvidrand = rand(0, 10)
 
-			if parksvidrand > 0 and parksvidrand < 3:gt 'parksvid', '1'
-			if parksvidrand >= 3:gt 'parksvid', '3'
+			if parksvidrand > 0 and parksvidrand < 3:
+				gt 'parksvid', '1'
+			else
+				gt 'parksvid', '3'
+			end
+		else
+			gt 'parksvid', '3'
 		end
-
-		if kat < 20:gt 'parksvid', '3'
 	end
 end
 
@@ -61,7 +66,7 @@ if $ARGS[0] = '1':
 		'<center><img src="images/img/parksvid/2.jpg"></center>'
 		'Coming closer, you notice that in the hands of men something round, it seems that he has been pushing the nucleus.'
 		'"Girls, you would move a little and then you get, sorry to be such beauties, " he said, noting your interest in his occupation.'
-		'"That´s interesting, but they really do not have anything under her skirt, " said <<$telsob>>.'
+		'"That''s interesting, but they really do not have anything under her skirt, " said <<$telsob>>.'
 		'"How should I know, come and ask"'
 		'"Not one will not go, go along ask" said <<$telsob>>, making plaintive eyes.'
 
@@ -74,7 +79,7 @@ if $ARGS[0] = '1':
 			'You two go up to the guy and <<$telsob>> starts to push you to the side, whispering in his ear, "Well ask."'
 			'"Is it true that under the kilt wearing nothing." you ask'
 			'"You want to know, look and see." smiling boy said.'
-			'"Well, let´s see the <<$name>>." asked <<$telsob>>'
+			'"Well, let''s see the <<$name>>." asked <<$telsob>>'
 			'"Here, take a look and" you answered'
 			'"Come and see, " said <<$telsob>> defiantly pouting and sitting down on his haunches.'
 			'When she began to lift the kilt guy quickly threw it on his head.'
@@ -87,9 +92,9 @@ if $ARGS[0] = '1':
 			act 'Go-to guy':
 				cla
 				*clr
-				set orgasm += 1
-				set lesbian += 1
-				set minut += 30
+				orgasm += 1
+				lesbian += 1
+				minut += 30
 				'<center><img src="images/img/parksvid/4.jpg"></center>'
 				'When you come home to the guy, the guy with the threshold lifted kilt demonstrate your worth dildo and said, "Well that continue acquaintance."'
 				'Emboldened <<$telsob>> immediately knelt and clasped his lips began to suck dick. You crouched behind and started sliding her panties to fondle her pussy tongue.'
@@ -117,15 +122,20 @@ end
 
 if $ARGS[0] = '2':
 	cla
-	*clr
+	horny = 0
+	minut += 90
+	gs 'stats'
+	'When you have finished, <<$telsob>> said that she needed to escape and went'
+
+	act 'Leave':gt 'park', 'start'
 end
 
 if $ARGS[0] = '3':
 	cla
-	set horny = 0
-	set minut += 90
+	horny = 0
+	minut += 90
 	gs 'stat'
-	'When you´re finished <<$telsob>> said that she needed to escape and went'
+	'When you''re finished <<$telsob>> said that she needed to escape and went'
 
 	act 'Leave':gt 'park', 'start'
 end
