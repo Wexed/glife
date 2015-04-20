@@ -97,7 +97,9 @@ if $ARGS[0] = 'pomman':
 	'There is a young guy tapping on the computer keys in a small office.'
 	'<font color="#0D42C0"> "How can I help you?".</font> '
 
-	if pfilmSTOP = 0:act <font color="magenta">'What rating views from my video?'</font>:gt 'pornstudio', 'myvid'
+	if pfilmSTOP = 0: 
+        act 'What''s the rating on my videos?': gt 'pornstudio', 'myvid'
+    end
 
 	act 'Leave':gt 'pornstudio', 'start'
 end
@@ -140,7 +142,7 @@ if $ARGS[0] = 'myvid3':
 	set minut += 5
 	set money -= films_stop_payment
 	set pfilmSTOP = 1
-	$pfilmstory_new = 'In the porn industry you know the name' + $pfname + '. You starred in porn' + film + ' times. Shooting ceased all video seized.'
+	$pfilmstory_new = 'In the porn industry you''re knows as <<$pfname>>. You starred in <<film>> porn films. Shooting ceased all video seized.'
 	set film = 0
 	'So, your video removed. Have a nice day.'
 
@@ -166,7 +168,7 @@ if $ARGS[0] = 'man':
 	end
 
 	if pfilmSTOP = 1:
-		'You yourself decided to end all business with us.'
+		'I''m sorry I thought you were retired...'
 
 		act 'Leave':gt 'pornstudio', 'start'
 
