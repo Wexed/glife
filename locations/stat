@@ -1022,15 +1022,15 @@ end
 
 if hour < 10 :
 	if minut > 9 :
-		pl '<b><<hour>>:<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
-	else
-		pl '<b><<hour>>:0<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
-	end
-else
-	if minut > 9 :
 		pl '<b>0<<hour>>:<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
 	else
 		pl '<b>0<<hour>>:0<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
+	end
+else
+	if minut > 9 :
+		pl '<b><<hour>>:<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
+	else
+		pl '<b><<hour>>:0<<minut>></b> <<$week>> <<day>> <<$month>> <<year>>'
 	end
 end
 
