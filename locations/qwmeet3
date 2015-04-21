@@ -4,7 +4,7 @@ gs 'stat'
 '<center><img src="images/qwest/kim/001.jpg"></center>'
 'Glory smiled and gestured you get in the car on the front passenger seat.'
 
-act 'Sit next to the driver.':
+act 'Sit next to the driver':
 	cls
 	minut += 3
 	gs 'stat'
@@ -17,7 +17,7 @@ act 'Sit next to the driver.':
 	dynamic $qwmeetdin
 end
 
-act 'Sit in the back seat.':
+act 'Sit in the back seat':
 	cls
 	minut += 3
 	gs 'stat'
@@ -29,7 +29,7 @@ end
 $qwmeetdin = {
 	'Finally the car stopped near the restaurant.'
 
-	act 'Out of the car.':
+	act 'Out of the car':
 		cls
 		minut += 60
 		energy = 21
@@ -42,15 +42,15 @@ $qwmeetdin = {
 		if VladimirKnowAboutHusband = 0:
 			'Then you came out of the restaurant and sat in the car with Vladimir, Thank you belive drove to your home. Vladimir pointedly whispered, "can priglasish me to her?"'
 
-			act 'Sorry, but I still have a case.':gt 'street'
+			act 'Sorry, but I still have a case':gt 'street'
 
 			if husband <= 0:
-				act 'Invite.':
+				act 'Invite':
 					cls
 					minut += 15
-					set $nameV = 'Vladimir'
+					$nameV = 'Vladimir'
 					$boy = 'Vladimir'
-					set dick = 16
+					dick = 16
 					silavag = 1
 					NoGuy = 1
 					InYouHome = 1
@@ -61,10 +61,8 @@ $qwmeetdin = {
 
 					act '...':gt 'BDsex', 'start'
 				end
-			end
-
-			if husband > 0 and VladimirKnowAboutHusband = 0:
-				act 'I am married.':
+			elseif husband > 0 and VladimirKnowAboutHusband = 0:
+				act 'I am married':
 					cls
 					VladimirKnowAboutHusband = 1
 					'You told Vladimir that you have a husband. He kept apologizing and said goodbye to you.'
@@ -72,24 +70,22 @@ $qwmeetdin = {
 					act 'Leave.':gt 'street'
 				end
 			end
-		end
-
-		if VladimirKnowAboutHusband = 1:
+		elseif VladimirKnowAboutHusband = 1:
 			'After the meal you left the restaurant and got into the car with Vladimir. He suggested that you go to him, to a safe place.'
 
-				act 'Sorry, but I still have a case.':gt 'street'
+				act 'Sorry, but I still have a case':gt 'street'
 
-				act 'Agree.':
+				act 'Agree':
 					cls
 					minut += 15
-					set $nameV = 'Vladimir'
+					$nameV = 'Vladimir'
 					$boy = 'Vladimir'
-					set dick = 16
+					dick = 16
 					silavag = 1
 					NoGuy = 1
 					harakBoy = 0
 					finance = 2
-					gtGuy = 2
+					GoToGuy = 2
 					'Glory to you belive drove a rented apartment Vladimir. You got out and went up to the apartment.'
 					'In the apartment you have been with Vladimir in the bedroom.'
 

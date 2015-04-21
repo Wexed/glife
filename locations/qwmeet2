@@ -10,7 +10,7 @@ $qwmeetkatdy = {
 		'<center><b><font color="maroon">Nick</font></b></center>'
 		'<center><img src="images/qwest/kolan/001.jpg"></center>'
 		'Nicholas did not close the flashing eyes looked at you and said politely pointed "Very nice."'
-		'Vladimir brought you to the girl standing next to Nicholas and introduced you to each other. "It´s Isolde is <<$name>>."'
+		'Vladimir brought you to the girl standing next to Nicholas and introduced you to each other. "It''s Isolde is <<$name>>."'
 
 		act 'Very nice':
 			cls
@@ -28,7 +28,7 @@ $qwmeetkatdy = {
 				'<center><b><font color="maroon">Vitali</font></b></center>'
 				'<center><img src="images/qwest/marafet/001.jpg"></center>'
 				'The man looked at you mad eyes and smiled. "Hello beautiful, welcome to our warm company"'
-				'Vladimir looked "Well, since we´re all here, let´s go on the boat." Nicholas looked at the driver´s glory. "Hey Banzai, lend and moorings at the helm." Asian nodded and began fussing around the boat.'
+				'Vladimir looked "Well, since we''re all here, let''s go on the boat." Nicholas looked at the driver''s glory. "Hey Banzai, lend and moorings at the helm." Asian nodded and began fussing around the boat.'
 
 				act 'Vzayti aboard boats':
 					cls
@@ -52,22 +52,22 @@ $qwmeetkatdy = {
 							cla
 							minut += 5
 							gs 'stat'
-							'You asked that binds her and Nicholas. Isolde immediately responded, "We are not married but dating. Nicholas blank, do not have anyone Nigo, no wife, no children. He´s a very influential person in the city, with one mention of it all start to go toe the line."'
+							'You asked that binds her and Nicholas. Isolde immediately responded, "We are not married but dating. Nicholas blank, do not have anyone Nigo, no wife, no children. He''s a very influential person in the city, with one mention of it all start to go toe the line."'
 							'Nicholas mediates and resolves a variety of issues and disputes. The very same Isolde according to her works in one his room, he does almost nothing and gets not a bad salary. Nicholas gave her there.'
 
-							act 'Ask about Vitali.':
+							act 'Ask about Vitali':
 								cla
 								minut += 5
 								gs 'stat'
 								'You asked who is Vitaly. Isolde shrugged, "do not really know, Nikolai his cop calls. So probably he is cop."'
 
-								act 'Ask about the glory.':
+								act 'Ask about the glory':
 									cla
 									minut += 5
 									gs 'stat'
 									'You asked whether she knows the glory, she smiled, "I do not know, but all the time around the Banzai Koli rubs, he rubbed his driver to Vovka. Brazen and crazy type, a really great driver. He kind of master of sport of racing."'
 
-									act 'Come on deck with a tray.':gt 'qwpaluba'
+									act 'Come on deck with a tray':gt 'qwpaluba'
 								end
 							end
 						end
@@ -81,7 +81,7 @@ $qwmeetkatdy = {
 
 $qwslavady = {
 	'Glory is not looking at you said "<<$name>>, where you met Volodya?"'
-	'You´re a little surprised that the driver called his boss told him but Volodya that you meet in the park.'
+	'You''re a little surprised that the driver called his boss told him but Volodya that you meet in the park.'
 	'The driver smiled "Yeah I remember. Carried I have it in the park with his wife and child. Then you already know that he has a wife and child, and?"'
 	'You nodded, "Yes, he told me." Glory chuckled avoiding another car at full speed "is clear. Cinderella found her prince on a white horse."'
 	'Police siren wailed from behind and began to demand that the megaphone would audi stopped. Glory and laughed even harder pressed the gas to the floor. "Not even a man who was born to catch up with me."'
@@ -111,7 +111,7 @@ gs 'stat'
 '<center><img src="images/qwest/kim/001.jpg"></center>'
 'Glory smiled and gestured you get in the car on the front passenger seat.'
 
-act 'Sit next to the driver.':
+act 'Sit next to the driver':
 	cls
 	minut += 3
 	gs 'stat'
@@ -120,7 +120,7 @@ act 'Sit next to the driver.':
 	dynamic $qwslavady
 end
 
-act 'Sit in the back seat.':
+act 'Sit in the back seat':
 	cls
 	minut += 3
 	gs 'stat'

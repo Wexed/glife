@@ -13,14 +13,16 @@ if hour >= 16 and izoldaday ! day:
 	act 'Enter the apartment':
 		cla
 		minut += 30
-		izoldaWQ += 1
+		izoldaday = day
+		izoldaQW += 1
 		gs 'stat'
 
-		if izoldaWQ < 5:'You went to the apartment and Isolde you spent in the kitchen. There she poured tea, and you yourself. You sat at the table and began to chat about all sorts of trivia.'
-		if izoldaWQ >= 5 and izoldaSex = 0:
+		if izoldaQW < 5:
+			'You went to the apartment and Isolde you spent in the kitchen. There she poured tea, and you yourself. You sat at the table and began to chat about all sorts of trivia.'
+		elseif izoldaQW >= 5 and izoldaSex = 0:
 			'Isolde suggested that you drink wine. You agreed and went to the kitchen. Isolde opened a bottle of wine and poured two glasses. You drank it.'
 
-			if izoldaWQ >= 10 and izoldaSex = 0:
+			if izoldaQW >= 10 and izoldaSex = 0:
 				'Soon you both drunk and Isolde invited you to go to the lounge to relax.'
 
 				act 'Go Isolde':
@@ -33,12 +35,12 @@ if hour >= 16 and izoldaday ! day:
 					'<center><img src="images/qwest/kolan/izoldasex.jpg"></center>'
 					'The room suddenly Isolde you kissed and hugged her gently.'
 
-					act 'Tselovatsya Isolde':
+					act 'Kiss Isolde':
 						cls
 						horny += 10
 						gs 'stat'
 						'<center><img src="images/qwest/kolan/izoldasex1.jpg"></center>'
-						'Isolde´s head gently slipped from your lips to your breasts and began to caress them.'
+						'Isolde''s head gently slipped from your lips to your breasts and began to caress them.'
 
 						act '...':
 							cls
@@ -61,9 +63,7 @@ if hour >= 16 and izoldaday ! day:
 					end
 				end
 			end
-		end
-
-		if izoldaSex > 0:
+		elseif izoldaSex > 0:
 			'Isolde offer you a drink of wine and you have gone with her to the kitchen, drinking a bottle she took you by the hand and led her into the room.'
 
 			act 'Go Isolde':
@@ -75,12 +75,12 @@ if hour >= 16 and izoldaday ! day:
 				'<center><img src="images/qwest/kolan/izoldasex.jpg"></center>'
 				'The room suddenly Isolde you kissed and hugged her gently.'
 
-				act 'Tselovatsya Isolde':
+				act 'Kiss Isolde':
 					cls
 					horny += 10
 					gs 'stat'
 					'<center><img src="images/qwest/kolan/izoldasex1.jpg"></center>'
-					'Isolde´s head gently slipped from your lips to your breasts and began to caress them.'
+					'Isolde''s head gently slipped from your lips to your breasts and began to caress them.'
 
 					act '...':
 						cls
