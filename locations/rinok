@@ -1,9 +1,5 @@
 # rinok
 if $ARGS[0] = 'start':
-	cla
-	*clr
-	set minut += 5
-
 	$rinbuy1 = {
 		cla
 		*clr
@@ -13,10 +9,10 @@ if $ARGS[0] = 'start':
 		if portion * 50 > money:'You do not have enough money.'
 
 		if portion * 50 <= money:
-			set fairy += portion
-			set money -= portion * 50
+			fairy += portion
+			money -= portion * 50
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
-			'You pay the cashier and bought dishwashing detergent.'
+			'You bought dishwashing detergent and paid the money to the cashier.'
 		end
 
 		act 'Move away from the counter':gt 'rinok', 'start'
@@ -31,10 +27,10 @@ if $ARGS[0] = 'start':
 		if portion * 150 > money:'You do not have enough money.'
 
 		if portion * 150 <= money:
-			set poroshok += portion
-			set money -= portion * 150
+			poroshok += portion
+			money -= portion * 150
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
-			'You pay the cashier and bought detergent.'
+			'You bought detergent and paid the money to the cashier.'
 		end
 
 		act 'Move away from the counter':gt 'rinok', 'start'
@@ -49,10 +45,10 @@ if $ARGS[0] = 'start':
 		if portion * 150 > money:'You do not have enough money.'
 
 		if portion * 150 <= money:
-			set cltarelka += portion * 3
-			set money -= portion * 150
+			cltarelka += portion * 3
+			money -= portion * 150
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
-			'You pay the cashier and bought plates.'
+			'You bought plates and paid the money to the cashier.'
 		end
 
 		act 'Move away from the counter':gt 'rinok', 'start'
@@ -67,10 +63,10 @@ if $ARGS[0] = 'start':
 		if portion * 500 > money:'You do not have enough money.'
 
 		if portion * 500 <= money:
-			set kosmetica += portion * 25
-			set money -= portion * 500
+			kosmetica += portion * 25
+			money -= portion * 500
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
-			'You pay the cashier and bought cosmetics.'
+			'You bought cosmetics and paid the money to the cashier.'
 		end
 
 		act 'Move away from the counter':gt 'rinok', 'start'
@@ -85,10 +81,10 @@ if $ARGS[0] = 'start':
 		if portion * 200 > money:'You do not have enough money.'
 
 		if portion * 200 <= money:
-			set stanok += portion * 10
-			set money -= portion * 200
+			stanok += portion * 10
+			money -= portion * 200
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
-			'You pay the cashier and bought razor.'
+			'You bought razor and paid the money to the cashier.'
 		end
 
 		act 'Move away from the counter':gt 'rinok', 'start'
@@ -103,10 +99,10 @@ if $ARGS[0] = 'start':
 		if portion * 150 > money:'You do not have enough money.'
 
 		if portion * 150 <= money:
-			set tampon += portion * 20
-			set money -= portion * 150
+			tampon += portion * 20
+			money -= portion * 150
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
-			'You pay the cashier and bought tampons.'
+			'You bought tampons and paid the money to the cashier.'
 		end
 
 		act 'Move away from the counter':gt 'rinok', 'start'
@@ -121,8 +117,8 @@ if $ARGS[0] = 'start':
 		if portion * 200 > money:'You do not have enough money.'
 
 		if portion * 200 <= money:
-			set clrbelo += portion
-			set money -= portion * 200
+			clrbelo += portion
+			money -= portion * 200
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
 			'You pay the cashier and bought clothes.'
 		end
@@ -133,8 +129,8 @@ if $ARGS[0] = 'start':
 		if money >= 1000 and bikini < 1:
 			cla
 			*clr
-			set money -= 1000
-			set bikini = 1
+			money -= 1000
+			bikini = 1
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
 			'You pay the cashier and bought a swimsuit.'
 
@@ -148,8 +144,8 @@ if $ARGS[0] = 'start':
 		if money >= 1000 and umbrella < 1:
 			cla
 			*clr
-			set money -= 1000
-			set umbrella = 1
+			money -= 1000
+			umbrella = 1
 			'<center><img src="images/etogame/kassa2.jpg"></center>'
 			'You pay the cashier and bought an umbrella.'
 
@@ -159,40 +155,43 @@ if $ARGS[0] = 'start':
 		end
 	}
 
-$metka = $ARGS[0]
-$loc = $CURLOC
-$metkaM = $ARGS[0]
-$locM = $CURLOC
-mag = 1
-'<center><b><font color="maroon">Trade</font></b></center>'
-'<center><img src="images/etogame/rinok.jpg"></center>'
-'<a href="exec:dynamic $rinbuy1">Dishwashing detergent - 50 rubles</a> <a href="exec:dynamic $rinbuy2">laundry detergent - 150 rubles</a> <a href="exec:dynamic $rinbuy3">a set of 3 plates - 150 rubles</a> <a href="exec:dynamic $rinbuy4">Cosmetics - 500 rubles</a> <a href="exec:dynamic $rinbuy5">razor - 200 rubles</a> <a href="exec:dynamic $rinbuy6">tampons - 100 rubles</a> <a href="exec:dynamic $rinbuy7">Underwear - 200 rubles</a>'
+	cla
+	*clr
+	minut = minut + 5
+	mag = 1
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	$metkaM = $ARGS[0]
+	$locM = $CURLOC
+	'<center><b><font color="maroon">Trade</font></b></center>'
+	'<center><img src="images/etogame/rinok.jpg"></center>'
+	'<a href="exec:dynamic $rinbuy1">Dishwashing detergent - 50 rubles</a> <a href="exec:dynamic $rinbuy2">laundry detergent - 150 rubles</a> <a href="exec:dynamic $rinbuy3">a of 3 plates - 150 rubles</a> <a href="exec:dynamic $rinbuy4">Cosmetics - 500 rubles</a> <a href="exec:dynamic $rinbuy5">razor - 200 rubles</a> <a href="exec:dynamic $rinbuy6">tampons - 100 rubles</a> <a href="exec:dynamic $rinbuy7">Underwear - 200 rubles</a>'
 
-if bikini < 1:'<a href="exec:dynamic $rinbuy8">Swimsuit (1,000 rubles)</a>'
-if umbrella < 1:'<a href="exec:dynamic $rinbuy9">Umbrella (1,000 rubles)</a>'
+	if bikini < 1:'<a href="exec:dynamic $rinbuy8">Swimsuit - 1,000 rubles</a>'
+	if umbrella < 1:'<a href="exec:dynamic $rinbuy9">Umbrella - 1,000 rubles</a>'
 
-'On one of the tents hanging listing <a href="exec:gt ''loker2'', ''start''">"Accept the things to implement"</a>'
+	'On one of the tents hanging listing <a href="exec:gt ''loker2'', ''start''">"Accept the things to implement"</a>'
+	'<a href="exec:numdres = 1 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect jeans number 1</a> <a href="exec:numdres = 2 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 2</a> <a href="exec:numdres = 3 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 3</a> <a href="exec:numdres = 4 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 4</a> <a href="exec:numdres = 5 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 5</a>'
 
-if (analplugIN = 1 and tanga = 0 and ski = 1) or (analplugIN = 1 and tanga = 0 and glamur = 1):
-	set nurand = rand(0, 100)
+	if analplugIN = 1 and tanga = 0 and ski = 1 or analplugIN = 1 and tanga = 0 and glamur = 1:
+		nurand = rand(0, 100)
+
 		if nurand >= 80:
-			set manna -= 5
-			set SUB += 1
-			set horny += SUB
-			set nudity += 1
+			manna -= 5
+			SUB += 1
+			horny += SUB
+			nudity += 1
 			'You feel that someone gently touched <a href="exec:gt ''etoexhib'', ''pos15''">your hand buttocks</a>'
-			*nl
 		end
 	end
 
-	'<a href="exec:numdres = 1 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect jeans number 1</a> <a href="exec:numdres = 2 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 2</a> <a href="exec:numdres = 3 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 3</a> <a href="exec:numdres = 4 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 4</a> <a href="exec:numdres = 5 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 5</a>'
 	clr
 	gs 'stat'
 	gs 'time'
 
 	act 'Leave':
 		cla
-		set minut += 5
+		minut += 5
 		gt 'street'
 	end
 
@@ -200,7 +199,7 @@ if (analplugIN = 1 and tanga = 0 and ski = 1) or (analplugIN = 1 and tanga = 0 a
 		if week = 2 or week = 4 or week = 6:
 			if hour < 9:
 				'Arthur item is waiting for you.'
-				act '<b>Accept goods.</b>':
+				act '<b>Accept goods</b>':
 					cla
 					*clr
 					hour = 9
@@ -213,23 +212,21 @@ if (analplugIN = 1 and tanga = 0 and ski = 1) or (analplugIN = 1 and tanga = 0 a
 				end
 			end
 		end
-	end
-
-	if workrin = 1:
 		act 'Retire from work':
 			cla
 			work = 0
 			workrin = 0
 			'You retired from work and took labor.'
+
 			act 'Leave':gt 'rinok', 'start'
 		end
 	end
 
-	if work = 0:
+	if (work = 0 and workrin = 0 and cheatWork = 0) or (workrin = 0 and cheatWork = 1):
 		nl
 		'On one of the tents hanging ad "Need females saleswomen. Paychecks big."'
 
-		act 'Approach to a host of tents ad':
+		act 'Approach the owner of the tents ad':
 			cla
 			*clr
 			'Hi, my name is Arthur. I am the master of the tent, I need a saleswoman. I do not cope. Well? Will you?'

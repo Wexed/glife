@@ -11,16 +11,12 @@ stoper = 0
 			!loss[i] += 1
 			'The referee raises your hand as a sign of your victory.'
 			resultFight = 1
-		end
-
-		if point < pointE:
+		elseif point < pointE:
 			!win[i] += 1
 			!loss[1] += 1
 			'The referee raises his hand as a sign of its rival wins.'
 			resultFight = 3
-		end
-
-		if point = pointE:
+		elseif point = pointE:
 			!draw[1] += 1
 			!draw[i] += 1
 			'The referee raises your hand and arm rival announcing a draw.'
@@ -28,9 +24,7 @@ stoper = 0
 		end
 
 		act '...':gt 'EndFight'
-	end
-
-	if round < Formula + 1:
+	elseif round < Formula + 1:
 		endur += lustw * 25 / 100
 		endurE += lustwe * 25 / 100
 
@@ -43,7 +37,7 @@ stoper = 0
 		if crouch = 1:$text = 'Stand your opponent on all fours, and you catch him from behind.'
 		if crouch = 0:$text = 'You get up on all fours, and your opponent to catch him from behind.'
 
-		'You rest for a while and hear the whistle refferi announces the beginning of the next round.'
+		'You rest for a while and hear the whistle Referee announces the beginning of the next round.'
 		'referee ordered <<$text>>'
 
 		act 'Follow the instructions referees':gt 'FightCrouch'

@@ -1,12 +1,12 @@
 # restoran
 if $ARGS[0] = 'start':
 	cla
+	clr
 	*clr
-	set minut += 5
+	minut += 5
+	gs 'stat'
 	'<center><b><font color="maroon">Restaurant</font></b></center>'
 	'<center><img src="images/etogame/restoran.jpg"></center>'
-	clr
-	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
@@ -18,7 +18,7 @@ if $ARGS[0] = 'start':
 		if money >= 5000:
 			act 'VIP room (5,000 rubles)':
 				cla
-				set money -= 5000
+				money -= 5000
 				gt 'restoran', 'vip'
 			end
 		end
@@ -30,7 +30,7 @@ if $ARGS[0] = 'start':
 
 	act 'Out of the restaurant':
 		cla
-		set minut += 5
+		minut += 5
 		gt 'down'
 	end
 
@@ -39,17 +39,16 @@ end
 
 if $ARGS[0] = 'zal':
 	cla
-	*clr
-	set minut += 5
-	'<center><b><font color="maroon">restaurant, common room</font></b></center>'
-	'<center><img src="images/etogame/restoran2.jpg"></center>'
-	'The room was pretty good atmosphere. Soft lighting and light furniture. Until you hear the sounds of music, the clink of glasses and female laughter. It seems you can finally relax a little.'
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
-
+	'<center><b><font color="maroon">restaurant, common room</font></b></center>'
+	'<center><img src="images/etogame/restoran2.jpg"></center>'
+	'The room was pretty good atmosphere. Soft lighting and light furniture. Until you hear the sounds of music, the clink of glasses and female laughter. It seems you can finally relax a little.'
 	!!etogame
 	nastjarand = rand(0, 100)
 
@@ -73,7 +72,7 @@ if $ARGS[0] = 'zal':
 	if money >= 5000:
 		act 'Eat (5,000 rubles)':
 			cla
-			set minut += 60
+			minut += 60
 			energy =22
 			fat += 5
 			water = 22
@@ -87,32 +86,26 @@ if $ARGS[0] = 'zal':
 		end
 	end
 
-	act 'Leave':set minut += 5 & gt 'restoran', 'start'
+	act 'Leave':minut += 5 & gt 'restoran', 'start'
 end
 
 if $ARGS[0] = 'vip':
 	cla
-	*clr
-	set minut += 5
-	'<center><b><font color="maroon">Restaurant, VIP room</font></b></center>'
-	'<center><img src="images/etogame/restoran3.jpg"></center>'
-	'Caught in the vip box you caught yourself thinking that smile involuntarily. In the bed of a calm and friendly atmosphere. Soft lighting and furniture in the Empire style. You hear soft music. Finally, your new weak feminine essence, albeit briefly, but can feel safe.'
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
-
-	act 'Leave':
-		cla
-		set minut += 5
-		gt 'restoran', 'start'
-	end
+	'<center><b><font color="maroon">Restaurant, VIP room</font></b></center>'
+	'<center><img src="images/etogame/restoran3.jpg"></center>'
+	'Caught in the vip box you caught yourself thinking that smile involuntarily. In the bed of a calm and friendly atmosphere. Soft lighting and furniture in the Empire style. You hear soft music. Finally, your new weak feminine essence, albeit briefly, but can feel safe.'
 
 	if money >= 5000:
 		act 'Eat (5,000 rubles)':
 			cla
-			set minut += 60
+			minut += 60
 			energy = 22
 			fat += 5
 			water = 22
@@ -120,11 +113,16 @@ if $ARGS[0] = 'vip':
 			manna = manna + 100
 			health = health + 20
 			money -= 5000
+			gs 'stat'
 			'On the recommendation of a chef, a wonderful dish you ordered and ate with pleasure in the cozy vip room of the restaurant.'
 
 			act 'Leave':gt 'restoran', 'vip'
 		end
 	end
-end
+	act 'Leave':
+		cla
+		minut += 5
+		gt 'restoran', 'start'
+	end
 
 --- restoran ---------------------------------
