@@ -1,14 +1,14 @@
 # saunawhore
-set saunaWorkKlient = 1
-set guy += 1
-set slutty += 1
-set bj += 1
+saunaWorkKlient = 1
+guy += 1
+slutty += 1
+bj += 1
 dynamic $venerasiak
 gs 'boy'
-$namev = 'client'
-set whorerand = rand(1, 22)
-set minut += 15
-set SaunaWhore += 1
+$namev = 'Client'
+whorerand = rand(1, 22)
+minut += 15
+SaunaWhore += 1
 gs 'stat'
 '<center><img src="images/sauna/bj<<whorerand>>.jpg"></center>'
 'You are logged in to the sauna with a client, he undressed, you too undressed.'
@@ -16,7 +16,7 @@ gs 'stat'
 'You carefully clasping his dick sucked their <<$liptalk>> and felt like with every movement hard cock fills your mouth to the throat.'
 
 if dick <= 12:'Member is not very large and you constantly poke his nose in curly pubis sucking dick to the ground and hairy balls hit you on the chin.'
-if dick > 12 and dick <= 15:'Member at each movement gets to your throat and you´re a little choking diligently handle it their jaws.'
+if dick > 12 and dick <= 15:'Member at each movement gets to your throat and you''re a little choking diligently handle it their jaws.'
 if dick > 15:'Dick too big for your mouth and you suck it for as long as you allow your mouth sucking it up to the neck and head of the language processing.'
 !!dynamic $saunadinsexbefore
 if dick > 15:saunarand = rand(0, 100)
@@ -62,9 +62,7 @@ if dick <= 15 or saunarand <= 90:
 			gs 'orgazm', 'start'
 
 			act 'Take the money from the client and go':money += 1000 & saunaWorkNow = 1 & gt 'saunawork'
-		end
-
-		if whorerand > 80:
+		else
 			cls
 			minut += 45
 			sweat += 1

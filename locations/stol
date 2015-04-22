@@ -25,11 +25,11 @@ if $ARGS[0] = 'start':
 			if stolIN <= 0 or stolIN > money:
 				!!'Not correct operation.'
 			else
-				set stolmoney += stolIN
-				set money -= stolIN
+				stolmoney += stolIN
+				money -= stolIN
 			end
 
-			gt 'stol', 'start'
+			gt 'stol', 'fin'
 		end
 	end
 
@@ -41,8 +41,8 @@ if $ARGS[0] = 'start':
 			if stolOUT <= 0 or stolOUT > stolmoney:
 				!!'Not correct operation.'
 			else
-				set stolmoney -= stolOUT
-				set money += stolOUT
+				stolmoney -= stolOUT
+				money += stolOUT
 				!!'You debited <<kartaOUT>> rubles, now on your account <<karta>> rubles.'
 			end
 
@@ -55,10 +55,12 @@ if $ARGS[0] = 'fin':
 	cla
 	gt $locM, $metkaM
 
-	!'if housr = 1 and housrA = 1:
-	set housrA = 0
-	gt 'sitr'
-	end'!
+	!'
+	if housr = 1 and housrA = 1:
+		housrA = 0
+		gt 'sitr'
+	end
+	'!
 end
 
 --- stol ---------------------------------

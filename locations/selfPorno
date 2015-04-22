@@ -36,13 +36,13 @@ end
 $selfPorno_Strip = {
 	cla
 	*clr
-	set nude = 1
-	set odedosna = numdress
-	set numdress = 0
-	set selfPornVidTime += 5
-	set minut += 5
-	set selfPornVar += 5
-	set horny += 5
+	nude = 1
+	odedosna = numdress
+	numdress = 0
+	selfPornVidTime += 5
+	minut += 5
+	selfPornVar += 5
+	horny += 5
 	clr
 	!!gs 'stat'
 	'You spent five minutes stripping erotically.'
@@ -54,18 +54,18 @@ $selfPorno_Fondle = {
 	cla
 	*clr
 	gs 'stat'
-	set minut += 5
+	minut += 5
 
 	if nude ! 1:
-		set selfPornVidTime += 5
-		set selfPornVar += 3
-		set horny += 7
+		selfPornVidTime += 5
+		selfPornVar += 3
+		horny += 7
 		clr
 		'You spent five minutes fondling your breasts through your clothes.'
 	else
-		set selfPornVidTime += 5
-		set selfPornVar += 5
-		set horny += 10
+		selfPornVidTime += 5
+		selfPornVar += 5
+		horny += 10
 		clr
 		'You spent five minutes fondling your breasts.'
 	end
@@ -77,23 +77,23 @@ $selfPorno_Masturbate = {
 	cla
 	*clr
 	gs 'stat'
-	set selfPornVidTime += 10
-	set minut += 10
-	set mastr += 1
-	set manna += 15
-	set willpower += 15
-	set horny += 10
+	selfPornVidTime += 10
+	minut += 10
+	mastr += 1
+	manna += 15
+	willpower += 15
+	horny += 10
 
 	if horny <= 90:
 		clr
-		set selfPornVar += 5
+		selfPornVar += 5
 		'You spend ten minutes masturbating for the camera.'
 
 		act 'Continue':gt 'selfPorno', 'start'
 	else
 		clr
-		set videoOrgasm += 1
-		set selfPornVar += 8
+		videoOrgasm += 1
+		selfPornVar += 8
 		'You spend ten minutes masturbating for the camera and end up orgasming.'
 
 		act 'Continue':gt 'selfPorno', 'start'
@@ -104,24 +104,24 @@ $selfPorno_Dildo = {
 	cla
 	*clr
 	gs 'stat'
-	set selfPornVidTime += 10
-	set minut += 10
-	set mastr += 1
-	set manna += 15
-	set willpower += 15
-	set horny += 15
-	set selfPornVar += 5
+	selfPornVidTime += 10
+	minut += 10
+	mastr += 1
+	manna += 15
+	willpower += 15
+	horny += 15
+	selfPornVar += 5
 
 	if horny <= 85:
-		set selfPornVar += 10
+		selfPornVar += 10
 		clr
 		'You spend ten minutes masturbating for the camera with a dildo.'
 
 		act 'Continue':gt 'selfPorno', 'start'
 	else
 		clr
-		set videoOrgasm += 1
-		set selfPornVar += 15
+		videoOrgasm += 1
+		selfPornVar += 15
 		'You spend ten minutes masturbating for the camera with a dildo and end up orgasming.'
 
 		act 'Continue':gt 'selfPorno', 'start'
@@ -132,24 +132,24 @@ $selfPorno_Dog = {
 	cla
 	*clr
 	gs 'stat'
-	set selfPornDogTime = rand(10, 25)
-	set selfPornVidTime += selfPornDogTime
-	set minut += selfPornDogTime
-	set zoo += 1
-	set manna += 15
-	set willpower += 15
-	set horny += 15
-	set selfPornVar += selfPornDogTime
+	selfPornDogTime = rand(10, 25)
+	selfPornVidTime += selfPornDogTime
+	minut += selfPornDogTime
+	zoo += 1
+	manna += 15
+	willpower += 15
+	horny += 15
+	selfPornVar += selfPornDogTime
 
 	if horny <= 85:
-		set selfPornVar += 10
+		selfPornVar += 10
 		clr
 		'You spend <<selfPornDogTime>> minutes having sex with your dog on camera.'
 
 		act 'Continue':gt 'selfPorno', 'start'
 	else
-		set videoOrgasm += 1
-		set selfPornVar += 15
+		videoOrgasm += 1
+		selfPornVar += 15
 		clr
 		'You spend <<selfPornDogTime>> minutes having sex with your dog on camera and end up orgasming.'
 
@@ -160,15 +160,15 @@ $selfPorno_Dog = {
 $selfPorno_Finish = {
 	clr
 	gs 'stat'
-	set webcamday = day
+	webcamday = day
 
 	if selfPornVidTime >= 0 and selfPornVidTime < 20:
-		set selfPornVidMoney = selfPornVar * 50 * videoOrgasm
-		set minut += 10
-		set selfPornVidTime = 0
-		set selfPornVar = 0
-		set videoOrgasm = 0
-		set selfPornvid += 1
+		selfPornVidMoney = selfPornVar * 50 * videoOrgasm
+		minut += 10
+		selfPornVidTime = 0
+		selfPornVar = 0
+		videoOrgasm = 0
+		selfPornvid += 1
 		cls
 		'You put together your video and upload it to a site'
 
@@ -176,12 +176,12 @@ $selfPorno_Finish = {
 	end
 
 	if selfPornVidTime >= 20 and selfPornVidTime < 120:
-		set selfPornVidMoney = selfPornVar*100*videoOrgasm
-		set minut += 10
-		set selfPornVidTime = 0
-		set selfPornVar = 0
-		set videoOrgasm = 0
-		set selfPornvid += 1
+		selfPornVidMoney = selfPornVar*100*videoOrgasm
+		minut += 10
+		selfPornVidTime = 0
+		selfPornVar = 0
+		videoOrgasm = 0
+		selfPornvid += 1
 		cls
 		'You put together your video and upload it to a site'
 
@@ -189,12 +189,12 @@ $selfPorno_Finish = {
 	end
 
 	if selfPornVidTime >= 120:
-		set selfPornVidMoney = selfPornVar*75*videoOrgasm
-		set minut += 10
-		set selfPornVidTime = 0
-		set selfPornVar = 0
-		set videoOrgasm = 0
-		set selfPornvid += 1
+		selfPornVidMoney = selfPornVar*75*videoOrgasm
+		minut += 10
+		selfPornVidTime = 0
+		selfPornVar = 0
+		videoOrgasm = 0
+		selfPornvid += 1
 		cls
 		'You put together your video and upload it to a site'
 
@@ -205,13 +205,13 @@ $selfPorno_Finish = {
 $selfPorno_Disk = {
 	clr
 	gs 'stat'
-	set webcamday = day
-	set DVDDisk -= 1
-	set selfPornvidDVD += 1
-	set minut += 10
-	set selfPornVidTime = 0
-	set selfPornVar = 0
-	set videoOrgasm = 0
+	webcamday = day
+	DVDDisk -= 1
+	selfPornvidDVD += 1
+	minut += 10
+	selfPornVidTime = 0
+	selfPornVar = 0
+	videoOrgasm = 0
 	'You burned your porn video to a DVD.'
 
 	act 'Continue':gt 'Komp', 'start'

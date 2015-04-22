@@ -2,88 +2,80 @@
 if $ARGS[0] = 'start':
 	cla
 	*clr
+	minut += 30
+	sweat += 1
+	picrand = rand(0, 1)
 	gs 'stat'
-	set picrand = rand(0, 1)
-	set minut += 30
-	set sweat += 1
 	gt 'sexorg', 'var'
 end
 
 if $ARGS[0] = 'var':
-	set sexorgrand = rand(0, 6)
+	sexorgrand = rand(0, 6)
 
 	if sexorgrand = 0:
 		cla
 		*clr
-		set horny += 10
+		horny += 10
+		sexvar += 1
 
 		if orsxbj = 0:
-			set bj += 1
-			set orsxbj = 1
+			bj += 1
+			orsxbj = 1
 		end
 
-		set sexvar += 1
 		'<center><img src="images/img/sexorg/minet<<picrand>>.jpg"></center>'
 		'You two suck his cock, then take turns licking it with his dildo, touching tongues.'
 
 		act 'More':gt 'sexorg', 'var'
 
 		if sexvar >= 3:act 'Finish.':gt 'sexorg', 'end'
-	end
-
-	if sexorgrand = 1:
+	elseif sexorgrand = 1:
 		cla
 		*clr
-		set horny += 10
-		set sexvar += 1
+		horny += 10
+		sexvar += 1
 		'<center><img src="images/img/sexorg/vag<<picrand>>.jpg"></center>'
 		'While she enjoys her pussy in a member, you also find yourself iteresnoe employment.'
 
 		act 'More':gt 'sexorg', 'var'
 
 		if sexvar >= 3:act 'Finish.':gt 'sexorg', 'end'
-	end
-
-	if sexorgrand = 2:
+	elseif sexorgrand = 2:
 		cla
 		*clr
-		set horny += 10
+		horny += 10
+		sexvar += 1
 
 		if orsxsex = 0:
-			set sex += 1
-			set orsxsex = 1
+			sex += 1
+			orsxsex = 1
 		end
 
-		set sexvar += 1
 		'<center><img src="images/img/sexorg/uvag<<picrand>>.jpg"></center>'
 		'He comes into you, his cock moving inside your pussy bringing you pleasure, this time she did not lose too found something to do.'
 
 		act 'More':gt 'sexorg', 'var'
 
 		if sexvar >= 3:act 'Finish.':gt 'sexorg', 'end'
-	end
-
-	if sexorgrand = 3:
+	elseif sexorgrand = 3:
 		cla
 		*clr
-		set horny += 10
-		set sexvar += 1
+		horny += 10
+		sexvar += 1
 		'<center><img src="images/img/sexorg/anal<<picrand>>.jpg"></center>'
 		'Do you like the sight of his cock in her ass and sweet until she yells trying to absorb all of it, too, you did not get lost.'
 
 		act 'More':gt 'sexorg', 'var'
 
 		if sexvar >= 3:act 'Finish.':gt 'sexorg', 'end'
-	end
-
-	if sexorgrand = 4:
+	elseif sexorgrand = 4:
 		cla
 		*clr
-		set horny += 10
+		horny += 10
 
 		if orsxanal = 0:
-			set anal += 1
-			set pdsxanal = 1
+			anal += 1
+			pdsxanal = 1
 		end
 
 		'<center><img src="images/img/sexorg/uanal<<picrand>>.jpg"></center>'
@@ -92,26 +84,24 @@ if $ARGS[0] = 'var':
 		act 'More':gt 'sexorg', 'var'
 
 		if sexvar >= 3:act 'Finish.':gt 'sexorg', 'end'
-	end
-
-	if sexorgrand = 5:
+	elseif sexorgrand = 5:
 		cla
 		*clr
-		set horny += 10
+		horny += 10
 
 		if orsxbj = 0:
-			set bj += 1
-			set orsxbj = 1
+			bj += 1
+			orsxbj = 1
 		end
 
 		if orsxsex = 0:
-			set sex += 1
-			set orsxsex = 1
+			sex += 1
+			orsxsex = 1
 		end
 
 		if orsxanal = 0:
-			set anal += 1
-			set orsxanal = 1
+			anal += 1
+			orsxanal = 1
 		end
 
 		'<center><img src="images/img/sexorg/udp<<picrand>>.jpg"></center>'
@@ -120,13 +110,11 @@ if $ARGS[0] = 'var':
 		act 'More':gt 'sexorg', 'var'
 
 		if sexvar >= 3:act 'Finish.':gt 'sexorg', 'end'
-	end
-
-	if sexorgrand = 6:
+	elseif sexorgrand = 6:
 		cla
 		*clr
-		set horny += 10
-		set sexvar += 1
+		horny += 10
+		sexvar += 1
 		'<center><img src="images/img/sexorg/dp<<picrand>>.jpg"></center>'
 		'When they enter into it as a couple you get a little jealous seeing how she enjoys.'
 
@@ -139,15 +127,15 @@ end
 if $ARGS[0] = 'end':
 	cla
 	*clr
-	set orsxbj = 0
-	set orsxsex = 0
-	set orsxanal = 0
-	set sexvar = 0
-	set cumlip = 1
+	orsxbj = 0
+	orsxsex = 0
+	orsxanal = 0
+	sexvar = 0
+	cumlip = 1
 
 	if horny >= 80:
-		set horny = 0
-		set orgasm += 1
+		horny = 0
+		orgasm += 1
 	end
 
 	'<center><img src="images/img/sexorg/cum<<picrand>>.jpg"></center>'

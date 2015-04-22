@@ -21,16 +21,12 @@ if StasKafe = 2:
 			act 'Further':SStip = 0 & gt 'StasSex'
 		end
 	end
-
-	!!sex in the toilet with Stas
-end
-
-if StasKafe = 1:
+elseif StasKafe = 1:
 	'<center><img src="images/qwest/sosed/kafe.jpg"></center>'
-	'After the dance, you sat down again at the table, the waitress brought the bill. You look at the figure and slightly stunned. Five thousand! Stas took the paper out of your hands and you said "Do not worry, I´ll pay."'
+	'After the dance, you sat down again at the table, the waitress brought the bill. You look at the figure and slightly stunned. Five thousand! Stas took the paper out of your hands and you said "Do not worry, I''ll pay."'
 
 	if money >= 5000:
-		act 'No thank you, I´ll pay.':
+		act 'No thank you, I''ll pay.':
 			cls
 			money -= 5000
 			gs 'stat'
@@ -57,7 +53,7 @@ if StasKafe = 1:
 		end
 	end
 
-	act 'Oh it´s so cute!':
+	act 'Oh it''s so cute!':
 		cls
 		gs 'stat'
 		'<center><img src="images/qwest/sosed/kafe.jpg"></center>'
@@ -73,12 +69,10 @@ if StasKafe = 1:
 			act 'To invite':SStip = 0 & gt 'StasSex'
 		end
 	end
-end
-
-if StasKafe = 0:
+elseif StasKafe = 0:
 	'<center><b><font color="maroon">Cafe</font></b></center>'
 	'<center><img src="images/etogame/kafe.jpg"></center>'
-	'You sat on a chair and gestured Stas master´s waitress. When the waitress came, he ordered champagne and fruit. Order quickly brought Stas poured champagne glasses. "A toast to friendship."'
+	'You sat on a chair and gestured Stas master''s waitress. When the waitress came, he ordered champagne and fruit. Order quickly brought Stas poured champagne glasses. "A toast to friendship."'
 
 	act 'Drink for acquaintance':
 		cls

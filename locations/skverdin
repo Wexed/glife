@@ -31,29 +31,31 @@ $d_pp_hand = {
 			'<<$bname>> took you by the shoulders and pushed, trying to put you on his heels'
 			dynamic $d_pp_squat
 		elseif tiprand >= 50 and tiprand < 90:
-			'<<$bname>> said impatiently "Svetsik, kiss him"'
+			'<<$bname>> said impatiently "<<$name>>, kiss him"'
 			dynamic $d_pp_squat
 
-			if dom > 0:dynamic $d_pp_hjcum
-		else
-			'<<$bname>> stands still and you devour eyes'
-			dynamic $d_pp_hjcum
-			dynamic $d_pp_squat
+			if dom > 0:
+				dynamic $d_pp_hjcum
+			else
+				'<<$bname>> stands still and you devour eyes'
+				dynamic $d_pp_hjcum
+				dynamic $d_pp_squat
+			end
 		end
 	end
 }
 
 $d_pp_hjcum = {
 	act 'Dodrochit':
+		cls
 		pphj += 1
 		minut += 1
-		cls
+		gs 'stat'
 		tiprand = rand(1, 100)
 
 		if tiprand >= 80:cumfrot += 1 & $pptext = 'you notice as one of the jets of semen gets into your clothes on'
 		if tiprand < 80:$pptext = 'Man sperm tight jets flew to the ground'
 
-		gs 'stat'
 		'<center><img src="images/qwest/alter/Ev/pphjcum.jpg"></center>'
 		'You have become hard to masturbate cock and he began to finish, <<$pptext>>'
 		dynamic $d_pp_goend
@@ -86,20 +88,14 @@ $d_pp_bj = {
 		if tiprand = 100:
 			'Suddenly, He laughed and said "shit, <<$bname>> fifteen minutes you can not leave, already what that heifer cheek wheeled." <<$bname>> laughed and turned to his friend "What do you tupish? Come_Over!" The second guy immediately came up to you and pulled out of his pants his dick.'
 			dynamic $d_pp_double
-		end
-
-		if tiprand >= 90 and tiprand < 100:
+		elseif tiprand >= 90 and tiprand < 100:
 			'<<$bname>> suddenly took out a member of your mouth and began to say a word to lift you and expand back to him'
 			dynamic $d_pp_sex
-		end
-
-		if tiprand >= 70 and tiprand < 90:
-			'<<$bname>> whispers to you "Svetsik, you mouth is not tired? can perepihnemsya?"'
+		elseif tiprand >= 70 and tiprand < 90:
+			'<<$bname>> whispers to you "<<$name>>, you mouth is not tired? can perepihnemsya?"'
 			dynamic $d_pp_sex
 			dynamic $d_pp_bjcum
-		end
-
-		if tiprand < 70:
+		elseif tiprand < 70:
 			'You chustvuete stiffen cock, it seems he is ready is about to finish'
 			dynamic $d_pp_hjcum
 			dynamic $d_pp_bjcum
@@ -137,9 +133,7 @@ $d_pp_sex = {
 		if tiprand >= 20:
 			dynamic $sexcum
 			dynamic $d_pp_goend
-		end
-
-		if tiprand < 20:
+		elseif tiprand < 20:
 			'<<$bname>> took out of you cock and you deploying to face him began to put you on his heels'
 			dynamic $d_pp_squat
 		end
@@ -184,7 +178,7 @@ $d_pp_double = {
 					cumfrot += 1
 					gs 'stat'
 					'<center><img src="images/qwest/alter/Ev/ppbjdouble4.jpg"></center>'
-					'You turned your face and you immediately charged a second portion struhni directly into open mouth, you instinctively shaken and a large ball of sperm fell out of your mouth and you shmyaknulsya on clothes. <<$bname>> neigh "epta! You`re a sniper, huesoska loaded directly into her mouth fucking!"'
+					'You turned your face and you immediately charged a second portion struhni directly into open mouth, you instinctively shaken and a large ball of sperm fell out of your mouth and you shmyaknulsya on clothes. <<$bname>> neigh "epta! You''re a sniper, huesoska loaded directly into her mouth fucking!"'
 					dynamic $d_pp_goend
 				end
 			end
@@ -210,7 +204,7 @@ $d_pp_goend = {
 			'<center><img src="images/qwest/alter/Ev/ppendno.jpg"></center>'
 		end
 
-		'You began to brush up. <<$bname>> pretty buttoned pants "Well pokeda Svetulya, I still have things, can be seen as a."'
+		'You began to brush up. <<$bname>> pretty buttoned pants "Well pokeda <<$name>>, I still have things, can be seen as a."'
 
 		act 'Leave':gt 'gskver'
 	end

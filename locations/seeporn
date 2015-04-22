@@ -1,6 +1,6 @@
 # seeporn
 gs 'stat'
-'Together with all the guys you`ve come to bear and he turned on the video player, by which immediately began to show porn.'
+'Together with all the guys you''ve come to bear and he turned on the video player, by which immediately began to show porn.'
 
 act 'watch':
 	cls
@@ -9,18 +9,19 @@ act 'watch':
 	horny += (seepornofut + mastr) * 2
 	gs 'stat'
 
-	if seepornofut < 3:'Boys looking at what is happening on the screen clearly at ease and embarrassed shoot you in the eyes.'
-	if seepornofut >= 3 and seepornofut < 10:'Guys have become accustomed to watching porn , sometimes even comment on it.'
-
-	if seepornofut >= 10:
+	if seepornofut < 3:
+		'Boys looking at what is happening on the screen clearly at ease and embarrassed shoot you in the eyes.'
+	elseif seepornofut >= 3 and seepornofut < 10:
+		'Guys have become accustomed to watching porn , sometimes even comment on it.'
+	elseif seepornofut >= 10:
 		'Guys look hard porn, you notice, that all vyzdybilis shirinki.'
-		evgenrand = rand(0, 5)
+		evgenrand = rand(0, 1)
 
-		if evgenqw = 4:
+		if evgenQW = 4:
 			cls
 			boyseeporn += 1
 			gs 'stat'
-			'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos offers "Svetsik, What about work mouth?"'
+			'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos offers "<<$name>>, What about work mouth?"'
 
 			act 'Be silent':
 				cls
@@ -52,21 +53,22 @@ act 'watch':
 					!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
 					'You indignantly rejected the proposal boys.'
 
-					act 'Exit':gt 'gorodok'
+					act 'Leave':gt 'gorodok'
 				end
 			end
 
 			exit
-		end
-
-		if evgenqw = 3:
+		elseif evgenQW = 3:
 			cls
 			gs 'stat'
 			'<center><img src="images/qwest/alter/ev2/seeporn.jpg"></center>'
-			'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos suddenly takes your hand and puts it in the groin, just goes and Bear. Your brother Kolka laughed nervously. A Bear told you conspiratorially "Svetsik, vzdrochni us."'
+			'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos suddenly takes your hand and puts it in the groin, just goes and Bear. Your brother Kolka laughed nervously. A Bear told you conspiratorially "<<$name>>, vzdrochni us."'
 
 			act 'Jerk kid':
 				cls
+
+				if MihJenSex = 0:MihJenSex = 1 & guy += 2
+
 				hj += 2
 				boyseeporn += 1
 				sub += 1
@@ -82,18 +84,13 @@ act 'watch':
 						cumfrot += 2
 						gs 'stat'
 						'<center><img src="images/qwest/alter/ev2/seeporncumhj.jpg"></center>'
-						'you have rebelled "look assholes, you all I smeared!" But the boys blissfully sprawled on the couch "Very best in your palms Svetsik, such small, soft and warm."'
+						'you have rebelled "look assholes, you all I smeared!" But the boys blissfully sprawled on the couch "Very best in your palms <<$name>>, such small, soft and warm."'
 
-						act 'Exit':gt 'gorodok'
+						act 'Leave':gt 'gorodok'
 					end
-				end
-
-				if boyseeporn >= 2:
+				elseif boyseeporn >= 2:
 					bj += 1
-					evgenqw = 4
-
-					if brotherSex = 0:brotherSex = 1 & guy += 1
-
+					evgenQW = 4
 					'<center><img src="images/qwest/alter/ev2/seepornfirst.jpg"></center>'
 					'You glide skin on both members of their handles, your brother Kolka broke down and with a strangled groan. You have eyes widened by this turn of events. Zhendos rapidly groaned and of its members flew jet of sperm on your foot, immediately joined by Mishan and also finished on your foot.'
 
@@ -102,48 +99,60 @@ act 'watch':
 						cumfrot += 2
 						cumface += 1
 						facial += 1
+
+						if brotherSex = 0:brotherSex = 1 & guy += 1
+
 						gs 'stat'
 						'<center><img src="images/qwest/alter/ev2/seepornfacial.jpg"></center>'
 						'Suddenly. Mishan laughed "Kolyamba, you just fucked his sister in the mouth. ohrenet" Kohl wiping the sweat from his forehead choked said "Yes, she asks that this slut. That could not resist."'
 
-						act 'Exit':gt 'gorodok'
+						act 'Leave':gt 'gorodok'
 					end
 				end
-			end
 
-			if dom > boyseeporn * 2:
-				act 'Remove hand':
-					cls
-					dom += 1
-					gs 'stat'
-					!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
-					'You angrily removes his hands and yelling angrily at the boys.'
+				if dom > boyseeporn * 2:
+					act 'Remove hand':
+						cls
+						dom += 1
+						gs 'stat'
+						!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
+						'You angrily removes his hands and yelling angrily at the boys.'
 
-					act 'Exit':gt 'gorodok'
+						act 'Leave':gt 'gorodok'
+					end
 				end
+
+				exit
+				cls
+				dom += 1
+				gs 'stat'
+				!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
+				'You angrily removes his hands and yelling angrily at the boys.'
+
+				act 'Leave':gt 'gorodok'
 			end
 
 			exit
-		end
-
-		if evgenqw = 2 and evgenrand = 0:
+		elseif evgenQW = 2 and evgenrand = 0:
 			cls
 			gs 'stat'
 			'<center><img src="images/qwest/alter/ev2/seeporn.jpg"></center>'
-			'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos suddenly takes your hand and puts it in the groin, just goes and Bear. Your brother Kolka laughed nervously. A Bear told you conspiratorially "Svetsik, vzdrochni us."'
+			'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos suddenly takes your hand and puts it in the groin, just goes and Bear. Your brother Kolka laughed nervously. A Bear told you conspiratorially "<<$name>>, vzdrochni us."'
 
-			act 'Yes you ohueli!!':
+			act 'Yes you ohueli!!!':
 				cls
 				gs 'stat'
 				'<center><img src="images/qwest/alter/ev2/seeporn.jpg"></center>'
-				'You rebelled actions boys. What Bear said "Come, you`re a girl, moreover, we just peredernesh gate in a friendly."'
+				'You rebelled actions boys. What Bear said "Come, you''re a girl, moreover, we just peredernesh gate in a friendly."'
 
 				if horny> = 70:
 					act 'jerk kid':
 						cls
 						hj += 2
-						boy += 2
-						evgenqw = 3
+
+						if MihJenSex = 0:MihJenSex = 1 & guy += 2
+
+						evgenQW = 3
 						gs 'stat'
 						'<center><img src="images/qwest/alter/ev2/seepornHJ.jpg"></center>'
 						'You glide skin on both members of their handles, Zhendos rapidly groaned and of its members flew jet of sperm on your foot, immediately joined by Mishan and also finished on your foot.'
@@ -153,33 +162,30 @@ act 'watch':
 							cumfrot += 2
 							gs 'stat'
 							'<center><img src="images/qwest/alter/ev2/seeporncumhj.jpg"></center>'
-							'you have rebelled "look assholes, you all I smeared!" But the boys blissfully sprawled on the couch "Very best in your palms Svetsik, such small, soft and warm."'
+							'you have rebelled "look assholes, you all I smeared!" But the boys blissfully sprawled on the couch "Very best in your palms <<$name>>, such small, soft and warm."'
 
-							act 'Exit':gt 'gorodok'
+							act 'Leave':gt 'gorodok'
 						end
 					end
-				end
-
-				if horny < 70:
-					act 'remove hands':
+				elseif horny < 70:
+					act 'Remove hands':
 						cls
 						dom += 1
 						gs 'stat'
 						!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
 						'You angrily removes his hands and yelling angrily at the boys.'
 
-						act 'Exit':gt 'gorodok'
+						act 'Leave':gt 'gorodok'
 					end
 				end
 			end
 			exit
-		end
-
-		if evgenqw = 1 and evgenrand = 0:
+		elseif evgenQW = 1 and evgenrand = 0:
 			cls
 			horny += 10
 			gs 'stat'
-			'Guys look hard porn, you notice, that all vyzdybilis shirinki. You feel like a hand Zhendosa accidentally stroking your ass.'
+			'Guys look hard porn, you notice, that all vyzdybilis shirinki.'
+			'You feel like a hand Zhendosa accidentally stroking your ass.'
 
 			if horny < 70:
 				act 'Remove his hands':
@@ -189,11 +195,9 @@ act 'watch':
 					!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
 					'You angrily removes his hands from his priests Zhendosa.'
 
-					act 'Exit':gt 'gorodok'
+					act 'Leave':gt 'gorodok'
 				end
-			end
-
-			if horny >= 70:
+			elseif horny >= 70:
 				act 'Pretend that nothing is happening':
 					cls
 					sub += 1
@@ -202,14 +206,12 @@ act 'watch':
 					!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
 					'You sit on the couch red as a lobster enjoying a nice touch to his priest.'
 
-					act 'Exit':gt 'gorodok'
+					act 'Leave':gt 'gorodok'
 				end
 			end
 
 			exit
-		end
-
-		if evgenqw = 0 and evgenrand = 0:
+		elseif evgenQW = 0 and evgenrand = 0:
 			cls
 			gs 'stat'
 			'Guys look hard porn, you notice, that all vyzdybilis shirinki. Zhendos looking at porn asks you "And you did that <<$name>> ever?"'
@@ -222,20 +224,18 @@ act 'watch':
 					!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
 					'You sent Zhendosa on dick with such conversations.'
 
-					act 'Exit':gt 'gorodok'
+					act 'Leave':gt 'gorodok'
 				end
-			end
-
-			if horny >= 70:
+			elseif horny >= 70:
 				act 'Be silent':
 					cls
 					sub += 1
-					evgenqw = 1
+					evgenQW = 1
 					gs 'stat'
 					!!'<center><img src="images/qwest/alter/ev2/seepornHand.jpg"></center>'
 					'You swallowed and said nothing eyeing porn. Mishan chuckled "And she asks how flushed. It turns out the girls also like porn."'
 
-					act 'Exit':gt 'gorodok'
+					act 'Leave':gt 'gorodok'
 				end
 			end
 
@@ -243,7 +243,7 @@ act 'watch':
 		end
 	end
 
-	act 'Exit':gt 'gorodok'
+	act 'Leave':gt 'gorodok'
 end
 
 --- seeporn ---------------------------------

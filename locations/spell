@@ -7,8 +7,8 @@ if $ARGS[0] = 'reset':
 	act 'Absorb accumulated manna':
 		cla
 		*clr
-		set manna += mannaReset
-		set mannaReset = 0
+		manna += mannaReset
+		mannaRe= 0
 		xgt 'fight', 'sta'
 	end
 
@@ -27,14 +27,14 @@ if $ARGS[0] = 'unmat':
 		act 'Become a disembodied':
 			cla
 			*clr
-			set unmaterial = 31
-			set rikudo += 3000
-			set mannaReset = 0
+			unmaterial = 31
+			rikudo += 3000
+			mannaRe= 0
 			xgt 'fight', 'sta'
 		end
+	else
+		'You have too little strength Rikudo for this spell.'
 	end
-
-	if rikudo < 3000:'You have too little strength Rikudo for this spell.'
 
 	act 'Physical attacks':gt 'boxing'
 
@@ -46,16 +46,16 @@ end
 if $ARGS[0] = 'tuman':
 	cla
 	!!Creating fog
-	if tumanV > 0:'It is not possible to impose your fog on the existing fog enemy.'
-
-	if tumanV <= 0:
+	if tumanV > 0:
+		'It is not possible to impose your fog on the existing fog enemy.'
+	else
 		'Create a fog on the battlefield, the enemy closing review. Cost 10 mana.'
 
 		act 'Create a fog (10 mana)':
 			cla
 			*clr
-			set manna -= 10
-			set tuman += 10
+			manna -= 10
+			tuman += 10
 			gt 'fight', 'sta'
 		end
 	end
@@ -74,8 +74,8 @@ if $ARGS[0] = 'klon':
 	act 'Create a clone':
 		cla
 		*clr
-		set manna -= 15
-		set klon += 1
+		manna -= 15
+		klon += 1
 		gt 'fight', 'sta'
 	end
 
@@ -93,8 +93,8 @@ if $ARGS[0] = 'stun':
 	act 'Paralytic stroke':
 		cla
 		*clr
-		set manna -= 20
-		set stunner = 1
+		manna -= 20
+		stunner = 1
 		xgt 'atak', 'player'
 	end
 
@@ -112,8 +112,8 @@ if $ARGS[0] = 'weap':
 	act 'Invest energy':
 		cla
 		*clr
-		set manna -= 20
-		set magweapbonus = weapbonus * 4
+		manna -= 20
+		magweapbonus = weapbonus * 4
 		xgt 'atak', 'player'
 	end
 
@@ -131,9 +131,9 @@ if $ARGS[0] = 'wind':
 	act 'Apply':
 		cla
 		*clr
-		set manna -= 40
-		set tumanV = 0
-		set tuman = 0
+		manna -= 40
+		tumanV = 0
+		tuman = 0
 		'<b><font color="green">You sent against the wind on the battlefield and destroyed fog.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -152,8 +152,8 @@ if $ARGS[0] = 'klon2':
 	act 'Create clones':
 		cla
 		*clr
-		set manna -= 45
-		set klon += 3
+		manna -= 45
+		klon += 3
 		gt 'fight', 'sta'
 	end
 
@@ -171,8 +171,8 @@ if $ARGS[0] = 'energo':
 	act 'Create energy shield':
 		cla
 		*clr
-		set manna -= 50
-		set defence += 100
+		manna -= 50
+		defence += 100
 		'<b><font color="green">You have imposed energy shield, you now have <<defence>> protection units.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -191,8 +191,8 @@ if $ARGS[0] = 'init':
 	act 'Create a slowdown':
 		cla
 		*clr
-		set manna -= 60
-		set initBonus = 120
+		manna -= 60
+		initBonus = 120
 		'<b><font color="green">You put the manna in the amplification reaction.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -212,8 +212,8 @@ if $ARGS[0] = 'hel':
 	act 'Treated (400 mana)':
 		cla
 		*clr
-		set manna -= 400
-		set health += 400
+		manna -= 400
+		health += 400
 		'<b><font color="green">You put the manna in the acceleration of regenerative processes in the body.</font></b>'
 		gt 'fight', 'sta'
 	end
@@ -233,9 +233,9 @@ if $ARGS[0] = 'hand':
 	act 'Striking hand (100 mana)':
 		cla
 		*clr
-		set manna -= 100
-		set strenK = stren * 20/100
-		set magweapbonus = rand(stren * 10 - strenK, stren * 10 + strenK)
+		manna -= 100
+		strenK = stren * 20/100
+		magweapbonus = rand(stren * 10 - strenK, stren * 10 + strenK)
 		'<b><font color="green">You put the manna in the palm for applying a devastating blow.</font></b>'
 		xgt 'atak', 'player'
 	end
@@ -255,8 +255,8 @@ if $ARGS[0] = 'fire1':
 	act 'Flame (10 mana)':
 		cla
 		*clr
-		set manna -= 10
-		set damTip = 250
+		manna -= 10
+		damTip = 250
 		'<b><font color="green">You have created a torrent of flames pouring out of your hand.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -276,8 +276,8 @@ if $ARGS[0] = 'fire2':
 	act 'Release of fire (100 mana)':
 		cla
 		*clr
-		set manna -= 100
-		set damTip = 2500
+		manna -= 100
+		damTip = 2500
 		'<b><font color="green">You have created a huge stream of fire pouring out of your hand.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -297,8 +297,8 @@ if $ARGS[0] = 'fire3':
 	act 'Fire barrier (150 mana)':
 		cla
 		*clr
-		set manna -= 150
-		set defence += 750
+		manna -= 150
+		defence += 750
 		'<b><font color="green">You have created a fire barrier around him, now you <<defence>> protection units.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -318,9 +318,9 @@ if $ARGS[0] = 'fire4':
 	act 'Firestorm (250 mana)':
 		cla
 		*clr
-		set manna -= 250
-		set damTip = 6250
-		set bonusSh = 100
+		manna -= 250
+		damTip = 6250
+		bonusSh = 100
 		'<b><font color="green">The air around you is red-hot and inflamed, a sea of ​​fire fell upon the enemy.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -340,8 +340,8 @@ if $ARGS[0] = 'fire5':
 	act 'Flame Shield (500 mana)':
 		cla
 		*clr
-		set manna -= 500
-		set defence += 2500
+		manna -= 500
+		defence += 2500
 		'<b><font color="green">You have created a wall of fire around it absorbs damage, you now have <<defence>> protection units.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -361,9 +361,9 @@ if $ARGS[0] = 'ele1':
 	act 'Discharge (10 mana)':
 		cla
 		*clr
-		set manna -= 10
-		set damTip = 150
-		set eleSh = 1
+		manna -= 10
+		damTip = 150
+		eleSh = 1
 		'<b><font color="green">You have created an electrical discharge pouring out of your hand.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -383,9 +383,9 @@ if $ARGS[0] = 'ele2':
 	act 'Lightning (100 mana)':
 		cla
 		*clr
-		set manna -= 100
-		set damTip = 1500
-		set eleSh = 1
+		manna -= 100
+		damTip = 1500
+		eleSh = 1
 		'<b><font color="green">You have created a lightning rattled vystrelevshuyu from your hand.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -405,8 +405,8 @@ if $ARGS[0] = 'ele3':
 	act 'Electric barrier (150 mana)':
 		cla
 		*clr
-		set manna -= 150
-		set defence += 1500
+		manna -= 150
+		defence += 1500
 		'<b><font color="green">You have created a wall around himself dancing lightning, you now have <<defence>> protection units.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -426,10 +426,10 @@ if $ARGS[0] = 'ele4':
 	act 'Dance of thousands of birds (250 mana)':
 		cla
 		*clr
-		set manna -= 250
-		set damTip = 3750
-		set bonusSh = 30
-		set eleSh = 1
+		manna -= 250
+		damTip = 3750
+		bonusSh = 30
+		eleSh = 1
 		'<b><font color="green">you have gathered the manna in the hand and danced around the palm of your hand lightning leaping through the air with shrieks.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -449,8 +449,8 @@ if $ARGS[0] = 'ele5':
 	act 'Plyaschuschaya sphere (500 mana)':
 		cla
 		*clr
-		set manna -= 500
-		set defence += 5000
+		manna -= 500
+		defence += 5000
 		'<b><font color="green">you have created around him a large sphere of lightning dancing, you now have <<defence>> protection units.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -470,9 +470,9 @@ if $ARGS[0] = 'ert1':
 	act 'Quicksand (10 mana)':
 		cla
 		*clr
-		set manna -= 10
-		set damTip = 100
-		set eleSh = 5
+		manna -= 10
+		damTip = 100
+		eleSh = 5
 		'<b><font color="green">you have created under enemy addictive quicksand.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -492,13 +492,13 @@ if $ARGS[0] = 'ert2':
 	act 'Active Protection (100 mana)':
 		cla
 		*clr
-		set manna -= 100
-		set defence += 2500
-		set defenceM += 2500
-		set defenceActPar = 1000
-		set defenceActParM = 1000
-		set defenceAct = 10
-		set defenceActM = 10
+		manna -= 100
+		defence += 2500
+		defenceM += 2500
+		defenceActPar = 1000
+		defenceActParM = 1000
+		defenceAct = 10
+		defenceActM = 10
 		'<b><font color="green">Land surrounded you, giving you protection.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -518,9 +518,9 @@ if $ARGS[0] = 'ert3':
 	act 'Quicksand (150 mana)':
 		cla
 		*clr
-		set manna -= 150
-		set damTip = 1500
-		set eleSh = 5
+		manna -= 150
+		damTip = 1500
+		eleSh = 5
 		'<b><font color="green">You are the earth underfoot opponents.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -540,17 +540,17 @@ if $ARGS[0] = 'ert4':
 	act 'Absolute protection (250 mana)':
 		cla
 		*clr
-		set manna -= 250
-		set defence += 6250
-		set defenceM += 6250
-		set defenceW += 6250
-		set defenceActPar = 1000
-		set defenceActParM = 1000
-		set defenceActParW = 1000
-		set defenceAct = 15
-		set defenceActM = 15
-		set defenceActW = 15
-		set defAtk = 15
+		manna -= 250
+		defence += 6250
+		defenceM += 6250
+		defenceW += 6250
+		defenceActPar = 1000
+		defenceActParM = 1000
+		defenceActParW = 1000
+		defenceAct = 15
+		defenceActM = 15
+		defenceActW = 15
+		defAtk = 15
 		'<b><font color="green">Land surrounded you, giving you protection.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -570,10 +570,10 @@ if $ARGS[0] = 'ert5':
 	act 'Sando (500 mana)':
 		cla
 		*clr
-		set manna -= 500
-		set damTip = 5000
-		set bonusSh = 50
-		set eleSh = 5
+		manna -= 500
+		damTip = 5000
+		bonusSh = 50
+		eleSh = 5
 		'<b><font color="green">Two huge plate with a roar came from the earth and imploded.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -593,13 +593,13 @@ if $ARGS[0] = 'wind1':
 	act 'Wind gusts (10 mana)':
 		cla
 		*clr
-		set manna -= 10
-		set damTip = 100
-		set bonusSh = 50
+		manna -= 10
+		damTip = 100
+		bonusSh = 50
 		'<b><font color="green">You have created a gust of wind.</font></b>'
 
-		if klonV > 0:set klonV = 0 & '<b><font color="green">Clone opponent turned into steam.</font></b>'
-		if tumanV > 0:set tumanV = 0 & '<b><font color="green">Fog enemy torn to shreds by the wind.</font></b>'
+		if klonV > 0:klonV = 0 & '<b><font color="green">Clone opponent turned into steam.</font></b>'
+		if tumanV > 0:tumanV = 0 & '<b><font color="green">Fog enemy torn to shreds by the wind.</font></b>'
 
 		xgt 'atakA', 'atak'
 	end
@@ -619,13 +619,13 @@ if $ARGS[0] = 'wind2':
 	act 'Horrendous pressure (100 mana)':
 		cla
 		*clr
-		set manna -= 100
-		set damTip = 1000
-		set bonusSh = 100
+		manna -= 100
+		damTip = 1000
+		bonusSh = 100
 		'<b><font color="green">You are sharply raised air pressure.</font></b>'
 
-		if klonV > 0:set klonV = 0 & '<b><font color="green">Clone the enemy broke and turned into steam.</font></b>'
-		if tumanV > 0:set tumanV = 0 & '<b><font color="green">Fog enemy torn apart pressure.</font></b>'
+		if klonV > 0:klonV = 0 & '<b><font color="green">Clone the enemy broke and turned into steam.</font></b>'
+		if tumanV > 0:tumanV = 0 & '<b><font color="green">Fog enemy torn apart pressure.</font></b>'
 
 		xgt 'atakA', 'atak'
 	end
@@ -645,8 +645,8 @@ if $ARGS[0] = 'wind3':
 	act 'Vacuum sphere (150 mana)':
 		cla
 		*clr
-		set manna -= 150
-		set defence += 1500
+		manna -= 150
+		defence += 1500
 		'<b><font color="green">you have created around themselves the vacuum, you now have <<defence>> protection units.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -666,13 +666,13 @@ if $ARGS[0] = 'wind4':
 	act 'Vacuum Rockets (250 mana)':
 		cla
 		*clr
-		set manna -= 250
-		set damTip = 2500
-		set bonusSh = 100
+		manna -= 250
+		damTip = 2500
+		bonusSh = 100
 		'<b><font color="green">you have created around themselves many areas and they vacuum at high speed with a whistle flew over the battlefield.</font></b>'
 
-		if klonV > 0:set klonV = 0 & '<b><font color="green">Clone the enemy broke and turned into steam.</font></b>'
-		if tumanV > 0:set tumanV = 0 & '<b><font color="green">Fog enemy torn apart pressure.</font></b>'
+		if klonV > 0:klonV = 0 & '<b><font color="green">Clone the enemy broke and turned into steam.</font></b>'
+		if tumanV > 0:tumanV = 0 & '<b><font color="green">Fog enemy torn apart pressure.</font></b>'
 
 		xgt 'atakA', 'atak'
 	end
@@ -693,21 +693,22 @@ if $ARGS[0] = 'wind5':
 		act 'Devouring vacuum (500 mana)':
 			cla
 			*clr
-			set manna -= 500
-			set defenceV = 0
-			set defenceMV = 0
-			set defenceWV = 0
-			set defenceActParV = 0
-			set defenceActParMV = 0
-			set defenceActV = 0
-			set defenceActMV = 0
-			set defAtkMV = 0
+			manna -= 500
+			defenceV = 0
+			defenceMV = 0
+			defenceWV = 0
+			defenceActParV = 0
+			defenceActParMV = 0
+			defenceActV = 0
+			defenceActMV = 0
+			defAtkMV = 0
 			'<b><font color="green">you have created around themselves the vacuum that sucked in the defense of the enemy to destroy it.</font></b>'
 			xgt 'fight', 'sta'
 		end
-	end
 
-	if defenceV <= 0:'The enemy is no shield that can destroy this spell.'
+	else
+		'The enemy is no shield that can destroy this spell.'
+	end
 	act 'Physical attacks':gt 'boxing'
 
 	if magik > 0:
@@ -723,9 +724,9 @@ if $ARGS[0] = 'water1':
 	act 'Creek mana (10 mana)':
 		cla
 		*clr
-		set manna -= 10
-		set damTip = 100
-		set damTipM = 1000
+		manna -= 10
+		damTip = 100
+		damTipM = 1000
 		'<b><font color="green">you have created in his hand a small stream of water which was shot at the enemy.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -745,9 +746,9 @@ if $ARGS[0] = 'water2':
 	act 'Flooding (100 mana)':
 		cla
 		*clr
-		set manna -= 100
-		set damTip = 1000
-		set damTipM = 500
+		manna -= 100
+		damTip = 1000
+		damTipM = 500
 		'<b><font color="green">From your mouth a flood of water flooded the countryside.</font></b>'
 		xgt 'atakA', 'atak'
 	end
@@ -767,14 +768,14 @@ if $ARGS[0] = 'water3':
 	act 'Blister (150 mana)':
 		cla
 		*clr
-		set manna -= 150
-		set defence += 1500
-		set defenceM += 1500
-		set defenceW += 1500
-		set defenceActPar = 500
-		set defenceActParM = 500
-		set defenceAct = 10
-		set defenceActM = 10
+		manna -= 150
+		defence += 1500
+		defenceM += 1500
+		defenceW += 1500
+		defenceActPar = 500
+		defenceActParM = 500
+		defenceAct = 10
+		defenceActM = 10
 		'<b><font color="green">Water has created around you the scope of protection.</font></b>'
 		xgt 'fight', 'sta'
 	end
@@ -794,13 +795,13 @@ if $ARGS[0] = 'water4':
 	act 'Water shark missile (250 mana)':
 		cla
 		*clr
-		set manna -= 250
-		set damTip = 1500
-		set damTipM = 2500
-		set bonusSh = 50
+		manna -= 250
+		damTip = 1500
+		damTipM = 2500
+		bonusSh = 50
 		'<b><font color="green">You released a pack of sharks consist of water flying towards the enemy like a torpedo.</font></b>'
 
-		if klonV > 0:set klonV = 0 & '<b><font color="green">Clones enemy disappeared.</font></b>'
+		if klonV > 0:klonV = 0 & '<b><font color="green">Clones enemy disappeared.</font></b>'
 
 		xgt 'atakA', 'atak'
 	end
@@ -820,18 +821,18 @@ if $ARGS[0] = 'water5':
 	act 'Great Flood (500 mana)':
 		cla
 		*clr
-		set manna -= 500
-		set defence += 5000
-		set defenceM += 5000
-		set defenceW += 5000
-		set defenceActPar = 500
-		set defenceActParM = 500
-		set defenceAct = 10
-		set defenceActM = 10
-		set defAtkM = 10
+		manna -= 500
+		defence += 5000
+		defenceM += 5000
+		defenceW += 5000
+		defenceActPar = 500
+		defenceActParM = 500
+		defenceAct = 10
+		defenceActM = 10
+		defAtkM = 10
 		'<b><font color="green">you have filled out all the water district that protects you and devour enemy mana.</font></b>'
 
-		if klonV > 0:set klonV = 0 & '<b><font color="green">Clones enemy disappeared.</font></b>'
+		if klonV > 0:klonV = 0 & '<b><font color="green">Clones enemy disappeared.</font></b>'
 
 		xgt 'fight', 'sta'
 	end

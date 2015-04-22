@@ -13,14 +13,13 @@ if lernHome > 0:
 			minut += 60 * lernHome
 			lernHome = 0
 			lern += 1
-		end
-
-		if lernHome > 2:
+			gs 'stat'
+		else
 			minut += 60 * 2
 			lernHome = 0
+			gs 'stat'
 		end
 
-		gs 'stat'
 		'Sitting for a long time you learned yet they were able to learn.'
 
 		act 'Get up from the table':gt $locM, $metkaM

@@ -7,7 +7,7 @@ gs 'stat'
 
 if son < 10:
 	if budon = 1:
-		act 'Sleep before the alarm in <<alarm1>> hours <<alarm2>> minutes':
+		act 'Sleep until the alarm at <<alarm1>> hours <<alarm2>> minutes':
 			cls
 			inSleep = 1
 			:markson
@@ -49,7 +49,7 @@ else
 	act 'Enable Service':budon = 1 & gt $curloc
 end
 
-act 'set the alarm time':gt 'saunabud'
+act 'Set the alarm time':gt 'saunabud'
 act 'Get out of bed':sec += 5 & gt $locBroom, $metkaBroom
 
 --- saunabed ---------------------------------

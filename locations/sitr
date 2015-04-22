@@ -21,21 +21,19 @@ if remsitr = 0:
 	else
 		'<center><img src="images/etogame/sitr1.jpg"></center>'
 	end
-	$zal = 'tight room'
-	$zal2 = 'shabby wall stands'
+
+	$zal = 'A cramped room'
+	$zal2 = 'faded wall'
 elseif remsitr = 1:
 	'<center><img src="images/etogame/sitr2.jpg"></center>'
-	$zal = 'modern, bright room'
-	$zal2 = 'walls with light-colored wallpaper worth'
+	$zal = 'A modern, bright room'
+	$zal2 = 'papered walls with light'
 end
-
 if TV = 0:$TV = 'a great place for a TV, which you don''t have'
 if TV = 1:$TV = 'an ancient <a href="exec:gt ''TV'', ''start''">TV</a>'
 if TV = 2:$TV = 'a huge plasma <a href="exec:gt ''TV'', ''start''">TV</a>'
-
 if divan = 0:$divan = '<a href="exec:gt ''divan'', ''start''">an old sofa</a>'
 if divan = 1:$divan = 'luxury <a href="exec:gt ''divan'', ''start''">a leather sofa</a>'
-
 if komp = 0:$komp = ''
 if komp = 1:$komp = 'with a <a href="exec:gt ''Komp'', ''start''">computer</a> on top of it.'
 !!!Probably CV edition
@@ -44,22 +42,16 @@ if selfPornvidDVD > 0: $selfPornvidDVD = 'You have <a href="exec:Dynamic $selfPo
 !!!
 if stol = 0:$stol = 'decrepit <a href="exec:gt ''stol'', ''start''">table</a>'
 if stol = 1:$stol = 'new <a href="exec:gt ''stol'', ''start''">table</a>'
-
-!!!Probably CV Edition
-'<<$zal>>, <<$divan>> stands next to the <<$zal2>>. In front of the sofa is <<$TV>>. In front of the window is a <<$stol>> <<$komp>> <<$selfPornvidDVD>>'
-!!!
-
 if obruch > 0:'<br>A hula hoop stands in corner of the room. '
 if skak > 0:'A jump rope is on a shelf. '
 if bookYog > 0:'A yoga mat is rolled up in a corner. '
+'<<$zal>>, <<$divan>> stands next to the <<$zal2>>. In front of the sofa is <<$TV>>. In front of the window is a <<$stol>> <<$komp>> <<$selfPornvidDVD>>'
 if mishka > 0:'On a shelf is <<mishka>> teddy bear'
 
 *nl
 
-!!!Probably CV edition
 sports = 0
 $sportStringPrefix = ''
-!!!
 
 if obruch > 0 and obruchday ! day:
 	$sitrobr = $sportStringPrefix + ' <a href="exec:dynamic $sitrobrd">twist hoop</a>'
@@ -120,7 +112,6 @@ if suhbelo2 > 0:'<br>Lying on the table are <<suhbelo2>> pieces of dried laundry
 
 *nl
 !!housegostrand = rand(1, 20)
-
 !!if husband > 0 and husbandrink ! 10 and week = 5 and hour > 17 and hour < 21 and housegostrand > 15:gt 'sitr', 'guest'
 
 if husband > 0 and husbandrink ! 10 and husbandrinkday ! day:
@@ -129,7 +120,7 @@ if husband > 0 and husbandrink ! 10 and husbandrinkday ! day:
 	else
 		if hour > 7 and hour < 17:
 			'<a href="exec:gt ''husb'', ''start''">On the couch sits husband and watching TV.</a>'
-		else
+		elseif hour > 17 and hour <= 22:
 			'<a href="exec:gt ''husb'', ''start''">On the couch sits husband and watching TV.</a>'
 		end
 	end
@@ -154,7 +145,7 @@ if student > 0 and kursovik < 100:
 		'<center><img src="images/etogame/study.jpg"></center>'
 		'You sat on the course work and prepared her <<kursovik>> percent.'
 
-		act 'Leave':gt 'sitr'
+		act 'Exit':gt 'sitr'
 	end
 end
 
@@ -173,9 +164,9 @@ if zoo >= 6:
 					zoo += 1
 					horny = 0
 					orgasm += 1
+					husband -= 1
 					'"What''s he doing dear, stop him, " cries the husband'
 					'"I can not, try myself, " you reply.'
-					husband -= 1
 					'<<$husName>> trying to shove the dog, but he growls and snarls. "I can not get it to drive away what to do dear?" he asks.'
 					'"Think of something." you reply, already slightly moaning with pleasure. <<$husName>> begins to pace the room, periodically coming to the dog, but hearing his growl off. While <<$husName>> pacing the room dog began to jump on you.'
 					'"Oh my God, that he was going to do?" shrieked <<$husName>>, see attempts dog jump on you.'
@@ -191,8 +182,8 @@ if zoo >= 6:
 						if izvratH = 0:
 							'"Oh my God, I can not look at it, " cried the husband slammed the door and ran. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. My husband came back, and you still were cancer and dog sperm flowed from your pussy.'
 							'"I''ll take him now on euthanasia, " said <<$husName>>'
-						else
-							'"Well get off of her, " shouts <<$husName>> at the dog, but close to it does not fit. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him and your husband decided that your movement is an attempt to free you cheered "Yes <<$name>> so can get more wiggle lose it." Soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. Husband looked at you standing cancer hips peremazanymi canine semen flowing out of your pussy.'
+						elseif izvratH = 1:
+							'"Well get off of her, " shouts <<$husName>> at the dog, but close to it does not fit. Meanwhile, a member of the dog has found a hole and full-pecked you. You moaned and podmahivat him and your husband decided that your movement is an attempt to free you cheered "Yes Svetsik so can get more wiggle lose it." Soon you covered orgasm, and after a few seconds dog cum inside you and radosnym ran out into the corridor. Husband looked at you standing cancer hips peremazanymi canine semen flowing out of your pussy.'
 							'"I''ll take him now on euthanasia, " said <<$husName>>'
 						end
 
@@ -231,7 +222,7 @@ if zoo >= 6:
 
 							act 'Finish':gt 'sitr'
 						end
-					else
+					elseif izvratH = 1:
 						zoo += 1
 						bj += 1
 						swallow += 1
@@ -284,7 +275,7 @@ if zoo >= 6:
 							end
 						end
 					end
-				else
+				elseif harakHusb = 2:
 					'"Her dog you absolutely ohrenel, go find yourself on the street bitch and then you froze otpihni it" the husband says.'
 					'"I can not, try myself, " you reply.'
 
@@ -300,7 +291,7 @@ if zoo >= 6:
 							zoo = 0
 							gt 'sitr'
 						end
-					else
+					elseif izvratH = 1:
 						zoo += 1
 						bj += 1
 						swallow += 1
@@ -422,7 +413,7 @@ if dildo > 0 and horny >= 50:
 						orgasm += 1
 
 						act 'Finish':gt 'sitr'
-					else
+					elseif izvratH = 1:
 						husband += 1
 						'"And how is it necessarily demonstrate" he said.'
 						'"Anything you want, " you said'
@@ -461,7 +452,7 @@ if dildo > 0 and horny >= 50:
 							picrand = 88
 							gt 'sex', 'vag'
 						end
-					else
+					elseif izvratH = 1:
 						husband += 1
 						SUB += 1
 						'"Insert this crap myself in the ass and mash, I''ll popolzuyut it, as long as pine Quick" he said, pulling member. You quickly rearrange the dildo from pussy anus and mouth open submissively.'
@@ -501,21 +492,18 @@ end
 !!!Probably CV edition
 $selfPorno_Take = {
 	'You have <<selfPornvidDVD>> of your amateur porn videos available'
-
 	if selfPornvidDVD > 0 and bag > 0:
 		act 'Take one':
 			selfPornvidDVD -= 1
 			selfPornvidDVDCarry +=1
 		end
 	end
-
 	if selfPornvidDVDCarry > 0:
 		act 'Put one back':
 			selfPornvidDVD +=1
 			selfPornvidDVDCarry -=1
 		end
 	end
-
 	act 'Back': gt 'sitr'
 }
 !!!

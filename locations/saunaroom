@@ -22,8 +22,8 @@ if workDolg > 0:
 		*clr
 		minut += 5
 		workDolg += 50
-		set health += 30
-		set manna += 100
+		health += 30
+		manna += 100
 		energy = 20
 		water = 20
 		fat += 50
@@ -38,7 +38,7 @@ if workDolg > 0:
 
 	act 'Borrow cosmetics':
 		workDolg += 1000
-		set kosmetica += 25
+		kosmetica += 25
 		gt $curloc
 	end
 end
@@ -46,12 +46,13 @@ end
 if water < 20:
 	act 'Drink':
 		cla
-		set minut += 5
+		minut += 5
 
-		if water >= 20:'Water in you no longer climbs.'
-		if water < 20:
+		if water >= 20:
+			'You don''t need any more water.'
+		elseif water < 20:
+			water += 20
 			'You gladly drank a glass of water.'
-			set water += 20
 		end
 
 		act 'Get up from the table':gt $curloc

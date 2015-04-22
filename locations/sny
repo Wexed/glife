@@ -19,7 +19,7 @@ $d_dima_end = {
 }
 
 $d_dima_kiss = {
-	act 'tselovatsya':
+	act 'Kiss':
 		cls
 		minut += 5
 		horny += 10
@@ -29,67 +29,73 @@ $d_dima_kiss = {
 		'You kiss with Dimka and he slowly undresses you. His hands gently wrapped around you and you get up on his knees and lie down on the sofa breast.'
 
 		 act 'wait':
-			 cls
-			 minut += 5
-			 horny += 10
-			 !1 and 4
-			 gs 'stat'
-			 '<center><img src="images/qwest/alter/ev2/pett2.jpg"></center>'
-			 'Member of Dimka poked you in the pussy and you decide to help him apart their buns that would facilitate access.'
+			cls
+			minut += 5
+			horny += 10
+			!1 and 4
+			gs 'stat'
+			'<center><img src="images/qwest/alter/ev2/pett2.jpg"></center>'
+			'Member of Dimka poked you in the pussy and you decide to help him apart their buns that would facilitate access.'
 
-		 	 act 'wait':
-				 cls
-				 minut += 5
-				 $boy = 'Dima'
-				 silavag = 1
-				 dick = 16
-				 if npcSex[1] = 0:npcSex[1] = 1 & guy += 1
-				 gs 'stat'
-				 '<center><img src="images/qwest/alter/ev2/fuck.jpg"></center>'
-				 dynamic $sexstart
-				 dynamic $sexstart2
-				 !dynamic $sexcum
-				 'Suddenly, each Dimka and sits next to you pulled out his penis.'
+		 	act 'wait':
+				cls
+				minut += 5
+				$boy = 'Dima'
+				silavag = 1
+				dick = 16
 
-				 act 'Take by mouth':
-					 cls
-					 minut += 5
-					 if npcSex[4] = 0:npcSex[4] = 1 & guy += 1
-					 bj += 1
-					 if protect = 1:condomDima = 1
-					 gang += 1
-					 gs 'stat'
-					 '<center><img src="images/qwest/alter/ev2/fuck2.jpg"></center>'
-					 'You bows member Ghosh and start to suck absorbing his mouth to the throat.'
-					 dynamic $sexstart4
-					 dynamic $sexcum
+				if npcSex[1] = 0:npcSex[1] = 1 & guy += 1
 
-				 	 act 'suck':
-						 cls
-						 minut += 5
-						 cumface += 1
-						 facial += 1
-						 gs 'stat'
-						 '<center><img src="images/qwest/alter/ev2/facial.jpg"></center>'
-						 'Gosh takes dick out of your mouth and the jet of sperm hit you in the face.'
+				gs 'stat'
+				'<center><img src="images/qwest/alter/ev2/fuck.jpg"></center>'
+				dynamic $sexstart
+				dynamic $sexstart2
+				!dynamic $sexcum
+				'Suddenly, each Dimka and sits next to you pulled out his penis.'
 
-						 if condomDima = 1:
-							 act 'further':
-								 cls
-								 facial += 1
-								 cumface += 1
-								 gs 'stat'
-								 '<center><img src="images/qwest/alter/ev2/cond.jpg"></center>'
-								 'Dimka takes off his penis with a condom and squeezes cum out of it on your face.'
-								 dynamic $d_dima_end
-							 end
-						 end
+				act 'Take by mouth':
+					cls
+					minut += 5
 
-						 if condomDima = 0:dynamic $d_dima_end
-					 end
-				 end
-			 end
-		 end
+					if npcSex[4] = 0:npcSex[4] = 1 & guy += 1
+
+					bj += 1
+
+					if protect = 1:condomDima = 1
+
+					gang += 1
+					gs 'stat'
+					'<center><img src="images/qwest/alter/ev2/fuck2.jpg"></center>'
+					'You bows member Ghosh and start to suck absorbing his mouth to the throat.'
+					dynamic $sexstart4
+					dynamic $sexcum
+
+				 	act 'Suck':
+						cls
+						minut += 5
+						cumface += 1
+						facial += 1
+						gs 'stat'
+						'<center><img src="images/qwest/alter/ev2/facial.jpg"></center>'
+						'Gosh takes dick out of your mouth and the jet of sperm hit you in the face.'
+
+						if condomDima = 1:
+							act 'further':
+								cls
+								facial += 1
+								cumface += 1
+								gs 'stat'
+								'<center><img src="images/qwest/alter/ev2/cond.jpg"></center>'
+								'Dimka takes off his penis with a condom and squeezes cum out of it on your face.'
+								dynamic $d_dima_end
+							end
+						elseif condomDima = 0:
+							dynamic $d_dima_end
+						end
+					end
+				end
+			end
+		end
 	end
 }
 
@@ -130,9 +136,9 @@ if snyqw = 0:
 	act 'drink tea, with buns':
 		cls
 		minut += 30
-		set fat = fat + 3
-		set energy = energy + 10
-		set water = water +20
+		fat = fat + 3
+		energy = energy + 10
+		water = water +20
 		gs 'stat'
 		'Within half an hour all clinked cups drinking tea and buns devoured. Finally all ate and teacher putting a tape recorder on the table said "Now cool disco." From the speakers the music started. All began to slowly get up from behind the desk.'
 
@@ -141,7 +147,7 @@ if snyqw = 0:
 			minut += 30
 			snyqw = 1
 			gs 'stat'
-			'The next half hour passed actually very sad. The boys broke into his pile somewhere and run regularly. The girls broke into a pile and discussed the problems and ways to apply makeup to the skin scrub. Teacher seems to have bothered pechonok stuck at school and she became the happiest face "Well guys, Happy New Year. And I`ll go home, still need to prepare for the holiday." Discordant chorus teacher congratulated the new year .'
+			'The next half hour passed actually very sad. The boys broke into his pile somewhere and run regularly. The girls broke into a pile and discussed the problems and ways to apply makeup to the skin scrub. Teacher seems to have bothered pechonok stuck at school and she became the happiest face "Well guys, Happy New Year. And I''ll go home, still need to prepare for the holiday." Discordant chorus teacher congratulated the new year .'
 
 			act 'Help clear the table':gt $curloc
 		end
@@ -153,7 +159,7 @@ if snyqw = 1:
 
 	if GorSlut >= 3:
 		!total Shmarev
-		'To you came Shul`ga and loudly slamming ass said "Hey lowered, do you even come here Nahuas? There are normal people tusyat, and your place on the Parasha, with the cheek by a dick."'
+		'To you came Shul''ga and loudly slamming ass said "Hey lowered, do you even come here Nahuas? There are normal people tusyat, and your place on the Parasha, with the cheek by a dick."'
 
 		act 'to_be_silent':
 			cls
@@ -163,21 +169,19 @@ if snyqw = 1:
 
 			if AlbinaBlockHumiliation = 1:
 				GorSlut -= 1
-				'To you came Albina "Slysh you, uebok. You do not seem to last vkuril our conversation? Fuck off of it, i_get_it?" But Shul`ga apparently had already somewhere plunk and bravely began to run into Albina "You called someone uebkom? A? you cho, Ramsey beguiled creature?" Albina smiled most charming smile Shulga and then abruptly stuck between his legs his knee, from what Shul`ga howling fell to the floor. Albina squatted beside rolling on the floor Shulgi "Will you still complain, come large and powerful uncle of the office of funeral services and bury you." Shul`ga curled into a ball on the floor howling "bitch!!!" Albina got to his feet and suddenly with all his strength Shulga kicked in the ribs "It was you who called a bitch?" Shul`ga howled and wailed even more "Do not you! This is me in pain." Albina grinned and sat down next to him suddenly patting him on the head. "You see, can also be a smart boy." Then he stood up and said you "Okay Sveta, better really go away. See how you reacts to kids, Corn is not their eyes once again."'
+				'To you came Albina "Slysh you, uebok. You do not seem to last vkuril our conversation? Fuck off of it, i_get_it?" But Shul''ga apparently had already somewhere plunk and bravely began to run into Albina "You called someone uebkom? A? you cho, Ramsey beguiled creature?" Albina smiled most charming smile Shulga and then abruptly stuck between his legs his knee, from what Shul''ga howling fell to the floor. Albina squatted beside rolling on the floor Shulgi "Will you still complain, come large and powerful uncle of the office of funeral services and bury you." Shul''ga curled into a ball on the floor howling "bitch!!!" Albina got to his feet and suddenly with all his strength Shulga kicked in the ribs "It was you who called a bitch?" Shul''ga howled and wailed even more "Do not you! This is me in pain." Albina grinned and sat down next to him suddenly patting him on the head. "You see, can also be a smart boy." Then he stood up and said you "Okay <<$name>>, better really go away. See how you reacts to kids, Corn is not their eyes once again."'
 
 				act 'Leave':gt 'gschool'
 			else
-				'you wailed "Yes. What do you want it?" Shul`ga grinned, "as cho? New Year`s gift to you on the cheek vlupit. In short go to the toilet, Hare vyebyvatsya."'
+				'you wailed "Yes. What do you want it?" Shul''ga grinned, "as cho? New Year''s gift to you on the cheek vlupit. In short go to the toilet, Hare vyebyvatsya."'
 
 				act 'Go to the toilet':snyqw = 2 & minut += 15 & gt $curloc
 			end
 
 			act 'Help clear the table':gt $curloc
 		end
-	end
-
-	if GorSlut <= 2:
-		'Suddenly you called one of the boys "light, let`s go to our."'
+	elseif GorSlut <= 2:
+		'Suddenly you called one of the boys "<<$name>>, let''s go to our."'
 
 		act 'come_Up':
 			cls
@@ -196,7 +200,7 @@ if snyqw = 1:
 				if grupNPC[1] = 0:
 					grupNPC[1] = 50
 					NosovRevenge = 1
-					'Dimka Nosov addressed to you in a floor vote. "Sveta, you and I have had disagreements. I sincerely apologize for his misbehavior. I hope you will not give up and you will come to the party."'
+					'Dimka Nosov addressed to you in a floor vote. "<<$name>>, you and I have had disagreements. I sincerely apologize for his misbehavior. I hope you will not give up and you will come to the party."'
 				end
 
 				act 'Go to the party':snyqw = 3 & minut += 30 & gt $curloc
@@ -212,7 +216,7 @@ if snyqw = 1:
 				if grupNPC[1] = 0:
 					grupNPC[1] = 50
 					NosovRevenge = 1
-					'Dimka Nosov addressed to you in a floor vote. "Sveta, you and I have had disagreements. I sincerely apologize for his misbehavior. I hope you will not give up and you will come to the party."'
+					'Dimka Nosov addressed to you in a floor vote. "<<$name>>, you and I have had disagreements. I sincerely apologize for his misbehavior. I hope you will not give up and you will come to the party."'
 				end
 
 				act 'Go to the party':snyqw = 3 & minut += 30 & gt $curloc
@@ -220,10 +224,8 @@ if snyqw = 1:
 			end
 		end
 	end
-end
-
-if snyqw = 2:
-	'In the outhouse Shul`ga immediately lowered his pants and said "Mr. Cho nipple, to the trough."'
+elseif snyqw = 2:
+	'In the outhouse Shul''ga immediately lowered his pants and said "Mr. Cho nipple, to the trough."'
 
 	act 'suck':
 		cls
@@ -295,9 +297,7 @@ if snyqw = 2:
 			end
 		end
 	end
-end
-
-if snyqw = 3:
+elseif snyqw = 3:
 	if music_on = 0:
 		inited = 1
 		music_on = 1
@@ -306,9 +306,8 @@ if snyqw = 3:
 		gs 'init_music'
 	end
 
-	!!get-together
 	'<center><img src="images/qwest/alter/ev2/tusa3.jpg"></center>'
-	'The whole class went to Dimka Nosov home. Along the way. Dimka house included music, girls quickly set the table and the class began to celebrate the new year. You too stuck in the hands of a glass of vodka.'
+	'The whole class went to Dimka Nosov home. Along the way. Dimka house included music, girls quickly the table and the class began to celebrate the new year. You too stuck in the hands of a glass of vodka.'
 
 	act 'drink':
 		cls
@@ -330,10 +329,7 @@ if snyqw = 3:
 
 		act 'tusit':snyqw = 4 & minut += 5 & gt $curloc
 	end
-end
-
-if snyqw = 4:
-	!!get-together
+elseif snyqw = 4:
 	'<center><img src="images/qwest/alter/ev2/tusa4.jpg"></center>'
 	'Boys and girls to relax and start easy communication. Someone poured more vodka into the glasses and handed you a glass of vodka.'
 
@@ -357,10 +353,7 @@ if snyqw = 4:
 
 		act 'tusit':snyqw = 5 & minut += 5 & gt $curloc
 	end
-end
-
-if snyqw = 5:
-	!!get-together
+elseif snyqw = 5:
 	'<center><img src="images/qwest/alter/ev2/tusa5.jpg"></center>'
 	'Albina came to the center of the room and began to dance incendiary. It was joined by Kate and her sister Vick. While you were watching the girls, you again stuck in his hand a glass of vodka.'
 
@@ -384,10 +377,7 @@ if snyqw = 5:
 
 		act 'tusit':snyqw = 6 & minut += 5 & gt $curloc
 	end
-end
-
-if snyqw = 6:
-	!!get-together
+elseif snyqw = 6:
 	'<center><img src="images/qwest/alter/ev2/tusa6.jpg"></center>'
 	'Albina and Katja in full light the middle of the room. And suddenly Albina covers the face and hands Katja kisses her on the lips. The room is carried howling kids require continuing. You do not understand how, but in your hand again was full glass of vodka. The girls .'
 
@@ -411,10 +401,7 @@ if snyqw = 6:
 
 		act 'tusit':snyqw = 7 & minut += 5 & gt $curloc
 	end
-end
-
-if snyqw = 7:
-	!!get-together
+elseif snyqw = 7:
 	if alko >= 10:
 		'<center><img src="images/qwest/alter/ev2/vomit.jpg"></center>'
 		'You felt my stomach contents rapidly beginning to break out. Dale you Rushed to the toilet.'
@@ -432,9 +419,7 @@ if snyqw = 7:
 				'You woke up on the bed in the room Dimka Nosov. My head hurts the whole body aches and you feel, that you have the pope wet panties, turning his head you see, shorts that some sort of white mucus. You poke a finger in the mucus and hold the finger -to-nose, pungent smell of sperm hits you nose. At this point enters the room Nosov. Seeing your panties smeared with sperm he begins to laugh "dammit. I thought that here in the room before you no one gets, but hell. Already someone had otebal you." The noise in the room drop a few tousled heads, hear the whisper "Th there?" another voice responds "Yes nicho, Svetku someone otebal."'
 
 				act 'Leave':gt 'gorodok'
-			end
-
-			if NosovRevenge = 1:
+			elseif NosovRevenge = 1:
 				'<center><img src="images/body/tatvag6.jpg"></center>'
 				'You woke up lying on the couch which is awkward. With difficulty raising his head you understand, it is a place you are not familiar, listening to the feelings you understand , that you have a very sore and burns pubic, looking between her legs you saw, that you wear panties, lowered their ofigeli you just by what he saw. Pubic tattoo emblazoned svezhevybitaya.'
 
@@ -452,16 +437,12 @@ if snyqw = 7:
 				act 'Leave':gt 'gorodok'
 			end
 		end
-	end
-
-	if alko >= 6 and alko < 10:
+	elseif alko >= 6 and alko < 10:
 		'<center><img src="images/qwest/alter/ev2/tit.jpg"></center>'
-		'You are quite tipsy and has not thinking. Someone`s hands pull you into the center of the room where the dancing boys and girls. Nosov suddenly pulls off her blouse exposing you to your chest in front of the class. You have become sluggish otbivatsya and hysterical laughter pytatsya pull her blouse back on his chest. Dimka takes you by the hand and drags somewhere.'
+		'You are quite tipsy and has not thinking. Someone''s hands pull you into the center of the room where the dancing boys and girls. Nosov suddenly pulls off her blouse exposing you to your chest in front of the class. You have become sluggish otbivatsya and hysterical laughter pytatsya pull her blouse back on his chest. Dimka takes you by the hand and drags somewhere.'
 
 		act 'hey! Where are you my taschisch?':snyqw = 10 & minut += 5 & gt $curloc
-	end
-
-	if alko > 0 and alko < 6:
+	elseif alko > 0 and alko < 6:
 		'<center><img src="images/qwest/alter/ev2/alb.jpg"></center>'
 		'You are a little drunk and you have fun. you notice, Albina that sits on the couch and kissing Vanka Prokhorov and Fedka Kozlov paw her breasts. Looking around you notice, that Katja nowhere.'
 
@@ -474,21 +455,17 @@ if snyqw = 7:
 			horny += 10
 			gs 'stat'
 			'<center><img src="images/qwest/alter/ev2/kat.jpg"></center>'
-			'You began to walk around the apartment in search of Katja, behind one of the doors you hear women moaning and creaking beds. Looking back you a little of what he saw ofigeli. On the bed stands cancer Katka Meynold, straight into the back of her dress and furiously hammer Slavik Warriors. Katka only moans when fat cock enters her to the core and eggs beaten her pubes. Slavik finally growled finished right in Katya and fell on its side, he whispered to her "Katja, I`m in love with you for a long time, do not think, that is , I just dream vstrechatsya with you." Kate muttered something and it seems blacked.'
+			'You began to walk around the apartment in search of Katja, behind one of the doors you hear women moaning and creaking beds. Looking back you a little of what he saw ofigeli. On the bed stands cancer Katka Meynold, straight into the back of her dress and furiously hammer Slavik Warriors. Katka only moans when fat cock enters her to the core and eggs beaten her pubes. Slavik finally growled finished right in Katya and fell on its side, he whispered to her "Katja, I''m in love with you for a long time, do not think, that is , I just dream vstrechatsya with you." Kate muttered something and it seems blacked.'
 
 			act 'Go into the room':snyqw = 8 & minut += 5 & gt $curloc
 		end
-	end
-
-	if alko = 0:
+	elseif alko = 0:
 		'<center><img src="images/qwest/alter/ev2/idi.jpg"></center>'
 		'You are quite sober look at these raging idiots that surround you.'
 
 		act 'Leave':gt 'gorodok'
 	end
-end
-
-if snyqw = 8:
+elseif snyqw = 8:
 	'<center><img src="images/qwest/alter/ev2/tusa8.jpg"></center>'
 	'Back in the main room, you saw, that odnoklaniki continue to thump. Albina, with Vanka and Fedka, in the room no. Girls like mad in the middle of the room and Kristinka Zvereva even let down her pants around his ass pokazavaya.'
 
@@ -503,11 +480,9 @@ if snyqw = 8:
 
 		act 'Go into the room':snyqw = 9 & minut += 5 & gt $curloc
 	end
-end
-
-if snyqw = 9:
+elseif snyqw = 9:
 	'<center><img src="images/qwest/alter/ev2/tusa9.jpg"></center>'
-	'Virtually the entire company already census , someone lying in the butt, who is trying to hang out. It suits you Nosov "And you`re still light on his feet? good_for_you, others are ready, let`s_go, help me with something."'
+	'Virtually the entire company already census , someone lying in the butt, who is trying to hang out. It suits you Nosov "And you''re still light on his feet? good_for_you, others are ready, let''s_go, help me with something."'
 
 	act 'I have to go now':
 		cls
@@ -519,9 +494,7 @@ if snyqw = 9:
 	end
 
 	act 'Let''s go':snyqw = 10 & minut += 5 & gt $curloc
-end
-
-if snyqw = 10:
+elseif snyqw = 10:
 	'<center><img src="images/qwest/alter/ev2/kiss.jpg"></center>'
 	'Being alone in the room with Dimka Nosov, he began to paw at your chest and sucked his lips to yours in the long slobbery kiss.'
 
