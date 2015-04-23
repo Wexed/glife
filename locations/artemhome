@@ -15,7 +15,7 @@ if artemhomemark = 0:
 		elseif hour >= 16 and hour < 20:
 			'The door you opened Artem and invited to enter.'
 
-			act 'Login':artemhomemark = 1 & gt $curloc
+			act 'Enter':artemhomemark = 1 & gt $curloc
 		elseif hour >= 20 or hour < 7:
 			'Too late, that would go to visit.'
 		end
@@ -25,7 +25,7 @@ if artemhomemark = 0:
 		elseif hour >= 10 and hour < 20:
 			'The door you opened Artem and invited to enter.'
 
-			act 'Login':artemhomemark = 1 & gt $curloc
+			act 'Enter':artemhomemark = 1 & gt $curloc
 		elseif hour >= 20 or hour < 5:
 			'Too late, that would go to visit.'
 		end
@@ -36,7 +36,7 @@ elseif artemhomemark = 1:
 		DimaRudeBlock = 1
 		'Artem tells you "There are no words - well.I was ready to do anything for you .I think after that I saw our relationship will move to another plane. A record pobudet let me - so that your head is not climbed all sorts of nonsense. And now ON KNEES BITCH! Exhaustion - it''s the least you can do that I have not used this entry."Artem very disappointed and angry.It seems he began to despise you.'
 
-		act 'On your knees':
+		act 'Get on your knees':
 			cls
 			minut += 5
 			bj += 1
@@ -70,7 +70,7 @@ elseif artemhomemark = 1:
 					'Artem:"Look who I have here. As I promised you <<$name>> kindly agreed to teach us all the secrets of the female body. Anatomy lessons will be held on Mondays. And today''s lesson we will start with the vagina ...!"'
 					'Artem:"Stretch ka pussy. I can imagine what else you got up with Nosov!"'
 
-					act 'stretch':
+					act 'Spread your lips':
 						cls
 						minut += 15
 						vagina += 3
@@ -150,12 +150,12 @@ elseif artemhomemark = 1:
 
 			if horny < 50:
 				if lernHome > 0:
-					act 'Teach lessons':artemhomemark = 2 & gt $curloc
+					act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 				else
 					act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 				end
 
-				act 'Artem reluctantly masturbate':
+				act 'Reluctantly masturbate Artem':
 					cls
 					sub += 1
 					manna = manna / 2
@@ -170,13 +170,13 @@ elseif artemhomemark = 1:
 					'You got a reluctant member of Artem of his pants and began to gently move the skin up and down then revealing crimson head then closing it. Artem soon broke down and finished in your hands. You went to the bathroom and washed his hands.'
 
 					if lernHome > 0:
-						act 'Teach lessons':artemhomemark = 2 & gt $curloc
+						act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 					else
 						act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 					end
 				end
 			elseif horny >= 50:
-				act 'Wank Artem':
+				act 'Masturbate Artem':
 					cls
 					minut += 15
 					hj += 1
@@ -190,7 +190,7 @@ elseif artemhomemark = 1:
 					'You got Artem member of his pants and began to gently move the skin up and down then revealing crimson head then closing it. Artem soon broke down and finished in your hands. You went to the bathroom and washed his hands.'
 
 					if lernHome > 0:
-						act 'Teach lessons':artemhomemark = 2 & gt $curloc
+						act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 					else
 						act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 					end
@@ -216,12 +216,12 @@ elseif artemhomemark = 1:
 
 				if horny < 30:
 					if lernHome > 0:
-						act 'Teach lessons':artemhomemark = 2 & gt $curloc
+						act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 					else
 						act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 					end
 				elseif horny >= 30:
-					act 'Wank Artem':
+					act 'Masturbate him':
 						cls
 						minut += 15
 						hj += 1
@@ -234,13 +234,13 @@ elseif artemhomemark = 1:
 						'You got Artem member of his pants and began to gently move the skin up and down then revealing crimson head then closing it. Artem soon broke down and finished in your hands. You went to the bathroom and washed his hands.'
 
 						if lernHome > 0:
-							act 'Teach lessons':artemhomemark = 2 & gt $curloc
+							act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 						else
 							act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 						end
 					end
 
-					act 'Take by mouth':
+					act 'Give him a blowjob':
 						cls
 						minut += 5
 						bj += 1
@@ -269,13 +269,13 @@ elseif artemhomemark = 1:
 								dynamic $analsexrude
 
 								if lernHome > 0:
-									act 'Teach lessons':artemhomemark = 2 & gt $curloc
+									act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 								else
 									act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 								end
 							end
 						elseif artemsex >= 10 and artemanal = 0:
-							act 'I have my period':
+							act 'Tell him that you have your period':
 								cls
 								minut += 5
 								gs 'stat'
@@ -283,7 +283,7 @@ elseif artemhomemark = 1:
 								'You: "I''d love to but I started ... red days.. Well"'
 								'Artem blushing and strongly: "Or maybe try in the ass?"'
 
-								act 'Unsubscribe and to continue to suck':
+								act 'Refuse and continue to suck':
 									cls
 									minut += 5
 									swallow += 1
@@ -297,7 +297,7 @@ elseif artemhomemark = 1:
 
 
 									if lernHome > 0:
-										act 'Teach lessons':artemhomemark = 2 & gt $curloc
+										act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 									else
 										act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 									end
@@ -317,7 +317,7 @@ elseif artemhomemark = 1:
 									dynamic $analsexrude
 
 									if lernHome > 0:
-										act 'Teach lessons':artemhomemark = 2 & gt $curloc
+										act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 									else
 										act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 									end
@@ -346,7 +346,7 @@ elseif artemhomemark = 1:
 								'In response. '
 							end
 							if lernHome > 0:
-								act 'Teach lessons':artemhomemark = 2 & gt $curloc
+								act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 							else
 								act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 							end
@@ -375,7 +375,7 @@ elseif artemhomemark = 1:
 						'Artem:"Very much. It was really cool"'
 
 						if lernHome > 0:
-							act 'Teach lessons':artemhomemark = 2 & gt $curloc
+							act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 						else
 							act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 						end
@@ -386,7 +386,7 @@ elseif artemhomemark = 1:
 	end
 
 	if dimaFilm > 0 and arthakQW = 0 and vagina > 0:
-		act 'Ask Artem steal video filmed Dimka with you':
+		act 'Ask Artem to steal the video Dimka filmed of you':
 			cls
 			minut += 15
 			gs 'stat'
@@ -408,13 +408,13 @@ elseif artemhomemark = 1:
 				'"Yes" you lied.'
 
 				if lernHome > 0:
-					act 'Teach lessons':artemhomemark = 2 & gt $curloc
+					act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 				else
 					act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 				end
 			end
 
-			act 'Tell the truth':
+			act 'Tell him the truth':
 				cls
 				minut += 5
 				artemhakday = daystart
@@ -424,7 +424,7 @@ elseif artemhomemark = 1:
 				'"It seemed to me that I love him and he took off like I''m doing him a blow job - now he is blackmailing me this." you said Artem downcast eyes.'
 
 				if lernHome > 0:
-					act 'Teach lessons':artemhomemark = 2 & gt $curloc
+					act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 				else
 					act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 				end
@@ -432,7 +432,7 @@ elseif artemhomemark = 1:
 		end
 	end
 
-	if lernHome > 0:act 'Teach lessons':artemhomemark = 2 & gt $curloc
+	if lernHome > 0:act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 
 	act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 
@@ -466,7 +466,7 @@ elseif artemhomemark = 2:
 	'<center><img src="images/qwest/alter/npc/<<2>>.jpg"></center>'
 	'Did you do with Artem in under an hour, During this time he helped you with homework and explained something of the studied material.'
 
-	act 'rest':artemhomemark = 1 & gt $curloc
+	act 'Rest':artemhomemark = 1 & gt $curloc
 end
 
 --- artemhome ---------------------------------

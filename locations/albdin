@@ -24,7 +24,7 @@ $d_albina_home_start = {
 }
 
 $d_albina_home_game = {
-	act 'play':
+	act 'Play':
 		cls
 		minut += 60
 		manna += 100
@@ -38,9 +38,9 @@ $d_albina_home_game = {
 		if albsexday!daystart:
 			'Albina winking at you "<<$name>>, and let''s play on the desire, if I win, I''ll do something with you, and if you win, you can do with me anything"'
 
-			act 'Oh':gt $curloc
+			act 'Refuse':gt $curloc
 
-			act 'Bring_It_On':
+			act 'Bring it on':
 				cls
 				albsexday = daystart
 
@@ -79,32 +79,32 @@ $d_albina_home_game = {
 				end
 			end
 		elseif albsexday = daystart:
-			act 'rest':gt $curloc
+			act 'Rest':gt $curloc
 		end
 
 	end
 }
 
 $d_albina_home_dressing = {
-	act 'try on outfits':
+	act 'Try out the outfits':
 		cls
 		minut += 60
 		manna += 100
 		willpower += 20
 		gs 'stat'
 		'<center><img src="images/qwest/alter/albina/dressing.jpg"></center>'
-		'You and Albina opened her huge cloand start the fun kopatsya in rags. She was just a bottomless clofull of clothes and a wide range of you for an hour trying on with different outfits Albina.'
+		'You and Albina opened her huge closet and start the fun kopatsya in rags. She was just a bottomless clofull of clothes and a wide range of you for an hour trying on with different outfits Albina.'
 
 		if albsexday!daystart:
-			act 'rest':gt $curloc
+			act 'Rest':gt $curloc
 		elseif albsexday = daystart:
-			act 'rest':gt $curloc
+			act 'Rest':gt $curloc
 		end
 	end
 }
 
 $d_albina_home_chat = {
-	act 'chat':
+	act 'Chat':
 		cls
 		minut += 60
 		manna += 100
@@ -114,9 +114,9 @@ $d_albina_home_chat = {
 		''
 
 		if albsexday!daystart:
-			act 'rest':gt $curloc
+			act 'Rest':gt $curloc
 		elseif albsexday = daystart:
-			act 'rest':gt $curloc
+			act 'Rest':gt $curloc
 		end
 	end
 }
@@ -133,37 +133,37 @@ $d_albina_home_vine = {
 		''
 
 		if albsexday!daystart:
-			act 'rest':gt $curloc
+			act 'Rest':gt $curloc
 		elseif albsexday = daystart:
-			act 'rest':gt $curloc
+			act 'Rest':gt $curloc
 		end
 	end
 }
 
 $d_albina_vag_strapon = {
-	act 'get cancer':
+	act 'Get on all fours':
 		cls
 		albsexday = daystart
 		minut += 15
 		$boy = 'Albina'
 
 		if vagina < 10:dick = 10
-			if vagina >= 10:dick = vagina+5
-			if npcSex[23] = 0:npcSex[23] = 1 & girl += 1
+		if vagina >= 10:dick = vagina + 5
+		if npcSex[23] = 0:npcSex[23] = 1 & girl += 1
 
-			lesbian += 1
-			straponVagPass += 1
-			gs 'stat'
-			'<center><img src="images/qwest/alter/albina/strapon.jpg"></center>'
-			'Albina took <<dick>> inch strap-on harness and attach it to yourself. Her hands stroked gently between your legs and you feel as her fingers began to caress your pussy.'
-			dynamic $d_strapon_vag
+		lesbian += 1
+		straponVagPass += 1
+		gs 'stat'
+		'<center><img src="images/qwest/alter/albina/strapon.jpg"></center>'
+		'Albina took <<dick>> inch strap-on harness and attach it to yourself. Her hands stroked gently between your legs and you feel as her fingers began to caress your pussy.'
+		dynamic $d_strapon_vag
 
-			act 'rest':gt $curloc
-		end
+		act 'Rest':gt $curloc
+	end
 }
 
 $d_albina_anal_strapon = {
-	act 'get cancer':
+	act 'Get on all fours':
 		cls
 		albsexday = daystart
 		minut += 15
@@ -180,12 +180,12 @@ $d_albina_anal_strapon = {
 		'Albina took <<dick>> inch strap-on harness and attach it to yourself. Her hands stroked gently between your legs and you feel as her fingers began to caress your anus.'
 		dynamic $d_strapon_anal
 
-		act 'rest':gt $curloc
+		act 'Rest':gt $curloc
 	end
 }
 
 $d_albina_akt_vag = {
-	act 'Put Albina cancer and fuck pussy threesome':
+	act 'Put Albina on all fours and fuck her pussy':
 		cls
 		albsexday = daystart
 		minut += 15
@@ -198,12 +198,12 @@ $d_albina_akt_vag = {
 		'<center><img src="images/qwest/alter/albina/straponakt.jpg"></center>'
 		'You started to peck Albina threesome pussy and she moaned and spit on his back strapon, Finally you''re just tired and stopped.'
 
-		act 'rest':gt $curloc
+		act 'Rest':gt $curloc
 	end
 }
 
 $d_albina_akt_anal = {
-	act 'Put Albina cancer and fuck ass threesome':
+	act 'Put Albina on all fours and fuck her ass':
 		cls
 		albsexday = daystart
 		minut += 15
@@ -216,7 +216,7 @@ $d_albina_akt_anal = {
 		'<center><img src="images/qwest/alter/albina/straponaktanal.jpg"></center>'
 		'You started to peck Albina threesome in the ass and she moaned and spit on his back strapon, Finally you''re just tired and stopped.'
 
-		act 'rest':gt $curloc
+		act 'Rest':gt $curloc
 	end
 }
 

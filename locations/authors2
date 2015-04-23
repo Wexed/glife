@@ -5,7 +5,7 @@ gs 'stat'
 '<center><img src="images/casino/avt.jpg"></center>'
 'Rules of the game are very simple:toss a coin 100 rubles and pull lever. Jackpot million rubles.'
 
-act 'pull the lever':
+act 'Pull the lever':
 	if money >= 100:
 		clr
 		money -= 100
@@ -16,10 +16,10 @@ act 'pull the lever':
 			msg 'You won the jackpot! Congratulations!'
 		elseif x_10<1000 and x_10 > 850:
 			money += 200
-			msg 'Congratulations, you win 200 rubles'
+			msg 'Congratulations, you have won 200 rubles'
 		elseif x_10 > 500 and x_10 <= 850:
 			money += 100
-			msg 'congratulations, you win 100 rubles'
+			msg 'congratulations, you have won 100 rubles'
 		elseif x_10 <= 500:
 			msg 'Alas you lose, try again'
 		end

@@ -12,7 +12,7 @@ if artemhomemark = 0:
 		elseif hour >= 16 and hour < 20:
 			'The door you opened Artem and invited to enter.'
 
-			act 'Login':artemhomemark = 1 & gt $curloc
+			act 'Enter':artemhomemark = 1 & gt $curloc
 		elseif hour >= 20 or hour < 7:'Too late, that would go to visit.'
 	end
 
@@ -22,7 +22,7 @@ if artemhomemark = 0:
 		elseif hour >= 10 and hour < 20:
 			'The door you opened Artem and invited to enter.'
 
-			act 'Login':artemhomemark = 1 & gt $curloc
+			act 'Enter':artemhomemark = 1 & gt $curloc
 		elseif hour >= 20 or hour < 5:
 			'Too late, that would go to visit.'
 		end
@@ -51,7 +51,7 @@ elseif artemhomemark = 1:
 		'Artem with a smile looking at you "Oh <<$nickname>>, you milked me dry, I need a vacation."'
 	end
 
-	if lernHome > 0:act 'Teach lessons':artemhomemark = 2 & gt $curloc
+	if lernHome > 0:act 'Do homework with Artem':artemhomemark = 2 & gt $curloc
 
 	act 'Leave':artemhomemark = 0 & minut += 15 & gt 'gorodok'
 elseif artemhomemark = 2:
@@ -64,7 +64,7 @@ elseif artemhomemark = 2:
 	'<center><img src="images/qwest/alter/npc/<<2>>.jpg"></center>'
 	'Did you do with Artem in under an hour, During this time he helped you with homework and explained something of the studied material.'
 
-	act 'rest':artemhomemark = 1 & gt $curloc
+	act 'Rest':artemhomemark = 1 & gt $curloc
 end
 
 !'

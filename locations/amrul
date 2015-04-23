@@ -5,7 +5,7 @@ kh = 0
 chnch = 0
 mb = 0
 du = 0
-a_row = 0
+series = 0
 chi = 100
 x_rul = 100
 gs 'stat'
@@ -17,7 +17,7 @@ act 'Make a bet':
 
 	if money < st_1:
 		msg 'You have enough money'
-		gt 'tape_measure'
+		gt 'roulette'
 	elseif st_1 < 0:
 		msg 'Wrong, try again'
 		gt 'amrul'
@@ -27,9 +27,9 @@ act 'Make a bet':
 	end
 
 	money -= st_1
-	gt 'the_bet'
+	gt 'rate'
 end
 
-act 'Move away from the table':gt 'tape_measure'
+act 'Move away from the table':gt 'roulette'
 
 --- amrul ---------------------------------

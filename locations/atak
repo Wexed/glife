@@ -68,14 +68,14 @@ end
 if $ARGS[0] = 'popad':
 	cla
 	!!payment hit dodge
-	poSp = speedA * 20/100
-	uvAg = agilD * 20/100
-	poBox = boxingA * 20/100
-	uvBox = boxingD * 20/100
+	poSp = speedA * 20 / 100
+	uvAg = agilD * 20 / 100
+	poBox = boxingA * 20 / 100
+	uvBox = boxingD * 20 / 100
 	popad = rand(boxingA - poBox, boxingA + poBox) + rand(speedA - poSp, speedA + poSp) + BonusA + initBonusA
 	uvorot = rand(boxingD - uvBox, boxingD + uvBox) + rand(agilD - uvAg, agilD + uvAg) + BonusD
-	uvorKoef = uvorot * 50/100
-	popKoef = popad * 50/100
+	uvorKoef = uvorot * 50 / 100
+	popKoef = popad * 50 / 100
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
@@ -89,7 +89,7 @@ if $ARGS[0] = 'popad':
 				'<b><font color="red">critical hits</font></b>'
 				xgt 'atak', 'uronKritV'
 			end
-		elseif popad < uvorot+uvorKoef:
+		elseif popad < uvorot + uvorKoef:
 			!!normal hit
 			if tip = 0:
 				!!attack players

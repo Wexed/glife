@@ -60,7 +60,7 @@ if $ARGS[0] = 'start':
 		'At the service station operates a service evacuation of damaged cars to service centers, the cost in 2500'
 
 		if money >= 2500:
-			act 'Pay shipping cars (2,500 rubles) (1:00)':
+			act 'Pay for towing service (2,500 rubles) (1:00)':
 				cla
 				*clr
 				money -= 2500
@@ -69,7 +69,7 @@ if $ARGS[0] = 'start':
 				'<center><img src="images/etogame/autoservis2.jpg"></center>'
 				'You sat for an hour in the service station, waiting when will bring your car. Finally the time has passed and your car was delivered to the gate Car.'
 
-				act 'To master':gt 'autoservisF', 'start'
+				act 'Back to the car service station':gt 'autoservisF', 'start'
 			end
 		end
 	end

@@ -11,7 +11,7 @@ if $ARGS[0] = 'start':
 	'Machine can only be bought if you have permission. And you can not have two cars.'
 
 	if hour <= 17:
-		if car > 0:act 'Approach to cornerer':gt 'autotraidF', 'manager1'
+		if car > 0:act 'Approach the car salesman':gt 'autotraidF', 'manager1'
 
 		act 'View cars put up for sale':gt 'autotraidF', 'car'
 	end
@@ -46,14 +46,14 @@ if $ARGS[0] = 'manager1':
 		'Fence says that he needs to look at the car before you a price, and if you want, it will call a tow truck for 2500 that would take your car to the market.'
 
 		if money >= 2500:
-			act 'Tow truck to market (2500 rubles) (1:00)':
+			act 'Pay for towing service to the car market (2,500 rubles) (1:00)':
 				cla
 				minut += 60
 				cardrive = 9
 				money -= 2500
 				'You gave the money and waited for an hour and when you bring a car, you will finally see her tow truck unloaded near the market.'
 
-				act 'To cornerer':gt 'autotraidF', 'manager1'
+				act 'Go to car salesman':gt 'autotraidF', 'manager1'
 			end
 		end
 	end
@@ -105,7 +105,7 @@ if $ARGS[0] = 'car':
 			end
 		end
 
-		act 'Inspect 2107 (not move)':
+		act 'Inspect 2107 (doesn't move)':
 			cla
 			*clr
 			tehNT = 200

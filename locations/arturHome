@@ -5,7 +5,7 @@ gs 'stat'
 '<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
 'Arthur took you to the parking lot where his black Priora. You got into the car and drove Arthur somewhere you "I lyuchshy by Del skewers, ne what rubbish in cafe, real jam." After a while.'
 
-act 'Go to home':
+act 'Go to his home':
 	cls
 	minut += 60
 	alko += 6
@@ -20,14 +20,14 @@ act 'Go to home':
 	act 'Further':gt 'arturSex'
 
 	if condomtalkartur = 0 and arturSex > 0:
-		act 'Poros wear a condom':
+		act 'Ask him to wear a condom':
 			cls
 			condomtalkartur = 1
 			gs 'stat'
 			'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
 			'You asked Arthur wear a condom, what Arthur protested "Wai, sex in a condom is like breathing through a mask. Nat!"'
 
-			act 'further':gt 'arturSex'
+			act 'Further':gt 'arturSex'
 		end
 	end
 end

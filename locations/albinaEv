@@ -18,7 +18,7 @@ gs 'stat'
 !!if albinaCar > 0:end
 
 if albinaCar = 0:
-	act 'Is that your car?':
+	act 'Ask her if that car is hers':
 		cls
 		albinaCar = 1
 		gs 'stat'
@@ -44,7 +44,7 @@ if albinaCar = 0:
 					'Albina does not stop the engine, got out and told the guy, "I''ve brought you a not very obedient girl who knows something about my dance business." High grinned "I see." Strong Shorty silently and lazily toward you.'
 
 					if dom > 0:
-						act 'Go behind the wheel':
+						act 'Jump behind the wheel':
 							cls
 							minut += 5
 							gs 'stat'
@@ -53,7 +53,7 @@ if albinaCar = 0:
 							if agil >= 100:
 								'You deftly jumped behind the wheel of cars. Fortress was at the hood and the long man rushed to the driver''s door that would get you.'
 
-								act 'Into reverse':
+								act 'Switch into reverse gear':
 									cls
 									minut += 1
 									gs 'stat'
@@ -61,7 +61,7 @@ if albinaCar = 0:
 									'You abruptly passed back and stayed virtually the concrete fence. Before you see your hood as burly running to you. A driver''s door to long runs.'
 								end
 
-								act 'Sharply to go forward':
+								act 'Put the pedal to the metal':
 									cls
 									minut += 1
 									gs 'stat'
@@ -76,7 +76,7 @@ if albinaCar = 0:
 						end
 					end
 
-					act 'Out of the car':
+					act 'Get out of the car':
 						cls
 						minut += 5
 						gs 'stat'

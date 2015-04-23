@@ -16,18 +16,18 @@ if young_shop_work = 0:
 		'Begin work on the next working day after employment.'
 		'<b>Details</b>need to work 5 days a week (Monday-Friday) at 2:00. Salary - 800 rubles per day. Work need to come in 15 hours. Salary paid every week on Friday according to hours worked. 3 for truancy fired from his job.'
 
-		act 'Mull conditions and arrive at a different time':gt 'young_shop'
+		act 'Consider the conditions and come at another time':gt 'young_shop'
 
 		if ((work = 0 and young_shop_work = 0 and cheatWork = 0) or (young_shop_work = 0 and cheatWork = 1)) and hour < 15:
 			'If operating conditions suit me, I can now fill in the blanks and sign documents.'
 
-			act 'Get a job':
+			act 'Get this job':
 				work = 1
 				young_shop_work = 1
-				minut+= 5
+				minut += 5
 
-				if week >= 1 and week <= 4:msg '<b><center>I get a job in youth clothing store '' '' Kies pussy. Starting tomorrow</center></b>'
-				if week = 5:msg '<b><center>I get a job in youth clothing store '' '' Kies pussy. Starting on Monday</center></b>'
+				if week >= 1 and week <= 4:msg '<b><center>I get a job in youth clothing store ''Kies pussy''. Starting tomorrow</center></b>'
+				if week = 5:msg '<b><center>I get a job in youth clothing store ''Kies pussy''. Starting on Monday</center></b>'
 
 				gt 'young_shop'
 			end
@@ -97,7 +97,7 @@ elseif young_shop_work = 1:
 			act 'Leave':gt 'young_shop'
 		end
 
-		act 'Beg to leave':
+		act 'Beg to not be dismissed':
 			cla
 			'- But I can not lose my job! It is very necessary to me - I have already in tears. - Please do not fire me.'
 			'- Then you have only one option:lock the door and show how your lips are able to convince - Andrew M. rises to his feet and taken the right hand for balls.'
@@ -133,12 +133,14 @@ elseif young_shop_work = 1:
 				young_shop_miss = 0
 				gt 'young_shop'
 			end
+
 			if cheatWorkKiskis = 0:
 				act 'Disable counter truancy (Cheat)':
 					cheatWorkKiskis = 1
 					young_shop_miss = 0
 					gt 'young_shop'
 				end
+
 			elseif cheatWorkKiskis = 1:
 				act 'Enable counter truancy (Cheat)':
 					cheatWorkKiskis = 0
@@ -152,7 +154,7 @@ elseif young_shop_work = 1:
 			'- I would like to resign - I come to the table manager.'
 			'- Are you sure? Of course, I can arrange everything right Wait - Andrew M. scratching his head. - But then suddenly, ?'
 
-			act '<b>Change of heart</b>':
+			act 'Change your mind':
 				'- You know, I should still think about it - I''m moving back to the door. - Come on, I''ll come next time.'
 				'- Right, something else may like?'
 
@@ -187,7 +189,7 @@ elseif (work = 0 and young_shop_work = 2 and cheatWork = 0) or (young_shop_work 
 		'- Oh, please! I''ll do anything, I really need this job! - I do not even know how to convince him ..'
 		'- Anything? Ha! I know what you could do - open the eyes of the manager begins to evaluate my body. - Frankly, I fuck you in the ass, and then you and I still otsosesh. Hand?'
 
-		act 'Never':
+		act 'Tell him you would never do this':
 			cla
 			'Paint rushed to my face. I''m even a little stunned by what he heard:'
 			'- Do you want me to do anal sex, and then I''ll have to lick all the juices from your penis? - It does not even fit in my head. - I will not do it!'

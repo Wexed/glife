@@ -11,7 +11,7 @@ if hour < 20:
 	if npcSex[23] = 0:
 		'Albina you smiling affably "<<$name>>, I have a bottle of fine wine, let''s drink."'
 
-		act 'drink':
+		act 'Drink':
 			cls
 			minut += 15
 			alko += 2
@@ -19,7 +19,7 @@ if hour < 20:
 			'<center><img src="images/qwest/alter/albina/drunk.jpg"></center>'
 			'You sat down at a table and Albina brought a bottle of wine. She deftly opened a bottle and poured the wine by the glass. You drank together with Albina. She smiled and said "Once again, that warned me. I was still brought a criminal case, but to prove that it will be very difficult for them. Father of course ranting and raving. His political career was covered with a copper basin anyway, though I otmazhus, though not otmazhus."'
 
-			act 'And how did he react to it, that you have a business spetsefichesky?':
+			act 'Ask her about the reaction of her father when he got scent of her specific business':
 				cls
 				minut += 15
 				alko += 2
@@ -27,7 +27,7 @@ if hour < 20:
 				'<center><img src="images/qwest/alter/albina/drunk.jpg"></center>'
 				'You asked Albina "And how did he react to it, that you have a business spetsefichesky?" Albina laughed again and poured wine by the glass. "And he knew from the beginning." You stared in surprise at the Albina "That is?" Albina laughed "I have a very strange little family, not so easy to disassemble. Let''s have a drink." You drank more wine along with Albina and she continued "Actually . If there is a hell, then it is already there prepared a special boiler, for all that he has done in his life."'
 
-				act 'You''re so otzyvaeshsya about his father?':
+				act 'Ask her how her father responded':
 					cls
 					minut += 15
 					alko += 2
@@ -35,7 +35,7 @@ if hour < 20:
 					'<center><img src="images/qwest/alter/albina/drunk.jpg"></center>'
 					'You shake your head in amazement "You''re so otzyvaeshsya about his father?" Albina suddenly sobered and evil hissed "And how do I apply to it? Fair_Enough, you want to get into the snake-coil, you''re_welcome. My dad fucked me from early childhood, I do not even remember when it all began. I lived all his life his litter. my mom, when she learned, my bastard father sent in Durkee. Yes_I_Am, he had enough influence even to this. The truth is now the scum losing ground one after the other. All his life he was a senior cop, but now retired , this kid can only complain money. All his business went bankrupt, whatever the context. Political career is his last chance to jump into the passing train." She poured wine into glasses and was visibly shaking as her hands. "You Videsh this rich mansion? Guard at the entrance, All this luxury? It''s all a chimera. My father is not something that on the verge of bankruptcy, he is far beyond. Without my business."'
 
-					act 'And how do you now no business going?':
+					act 'Ask her how she knows there is no business going on':
 						cls
 						minut += 15
 						alko += 2
@@ -43,7 +43,7 @@ if hour < 20:
 						'<center><img src="images/qwest/alter/albina/drunk.jpg"></center>'
 						'You asked Albina "And how do you now no business going?" Albina shrugged "But I have no idea. Dad poured all the assets on the election campaign. We still have money left serious people. And now it''s over. No my business, nor his political career. There is only the debts and bad creditors." She grabbed the bottle and poured more wine, you drink more wine with Albina.'
 
-						act 'I have it all in my head does not fit':
+						act 'Tell Albina that you didn''t got the whole picture':
 							cls
 							minut += 15
 							alko += 2
@@ -51,7 +51,7 @@ if hour < 20:
 							'<center><img src="images/qwest/alter/albina/drunk.jpg"></center>'
 							'you murmured "I have it all in my head does not fit" Albina grinned "What is there to lay. Pedophile father fucked me from childhood. His influence enough that would cover their tracks." She paused and added "The most worthless then, he made вЂ‹вЂ‹me a monster. I just have not had a chance to grow up normal. I understand all this head, but nothing I can not do already. I like ebatsya, and with whom pohrenu. I''m down and out and pervert quite capable of being a normal mother and wife." We always cold and ironic Albina had tears in her eyes and she began to pour wine into glasses.'
 
-							act 'drink':
+							act 'Drink':
 								cls
 								minut += 15
 								alko += 2
@@ -83,7 +83,7 @@ if hour < 20:
 											'<center><img src="images/qwest/alter/albina/kiss3.jpg"></center>'
 											'Albino cleverly section you without stopping to caress your expiring juices from the desire pussy and continuing to kiss you on the lips.'
 
-											act 'further':
+											act 'Further':
 												cls
 												minut += 30
 
@@ -114,7 +114,7 @@ if hour < 20:
 			'<center><img src="images/qwest/alter/albina/train.jpg"></center>'
 			'Albina trains in his room doing stretching.'
 
-			act 'chat':
+			act 'Chat':
 				cls
 				albsporthome = 1
 				minut += 15
@@ -122,7 +122,7 @@ if hour < 20:
 				'<center><img src="images/qwest/alter/npc/23.jpg"></center>'
 				'Albina you smiled and said "Now I can not afford to rent a hall for training, Here I train at home, that would not be out of shape. By_The_Way, I could teach you and stripdensu and poledensu."'
 
-				act 'further':gt $curloc
+				act 'Further':gt $curloc
 			end
 		elseif albsporthome > 0:
 			if albsportday!daystart:
@@ -131,7 +131,7 @@ if hour < 20:
 				'<center><img src="images/qwest/alter/albina/train.jpg"></center>'
 				'Albina trains in his room doing stretching. She smiles at you and asks "what? Potreneruemsya?"'
 
-				act 'Stripdens':
+				act 'Learn striptease (2:00)':
 					cla
 					*clr
 					albsportday = daystart
@@ -154,10 +154,10 @@ if hour < 20:
 						'Striptease for you too complex, you can not perform the dance moves combining them with strip. Albina recommends that you first learn to ordinary club dances.'
 					end
 
-					act 'rest':gt $curloc
+					act 'Rest':gt $curloc
 				end
 
-				act 'Dancing on a pole':
+				act 'Learn poledancing (2:00)':
 					cla
 					*clr
 					albsportday = daystart
@@ -182,13 +182,13 @@ if hour < 20:
 						if stren < 80:'Albina explain to you that dances on a pole, than the ability to dance, require more physical strength.'
 					end
 
-					act 'rest':gt $curloc
+					act 'Rest':gt $curloc
 				end
 
 				if stren < 80:
-					'Albina grins "You''re still pretty weak for dancing on a pole, we can potrenirovatsya developing your strength."'
+					'Albina grins "You''re still pretty weak for dancing on a pole, we can practice developing your strength."'
 
-					act 'develop strength':
+					act 'Develop strength (2:00)':
 						cls
 						albsportday = daystart
 						minut += 120
@@ -197,11 +197,11 @@ if hour < 20:
 						'<center><img src="images/qwest/alter/albina/stren.jpg"></center>'
 						'You are led by Albina developed their strength by performing various exercises.'
 
-						act 'rest':gt $curloc
+						act 'Rest':gt $curloc
 					end
 				end
 
-				act 'yah, not hunt.':albsportday = daystart & gt $curloc
+				act 'Tell Albina that you are not in the mood':albsportday = daystart & gt $curloc
 			elseif albsportday = daystart:
 				if sweat <= 0:
 					if hapri <= 0:
@@ -215,7 +215,7 @@ if hour < 20:
 				elseif sweat > 0:
 					'Albina grins "Go to the souls of <<$nickname>>, and then you''re all sweaty."'
 
-					act 'wash':
+					act 'Get into the shower (0:15)':
 						cls
 						dynamic $showerdin
 						minut += 15

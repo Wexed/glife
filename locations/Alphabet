@@ -1,5 +1,5 @@
 # Alphabet
-act 'In the corridor':gt 'floor'
+act 'Go to the corridor':gt 'floor'
 
 clr
 gs 'stat'
@@ -13,13 +13,13 @@ if palto = 3:'At the entrance hangs a dear lady''s coat'
 if daystart = 0:daystart = 1
 if house = 1 and student = 0:house = 0 & 'You are being evicted from their dormitory if right now you find yourself through the computer place to stay, you will remain without a roof over your head at the first exit from the hostel.'
 
-act 'roommate Vic':
+act 'Roommate Vicky':
 	cla
 	clr
 	gs 'stat'
 	'Vick sits on her bed and as always paints her nails.'
 
-	act 'Room':gt 'Alphabet'
+	act 'Room':gt 'dorm'
 		if hour < 23:
 			act 'Chat with Vika (1:00)':
 			cla
@@ -51,7 +51,7 @@ act 'roommate Vic':
 			if talkrand = 17:'Vick says the summer sunning herself on the beach, for this truth had her buy a swimsuit, but it came in handy in the winter and go to the pool. The pool is not a bad tool to maintain a healthy body.'
 			if talkrand = 18:'Vic tells an interesting psychological effect is in the stores do not notice things that are not short of money.'
 
-			act 'Room':gt 'Alphabet'
+			act 'Room':gt 'dorm'
 		end
 
 		if Vika > 10:
@@ -61,28 +61,28 @@ act 'roommate Vic':
 
 			'Vic tells you that the party is planned, as well, and always on Fridays. You can go there with Vika'
 
-			act 'Go to a party':gt 'party', 'start'
-			act 'I have business':gt 'Alphabet'
+			act 'Go to a party':gt 'party', 'beginning'
+			act 'Don''t go to the party':gt 'dorm'
 		end
 
 		if Vika > 10 and Vzaem = 0:
-			act 'Borrow from Wiki 1000 rubles':
+			act 'Borrow money from Vicky (1,000 rubles)':
 				cla
 				money += 1000
 				Vzaem = 1
-				'Vick fumbled in her purse and gave you 1000 rubles in debt'
+				'Vick fumbled in her purse and gave you 1,000 rubles in debt'
 
-				act 'Room':gt 'Alphabet'
+				act 'Room':gt 'dorm'
 			end
 		elseif Vika > 10 and Vzaem = 1 and money >= 1000:
-			act 'Giving Vick debt (1,000 rubles)':
+			act 'Borrow Vicky some money (1,000 rubles)':
 				cla
 				money -= 1000
 				Vzaem = 0
 				Vika += 5
-				'You gave Vick 1000 rubles taken you in debt'
+				'You gave Vick 1,000 rubles taken you in debt'
 
-				act 'Room':gt 'Alphabet'
+				act 'Room':gt 'dorm'
 			end
 		end
 
@@ -91,22 +91,22 @@ act 'roommate Vic':
 				cla
 				hour += 1
 				$girl = 'Vetch'
-				gt 'lesb', 'start'
+				gt 'lesb', 'beginning'
 			end
 		end
 	end
 end
 
-act 'roommate Galya':
+act 'Roommate Galya':
 	cla
 	clr
 	gs 'stat'
 	'Galya overlaid textbooks and bison.'
 
-	act 'Room':gt 'Alphabet'
+	act 'Room':gt 'dorm'
 
 	if hour < 23:
-		act 'Engage with Galya (1:00)':
+		act 'Learn with Galya (1:00)':
 			cla
 			hour += 1
 			intel += 1
@@ -116,27 +116,27 @@ act 'roommate Galya':
 
 			'You overlaid textbooks and began to prepare together with Galya.'
 
-			act 'Room':gt 'Alphabet'
+			act 'Room':gt 'dorm'
 		end
 
 		if Gala > 10 and Gzaem = 0:
-			act 'Borrow Ghali money (1,000 rubles)':
+			act 'Borrow money from Ghali (1,000 rubles)':
 				cla
 				money += 1000
 				Gzaem = 1
-				'Galya rummaged in my purse and gave you 1000 rubles in debt'
+				'Galya rummaged in my purse and gave you 1,000 rubles in debt'
 
-				act 'Room':gt 'Alphabet'
+				act 'Room':gt 'dorm'
 			end
 		elseif Gala > 10 and Gzaem = 1 and money >= 1000:
-			act 'Giving Gala debt (1,000 rubles)':
+			act 'Borrow Ghalia some money (1,000 rubles)':
 				cla
 				money -= 1000
 				Gzaem = 0
 				Gala += 5
-				'You gave Gale 1000 rubles taken you in debt'
+				'You gave Gale 1,000 rubles taken you in debt'
 
-				act 'Room':gt 'Alphabet'
+				act 'Room':gt 'dorm'
 			end
 		end
 	end
@@ -148,7 +148,7 @@ act 'Test':
 	gs 'boy'
 	gs 'boyopred'
 
-	act 'Room':gt 'Alphabet'
+	act 'Room':gt 'dorm'
 end
 '!
 

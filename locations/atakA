@@ -3,14 +3,14 @@
 if $ARGS[0] = 'atak':
 	cla
 	!!payment hit dodge
-	poSp = speed * 20/100
-	uvAg = agilV * 20/100
-	poBox = react * 20/100
-	uvBox = reactV * 20/100
+	poSp = speed * 20 / 100
+	uvAg = agilV * 20 / 100
+	poBox = react * 20 / 100
+	uvBox = reactV * 20 / 100
 	popad = rand(react - poBox, react + poBox) + rand(speed - poSp, speed + poSp) + bonusSh
 	uvorot = rand(reactV - uvBox, reactV + uvBox) + rand(agilV - uvAg, agilV + uvAg)
-	uvorKoef = uvorot * 50/100
-	popKoef = popad * 50/100
+	uvorKoef = uvorot * 50 / 100
+	popKoef = popad * 50 / 100
 
 	if popad > uvorot:
 		if popad >= uvorot + uvorKoef:
@@ -36,7 +36,7 @@ if $ARGS[0] = 'uronKrit':
 	damage = rand(damTip + damKoef, damTip + damKoef * 2)
 
 	if damTipM > 0:
-		damKoefM = damTipM * 20/100
+		damKoefM = damTipM * 20 / 100
 		damageM = rand(damTipM + damKoefM, damTipM + damKoefM * 2)
 	end
 
@@ -49,7 +49,7 @@ if $ARGS[0] = 'uron':
 	damage = rand(damTip - damKoef, damTip + damKoef)
 
 	if damTipM > 0:
-		damKoefM = damTipM * 20/100
+		damKoefM = damTipM * 20 / 100
 		damageM = rand(damTipM - damKoefM, damTipM + damKoefM)
 	end
 
