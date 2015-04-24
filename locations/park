@@ -175,7 +175,7 @@ if $ARGS[0] = 'start':
 		end
 	end
 
-	act 'Go to the highway near the park':gt 'Prostitute', 'start'
+	act 'Go to the highway near the park':gt 'park', 'whore'
 	act 'Go to the fair':gt 'park', 'luna'
 end
 
@@ -194,7 +194,7 @@ if $ARGS[0] = 'luna':
 
 
 	if hour >= 9 and hour <= 20:
-		act 'Distribute flyers to earn money (50 rubles per hour)':
+		act 'Distribute flyers to earn money (50 rubles) (1:00)':
 			cla
 			*clr
 			minut += 60
@@ -256,14 +256,14 @@ if $ARGS[0] = 'luna':
 			act 'Ride on the carousel (50 rubles)':
 				cla
 				*clr
-				minut = minut + 30
-				money = money - 50
+				minut += 30
+				money -= 50
 
 				if will < 30:will += 1
 				if will >= 30:will += rand(0, 1)
 
 				willpower += 10
-				manna = manna + 10
+				manna += 10
 				'<center><img src="images/pic/karusel.jpg"></center>'
 				'You paid 50 rubles and sat in the carousel.'
 				'You have a great ride, already dazzled.'
@@ -276,15 +276,15 @@ if $ARGS[0] = 'luna':
 			act 'Shoot some targets (100 rubles)':
 				cla
 				*clr
-				minut += 15
+				minut += 30
 				money -= 100
 				'<center><img src="images/etogame/tir.jpg"></center>'
-				'You pay 100 rubles for ten bullets. If you are able to hit all targets, you can win a teddy bear.'
+				'You paid 100 rubles for ten bullets. If you are able to hit all targets, you can win a teddy bear.'
 
 				act 'Shoot':
 					cla
 					tirkoef = agil + shoot
-					tirmin = tirkoef * 20/100
+					tirmin = tirkoef * 20 / 100
 					tirand = rand(tirkoef - tirmin, tirkoef + tirmin)
 
 					if tirand >= 80:
@@ -544,8 +544,8 @@ if $ARGS[0] = 'prost':
 				guy += 1
 				money += 500
 				throat += 1
-				'To you a car drove up and a man sitting behind the wheel asked how much it would cost the vacuum. You called a standard fee of 500 rubles. He agreed and opened Passenger door for you.'
 				'<center><img src="images/picV/car.jpg"></center>'
+				'To you a car drove up and a man sitting behind the wheel asked how much it would cost the vacuum. You called a standard fee of 500 rubles. He agreed and opened Passenger door for you.'
 
 				if prezik > 0:'You got a condom and put it in your mouth, then bent over his pants and put his client condom on the penis with his mouth.'
 

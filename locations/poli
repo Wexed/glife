@@ -149,7 +149,7 @@ if $ARGS[0] = 'start':
 			end
 		end
 
-		if SifNapr > 0 and money >= 5000 and SifUkolDay ! day:
+		if money >= 5000 and SifNapr > 0 and SifUkolDay ! day:
 			act 'Go to injections of syphilis (5,000 rubles). Remaining <<SifNapr>> in the direction of injection':
 				cls
 				money -= 5000

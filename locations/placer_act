@@ -130,8 +130,11 @@ if plact = 1:
 								gs 'stat'
 								'You drank another cup of cheap vodka which is contrary to bore rubber and ate anchovies from banks.'
 
-								if alko < 6:'you feel, that very drunk, but are still able to think. A few guys have picked up under your arms and led from the square, soon the whole company came to what that house and you have spent in the basement and put on a dirty mattress.'
-								if alko >= 6:'You feel like the beginning of dizzy and the earth started to slip away from under the feet. Several strong hands gripped you and you somewhere dragged. You could not get to focus vision and you just realized, that you have somewhere to bring. In this place so much bore sewerage, that you start to feel sick.'
+								if alko < 6:
+									'you feel, that very drunk, but are still able to think. A few guys have picked up under your arms and led from the square, soon the whole company came to what that house and you have spent in the basement and put on a dirty mattress.'
+								elseif alko >= 6:
+									'You feel like the beginning of dizzy and the earth started to slip away from under the feet. Several strong hands gripped you and you somewhere dragged. You could not get to focus vision and you just realized, that you have somewhere to bring. In this place so much bore sewerage, that you start to feel sick.'
+								end
 
 								act 'further':gt 'podval_rape'
 							end
@@ -139,7 +142,7 @@ if plact = 1:
 
 						act 'Leave':gt 'gskver'
 					elseif tiprand = 1:
-						'One of the guys said "In_short, boys, that we here in the square hang, I hata free, let''s go back to thump." Were enthusiastically supported this idea.'
+						'One of the guys said "In short, boys, that we here in the square hang, I hata free, let''s go back to thump." Were enthusiastically supported this idea.'
 
 						act 'Go with the guys':
 							cls
@@ -448,7 +451,7 @@ if plact = 1:
 						horny += 10
 						minut += 5
 						gs 'stat'
-						'You started kissing Man вЂ‹вЂ‹and his hands began to fumble through the body, corner of your eye you notice <<$ev_name>> Man kisses too. The guy broke the kiss and offered to go to his apartment or continue to rest all together.'
+						'You started to kiss a guy and his hands began to fumble through the body, corner of your eye you notice <<$ev_name>> Man kisses too. The guy broke the kiss and offered to go to his apartment or continue to rest all together.'
 
 						act 'Go the whole company at the apartment':minut += 5 & gt 'placer_house'
 						act 'Go to guy for him':minut += 5 & gt 'placer_house_one'

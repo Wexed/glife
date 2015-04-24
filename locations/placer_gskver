@@ -29,7 +29,7 @@ elseif encounter = 1:
 
 		if kol_man = 1:$textSub = 'is a guy'
 		if kol_man = 2:$textSub = 'are two guys'
-		if kol_man = 3:$textSub = 'three guys go'
+		if kol_man = 3:$textSub = 'are three guys'
 		if kol_man = 4:$textSub = 'four guys'
 		if kol_man = 5:$textSub = 'five guys'
 
@@ -80,7 +80,7 @@ if Frend_num > 0:
 		if ver_zn = 1:
 			'At you with his girlfriend looked <<$kol_man_prefiks>> appreciatively <<$kol_man_text>>.'
 
-			if kol_man = 1:'The guy came up to you and said, "<<$text_znak>>"'
+			if kol_man = 1:'A guy came up to you and said, "<<$text_znak>>"'
 			if kol_man > 1:'Guys come to you and one of the guys said "<<$text_znak>>"'
 
 			act 'meet':
@@ -109,7 +109,7 @@ if Frend_num > 0:
 		!!acts with the girl you came
 	end
 
-	act 'Leave':gt 'gskver'
+	act 'Continue to walk':gt 'placer_end'
 elseif Frend_num = 0:
 	'You stroll through the quiet park. <<$textEvent>>'
 

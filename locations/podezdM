@@ -47,11 +47,11 @@ if $ARGS[0] = 'kiosk':
 	fat += 1
 	manna += 10
 	willpower += 10
+	podrand = rand(5, 100)
 	'<center><img src="images/etogame/podezdM.jpg"></center>'
 	'At the entrance you guy opens a bottle of beer and delivers it to you.'
-	podrand = rand(5, 100)
 
-	act 'Drink a little.':
+	act 'Drink a little':
 		cla
 		alko += 1
 		gs 'stat'
@@ -63,7 +63,7 @@ if $ARGS[0] = 'kiosk':
 		end
 	end
 
-	act 'Drink a bottle.':
+	act 'Drink a bottle':
 		cla
 		alko += 2
 		fat += 1
@@ -93,19 +93,19 @@ if $ARGS[0] = 'kiosk1':
 	gs 'anekdot'
 	'<<$boyA>> drinking beer and anecdote tells you "<<$anek>>."'
 
-	act 'Laugh.':
+	act 'Laugh':
 		cla
 		SUB += 1
 		bfa += 1
 		gt 'podezdM', 'kiosk2'
 	end
 
-	act 'Smile.':
+	act 'Smile':
 		cla
 		gt 'podezdM', 'kiosk2'
 	end
 
-	act 'Not funny.':
+	act 'Not funny':
 		cla
 		DOM += 1
 		bfa -= 1
@@ -181,7 +181,7 @@ if $ARGS[0] = 'kiosk2':
 		if daya < 3 and boyonceA = 0:
 			'<<$boyA>> drank beer and threw the bottle told you. "<<$name>>, you''re so juicy, I want you!" with these words he came up to you and hugged the waist dug its lips in yours, his tongue entered your mouth.'
 
-			act 'Break.':
+			act 'Break':
 				cla
 				'You escaped from the grip of his, and that he has told you, "Well, what you break, you want to do this myself."'
 
@@ -199,7 +199,7 @@ if $ARGS[0] = 'kiosk2':
 				end
 			end
 
-			act 'Kissing.':
+			act 'Kiss':
 				cla
 				SUB += 1
 				'<<$boyA>> kisses you and his hands down to your waist on her ass and tight squeeze.'
@@ -229,7 +229,7 @@ if $ARGS[0] = 'grup':
 	'<center><img src="images/etogame/podezdM1.jpg"></center>'
 	'In a couple of guys got locked, they came to your boyfriend and greeted him. Boys brought vodka and a snack.'
 
-	act 'Refuse to drink.':
+	act 'Refuse to drink':
 		cla
 
 		if harakBoyA = 0:bfa += 1
@@ -239,7 +239,7 @@ if $ARGS[0] = 'grup':
 		gt 'podezdM', 'grup1'
 	end
 
-	act 'Drink a little.':
+	act 'Drink a little':
 		cla
 		alko += 1
 		gs 'stat'
@@ -251,7 +251,7 @@ if $ARGS[0] = 'grup':
 		gt 'podezdM', 'grup1'
 	end
 
-	act 'Thump with the guys.':
+	act 'Thump with the guys':
 		cla
 		alko += 2
 		fat += 1
@@ -274,7 +274,7 @@ if $ARGS[0] = 'grup1':
 	'You tusite in porch with the guys, they poison jokes, thumps and yuk.'
 	'<<$boyA>> drank beer and offered to take you home.'
 
-	act 'Go with a guy before his entrance.':gt 'sexm', 'start'
+	act 'Go with a guy before his entrance':gt 'sexm', 'start'
 end
 
 if $ARGS[0] = 'grup2':
@@ -312,8 +312,8 @@ if $ARGS[0] = 'grup2':
 		'<<$boyA>> neigh "Let this whore in a circle is empty!"'
 		'Drunk guys were enthusiastic about the proposal and began pulling off your clothes.'
 
-		act 'Resist.':gt 'sexm', 'gangrape'
-		act 'Surrender.':gt 'sexm', 'gangbang'
+		act 'Resist':gt 'sexm', 'gangrape'
+		act 'Surrender':gt 'sexm', 'gangbang'
 
 		exit
 	end

@@ -1,0 +1,272 @@
+# party
+if $ARGS[0] = 'beginning':
+	cla
+
+	if vikavecher = 1:
+		gt 'party', 'first'
+	elseif vikavecher > 1:
+		gt 'party', 'evening'
+	end
+end
+
+if $ARGS[0] = 'first':
+	cla
+	vikavecher = 2
+	'You have come to the party with Vika. The party was held in the male dormitory, the company of beautiful girls and guys were drinking, dancing to the music and fun.'
+	'Are you politely said hello, but of particular interest to you, nobody showed'
+
+	act 'Be overmodest':
+		cla
+		clr
+		hour = 23
+		fairy = 1
+		gs 'stat'
+
+		'You modestly sat in a corner, that would not interfere with other fun. To you started glued what that small, long-haired guy. The other guys he was called explicitly for a laugh and otherwise as a fairy and did not call.'
+
+		act 'Leave':gt 'Loka'
+	end
+
+	act 'Cheerful':
+		cla
+		hour = 23
+		fairy = 2
+		'You drank vodka together with all and struck up a conversation gradually. You dovlno strongly opyaneli and started dancing with sex. What is a little boy with a gentle girlish face and long blond hair trying to provide you clumsy attentions. The other guys he was called explicitly for a laugh and was referred to as a fairy. Gradually you kick in the trash and bran.'
+		'You woke up in a strange room, lying on his stomach, thank god clothes, then no you are not drunk ripped.'
+
+		if jeans = 2:'<center><img src="images/picparty/jeanscum.jpg"></center>'
+		if jeans ! 2:'<center><img src="images/picparty/skirtcum.jpg"></center>'
+
+		'What''s this? Damn! What that bastard, you dragged into another room and obkonchal your ass.'
+
+		act 'Leave':gt 'Loka'
+	end
+end
+
+if $ARGS[0] = 'evening':
+	cla
+	'You have come to the party, a lot of beautiful girls and guys, drink, dance and hang out.'
+
+	act 'Sit modestly':
+		cla
+		h = 23
+		zrand = rand(50, 100)
+
+		if vnesh < zrand:
+			cla
+			'You modestly sat watching the whole party opened others.'
+		act 'Leave':gt 'Loka'
+	elseif vnesh >= zrand:
+		cla
+		'You modestly modestly sat in a corner, but a guy came up to you and started to talk to you.'
+
+		act 'Snub and go':gt 'Lok'
+			act 'Keep the conversation':
+				cla
+				'Party ends and your new friend offers you to spend'
+
+				act 'Refuse':gt 'Loka'
+
+				act 'Go with a guy':
+					newboy = 1
+					gs 'boy'
+					gs 'boyopred'
+					gt 'Loka'
+				end
+			end
+		end
+	end
+
+	act '<<$name>>':
+		cla
+		h = 23
+		horny -= 10
+		'You have fun, dance and Bukhaev.'
+		itrand = rand(1, 10)
+
+		if itrand = 1:xgt 'party', 'result'
+		if itrand = 2:xgt 'party', 'result2'
+		if itrand = 3:xgt 'party', 'result3'
+		if itrand = 4:xgt 'party', 'result4'
+		if itrand = 5:xgt 'party', 'result5'
+		if itrand = 6:xgt 'party', 'result6'
+		if itrand = 7:xgt 'party', 'result7'
+		if itrand = 8:xgt 'party', 'result8'
+		if itrand = 9:xgt 'party', 'result9'
+		if itrand = 10:xgt 'party', 'result10'
+	end
+end
+
+if $ARGS[0] = 'result':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog.jpg"></center>'
+	'Gradually you distribute alcohol as hell and you start to feel sick, you end vechereniki spent hugging the toilet.'
+
+	act 'Leave':gt 'Loka'
+end
+
+if $ARGS[0] = 'result2':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog2.jpg"></center>'
+	'You danced and hooligans, you had the idea to dance with Vika, ended your dance light lesbian show with savory lingering kisses.'
+
+	act 'Leave':gt 'Lok'
+
+	act 'Vika leave an empty room':
+		cla
+		$girl = 'Vetch'
+
+		if vikasex = 0:vikasex = 1 & sexf += 1
+
+		gt 'lesb', 'beginning'
+	end
+end
+
+if $ARGS[0] = 'result3':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog3.jpg"></center>'
+	'You nakiryalis and slept in the next room with a few hardcore sex.'
+
+	act 'Leave':gt 'Loka'
+end
+
+if $ARGS[0] = 'result4':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog4.jpg"></center>'
+	'You get opyaneli and began to molest girls, how come you and do not understand, but you have exposed breasts and Vic kiss and lick your nipples in front of everyone.'
+
+	act 'Leave':gt 'Loka'
+
+	act 'Vika leave an empty room':
+		cla
+		$girl = 'Vetch'
+
+		if vikasex = 0:vikasex = 1 & sexf += 1
+
+		gt 'lesb', 'beginning'
+	end
+end
+
+if $ARGS[0] = 'result5':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog5.jpg"></center>'
+
+	if throat > 10:money += 100 & 'Fun and drinking, you had an argument about the girl that will be able to shove down your throat it a whole banana, not great wisdom that you have done with success and at the table. The girl gave you 100 rubles.'
+	if throat <= 10:money -= 100 & 'Fun and drinking, you had an argument about the girl that will be able to shove down your throat myself a banana, you have choked on a half a banana and lost the argument. Then you gave 100 rubles.'
+
+	act 'Leave':gt 'Loka'
+end
+
+if $ARGS[0] = 'result6':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog6.jpg"></center>'
+	'You all evening molested girl with big breasts begging her to kiss her breasts. By evening, the two of you got drunk in the trash and then you climbed her face in his chest and began kissing them.'
+
+	act 'Leave':gt 'Loka'
+end
+
+if $ARGS[0] = 'result7':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog7.jpg"></center>'
+	'Natreskavshis in zyuzyu you bared her breasts and started licking her nipples.'
+
+	act 'Leave':gt 'Loka'
+end
+
+if $ARGS[0] = 'result8':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog8.jpg"></center>'
+	'You ran with Vika Vika became sex with what that guy is not known. You were lying next fun chatting with her until Vika tore drunk in the trash is not familiar guy.'
+
+	act 'Leave':gt 'Loka'
+
+	act 'Caress Vic':
+		cla
+		*clr
+		$girl = 'Vetch'
+		sex += 1
+
+		if vikasex = 0:vikasex = 1 & sexf += 1
+
+		'<center><img src="images/picvag/tri.jpg"></center>'
+		'You kiss and fondle breasts Vicki, she is very excited and you have decided to give her to lick your pussy.'
+
+		if horny < 100:'You started to get tired of licking and wanted to continue'
+		if horny >= 100:horny = 0 & 'Muscles of the vagina began to decline sharply, the entire abdomen as if covered hot wave of pleasure, you scream from a powerful orgasm.'
+
+		'The guy pulls his dick out of Vicki and lifting it inserts his penis into her mouth.'
+
+		act 'Watch':
+			cla
+			*clr
+			'<center><img src="images/picvag/tri4.jpg"></center>'
+			'Vick guy cums in her mouth. Vicki peremazanny lips in semen and it stretches to you that would have kissed her.'
+
+			act 'Kissing with Vika':
+				cla
+				*clr
+				cumlip += 1
+				'<center><img src="images/picvag/tri3.jpg"></center>'
+				'You''re kissing licking each other''s cum.'
+
+				act 'Leave':gt 'Loka'
+			end
+		end
+
+		act 'Suck together with Vika':
+			cla
+			*clr
+			sexm += 1
+			oral += 1
+			cumface += 1
+			'<center><img src="images/picvag/tri2.jpg"></center>'
+			'You fucked by dick together with Vika finally ends Perrin you on the face.'
+
+			act 'Kissing with Vika':
+				cla
+				*clr
+				cumlip += 1
+				'<center><img src="images/picvag/tri3.jpg"></center>'
+				'You''re kissing licking each other''s cum.'
+
+				act 'Leave':gt 'Loka'
+			end
+		end
+	end
+end
+
+if $ARGS[0] = 'result9':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog9.jpg"></center>'
+	'Girls love to have fun, you two had a drunken girlfriends lesbian show right at the party. Caressing, kissing and squeezing each other in front of everyone.'
+
+	act 'Leave':gt 'Lok'
+end
+
+if $ARGS[0] = 'result10':
+	cla
+	repa += 1
+	'<center><img src="images/picparty/itog10.jpg"></center>'
+	'You got drunk and danced with what that guy who you dirty paw tits.'
+
+	act 'Leave':gt 'Loka'
+
+	act 'Touch for pants':
+		cla
+		repa += 1
+		sexm += 1
+		gs 'boy'
+		gt 'BJ', 'beginning'
+	end
+end
+
+--- party ---------------------------------
