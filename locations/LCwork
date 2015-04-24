@@ -23,9 +23,10 @@ if $ARGS[0] = 'start1':
 
 	act '...':
 		cls
+		gs 'stat'
 		'<center><img src="images/LakeCafe/LakeWork/1b.jpg"></center>'
 		'They gave you wash and able to take to the house. You got for it <<randLCpay>> rubleyyu'
-		gs 'stat'
+
 
 		act '...':money += randLCpay & gt 'street'
 	end
@@ -49,8 +50,8 @@ if $ARGS[0] = 'start2':
 	'<center><img src="images/LakeCafe/LakeWork/2a.jpg"></center>'
 	'You walk up to the old man and say that you have come to serve him. He gets up priobnimaet you and you go with him to his car. He takes you into the woods, where you stop and undresses. He spread your legs and fuck you in the pussy, then finished on your face.'
 
-	if horand <= horny:Set horny = 0 & orgasm += 1 & 'You covered orgasm'
-	if horand > horny:Set horny += 10 & 'You were not satisfied'
+	if horand <= horny:horny = 0 & orgasm += 1 & 'You covered orgasm'
+	if horand > horny:horny += 10 & 'You were not satisfied'
 
 	act '...':
 		cls
@@ -124,6 +125,7 @@ if $ARGS[0] = 'start4':
 
 	act '...':
 		cls
+		gs'stat'
 		'<center><img src="images/LakeCafe/LakeWork/4b.jpg"></center>'
 		'You went out of their apartment and came to the house. For this you got <<randLCpay>> rubles.'
 

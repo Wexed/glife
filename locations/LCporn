@@ -36,10 +36,10 @@ if $ARGS[0] = 'firsttime':
 	act 'Leave':
 		cla
 		*clr
-		'Frightened, you get away from the barbecue.'
 		JenyaLC -= 10
 		minut += 7
 		gs 'stat'
+		'Frightened, you get away from the barbecue.'
 
 		act '...':gt 'nord'
 	end
