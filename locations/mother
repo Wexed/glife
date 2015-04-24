@@ -23,7 +23,7 @@ act 'Move away':gt $loc, $metka
 if motherWorry = 1 and indorf = 0:
 	motherWorry = 0
 	mother -= 1
-	'Mother sleeps and stands in the hallway waiting for you. "Where are you shlyaeshsya? You know what hour in the court?"'
+	'Mama is awake and stands in the hallway waiting for you. "Where are you shlyaeshsya? You know what hour in the court?"'
 elseif motherWorry = 1 and indorf > 0:
 	motherWorry = 0
 end
@@ -32,7 +32,7 @@ if SchoolAtestat = 1 and SAtestatGift = 0:
 	SAtestatGift = 1
 	money += 5000
 	gs 'stat'
-	'Mum was delighted, "Now you graduated from high school and I want to give you five thousand rubles. Can buy myself a gift."'
+	'Mama was delighted, "Now you graduated from high school and I want to give you five thousand rubles. Can buy myself a gift."'
 end
 
 if hour > 5:
@@ -136,9 +136,9 @@ if hour > 5:
 					end
 				end
 			elseif mother >= 40 and mother < 60:
-				if motherPayDay = day:'Mother frowned "That thou Velcro. Received nothing!"'
-
-				if motherPayDay ! day:
+				if motherPayDay = day:
+					'Mother frowned "That thou Velcro. Received nothing!"'
+				elseif motherPayDay ! day:
 					mother -= 1
 					motherPayDay = day
 

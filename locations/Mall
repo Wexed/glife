@@ -19,7 +19,7 @@ elseif car > 0 and benzin <= 0:
 	gs 'stat'
 	'You ran out of gas and you had to go on the bus, paying the fare of 20 rubles.'
 end
-act 'Buy':gt 'RynokP', 'the_choice'
+act 'Buy':gt 'RynokP', 'selection'
 act 'Go home':gt 'street'
 
 if rinwork > 0 and hour < 9:
@@ -50,7 +50,7 @@ if rinwork > 0 and hour < 9:
 				act 'Go home':gt 'street'
 			end
 
-			act 'Ogle':gt 'RynokHoz', 'the_beginning'
+			act 'Ogle':gt 'RynokHoz', 'beginning'
 		elseif rinrand < 60 and palevorin = 0 and rinhoz = 1:
 			act 'Go home':gt 'street'
 		elseif rinrand >= 60 and palevorin = 0 and rinhoz = 1:
@@ -64,7 +64,7 @@ if rinwork > 0 and hour < 9:
 				act 'Go home':gt 'street'
 			end
 
-			act 'Ogle':gt 'RynokHoz', 'the_beginning'
+			act 'Ogle':gt 'RynokHoz', 'beginning'
 		elseif rinrand < 60 and palevorin = 1:
 			'On the market there is a rumor among the sellers that you fucks boss tray'
 
@@ -80,7 +80,7 @@ if rinwork > 0 and hour < 9:
 				act 'Go home':gt 'street'
 			end
 
-			act 'Ogle':gt 'RynokHoz', 'the_beginning'
+			act 'Ogle':gt 'RynokHoz', 'beginning'
 		elseif rinrand < 40 and palevorin = 2:
 			'On the market there is a rumor among the sellers that you fucks boss tray with buddies'
 			slutrand = rand(1, 100)
@@ -103,7 +103,7 @@ if rinwork > 0 and hour < 9:
 				act 'Go home':gt 'street'
 			end
 
-			act 'Ogle':gt 'RynokHoz', 'the_beginning'
+			act 'Ogle':gt 'RynokHoz', 'beginning'
 		elseif rinrand >= 70 and palevorin = 2:
 			'To you approached the owner of the tent c already familiar to you guys and they began to entice you to perform oral sex, promising to write premium'
 
@@ -192,7 +192,7 @@ if rinokTorg = 1 and rinhour ! number:
 	act 'Dismiss saleswoman':
 		cla
 		rinokTorg = 0
-		'You hired fired saleswoman'
+		'You fired saleswoman'
 
 		act 'Go home':gt 'street'
 	end

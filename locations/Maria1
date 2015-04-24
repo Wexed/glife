@@ -1,7 +1,7 @@
 # Maria1
 '- How can I help you?'
 
-act 'Move away':gt 'the_stand'
+act 'Move away':gt 'rack'
 
 if nom_1 = 0:
 	act 'Ask about plans for the evening':
@@ -28,9 +28,9 @@ if nomer = 0:
 	*clr
 
 	act 'Stay':
+		cla
 		'- I would like to stay'
 		'- Well, what would you like?'
-		cla
 
 		act 'Cheap room':
 			'- Cheap room'
@@ -86,7 +86,7 @@ if nom_1 = 1 and flag = 0:
 		'Thank you for using our services'
 		'Your room <<nom_nom>>'
 
-		act 'Goodbye':gt 'the_stand'
+		act 'Goodbye':gt 'rack'
 	end
 
 	act 'Change Your Mind':
@@ -97,7 +97,7 @@ if nom_1 = 1 and flag = 0:
 end
 
 if nom_1 = 0:
-	act 'Move away':gt 'the_stand'
+	act 'Move away':gt 'rack'
 end
 
 --- Maria1 ---------------------------------

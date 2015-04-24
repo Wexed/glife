@@ -1,0 +1,126 @@
+# movie
+if $ARGS[0] = 'movie':
+	cla
+	clr
+	gs 'stat'
+
+	!!pfilmA
+	if pfilmA >= 5:
+		cla
+		pfilmA = 0
+		pfilm = 0
+		film = film + 1
+		'You dosnyal in the film.'
+
+		act 'Approach to Peter':gt 'pornstudio', 'start'
+		act 'Finish':gt 'down'
+	end
+
+	if hour >= 22 and pfilmA < 5:
+		cla
+		'Time is too late for filming'
+
+		act 'Go home':gt 'down'
+	elseif hour < 22 and pfilmA < 5 and pfilm > 0:
+		cla
+		minut += 60
+		money += 1000
+
+		if pfilmA = 0:guy+= 1
+
+		bj += 1
+		pfilmA += 1
+		gs 'stat'
+		'You undress and start shooting.'
+		prand = rand(1, 2)
+
+		if prand = 1:
+			porand = rand(1, 10)
+
+			'<center><img src="images/picBJ/bj<<porand>>.jpg"></center>'
+			'You suck dick for an hour at the actor portraying the passion and lust. Really hard to concentrate when there are fixtures, Assistant, you continually shoved the camera to face.'
+		elseif prand = 2:
+			facial += 1
+			porand = rand(1, 10)
+
+			'<center><img src="images/picBJ/fa<<picrand>>.jpg"></center>'
+			'You suck dick for an hour at the actor portraying the passion and lust. He ends up on your face, you lick the sperm. You every minute shoved the camera in person, running an assistant and illuminators.'
+		end
+
+		act 'Finish':gt 'down'
+
+		if hour < 22:act 'Acting on':gt 'film', 'film'
+	end
+end
+
+if $ARGS[0] = 'movie2':
+cla
+clr
+gs 'stat'
+
+	!!pfilmB
+	if pfilmB >= 10:
+		cla
+		pfilmB = 0
+		pfilm = 0
+		film = film + 1
+		'You dosnyal in the film.'
+
+		act 'Approach to Peter':gt 'pornstudio', 'start'
+		act 'Go home':gt 'down'
+	end
+
+	if h >= 22 and pfilmB < 10:
+		cla
+		'Time is too late for filming'
+
+		act 'Go home':gt 'down'
+	elseif hour < 22 and pfilmB < 10 and pfilm > 0:
+		cla
+		minut += 60
+		money += 3000
+
+		if pfilmB = 0:guy += 1
+
+		pfilmB += 1
+		gs 'stat'
+		'You undress and start shooting.'
+		prand = rand(1, 3)
+
+		if prand = 1:
+			bj += 1
+			porand = rand(1, 10)
+			'<center><img src="images/picBJ/bj<<picrand>>.jpg"></center>'
+			'You suck dick for an hour at the actor portraying the passion and lust. Really hard to concentrate when there are fixtures, Assistant, you continually shoved the camera to face.'
+		elseif prand = 2:
+			anus += 1
+			anal += 1
+			porand = rand(1, 10)
+
+			'<center><img src="images/pics/anal<<picrand>>.jpg"></center>'
+			'An hour you fucked in the ass for the camera, you do not pleasant, but you portray passion and pleasure. Finally, the actor does not stand up and fills your ass with his sperm. You every minute shoved the camera in person, running an assistant and illuminators.'
+		elseif prand = 3:
+			sex += 1
+			vagina+= 1
+			facial += 1
+
+			porand = rand(0, 1)
+
+			if porand = 0:
+				picrand = rand(1, 5)
+				'<center><img src="images/pics/vagcow<<picrand>>.jpg"></center>'
+			else
+				picrand = rand(1, 5)
+				'<center><img src="images/pics/vagdog<<picrand>>.jpg"></center>'
+			end
+
+			'You have an hour before the camera, you portray passion and lust. He ends up on your face, you lick the sperm. You every minute shoved the camera in person, running an assistant and illuminators.'
+		end
+
+		act 'Go home':gt 'down'
+
+		if hour < 22:act 'Acting on':gt 'movie', 'movie2'
+	end
+end
+
+--- movie ---------------------------------
