@@ -1,81 +1,84 @@
 # BDsex
 if $ARGS[0] = 'start':
-!!range of interactions
-!!gs 'BDsex', 'start'
-minut += 3
-if NoGuy = 0:guy += 1
-horny += 10
-gs 'stat'
-'<center><img src="images/picKav/petting.jpg"></center>'
+	!!range of interactions
+	!!gs 'BDsex', 'start'
+	minut += 3
 
-if harakBoy = 0:
-	'<<$boy>> hugs you and gently caress your breasts.'
+	if NoGuy = 0:guy += 1
 
-	act 'Lick me':gt 'BDsex', 'kuni'
-	act 'Stroking his cock':gt 'BDsex', 'hj'
-	act 'Take by mouth':gt 'BDsex', 'minet'
-	act 'Lie on your back and spread her legs ':gt 'BDsex', 'sex'
-	act 'Stand on all fours':gt 'BDsex', 'sex2'
-	act 'Anal':gt 'BDsex', 'anal2'
-elseif harakBoy = 1:
-	'<<$boy>> you and skillfully caresses your breasts.'
-	brand = rand(0, 100)
+	horny += 10
+	gs 'stat'
+	'<center><img src="images/picKav/petting.jpg"></center>'
 
-	if brand < 70:
-		'<<$boy>> you hugs and caresses your pussy with his fingers.'
-		trand = rand(0, 2)
+	if harakBoy = 0:
+		'<<$boy>> hugs you and gently caress your breasts.'
 
-		if trand < 2:
-			'It puts you in the back.'
-
-			act 'Lie on your back and spread her legs ':gt 'BDsex', 'sex'
-		else
-			'It turns your stomach.'
-
-			act 'Stand on all fours':gt 'BDsex', 'sex2'
-		end
-
-		act 'Let me suck':gt 'BDsex', 'minet'
-	else
-		'<<$boy>> baby, caressed my mouth.'
-
-		act 'Stroking his cock':gt 'BDsex', 'hj'
+		act 'Order him to lick you':gt 'BDsex', 'kuni'
+		act 'Stroke his cock':gt 'BDsex', 'hj'
 		act 'Take by mouth':gt 'BDsex', 'minet'
-		act 'I do not want to. Lie on your back and spread her legs ':gt 'BDsex', 'sex'
-	end
-elseif harakBoy = 2:
-	'<<$boy>> hugs you and passionately caress your breasts.'
-	brand = rand(0, 100)
+		act 'Lie on your back and spread your legs ':gt 'BDsex', 'sex'
+		act 'Go on all fours':gt 'BDsex', 'sex2'
+		act 'Do anal':gt 'BDsex', 'anal2'
+	elseif harakBoy = 1:
+		'<<$boy>> you and skillfully caresses your breasts.'
+		brand = rand(0, 100)
 
-	if brand < 70:
-		'<<$boy>> caresses your pussy with his fingers.'
-		trand = rand(0, 2)
+		if brand < 70:
+			'<<$boy>> you hugs and caresses your pussy with his fingers.'
+			trand = rand(0, 2)
 
-		if trand < 2:
-			'It puts you in the back.'
+			if trand < 2:
+				'It puts you in the back.'
 
-			act 'Lie on your back and spread her legs ':gt 'BDsex', 'sex'
-		else
-			'It turns your stomach.'
-
-			act 'Stand on all fours':gt 'BDsex', 'sex2'
-		end
-	elseif brand >= 70 and brand < 90:
-		'<<$boy>> takes you behind your head and pulls you to face your penis.'
-
-		act 'Take by mouth':gt 'BDsex', 'minet'
-			if dom > 0:
 				act 'Lie on your back and spread her legs ':gt 'BDsex', 'sex'
+			else
+				'It turns your stomach.'
+
 				act 'Stand on all fours':gt 'BDsex', 'sex2'
 			end
-		elseif brand >= 90:
 
-		'<<$boy>> tells you that he wants you in the ass.'
+			act 'Suck him':gt 'BDsex', 'minet'
+		else
+			'<<$boy>> baby, caressed my mouth.'
 
-		act 'Anal':gt 'BDsex', 'anal2'
+			act 'Stroke his cock':gt 'BDsex', 'hj'
+			act 'Take by mouth':gt 'BDsex', 'minet'
+			act 'Tell him you prefer to lay down and happily spreading your legs for him':gt 'BDsex', 'sex'
+		end
+	elseif harakBoy = 2:
+		'<<$boy>> hugs you and passionately caress your breasts.'
+		brand = rand(0, 100)
+
+		if brand < 70:
+			'<<$boy>> caresses your pussy with his fingers.'
+			trand = rand(0, 2)
+
+			if trand < 2:
+				'It puts you in the back.'
+
+				act 'Lie on your back and spread your legs ':gt 'BDsex', 'sex'
+			else
+				'It turns your stomach.'
+
+				act 'Go on all fours':gt 'BDsex', 'sex2'
+			end
+		elseif brand >= 70 and brand < 90:
+			'<<$boy>> takes you behind your head and pulls you to face your penis.'
+
+			act 'Take by mouth':gt 'BDsex', 'minet'
+				if dom > 0:
+					act 'Lie on your back and spread her legs ':gt 'BDsex', 'sex'
+					act 'Stand on all fours':gt 'BDsex', 'sex2'
+				end
+			elseif brand >= 90:
+
+			'<<$boy>> tells you that he wants you in the ass.'
+
+			act ' Do anal':gt 'BDsex', 'anal2'
+
 			if dom > 0:
 				act 'I do not want to! Lie on your back and spread her legs ':gt 'BDsex', 'sex'
-				act 'I''ll get cancer, but not in the ass ladies!':gt 'BDsex', 'sex2'
+				act 'Tell him that you'll go into a doggystyle position, but that your ass is a no-go':gt 'BDsex', 'sex2'
 				act 'Take by mouth':gt 'BDsex', 'minet'
 			end
 		end
@@ -104,9 +107,9 @@ if $ARGS[0] = 'kuni':
 
 	act 'Stroking his cock':gt 'BDsex', 'hj'
 	act 'Take by mouth':gt 'BDsex', 'minet'
-	act 'Lie on your back and spread her legs ':gt 'BDsex', 'sex'
-	act 'Stand on all fours':gt 'BDsex', 'sex2'
-	act 'Anal':gt 'BDsex', 'anal2'
+	act 'Lie on your back and spread your legs ':gt 'BDsex', 'sex'
+	act 'Go on all fours':gt 'BDsex', 'sex2'
+	act 'Do anal':gt 'BDsex', 'anal2'
 end
 
 if $ARGS[0] = 'sex':
@@ -123,7 +126,7 @@ if $ARGS[0] = 'sex':
 			'Suddenly <<$boy>> took out of you cock and taking you by the shoulders put in front of him on his knees.'
 
 			act 'Substitute person':gt 'BDsex', 'facial'
-			act 'Open mouth':gt 'BDsex', 'swallow'
+			act 'Open your mouth':gt 'BDsex', 'swallow'
 
 			exit
 		end
@@ -135,7 +138,7 @@ if $ARGS[0] = 'sex':
 		if givfinrand >= 8:
 			'Suddenly <<$boy>> you took out a member and began to fondle your ass preparing it to penetrate.'
 
-			act 'Anal':gt 'BDsex', 'anal2'
+			act 'Do anal':gt 'BDsex', 'anal2'
 
 			exit
 		end

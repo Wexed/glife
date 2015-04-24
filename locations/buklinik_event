@@ -17,9 +17,9 @@ if $ARGS[0] = 'pos1':
 	act 'Staying at the door':gt 'buklinik_event', 'pos5'
 
 	act 'Get out into the corridor':gt 'buklinik', 'holl'
-	end
+end
 
-	if $ARGS[0] = 'pos2':
+if $ARGS[0] = 'pos2':
 	cla
 	*clr
 	bumtolik = 7
@@ -39,9 +39,9 @@ if $ARGS[0] = 'pos1':
 	'- Yeah, and me! So young, smooth skin and smells delicious.'
 
 	act 'Try to get away':gt 'buklinik_event', 'pos3'
-	end
+end
 
-	if $ARGS[0] = 'pos3':
+if $ARGS[0] = 'pos3':
 	cla
 	*clr
 	manna -= 20
@@ -93,6 +93,7 @@ if $ARGS[0] = 'pos5':
 
 	act 'Get out into the corridor':gt 'buklinik', 'holl'
 end
+
 if $ARGS[0] = 'pos6':
 	cla
 	*clr

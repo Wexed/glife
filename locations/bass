@@ -1,23 +1,23 @@
 # bass
-	if $ARGS[0] = 'start':
-		cla
-		clr
-		*clr
-		minut += 5
-		gs 'stat'
-		fcolor = rgb(0, 0, 0)
-		bcolor = rgb(255, 255, 255)
-		lcolor = rgb(106, 90, 205)
-		'<center><b><font color="maroon">Pool</font></b></center>'
-		'<center><img src="images/etogame/bass.jpg"></center>'
-		'Entrance to the pool is worth 100 rubles, you must have a swimsuit.'
+if $ARGS[0] = 'start':
+	cla
+	clr
+	*clr
+	minut += 5
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">Pool</font></b></center>'
+	'<center><img src="images/etogame/bass.jpg"></center>'
+	'Entrance to the pool costs 100 rubles, you must have a swimsuit.'
 
-		act 'Leave':minut += 5 & gt 'down'
+	act 'Leave':minut += 5 & gt 'down'
 
-		if db >= 1 and bikini > 0 and Goraday ! day:act 'Search ZHoru':Goraday = day & gt 'klofdomhouse', 'ev42'
+	if db >= 1 and bikini > 0 and Goraday ! day:act 'Search ZHoru':Goraday = day & gt 'klofdomhouse', 'ev42'
 
-		if money >= 100 and bikini > 0:
-			act 'To pay 100 rubles per 1 hour in the pool':
+	if money >= 100 and bikini > 0:
+		act 'Pay to swim in the pool for an hour (100 rubles)':
 			cla
 			minut += 5
 			money -= 100
@@ -52,7 +52,7 @@ if $ARGS[0] = 'a':
 			'<center><img src="images/qwest/kisame.jpg"></center>'
 			'Athlete put on a towel and walked up to you. He smiled and said "Hi sweetie My name is Kisame just for you Kitty!"'
 
-			act 'Hi! I <<$name>>.':
+			act 'Say hello':
 				cla
 				'(You) - Hi! I <<$name>>.'
 				'(Plavec) - <<$name>> can swim together?'
@@ -61,7 +61,7 @@ if $ARGS[0] = 'a':
 				act 'Next.':gt 'kisameQW', 'start'
 			end
 
-			act 'Fuck off Kish!':
+			act 'Tell Kisame to fuck off':
 				cla
 				'(You) - Fuck off Kish!'
 				'(Plavec) - How rude!'
@@ -75,7 +75,7 @@ if $ARGS[0] = 'a':
 		'<center><img src="images/qwest/kisameV.jpg"></center>'
 		'Seeing you akulopodobny Kisame smiling "Hi baby. Want me to fill your hot mouth his shark-seed?"'
 
-		act 'Attack (Kisame mag10)':
+		act 'Attack Kisame':
 			cla
 			horny += 10
 			$nameV = 'Kisame'

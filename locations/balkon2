@@ -6,13 +6,13 @@ if $ARGS[0] = 'kurit':
 	*clr
 	minut += 10
 	vikureno += 1
-	siga -= 1
+	sigaret -= 1
 	son += 1
 	gs 'stat'
 	'<center><img src="images/etogame/kurit.jpg"></center>'
-	'<center>You lit a cigarette...</center>'
+	'You lit a cigarette...'
 
-	act 'Throw a cigarette butt...':gt 'balkon', 'start'
+	act 'Throw a cigarette over the railing...':gt 'balkon', 'start'
 end
 
 if $ARGS[0] = 'demo1':
@@ -67,16 +67,13 @@ if $ARGS[0] = 'niz':
 		!!!
 
 		act 'Enjoy the view':
-			cla
-			*clr
-
-			if hour >=8 and hour <= 19:
+			if hour >= 8 and hour <= 19:
 				'<center><img src="images/etogame/bal1.jpg"></center>'
 			else
 				'<center><img src="images/etogame/bal2.jpg"></center>'
 			end
 
-			'<center>You look at the panorama from your private balcony.</center>'
+			'You look at the panorama from your private balcony.'
 
 			act 'Further':gt 'balkon', 'start'
 		end
@@ -92,15 +89,15 @@ if $ARGS[0] = 'sosed':
 	clr
 	*clr
 	gs 'stat'
-	'<center><font size="5" color="maroon"><b>Balcony</b></font></center>'
+	'<center><b><font color="maroon">Balcony</font></b></center>'
 	'<center><img src="images/etogame/sosed.jpg"></center>'
 	'<center>Neighbor on the left on the balcony, looking at you carefully.</center>'
 
-	act 'Demonstrate body':gt 'balkon2', 'demo1'
+	act 'Demonstrate your body':gt 'balkon2', 'demo1'
 	act 'Show pervert thumb':gt 'balkon2', 'palec1'
 end
 
-!!1Probably CV edition
+!!!Probably CV edition
 if $ARGS[0] = 'masopt':
 	cla
 	*clr
@@ -115,9 +112,7 @@ if $ARGS[0] = 'masopt':
 	'<center><img src="images/community/balcony_dildo.jpg"></center>'
 
 	if dildo = 1:
-		'<center>Do you want use the dildo?</center>'
-
-		act 'Yes':
+		act 'Masturbate your pussy with your dildo':
 			cla
 			*clr
 			vagina += rand(0, 2)
@@ -126,12 +121,12 @@ if $ARGS[0] = 'masopt':
 			if badildo = 1:'<center><img src="images/community/balcony_dildo1.jpg"></center>'
 			if badildo = 2:'<center><img src="images/community/balcony_dildo2.jpg"></center>'
 
-			'<center>After pleasuring yourself intensily with the dildo you reach the orgasm and feel more calm.</center>'
+			'After pleasuring yourself intensily with the dildo you reach the orgasm and feel more calm.'
 
 			act 'Finish':gt 'balkon', 'start'
 		end
 
-		act 'Yes, on my ass':
+		act 'Masturbate and use your dildo with your ass':
 			cla
 			*clr
 			minut += 10
@@ -139,19 +134,20 @@ if $ARGS[0] = 'masopt':
 			anal += 1
 			anus += rand(0, 2)
 			'<center><img src="images/community/balcony_anal1.gif"></center>'
-			'<center>I feel that my whole ass is burning</center>'
+			'I feel that my whole ass is burning'
 
 			act 'Continue':
 				cla
 				*clr
 				'<center><img src="images/community/balcony_anal2.gif"></center>'
 				'An immense pleasure overtake you. Your body shivers like in the cold.'
+
 				act 'Go back':gt 'balkon', 'start'
 			end
 		end
 	end
 
-	act iif(dildo = 1, 'No', 'Finger'):
+	act 'Masturbate':
 		cla
 		*clr
 		vagina += rand(0, 1)
@@ -164,19 +160,19 @@ if $ARGS[0] = 'finger':
 	*clr
 	clr
 	'<center><img src="images/community/balcony_mas1-1.jpg"></center>'
-	'<center>You lick your fingers preparing them for your pussy.</center>'
+	'You lick your fingers preparing them for your pussy.'
 
 	act 'Insert finger':
 		cla
 		*clr
 		'<center><img src="images/community/balcony_mas1-2.jpg"></center>'
-		'<center>Slowly put my finger into my pussy.</center>'
+		'Slowly put my finger into my pussy.'
 
 		act 'Next':
 			cla
 			*clr
 			'<center><img src="images/community/balcony_mas1-3.jpg"></center>'
-			'<center>I feel like in heaven. Slowly my pussy gets wet.</center>'
+			'I feel like in heaven. Slowly my pussy gets wet.'
 
 			act 'Stand':
 				cla
@@ -185,17 +181,17 @@ if $ARGS[0] = 'finger':
 				if exhibi >= 0:
 
 					if exhibi = 1:exhibi = 2
-					'<center>You look around to see if you have an audience.</center>'
+					'You look around to see if you have an audience.'
 
 					visit = rand(0, 0)
 
 					if visit = 0:
 						vagina += 1
-						'<center>You can''t see anyone.</center>'
+						'You can''t see anyone.'
 
-						act 'insert fingers':gt 'balkon2', 'finger_solo'
+						act 'Insert fingers':gt 'balkon2', 'finger_solo'
 					else
-						'<center>I notice that someone seems to be enjoying the show as much as I am.</center>'
+						'I notice that someone seems to be enjoying the show as much as I am.'
 
 						!!act 'Invite':gt 'balkon2', 'beatafriend'
 						act 'Ignore and continue to play':gt 'balkon2', 'finger_solo'
@@ -216,25 +212,25 @@ if $ARGS[0] = 'finger_solo':
 	*clr
 	clr
 	'<center><img src="images/community/balcony_mas1-5.jpg"></center>'
-	'<center>The feeling is now so intense that you ignore everything surrounding you.</center>'
+	'The feeling is now so intense that you ignore everything surrounding you.'
 
 	act 'Next':
 		cla
 		*clr
 		'<center><img src="images/community/balcony_mas1-6.jpg"></center>'
-		'<center>Your pussy is so wet that it is leaking liquids and you cant think in nothing else than ... Faster!Faster!</center>'
+		'Your pussy is so wet that it is leaking liquids and you cant think in nothing else than ... Faster!Faster!'
 
 		act 'Faster':
 			cla
 			*clr
 			'<center><img src="images/community/balcony_mas1-7.jpg"></center>'
-			'<center>ohh ahh...</center>'
+			'Ohh ahh...'
 
 			act 'Faster':
 				cla
 				*clr
 				'<center><img src="images/community/balcony_mas1-8.jpg"></center>'
-				'<center>ohh ahh...</center>'
+				'Ohh ahh...'
 
 				act 'Do it':
 					cla
@@ -246,8 +242,8 @@ if $ARGS[0] = 'finger_solo':
 						cla
 						*clr
 						'<center><img src="images/community/balcony_orgasm.jpg"></center>'
-						'<center>You are shivering after such an intense pleasure. You can see some of your neighbours even aplauding your performance.</center>'
-						'<center>A bit surprised with the audience you try to gather your clothes.</center>'
+						'You are shivering after such an intense pleasure. You can see some of your neighbours even aplauding your performance.'
+						'A bit surprised with the audience you try to gather your clothes.'
 
 						act 'Dress Up':
 							cla

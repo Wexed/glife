@@ -11,7 +11,21 @@ else
 	$anus = 'Your <a href="exec:view''picb/analplug.jpg''">anus</a> is currently filled with your butt plug.'
 end
 
-!!'<a href="exec:view''images/body/1.jpg''">anus</a>'
+if throat = 0:thpic = 0 & $throat = 'You chaste <a href="exec:view''images/picb/th0.jpg''">mouth</a>.' & $throattipe = 'absolutely unusual'
+if throat > 0 and throat <= 5:thpic = 1 & $throat = 'You inexperienced <a href="exec:view''images/picb/th1.jpg''">mouth</a>.' & $throattipe = 'virgin'
+if throat > 5 and throat <= 10:thpic = 2 & $throat = 'You work her mouth and sensitive <a href="exec:view''images/picb/th2.jpg''">throat</a>.' & $throattipe = 'sensitive'
+if throat > 10 and throat <= 15:thpic = 3 & $throat = 'You have experienced mouth and slightly stretched <a href="exec:view''images/picb/th3.jpg''">throat</a>.' & $throattipe = 'slightly stretched'
+if throat > 15 and throat <= 25:thpic = 4 & $throat = 'You capacious mouth and trained <a href="exec:view''images/picb/th4.jpg''">throat</a>.' & $throattipe = 'stretched'
+if throat > 25 and throat <= 35:thpic = 5 & $throat = 'Your deep tin <a href="exec:view''images/picb/th5.jpg''">throat</a> may adopt any member.' & $throattipe = 'tinned'
+if throat > 35:thpic = 6 & $throat = 'You completely absent gag reflex, Your razebannaya <a href="exec:view''images/picb/th6.jpg''">throat</a> like a bottomless pit' & $throattipe = 'bottomless'
+
+if vagina = 0:puspic = 0 & $vagina = 'You virgin <a href="exec:view''images/picb/vag0.jpg''">membrane</a>.' & $vaginatipe = 'virgin'
+if vagina > 0 and vagina <= 5:puspic = 1 & $vagina = 'Your pussy <a href="exec:view''images/picb/vag1.jpg''">pussy</a> has a tiny hole.' & $vaginatipe = 'narrow'
+if vagina > 5 and vagina <= 10:puspic = 2 & $vagina = 'You close, similar to the slit <a href="exec:view''images/picb/vag2.jpg''">vagina</a>.' & $vaginatipe = 'close'
+if vagina > 10 and vagina <= 15:puspic = 3 & $vagina = 'You have a slightly stretched elastic <a href="exec:view''images/picb/vag3.jpg''">vagina</a>.' & $vaginatipe = 'tight'
+if vagina > 15 and vagina <= 25:puspic = 4 & $vagina = 'You have a well-developed <a href="exec:view''images/picb/vag4.jpg''">vagina</a>.' & $vaginatipe = 'developed'
+if vagina > 25 and vagina <= 35:puspic = 5 & $vagina = 'Between the legs you have not closed a hefty <a href="exec:view''images/picb/vag5.jpg''">dyren</a>' & $vaginatipe = 'broken-down'
+if vagina > 35:puspic = 6 & $vagina = 'The fact that you have in place pussy, more like <a href="exec:view''images/picb/vag6.jpg''">well</a> with deep Mariana Trench' & $vaginatipe = 'dimensionless'
 !!!!!!!!!!!!!!!!
 !!!!!SIZE AND WEIGHT!!!
 !!!!!!!!!!!!!!!!
@@ -21,7 +35,7 @@ if dounspell = 0:
 	vmeat = (strenbuf + vitalbuf) / 8
 	vfat = salo / 10
 	Kves = vmeat + vfat
-	krost = rost - 130
+	krost -= 130
 	ves = Kves + krost - (agilbuf / 10)
 	talia = ves - (agilbuf / 10)
 	grudi = talia + 10 + vfat + silicone
@@ -55,7 +69,7 @@ else
 	talia = TaliaDoun
 	grudi = talia + 14 + silicone
 	ves = TaliaDoun
-	titK = grudi - talia 
+	titK = grudi - talia
 
 	if titK <= 10:tits = 0
 	if titK > 10 and titK <= 15:tits = 1

@@ -185,9 +185,9 @@ end
 
 if $ARGS[0] = 'dir':
 	cla
+	clr
 	*clr
 	minut += 15
-	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -204,9 +204,7 @@ if $ARGS[0] = 'dir':
 		'You:- Very nice, <<$name>>!'
 		'Vera:- Welcome to contact us. (Vera you smile)'
 		act 'complete familiarity':gt 'buklinik', 'olga2'
-	end
-
-	if bumtolik > 5:
+	elseif bumtolik > 5:
 		'- Hello, <<$name>>!'
 		act 'In the corridor':gt 'buklinik', 'holl'
 	end
@@ -214,9 +212,9 @@ end
 
 if $ARGS[0] = 'shower':
 	cla
+	clr
 	*clr
 	minut += 15
-	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)

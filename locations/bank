@@ -14,7 +14,7 @@ if $ARGS[0] = 'start':
 	if karta > 0:'In the bank <<karta>> rubles'
 
 	if BankPapper = 1 and dayBankPapper = day:
-		act 'Giving documents':
+		act 'Give documents':
 			cls
 			minut += 15
 			BankPapper = 2
@@ -44,7 +44,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if karta > 0:
-		act 'Withdrawing money':
+		act 'Withdraw money':
 			cla
 			minut += 5
 			kartaOUT = input ("How much do you want to withdraw from account?")

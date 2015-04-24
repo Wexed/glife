@@ -85,15 +85,14 @@ if $loc = 'gschool':
 							act 'Move away':gt $loc, $metka
 						end
 					end
-				end
-
-				if seepornofut >= 1:
+				elseif ivrand = 0 and seepornofut >= 1:
 					'Guys poshushukavshis together tell you "<<$nickname>>, go look porn?"'
 
 					act 'Go watch porn':minut + = 5 & gt 'seeporn'
-			end
+				end
 
-			act 'Move away':gt $loc, $metka
+				act 'Move away':gt $loc, $metka
+			end
 		end
 	end
 end

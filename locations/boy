@@ -2,7 +2,7 @@
 !!'<<$boy>> <<$boybody>> <<$boybod>> <<$boyface>>. <<$boy>> <<$boyClo>>'
 !!Randomly male names
 Set boynamerand = rand(1, 38)
-!!Russian names
+
 if boynamerand = 1: $boy = 'Alexander'
 if boynamerand = 2: $boy = 'Alexey'
 if boynamerand = 3: $boy = 'Albert'
@@ -76,10 +76,10 @@ silaVag = rand(0, 2)
 
 !!variable is responsible for guy
 boyonce = 0
-harakBoy = rand(0, 2)
 
 !!Variables responsible for any features like
 !!security, is responsible for the money and requirements
+harakBoy = rand(0, 2)
 finance = rand(0, 2)
 
 if finance = 0:
@@ -90,9 +90,7 @@ if finance = 0:
 	if harakBoy = 2:vneshBoy = rand(0, 8)
 
 	$boyClo = 'wearing a tracksuit.'
-end
-
-if finance = 1:
+elseif finance = 1:
 	!!middle_peasant
 	!!check in appearance
 	if harakBoy = 0:vneshBoy = rand(0, 4)
@@ -100,9 +98,7 @@ if finance = 1:
 	if harakBoy = 2:vneshBoy = rand(0, 8)
 
 	$boyClo = 'wearing jeans and a sweater.'
-end
-
-if finance = 2:
+elseif finance = 2:
 	!!middle_peasant
 	!!check in appearance
 	if harakBoy = 0:vneshBoy = rand(4, 8)

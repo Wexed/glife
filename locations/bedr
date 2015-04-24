@@ -33,11 +33,9 @@ if nude = 0:$nude = 'The corridor'
 if nude = 1:$nude = 'Get dressed'
 
 if husbandrinkday = day:
-	if husbanstrapon = 1:$tempval = 'with anal plug in his ass.'
-	if husbanstrapon = 2:$tempval = 'after you have put a dildo up his ass.'
-	if husbanstrapon = 3:$tempval = 'after you fucked him with a strapon.'
-
-	'Drunken husband sleeps on the bed <<$tempval>>'
+	if husbanstrapon = 1:'Drunken husband sleeps on the bed with butt plug in his ass.'
+	if husbanstrapon = 2:'Drunken husband sleeps on the bed after you have put a dildo up his ass.'
+	if husbanstrapon = 3:'Drunken husband sleeps on the bed after you fucked him with a strapon.'
 end
 if husband > 0 and husbandrink ! 10 and husbandrinkday ! day:
 	if hour > 22 or hour < 7:'<a href="exec:gt ''husb'', ''start''">Husband is sleeping on the bed.</a>'

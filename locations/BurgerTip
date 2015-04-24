@@ -195,9 +195,9 @@ $burger_work_din = {
 					'To your office assistant manager went Sergei.'
 					'Sergei looked you carnivorous eyes "Anatoly Borisovich at?" You said no.'
 
-					if sergeyPQW = 1:'Pimply young man chuckled and sat on the edge of the table. "<<$name>>, you''re dynamite. Cafe I invested for you, and you with me here and so cost.''s No nice of you."'
-
-					if sergeyPQW = 0:
+					if sergeyPQW = 1:
+						'Pimply young man chuckled and sat on the edge of the table. "<<$name>>, you''re dynamite. Cafe I invested for you, and you with me here and so cost.''s No nice of you."'
+					elseif sergeyPQW = 0:
 						'Pimply kid sat on the edge of the table "<<$name>> you cool the girl can descend to something?"'
 
 						act 'No! And do not even think about it!':
@@ -247,7 +247,7 @@ $burger_work_din = {
 					if PSBBtimes = 2:dynamic $dinBistroWork2
 
 				elseif bburand = 2:
-					'To your office came GlavBukh Lena.'
+					'To your office came chief accountant Lena.'
 					'Lena looked disapprovingly you "Chef at home?" You said that he was gone. Lena lipped gone.'
 
 					if PSBBtimes = 1:dynamic $dinBistroWork
@@ -307,8 +307,8 @@ $burger_work_din = {
 										'<center><img src="images/qwest/sosed/bossSexS.jpg"></center>'
 										'Anatoly Borisovich put a condom on the penis and lay down on the bench pulling your hand to yourself. You have thrown a leg over the boss stomach and sat on top of him, then you took his hard hand and sent it into my pussy.'
 										dynamic $sexstart3
-										'You heard Anatoly Borisovich groaned and twitched a few times, he took you with ebya and you saw that sperm filled condom.'
 										sweat = -3
+										'You heard Anatoly Borisovich groaned and twitched a few times, he took you with ebya and you saw that sperm filled condom.'
 										'Then you went into the shower to wash. Coming out of the shower, you saw that Anatoly Borisovich already dressed. "<<$name>>, I''ve got to run." He kissed you and left.'
 
 										act 'Leave':gt 'street'
@@ -594,8 +594,8 @@ $boss_din_bj2 = {
 				if PSBBtimes = 2:dynamic $dinBistroWork2
 			elseif boburand <= 2:
 				cumfrot += 1
-				'Spitting sperm you notice that a few drops of semen got you on her blouse.'
 				gs 'stat'
+				'Spitting sperm you notice that a few drops of semen got you on her blouse.'
 				dynamic $boss_din_go_toilet
 			end
 		end

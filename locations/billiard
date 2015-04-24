@@ -11,7 +11,7 @@ act 'Leave':gt 'torgcentr'
 
 if hour >= 8 and hour <= 20:
 	if money >= 250:
-		act 'Play 250 rubles (1:00)':
+		act 'Play (250 rubles) (1:00)':
 			money -= 250
 			minut += 60
 			billvar = 0
@@ -56,7 +56,7 @@ if hour >= 8 and hour <= 20:
 	end
 
 	if money >= 300:
-		act 'Play for money':
+		act 'Play for money (300 rubles)':
 			money -= 300
 			minut += 60
 			billvar = 3
