@@ -58,12 +58,11 @@ if $ARGS[0] = 'salon':
 	cla
 	clr
 	*clr
-	gs 'stat'
 	minut += 1
-
+	gs 'stat'
 	'<center><b><<$car>></b></center>'
 	'<center><img src="images/picar/salon<<car>>.jpg"></center>'
-	'Gasoline - <<benz>>l, fuel tank capacity of 40 liters.'
+	'Gasoline - <<benz>> liters, fuel tank capacity of 40 liters.'
 
 	if teh <= 0:teh = 0 & wrek = 1
 	if teh <= 0 or wrek = 1:$teh = 'Car will not start, it needs repairs.'
@@ -84,19 +83,19 @@ if $ARGS[0] = 'salon':
 	act 'Out of the car':dynamic $enddrive
 
 	if benz > 0 and wrek = 0 and prava > 0:
-		if teh >= tehcar * 75/100 and wrek = 0:
+		if teh >= tehcar * 75 / 100 and wrek = 0:
 			wrekrand = rand(0, 1000)
 
 			if wrekrand = 1000:wrek = 1
-		elseif teh < tehcar*75/100 and teh >= tehcar * 50/100 and wrek = 0:
+		elseif teh < tehcar * 75 / 100 and teh >= tehcar * 50/100 and wrek = 0:
 			wrekrand = rand(0, 100)
 
 			if wrekrand = 100:wrek = 1
-		elseif teh < tehcar*50/100 and teh >= tehcar * 25/100 and wrek = 0:
+		elseif teh < tehcar * 50 / 100 and teh >= tehcar * 25 / 100 and wrek = 0:
 			wrekrand = rand(0, 100)
 
 			if wrekrand >= 80:wrek = 1
-		elseif teh < tehcar*25/100 and wrek = 0:
+		elseif teh < tehcar * 25 / 100 and wrek = 0:
 			wrekrand = rand(0, 100)
 
 			if wrekrand >= 40:wrek = 1
@@ -138,7 +137,7 @@ if $ARGS[0] = 'salon':
 			avarand = rand(0, 100)
 
 			if avarand >= 50:
-				teh = teh / 2
+				teh /= 2
 				wrek = 1
 				'You with a drunk crashed into a tree, breaking the car into pieces.'
 

@@ -1,5 +1,5 @@
 # cafe2
-if $ARGS[0] = 'the_beginning':
+if $ARGS[0] = 'beginning':
 	cla
 	*clr
 	'<<$boybody>> <<$boybod>> <<$boyface>>, introduced as <<$boy>>.'
@@ -8,17 +8,17 @@ if $ARGS[0] = 'the_beginning':
 	if deyst <= 25:
 		'<<$boy>> has invited you to dance.'
 
-		act 'Dance':gt 'cafe2', 'dance'
+		act 'Dance':gt 'Cafe2', 'dance'
 		act 'Otshit':gt 'street'
 	elseif deyst > 25 and deyst <= 50:
 		'<<$boy>> sat down at your table and ordered a drink and a snack.'
 
-		act 'Drink':gt 'cafe2', 'booze'
+		act 'Drink':gt 'Cafe2', 'booze'
 		act 'Otshit':gt 'street'
 	elseif deyst > 50 and deyst <= 75:
 		'<<$boy>> has invited you to join the party on which he walks.'
 
-		act 'Agree':gt 'cafe2', 'kompashka'
+		act 'Agree':gt 'Cafe2', 'kompashka'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -26,7 +26,7 @@ if $ARGS[0] = 'the_beginning':
 	elseif deyst > 75:
 		'<<$boy>> began to stick to you and try to take pictures. <<$boy>> offered to go with him to the toilet.'
 
-		act 'Agree':gt 'cafe3', 'WC'
+		act 'Agree':gt 'Cafe3', 'toilet'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -34,7 +34,7 @@ if $ARGS[0] = 'the_beginning':
 	end
 end
 
-if $ARGS[0] = 'the_dance':
+if $ARGS[0] = 'dance':
 	cla
 
 	if dance < 50 and agil >= dance:dance += 1
@@ -47,7 +47,7 @@ if $ARGS[0] = 'the_dance':
 	if deyst <= 25:
 		'During the dance <<$boy>> you confidently and correctly conducted and not molested. His strong hands held tightly your waist. Finally the song ended.'
 
-		act 'Finish the dance':gt 'cafe2', 'the_dance2'
+		act 'Finish the dance':gt 'Cafe2', 'dance2'
 	elseif deyst > 25 and deyst <= 80:
 		horny += 5
 		clr
@@ -63,7 +63,7 @@ if $ARGS[0] = 'the_dance':
 
 		'During the dance <<$boy>> gently hugged you and stroking your back down to the hips. His strong hands pressed against your fragile body to him, pressing your soft breasts <<tits>> the size of his body. <<$didanc>> Finally, the song ends.'
 
-		act 'Finish the dance':gt 'cafe2', 'the_dance2'
+		act 'Finish the dance':gt 'Cafe2', 'dance2'
 	elseif deyst > 80:
 		horny += 8
 		clr
@@ -106,7 +106,7 @@ if $ARGS[0] = 'the_dance':
 				if deyst <= 75:
 					'Keeping your waist and hold <<$boy>> offers to go to his home.'
 
-					act 'Agree':gt 'cafe3', 'a_house'
+					act 'Agree':gt 'Cafe3', 'house'
 
 					if horny < 75:
 						act 'Otshit':gt 'street'
@@ -114,7 +114,7 @@ if $ARGS[0] = 'the_dance':
 				elseif deyst > 75:
 					'Keeping your waist and hold <<$boy>> offers to go to the toilet and continue.'
 
-					act 'Agree':gt 'cafe3', 'wc'
+					act 'Agree':gt 'Cafe3', 'toilet'
 
 					if horny < 75:
 						act 'Otshit':gt 'street'
@@ -147,7 +147,7 @@ if $ARGS[0] = 'the_dance':
 				if deyst <= 75:
 					'Keeping your waist and hold <<$boy>> offers to go to his home.'
 
-					act 'Agree':gt 'cafe3', 'a_house'
+					act 'Agree':gt 'Cafe3', 'house'
 
 					if horny < 75:
 						act 'Otshit':gt 'street'
@@ -155,7 +155,7 @@ if $ARGS[0] = 'the_dance':
 				elseif deyst > 75:
 					'Keeping your waist and hold <<$boy>> offers to go to the toilet and continue.'
 
-					act 'Agree':gt 'cafe3', 'wc'
+					act 'Agree':gt 'Cafe3', 'toilet'
 
 					if horny < 75:
 						act 'Otshit':gt 'street'
@@ -170,7 +170,7 @@ if $ARGS[0] = 'the_dance':
 	end
 end
 
-if $ARGS[0] = 'the_dance2':
+if $ARGS[0] = 'dance2':
 	cla
 	deyst = rand(1, 70)
 
@@ -178,12 +178,10 @@ if $ARGS[0] = 'the_dance2':
 		'The dance ended, and <<$boy>> kiss you goodbye'
 
 		act 'Say goodbye':gt 'kafe', 'start'
-	end
-
-	if deyst < vnesh:
+	elseif deyst < vnesh:
 		'The dance ended, and <<$boy>> suggested to go to him'
 
-		act 'Agree':gt 'cafe3', 'a_house'
+		act 'Agree':gt 'Cafe3', 'house'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -205,7 +203,7 @@ if $ARGS[0] = 'booze':
 	elseif deyst >= 75 and deyst < 95:
 		'It seems you''ve had enough and should go home. <<$boy>> suggested to go to him'
 
-		act 'Agree':gt 'cafe3', 'house'
+		act 'Agree':gt 'Cafe3', 'house'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -213,7 +211,7 @@ if $ARGS[0] = 'booze':
 	elseif deyst >= 95:
 		'You drank to pig squeal and <<$boy>> began to stick to you. He kissed you and caressed, and then offered to go with him to the toilet.'
 
-		act 'Agree':gt 'cafe3', 'WC'
+		act 'Agree':gt 'Cafe3', 'toilet'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -236,7 +234,7 @@ if $ARGS[0] = 'kompashka':
 	elseif deyst >= 60 and deyst < 90:
 		'Think you''ve had enough and should go home. <<$boy>> suggested to go to him'
 
-		act 'Agree':gt 'cafe3', 'a_house'
+		act 'Agree':gt 'Cafe3', 'house'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'
@@ -244,7 +242,7 @@ if $ARGS[0] = 'kompashka':
 	elseif deyst >= 90:
 		'You drank to pig squeal and <<$boy>> began to stick to you. He kissed you and caressed, and then offered to go to rest with the company.'
 
-		act 'Agree':gt 'cafe3', 'kompashka'
+		act 'Agree':gt 'Cafe3', 'kompashka'
 
 		if horny < 75:
 			act 'Otshit':gt 'street'

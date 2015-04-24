@@ -70,8 +70,8 @@ if $ARGS[0] = 'toi':
 	act 'Wait in line':
 		cla
 		minut += rand(10, 30)
-		'Finally there''s a free booth for you.'
 		vnesh += 1
+		'Finally there''s a free booth for you.'
 
 		act 'WC':gt 'club', 'tou'
 	end
@@ -85,11 +85,11 @@ if $ARGS[0] = 'toi':
 			randbj = rand(1, 100)
 
 			if TQuest = 0 and horny < 50:gt 'club', 'tou'
-			if TQuest = 0 and horny >= 50:gt 'The_Club2', 'wc'
-			if TQuest = 1:gt 'The_Club2', 'wc1'
-			if TQuest = 2:gt 'The_Club2', 'wc2'
+			if TQuest = 0 and horny >= 50:gt 'Club2', 'toilet'
+			if TQuest = 1:gt 'Club2', 'toilet1'
+			if TQuest = 2:gt 'Club2', 'toilet2'
 			if TQuest >= 3 and randbj < 60:gt 'club', 'tou'
-			if TQuest >= 3 and randbj >= 60:gt 'The_Club2', 'wc1'
+			if TQuest >= 3 and randbj >= 60:gt 'Club2', 'toilet1'
 		end
 	end
 
@@ -622,9 +622,9 @@ if $ARGS[0] = 'sex':
 	*clr
 	dynamic $venerasiak
 	minut += 5
-	gs 'stat'
 	$nameV = 'Stranger'
 	dick = rand(10, 18)
+	gs 'stat'
 	'<center><b><font color="maroon">toilet stall</font></b></center>'
 	'<center><img src="images/etogame/sex.jpg"></center>'
 	'You went with the guy to the mens toilet and he dragged you into one of the free booths. He started to caress your breats and pussy, then helped you getting rid of the clothes.'
