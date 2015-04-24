@@ -4,7 +4,8 @@ if $ARGS[0] = 'start':
 	gs 'stat'
 
 	if week < 6:
-		if hour > 22 or hour < 7:'Your husband <<$husName>> lying in bed opens his eyes. "What do you want? Night already, go to sleep."'
+		if hour > 22 or hour < 7:'
+			Your husband <<$husName>> lying in bed opens his eyes. "What do you want? Night already, go to sleep."'
 		elseif hour = 7:
 			'<<$husName>> sitting at the kitchen table.'
 		elseif hour = 17:
@@ -18,11 +19,11 @@ if $ARGS[0] = 'start':
 		elseif hour = 7:
 			'<<$husName>> sitting at the kitchen table.'
 		elseif hour > 7 and hour < 17:
-			'<<$husName>> sitting on a couch and watching television.'
+			'<<$husName>> sitting on the couch and watching TV.'
 		elseif hour = 17:
 			'<<$husName>> sitting at the kitchen table.'
 		elseif hour > 17 and hour <= 22:
-			'<<$husName>> sitting on a couch and watching television.'
+			'<<$husName>> sitting on the couch and watching TV.'
 		end
 	end
 
