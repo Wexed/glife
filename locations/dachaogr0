@@ -35,10 +35,10 @@ elseif etoexhib = 15 and temp ! day:
 	act 'Pay money (3,000 rubles)':
 		cla
 		*clr
-		'You paid a working 3000 rubles.'
 		money -= 3000
 		etoexhib = 16
 		gs 'stat'
+		'You paid a working 3000 rubles.'
 
 		act 'To lodge':minut += 15 & gt 'dachamy'
 	end
