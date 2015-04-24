@@ -49,7 +49,7 @@ if turn = 1:
 	suit = rand(1, 4)
 	number = rand(1, 13)
 	$p_card[2] = $number[number] + $suit[suit]
-	p_points = p_points + points[number]
+	p_points += points[number]
 
 	if p_points = 22:
 		p_points = 21
@@ -97,7 +97,7 @@ if turn = 2:
 	suit = rand(1, 4)
 	number = rand(1, 13)
 	$p_card[3] = $number[number] + $suit[suit]
-	p_points = p_points + points[number]
+	p_points += points[number]
 
 	if p_points <= 21:
 		'Map of dealer:'
@@ -143,7 +143,7 @@ if turn = 22:
 	suit = rand(1, 4)
 	number = rand(1, 13)
 	$p_card[4] = $number[number] + $suit[suit]
-	p_points = p_points + points[number]
+	p_points += points[number]
 
 	if p_points <= 21:
 		'Map of dealer:'
@@ -190,7 +190,7 @@ if turn = 222:
 	suit = rand(1, 4)
 	number = rand(1, 13)
 	$p_card[5] = $number[number] + $suit[suit]
-	p_points = p_points + points[number]
+	p_points += points[number]
 
 	if p_points <= 21:
 		'Bank card:'
@@ -236,7 +236,7 @@ if turn = 3:
 	suit = rand(1, 4)
 	number = rand(1, 13)
 	$d_card[2] = $number[number] + $suit[suit]
-	d_points = d_points + points[number]
+	d_points += points[number]
 
 	if p_points = 22:
 		p_points = 21
@@ -278,7 +278,7 @@ if turn = 3:
 		suit = rand(1, 4)
 		number = rand(1, 13)
 		$d_card[3] = $number[number] + $suit[suit]
-		d_points = d_points + points[number]
+		d_points += points[number]
 
 		if d_points <= 21:
 			'The dealer''s cards:'

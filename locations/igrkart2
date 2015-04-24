@@ -177,9 +177,9 @@ if turn1 = 3:
 	end
 
 	act 'Pick up half your bet':
-		if deal mod 2 = 1:deal = deal + 1
+		if deal mod 2 = 1:deal += 1
 
-		money += deal/2
+		money += deal / 2
 		gt 'igrkart2'
 	end
 end
