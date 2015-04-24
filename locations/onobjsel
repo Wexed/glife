@@ -28,11 +28,13 @@ $objdescrip = {
 	pl '<<$vnesh>>'
 	pl '<<$hair>>'
 	pl '<<$lip>>'
+	pl'<<$throat>>'
 	pl '<<$skin>>'
 	pl '<<$glaza>>'
 	pl '<<$mop>>'
 	pl '<<$leghair>>'
 	pl '<<$lobok>>'
+	pl'<<$vagina>>'
 	nl
 
 	if salo = 0 and musle > 0 and dounspell = 0:pl '<b><font color="red">You are showing signs undernourishment. You should probably eat more and more often.</font></b>'
@@ -166,6 +168,7 @@ $objstatistika = {
 
 		nl
 	end
+
 	if kolsorev > 0:pl 'You have participate <<kolsorev>> in a running race'
 	if bronzebeg > 0:pl '<<bronzebeg>> - bronze medals on the run'
 	if silverbeg > 0:pl '<<silverbeg>> - silver medals for event'
@@ -288,6 +291,7 @@ $objstatistika = {
 	if VAF > 0:pl 'Vaflizm <<VAF>>.'
 	if zoo > 0:pl 'Having sex with animals <<zoo>> times.'
 	if pee > 0:pl 'You pissing <<pee>> times.'
+	if swallowpee > 0:pl'You swallow urine <<swallowpee>> time.'
 	!!!WD:FORMATING
 	if (slutty + pfilmSTOP + film + orgasm + analorgasm + swallow + facial + frot + VAF + zoo + pee) > 0:nl
 	!!!
@@ -451,7 +455,7 @@ $din_cheat_menu_look = {
 
 	if skin < 4:pl'<a href="exec:skin += 1 & dynamic $din_cheat_menu_look">improve the skin</a>'
 	if skin > 0:pl'<a href="exec:skin -= 1 & dynamic $din_cheat_menu_look">worsen the skin</a>'
-	if tan >= 0:pl'<a href="exec:tan += 10 & dynamic $din_cheat_menu_look">become_sunburnt</a>'
+	if tan >= 0:pl'<a href="exec:tan += 10 & dynamic $din_cheat_menu_look">become sunburnt</a>'
 	if tan > 0:pl'<a href="exec:tan = 0 & dynamic $din_cheat_menu_look">remove tan</a>'
 
 	pl ''
@@ -475,7 +479,7 @@ $din_cheat_menu_look = {
 $din_cheat_menu_param = {
 	gs 'stat'
 	clr
-	pl '<a href="exec:dynamic $din_cheat">Back to the cheat menu</a>'
+	pl'<center><a href="exec:dynamic $objcheat_menu"><b>Cheat menu</b></a> - <a href="exec:dynamic $din_cheat_menu_look"><b>Outward Appearance</b></a></center>'
 	pl ''
 	pl '<<strenbuf>> - strenbuf'
 	pl '<<vitalbuf>> - vitalbuf'
@@ -515,6 +519,8 @@ $din_cheat_menu_tatoo = {
 $din_cheat_menu_stats = {
 	gs 'stat'
 	clr
+	pl '<center><a href="exec:dynamic $objcheat_menu"><b>Cheat menu</b></a></center>'
+	pl ''
 	pl 'Power (<<stren>>): <a href="exec:stren += 1 & dynamic $din_cheat_menu_stats">+1</a> <a href="exec:stren += 5 & dynamic $din_cheat_menu_stats">+5</a> <a href="exec:stren += 10 & dynamic $din_cheat_menu_stats">+10</a> <a href="exec:stren += 25 & dynamic $din_cheat_menu_stats">+25</a> <a href="exec:stren -= 1 & dynamic $din_cheat_menu_stats">-1</a> <a href="exec:stren -= 5 & dynamic $din_cheat_menu_stats">-5</a> <a href="exec:stren -= 10 & dynamic $din_cheat_menu_stats">-10</a> <a href="exec:stren -= 25 & dynamic $din_cheat_menu_stats">-25</a>'
 	pl 'Speed (<<speed>>): <a href="exec:speed += 1 & dynamic $din_cheat_menu_stats">+1</a> <a href="exec:speed += 5 & dynamic $din_cheat_menu_stats">+5</a> <a href="exec:speed += 10 & dynamic $din_cheat_menu_stats">+10</a> <a href="exec:speed += 25 & dynamic $din_cheat_menu_stats">+25</a> <a href="exec:speed -= 1 & dynamic $din_cheat_menu_stats">-1</a> <a href="exec:speed -= 5 & dynamic $din_cheat_menu_stats">-5</a> <a href="exec:speed -= 10 & dynamic $din_cheat_menu_stats">-10</a> <a href="exec:speed -= 25 & dynamic $din_cheat_menu_stats">-25</a>'
 	pl 'Agility (<<agil>>): <a href="exec:agil += 1 & dynamic $din_cheat_menu_stats">+1</a> <a href="exec:agil += 5 & dynamic $din_cheat_menu_stats">+5</a> <a href="exec:agil += 10 & dynamic $din_cheat_menu_stats">+10</a> <a href="exec:agil += 25 & dynamic $din_cheat_menu_stats">+25</a> <a href="exec:agil -= 1 & dynamic $din_cheat_menu_stats">-1</a> <a href="exec:agil -= 5 & dynamic $din_cheat_menu_stats">-5</a> <a href="exec:agil -= 10 & dynamic $din_cheat_menu_stats">-10</a> <a href="exec:agil -= 25 & dynamic $din_cheat_menu_stats">-25</a>'
@@ -638,7 +644,7 @@ $din_cheat_menu_week = {
 	pl 'Right_Now <<$week>> <<day>> the_number, <<$month>>, <<year>> a_year.'
 	pl '<a href="exec:week = 1 & dynamic $din_cheat_menu_time">Monday</a>'
 	pl '<a href="exec:week = 2 & dynamic $din_cheat_menu_time">Tuesday</a>'
-	pl '<a href="exec:week = 3 & dynamic $din_cheat_menu_time">The_Environment</a>'
+	pl '<a href="exec:week = 3 & dynamic $din_cheat_menu_time">Wednesday</a>'
 	pl '<a href="exec:week = 4 & dynamic $din_cheat_menu_time">Thursday</a>'
 	pl '<a href="exec:week = 5 & dynamic $din_cheat_menu_time">Friday</a>'
 	pl '<a href="exec:week = 6 & dynamic $din_cheat_menu_time">Saturday</a>'
@@ -688,7 +694,7 @@ $din_cheat_menu_magic = {
 		pl '<b>Elements of Fire Spells:</b></a>'
 	end
 
-	if spellfire0 = 0:pl'<a href="exec:spellfire0 = 1 & dynamic $din_cheat_menu_magic">The_Flame</a>'
+	if spellfire0 = 0:pl'<a href="exec:spellfire0 = 1 & dynamic $din_cheat_menu_magic">Flame</a>'
 	if spellfire2 = 0:pl'<a href="exec:spellfire2 = 1 & dynamic $din_cheat_menu_magic">The release of fire</a>'
 	if spellfire3 = 0:pl'<a href="exec:spellfire3 = 1 & dynamic $din_cheat_menu_magic">fire barrier</a>'
 	if spellfire4 = 0:pl'<a href="exec:spellfire4 = 1 & dynamic $din_cheat_menu_magic">firestorm</a>'
@@ -745,16 +751,16 @@ $objcheat_menu = {
 	pl '<center><a href="exec:gs''stat''"><b>Get out of the cheat menu</b></a></center>'
 	pl ''
 	pl '<a href="exec:dynamic $din_cheat_menu_permanent"><b>permanent</b></a>'
-	pl '<a href="exec:dynamic $din_cheat_menu_look"><b>Physical_Appearance</b></a>'
-	pl '<a href="exec:dynamic $din_cheat_menu_stats"><b>characteristics_of</b></a>'
+	pl '<a href="exec:dynamic $din_cheat_menu_look"><b>Appearance</b></a>'
+	pl '<a href="exec:dynamic $din_cheat_menu_stats"><b>Characteristics of</b></a>'
 	pl '<a href="exec:dynamic $din_cheat_menu_reputation"><b>Relationships and Reputation</b></a>'
 	pl '<a href="exec:dynamic $din_cheat_menu_documents"><b>documents</b></a>'
 	pl '<a href="exec:dynamic $din_cheat_menu_time"><b>manipulation of time</b></a>'
 
-	if StoryLine = 0:pl'<a href="exec:dynamic $din_cheat_menu_magic"><b>The_Magic</b></a>'
+	if StoryLine = 0:pl'<a href="exec:dynamic $din_cheat_menu_magic"><b>Magic</b></a>'
 
 	pl ''
-	pl '<a href="exec:health = vital*10 + stren*5+1000 & willpower = intel*5 + will*5+1000 & manna = (intel*magik) + magik*100 + vital*10 + rikudo & dynamic $objcheat_menu">Complete recovery, manna, reason.</a>'
+	pl '<a href="exec:health = vital * 10 + stren * 5 + 1000 & willpower = intel * 5 + will * 5 + 1000 & manna = (intel * magik) + magik * 100 + vital * 10 + rikudo & dynamic $objcheat_menu">Complete recovery, manna, reason.</a>'
 	pl '<a href="exec:dynamic $din_cheat_money">Change the amount of money</a>'
 	pl '<a href="exec:money = 0 & dynamic $din_cheat">Zero the money</a>'
 }
@@ -1384,7 +1390,7 @@ $objoldmenu = {
 
 	if magik > 0:addobj 'The_Magic'
 
-	addobj 'Person'
+	addobj 'Face'
 	addobj 'Body'
 	addobj 'Clothing'
 	addobj 'Tattoos'
@@ -1433,7 +1439,7 @@ $menu_character[2] = 'Usage:$menu_statistika'
 
 if magik > 0:$menu_character[3] = 'Magic:$menu_magic'
 
-$menu_lookon[0] = 'Person:$menu_face'
+$menu_lookon[0] = 'Face:$menu_face'
 $menu_lookon[1] = 'Body:$menu_body'
 $menu_lookon[2] = 'Clothing:$menu_clothes'
 $menu_lookon[3] = 'Tattoos:$menu_tattoos'
