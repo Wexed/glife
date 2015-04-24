@@ -102,7 +102,6 @@ if $ARGS[0] = 'pos2':
 	act 'Go to the forest':gt 'etoexhib', 'pos3'
 	act 'Go down to the lake':gt 'etoexhib', 'pos16'
 
-	if etoexhib = 10:'Start at <a href="exec:gt ''etoexhib'', ''pos9''">clang saws</a>.'
 	act 'Leave':gt 'dachi'
 end
 
@@ -190,7 +189,8 @@ if $ARGS[0] = 'pos6':
 
 	act 'Have a drink':
 		if water >= 20:
-		if water >= 20:'Water in you no longer climbs.'
+		if water >= 20:
+			'Water in you no longer climbs.'
 		elseif water < 20:
 			'You gladly drank spring water.'
 			water += 20
@@ -208,7 +208,7 @@ if $ARGS[0] = 'pos7':
 	gs 'stat'
 	'<center><img src="images/etogame/stolbik.jpg"></center>'
 	'Also funny inscriptions on the column and have useful information.'
-	'Aunt Nina 3 alley sells goat milk 300 rubles/litre'
+	'Aunt Nina 3 alley sells goat milk 300 rubles/liter'
 
 	if money >= 300:
 		act 'Buy milk':
@@ -445,7 +445,6 @@ if $ARGS[0] = 'pos14':
 		act 'Surrender':
 			cla
 			*clr
-			'Boys pounced on you and after a brief caresses have become eagerly in all holes.'
 			minut += 120
 			etoexhib = 16
 			horny += 50
@@ -1407,18 +1406,19 @@ if $ARGS[0] = 'pos41':
 			*clr
 			shampoo -= 1
 			minut += 15
-			sweat = -3
 			horny += 1
 			hapri = 0
 			mop = 1
-			dynamic $showerdin
-
-			if frost > 0:frost = 0
+			sweat = -3
 
 			if tanga = 1:
 				clrbelo -= 1
 				dirtbelo += 1
 			end
+
+			dynamic $showerdin
+
+			if frost > 0:frost = 0
 
 			'<center><img src="images/pics/dush.jpg"></center>'
 
@@ -1433,7 +1433,7 @@ if $ARGS[0] = 'pos41':
 			minut += 30
 			leghair = -5
 			lobok = -5
-			horny = horny + 10
+			horny += 10
 			stanok -= 2
 
 			!'
@@ -1592,18 +1592,19 @@ if $ARGS[0] = 'pos49':
 			*clr
 			shampoo -= 1
 			minut += 15
-			sweat = -3
 			horny += 1
 			hapri = 0
 			mop = 1
-			dynamic $showerdin
-
-			if frost > 0:frost = 0
+			sweat = -3
 
 			if tanga = 1:
 				clrbelo -= 1
 				dirtbelo += 1
 			end
+
+			dynamic $showerdin
+
+			if frost > 0:frost = 0
 
 			'<center><img src="images/pics/dush.jpg"></center>'
 
