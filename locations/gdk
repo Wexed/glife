@@ -8,12 +8,12 @@ gs 'time'
 
 if hour >= 9 and hour < 20:
 	'<center><img src="images/etogame/dk.jpg"></center>'
-	'In the evenings, from 20.00 to 23.00 dances. Entrance 25 rubles.'
+	'In the evenings, from 20:00 to 23:00 dances. Entrance 25 rubles.'
 elseif hour >= 20 and hour <= 23:
 	'<center><img src="images/etogame/dk_night.jpg"></center>'
 	'At the entrance to the recreation center full of young people, the guys are just standing and smoking, joking and someone looking out for. Girls in groups of 2-3 people, discussing something, someone just thumps in the bushes.'
 
-	if money >= 25:act 'Sign in here':money -= 25 & minut += 15 & gt 'gdkin'
+	if money >= 25:act 'Sign in here (25 rubles)':money -= 25 & minut += 15 & gt 'gdkin'
 end
 
 act 'Leave':gt 'gorodok'
@@ -25,7 +25,7 @@ if hour >= 16 and hour <= 20:
 end
 
 if hour >= 8 and hour <= 18:
-	'Now the house of culture rabotet library.'
+	'Now the house has a library culture.'
 
 	act 'Go to the library':gt 'gdkbibl'
 end

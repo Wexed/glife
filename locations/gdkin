@@ -140,9 +140,11 @@ $din_vibor_tipe_dance = {
 		elseif DPgrup = 2:
 			if DPtipe = 1:
 				'The entire dance guy grabs your ass and he is clearly excited when he pressed against you, you feel something hard in his pants. Finally zakanchivaetsya song and the guy offers to go out, plunk.'
+
 				act 'Go thump':gt 'EvgopBuh'
 			elseif DPtipe = 2:
 				'The entire dance guy grabs your ass, breasts and kissed you, he clearly excited when he pressed against you, you feel something hard in his pants. Finally zakanchivaetsya song and the guy offers to go out, plunk.'
+
 				act 'Go thump':gt 'EvgopBuh'
 			end
 		elseif DPgrup = 3:
@@ -233,7 +235,7 @@ $din_otbor_dance_pertner = {
 		Tboynum = sozboyrand
 
 		if bmTip[Tboynum] = 0:
-			$niknameboy = 'The boy'
+			$niknameboy = 'Guy'
 			rudeboy = 1
 			$text = 'It suits you the guy in jeans and T-shirt, and invites you to dance. Appearance guy seems familiar to you, apparently you have danced with him.'
 		elseif bmTip[Tboynum] = 1:
@@ -241,7 +243,7 @@ $din_otbor_dance_pertner = {
 			rudeboy = 2
 			$text = 'It suits you the guy dressed in sweatpants and sweatshirts same and offers dance. Appearance guy seems familiar to you, apparently you have danced with him.'
 		elseif bmTip[Tboynum] = 2:
-			$niknameboy = 'The man'
+			$niknameboy = 'Man'
 			rudeboy = 0
 			$text = 'For you fit man in a decent jacket, pants with arrows, expensive shoes, and invites you to dance. Ethnicity men seem familiar to you, apparently you have danced with him.'
 		end
@@ -403,44 +405,43 @@ if hour >= 20 and hour <= 23:
 
 		if alko < 4:
 			verodance = 0
-				if hapri = 1:verodance += 1
-				if glamur = 1:verodance += 2
-				if ski = 1:verodance += 1
-				if mop = 2:verodance += 1
-				if mop = 3:verodance += 2
-				if mop = 4:verodance += 3
 
-				verodance += alko
-				verodance += 5
-				verprigrand = rand(0, 20)
+			if hapri = 1:verodance += 1
+			if glamur = 1:verodance += 2
+			if ski = 1:verodance += 1
+			if mop = 2:verodance += 1
+			if mop = 3:verodance += 2
+			if mop = 4:verodance += 3
 
-				if verprigrand <= verodance:
-					dynamic $din_otbor_dance_pertner
+			verodance += alko
+			verodance += 5
+			verprigrand = rand(0, 20)
+
+			if verprigrand <= verodance:
+				dynamic $din_otbor_dance_pertner
+				gs 'stat'
+				'<<$din_disc_dance>>'
+
+				act 'Dance':
+					cls
 					gs 'stat'
-					'<<$din_disc_dance>>'
-
-					act 'Dance':
-						cls
-						gs 'stat'
-						'<center><img src="images/etogame/club_dance.jpg"></center>'
-						dynamic $din_dance_vrp
-					end
-
-					act 'Refuse':
-						cls
-						gt $curloc
-					end
-
-					exit
+					'<center><img src="images/etogame/club_dance.jpg"></center>'
+					dynamic $din_dance_vrp
 				end
+
+				act 'Refuse':
+					cls
+					gt $curloc
+				end
+
+				exit
 			end
-
-			gs 'stat'
-
-			act 'Further':gt 'gdkin'
 		end
-	end
 
+		gs 'stat'
+
+		act 'Further':gt 'gdkin'
+	end
 elseif hour < 20:
 	'Club closes. The lights go on, the music fades and all begin to diverge.'
 end

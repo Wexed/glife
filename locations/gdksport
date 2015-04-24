@@ -287,8 +287,8 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 				elseif dancePRO >= 60 and dancePRO < 80:
 					'You train together with sex of "Zvezdushek" you normally get all but Albina regularly you niggles "<<$name>>, you are not at the funeral, raise your head and smile!"'
 				elseif dancePRO >= 80:
-					'You dance beautifully and Albina you start to put an example to other girl.'
 					stardance += 1
+					'You dance beautifully and Albina you start to put an example to other girl.'
 
 					if stardance < 10:
 						if otkazDanceWhore > 0 and AlbinaLast > 0:
@@ -464,7 +464,7 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 
 					if dancegevrand = 0:'It seems you see, that is <a href="exec:gt ''danceGev''">interesting</a>.'
 				elseif dance >= 100:
-					'Podcherpnut you tried something new in modern club dancing, but you all already know it.'
+					'You have tried something new in modern club dancing, but you all already know it.'
 
 					if albinaQWdance > 0:
 						!place for use in events
@@ -494,7 +494,7 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 								'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 								'You said scornfully as possible that you do not care and turned away from Albina. She said with a giggle. "Girls. Let''s train."'
 
-								act 'Leave':gt 'gdk'
+								act 'Leave':gt 'gdksport'
 							end
 
 							act 'I know how to dance':
@@ -507,7 +507,7 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 								'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
 								'Albina you already began to annoy his arrogance. And you told her firmly that you know how to dance. Albina turned to the girls who came to her and said. "Girls. Let''s train." Then she turned to you and said with a slight grin. "You can sit and watch as the dance pros. Itself will understand everything"'
 
-								act 'Leave':gt 'gdk'
+								act 'Leave':gt 'gdksport'
 
 								act 'Watch':
 									cls
@@ -515,7 +515,7 @@ if albinaQWdance > 0 or gsAboDance > 0 or gsAboBeg > 0 or gsAboVolley > 0:
 									gs 'stat'
 									'Girls included stereo and started dancing. You once it became clear that they dance very well and professionally. You can hardly so. Albina also dances much better than you. And indeed very concerted action girls and waste, apparently they do not work out this dance for the first time. When the music ended Albina said, "Girls. While a little break." She came to you and said a little breathlessly, "We are the pros. We spent a dance troupe Zvezdushki. Dancing on holidays. Even in a music video filming."'
 
-									act 'Leave':gt 'gdk'
+									act 'Leave':gt 'gdksport'
 
 									act 'Ask for them in the community':
 										cls

@@ -17,111 +17,93 @@ if hour >= 12 and hour <= 18:
 		gs 'stat'
 
 		'Stroll on the market for hot deals (0:15)'
+		if arturKnow = 0:rinevtip = rand(0, 6)
+		if arturKnow = 1:rinevtip = rand(0, 5)
 
-		if intel = 100:rinmaxrand = 2
-		if intel >= 75 and intel < 100:rinmaxrand = 4
-		if intel >= 50 and intel < 75:rinmaxrand = 6
-		if intel >= 25 and intel < 50:rinmaxrand = 8
-		if intel < 25:rinmaxrand = 10
+		if rinevtip = 0:
+			kosmpayrand = rand(3, 8)
+			kosmpay = kosmpayrand * 100
+			'You see that sell pretty cheap cosmetics for <<kosmpay>> rubles'
 
-		rinevrand = rand(0, rinmaxrand)
-
-		if rinevrand = 0:
-			rinevtip = rand(0, 6)
-
-			if rinevtip = 0:
-				kosmpayrand = rand(3, 8)
-				kosmpay = kosmpayrand * 100
-				'You see that sell pretty cheap cosmetics for <<kosmpay>> rubles'
-
-				if money >= kosmpay:
-					act 'Buy':
-						cls
-						minut += 15
-						money -= kosmpay
-						kosmetica += rand(10, 40)
-						gs 'stat'
-						gt $curloc
-					end
-				end
-			elseif rinevtip = 1:
-				tovpayrand = rand(2, 5)
-				tovpay = tovpayrand * 100
-				'You see that sell for Vitaminki <<tovpay>> rubles'
-
-				if money >= tovpay:
-					act 'Buy':
-						cls
-						minut += 15
-						vitamin += 20
-						money -= tovpay
-						gt $curloc
-					end
-				end
-			elseif rinevtip = 2:
-				tovpayrand = rand(2, 8)
-				tovpay = tovpayrand * 10
-				'You see that sell condoms <<tovpay>> rubles'
-
-				if money >= tovpay:
-					act 'Buy':
-						cls
-						minut += 15
-						prezik += 5
-						money -= tovpay
-						gt $curloc
-					end
-				end
-			elseif rinevtip = 3:
-				tovpayrand = rand(5, 10)
-				tovpay = tovpayrand * 100
-				'You see that sell lip balm for <<tovpay>> rubles'
-
-				if money >= tovpay:
-					act 'Buy':
-						cls
-						minut += 15
-						lipbalm += 20
-						money -= tovpay
-						gt $curloc
-					end
-				end
-			elseif rinevtip = 4:
-				tovpayrand = rand(1, 5)
-				tovpay = tovpayrand * 1000
-				'You see that sell for handbag <<tovpay>> rubles'
-
-				if bag = 0:
-					if money >= tovpay:
-						act 'buy':
-							cls
-							minut += 15
-							bag = 1
-							money -= tovpay
-							gt $curloc
-						end
-					end
-				elseif bag > 0:
-					'Hmm, you already have a bag, why do you need another.'
-				end
-			elseif rinevtip = 5:
-				if pornmarkonce = 0:pornmarkonce = 1
-				'Strolling on the market you accidentally wander into the far corner where they sell porn.'
-
-				act 'come_Up':gt 'Gpornmark'
-			elseif rinevtip = 6:
-				if arturKnow = 0:
-					'Suddenly you hail "Hey devyushka, want tangerine skyushat?"'
-
-					act 'Look':gt 'arturRinok'
-				elseif arturKnow > 0:
-					'Suddenly you hail "Hey <<$name>>, come here, skyushay tangerine."'
-
-					act 'Go to Artur':gt 'arturRinok'
+			if money >= kosmpay:
+				act 'Buy':
+					cls
+					minut += 15
+					money -= kosmpay
+					kosmetica += rand(10, 40)
+					gs 'stat'
+					gt $curloc
 				end
 			end
-		else
-			'Nothing unusual you do not come across, trash, buckets, granny gowns, sneakers, breeches and waistcoats with pockets.'
+		elseif rinevtip = 1:
+			tovpayrand = rand(2, 5)
+			tovpay = tovpayrand * 100
+			'You see that sell for Vitaminki <<tovpay>> rubles'
+
+			if money >= tovpay:
+				act 'Buy':
+					cls
+					minut += 15
+					vitamin += 20
+					money -= tovpay
+					gt $curloc
+				end
+			end
+		elseif rinevtip = 2:
+			tovpayrand = rand(2, 8)
+			tovpay = tovpayrand * 10
+			'You see that sell condoms <<tovpay>> rubles'
+
+			if money >= tovpay:
+				act 'Buy':
+					cls
+					minut += 15
+					prezik += 5
+					money -= tovpay
+					gt $curloc
+				end
+			end
+		elseif rinevtip = 3:
+			tovpayrand = rand(5, 10)
+			tovpay = tovpayrand * 100
+			'You see that sell lip balm for <<tovpay>> rubles'
+
+			if money >= tovpay:
+				act 'Buy':
+					cls
+					minut += 15
+					lipbalm += 20
+					money -= tovpay
+					gt $curloc
+				end
+			end
+		elseif rinevtip = 4:
+			tovpayrand = rand(1, 5)
+			tovpay = tovpayrand * 1000
+			'You see that sell for handbag <<tovpay>> rubles'
+
+			if bag = 0:
+				if money >= tovpay:
+					act 'buy':
+						cls
+						minut += 15
+						bag = 1
+						money -= tovpay
+						gt $curloc
+					end
+				end
+			elseif bag > 0:
+				'Hmm, you already have a bag, why do you need another.'
+			end
+		elseif rinevtip = 5:
+			if pornmarkonce = 0:pornmarkonce = 1
+			'Strolling on the market you accidentally wander into the far corner where they sell porn.'
+
+			act 'come_Up':gt 'Gpornmark'
+		elseif rinevtip = 6:
+			'Suddenly you hail "Hey devyushka, want tangerine skyushat?"'
+
+			act 'Look':gt 'arturRinok', 'start'
 		end
 
 		act 'Move on':gt $curloc
@@ -131,8 +113,18 @@ if hour >= 12 and hour <= 18:
 		act 'Go to the area with porn':gt 'Gpornmark'
 	end
 
-	if arturKnow > 0:
-		act 'Go to Arthur':gt 'arturRinok'
+	if arturKnow = 1 and arturQW = 0:
+		act 'Go to Arthur':gt 'arturRinok', 'start'
+	elseif arturQW = 1 and (week = 6 or week = 7):
+		if hour = 12 or hour = 13:
+			act 'Go to Arthur':gt 'arturRinok', 'work_1'
+		end
+	elseif arturQW = 2:
+		if hour = 16 and minut >= 0 and minut <= 30:
+			act 'Go to Arthur':gt 'arturRinok', 'work_2'
+		elseif hour < 16:
+			act 'Wait Arthur':hour = 16 & gt 'Grinok'
+		end
 	end
 
 	act 'Go to the book tray':
@@ -171,6 +163,9 @@ if hour >= 12 and hour <= 18:
 	end
 else
 	'In the market there is no one.'
+	if arturQW = 1 and (week = 6 or week = 7) and hour < 12:
+		act 'Wait Arthur':hour = 12 & gt 'Grinok'
+	end
 end
 
 --- Grinok ---------------------------------

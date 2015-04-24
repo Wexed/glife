@@ -25,13 +25,13 @@ if hour >= 16 and hour <= 22 and AlbFather = 2 and AlbZaDay + 30 < daystart and 
 	gt 'AlbStarsEnd'
 end
 
-if StoryLine > 0 and hour < 5 and motherWorry = 0:
+if StoryLine > 0 and hour < 5 and motherWorry = 0 and SchoolAtestat = 0 and age < 18:
 	motherWorry = 1
 end
 
 if NosovRevenge = 2 and daynosovrevenge + 1 >= daystart:
 	cls
-	gs'stat'
+	gs 'stat'
 	'<center><b><font color="maroon"><<$npcName[1]>> <<$npcSurName[1]>></font></b></center>'
 	'<center><img src="images/qwest/alter/npc/1.jpg" ></center>'
 	'Near the house "Well slut. If you do not want that to video became public, Now let''s go and talk to me."'
@@ -84,7 +84,7 @@ if hour >= 8 and hour <= 22:'A kiosk selling <a href="exec:dynamic $kiosksig">ci
 
 '<a href="exec:gt ''zaprF'', ''start''">Gas Station</a>'
 
-'This district <a href="exec:gt ''gdk''">House of Culture.</a>'
+'<a href="exec:gt ''gdk''">House of Culture.</a>'
 
 if SchoolBlock = 0:'Local <a href="exec:gt ''gschool''">school</a>'
 if hour >= 7 and hour <= 18:'The <a href="exec:gt ''etoexhib'', ''pos20''">Vocational School</a>'
@@ -135,9 +135,9 @@ if StoryLine = 1 and hour >= 8 and hour < 23:
 				sosedknow = 1
 				sosedday = day
 				gs 'stat'
-				'Suddenly "<<$name>>." You turn around and see a neighbor Uncle Misha, he looks at your face with surprise "It''s that on your face?" You blush and hesitate, Stra hand to wipe off the face of sperm. he grins "Well, all clear." and goes on about his business.'
+				'Suddenly someone call out to you "<<$name>>." You turn around and see a neighbor Uncle Misha, he looks at your face with surprise "It''s that on your face?" You blush and hesitate, Stra hand to wipe off the face of sperm. he grins "Well, all clear." and goes on about his business.'
 
-				act 'further':gt curloc
+				act 'further':gt $curloc
 
 				exit
 			elseif sosedknow > 0:

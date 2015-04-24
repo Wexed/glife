@@ -1087,7 +1087,7 @@ $din_gboy_go_to_boyhome = {
 gs 'stat'
 '<center><b><font color="maroon"><<$nameBoyfrend[numnpc]>></font></b></center>'
 !!'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
-'<<$nameBoyfrend[numnpc]>> your guy.'
+'<<$nameBoyfrend[numnpc]>> your boyfriend.'
 
 if otnBoyFrend[numnpc] < 20:'You have a bad attitude.'
 if otnBoyFrend[numnpc] >= 20 and otnBoyFrend[numnpc] < 40:'You tensions.'
@@ -1100,7 +1100,7 @@ if otnBoyFrend[numnpc] >= 80:'You have a great relationship.'
 
 if hour < 20:
 	if otnBoyFrend[numnpc] < 80:
-		'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
+		'<<$nameBoyfrend[numnpc]>> offered to take you home.'
 		act 'Go home':gt 'gorodok'
 	elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
 		gdeystboyrand = rand(0, 1)
@@ -1110,7 +1110,7 @@ if hour < 20:
 			dynamic $din_gboy_go_to_boyhome
 			act 'And refuse to go home':otnBoyFrend[numnpc] -= 10 & gt 'gorodok'
 		elseif gdeystboyrand = 1:
-			'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
+			'<<$nameBoyfrend[numnpc]>> offered to take you home.'
 			act 'Go home':gt 'gorodok'
 		end
 	elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] > 0:
@@ -1120,7 +1120,7 @@ if hour < 20:
 	end
 elseif hour >= 20 and hour < 23:
 	if otnBoyFrend[numnpc] < 80:
-		'<<$nameBoyfrend[numnpc]>> offered to accompany you home.'
+		'<<$nameBoyfrend[numnpc]>> offered to take you home.'
 		act 'Go home':gt 'gorodok'
 	elseif otnBoyFrend[numnpc] >= 80 and gnpcSex[numnpc] = 0:
 		tipgbrand = rand(0, 1)

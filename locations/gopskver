@@ -127,13 +127,14 @@ if kotovLoveQW > 0:
 			salo += 1
 			energy += 10
 			gs 'stat'
+			'<center><img src="images/pic/ParkBeer.jpg"></center>'
 			'You poured a beer and you began to drink with the guys.'
 
 			act 'further':gt $curloc
 		end
 
 		if alko > 2:
-			'Witek offers go to his house, well.'
+			'Witek offers go to his house, well, or continue to thump.'
 
 			act 'Go to Vit''ka.':
 				cls
@@ -246,6 +247,7 @@ else
 					salo += 1
 					energy += 10
 					gs 'stat'
+					'<center><img src="images/pic/ParkBeer.jpg"></center>'
 					'You poured a beer and you began to drink with the guys.'
 
 					act 'further':gt $curloc
@@ -265,6 +267,7 @@ else
 						energy += 10
 						dom += 1
 						gs 'stat'
+						'<center><img src="images/pic/ParkBeer.jpg"></center>'
 						'You poured a beer and you began to drink with the guys.'
 
 						act 'further':gt $curloc

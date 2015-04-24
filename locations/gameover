@@ -37,8 +37,16 @@ if $ARGS[0] = 'endscreen':
 	cls
 	cla
 
-	*nl & *nl & *nl & *nl & *nl & *nl & *nl & *nl & *nl & *nl & *nl & *nl
-	'<center><h1>END</h1></center>'
+	if over = 8:
+		*nl & *nl
+		'<center><h1>end</h1></center>'
+		'<center><h1>Open-ended - heroin whore!</h1></center>'
+		*nl & *nl
+		'<center><img src="images/qwest/sosed/crackwhore8.jpg"></center>'
+	else
+		*nl & *nl & *nl & *nl & *nl & *nl & *nl & *nl & *nl & *nl
+		'<center><h1>end</h1></center>'
+	end
 
 	act 'Main menu':gt 'start'
 	act 'Upload preservation':opengame
