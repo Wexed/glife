@@ -54,16 +54,14 @@ if crouch = 1:
 			'Opponent flipped onto his back did not hold you to spend dvavaya.'
 
 			act '...':gt 'fight3'
-			end
-
 		elseif enrand = 2:
 			''
 		end
 	end
 else
- enrand = rand(0, 1)
-	if enrand = 0:$text = '<<$nameE>> tries to throw'
+	enrand = rand(0, 1)
 
+	if enrand = 0:$text = '<<$nameE>> tries to throw'
 	if enrand = 1:$text = '<<$nameE>> trying to make an attempt to hold'
 
 	'You are standing on all fours in front of rival.'

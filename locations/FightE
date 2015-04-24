@@ -77,13 +77,13 @@ if stoper < 3:
 			exit
 		end
 	else
-		'Referee blows a whistle and throws you. End of round.'
+		'The referee blows a whistle and throws you. End of round.'
 
 		act 'up':gt 'RoundEnd'
 	end
 elseif stoper >= 3:
 	point += 1
-	'Referee blows a whistle and throws you. Time rivals to attack happened. You get one point.'
+	'The referee blows a whistle and throws you. Time rivals to attack happened. You get one point.'
 
 	act 'up':gt 'RoundStop'
 end

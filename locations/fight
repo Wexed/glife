@@ -146,8 +146,8 @@ if $ARGS[0] = 'start':
 					gt 'strelba'
 				end
 			elseif bulletIn <= 0:
-				if bullet = 0:'Ammunition for the gun ran.'
-
+				if bullet = 0:
+					'Ammunition for the gun ran.'
 				elseif bullet > 0:
 					'<<bullet>> ammunition for the pistol'
 
@@ -210,7 +210,7 @@ if $ARGS[0] = 'start':
 				end
 			elseif mbulletIn <= 0:
 				if mbullet = 0:
-					'Chucks for machine ran.'
+					'Cartridges for machine run out.'
 				elseif mbullet > 0:
 					'<<mbullet>> ammunition for the machine'
 
@@ -220,7 +220,7 @@ if $ARGS[0] = 'start':
 						if mbullet < 7:
 							mbulletIn = mbullet
 							mbullet = 0
-							'You loaded any remaining ammunition into the machine.'
+							'You loaded all the remaining cartridges in the machine.'
 						end
 
 						if mbullet >= 30:
@@ -238,7 +238,7 @@ if $ARGS[0] = 'start':
 		if tragun > 0:
 			!!Travmatik
 			if tbulletIn > 0:
-				'travmatik loaded'
+				'Travmatik charged'
 
 				act 'Shoot a gun':
 					cla
@@ -250,7 +250,7 @@ if $ARGS[0] = 'start':
 				end
 			elseif tbulletIn <= 0:
 				if tbullet = 0:
-					'Cartridges ran travmatika.'
+					'Cartridges for travmatika ended.'
 				elseif tbullet > 0:
 					'<<tbullet>> cartridges for travmatika'
 
@@ -260,7 +260,7 @@ if $ARGS[0] = 'start':
 						if tbullet >= 1:
 							tbullet -= 1
 							tbulletIn = 1
-							'You loaded the cartridge in travmatik.'
+							'You loaded a cartridge in travmatik.'
 						end
 
 						act 'Further':gt 'fight', 'sta'

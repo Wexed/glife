@@ -43,13 +43,13 @@ if stoper < 3:
 			dynamic $resultUderDin
 		end
 	else
-		'Referee blows a whistle and throws you. End of round.'
+		'The referee blows a whistle and throws you. End of round.'
 
 		act 'up':gt 'RoundEnd'
 	end
 elseif stoper >= 3:
 	pointE += 1
-	'Referee blows a whistle and throws you. Your time to attack happened. <<$nameE>> receives one point.'
+	'The referee blows a whistle and throws you. Your time to attack happened. <<$nameE>> receives one point.'
 
 	act 'Get up':gt 'RoundStop'
 end
