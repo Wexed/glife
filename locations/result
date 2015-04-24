@@ -22,10 +22,8 @@ end
 
 if kh ! 0:
 	if kh = 1:
-		'1'
-
 		if x_rul = 1 or x_rul = 3 or x_rul = 5 or x_rul = 7 or x_rul = 9 or x_rul = 12 or x_rul = 14 or x_rul = 16 or x_rul = 18 or x_rul = 19 or x_rul = 21 or x_rul = 23 or x_rul = 25 or x_rul = 27 or x_rul = 30 or x_rul = 32 or x_rul = 34 or x_rul = 36:
-			act 'You have won <<2*st_1>>':
+			act 'You have won <<2 * st_1>>':
 				money += 2 * st_1
 				gt 'amrul'
 			end
@@ -34,7 +32,7 @@ if kh ! 0:
 		end
 	elseif kh = 2:
 		if x_rul = 2 or x_rul = 4 or x_rul = 6 or x_rul = 8 or x_rul = 10 or x_rul = 11 or x_rul = 13 or x_rul = 15 or x_rul = 17 or x_rul = 20 or x_rul = 22 or x_rul = 24 or x_rul = 26 or x_rul = 28 or x_rul = 29 or x_rul = 31 or x_rul = 33 or x_rul = 35:
-			act 'You have won <<2*st_1>>':
+			act 'You have won <<2 * st_1>>':
 				money += 2 * st_1
 				gt 'amrul'
 			end
@@ -47,7 +45,7 @@ elseif chnch ! 0:
 		chnch = 0
 
 		if x_rul mod 2 = 0:
-			act 'You have won <<2*st_1>>':
+			act 'You have won <<2 * st_1>>':
 				money += 2 * st_1
 				gt 'amrul'
 			end
@@ -60,7 +58,7 @@ elseif chnch ! 0:
 		chnch = 0
 
 		if x_rul mod 2 = 1:
-			act 'You have won <<2*st_1>>':
+			act 'You have won <<2 * st_1>>':
 				money += 2 * st_1
 				gt 'amrul'
 			end
@@ -72,7 +70,7 @@ elseif mb ! 0:
 	if mb = 1:
 		mb = 0
 		if x_rul > 0 and x_rul < 19:
-			act 'You have won <<2*st_1>>':
+			act 'You have won <<2 * st_1>>':
 				money += 2 * st_1
 				gt 'amrul'
 			end
@@ -84,7 +82,7 @@ elseif mb ! 0:
 	if mb = 2:
 		mb = 0
 		if x_rul > 18 and x_rul < 37:
-			act 'You have won <<2*st_1>>':
+			act 'You have won <<2 * st_1>>':
 				money += 2 * st_1
 				gt 'amrul'
 			end
@@ -97,7 +95,7 @@ elseif du ! 0:
 		du = 0
 
 		if x_rul > 0 and x_rul < 13:
-			act 'You have won <<3*st_1>>':
+			act 'You have won <<3 * st_1>>':
 				money += 3 * st_1
 				gt 'amrul'
 			end
@@ -110,7 +108,7 @@ elseif du ! 0:
 		du = 0
 
 		if x_rul > 12 and x_rul < 25:
-			act 'You have won <<3*st_1>>':
+			act 'You have won <<3 * st_1>>':
 				money += 3 * st_1
 				gt 'amrul'
 			end
@@ -122,7 +120,7 @@ elseif du ! 0:
 	if du = 3:
 		du = 0
 		if x_rul > 24 and x_rul < 37:
-			act 'You have won <<3*st_1>>':
+			act 'You have won <<3 * st_1>>':
 				money += 3 * st_1
 				gt 'amrul'
 			end
@@ -130,9 +128,9 @@ elseif du ! 0:
 			act 'You lost':gt 'amrul'
 		end
 	end
-elseif a_row ! 0:
-	if a_row = 1:
-		a_row = 0
+elseif series ! 0:
+	if series = 1:
+		series = 0
 
 		if x_rul = 1 or x_rul = 4 or x_rul = 7 or x_rul = 10 or x_rul = 13 or x_rul = 16 or x_rul = 19 or x_rul = 22 or x_rul = 25 or x_rul = 28 or x_rul = 31 or x_rul = 34:
 			act 'You have won <<3*st_1>>':
@@ -142,8 +140,8 @@ elseif a_row ! 0:
 		else
 			act 'You lost':gt 'amrul'
 		end
-	elseif a_row = 2:
-		a_row = 0
+	elseif series = 2:
+		series = 0
 
 		if x_rul = 2 or x_rul = 3 or x_rul = 8 or x_rul = 11 or x_rul = 14 or x_rul = 17 or x_rul = 20 or x_rul = 23 or x_rul = 26 or x_rul = 29 or x_rul = 32 or x_rul = 35:
 			act 'You have won <<3*st_1>>':
@@ -153,10 +151,8 @@ elseif a_row ! 0:
 		else
 			act 'You lost':gt 'amrul'
 		end
-	end
-
-	if a_row = 3:
-		a_row = 0
+	elseif series = 3:
+		series = 0
 
 		if x_rul = 3 or x_rul = 4 or x_rul = 9 or x_rul = 12 or x_rul = 15 or x_rul = 18 or x_rul = 21 or x_rul = 24 or x_rul = 27 or x_rul = 30 or x_rul = 33 or x_rul = 36:
 			act 'You have won <<3*st_1>>':
@@ -171,7 +167,7 @@ end
 
 elseif chi ! 100:
 	if chi = x_rul:
-		act 'You have won <<37*st_1>>':
+		act 'You have won <<37 * st_1>>':
 			money += 37 * st_1
 			gt 'amrul'
 		end

@@ -116,7 +116,7 @@ if $ARGS[0] = 'start':
 			cla
 			*clr
 			rinart = rinvesh * 1000
-			rinmon = rinmon - rinart
+			rinmon -= rinart
 			money += rinmon
 			gs 'stat'
 			'You gave Arthur <<rinart>> per sold <<rinvesh>> things.'
@@ -155,7 +155,7 @@ if $ARGS[0] = 'start':
 
 				act 'Refuse':
 					cla
-					'You become otnekivatsya Arthur told you. Wai, why insult, you have here the tray is not cleaned, dust, dirt, I''m fine and I can take you.'
+					'You have become excuses Arthur told you. Wai, why insult, you have here the tray is not cleaned, dust, dirt, I''m fine and I can take you.'
 
 					act 'Okay, let''s go have a drink':gt 'RynokHoz', 'the_beginning'
 
@@ -391,7 +391,7 @@ if $ARGS[0] = 'start':
 
 					act 'Further':gt 'rinwork', 'start'
 				end
-			else
+			elseif rintakrand = 5:
 				$rintak = 'Arthur, Abdul Hassan and neighing loudly and talk about something not on the plain language.'
 
 				act 'View on Caucasians':
@@ -706,8 +706,9 @@ if $ARGS[0] = 'start':
 				if water >= 20:
 					'Coffee you no longer climbs.'
 				elseif water < 20:
-					'You gladly drank a mug of coffee.'
 					water += 20
+					'You gladly drank a mug of coffee.'
+
 				end
 
 				act 'Throw leftovers':gt 'rinwork', 'start'
