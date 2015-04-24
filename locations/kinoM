@@ -13,19 +13,19 @@ if $ARGS[0] = 'start':
 	gs 'anekdot'
 	'While you wait for the show <<$boyA>> anecdote tells you "<<$anek>>."'
 
-	act 'Laugh.':
+	act 'Laugh':
 		cla
 		SUB += 1
 		bfa += 1
 		xgt 'kinoM', 'a'
 	end
 
-	act 'Smile.':
+	act 'Smile':
 		cla
 		xgt 'kinoM', 'a'
 	end
 
-	act 'Not funny.':
+	act 'Not funny':
 		cla
 		DOM += 1
 		bfa -= 3
@@ -41,14 +41,14 @@ if $ARGS[0] = 'a':
 	'Finally started the session. And you <<$boyA>> entered the room, found their seats and sat on comfortable chairs. <<$boyA>> put a big jar of popcorn on your knees and you have become his turn.'
 
 	if harakBoyA < 2:
-		act 'Hug his arm.':
+		act 'Hug his arm':
 			cla
 			bfa += 1
 			'Have you hugged his hand and he kissed you, and then sat out the entire session holding hands.'
 			xgt 'kinoM', 'b'
 		end
 	elseif harakBoyA = 2:
-		act 'Hug his arm.':
+		act 'Hug his arm':
 			cla
 			bfa += 1
 			'Have you hugged his hand and he kissed you, then his hand began obschupyvat your knee <<$boyA>> whispered to you, baby, I want you.'
@@ -60,7 +60,7 @@ if $ARGS[0] = 'a':
 		end
 	end
 
-	act 'Watch a movie.':
+	act 'Watch a movie':
 		cla
 		bfa -= 1
 		intel += 1
@@ -90,7 +90,7 @@ if $ARGS[0] = 'sex':
 
 	'Soon <<$boyA>> could not resist and finished in a condom.'
 
-	act 'Next.':gt 'kinoM', 'b'
+	act 'Next':gt 'kinoM', 'b'
 end
 
 if $ARGS[0] = 'bj':
@@ -106,7 +106,7 @@ if $ARGS[0] = 'bj':
 	'You got his dick out of his pants and masturbate him to begin with, then leaned over him and around his lips slowly began to suck it <<$dick>> centimeter member viewers in the dark hall.'
 	'Soon <<$boyA>> could not resist and finished in your mouth, you have tried to swallow all the sperm because spit still nowhere.'
 
-	act 'Next.':gt 'kinoM', 'b'
+	act 'Next':gt 'kinoM', 'b'
 end
 
 if $ARGS[0] = 'hj':
@@ -120,7 +120,7 @@ if $ARGS[0] = 'hj':
 	'You got his dick out of his pants and began to fondle his hands in a dark room viewers.'
 	'Soon, your skillful movements guy finished you in her hands, you wiped them on his handkerchief.'
 
-	act 'Next.':gt 'kinoM', 'b'
+	act 'Next':gt 'kinoM', 'b'
 end
 
 if $ARGS[0] = 'b':
@@ -128,7 +128,7 @@ if $ARGS[0] = 'b':
 	fat += 1
 	'Session ended, the lights came on in the theater and the people went to the exit <<$boyA>> proposed to hold you.'
 
-	act 'Home.':gt 'sexm', 'start'
+	act 'Home':gt 'sexm', 'start'
 end
 
 --- kinoM ---------------------------------

@@ -129,9 +129,9 @@ if $ARGS[0] = 'mansion1':
 		end
 	end
 
-	if tobiQW = 3 and manna < 1000:'Kakuzu tells you "You have almost no energy, you need to rest."'
-
-	if tobiQW = 3 and manna >= 1000:
+	if tobiQW = 3 and manna < 1000:
+		'Kakuzu tells you "You have almost no energy, you need to rest."'
+	elseif tobiQW = 3 and manna >= 1000:
 		if stihia = 1:
 			if magik >= 6 and spellfire1 = 0:
 				act 'Learn Flame (1:00)':

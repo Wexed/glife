@@ -1,19 +1,4 @@
 # korrPar
-act 'Go to your room':gt 'bedrPar'
-act 'Go to my parents'' room':gt 'bedrPar2'
-act 'Going to the living room':gt 'sitrPar'
-act 'Go to the bathroom':gt 'vanrPar'
-act 'Go to the kitchen':gt 'kuhrPar'
-
-act '<b>Go to the street</b>':
-	if nude = 0:
-		gt 'gorodok'
-	else
-		msg 'You are not dressed'
-		gt $curloc
-	end
-end
-
 $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
@@ -29,6 +14,26 @@ gs 'stat'
 fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
+if hour ! 18 and blockBedrPar = 1:blockBedrPar = 0
+
+if blockBedrPar = 0 and sisboyday + 1 = day and hour = 18 and (sisboyQW = 3 or sisboyQW = 5 or sisboyQW = 7):
+	act 'Go to your room':gt'sisterQW','sisboyQW_bedroom'
+elseif blockBedrPar = 0:
+	act 'Go to your room':gt'bedrPar'
+end
+act 'Go to my parents'' room':gt 'bedrPar2'
+act 'Going to the living room':gt 'sitrPar'
+act 'Go to the bathroom':gt 'vanrPar'
+act 'Go to the kitchen':gt 'kuhrPar'
+
+act '<b>Go to the street</b>':
+	if nude = 0:
+		gt 'gorodok'
+	else
+		msg 'You are not dressed'
+		gt $curloc
+	end
+end
 '<center><b><font color="maroon">corridor</font></b></center>'
 '<center><img src="images/qwest/alter/korrPar.jpg"></center>'
 'On the wall near the front door hanging <a href="exec:gt ''mirror'', ''start''">mirror</a>.'

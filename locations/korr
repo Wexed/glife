@@ -65,7 +65,7 @@ if ring = 1:'<b><font color="red">The phone is ringing</font></b>'
 if suhbelo > 0:'Drying on the clothesline are <<suhbelo>> laundry items.'
 if umbrella > 0:'An umbrella hangs on a hook.'
 if palto > 0:'Hanging on the hook <<$palto>>.'
-if sobaka = 1:'<br>Your dog, <a href="exec:gt ''soba'', ''start''"><<$namesob>></a>, is lying on the floor near the entrance.'
+if sobaka = 1:'Your dog, <a href="exec:gt ''soba'', ''start''"><<$namesob>></a>, is lying on the floor near the entrance.'
 if krolik = 1:'Resting on the floor your rabbit <a href="exec:gt ''krol'', ''start''"><<$namekrol>></a>.'
 if popugai = 1:'In the cage sits your parrot <a href="exec:gt ''popu'', ''start''"><<$namepopu>></a>.'
 
@@ -89,6 +89,9 @@ elseif bfA > 1 and boydayA ! day and hour >= 5 and hour < 20 and vnesh >= vneshB
 	ring = 1
 	ringA = 1
 	'<b><font color="red">The phone is ringing</font></b>'
+elseif bfA > 1 and boydayA ! day and hour >= 5 and hour < 20 and vnesh < vneshBoyA:
+	bfA = 0
+	'<b><font color="red">Your guy does not call you, apparently he threw you.</font></b>'
 end
 
 if bfB > 1 and boydayB ! day and hour >= 5 and hour < 20 and vnesh >= vneshBoyB:
@@ -244,7 +247,7 @@ if IvanPodstavaQW = 3 and hour >= 9 and hour <= 20:
 end
 
 if IvanPodstavaDay ! day and IvanPodstavaQW = 1 and hour >= 8 and hour <= 20:
-	'<b><font color="red">, the doorbell rang</font></b>'
+	'<b><font color="red">The doorbell rings</font></b>'
 
 	act 'Come to the door':
 		cls

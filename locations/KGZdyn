@@ -752,8 +752,8 @@ $KGZvihod16 = {
 							KGZgruzovik = 1
 							KGZplace = 10
 							KGZplaceA = 9
-							'Your truck surrounded by a ring of the dead tried to clear the road of traffic jams. But you get stuck. There is no choice, already dead truck stuck like flies.'
 							KGZdead = rand(KGZday * 50, KGZday * 100)
+							'Your truck surrounded by a ring of the dead tried to clear the road of traffic jams. But you get stuck. There is no choice, already dead truck stuck like flies.'
 
 							act 'Srazhatsya':KGZdist = rand(5, 10) & gt 'KGZfight'
 						end
@@ -763,8 +763,9 @@ $KGZvihod16 = {
 							KGZgruzovik = 2
 							KGZplace = 10
 							KGZplaceA = 11
-							'Your truck surrounded by a ring of the dead tried to clear the road of traffic jams. But you get stuck. There is no choice, already dead truck stuck like flies.'
 							KGZdead = rand(KGZday * 50, KGZday * 100)
+							'Your truck surrounded by a ring of the dead tried to clear the road of traffic jams. But you get stuck. There is no choice, already dead truck stuck like flies.'
+
 							act 'Srazhatsya':KGZdist = rand(5, 10) & gt 'KGZfight'
 						end
 
@@ -773,8 +774,8 @@ $KGZvihod16 = {
 							KGZgruzovik = 3
 							KGZplace = 10
 							KGZplaceA = 7
-							'Your truck surrounded by a ring of the dead went on slippery roadside. When the truck crushed corpses wheel very punt and you still make a mistake, the truck slid into a ditch and overturned. There is no choice, already dead truck stuck like flies.'
 							KGZdead = rand(KGZday * 50, KGZday * 100)
+							'Your truck surrounded by a ring of the dead went on slippery roadside. When the truck crushed corpses wheel very punt and you still make a mistake, the truck slid into a ditch and overturned. There is no choice, already dead truck stuck like flies.'
 
 							act 'Srazhatsya':KGZdist = rand(5, 10) & gt 'KGZfight'
 						end
@@ -784,8 +785,8 @@ $KGZvihod16 = {
 							KGZgruzovik = 4
 							KGZplace = 10
 							KGZplaceA = 13
-							'Your truck surrounded by a ring of the dead went on slippery roadside. When the truck crushed corpses wheel very punt and you still make a mistake, the truck slid into a ditch and overturned. There is no choice, already dead truck stuck like flies.'
 							KGZdead = rand(KGZday * 50, KGZday * 100)
+							'Your truck surrounded by a ring of the dead went on slippery roadside. When the truck crushed corpses wheel very punt and you still make a mistake, the truck slid into a ditch and overturned. There is no choice, already dead truck stuck like flies.'
 
 							act 'Srazhatsya':KGZdist = rand(5, 10) & gt 'KGZfight'
 						end
@@ -828,13 +829,14 @@ $KGZvihod100 = {
 		KGZlocrand = rand(0, 100)
 
 		if KGZlocrand >= 90 and KGZlok = 0:
-			'You have found a solid house with iron bars on the windows'
 			KGZlok = 1
+			'You have found a solid house with iron bars on the windows'
 
 			act 'Enter the house':KGZplace = 101 & gt $curloc
 		elseif KGZlocrand >= 80 and KGZlok2 = 0:
 			KGZlok2 = 1
 			'You find a large supermarket where when it sold a variety of goods'
+
 			act 'Sign in to supermarket':KGZplace = 102 & gt $curloc
 		end
 
@@ -964,9 +966,10 @@ $KGZfizatk = {
 		end
 	elseif KGZweapon = 1:
 		KGZuspeh = rand(0, 100)
-			if KGZuspeh <= 50:
-				KGZdead -= 1
-				'You were very good ghouls club head and he fell stopping moves.'
+
+		if KGZuspeh <= 50:
+			KGZdead -= 1
+			'You were very good ghouls club head and he fell stopping moves.'
 		else
 			'Ghoul irreversible no attention to your clubbing.'
 		end
@@ -982,9 +985,9 @@ $KGZfizatk = {
 	end
 
 	if KGZdead > 0:
-		'<<KGZdead>> dead clutching at you, trying to tear.'
 		kgzuron = rand(KGZdead * 2, KGZdead * 5)
 		KGZHP -= kgzuron
+		'<<KGZdead>> dead clutching at you, trying to tear.'
 		'<b><font color="red">you have caused damage <<kgzuron>> units.</font></b>'
 	end
 }
