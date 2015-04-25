@@ -67,8 +67,8 @@ if workDolgDay <= 0 and workDolg > 0:
 	cls
 	gs 'stat'
 	gs 'time'
-	'<center><img src="images/sauna/bug.jpg"></center>'
 	workDisk = 0
+	'<center><img src="images/sauna/bug.jpg"></center>'
 	'Near the entrance to the house you see two large guys, you notice that both are carrying guns. They notice you and walk up to you. "It''s time for you to pay back your depts."'
 
 	if money >= workDolg:
@@ -92,13 +92,13 @@ if workDolgDay <= 0 and workDolg > 0:
 
 			exit
 		else
-			'You tell them that you don''t have enough money. They smack you, push you into your apartment and search everything. They find you stash and plunder it.'
 			money += stolmoney + karta
 			stolmoney = 0
 			karta = 0
 			workDolg -= money
 			money = 0
 			workDolg += 10000
+			'You tell them that you don''t have enough money. They smack you, push you into your apartment and search everything. They find you stash and plunder it.'
 			'Brutes took everything that you have been told. In short, you have a duty to <<workDolg>>. Debt grows by 10 pieces, and since you can not pay off, then we will help you. Brutes dragged you into the car and thrown into the back seat. Car started and you went somewhere.'
 
 			act 'Out of the car':

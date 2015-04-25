@@ -503,7 +503,9 @@ if $ARGS[0] = 'anal':
 			' In anus blazing fire and waves of pleasure swept body, you were moaning and impale themselves on the ass dick.'
 		end
 
-		act 'Hold up doors.':analpluginbonus = 0 & gt 'sexm', 'endsex'
+		gs 'stat'
+
+		act 'Hold up doors.':gt 'sexm', 'endsex'
 	else
 		if lubri = 0:
 			lubonus = 2
@@ -536,7 +538,7 @@ if $ARGS[0] = 'anal':
 		elseif anus + lubonus + 2 >= dickA:
 			'You started to moan rhythmically in time with the movements member inside you.'
 		end
-	
+
 		'Finally <<$boyA>> grabbed you tight ass and drove for your aching ass dick up to the finished balls inside you.'
 
 		if klismaday ! day:
@@ -603,7 +605,7 @@ if $ARGS[0] = 'dog':
 	gs 'brosok'
 	gs 'stat'
 	'<center><img src="images/picV/dog1.jpg"></center>'
-	'<<$boyA>> poctavil you cancer and spread your bread before you enter.'
+	'<<$boyA>> made you cancer and spread your bread before you enter.'
 	gs 'orgazm', 'start'
 
 	act 'Hold up doors.':gt 'sexm', 'endsex'
@@ -649,7 +651,7 @@ if $ARGS[0] = 'doggy':
 	gs 'brosok'
 	gs 'stat'
 	'<center><img src="images/picV/dog.jpg"></center>'
-	'<<$boyA>> poctavil you cancer and spread your bread before you enter.'
+	'<<$boyA>> made you cancer and spread your bread before you enter.'
 	gs 'orgazm', 'start'
 
 	act 'Correct clothes and leave.':
@@ -660,6 +662,7 @@ end
 
 if $ARGS[0] = 'blow':
 	minut += 20
+	gs 'stat'
 	'You squatted and <<$boyA>> pulled out his penis.'
 
 	act 'Take by mouth':
@@ -756,9 +759,9 @@ end
 if $ARGS[0] = 'gangrape':
 	'You began struggling and one of the guys hit you with his hand on the cheek, saying, "Shut up slut Spreads and thighs! And that''ll blow fuck up now!"'
 
-	act 'Obey.':gt 'sexm', 'gangbang'
+	act 'Obey':gt 'sexm', 'gangbang'
 
-	act 'Start a fight.':
+	act 'Start a fight':
 		cla
 		$nameV = 'Drunken mug'
 		!!stats

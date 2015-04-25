@@ -1470,15 +1470,16 @@ if $ARGS[0] = 'teh':
 		end
 	}
 
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-	'<center><b><font color="maroon">Department of household appliances</font></b></center>'
-	'<center><img src="images/etogame/shop5.jpg"></center>'
+	cla
+	*clr
+	minut += 1
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">Department of household appliances</font></b></center>'
+	'<center><img src="images/etogame/shop5.jpg"></center>'
 
 	if TV = 0:'<a href="exec:dynamic $buytv">A small TV with a picture tube (5,000 rubles)</a>'
 	if TV ! 2:'<a href="exec:dynamic $buytv2">Large plasma TV (35,000 rubles)</a>'

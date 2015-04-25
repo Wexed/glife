@@ -26,9 +26,9 @@ end
 if SiSgdk = 1:
 	!!Outside the club with friends
 	if sister < 40:
-		'"What do you want? Wali come on!" Anya told you chuckle under her friends.'
+		'"What do you want? Wali come on!" Anja told you chuckle under her friends.'
 	else
-		'Anya sits now devchenok guys drinking beer and "Hey little sister." Anya said you smile. "Want pivasom?"'
+		'Anja sits now devchenok guys drinking beer and "Hey little sister." Anya said you smile. "Want pivasom?"'
 
 		act 'Drink beer':
 			cls
@@ -40,9 +40,9 @@ if SiSgdk = 1:
 			energy += 10
 			gs 'stat'
 
-			if AniaFrends >= 1:gt 'annafrends'
-
-			if AniaFrends = 0:
+			if AniaFrends >= 1:
+				gt 'annafrends'
+			elseif AniaFrends = 0:
 				AniaFrends = 1
 				'You met friends they. They are all former classmates. Little Lena and moving constantly confuses Ira High athletic guy whose name is Rex and all the red-haired skinny guy by the name Roma. After dating you sat drinking beer and chatted with friends Anja.'
 			end
@@ -56,46 +56,219 @@ if SiSgdk = 1:
 	exit
 end
 
-act 'Ask about this father':
+act 'Chat':
 	cls
-	minut += 5
+	minut += 15
+	sister += 2
 	gs 'stat'
-	'<center><b><font color="maroon">Anja</font></b></center>'
-	'<center><img src="images/qwest/alter/sister.jpg"></center>'
-	'You asked about Anja real father. She grinned. "<<$name>>. I was 4 years old when they broke up. I do not remember him and never vidila. Nurse does not like to talk details. But like with you as our real father left somewhere in another city."'
 
-	act 'Move away':SiSonWork = 0 & SiSgdk = 0 & gt $loc, $metka
+	'<center><b><font color = maroon>Anja</font></b></center>'
+	'<center><img src="images/qwest/alter/sister/sister.jpg"></center>'
+
+	sistalkrand = rand (0, 18)
+	if sistalkrand = 0:'You started talking with Anja, It tells you about the boys she met, about parties, about cosmetics.'
+	if sistalkrand = 1:'You`re talking and gossiping with your sister, She tells you about the new dress, which was brought to the store today.'
+	if sistalkrand = 2:'You`re talking and gossiping with your sister, you discuss with movie stars, and share your fantasies with any of them want to have sex.'
+	if sistalkrand = 3:'Anja talks about sports clubs in the House of Culture, and recognizes that sport is good for the figure, but she was too lazy to go there.'
+	if sistalkrand = 4:'Anja says that one of her friends flew from a guy who does not have time to get out of it. And he says, that we should be smarter, and recognizes that you buy at the pharmacy birth control.'
+	if sistalkrand = 5:'You`re talking and gossiping with your sister, she says, that it is possible to rent an apartment in the city and live and work there, but her while in town are satisfied.'
+	if sistalkrand = 6:'Anja tells you not to get drunk at parties and at the disco, Once she made that mistake and still regrets.'
+	if sistalkrand = 7:'Anja tells how she once winter came out without a coat and a bad cold.'
+	if sistalkrand = 8:'You`re talking and gossiping with your sister, you and discuss the latest trends in fashion.'
+	if sistalkrand = 9:'Anja recognized, before that she was fond of diets, but they deteriorated skin and went pryshi, yes match start, now she cracks for three and only become more beautiful.'
+	if sistalkrand = 10:'You`re talking and gossiping with your sister, She says that she used to go to the dance, but she quickly tired.'
+	if sistalkrand = 11:'You`re talking and gossiping with your sister, she advises you where-some earn.'
+	if sistalkrand = 12:'Anja shares with you a secret and tells, that her friend filmed naked in a photo studio, Easy Money, but can be seen on the Internet.'
+	if sistalkrand = 13:'You`re talking and gossiping with your sister, it tells you, if wander through the market, there you can find a lot of interesting and cheap.'
+	if sistalkrand = 14:'Anja tells a horror story about how a nice girl not washed or shaved legs, then began to so many terrible, its per kilometer all obbegat, and advises you to take care of body.'
+	if sistalkrand = 15:'You`re talking and gossiping with your sister, she says, that her ex-boyfriend was a weirdo. As-told me: "I love you as much, how to shit in the sea". The sea together we walked no more.'
+	if sistalkrand = 16:'Sister complains about you: "Always bothered you,looks like my chin during sex. And now rejoice, If you see a porn actress folds on the neck or chin."'
+	if sistalkrand = 17:'Anja asks you, do not you think, that her left eyebrow much sexual rights?'
+	if sistalkrand = 18:'Anja recognizes you, that they are with friends at work sometimes make intimate pictures on the camera, and put them back in the window.'
+
+	act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt'sister'
 end
+if trfatherQW = 0 and sister >= 30:
+	act 'Ask about the real father':
+		cls
+		minut += 5
+		gs 'stat'
+		'<center><b><font color="maroon">Anja</font></b></center>'
+		'<center><img src="images/qwest/alter/sister.jpg"></center>'
+		'You asked about Anja real father. She grinned. "<<$name>>. I was 4 years old when they broke up. I do not remember him and never vidila. Nurse does not like to talk details. But like with you as our real father left somewhere in another city."'
 
-act 'Ask about universal':
-	cls
-	minut += 5
-	gs 'stat'
-	'<center><b><font color="maroon">Anja</font></b></center>'
-	'<center><img src="images/qwest/alter/sister.jpg"></center>'
-	'You asked about Anja University. She grinned. "I almost came, gleaning points. Who scored on guys need it the whole university. What I will give this piece of paper?"'
-
-	act 'Move away':SiSonWork = 0 & SiSgdk = 0 & gt $loc, $metka
+		act 'Move away':SiSonWork = 0 & SiSgdk = 0 & gt $loc, $metka
+	end
 end
+if sisboyQW = 0 and sister >= 40:
+	act 'Ask about her boyfriend':
+		cls
+		minut += 5
+		sister += 2
+		sisboyQW = 1
+		gs 'stat'
+		'<center><b><font color="maroon">Anja</font></b></center>'
+		'<center><img src="images/qwest/alter/sister.jpg"></center>'
+		'You asked Anja about her boyfriend. She smiled.'
+		'-Well, I have a boyfriend. Although nothing serious. He told me one more.'
+		'-Awesome, Now when I found out about it, you simply must introduce me to him.'
+		'-Good sister, we hang out in the evening at the house of culture, Come, there and introduce you to them.'
 
-act 'Ask about her boyfriend':
-	cls
-	minut += 5
-	gs 'stat'
-	'<center><b><font color="maroon">Anja</font></b></center>'
-	'<center><img src="images/qwest/alter/sister.jpg"></center>'
-	'You asked about her boyfriend Anja. She smiled. "Well, I have a boyfriend. Though nothing serious. He told me more than a friend."'
+		act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt 'sister'
+	end
+elseif (sisboyQW = 2 or sisboyQW = 4 or sisboyQW = 6) and sister >= 40:
+	act 'Talk about Roma':
+		cls
+		minut += 5
+		sisboyrand = rand(1, 10)
+		gs'stat'
 
-	act 'Move away':SiSonWork = 0 & SiSgdk = 0 & gt $loc, $metka
+		if (sisboyrand < 8 and sisboyday ! day) or sisboyday = day:
+			minut += 10
+			sister += 2
+			talkrand = rand(0, 10)
+			gs 'stat'
+
+			'<center><b><font color = maroon>Anja</font></b></center>'
+			'<center><img src="images/qwest/alter/sisterQW/sisboyQW_05.jpg"></center>'
+			if talkrand = 0:'You ask my sister about Romka, it long and happy says what he is good, responsive and courageous.'
+			if talkrand = 1:'Anja says, before she met with some Romka-then mymra, and after leaving it for a long time he nazvanivala, from-Because of this, Anja much cursing and jealous.'
+			if talkrand = 2:'One day she and Romka were in a movie, and noticed on the last rows girl sucking guy, and that Romka asked her how-something to do the same.'
+			if talkrand = 3:'Anja swears, Roma that drinks too much beer, does not bestow gifts, and she pays little time.'
+			if talkrand = 4:'Anja says, Romka that offered her a threesome with another girl, to which she greatly offended and week did not communicate with him.'
+			if talkrand = 5:'Anja embarrassed complains you, Roma that sometimes comes to her work and drags her into the back room.'
+			if talkrand = 6:'Anja in detail with enthusiasm tells you about the great virtue Romka, and if it is not, they would have long since parted.'
+			if talkrand = 7:'Anja shares with you a secret, that her favorite position "horsewoman", and Romke likes to have her cancer.'
+			if talkrand = 8:'You`re talking to my sister on a very frank things, and she says shyly, that she does not like to swallow cum, but it Romka strong winds, and she was ready for him to swallow.'
+			if talkrand = 9:'Anja long talks about their company, about Romkinyh friends, and asks you if you wanted to whom any of them meet.'
+			if talkrand = 10:'Anja says, what you liked Roma, and asks if he likes you.'
+
+			act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt'sister'
+		elseif sisboyrand >= 8 and sisboyQW = 2 and sisboyday ! day:
+			'<center><b><font color = maroon>Anja</font></b></center>'
+			'<center><img src="images/qwest/alter/sisterQW/sisboyQW_01.jpg"></center>'
+			'Anja long and hesitantly looking at you, and still decided to ask'
+			'-<<$nickname>> could you tomorrow after 18.00 go for a walk for an hour, we are here with a little Romka want... sit, Well, you know what I mean.'
+			'Blushing a little sister looks at you with pleading eyes.'
+
+			act 'Of course':
+				cls
+				minut += 5
+				sister += 10
+				sisThank = 1
+				sisboyQW = 3
+				sisboyday = day
+				gs 'stat'
+
+				'<center><img src="images/qwest/alter/sisterQW/sisboyQW_03.jpg"></center>'
+				'-Certainly sister, i understand, I will walk until late, just do not make noise loud, You do not want to destroy the psyche of our brother, hee-hee.'
+				'-You`re my best", your sister with a cry of joy hugs you.'
+
+				act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt 'sister'
+			end
+
+			act 'No':
+				cls
+				sister -= 10
+				minut += 5
+				sisboyday = day
+				gs 'stat'
+
+				'<center><img src="images/qwest/alter/sisterQW/sisboyQW_04.jpg"></center>'
+				'-Sorry Anja, I need to study in the evenings'
+				'-Oh well, Anja turned angrily away, and buried in his book.'
+
+				act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt 'sister'
+			end
+		elseif sisboyrand >= 8 and (sisboyQW = 4 or sisboyQW = 6) and sisboyday ! day:
+			'<center><b><font color = maroon>Anja</font></b></center>'
+			'<center><img src="images/qwest/alter/sisterQW/sisboyQW_09.jpg"></center>'
+			'-The last time you have with Roma so much was saved, thank you very much.'
+			'-You`re welcome, I am always very happy to help the beloved sister and see you happy.'
+			'-We are here again today want to sit by me, you do not mind a walk for an hour?'
+
+			act 'Of course':
+				cls
+				minut += 5
+				sister += 10
+				sisThank = 1
+				if sisboyQW = 4:sisboyQW = 5
+				if sisboyQW = 6:sisboyQW = 7
+				sisboyday = day
+				gs 'stat'
+
+				'<center><img src="images/qwest/alter/sisterQW/sisboyQW_03.jpg"></center>'
+				'-Certainly sister, i understand, I will walk until late, just do not make noise loud, You do not want to destroy the psyche of our brother, hee-hee.'
+				'-You`re my best", your sister with a cry of joy hugs you.'
+
+				act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt 'sister'
+			end
+			act 'No':
+				cls
+				sister -= 10
+				minut += 5
+				sisboyday = day
+				gs'stat'
+
+				'<center><img src="images/qwest/alter/sisterQW/sisboyQW_04.jpg"></center>'
+				'-Sorry Anja, I need to study in the evenings'
+				'-Oh well, Anja turned angrily away, and buried in his book.'
+
+				act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt 'sister'
+			end
+		end
+	end
+end
+if sisuniQW = 0:
+	act 'Ask about the university':
+		cls
+		minut += 5
+		sisuniQW = 1
+		gs 'stat'
+		'<center><b><font color="maroon">Anja</font></b></center>'
+		'<center><img src="images/qwest/alter/sister.jpg"></center>'
+		'You asked about Anja University. She grinned. "I almost came, gleaning points. Who scored on guys need it the whole university. What I will give this piece of paper?"'
+
+		act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt 'sister'
+	end
 end
 
 act 'Move away':SiSonWork = 0 & SiSgdk = 0 & gt $loc, $metka
+if sisboyQW = 10:
+	cls
+	if sisboyQW = 10:sisboyQW = 11
+	gs 'stat'
 
-if SisterKnowMastr > 0 and sisterQW = 0:
+	'<center><img src="images/qwest/alter/sisterQW/sisboyQW_24.jpg"></center>'
+	'Both of you are confused after what happened the night, and do not look into each other`s eyes, all-Anja still speaks with you:'
+	'-<<$nickname>>, smiling tells you, Well, you`re a fool, I thought guys like me, but it turns out your pen much more pleasant male.'
+	'You blushing look at Anja, - Forgive me, I seriously started up, and did not control myself, I do not know what came over me...'
+	'-Well, I do not mind, so you sometimes so loses control..., smiled slyly, you smiled back at her...'
+
+	act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt 'sister'
+end
+
+if ((sisboyday + 1 = day and hour > 18) or sisboyday ! day) and sisThank = 1:
+	cls
+	if sisboyQW = 7:sisboyQW = 6
+	sisboyday = 0
+	sisThank = 0
+	gs 'stat'
+
+	'<center><b><font color = maroon>Anja</font></b></center>'
+	'<center><img src="images/qwest/alter/sisterQW/sisboyQW_00.jpg"></center>'
+	'Merry Anja suddenly runs up to you and wraps around your neck.'
+	'-Sister, i adore you, we spent a lovely evening with Romka.'
+	'-Yes, I am glad for you, Get off of me already, strangle, Anja and happy to let you go, a kiss on the cheek'
+
+	act 'Finish':SiSonWork = 0 & SiSgdk = 0 & gt 'sister'
+end
+
+if SisterKnowMastr = 1 and sisterQW = 0:
 	cls
 	sisterQW = 1
 	gs 'stat'
-	'<center><b><font color="maroon">Anya</font></b></center>'
+	'<center><b><font color="maroon">Anja</font></b></center>'
 	'<center><img src="images/qwest/alter/sister.jpg"></center>'
 	'Anja looks at you and laughs "Well <<$nickname>>, and you give! I come into the room, and she''d play. Man himself Establishments, whether that."'
 

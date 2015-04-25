@@ -38,7 +38,7 @@ if $ARGS[0] = 'start':
 				hcol = 1
 
 				if salonrand = 0 and masha = 0:gt 'salon','0'
-				gs'stat'	
+				gs'stat'
 				'Do you dye your hair.'
 				act 'Leave':gt 'salon', 'start'
 			end
@@ -92,8 +92,9 @@ if $ARGS[0] = 'start':
 
 		if salonrand = 0 and masha = 0:gt 'salon', '0'
 
-		'You lengthen lashes.'
 		gs 'stat'
+		'You lengthen lashes.'
+
 		act 'Leave':gt 'salon', 'start'
 	}
 
@@ -418,7 +419,7 @@ if $ARGS[0] = 'start':
 				'<center><img src="images/body/tatupb3.jpg"></center>'
 
 				act 'Leave':gt 'salon', 'start'
-	
+
 				act 'A tattoo':
 					cla
 					tatupb = 3
@@ -585,7 +586,7 @@ if $ARGS[0] = 'start':
 				cla
 				*clr
 				'<center><img src="images/body/tatleg2.jpg"></center>'
-		
+
 				act 'Leave':gt 'salon', 'start'
 
 				act 'A tattoo':
@@ -776,6 +777,8 @@ if $ARGS[0] = 'start':
 	if money < 5000:'Complete Hair Removal - 5,000 rubles'
 	if money >= 5000:'<a href="exec:dynamic $ozdormas">Wellness massage (accelerates fat, rejuvenates the body), 5,000 rubles</a>'
 	if money < 5000:'Wellness massage (accelerates fat, rejuvenates the body), 5,000 rubles'
+	if money >= 6000 and browper=0:'<a href="exec: dynamic $permtatbro">Permanent tattoo eyebrows - 6,000 rubles</a>'
+	if money < 6000 and browper = 1:'Permanent tattoo eyebrows - 6,000 rubles'
 	if money >= 8000:'<a href="exec:dynamic $tatyadd">Tatuiroka or piercing - 8,000 rubles</a>'
 	if money < 8000:'Tatuiroka or piercing - 8,000 rubles'
 	if money >= 15000:'<a href="exec:dynamic $uhodkosha">Skin Care - 15,000 rubles</a>'
@@ -785,15 +788,13 @@ if $ARGS[0] = 'start':
 	if money >= 25000 and lip < 4:'<a href="exec:dynamic $addgub">Lip Augmentation - 25,000 rubles</a>'
 	if money < 25000 or lip >= 4:'Lip augmentation - 25,000 rubles'
 	if money >= 30000:'<a href="exec:dynamic $addglaza">Increase the eye - 30,000 rubles</a>'
-	if money < 30000:'Increased eye - 30, 000 rubles'
+	if money < 30000:'Increased eye - 30,000 rubles'
 	if money >= 150000:'<a href="exec:dynamic $addtitki">Breast Augmentation - 150,000 rubles</a>'
 	if money < 150000:'Breast Augmentation - 150,000 rubles'
 	if money >= 150000:'<a href="exec:dynamic $delshir">Suction fat - 150,000 rubles</a>'
-	if money < 150000:'Suction of fat - 150, 000 rubles'
+	if money < 150000:'Suction of fat - 150,000 rubles'
 	if money >= 250000:'<a href="exec:dynamic $omoloshenie">Procedures for rejuvenation - 250,000 rubles</a>'
-	if money < 250000:'Rejuvenation - 250, 000 rubles'
-	if money >= 6000 and browper=0:'<a href="exec: dynamic $permtatbro">Permanent tattoo eyebrows - 6,000 rubles</a>'
-	if money < 6000 and browper = 1:'Permanent tattoo eyebrows - 6,000 rubles'
+	if money < 250000:'Rejuvenation - 250,000 rubles'
 
 	if hour < 8 or hour > 20:
 		cls

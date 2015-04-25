@@ -6,12 +6,12 @@ bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
 '<center><b><font color="maroon">Sauna</font></b></center>'
 '<center><img src="images/etogame/sauna1.jpg"></center>'
-'Stay for an hour (2,000 rubles)'
+'Stay for an hour - 2,000 rubles'
 
 act 'Leave':gt 'sauna'
 
 if money >= 2000 and saunaday ! day:
-	act 'Stay':
+	act 'Stay (2,000 rubles)':
 		cls
 		money = money - 2000
 		minut += 60

@@ -37,7 +37,7 @@ $d_dima_kiss = {
 			'<center><img src="images/qwest/alter/ev2/pett2.jpg"></center>'
 			'Member of Dimka poked you in the pussy and you decide to help him apart their buns that would facilitate access.'
 
-		 	act 'wait':
+			act 'wait':
 				cls
 				minut += 5
 				$boy = 'Dima'
@@ -70,7 +70,7 @@ $d_dima_kiss = {
 					dynamic $sexstart4
 					dynamic $sexcum
 
-				 	act 'Suck':
+					act 'Suck':
 						cls
 						minut += 5
 						cumface += 1
@@ -111,9 +111,7 @@ $d_otvali_nosov = {
 					'You pushed yourself from Dimka "hey! Beat_It! Are you, ohrenel something?"'
 
 					act 'Leave':gt 'gorodok'
-				end
-
-				if horny >= 90:
+				elseif horny >= 90:
 					'You want to push Dimka, but nice fire broke out in the lower abdomen with fury, your pussy just begging to fill it than ever.'
 					dynamic $d_dima_kiss
 				end
@@ -128,6 +126,7 @@ $d_otvali_nosov = {
 	end
 }
 
+alkoblock = 1
 gs 'stat'
 
 if snyqw = 0:
@@ -155,10 +154,9 @@ if snyqw = 0:
 end
 
 if snyqw = 1:
-	'You began to help clear the table other girls. In boys .'
+	'You began to help clear the table other girls. In boys, meanwhile, prevailed what that recovery.'
 
 	if GorSlut >= 3:
-		!total Shmarev
 		'To you came Shul''ga and loudly slamming ass said "Hey lowered, do you even come here Nahuas? There are normal people tusyat, and your place on the Parasha, with the cheek by a dick."'
 
 		act 'to_be_silent':
@@ -177,8 +175,6 @@ if snyqw = 1:
 
 				act 'Go to the toilet':snyqw = 2 & minut += 15 & gt $curloc
 			end
-
-			act 'Help clear the table':gt $curloc
 		end
 	elseif GorSlut <= 2:
 		'Suddenly you called one of the boys "<<$name>>, let''s go to our."'

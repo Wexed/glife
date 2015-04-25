@@ -1,11 +1,132 @@
 # sistersleep
-if lesbian > 0:horny += 10 & siswath += 1
+$sisboyQW_prycaress = {
+	cls
+	minut += 5
+	horny += 10
+	gs 'stat'
 
+	'<center><img src="images/qwest/alter/sisterQW/sisboyQW_17.jpg"></center>'
+	'From unexpected turbulent feelings you lay back, were placed legs wide and relaxed.'
+	'You fondle himself slowly and gently, enjoying every second, looking for sexy ass Anja.'
+	'You kept thinking, continue to touch sleeping sister, touch her tender Picea, but what-then you stopped.'
+	'-Maybe next time I will resolutely, you think to yourself, continuing to tease her clit.'
+
+	act 'Move away':gt 'bedrPar'
+}
+if lesbian > 0:horny += 10 & siswath += 1
+randompic = rand(0, 7)
 gs 'stat'
 '<center><b><font color="maroon">Anja</font></b></center>'
-'<center><img src="images/qwest/alter/Ev/sleep.jpg"></center>'
+'<center><img src="images/qwest/alter/Ev/sleep<<randompic>>.jpg"></center>'
 'on the bed, Anja is putting the ass'
 
-act 'Move away':gt $loc, $metka
+if $loc = 'bedrPar':
+	if sisboyQW = 8 and horny >= 50:
+		act 'Touch':
+			cls
+			minut += 1
+			horny += 5
+
+			if sisboyQW = 8:sisboyQW = 9
+
+			sisprynight = day
+			gs 'stat'
+
+			'<center><img src="images/qwest/alter/sisterQW/sisboyQW_16.jpg"></center>'
+			'You dare to touch the sleeping sister of elastic ass.'
+			'Touching his hand so soft buttocks, You like electric shock, and rushed inside different weird feeling.'
+			'You suddenly wanted to have sex with sister.'
+
+			act 'Fondle himself':dynamic $sisboyQW_prycaress
+			act 'Move away':gt 'bedrPar'
+		end
+	elseif sisboyQW = 9 and horny >= 50 and sisprynight ! day:
+		act 'Touch':
+			cls
+			minut += 1
+			horny += 5
+			sisprynight = day
+			gs 'stat'
+
+			'<center><img src="images/qwest/alter/sisterQW/sisboyQW_18.jpg"></center>'
+			'You can not help feeling, tested last time by touching the bare ass sister his hand.'
+			'Convinced, that Anja fast asleep, again you dare touch her soft ass.'
+			'But this time you decide to caress buns a little longer, enjoying the moment.'
+			'Sexy body you sister is not a joke and has brought you decide...'
+
+			act 'Proceed':
+				cls
+				minut += 2
+				horny += 5
+				gs 'stat'
+
+				'<center><img src="images/qwest/alter/sisterQW/sisboyQW_19.jpg"></center>'
+				'You have continued to explore the hot body sisters, Your frisky fingers accidentally slipped between the legs of Anja.'
+				'Sensations of heat and moisture have greatly impressed, pussy oozing with desire, -Apparently her dream a fascinating dream, or is it all I?'
+				'You think to yourself, continuing to gently and slowly caress her sister, second hands dangling under his shorts'
+				'But suddenly stirred Anja, -hell..hell, she wakes up... I do not have time to remove his hand...'
+
+				act 'Kiss Anja':
+					cls
+					minut += 1
+					horny += 5
+					gs 'stat'
+
+					'<center><img src="images/qwest/alter/sisterQW/sisboyQW_21.jpg"></center>'
+					'Are you brave enough girl, and while half asleep Anja not come round, you`re close to her face and sensually kissed her on the lips.'
+					'Strongly excited Anja did not think to resist, her soft body easily give you the pressure.'
+					'Your palm again slipped under her panties sister, but now your affection were confident...'
+
+					act 'Caress sister':
+						cls
+						minut += 1
+						if horny < 95:horny += 5
+						if sisboyQW = 9:sisboyQW = 10
+						gs 'stat'
+
+						'<center><img src="images/qwest/alter/sisterQW/sisboyQW_22.jpg"></center>'
+						'Anja suddenly huddled in gentle convulsions and roughly finished. She gratefully looked at you and smiled'
+						'-Well, you give a little sister...'
+						'And nuzzled into his pillow and went to sleep. You really excited and even a little upset unsatisfied, but was satisfied...'
+
+						act 'Move away':gt 'bedrPar'
+					end
+				end
+
+				act 'Remove hand':
+					cls
+					minut += 1
+					gs'stat'
+
+					'<center><img src="images/qwest/alter/sisterQW/sisboyQW_20.jpg"></center>'
+					'Sleepy and crumpled Anja wakes up and sees you on her bed, and as you hastily removed his hand and hide behind.'
+					'-What...what`s going on here? <<$nickname>>? Are you crazy? What are you doing here?'
+					'You sit in front of my sister on her bed, excited, caught off guard, and not knowing what to do...'
+
+					act 'Move away':
+						cls
+						minut += 1
+						sister = 0
+						!if sisboyQW = 9:sisboyQW = 5
+						gs 'stat'
+
+						'<center><img src="images/qwest/alter/sisterQW/sisboyQW_23.jpg"></center>'
+						'You have decided to do nothing and quietly move away from the sleepy sister, She can forget all the morning'
+						'As soon you have made a step from her bed she called you:'
+						'-I do not want to know what you did to me while I was asleep, but do not come near me.'
+
+						act 'Move away':gt 'bedrPar'
+					end
+				end
+			end
+
+			act 'Fondle himself':dynamic $sisboyQW_prycaress
+			act 'Move away':gt 'bedrPar'
+		end
+	end
+	act 'Move away':gt 'bedrPar'
+else
+	act 'Move away':gt $loc, $metka
+end
 
 --- sistersleep ---------------------------------

@@ -454,17 +454,16 @@ end
 
 if $ARGS[0] = 'podval':
 	cla
+	clr
 	*clr
 	minut += 5
-	'<center><b><font color="maroon">Basement with cubicles for watching movies</font></b></center>'
-	'<center><img src="images/etogame/gloryholeBooths1.jpg"></center>'
-	''
-	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
-	!!gloryholeBooths
+	'<center><b><font color="maroon">Basement with cubicles for watching movies</font></b></center>'
+	'<center><img src="images/etogame/gloryholeBooths1.jpg"></center>'
+	''
 
 	act 'Go to a free booth':gt 'sexshop', 'pip'
 	act 'Go to the toilet':gt 'sexshop', 'toi'
@@ -476,16 +475,16 @@ end
 
 if $ARGS[0] = 'toi':
 	cla
+	clr
 	*clr
 	minut += 5
-	'<center><b><font color="maroon">WC</font></b></center>'
-	'<center><img src="images/etogame/PublicToilet.jpg"></center>'
-	''
-	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">WC</font></b></center>'
+	'<center><img src="images/etogame/PublicToilet.jpg"></center>'
+	''
 
 	if tanga = 1:
 		act 'Remove Underwear':
@@ -505,7 +504,7 @@ if $ARGS[0] = 'toi':
 		act 'Move away from the mirror':
 			cla
 			gt 'sexshop', 'toi'
-		end	
+		end
 	end
 
 	!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
@@ -515,11 +514,18 @@ if $ARGS[0] = 'toi':
 		act 'Quick wash (0:15)':
 			cla
 			*clr
-			$showerdin
+
+			if clrbelo > 0 and tanga = 1:
+				clrbelo -= 1
+				dirtbelo += 1
+			elseif clrbelo = 0 and tanga = 1:
+				tanga = 0
+				dirtbelo += 1
+			end
+
+			dynamic $showerdin
 			sweat -= 1
 			minut += 15
-			clrbelo -= 1
-			dirtbelo += 1
 			'<center><img src="images/pics/wash5.jpg"></center>'
 			'You gave yourself a catlick, thus removing any traces of cum.'
 
@@ -588,7 +594,7 @@ if $ARGS[0] = 'pip':
 
 	'<center><b><font color="maroon">Booth movies</font></b></center>'
 	'<center><img src="images/etogame/ghBooths.jpg"></center>'
-	'Small clowith a TV on the wall, bill acceptor and two holes in the walls at waist level.'
+	'Small cabinet with a TV on the wall, terminal and two holes in the walls at waist level.'
 
 	if ghnow > 0:'You served <<ghnow>> cocks.'
 
