@@ -1,17 +1,15 @@
 # zoomagazine
 if $ARGS[0] = 'start':
 	cla
-	*clr
-	set minut += 5
-	'<center><b><font color="maroon">Pet Shop</font></b></center>'
-	*nl
-	'<center><img src="images/zoo/1277894267_dsc_0544.jpg" width = 650 height = 450 ></center>'
-	*nl
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><b><font color="maroon">Pet Shop</font></b></center>'
+	'<center><img src="images/zoo/1277894267_dsc_0544.jpg" width = 650 height = 450 ></center>'
 	'Dog - 3000 rubles'
 	'Rabbit - 2000 rubles'
 	'Parrot - 3000 rubles'
@@ -31,12 +29,12 @@ if $ARGS[0] = 'start':
 				act 'Buy a dog':
 					cla
 					*clr
-					set minut += 10
-					set sobaka += 1
-					set money -= 3000
+					minut += 10
+					sobaka += 1
+					money -= 3000
 					'<center><img src="images/zoo/dog1.jpg" width = 600 height = 500 ></center>'
 					'<center><b>You bought a dog-Dalmatians.</center></b>'
-					$namesob = input ('I''ll call a dog ...')
+					$namesob = input ('I''ll call the dog ...')
 
 					act 'Move away from the counter':gt 'zoomagazine', 'start'
 				end
@@ -50,12 +48,12 @@ if $ARGS[0] = 'start':
 		act 'Buy a rabbit (2000 rubles)':
 			cla
 			*clr
+			minut += 10
+			krolik += 1
+			money -= 2000
 			'<center><img src="images/zoo/x_2b1d398b.jpg"></center>'
 			'<center><b>You bought a rabbit.</center></b>'
 			$namekrol = input ("I call rabbit ...")
-			set minut += 10
-			set krolik += 1
-			set money -= 2000
 
 			act 'Move away from the counter':gt 'zoomagazine', 'start'
 		end
@@ -65,12 +63,12 @@ if $ARGS[0] = 'start':
 		act 'Buy a parrot (3000 rubles)':
 			cla
 			*clr
+			minut += 10
+			popugai += 1
+			money -= 3000
 			'<center><img src="images/zoo/parrot1.jpg"></center>'
 			'<center><b>You bought a parrot.</center></b>'
 			$namepopu = input ("I call parrot ...")
-			set minut += 10
-			set popugai += 1
-			set money -= 3000
 
 			act 'Move away from the counter':gt 'zoomagazine', 'start'
 		end
