@@ -1,20 +1,8 @@
 # telefon
 $objmobilaraz = {
 	cla
-	set telotvet = rand(0, 10)
+	telotvet = rand(0, 10)
 	'"Yes, I''m listening, " said a voice from the speaker.'
-
-	act 'Invite to movie':
-		cla
-		'YOU:Come with me to the movies?'
-
-		if telotvet > 3:
-			'<<$telsob>>:Well let an hour in the theater.'
-			act 'Go':gt 'kinosvid'
-		end
-
-		if telotvet <= 3:dynamic $telotkaz
-	end
 
 	if month > 5 and temper > 20 and osadki < painweather:
 		act 'Invite a walk in the park':
@@ -25,9 +13,21 @@ $objmobilaraz = {
 				'<<$telsob>>:Well let an hour in the park.'
 
 				act 'Go':gt 'parksvid'
+			elseif telotvet <= 3:
+				dynamic $telotkaz
 			end
+		end
+	end
 
-			if telotvet <= 3:dynamic $telotkaz
+	act 'Invite to movie':
+		cla
+		'YOU:Come with me to the movies?'
+
+		if telotvet > 3:
+			'<<$telsob>>:Well let an hour in the theater.'
+			act 'Go':gt 'kinosvid'
+		elseif telotvet <= 3:
+			dynamic $telotkaz
 		end
 	end
 
@@ -39,22 +39,22 @@ $objmobilaraz = {
 			'<<$telsob>>:Well let an hour of billiards.'
 
 			act 'Go':gt 'billsvid'
+		elseif telotvet <= 3:
+			dynamic $telotkaz
 		end
-
-		if telotvet <= 3:dynamic $telotkaz
 	end
 
 	act 'Invite a cafe':
 		cla
-		'YOU:Let´s go to the cafe.'
+		'YOU:Let''s go to the cafe.'
 
 		if telotvet > 3:
 			'<<$telsob>>:Well let an hour in the cafe.'
 
 			act 'Go':gt 'kafesvid'
+		elseif telotvet <= 3:
+			dynamic $telotkaz
 		end
-
-		if telotvet <= 3:dynamic $telotkaz
 	end
 
 	act 'Invite casino':
@@ -65,9 +65,9 @@ $objmobilaraz = {
 			'<<$telsob>>:Well let an hour at the casino.'
 
 			act 'Go':gt 'kazinosvid'
+		elseif telotvet <= 3:
+			dynamic $telotkaz
 		end
-
-		if telotvet <= 3:dynamic $telotkaz
 	end
 
 	act 'Hangup':gt 'telefon', 'fin'
@@ -75,8 +75,23 @@ $objmobilaraz = {
 
 $objmobilarazboy = {
 	cla
-	set telotvet = rand(0, 10)
-	'"Yes, I´m listening, " said a voice from the speaker.'
+	telotvet = rand(0, 10)
+	'"Yes, I''m listening, " said a voice from the speaker.'
+
+	if month > 5 and temper > 20 and osadki < painweather:
+		act 'Invite a walk in the park':
+			cla
+			'YOU:Let''s go take a walk in the park.'
+
+			if telotvet > 3:
+				'<<$telsob>>:Well let an hour in the park.'
+
+				act 'Go':gt 'svidboy', 'parksvid'
+			elseif telotvet <= 3:
+				dynamic $telotkazboy
+			end
+		end
+	end
 
 	act 'Invite to movie':
 		cla
@@ -86,50 +101,35 @@ $objmobilarazboy = {
 			'<<$telsob>>:Well let an hour in the theater.'
 
 			act 'Go':gt 'svidboy', 'kinosvid'
-		end
-
-		if telotvet <= 3:dynamic $telotkaz
-	end
-
-	if month > 5 and temper > 20 and osadki < painweather:
-		act 'Invite a walk in the park':
-			cla
-			'YOU:Let´s go take a walk in the park.'
-
-			if telotvet > 3:
-				'<<$telsob>>:Well let an hour in the park.'
-
-				act 'Go':gt 'svidboy', 'parksvid'
-			end
-
-			if telotvet <= 3:dynamic $telotkazboy
+		elseif telotvet <= 3:
+			dynamic $telotkaz
 		end
 	end
 
 	act 'Invite billiards':
 		cla
-		'YOU:Let´s go to the pool.'
+		'YOU:Let''s go to the pool.'
 
 		if telotvet > 3:
 			'<<$telsob>>:Well let an hour of billiards.'
 
 			act 'Go':gt 'svidboy', 'billsvid'
+		elseif telotvet <= 3:
+			dynamic $telotkazboy
 		end
-
-		if telotvet <= 3:dynamic $telotkazboy
 	end
 
 	act 'Invite a cafe':
 		cla
-		'YOU:Let´s go to the cafe.'
+		'YOU:Let''s go to the cafe.'
 
 		if telotvet > 3:
 			'<<$telsob>>:Well let an hour in the cafe.'
 
 			act 'Go':gt 'svidboy', 'kafesvid'
+		elseif telotvet <= 3:
+			dynamic $telotkazboy
 		end
-
-		if telotvet <= 3:dynamic $telotkazboy
 	end
 
 	act 'Hangup':gt 'telefon', 'fin'
@@ -137,7 +137,7 @@ $objmobilarazboy = {
 
 $telotkaz = {
 	cla
-	set minut += 10
+	minut += 10
 	'<<$telsob>>:Sorry I''m busy, come next time.'
 
 	act 'Hangup':gt 'telefon', 'fin'
@@ -145,7 +145,7 @@ $telotkaz = {
 
 $telotkazboy = {
 	cla
-	set minut += 10
+	minut += 10
 	'<<$boyA>>:Sorry, I''m busy right now, come next time.'
 
 	act 'Hangup':gt 'telefon', 'fin'
@@ -176,7 +176,6 @@ if $ARGS[0] = 'start':
 		'<center><b><a href="exec:gt ''telefon'', ''7''">7</a> <a href="exec:gt ''telefon'', ''8''">8</a> <a href="exec:gt ''telefon'', ''9''">9</a></b></center>'
 		'<center><b><a href="exec:gt ''telefon'', ''Reset''">Clear</a> <a href="exec:gt ''telefon'', ''0''">0</a> <a href="exec:gt ''telefon'', ''Call''">Call</a></b></center>'
 
-		!!etogame
 		if hour >= 8 and hour <= 19:
 			if telalla > 0:
 				act 'Call Alla':
@@ -240,18 +239,18 @@ end
 if $ARGS[0] = 'boyA':
 	cla
 	clr
+	ring = 0
+	ringA = 0
+	boydayA = day
 	gs 'stat'
-	set ring = 0
-	set ringA = 0
-	set boydayA = day
-	set svetrand = rand(0, 5)
+	svetrand = rand(0, 5)
 
-	if svetrand = 0:set $sveta = 'cutie'
-	if svetrand = 1:set $sveta = 'honey'
-	if svetrand = 2:set $sveta = 'sweetie'
-	if svetrand = 3:set $sveta = 'baby'
-	if svetrand = 4:set $sveta = 'hot stuff'
-	if svetrand = 5:set $sveta = '<<$name>>'
+	if svetrand = 0:$$sveta = 'cutie'
+	if svetrand = 1:$sveta = 'honey'
+	if svetrand = 2:$sveta = 'sweetie'
+	if svetrand = 3:$sveta = 'baby'
+	if svetrand = 4:$sveta = 'hot stuff'
+	if svetrand = 5:$sveta = '<<$name>>'
 
 	'Hey <<$sveta>>, it''s me, <<$boyA>>. How''s it going?'
 
@@ -268,17 +267,17 @@ if $ARGS[0] = 'boyA':
 
 				if harakBoyA = 0:
 					if bfA >= 90:
+						love = 1
 						'(<<$boyA>>) - This is wonderful! We have to celebrate!'
-						set love = 1
 						'You started talking about living together. <<$boyA>> told you that he is not against it in principle, but first he wants you to meet his parents.'
-						'He warns you that his mother is very demanding and rigorous. <<$boyA>> says that he loves his mother and does not want to upset her. Therefore, you must look gorgeous, wear a dress from a boutique, have well-groomed and curled hair and makeup in moderation.'
+						'He warns you that his mother is very demanding and rigorous. <<$boyA>> says that he loves his mother and does not want to upher. Therefore, you must look gorgeous, wear a dress from a boutique, have well-groomed and curled hair and makeup in moderation.'
 						'When you are totally ready <<$boyA>> will take you to their parents.'
 
 						act 'Hang up.':gt 'telefon', 'fin'
 
 						act 'Meet tonight':
 							cla
-							set svidanieA = 1
+							svidanieA = 1
 							'(You) - How about this evening?'
 							'(<<$boyA>>) - Sounds great! When can I come to pick you up?'
 
@@ -295,45 +294,35 @@ if $ARGS[0] = 'boyA':
 								act 'Hang up.':gt 'telefon', 'fin'
 							end
 						end
-					end
-
-					if bfA < 90:
-						'(<<$boyA>>) - I''m not yet ready to become a dad. I''ll give you the money for an abortion. Go out and get rid of the child.'
+					elseif bfA < 90:
 						money += 20000
+						'(<<$boyA>>) - I''m not yet ready to become a dad. I''ll give you the money for an abortion. Go out and get rid of the child.'
 
 						act 'Hang up.':gt 'telefon', 'fin'
 					end
-				end
-
-				if harakBoyA = 1:
-					'(<<$boyA>>) - I''m not yet ready to become a dad. I''ll give you the money for an abortion. Go out and get rid of the child.'
+				elseif harakBoyA = 1:
 					money += 20000
+					'(<<$boyA>>) - I''m not yet ready to become a dad. I''ll give you the money for an abortion. Go out and get rid of the child.'
 
 					act 'Hang up.':gt 'telefon', 'fin'
-				end
-
-				if harakBoyA = 2:
-					'(<<$boyA>>) - What? Yes you ohuel! Somewhere tucked pussy and now dumped on me. Come on you dick.'
-					set bfA = 0
+				elseif harakBoyA = 2:
+					bfA = 0
 					pregtalk = 0
+					'(<<$boyA>>) - What? Yes you ohuel! Somewhere tucked pussy and now dumped on me. Come on you dick.'
 
 					act 'Hang up.':gt 'telefon', 'fin'
 				end
 			end
-		end
-
-		if pregtime > dayA and pregtime >= 7 and pregtalk = 0:
+		elseif pregtime > dayA and pregtime >= 7 and pregtalk = 0:
 			act 'Honey, you will soon become a dad.':
 				cla
+				bfA = 0
 				'(You) - Honey, I''m pregnant with your child.'
 				'(<<$boyA>>) - How the fuck dad? We meet with you less than you''re pregnant. Sprained whore who is here, and go to him. Everything. I can not call. Goodbye.'
-				set bfA = 0
 
 				act 'Hang up.':gt 'telefon', 'fin'
 			end
-		end
-
-		if week > 1 and week < 5 and workKafe = 1:
+		elseif week > 1 and week < 5 and workKafe = 1:
 			act 'Sorry, I''m working today.':
 				cla
 				'(You) - Oh, sorry, I''m working today.'
@@ -345,8 +334,8 @@ if $ARGS[0] = 'boyA':
 
 		act 'Tonight':
 			cla
-			set bfA += 1
-			set svidanieA = 1
+			bfA += 1
+			svidanieA = 1
 			meetday = daystart
 			'(You) - How about this evening?'
 			'(<<$boyA>>) - Sounds great! When can I come to pick you up?'
@@ -366,10 +355,10 @@ if $ARGS[0] = 'boyA':
 
 		act 'I''m busy today. Call tomorrow.':
 			cla
-			set bfA -= 1
+			bfA -= 1
 			'(You) - I''m busy today. Call tomorrow.'
 
-			if bfa <= 0:set bfa = 0 & '(<<$boyA>>) - damn, you''ve fucked me, come on dick.'
+			if bfa <= 0:bfa = 0 & '(<<$boyA>>) - damn, you''ve fucked me, come on dick.'
 			if bfa > 0:'(<<$boyA>>) -  Okay, I''ll call tomorrow.'
 
 			act 'Hang up.':gt 'telefon', 'fin'
@@ -378,7 +367,7 @@ if $ARGS[0] = 'boyA':
 
 	act 'Leave':
 		cla
-		set bfA = 0
+		bfA = 0
 		gt 'telefon', 'fin'
 	end
 end
@@ -386,23 +375,23 @@ end
 if $ARGS[0] = 'boyB':
 	cla
 	clr
+	ring = 0
+	ringB = 0
+	boydayB = day
 	gs 'stat'
-	set ring = 0
-	set ringB = 0
-	set boydayB = day
 	'<<$boyB>> offers a walk.'
 
 	act 'Leave':
 		cla
-		set bfB = 0
+		bfB = 0
 		gt 'telefon', 'fin'
 	end
 
 	act 'Call tomorrow':
 		cla
-		set bfB -= 1
+		bfB -= 1
 
-		if bfB <= 0:set bfB = 0 & '<<$boyB>> said he throws you.'
+		if bfB <= 0:bfB = 0 & '<<$boyB>> said he throws you.'
 		if bfB > 0:'<<$boyB>> angry and hung up.'
 
 		gt 'telefon', 'fin'
@@ -410,8 +399,8 @@ if $ARGS[0] = 'boyB':
 
 	act 'Tonight':
 		cla
-		set bfB += 1
-		set svidanieB = 1
+		bfB += 1
+		svidanieB = 1
 		'<<$boyB>> asked how much he come to your house.'
 
 		act 'Let 20 hours.':
@@ -426,23 +415,23 @@ end
 if $ARGS[0] = 'boyC':
 	cla
 	clr
+	ring = 0
+	ringC = 0
+	boydayC = day
 	gs 'stat'
-	set ring = 0
-	set ringC = 0
-	set boydayC = day
 	'<<$boyC>> offers a walk.'
 
 	act 'Leave':
 		cla
-		set bfC = 0
+		bfC = 0
 		gt 'telefon', 'fin'
 	end
 
 	act 'Call tomorrow':
 		cla
-		set bfC -= 1
+		bfC -= 1
 
-		if bfC <= 0:set bfC = 0 & '<<$boyC>> said he throws you.'
+		if bfC <= 0:bfC = 0 & '<<$boyC>> said he throws you.'
 		if bfC > 0:'<<$boyC>> angry and hung up.'
 
 		gt 'telefon', 'fin'
@@ -450,8 +439,8 @@ if $ARGS[0] = 'boyC':
 
 	act 'Tonight':
 		cla
-		set bfC += 1
-		set svidanieC = 1
+		bfC += 1
+		svidanieC = 1
 		'<<$boyC>> asked how much he come to your house.'
 
 		act 'Let 20 hours.':
@@ -486,12 +475,12 @@ if $ARGS[0] = '1':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 1 & set number = 6
-	if number = 4:set num2 = 1 & set number = 5
-	if number = 3:set num3 = 1 & set number = 4
-	if number = 2:set num4 = 1 & set number = 3
-	if number = 1:set num5 = 1 & set number = 2
-	if number = 0:set num6 = 1 & set number = 1
+	if number = 5:num1 = 1 & number = 6
+	if number = 4:num2 = 1 & number = 5
+	if number = 3:num3 = 1 & number = 4
+	if number = 2:num4 = 1 & number = 3
+	if number = 1:num5 = 1 & number = 2
+	if number = 0:num6 = 1 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -500,12 +489,12 @@ if $ARGS[0] = '2':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 2 & set number = 6
-	if number = 4:set num2 = 2 & set number = 5
-	if number = 3:set num3 = 2 & set number = 4
-	if number = 2:set num4 = 2 & set number = 3
-	if number = 1:set num5 = 2 & set number = 2
-	if number = 0:set num6 = 2 & set number = 1
+	if number = 5:num1 = 2 & number = 6
+	if number = 4:num2 = 2 & number = 5
+	if number = 3:num3 = 2 & number = 4
+	if number = 2:num4 = 2 & number = 3
+	if number = 1:num5 = 2 & number = 2
+	if number = 0:num6 = 2 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -514,12 +503,12 @@ if $ARGS[0] = '3':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 3 & set number = 6
-	if number = 4:set num2 = 3 & set number = 5
-	if number = 3:set num3 = 3 & set number = 4
-	if number = 2:set num4 = 3 & set number = 3
-	if number = 1:set num5 = 3 & set number = 2
-	if number = 0:set num6 = 3 & set number = 1
+	if number = 5:num1 = 3 & number = 6
+	if number = 4:num2 = 3 & number = 5
+	if number = 3:num3 = 3 & number = 4
+	if number = 2:num4 = 3 & number = 3
+	if number = 1:num5 = 3 & number = 2
+	if number = 0:num6 = 3 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -528,12 +517,12 @@ if $ARGS[0] = '4':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 4 & set number = 6
-	if number = 4:set num2 = 4 & set number = 5
-	if number = 3:set num3 = 4 & set number = 4
-	if number = 2:set num4 = 4 & set number = 3
-	if number = 1:set num5 = 4 & set number = 2
-	if number = 0:set num6 = 4 & set number = 1
+	if number = 5:num1 = 4 & number = 6
+	if number = 4:num2 = 4 & number = 5
+	if number = 3:num3 = 4 & number = 4
+	if number = 2:num4 = 4 & number = 3
+	if number = 1:num5 = 4 & number = 2
+	if number = 0:num6 = 4 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -542,12 +531,12 @@ if $ARGS[0] = '5':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 5 & set number = 6
-	if number = 4:set num2 = 5 & set number = 5
-	if number = 3:set num3 = 5 & set number = 4
-	if number = 2:set num4 = 5 & set number = 3
-	if number = 1:set num5 = 5 & set number = 2
-	if number = 0:set num6 = 5 & set number = 1
+	if number = 5:num1 = 5 & number = 6
+	if number = 4:num2 = 5 & number = 5
+	if number = 3:num3 = 5 & number = 4
+	if number = 2:num4 = 5 & number = 3
+	if number = 1:num5 = 5 & number = 2
+	if number = 0:num6 = 5 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -556,12 +545,12 @@ if $ARGS[0] = '6':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 6 & set number = 6
-	if number = 4:set num2 = 6 & set number = 5
-	if number = 3:set num3 = 6 & set number = 4
-	if number = 2:set num4 = 6 & set number = 3
-	if number = 1:set num5 = 6 & set number = 2
-	if number = 0:set num6 = 6 & set number = 1
+	if number = 5:num1 = 6 & number = 6
+	if number = 4:num2 = 6 & number = 5
+	if number = 3:num3 = 6 & number = 4
+	if number = 2:num4 = 6 & number = 3
+	if number = 1:num5 = 6 & number = 2
+	if number = 0:num6 = 6 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -570,12 +559,12 @@ if $ARGS[0] = '7':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 7 & set number = 6
-	if number = 4:set num2 = 7 & set number = 5
-	if number = 3:set num3 = 7 & set number = 4
-	if number = 2:set num4 = 7 & set number = 3
-	if number = 1:set num5 = 7 & set number = 2
-	if number = 0:set num6 = 7 & set number = 1
+	if number = 5:num1 = 7 & number = 6
+	if number = 4:num2 = 7 & number = 5
+	if number = 3:num3 = 7 & number = 4
+	if number = 2:num4 = 7 & number = 3
+	if number = 1:num5 = 7 & number = 2
+	if number = 0:num6 = 7 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -584,12 +573,12 @@ if $ARGS[0] = '8':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 8 & set number = 6
-	if number = 4:set num2 = 8 & set number = 5
-	if number = 3:set num3 = 8 & set number = 4
-	if number = 2:set num4 = 8 & set number = 3
-	if number = 1:set num5 = 8 & set number = 2
-	if number = 0:set num6 = 8 & set number = 1
+	if number = 5:num1 = 8 & number = 6
+	if number = 4:num2 = 8 & number = 5
+	if number = 3:num3 = 8 & number = 4
+	if number = 2:num4 = 8 & number = 3
+	if number = 1:num5 = 8 & number = 2
+	if number = 0:num6 = 8 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -598,12 +587,12 @@ if $ARGS[0] = '9':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 9 & set number = 6
-	if number = 4:set num2 = 9 & set number = 5
-	if number = 3:set num3 = 9 & set number = 4
-	if number = 2:set num4 = 9 & set number = 3
-	if number = 1:set num5 = 9 & set number = 2
-	if number = 0:set num6 = 9 & set number = 1
+	if number = 5:num1 = 9 & number = 6
+	if number = 4:num2 = 9 & number = 5
+	if number = 3:num3 = 9 & number = 4
+	if number = 2:num4 = 9 & number = 3
+	if number = 1:num5 = 9 & number = 2
+	if number = 0:num6 = 9 & number = 1
 
 	gt 'telefon', 'start'
 end
@@ -612,43 +601,45 @@ if $ARGS[0] = '0':
 	cla
 
 	!!if number = 6:end
-	if number = 5:set num1 = 0 & set number = 6
-	if number = 4:set num2 = 0 & set number = 5
-	if number = 3:set num3 = 0 & set number = 4
-	if number = 2:set num4 = 0 & set number = 3
-	if number = 1:set num5 = 0 & set number = 2
-	if number = 0:set num6 = 0 & set number = 1
+	if number = 5:num1 = 0 & number = 6
+	if number = 4:num2 = 0 & number = 5
+	if number = 3:num3 = 0 & number = 4
+	if number = 2:num4 = 0 & number = 3
+	if number = 1:num5 = 0 & number = 2
+	if number = 0:num6 = 0 & number = 1
 
 	gt 'telefon', 'start'
 end
 
 if $ARGS[0] = 'Reset':
 	cla
-	set num1 = 0
-	set num2 = 0
-	set num3 = 0
-	set num4 = 0
-	set num5 = 0
-	set num6 = 0
-	set number = 0
+	num1 = 0
+	num2 = 0
+	num3 = 0
+	num4 = 0
+	num5 = 0
+	num6 = 0
+	number = 0
 	gt 'telefon', 'start'
 end
 
 if $ARGS[0] = 'fin':
 	cla
-	set num1 = 0
-	set num2 = 0
-	set num3 = 0
-	set num4 = 0
-	set num5 = 0
-	set num6 = 0
-	set number = 0
+	num1 = 0
+	num2 = 0
+	num3 = 0
+	num4 = 0
+	num5 = 0
+	num6 = 0
+	number = 0
 	gt $locM, $metkaM
 
-	!'if housr = 1 and housrA = 1:
-		set housrA = 0
+	!'
+	if housr = 1 and housrA = 1:
+		housrA = 0
 		gt 'korr'
-	end'!
+	end
+	'!
 end
 
 --- telefon ---------------------------------

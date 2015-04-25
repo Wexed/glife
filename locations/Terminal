@@ -1,29 +1,32 @@
 # Terminal
-set minut += 5
-'<center><b><font color="maroon">Storage terminal</font></b></center>'
-'<center><img src="images/etogame/terminal.jpg"></center>'
+minut += 5
+
 clr
 gs 'stat'
-!!fcolor = rgb(0, 0, 0)
-!!bcolor = rgb(255, 255, 255)
-!!lcolor = rgb(106, 90, 205)
+!'
+fcolor = rgb(0, 0, 0)
+bcolor = rgb(255, 255, 255)
+lcolor = rgb(106, 90, 205)
+'!
+'<center><b><font color="maroon">Storage terminal</font></b></center>'
+'<center><img src="images/etogame/terminal.jpg"></center>'
 'A plurality of storage buildings to which drive up truck for loading and unloading.'
 
 act 'Leave':
 	cla
-	set minut += 5
+	minut += 5
 	gt 'nord'
 end
 
 if TerminalPapper = 1 and DayTerminalPapper = day:
 	act 'Classified documents':
 		cls
-		set minut += 15
+		minut += 15
 		TerminalPapper = 2
+		gs 'stat'
 		fcolor = rgb(0, 0, 0)
 		bcolor = rgb(255, 255, 255)
 		lcolor = rgb(106, 90, 205)
-		gs 'stat'
 		'You went to the office and gave the documents to the manager.'
 
 		act 'Leave':minut += 5 & gt 'nord'
@@ -33,14 +36,14 @@ end
 if money >= 100:
 	act 'Buy small items (100 rubles)':
 		cls
-		set minut += 15
+		minut += 15
 		gs 'stat'
 		'You went to the office and spoke with the manager about buying small things.'
 
 		if tovarskladlevel = 0:
-			if tovarL >= 30:'Thinking a bit you realize, you just have nowhere to store the goods and decide to unsubscribe from the purchase.'
-
-			if tovarL < 30:
+			if tovarL >= 30:
+				'Thinking a bit you realize, you just have nowhere to store the goods and decide to unsubscribe from the purchase.'
+			elseif tovarL < 30:
 				maxtov = 30 - tovarL
 				'Do you have a place for storage <<maxtov>> One unit of product.'
 
@@ -64,20 +67,20 @@ if money >= 100:
 			end
 		end
 
-		act 'Leave':minut += 5 & gt $curloc
+		act 'Leave':minut += 5 & gt 'nord'
 	end
 
 	if YouCanGar > 0:
 		act 'Buy small items for the car storage (100 rubles)':
 			cls
-			set minut += 15
+			minut += 15
 			gs 'stat'
 			'You went to the office and spoke with the manager about buying small things.'
 
 			if tovarskladlevel = 0:
-				if GarTorgItem >= 100:'Thinking a bit you realize, you just have nowhere to store the goods and decide to unsubscribe from the purchase.'
-
-				if GarTorgItem < 100:
+				if GarTorgItem >= 100:
+					'Thinking a bit you realize, you just have nowhere to store the goods and decide to unsubscribe from the purchase.'
+				elseif GarTorgItem < 100:
 					maxtov = 100 - GarTorgItem
 					'Do you have a place for storage <<maxtov>> One unit of product.'
 

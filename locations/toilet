@@ -1,56 +1,54 @@
 # toilet
 if $ARGS[0] = 'start':
-	cla
 	$metka = $ARGS[0]
 	$loc = $CURLOC
-	*clr
-	set minut += 5
-	'<center><img src="images/toilet/cabin.jpg"></center>'
-	'Do you hear any noises at some of the booths ...'
+	cla
 	clr
+	*clr
+	minut += 5
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><img src="images/toilet/cabin.jpg"></center>'
+	'Do you hear any noises at some of the booths ...'
 
 	act 'Come up with a toilet':
 		cla
-		set minut += 5
+		minut += 5
 		gt 'sexshop', 'podval'
 	end
 
 	act 'Look at each booth':
 		cla
-		*clr
 		clr
+		*clr
 		gs 'stat'
-		toisexrand = rand(0, 100)
 		'<center><img src="images/toilet/pry_1.jpg"></center>'
 		'You looked into the booth and all ....'
+		toisexrand = rand(0, 100)
 
 		if toisexrand < 66 :
 			act 'And anyone not found ...':
-				set minut += 10
+				minut += 10
 				cla
-				*clr
 				clr
+				*clr
 				gs 'stat'
 				'<center><img src="images/toilet/cabin_0.jpg"></center>'
 				'And all the booths were empty'
 
 				act 'Come up with a toilet':gt 'sexshop', 'podval'
 			end
-		end
-
-		if toisexrand >= 66 :
+		elseif toisexrand >= 66 :
 			act 'Saw a naked girl masturbating ....':
-				set toigirlrand = rand(1, 2)
+				toigirlrand = rand(1, 2)
 
 				if toigirlrand = 1:
-					set minut += 10
+					minut += 10
 					cla
-					*clr
 					clr
+					*clr
 					gs 'stat'
 					'<center><img src="images/toilet/toisex_1_1.jpg"></center>'
 					'You know her, this girl watched porn in the next stall ....'
@@ -58,13 +56,11 @@ if $ARGS[0] = 'start':
 
 					act 'Enter into the booth and show that bitch ....':gt 'toilet', '1'
 					act 'You took a good movie on a mobile phone and gone ...':gt 'toilet', '0'
-				end
-
-				if toigirlrand = 2:
-					set minut += 10
+				elseif toigirlrand = 2:
+					minut += 10
 					cla
-					*clr
 					clr
+					*clr
 					gs 'stat'
 					'<center><img src="images/toilet/toisex_2_1.jpg"></center>'
 					'You know her - this girl watched porn in the next stall ....'
@@ -82,16 +78,17 @@ if $ARGS[0] = '0':
 	$metka = $ARGS[0]
 	$loc = $CURLOC
 	cla
-	*clr
-	set minut += 10
-	horny = horny + 50
-	'<center><img src="images/toilet/pornjrolik.jpg"></center>'
-	'Finding and viewing movies on your phone you are very excited ...'
 	clr
+	*clr
+	minut += 10
+	horny = horny + 50
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+	'<center><img src="images/toilet/pornjrolik.jpg"></center>'
+	'Finding and viewing movies on your phone you are very excited ...'
+
 	act 'Delete movie and walk out basement ...':gt 'sexshop', 'start'
 
 	act 'Sell ​​clip on one of the porn sites ...!':
@@ -184,9 +181,9 @@ if $ARGS[0] = '1':
 									'Continuing to play the role of the Master, you said ...'
 
 									act '- Swallow the whole sperm and lick the toilet bowl ...':
-										set horny = 0
-										set girl += 1
-										set minut += 30
+										horny = 0
+										girl += 1
+										minut += 30
 										sexm = sexm + 1
 										manna = manna + 25
 										cla
@@ -198,10 +195,10 @@ if $ARGS[0] = '1':
 										'And you thought:"Do not offer if she participated in the filming of" ...'
 										'Judging by her inclination to obey - it could play in the genre BDSM'
 										'These films are more expensive than usual, and actresses such genre is not enough ...'
-										'You:- Listen sweetheart! You´re gorgeous! I have a proposal for you ...'
+										'You:- Listen sweetheart! You''re gorgeous! I have a proposal for you ...'
 
 										act 'I needed an actress in the genre BDSM':
-											set BDSMactressrand = rand(1, 2)
+											BDSMactressrand = rand(1, 2)
 												if BDSMactressrand = 1:
 													cla
 													*clr
@@ -229,7 +226,7 @@ if $ARGS[0] = '1':
 													*clr
 													bankfond = bankfond + 1000
 													'<center><img src="images/toilet/pornjrolik.jpg"></center>'
-													'- That´s because of a bitch! - You might think ....'
+													'- That''s because of a bitch! - You might think ....'
 													'You I still become a star! Though on the Internet!'
 													'And finding a movie on your phone, sold it to one of the porn sites for 1000 rubles!'
 													'You transferred the money to the account ...'
@@ -279,7 +276,7 @@ if $ARGS[0] = '2':
 			*clr
 			'<center><img src="images/toilet/toisex_2_4.jpg"></center>'
 			'Removing panties she knelt down and began to suck you dick ...'
-			'It´s certainly nice, but I want a good suction ...'
+			'It''s certainly nice, but I want a good suction ...'
 
 			act 'Let ka kiddie more active ....':
 				cla
@@ -328,14 +325,14 @@ if $ARGS[0] = '2':
 									'You:- Well, ka bitch conducted on hand between your legs and show me ...'
 
 									act '....':
-										set horny = 0
-										set girl += 1
-										set minut += 30
+										cla
+										clr
+										*clr
+										horny = 0
+										girl += 1
+										minut += 30
 										sexm = sexm + 1
 										manna = manna + 25
-										cla
-										*clr
-										clr
 										gs 'stat'
 										'<center><img src="images/toilet/toisex_2_11.jpg"></center>'
 										'Groaning she held her fingers on her pussy ...'
@@ -343,10 +340,10 @@ if $ARGS[0] = '2':
 										'And you thought:"Do not offer if she participated in the filming of" ...'
 										'Judging by her inclination to obey - it could play in the genre BDSM'
 										'These films are more expensive than usual, and actresses such genre is not enough ...'
-										'You:- Listen sweetheart! You´re gorgeous! I have a proposal for you ...'
+										'You:- Listen sweetheart! You''re gorgeous! I have a proposal for you ...'
 
 										act 'I needed an actress in the genre BDSM':
-											set BDSMactressrand = rand(1, 2)
+											BDSMactressrand = rand(1, 2)
 
 											if BDSMactressrand = 1:
 												cla
@@ -359,9 +356,7 @@ if $ARGS[0] = '2':
 												'You:- I am very pleased'
 
 												act 'Here, take a business card! And to meet ...':gt 'sexshop', 'start'
-											end
-
-											if BDSMactressrand = 2:
+											elseif BDSMactressrand = 2:
 												cla
 												*clr
 												'<center><img src="images/toilet/oblom_1.jpg"></center>'
@@ -375,7 +370,7 @@ if $ARGS[0] = '2':
 													*clr
 													bankfond = bankfond + 1000
 													'<center><img src="images/toilet/pornjrolik.jpg"></center>'
-													'- That´s because of a bitch! - You might think ....'
+													'- That''s because of a bitch! - You might think ....'
 													'You I still become a star! Though on the Internet!'
 													'And finding a movie on your phone, sold it to one of the porn sites for 1000 rubles!'
 													'You transferred the money to the account ...'

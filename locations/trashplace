@@ -1,6 +1,6 @@
 # trashplace
 $bomzstartqwestdi = {
-	'-Okay. I see you´re a good man, but with finance problems. I here you have several times seen and heard said about you. I know one part time. Work is not dusty, but a bit risky. Now all I will not tell, just ask:Do you bring your passport with residence permit local there?'
+	'-Okay. I see you''re a good man, but with finance problems. I here you have several times seen and heard said about you. I know one part time. Work is not dusty, but a bit risky. Now all I will not tell, just ask:Do you bring your passport with residence permit local there?'
 
 	act 'Yes, there is.':
 		cls
@@ -9,7 +9,7 @@ $bomzstartqwestdi = {
 		gs 'time'
 		'Yes, there is. So when you tell about the job?'
 		'-Not here. Drove into the center, where you will explain everything.'
-		'One of the ways the center passes near an abandoned construction site, and you´ve decided that if a man will go through it, you immediately use the excuse of iron and hurriedly removed.'
+		'One of the ways the center passes near an abandoned construction site, and you''ve decided that if a man will go through it, you immediately use the excuse of iron and hurriedly removed.'
 		'But to your surprise, the man walked toward the subway. You reminded him about his financial problems, but he just waved. In the subway he went to the checkout, the cashier and start a conversation'
 		'-Hi, Uncle Nick, decided to go - she asked, holding out his badge.'
 		'-Yes, you know, do, do. Here, people help - Uncle Nick nodded at you - you can throw another zhetonchik?'
@@ -28,10 +28,10 @@ $bomzstartqwestdi = {
 				'-Do you think the porn studio only by a pussy you can trade? - Said with a grin Uncle Nick - there are other ways to earn there.'
 			elseif pfilmNO = 1:
 				'I have come here, but I was denied'
-				'-Do you think the porn studio only by a pussy you can trade? - Said with a grin Uncle Nick - there are other ways to earn there. You´re only as an actress ask for?'
+				'-Do you think the porn studio only by a pussy you can trade? - Said with a grin Uncle Nick - there are other ways to earn there. You''re only as an actress ask for?'
 			else
-				'Not the porn studio I´m not going look for another rabotuI have come here, but I was denied'
-				'-Do you think the porn studio only by a pussy you can trade? - Said with a grin Uncle Nick - there are other ways to earn there. You´re only as an actress ask for?'
+				'Not the porn studio I''m not going look for another rabotuI have come here, but I was denied'
+				'-Do you think the porn studio only by a pussy you can trade? - Said with a grin Uncle Nick - there are other ways to earn there. You''re only as an actress ask for?'
 			end
 
 			act 'Log in to the manager.':
@@ -70,16 +70,16 @@ $bomzstartqwestdi = {
 
 							if film > 0:
 								'The manager laughed and said, '
-								'-What do you mean, everything has already been verified. Normally she´s all there.'
+								'-What do you mean, everything has already been verified. Normally she''s all there.'
 							else
 								'The manager looked at you and said, '
 								'-We got one question arose. Suspicions have that you do not quite ... Girl. Single bearer evidence.'
 
 								act 'How dare you? (To leave).':gt 'down'
-								act 'Show pussy.':
+								act 'Show pussy':
 									cls
-									set SUB += 1
-									set minut += 15
+									SUB += 1
+									minut += 15
 									gs 'stat'
 
 									if ski > 0 or glamur > 0:
@@ -100,9 +100,7 @@ $bomzstartqwestdi = {
 										end
 
 										'How Schoolgirl - All-manager noticed, checked, do not forget to come on Thursday.'
-									end
-
-									if lobok > 0 and lobok <= 2:
+									elseif lobok > 0 and lobok <= 2:
 										if ski > 0 or glamur > 0:
 											'<center><img src="images/sauna/sauna_pussy2.jpg"></center>'
 										else
@@ -110,9 +108,7 @@ $bomzstartqwestdi = {
 										end
 
 										'-Hedgehog, neither head nor feet - noticed Manager-Everything checked out, do not forget to come on Thursday.'
-									end
-
-									if lobok > 2:
+									elseif lobok > 2:
 										if ski > 0 or glamur > 0:
 											'<center><img src="images/sauna/sauna_pussy4.jpg"></center>'
 										else
@@ -177,35 +173,35 @@ $workbomzdi = {
 	end
 }
 
-'<center><b>Musorka</b></center>'
-'<center><img src="images/etogame/musorka.jpg"></center>'
-'A long string of garbage bins from which carries per kilometer shamefully hidden small iron fence.'
 clr
 gs 'stat'
 gs 'time'
+'<center><b>Musorka</b></center>'
+'<center><img src="images/etogame/musorka.jpg"></center>'
+'A long string of garbage bins from which carries per kilometer shamefully hidden small iron fence.'
 
 if bumtolik = 2:bumtrand = rand(0, 100)
 
-if bumtolik = 2 and bumtrand >= 90:
+if bumtolik = 2 and bumtrand >= 50:
 	cls
 	gs 'stat'
 	gs 'time'
 	'<center><img src="images/etogame/musorka.jpg"></center>'
 	'You see a homeless person who gave the last time money. He smiles, hand making the gesture did not escape and goes to you to say something.'
-	'-Girl, you´ll excuse me, do not be afraid, hear what I say?'
+	'-Girl, you''ll excuse me, do not be afraid, hear what I say?'
 
 	act 'Hear out':gt 'musorkaexh', 'pos8'
 end
 
 if bumtolik = 3:temp = rand(0, 100)
 
-if bumtolik = 3 and hour >= 6 and hour <= 20 and temp >= 80:
+if bumtolik = 3 and hour >= 6 and hour <= 20 and temp >= 50:
 	cls
 	gs 'stat'
 	gs 'time'
 	'<center><img src="images/etogame/bumt2.jpg"></center>'
 	'You see a girl feed the homeless.'
-	'Stranger:- Girl, I´m sorry, please take a picture for the record, as I help this unhappy.'
+	'Stranger:- Girl, I''m sorry, please take a picture for the record, as I help this unhappy.'
 	*nl
 	'You were uncomfortable and you refuse photographed girl on her camera.'
 
@@ -214,8 +210,8 @@ end
 
 if musor > 0:
 	act 'Throw garbage':
-		musor = 0
 		cls
+		musor = 0
 		'<center><img src="images/etogame/musorka.jpg"></center>'
 		'You throw trash in the trash.'
 
@@ -262,7 +258,7 @@ if bomzrand >= 80 and hour <= 16 and bomzQW = 0 and week ! 4:
 		gs 'time'
 
 		if daystart < 10 or sex <= 2:
-			'I´d love to, but the money and most do not. Hell, like already accustomed to the new body, but watch your tongue with difficulty. -Himself? Are you pidorok?'
+			'I''d love to, but the money and most do not. Hell, like already accustomed to the new body, but watch your tongue with difficulty. -Himself? Are you pidorok?'
 
 			act 'No':
 				cls
@@ -272,7 +268,7 @@ if bomzrand >= 80 and hour <= 16 and bomzQW = 0 and week ! 4:
 				dynamic $bomzstartqwestdi
 			end
 		else
-			'I´d love to, but that kind of money and most do not.'
+			'I''d love to, but that kind of money and most do not.'
 			dynamic $bomzstartqwestdi
 		end
 	end

@@ -6,7 +6,8 @@ gs 'stat'
 'One of the tables sits Stas, after another Vitali, for the third table sits a woman chief accountant.'
 
 act 'Leave':gt 'clener', 'start'
-if SVqw = 2:
+
+if svQW = 2:
 	if TorgPredDay ! day:
 		if TorgPredZ = 0 and TorgPredZV = 0:
 			act 'Take the job':
@@ -45,7 +46,7 @@ if SVqw = 2:
 							minut += 5
 							gs 'stat'
 							'<center><img src="images/etogame/clener.jpg"></center>'
-							'You answered Stas that everything is fine and he smiled. "Our company is developing, and intelligent man there will be a place better. Way, let´s go to the cafe, you have not stamped for work."'
+							'You answered Stas that everything is fine and he smiled. "Our company is developing, and intelligent man there will be a place better. Way, let''s go to the cafe, you have not stamped for work."'
 
 							act 'Agree':
 								cls
@@ -64,7 +65,7 @@ if SVqw = 2:
 							minut += 5
 							gs 'stat'
 							'<center><img src="images/etogame/clener.jpg"></center>'
-							'You answered that Stas so-so and he grinned. "Our company is developing, and intelligent man there will be a place better. Way, let´s go to the cafe, you have not stamped for work."'
+							'You answered that Stas so-so and he grinned. "Our company is developing, and intelligent man there will be a place better. Way, let''s go to the cafe, you have not stamped for work."'
 
 							act 'Agree':
 								cls
@@ -96,9 +97,9 @@ if SVqw = 2:
 	if TPmainQW = 1 and StasikSex > 0 and StVaGang = 0:
 		'In view of Stas clearly glimpsed joy, when he sees you. in_a_low_voice, to not hear his colleagues are busy, it offers you to continue your relationship and start dating.'
 
-		if bfa >= 1:'you think, that your current boyfriend is unlikely to please, you accept this offer. Stas, of_course, very nice, but you first need to understand their current relationship.'
-
-		if bfa < 1:
+		if bfa >= 1:
+			'You think, that your current boyfriend is unlikely to please, you accept this offer. Stas, of_course, very nice, but you first need to understand their current relationship.'
+		elseif bfa < 1:
 			act 'agree':
 				'You answered Stas consent, to which he beamed and promised to call you back shortly.'
 				TPmainQW = 2
@@ -115,9 +116,9 @@ if SVqw = 2:
 				finance = 1
 				vneshBoy = 1
 				$boyClo = 'dressed in jeans and a sweater.'
-				set figurBoy = rand(0, 2)
-				set titBoy = rand(0, 2)
-				set haerBoy = rand(0, 3)
+				figurBoy = rand(0, 2)
+				titBoy = rand(0, 2)
+				haerBoy = rand(0, 3)
 				izvrat = 0
 				gs 'boyfrend', 'start'
 				stopboy = 0
@@ -131,17 +132,17 @@ if SVqw = 2:
 		end
 
 		act 'I need to think':
-			'You answered Stas, you will find it very much, but you are not ready to give an answer, and ask him a little-just wait. Stas frowns, but accepts your answer.'
 			cla
+			'You answered Stas, you will find it very much, but you are not ready to give an answer, and ask him a little-just wait. Stas frowns, but accepts your answer.'
 
 			act 'Leave':gt 'clener', 'start'
 		end
 
 		act 'Contribute':
 			TPmainQW = 2
-			'You quite sharply denied Stas, what he is offended: "Oh well! I-thought, we have that-something more, than an occasional census."'
 			cla
 			gs 'stat'
+			'You quite sharply denied Stas, what he is offended: "Oh well! I-thought, we have that-something more, than an occasional census."'
 
 			act 'Leave':gt 'clener', 'start'
 		end
