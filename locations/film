@@ -1,4 +1,4 @@
-# movie
+# film
 if $ARGS[0] = 'movie':
 	cla
 	clr
@@ -49,7 +49,7 @@ if $ARGS[0] = 'movie':
 
 		act 'Finish':gt 'down'
 
-		if hour < 22:act 'Acting on':gt 'film', 'film'
+		if hour < 22:act 'Acting on':gt 'film', 'movie'
 	end
 end
 
@@ -119,8 +119,8 @@ gs 'stat'
 
 		act 'Go home':gt 'down'
 
-		if hour < 22:act 'Acting on':gt 'movie', 'movie2'
+		if hour < 22:act 'Acting on':gt 'film', 'movie2'
 	end
 end
 
---- movie ---------------------------------
+--- film ---------------------------------
