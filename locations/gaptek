@@ -236,93 +236,93 @@ if $ARGS[0] = 'start':
 					end
 
 					act 'Move away from the counter':gt 'gaptek', 'start'
-				elseif StoryLine = 0:
-					act 'Buy <b>birth control pills</b> (500 rubles) <<iif(tabletki > 0, ''[left:<b>'' + tabletki + ''</b>]'', '''')>>':
-						cla
-						*clr
-						portion = input ("How many packages you want to buy?")
-
-						if portion < 0:portion = 1
-
-						if portion * 500 <= money:
-							tabletki += portion * 28
-							minut += 5 + (portion / 5)
-							money -= portion * 500
-							'<center><img src="images/etogame/kassa.jpg"></center>'
-							'You bought some lubricant and paid the money to the cashier.'
-						else
-							'You do not have enough money.'
-						end
-
-						act 'Move away from the counter':gt 'gaptek', 'start'
-					end
 				end
-
-				if klisma = 0 and motherQW >= 2 and gaptekfirst = 1:
-					act 'Buy <b>enema</b> (500 rubles)':
-						cla
-						*clr
-						klisma = 1
-						minut += 5
-						money -= 500
-						'<center><img src="images/etogame/kassa.jpg"></center>'
-						'You bought an enema and paid the money to the cashier.'
-
-						act 'Move away from the counter':gt 'gaptek', 'start'
-					end
-				elseif klisma = 0 and StoryLine = 0:
-					act 'Buy <b>enema</b> (500 rubles)':
-						cla
-						*clr
-						klisma = 1
-						minut += 5
-						money -= 500
-						'<center><img src="images/etogame/kassa.jpg"></center>'
-						'You bought an enema and paid the money to the cashier.'
-
-						act 'Move away from the counter':gt 'gaptek', 'start'
-					end
-				end
-
-				act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, ''[left:<b>'' + lekarstvo + ''</b>]'', '''')>>':
+			elseif StoryLine = 0:
+				act 'Buy <b>birth control pills</b> (500 rubles) <<iif(tabletki > 0, ''[left:<b>'' + tabletki + ''</b>]'', '''')>>':
 					cla
 					*clr
-					portion = input("How many packages you want to buy? (One package contains 10 pills)")
+					portion = input ("How many packages you want to buy?")
 
-					if portion <= 0:portion = 1
+					if portion < 0:portion = 1
 
 					if portion * 500 <= money:
-						money -= portion * 500
+						tabletki += portion * 28
 						minut += 5 + (portion / 5)
-						lekarstvo += portion * 10
+						money -= portion * 500
 						'<center><img src="images/etogame/kassa.jpg"></center>'
-						'You bought drugs and paid the money to the cashier.'
+						'You bought some lubricant and paid the money to the cashier.'
 					else
 						'You do not have enough money.'
 					end
 
-					act 'Move away from the counter':gt 'aptek', 'start'
+					act 'Move away from the counter':gt 'gaptek', 'start'
 				end
+			end
 
-				act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin > 0, ''[left:<b>'' + vitamin + ''</b>]'', '''')>>':
+			if klisma = 0 and motherQW >= 2 and gaptekfirst = 1:
+				act 'Buy <b>enema</b> (500 rubles)':
 					cla
 					*clr
-					portion = input("How many packages you want to buy? (One package contains 20 pills)")
+					klisma = 1
+					minut += 5
+					money -= 500
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought an enema and paid the money to the cashier.'
 
-					if portion <= 0:portion = 1
-
-					if portion * 500 <= money:
-						vitamin += portion * 20
-						minut += 5 + (portion / 5)
-						money -= portion * 500
-						'<center><img src="images/etogame/kassa.jpg"></center>'
-						'You bought vitamins and paid the money to the cashier.'
-					else
-						'You do not have enough money.'
-					end
-
-					act 'Move away from the counter':gt 'aptek', 'start'
+					act 'Move away from the counter':gt 'gaptek', 'start'
 				end
+			elseif klisma = 0 and StoryLine = 0:
+				act 'Buy <b>enema</b> (500 rubles)':
+					cla
+					*clr
+					klisma = 1
+					minut += 5
+					money -= 500
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought an enema and paid the money to the cashier.'
+
+					act 'Move away from the counter':gt 'gaptek', 'start'
+				end
+			end
+
+			act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, ''[left:<b>'' + lekarstvo + ''</b>]'', '''')>>':
+				cla
+				*clr
+				portion = input("How many packages you want to buy? (One package contains 10 pills)")
+
+				if portion <= 0:portion = 1
+
+				if portion * 500 <= money:
+					money -= portion * 500
+					minut += 5 + (portion / 5)
+					lekarstvo += portion * 10
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought drugs and paid the money to the cashier.'
+				else
+					'You do not have enough money.'
+				end
+
+				act 'Move away from the counter':gt 'aptek', 'start'
+			end
+
+			act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin > 0, ''[left:<b>'' + vitamin + ''</b>]'', '''')>>':
+				cla
+				*clr
+				portion = input("How many packages you want to buy? (One package contains 20 pills)")
+
+				if portion <= 0:portion = 1
+
+				if portion * 500 <= money:
+					vitamin += portion * 20
+					minut += 5 + (portion / 5)
+					money -= portion * 500
+					'<center><img src="images/etogame/kassa.jpg"></center>'
+					'You bought vitamins and paid the money to the cashier.'
+				else
+					'You do not have enough money.'
+				end
+
+				act 'Move away from the counter':gt 'aptek', 'start'
 			end
 		end
 
