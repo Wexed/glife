@@ -2,11 +2,11 @@
 $stirkao = {
 	cla
 	*clr
-	set minut += dirtbelo * 5
-	set clrbelo += dirtbelo
-	set poroshok -= 1
-	set dirtbelo = 0
-	set manna -= 10
+	minut += dirtbelo * 5
+	clrbelo += dirtbelo
+	poroshok -= 1
+	dirtbelo = 0
+	manna -= 10
 	'<center><img src="images/etogame/stir.jpg"></center>'
 	'You soak the clothes in a basin and add the power detergent. You then wash your clothes until they are clean.'
 
@@ -19,15 +19,15 @@ if $ARGS[0] = 'start':
 	gs 'stat'
 
 	if obdysh = 1 and vannin = 0:
-		set vanobrand = rand(0, 10)
-		set vannin = 1
+		vanobrand = rand(0, 10)
+		vannin = 1
 
 		if vanobrand = 0:gt 'vann', 'v1'
 		if vanobrand = 1:gt 'vann', 'v2'
 		if vanobrand = 2:gt 'vann', 'v3'
 	end
 
-	set vannin = 1
+	vannin = 1
 	'<center><img src="images/pics/wash1.jpg"></center>'
 
 	if shampoo = 0:'You''re out of shampoo'
@@ -39,10 +39,10 @@ if $ARGS[0] = 'start':
 			act 'Use a tampon (0:05)':
 				cla
 				*clr
-				set tampon -= 1
-				set isprok = 1
-				set minut += 5
-				set manna -= 5
+				tampon -= 1
+				isprok = 1
+				minut += 5
+				manna -= 5
 				'<center><img src="images/pics/wash3.jpg"></center>'
 				'You use a tampon.'
 
@@ -53,15 +53,28 @@ if $ARGS[0] = 'start':
 		!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
 		!!Washing off cosmetics also removes cum from face
 		!!clrbelo: Amount of clean panties available
-		if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+		if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
 			act 'Quick wash (0:15)':
 				cla
 				*clr
+
+				if clrbelo > 0 and tanga = 1:
+					clrbelo -= 1
+					dirtbelo += 1
+				elseif clrbelo = 0 and tanga = 1:
+					tanga = 0
+					dirtbelo += 1
+				end
+
 				dynamic $showerdin
-				set sweat -= 1
-				set minut += 15
-				set clrbelo -= 1
-				set dirtbelo += 1
+				sweat -= 1
+				minut += 15
+				'<center><img src="images/pics/wash5.jpg"></center>'
+				'You gave yourself a catlick, thus removing any traces of cum.'
+				sweat -= 1
+				minut += 15
+				clrbelo -= 1
+				dirtbelo += 1
 				'<center><img src="images/pics/wash5.jpg"></center>'
 				'You gave yourself a catlick, thus removing any traces of cum.'
 
@@ -73,11 +86,11 @@ if $ARGS[0] = 'start':
 			act 'Clean your face from sperm (0:05)':
 				cla
 				*clr
-				set mop = 1
-				set cumlip = 0
-				set cumface = 0
-				set sweat -= 1
-				set minut += 5
+				mop = 1
+				cumlip = 0
+				cumface = 0
+				sweat -= 1
+				minut += 5
 				'<center><img src="images/etogame/facesp.jpg"></center>'
 				'You clean your face and got rid of any trace of cum.'
 
@@ -88,9 +101,9 @@ if $ARGS[0] = 'start':
 		if mop ! 1:
 			act 'Wash off cosmetics (0:15)':
 				cla
-				set mop = 1
-				set cumface = 0
-				set minut += 15
+				mop = 1
+				cumface = 0
+				minut += 15
 				'You washed off your makeup.'
 
 				act 'Finish':gt 'vann', 'start'
@@ -102,9 +115,9 @@ if $ARGS[0] = 'start':
 			act 'Give yourself an enema (0:05)':
 				cla
 				*clr
-				set minut += 5
-				set klismaday = day
-				set klismaday1= 1
+				minut += 5
+				klismaday = day
+				klismaday1= 1
 				'<center><img src="images/picV/klisma.jpg"></center>'
 				'You put yourself an enema and clean intestines, now your ass is ready for anal sex.'
 
@@ -116,10 +129,10 @@ if $ARGS[0] = 'start':
 			act 'Insert the vibrator (0:05)':
 				cla
 				*clr
-				set minut += 5
-				set vibratorIN = 1
+				minut += 5
+				vibratorIN = 1
 
-				if vagina < 30:set vagina += 2
+				if vagina < 30:vagina += 2
 
 				'<center><img src="images/etogame/vibrator.jpg"></center>'
 				'You bend over the sink and inserted the vibrator in your pussy.'
@@ -132,10 +145,10 @@ if $ARGS[0] = 'start':
 			act 'Remove the vibrator (0:05)':
 				cla
 				*clr
-				set minut += 5
-				set vibratorIN = 0
+				minut += 5
+				vibratorIN = 0
 
-				if vagina < 30:set vagina += 1
+				if vagina < 30:vagina += 1
 
 				'<center><img src="images/etogame/vibrator.jpg"></center>'
 				'You bend over the sink and take the vibrator out of your pussy.'
@@ -148,15 +161,15 @@ if $ARGS[0] = 'start':
 			act 'Insert a butt plug (0:05)':
 				cla
 				*clr
-				set minut += 5
-				set analplugIN = 1
+				minut += 5
+				analplugIN = 1
 
-				if anus < 30:set anus += 5
+				if anus < 30:anus += 5
 
 				'<center><img src="images/etogame/analplug.jpg"></center>'
 
 				if butpluguse > 0:'You bent over and inserted the butt plug.'
-				if butpluguse = 0:set butpluguse = 1 & '"If I don''t use it then why did I buy it!" you thought. You decided to take a closer look while thinking, "It is necessary to start developing my ass so I could have great adventures someday, you could even say a huge and thick adventures with crimson heads, uh, now I got carried away." You scratched your head. Then you directed it in your ass, it was a bit painful at first, but as soon as the widest part was plunged into the murky depths of your anus it became easier to push it all the way.'
+				if butpluguse = 0:butpluguse = 1 & '"If I don''t use it then why did I buy it!" you thought. You decided to take a closer look while thinking, "It is necessary to start developing my ass so I could have great adventures someday, you could even say a huge and thick adventures with crimson heads, uh, now I got carried away." You scratched your head. Then you directed it in your ass, it was a bit painful at first, but as soon as the widest part was plunged into the murky depths of your anus it became easier to push it all the way.'
 
 				act 'Finish':gt 'vann', 'start'
 			end
@@ -166,10 +179,10 @@ if $ARGS[0] = 'start':
 			act 'Remove the butt plug (0:05)':
 				cla
 				*clr
-				set minut += 5
-				set analplugIN = 0
+				minut += 5
+				analplugIN = 0
 
-				if anus < 30:set anus += 1
+				if anus < 30:anus += 1
 
 				'<center><img src="images/etogame/analplug.jpg"></center>'
 				'You bent over and took out the butt plug.' !!0.2.6: Removed unneccessary var check
@@ -197,18 +210,18 @@ if $ARGS[0] = 'start':
 		act 'Take a shower (0:15)':
 			cla
 			*clr
+			shampoo -= 1
+			minut += 15
+			horny += 1
+			hapri = 0
+			mop = 1
+			sweat = -3
 
 			if tanga = 1:
-				set clrbelo -= 1
-				set dirtbelo += 1
+				clrbelo -= 1
+				dirtbelo += 1
 			end
 
-			shampoo -= 1
-			set minut += 15
-			set horny += 1
-			set hapri = 0
-			set mop = 1
-			set sweat = -3
 			dynamic $showerdin
 
 			if frost > 0:frost = 0
@@ -227,27 +240,25 @@ if $ARGS[0] = 'start':
 				act 'Use the showerhead on your pussy':
 					cla
 					*clr
-					set horny = 0
-					set minut += 30
-					set mastr += 1
-					set orgasm += 1
-					set manna += 15
-					set willpower += 15
+					horny = 0
+					minut += 30
+					mastr += 1
+					orgasm += 1
+					manna += 15
+					willpower += 15
 					'<center><img src="images/pics/wash2.jpg"></center>'
 					'You place the showerhead onto your pussy and a powerful jet of warm water begins to caress you. Soon you feel a warm wave covers your entire body and you begin to shudder as the orgasm overtakes you.'
 
 					act 'Get out and get dressed':gt 'vann', 'fin'
 				end
-			end
-
-			if horny >= 40 and hormy < 90:
+			elseif horny >= 40 and hormy < 90:
 				act 'Send shower pussy':
 					cla
 					*clr
-					set horny += 5
-					set minut += 30
-					set manna += 10
-					set willpower += 10
+					horny += 5
+					minut += 30
+					manna += 10
+					willpower += 10
 					'<center><img src="images/pics/wash2.jpg"></center>'
 					'You place the showerhead onto your pussy and a powerful jet of warm water begins to caress you. At first it feels very nice, but after a while it starts to be a little bit painful. You decide to stop masturbating.'
 
@@ -257,37 +268,34 @@ if $ARGS[0] = 'start':
 
 			act 'Get out and get dressed':gt 'vann', 'fin'
 		end
-	end
-
-	if shampoo > 0:
 		act 'Take a bath (1:00)':
 			cla
 			*clr
+			shampoo -= 1
+			minut += 60
+			sweat = -3
+			horny += 1
+			!!dirtbelo += 1
+			hapri = 0
+			mop = 1
+			manna += 10
 
 			if tanga = 1:
-				set clrbelo -= 1
-				set dirtbelo += 1
+				clrbelo -= 1
+				dirtbelo += 1
 			end
 
-			shampoo -= 1
-			set minut += 60
-			set sweat = -3
-			set horny += 1
-			!!set dirtbelo += 1
-			set hapri = 0
-			set mop = 1
-			set manna += 10
 			dynamic $showerdin
 
 			if frost > 0:frost = 0
 
-			set skinvan += 1
+			skinvan += 1
 
-			if skinvan = 20:set skinvan = 0 & set skin += 1
+			if skinvan = 20:skinvan = 0 & skin += 1
 
 			'<center><img src="images/pics/wash4.jpg"></center>'
 
-			if daystart < 10:'You got into the bathroom and sat down in the warm water, sticking out of the water your knees are rounded and smooth, which you blinked, you still have not got used to his new body was wildly like to look at all these roundness. Starting lather body you unwittingly turned their attention to the chest, it´s so soft and big, and when you touch her body appear in what is unfamiliar but pleasant sensations. Then you washed with soap yourself and you can already out of the bathroom.'
+			if daystart < 10:'You got into the bathroom and sat down in the warm water, sticking out of the water your knees are rounded and smooth, which you blinked, you still have not got used to his new body was wildly like to look at all these roundness. Starting lather body you unwittingly turned their attention to the chest, it''s so soft and big, and when you touch her body appear in what is unfamiliar but pleasant sensations. Then you washed with soap yourself and you can already out of the bathroom.'
 			if daystart >= 10 and daystart < 30:'You got into the bathroom and sat down in the warm water, you have a little accustomed to his new body and calmly soaping all these curves and bulges, then you flushed the soap.'
 			if daystart >= 30:'You got into the bathroom and went into the warm water stolidly staring at his smooth legs sticking out of the water. You lathered his body and then washed soap rubbing his hands over his curves of the female body.'
 
@@ -297,7 +305,7 @@ if $ARGS[0] = 'start':
 				act 'Get razor':gt 'vann', 'brit'
 			end
 
-			if obdysh = 1:set vannmastrand = rand(0, 5)
+			if obdysh = 1:vannmastrand = rand(0, 5)
 
 			if horny >= 90:
 				act 'Direct water on pussy':
@@ -306,30 +314,28 @@ if $ARGS[0] = 'start':
 
 					if obdysh = 1 and vannmastrand = 1:gt 'vann', 'v4'
 
-					set horny = 0
-					set minut += 30
-					set mastr += 1
-					set orgasm += 1
-					set manna += 15
-					set willpower += 15
+					horny = 0
+					minut += 30
+					mastr += 1
+					orgasm += 1
+					manna += 15
+					willpower += 15
 					'<center><img src="images/pics/wash7.jpg"></center>'
 					'You sent a water faucet on pussy and tight jet of warm water began to caress you. Soon you will feel like a warm wave covers your entire body and you began to shudder in orgasm.'
 
 					act 'Get out and get dressed':gt 'vann', 'fin'
 				end
-			end
-
-			if horny >= 40 and horny < 90:
+			elseif horny >= 40 and horny < 90:
 				act 'Direct water on pussy':
 					cla
 					*clr
 
 					if obdysh = 1 and vannmastrand = 1:gt 'vann', 'v4'
 
-					set horny += 5
-					set minut += 30
-					set manna += 10
-					set willpower += 10
+					horny += 5
+					minut += 30
+					manna += 10
+					willpower += 10
 					'<center><img src="images/pics/wash7.jpg"></center>'
 					'You sent a water faucet on pussy and tight jet of warm water began to caress you. At first it was not even bad, but then sleep and arousal, even as it was not nice. So you stopped masturbating.'
 
@@ -350,17 +356,18 @@ if $ARGS[0] = 'brit':
 		act 'Shave your legs (0:15)':
 			cla
 			*clr
-			set minut += 15
-			set leghair = -5
-			set horny += 5
-			set stanok -= 1
+			minut += 15
+			leghair = -5
+			horny += 5
+			stanok -= 1
 			'<center><img src="images/pics/shave.jpg"></center>'
 
-			if daystart < 10:'You have decided to shave your pussy and picking up a razor realized that you do not know how to shave. To begin, you have shaved pubic hair, it was not difficult, but then you notice that near your newfound pussy hair grow too. Here you have difficulties began, you tried to pull one hand, all these soft folds to the side so the second hand to shave all the hairs. Gradually, you still managed to shave off all his hair with your new vagina. As long as you shave you hardly came out of shock contemplating his crotch which was not at all what you´re used to. But finally it was done with shaving and you flushed with foam pussy stroking your hand and wondering sensations.'
+			if daystart < 10:'You have decided to shave your pussy and picking up a razor realized that you do not know how to shave. To begin, you have shaved pubic hair, it was not difficult, but then you notice that near your newfound pussy hair grow too. Here you have difficulties began, you tried to pull one hand, all these soft folds to the side so the second hand to shave all the hairs. Gradually, you still managed to shave off all his hair with your new vagina. As long as you shave you hardly came out of shock contemplating his crotch which was not at all what you''re used to. But finally it was done with shaving and you flushed with foam pussy stroking your hand and wondering sensations.'
 			if daystart >= 10 and daystart < 30:'You lathered her soft feet and took in hand razor. You have grown accustomed to his new body and shaved legs calmly knowing that hairy legs with your new body is not beautiful. Finally shaving was done with and you flushed foam stroking his smooth as silk legs.'
 			if daystart >= 30:'You lathered his feet and took a razor. Habitual movements you shaved hair on the legs and washed shaving foam.'
 
 			!!'You lathered up and shaved hair with them.'
+
 			act 'Postpone machine':gt 'vann', 'brit'
 		end
 	end
@@ -369,20 +376,20 @@ if $ARGS[0] = 'brit':
 		act 'Shave pubis (0:15)':
 			cla
 			*clr
-			set minut += 15
-			set lobok = -5
-			set horny += 5
-			set stanok -= 1
+			minut += 15
+			lobok = -5
+			horny += 5
+			stanok -= 1
 
 			if obdysh = 1 and obbritinvent = 0:
-				set britrand = rand(0, 5)
+				britrand = rand(0, 5)
 
 				if britrand = 5:gt 'vann', 'brit1'
 			end
 
 			'<center><img src="images/pics/shave3.jpg"></center>'
 
-			if daystart < 10:'You have decided to shave pubis, lathered his foam and picking up a razor realized that he did not imagine how it shaved. To begin, you have shaved pubic hair, it was not difficult, but then you notice that near your newfound pussy hair grow too. Here you have difficulties began, you tried to pull one hand, all these soft folds to the side so the second hand to shave all the hairs. Gradually, you still managed to shave off all his hair with your new vagina. As long as you shave you hardly came out of shock contemplating his crotch which was not at all what you´re used to. But finally it was done with shaving and you flushed with foam pussy stroking her hand and wondering sensations.'
+			if daystart < 10:'You have decided to shave pubis, lathered his foam and picking up a razor realized that he did not imagine how it shaved. To begin, you have shaved pubic hair, it was not difficult, but then you notice that near your newfound pussy hair grow too. Here you have difficulties began, you tried to pull one hand, all these soft folds to the side so the second hand to shave all the hairs. Gradually, you still managed to shave off all his hair with your new vagina. As long as you shave you hardly came out of shock contemplating his crotch which was not at all what you''re used to. But finally it was done with shaving and you flushed with foam pussy stroking her hand and wondering sensations.'
 			if daystart >= 10 and daystart < 30:'You foam lathered his groin, trying not to miss a single crease on her pussy. Then neat movements began shave pussy trying not to cut. Finally you did it and you flushed foam pubic hair and pussy.'
 			if daystart >= 30:'You lathered crotch and took a razor habitual movements began to shave pubic hairs and shave pussy vokurug. Finally shaving was finished and you flushed with foam pussy.'
 
@@ -396,30 +403,30 @@ end
 
 if $ARGS[0] = 'fin':
 	cla
-	set vannin = 0
+	vannin = 0
 	gt $locM, $metkaM
 end
 
 if $ARGS[0] = 'brit1':
 	cla
 	*clr
-	set obbritinvent = 1
+	obbritinvent = 1
 	'<center><img src="images/img/ob/brit1.jpg"></center>'
-	'While you smeared pubis foam in bath guy came, you were so passionate about what did not even notice it and only when he turned on the shaver socket looked up and saw him standing in front of you with a smile and treat your crotch. A few seconds later, he looked up from your feet, and said, "Hey, do you mind that I´m here, too, shave." and noticing your not very deft movement, which still continued to put foam on pussy, he added, "I can help, if necessary, when I have an older sister flew four years ago, so the bride from her fled, that had sometimes help shave. And then with a belly that does the most. " You and presented as a boy, who was still thirteen years probably was squatting in front of the pregnant girl and shaves her pussy, it´s probably had his first sexual experience.'
+	'While you smeared pubis foam in bath guy came, you were so passionate about what did not even notice it and only when he turned on the shaver socket looked up and saw him standing in front of you with a smile and treat your crotch. A few seconds later, he looked up from your feet, and said, "Hey, do you mind that I''m here, too, shave." and noticing your not very deft movement, which still continued to put foam on pussy, he added, "I can help, if necessary, when I have an older sister flew four years ago, so the bride from her fled, that had sometimes help shave. And then with a belly that does the most. " You and presented as a boy, who was still thirteen years probably was squatting in front of the pregnant girl and shaves her pussy, it''s probably had his first sexual experience.'
 
 	act 'Let him stay':
 		cla
 		*clr
-		set horny += 40
+		horny += 40
 		'<center><img src="images/img/ob/brit2.jpg"></center>'
 		'"Shave all you want, " you replied and went back to his task. A few minutes later the guy graduated and started watching you, he came closer, eventually sat down with you and help you began shortly razor was already in the hands of unego. Since you became delot nothing, you started to talk to him, "Do you often helped shave sister?"'
 		'"Yes, when both first time in two weeks, and then once every two days, she then became very fractious, and only a little stubble appeared so I ran with a razor, although I bristle even this language is not felt." Then he paused, realizing that blurted out too much.'
-		'"Well, you´re done, not everyone will be helping her sister in such a delicate matter." you continue pretending that nothing zatetili.'
-		'"Well, how else, I have the same except it´s nobody there. So I helped her in everything, and helped clean up, and even gave birth, I shave and wash it helped. Though she herself could have, but I always requested. " until he raskazyval you noticed that in his pants narostalo excitement.'
+		'"Well, you''re done, not everyone will be helping her sister in such a delicate matter." you continue pretending that nothing zatetili.'
+		'"Well, how else, I have the same except it''s nobody there. So I helped her in everything, and helped clean up, and even gave birth, I shave and wash it helped. Though she herself could have, but I always requested. " until he raskazyval you noticed that in his pants narostalo excitement.'
 		'"So while you lick her or just touch?" suddenly asked you.'
 		'"Snatch touched well then, and began to lick." he blurted out and immediately stopped and blushed, you smiled pleased that dragged him from the truth.'
-		'"And she gratified as you, or you´re not the language of work and did not deserve?" asked you, the guy looked at the floor, all red as a lobster, but then decided to be seen, that still was asleep and began to speak.'
-		'"Well, why did not deserve deserved. First time by chance happened, then I do not know how to shave, well naelozil hands on her so that she had finished first I was scared and ran out of the bathroom, and sleduyuzhy day, she had me again in the bath called and told to shave, shave it well, so there was nothing. I say it so that there is shaved, and she said the language test that´s how I first lick, and when she finished when she came to me in the pants and pulls climbed began to suck . When I finished, she said that every time I do it nicely, it will be my pleasure to do so. " he finished.'
+		'"And she gratified as you, or you''re not the language of work and did not deserve?" asked you, the guy looked at the floor, all red as a lobster, but then decided to be seen, that still was asleep and began to speak.'
+		'"Well, why did not deserve deserved. First time by chance happened, then I do not know how to shave, well naelozil hands on her so that she had finished first I was scared and ran out of the bathroom, and sleduyuzhy day, she had me again in the bath called and told to shave, shave it well, so there was nothing. I say it so that there is shaved, and she said the language test that''s how I first lick, and when she finished when she came to me in the pants and pulls climbed began to suck . When I finished, she said that every time I do it nicely, it will be my pleasure to do so. " he finished.'
 		'"Well, you do not even fuck never?" asked you already forgotten about the razor and carefully listening to the story.'
 		'"Well, actually it was. When I got used to the daily blowjob, we do this for three or four times a day doing, and so she had for twenty or thirty minutes to suck in the end when I was once again granted it, and already got a member of that -would stick in her mouth, she told me to bring the cream. When I brought it she lay on her side and said we were brother and sister and therefore can not be in the pussy and ass in here can. then I rubbed her anus cream and gently began to come. And she smiled-that I did not hesitate because it is no longer a girl and my pod her pain does not deliver. Then I drove straight off to her and started to move convulsively. I loved it podmahivala my ass, and when I finished, then just milked him his anus. So then I had already stopped giving her mouth and ass just had, and when she gave birth it was then already expanse in all positions tested her ass. " raskazyval he so vividly that you have drawn the images in my head all this and soon your pussy flowed that did not escape his gaze.'
 		'"Well, here I finished, something else may pobreem?" he asked, already took the shaving foam.'
@@ -427,10 +434,10 @@ if $ARGS[0] = 'brit1':
 		act 'Come on':
 			cla
 			*clr
-			set picrand = 74
+			picrand = 74
 			'<center><img src="images/img/ob/brit3.jpg"></center>'
 			'"Come on, and that will shave, my chest hair does not grow." you said'
-			'"Well, I´m now your whole body check" With these words, he began to put foam on you, smearing it all over your body. His hands slid over you, you melted at his touch and when he slid to your current pussy already being almost finished.'
+			'"Well, I''m now your whole body check" With these words, he began to put foam on you, smearing it all over your body. His hands slid over you, you melted at his touch and when he slid to your current pussy already being almost finished.'
 
 			act 'Continue':gt 'sex', 'kuni'
 		end
@@ -451,8 +458,8 @@ if $ARGS[0] = 'v1':
 	*clr
 	'<center><img src="images/img/ob/v0.jpg"></center>'
 	'You went into the bathroom and saw a girl sitting on the edge of the bath and feet smeared with cream.'
-	'"Sorry, I´ll come later." you said and turned to leave.'
-	'"Yes, okay, come on I´m almost finished, " she said with a smile. You came back and turned to the sink to wash their hands began to occupy themselves than that until she leaves. But she was not in a hurry, and in a couple of minutes you asked "Do you want your feet too smear?"'
+	'"Sorry, I''ll come later." you said and turned to leave.'
+	'"Yes, okay, come on I''m almost finished, " she said with a smile. You came back and turned to the sink to wash their hands began to occupy themselves than that until she leaves. But she was not in a hurry, and in a couple of minutes you asked "Do you want your feet too smear?"'
 
 	act 'Refuse':
 		cla
@@ -465,7 +472,7 @@ if $ARGS[0] = 'v1':
 	act 'Agree':
 		cla
 		*clr
-		set picrand = 21
+		picrand = 21
 		'<center><img src="images/img/ob/v1.jpg"></center>'
 		'"Come on, " you said, and she began to put the cream on your feet. Her hands stroked your calves, gradually rising up to the hips and then to the buttocks, she stayed on them longer. Her hands were crushed your ass down periodically to the inside of the thighs and inapplicable fingers touched your pussy, soon it happened more often. When you slightly radvinuli feet, she kept one hand there massaging your pussy, and the second continued to stroke your buttocks. Soon you will feel on your feet not only her hands, but her lips, she kissed your feet moving eventually rising up, and now her tongue slid on your buttocks, and started down to her pussy.'
 
@@ -484,7 +491,7 @@ if $ARGS[0] = 'v2':
 	act 'Offer help':
 		cla
 		*clr
-		set picrand = 75
+		picrand = 75
 		'<center><img src="images/img/ob/v3.jpg"></center>'
 		'"Let me help you" escaped you. The guy paused and finally said something articulate - "What?" you podozhli him in full and running his hand under his towel groped dildo. The guy relaxed and removed the towel, you meanwhile, dropped to a crouch and took his penis in his hand began to stroke it, then led by the hand up and down. He began to moan.'
 
@@ -494,10 +501,10 @@ if $ARGS[0] = 'v2':
 		act 'Continue':
 			cla
 			*clr
-			set cumlip += 1
-			set cumface += 1
+			cumlip += 1
+			cumface += 1
 			'<center><img src="images/img/ob/v4.jpg"></center>'
-			'You continued to work with his hands, a minute later the guy sat on the edge of the bed and then lay down. You actin continued to wield two-handed, and judging by his moans happy he liked it. Once you´ve started thinking about what would caress his hands not only as a member in your hands began to twitch. "Damn, " you said, and immediately realized that nothing opened his mouth, pulled out his penis and flew jet of sperm you right in the face, and some got in my mouth. "Damn, you and skorostrel." told you spitting sperm. "Sorry, " mumbled and quickly gathered guy jumped out of the bathroom.'
+			'You continued to work with his hands, a minute later the guy sat on the edge of the bed and then lay down. You actin continued to wield two-handed, and judging by his moans happy he liked it. Once you''ve started thinking about what would caress his hands not only as a member in your hands began to twitch. "Damn, " you said, and immediately realized that nothing opened his mouth, pulled out his penis and flew jet of sperm you right in the face, and some got in my mouth. "Damn, you and skorostrel." told you spitting sperm. "Sorry, " mumbled and quickly gathered guy jumped out of the bathroom.'
 
 			act 'To do their job':gt 'vann', 'start'
 		end
@@ -510,7 +517,7 @@ if $ARGS[0] = 'v3':
 	'<center><img src="images/img/ob/v5.jpg"></center>'
 	'You literally fly into the bathroom and seated on the toilet. "Wow, still a little, and just peed" you thought with relief, but then you realize that edge you have someone else here, turning his head, you see a guy washable. He stands smiling and says, "Hi."'
 	'"Hi, " you reply, trying pridamat something to say. "Sorry, I just have to" finally you say.'
-	'"Yes, I hear very, judging by the sound for a long time, very necessary." he says, laughing. Of you still pouring down, you´re ready to sink into the ground, but can not stand. Meanwhile man climbs out of the bathroom and stood up in front of you starts to silently watch and you see his cock medleno but surely increasing. Soon he is worth and he makes a small step forward, now his dildo literally inches from your face. He shakes them a bit from your lips, clearly hinting at a blowjob. Finally it bothers you and you start talking intending to say something he would put it away from your face. But as soon as you open your mouth, as he immediately makes dvischenie pelvis and his dildo is in your mouth.'
+	'"Yes, I hear very, judging by the sound for a long time, very necessary." he says, laughing. Of you still pouring down, you''re ready to sink into the ground, but can not stand. Meanwhile man climbs out of the bathroom and stood up in front of you starts to silently watch and you see his cock medleno but surely increasing. Soon he is worth and he makes a small step forward, now his dildo literally inches from your face. He shakes them a bit from your lips, clearly hinting at a blowjob. Finally it bothers you and you start talking intending to say something he would put it away from your face. But as soon as you open your mouth, as he immediately makes dvischenie pelvis and his dildo is in your mouth.'
 	'"Sorry, but I am also very necessary." he said still smiling.'
 
 	act 'Bite':
@@ -523,23 +530,23 @@ if $ARGS[0] = 'v3':
 	act 'Suck':
 		cla
 		*clr
-		set bj += 1
+		bj += 1
 		'<center><img src="images/img/ob/v6.jpg"></center>'
 		'You began gently licking the head and hand massage testicles. The guy started to moan, and then he grabbed your head with both hands, legs wide apart and planted your head so that the term immediately flew down your throat, you began to choke and popytalalis away, but his hand firmly held your head. Soon he relaxed hand, you began to suck his cock swallowing himself. A few minutes later he took a member of your mouth and lift you off the toilet, turned and put the cancer.'
 
 		act 'Continue':
 			cla
 			*clr
-			set sex += 1
+			sex += 1
 			'<center><img src="images/img/ob/v7.jpg"></center>'
-			'He put his penis in your vagina, and started with the power to penetrate into you, his movements were strong and deep. You do not have time podtiretsya after pee and now drops of urine running down your thighs. You looked down on the toilet and you head climbed thought "What am I doing, fuck me in an almost public toilet, I´m cancer over the toilet full of urine and on my own leg drains urine from behind a complete stranger jerk fucks me like a cheap whore. Horror I sat down, and the most disgusting thing I like how he does it. " These thoughts all your excitement vanished and you just stood and waited as he sated. Soon he pulled out of you penis and commanded that you dropped on the floor.'
+			'He put his penis in your vagina, and started with the power to penetrate into you, his movements were strong and deep. You do not have time podtiretsya after pee and now drops of urine running down your thighs. You looked down on the toilet and you head climbed thought "What am I doing, fuck me in an almost public toilet, I''m cancer over the toilet full of urine and on my own leg drains urine from behind a complete stranger jerk fucks me like a cheap whore. Horror I sat down, and the most disgusting thing I like how he does it. " These thoughts all your excitement vanished and you just stood and waited as he sated. Soon he pulled out of you penis and commanded that you dropped on the floor.'
 
 			act 'Sit on the floor':
 				cla
 				*clr
-				set cumlip += 1
-				set cumface += 1
-				set cumbelly += 1
+				cumlip += 1
+				cumface += 1
+				cumbelly += 1
 				'<center><img src="images/img/ob/v8.jpg"></center>'
 				'You fell to the floor, until you sit down with you, he pulled a T-shirt.'
 				'"Mouth open, now finished, " he said nayarivaya his dick hand. You opened your mouth and you splattered sperm bay you chest and face, in my mouth got a few drops that you spat.'
@@ -554,16 +561,16 @@ end
 if $ARGS[0] = 'v4':
 	cla
 	*clr
-	set minut += 30
-	set mastr += 1
+	minut += 30
+	mastr += 1
 	'<center><img src="images/img/ob/v9.jpg"></center>'
 	'You have sent water faucet on pussy and tight jet of warm water began to caress you, then you put the funnel and its place was taken by his fingers. You selflessly masturbated suddenly heard that turn on the faucet in the sink. Opening his eyes, you see a guy standing at the sink, he looked at you and smiled.'
-	'"I´m sorry to interrupt, I´ll keep you will not interfere, " he said, without looking away from your pussy, which still Sherudilo your fingers.'
+	'"I''m sorry to interrupt, I''ll keep you will not interfere, " he said, without looking away from your pussy, which still Sherudilo your fingers.'
 
 	act 'Scream':
 		cla
 		*clr
-		set horny = 0
+		horny = 0
 		'<center><img src="images/img/ob/v10.jpg"></center>'
 		'You yelled so that you most laid ears. Guy without hesitation hurried retreat and left the bathroom. You are once again left alone, but the excitement is gone and you have nothing to like.'
 
@@ -589,7 +596,7 @@ if $ARGS[0] = 'v4':
 		act 'Agree':
 			cla
 			*clr
-			set picrand = 76
+			picrand = 76
 			'<center><img src="images/img/ob/v11.jpg"></center>'
 			'You nodded in agreement, and he immediately threw off everything and you got into the bath. He began to rub your body sponge, soon joined her and his other hand, she glided over your body, caressing his chest, then down to her pussy below. Worth his fingers touch your pussy as you shuddered and clung to him all over, his erection caught between your buttocks. He began to move up, down, and you slightly caved giving him room to maneuver, but he did not enter into you, and put his hands on your shoulders and gently pressed, you will immediately understand what he wants, knelt down and turned to face him. Here was his throbbing dildo, you took it in hand and to right in his mouth.'
 

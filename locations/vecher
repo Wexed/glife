@@ -8,25 +8,14 @@ if $ARGS[0] = 'start':
 
 	act 'Dance':
 		cla
-		set hour = 23
+		hour = 23
 		'You have fun, dance and Bukhaev.'
-		Set itrand = rand(1, 11)
-
-		if itrand = 1:gt 'vecher', 'end'
-		if itrand = 2:gt 'vecher', 'end2'
-		if itrand = 3:gt 'vecher', 'end3'
-		if itrand = 4:gt 'vecher', 'end4'
-		if itrand = 5:gt 'vecher', 'end5'
-		if itrand = 6:gt 'vecher', 'end6'
-		if itrand = 7:gt 'vecher', 'end7'
-		if itrand = 8:gt 'vecher', 'end8'
-		if itrand = 9:gt 'vecher', 'end9'
-		if itrand = 10:gt 'vecher', 'end10'
-		if itrand = 11:gt 'vecher', 'end11'
+		itrand = rand(1, 11)
+		gt 'vecher', 'end<<itrand>>'
 	end
 end
 
-if $ARGS[0] = 'end':
+if $ARGS[0] = 'end1':
 	cla
 	*clr
 	'<center><img src="images/picparty/itog.jpg"></center>'
@@ -45,8 +34,8 @@ if $ARGS[0] = 'end2':
 
 	act 'Go into the room with Vika':
 		cla
-		if vikasex = 0:set vikasex = 1
-		set $sexloc = 'obroom'
+		if vikasex = 0:vikasex = 1
+		$sexloc = 'obroom'
 		gt 'lezbsex', 'start'
 	end
 end
@@ -60,9 +49,7 @@ if $ARGS[0] = 'end3':
 		'You nakiryalis and slept in the next room with a few hardcore sex.'
 
 		act 'Leave':gt 'dorm', 'korr'
-	end
-
-	if vnesh >= 20:
+	else
 		'<center><img src="images/img/centr/vechend1.jpg"></center>'
 		'You nakiryalis and slept in the next room with a few hardcore sex. You dream that you have sex with Vika, you literally feel like it pushes you to your feet, and then hot tongue starts licking your clitoris. Opening his eyes you can see a few girls bent over your hands and caress your body, and you have between your legs Vick wielded his tongue, "This is a prophetic dream" flashed through your mind.'
 
@@ -72,11 +59,11 @@ if $ARGS[0] = 'end3':
 			cla
 			*clr
 
-			if vikasex = 0:set vikasex = 1
+			if vikasex = 0:vikasex = 1
 
-			set orgasm += 1
-			set girl += 4
-			set lesbian += 1
+			orgasm += 1
+			girl += 4
+			lesbian += 1
 			'<center><img src="images/img/centr/vechend2.jpg"></center>'
 			'You relax allowing girls to caress your body, they periodically change in your pussy, giving each try yazochok from these endless caresses you covered orgasm.'
 
@@ -89,14 +76,14 @@ if $ARGS[0] = 'end4':
 	cla
 	*clr
 	'<center><img src="images/picparty/itog4.jpg"></center>'
-	'You get opyaneli and began to molest girls, how come you and do not understand, but you have exposed breasts and Vic kiss and lick your nipples in front of everyone.'
+	'You get drunk and began to molest girls, how come you and do not understand, but you have exposed breasts and Vic kiss and lick your nipples in front of everyone.'
 
 	act 'Leave':gt 'dorm', 'korr'
 
 	act 'Vika leave an empty room':
 		cla
-		if vikasex = 0:set vikasex = 1
-		set $sexloc = 'obroom'
+		if vikasex = 0:vikasex = 1
+		$sexloc = 'obroom'
 		gt 'lezbsex', 'start'
 	end
 end
@@ -104,10 +91,10 @@ end
 if $ARGS[0] = 'end5':
 	cla
 	*clr
-	set guy += 1
-	set sex += 1
+	guy += 1
+	sex += 1
 	'<center><img src="images/img/centr/itog5.jpg"></center>'
-	'You woke up on the floor in the hallway, half way to your room. Puffed over you what that pimply young man fucking your vagina carefully. Noticing that you´re awake, he quickly jumped to his feet and ran off, leaving you lying on the dirty floor.'
+	'You woke up on the floor in the hallway, half way to your room. Puffed over you what that pimply young man fucking your vagina carefully. Noticing that you''re awake, he quickly jumped to his feet and ran off, leaving you lying on the dirty floor.'
 
 	act 'Leave':gt 'dorm', 'korr'
 end
@@ -132,10 +119,10 @@ if $ARGS[0] = 'end7':
 	act 'Remove panties':
 		cla
 		*clr
-		set guy += 1
-		set bj += 1
-		set sex += 1
-		set cumass += 1
+		guy += 1
+		bj += 1
+		sex += 1
+		cumass += 1
 		'<center><img src="images/img/centr/itog71.jpg"></center>'
 		'You go up to her feet and shoot the last thing you have left, panties, nearly fell again. Seeing your man rush immediately releases chleniz pants.'
 
@@ -174,18 +161,18 @@ if $ARGS[0] = 'end8':
 
 	act 'Caress Vic':
 		cla
-
-		if vikasex = 0:set vikasex = 1
-
-		set girl += 1
-		set lesbian += 1
 		*clr
+
+		if vikasex = 0:vikasex = 1
+
+		girl += 1
+		lesbian += 1
+		horny += 60
 		'<center><img src="images/img/centr/itog81.jpg"></center>'
 		'You kiss and fondle breasts Vicki, she is very excited and you have decided to give her to lick your pussy.'
-		set horny += 60
 
 		if horny < 100:'You started to get tired of licking and wanted to continue'
-		if horny >= 100:set horny = 0 & set orgasm += 1 & 'Muscles of the vagina began to decline sharply, the entire abdomen as if covered hot wave of pleasure, you scream from a powerful orgasm.'
+		if horny >= 100:horny = 0 & orgasm += 1 & 'Muscles of the vagina began to decline sharply, the entire abdomen as if covered hot wave of pleasure, you scream from a powerful orgasm.'
 
 		'The guy pulls his dick out of Vicki and lifting it inserts his penis into her mouth.'
 
@@ -198,9 +185,9 @@ if $ARGS[0] = 'end8':
 			act 'Kissing with Vika':
 				cla
 				*clr
-				Set cumlip += 1
+				cumlip += 1
 				'<center><img src="images/img/centr/itog83.jpg"></center>'
-				'You´re kissing licking each other´s cum.'
+				'You''re kissing licking each other''s cum.'
 
 				act 'Leave':gt 'dorm', 'korr'
 			end
@@ -209,18 +196,18 @@ if $ARGS[0] = 'end8':
 		act 'Suck together with Vika':
 			cla
 			*clr
-			set bj += 1
-			set guy += 1
-			set cumface += 1
+			bj += 1
+			guy += 1
+			cumface += 1
 			'<center><img src="images/img/centr/itog84.jpg"></center>'
 			'You fucked by dick together with Vika finally ends Perrin you on the face.'
 
 			act 'Kissing with Vika':
 				cla
 				*clr
-				set cumlip += 1
+				cumlip += 1
 				'<center><img src="images/img/centr/itog83.jpg"></center>'
-				'You´re kissing licking each other´s cum.'
+				'You''re kissing licking each other''s cum.'
 
 				act 'Leave':gt 'dorm', 'korr'
 			end
@@ -244,7 +231,7 @@ if $ARGS[0] = 'end10':
 	act 'Leave':gt 'dorm', 'korr'
 
 	act 'Touch for pants':
-		set $sexloc = 'obroom'
+		$sexloc = 'obroom'
 		gt 'sex', 'start'
 	end
 end
@@ -252,10 +239,10 @@ end
 if $ARGS[0] = 'end11':
 	cla
 	*clr
-	set cumfrot += 1
+	cumfrot += 1
 	'<center><img src="images/picparty/skirtcum.jpg"></center>'
 	'You woke up in a strange room, lying on his stomach, thank god clothes, then no you are not drunk ripped.'
-	'What´s this? Damn! What that bastard, you dragged into another room and obkonchal your ass.'
+	'What''s this? Damn! What that bastard, you dragged into another room and obkonchal your ass.'
 
 	act 'Leave':gt 'dorm', 'korr'
 end
@@ -263,10 +250,10 @@ end
 if $ARGS[0] = 'end12':
 	cla
 	*clr
-	set picrand = rand(3, 9)
-	set minut += 15
+	minut += 15
+	picrand = rand(3, 9)
 	'<center><img src="images/img/centr/vechend<<picrand>>.jpg"></center>'
-	'All mixed up in a big ball of women´s bodies, you do not understand or who or whom, and how that now makes your tongue or in your hole either language, or fingers.'
+	'All mixed up in a big ball of women''s bodies, you do not understand or who or whom, and how that now makes your tongue or in your hole either language, or fingers.'
 
 	act 'More':gt 'vecher', 'end12'
 	act 'Leave':gt 'dorm', 'korr'

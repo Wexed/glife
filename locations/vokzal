@@ -1,9 +1,14 @@
 # vokzal
-'<center><h4>Station</h4></center>'
-'<center><img src="images/etogame/vokzal.jpg"></center>'
 clr
 gs 'stat'
 gs 'time'
+'<center><h4>Station</h4></center>'
+'<center><img src="images/etogame/vokzal.jpg"></center>'
+
+
+temp = rand(1, 100)
+
+if temp > 70:'You see <a href="exec:gt ''etoexhib'', ''pos54''">suspicious character.</a>'
 
 act 'Leave':minut += 15 & gt 'nord'
 act 'Exit to the northern highway':minut += 15 & nroad = 0 & gt 'road'
@@ -39,16 +44,16 @@ if money >= 200:
 					'<center><img src="images/etogame/electri.jpg"></center>'
 					'After 15 minutes the train stopped in the Township.'
 
-					act 'Exit':minut += 5 & nroad = 20 & gt 'VokzalG'
+					act 'Leave':minut += 5 & nroad = 20 & gt 'VokzalG'
 				end
 
-				act 'Exit':minut += 5 & nroad = 15 & gt 'road'
+				act 'Leave':minut += 5 & nroad = 15 & gt 'road'
 			end
 
-			act 'Exit':minut += 5 & nroad = 10 & gt 'road'
+			act 'Leave':minut += 5 & nroad = 10 & gt 'road'
 		end
 
-		act 'Exit':minut += 5 & nroad = 5 & gt 'road'
+		act 'Leave':minut += 5 & nroad = 5 & gt 'road'
 	end
 end
 

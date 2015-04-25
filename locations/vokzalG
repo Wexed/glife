@@ -1,12 +1,14 @@
 # vokzalG
 $metka = $ARGS[0]
 $loc = $CURLOC
-'<center><H4>Station</H4></center>'
-'<center><img src="images/etogame/vokzal.jpg"></center>'
-'Little quiet station. About <a href="exec:minut += 3 & gt ''vokzalGin''">Station</a> worth <a href="exec:minut += 5 & gt ''gkafe''">cafe</a>. Just outside the station is a small hotel, guesthouse, post office and police station.'
 clr
 gs 'stat'
 gs 'time'
+'<center><h4>Station</h4></center>'
+'<center><img src="images/etogame/vokzal.jpg"></center>'
+'Little quiet station. About <a href="exec:minut += 3 & gt ''vokzalGin''">Station</a> worth <a href="exec:minut += 5 & gt ''gkafe''">cafe</a>. Just outside the station is a small hotel, guesthouse, post office and police station.'
+'On the forecourt placed small <a href="exec:minut += 1 & gt ''Grinok''">market</a>'
+'Not great <a href="exec:minut += 1 & gt ''Gotel''">hotel</a> in which they live travel.'
 
 if kidalob = 0:
 	podrand = rand(0, 3)
@@ -42,15 +44,10 @@ if kidalob = 0:
 		end
 
 		exit
-	end
-end
-
-if kidalo = 0:
-	podrand = rand(0, 3)
-
-	if money >= 1000 and hour >= 8 and hour <= 20 and podrand = 0 and glamur > 0 and monthKidalo ! month:
+	elseif money >= 1000 and hour >= 8 and hour <= 20 and podrand = 0 and glamur > 0 and monthKidalo ! month:
 		cls
 		monthKidalo = month
+		gs 'stat'
 		'<center><h4>Station</h4></center>'
 		'<center><img src="images/etogame/vokzal.jpg"></center>'
 		'Walking along the station you notice how near the station are two men. They notice you come up to you and talking among themselves. "Well, just the model, well, just kind of ... Claudia Schiffer" One of the guys in a representative suit comes up to you and says. "We are opening a new store your city and we need a woman for advertising. We offer you 30 thousand for the photograph on advertising."'
@@ -60,43 +57,42 @@ if kidalo = 0:
 		act 'Agree':
 			cls
 			gs 'stat'
-			'You willingly agree to such a tempting offer. Boys took you to build the site near the railway station, one of the guys pulled out a camera and put it in front of a tree with bushes. "Shoot will on natural background. So picturesque. Only here´s the problem, your dress glare. You need to change." The guy pulled out of the car´s trunk, and gave you a dress. "Can change clothes in the car" guy showed you that Audi was not far away.'
+			'You willingly agree to such a tempting offer. Boys took you to build the site near the railway station, one of the guys pulled out a camera and put it in front of a tree with bushes. "Shoot will on natural background. So picturesque. Only here''s the problem, your dress glare. You need to change." The guy pulled out of the car''s trunk, and gave you a dress. "Can change clothes in the car" guy showed you that Audi was not far away.'
 
 			act 'Leave':minut += 15 & gt $curloc
 
 			act 'To change':
 				cls
-				gs 'stat'
 				dress[numdress] = 0
-				set numdress = 0
-				set odetjeans = 0
-				set odetyoga = 0
-				set odetsarafan = 1
-				set odetshort = 0
-				set odetskirt = 0
-				set odetdress = 0
-				set odetprofi = 0
-				set odetpants = 0
-				set odetlatex = 0
-				set odethooker = 0
-				set odetkis = 0
-				set odetnewclo = 0
-				set odetero = 0
-				set vatnik = 0
-				set glamur = 0
-				set sport = 0
-				set ski = 0
-				set hook = 0
-				set ofclo = 0
-					set sexual = 0
+				numdress = 0
+				odetjeans = 0
+				odetyoga = 0
+				odetsarafan = 1
+				odetshort = 0
+				odetskirt = 0
+				odetdress = 0
+				odetprofi = 0
+				odetpants = 0
+				odetlatex = 0
+				odethooker = 0
+				odetkis = 0
+				odetnewclo = 0
+				odetero = 0
+				vatnik = 0
+				glamur = 0
+				sport = 0
+				ski = 0
+				hook = 0
+				ofclo = 0
+					sexual = 0
 
-				if cumfrot > 0:set cumfrot = 0
+				if cumfrot > 0:cumfrot = 0
 
-				set nude = 0
-				set odevnesh = 0
-				!
+				nude = 0
+				odevnesh = 0
 				sarafan[3] = 2
 				sarafanH[3] = 20
+				gs 'stat'
 				'You got into the car and took off her dress. Then you put on her dress, which gave you a man.'
 
 				act 'Pose':

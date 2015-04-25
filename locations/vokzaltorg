@@ -8,7 +8,7 @@ $d_kachatprava = {
 		manna = 0
 		gs 'stat'
 		'<center><img src="images/qwest/vokzal/katalkin.jpg"></center>'
-		'You have decided to shake their rights, Police responded to what is to be expected, dragged you to the department, money seized and confiscated goods. Once you promuryzhili two o`clock, you still released.'
+		'You have decided to shake their rights, Police responded to what is to be expected, dragged you to the department, money seized and confiscated goods. Once you promuryzhili two o''clock, you still released.'
 
 		act 'Leave':minut += 1 & gt 'vokzalGin'
 	end
@@ -16,7 +16,6 @@ $d_kachatprava = {
 
 cls
 minut += 30
-gs 'stat'
 prodskill = vnesh + will + dom
 
 if prodskill < 20:prodskill = 20
@@ -67,9 +66,7 @@ act 'Leave':
 				'captain grinned "Well."'
 
 				act 'Leave':minut += 1 & gt 'vokzalGin'
-			end
-
-			if katalkinSexDay + 7 < daystart:
+			elseif katalkinSexDay + 7 < daystart:
 				'The captain frowned "You long ago to me did not come, avoiding?"'
 
 				act 'No, what do you, simply no':
@@ -81,9 +78,7 @@ act 'Leave':
 					act 'Go to the police':minut += 5 & katalkinNoexit = 1 & gt 'katalkin'
 				end
 			end
-		end
-
-		if katalkinSexOnce = 0:
+		elseif katalkinSexOnce = 0:
 			schtraf = 500
 			'captain grinned "Come then now the Department. there shall understand."'
 

@@ -2,33 +2,28 @@
 minut += 30
 gs 'stat'
 if volltime = 0:
-	poverkomandV = rand(500, 1500)
 	'<center><img src="images/qwest/alter/gdksport.jpg"></center>'
 	'Teams took to the field and started playing.'
 
 	if volleysostav = 1:'You sit on the bench watching your team plays.'
+	poverkomandV = rand(500, 1500)
+
 	if poverkomand > poverkomandV:
 		volpoint += 1
 		'Your team plays with the team opponents.'
-	end
-
-	if poverkomand = poverkomandV:
+	elseif poverkomand = poverkomandV:
 		volpoint += 1
 		volpointv += 1
 		'The scales vary in one, then the other, obviously teams are equal on forces.'
-	end
-
-	if poverkomand < poverkomandV:
+	elseif poverkomand < poverkomandV:
 		volpointv += 1
 		'Team beats rivals your team.'
 	end
 
 	act 'further':volltime=1 & gt $curloc
-end
-
-if volltime = 1:
+elseif volltime = 1:
 	'<center><img src="images/qwest/alter/gdksport.jpg" ></center>'
-	'There was a break .'
+	'There was a break, and both teams have a rest.'
 
 	if volleysostav = 1:
 		'You are sitting on the bench.'
@@ -55,9 +50,7 @@ if volltime = 1:
 	end
 
 	act 'further':volltime = 2 & gt $curloc
-end
-
-if volltime=2:
+elseif volltime=2:
 	'<center><img src="images/qwest/alter/gdksport.jpg" ></center>'
 	'Break is over and the team started to play again.'
 
@@ -70,9 +63,7 @@ if volltime=2:
 		if volleysostav = 2:
 			if volpointv > 0:trenerepa += 10
 		end
-	end
-
-	if poverkomand = poverkomandV:
+	elseif poverkomand = poverkomandV:
 		volpoint += 1
 		volpointv += 1
 		'The scales vary in one, then the other, obviously teams are equal on forces.'
@@ -80,9 +71,7 @@ if volltime=2:
 		if volleysostav = 2:
 			if volpointv > 0:trenerepa += 5
 		end
-	end
-
-	if poverkomand < poverkomandV:
+	elseif poverkomand < poverkomandV:
 		volpointv += 1
 		'Team beats rivals your team.'
 
@@ -92,9 +81,7 @@ if volltime=2:
 	end
 
 	act 'further':volltime = 3 & gt $curloc
-end
-
-if volltime = 3:
+elseif volltime = 3:
 	volsesongame += 1
 	'<center><img src="images/qwest/alter/gdksport.jpg" ></center>'
 	'Final whistle.'
@@ -102,14 +89,10 @@ if volltime = 3:
 	if volpoint > volpointv:
 		volsesonwin += 1
 		'Your team won.'
-	end
-
-	if volpoint = volpointv:
+	elseif volpoint = volpointv:
 		volsesondraw += 1
 		'draw.'
-	end
-
-	if volpoint < volpointv:
+	elseif volpoint < volpointv:
 		volsesonloss += 1
 		'Your team lost.'
 	end
@@ -122,4 +105,5 @@ if volltime = 3:
 	act 'Leave':gt 'gdksport'
 	act 'Go to coaching':gt 'Voltrener'
 end
+
 --- volley ---------------------------------

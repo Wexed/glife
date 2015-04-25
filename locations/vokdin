@@ -38,16 +38,16 @@ $din_vokzalg_kassi = {
 						'<center><img src="images/pic/electri.jpg"></center>'
 						'After 15 minutes the train stopped at the Centre.'
 
-						act 'Exit':minut += 5 & nroad = 0 & gt 'Vokzal'
+						act 'Leave':minut += 5 & nroad = 0 & gt 'Vokzal'
 					end
 
-					act 'Exit':minut += 5 & nroad = 5 & gt 'road'
+					act 'Leave':minut += 5 & nroad = 5 & gt 'road'
 				end
 
-				act 'Exit':minut += 5 & nroad = 10 & gt 'road'
+				act 'Leave':minut += 5 & nroad = 10 & gt 'road'
 			end
 
-			act 'Exit':minut += 5 & nroad = 15 & gt 'road'
+			act 'Leave':minut += 5 & nroad = 15 & gt 'road'
 		end
 	end
 
@@ -88,8 +88,8 @@ $din_vokzalg_toilet_deyst = {
 	if hapri = 0:
 		act 'Comb your hair (0:03)':
 			cla
-			set minut += 3
-			set hapri = 1
+			minut += 3
+			hapri = 1
 
 			if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
 			if vokzalToilet = 2:act 'Finish':dynamic $din_vokzalg_toilet_m
@@ -104,9 +104,9 @@ $din_vokzalg_toilet_deyst = {
 
 			act 'Light makeup (0:03)':
 				cla
-				set minut += 3
-				set kosmetica -= 1
-				set mop = 2
+				minut += 3
+				kosmetica -= 1
+				mop = 2
 				'You lightly summed eyes and a little lipstick.'
 
 				if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
@@ -116,9 +116,9 @@ $din_vokzalg_toilet_deyst = {
 			if kosmetica >= 2:
 				act 'Normal makeup (0:05)':
 					cla
-					set minut += 5
-					set kosmetica -= 2
-					set mop = 3
+					minut += 5
+					kosmetica -= 2
+					mop = 3
 					'You lipstick, summed up the eyes and eyelids.'
 
 					if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
@@ -129,10 +129,10 @@ $din_vokzalg_toilet_deyst = {
 			if kosmetica >= 3:
 				act 'Challenging makeup (0:10)':
 					cla
-					set minut += 10
-					set kosmetica -= 3
-					set vidageday -= 1
-					set mop = 4
+					minut += 10
+					kosmetica -= 3
+					vidageday -= 1
+					mop = 4
 					'You densely nakrasili eyes, imposed shadows and mascara , nakrasili lip contour pencil and lipstick.'
 
 					if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
@@ -145,15 +145,22 @@ $din_vokzalg_toilet_deyst = {
 	!!0.2.6 extension: reworked how quick wash and face wash was supposed to work, it is now uniform in all toilet/bathroom locations
 	!!Removed sweat =- 1 when cum is wiped off clothes
 	!!clrbelo: Amount of clean panties available
-	if (cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0) and clrbelo > 0:
+	if cumpussy > 0 or cumbelly > 0 or cumass > 0 or cumanus > 0:
 		act 'Quick wash (0:15)':
 			cla
 			*clr
+
+			if clrbelo > 0:
+				clrbelo -= 1
+				dirtbelo += 1
+			elseif tanga = 1:
+				tanga = 0
+				dirtbelo += 1
+			end
+
 			dynamic $showerdin
-			set sweat -= 1
-			set minut += 15
-			set clrbelo -= 1
-			set dirtbelo += 1
+			sweat -= 1
+			minut += 15
 			'<center><img src="images/pics/wash5.jpg"></center>'
 			'You gave yourself a catlick, thus removing any traces of cum.'
 
@@ -166,11 +173,11 @@ $din_vokzalg_toilet_deyst = {
 		act 'Clean your face from sperm (0:05)':
 			cla
 			*clr
-			set mop = 1
-			set cumlip = 0
-			set cumface = 0
-			set sweat -= 1
-			set minut += 5
+			mop = 1
+			cumlip = 0
+			cumface = 0
+			sweat -= 1
+			minut += 5
 			'<center><img src="images/pic/facesp.jpg"></center>'
 			'You clean your face and got rid of any trace of cum.'
 
@@ -183,8 +190,8 @@ $din_vokzalg_toilet_deyst = {
 		act 'Wipe the cum off your clothes (0:10)':
 			cla
 			*clr
-			set cumfrot = 0
-			set minut += 10
+			cumfrot = 0
+			minut += 10
 			'<center><img src="images/pic/frotsp.jpg"></center>'
 			'You remove traces of cum from your clothes.'
 
@@ -198,10 +205,10 @@ $din_vokzalg_toilet_deyst = {
 		act 'Use a tampon (0:05)':
 			cla
 			*clr
-			set tampon -= 1
-			set isprok = 1
-			set minut =+ 5
-			set manna -= 5
+			tampon -= 1
+			isprok = 1
+			minut =+ 5
+			manna -= 5
 			'<center><img src="images/pics/wash3.jpg"></center>'
 			'You use a tampon.'
 
@@ -213,14 +220,13 @@ $din_vokzalg_toilet_deyst = {
 	if horny >= 90:
 		act 'Masturbate':
 			cls
-			gs 'stat'
-			'<center><img src="images/qwest/alter/Ev/mastr.jpg"></center>'
-			'You closed booth, removed the pants and sat on the toilet.'
-			'Your fingers began to caress expiring pussy juice and you started to rub your clit.'
 			orgasm += 1
 			mastr += 1
 			horny = 0
 			gs 'stat'
+			'<center><img src="images/qwest/alter/Ev/mastr.jpg"></center>'
+			'You closed booth, removed the pants and sat on the toilet.'
+			'Your fingers began to caress expiring pussy juice and you started to rub your clit.'
 			'Soon pleasant wave began to spread throughout the body and you covered a very powerful orgasm.'
 
 			if vokzalToilet = 1:act 'Finish':dynamic $din_vokzalg_toilet_f
@@ -231,8 +237,8 @@ $din_vokzalg_toilet_deyst = {
 
 $din_vokzalg_toilet_f = {
 	cls
-	gs 'stat'
 	vokzalToilet = 1
+	gs 'stat'
 	'<center><h4>The ladies'' room</h4></center>'
 	'<center><img src="images/pic/PublicToilet.jpg"></center>'
 	'You opened the door to the ladies'' room and went in.'
@@ -244,12 +250,16 @@ $din_vokzalg_toilet_f = {
 
 $din_vokzalg_toilet_m = {
 	cls
-	gs 'stat'
 	vokzalToilet = 2
-	'<center><h4>The men`s room</h4></center>'
+	gs 'stat'
+	'<center><h4>The men''s room</h4></center>'
 	'<center><img src="images/pic/PublicToilet.jpg"></center>'
 	'You opened the door to the men''s room and went in.'
 
+	if cloth_vid = 1:
+		act 'Stand and wait adventures':gt 'vokBimbo', 'pos1'
+		act 'Go to the booth':gt 'vokBimbo', 'pos5'
+	end
 	act 'Leave':minut += 1 & dynamic $din_vokzalg_toilet
 
 	dynamic $din_vokzalg_toilet_deyst
@@ -257,11 +267,12 @@ $din_vokzalg_toilet_m = {
 
 $din_vokzalg_toilet = {
 	cls
-	gs 'stat'
 	vokzalToilet = 0
+	gs 'stat'
+
 	'<center><h4>Station</h4></center>'
 	'<center><img src="images/qwest/alter/vokzal.jpg"></center>'
-	'You are logged into the wing where the station to be <a href="exec:minut += 1 & dynamic $din_vokzalg_toilet_f">women`s</a> and <a href="exec:minut += 1 & dynamic $din_vokzalg_toilet_m">men`s</a> wc.'
+	'You are logged into the wing where the station to be <a href="exec:minut += 1 & dynamic $din_vokzalg_toilet_f">women''s</a> and <a href="exec:minut += 1 & dynamic $din_vokzalg_toilet_m">men''s</a> wc.'
 
 	act 'Leave':minut += 1 & gt 'vokzalGin'
 }

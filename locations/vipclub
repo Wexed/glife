@@ -4,28 +4,28 @@ if $ARGS[0] = 'start':
 	gs 'stat'
 	'<center><b>Vip-room</b></center>'
 	'<center><img src="images/img/centr/vipclub.jpg"></center>'
-	'VIP area is divided into several separate rooms, with no doors and passing by can see such a scene that would be the envy even the director´s porn.'
+	'VIP area is divided into several separate rooms, with no doors and passing by can see such a scene that would be the envy even the director''s porn.'
 
 	act 'Leave':gt 'club', 'inside'
 
 	if hour >= 15 or hour <= 3:
 		act 'Cocktails.':
 			*clr
-			set minut += 15
-			set drunk += 1
-			set water += 5
-			set son -= 5
+			minut += 15
+			drunk += 1
+			water += 5
+			son -= 5
 			frost = 0
-			set horny += rand(10, 20)
+			horny += rand(10, 20)
 			gt 'vipclub', 'start'
 		end
 
 		if money >= 3000:
 			act 'Order Woman (3,000 rubles)':
-				set money -= 3000
-				set picrand = rand(13, 17)
-				set girl += 1
-				set lesbian += 1
+				money -= 3000
+				picrand = rand(13, 17)
+				girl += 1
+				lesbian += 1
 				dynamic $venerasiak
 				xgt 'lezbsex', 'var'
 			end
@@ -33,9 +33,9 @@ if $ARGS[0] = 'start':
 
 		if money >= 3000:
 			act 'Order Man (3,000 rubles)':
-				set money -= 3000
-				set picrand = 38
-				set guy += 1
+				money -= 3000
+				picrand = 38
+				guy += 1
 				dynamic $venerasiak
 				xgt 'sex', 'var'
 			end
@@ -45,10 +45,11 @@ if $ARGS[0] = 'start':
 			act 'Order representation (5,000 rubles)':
 				cla
 				*clr
-				set girl += 1
-				set lesbian += 1
+				girl += 1
+				lesbian += 1
+				money -= 5000
 				dynamic $venerasiak
-				set money -= 5000
+
 				'<center><img src="images/img/centr/vip1.jpg"></center>'
 				'You booked an idea and a couple of minutes you went into the room boy and a girl. Man undid his pants and sat on the couch, she began to make him a blowjob. You intiresom watched the scene.'
 
@@ -67,8 +68,8 @@ if $ARGS[0] = 'start':
 						act 'Further':
 							cla
 							*clr
-							set horny = 0
-							set orgasm += 1
+							horny = 0
+							orgasm += 1
 							'<center><img src="images/img/centr/vip4.jpg"></center>'
 							'Then she turns around and puts it in her pussy, you begin to move actively trying to take the dildo as deep as possible and rub against her pussy, she sucks at this time with a guy. Soon you covers the wave of orgasm.'
 
@@ -89,7 +90,7 @@ if $ARGS[0] = 'start':
 									act 'Lick her breasts':
 										cla
 										*clr
-										set cumlip += 1
+										cumlip += 1
 										'<center><img src="images/img/centr/vip7.jpg"></center>'
 										'You began to lick the droplets of cum from her chest, trying not to miss an inch of her body.'
 
