@@ -1,9 +1,9 @@
 # youry
 $roomyour = {
-	set $nameV = 'Yuri'
+	$nameV = 'Yuri'
 	$boy = $nameV
-	set dick = 18
-	set silavag = 2
+	dick = 18
+	silavag = 2
 	harakBoy = 1
 	NoGuy = 1
 	gtGuy = 1
@@ -12,18 +12,18 @@ $roomyour = {
 	act 'On the bed':gt 'BDsex', 'start'
 }
 
-set minut += 5
-'<center><b><font color="maroon">Flat George</font></b></center>'
-'<center><img src="images/peter/peterdoor.jpg"></center>'
 clr
+minut += 5
 gs 'stat'
 fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
+'<center><b><font color="maroon">Flat George</font></b></center>'
+'<center><img src="images/peter/peterdoor.jpg"></center>'
 
 act 'Leave':
 	cla
-	set minut += 5
+	minut += 5
 	gt 'nord'
 end
 

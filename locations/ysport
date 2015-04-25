@@ -3,17 +3,18 @@ $metkaM = $ARGS[0]
 $locM = $CURLOC
 $metka = $ARGS[0]
 $loc = $CURLOC
+clr
+gs 'stat'
 '<center><b><font color="maroon">Detached</font></b></center>'
 '<center>Gym</center>'
+'In the hall is enough space for a variety of sport activities'
 
 if ymanrem[11] = 0:'<center><img src="images/etogame/ynill.jpg"></center>'
 if ymanrem[11] = 1:'<center><img src="images/etogame/yrem.jpg"></center>'
 if ymanrem[11] = 2:'<center><img src="images/etogame/ysport.jpg"></center>'
 if ymanrem[11] = 2:''
 
-clr
-gs 'stat'
-'In the hall is enough space for a variety of sport activities'
+
 
 !!! does not exists in 1.0.5
 if treadmillday ! day:
