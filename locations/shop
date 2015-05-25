@@ -1,897 +1,324 @@
 # shop
+!! This is the supermarket, located in several places
+
+!! Main entrance
 if $ARGS[0] = 'start':
-	$icecreem = {
-		if hour >= 8 and hour <= 20:
-			cls
-			minut += 3
-			'Ice cream, sold for 50 rubles.'
+	$shoplocation = 'main'
+end
 
-			act 'Get out of the department':gt 'shop', 'start'
+if $ARGS[0] = 'start' or $ARGS[0] = 'move':
+	minut += 1
+end
 
-			if money >= 50:
-				act 'Buy ice cream (50 rubles)':
-					cls
-					money -= 50
-					salo += 1
-					fat += 50
-					manna += 500
-					water = 20
-					energy = 20
-					perkice += 1
-					gs 'stat'
-					!!icecreem
-					'<center><img src="images/etogame/icecreem.jpg"></center>'
-					'You bought ice cream and ate it not going far.'
-
-					act 'Get out of the department':gt 'shop', 'start'
-				end
-			end
-		else
-			'Ice cream counter with closed'
-		end
-	}
-
-	$sofood = {
-		if hour >= 8 and hour <= 20:
-			minut += 3
-			gt 'shop', 'food'
-		else
-			'Section closed'
-		end
-	}
-
-	$socosm = {
-		if hour >= 8 and hour <= 20:
-			minut += 3
-			gt 'shop', 'cosm'
-		else
-			'Section closed'
-		end
-	}
-
-	$sohos = {
-		if hour >= 8 and hour <= 20:
-			minut += 3
-			gt 'shop', 'hos'
-		else
-			'Section closed'
-		end
-	}
-
-	$soclo = {
-		if hour >= 8 and hour <= 20:
-			minut += 3
-			gt 'shop', 'clo'
-		else
-			'Section closed'
-		end
-	}
-
-	$soteh = {
-		if hour >= 8 and hour <= 20:
-			minut += 3
-			gt 'shop', 'teh'
-		else
-			'Section closed'
-		end
-	}
-
-	$sobank = {
-		if hour >= 8 and hour <= 20:
-			if karta > 0:
-				act 'Withdraw money from the ATM':
-					cla
-					minut += 5
-					kartaOUT = input ("How much money you want to withdraw?")
-
-					if kartaOUT <= 0 or kartaOUT > karta:
-						'<br>Invalid operation.'
-					else
-						karta -= kartaOUT
-						money += kartaOUT
-						'<br>You withdraw <<kartaOUT>> rubles. You have <<karta>> rubles left in your bank account.'
-					end
-
-					act 'Move away':gt 'shop', 'start'
-				end
-			else
-				'You do not have a bank card'
-			end
-		else
-			'ATM disabled'
-		end
-	}
-
+!! Main area
+if $shoplocation = 'main':
 	cla
 	*clr
-	minut = minut + 1
-	clr
-	gs 'stat'
-	fcolor = rgb(0, 0, 0)
-	bcolor = rgb(255, 255, 255)
-	lcolor = rgb(106, 90, 205)
-	'<center><b><font color = maroon>Supermarket</font></b></center>'
+
+	'<center><b><font color="maroon">Supermarket</font></b></center>'
 	'<center><img src="images/etogame/shop.jpg"></center>'
-	'In the hall stands <a href="exec:dynamic $sobank">ATM</a>, from which you can withdraw money if you have it in the bank.'
-	'<br>Most of the space in the supermarket is taken by the <a href="exec:dynamic $sofood">grocery department</a>, but the store has many smaller departments as well. <a href="exec:dynamic $socosm">Cosmetics</a>, <a href="exec:dynamic $sohos">hardware</a>, <a href="exec:dynamic $soclo">clothing</a> and the department of <a href="exec:dynamic $soteh">household appliances</a>. Not far from the entrance is a <a href="exec:dynamic $icecreem">counter selling ice cream</a>'
-	if $loc = 'gorodok' and StoryLine > 0:
-		if week < 6:
-			if hour >= 8 and hour < 16:
-				'Your sister <a href="exec:SiSonWork = 1 & gt ''sister''">Anja</a> sits at the checkout.'
-			end
+	
+	if hour < 8 or hour > 20:
+		'The supermarket is currently closed.'
+		
+		act 'Leave the store':gt $loc
+		exit
+	end
+	
+	'In the hall stands an <a href="exec:$shoplocation = ''ATM'' & gt ''shop'', ''move''">ATM</a>, from which you can withdraw money from your bank account.'
+	'<br>Most of the space in the supermarket is taken up by the <a href="exec:$shoplocation = ''grocery'' & gt ''shop'', ''move''">grocery department</a>, but the store has many smaller departments as well. <a href="exec:$shoplocation=''cosmetics'' & gt ''shop'', ''move''">Cosmetics</a>, <a href="exec:$shoplocation = ''hardware'' & gt ''shop'', ''move''">hardware</a>, <a href="exec:$shoplocation = ''clothing'' & gt ''shop'', ''move''">clothing</a> and the department of <a href="exec:$shoplocation = ''tech'' & gt ''shop'', ''move''">household appliances</a>. Not far from the entrance is a <a href="exec:$shoplocation = ''icecream'' & gt ''shop'', ''move''">counter selling ice cream</a>.'
+	clr
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
+	!! The store in the town and in the altstart only
+	if $loc = 'gorodok' and StoryLine = 1:
+		if week < 6 and hour >= 8 and hour < 16:
+			'Your sister <a href="exec:SiSonWork = 1 & gt ''sister''">Anja</a> sits at the checkout.'
 		end
 	end
 
+	!! Store in the residential district
 	if $loc = 'street':
-		evrand = rand(1, 100)
+		if rand(1, 20) = 20:
+			if dimaQW = 0:
+				'In the lobby of the store looks at you appreciatively what that man.'
+				act 'See it':gt 'event', 'dima'
+			elseif dimaQW = 1:
+				'In the lobby of the store you notice Dima and binds you fear, you can not move.'
+				act 'See it':gt 'event', 'scoreslut1'
+			else
+				'You met the same Dima who boyfriend fucking amuse you. Dima cocky grin came to you and said hello.'
 
-		if evrand >= 95 and dimaQW = 0:
-			'In the lobby of the store looks at you appreciatively what that man.'
-
-			act 'See it':gt 'event', 'dima'
-		elseif evrand >= 95 and dimaQW = 1:
-			'In the lobby of the store you notice Dima and binds you fear, you can not move.'
-
-			act 'See it':gt 'event', 'scoreslut1'
-		elseif evrand >= 95 and dimaQW = 2:
-			'You met the same Dima who boyfriend fucking amuse you. Dima cocky grin came to you and said hello.'
-
-			act 'Hello':
-				cla
-				'Come to me, I have no wife at home said Dima.'
-
-				act 'No':gt 'shop', 'start'
-
-				act 'Come':
+				act 'Hello':
 					cla
-					*clr
-					gostrand = rand(1, 2)
+					'Come to me, I have no wife at home said Dima.'
 
-					if gostrand = 1:
+					act 'No':gt 'shop', 'start'
+
+					act 'Come':
 						cla
-						sex += 1
-						oral += 1
-						throat += 1
-						cumlip += 1
-						swallow += 1
-						horny = 0
-						'Dima took you to his house and there has ordered you to kneel. You got on his knees and he calling you a bitch and fuck you cocksucker began in the mouth.'
-						'<center><img src="images/pics/gostDT2.jpg"></center>'
-						'Dima finally finished your mouth, you obediently swallowed and licked the remnants of sperm with his big cock.'
+						*clr
+						
+						if rand(1, 2) = 1:
+							cla
+							sex += 1
+							oral += 1
+							throat += 1
+							cumlip += 1
+							swallow += 1
+							horny = 0
+							'Dima took you to his house and there has ordered you to kneel. You got on his knees and he calling you a bitch and fuck you cocksucker began in the mouth.'
+							'<center><img src="images/pics/gostDT2.jpg"></center>'
+							'Dima finally finished your mouth, you obediently swallowed and licked the remnants of sperm with his big cock.'
 
-						act 'Go home':gt 'street'
-					elseif gostrand = 2:
-						cla
-						sex += 1
-						anal += 1
-						cumass += 1
-						spank += 1
-						boom = 5
-						horny = 0
-						'Dima has brought you to my house and right in the corridor began to kiss you and undress. After he stripped you he took you to the bathroom. There he sat in the bathroom and you unscrewing the showerhead put a water hose you in the ass. Quickly the feeling of fullness and Dima put you on the toilet. After an enema, he made you cancer and put you in the ass his big dick.'
-						'<center><img src="images/pics/gostAnal2.jpg"></center>'
-						'Dima long you fucked in the ass and beat his hands, you first it was painful, but gradually you got the taste and began to catch the buzz finally your ass filled with hot liquid and Dima moan grabbed your buttocks.'
+							act 'Leave':gt 'street'
+						else
+							cla
+							sex += 1
+							anal += 1
+							cumass += 1
+							spank += 1
+							boom = 5
+							horny = 0
+							'Dima has brought you to my house and right in the corridor began to kiss you and undress. After he stripped you he took you to the bathroom. There he sat in the bathroom and you unscrewing the showerhead put a water hose you in the ass. Quickly the feeling of fullness and Dima put you on the toilet. After an enema, he made you cancer and put you in the ass his big dick.'
+							'<center><img src="images/pics/gostAnal2.jpg"></center>'
+							'Dima long you fucked in the ass and beat his hands, you first it was painful, but gradually you got the taste and began to catch the buzz finally your ass filled with hot liquid and Dima moan grabbed your buttocks.'
 
-						act 'Go home':gt 'street'
+							act 'Leave':gt 'street'
+						end
 					end
 				end
 			end
 		end
 	end
 
-	if hour >= 8 and hour <= 20:
-		'<br>In store is crowd of shoppers.'
+	'<br>The store is crowded with shoppers.'
 
-		if TorgPredZ > 0:
-			if $loc = 'street':
-				if StreetShopTPday ! day:
-					act 'Arrange products':
-						cls
-						mtprand = rand(40, 130)
-						minut += mtprand
-						TorgPredZ -= 1
-						TorgPredZV += 1
-						StreetShopTPday = day
-						gs 'stat'
-						'<center><img src="images/etogame/shop.jpg"></center>'
-						'You arranged the products for quite a while and when I finally managed, then went to the cashier and you check it struck.'
+	!! This is connected to the trade mission
+	if TorgPredZ > 0:
+		!! the location of the shop hasn''t been done today
+		if ($loc = 'street' and StreetShopTPday ! day) or ($loc = 'Nord' and nordShopTPday ! day) or ($loc = 'down' and downShopTPday ! day):
+			act 'Arrange products':
+				if $loc = 'street':StreetShopTPday = day
+				if $loc = 'Nord':nordShopTPday = day
+				if $loc = 'down':downShopTPday = day
+				
+				cls
+				mtprand = rand(40, 130)
+				minut += mtprand
+				TorgPredZ -= 1
+				TorgPredZV += 1
+				gs 'stat'
+				'<center><img src="images/etogame/shop.jpg"></center>'
+				'You arranged the products for quite a while and when I finally managed, then went to the cashier and you check it struck.'
 
-						act 'Leave':gt 'shop', 'start'
-					end
-				end
-			elseif $loc = 'Nord':
-				if nordShopTPday ! day:
-					act 'Arrange products':
-						cls
-						mtprand = rand(40, 130)
-						minut += mtprand
-						TorgPredZ -= 1
-						TorgPredZV += 1
-						nordShopTPday = day
-						gs 'stat'
-						'<center><img src="images/etogame/shop.jpg"></center>'
-						'You arranged the products for quite a while and when I finally managed, then went to the cashier and you check it struck.'
-
-						act 'Leave':gt 'shop', 'start'
-					end
-				end
-			elseif $loc = 'down':
-				if downShopTPday ! day:
-					act 'Arrange products':
-						cls
-						mtprand = rand(40, 130)
-						minut += mtprand
-						TorgPredZ -= 1
-						TorgPredZV += 1
-						downShopTPday = day
-						gs 'stat'
-						'<center><img src="images/etogame/shop.jpg"></center>'
-						'You arranged the products for quite a while and when I finally managed, then went to the cashier and you check it struck.'
-
-						act 'Leave':gt 'shop', 'start'
-					end
-				end
+				act 'Exit':gt 'shop', 'start'
 			end
-		end
-	else
-		'The store is closed.'
-	end
 
+		end
+	end
+	
 	act 'Leave the store':gt $loc
-
+	exit
 end
 
-if $ARGS[0] = 'food':
-	cla
-	clr
-	*clr
-	minut += 1
-	gs 'stat'
-	fcolor = rgb(0, 0, 0)
-	bcolor = rgb(255, 255, 255)
-	lcolor = rgb(106, 90, 205)
-	'<center><b><font color="maroon">Grocery deparment</font></b></center>'
-	'<center><img src="images/etogame/shop1.jpg"></center>'
-	'Serving of food - 50 rubles'
-	'Bottle of water - 50 rubles'
-	'Sandwich - 100 rubles'
-	'Serving of diet food - 250 rubles'
-	'Tea biscuits - 300 rubles'
-	'Bottle of wine - 500 rubles'
+!! ATM
+if $shoplocation = 'ATM':
+	if karta > 0:
+		act 'Withdraw money from the ATM':
+			cla
+			minut += 5
+			kartaOUT = input ("How much money you want to withdraw?")
 
-	act 'Get out of the grocery department':gt 'shop', 'start'
-
-	if hour >= 8 and hour <= 20:
-		if money >= 50:
-			act 'Buy <b>Food</b> (50 rubles) <<iif(eda > 0, ''[left:<b>'' + eda + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input("How many servings you want to buy?")
-
-				if portion <= 0:portion = 1
-
-				if portion * 50 <= money:
-					eda += portion
-					minut += 5 + (portion / 5)
-					money -= portion * 50
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought food and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'food'
+			if kartaOUT <= 0 or kartaOUT > karta:
+				'<br>Invalid operation.'
+			else
+				karta -= kartaOUT
+				money += kartaOUT
+				'<br>You withdraw <<kartaOUT>> rubles. You have <<karta>> rubles left in your bank account.'
 			end
 
-			if bottle = 0 and bag > 0:
-				act 'Buy a <b>bottle of water</b> (50 rubles)':
-					cla
-					*clr
-					minut += 5
-					money -= 50
-					bottle = 1
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought a bottle of water, put it in your purse and paid the money to the cashier.'
-
-					act 'Move away from the counter':gt 'shop', 'food'
-				end
-			end
-		end
-
-		if money >= 100 and buterbrod = 0 and bag > 0:
-			act 'Buy a <b>sandwich</b> (100 rubles)':
-				cla
-				*clr
-				minut += 5
-				money -= 100
-				buterbrod = 1
-				'You bought a sandwich and put it in your purse.'
-
-				act 'Move away from the counter':gt 'shop', 'food'
-			end
-		end
-
-		if money >= 250:
-			act 'Buy <b>diet food</b> (250 rubles) <<iif(edaD > 0, ''[left:<b>'' + edaD + ''</b>]'', '''')>>':
-				cla
-				*clr
-				minut += 15
-				portion = input ("How many servings you want to buy?")
-
-				if portion <= 0:portion = 1
-
-				if portion * 250 <= money:
-					edaD += portion
-					minut += 5 + (portion / 5)
-					money -= portion * 250
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought food and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'food'
-			end
-		end
-
-		if money >= 300:
-			act 'Buy <b>tea biscuits</b> (300 rubles) <<iif(pranik > 0, ''[left:<b>'' + pranik + ''</b>]'', '''')>>':
-				cla
-				*clr
-
-				portion = input("How many biscuit packages you want to buy? (One package contains 10 buscuits)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 300 <= money:
-					pranik += portion * 10
-					minut += 5 + (portion / 5)
-					money -= portion * 300
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought bags of cookies and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'food'
-			end
-		end
-
-		if money >= 500 and wine = 0 and bag > 0:
-			act 'Buy a <b>bottle of wine</b> (500 rubles)':
-				cla
-				*clr
-				minut += 5
-				money -= 500
-				wine = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You bought a bottle of wine, put it in your purse and paid the money to the cashier.'
-
-				act 'Get out of the department':gt 'shop', 'food'
-			end
+			act 'Move away':gt 'shop', 'start'
 		end
 	else
-		'The grocery department is closed'
+		'You do not have any money in the bank.'
+		act 'Move away':gt 'shop', 'start'
 	end
 end
 
-if $ARGS[0] = 'cosm':
-
+!! Grocery
+if $shoplocation = 'grocery':
 	cla
-	clr
 	*clr
-	minut += 1
+
+	'<center><b><font color="maroon">Grocery</font></b></center>'
+	'<center><img src="images/etogame/shop1.jpg"></center>'
+	
+	if hour < 8 or hour > 20:
+		'The grocery is currently closed.'
+		
+		act 'Leave the grocery':gt 'shop', 'start'
+		exit
+	end
+	
+	!! output from purchase
+	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
+	
+	*pl '<center><table align="center">' + _
+	FUNC ('$stock_item', 1, 'Regular food', 50, 'eda', $CURLOC) + _
+	FUNC ('$stock_item', 1, 'Diet food', 250, 'edaD', $CURLOC) + _
+	FUNC ('$stock_item', 10, 'Tea biscuits', 300, 'pranik', $CURLOC) + _
+	iif(bag > 0, FUNC ('$single_stock_item', 1, 'Bottle of water', 50, 'bottle', $CURLOC), '') + _
+	iif(bag > 0, FUNC ('$single_stock_item', 1, 'Sandwich', 100, 'buterbrod', $CURLOC), '') + _
+	iif(bag > 0, FUNC ('$single_stock_item', 1, 'Bottle of wine', 500, 'wine', $CURLOC), '') + _
+	'</table></center>'
+
+	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+
+	act 'Leave the grocery':gt 'shop', 'start'
+end
+
+!! Cosmetics
+!! The scrunchies and hairpins sold here are from the Maruda Hair Mod
+if $shoplocation= 'cosmetics':
+	cla
+	*clr
+
 	'<center><b><font color="maroon">Cosmetics Department</font></b></center>'
 	'<center><img src="images/etogame/shop2.jpg"></center>'
-	!!! Maruda Hair Mod
-	'A Box of 10 Hairscrunchies - 80 rubles'
-	'A Box of 12 Hairpins, -clips and -grips - 100 rubles'
-	!!! Maruda Hair Mod
-	'Tissues - 100 rubles'
-	'Comb - 150 rubles'
-	'A box of tampons - 200 rubles'
-	'A box of razors - 500 rubles'
-	'A bottle of sunblock - 500 rubles'
-	'A bottle of shampoo - 500 rubles'
-	'Makeup kit - 1,000 rubles'
-	'Portable makeup kit - 1,000 rubles'
-	'Handbag - 5,000 rubles'
-
-	act 'Get out of the department':gt 'shop', 'start'
-
-	if hour >= 8 and hour <= 20:
-		!!! Maruda Hair Mod
-		if money >= 80:
-			act 'Buy <b>hairscrunchies</b> (80 rubles) <<iif(hscrunch > 0, ''[left:<b>'' + hscrunch + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input ("How many hairscrunchies you want to buy? (A box contains 10 hairscrunchies)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 80 <= money:
-					hscrunch += portion * 10
-					minut += 5 + (portion / 5)
-					money -= portion * 80
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought the small box of hairscrunchies and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'cosm'
-			end
-		end
-
-		if money >= 100:
-			act 'Buy <b>hairpins</b> (100 rubles) <<iif(hpingrip > 0, ''[left:<b>'' + hpingrip + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input ("How many hairpins you want to buy? (A box contains 10 hairpins)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 100 <= money:
-					hpingrip += portion * 10
-					minut += 5 + (portion / 5)
-					money -= portion * 100
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought the small box of hairpins and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'cosm'
-			end
-			!!! Maruda Hair Mod
-
-			if bag > 0:
-				act 'Buy <b>tissues</b> (100 rubles) <<iif(salfetka > 0, ''[left:<b>'' + salfetka + ''</b>]'', '''')>>':
-					cla
-					*clr
-					portion = input ("How many tissues you want to buy? (A box contains 10 tissues)")
-
-					if portion <= 0:portion = 1
-
-					if portion * 100 <= money:
-						salfetka += portion *10
-						minut += 5 + (portion / 5)
-						money -= portion * 100
-						'<center><img src="images/etogame/kassa.jpg"></center>'
-						'You bought tissues, put them in your purse and paid the money to the cashier.'
-					else
-						'You do not have enough money.'
-					end
-
-					act 'Move away from the counter':gt 'shop', 'cosm'
-				end
-			end
-		end
-
-		if money >= 150 and greben = 0 and bag > 0:
-			act 'Buy a <b>comb</b> (150 rubles)':
-				cla
-				*clr
-				greben = 1
-				minut += 5
-				money -= 150
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You bought a comb, put it in your purse and paid the money to the cashier.'
-				act 'Move away from the counter':gt 'shop', 'cosm'
-			end
-		end
-
-		if money >= 200:
-			act 'Buy <b>tampons</b> (200 rubles) <<iif(tampon > 0, ''[left:<b>'' + tampon + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input ("How many tampons you want to buy? (A box contains 20 tampons)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 200 <= money:
-					tampon += portion * 20
-					minut += 5 + (portion / 5)
-					money -= portion * 200
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought tampons and paid the money to the cashier.'
-
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'cosm'
-			end
-		end
-
-		if money >= 500:
-				act 'Buy <b>razors</b> (500 rubles) <<iif(stanok > 0, ''[left:<b>'' + stanok + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input ("How many razors you want to buy? (A razor lasts for 10 uses)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 500 <= money:
-					stanok += portion * 10
-					minut += 5 + (portion / 5)
-					money -= portion * 500
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought razors and paid the money to the cashier.'
-
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'cosm'
-			end
-
-				act 'Buy <b>bottles of sunblock</b> (500 rubles) <<iif(krem > 0, ''[left:<b>'' + krem + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input ("How much you want to buy? (A bottle of sunblock lasts for 20 uses)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 500 <= money:
-					krem += portion * 20
-					minut += 5 + (portion / 5)
-					money -= portion * 500
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought bottles of sunblocks and paid the money to the cashier.'
-
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'cosm'
-			end
-
-				act 'Buy <b>shampoo</b> (500 rubles) <<iif(shampoo > 0, ''[left:<b>'' + shampoo + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input ("How many shampoos you want to buy? (A bottle of shampoo lasts for 30 uses)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 500 <= money:
-					shampoo += portion * 30
-					minut += 5 + (portion / 5)
-					money -= portion * 500
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought tampons and paid the money to the cashier.'
-
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'cosm'
-			end
-		end
-
-		if money >= 1000:
-			act 'Buy <b>makeup kits</b> (1,000 rubles) <<iif(kosmetica > 0, ''[left:<b>'' + kosmetica + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input ("How many makeup kits you want to buy? (A kit lasts for 25 normal uses")
-
-				if portion <= 0:portion = 1
-
-				if portion *1000 <= money:
-					kosmetica += portion * 50
-					minut += 5 + (portion / 5)
-					money -= portion * 1000
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought cosmetics and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'cosm'
-			end
-
-
-			if bag > 0:
-				act 'Buy <b>portable makeup kits</b> (1,000 rubles) <<iif(kosmetitka > 0, ''[left:<b>'' + kosmetitka + ''</b>]'', '''')>>':
-					cla
-					*clr
-					portion = input ("How many portable makeup kits you want to buy? (A kit lasts for 5 normal uses")
-
-					if portion <= 0:portion = 1
-
-					if portion *1000 <= money:
-						kosmetitka += portion * 10
-						minut += 5 + (portion / 5)
-						money -= portion * 1000
-						'<center><img src="images/etogame/kassa.jpg"></center>'
-						'You bought portable cosmetics and paid the money to the cashier.'
-					else
-						'You do not have enough money.'
-					end
-
-					act 'Move away from the counter':gt 'shop', 'cosm'
-				end
-			end
-		end
-		if money >= 5000 and bag = 0:
-			act 'Buy a <b>handbag</b> (5,000 rubles)':
-				cla
-				*clr
-				money -= 5000
-				minut += 5
-				bag = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You bought a handbag and paid the money to the cashier.'
-
-				act 'Get out of the department':gt 'shop', 'cosm'
-			end
-		end
-	else
-		'The grocery department is closed'
+	
+	if hour < 8 or hour > 20:
+		'The cosmetics department is currently closed.'
+		
+		act 'Leave the cosmetics department':gt 'shop', 'start'
+		exit
 	end
-end
-
-if $ARGS[0] = 'hos':
-	cla
+	
+	!! output from purchase
+	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
+	
+	*pl '<center><table align="center">' + _
+	FUNC ('$stock_item', 50, 'Cosmetics', 1000, 'kosmetica', $CURLOC) + _
+	FUNC ('$stock_item', 10, 'Razors', 500, 'stanok', $CURLOC) + _
+	FUNC ('$stock_item', 20, 'Sunblock', 500, 'krem', $CURLOC) + _
+	FUNC ('$stock_item', 20, 'Tampons', 200, 'tampon', $CURLOC) + _
+	FUNC ('$stock_item', 30, 'Shampoo', 500, 'shampoo', $CURLOC) + _
+	FUNC ('$stock_item', 10, 'Hair scrunchies', 80, 'hscrunch', $CURLOC)
+	
+	*pl FUNC ('$stock_item', 12, 'Hair pins', 100, 'hpingrip', $CURLOC) + _
+	iif(bag > 0, FUNC ('$stock_item', 10, 'Wipes', 100, 'salfetka', $CURLOC), '') + _
+	iif(bag > 0, FUNC ('$stock_item', 10, 'Portable makeup', 1000, 'kosmetitka', $CURLOC), '') + _
+	iif(bag > 0, FUNC ('$single_stock_item', 1, 'Comb', 150, 'greben', $CURLOC), '') + _
+	FUNC ('$single_stock_item', 1, 'Handbag', 5000, 'bag', $CURLOC) + _
+	'</table></center>'
+	
 	clr
-	*clr
-	minut += 1
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
+
+	act 'Leave the cosmetics department':gt 'shop', 'start'
+end
+
+!! Hardware
+if $shoplocation = 'hardware':
+	cla
+	*clr
+
 	'<center><b><font color="maroon">Division of household goods</font></b></center>'
 	'<center><img src="images/etogame/shop3.jpg"></center>'
-	'<a href="exec:dynamic $buyfairy">Dishwashing detergent - 100 rubles</a>'
-	'<a href="exec:dynamic $buyporoshok">Washing powder - 250 rubles</a>'
-	'<a href="exec:dynamic $buycltarelka">of 5 plates - 300 rubles</a>'
-
-	act 'Get out of the department':gt 'shop', 'start'
-
-	if hour >= 8 and hour <= 20:
-		if money > 100:
-			act 'Buy <b>Dishwashing detergent</b> (100 rubles) <<iif(fairy > 0, ''[left:<b>'' + fairy + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input("How many detergents you want to buy? (One box lasts for 20 uses)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 100 <= money:
-					fairy += portion * 20
-					minut += 5 + (portion / 5)
-					money -= portion * 100
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought detergent and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'hos'
-			end
-		end
-
-		if money > 250:
-			act 'Buy <b>Washing powder</b> (100 rubles) <<iif(poroshok > 0, ''[left:<b>'' + poroshok + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input("How many washing powder you want to buy? (One box lasts for 30 uses)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 250 <= money:
-					poroshok += portion * 30
-					minut += 5 + (portion / 5)
-					money -= portion * 250
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought washing powder and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'hos'
-			end
-		end
-
-		if money > 300:
-			act 'Buy <b>Set of dishes</b> (100 rubles) <<iif(cltarelka > 0, ''[left:<b>'' + cltarelka + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input("How many sets you want to buy? (One set contains 5 dishes)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 300 <= money:
-					cltarelka += portion * 5
-					minut += 5 + (portion / 5)
-					money -= portion * 300
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought sets of dishes and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'hos'
-			end
-		end
-	else
-		'Section closed'
+	
+	if hour < 8 or hour > 20:
+		'The hardware department is currently closed.'
+		
+		act 'Leave the hardware department':gt 'shop', 'start'
+		exit
 	end
-end
+	
+	!! output from purchase
+	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
+	
+	*pl '<center><table align="center">' + _
+	FUNC ('$stock_item', 20, 'Dishwashing detergent', 100, 'fairy', $CURLOC) + _
+	FUNC ('$stock_item', 30, 'Clothing detergent', 250, 'poroshok', $CURLOC) + _
+	FUNC ('$stock_item', 5, 'Plates', 300, 'cltarelka', $CURLOC) + _
+	'</table></center>'
 
-if $ARGS[0] = 'clo':
-	cla
-	*clr
-	minut += 5
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
-	'<center><b><font color="maroon">Department of Women''s Clothing - Main section</font></b></center>'
+
+	act 'Leave the hardware department':gt 'shop', 'start'
+end
+
+!! Women''s clothing
+if $shoplocation = 'clothing':
+	cla
+	*clr
+
+	'<center><b><font color="maroon">Department of Women''s Clothing</font></b></center>'
 	'<center><img src="images/etogame/shop4.jpg"></center>'
-	'In front of you you see some sets of underwear and non-sorted clothing. Further ahead is a seperate section of female pants.'
-	'Underwear - 300 rubles'
-	'Swimsuit - 1,000 rubles'
-	'Underwear "Nedelka" - 2,000 rubles'
-	'All women''s clothing for 2,500 rubles'
-	'Winter coat - 10,000 rubles'
+	
+	if hour < 8 or hour > 20:
+		'The women''s clothing department is currently closed.'
+		
+		act 'Leave the women''s clothing department':gt 'shop', 'start'
+		exit
+	end
+	
+	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
+	
+	*pl '<center><table align="center">' + _
+	FUNC ('$stock_item', 1, 'Underwear', 300, 'clrbelo', $CURLOC) + _
+	FUNC ('$stock_item', 7, 'Sale pack of underwear', 2000, 'clrbelo', $CURLOC) + _
+	FUNC ('$single_stock_item', 1, 'Swimsuit', 1000, 'bikini', $CURLOC) + _
+	'</table></center>'
 
-	act 'Leave the department':gt 'shop', 'start'
+	'<br/>Women''s clothing cost 2,500 rubles each.'
+	
+	clr
+	gs 'stat'
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
 
-	if hour >= 8 and hour <= 20:
-		act 'Go to the pants section':gt 'shop', 'clo2'
+	act 'Leave the women''s clothing department':gt 'shop', 'start'
 
-		if money >= 300:
-			act 'Buy <b>underwear</b> (300 rubles) <<iif(clrbelo + dirtbelo > 0, ''[left:<b>'' + (clrbelo + dirtbelo) + ''</b>]'', '''')>>':
+	!! This is not being done as a stock item because it needs to set the palto string value
+	if palto < 2:
+		'A winter coat is available for 10,000 rubles'
+		if money >= 10000:
+			act 'Purchase a winter coat for 10,000 rubles':
 				cla
-				*clr
-				portion = input("How many underwear you want to buy?")
-
-				if portion <= 0:portion = 1
-
-				if portion * 300 <= money:
-					clrbelo += portion
-					minut += 5 + (portion / 5)
-					money -= portion * 300
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought some underwear and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'clo'
-			end
-
-
-		end
-
-		if money >= 1000 and bikini = 0:
-			act 'Buy a <b>swimsuit</b> (1,000 rubles)':
-				cla
-				*clr
-				bikini = 1
-				minut += 5
-				money -= 1000
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You bought a swimsuit and paid the money to the cashier.'
-
-				act 'Move away from the counter':gt 'shop', 'clo'
-			end
-		end
-
-		if money >= 2000:
-			act 'Buy <b>sets of underwear "Nedelka"</b> (2,000 rubles) <<iif(clrbelo + dirtbelo > 0, ''[left:<b>'' + (clrbelo + dirtbelo) + ''</b>]'', '''')>>':
-				cla
-				*clr
-				portion = input("How many "Nedelka" sets you want to buy? (One set contains 7 panties)")
-
-				if portion <= 0:portion = 1
-
-				if portion * 2000 <= money:
-					clrbelo += portion * 7
-					minut += 5 + (portion / 5)
-					money -= portion * 2000
-					'<center><img src="images/etogame/kassa.jpg"></center>'
-					'You bought some underwear and paid the money to the cashier.'
-				else
-					'You do not have enough money.'
-				end
-
-				act 'Move away from the counter':gt 'shop', 'clo'
-			end
-		end
-
-		if money >= 2500
-			if sarafan[1] = 0:
-				act 'Inspect colorful sundress':
-					cla
-					*clr
-					'<center><img src="images/clothes/sarafan1.jpg"></center>'
-					'Simple sundress, its main advantage is its dimensionless.'
-
-					act 'Leave':gt 'shop', 'clo'
-
-					act 'Buy (2,500 rubles)':
-						cla
-						money -= 2500
-						minut += 10
-						sarafan[1] = 1
-						sarafanH[1] = 60
-						'You bought a colorful sundress and paid the money to the cashier.'
-
-						act 'Move away from the counter':gt 'shop', 'clo'
-					end
-				end
-			end
-
-			if sarafan[2] = 0:
-				act 'Inspect light sundress':
-					cla
-					*clr
-					'<center><img src="images/clothes/sarafan2.jpg"></center>'
-					'Simple sundress, its main advantage is its dimensionless.'
-
-					act 'Leave':gt 'shop', 'clo'
-
-					act 'Buy (2,500 rubles)':
-						cla
-						money -= 2500
-						minut += 10
-						sarafan[2] = 1
-						sarafanH[2] = 60
-
-						act 'Move away from the counter':gt 'shop', 'clo'
-					end
-				end
-			end
-		end
-
-		if money >= 10000 and palto < 2:
-			act 'Buy a <b>winter coat</b>':
-				cla
-				*clr*
 				money -= 10000
 				palto = 2
-				$palto = 'Winter coat'
-				'You bought a winter coat and paid the money to the cashier.'
+				$palto = 'winter coat'
+				'You bought a coat.'
 
-				act 'Move away from the counter':gt 'shop', 'clo'
+				act 'Move away from the counter':gt 'shop'
 			end
 		end
-	else
-		'Section closed'
 	end
-end
-
-if $ARGS[0] = 'clo2'
-	cla
-	*clr
-	minut += 5
-	clr
-	gs 'stat'
-	fcolor = rgb(0, 0, 0)
-	bcolor = rgb(255, 255, 255)
-	lcolor = rgb(106, 90, 205)
-	'<center><b><font color="maroon">Department of Women''s Clothing - Pants section</font></b></center>'
-	'<center><img src="images/etogame/shop4.jpg"></center>'
-	'In front of you you see some sets of underwear and non-sorted clothing. Further ahead is a seperate section of female pants.'
-	'All women''s clothing for 2,500 rubles'
 
 	if money >= 2500:
 		if profi[1] = 0:
-			act 'Inspect office clothes number 1':
+			act 'Inspect Office clothes number 1':
 				cla
 				*clr
 				'<center><img src="images/clothes/profi1.jpg"></center>'
 				'Office clothes.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -899,20 +326,20 @@ if $ARGS[0] = 'clo2'
 					profi[1] = 1
 					profiH[1] = 60
 					profiB[1] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Office clothes number 1</b>.</font>'
 				end
 			end
 		end
 
 		if profi[2] = 0:
-			act 'Inspect office clothes number 2':
+			act 'Inspect Office clothes number 2':
 				cla
 				*clr
 				'<center><img src="images/clothes/profi2.jpg"></center>'
 				'Office clothes.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -920,22 +347,60 @@ if $ARGS[0] = 'clo2'
 					profi[2] = 1
 					profiH[2] = 60
 					profiB[2] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Office clothes number 2</b>.</font>'
 				end
 			end
 		end
 
+		if sarafan[1] = 0:
+			act 'Inspect Colorful sundress':
+				cla
+				*clr
+				'<center><img src="images/clothes/sarafan1.jpg"></center>'
+				'Simple sundress, its main advantage is its dimensionless.'
+				'Costs 2,500 rubles.'
 
+				act 'Leave':gt 'shop'
+
+				act 'Buy':
+					cla
+					money -= 2500
+					sarafan[1] = 1
+					sarafanH[1] = 60
+					gt 'shop', '<font color="green">You bought <b>colorful sundress</b>.</font>'
+				end
+			end
+		end
+
+		if sarafan[2] = 0:
+			act 'Inspect Light sundress':
+				cla
+				*clr
+				'<center><img src="images/clothes/sarafan2.jpg"></center>'
+				'Simple sundress, its main advantage is its dimensionless.'
+				'Costs 2,500 rubles.'
+
+				act 'Leave':gt 'shop'
+
+				act 'Buy':
+					cla
+					money -= 2500
+					sarafan[2] = 1
+					sarafanH[2] = 60
+					gt 'shop', '<font color="green">You bought <b>Light sundress</b>.</font>'
+				end
+			end
+		end
 
 		if short[1] = 0:
-			act 'Inspect Black shorts with a purple T-shirt':
+			act 'Inspect Black shorts with a purple t-shirt':
 				cla
 				*clr
 				'<center><img src="images/clothes/short1.jpg"></center>'
 				'Black shorts with a purple jersey.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -943,20 +408,20 @@ if $ARGS[0] = 'clo2'
 					short[1] = 1
 					shortH[1] = 60
 					shortB[1] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Black shorts with a purple t-shirt</b>.</font>'
 				end
 			end
 		end
 
 		if short[2] = 0:
-			act 'Inspect Black shorts with a striped T-shirt':
+			act 'Inspect Black shorts with a striped t-shirt':
 				cla
 				*clr
 				'<center><img src="images/clothes/short2.jpg"></center>'
 				'Black shorts with striped jersey.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -964,20 +429,20 @@ if $ARGS[0] = 'clo2'
 					short[2] = 1
 					shortH[2] = 60
 					shortB[2] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Black shorts with a striped t-shirt</b>.</font>'
 				end
 			end
 		end
 
 		if short[3] = 0:
-			act 'Inspect Black shorts with black jersey':
+			act 'Inspect Black shorts with a black jersey':
 				cla
 				*clr
 				'<center><img src="images/clothes/short3.jpg"></center>'
 				'Black shorts with a black T-shirt.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -985,20 +450,20 @@ if $ARGS[0] = 'clo2'
 					short[3] = 1
 					shortH[3] = 60
 					shortB[3] = bedra
-					gt 'shop', 'clo'
-					end
+					gt 'shop', '<font color="green">You bought <b>Black shorts with a black jersey</b>.</font>'
+				end
 			end
 		end
 
 		if short[4] = 0:
-			act 'Inspect pink shorts with pink jersey':
+			act 'Inspect Pink shorts with a pink jersey':
 				cla
 				*clr
 				'<center><img src="images/clothes/short4.jpg"></center>'
 				'pink shorts with the pink jersey.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1006,20 +471,20 @@ if $ARGS[0] = 'clo2'
 					short[4] = 1
 					shortH[4] = 60
 					shortB[4] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Pink shorts with a pink jersey</b>.</font>'
 				end
 			end
 		end
 
 		if short[5] = 0:
-			act 'Inspect the white shorts with a white bodice':
+			act 'Inspect White shorts with a white bodice':
 				cla
 				*clr
 				'<center><img src="images/clothes/short5.jpg"></center>'
 				'white shorts with a white bodice.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1027,20 +492,20 @@ if $ARGS[0] = 'clo2'
 					short[5] = 1
 					shortH[5] = 60
 					shortB[5] = bedra
-					gt 'shop', 'clo'
-					end
+					gt 'shop', '<font color="green">You bought <b>White shorts with a white bodice</b>.</font>'
+				end
 			end
 		end
 
 		if skirt[1] = 0:
-			act 'Inspect the white skirt with a colorful blouse.':
+			act 'Inspect White skirt with a colorful blouse':
 				cla
 				*clr
 				'<center><img src="images/clothes/skirt1.jpg"></center>'
 				'White skirt with a colorful blouse.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1048,20 +513,20 @@ if $ARGS[0] = 'clo2'
 					skirt[1] = 1
 					skirtH[1] = 60
 					skirtB[1] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>White shirt with a colorful blouse</b>.</font>'
 				end
 			end
 		end
 
 		if skirt[2] = 0:
-			act 'Inspect the black skirt with a red sweater.':
+			act 'Inspect Black skirt with a red sweater':
 				cla
 				*clr
 				'<center><img src="images/clothes/skirt2.jpg"></center>'
 				'Black skirt with a red sweater.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1069,20 +534,20 @@ if $ARGS[0] = 'clo2'
 					skirt[2] = 1
 					skirtH[2] = 60
 					skirtB[2] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Black skirt with a red sweater</b>.</font>'
 				end
 			end
 		end
 
 		if skirt[3] = 0:
-			act 'Inspect the white skirt with a striped shirt.':
+			act 'Inspect White skirt with a striped shirt':
 				cla
 				*clr
 				'<center><img src="images/clothes/skirt3.jpg"></center>'
 				'White skirt with a striped shirt.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1090,20 +555,20 @@ if $ARGS[0] = 'clo2'
 					skirt[3] = 1
 					skirtH[3] = 60
 					skirtB[3] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>White skirt with a striped shirt</b>.</font>'
 				end
 			end
 		end
 
 		if skirt[4] = 0:
-			act 'Inspect the skin black skirt with a red blouse.':
+			act 'Inspect Skin black skirt with a red blouse':
 				cla
 				*clr
 				'<center><img src="images/clothes/skirt4.jpg"></center>'
 				'Black skirt under the skin with a red blouse.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1111,20 +576,20 @@ if $ARGS[0] = 'clo2'
 					skirt[4] = 1
 					skirtH[4] = 60
 					skirtB[4] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Skin black skirt with a red blouse</b>.</font>'
 				end
 			end
 		end
 
 		if skirt[5] = 0:
-			act 'Inspect the black skirt with a white blouse.':
+			act 'Inspect Black skirt with a white blouse':
 				cla
 				*clr
 				'<center><img src="images/clothes/skirt5.jpg"></center>'
 				'Black skirt with a white blouse.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1132,20 +597,20 @@ if $ARGS[0] = 'clo2'
 					skirt[5] = 1
 					skirtH[5] = 60
 					skirtB[5] = bedra
-				gt 'shop', 'clo'
+				gt 'shop', '<font color="green">You bought <b>Black skirt with a white blouse</b>.</font>'
 				end
 			end
 		end
 
 		if pants[1] = 0:
-			act 'Inspect the pants with a blouse. Number 1':
+			act 'Inspect Pants with a blouse number 1':
 				cla
 				*clr
 				'<center><img src="images/clothes/pants1.jpg"></center>'
 				'Pants with a blouse.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1153,20 +618,20 @@ if $ARGS[0] = 'clo2'
 					pants[1] = 1
 					pantsH[1] = 60
 					pantsB[1] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Pants with a blouse number 1</b>.</font>'
 				end
 			end
 		end
 
 		if pants[2] = 0:
-			act 'Inspect the pants with a blouse. Number 2':
+			act 'Inspect Pants with a blouse number 2':
 				cla
 				*clr
 				'<center><img src="images/clothes/pants2.jpg"></center>'
 				'Pants with a blouse.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1174,20 +639,20 @@ if $ARGS[0] = 'clo2'
 					pants[2] = 1
 					pantsH[2] = 60
 					pantsB[2] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Pants with a blouse number 2</b>.</font>'
 				end
 			end
 		end
 
 		if pants[3] = 0:
-			act 'Inspect the pants with a blouse. Number 3':
+			act 'Inspect Pants with a blouse number 3':
 				cla
 				*clr
 				'<center><img src="images/clothes/pants3.jpg"></center>'
 				'Pants with a blouse.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1195,20 +660,20 @@ if $ARGS[0] = 'clo2'
 					pants[3] = 1
 					pantsH[3] = 60
 					pantsB[3] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Pants with a blouse number 3</b>.</font>'
 				end
 			end
 		end
 
 		if pants[4] = 0:
-			act 'Inspect the pants with a blouse. Number 4':
+			act 'Inspect Pants with a blouse number 4':
 				cla
 				*clr
 				'<center><img src="images/clothes/pants4.jpg"></center>'
 				'Pants with a blouse.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1216,20 +681,20 @@ if $ARGS[0] = 'clo2'
 					pants[4] = 1
 					pantsH[4] = 60
 					pantsB[4] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Pants with a blouse number 4</b>.</font>'
 				end
 			end
 		end
 
 		if pants[5] = 0:
-			act 'Inspect the pants with a blouse. Number 5':
+			act 'Inspect Pants with a blouse number 5':
 				cla
 				*clr
 				'<center><img src="images/clothes/pants5.jpg"></center>'
 				'Pants with a blouse.'
 				'Costs 2,500 rubles.'
 
-				act 'Leave':gt 'shop', 'clo'
+				act 'Leave':gt 'shop'
 
 				act 'Buy':
 					cla
@@ -1237,262 +702,73 @@ if $ARGS[0] = 'clo2'
 					pants[5] = 1
 					pantsH[5] = 60
 					pantsB[5] = bedra
-					gt 'shop', 'clo'
+					gt 'shop', '<font color="green">You bought <b>Pants with a blouse number 5</b>.</font>'
 				end
 			end
 		end
 	end
 end
 
-
-
-if $ARGS[0] = 'teh':
+!! Household appliances
+if $shoplocation = 'tech':
 	cla
 	*clr
-	minut += 1
 
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-	$buytv = {
-		if hour >= 8 and hour <= 20:
-			if money >= 5000 and TV < 1:
-				cla
-				*clr
-				money -= 5000
-				TV = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You the money to the cashier and bought the TV'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif TV > 0:
-				'Do you already have a TV'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	$buytv2 = {
-		if hour >= 8 and hour <= 20:
-			if money >= 35000 and TV < 2:
-				cla
-				*clr
-				money -= 35000
-				TV = 2
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You the money to the cashier and bought the TV'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif TV > 1:
-				'Do you already have a TV'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	$buykomp = {
-		if hour >= 8 and hour <= 20:
-			if money >= 25000 and komp =0:
-				cla
-				*clr
-				money -= 25000
-				komp = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You paid in cash and bought the computer'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif komp > 0:
-				'Do you already have a computer'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	$buycd = {
-		if hour >= 8 and hour <= 20:
-			if money >= 500 and komp > 0 and GameCD = 0:
-				cla
-				*clr
-				money -= 500
-				GameCD = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You paid in cash and bought the game'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif komp = 0:
-				'You do not have computer'
-			elseif GameCD > 0:
-				'You already have this game'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	$buycd2 = {
-		if hour >= 8 and hour <= 20:
-			if money >= 500 and komp > 0 and GameCD2 = 0:
-				cla
-				*clr
-				money -= 500
-				GameCD2 = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You paid in cash and bought the game'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif komp = 0:
-				'You do not have computer'
-			elseif GameCD2 > 0:
-				'You already have this game'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	$buycd3 = {
-		if hour >= 8 and hour <= 20:
-			if money >= 500 and komp > 0 and GameCD3 = 0:
-				cla
-				*clr
-				money -= 500
-				GameCD3 = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You paid in cash and bought the game'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif komp = 0:
-				'You do not have computer'
-			elseif GameCD3 > 0:
-				'You already have this game'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	$buyposudmoi = {
-		if hour >= 8 and hour <= 20:
-			if money >= 50000 and posudomashina = 0:
-				cla
-				*clr
-				money -= 50000
-				posudomashina = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You paid in cash and bought a dishwasher'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif posudomashina > 0:
-				'You already have a dishwasher'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	$buystiralka = {
-		if hour >= 8 and hour <= 20:
-			if money >= 50000 and stiralka = 0:
-				cla
-				*clr
-				money -= 50000
-				stiralka = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You paid in cash and bought a washing machine'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif stiralka > 0:
-				'You already have a washing machine'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	$buyzenit = {
-		if hour >= 8 and hour <= 20:
-			if money >= 10000 and zenit = 0:
-				cla
-				*clr
-				money -= 10000
-				zenit = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You paid in cash and bought a camera'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif zenit > 0:
-				'Do you already have a camera'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-
-	$buyminifoto = {
-		if hour >= 8 and hour <= 20:
-			if money >= 40000 and minifoto = 0:
-				cla
-				*clr
-				money -= 40000
-				minifoto = 1
-				'<center><img src="images/etogame/kassa.jpg"></center>'
-				'You paid in cash and bought a mini camera'
-
-				act 'Leave':gt 'shop', 'teh'
-			elseif minifoto > 0:
-				'You already have a mini camera'
-			else
-				'You do not have enough money'
-			end
-		else
-			'Department closed'
-		end
-	}
-
-	cla
-	*clr
-	minut += 1
+	'<center><b><font color="maroon">Department of household appliances</font></b></center>'
+	'<center><img src="images/etogame/shop5.jpg"></center>'
+	
+	if hour < 8 or hour > 20:
+		'The household appliance department is currently closed.'
+		
+		act 'Leave the appliance department':gt 'shop', 'start'
+		exit
+	end
+	
+	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
+	
+	*pl '<center><table align="center">' + _
+	FUNC ('$single_stock_item', 1, 'Small TV with a picture tube', 35000, 'TV', $CURLOC) + _
+	FUNC ('$single_stock_item', 2, 'Large Plasma TV', 35000, 'TV', $CURLOC) + _
+	FUNC ('$single_stock_item', 1, 'Computer', 25000, 'komp', $CURLOC) + _
+	iif(komp > 0, FUNC ('$single_stock_item', 1, 'Computer game Dead Sunset', 500, 'GameCD2', $CURLOC), '') + _
+	FUNC ('$single_stock_item', 1, 'Dishwasher', 50000, 'posudomashina', $CURLOC) + _
+	FUNC ('$single_stock_item', 1, 'Washing machine', 50000, 'stiralka', $CURLOC) + _
+	FUNC ('$single_stock_item', 1, 'Camera', 10000, 'zenit', $CURLOC) + _
+	FUNC ('$single_stock_item', 1, 'Mini camera disguised as a cigarette pack', 40000, 'minifoto', $CURLOC) + _
+	'</table></center>'
+	
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
-	'<center><b><font color="maroon">Department of household appliances</font></b></center>'
-	'<center><img src="images/etogame/shop5.jpg"></center>'
 
-	if TV = 0:'<a href="exec:dynamic $buytv">A small TV with a picture tube (5,000 rubles)</a>'
-	if TV ! 2:'<a href="exec:dynamic $buytv2">Large plasma TV (35,000 rubles)</a>'
-	if komp = 0:'<a href="exec:dynamic $buykomp">Computer - (25,000 rubles)</a>'
-	!!'<a href="exec:dynamic $buycd">Computer game Disopl (500 rubles)</a>'
-	if GameCD2 = 0:'<a href="exec:dynamic $buycd2">Computer game Dead Sun(500 rubles)</a>'
-	!!'<a href="exec:dynamic $buycd3">Computer game Albida (500 rubles)</a>'
-	if posudomashina = 0:'<a href="exec:dynamic $buyposudmoi">A dishwasher (50,000 rubles)</a>'
-	if stiralka = 0:'<a href="exec:dynamic $buystiralka">Washing machine (50,000 rubles)</a>'
-	if zenit = 0:'<a href="exec:dynamic $buyzenit">Camera can be bought (10,000 rubles)</a>'
-	if minifoto = 0:'<a href="exec:dynamic $buyminifoto">Mini camera disguised as a cigarette pack (40,000 rubles)</a>'
+	act 'Leave the appliance department':gt 'shop', 'start'
+end
 
-	act 'Leave the department':gt 'shop', 'start'
+!! Ice cream counter
+if $shoplocation = 'icecream':
+	'Ice cream is available for sale for 50 rubles.'
+
+	act 'Move away from the counter':gt 'shop', 'start'
+
+	if money >= 50:
+		act 'Buy ice cream':
+			cls
+			money -= 50
+			fat += 50
+			manna += 500
+			water = 20
+			energy = 20
+			!! perkice is currently only ever referenced in stat and only then to decrement itself if > 0, so it does not currently do anything
+			perkice += 1
+			gs 'stat'
+			'<center><img src="images/etogame/icecreem.jpg"></center>'
+			'You bought ice cream and ate it not going far.'
+
+			act 'Move away from the counter':gt 'shop', 'start'
+		end
+	end
 end
 
 --- shop ---------------------------------
