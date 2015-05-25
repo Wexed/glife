@@ -745,6 +745,12 @@ $din_cheat_menu_magic = {
 	if spellwater5 = 0:pl'<a href="exec:spellwater5 = 1 & dynamic $din_cheat_menu_magic">The Great Flood'
 }
 
+$din_cheat_dynamic = {
+	$dynamicCommand = input("Enter command to execute.")
+	if $dynamicCommand = '':exit
+	dynamic $dynamicCommand
+}
+
 $objcheat_menu = {
 	gs 'stat'
 	clr
@@ -763,6 +769,9 @@ $objcheat_menu = {
 	pl '<a href="exec:health = vital * 10 + stren * 5 + 1000 & willpower = intel * 5 + will * 5 + 1000 & manna = (intel * magik) + magik * 100 + vital * 10 + rikudo & dynamic $objcheat_menu">Complete recovery, manna, reason.</a>'
 	pl '<a href="exec:dynamic $din_cheat_money">Change the amount of money</a>'
 	pl '<a href="exec:money = 0 & dynamic $din_cheat">Zero the money</a>'
+	
+	pl ''
+	pl '<a href="exec:dynamic $din_cheat_dynamic">Dynamic Input Command</a>'
 }
 $objmagic = {
 	clr
