@@ -1,0 +1,29 @@
+# $single_stock_item
+!! generic function to be used to stock single purchase items in stores
+!! see # shop, specifically the household appliances section for an example of use
+
+!! ARGS 0 is the value identifying when the item is owned
+!! it is assumed that anything >= the value is acceptable, this allows for upgrades like regular tv to plasma
+!! ARGS 1 is the item description
+!! ARGS 2 is the price
+!! ARGS 3 is the variable name for the item
+!! ARGS 4 is the location to go back to
+
+!! This will check to see if the item is already owned
+dynamic "$RESULT = iif(<<$ARGS[3]>> >= <<ARGS[0]>>, '', 'not owned')"
+if $RESULT = '':
+	exit
+end
+
+$RESULT = '<tr>' + _
+'<td align="center"><<$ARGS[1]>></td>' + _
+'<td align="left">costs <<ARGS[2]>> rubles</td>' + _
+'<td align="right">'
+
+if money >= ARGS[2]:
+	$RESULT += '<a href="exec: gs ''$buy_single_item'', <<ARGS[0]>>, ''<<$ARGS[1]>>'', <<ARGS[2]>>, ''<<$ARGS[3]>>'', ''<<$ARGS[4]>>''">buy</a>'
+end
+
+$RESULT += '</td></tr>'
+
+--- $single_stock_item ---------------------------------

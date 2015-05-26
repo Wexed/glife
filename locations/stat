@@ -1157,6 +1157,8 @@ else
 end
 
 pl '<b><<money>></b> rubles in your wallet.'
+if karta > 0:pl '<b><<karta>></b> rubles in your bank account.'
+if stolmoney > 0:pl '<b><<stolmoney>></b> rubles in your table drawer.'
 
 if StoryLine > 0 and SchoolAtestat = 0:pl '<<$holyday>>'
 if birthday = day and birthmonth = month:pl '<b>Today is your birthday.</b>'
