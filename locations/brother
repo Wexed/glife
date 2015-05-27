@@ -1,7 +1,7 @@
 # brother
 brotherAge = age - 2
 gs 'stat'
-'<center><b><font color="maroon">Colca</font></b></center>'
+'<center><b><font color="maroon">Kolca</font></b></center>'
 '<center><img src="images/qwest/alter/brother.jpg"></center>'
 'Your brother Kolka younger than you and he <<brotherAge>> years. Kolka born unlike you and your sister already from his stepfather. He goes to the same school as you and enjoys football.'
 
@@ -41,58 +41,55 @@ act 'Move away':gt $loc, $metka
 if $loc = 'gschool':
 	if brother < 40:
 		'Brother frowns "Get off me pridurochnaya!"'
+		exit
+	end
+
+	if evgenQW >= 4:
+		'Guys poshushukavshis together tell you "Yup, Well it this Soccer, Let`s go watch porn."'
+
+		act 'Go watch porn':minut += 5 & gt 'seeporn'
 	else
-		if evgenQW >= 4:
-			'Guys poshushukavshis together tell you "Yup, Well it this Soccer, Let`s go watch porn."'
+		'Brother grins "Hi <<$nickname>>. Play football?"'
 
-			act 'Go watch porn':minut += 5 & gt 'seeporn'
-		elseif evgenQW < 4:
-			'Brother grins "Hi <<$nickname>>. Play football?"'
+		act 'Play football':
+			cls
+			minut += 60
+			brother += 5
+			agil += rand(0, 2)
+			speed += rand(0, 2)
+			sweat += 3
+			beg += rand(2, 5)
+			gs 'stat'
+			'You ran for an hour on the field chasing a ball with my brother and his friends Bear and Zhendosom.'
 
-			act 'Play football':
-				cls
-				minut += 60
-				brother += 5
-				agil += rand(0, 2)
-				speed += rand(0, 2)
-				sweat += 3
-				beg += rand(2, 5)
-				gs 'stat'
-				'You ran for an hour on the field chasing a ball with my brother and his friends Bear and Zhendosom.'
-				ivrand = rand(0, 1)
+			if rand(0, 1) = 0 and seepornofut = 0:
+				'Boys whispering among themselves discussing something.'
 
-				if ivrand = 0 and seepornofut = 0:
-					'Boys whispering among themselves discussing something.'
+				act 'You are talking about here?':
+					cls
+					gs 'stat'
+					'Boys hesitated, so much so, nothing.'
 
-					act 'You are talking about here?':
-						cls
-						gs 'stat'
-						'Boys hesitated, so much so, nothing.'
+					act 'Move away':gt $loc, $metka
 
-						if dom > 0:
-							'You''re a bit pressed on them "Are you as malyshnya, sekretiki what that you." One of the boys immediately split "Yes."'
+					if dom > 0:
+						'You''re a bit pressed on them "Are you as malyshnya, sekretiki what that you." One of the boys immediately split "Yes."'
+						act 'Take me':
+							cls
+							gs 'stat'
+							'you asked, what would you also have to look porn. Guys nemnog oposmuschalis, but agreed.'
 
-							act 'Move away':gt $loc, $metka
-
-							act 'Take me':
-								cls
-								gs 'stat'
-								'you asked, what would you also have to look porn. Guys nemnog oposmuschalis, but agreed.'
-
-								act 'Go watch porn':minut += 5 & gt 'seeporn'
-							end
-						else
-							act 'Move away':gt $loc, $metka
+							act 'Go watch porn':minut += 5 & gt 'seeporn'
 						end
 					end
-				elseif ivrand = 0 and seepornofut >= 1:
-					'Guys poshushukavshis together tell you "<<$nickname>>, go look porn?"'
-
-					act 'Go watch porn':minut += 5 & gt 'seeporn'
 				end
+			elseif rand(0, 1) = 0 and seepornofut >= 1:
+				'Guys poshushukavshis together tell you "<<$nickname>>, go look porn?"'
 
-				act 'Move away':gt $loc, $metka
+				act 'Go watch porn':minut += 5 & gt 'seeporn'
 			end
+
+			act 'Move away':gt $loc, $metka
 		end
 	end
 end
