@@ -12,14 +12,10 @@ $din_trener_bj = {
 		'<center><img src="images/qwest/alter/ev/tren.jpg"></center>'
 		'You squatted in front of the coach and stroked his crotch and felt how his cock stood up. You reached into his sweatpants gum holding with the other hand and groped hot cock trainer. You pulled the standing member of sweatpants and leaned toward him around his lips.'
 
-		!!if trenerSex >= 5:end
-
-		if tipTrsex = 0:
-			cumlip += 1
-			swallow += 1
-			gs 'stat'
-			'Coach groaned slightly and your mouth spurted warm jet of sperm. You started to swallow warm liquid fills your mouth.'
-		end
+		cumlip += 1
+		swallow += 1
+		gs 'stat'
+		'Coach groaned slightly and your mouth spurted warm jet of sperm. You started to swallow warm liquid fills your mouth.'
 
 		if volleysostav = 0:
 			volleysostav = 1
@@ -27,7 +23,7 @@ $din_trener_bj = {
 			'Coach bosses cock in his pants. "Okay <<$surname>>, you are very diligent girl, maybe you will come out of sense, consider that you have a team, but of course in replacement players."'
 		end
 
-		if tipTrsex = 0:act 'Leave':tipTrsex = 0 & gt 'gdksport'
+		act 'Leave':gt 'gdksport'
 	end
 }
 $din_trener_gorslut = {
@@ -81,7 +77,7 @@ act 'Talk with the coach':
 	if volleysostav = -1:
 		if trenerSex = 0:
 			'Coach looked up at you, "<<$surname>>. Did not even come near me. Longer I''ll put you in command!"'
-		elseif trenerSex > 0:
+		else
 			'Coach looked up at you, "<<$surname>>. Did not even come near me. Longer I''ll put you in the team!"'
 		end
 	elseif volleysostav = 0:
@@ -91,7 +87,7 @@ act 'Talk with the coach':
 			'Coach looked at you "And <<$surname>>. You need to devote more time to training, you are all very bad."'
 		elseif volleyboll >= 50 and volleyboll < 75:
 			'Coach looked at you "And <<$surname>>. You certainly did not play bad, but not bad for an amateur. Higher level you do not you pull."'
-		elseif volleyboll >= 75:
+		else
 			'Coach looked at you "And <<$surname>>. Do you have the makings of athletes, though I''m not sure that at the professional level you get that either."'
 
 			act 'Asks the pros':
@@ -101,7 +97,7 @@ act 'Talk with the coach':
 				if GorSlut = 0:
 					if volleyboll < 100:
 						'You started to ask the coach to include you in command, but he shook his head. "<<$surname>> is not buried, you have a good amateur level. Potyanesh But you do not."'
-					elseif volleyboll >= 100:
+					else
 						'You started to ask the coach to include you in the team, the coach thought. "Of course you can try to include you in the replacement, but I do not even know if I should."'
 
 						act 'Persuade':
@@ -121,7 +117,7 @@ act 'Talk with the coach':
 							act 'Leave':gt 'gdksport'
 						end
 					end
-				elseif GorSlut > 0:
+				else
 					'You started to ask the coach to include you in the. Coach thought, "Hey <<$surname>>, then other devchoki about you say different things. Example you <<$gnikname>>. Is that true?"'
 
 					act 'It''s all lies':
@@ -170,10 +166,10 @@ act 'Talk with the coach':
 				act 'Leave':gt 'gdksport'
 			end
 		end
-	elseif volleysostav > 0:
+	else
 		if trenerSex = 0:
 			'Coach looked at you "And <<$surname>>. Do not distract me from things."'
-		elseif trenerSex > 0:
+		else
 			'Coach looked at you "And <<$surname>>. Done for coming."'
 
 			act 'Coach put his hand on her knee':
