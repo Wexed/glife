@@ -5,6 +5,9 @@ set minut += 5
 *pl '<center><b><font color="maroon">Pharmacy</font></b></center>'
 *pl '<center><img src="images/community/pharmacy.jpg"></center>'
 
+!! output for purchased item
+*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
+
 *pl '<center><table align="center">' + _
 FUNC ('$stock_item', 5, 'condoms', 100, 'prezik', $CURLOC) + _
 FUNC ('$stock_item', 1, 'pregnancy test', 200, 'pregtest', $CURLOC) + _
@@ -19,7 +22,6 @@ FUNC ('$stock_item', 1, 'weight loss pill', 2000, 'fatdel', $CURLOC) + _
 
 !!gs '$stock_item', 1, 'antifungal pills', 600, 'mosolmaz', $CURLOC
 *nl
-*p iif( $ARGS[0] = 'start', '', '<center><<$ARGS[0]>></center>')
 clr
 gs 'stat'
 gs 'time'
