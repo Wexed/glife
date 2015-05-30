@@ -14,6 +14,14 @@ music_on = 0
 '<center><img src="images/etogame/gorodok.jpg"></center>'
 'A quiet province village, if you had no idea of you where abouts, you couldn''t differ this village from others. It''s tallest building is the chuches tower.'
 
+if GorSlut = 6 and rand(1, 20) = 20:
+	'To you a guy came up and offered to move into the bushes to get laid for a hundred.'
+
+	act 'Agree':gt 'gevent', '5'
+	act 'Refuse':gt $curloc
+	exit
+end
+
 if AlbFather >= 1:
 	if AlbFaterBlackTime = 0:AlbFaterBlackTime = totminut + 2880
 
@@ -53,12 +61,6 @@ if rand(1, 5) >= 4:
 	if GorSlut = 3:'You catch yourself on people''s views, some are trying to find you in someone, and maybe learn. Occasionally you hear people chuckle. Looks like someone found out about your adventures.'
 	if GorSlut = 4:'People look at you with a grin, someone makes vulgar gestures towards you some hints on your adventures.'
 	if GorSlut >= 5:'All around you will recognize whore. Some came by and slap you on the ass. Grandmother on the benches name-calling you whore.'
-end
-
-if GorSlut = 6 and rand(1, 20) = 20:
-	'To you a guy came up and offered to move into the bushes to get laid for a hundred'
-
-	act 'Agree':gt 'gevent', '5'
 end
 
 gs 'stat'
