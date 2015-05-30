@@ -41,7 +41,256 @@ if $ARGS[0] = 'drinking':
 			gs 'stat'
 
 			if AniaFrends >= 1:
-				gt 'annafrends'
+				gs 'stat'
+				'Around the house drinking beer culture your sister Anja, Lena, Ira, Rex and Roman.'
+				dialogstartrand = rand(0, 4)
+
+				if dialogstartrand = 0:
+					!!Anja
+					'Anja outraged polutoralitrovogo grasping a bottle of beer "Guys! Well you pour beer today or not?"'
+					if rand(0, 1) = 0:
+						'Rex took poltorashku hands of Anja.'
+						tipDSrand = rand(0, 4)
+
+						if tipDSrand = 0:
+							*nl
+							'"And why not to shout! now pour!"'
+							tipDSrand = rand(0, 2)
+
+							if tipDSrand = 0:
+								'Anja giggles "I have not yet started to yell, if I start, you oglohnesh."'
+							elseif tipDSrand = 1:
+								'Lena resounding slaps on the shoulder Rex "Hurry! And with a jump of dog shit, with jumps!"'
+							else
+								'Ira smiling "not outraged, Reksik."'
+
+								if rand(0, 10) = 0:'Anja sprinkles in cam "And then put him on a chain."'
+							end
+						elseif tipDSrand = 1:
+							*nl
+							'"Well, you always like to be late for the train. Relax rolls. Now everything will be."'
+							tipDSrand = rand(0, 2)
+
+							if tipDSrand = 0:
+								'Anja giggles, "I have not started to scream if I start, you oglohnesh."'
+							elseif tipDSrand = 1:
+								'Lena resounding slaps on the shoulder Rex "Hurry! And with a jump of dog shit, with a jump!"'
+							else
+								'Roma giggles "Here and stinks. And if she rolls relax, we run the risk of suffocation!"'
+								tipDSrand = rand(0, 2)
+
+								if tipDSrand = 0:
+									'Anja quips, "You''re so forever remain a virgin, Roma."'
+									if rand(0, 10) = 0:
+										'Roma grins "It was an offer?"'
+										tipDSrand = rand(0, 2)
+
+										if tipDSrand = 0:
+											'Anja laughs "Dream on, saffron."'
+										elseif tipDSrand = 1:
+											'Anja laughs "Only in your dreams, saffron."'
+										else
+											'Anja laughs "Yeah, schazz. Hear the tramp? Already ran to give."'
+										end
+									end
+								elseif tipDSrand = 1:
+									'Anja quips "And you udivlyaeshsya that you girls do not give Roma."'
+
+									if rand(0, 10) = 0:'Rex grins "Yeah, our eternal virgin Roma is able to enliven the conversation on the topic of anal gases."'
+								else
+									'Anja quips "It''s from you is the smell."'
+
+									if rand(0, 10) = 0:'Roma grins "Yes, no, it sobachatiny bears."'
+								end
+							end
+						elseif tipDSrand = 2:
+							*nl
+							'"Che, unscrew the plug does not have a hand?"'
+							tipDSrand = rand(0, 2)
+
+							if tipDSrand = 0:
+								'Anja giggles "And then what for you need?"'
+
+								if rand(0, 10) = 0:'Rex with mock indignation "Around one operation."'
+							elseif tipDSrand = 1:
+								'Lena resounding slaps on the shoulder Rex "You talk like a girl?"'
+
+								if rand(0, 10) = 0:'Rex with mock indignation "In Russian, I speak with her."'
+							else
+								'Ira smiling "not outraged, Reksik."'
+
+								if rand(0, 10) = 0:'Anja sprinkles in cam "And then on the chain to plant."'
+							end
+						elseif tipDSrand = 3:
+							*nl
+							'"Let me be undermined, madam."'
+							tipDSrand = rand(0, 2)
+
+							if tipDSrand = 0:
+								'Anja giggles "Cleared, monsieur."'
+							elseif tipDSrand = 1:
+								'Anja with mock indignation says "Do not Madame and Mademoiselle!"'
+
+								if rand(0, 10) = 0:'Rex bowing gallantly "Miles sorry mademoiselle."'
+							else
+								'Anja says impatiently "Pour already a clown."'
+							end
+						else
+							*nl
+							'"Shit! Where cups? Are we not buy them?"'
+							tipDSrand = rand(0, 2)
+
+							if tipDSrand = 0:
+								'Anja takes cups "Here they are, blind monster."'
+							elseif tipDSrand = 1:
+								'Roma says "Rex, you did them in the store took, all memory is that it is not?"'
+							else
+								'Lena enough cups "Rex, do not pull the rubber."'
+							end
+						end
+					else
+						'Roma took the bottle out of the hands polutoralitrovogo Anja and began to print. "Hold somebody cups."'
+						tipDSrand = rand(0, 2)
+
+						if tipDSrand = 0:
+							'Rex took the cups and Roma began to pour beer on plastic glasses.'
+						elseif tipDSrand = 1:
+							'Rex took the cups "That same armless horseradish. Itself can not what?"'
+						else
+							'Ira took cups "Pour already onion grief."'
+						end
+
+						if rand(0, 3) = 0:
+							'Fracture of beer cups and flooded the ground.'
+							tipDSrand = rand(0, 2)
+
+							if tipDSrand = 0:
+								'Rex was outraged. "That thou armless hell! Nothing can trust you!"'
+							elseif tipDSrand = 1:
+								'Rex was outraged. "No, well, how not to spill it?"'
+							else
+								'Anja was indignant. "Always the same, if saffron pours, make sure you will pour."'
+							end
+						end
+					end
+				elseif dialogstartrand = 1:
+					!!Lena
+					'Lena indignantly, "We came to drink beer or admire it?"'
+				elseif dialogstartrand = 2:
+					!!Ira
+					'Ira flirting eyes and flapping "Boys, and today we are going to drink beer?"'
+				elseif dialogstartrand = 3:
+					!!Rex
+					if rand(0, 1) = 0:
+						'Rex took poltorashku beer and unscrew the plug.'
+						if rand(0, 2) = 0:
+							*nl
+							'"Shit! Where cups? Are we not buy them?"'
+
+							tipDSrand = rand(0, 2)
+
+							if tipDSrand = 0:
+								'Anja takes cups "Here they are, blind monster."'
+							elseif tipDSrand = 1:
+								'Roma says "Rex, you did them in the store took, all memory is that it is not?"'
+							else
+								'Lena enough cups "Rex, do not pull the rubber."'
+							end
+						else
+							*nl
+							'"Roman, cups hold this while I pour."'
+						end
+					else
+						'Rex took poltorashku beer and handed it to Roma. "Pour, then froze."'
+						'Roma took polutoralitrovogo beer bottle and began to print. "Hold somebody cups."'
+						tipDSrand = rand(0, 2)
+
+						if tipDSrand = 0:
+							'Rex took the cups and Roma began to pour beer on plastic glasses.'
+						elseif tipDSrand = 1:
+							'Rex took the cups "That same armless horseradish. Itself can not what?"'
+						else
+							'Ira took cups "Pour already grief onion."'
+						end
+
+						if rand(0, 3) = 0:
+							'Fracture of beer cups and flooded the land.'
+							tipDSrand3 = rand(0, 2)
+
+							if tipDSrand3 = 0:
+								'Rex was outraged. "That thou armless hell! Nothing can trust you!"'
+							elseif tipDSrand3 = 1:
+								'Rex was outraged. "No, well, how not to spill it?"'
+							elseif tipDSrand3 = 2:
+								'Anja was indignant. "Always the same, if saffron pours, make sure you will pour."'
+							end
+						end
+					end
+				else
+					!!Roma Meynold
+					'Roma took polutoralitrovogo beer bottle and began to print. "Hold somebody cups."'
+					tipDSrand = rand(0, 2)
+
+					if tipDSrand = 0:
+						'Rex took the cups and Roma began to pour beer on plastic glasses.'
+					elseif tipDSrand = 1:
+						'Rex took the cups "That same armless horseradish. Itself can not what?"'
+					else
+						'Ira took cups "Pour already onion grief."'
+					end
+
+					if rand(0, 3) = 0:
+						'Fracture of beer cups and flooded the ground.'
+						tipDSrand = rand(0, 2)
+
+						if tipDSrand = 0:
+							'Rex was outraged. "That thou armless hell! Nothing can trust you!"'
+						elseif tipDSrand = 1:
+							'Rex was outraged. "No, well, how not to spill it?"'
+						else
+							'Anja was indignant. "Always the same, if saffron pours, make sure you will pour."'
+						end
+					end
+				end
+
+				'Finally turned into beer cups and you also gave a plastic cup with a cold beer. Are you drunk with all beer.'
+
+				act 'Further':
+					cls
+					gs 'stat'
+					'Poltorashka beer was quickly drained and the guys got a new bottle.'
+
+					if rand(0, 1) = 0:
+						gennpc = rand(0, 2)
+
+						if gennpc = 0:
+							'Anja came to you. "<<$name>>, go to the toilet."'
+						elseif gennpc = 1:
+							'Lena came to you. "<<$name>>, you do not want the toilet?"'
+						elseif gennpc = 2:
+							'Ira came to you. "<<$name>>, you do not want to go some where?"'
+						end
+
+						act 'Go together':
+							cls
+							minut += 5
+							gs 'stat'
+
+							if gennpc = 0:$annafrendname = 'Anja' & $annafrendname2 = 'Anja'
+							if gennpc = 1:$annafrendname = 'Lena' & $annafrendname2 = 'Lena'
+							if gennpc = 2:$annafrendname = 'Ira' & $annafrendname2 = 'Ira'
+
+							'<center><img src="images/qwest/alter/Ev/piss.jpg"></center>'
+							'You went with <<$annafrendname>> in the bushes behind the club. <<$annafrendname2>> looked around, lifted her skirt, pulled down pantyhose and squatted. Between the legs of a flood of gushing jet on the ground.'
+
+							act 'Leave':gt 'gdk'
+						end
+					else
+						'Boys went around the corner of the club, to empty their bladder, leaving the girls alone.'
+					end
+
+					act 'Leave':gt 'gdk'
+				end
 			elseif AniaFrends = 0:
 				AniaFrends = 1
 				'You met friends they. They are all former classmates. Little Lena and moving constantly confuses Ira High athletic guy whose name is Rex and all the red-haired skinny guy by the name Roma. After dating you sat drinking beer and chatted with friends Anja.'
@@ -88,6 +337,7 @@ act 'Chat':
 
 	act 'Finish':gt 'sister'
 end
+
 if trfatherQW = 0 and sister >= 30:
 	act 'Ask about the real father':
 		cls
@@ -100,6 +350,7 @@ if trfatherQW = 0 and sister >= 30:
 		act 'Move away':gt $loc, $metka
 	end
 end
+
 if sisboyQW = 0 and sister >= 40:
 	act 'Ask about her boyfriend':
 		cls
@@ -219,6 +470,7 @@ elseif (sisboyQW = 2 or sisboyQW = 4 or sisboyQW = 6) and sister >= 40:
 		end
 	end
 end
+
 if sisuniQW = 0:
 	act 'Ask about the university':
 		cls
@@ -234,6 +486,7 @@ if sisuniQW = 0:
 end
 
 act 'Move away':gt $loc, $metka
+
 if sisboyQW = 10:
 	cls
 	if sisboyQW = 10:sisboyQW = 11
