@@ -378,10 +378,97 @@ if motherQW = 1 and mother >= 20 and $loc = 'kuhrPar':
 
 			act 'Move away':gt $loc, $metka
 		elseif mqwtRand > 8:
-			gt 'motherQW', 'motherQW_2'
+			cls
+			minut += 60
+			motherQW = 2
+			mother += rand(5, 10)
+			gs 'stat'
+			'<center><b><font color="maroon">Mama</font></b></center>'
+			'<center><img src="images/qwest/alter/mother.jpg"></center>'
+			'You''re trying to talk with his mother and make peace. The whole half-hour conversation mainly consists of a fairly aggressive monologue your mom about morality, disease and future. At some point you get tired of all this.'
+
+			act 'Wedge':
+				cla
+				cls
+				'<center><b><font color="maroon">Mama</font></b></center>'
+				'<center><img src="images/qwest/alter/mother.jpg"></center>'
+				'- All that you say, Mom, of course, is true and correct, but unless you are the not so?'
+				'She is flustered from your sentence, but quickly recovers.'
+				'- What do you mean? I''m not the same ...'
+				'- So, so. Such a whore! Even abruptly I will!'
+				'- <<$nickname>>! What are you currently pos ...'
+
+				act 'Continue to press':
+					cla
+					cls
+					'<center><b><font color="maroon">Mama</font></b></center>'
+					'<center><img src="images/qwest/alter/mother.jpg"></center>'
+					'- What did I allow myself? - You will quickly intercept of an initiative to prevent her finish. - Well, we''re adults, and are conducting an adult conversation about it is more than an adult theme. And forgive me, but I''ll say it all in plain text.'
+					'- <<$nickname>>! They did not break ...'
+					'- No, Mom, now you do not interrupt. I have half an hour listening to sermons! And from whom ?!'
+					'- <<$nickname>>! ..'
+
+					if age = 15:'- What is the <<$nickname>> that <<$nickname>> ?! Mom, are you now <<motherAge>>, Anjaa <<sisterAge>>. Addition and subtraction are taught in the first grade. Yes, you were just as much as me, when you''re knocked up!'
+					if age > 15:'- What the <<$nickname>> that <<$nickname>> ?! Mom, are you now <<motherAge>>, Anja <<sisterAge>>. Addition and subtraction are taught in the first grade. Yes, you were even younger than me, when you''re knocked up!'
+
+					'Unnerving silence. You, red as a lobster, trying to catch my breath, and your mother is sitting with his face all at the same time expressing human emotions simultaneously. Most likely she is trying to figure out what the hell''s going on here and why she listens to sermons from his daughter. Do you even think that once upon a time she just sat there and swore to your grandmother.'
+					'- But it was your father, - she says quietly.'
+					'- And so what?'
+					'- And the fact that I did it out of love and not to expose Mandu first comer of the gate!'
+					'- Who told you that I do not love and with everyone ?! And besides, you flew the first time?'
+					'- No, but what does this have to talk?'
+
+					act 'Next':
+						cla
+						cls
+						'<center><b><font color="maroon">Mama</font></b></center>'
+						'<center><img src="images/qwest/alter/mother.jpg"></center>'
+						'- And this, my mother:I am in life I will not believe that it was unpleasant to fuck you and you''re doing it solely for the love of the father.'
+						'- <<$nickname>>! Do not swear!'
+						'- Okay, okay, had sex. With the rest of you probably agree.'
+						'- Nuu ... - she thinks for a moment, immersed in memories of his youth - yes, it was nice, of course, especially when the doors ...'
+						'- No comment - with malice notice you.'
+						'Awkward silence. Now the mother, red as a lobster, trying to come to his senses. Five minutes later it is obtained, and you see that it is something to mull over, looking something on you, on the wall.'
+						'- Well, I have a daughter.'
+						'- All in mother - smiling you say.'
+						'- All of the mother ... - with a nervous laugh she repeats again and stops for a few minutes.'
+						'- Well, Mom, I think we understand each other, and the situation shouted, Oromo, and the scandal is still not correct.'
+						'- Do not fix it, but ... - she says slowly, continuing something to think about. - Not to say that I approve your behavior, but ... - you can see that the words are it is not easy - but I understand you.'
+						'You get up, hugging his mother and heads for the door.'
+
+						act 'Leave':
+							cla
+							cls
+							'<center><b><font color="maroon">Mama</font></b></center>'
+							'<center><img src="images/qwest/alter/mother.jpg"></center>'
+							'- Wait, <<$nickname>>.'
+							'- Mmm? - You turn in the doorway. Mother gesture tells you to sit back on the kitchen chair.'
+							'- Anka at least partially in the Bear went, but you''re just all in me, so that adventure to find his ass and ...'
+							'- Maaaam, we''ve just discussed it.'
+							'- Now you do not interrupt me, I do something else now. Do not want to, you know, that you any sore or baby from is not clear who currently work up.'
+
+							if prezik > 0 or tabletki > 0:'- Do not worry, I have everything. Gone to town and bought. End - again I will go.'
+							if prezik = 0 and tabletki = 0:' Nuuu ... I will go to the city, there is a pharmacy.'
+
+							'- In the city means. You know, it''s better to buy everything in our pharmacy. And you easier, and I will be more easy for you.'
+							'- And how, tell me, please, ma''am, I''ll do it? Tell aunt Luda that I Gandon for balls need?'
+							'- Fie on you! If Lyudka dig, you say, well, me for a vegetable garden, she will understand. Just do not buy a lot at once.'
+							'- Hmm, for the garden, of course. What does it mean ...'
+							'- No, docha! - Quickly interrupted her.'
+							'- Okay, okay.'
+							'You get up, run up and kiss your mother.'
+							'- You know, Mom, but you''re still my best.'
+							'- Appreciate it, fool - with a smile she says.'
+
+							act 'Leave':gt 'korrPar'
+						end
+					end
+				end
+			end
 		end
 	end
 end
+
 if alko > 0 and alkomday ! day:
 	alkomday = day
 	mother -= 1
