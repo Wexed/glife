@@ -371,10 +371,9 @@ elseif (sisboyQW = 2 or sisboyQW = 4 or sisboyQW = 6) and sister >= 40:
 	act 'Talk about Roma':
 		cls
 		minut += 5
-		sisboyrand = rand(1, 10)
 		gs'stat'
 
-		if (sisboyrand < 8 and sisboyday ! day) or sisboyday = day:
+		if (rand(1, 10) < 8 and sisboyday ! day) or sisboyday = day:
 			minut += 10
 			sister += 2
 			talkrand = rand(0, 10)
@@ -395,7 +394,7 @@ elseif (sisboyQW = 2 or sisboyQW = 4 or sisboyQW = 6) and sister >= 40:
 			if talkrand = 10:'Anja says, what you liked Roma, and asks if he likes you.'
 
 			act 'Finish':gt 'sister'
-		elseif sisboyrand >= 8 and sisboyQW = 2 and sisboyday ! day:
+		elseif sisboyQW = 2 and sisboyday ! day:
 			'<center><b><font color = maroon>Anja</font></b></center>'
 			'<center><img src="images/qwest/alter/sisterQW/sisboyQW_01.jpg"></center>'
 			'Anja long and hesitantly looking at you, and still decided to ask'
@@ -431,7 +430,7 @@ elseif (sisboyQW = 2 or sisboyQW = 4 or sisboyQW = 6) and sister >= 40:
 
 				act 'Finish':gt 'sister'
 			end
-		elseif sisboyrand >= 8 and (sisboyQW = 4 or sisboyQW = 6) and sisboyday ! day:
+		elseif (sisboyQW = 4 or sisboyQW = 6) and sisboyday ! day:
 			'<center><b><font color = maroon>Anja</font></b></center>'
 			'<center><img src="images/qwest/alter/sisterQW/sisboyQW_09.jpg"></center>'
 			'-The last time you have with Roma so much was saved, thank you very much.'
