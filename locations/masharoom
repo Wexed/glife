@@ -4,39 +4,39 @@ if $ARGS[0] = 'start':
 	*clr
 	gs 'stat'
 
-	if hour >= 7 and hour <= 20:
-		'<center><img src="images/img/masha/r1.jpg"></center>'
-		'Konata Masha obsharpannosti huge room with walls and many kinds of sex toys and accessories.'
-		'Masha is not, and this door softy forgot to close.'
-
-		act 'Wait an hour':
-			minut += 60
-			if hour >= 7 and hour <= 20:gt 'masharoom', 'start'
-			if hour < 7 or hour > 20:gt 'masharoom', '0'
-		end
-
-		act 'Trying on costumes':
-			cla
-			*clr
-			minut += 60
-			mashroomrand = rand(0, 10)
-
-			if mashroomrand = 10:gt 'masharoom', '1'
-			if mashroomrand = 9:gt 'masharoom', '2'
-
-			'<center><img src="images/img/masha/r2.jpg"></center>'
-			'You is interested suits hanging on the walls and you have decided to try a few for yourself.'
-
-			act 'Finish':gt 'masharoom', 'start'
-		end
-
-		act 'Leave':gt 'sexshop', 'podval'
-	else
-		gt 'masharoom', '0'
+	if hour < 7 or hour > 20:
+		gt 'masharoom', 'masha'
+		exit
 	end
+	
+	'<center><img src="images/img/masha/r1.jpg"></center>'
+	'Konata Masha obsharpannosti huge room with walls and many kinds of sex toys and accessories.'
+	'Masha is not, and this door softy forgot to close.'
+
+	act 'Wait an hour':
+		minut += 60
+		gt 'masharoom', 'start'
+	end
+
+	act 'Trying on costumes':
+		cla
+		*clr
+		minut += 60
+		mashroomrand = rand(1, 10)
+
+		if mashroomrand = 10:gt 'masharoom', '1'
+		if mashroomrand = 9:gt 'masharoom', '2'
+
+		'<center><img src="images/img/masha/r2.jpg"></center>'
+		'You are interested suits hanging on the walls and you have decided to try a few for yourself.'
+
+		act 'Finish':gt 'masharoom', 'start'
+	end
+
+	act 'Leave':gt 'sexshop', 'podval'
 end
 
-if $ARGS[0] = '0':
+if $ARGS[0] = 'masha':
 	gs 'stat'
 	cla
 	*clr

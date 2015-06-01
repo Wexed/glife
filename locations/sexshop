@@ -3,10 +3,9 @@ if $ARGS[0] = 'start':
 	$sexloc = $CURLOC
 	cla
 	*clr
-	shrand = rand(0, 100)
 
-	if kendra > 0 and shrand < 10:gt 'sexshop', 'kendra'
-	if tanga = 0 and shrand > 90:gt 'sexshop', 'shprod'
+	if kendra > 0 and rand(1, 10) = 10:gt 'sexshop', 'kendra'
+	if tanga = 0 and rand(1, 10) = 10:gt 'sexshop', 'shprod'
 
 	minut += 5
 	$metkaM = $ARGS[0]
@@ -32,10 +31,8 @@ if $ARGS[0] = 'start':
 		gt 'down'
 	end
 
-	if SUB >= 100 and analplug = 1 and dildo = 1 and vnesh > 26 and Peter < 1:
-		Peterrand = rand(0, 100)
-
-		if Peterrand > 50 :
+	if SUB >= 100 and analplug = 1 and dildo = 1 and vnesh > 26 and Peter = 0:
+		if rand(0, 1) = 1:
 			'You see an interesting looking middle-aged man, apparently he is the owner of this store.'
 
 			act 'Introduce yourself to the owner of the store' :
@@ -61,7 +58,91 @@ if $ARGS[0] = 'start':
 	if gloryhole >= 20 and pornstudio = 0:
 		'You notice out of the corner your eye, that the seller is trying to get your attention.'
 
-		act 'Approach to learn what we wants':gt 'sexshop', 'porn'
+		act 'Approach to learn what we wants':
+			cla
+			*clr
+			minut += 5
+			'In general, you give a great blowjob, everyone knows that. Do you want to earn extra money in the porn business as an actress? The pay there is certainly better than here, and cocks, maybe even more. Well? Other options will not be as good!'
+
+			act 'Agree':
+				cla
+				*clr
+				minut += 5
+				gs 'stat'
+				'<center><img src="images/studia/Pierre_1.jpg"></center>'
+				'You came to the studio, looking for someone to look, who to approach to the issue.'
+				'To you approached by a young man who introduced Peter, you are greeted and met.'
+
+				act 'Set out the purpose of your visit':
+					cla
+					*clr
+					minut = minut + 60
+					'<center><img src="images/studia/Pierre_2.jpg"></center>'
+					'Peter smiled and said that the new actresses are always welcome, just terrible, of course, in the business do not take. On the first couple of auditions will take place, if you like the public - you can not take them.'
+					'I''ll tell you that here and how, but under one condition - you have to undress.'
+
+					act 'Undress':
+						cla
+						*clr
+						'<center><img src="images/studia/casting_3.jpg"></center>'
+						'First there is a casting actresses - as I said, if you are terrible - you can not hope only comes when you have a beautiful appearance.'
+
+						act '......':
+							cla
+							*clr
+							'<center><img src="images/studia/model_0.jpg"></center>'
+							'Then she selected for the lead role.'
+							'Here you have to be the most beautiful.'
+
+							act '......':
+								cla
+								*clr
+								'<center><img src="images/studia/Film_0.jpg"></center>'
+								'Well then filming itself - an interesting and exciting process'
+								'And the output we get ....'
+
+								act '......':
+									cla
+									*clr
+									'<center><img src="images/studia/dvd-disс.jpg"></center>'
+									'Then on what I make money.'
+
+									act 'Everything is clear, but how and where everything is for sale? Maybe I want to see for yourself ..':
+										cla
+										*clr
+										'<center><img src="images/studia/Pierre_2.jpg"></center>'
+										'The sauna is in a residential area we have one man .. And in a sex shop, how could you understand there garters. Now here are thinking about selling in the university. If we have this who helped - increased profits used well, with dividend entitlements assistant, of course.'
+
+										act 'And any problems with the law?':
+											cla
+											*clr
+											'<center><img src="images/studia/ment_0.jpg"></center>'
+											'Specifically for you - yet. We''ve got their contracts with the cops, maybe in the future you will be able to help us to keep them in power, but for now - I told you all have to try on the weekend.'
+
+											act 'Well like all realized':
+												cla
+												*clr
+												'<center><img src="images/studia/Pierre_2.jpg"></center>'
+												'Boy, girl, enjoy yourself and do not take away I have more time'
+												pornstudio = 3
+												gt 'pornstudio', 'start'
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+
+			act 'Refuse':
+				cla
+				*clr
+				pornstudio = 1
+				gt 'sexshop', 'start'
+			end
+		end
 	end
 
 	if money >= 300:
@@ -599,6 +680,7 @@ if $ARGS[0] = 'pip':
 	if ghnow > 0:'You served <<ghnow>> cocks.'
 
 	act 'Get out of the booth':gt 'sexshop', 'podval'
+	
 	if money >= 50 and hour < 23:
 		act 'Stick 50 rubles in the machine':
 			cla
@@ -609,34 +691,33 @@ if $ARGS[0] = 'pip':
 			'Once you have paid the money the TV on the wall showing porn.'
 			'You sat in a chair and watched porn, you began to get a little excited.'
 
-		act 'The movie ended':gt 'sexshop', 'pip'
+			act 'The movie ended':gt 'sexshop', 'pip'
 
-		if horny >= 50:
-			act 'Masturbate':
-				cla
-				horny += 10
-				manna += 10
-				'You caress your pussy with your fingers and enjoy the pleasant sensation between your legs.'
+			if horny >= 50:
+				act 'Masturbate':
+					cla
+					horny += 10
+					manna += 10
+					'You caress your pussy with your fingers and enjoy the pleasant sensation between your legs.'
 
-				if horny >= 100:
-					orgasm += 1
-					horny = 0
-					manna += 15
-					willpower += 15
-					mastr += 1
-					'Gradually the pleasurable sensations spread throughout the body and you orgasm.'
+					if horny >= 100:
+						orgasm += 1
+						horny = 0
+						manna += 15
+						willpower += 15
+						mastr += 1
+						'Gradually the pleasurable sensations spread throughout the body and you orgasm.'
+					end
+
+					act 'The movie ended':gt 'sexshop', 'pip'
 				end
-
-				act 'The movie ended':gt 'sexshop', 'pip'
 			end
-		end
 
-		ghrand = rand(0, 10)
 
-		if ghrand >= 10 - (cumlip * 2):
-			'You hear the TV turn on in the next stall.'
+			if rand(0, 10) = 10 - (cumlip * 2):
+				'You hear the TV turn on in the next stall.'
 
-			act 'Stick a finger in the hole (to serve the stranger)':
+				act 'Stick a finger in the hole (to serve the stranger)':
 					cla
 					*clr
 					ghnow += 1
@@ -677,27 +758,6 @@ if $ARGS[0] = 'pip':
 				end
 			end
 		end
-	end
-end
-
-if $ARGS[0] = 'porn':
-	cla
-	*clr
-	minut += 5
-	'In general, you give a great blowjob, everyone knows that. Do you want to earn extra money in the porn business as an actress? The pay there is certainly better than here, and cocks, maybe even more. Well? Other options will not be as good !'
-
-	act 'Agree':
-		cla
-		*clr
-		pornstudio = 2
-		gt 'pornstudio', '1'
-	end
-
-	act 'Refuse':
-		cla
-		*clr
-		pornstudio = 1
-		gt 'sexshop', 'start'
 	end
 end
 
@@ -870,25 +930,24 @@ if $ARGS[0] = 'kendra4':
 end
 
 if $ARGS[0] = 'shprod':
-cla
-*clr
-minut += 5
-'<center><img src="images/img/centr/shprod.jpg"></center>'
-'The cashier is right infortn of you offering to help and holdign a miniskirt "Girl this is very you, will you try it on"'
-
-act 'Refuse':gt 'sexshop', 'start'
-
-act 'Try':
 	cla
 	*clr
-	picrand = 47
-	'<center><img src="images/img/centr/shprod1.jpg"></center>'
-	'You wear the skirt out of the booth and pose in the mirror, you do not have panties on and the skirt is so short that looks more like a belt and does not cover anything.  All your charms are visible from all directions.'
-	'Approaching the mirror you are considering this so-called skirt, and the cashier kneels behind you and starts praising your ass in that skirt, his hands already wander around your hips and he get his lips as close to your butt as he can, he says that he wants to kiss on your skin.  Words soon cease and just the touch of his lips to your skin remains, closer and closer to your pussy.'
+	minut += 5
+	'<center><img src="images/img/centr/shprod.jpg"></center>'
+	'The cashier is right in front of you offering to help and holding a miniskirt "Girl this is very you, will you try it on"'
 
-	act 'Push him away':gt 'sexshop', 'start'
-	act 'Let him':gt 'sex', 'kuni'
+	act 'Refuse':gt 'sexshop', 'start'
 
+	act 'Try':
+		cla
+		*clr
+		picrand = 47
+		'<center><img src="images/img/centr/shprod1.jpg"></center>'
+		'You wear the skirt out of the booth and pose in the mirror, you do not have panties on and the skirt is so short that looks more like a belt and does not cover anything.  All your charms are visible from all directions.'
+		'Approaching the mirror you are considering this so-called skirt, and the cashier kneels behind you and starts praising your ass in that skirt, his hands already wander around your hips and he get his lips as close to your butt as he can, he says that he wants to kiss on your skin.  Words soon cease and just the touch of his lips to your skin remains, closer and closer to your pussy.'
+
+		act 'Push him away':gt 'sexshop', 'start'
+		act 'Let him':gt 'sex', 'kuni'
 	end
 end
 
