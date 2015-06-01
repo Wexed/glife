@@ -1,0 +1,71 @@
+# $get_face_image
+
+!! These images are missing from my copy of the image folder, so I am commenting them out for now
+!!if glass = 2:
+!!	$RESULT = 'images/body/hcolglass<<hcol>>.jpg'
+!!	exit
+!!end
+!!if glass = 1:
+!!	$RESULT = 'images/body/nerd.jpg'
+!!	exit
+!!end
+!!if shorthair = 1:
+!!	$RESULT = 'images/body/SHcol<<hcol>>.jpg'
+!!	exit
+!!end
+
+
+$RESULT = 'images/body/hairstyles/'
+
+!! length
+if hairlength > 400:
+	$RESULT += 'vlng'
+elseif hairlength > 260:
+	$RESULT += 'lng'
+elseif hairlength > 160:
+	$RESULT += 'medlo'
+elseif hairlength > 80:
+	$RESULT += 'med'
+elseif hairlength > 30:
+	$RESULT += 'short'
+else
+	$RESULT += 'vshort'
+end
+$RESULT += '/'
+
+!! style
+if hbraids > 0:
+	$RESULT += 'braids'
+elseif hpigtail > 0:
+	$RESULT += 'pigtails'
+elseif curly > 0 and hbangs > 0 and hpingripw > 0:
+	$RESULT += 'curly-bangs-buns'
+elseif curly > 0 and hbangs > 0 and hscrunchw > 0:
+	$RESULT += 'curly-bangs-scrunch'
+elseif curly > 0 and hbangs > 0:
+	$RESULT += 'curly-bangs'
+elseif curly > 0 and hpingripw > 0:
+	$RESULT += 'curly-buns'
+elseif curly > 0 and hscrunchw > 0:
+	$RESULT += 'curly-scrunch'
+elseif hbangs > 0 and hpingripw > 0:
+	$RESULT += 'bangs-buns'
+elseif hbangs > 0 and hscrunchw > 0:
+	$RESULT += 'bangs-scrunch'
+elseif curly > 0:
+	$RESULT += 'curly'
+elseif hbangs > 0:
+	$RESULT += 'bangs'
+elseif hpingripw > 0:
+	$RESULT += 'buns'
+elseif hscrunchw > 0:
+	$RESULT += 'scrunch'
+else
+	$RESULT += 'normal'
+end
+$RESULT += '/'
+
+!! color
+$RESULT += 'hcol<<hcol>>.jpg'
+
+--- get_face_image --------
