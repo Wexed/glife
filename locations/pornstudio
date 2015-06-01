@@ -10,146 +10,169 @@ if $ARGS[0] = 'start':
 
 	act 'Leave':gt 'down'
 
-	if hour >= 9 and hour <= 22:
-		'Manager''s office opened.'
+	if hour < 10 or hour > 22:
+		'The Porn studio is closed.'
+		exit
+	end
+	
+	'Manager''s office opened.'
 
-		act 'Go to the manager':gt 'pornstudio', 'man'
-		act 'Visit the manager assistant':gt 'pornstudio', 'pomman'
+	act 'Go to the manager':gt 'pornstudio', 'manager'
+	
+	act 'Visit the manager assistant':
+		cla
+		*clr
+		minut += 5
+		gs 'stat'
+		'There is a young guy tapping on the computer keys in a small office.'
+		'<font color="#0D42C0"> "How can I help you?"</font>'
 
-		if bomzQW = 1 and week = 4 and workDisk = 0:act 'Arrive for work':dynamic $workbomzdi
-
-		if workDisk = 1 and week = 5:
-			act 'Take the disk':
-				cls
+		if pfilmSTOP = 0:
+			act 'What''s the rating on my videos?':
+				cla
 				minut += 5
-				workDisk = 2
-				gs 'stat'
-				'You are given a disk, and specify whether you remember all the instructions. You nod with your head and goes for the exit with the disc. Moving away from the studio near you heard someone else came out of a nearby building and head for you. <font color="magenta"> "Avoid deserted places, maybe this will blow over"</font> you had hoped, and went on.'
-
-				act 'Leave':gt 'down'
-			end
-		elseif workDisk = 3 and week = 5:
-			act 'Give the envelope':
-				cls
-				minut += 5
-				workDisk = 4
 				gs 'stat'
 
-				if konvert = 0:
-					workDolg = 200000
-					workDolgDay = 7
-					'Starting to dig in your things you are struckd in terror. No envelope. You search everything again, but you didn''t find the envelope.'
-					'-WHAT!! But how could you let this happen! You know in what you have gotten into?!'
-					'You stand there not squeezing out a single word. Sounds like your situation is really deplorable.'
-					'The Manager grabs the phone explaining the situation to the other party. After listening to a couple of minutes, he hung up.'
-					'<font color="#0D42C0"> So-so</font>  - he said - <font color="#0D42C0"> his boss was in a good mood, so I have good news. You have a week. Until next Friday evening you shall bring into the studio 200000. If you bring - we separate. You can not work as an actress with us anymore.</font>'
-					'<font color="#0D42C0">Otherwise, there will be consequences.</font>'
+				if film = 0:
+					'"You have no videos."'
 				else
-					konvert = 0
-					money += 5000
-					'You gave the envelope to the manager and he gave you 5, 000 rubles'
+					'"Do you <<film>> videos. Their rating is still very low, quite simply, they are almost nobody is looking."'
+					'The guy whispers "By the way if you suddenly want to, I can contribute to their removal from the network - if you go down to the price."'
+
+					act 'Tell me more':
+						cla
+						minut += 5
+						films_stop_payment = film * 40000
+						gs 'stat'
+						'So long as little video views, we are not very interested in them, and I can remove them. But will have to pay all the costs of the studio, about 40, 000 each. A total amount of <<films_stop_payment>>. In addition, site-hoster does not love these models, so that the more you do not get a job with us.'
+
+						if money >= films_stop_payment:
+							act 'Agree':
+								minut += 5
+								money -= films_stop_payment
+								pfilmSTOP = 1
+								film = 0
+								gs 'stat'
+								'So, your video removed. Have a nice day.'
+
+								act 'Leave':gt 'pornstudio', 'start'
+							end
+						end
+
+						act 'Leave':gt 'pornstudio', 'start'
+					end
 				end
 
-				act 'Leave':gt 'down'
+				act 'Leave':gt 'pornstudio', 'start'
 			end
 		end
 
-		if workDolg > 0 and money >= workDolg:
-			act 'Repay your debt':
+		act 'Leave':gt 'pornstudio', 'start'
+	end
+
+	if bomzQW = 1 and week = 4 and workDisk = 0:
+		act 'Arrive for work':
+			cls
+			minut += 15
+			gs 'stat'
+			'We made inquiries about you, and have decided that you come to us. The essence is this:We give you a couple of drives, and deliver them to you in the sauna, where you are given an envelope, you bring it to us immediately. Upon return now 5000. Shuttling need every Friday after opening the studio. If you agree, then passes on Friday unacceptable, choose safe mode of transport.'
+
+			act 'No, I do not fit (to leave)':bomzQW = -1 & gt 'down'
+
+			act 'Agree to work':
 				cls
-				minut += 5
-				workDisk = 0
-				money -= workDolg
-				workDolg = 0
+				minut += 15
 				gs 'stat'
-				'You gave the money that you owed to the studio.'
+				'Today, it will take you to our people. In the future, will get themselves because Fridays control us increase, but watch out for each lonely girl coming from us - too costly for them.'
 
-				act 'Leave':gt 'down'
+				act 'Well, show':
+					cls
+					workDisk = 1
+					minut += 15
+					gs 'stat'
+					'You slipped into a jeep standing at the entrance, and you have brought to the sauna.'
+
+					if saunasex = 1:
+						'You recall how you were brought into the sauna, but then you were so excited that they could not remember anything sensible.'
+					elseif sauna > 0:
+						'A sauna, you recall it, it close to your home.'
+					else
+						'This sauna is located near your home, it is strange that you did not notice it before.'
+					end
+
+					'You went to the sauna, you have presented to local managers. Lucidly explained to you who need to deliver, and that it is necessary to return the envelope on the same day when you gave him. Do not forget to remind about the use of secure transport. On this with you goodbye until tomorrow.'
+
+					act 'Leave':bomzQW = 2 & gt 'street'
+				end
 			end
 		end
+	end
 
-		if pfilmNO = 1 and pfilmNoVenera = 1 and Venera = 0:
-			act 'Show the certificate about STD''s cured':
-				cls
-				minut += 5
-				pfilmNoVenera = 0
-				pfilmNO = 0
-				gs 'stat'
-				'You gave a certificate that your sexually transmitted diseases is cured.They promised to consider your reinstatement as a porn actress.'
+	if workDisk = 1 and week = 5:
+		act 'Take the disk':
+			cls
+			minut += 5
+			workDisk = 2
+			gs 'stat'
+			'You are given a disk, and specify whether you remember all the instructions. You nod with your head and goes for the exit with the disc. Moving away from the studio near you heard someone else came out of a nearby building and head for you. <font color="magenta"> "Avoid deserted places, maybe this will blow over"</font> you had hoped, and went on.'
 
-				act 'Leave':gt 'down'
-			end
+			act 'Leave':gt 'down'
 		end
-	else
-		'The Porn studio is closed'
+	elseif workDisk = 3 and week = 5:
+		act 'Give the envelope':
+			cls
+			minut += 5
+			workDisk = 4
+			gs 'stat'
+
+			if konvert = 0:
+				workDolg = 200000
+				workDolgDay = 7
+				'Starting to dig in your things you are struckd in terror. No envelope. You search everything again, but you didn''t find the envelope.'
+				'-WHAT!! But how could you let this happen! You know in what you have gotten into?!'
+				'You stand there not squeezing out a single word. Sounds like your situation is really deplorable.'
+				'The Manager grabs the phone explaining the situation to the other party. After listening to a couple of minutes, he hung up.'
+				'<font color="#0D42C0"> So-so</font>  - he said - <font color="#0D42C0"> his boss was in a good mood, so I have good news. You have a week. Until next Friday evening you shall bring into the studio 200000. If you bring - we separate. You can not work as an actress with us anymore.</font>'
+				'<font color="#0D42C0">Otherwise, there will be consequences.</font>'
+			else
+				konvert = 0
+				money += 5000
+				'You gave the envelope to the manager and he gave you 5,000 rubles.'
+			end
+
+			act 'Leave':gt 'down'
+		end
+	end
+
+	if workDolg > 0 and money >= workDolg:
+		act 'Repay your debt':
+			cls
+			minut += 5
+			workDisk = 0
+			money -= workDolg
+			workDolg = 0
+			gs 'stat'
+			'You gave the money that you owed to the studio.'
+
+			act 'Leave':gt 'pornstudio', 'start'
+		end
+	end
+
+	if pfilmNO = 1 and pfilmNoVenera = 1 and Venera = 0:
+		act 'Show the certificate about STD''s cured':
+			cls
+			minut += 5
+			pfilmNoVenera = 0
+			pfilmNO = 0
+			gs 'stat'
+			'You gave a certificate that your sexually transmitted diseases is cured. They promised to consider your reinstatement as a porn actress.'
+
+			act 'Leave':gt 'pornstudio', 'start'
+		end
 	end
 end
 
-if $ARGS[0] = 'pomman':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
-	cla
-	*clr
-	minut += 5
-	gs 'stat'
-	'There is a young guy tapping on the computer keys in a small office.'
-	'<font color="#0D42C0"> "How can I help you?".</font> '
-
-	if pfilmSTOP = 0:
-	act 'What''s the rating on my videos?': gt 'pornstudio', 'myvid'
-    end
-
-	act 'Leave':gt 'pornstudio', 'start'
-end
-
-if $ARGS[0] = 'myvid':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
-	minut += 5
-	gs 'stat'
-
-	if film = 0:
-		'"You have no videos."'
-	elseif film > 0:
-		'"Do you <<film>> videos. Their rating is still very low, quite simply, they are almost nobody is looking."'
-		'The guy whispers "By the way if you suddenly want to, I can contribute to their removal from the network - if you go down to the price."'
-
-		act 'Rasprosov more':gt 'pornstudio', 'myvid2'
-	end
-
-	act 'Leave':gt 'pornstudio', 'start'
-end
-
-if $ARGS[0] = 'myvid2':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
-	minut += 5
-	films_stop_payment = film * 40000
-	gs 'stat'
-	'So long as little video views, we are not very interested in them, and I can remove them. But will have to pay all the costs of the studio, about 40, 000 each. A total amount of <<films_stop_payment>>. In addition, site-hoster does not love these models, so that the more you do not get a job with us.'
-
-	if money >= films_stop_payment:act 'Agree':gt 'pornstudio', 'myvid3'
-
-	act 'Leave':gt 'pornstudio', 'start'
-end
-
-if $ARGS[0] = 'myvid3':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
-	minut += 5
-	money -= films_stop_payment
-	pfilmSTOP = 1
-	$pfilmstory_new = 'In the porn industry you''re knows as <<$pfname>>. You starred in <<film>> porn films. Shooting ceased all video seized.'
-	film = 0
-	gs 'stat'
-	'So, your video removed. Have a nice day.'
-
-	act 'Leave':gt 'pornstudio', 'start'
-end
-
-if $ARGS[0] = 'man':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
+if $ARGS[0] = 'manager':
 	cla
 	*clr
 	minut += 5
@@ -159,57 +182,658 @@ if $ARGS[0] = 'man':
 
 	if pfilmNO = 1:
 		'You''re blacklisted, you no decent studio will not have affairs, goodbye.'
-
 		act 'Leave':gt 'pornstudio', 'start'
-
 		exit
 	end
 
 	if pfilmSTOP = 1:
 		'I''m sorry I thought you were retired...'
-
 		act 'Leave':gt 'pornstudio', 'start'
-
 		exit
 	end
 
 	if pfilmday = daystart and pfilm > 0:
 		'Do not distract me from my work. Like I said, tomorrow shooting.'
-
 		act 'Leave':gt 'pornstudio', 'start'
-
-		exit
-	elseif pfilmday >= daystart + 2:
-		pfilmNO = 1
-		'You did not come to the shooting. Plucked them. I paid a lot of dough assistants, actors, cameramen, plus rental studio, and you took it and threw me. No, with you I do not want to work and am submitting your name in the blacklist.'
-
-		act 'Leave':gt 'pornstudio', 'start'
-
 		exit
 	end
 
-	if pfilm > 0 and hour = 10:
-		pfilmday = day
-		'Come on honey inspection.'
-
-		act 'Go for medical check-up':gt 'pf', 'doc'
-
+	if pfilmday >= daystart + 2:
+		pfilmNO = 1
+		'You did not come to the shooting. Plucked them. I paid a lot of dough assistants, actors, cameramen, plus rental studio, and you took it and threw me. No, with you I do not want to work and am submitting your name in the blacklist.'
+		act 'Leave':gt 'pornstudio', 'start'
 		exit
-	elseif pfilm > 0 and hour = 11:
+	end
+
+	if pfilm > 0 and hour >= 10 and hour <= 12:
+		if hour = 10:'Come on honey inspection.'
+		if hour = 11:'Do not be late, my patience is not eternal, strictly tells you Peter. Vividly honey inspection.'
+		if hour = 12:'What the dick? There''s only one waiting for you. Hurry honey inspection.'
+		
 		pfilmday = day
-		'Do not be late, my patience is not eternal, strictly tells you Peter. Vividly honey inspection.'
+		act 'Go for medical check-up':
+			cla
+			*clr
+			minut += 5
+			gs 'stat'
+			'You went into the office where the doctor was waiting in a white robe. He quickly pulled on rubber gloves and briefly told you undress.'
+			'You removed the clothes and sat in the high gynecological chair legs apart. The doctor came up to you and started inspection. After inspection, he took a syringe and took you out of the vein blood samples.'
+			'Now after half an hour and will be ready tests, if you have at least something, they will show.'
 
-		act 'Go for medical check-up':gt 'pf', 'doc'
+			act 'Wait':
+				cla
+				*clr
+				minut += 30
+				gs 'stat'
 
+				if venera > 0:
+					pfilmNO = 1
+					pfilmNoVenera = 1
+					'Your analysis showed a sexually transmitted disease. doctor told you and called Peter. Peter looked at the piece of paper with analyzes.'
+					'Well, as long as you have an STD you can''t make films.'
+					act 'Leave':gt 'pornstudio', 'start'
+				else
+					'Well Well, you''re clean. Go into the dressing room'
+
+					act 'Go to the dressing room':
+						cla
+						*clr
+						minut += 30
+						hapri = 1
+						mop = 4
+						gs 'stat'
+						'In the dressing room waiting for you already lean and withered as roach woman.'
+
+						if pfilm > 3:'The first cases you put a powerful enema.'
+
+						'You put in front of the mirror, brushed and laid makeup.'
+						!!if the scene with anal, then enema.
+
+						act 'Go to the set':
+							if pfilm = 1:
+								cla
+								*clr
+								minut += 30
+								gs 'stat'
+
+								akrand = rand(1, 5)
+								if akrand = 1:$pakter = 'Alexei'
+								if akrand = 2:$pakter = 'Sergey'
+								if akrand = 3:$pakter = 'George'
+								if akrand = 4:$pakter = 'Ignat'
+								if akrand = 5:$pakter = 'Simeon'
+								if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
+								if akrand = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
+								if akrand = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
+								if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
+								if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
+
+								'On the site already bustling assistants installing lighting, so that there were no shadows.'
+								'On one side stands the actor <<$pakter>> and examining pornozhurnal Fingering member.'
+
+								act 'Removed':
+									cla
+									*clr
+									minut += 30
+									hj += 1
+									gs 'stat'
+									'<center><img src="images/studia/hj.gif"></center>'
+									'<<$pakter>> lay on the bed and put his penis. You lay down beside him and took his penis in his hand. Smeared his chest and a member of the actor, you started it nadrachivat eldu.'
+
+									act 'Masturbate on chest':
+										cla
+										*clr
+										minut += 5
+										'<center><img src="images/studia/hjcumontits.gif"></center>'
+										'<<$pakter>> began to finish your chest, and you continued to jerk his cock squeezing his hot cum on himself.'
+
+										act 'Walk in shower':
+											cla
+											*clr
+											minut += 5
+											sweat = -3
+											horny += 1
+											mop = 1
+											cumpussy = 0
+											cumbelly = 0
+											cumass = 0
+											cumanus =0
+											cumlip = 0
+											cumface = 0
+											'<center><img src="images/pics/dush.jpg"></center>'
+											'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
+
+											act 'Go to Peter':gt 'pornstudio', 'postvideo'
+										end
+									end
+								end
+							elseif pfilm = 2:
+								cla
+								*clr
+								minut += 30
+								gs 'stat'
+								
+								akrand = rand(1, 5)
+								if akrand = 1:$pakter = 'Alexei'
+								if akrand = 2:$pakter = 'Sergey'
+								if akrand = 3:$pakter = 'George'
+								if akrand = 4:$pakter = 'Ignat'
+								if akrand = 5:$pakter = 'Simeon'
+								if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
+								if akrand = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
+								if akrand = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
+								if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
+								if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
+
+								'On the site already bustling assistants installing lighting, so that there were no shadows.'
+								'On one side stands the actor <<$pakter>> and examining pornozhurnal Fingering member.'
+
+								act 'Removed':
+									cla
+									*clr
+									minut += 30
+									hj += 1
+									gs 'stat'
+									'<center><img src="images/studia/hj.gif"></center>'
+									'<<$pakter>> lay on the bed and put his penis. You lay down beside him and took his penis in his hand. Smeared his chest and a member of the actor, you started it nadrachivat eldu.'
+
+									act 'Take by mouth':
+										cla
+										*clr
+										bj += 1
+										minut += 5
+										'<center><img src="images/studia/bj.gif"></center>'
+										'<<$pakter>> sat on the bed and you have settled down between his legs taking his cock in her mouth and began to suck the head.'
+
+										act 'Suck':
+											cla
+											*clr
+											minut += 5
+											'<center><img src="images/studia/deep.gif"></center>'
+											'<<$pakter>> began to fuck you in the mouth by driving his cock down your throat every move.'
+											'Finally he took a member of you. It is time to remove ejaculation.'
+
+											act 'Sit on your knees and open your mouth':
+												cla
+												*clr
+												minut += 5
+												cumlip += 1
+												facial += 1
+												gs 'stat'
+												'<center><img src="images/studia/cum.gif"></center>'
+												'<<$pakter>> finished in your mouth, whipping a hot stream of sperm you by language and once in the throat.'
+
+												act 'Clean the mouth from his cock sperm':
+													cla
+													*clr
+													minut += 5
+													cumface += 1
+													swallow += 1
+													gs 'stat'
+													'<center><img src="images/studia/bj2.gif"></center>'
+													'You began to gently clean his cock swallowing sperm from her dedication and looking into his eyes.'
+
+													act 'Walk in shower':
+														cla
+														*clr
+														minut += 5
+														sweat = -3
+														horny += 1
+														mop = 1
+														cumpussy = 0
+														cumbelly = 0
+														cumass = 0
+														cumanus =0
+														cumlip = 0
+														cumface = 0
+														'<center><img src="images/pics/dush.jpg"></center>'
+														'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
+
+														act 'Go to Peter':gt 'pornstudio', 'postvideo'
+													end
+												end
+											end
+										end
+									end
+								end
+							elseif pfilm = 3:
+								cla
+								*clr
+								minut += 30
+								gs 'stat'
+								
+								akrand = rand(1, 5)
+								if akrand = 1:$pakter = 'Alexei'
+								if akrand = 2:$pakter = 'Sergey'
+								if akrand = 3:$pakter = 'George'
+								if akrand = 4:$pakter = 'Ignat'
+								if akrand = 5:$pakter = 'Simeon'
+								if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
+								if akrand = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
+								if akrand = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
+								if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
+								if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
+
+								'On the site already bustling assistants installing lighting, so that there were no shadows.'
+								'On one side stands the actor <<$pakter>> and examining pornozhurnal Fingering member.'
+
+								act 'Removed':
+									cla
+									*clr
+									minut += 30
+									hj += 1
+									gs 'stat'
+									'<center><img src="images/studia/hj.gif"></center>'
+									'<<$pakter>> lay on the bed and put his penis. You lay down beside him and took his penis in his hand. Smeared his chest and a member of the actor, you started it nadrachivat eldu.'
+
+									act 'Take by mouth':
+										cla
+										*clr
+										bj += 1
+										minut += 5
+										'<center><img src="images/studia/bj.gif"></center>'
+										'<<$pakter>> sat on the bed and you have settled down between his legs taking his cock in her mouth and began to suck the head.'
+
+										act 'Suck':
+											cla
+											*clr
+											minut += 5
+											'<center><img src="images/studia/deep.gif"></center>'
+											'<<$pakter>> began to fuck you in the mouth by driving his cock down your throat every move.'
+
+											act 'Stand up doggy style':
+												cla
+												*clr
+												sex += 1
+												vagina += 1
+												minut += 15
+												'<center><img src="images/studia/sex.gif"></center>'
+												'You got up on all fours and <<$pakter>> you drove his dick in pussy on the most balls. He began to fuck you hard-hitting all case you on the behind and if it did not hold hands tenaciously your buttocks, then you would definitely have fallen after the first blow.'
+
+												act 'Sit on your knees and open your mouth':
+													cla
+													*clr
+													minut += 5
+													cumlip += 1
+													facial += 1
+													gs 'stat'
+													'<center><img src="images/studia/cum.gif"></center>'
+													'<<$pakter>> finished in your mouth, whipping a hot stream of sperm you by language and once in the throat.'
+
+													act 'Clean the mouth from his cock sperm':
+														cla
+														*clr
+														minut += 5
+														cumface += 1
+														swallow += 1
+														gs 'stat'
+														'<center><img src="images/studia/bj2.gif"></center>'
+														'You began to gently clean his cock swallowing sperm from her dedication and looking into his eyes.'
+
+														act 'Walk in shower':
+															cla
+															*clr
+															minut += 5
+															sweat = -3
+															horny += 1
+															mop = 1
+															cumpussy = 0
+															cumbelly = 0
+															cumass = 0
+															cumanus =0
+															cumlip = 0
+															cumface = 0
+															'<center><img src="images/pics/dush.jpg"></center>'
+															'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
+
+															act 'Go to Peter':gt 'pornstudio', 'postvideo'
+														end
+													end
+												end
+											end
+										end
+									end
+								end
+							elseif pfilm = 4:
+								cla
+								*clr
+								minut += 30
+								gs 'stat'
+								
+								akrand = rand(1, 5)
+								if akrand = 1:$pakter = 'Alexei'
+								if akrand = 2:$pakter = 'Sergey'
+								if akrand = 3:$pakter = 'George'
+								if akrand = 4:$pakter = 'Ignat'
+								if akrand = 5:$pakter = 'Simeon'
+								if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
+								if akrand = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
+								if akrand = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
+								if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
+								if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
+
+								'On the site already bustling assistants installing lighting, so that there were no shadows.'
+								'On one side stands the actor <<$pakter>> and examining pornozhurnal Fingering member.'
+
+								act 'Removed':
+									cla
+									*clr
+									minut += 30
+									hj += 1
+									gs 'stat'
+									'<center><img src="images/studia/hj.gif"></center>'
+									'<<$pakter>> lay on the bed and put his penis. You lay down beside him and took his penis in his hand. Smeared his chest and a member of the actor, you started it nadrachivat eldu.'
+
+									act 'Take by mouth':
+										cla
+										*clr
+										bj += 1
+										minut += 5
+										'<center><img src="images/studia/bj.gif"></center>'
+										'<<$pakter>> sat on the bed and you have settled down between his legs taking his cock in her mouth and began to suck the head.'
+
+										act 'Suck':
+											cla
+											*clr
+											minut += 5
+											'<center><img src="images/studia/deep.gif"></center>'
+											'<<$pakter>> began to fuck you in the mouth by driving his cock down your throat every move.'
+
+											act 'Stand up doggy style':
+												cla
+												*clr
+												sex += 1
+												vagina += 1
+												minut += 5
+												'<center><img src="images/studia/sex.gif"></center>'
+												'You got up on all fours and <<$pakter>> you drove his dick in pussy on the most balls. He began to fuck you hard-hitting all case you on the behind and if it did not hold hands tenaciously your buttocks, then you would definitely have fallen after the first blow.'
+												'Finally the actor pulled out of you cock and you feel like it touches you in the anus.'
+
+												act 'Relax the anus':
+													cla
+													*clr
+													anal += 1
+													anus += 1
+													minut += 5
+													'<center><img src="images/studia/sex.gif"></center>'
+													'You tried as best they could relax the anus that would painlessly Hollow member. <<$pakter>> gradually came into your ass and began to peck your ass like a steam hammer.'
+
+													act 'Sit on your knees and open your mouth':
+														cla
+														*clr
+														minut += 5
+														cumlip += 1
+														facial += 1
+														gs 'stat'
+														'<center><img src="images/studia/cum.gif"></center>'
+														'<<$pakter>> finished in your mouth, whipping a hot stream of sperm you by language and once in the throat.'
+
+														act 'Clean the mouth from his cock sperm':
+															cla
+															*clr
+															minut += 5
+															cumface += 1
+															swallow += 1
+															gs 'stat'
+															'<center><img src="images/studia/bj2.gif"></center>'
+															'You began to gently clean his cock swallowing sperm from her dedication and looking into his eyes.'
+
+															act 'Go to the shower':
+																cla
+																*clr
+																minut += 5
+																sweat = -3
+																horny += 1
+																mop = 1
+																cumpussy = 0
+																cumbelly = 0
+																cumass = 0
+																cumanus =0
+																cumlip = 0
+																cumface = 0
+																'<center><img src="images/pics/dush.jpg"></center>'
+																'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
+
+																act 'Go to Peter':gt 'pornstudio', 'postvideo'
+															end
+														end
+													end
+												end
+											end
+										end
+									end
+								end
+							elseif pfilm = 5:
+								cla
+								*clr
+								minut += 30
+								gang += 1
+								gs 'stat'
+
+								akrand = rand(1, 5)
+								if akrand = 1:$pakter = 'Alexei'
+								if akrand = 2:$pakter = 'Sergey'
+								if akrand = 3:$pakter = 'George'
+								if akrand = 4:$pakter = 'Ignat'
+								if akrand = 5:$pakter = 'Simeon'
+								if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
+								if akrand = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
+								if akrand = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
+								if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
+								if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
+
+								akrand2 = rand(1, 4)
+								if akrand2 >= akrand:akrand2 += 1
+								if akrand2 = 1:$pakter2 = 'Alexei'
+								if akrand2 = 2:$pakter2 = 'Sergey'
+								if akrand2 = 3:$pakter2 = 'George'
+								if akrand2 = 4:$pakter2 = 'Ignat'
+								if akrand2 = 5:$pakter2 = 'Simeon'
+								if akrand2 = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
+								if akrand2 = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
+								if akrand2 = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
+								if akrand2 = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
+								if akrand2 = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
+
+								'On the site already bustling assistants installing lighting, so that there were no shadows.'
+								'Actors <<$pakter>> and <<$pakter2>> peppers before play dirty magazines that would lead them to a state of combat readiness.'
+
+								act 'Removed':
+									cla
+									*clr
+									minut += 10
+									bj += 2
+									gs 'stat'
+									'<center><img src="images/studia/tbj.gif"></center>'
+									'Cast members got started and you bash them in the face.'
+
+									act 'Suck':
+										cla
+										*clr
+										minut += 15
+										gs 'stat'
+										'<center><img src="images/studia/tbj2.gif"></center>'
+										'You started to suck both members trying to deprive no one attention, caressing them with his tongue, lips and sucked.'
+
+										act 'Fuck':
+											cla
+											*clr
+											minut += 15
+											sex += 1
+											vagina += 1
+											gs 'stat'
+											'<center><img src="images/studia/three.gif"></center>'
+											'You got up on all fours and <<$pakter>> you drove his dick in pussy until you have aspirated <<$pakter2>>.'
+
+											act 'Anal':
+												cla
+												*clr
+												minut += 15
+												anal += 1
+												anus += 1
+												gs 'stat'
+												'<center><img src="images/studia/threea.gif"></center>'
+												'<<$pakter>> drove a screw you in the ass until you have aspirated <<$pakter2>>.'
+
+												act 'Cum on face':
+													cla
+													*clr
+													minut += 5
+													cumface += 1
+													facial += 1
+													gs 'stat'
+													'<center><img src="images/studia/tcum.gif"></center>'
+													'<<$pakter2>> finished in your mouth, whipping a hot stream of sperm you by language and once in the throat.'
+
+													act 'Go to the shower':
+														cla
+														*clr
+														minut += 5
+														sweat = -3
+														horny += 1
+														mop = 1
+														cumpussy = 0
+														cumbelly = 0
+														cumass = 0
+														cumanus =0
+														cumlip = 0
+														cumface = 0
+														'<center><img src="images/pics/dush.jpg"></center>'
+														'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
+
+														act 'Go to Peter':gt 'pornstudio', 'postvideo'
+													end
+												end
+											end
+										end
+									end
+								end
+							else
+								cla
+								*clr
+								minut += 30
+								gang += 1
+								gs 'stat'
+								
+								akrand = rand(1, 5)
+								if akrand = 1:$pakter = 'Alexei'
+								if akrand = 2:$pakter = 'Sergey'
+								if akrand = 3:$pakter = 'George'
+								if akrand = 4:$pakter = 'Ignat'
+								if akrand = 5:$pakter = 'Simeon'
+								if akrand = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
+								if akrand = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
+								if akrand = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
+								if akrand = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
+								if akrand = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
+
+								akrand2 = rand(1, 4)
+								if akrand2 >= akrand:akrand2 += 1
+								if akrand2 = 1:$pakter2 = 'Alexei'
+								if akrand2 = 2:$pakter2 = 'Sergey'
+								if akrand2 = 3:$pakter2 = 'George'
+								if akrand2 = 4:$pakter2 = 'Ignat'
+								if akrand2 = 5:$pakter2 = 'Simeon'
+								if akrand2 = 1 and aksex1 = 0:aksex1 = 1 & guy += 1
+								if akrand2 = 2 and aksex2 = 0:aksex2 = 1 & guy += 1
+								if akrand2 = 3 and aksex3 = 0:aksex3 = 1 & guy += 1
+								if akrand2 = 4 and aksex4 = 0:aksex4 = 1 & guy += 1
+								if akrand2 = 5 and aksex5 = 0:aksex5 = 1 & guy += 1
+
+								'On the site already bustling assistants installing lighting, so that there were no shadows.'
+								'Actors <<$pakter>> and <<$pakter2>> peppers before play dirty magazines that would lead them to a state of combat readiness.'
+
+								act 'Removed':
+									cla
+									*clr
+									minut += 10
+									bj += 2
+									gs 'stat'
+									'<center><img src="images/studia/tbj.gif"></center>'
+									'Cast members got started and you bash them in the face.'
+
+									act 'Suck':
+										cla
+										*clr
+										minut += 15
+										gs 'stat'
+										'<center><img src="images/studia/tbj2.gif"></center>'
+										'You started to suck both members trying to deprive no one attention, caressing them with his tongue, lips and sucked.'
+
+										act 'Fuck':
+											cla
+											*clr
+											minut += 15
+											sex += 1
+											vagina += 1
+											gs 'stat'
+											'<center><img src="images/studia/three.gif"></center>'
+											'You got up on all fours and <<$pakter>> you drove his dick in pussy until you have aspirated <<$pakter2>>.'
+
+											act 'Anal':
+												cla
+												*clr
+												minut += 15
+												anal += 1
+												anus += 1
+												gs 'stat'
+												'<center><img src="images/studia/threea.gif"></center>'
+												'<<$pakter>> drove a screw you in the ass until you have aspirated <<$pakter2>>.'
+
+												act 'Double Penetration':
+													cla
+													*clr
+													minut += 15
+													anus += 1
+													vagina += 1
+													gs 'stat'
+													'<center><img src="images/studia/three2.gif"></center>'
+													'<<$pakter>> lay down and you sat down on his cock pussy <<$pakter2>> came from behind and you feel his penis penetrates your anus. You guys started to peck holes in two, hard dicks rubbing against each other through the thin stenochku in your body.'
+
+													act 'Cum on face':
+														cla
+														*clr
+														minut += 5
+														cumface += 1
+														facial += 1
+														gs 'stat'
+														'<center><img src="images/studia/tcum.gif"></center>'
+														'<<$pakter2>> finished in your mouth, whipping a hot stream of sperm you by language and once in the throat.'
+
+														act 'Walk in shower':
+															cla
+															*clr
+															minut += 5
+															sweat = -3
+															horny += 1
+															mop = 1
+															cumpussy = 0
+															cumbelly = 0
+															cumass = 0
+															cumanus =0
+															cumlip = 0
+															cumface = 0
+															'<center><img src="images/pics/dush.jpg"></center>'
+															'Logged-in shower cubicle and turned on the shower. Lathered body and washed off in the shower by removing all traces of semen from his body.'
+
+															act 'Go to Peter':gt 'pornstudio', 'postvideo'
+														end
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
 		exit
-	elseif pfilm > 0 and hour = 12:
-		pfilmday = day
-		'What the dick? There''s only one waiting for you. Hurry honey inspection.'
-
-		act 'Go for medical check-up':gt 'pf', 'doc'
-
-		exit
-	elseif pfilm > 0 and hour > 12:
+	end
+	
+	if pfilm > 0 and hour > 12:
 		pfilmday = day
 		'I told you not to be late? Said. Get out of here, I''m out for you a lot of money lost. Actors paid assistants, operator, doctor, and because of you slut, shooting all failed.'
 		'Either you come tomorrow and work for free, or get out and I know you do not want.'
@@ -220,19 +844,14 @@ if $ARGS[0] = 'man':
 			gt 'pornstudio', 'start'
 		end
 
-		act 'Well, in return for free.':
+		act 'Well, in return for free':
 			pfilmNOPAY = 1
 			gt 'pornstudio', 'start'
 		end
-	!'
-	else
-		'Peter said on the phone, he covers up the phone for a second. "Listen, while not up to you, how come some other time."'
-
-		act 'Leave':gt 'pornstudio', 'start'
-	'!
 		exit
 	end
-	if film = 0 and firstkasting = 0:
+	
+	if firstkasting = 0:
 		'You sat down on the sofa and asked the boss. I see you for the first time with us. Want to rent a porno movie?'
 
 		act 'I changed my mind':gt 'pornstudio', 'start'
@@ -300,7 +919,7 @@ if $ARGS[0] = 'man':
 				end
 			end
 		end
-	elseif film = 0 and firstkasting = 1 and pfilm = 0:
+	elseif film = 0 and pfilm = 0:
 		'So, you''re new girl, and we just have an order for a brand new girl. In the genre handdzhob. You''ll have to masturbate guy, and he would finish your chest. All this for 3,000.'
 
 		act 'Agree':
@@ -317,8 +936,6 @@ if $ARGS[0] = 'man':
 		if daystart > pffilmday and pfilm = 0:
 			'Come on <<$pfname>>. So, let''s see what I can pick up for you.'
 			frand = rand(1, 6)
-			!!frand = 6
-
 			if frand = 1:'Job handles need podorochit guy and he pulls on his chest. 2000.'
 			if frand = 2:'Do blowjob guy, ending in the mouth and face. 3 thousand.'
 			if frand = 3:'Classical, first blowjob, then sex with the end in the mouth and face. 5000.'
@@ -340,12 +957,10 @@ if $ARGS[0] = 'man':
 				act 'Leave':gt 'pornstudio', 'start'
 			end
 		else
-			if pffilmday-daystart > 0:
-				$talkpsno = 'Come back <<pffilmday-daystart>>days'
-				'Sorry <<$pfname>>, now there is no work for you. <<$talkpsno>>.'
-			elseif pffilmday-daystart = 0:
-				$talkpsno = 'Come back tomorrow'
-				'Sorry <<$pfname>>, now there is no work for you. <<$talkpsno>>.'
+			if pffilmday - daystart > 0:
+				'Sorry <<$pfname>>, now there is no work for you. Come back <<pffilmday-daystart>> days.'
+			elseif pffilmday - daystart = 0:
+				'Sorry <<$pfname>>, now there is no work for you. Come back tomorrow.'
 			end
 
 			act 'Leave':gt 'pornstudio', 'start'
@@ -355,54 +970,44 @@ if $ARGS[0] = 'man':
 	'Peter said on the phone, he covers up the phone for a second. "Listen, while not up to you, how come some other time."'
 
 	act 'Leave':gt 'pornstudio', 'start'
+end
 
-	!'
-	if week < 6 and pornstudio > 1 and pfilmA = 0 and pfilmB = 0:
-		porand = rand(1, 3)
+if $ARGS[0] = 'postvideo':
+	cla
+	*clr
+	minut += 30
+	film += 1
+	gs 'stat'
 
-		if porand < 3:
-			'Who needs an actress doing a blowjob. 1000 per hour. Filming will take 5 hours. Not necessarily immediately removed. Can come and shoot for an hour.'
+	if pfilm = 1:pfcash = 2000 & $filmtext = ' where you snimalilis as otdrachivali guy and he descended on your boobs.'
+	if pfilm = 2:pfcash = 3000 & $filmtext = ' where you snimalilis aspirated as a member of the guy and he goes down you in the mouth and face.'
+	if pfilm = 3:pfcash = 5000 & $filmtext = ' where you snimalilis aspirated as a member of the guy, then he fucked you and cum in your mouth.'
+	if pfilm = 4:pfcash = 6000 & $filmtext = ' where you snimalilis aspirated as a member of the guy, then he fucked you in the pussy and ass and pulled you into his mouth.'
+	if pfilm = 5:pfcash = 7000 & $filmtext = ' where you snimalilis as you in all holes hollows two men.'
+	if pfilm = 6:pfcash = 9000 & $filmtext = ' where you snimalilis as you hammering in all holes two men and even double penetration.'
 
-			act 'Agree':
-				pfilm = 1
-				gt 'the_movie', 'film'
-			end
-		elseif porand = 3:
-			'Who needs an actress for the film, anal, classic, deep blowjob. 3000 per hour. Filming will take 10:00. Not necessarily immediately removed. Can come and shoot for an hour.'
+	$pfilmhistory += film + ') shot on '+year+'.'+$month+'.'+day+':'+$filmtext+'<br>'
 
-			act 'Agree':
-				pfilm = 2
-				gt 'the_movie', 'film2'
-			end
-		end
-	elseif week < 6 and hour >= 10 and pfilmA > 0:
-		'You are not yet fully appeared in the film and you have to continue.'
-
-		act 'Go to the set':
-			pfilm = 1
-			gt 'the_movie', 'film'
-		end
-	elseif week < 6 and hour >= 10 and pfilmB > 0:
-		'You are not yet fully appeared in the film and you have to continue.'
-
-		act 'Go to the set':
-			pfilm = 2
-			gt 'the_movie', 'film2'
-		end
+	if pfilmNOPAY = 0:
+		money += pfcash
+		'Peter you counted <<pfcash>> per shot in the film and wished good luck.'
+	else
+		pfilmNOPAY = 0
+		'You have fulfilled his sentence and the film was made for free.'
 	end
 
-	if actr = 1 and pfilmA = 0 and pfilmB = 0:
-		'Now you have nothing to do in the studio, come Sunday'
-	elseif week = 6 and actr = 0:
-		act 'Try your luck at kastinge for starring':gt 'pornstudio', '2'
-	elseif week = 7 and actr = 1:
-		act 'Go to the shooting':gt 'pornstudio', '3'
-	end
+	pfilm = 0
 
-	if week < 6 and hour >= 22:
-		act 'Go home':gt 'down'
-	end
-	'!
+	if film < 10:filmkoef = 2
+	if film >= 10 and film < 20:filmkoef = 5
+	if film >= 20:filmkoef = 10
+
+	pffilmday = daystart+(film + filmkoef)
+	pfilmday = 0
+
+	'I think we will have a job for you no earlier than one <<pffilmday-daystart>>day.'
+
+	act 'Leave':gt 'pornstudio', 'start'
 end
 
 if $ARGS[0] = '1':
@@ -476,46 +1081,6 @@ if $ARGS[0] = '1':
 			end
 		end
 	end
-end
-
-if $ARGS[0] = '2':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
-	clr
-	carraf = rand(10, 250)
-	gs 'stat'
-	castingrand = rand(1, 6)
-
-	'<center><img src="images/studia/casting_<<castingrand>>.jpg"></center>'
-	'You spent eight o''clock in the casting producer was undressing in front and taking a variety of poses.'
-	minut = minut + 120
-	gs 'stat'
-	minut = minut + 120
-	gs 'stat'
-	minut = minut + 120
-	gs 'stat'
-	minut = minut + 120
-	gs 'stat'
-
-	if vnesh < carrar:
-		'You have not taken the role, very sorry'
-	elseif vnesh >= carrar:
-		actr = 1
-		'Your role'
-	end
-
-	act 'Finish':
-		gt 'pornstudio', 'start'
-	end
-end
-
-if $ARGS[0] = '3':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
-	clr
-	actr = 0
-	gs 'stat'
-	gt 'bdsm'
 end
 
 --- pornstudio ---------------------------------
