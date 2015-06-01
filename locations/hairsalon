@@ -1,120 +1,65 @@
 # hairsalon
-!!! Maruda Hair Mod
-$pokraska = {
-	clr
+if $ARGS[0] = 'start':
 	cla
-	money -= 1000
-	'You ask the woman hairdresser, if she could dye your hair.'
-	'"Sure.", she says.'
-	'"Which colour would like to have your hair dyed in?"'
-
-	if hcol ! 0:
-		act 'Black':
-			cla
-			*clr
-			'"Black", you say, "I want it to be raven black, dark as the night, please."'
-			'"Sure thing!", she answer in a happy tone, "Why don''t you take a seat?"'
-			'"We''ll be done in no time!", she says happily as she turns around one of the seats for you.'
-
-			act 'Sit down':
-				cla
-				*clr
-				minut += 60
-				hcol = 0
-				'About an hour later, everything should be dried up and the female hairdress comes back to you.'
-				'She removes the dryer hood. "And we''re all done."'
-				'You stand up from the chair and pay the 1000 rubles.'
-
-				act 'Leave':gt 'hairsalon', 'start'
-			end
-		end
-	end
-
-	if hcol ! 1:
-		act 'Brown':
-			cla
-			*clr
-			'"I''d like to have my hair brown", you say.'
-			'"Sure thing!", she answer in a happy tone, "Why don''t you take a seat?"'
-			'"We''ll be done in no time!", she says happily as she turns around one of the seats for you.'
-
-			act 'Sit down':
-				cla
-				*clr
-				minut += 60
-				hcol = 1
-				'About an hour later, everything should be dried up and the female hairdress comes back to you.'
-				'She removes the dryer hood. "And we''re all done."'
-				'You stand up from the chair and pay the 1000 rubles.'
-
-				act 'Leave':gt 'hairsalon', 'start'
-			end
-		end
-	end
-
-	if hcol ! 2:
-		act 'Red':
-			cla
-			*clr
-			'"I''d like to have my in a fiercely red", you say with a devilish grin.'
-			'"Sure thing!", she laughs, "Why don''t you take a seat?"'
-			'"We''ll be done in no time!", she says happily as she turns around one of the seats for you.'
-
-			act 'Sit down':
-				cla
-				*clr
-				minut += 60
-				hcol = 2
-				'About an hour later, everything should be dried up and the female hairdress comes back to you.'
-				'She removes the dryer hood. "And we''re all done."'
-				'You stand up from the chair and pay the 1000 rubles.'
-
-				act 'Leave':gt 'hairsalon', 'start'
-			end
-		end
-	end
-
-	if hcol ! 3:
-		act 'Blonde':
-			cla
-			*clr
-			'"Blonde! Blondes have more fun. I want to see if that is true!", you giggle.'
-			'"Blondes definately have more fun!", she says with a wink, "Why don''t you take a seat?"'
-			'"We''ll be done in no time!", she says happily as she turns around one of the seats for you.'
-
-			act 'Sit down':
-				cla
-				*clr
-				minut += 60
-				hcol = 3
-				'About an hour later, everything should be dried up and the female hairdress comes back to you.'
-				'She removes the dryer hood. "And we''re all done."'
-				'You stand up from the chair and pay the 1000 rubles.'
-
-				act 'Leave':gt 'hairsalon', 'start'
-			end
-		end
-	end
-
+	cls
+	'<center><b><font color="maroon">The Golden Curl Salon</font></b></center>'
+	'<center>A well reviewed hair salon, capable of creating the most beautiful hairstyles. For a price of course.</center>'
+	'<center>Next to the check out are two aisles filled with premium merchandise for you hair, including Scrunchies, Hairpins and Shampoo.</center>'
+	clr
 	gs 'stat'
-}
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
 
-$zavivka = {
-	minut += 20
-	curly += 10
-	money -= 500
-	'You have your hair curled'
-	gs 'stat'
-	gt 'hairsalon', 'start'
-}
+	if hour =< 8 or hour >= 20:
+		cls
+		'The hair salon is closed. You should come back during their working hours.'
+		act 'Leave':minut += 2 & gt 'torgcentr'
+		exit
+	end
 
-$cuthair = {
+	''
+	'<a href=' + iif(money >= 750, '"exec:gt ''hairsalon'', ''cuthair''"', '') + '>Get a haircut - 750 rubles</a>'
+	''
+	'<a href=' + iif(money >= 500, '"exec:gt ''hairsalon'', ''curlhair''"', '') + '>Get your hair curled - 500 rubles</a>'
+	''
+	'<a href=' + iif(money >= 1000, '"exec:gt ''hairsalon'', ''dyehair''"', '') + '>Get your hair dyed - 1000 rubles</a>'
+	''
+	'<a href=' + iif(money >= 1250, '"exec:gt ''hairsalon'', ''braidhair''"', '') + '>Get your hair braided - 1250 rubles</a>'
+
+	act 'Leave':minut += 2 & gt 'torgcentr'
+
+	if money >= 100:
+		act 'Buy Scrunchies - 100 rubles':
+			cls
+			money -= 100
+			hscrunch += 10
+			'You pay the cashier and bought the small box.'
+
+			act 'Move away':gt 'hairsalon', 'start'
+		end
+	end
+
+	if money >= 120:
+		act 'Buy Hair accessories - 120 rubles':
+			cls
+			money -= 120
+			hpingrip += 10
+			'You pay the cashier and bought the small box.'
+
+			act 'Move away':gt 'hairsalon', 'start'
+		end
+	end
+end
+
+if $ARGS[0] = 'cuthair':
 	cla
 	*clr
-	money -= 750
 	'You approach the female hairdresser and ask, "Hi, I would like to get my hair cut. Can someone do it now or do I have to wait?"'
 	'She smiles, "Sure thing, have you already decided on how much we shall cut off?"'
 
+	act 'Change your mind':gt 'hairsalon', 'start'
+	
 	if hairlength > 10:
 		act 'Very short':
 			cla
@@ -128,10 +73,11 @@ $cuthair = {
 				*clr
 				minut += 30
 				hairlength = 10
+				money -= 750
 				'About half an hour later she is done and what''s left from you former hairstyle is a very short buzzcut.'
 				'You stand up and pay the women at the counter.'
 
-				act 'Stand up':gt 'hairsalon', 'start'
+				act 'Look in the mirror':gt 'hairsalon', 'mirror'
 			end
 		end
 	end
@@ -156,10 +102,11 @@ $cuthair = {
 						hairlength = 31
 						hbangs = 1
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 
 					act 'No':
@@ -168,10 +115,11 @@ $cuthair = {
 						minut += 30
 						hairlength = 31
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 				else
 					cla
@@ -179,10 +127,11 @@ $cuthair = {
 					minut += 30
 					hairlength = 31
 					hapri = 1
+					money -= 750
 					'30 minutes later, she is done cutting your hair. And you have now a hairstyle, which barely reaches your earlobes.'
 					'You stand up and pay the women at the counter.'
 
-					act 'Stand up':gt 'hairsalon', 'start'
+					act 'Look in the mirror':gt 'hairsalon', 'mirror'
 				end
 			end
 		end
@@ -208,10 +157,11 @@ $cuthair = {
 						hairlength = 81
 						hbangs = 1
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. Your new hairstyle goes down to you chin-line and you have a fringe, covering your forehead.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 
 					act 'No':
@@ -220,10 +170,11 @@ $cuthair = {
 						minut += 30
 						hairlength = 81
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. Your new hairstyle goes down to you chin-line.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 				else
 					cla
@@ -231,10 +182,11 @@ $cuthair = {
 					minut += 30
 					hairlength = 31
 					hapri = 1
+					money -= 750
 					'30 minutes later, she is done cutting your hair. Your new hairstyle goes down to you chin-line.'
 					'You stand up and pay the women at the counter.'
 
-					act 'Stand up':gt 'hairsalon', 'start'
+					act 'Look in the mirror':gt 'hairsalon', 'mirror'
 				end
 			end
 		end
@@ -260,10 +212,11 @@ $cuthair = {
 						hairlength = 161
 						hbangs = 1
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. Your hair now goes just to your shoulders and you have a fringe, covering your forehead.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 
 					act 'No':
@@ -272,10 +225,11 @@ $cuthair = {
 						minut += 30
 						hairlength = 161
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. Your hair now goes just to your shoulders..'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 				else
 					cla
@@ -283,10 +237,11 @@ $cuthair = {
 					minut += 30
 					hairlength = 161
 					hapri = 1
+					money -= 750
 					'30 minutes later, she is done cutting your hair. Your hair now goes just to your shoulders..'
 					'You stand up and pay the women at the counter.'
 
-					act 'Stand up':gt 'hairsalon', 'start'
+					act 'Look in the mirror':gt 'hairsalon', 'mirror'
 				end
 			end
 		end
@@ -312,10 +267,11 @@ $cuthair = {
 						hairlength = 261
 						hbangs = 1
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. She cut your hair back to about the line where your bra sits, in addition she made you a fringe, covering your forehead, as requested.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 
 					act 'No':
@@ -324,10 +280,11 @@ $cuthair = {
 						minut += 30
 						hairlength = 261
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. She cut your hair back to about the line where your bra sits.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 				else
 					cla
@@ -335,10 +292,11 @@ $cuthair = {
 					minut += 30
 					hairlength = 261
 					hapri = 1
+					money -= 750
 					'30 minutes later, she is done cutting your hair. She cut your hair back to about the line where your bra sits.'
 					'You stand up and pay the women at the counter.'
 
-					act 'Stand up':gt 'hairsalon', 'start'
+					act 'Look in the mirror':gt 'hairsalon', 'mirror'
 				end
 			end
 		end
@@ -364,10 +322,11 @@ $cuthair = {
 						hairlength = 401
 						hbangs = 1
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. She just cuts the tips of your, barely making it shorter and as requested, she cut you a nice fringe, , which now covers your forehead.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 
 					act 'No':
@@ -376,10 +335,11 @@ $cuthair = {
 						minut += 30
 						hairlength = 401
 						hapri = 1
+						money -= 750
 						'30 minutes later, she is done cutting your hair. She just cuts the tips of your, barely making it shorter.'
 						'You stand up and pay the women at the counter.'
 
-						act 'Stand up':gt 'hairsalon', 'start'
+						act 'Look in the mirror':gt 'hairsalon', 'mirror'
 					end
 				else
 					cla
@@ -387,20 +347,171 @@ $cuthair = {
 					minut += 30
 					hairlength = 401
 					hapri = 1
+					money -= 750
 					'30 minutes later, she is done cutting your hair. She just cuts the tips of your, barely making it shorter. '
 					'You stand up and pay the women at the counter.'
 
-					act 'Stand up':gt 'hairsalon', 'start'
+					act 'Look in the mirror':gt 'hairsalon', 'mirror'
 				end
 			end
 		end
 	end
-}
+end
 
-$makebraids = {
+if $ARGS[0] = 'curlhair':
+	cls
+	if hairlength <= 80:
+		'"Sorry, your hair is too short to curl."'
+		act 'Move away':gt 'hairsalon', 'start'
+	elseif curly = 10:
+		'"Your hair is already as curly as I can make it."'
+		act 'Move away':gt 'hairsalon', 'start'
+	elseif hbraids > 0:
+		'"Your hair is in braids right now, to curl it I would have to remove them. Is that what you want me to do?"'
+		act 'Yes':
+			cla
+			minut += 20
+			hbraids = 0
+			curly = 10
+			money -= 500
+			'Your braids were removed and your hair was curled instead.'
+			gs 'stat'
+			act 'Look in the mirror':gt 'hairsalon', 'mirror'
+		end
+		
+		act 'No':gt 'hairsalon', 'start'
+	else
+		minut += 20
+		curly = 10
+		money -= 500
+		'You have your hair curled.'
+		gs 'stat'
+		act 'Look in the mirror':gt 'hairsalon', 'mirror'
+	end
+end
+
+if $ARGS[0] = 'dyehair':
+	clr
+	cla
+	'You ask the woman hairdresser, if she could dye your hair.'
+	'"Sure.", she says.'
+	'"Which colour would like to have your hair dyed in?"'
+
+	act 'Change your mind':gt 'hairsalon', 'start'
+	
+	if hcol ! 0:
+		act 'Black':
+			cla
+			*clr
+			'"Black", you say, "I want it to be raven black, dark as the night, please."'
+			'"Sure thing!", she answer in a happy tone, "Why don''t you take a seat?"'
+			'"We''ll be done in no time!", she says happily as she turns around one of the seats for you.'
+
+			act 'Sit down':
+				cla
+				*clr
+				minut += 60
+				hcol = 0
+				money -= 1000
+				'About an hour later, everything should be dried up and the female hairdress comes back to you.'
+				'She removes the dryer hood. "And we''re all done."'
+				'You stand up from the chair and pay the 1000 rubles.'
+
+				act 'Look in the mirror':gt 'hairsalon', 'mirror'
+			end
+		end
+	end
+
+	if hcol ! 1:
+		act 'Brown':
+			cla
+			*clr
+			'"I''d like to have my hair brown", you say.'
+			'"Sure thing!", she answer in a happy tone, "Why don''t you take a seat?"'
+			'"We''ll be done in no time!", she says happily as she turns around one of the seats for you.'
+
+			act 'Sit down':
+				cla
+				*clr
+				minut += 60
+				hcol = 1
+				money -= 1000
+				'About an hour later, everything should be dried up and the female hairdress comes back to you.'
+				'She removes the dryer hood. "And we''re all done."'
+				'You stand up from the chair and pay the 1000 rubles.'
+
+				act 'Look in the mirror':gt 'hairsalon', 'mirror'
+			end
+		end
+	end
+
+	if hcol ! 2:
+		act 'Red':
+			cla
+			*clr
+			'"I''d like to have my in a fiercely red", you say with a devilish grin.'
+			'"Sure thing!", she laughs, "Why don''t you take a seat?"'
+			'"We''ll be done in no time!", she says happily as she turns around one of the seats for you.'
+
+			act 'Sit down':
+				cla
+				*clr
+				minut += 60
+				hcol = 2
+				money -= 1000
+				'About an hour later, everything should be dried up and the female hairdress comes back to you.'
+				'She removes the dryer hood. "And we''re all done."'
+				'You stand up from the chair and pay the 1000 rubles.'
+
+				act 'Look in the mirror':gt 'hairsalon', 'mirror'
+			end
+		end
+	end
+
+	if hcol ! 3:
+		act 'Blonde':
+			cla
+			*clr
+			'"Blonde! Blondes have more fun. I want to see if that is true!", you giggle.'
+			'"Blondes definately have more fun!", she says with a wink, "Why don''t you take a seat?"'
+			'"We''ll be done in no time!", she says happily as she turns around one of the seats for you.'
+
+			act 'Sit down':
+				cla
+				*clr
+				minut += 60
+				hcol = 3
+				money -= 1000
+				'About an hour later, everything should be dried up and the female hairdress comes back to you.'
+				'She removes the dryer hood. "And we''re all done."'
+				'You stand up from the chair and pay the 1000 rubles.'
+
+				act 'Look in the mirror':gt 'hairsalon', 'mirror'
+			end
+		end
+	end
+
+	gs 'stat'
+end
+
+if $ARGS[0] = 'braidhair':
 	cla
 	*clr
 	'"I''d like to have my hair braided. Could you do that?", you as the female hairdresser.'
+
+	if hbraids = 20:
+		'"Sorry, your hair is already braided as well as I can do."'
+		act 'Move away':gt 'hairsalon', 'start'
+		exit
+	elseif hairlength <= 80:
+		'"Sorry, your hair is too short for me to braid it."'
+		act 'Move away':gt 'hairsalon', 'start'
+		exit
+	elseif hairlength > 400:
+		'"Sorry, your hair is too long to make a braid that will not fall apart."'
+		act 'Move away':gt 'hairsalon', 'start'
+	end
+	
 	'She takes a look at you hair and nods, "Sure, you have beautiful, long hair, it shouldn''t be a problem at all."'
 	'The hairdresser tells you to sit down on one of the free seats and she''ll get on it immediately.'
 
@@ -418,77 +529,16 @@ $makebraids = {
 			'"And we are done.", she says.'
 			'You stand up and pay her at the counter.'
 
-			act 'Stand up':gt 'hairsalon', 'start'
+			act 'Look in the mirror':gt 'hairsalon', 'mirror'
 		end
 	end
-}
-
-if $ARGS[0] = 'start':
-	gs 'stat'
-	'<center><b><font color="maroon">The Golden Curl Salon</font></b></center>'
-	'<center>A well reviewed hair salon, capable of creating the most beautiful hairstyles. For a price of course.</center>'
-	'<center>Next to the check out are two aisles filled with premium merchandise for you hair, including Scrunchies, Hairpins and Shampoo.</center>'
-	clr
-	gs 'stat'
-	fcolor = rgb(0, 0, 0)
-	bcolor = rgb(255, 255, 255)
-	lcolor = rgb(106, 90, 205)
-	''
-
-	if money >= 750 and hairlength > 15:'<a href="exec:dynamic $cuthair">Cut your hair - 750 rubles</a>'
-	if money < 750 and hairlength <= 15:'You don''t have enough money to get your hair properly cut. It costs 750 rubles but you only have <<money>>.'
-
-	''
-
-	if money >= 500 and hairlength > 80:'<a href="exec:dynamic $zavivka">Curl your hair - 500 rubles</a>'
-	if money < 500:'You cannot afford curling your hair, as it costs 500 rubles, which you do not have at the moment.'
-	if money >= 300 and hairlength <= 30:'Your hair is too short to curl.'
-
-	''
-
-	if money >= 1000:'<a href="exec:dynamic $pokraska">Dye your hair - 1.000 rubles</a>'
-	if money < 1000:'You cannot afford dyeing your hair, as you are missing the 1.000 rubles required for it.'
-
-	''
-
-	if money >= 1250 and hairlength > 80:'<a href="exec:dynamic $makebraids">Braid your hair - 1250 rubles</a>'
-	if money >= 1250 and hairlength <= 80:'While you do have enough money to get your hair braided, your hair is not long enough to get it done properly and get a satisfying outcome.'
-	if money < 1250 and hairlength > 80:'You don''t have the 1.250 rubles, which you''ll need to get your hair braided.'
-	if money < 1250 and hairlength <= 80:'Not only you''re missing the 1.250 rubles required to do this hair job, you''re hair is also too short to get it braided.'
-
-	if hour =< 8 or hour >= 20:
-		cls
-		'The hair salon is closed. You should come back during their working hours.'
-
-		act 'Leave':minut += 2 & gt 'torgcentr'
-
-		exit
-	end
-
-	act 'Leave':minut += 2 & gt 'torgcentr'
 end
 
-if money >= 100:
-	act 'Buy Scrunchies - 100 rubles':
-		cls
-		money -= 100
-		hscrunch += 10
-		'You pay the cashier and bought the small box.'
-
-		act 'Move away':gt 'hairsalon', 'start'
-	end
+if $ARGS[0] = 'mirror':
+	cls
+	'<center><img src="' + FUNC('$get_face_image') + '"></center>'
+	'<center>You look at your new hairstyle in the mirror.</center>'
+	act 'Move away':gt 'hairsalon', 'start'
 end
-
-if money >= 120:
-	act 'Buy Hairaccessories - 120 rubles':
-		cls
-		money -= 120
-		hpingrip += 10
-		'You pay the cashier and bought the small box.'
-
-		act 'Move away':gt 'hairsalon', 'start'
-	end
-end
-!!! Maruda Hair Mod
 
 --- hairsalon ---------------------------------
