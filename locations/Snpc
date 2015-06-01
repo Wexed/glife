@@ -279,7 +279,7 @@ if numnpc = 16:
 			'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 
 			if GorSlut < 1:'You came to Natasha and asked you to pull up a little learning, She thought agreed.'
-			if GorSlut> = 1:'You came to Natasha and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
+			if GorSlut >= 1:'You came to Natasha and asked you to pull up a little learning, she snorted indignantly, well, and then think, we are friends.'
 			if $loc ! 'gdkin':dynamic $din_sekondparturok
 			if $loc = 'gdkin':act 'Move away':gt $loc, $metka
 		end
