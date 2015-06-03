@@ -230,17 +230,16 @@ if lipbalm > 0 and lipbalmstat <= 0 and AutoLipBalm = 1:
 end
 
 if AutoVitamins = 1 and vitamin > 0 and vitaminday ! day:
-		minut += 5
-		vitaminday = day
-		vitamin -= 1
-		frost = 0
-		skinvan += 1
+	minut += 5
+	vitaminday = day
+	vitamin -= 1
+	frost = 0
+	skinvan += 1
 
-		if KandidozOnce = 1:Kandidoz -= 2
-		if GerpesOnce = 1:Gerpes -= 2
-		if SifacOnce = 1 and Sifilis >= 10:Sifilis -= rand(0, 1)
-		if skinvan = 20:skinvan = 0 & skin += 1
-	end
+	if KandidozOnce = 1:Kandidoz -= 2
+	if GerpesOnce = 1:Gerpes -= 2
+	if SifacOnce = 1 and Sifilis >= 10:Sifilis -= rand(0, 1)
+	if skinvan = 20:skinvan = 0 & skin += 1
 end
 !!!
 
