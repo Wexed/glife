@@ -2,9 +2,7 @@
 if $ARGS[0] = 'food':
 	if money < 100:
 		'You do not have enough money for the cafe.'
-
 		act 'Leave':gt 'park', 'start'
-
 		exit
 	end
 
@@ -37,7 +35,7 @@ if $ARGS[0] = 'food':
 	arand = rand(1, 7)
 
 	if arand = 1:'You look around and notice the cafe visitors strolling company <a href="exec:gt ''ParkKafe'', ''youth''">Youth</a>'
-	if arand = 2:'You look around and notice the cafe visitors sitting alone young <a href="exec:gt ''ParkKafe'', ''guy''">Man</a>'
+	if arand = 2:'You look around and notice the cafe visitors sitting alone young <a href="exec:gt ''ParkKafe'', ''the_boy''">Man</a>'
 	if arand = 3:'You are viewing a cafe visitors and students notice campaign <a href="exec:gt ''ParkKafe'', ''negros''">Africans</a>'
 	if arand = 4:'You look around and notice the cafe visitors <a href="exec:gt ''ParkKafe'', ''woman''">woman</a> imperious form'
 	if arand = 5:'You look around and notice the cafe visitors solid <a href="exec:gt ''ParkKafe'', ''man''">man</a> aged'
@@ -50,43 +48,43 @@ end
 
 if $ARGS[0] = 'guys':
 	cla
-	rrand = rand(1, 2)
 
-	if rrand = 1:
+	if rand(0, 1) = 0:
 		'You''re looking at them intently, but they think you do not notice.'
 
 		act 'Go home':gt 'park', 'start'
-	elseif rrand = 2:
+	else
+		act 'Leave':gt 'park', 'start'
+		
 		if parkara > 0:
 			'Jora Senya notice you, but continued to drink beer with friends.'
-
-			act 'Leave':gt 'park', 'start'
-		elseif parkara = 0:
+		else
 			'Your views were seen guys and one of them rolled up to you and asked to join them.'
-
-			act 'Leave':gt 'park', 'start'
 
 			act 'Drink beer with the guys':
 				cla
 				'You guys drank a glass of beer for guys ordered another. One of the guys that you quietly slipped it into the glass. You get drunk and you guys took in the nearest woods.'
-				deyrand = rand(1, 2)
-
-				if deyrand = 1:
+				if rand(0, 1) = 0:
 					if parkara = 0:guy += 2 & parkara = 1
 					sex += 1
 					bj += 2
 					cumlip += 2
 					'<center><img src="images/klof/022.jpg"></center>'
 					'Guys put you on your knees and take out their members. you do not understand what is going on at once both start sucking cock.'
-					horand = rand(1, 100)
-
-					if horand <= bj:horny = 0 & orgasm += 1 & 'You covered orgasm'
-					if horand > bj:horny += 10 & 'You were not satisfied'
+					
+					if rand(1, 100) <= bj:
+						horny = 0
+						orgasm += 1
+						'You orgasmed.'
+					else
+						horny += 10
+						'You were not satisfied'
+					end
 
 					'They end up in your mouth, you swallow sperm greed'
 
 					act 'Become acquainted':gt 'parkkafe', 'klof 1'
-				elseif deyrand = 2:
+				else
 					if parkara = 0:guy += 2 & parkara = 1
 
 					sex += 1
@@ -98,11 +96,16 @@ if $ARGS[0] = 'guys':
 					anal += 1
 					'<center><img src="images/klof/004.jpg"></center>'
 					'Guy fucks you in the pussy. Another time, too, does not lose his penis and shoves you in the ass.'
-					horand = rand(1, 100)
-
-					if horand <= horny:horny = 0 & orgasm += 1 & 'You covered orgasm'
-					if horand > horny:horny += 10 & 'You were not satisfied'
-
+					
+					if rand(1, 100) <= bj:
+						horny = 0
+						orgasm += 1
+						'You orgasmed.'
+					else
+						horny += 10
+						'You were not satisfied'
+					end
+					
 					'One of them ends up in you, and the other is discharged you on your ass.'
 
 					act 'Become acquainted':gt 'parkkafe', 'klof 1'
@@ -128,13 +131,12 @@ end
 
 if $ARGS[0] = 'Armenians':
 	cla
-	rrand = rand(1, 2)
 
-	if rrand = 1:
+	if rand(0, 1) = 0:
 		'You''re looking at them intently, but they think you do not notice.'
 
-		act 'Go home':gt 'park', 'start'
-	elseif rrand = 2:
+		act 'Leave':gt 'park', 'start'
+	else
 		'Your views were seen by Armenians and one of them rolled to your table with a bottle of champagne.'
 
 		act 'Leave':gt 'park', 'start'
@@ -143,23 +145,27 @@ if $ARGS[0] = 'Armenians':
 			cla
 			*clr
 			'You drank champagne with Armenian. His friend moved smoothly for your table. You drank and made merry. You get drunk and Armenians took you into the back room cafe.'
-			deyrand = rand(1, 2)
 
-			if deyrand = 1:
+			if rand(0, 1) = 0:
 				if parkarman = 0:guy += 2 & parkarman = 1
 				bj+= 2
 				cumlip += 2
 				'<center><img src="images/pics2/ara.jpg"></center>'
 				'Armenians put you on your knees and take out their mighty members. They dvoem poke them in your face, you start to suck at once both members.'
-				horand = rand(1, 100)
 
-				if horand <= bj:horny = 0 & orgasm += 1 & 'You covered orgasm'
-				if horand > bj:horny += 10 & 'You were not satisfied'
-
+				if rand(1, 100) <= bj:
+					horny = 0
+					orgasm += 1
+					'You orgasmed.'
+				else
+					horny += 10
+					'You were not satisfied'
+				end
+					
 				'They end up in your mouth with laughter and go'
 
 				act 'Leave':gt 'park', 'start'
-			elseif deyrand = 2:
+			else
 				if parkarman = 0:guy += 2 & parkarman = 1
 
 				sex += 1
@@ -170,11 +176,16 @@ if $ARGS[0] = 'Armenians':
 				vagina += 1
 				'<center><img src="images/pics2/ara2.jpg"></center>'
 				'Armenians bend over you and puts you one cock in her mouth. Another time, too, does not lose his penis and shoves you into the vagina.'
-				horand = rand(1, 100)
-
-				if horand <= horny:horny = 0 & orgasm += 1 & 'You covered orgasm'
-				if horand > horny:horny += 10 & 'You were not satisfied'
-
+				
+				if rand(1, 100) <= bj:
+					horny = 0
+					orgasm += 1
+					'You orgasmed.'
+				else
+					horny += 10
+					'You were not satisfied'
+				end
+					
 				'One of them ends up in your mouth and swallow all causes, and the other is discharged you on your ass.'
 
 				act 'Leave':gt 'park', 'start'
@@ -185,13 +196,12 @@ end
 
 if $ARGS[0] = 'man':
 	cla
-	mrand = rand(1, 2)
 
-	if mrand = 1:
+	if rand(0, 1) = 0:
 		'You glanced surreptitiously at respectable man, but it seems you did not notice.'
 
 		act 'Leave':gt 'park', 'start'
-	elseif mrand = 2:
+	else
 		cla
 		'A man walks up to you and invites you to dance.'
 
@@ -235,13 +245,12 @@ end
 
 if $ARGS[0] = 'youth':
 	cla
-	rrand = rand(1, 2)
 
-	if rrand = 1:
+	if rand(0, 1) = 0:
 		'You looked at the campaign secretly laughing youth, but they seem to have overlooked.'
 
 		act 'Leave':gt 'park', 'start'
-	elseif rrand = 2:
+	else
 		'To you tipsy man approached and invited you to the company.'
 
 		act 'Leave':gt 'park', 'start'
@@ -290,13 +299,12 @@ end
 
 if $ARGS[0] = 'negros':
 	cla
-	rrand = rand(1, 2)
 
-	if rrand = 1 or afra >= 1:
+	if rand(0, 1) = 0 or afra >= 1:
 		'You glanced surreptitiously at the Africans, but they seem to have overlooked.'
 
 		act 'Leave':gt 'park', 'start'
-	elseif rrand = 2 and afra = 0:
+	else
 		afra = 1
 		obs = 1
 		'To fit your table a few Africans, they behave not quite restrained, talk a lot in English, grabs you by the back and chest. One of the Africans who introduced DeMarcus tells you that they are students from Africa and live in the dorm, so he tells you how to get to the hostel and find them.'
@@ -307,22 +315,23 @@ end
 
 if $ARGS[0] = 'the_boy':
 	cla
-	rrand = rand(1, 2)
 
-	if rrand = 1 and gosh = 0:
+	if rand(0, 1) = 0 and gosh = 0:
 		'You secretly looked at the young boy, but it seems you did not notice.'
 
 		act 'Leave':gt 'park', 'start'
-	elseif rrand = 2 and gosh = 1:
-		'You secretly looked at the young boy. Gosh it, but it seems you did not notice.'
+	else
+		if gosh = 1:
+			'You secretly looked at the young boy. Gosh it, but it seems you did not notice.'
 
-		act 'Leave':gt 'park', 'start'
-	elseif rrand = 2 and gosh = 0:
-		gosh = 1
-		obs = 1
-		'For your table fit young man and introduces himself as Gosha, you become acquainted with him, he is a student and lives in obschege. Ghosh tells you how to get to the hostel and how to find it.'
+			act 'Leave':gt 'park', 'start'
+		else
+			gosh = 1
+			obs = 1
+			'For your table fit young man and introduces himself as Gosha, you become acquainted with him, he is a student and lives in obschege. Ghosh tells you how to get to the hostel and how to find it.'
 
-		act 'Leave':gt 'park', 'start'
+			act 'Leave':gt 'park', 'start'
+		end
 	end
 end
 
