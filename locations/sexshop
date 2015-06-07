@@ -1,5 +1,7 @@
 # sexshop
 if $ARGS[0] = 'start':
+	$loc = $CURLOC
+	$metka = $ARGS[0]
 	$sexloc = $CURLOC
 	cla
 	*clr
@@ -319,217 +321,12 @@ if $ARGS[0] = 'start':
 	end
 
 	if money >= 1000:
-		if hooker[1] = 0:
-			act 'Inspect clothes prostitutes. Number 1':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker1.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[1] = 1
-					hookerH[1] = 200
-					hookerB[1] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		if hooker[2] = 0:
-			act 'Inspect clothes prostitutes. Number 2':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker2.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[2] = 1
-					hookerH[2] = 200
-					hookerB[2] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		if hooker[3] = 0:
-			act 'Inspect clothes prostitutes. Number 3':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker3.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[3] = 1
-					hookerH[3] = 200
-					hookerB[3] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		if hooker[4] = 0:
-			act 'Inspect clothes prostitutes. Number 4':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker4.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[4] = 1
-					hookerH[4] = 200
-					hookerB[4] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		if hooker[5] = 0:
-			act 'Inspect clothes prostitutes. Number 5':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker5.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[5] = 1
-					hookerH[5] = 200
-					hookerB[5] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		if hooker[201] = 0:
-			act 'Inspect clothes prostitutes. Number 201':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker201.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[201] = 1
-					hookerH[201] = 200
-					hookerB[201] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		!!!WD: Probably community edition
-		if hooker[202] = 0:
-			act 'Inspect clothes prostitutes. Number 202':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker202.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[202] = 1
-					hookerH[202] = 200
-					hookerB[202] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		if hooker[203] = 0:
-			act 'Inspect clothes prostitutes. Number 203':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker203.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[203] = 1
-					hookerH[203] = 200
-					hookerB[203] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		if hooker[204] = 0:
-			act 'Inspect clothes prostitutes. Number 204':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker204.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[204] = 1
-					hookerH[204] = 200
-					hookerB[204] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-
-		if hooker[205] = 0:
-			act 'Inspect clothes prostitutes. Number 205':
-				cla
-				*clr
-				'<center><img src="images/clothes/hooker205.jpg"></center>'
-				'Clothing for prostitutes.'
-				'Costs 1,000 rubles.'
-
-				act 'Leave':gt 'sexshop', 'start'
-
-				act 'Buy (1,000 rubles)':
-					cla
-					money -= 1000
-					hooker[205] = 1
-					hookerH[205] = 200
-					hookerB[205] = bedra
-					gt 'sexshop', 'start'
-				end
-			end
-		end
-		!!!
+		i = 1
+		:loophooker
+			if hooker[i] = 0:dynamic 'act ''Look at hooker outfit <<i>>'':gt ''clothing'', ''view_clothing_item'', ''shop'', ''hooker'', <<i>>, 1000'
+			i += 1
+			if i = 6:i = 201
+		if i <= 205:jump 'loophooker'
 	end
 end
 
@@ -714,7 +511,7 @@ if $ARGS[0] = 'pip':
 			end
 
 
-			if rand(0, 10) = 10 - (cumlip * 2):
+			if rand(1, 10) >= 10 - (cumlip * 2):
 				'You hear the TV turn on in the next stall.'
 
 				act 'Stick a finger in the hole (to serve the stranger)':
