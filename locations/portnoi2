@@ -71,7 +71,7 @@ if newclo[o] = 1 and newcloB[o]!bedra:poshvalldrop += 1
 if o ! 130:jump 'newclomet'
 
 if money < poshvalldrop * 500:
-	'Do you have enough money, the cost ushivki all clothing <<poshvalldrop * 500>> rub.'
+	'You do not have enough money to resize all of your clothing. The total cost would be <<poshvalldrop * 500>> rubles.'
 
 	act 'Leave':gt 'clener', 'start'
 
@@ -148,7 +148,7 @@ elseif money >= poshvalldrop * 500:
 	if newclo[o] = 1 and newcloB[o]!bedra:newcloB[o] = bedra
 	if o ! 130:jump 'newclomet1'
 
-	'You ushili all clothing for <<poshvalldrop*500>> rub.'
+	'You resize all clothing for <<poshvalldrop*500>> rubles.'
 
 	act 'Leave':gt 'clener', 'start'
 
