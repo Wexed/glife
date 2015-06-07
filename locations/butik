@@ -13,12 +13,17 @@ if $ARGS[0] = 'start':
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
 	lcolor = rgb(106, 90, 205)
-	'All kind of dresses, all at 25,000 rubles'
 	'<center><b><font color="maroon">Boutique</font></b></center>'
 	'<center><img src="images/etogame/butik.jpg"></center>'
-	evrand = rand(0, 100)
+	'All kind of dresses, all at 25,000 rubles'
 
-	if evrand >= 80 and skin > 0 and lesbiQW = 0:
+	act 'Leave the boutique':
+		cla
+		minut += 5
+		gt 'torgcentr'
+	end
+
+	if rand(1, 100) >= 80 and skin > 0 and lesbiQW = 0:
 		'In the boutique you see a stylish and slender woman ,with about forty years old.'
 
 		act 'Stare at the woman.':gt 'event', 'lesbi'
@@ -59,99 +64,11 @@ if $ARGS[0] = 'start':
 	end
 
 	if money >= 25000:
-		if dress[1] = 0:
-			act 'Inspect the 1st dress (25,000 rubles)':numdres = 1 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[2] = 0:
-			act 'Inspect the 2nd dress (25,000 rubles)':numdres = 2 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[3] = 0:
-			act 'Inspect the 3rd dress (25,000 rubles)':numdres = 3 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[5] = 0:
-			act 'Inspect the 5th dress (25,000 rubles)':numdres = 5 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[6] = 0:
-			act 'Inspect the 6th dress (25,000 rubles)':numdres = 6 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[7] = 0:
-			act 'Inspect the 7th dress (25,000 rubles)':numdres = 7 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[8] = 0:
-			act 'Inspect the 8th dress (25,000 rubles)':numdres = 8 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[9] = 0:
-			act 'Inspect the 9th dress (25,000 rubles)':numdres = 9 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[10] = 0:
-			act 'Inspect the 10th dress (25,000 rubles)':numdres = 10 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[11] = 0:
-			act 'Inspect the 11th dress (25,000 rubles)':numdres = 11 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[12] = 0:
-			act 'Inspect the 12th dress (25,000 rubles)':numdres = 12 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[13] = 0:
-			act 'Inspect the 13th dress (25,000 rubles)':numdres = 13 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[14] = 0:
-			act 'Inspect the 14th dress (25,000 rubles)':numdres = 14 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[15] = 0:
-			act 'Inspect the 15th dress (25,000 rubles)':numdres = 15 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[16] = 0:
-			act 'Inspect the 16th dress (25,000 rubles)':numdres = 16 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[17] = 0:
-			act 'Inspect the 17th dress (25,000 rubles)':numdres = 17 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[18] = 0:
-			act 'Inspect the 18th dress (25,000 rubles)':numdres = 18 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[19] = 0:
-			act 'Inspect the 19th dress (25,000 rubles)':numdres = 19 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[20] = 0:
-			act 'Inspect the 20th dress (25,000 rubles)':numdres = 20 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[21] = 0:
-			act 'Inspect the 21th dress (25,000 rubles)':numdres = 21 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[22] = 0:
-			act 'Inspect the 22th dress (25,000 rubles)':numdres = 22 & payclo = 25000 & gt 'loker', 'dress'
-		end
-
-		if dress[23] = 0:
-			act 'Inspect the 23th dress (25,000 rubles)':numdres = 23 & payclo = 25000 & gt 'loker', 'dress'
-		end
-	end
-
-	act 'Leave the boutique':
-		cla
-		minut += 5
-		gt 'torgcentr'
+		i = 1
+		:loopdress
+			if dress[i] = 0:dynamic 'act ''Look at dress <<i>>'':gt ''clothing'', ''view_clothing_item'', ''shop'', ''dress'', <<i>>, 25000'
+			i += 1
+		if i <= 23:jump 'loopdress'
 	end
 end
 

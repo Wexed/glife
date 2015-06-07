@@ -11,44 +11,10 @@ act '<font color="navy">Go</font>':
 	gt 'young_shop'
 end
 
-if odekis[1] = 0:
-	act '<font color="navy">See the first variant of clothes</font>':numdres = 1 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[2] = 0:
-	act '<font color="navy">Display a second embodiment of clothing</font>':numdres = 2 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[3] = 0:
-	act '<font color="navy">See the third variant of clothes</font>':numdres = 3 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[4] = 0:
-	act '<font color="navy">See the fourth variant of clothes</font>':numdres = 4 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[5] = 0:
-	act '<font color="navy">See the fifth variant of clothes</font>':numdres = 5 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[6] = 0:
-	act '<font color="navy">See the sixth variant of clothes</font>':numdres = 6 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[7] = 0:
-	act '<font color="navy">See the seventh variant of clothes</font>':numdres = 7 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[8] = 0:
-	act '<font color="navy">See the eighth embodiment of clothing</font>':numdres = 8 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[9] = 0:
-	act '<font color="navy">See the ninth variant of clothes</font>':numdres = 9 & payclo = 10000 & gt 'loker', 'odekis'
-end
-
-if odekis[10] = 0:
-	act '<font color="navy">See a tenth embodiment of clothing</font>':numdres = 10 & payclo = 10000 & gt 'loker', 'odekis'
-end
+i = 1
+:loopodekis
+	if odekis[i] = 0:dynamic 'act ''Look at youth clothing <<i>>'':gt ''clothing'', ''view_clothing_item'', ''shop'', ''odekis'', <<i>>, 10000'
+	i += 1
+if i <= 10:jump 'loopodekis'
 
 --- sell_young_clothes ---------------------------------

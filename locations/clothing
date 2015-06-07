@@ -1,0 +1,314 @@
+# clothing
+if $ARGS[0] = 'view_clothing_list':
+	!! ARGS 0 - view_clothing_list
+	!! ARGS 1 - action type (wardrobe, sell, resize)
+	!! ARGS 2 - brothel flag (brothel)
+	
+	act 'Leave':gt $loc, $metka
+	
+	if $ARGS[1] = 'wardrobe':
+		if bikini > 0:'On the top shelf is a swimsuit'
+		if vatnik ! 2:FUNC('$clothing_list_line', $ARGS[1], 'vatnik', 2)
+		if newclo[131] = 1:
+			if odetnewclo ! 1 or numdress ! 131:FUNC('$clothing_list_line', $ARGS[1], 'newclo', 131)
+		end
+	end
+	
+	i = 1
+	:loopjeans
+		if jeans[i] = 1 and (odetjeans ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'jeans', i)
+		i += 1
+		if i = 6:i = 201
+	if i <= 297:jump 'loopjeans'
+	
+	i = 1
+	:loopyoga
+		if yoga[i] = 1 and (odetyoga ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'yoga', i)
+		i += 1
+	if i <= 18:jump 'loopyoga'
+	
+	i = 1
+	:loopsarafan
+		if sarafan[i] = 1 and (odetsarafan ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'sarafan', i)
+		i += 1
+	if i <= 3:jump 'loopsarafan'
+	
+	i = 1
+	:loopshort
+		if short[i] = 1 and (odetshort ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'short', i)
+		i += 1
+		if i = 6:i = 201
+	if i <= 256:jump 'loopshort'
+	
+	i = 1
+	:loopskirt
+		if skirt[i] = 1 and (odetskirt ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'skirt', i)
+		i += 1
+		if i = 6:i = 201
+	if i <= 273:jump 'loopskirt'
+	
+	i = 1
+	:loopdress
+		if dress[i] = 1 and (odetdress ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'dress', i)
+		i += 1
+		if i = 25:i = 201
+	if i <= 225:jump 'loopdress'
+	
+	i = 1
+	:loopprofi
+		if profi[i] = 1 and (odetprofi ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'profi', i)
+		i += 1
+		if i = 3:i = 201
+	if i <= 208:jump 'loopprofi'
+	
+	i = 1
+	:looppants
+		if pants[i] = 1 and (odetpants ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'pants', i)
+		i += 1
+		if i = 6:i = 201
+	if i <= 346:jump 'looppants'
+	
+	i = 1
+	:looplatex
+		if latex[i] = 1 and (odetlatex ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'latex', i)
+		i += 1
+	if i <= 2:jump 'looplatex'
+	
+	i = 1
+	:loophooker
+		if hooker[i] = 1 and (odethooker ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'hooker', i)
+		i += 1
+	if i <= 5:jump 'loophooker'
+	
+	i = 1
+	:loopodekis
+		if odekis[i] = 1 and (odekis ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'odekis', i)
+		i += 1
+	if i <= 10:jump 'loopodekis'
+	
+	i = 1
+	:loopnewclo
+		if newclo[i] = 1 and (odetnewclo ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'newclo', i)
+		i += 1
+	!! NOTE: 131 is the school uniform and is handled up top
+	if i <= 130:jump 'loopnewclo'
+	
+	if $ARGS[2] = 'brothel':
+		''
+		'<b>Brothel clothing</b>'
+		i = 1
+		:loopero
+			if odetero ! 1 or numdress ! i:FUNC('$clothing_list_line', $ARGS[1], 'ero', i)
+			i += 1
+		if i <= 18:jump 'loopero'
+	end
+end
+
+if $ARGS[0] = 'view_clothing_item':
+	!! ARGS 0 - view_clothing_item
+	!! ARGS 1 = action type (wardrobe, shop, sell, resize)
+	!! ARGS 2 - clothing group name
+	!! ARGS 3 - clothing index
+	!! ARGS 4 - price for shop
+	
+	cla
+	'<center><img src="' + FUNC('$clothing_get_image', $ARGS[2], ARGS[3]) + '"></center>'
+	FUNC('$clothing_name', $ARGS[2], ARGS[3])
+	
+	if $ARGS[1] ! 'shop' and $ARGS[2] ! 'vatnik' and $ARGS[2] ! 'ero' and ($ARGS[2] ! 'newclo' or ARGS[3] ! 131):
+		$RESULT = '(strength '
+		dynamic '$RESULT += <<$ARGS[2]>>H[<<ARGS[3]>>]'
+		if $ARGS[2] ! 'yoga' and $ARGS[2] ! 'sarafan':
+			$RESULT += ', hip size '
+			dynamic '$RESULT += <<$ARGS[2]>>B[<<ARGS[3]>>]'
+		end
+		$RESULT += ')'
+		'<<$RESULT>>'
+	end
+	
+	if $ARGS[1] = 'shop':
+		dynamic 'RESULT = <<$ARGS[2]>>[<<ARGS[3]>>]'
+		if RESULT = 1:
+			'You already own this item.'
+		else
+			'Price: <<ARGS[4]>>'
+			act 'Leave': gt $loc, $metka
+			if money >= ARGS[4]:
+				act 'Buy':
+					money -= ARGS[5]
+					dynamic $ARGS[2] + '[<<ARGS[3]>>] = 1'
+					if $ARGS[2] = 'yoga':
+						dynamic $ARGS[2] + 'H[<<ARGS[3]>>] = 80'
+					elseif $ARGS[2] = 'odekis':
+						dynamic $ARGS[2] + 'H[<<ARGS[3]>>] = 100'
+					elseif $ARGS[2] = 'dress':
+						dynamic $ARGS[2] + 'H[<<ARGS[3]>>] = 160'
+					elseif $ARGS[2] = 'hooker':
+						dynamic $ARGS[2] + 'H[<<ARGS[3]>>] = 200'
+					else
+						dynamic $ARGS[2] + 'H[<<ARGS[3]>>] = 60'
+					end
+					dynamic $ARGS[2] + 'B[<<ARGS[3]>>] = bedra'
+					gt $loc, $metka
+				end
+			end
+		end
+	elseif $ARGS[1] = 'wardrobe':
+		act 'Leave in closet':gt 'clothing', 'view_clothing_list', $ARGS[1]
+		
+		if $ARGS[2] ! 'vatnik' and $ARGS[2] ! 'ero' and ($ARGS[2] ! 'newclo' or ARGS[3] ! 131):
+			!! if the clothing is worn out
+			dynamic 'RESULT = <<$ARGS[2]>>H[<<ARGS[3]>>]'
+			if RESULT <= 0:
+				'This item is worn and is not suitable for further wear.'
+				exit
+			end
+
+			!! if the clothing is a type that checks for hip size
+			if $ARGS[2] ! 'yoga' and $ARGS[2] ! 'sarafan':
+				!! if the hipsize is too far from your hipsize
+				dynamic 'RESULT = <<$ARGS[2]>>B[<<ARGS[3]>>]'
+				if RESULT < bedra - 8:
+					'This item is too small for you to wear.'
+					exit
+				elseif RESULT > bedra + 8:
+					'This item is too large for you to wear.'
+					exit
+				end
+			end
+		end
+		
+		act 'Wear':gs 'clothing', 'wear', $ARGS[2], ARGS[3] & gt 'clothing', 'view_clothing_list', $ARGS[1]
+	elseif $ARGS[1] = 'sell':
+		act 'Keep item':gt 'clothing', 'view_clothing_list', $ARGS[1]
+		
+		!! value is based on the strength remaining
+		dynamic 'RESULT = <<$ARGS[2]>>H[<<ARGS[3]>>]'
+		if RESULT > 45:
+			'You can sell this item for 500 rubles.'
+			act 'Sell':
+				dynamic '<<$ARGS[2]>>[<<ARGS[3]>>] = 0'
+				money += 500
+				gt 'clothing', 'view_clothing_list', $ARGS[1]
+			end
+		elseif RESULT > 30:
+			'You can sell this item for 300 rubles.'
+			act 'Sell':
+				dynamic '<<$ARGS[2]>>[<<ARGS[3]>>] = 0'
+				money += 300
+				gt 'clothing', 'view_clothing_list', $ARGS[1]
+			end
+			elseif RESULT > 0:
+			'You can sell this item for 100 rubles.'
+			act 'Sell':
+				dynamic '<<$ARGS[2]>>[<<ARGS[3]>>] = 0'
+				money += 100
+				gt 'clothing', 'view_clothing_list', $ARGS[1]
+			end
+		else
+			'This item is too worn to have any sale value.'
+		end
+	elseif $ARGS[1] = 'resize':
+		act 'Leave item alone':gt 'clothing', 'view_clothing_list', $ARGS[1]
+		
+		if $ARGS[2] ! 'yoga' and $ARGS[2] ! 'sarafan':
+			dynamic 'RESULT = <<$ARGS[2]>>B[<<ARGS[3]>>]'
+			if RESULT ! bedra and money >= 500:
+				'You can have this resized for 500 rubles.'
+				act 'Resize':
+					money -= 500
+					dynamic '<<$ARGS[2]>>B[<<ARGS[3]>>] = bedra'
+					gt 'clothing', 'view_clothing_list', $ARGS[1]
+				end
+			end
+		end
+	end
+end
+
+if $ARGS[0] = 'wear':
+	!! ARGS 0 - action
+	!! ARGS 1 - clothing group name
+	!! ARGS 2 - clothing index
+	
+	if cumfrot > 0:cumfrot = 0
+	nude = 0
+
+	!! numdress is used globally to track the index of the currently worn clothing
+	numdress = ARGS[2]
+
+	!! reset all clothing settings, then adjust based on type
+	odetjeans = 0
+	odetyoga = 0
+	odetsarafan = 0
+	odetshort = 0
+	odetskirt = 0
+	odetdress = 0
+	odetprofi = 0
+	odetpants = 0
+	odetlatex = 0
+	odethooker = 0
+	odetkis = 0
+	odetnewclo = 0
+	odetero = 0
+	vatnik = 0
+	glamur = 0
+	sport = 0
+	ski = 0
+	hook = 0
+	ofclo = 0
+	sexual = 0
+	sforma = 0
+	odevnesh = 1
+	
+	if $ARGS[1] = 'vatnik':
+		vatnik = 2
+		odevnesh = -10
+	elseif $ARGS[1] = 'jeans':
+		odetjeans = 1
+	elseif $ARGS[1] = 'yoga':
+		odetyoga = 1
+		sport = 1
+	elseif $ARGS[1] = 'sarafan':
+		odetsarafan = 1
+		ski = 1
+	elseif $ARGS[1] = 'short':
+		odetshort = 1
+		odevnesh = 2
+	elseif $ARGS[1] = 'skirt':
+		odetskirt = 1
+		ski = 1
+		odevnesh = 5
+	elseif $ARGS[1] = 'dress':
+		odetdress = 1
+		glamur = 1
+		odevnesh = 10
+	elseif $ARGS[1] = 'profi':
+		odetprofi = 1
+		ofclo = 1
+		odevnesh = 5
+	elseif $ARGS[1] = 'pants':
+		odetpants = 1
+		odevnesh = 3
+	elseif $ARGS[1] = 'latex':
+		odetlatex = 1
+	elseif $ARGS[1] = 'hooker':
+		odethooker = 1
+		hook = 1
+	elseif $ARGS[1] = 'odekis':
+		odekis = 1
+		glamur = 1
+		sexual = 1
+		odevnesh = 5
+	elseif $ARGS[1] = 'newclo':
+		odetnewclo = 1
+		sexual = 1
+		odevnesh = 5
+		if numdress < 90:ski = 1
+		if numdress = 131:sforma = 1
+	elseif $ARGS[1] = 'ero':
+		odetero = 1
+		odevnesh = 10
+	end
+end
+
+--- clothing -------------

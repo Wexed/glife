@@ -94,79 +94,13 @@ if $ARGS[0] = 'clo':
 		minut += 5
 		gt 'sportshop', 'start'
 	end
-
+	
 	if money >= 4000:
-		if yoga[1] = 0:
-			act 'Inspect 1st sportswear.':numdres = 1 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[2] = 0:
-			act 'Inspect 2nd sportswear.':numdres = 2 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[3] = 0:
-			act 'Inspect 3rd sportswear.':numdres = 3 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[4] = 0:
-			act 'Inspect 4th sportswear.':numdres = 4 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[5] = 0:
-			act 'Inspect 5th sportswear.':numdres = 5 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[6] = 0:
-			act 'Inspect 6th sportswear.':numdres = 6 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[7] = 0:
-			act 'Inspect 7th sportswear.':numdres = 7 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[8] = 0:
-			act 'Inspect 8th sportswear.':numdres = 8 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[9] = 0:
-			act 'Inspect 9th sportswear.':numdres = 9 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[10] = 0:
-			act 'Inspect 10th sportswear.':numdres = 10 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[11] = 0:
-			act 'Inspect 11th sportswear.':numdres = 11 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[12] = 0:
-			act 'Inspect 12th sportswear.':numdres = 12 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[13] = 0:
-			act 'Inspect 13th sportswear.':numdres = 13 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[14] = 0:
-			act 'Inspect 14th sportswear.':numdres = 14 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[15] = 0:
-			act 'Inspect 15th sportswear.':numdres = 15 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[16] = 0:
-			act 'Inspect 16th sportswear.':numdres = 16 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[17] = 0:
-			act 'Inspect 17th sportswear.':numdres = 17 & payclo = 4000 & gt 'loker', 'yoga'
-		end
-
-		if yoga[18] = 0:
-			act 'Inspect 18th sportswear.':numdres = 18 & payclo = 4000 & gt 'loker', 'yoga'
-		end
+		i = 1
+		:loopyoga
+			if yoga[i] = 0:dynamic 'act ''Look at sportswear <<i>>'':gt ''clothing'', ''view_clothing_item'', ''shop'', ''yoga'', <<i>>, 4000'
+			i += 1
+		if i <= 18:jump 'loopyoga'
 	end
 end
 

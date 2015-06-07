@@ -170,8 +170,7 @@ if $ARGS[0] = 'start':
 	if bikini < 1:'<a href="exec:dynamic $rinbuy8">Swimsuit - 1,000 rubles</a>'
 	if umbrella < 1:'<a href="exec:dynamic $rinbuy9">Umbrella - 1,000 rubles</a>'
 
-	'On one of the tents hanging listing <a href="exec:gt ''loker2'', ''start''">"Accept the things to implement"</a>'
-	'<a href="exec:numdres = 1 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect jeans number 1</a> <a href="exec:numdres = 2 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 2</a> <a href="exec:numdres = 3 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 3</a> <a href="exec:numdres = 4 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 4</a> <a href="exec:numdres = 5 & payclo = 1500 & gt ''loker'', ''jeans''">Inspect the jeans. Number 5</a>'
+	'On one of the tents hanging listing <a href="exec:gt ''clothing'', ''view_clothing_list'', ''sell''">"Accept the things to implement"</a>'
 
 	if analplugIN = 1 and tanga = 0 and ski = 1 or analplugIN = 1 and tanga = 0 and glamur = 1:
 		nurand = rand(0, 100)
@@ -188,13 +187,13 @@ if $ARGS[0] = 'start':
 	clr
 	gs 'stat'
 	gs 'time'
-
+	
 	act 'Leave':
 		cla
 		minut += 5
 		gt 'street'
 	end
-
+	
 	if workrin = 1:
 		if week = 2 or week = 4 or week = 6:
 			if hour < 9:
@@ -262,6 +261,15 @@ if $ARGS[0] = 'start':
 			end
 		end
 	end
+	
+	if money >= 1500:
+		i = 1
+		:loopjeans
+			if jeans[i] = 0:dynamic 'act ''Look at jeans <<i>>'':gt ''clothing'', ''view_clothing_item'', ''shop'', ''jeans'', <<i>>, 1500'
+			i += 1
+		if i <= 5:jump 'loopjeans'
+	end
+
 end
 
 --- rinok ---------------------------------
