@@ -81,17 +81,15 @@ if $ARGS[0] = 'start':
 			act 'Stand on the panel (0:15)':
 				cla
 				minut += 10
-				prosrand = rand(0, (vnesh + hour) * 2)
 
-				if prosrand < 20:
+				if rand(0, (vnesh + hour) * 2) < 20:
 					'No you are not interested.'
 
 					act 'Leave':gt 'prostitute', 'start'
-				elseif prosrand >= 20:
-					'To you a car drove up.'
-					proseventrand = rand(0, 100)
+				else
+					proseventrand = rand(1, 20)
 
-					if proseventrand <= 5:
+					if proseventrand = 1:
 						'To you black jeep pulled up, opened the window and leaned out healthy brazen face. "Hey slut, it´s time to pay tribute. Shtukar Come here and get out on work."'
 
 						if money >= 1000:
@@ -148,49 +146,7 @@ if $ARGS[0] = 'start':
 
 							gt 'fight', 'start'
 						end
-					elseif proseventrand > 5 and proseventrand <= 50:
-						klient_needs = 0
-						prosti = 0
-						KlientMON = rand(1, 10)
-						'The client wants to blow and asks how much it will cost.'
-					elseif proseventrand > 50 and proseventrand <= 75:
-						klient_needs = 1
-						prosti = 0
-						KlientMON = rand(3, 25)
-						'Client wants sex and asks how much it will cost.'
-					elseif proseventrand > 75 and proseventrand <= 95:
-						klient_needs = 2
-						prosti = 0
-						KlientMON = rand(5, 40)
-						'Client wants anal and asks how much it will cost.'
-					end
-
-					if proseventrand > 5 and proseventrand <= 95:
-						klienVNPR = rand(0, 30)
-
-						act 'Leave':gt 'prostitute', 'start'
-
-						if ProsMoney > 0:
-							act '<<ProsMoney * 100>> rubles':
-								cls
-								dynamic $universalklient
-							end
-						end
-
-						act 'Assign a price':
-							cls
-							gs 'stat'
-							ProsMoney = input("Enter a number below, which will multiplied by 100")
-
-							if ProsMoney < 1:
-								'The client looked at you in amazement and muttered "what that fucker." Then started the car and drove away.'
-
-								act 'Leave':gt 'prostitute', 'start'
-							else
-								dynamic $universalklient
-							end
-						end
-					elseif proseventrand > 95:
+					elseif proseventrand = 2:
 						'To you approached a prostitute. "I hear you, slut, if you do not want problems, you have to pay Stella. Pyatihatnik Come here and get out on work."'
 
 						if money >= 500:
@@ -242,6 +198,39 @@ if $ARGS[0] = 'start':
 
 							gt 'fight', 'start'
 						end
+					else
+						'To you a car drove up.'
+						prosti = 0
+						if proseventrand <= 8:
+							'The client wants to blow and asks how much it will cost.'
+						elseif proseventrand <= 14:
+							'Client wants sex and asks how much it will cost.'
+						else
+							'Client wants anal and asks how much it will cost.'
+						end
+						
+						act 'Leave':gt 'prostitute', 'start'
+
+						if ProsMoney > 0:
+							act '<<ProsMoney * 100>> rubles':
+								cls
+								gt 'prostitute', 'work1', iif(proseventrand <= 8, 'blow job', iif(proseventrand <= 14, 'sex', 'anal'))
+							end
+						end
+
+						act 'Assign a price':
+							cls
+							gs 'stat'
+							ProsMoney = input("Enter a number below, which will multiplied by 100")
+
+							if ProsMoney < 1:
+								'The client looked at you in amazement and muttered "what that fucker." Then started the car and drove away.'
+
+								act 'Leave':gt 'prostitute', 'start'
+							else
+								gt 'prostitute', 'work1', iif(proseventrand <= 8, 'blow job', iif(proseventrand <= 14, 'sex', 'anal'))
+							end
+						end
 					end
 				end
 			end
@@ -253,6 +242,367 @@ if $ARGS[0] = 'start':
 		minut += 5
 		prosta = 0
 		gt 'park', 'start'
+	end
+end
+
+if $ARGS[0] = 'work1':
+	!! ARGS 1 - blow job, sex, anal
+
+	'<center><img src="images/etogame/park2.jpg"></center>'
+	'You told the client that <<$ARGS[1]>> will cost <<ProsMoney * 100>> rubles.'
+	
+	vnpr = 0
+	if vidage >= 40:vnpr -= 20
+	if vidage >= 35 and vidage < 40:vnpr -= 10
+	if vidage >= 30 and vidage < 35:vnpr -= 5
+	if vidage >= 25 and vidage < 30:vnpr += 1
+	if vidage >= 20 and vidage < 25:vnpr += 5
+	if vidage >= 18 and vidage < 20:vnpr += 10
+	if vidage < 18:vnpr += 15
+	if vnesh = -10:vnpr -= 100
+	if vnesh < 5 and vnesh > -10:vnpr -= 10
+	if vnesh >= 5 and vnesh < 15:vnpr -= 5
+	if vnesh >= 15 and vnesh < 30:vnpr += 1
+	if vnesh >= 30 and vnesh < 50:vnpr += 5
+	if vnesh >= 50:vnpr += 10
+	if cumSUM > 0:vnpr -= 10
+	if mop = 0:vnpr -= 10
+	if mop = 1:vnpr -= 1
+	if mop = 2:vnpr += 1
+	if mop = 3:vnpr += 5
+	if mop = 4:vnpr += 10
+	if leghair <= 0:vnpr += 1
+	if leghair > 0:vnpr -= 5
+	if lobok > 0:vnpr -= 5
+	if lobok <= 0:vnpr += 1
+	if tan > 0:vnpr += 1
+	if curly > 0:vnpr += 1
+	if sweat > 0:vnpr -= 10
+	if hapri = 0:vnpr -= 1
+	if lip = 4:vnpr += 1
+
+	if vnpr >= 0:
+		if ProsMoney = 1:
+			gt 'prostitute', 'work2', $ARGS[1]
+			exit
+		else
+			if vnpr >= rand(0, 30):
+				if $ARGS[1] = 'blow job':KlientMON = rand(1, 10)
+				if $ARGS[1] = 'sex':KlientMON = rand(3, 25)
+				if $ARGS[1] = 'anal':KlientMON = rand(5, 40)
+				
+				if KlientMON >= ProsMoney:
+					gt 'prostitute', 'work2', $ARGS[1]
+					exit
+				else
+					if rand(0, 1) = 1:
+						'The client grins and offers <<KlientMON * 100>> per job.'
+
+						act 'Agree':
+							ProsMoney = KlientMON
+							gt 'prostitute', 'work2', $ARGS[1]
+							exit
+						end
+
+						act 'Refuse':gt 'prostitute', 'start'
+						exit
+					end
+				end
+			end
+		end
+	end
+
+	'Client meticulously examined you and said, "No, fuck." After that, he started the car and drove away.'
+	act 'Leave':gt 'prostitute', 'start'
+end
+
+if $ARGS[0] = 'work2':
+	!! ARGS 1 - blow job, sex, anal
+	'The client nods his head and opens the door of his car.'
+	act 'Get into the client''s car':
+		cla
+		clr
+		*clr
+		gs 'boy'
+		slutty += 1
+		minut += 1
+		guy += 1
+		bj += 1
+		throat += 1
+		prosta = 1
+
+		if rand(1, 100) >= 70:dynamic $venerasiak
+
+		gs 'stat'
+		'<center><img src="images/img/prost/bj.jpg"></center>'
+		'Your hand slid crotch guy and unzipped his pants. You shoved his hand into his pants and pulled out his cock.'
+
+		if prezik > 0:
+			act 'Wear a condom on the penis mouth':
+				cla
+				clr
+				*clr
+				minut += 5
+				prezik -= 1
+				gs 'stat'
+				picrand = rand(1, 7)
+				'<center><img src="images/img/prost/bjp<<picrand>>.jpg"></center>'
+				'You pulled his lips a condom on the penis'
+
+				if $ARGS[1] = 'blow job':
+					'Your lips slide down the barrel client until he cums in a condom.'
+
+					act 'Finish':gt 'prostitute', 'start'
+				elseif $ARGS[1] = 'sex':
+					'Client sufficiently warmed up and you can continue.'
+
+					act 'Further':
+						cla
+						clr
+						*clr
+						prosti = 0
+						minut += 15
+						sex += 1
+						protect = 1
+						gs 'stat'
+
+						if rand(0, 1) = 0:
+							'<center><img src="images/img/prost/sexcar.jpg"></center>'
+							'You obediently lay naked in the back seat until your dick hole logged.'
+							gs 'orgazm', 'start'
+						else
+							'<center><img src="images/img/img/prost/sexcar2.jpg"></center>'
+							'Standing on all fours, you felt like you were planting confident movement on the penis.'
+							gs 'orgazm', 'start'
+						end
+
+						act 'Leave':gt 'prostitute', 'start'
+					end
+				elseif $ARGS[1] = 'anal':
+					'Client sufficiently warmed up and you can continue.'
+
+					act 'Further':
+						cla
+						clr
+						*clr
+						minut += 1
+						prosti = 0
+						anal += 1
+						money += ProsMoney * 100
+						gs 'stat'
+						dickK = dick * 10 / 100
+
+						if dickK < 1:dickK = 1
+						anus += dickK
+
+						'<center><img src="images/img/prost/anal.jpg"></center>'
+						'You got cancer and client uper you in your anus <<dick>> centimeter member.'
+
+						if anus < dick:
+							fun = 0
+							'Ass ached when the member entered her client waited for a bit until your ass adapt and gradually began to move his cock in you, gradually accelerating.'
+						end
+
+						if anus >= dick:
+							horny += anus
+							'You felt like like vagina stretched anus clasping member when a customer came in you, he immediately began to have your ass.'
+						end
+
+						'Finally, the client does not stand up and ends in a condom.'
+
+						act 'Leave':gt 'prostitute', 'start'
+					end
+				end
+			end
+		else
+			act 'Mark cock in her mouth':
+				cla
+				clr
+				*clr
+				dynamic $venerasiak
+				minut += 5
+				gs 'stat'
+				picrand = rand(8, 13)
+				'<center><img src="images/img/prost/bjp<<picrand>>.jpg"></center>'
+				'You clasped lips member.'
+
+				act 'Suck':
+					*clr
+					cla
+
+					if $ARGS[1] = 'blow job':
+						bjrand = rand(1, 100)
+	
+						if bjrand <= 50:
+							if bj <= 15:
+								cumlip += 1
+								'<center><img src="images/img/prost/bjm.jpg"></center>'
+								'You clumsy movements suck dick customer until he cums in your mouth, making you wince from the unpleasant taste of sperm.'
+							else
+								cumlip += 1
+								'<center><img src="images/img/prost/bjm2.jpg"></center>'
+								'Your trained sponge glide up and down, bringing pleasure to the customer. Very soon you will feel the taste of his seed that you swallow with delight to the last drop.'
+							end
+						elseif bjrand <= 80:
+							if bj <= 15:
+								cumface += 1
+								if mop > 1:mop = 0
+								'<center><img src="images/img/prost/bjf.jpg"></center>'
+								'You clumsy movements suck dick client suddenly you he pulls his dick, ending on your face, you do not have time to blink, a little sperm gets you in the eye, but, despite the burning, you can not cry, you can only smile.'
+							else
+								cumface += 1
+								'<center><img src="images/img/prost/bjf2.jpg"></center>'
+								'Your trained sponge glide up and down, bringing pleasure to the customer as soon as the client has released your mouth, you realize that your face is now flooded with sperm. You have time, tilt the head back with her eyes closed, heavy drops falling on your chin, forcing to smile at the thought of not smeared makeup.'
+							end
+						else
+							if bj <= 15:
+								cumfrot += 1
+								'<center><img src="images/img/prost/bjt2.jpg"></center>'
+								'You clumsy movements suck dick client, it stretches hands to your chest trying to expose it. You moaned, letting him know that was not the deal. Dissatisfied client continued to have you in my mouth. You have already relaxed, as a client, pushing, pulled wet from saliva member. His eyes closed, you feel like a drop of sperm not fall on your face and chest! Surprised you open your eyes in horror when he saw in the semen-stained clothing, and pretty smiling customer.'
+							else
+								money += 500
+								'<center><img src="images/img/prost/bjt.jpg"></center>'
+								'Your trained sponge glide up and down, bringing pleasure to the customer. He stretches his hands to your chest did not patiently trying to expose her, you understand everything without words. Exposing boobs you become even more carefully to work his mouth when he was already on the brink, you have stepped back sharply, slipping back with the member in a moment became a client shoot sperm on your carefully when substituted hemisphere. Left happy, he handed you another Piatihatki.'
+							end
+						end
+						
+						act 'Finish':gt 'prostitute', 'start'
+					elseif $ARGS[1] = 'sex':
+						'Client sufficiently warmed up and you can continue.'
+
+						act 'Further':
+							cla
+							clr
+							*clr
+							prosti = 0
+							minut += 15
+							sex += 1
+							gs 'stat'
+							prostRand = rand(1, 100)
+
+							if prostRand <= 50:
+								pose = 1
+								picpRand = rand(1, 7)
+								'Becoming cancer, you feel hot prick seeking to get into the vagina.'
+								gs 'orgazm', 'start'
+							elseif prostRand <= 75:
+								pose = 1
+								picpRand = rand(8, 10)
+								'Standing on all fours, you felt like a hole braced member.'
+								gs 'orgazm', 'start'
+							else
+								pose = 0
+								picpRand = rand(11, 17)
+								'You were ordered to undress and lie down on the hood of the car.'
+								gs 'orgazm', 'start'
+							end
+
+							'<center><img src="images/img/prost/sexcar<<picpRand>>.jpg"></center>'
+
+							act 'Leave':gt 'prostitute', 'start'
+						end
+					elseif $ARGS[1] = 'anal':
+						'Client sufficiently warmed up and you can continue.'
+
+						act 'Further':
+							cla
+							clr
+							*clr
+							minut += 1
+							prosti = 0
+							gs 'stat'
+							dickK = dick * 10 / 100
+
+							if dickK < 1:dickK = 1
+							anus += dickK
+
+							!! the first cowl image is cowl, not cowl1
+							picrand = rand(2, 6)
+							'<center><img src="images/img/prost/cowl<<picrand>>.jpg"></center>'
+							'As soon as you lay on the hood of the car, legs apart, you stared into the anus <<dick>> centimeter member.'
+
+							if anus < dick:
+								fun = 0
+								'A sharp pain pierced member of stuck in the ass, making you wince groan. Customer waited patiently until your anus, get used to stretching, but you still could not get rid of the nagging pain. Fake smile, through the desire to end this torture quickly, you give the signal to start the action. Client was cautious, starting with the slow movements in the anus, gradually accelerating, he forgot about your suffering, surrendering his own enjoyment, and not noticing as "goods", writhes and moans in pain.'
+							else
+								horny += anus
+								'You felt like like vagina stretched anus clasping member when a customer came in you, he immediately began to have your ass.'
+							end
+
+							if klismaday ! day:
+								act 'Escape':
+									cla
+									*clr
+									gs 'stat'
+									'You were going to get the money but instead heard swearing. "You fear that the nipple completely lost my whole bolt in your shit, you do not know that I have a dick, and not brush the toilet, get out of here while intact, but money can not forget."'
+
+									act 'Leave':gt 'prostitute', 'start'
+									
+									act 'Be rude':
+										cla
+										*clr
+										money += ProsMoney * 100
+										manna -= 30
+										health -= 30
+										willpower -= 30
+										bj += 1
+										throat += 1
+										gs 'stat'
+										'<center><img src="images/img/prost/bjr.jpg"></center>'
+										'"Hey, I did not understand, chase my money ..." you did not get to finish. Man hit you strong blow to the chest, from which you crashed to the ground. "Money is wanted, well, what a bitch I''ll give them to you, but you are correct his mistake" after these words he drove you exhaling stench dick in her mouth. You were choking from the stench, but there was nothing, his eyes closed, as if saying yes, you tried to keep from vomiting, fear of causing mayhem. The stranger had you in my mouth, trying to touch every movement of your lips their balls. His cock soon became clean, but it did not stop him, it seemed an eternity before he again finished right in the throat. Looking at you roll in a mixture of saliva and vomit, he laughed and said no more words thrown in your face money.'
+
+										act 'Leave':gt 'prostitute', 'start'
+									end
+									
+									if intel >= 50:
+										act 'Make amends':
+											cla
+											*clr
+											bj += 1
+											throat += 1
+											gs 'stat'
+											'<center><img src="images/img/prost/bjr1.jpg"></center>'
+											'You understand everything perfectly, you are at fault, and you correct client insanely angry and seems ready to tear you to pieces. You decide to make amends, his guilt polish smeared mouth organ client.'
+
+											act 'Suck':
+												cla
+												*clr
+												vagina += 1
+												money += ProsMoney * 110
+												gs 'stat'
+												'<center><img src="images/img/prost/sexcar20.jpg"></center>'
+												'Bitter taste in the mouth of feces did not give you a taste of diluted semen. Freeing your mouth working, customer ordered to lie on the grass. You humbly and even with a certain touch of acting talent was acting innocent doll while you fuck. Client warmed your able mouth twitching long over you, quickly ran into the condom. While you lay recovering on your body fall three green paper, he was satisfied, happy smile you think.'
+
+												act 'Escape':gt 'prostitute', 'start'
+											end
+										end
+									end
+								end
+							else
+								money += 2000
+								cumanalRand = rand(0, 2)
+
+								if cumanalRand = 0:
+									anal += 1
+									cumanal = cumass + 1
+									'Suddenly the anus was empty, the client abruptly yanked member before it drops the seed watered half your ass.'
+								elseif cumanalRand = 1:
+									anal += 1
+									cumfrot += 1
+									'Suddenly the anus was empty, the client abruptly yanked a member before his seed rain drops fell on your body, dirtying clothes traces of dairy.'
+								else
+									anal += 1
+									cumanus += 1
+									'Customer traffic have become sharp and painful it literally rammed in the ass you finally feel like you''re inside you flowing sperm all over you think.'
+								end
+
+								act 'Leave':gt 'prostitute', 'start'
+							end
+						end
+					end
+				end
+			end
+		end
 	end
 end
 
