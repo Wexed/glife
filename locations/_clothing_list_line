@@ -6,12 +6,10 @@
 
 $RESULT = FUNC('$clothing_name', $ARGS[1], ARGS[2])
 if $ARGS[1] ! 'vatnik' and $ARGS[1] ! 'ero' and ($ARGS[1] ! 'newclo' or ARGS[2] ! 131):
-	$RESULT += ' (strength '
-	dynamic '$RESULT += <<$ARGS[1]>>H[<<ARGS[2]>>]'
-
+	$RESULT += ' (strength ' + dyneval '$RESULT += <<$ARGS[1]>>H[<<ARGS[2]>>]'
+	
 	if $ARGS[1] ! 'yoga' and $ARGS[1] ! 'sarafan':
-		$RESULT += ', hip size '
-		dynamic '$RESULT += <<$ARGS[1]>>B[<<ARGS[2]>>]'
+		$RESULT += ', hip size ' + dyneval '$RESULT += <<$ARGS[1]>>B[<<ARGS[2]>>]'
 	end
 
 	$RESULT += ')'
