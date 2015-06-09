@@ -1,4 +1,24 @@
 # clothing
+
+$clothing_list_line = {
+	!! a single line in a clothing list (wardrobe, etc)
+	!! ARGS 0 - action type (wardrobe, sell)
+	!! ARGS 1 - clothing group name
+	!! ARGS 2 - clothing index
+
+	$RESULT = FUNC('$clothing_name', $ARGS[1], ARGS[2])
+	if $ARGS[1] ! 'vatnik' and $ARGS[1] ! 'ero' and ($ARGS[1] ! 'newclo' or ARGS[2] ! 131):
+		$RESULT += ' (strength ' + dyneval '$RESULT += <<$ARGS[1]>>H[<<ARGS[2]>>]'
+		
+		if $ARGS[1] ! 'yoga' and $ARGS[1] ! 'sarafan':
+			$RESULT += ', hip size ' + dyneval '$RESULT += <<$ARGS[1]>>B[<<ARGS[2]>>]'
+		end
+
+		$RESULT += ')'
+	end
+	$RESULT += ' <a href="exec:gt ''clothing'', ''view_clothing_item'', ''<<$ARGS[0]>>'', ''<<$ARGS[1]>>'', <<ARGS[2]>>">View</a>'
+}
+
 if $ARGS[0] = 'view_clothing_list':
 	!! ARGS 0 - view_clothing_list
 	!! ARGS 1 - action type (wardrobe, sell, resize)
@@ -8,87 +28,87 @@ if $ARGS[0] = 'view_clothing_list':
 	
 	if $ARGS[1] = 'wardrobe':
 		if bikini > 0:'On the top shelf is a swimsuit'
-		if vatnik ! 2:FUNC('$clothing_list_line', $ARGS[1], 'vatnik', 2)
+		if vatnik ! 2:dyneval($clothing_list_line, $ARGS[1], 'vatnik', 2)
 		if newclo[131] = 1:
-			if odetnewclo ! 1 or numdress ! 131:FUNC('$clothing_list_line', $ARGS[1], 'newclo', 131)
+			if odetnewclo ! 1 or numdress ! 131:dyneval($clothing_list_line, $ARGS[1], 'newclo', 131)
 		end
 	end
 	
 	i = 1
 	:loopjeans
-		if jeans[i] = 1 and (odetjeans ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'jeans', i)
+		if jeans[i] = 1 and (odetjeans ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'jeans', i)
 		i += 1
 		if i = 6:i = 201
 	if i <= 297:jump 'loopjeans'
 	
 	i = 1
 	:loopyoga
-		if yoga[i] = 1 and (odetyoga ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'yoga', i)
+		if yoga[i] = 1 and (odetyoga ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'yoga', i)
 		i += 1
 	if i <= 18:jump 'loopyoga'
 	
 	i = 1
 	:loopsarafan
-		if sarafan[i] = 1 and (odetsarafan ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'sarafan', i)
+		if sarafan[i] = 1 and (odetsarafan ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'sarafan', i)
 		i += 1
 	if i <= 3:jump 'loopsarafan'
 	
 	i = 1
 	:loopshort
-		if short[i] = 1 and (odetshort ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'short', i)
+		if short[i] = 1 and (odetshort ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'short', i)
 		i += 1
 		if i = 6:i = 201
 	if i <= 256:jump 'loopshort'
 	
 	i = 1
 	:loopskirt
-		if skirt[i] = 1 and (odetskirt ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'skirt', i)
+		if skirt[i] = 1 and (odetskirt ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'skirt', i)
 		i += 1
 		if i = 6:i = 201
 	if i <= 273:jump 'loopskirt'
 	
 	i = 1
 	:loopdress
-		if dress[i] = 1 and (odetdress ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'dress', i)
+		if dress[i] = 1 and (odetdress ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'dress', i)
 		i += 1
 		if i = 25:i = 201
 	if i <= 225:jump 'loopdress'
 	
 	i = 1
 	:loopprofi
-		if profi[i] = 1 and (odetprofi ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'profi', i)
+		if profi[i] = 1 and (odetprofi ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'profi', i)
 		i += 1
 		if i = 3:i = 201
 	if i <= 208:jump 'loopprofi'
 	
 	i = 1
 	:looppants
-		if pants[i] = 1 and (odetpants ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'pants', i)
+		if pants[i] = 1 and (odetpants ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'pants', i)
 		i += 1
 		if i = 6:i = 201
 	if i <= 346:jump 'looppants'
 	
 	i = 1
 	:looplatex
-		if latex[i] = 1 and (odetlatex ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'latex', i)
+		if latex[i] = 1 and (odetlatex ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'latex', i)
 		i += 1
 	if i <= 2:jump 'looplatex'
 	
 	i = 1
 	:loophooker
-		if hooker[i] = 1 and (odethooker ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'hooker', i)
+		if hooker[i] = 1 and (odethooker ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'hooker', i)
 		i += 1
 	if i <= 5:jump 'loophooker'
 	
 	i = 1
 	:loopodekis
-		if odekis[i] = 1 and (odekis ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'odekis', i)
+		if odekis[i] = 1 and (odekis ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'odekis', i)
 		i += 1
 	if i <= 10:jump 'loopodekis'
 	
 	i = 1
 	:loopnewclo
-		if newclo[i] = 1 and (odetnewclo ! 1 or numdress ! i):FUNC('$clothing_list_line', $ARGS[1], 'newclo', i)
+		if newclo[i] = 1 and (odetnewclo ! 1 or numdress ! i):dyneval($clothing_list_line, $ARGS[1], 'newclo', i)
 		i += 1
 	!! NOTE: 131 is the school uniform and is handled up top
 	if i <= 130:jump 'loopnewclo'
@@ -98,7 +118,7 @@ if $ARGS[0] = 'view_clothing_list':
 		'<b>Brothel clothing</b>'
 		i = 1
 		:loopero
-			if odetero ! 1 or numdress ! i:FUNC('$clothing_list_line', $ARGS[1], 'ero', i)
+			if odetero ! 1 or numdress ! i:dyneval($clothing_list_line, $ARGS[1], 'ero', i)
 			i += 1
 		if i <= 18:jump 'loopero'
 	end
