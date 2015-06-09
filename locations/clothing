@@ -147,8 +147,7 @@ if $ARGS[0] = 'view_clothing_item':
 	end
 	
 	if $ARGS[1] = 'shop':
-		dynamic 'RESULT = <<$ARGS[2]>>[<<ARGS[3]>>]'
-		if RESULT = 1:
+		if dyneval('RESULT = <<$ARGS[2]>>[<<ARGS[3]>>]') = 1:
 			'You already own this item.'
 		else
 			'Price: <<ARGS[4]>>'
@@ -178,8 +177,7 @@ if $ARGS[0] = 'view_clothing_item':
 		
 		if $ARGS[2] ! 'vatnik' and $ARGS[2] ! 'ero' and ($ARGS[2] ! 'newclo' or ARGS[3] ! 131):
 			!! if the clothing is worn out
-			dynamic 'RESULT = <<$ARGS[2]>>H[<<ARGS[3]>>]'
-			if RESULT <= 0:
+			if dyneval('RESULT = <<$ARGS[2]>>H[<<ARGS[3]>>]') <= 0:
 				'This item is worn and is not suitable for further wear.'
 				exit
 			end
@@ -232,8 +230,7 @@ if $ARGS[0] = 'view_clothing_item':
 		act 'Leave item alone':gt 'clothing', 'view_clothing_list', $ARGS[1]
 		
 		if $ARGS[2] ! 'yoga' and $ARGS[2] ! 'sarafan':
-			dynamic 'RESULT = <<$ARGS[2]>>B[<<ARGS[3]>>]'
-			if RESULT ! bedra and money >= 500:
+			if dyneval('RESULT = <<$ARGS[2]>>B[<<ARGS[3]>>]') ! bedra and money >= 500:
 				'You can have this resized for 500 rubles.'
 				act 'Resize':
 					money -= 500
