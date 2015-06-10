@@ -39,14 +39,15 @@ if $ARGS[0] = 'start':
 			abonement -= 1
 			fitday = day
 			razdtumbler = 1
-			gt 'fit', 'razd'
+			gt 'fit', 'dressing room'
 		end
 	end
 end
 
-if $ARGS[0] = 'razd':
+if $ARGS[0] = 'dressing room':
 	$metkaM = $ARGS[0]
 	$locM = $CURLOC
+	$sexloc = $CURLOC
 	$loc = $CURLOC
 	$metka = $ARGS[0]
 	clr
@@ -74,14 +75,25 @@ if $ARGS[0] = 'razd':
 		'"Okay as anything the race, briefs is true" you said holding out his hand.'
 		'"Nope, do not return, there must me something to stay on the memory of the first girl." With these words, Tanya slipped your panties in his pocket and left.'
 
-		act 'Further':gt 'fit', 'razd'
+		act 'Further':gt 'fit', 'dressing room'
 
 		exit
 	end
 
-	if begsec = 0:act 'Join section running':gt 'fit', '1'
-	if begsec > 0 and razdtumbler = 1 and sport > 0:act 'Go to section':gt 'beg', 'start'
-	if begsec > 0 and razdtumbler = 1 and sport > 0 and beg >= 20 and week = 6:act '<b>Competitions on the run</b>':gt 'beg1', 'start'
+	if begsec = 0:
+		act 'Join section running':
+			cla
+			*clr
+			minut += 5
+			begsec = 1
+			'You signed up for the run section.'
+
+			act 'Leave':gt 'fit', 'dressing room'
+		end
+	elseif razdtumbler = 1 and sport > 0:
+		act 'Go to section':gt 'beg', 'start'
+		if week = 6 and beg >= 20:act '<b>Competitions on the run</b>':gt 'beg1', 'start'
+	end
 
 	act 'Take a shower (0:15)':
 		cla
@@ -95,7 +107,7 @@ if $ARGS[0] = 'razd':
 		'<center><img src="images/pics/dush.jpg"></center>'
 		'You got into the bathroom and turned on the shower. Lathered body and washed off in the shower.'
 
-		act 'Get out of the shower':gt 'fit', 'razd'
+		act 'Get out of the shower':gt 'fit', 'dressing room'
 	end
 
 	act 'Mirror':
@@ -112,7 +124,7 @@ if $ARGS[0] = 'razd':
 	if razdtumbler = 1 and sport > 0:
 		act 'Go to the gym':
 		cla
-		gt 'fit', 'raz'
+		gt 'fit', 'gym'
 	end
 
 	act 'Go to the dance studio.':
@@ -127,13 +139,83 @@ if $ARGS[0] = 'razd':
 	end
 end
 
-if $ARGS[0] = 'raz':
+if $ARGS[0] = 'fitgirl':
+	'Girl notices your look and smile turns. Girl undressing and taking toiletries goes into the shower.'
+
+	act 'Turn away':gt 'fit', 'dressing room'
+
+	act 'Walk into the shower behind the girl':
+		cls
+		minut += 15
+		sweat = -3
+		horny += 1
+		hapri = 0
+		mop = 1
+		dynamic $showerdin
+		shovertania += 1
+		gs 'stat'
+		'<center><img src="images/pics/dush.jpg"></center>'
+		'Logged-in shower. There''s no one, except this girl. The girl looked around and see you smile again turned away.'
+		if dom > 10:
+			act 'Molest':
+				cla
+				*clr
+				tanday = day
+				gs 'stat'
+				'<center><img src="images/img/centr/razd1.jpg"></center>'
+				'You walk up to a girl and vskhvativ one hand on the buttock deploy to face you.'
+
+				if vnesh < 20:
+					'Girl puts you off, and shouting something about you and all your other relative, out of the locker room.'
+
+					act '...':gt 'fit', 'dressing room'
+				elseif vnesh >= 20:
+					'Girl vskhvatila your hand squeezing her ass, but stopped for a moment considering you, she probably expected to see a guy or girl does.'
+
+					act 'Take advantage of the confusion':
+						cla
+						*clr
+						gs 'stat'
+						'<center><img src="images/img/centr/razd2.jpg"></center>'
+						'While she was trying to understand what is happening you pulled up her shirt and began to fondle her nipples tongue, and now her hand stroking your buttocks'
+
+						act 'Further':tanznak = 1 & gt 'lezbsex', 'start'
+					end
+
+					act 'Wait for her reaction':
+						cls
+						gs 'stat'
+
+						if vnesh < 30:
+							'Girl smiling at you, but removes your hand and leaves, sending you a kiss.'
+
+							act '...':gt 'fit', 'dressing room'
+						elseif vnesh >= 30:
+							cla
+							*clr
+							'<center><img src="images/img/centr/razd3.jpg"></center>'
+							'The girl pressed to you even stronger and kisses your lips.'
+
+							act 'Further':
+								tanznak = 1
+								gt 'lezbsex', 'start'
+							end
+						end
+					end
+				end
+			end
+		end
+
+		act 'Out of the shower':gt 'fit', 'dressing room'
+	end
+end
+
+if $ARGS[0] = 'gym':
 	cla
 	clr
 	*clr
 	minut += 5
 	razdtumbler = 0
-	sportzalrand = rand(0, 20)
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
 	bcolor = rgb(255, 255, 255)
@@ -150,11 +232,10 @@ if $ARGS[0] = 'raz':
 		reakt += rand(1, 3)
 		manna -= 5
 		sweat += 3
-		gt 'zal', '<<sportzalrand>>'
 		'<center><img src="images/etogame/fit1.jpg"></center>'
 		'You are very vigorously the exercises for the music ebbs fat.'
 
-		act 'Leave':gt 'fit', 'razd'
+		gs 'fit', 'exercise end'
 	end
 
 	act 'Trenazhorka (in force)':
@@ -165,11 +246,10 @@ if $ARGS[0] = 'raz':
 		fat -= 1
 		manna -= 5
 		sweat += 3
-		gt 'zal', '<<sportzalrand>>'
 		'<center><img src="images/etogame/fit2.jpg"></center>'
 		'Did you do with iron for strength.'
 
-		act 'Leave':gt 'fit', 'razd'
+		gs 'fit', 'exercise end'
 	end
 
 	act 'Trenazhorka (endurance)':
@@ -180,11 +260,11 @@ if $ARGS[0] = 'raz':
 		manna -= 5
 		fat -= 2
 		sweat += 3
-		gt 'zal', '<<sportzalrand>>'
+		
 		'<center><img src="images/etogame/fit3.jpg"></center>'
 		'Trainers were you doing on the development of endurance.'
 
-		act 'Leave':gt 'fit', 'razd'
+		gs 'fit', 'exercise end'
 	end
 
 	act 'Tennis testing of protection (skill)':
@@ -196,11 +276,11 @@ if $ARGS[0] = 'raz':
 		manna -= 5
 		sweat += 3
 		TenisDef += 1
-		gt 'zal', '<<sportzalrand>>'
+		
 		'<center><img src="images/etogame/fit4.jpg"></center>'
 		'You do tennis practicing defensive actions.'
 
-		act 'Leave':gt 'fit', 'razd'
+		gs 'fit', 'exercise end'
 	end
 
 	act 'Tennis working out attacks (velocity)':
@@ -212,17 +292,112 @@ if $ARGS[0] = 'raz':
 		fat -= 5
 		sweat += 3
 		TenisAt += 1
-		gt 'zal', '<<sportzalrand>>'
+		
 		'<center><img src="images/etogame/fit4.jpg"></center>'
 		'You do practicing tennis attacking actions.'
 
-		act 'Leave':gt 'fit', 'razd'
+		gs 'fit', 'exercise end'
 	end
 
-	act 'Section kickboxing':gt 'fit', 'kik'
+	act 'Section kickboxing':gt 'fit', 'kickboxing'
 end
 
-if $ARGS[0] = 'kik':
+if $ARGS[0] = 'exercise end':
+	RESULT = rand(0, 19)
+	
+	act 'Further':
+		if RESULT = 0:
+			cla
+			*clr
+			'<center><img src="images/img/centr/zal1.jpg"></center>'
+			'Next to you has been a nice guy.'
+
+			act 'Leave':gt 'fit', 'dressing room'
+
+			if dom > 0:
+				act 'Covet':
+					cla
+					*clr
+					guy += 1
+					picrand = 17
+					'<center><img src="images/img/centr/zal2.jpg"></center>'
+					'You go up to the guy lying on the simulator, squats and start stroking his cock through his pants, man rises kisses you on the lips, then lower a little pants releasing his impressive size dildo.'
+
+					act 'Suck':gt 'sex', 'minet'
+				end
+			end
+		elseif RESULT = 1:
+			cla
+			*clr
+			'<center><img src="images/img/centr/zal3.jpg"></center>'
+			'Until you do, you and the guy behind suitable vskhvativ you kissing his chest in his ear, sucking the lobe.'
+
+			if dom > 0:act 'Hit him in the balls':gt 'fit', 'dressing room'
+
+			act 'Enjoy':
+				cla
+				*clr
+				guy += 1
+				picrand = 18
+				'<center><img src="images/img/centr/zal4.jpg"></center>'
+				'Guy passes you, pulls out his cock and it lays down on your chest, moving eventually head to your mouth.'
+
+				act 'Suck':gt 'sex', 'minet'
+			end
+		elseif RESULT = 2:
+			cla
+			'Until you do, you fit girl and offers to play squash with her until her boyfriend came.'
+
+			act 'Refuse':gt 'fit', 'dressing room'
+
+			act 'Agree':
+				cla
+				*clr
+				picrand = 15
+				'<center><img src="images/img/centr/zal5.jpg"></center>'
+				'You play fun playing with a girl, you, as well, and it is obtained is bad enough, but it just amuses you. After some time, it appears as a man and looking at your clumsy attempts nachinnaet show how to play correctly. He comes to you from behind priobnimaet and one hand on to your hand with roketkoy shows how to beat, and the second hand starts stroking your hips gradually approaching the perineum. You feel like you are in the back rests his cock looking at her, you know that she understands what is going on and wants to not less than men.'
+
+				act 'Send perverts':gt 'fit', 'dressing room'
+
+				act 'Enjoy':
+					guy += 1
+					girl += 1
+					gt 'podrsex', 'var'
+				end
+			end
+		elseif RESULT = 3:
+			cla
+			*clr
+			'<center><img src="images/img/centr/zal6.jpg"></center>'
+			'Near you engaged hedgehog one girl to suit you two guys obviously took you for girlfriends and try to start a conversation.'
+
+			act 'Send':gt 'fit', 'dressing room'
+
+			act 'Flirt':
+				cla
+				*clr
+				picrand = 12
+				'<center><img src="images/img/centr/zal7.jpg"></center>'
+				'You chat with a guy, and you notice that he was very excited and constantly glancing behind you, turning you see that the girl is already on his haunches and with gusto sucking the second guy.'
+
+				act 'Leave':gt 'fit', 'dressing room'
+
+				act 'Suck':
+					guy += 2
+					girl += 1
+					gang += 1
+					gt 'sexdvanadva', 'var'
+				end
+			end
+		else
+			cla
+			'You finish up your exercises and prepare to leave.'
+			act 'Leave':gt 'fit', 'dressing room'
+		end
+	end
+end
+
+if $ARGS[0] = 'kickboxing':
 	cla
 	clr
 	*clr
@@ -234,7 +409,6 @@ if $ARGS[0] = 'kik':
 	lcolor = rgb(106, 90, 205)
 	'<center><b><font color="maroon">Kickboxing Section</font></b></center>'
 	'<center><img src="images/etogame/kik.jpg"></center>'
-	''
 
 	act 'Testing jabs on pear':
 		cla
@@ -248,7 +422,7 @@ if $ARGS[0] = 'kik':
 		'<center><img src="images/etogame/kik1.jpg"></center>'
 		'You practiced on pear jab, straight punches with long step forward. These strikes are not so powerful as the police, but they are faster.'
 
-		act 'Leave':gt 'fit', 'razd'
+		act 'Leave':gt 'fit', 'dressing room'
 	end
 
 	act 'Testing power beats on a pear':
@@ -263,7 +437,7 @@ if $ARGS[0] = 'kik':
 		'<center><img src="images/etogame/kik1.jpg"></center>'
 		'You practiced on pear powerful force capable of hitting an opponent shake. These impacts are powerful, but they are hard to get.'
 
-		act 'Leave':gt 'fit', 'razd'
+		act 'Leave':gt 'fit', 'dressing room'
 	end
 
 	act 'Testing of kicks':
@@ -278,7 +452,7 @@ if $ARGS[0] = 'kik':
 		'<center><img src="images/etogame/kik1.jpg"></center>'
 		'You practiced on pear powerful kicks able to cut down an opponent. These impacts are powerful, but are very difficult to hit.'
 
-		act 'Leave':gt 'fit', 'razd'
+		act 'Leave':gt 'fit', 'dressing room'
 	end
 
 	act 'Testing of protection':
@@ -293,7 +467,7 @@ if $ARGS[0] = 'kik':
 		'<center><img src="images/etogame/kik1.jpg"></center>'
 		'You practiced defense movements.'
 
-		act 'Leave':gt 'fit', 'razd'
+		act 'Leave':gt 'fit', 'dressing room'
 	end
 
 	act 'Sparing (training bout in the ring)':
@@ -452,16 +626,6 @@ if $ARGS[0] = 'kik':
 			gt 'kikbox', 'start'
 		end
 	end
-end
-
-if $ARGS[0] = '1':
-	cla
-	*clr
-	minut += 5
-	begsec = 1
-	'You signed up for the run section'
-
-	act 'Leave':gt 'fit', 'razd'
 end
 
 --- fit ---------------------------------
