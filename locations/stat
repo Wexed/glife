@@ -104,7 +104,6 @@ if nopornowrestling = 0:
 	!!salo[1] = 100
 	!!fat[1] = 100
 end
-if newclo[131] = 1 and SchoolAtestat = 1 or newclo[131] = 1 and SchoolBlock = 1:newclo[131] = 0
 
 !!!CV edition
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!Automatic Stuff
@@ -263,7 +262,6 @@ end
 
 if alko > 0 and frost > 0:frost = 0
 if lernSkill >= 8:intel += 1 & lernSkill = 0
-if numdress ! 131 and Sforma > 0:Sforma = 0
 if lern >= 10:intel += 1 & lern = 0
 if GorSlut = 1:$gnikname = 'flirt'
 if GorSlut = 2:$gnikname = 'easy A'
@@ -1348,7 +1346,7 @@ if exhibi >= 4 and exhibiHideNewCloth ! 1:
 end
 if tanga = 0 and ski = 1 or tanga = 0 and glamur = 1:
 	pl '<b><font color="red">blush of shame fills your face, you do not put her panties and now from under your short skirt sparkles sometimes naked ass.</font></b>'
-elseif tanga = 0 and ski = 0 and glamur = 0 and opPRE = 0 and nude = 0:
+elseif tanga = 0 and ski = 0 and glamur = 0 and opPRE = 0 and $clothingworntype ! 'nude':
 	pl '<b><font color="red">you do not put panties.</font></b>'
 end
 if mosol >= 30 and mosol < 50:pl '<b><font color="red">Pisya flushed and itchy, it seems you are rubbed by clothing.</font></b>'

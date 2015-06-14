@@ -1712,14 +1712,14 @@ if $ARGS[0] = 'pos51':
 	act 'Go to the street':
 		cls
 
-		if sick <= 72 and nude = 0:
-			xgt 'street'
-		elseif nude = 0:
-			'<b><font color="red">YOU ARE TOO SICK TO WALK TO THE STREET.</font></b>'
+		if $clothingworntype = 'nude':
+			'<b><font color="red">You need to get dressed.</font></b>'
+			xgt $curloc
+		elseif sick > 72:
+			'<b><font color="red">You are too ill to walk to the street.</font></b>'
 			xgt $curloc
 		else
-			'<b><font color="red">YOU NEED TO GET DRESSED.</font></b>'
-			xgt $curloc
+			xgt 'street'
 		end
 	end
 

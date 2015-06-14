@@ -180,8 +180,9 @@ if hour <= 8 and week < 6 and StoryLine > 0 and SchoolAtestat = 0 and kanikuli =
 			minut += 120
 			alko += 5
 			gs 'stat'
+			gs 'clothing', 'strip'
 			!!gee gee, no normal outlet
-			'At graduation all get drunk in the asshole. You almost do not remember anything, only that bathed in the fountain as a paratrooper.'
+			'At graduation all get drunk in the asshole. You almost do not remember anything, only that bathed in the fountain as a paratrooper and woke up naked.'
 
 			act 'Leave':gt 'gorodok'
 		end
@@ -189,7 +190,7 @@ if hour <= 8 and week < 6 and StoryLine > 0 and SchoolAtestat = 0 and kanikuli =
 end
 
 if hour <= 8 and week < 6 and StoryLine > 0 and SchoolAtestat = 0 and kanikuli = 0:
-	if Sforma > 0:
+	if $clothingworntype = 'sforma':
 		act 'Go to school':gt 'gschool2'
 	else
 		'You are not dressed in uniforms and you are not allowed in school.'

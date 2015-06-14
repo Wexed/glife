@@ -27,10 +27,10 @@ act 'Go to the bathroom':gt 'vanrPar'
 act 'Go to the kitchen':gt 'kuhrPar'
 
 act '<b>Go to the street</b>':
-	if nude = 0:
+	if $clothingworntype = 'nude':
 		gt 'gorodok'
 	else
-		msg 'You are not dressed'
+		msg 'You are not dressed.'
 		gt $curloc
 	end
 end
@@ -135,6 +135,7 @@ if hour >= 16 and hour <= 20 and indorf = 0:
 			SchoolBlock = 1
 			ParHomeBlock = 1
 			schoolprogul = 0
+			if $clothingworntype = 'sforma':gs 'clothing', 'strip'
 			'In the corridor you vsrechaet mother, her eyes thundered. "Doprygat? Thee out of high school. All live the way you want, I am no longer a mother!" Mother gathered your things in a bag, put the bag in your hands and thrown by the scruff of the apartment.'
 
 			act 'Leave':gt 'gorodok'

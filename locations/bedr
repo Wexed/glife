@@ -29,8 +29,11 @@ else
 	'Bright and beautiful room, with a nice <a href="exec:gt ''bed'', ''start''">double bed</a>. Near the entrance is a modern <a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe''">wardrobe</a>. Against the wall are a table and a <a href="exec:gt ''mirror'', ''start''">mirror</a>.'
 end
 
-if nude = 0:$nude = 'The corridor'
-if nude = 1:$nude = 'Get dressed'
+if $clothingworntype = 'nude':
+	$nude = 'The corridor'
+else
+	$nude = 'Get dressed'
+end
 
 if husbandrinkday = day:
 	if husbanstrapon = 1:'Drunken husband sleeps on the bed with butt plug in his ass.'

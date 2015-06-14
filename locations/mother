@@ -229,17 +229,6 @@ if hour > 5:
 
 							act 'Leave':gt $loc, $metka
 						end
-
-						if newclo[131] = 0:
-							act 'Select uniforms':
-								cls
-								gs 'stat'
-								newclo[131] = 1
-								'Mom bought you a school uniform.'
-
-								act 'Leave':gt $loc, $metka
-							end
-						end
 					end
 
 					exit

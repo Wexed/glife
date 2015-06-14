@@ -19,7 +19,7 @@ act 'In the master bedroom':gt 'hozspal', 'start'
 act 'In the hall':gt 'housezal'
 act 'In room Thani':gt 'tanroom', 'start'
 
-if nude = 0:act 'On the street':gt 'down'
+if $clothingworntype ! 'nude':act 'On the street':gt 'down'
 
 if tanwork = 1:
 	act 'Resign':

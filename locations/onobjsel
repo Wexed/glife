@@ -854,58 +854,6 @@ $objbody = {
 	end
 }
 
-$objclothes = {
-	clr
-
-	if nude = 0:
-		if vatnik = 2:view 'images/clothes/vatnik.jpg'
-
-		if odetjeans > 0:
-			view 'images/clothes/jeans<<numdress>>.jpg'
-			pl '(strength <<jeansH[numdress]>>, hip size <<jeansB[numdress]>>)'
-		elseif odetyoga > 0:
-			view 'images/clothes/yoga<<numdress>>.jpg'
-			pl '(strength <<yogaH[numdress]>>)'
-		elseif odetsarafan > 0:
-			view 'images/clothes/sarafan<<numdress>>.jpg'
-			pl '(strength <<sarafanH[numdress]>>)'
-		elseif odetshort > 0:
-			view 'images/clothes/short<<numdress>>.jpg'
-			pl '(strength <<shortH[numdress]>>, hip size <<shortB[numdress]>>)'
-		elseif odetskirt > 0:
-			view 'images/clothes/skirt<<numdress>>.jpg'
-			pl '(strength <<skirtH[numdress]>>, hip size <<skirtB[numdress]>>)'
-		elseif odetdress > 0:
-			view 'images/clothes/dress<<numdress>>.jpg'
-			pl '(strength <<dressH[numdress]>>, hip size <<dressB[numdress]>>)'
-		elseif odetprofi > 0:
-			view 'images/clothes/profi<<numdress>>.jpg'
-			pl '(strength <<profiH[numdress]>>, hip size <<profiB[numdress]>>)'
-		elseif odetpants > 0:
-			view 'images/clothes/pants<<numdress>>.jpg'
-			pl '(strength <<pantsH[numdress]>>, hip size <<pantsB[numdress]>>)'
-		elseif odetlatex > 0:
-			view 'images/clothes/latex<<numdress>>.jpg'
-			pl '(strength <<latexH[numdress]>>, hip size <<latexB[numdress]>>)'
-		elseif odethooker > 0:
-			view 'images/clothes/hooker<<numdress>>.jpg'
-			pl '(strength <<hookerH[numdress]>>, hip size <<hookerB[numdress]>>)'
-		elseif odetkis > 0:
-			view 'images/clothes/k<<numdress>>.jpg'
-			pl '(strength <<odekisH[numdress]>>, hip size <<odekisB[numdress]>>)'
-		elseif odetnewclo > 0:
-			view 'images/clothes/newclo/<<numdress>>.jpg'
-			pl '(strength <<newcloH[numdress]>>, hip size <<newcloB[numdress]>>)'
-		end
-
-		if odetero > 0:view 'images/img/dress/ero<<numdress>>.jpg'
-		if cloth_vid = 1:view 'images/etogame/bimboView.jpg' & pl 'You are dressed in the image bimbo'
-	else
-		view 'images/clothes/nude.jpg'
-		pl 'You´re not dressed.'
-	end
-}
-
 $objtattoos = {
 	$tatlipdi = {
 		view 'images/Body/tatlip<<tatlip>>.jpg'
@@ -1173,7 +1121,7 @@ if $selobj = 'Statistics':dynamic $objstatistika
 if  magik > 0:if $selobj = 'Magic':dynamic $objmagic
 if $selobj = 'Face':view FUNC('$face_image')
 if $selobj = 'Body':dynamic $objbody
-if $selobj = 'Clothing':dynamic $objclothes
+!!if $selobj = 'Clothing':dynamic $objclothes
 if $selobj = 'Tattoos':dynamic $objtattoos
 if $selobj = 'Piercing':dynamic $objpirsing
 if $selobj = 'Diary':dynamic $objbloknot

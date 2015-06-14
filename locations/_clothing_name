@@ -1,10 +1,12 @@
 # $clothing_name
 !! returns the name of the clothing
-!! ARGS 0 - array name
-!! ARGS 1 - array index
+!! ARGS 0 - clothing type
+!! ARGS 1 - clothing index
 
 if $ARGS[0] = 'vatnik':
 	$RESULT = 'Tattered, rustic jacket'
+elseif $ARGS[0] = 'sforma':
+	$RESULT = 'School uniform'
 elseif $ARGS[0] = 'jeans':
 	if ARGS[1] <= 5:$RESULT = 'Jeans <<ARGS[1]>>'
 	if ARGS[1] = 201:$RESULT = 'Blue jeans with a grey tank top and a turquise hoodie'
@@ -448,7 +450,6 @@ elseif $ARGS[0] = 'odekis':
 	if ARGS[1] <= 10:$RESULT = 'Youth outfit <<ARGS[1]>>'
 elseif $ARGS[0] = 'newclo':
 	if ARGS[1] <= 130:$RESULT = 'Fashionista outfit <<ARGS[1]>>'
-	if ARGS[1] = 131:$RESULT = 'School uniform'
 elseif $ARGS[0] = 'ero':
 	if ARGS[1] = 1:$RESULT = 'Mesh jacket with white denim skirt'
 	if ARGS[1] = 2:$RESULT = 'Net blue dress'

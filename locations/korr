@@ -7,28 +7,28 @@ act 'The living room':gt 'sitr'
 act '<font color="maroon">Apartment hallway</font>':
 	cls
 
-	if sick <= 72 and nude = 0:
-		xgt 'etoexhib', 'pos51'
-	elseif nude = 0:
+	if $clothingworntype = 'nude':
+		'<b><font color="red">You need to get dressed before going out.</font></b>'
+		xgt $curloc
+	elseif sick > 72:
 		'<b><font color="red">You''re too sick to walk around in the streets.</font></b>'
 		xgt $curloc
 	else
-		'<b><font color="red">You need to get dressed before going out.</font></b>'
-		xgt $curloc
+		xgt 'etoexhib', 'pos51'
 	end
 end
 
 act '<b><font color="maroon">Go outside</font></b>':
 	cls
 
-	if sick <= 72 and nude = 0:
-		xgt 'street'
-	elseif nude = 0:
+	if $clothingworntype = 'nude':
+		'<b><font color="red">You need to get dressed before going out.</font></b>'
+		xgt $curloc
+	elseif sick > 72:
 		'<b><font color="red">You''re too sick to walk around in the streets.</font></b>'
 		xgt $curloc
 	else
-		'<b><font color="red">You need to get dressed before going out.</font></b>'
-		xgt $curloc
+		xgt 'etoexhib', 'pos51'
 	end
 end
 

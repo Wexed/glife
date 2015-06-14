@@ -5,22 +5,34 @@ if $ARGS[0] = 'start':
 	'You have spent <<selfPornVidTime>> minutes on your film and had <<videoOrgasm>> orgasms on camera.'
 
 	if selfPornVidTime < 300:
-		if nude ! 1:
-			act 'Strip':dynamic $selfPorno_Strip
+		if $clothingworntype ! 'nude':
+			act 'Strip':
+				cla
+				*clr
+				gs 'clothing', 'strip'
+				selfPornVidTime += 5
+				minut += 5
+				selfPornVar += 5
+				horny += 5
+				clr
+				'You spent five minutes stripping erotically.'
+
+				act 'Continue':gt 'selfPorno', 'start'
+			end
 		end
 
 
 		act 'Fondle Breasts':dynamic $selfPorno_Fondle
 
-		if nude = 1:
+		if $clothingworntype = 'nude':
 			act 'Masturbate':dynamic $selfPorno_Masturbate
 		end
 
-		if nude = 1 and dildo > 0:
+		if $clothingworntype = 'nude' and dildo > 0:
 			act 'Masturbate with dildo':dynamic $selfPorno_Dildo
 		end
 
-		if nude = 1 and zoo >= 1:
+		if $clothingworntype = 'nude' and zoo >= 1:
 			act 'Fuck your dog':dynamic $selfPorno_Dog
 		end
 	else
@@ -33,30 +45,13 @@ if $ARGS[0] = 'start':
 	act 'Leave webcam program':gt 'Komp', 'start'
 end
 
-$selfPorno_Strip = {
-	cla
-	*clr
-	nude = 1
-	odedosna = numdress
-	numdress = 0
-	selfPornVidTime += 5
-	minut += 5
-	selfPornVar += 5
-	horny += 5
-	clr
-	!!gs 'stat'
-	'You spent five minutes stripping erotically.'
-
-	act 'Continue':gt 'selfPorno', 'start'
-}
-
 $selfPorno_Fondle = {
 	cla
 	*clr
 	gs 'stat'
 	minut += 5
 
-	if nude ! 1:
+	if $clothingworntype ! 'nude':
 		selfPornVidTime += 5
 		selfPornVar += 3
 		horny += 7
@@ -176,7 +171,7 @@ $selfPorno_Finish = {
 	end
 
 	if selfPornVidTime >= 20 and selfPornVidTime < 120:
-		selfPornVidMoney = selfPornVar*100*videoOrgasm
+		selfPornVidMoney = selfPornVar * 100 * videoOrgasm
 		minut += 10
 		selfPornVidTime = 0
 		selfPornVar = 0
@@ -189,7 +184,7 @@ $selfPorno_Finish = {
 	end
 
 	if selfPornVidTime >= 120:
-		selfPornVidMoney = selfPornVar*75*videoOrgasm
+		selfPornVidMoney = selfPornVar * 75 * videoOrgasm
 		minut += 10
 		selfPornVidTime = 0
 		selfPornVar = 0

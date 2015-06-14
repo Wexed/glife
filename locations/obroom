@@ -17,12 +17,12 @@ if $ARGS[0] = 'start':
 	if komp = 1:'<a href="exec:gt ''Komp'', ''start''">Computer</a>.'
 
 	act 'In the corridor':
-		if nude = 0:
+		if $clothingworntype ! 'nude':
 			odkomp = 0
 			minut += 5
 			gt 'dorm', 'korr'
 		else
-			'You need to dress'
+			'You need to get dressed.'
 		end
 	end
 

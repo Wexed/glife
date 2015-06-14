@@ -804,8 +804,15 @@ if zoo >= 6:
 	end
 end
 
-if musor > 3 and nude = 1:act 'Discarded rubbish':'I can not go to the trash naked!'
-if musor > 3 and nude = 0:act 'Discarded rubbish':gt 'trashplace', 'start'
+if musor > 3:
+	act 'Discard rubbish':
+		if $clothingworntype = 'nude':
+			'I can not go to the trash naked!'
+		else
+			gt 'trashplace', 'start'
+		end
+	end
+end
 
 if dildo > 0 and horny >= 50:
 	act 'Masturbate':

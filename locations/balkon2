@@ -60,11 +60,13 @@ if $ARGS[0] = 'niz':
 	gs 'stat'
 
 	if alcohol < 12:
-		!!!Probably CV edition
-		if nude = 0:'<center><img src="images/community/balcony_dressed2.jpg"></center>'
-		if nude = 1 and tanga = 1:'<center><img src="images/community/balcony_underwear2.jpg"></center>'
-		if nude = 1 and tanga = 0:'<center><img src="images/community/balcony_naked2.jpg"></center>'
-		!!!
+		if $clothingworntype = 'nude':
+			'<center><img src="images/community/balcony_dressed2.jpg"></center>'
+		elseif tanga = 1:
+			'<center><img src="images/community/balcony_underwear2.jpg"></center>'
+		else
+			'<center><img src="images/community/balcony_naked2.jpg"></center>'
+		end
 
 		act 'Enjoy the view':
 			if hour >= 8 and hour <= 19:

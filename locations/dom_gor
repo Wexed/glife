@@ -1,14 +1,14 @@
 # dom_gor
 act 'On the street':
 	cls
-	if sick <= 72 and nude = 0:
-		xgt 'gorodok'
-	elseif nude = 0:
+	if $clothingworntype = 'nude':
+		'<b><font color="red">You need to get dressed.</font></b>'
+		xgt $curloc
+	elseif sick > 72:
 		'<b><font color="red">You are too ill to take to the streets.</font></b>'
 		xgt $curloc
 	else
-		'<b><font color="red">YOU HAVE TO GET DRESSED.</font></b>'
-		xgt $curloc
+		xgt 'gorodok'
 	end
 
 end

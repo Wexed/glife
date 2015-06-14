@@ -1,9 +1,10 @@
-# $clothing_get_image
+# $clothing_image
 !! get the image for clothing
 !! ARGS 0 - clothing group name
 !! ARGS 1 - clothing index
 
 if $ARGS[0] = 'vatnik':$RESULT = 'images/clothes/vatnik.jpg'
+if $ARGS[0] = 'sforma':$RESULT = 'images/clothes/newclo/131.jpg'
 if $ARGS[0] = 'jeans':$RESULT = 'images/clothes/jeans<<ARGS[1]>>.jpg'
 if $ARGS[0] = 'yoga':$RESULT = 'images/clothes/yoga<<ARGS[1]>>.jpg'
 if $ARGS[0] = 'sarafan':$RESULT = 'images/clothes/sarafan<<ARGS[1]>>.jpg'
@@ -19,4 +20,4 @@ if $ARGS[0] = 'newclo':$RESULT = 'images/clothes/newclo/<<ARGS[1]>>.jpg'
 if $ARGS[0] = 'ero':$RESULT = 'images/img/dress/ero<<ARGS[1]>>.jpg'
 end
 
---- $clothing_get_image -------
+--- $clothing_image -------

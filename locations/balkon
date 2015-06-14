@@ -7,11 +7,12 @@ if $ARGS[0] = 'start':
 	gs 'stat'
 	'<center><b><font color="maroon">Apartment Balcony</font></b></center>'
 
-	if nude = 0:
+	if $clothingworntype = 'nude':
 		'<center><img src="images/community/balcony_dressed1.jpg"></center>'
-	elseif nude = 1:
-		if tanga = 0:'<center><img src="images/community/balcony_naked1.jpg"></center>'
-		if tanga = 1:'<center><img src="images/community/balcony_underwear1.jpg"></center>'
+	elseif tanga = 0:
+		'<center><img src="images/community/balcony_naked1.jpg"></center>'
+	else
+		'<center><img src="images/community/balcony_underwear1.jpg"></center>'
 	end
 
 	'You went to the balcony.'
@@ -26,20 +27,16 @@ if $ARGS[0] = 'start':
 		'It''s twilight and the street below you is dimly lit.'
 	end
 
-	if nude = 1:
-		if sosedBalDay ! day:temp = rand(1, 4)
-		if sosedBalDay = day:temp = rand(1, 3)
-
-		if temp = 1:
-			'You no one pays you any attention.'
-		elseif temp = 2:
-			'You no one pays you any attention.'
-		elseif temp = 3:
-			'You no one pays you any attention.'
-		elseif temp = 4:
-			'A neighbor from the opposite building is out on his balcony and looking at your naked body.'
-
-			act 'Look at the neighbor':gt 'balkon2', 'sosed'
+	if $clothingworntype = 'nude':
+		if sosedBalDay ! day:
+			if rand(1, 4) = 4:
+				'A neighbor from the opposite building is out on his balcony and looking at your naked body.'
+				act 'Look at the neighbor':gt 'balkon2', 'sosed'
+			else
+				'No one pays you any attention.'
+			end
+		else
+			'No one pays you any attention.'
 		end
 	end
 

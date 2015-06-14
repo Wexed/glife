@@ -1,5 +1,26 @@
 # $menu_clothes
-dynamic $objclothes
+clr
+if $clothingworntype = 'nude':
+	view 'images/clothes/nude.jpg'
+	pl 'You´re not dressed.'
+elseif cloth_vid = 1:
+	view 'images/etogame/bimboView.jpg'
+	pl 'You are dressed like a bimbo.'
+else
+	view FUNC('$clothing_image', $clothingworntype, clothingwornnumber)
+	pl 'You are wearing ' + FUNC('$clothing_name', $clothingworntype, clothingwornnumber) + '.'
+	
+	if $clothingworntype ! 'vatnik' and $clothingworntype ! 'sforma' and $clothingworntype ! 'ero':
+		$RESULT = '(strength '
+		dynamic '$RESULT += <<$clothingworntype>>H[<<clothingwornnumber>>]'
+		if $clothingworntype ! 'yoga' and $clothingworntype ! 'sarafan':
+			$RESULT += ', hip size '
+			dynamic '$RESULT += <<$clothingworntype>>B[<<clothingwornnumber>>]'
+		end
+		$RESULT += ')'
+		'<<$RESULT>>'
+	end
+end
 
 --- $menu_clothes ---------------------------------
 

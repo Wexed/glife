@@ -28,7 +28,7 @@ if $ARGS[0] = 'start':
 	'In the middle is a huge bed, and a small side door <a href="exec:gt ''bordel'', ''dysh''">bath</a>.'
 
 	act 'Leave':
-		if odetero = 0:
+		if $clothingworntype ! 'ero':
 			gt 'down'
 		else
 			cla
@@ -39,7 +39,7 @@ if $ARGS[0] = 'start':
 	end
 
 	act 'Going to the gym, waiting for customers':
-		if odetero = 0:
+		if $clothingworntype ! 'ero':
 			cla
 			'You need to change into something more appropriate, in a locker in the bathroom is all there.'
 

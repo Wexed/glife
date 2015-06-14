@@ -178,13 +178,17 @@ if $ARGS[0] = 'start':
 				'Aah <<$name>>, come, come again cut down?'
 
 				if money >= 500:
-					act 'Wear clothes to take in 500 rubles':
+					act 'Take in the clothes you are wearing for 500 rubles':
 						cla
 						*clr
 						minut += 15
-						money -= 500
-						gs 'portnoi'
-						'You undressed and filed for shirmochka clothes Jacob Solomonovich it fifteen minutes ushil your clothes and returned to you.'
+						if $clothingworntype = 'vatnik' or $clothingworntype = 'sforma' or $clothingworntype = 'yoga' or $clothingworntype = 'sarafan':
+							'What are you wasting my time for? This type of clothing does not need to be resized.'
+						else
+							money -= 500
+							dynamic '<<$clothingworntype>>B[<<clothingwornnumber>>] = bedra'
+							'You undressed and filed for shirmochka clothes Jacob Solomonovich it fifteen minutes ushil your clothes and returned to you.'
+						end
 
 						act 'Leave':gt 'clener', 'start'
 					end
@@ -209,20 +213,7 @@ if $ARGS[0] = 'start':
 						'(You) - Can you tailor my clothes to fit me better?'
 						'(Yasha) - Of course I can! Otherwise, what kind of tailor would I be? Here, let me see that you''re wearing.'
 						'Jacob Solomonovich you jumped smartly and flexible by removing the meter from the neck began obmeryat your chest, waist and hips.'
-						'Well Well, I can take in this product, you will be 500 rubles.'
-
-						if money >= 500:
-							act 'Take in (500 rubles)':
-								cla
-								*clr
-								minut += 15
-								money -= 500
-								gs 'portnoi'
-								'You undressed and filed for shirmochka clothes Jacob Solomonovich it fifteen minutes ushal your clothes and returned to you.'
-
-								act 'Leave':gt 'clener', 'start'
-							end
-						end
+						'Well, I can take in whatever clothing you bring to me for 500 rubles.'
 
 						act 'Leave':gt 'clener', 'start'
 					end

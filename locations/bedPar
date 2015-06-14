@@ -1,8 +1,11 @@
 # bedPar
 gs 'stat'
 
-if nude = 0:'<center><img src="images/pics/bed.jpg"></center>'
-if nude = 1:'<center><img src="images/pics/son.jpg"></center>'
+if $clothingworntype = 'nude':
+	'<center><img src="images/pics/bed.jpg"></center>'
+else
+	'<center><img src="images/pics/son.jpg"></center>'
+end
 
 'You lie on the bed. Clock wound <<timer>> hours <<timerM>> minutes.'
 
@@ -44,11 +47,10 @@ act 'Set Alarm Clock':gt 'budilnik', 'start'
 		'Alarm goes off'
 		act 'Get out of bed and get dressed (0:15)':
 			cla
-			!!numdress = odedosna
+			gs 'clothing', 'wear_last_worn'
 			InSleep = 0
 			minut += 15
 			tanga = 1
-			!!nude = 0
 			gt $locM, $metkaM
 		end
 
@@ -60,11 +62,10 @@ act 'Set Alarm Clock':gt 'budilnik', 'start'
 
 		act 'Get out of bed and get dressed (0:15)':
 			cla
-			!!numdress = odedosna
+			gs 'clothing', 'wear_last_worn'
 			InSleep = 0
 			minut += 15
 			tanga = 1
-			!!nude = 0
 			gt $locM, $metkaM
 		end
 

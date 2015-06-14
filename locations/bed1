@@ -7,8 +7,11 @@ if $ARGS[0] = 'start':
 	shour = 24 - hour
 	stimer = 24 - timer
 
-	if nude = 0:'<center><img src="images/pics/bed.jpg"></center>'
-	if nude = 1:'<center><img src="images/pics/son.jpg"></center>'
+	if $clothingworntype = 'nude':
+		'<center><img src="images/pics/bed.jpg"></center>'
+	else
+		'<center><img src="images/pics/son.jpg"></center>'
+	end
 
 	'You lie on the bed. Clock wound <<timer>> hours <<timerM>> minutes.'
 
@@ -300,8 +303,11 @@ if $ARGS[0] = 'fin':
 
 	!'
 	if housr = 1 and housrA = 1:
-		if nude = 0:$nude = 'In the corridor'
-		if nude = 1:$nude = 'Get dressed'
+		if $clothingworntype = 'nude':
+			$nude = 'In the corridor'
+		else
+			$nude = 'Get dressed'
+		end
 
 		housrA = 0
 		gt 'bedr'

@@ -25,6 +25,6 @@ if ymanrem[3] >= 1:act 'Nursery':minut += 1 & gt 'ydet'
 if ymanrem[3] >= 1:act 'Library':minut += 1 & gt 'ybib'
 if ymanrem[3] >= 1:act 'Gymnasium':minut += 1 & gt 'ysport'
 if ymanrem[3] >= 1:act 'Cabinet':minut += 1 & gt 'ykabinet'
-if nude = 0:act 'Go outside':minut += 5 & gt 'youplace'
+if $clothingworntype ! 'nude':act 'Go outside':minut += 5 & gt 'youplace'
 
 --- ymans ---------------------------------

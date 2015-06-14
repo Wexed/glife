@@ -62,13 +62,14 @@ $sitryogd = {
 	bookYogday = day
 	will += 1
 	manna += 5
-	!!!CV extension
-	!!'<center><img src="images/etogame/bookYog.jpg"></center>'
 
-	if nude = 0:'<center><img src="images/community/yoga_dressed.jpg"></center>'
-	if nude = 1 and tanga = 1:'<center><img src="images/community/yoga_underwear.jpg"></center>'
-	if nude = 1 and tanga = 0:'<center><img src="images/community/yoga_naked.png"></center>'
-	!!!
+	if $clothingworntype ! 'nude':
+		'<center><img src="images/community/yoga_dressed.jpg"></center>'
+	elseif tanga = 1:
+		'<center><img src="images/community/yoga_underwear.jpg"></center>'
+	else
+		'<center><img src="images/community/yoga_naked.png"></center>'
+	end
 
 	'You meditate for fifteen minutes, developing your will.'
 
@@ -84,13 +85,14 @@ $sitrskakd = {
 	sweat += 1
 	manna -= 1
 	fat -= 1
-	!!!CV extension
-	!!'<center><img src="images/etogame/skak.jpg"></center>'
 
-	if nude = 0:'<center><img src="images/community/rope_dressed.jpg"></center>'
-	if nude = 1 and tanga = 0:'<center><img src="images/community/rope_naked.jpg"></center>'
-	if nude = 1 and tanga = 1:'<center><img src="images/community/rope_underwear.jpg"></center>'
-	!!!
+	if $clothingworntype ! 'nude':
+		'<center><img src="images/community/rope_dressed.jpg"></center>'
+	elseif tanga = 1:
+		'<center><img src="images/community/rope_underwear.jpg"></center>'
+	else
+		'<center><img src="images/community/rope_naked.jpg"></center>'
+	end
 
 	'You''re rope jumping for fifteen minutes, developing your speed.'
 
@@ -106,13 +108,14 @@ $sitrpressd = {
 	sweat += 1
 	manna -= 1
 	fat -= 1
-	!!!CV extension
-	!!'<center><img src="images/etogame/press.jpg"></center>'
 
-	if nude = 0:'<center><img src="images/community/abdominal_dressed.jpg"></center>'
-	if nude = 1 and tanga = 1:'<center><img src="images/community/abdominal_underwear.jpg"></center>'
-	if nude = 1 and tanga = 0:'<center><img src="images/community/abdominal_naked.jpg"></center>'
-	!!!
+	if $clothingworntype ! 'nude':
+		'<center><img src="images/community/abdominal_dressed.jpg"></center>'
+	elseif tanga = 1:
+		'<center><img src="images/community/abdominal_underwear.jpg"></center>'
+	else
+		'<center><img src="images/community/abdominal_naked.jpg"></center>'
+	end
 
 	'You do a series of abdominal exercises for fifteen minutes, developing your endurance.'
 
@@ -128,13 +131,14 @@ $sitrpushd = {
 	sweat += 1
 	manna -= 1
 	fat -= 1
-	!!!CV extension
-	!!'<center><img src="images/etogame/push.jpg"></center>'
 
-	if nude = 0:'<center><img src="images/community/push_dressed.jpg"></center>'
-	if nude = 1 and tanga = 1:'<center><img src="images/community/push_underwear.jpg"></center>'
-	if nude = 1 and tanga = 0:'<center><img src="images/community/push_naked.jpg"></center>'
-	!!!
+	if $clothingworntype ! 'nude':
+		'<center><img src="images/community/push_dressed.jpg"></center>'
+	elseif tanga = 1:
+		'<center><img src="images/community/push_underwear.jpg"></center>'
+	else
+		'<center><img src="images/community/push_naked.jpg"></center>'
+	end
 	'You do push-ups for fifteen minutes, developing your strength.'
 	pushnum = rand(stren / 10, stren / 5)
 	'<br>You managed to do <<pushnum>> push-ups. Your previous record is <<pushrecord>>.'
@@ -152,13 +156,14 @@ $gladbelo = {
 	suhbelo2 = 0
 	manna -= 10
 	elektro += 10
-	!!!CV extension
-	!!'<center><img src="images/etogame/belo.jpg"></center>'
 
-	if nude = 0:'<center><img src="images/community/iron_dressed.jpg"></center>'
-	if nude = 1 and tanga = 1:'<center><img src="images/community/iron_underwear.jpg"></center>'
-	if nude = 1 and tanga = 0:'<center><img src="images/community/iron_naked.jpg"></center>'
-	!!!
+	if $clothingworntype ! 'nude':
+		'<center><img src="images/community/iron_dressed.jpg"></center>'
+	elseif tanga = 1:
+		'<center><img src="images/community/iron_underwear.jpg"></center>'
+	else
+		'<center><img src="images/community/iron_naked.jpg"></center>'
+	end
 
 	'You iron your underwear.'
 
