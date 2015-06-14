@@ -71,7 +71,7 @@ $din_dima_predlog = {
 		act 'Leave':gt $loc, $metka
 	end
 
-	act 'become confused':
+	act 'Become confused':
 		cls
 		gs 'stat'
 		'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
@@ -89,6 +89,7 @@ $din_dima_predlog = {
 
 			act 'Leave':gt $loc, $metka
 		end
+		
 		act 'And you will not tell anyone?':
 			cls
 			dom += 1
