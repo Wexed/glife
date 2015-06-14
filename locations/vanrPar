@@ -109,8 +109,6 @@ if tampon > 0 and mesec > 0 and isprok = 0:
 	end
 end
 
-!!0.2.6 extension: Removed sweat =- 1 when cum is wiped off clothes
-!!Washing off cosmetics also removes cum from face
 if mop ! 1:
 	act 'Wash off cosmetics (0:15)':
 		cla
@@ -137,7 +135,22 @@ if cumfrot > 0:
 		act 'Finish':gt $curloc
 	end
 end
-!!
+
+if cumlip > 0 or cumface > 0:
+	act 'Clean your face from sperm (0:05)':
+		cla
+		*clr
+		mop = 1
+		cumlip = 0
+		cumface = 0
+		sweat -= 1
+		minut += 5
+		'<center><img src="images/etogame/facesp.jpg"></center>'
+		'You clean your face and got rid of any trace of cum.'
+
+		act 'Finish':gt $curloc
+	end
+end
 
 if leghair > 0 and stanok > 0:
 	act 'Shave your legs (0:15)':
@@ -200,7 +213,7 @@ elseif analplug = 1 and analplugin = 0 and klismaday1= 1 and plugday ! daystart:
 		if butpluguse > 0:'You bent over and inserted the butt plug.'
 		if butpluguse = 0:butpluguse = 1 & '"If I don''t use it then why did I buy it!" you thought. You decided to take a closer look while thinking, "It is necessary to start developing my ass so I could have great adventures someday, you could even say a huge and thick adventures with crimson heads, uh, now I got carried away." You scratched your head. Then you directed it in your ass, it was a bit painful at first, but as soon as the widest part was plunged into the murky depths of your anus it became easier to push it all the way.'
 
-		act 'Leave':gt $curloc
+		act 'Finish':gt $curloc
 	end
 end
 
@@ -213,6 +226,36 @@ if klisma = 1 and klismaday ! day:
 		klismaday1 = 1
 		'<center><img src="images/picV/klisma.jpg"></center>'
 		'You put yourself an enema and clean intestines, now your ass is ready for anal sex.'
+
+		act 'Finish':gt $curloc
+	end
+end
+
+if vibrator = 1 and vibratorIN = 1:
+	act 'Remove the vibrator (0:05)':
+		cla
+		*clr
+		minut += 5
+		vibratorIN = 0
+
+		if vagina < 30:vagina += 1
+
+		'<center><img src="images/etogame/vibrator.jpg"></center>'
+		'You bend over the sink and take the vibrator out of your pussy.'
+
+		act 'Finish':gt $curloc
+	end
+elseif vibrator = 1 and vibratorIN = 0 and vagina ! 0:
+	act 'Insert the vibrator in your vagina (0:05)':
+		cla
+		*clr
+		minut += 5
+		vibratorIN = 1
+
+		if vagina < 30:vagina += 2
+
+		'<center><img src="images/etogame/vibrator.jpg"></center>'
+		'You bend over the sink and inserted the vibrator in your pussy.'
 
 		act 'Finish':gt $curloc
 	end
