@@ -27,7 +27,7 @@ act 'Go to the bathroom':gt 'vanrPar'
 act 'Go to the kitchen':gt 'kuhrPar'
 
 act '<b>Go to the street</b>':
-	if $clothingworntype = 'nude':
+	if $clothingworntype ! 'nude':
 		gt 'gorodok'
 	else
 		msg 'You are not dressed.'
