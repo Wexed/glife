@@ -14,7 +14,7 @@ $d_katanal = {
 		'Captain undressed and stood behind your back, loudly slapped his hand on your naked ass. You even gasped in surprise.'
 		dynamic $analsex2
 
-		act 'further':
+		act 'Further':
 			cls
 			minut += 3
 			anal += 1
@@ -37,7 +37,7 @@ $d_katsub = {
 		'<center><img src="images/qwest/vokzal/kat/bend.jpg"></center>'
 		'You lay back with his eyes closed and trying to enjoy the feeling of. Suddenly the captain unfolds you back to yourself and tips.'
 
-		act 'stand leaning':
+		act 'Stand leaning':
 			cls
 			horny += 5
 			minut += 3
@@ -112,7 +112,7 @@ if katsexetap = 0:
 	dynamic $d_katsub
 
 	if horny >= 75:
-		act 'hug him':
+		act 'Hug him':
 			cls
 			horny += 5
 			gs 'stat'
@@ -136,16 +136,15 @@ elseif katsexetap = 1:
 		'<center><img src="images/qwest/vokzal/kat/kneel.jpg"></center>'
 		'You stood in front of a police officer on his knees and pulled his cock out of his pants.'
 
-		act 'suck':
+		act 'Suck':
 			cls
 			bj += 1
 			gs 'stat'
 			'<center><img src="images/qwest/vokzal/kat/bj.jpg"></center>'
 			dynamic $dinrandbj
-			kattiperand = rand(0, 1)
 
-			if kattiperand = 0:
-				act 'swallow cum':
+			if rand(0, 1) = 0:
+				act 'Swallow cum':
 					cls
 					swallow += 1
 					cumlip += 1
@@ -157,7 +156,7 @@ elseif katsexetap = 1:
 					act 'Brush up':minut += 1 & gt 'katalkin'
 				end
 
-				act 'on the face':
+				act 'On the face':
 					cls
 					facial += 1
 					cumface += 1
@@ -168,7 +167,7 @@ elseif katsexetap = 1:
 
 					act 'Brush up':minut += 1 & gt 'katalkin'
 				end
-			elseif kattiperand = 1:
+			else
 				'Katalkin suddenly pulls his dick out of your mouth and took you by the shoulders up from his knees to his feet.'
 				dynamic $d_katsub
 			end

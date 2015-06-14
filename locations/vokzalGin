@@ -17,7 +17,7 @@ lcolor = rgb(106, 90, 205)
 '<center><img src="images/qwest/alter/vokzal.jpg"></center>'
 'In the center of the station waiting room and <a href="exec:dynamic $din_vokzalg_kassi">Case</a> with the scoreboard. In one wing are <a href="exec:dynamic $din_vokzalg_kabinet">offices bosses</a>, and in the other <a href="exec:minut += 1 & dynamic $din_vokzalg_toilet">Toilets</a>.'
 
-if katalkinSexOnce >= 1:'<a href="exec:minut += 5 & gt ''katalkin''">police</a>'
+if katalkinSexOnce = 1:'There is a small <a href="exec:minut += 5 & gt ''katalkin''">police</a> station inside the terminal.'
 
 if podbros = 0:
 	podrand = rand(0, 1)
