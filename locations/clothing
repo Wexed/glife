@@ -27,6 +27,7 @@ if $ARGS[0] = 'view_clothing_list':
 	act 'Leave':gt $loc, $metka
 	
 	if $ARGS[1] = 'wardrobe':
+		if $clothingworntype ! 'nude':act 'Strip':gs 'clothing', 'strip' & gt $loc, $metka
 		if bikini = 1:'On the top shelf is a swimsuit'
 		if $clothingworntype ! 'vatnik':dyneval($clothing_list_line, $ARGS[1], 'vatnik', 0)
 		if StoryLine = 1 and SchoolAtestat = 0 and SchoolBlock = 0 and $clothingworntype ! 'sforma':dyneval($clothing_list_line, $ARGS[1], 'sforma', 0)
