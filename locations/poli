@@ -119,15 +119,16 @@ if $ARGS[0] = 'start':
 
 			if GerpesNapr > 0 and GerpesUkolDay ! day:
 				act 'Go for shots of herpes (1,000 rubles). Remaining <<GerpesNapr>> in the direction of injection':
-				cls
-				money -= 1000
-				minut += 60
-				GerpesUkolDay = day
-				GerpesNapr -= 1
-				gs 'stat'
-				'You made a very painful injection in the ass.'
+					cls
+					money -= 1000
+					minut += 60
+					GerpesUkolDay = day
+					GerpesNapr -= 1
+					gs 'stat'
+					'You made a very painful injection in the ass.'
 
-				if GerpesNapr = 0:Gerpes = -10 & 'It was the last injection'
+					if GerpesNapr = 0:Gerpes = -10 & 'It was the last injection'
+				end
 
 				act 'Leave':gt 'poli', 'start'
 			end
