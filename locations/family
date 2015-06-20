@@ -15,14 +15,7 @@ end
 
 if week = 1 and dostupindorf = 1:dostupindorf = 0
 
-if week = 6 and hour >= 12 and dostupindorf = 1:
-	!!go to the village
-	indorf = 1
-	father_go = 0
-	mother_go = 0
-end
-
-if week = 7 and hour < 20 and dostupindorf = 1:
+if dostupindorf = 1 and ((week = 6 and hour >= 12) or (week = 7 and hour < 20)):
 	!!go to the village
 	indorf = 1
 	father_go = 0
@@ -40,10 +33,28 @@ if indorf = 0:
 end
 
 if sister_indorf = 1:sisterHere = 0
-''
-''
 
-if StoryLine > 0:
+if StoryLine = 1:
+	if sisboytrio >= 5 and sisboyparty ! 0 and sisboyparty_day + 1 < daystart and randsbPartyDay <= daystart and week >= 4:
+		if week = 4:randsbPartyDay = daystart + 4 & sisboyparty_day = daystart + rand(0, 2)
+		if week = 5:randsbPartyDay = daystart + 3 & sisboyparty_day = daystart + rand(0, 1)
+		if week = 6:randsbPartyDay = daystart + 2 & sisboyparty_day = daystart
+	end
+	
+	if sisboyparty_day + 1 = daystart and sisboyparty = 2 and hour > 18 and sisboypartyQW = 1:
+		cls
+		minut += 5
+		sisboyparty = -1
+		gs 'stat'
+		'<center><img src="images/qwest/alter/sisterQW/Party/sisboyQWParty_7.jpg"></center>'
+		'You have forgotten to come to a party in honor of the birthday Rex.'
+		'- Oh well, I hope they are not offended me greatly...'
+		act 'Move away':gt $loc, $metka
+		exit
+	end
+	
+	if sisboyparty_day + 1 = daystart and (sisboyparty = 2 or sisboyparty = 1) and hour > 18 and sisboypartyQW > 1:sisboyparty = -1
+	
 	if sister_indorf = 0:
 		if $loc = 'bedrPar':
 			sisterHere = 0
@@ -56,7 +67,7 @@ if StoryLine > 0:
 			if week < 6:
 				if hour = 7:
 					sisterHere = 2
-					'Your sister <a href="exec:gt ''sister''">Anja</a> is going to work.'
+					'Your sister <a href="exec:gt ''sister'', ''home''">Anja</a> is going to work.'
 				end
 			end
 
@@ -74,7 +85,23 @@ if StoryLine > 0:
 
 			if hour >= 18:
 				sisterHere = 2
-				'Your sister <a href="exec:gt ''sister''">Anja</a> sitting on bed and reading a book.'
+				'Your sister <a href="exec:gt ''sister'', ''home''">Anja</a> sitting on bed and reading a book.'
+			elseif sisboyparty_day + 1 = daystart and sisboyparty = -1 and hour = 22:
+				cls
+				minut += 5
+				gs 'stat'
+				'<center><img src="images/qwest/alter/sisterQW/Party/sisboyQWParty_6_' + rand(1,7) + '.jpg"></center>'
+				'Drunk, disheveled Anja bursts into the room.'
+				'You notice that her hair, All clothes are smeared with sticky sperm.'
+				'In this form,, she falls on the bed and falls asleep instantly.'
+				sisboyparty = 1
+				act 'Move away':gt $loc
+				exit
+			elseif sisboyparty_day + 1 = daystart and hour >= 22:
+				sisterHere = 1
+				if sisboypartyQW = 1:sisboypartyQW = 2
+				if sisboyparty = -1:sisboyparty = 1
+				'Your drunken sister Anja asleep in bed.'
 			end
 		end
 	end
@@ -86,15 +113,10 @@ if StoryLine > 0:
 
 				if hour = 21:parsexrand = rand(0, 5)
 			end
-
-			if week < 6:
-			end
-			if week >= 6:
-			end
 		end
 
 		if $loc = 'sitrPar':
-			if hour < 7 or hour >= 21:'Sleeps on the couch your younger brother Kolya.'
+			if hour < 7 or hour >= 21:'Sleeps on the couch your younger brother Kolka.'
 
 			if week < 6:
 				if father_go = 0:
@@ -106,7 +128,7 @@ if StoryLine > 0:
 
 			if week >= 6:
 				if father_go = 0:
-					if hour >= 7 and hour < 21:'Sitting on the couch <a href="exec:gt ''father''">stepfather</a> and watching TV.'
+					if hour >= 7 and hour < 21:'Sitting on the couch <a href="exec:gt ''father''">stepfather</a> watching TV.'
 				else
 					if hour >= 7 and hour < 16:'Sitting on the couch <a href="exec:gt ''father''">stepfather</a> watching TV.'
 				end
@@ -120,7 +142,7 @@ if StoryLine > 0:
 				if mother_go = 0:
 					if hour >= 16 and hour < 21:'Stands near the stove <a href="exec:gt ''mother''">Mom</a> and that it cooks.'
 				else
-					if hour >= 17 and hour < 21:'Near the stove stands <a href="exec:gt ''mother''">mom</a> and that it is preparing.'
+					if hour >= 17 and hour < 21:'Near the stove stands <a href="exec:gt ''mother''">Mom</a> and that it is preparing.'
 				end
 			end
 
@@ -128,43 +150,32 @@ if StoryLine > 0:
 				if mother_go = 0:
 					if hour >= 7 and hour < 21:'Stands near the stove <a href="exec:gt ''mother''">Mom</a> and that it cooks.'
 				else
-					if hour >= 7 and hour < 16:'Near the stove stands <a href="exec:gt ''mother''">mom</a> and that it is preparing.'
-					if hour >= 17 and hour < 21:'Near the stove stands <a href="exec:gt ''mother''">mom</a> and that it is preparing.'
+					if (hour >= 7 and hour < 16) or (hour >= 17 and hour < 21):'Near the stove stands <a href="exec:gt ''mother''">Mom</a> and that it is preparing.'
 				end
 			end
 		end
 
 		if $loc = 'korrPar':
-			if week < 6:
-			end
-			if week >= 6:
-			end
+			!! for future code I guess
 		end
 
 		if $loc = 'vokzalG':
-			if week < 6:
-			end
-			if week >= 6:
-			end
+			!! for future code I guess
 		end
 
 		if $loc = 'gdk':
 			if week < 6:
-				if hour >= 16 and hour < 18:'Your sister <a href="exec:gt ''sister''">Anja</a> sitting in the company of beautiful girls and guys drinking beer.'
+				if hour >= 16 and hour < 18:'Your sister <a href="exec:gt ''sister'', ''drinking''">Anja</a> sitting in the company of beautiful girls and guys drinking beer.'
 			end
 
 			if week >= 6:
-				if hour >= 11 and hour < 18:'Your sister <a href="exec:gt ''sister''">Anja</a> sitting in the company of beautiful girls and guys drinking beer.'
+				if hour >= 11 and hour < 18:'Your sister <a href="exec:gt ''sister'', ''drinking''">Anja</a> sitting in the company of beautiful girls and guys drinking beer.'
 			end
 		end
 
 		if $loc = 'gschool':
-			if week < 6:
-				if hour >= 15 and hour <= 17:'On the football field near the school your <a href="exec:gt ''brother''">brother</a> rides in football.'
-			end
-
-			if week >= 6:
-				if hour >= 7 and hour <= 17:'On the football field near the school your <a href="exec:gt ''brother''">brother</a> rides in football.'
+			if (week < 6 and hour >= 15 and hour <= 17) or ((week >= 6 or kanikuli > 0) and hour >= 7 and hour <= 17):
+				if hour >= 15 and hour <= 17:'On the football field near the school your <a href="exec:gt ''brother''">brother</a> plays futbol.'
 			end
 		end
 	end

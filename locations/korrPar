@@ -16,11 +16,16 @@ bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
 if hour ! 18 and blockBedrPar = 1:blockBedrPar = 0
 
-if blockBedrPar = 0 and sisboyday + 1 = day and hour = 18 and (sisboyQW = 3 or sisboyQW = 5 or sisboyQW = 7):
-	act 'Go to your room':gt 'sisterQW','sisboyQW_bedroom'
-elseif blockBedrPar = 0:
-	act 'Go to your room':gt 'bedrPar'
+if blockBedrPar = 0:
+	if sisboyday + 1 = daystart and hour = 18 and sisboytrioQW = 1:
+		act 'Go to your room':gt 'sisterQW', 'sisboytrioQW_bedroom', 'start'
+	elseif sisboyday + 1 = daystart and hour = 18 and (sisboyQW = 3 or sisboyQW = 5 or sisboyQW = 7 or sisboyQW = 9):
+		act 'Go to your room':gt 'sisterQW', 'sisboyQW_bedroom'
+	else
+		act 'Go to your room':gt 'bedrPar'
+	end
 end
+
 act 'Go to my parents'' room':gt 'bedrPar2'
 act 'Going to the living room':gt 'sitrPar'
 act 'Go to the bathroom':gt 'vanrPar'
