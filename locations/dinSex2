@@ -32,11 +32,11 @@ $d_vag_sex_dildo = {
 			if horny >= 60 and horny < 70:orgazm = 1
 			if horny < 60:orgazm = 0
 		elseif dick <= prinat and dick >= vagina:
-			!!Member fewer opportunities gg
-				if horny >= 80:orgazm = 5
-				if horny >= 60 and horny < 80:orgazm = 4
-				if horny >= 40 and horny < 60:orgazm = 3
-				if horny < 40:orgazm = 2
+			!Member fewer opportunities gg
+			if horny >= 80:orgazm = 5
+			if horny >= 60 and horny < 80:orgazm = 4
+			if horny >= 40 and horny < 60:orgazm = 3
+			if horny < 40:orgazm = 2
 		elseif dick <= prinat and dick < vagina:
 			if horny >= 100:orgazm = 5
 			if horny >= 90 and horny < 100:orgazm = 4
@@ -83,12 +83,10 @@ $d_vag_sex_dildo = {
 			willpower -= 5
 			'You flinched at the sudden pain when stuck into itself <<dick>> inch dildo, but the pain between her legs slowly calm down and become quite tolerable. Are you trying to be excited while moving <<dick>> inch dildo in your pussy, but you will not go out.'
 		elseif orgazm = 3:
-			!!horny = horny + 5
 			manna += 5
 			willpower += 5
 			'You flinched from feeling, your pussy stretched, when a thrust <<dick>> inch dildo. Between the legs becomes a little nice, when you fuck themselves with dildos.'
 		elseif orgazm = 4:
-			!!horny = horny + 10
 			manna += 10
 			willpower += 10
 			'You flinched from feeling, your pussy stretched, when a thrust <<dick>> inch dildo. Between the legs becomes a little nice, when you fuck themselves with dildos. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of. '
@@ -100,7 +98,7 @@ $d_vag_sex_dildo = {
 			vaginalOrgasm += 1
 			'You startled by the pleasant sensation, when your pussy rastyagivatsya start taking a dildo. Between the legs becomes very warm and pleasant, when strong <<dick>> inch dildo moves in your pussy. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling descend on you and your entire body covered hot waves of orgasm, you involuntarily shout of pleasure writhing on dildo.'
 		elseif orgazm = 6:
-			horny += 5
+			horny += (hornyboost/10) - (hornydamp/10) + 5
 			manna += 5
 			willpower += 5
 			'You feel like dildo penetrates your pussy. Between her legs nice, but much less Dildo your pussy and <<dick>> centimeters for you little. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of.'
@@ -184,7 +182,7 @@ $d_analsex_dildo = {
 	lubonus = 0
 }
 
-$d_strapon_vag = {
+if $ARGS[0] = 'd_strapon_vag':
 	frost = 0
 
 	if mesec > 0:
@@ -193,55 +191,56 @@ $d_strapon_vag = {
 		manna -= 10
 		willpower -= 10
 		'You have monthly and while yet <<$boy>> drives in your pussy <<dick>> cm strap, vaginal blood flows slowly.'
-	elseif mesec <= 0 and vagina > 0:
-		!!no monthly
-		!!horny - excitement
-		!!vagina - the elasticity of the vagina
-		!!silavag - skill Man 0-sad_sack, 1-middle_peasant 2-stud
-		!!dick - penis Man
+	elseif vagina > 0:
 		!!orgazm - Total coefficient of pleasure
 		!!0 - very painful, 1 - it_hurts, 2 - not nice, 3 - so-so, 4 - nedoorgazm 5 - orgasm
-		smazka = horny/10
-		prinat = smazka + vagina
+		prinat = (horny / 10) + vagina
 
 		if dick >= prinat * 2:
-			!!member of the critical features more years
 			orgazm = 0
-		elseif dick < prinat*2 and dick > prinat:
-			!!member more options gg
-
-			if horny >= 100:orgazm = 5
-			if horny >= 90 and horny < 100:orgazm = 4
-			if horny >= 80 and horny < 90:orgazm = 3
-			if horny >= 70 and horny < 80:orgazm = 2
-			if horny >= 60 and horny < 70:orgazm = 1
-			if horny < 60:orgazm = 0
-		elseif dick <= prinat and dick >= vagina:
-			!!Member fewer opportunities gg
-
-			if horny >= 80:orgazm = 5
-			if horny >= 60 and horny < 80:orgazm = 4
-			if horny >= 40 and horny < 60:orgazm = 3
-			if horny < 40:orgazm = 2
-		elseif dick <= prinat and dick < vagina:
-			if horny >= 100:orgazm = 5
-			if horny >= 90 and horny < 100:orgazm = 4
-			if horny < 90:orgazm = 6
+		elseif dick > prinat:
+			if horny >= 100:
+				orgazm = 5
+			elseif horny >= 90:
+				orgazm = 4
+			elseif horny >= 80:
+				orgazm = 3
+			elseif horny >= 70:
+				orgazm = 2
+			elseif horny >= 60:
+				orgazm = 1
+			else
+				orgazm = 0
+			end
+		elseif dick >= vagina:
+			if horny >= 80:
+				orgazm = 5
+			elseif horny >= 60:
+				orgazm = 4
+			elseif horny >= 40:
+				orgazm = 3
+			else
+				orgazm = 2
+			end
+		else
+			if horny >= 100:
+				orgazm = 5
+			elseif horny >= 90:
+				orgazm = 4
+			else
+				orgazm = 6
+			end
 		end
 
-		if oragazm = 5:
+		if orgazm = 5:
 			preOrg += 1
 
 			if razeba < 4:
-				oragazm = 4
+				orgazm = 4
 			elseif razeba = 4:
-				orgrand = rand(50, 300)
-
-				if orgrand > preOrg:oragazm = 4
-			elseif razeba >= 5:
-				orgrand = rand(0, 100)
-
-				if orgrand > preOrg:oragazm = 4
+				if rand(50, 300) > preOrg:orgazm = 4
+			else
+				if rand(0, 100) > preOrg:orgazm = 4
 			end
 		end
 
@@ -259,7 +258,7 @@ $d_strapon_vag = {
 			horny -= 10
 			manna -= 10
 			willpower -= 10
-			'You bit her lip in pain when <<$boy>> stuck in you <<dick>> cm strap, between the legs pain.'
+			'You bit your lip in pain when <<$boy>> stuck in you <<dick>> cm strap, between the legs pain.'
 		elseif orgazm = 2:
 			if vgape < 1:vgape = 1
 
@@ -269,12 +268,10 @@ $d_strapon_vag = {
 			willpower -= 5
 			'You flinched at the sudden pain when <<$boy>> stuck in you <<dick>> cm strap, but the pain between her legs slowly calm down and become quite tolerable. Are you trying to be excited until <<$boy>> moves <<dick>> inch strap-on in your pussy, but you will not go out.'
 		elseif orgazm = 3:
-			!!horny += 5
 			manna += 5
 			willpower += 5
 			'You flinched from feeling, your pussy stretched, when <<$boy>> stuck in you <<dick>> cm strap. Between the legs becomes a little nice, when <<$boy>> you fucking threesome.'
 		elseif orgazm = 4:
-			!!horny = horny + 10
 			manna = manna + 10
 			willpower = willpower + 10
 			'You flinched from feeling, your pussy stretched, when <<$boy>> stuck in you <<dick>> cm strap. Between the legs becomes a little nice, when <<$boy>> fuck you using the strap. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of. '
@@ -290,7 +287,7 @@ $d_strapon_vag = {
 			manna += 5
 			willpower += 5
 			'You feel like strap penetrates your pussy. Between her legs nice, but much less than the strap and your pussy <<dick>> centimeters for you little. Gradually pritno warm and throbbing grow in the lower abdomen, then feeling slightly reduced and remain until the end of. '
-			end
+		end
 
 		if vagina <= dick:vagina += 1
 	elseif vagina = 0 and mesec <= 0:
@@ -302,9 +299,9 @@ $d_strapon_vag = {
 	end
 
 	if vagina < dick:vagina += 1
-}
+end
 
-$d_strapon_anal = {
+if $ARGS[0] = 'd_strapon_anal':
 	frost = 0
 
 	if analplugin = 1:
@@ -327,7 +324,7 @@ $d_strapon_anal = {
 	end
 
 	if anus < 10:'When your ass you entered three fingers involuntarily groaned in pain.'
-	if anus >= 10:'then <<$boy>> introduced you to three fingers and began to stretch the anus.'
+	if anus >= 10:'Then <<$boy>> introduced you to three fingers and began to stretch the anus.'
 
 	'<<$boy>> pulled his fingers out of your priests and put the strap to your the hole.'
 
@@ -368,7 +365,7 @@ $d_strapon_anal = {
 	end
 
 	lubonus = 0
-}
+end
 
 $doublepenetration = {
 	frost = 0
@@ -437,7 +434,7 @@ $doublepenetration = {
 	if totPAIN = 0:
 		'Feelings merge together when you move inside two members in contact with each other through a thin stenochku share your vagina filled <<dick>> centimeter and a member of your <<$anustipe>> anus filled <<dick2>> centimeter member. Abdomen burns pleasant light spreading heat throughout the body.'
 		bonusManna = manna * 100 / mannamax
-		DPplus = vaginalOrgasm * 10 + horny + bonusManna
+		DPplus = (vaginalOrgasm * 10) + horny + bonusManna
 		DPminus = rand(250, 350)
 
 		if DPplus > DPminus:
@@ -474,8 +471,6 @@ $doublepenetration = {
 	if vagina < dick:vagina += 1
 	if anus < dick2:anus += 1
 
-
-	!!sex += 1
 	gs 'stat'
 }
 

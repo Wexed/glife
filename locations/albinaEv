@@ -1,6 +1,6 @@
 # albinaEv
 $din_albina_get_over_car = {
-	'Strong hands grabbed you and out of the car.'
+	'Strong hands grabbed you and pulled out of the car.'
 
 	act 'Further':
 		cls
@@ -15,13 +15,12 @@ gs 'stat'
 '<center><img src="images/qwest/alter/BMW.jpg"></center>'
 'You went out to the car and looked at Albina. She looked around you haughty look and started the car.'
 
-!!if albinaCar > 0:end
-
 if albinaCar = 0:
 	act 'Ask her if that car is hers':
 		cls
 		albinaCar = 1
 		gs 'stat'
+
 		'<center><b><font color="maroon"><<$npcName[23]>> <<$npcSurName[23]>></font></b></center>'
 		'<center><img src="images/qwest/alter/npc23.jpg"></center>'
 		'You asked Albina "Is this your car?" Albina squirmed grimassy contemptuous "What? Of course not, this is the machine my father, I would never have bought it. Generally X5 is a machine for cattle suddenly grown rich and not for decent people." You shake your head, "You what? Rights have?" Albina laughed "Rights? Why should I, right? Do you know who my father is? He police chief of our town, though retired, but the connection remained. Never stopped me in his car." Albina second thought about something and said, "go for a drive."'
@@ -51,14 +50,14 @@ if albinaCar = 0:
 							'<center><img src="images/qwest/alter/BMW.jpg"></center>'
 
 							if agil >= 100:
-								'You deftly jumped behind the wheel of cars. Fortress was at the hood and the long man rushed to the driver''s door that would get you.'
+								'You deftly jumped behind the wheel of a car. Fortress was at the hood, as long guy rushed to the driver`s door, What would you get.'
 
 								act 'Switch into reverse gear':
 									cls
 									minut += 1
 									gs 'stat'
 									'<center><img src="images/qwest/alter/BMW.jpg"></center>'
-									'You abruptly passed back and stayed virtually the concrete fence. Before you see your hood as burly running to you. A driver''s door to long runs.'
+									'You dramatically stopped and handed back almost concrete fence. Before your hood you see as the burly running to you. A driver`s door to the long runs.'
 								end
 
 								act 'Put the pedal to the metal':
@@ -67,10 +66,10 @@ if albinaCar = 0:
 									gs 'stat'
 									'<center><img src="images/qwest/alter/BMW.jpg"></center>'
 									'You abruptly thrust gear and pull the clutch abruptly moved forward. Fortress with a bang flopped down on the hood and fell off the machine. Ahead you see the bushes, the gateway to which you moved Albina are to the right of you. From left to you is factory building brick wall.'
-
 								end
 							elseif agil < 100:
-								'You jumped behind the wheel of a car, but confused Nogmov between the seat and the gear lever. In the driver''s door stuck his hands long man.'
+								'You jumped behind the wheel of a car, but tangled legs between the seat and the gear lever. The driver`s door stuck his hands long man.'
+
 								dynamic $din_albina_get_over_car
 							end
 						end
