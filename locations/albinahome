@@ -1,7 +1,6 @@
 # albinahome
 if beinalbinahome = 0:beinalbinahome = 1
 
-gs 'albdin'
 gs 'stat'
 
 '<center><b><font color="maroon"><<$npcName[23]>> <<$npcSurName[23]>></font></b></center>'
@@ -207,9 +206,11 @@ if hour < 20:
 						hapri = 1
 						gs 'stat'
 						'Albina grins looking at your tousled hair and took a comb combs you.'
-					elseif hapri >= 1:
-						!!basic steps
-						gt 'albdin'
+					end
+
+					if albdinday ! daystart:
+						albdinday = daystart
+						gs 'albdin'
 					end
 				elseif sweat > 0:
 					'Albina grins "Go take a shower <<$nickname>>, you are all sweaty now."'
