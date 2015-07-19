@@ -11,114 +11,113 @@ if $ARGS[0] = 'start':
 		exit
 	end
 
-	!!!CV extension
 	if round >= 1:
 		'<center><b>Round <<round>></b></center>'
-	*nl
-	'<center><img src="images/community/ring<<round>>.jpg"></center>'
-	!!!
-	cla
-	gs 'befKik'
-	'<b>= = = = = = = = = = = = = (ROUND <<round>>) = = = = = = = = = = = = =</b>'
-	if minround = 1:'<b>the fight 0:30</b>'
-	if minround = 2:'<b>the fight 1:00</b>'
-	if minround = 3:'<b>the fight 1:30</b>'
-	if minround = 4:'<b>the fight 2:00</b>'
-	if minround = 5:'<b>the fight 2:30</b>'
-	'<b><<$nameV>></b> Life <b><font color="red"><<healthV>></font></b>, Endurance <b><font color="green"><<staminaV>></font></b>'
-	'Your life <b><font color="red"><<health>></font></b>, Endurance <b><font color="green"><<stamina>></font></b>'
-	'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
-	'Your points <<pointKik>>Points opponent <<pointKikV>>'
-	'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
-	gs 'initKik'
+		*nl
+		'<center><img src="images/community/ring<<round>>.jpg"></center>'
+		cla
+		gs 'befKik'
+		'<b>= = = = = = = = = = = = = (ROUND <<round>>) = = = = = = = = = = = = =</b>'
+		if minround = 1:'<b>the fight 0:30</b>'
+		if minround = 2:'<b>the fight 1:00</b>'
+		if minround = 3:'<b>the fight 1:30</b>'
+		if minround = 4:'<b>the fight 2:00</b>'
+		if minround = 5:'<b>the fight 2:30</b>'
+		'<b><<$nameV>></b> Life <b><font color="red"><<healthV>></font></b>, Endurance <b><font color="green"><<staminaV>></font></b>'
+		'Your life <b><font color="red"><<health>></font></b>, Endurance <b><font color="green"><<stamina>></font></b>'
+		'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
+		'Your points <<pointKik>>Points opponent <<pointKikV>>'
+		'<b>= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =</b>'
+		gs 'initKik'
 
-	if hod = 0:
-		!!Player attacks
-		'<font color="green">You can attack</font>'
+		if hod = 0:
+			!!Player attacks
+			'<font color="green">You can attack</font>'
 
-		act 'Apply fast Jeb':
-			cla
-			damage = rand(stren/12, stren/8)
+			act 'Apply fast Jeb':
+				cla
+				damage = rand(stren/12, stren/8)
 
-			if damage <= 0:damage = 1
+				if damage <= 0:damage = 1
 
-			koefatak = (speed + reakt + jab) * 2
-			koefpop = koefatak * 20 / 100
-			popad = rand(koefatak - koefpop, koefatak + koefpop)
-			'<font color="green">You deal with a quick jab step forward.</font>'
-			gs 'Kikatak', 'player'
-			xgt 'kikbox', 'sta'
-		end
+				koefatak = (speed + reakt + jab) * 2
+				koefpop = koefatak * 20 / 100
+				popad = rand(koefatak - koefpop, koefatak + koefpop)
+				'<font color="green">You deal with a quick jab step forward.</font>'
+				gs 'Kikatak', 'player'
+				xgt 'kikbox', 'sta'
+			end
 
-		act 'Apply power punch':
-			cla
-			damkoef = stren * 20 / 100
-			damage = rand(stren - damkoef, stren + damkoef)
+			act 'Apply power punch':
+				cla
+				damkoef = stren * 20 / 100
+				damage = rand(stren - damkoef, stren + damkoef)
 
-			if damage <= 0:damage = 1
+				if damage <= 0:damage = 1
 
-			koefatak = (speed + reakt + punch)
-			koefpop = koefatak * 20 / 100
-			popad = rand(koefatak - koefpop, koefatak + koefpop)
-			'<font color="green">You apply a powerful punch.</font>'
-			gs 'Kikatak', 'player'
-			xgt 'kikbox', 'sta'
-		end
+				koefatak = (speed + reakt + punch)
+				koefpop = koefatak * 20 / 100
+				popad = rand(koefatak - koefpop, koefatak + koefpop)
+				'<font color="green">You apply a powerful punch.</font>'
+				gs 'Kikatak', 'player'
+				xgt 'kikbox', 'sta'
+			end
 
-		act 'Footed strike':
-			cla
-			damkoef = stren * 20 / 100
-			damage = rand((stren - damkoef) * 3, (stren + damkoef) * 3)
+			act 'Footed strike':
+				cla
+				damkoef = stren * 20 / 100
+				damage = rand((stren - damkoef) * 3, (stren + damkoef) * 3)
 
-			if damage <= 0:damage = 1
+				if damage <= 0:damage = 1
 
-			koefatak = (speed + reakt + kik) / 2
-			koefpop = koefatak * 20 / 100
-			popad = rand(koefatak - koefpop, koefatak + koefpop)
-			'<font color="green">You apply a kick powerful.</font>'
-			gs 'Kikatak', 'player'
-			xgt 'kikbox', 'sta'
-		end
-	else
-		!!Enemy attacks
-		'<font color="red"><<$nameV>> attacks</font>'
-		tiprand = rand(0, 2)
+				koefatak = (speed + reakt + kik) / 2
+				koefpop = koefatak * 20 / 100
+				popad = rand(koefatak - koefpop, koefatak + koefpop)
+				'<font color="green">You apply a kick powerful.</font>'
+				gs 'Kikatak', 'player'
+				xgt 'kikbox', 'sta'
+			end
+		else
+			!!Enemy attacks
+			'<font color="red"><<$nameV>> attacks</font>'
+			tiprand = rand(0, 2)
 
-		if tiprand = 0:
-			damage = rand(strenV / 12, strenV / 8)
+			if tiprand = 0:
+				damage = rand(strenV / 12, strenV / 8)
 
-			if damage <= 0:damage = 1
+				if damage <= 0:damage = 1
 
-			koefatak = (speedV + reaktV + JabV) * 2
-			koefpop = koefatak * 20 / 100
-			popad = rand(koefatak - koefpop, koefatak + koefpop)
-			'<font color="red"><<$nameV>> deals with quick jab step forward.</font>'
-			gs 'Kikatak', 'enemy'
-			xgt 'kikbox', 'sta'
-		elseif tiprand = 1:
-			damkoef = strenV * 20/100
-			damage = rand(strenV - damkoef, strenV + damkoef)
+				koefatak = (speedV + reaktV + JabV) * 2
+				koefpop = koefatak * 20 / 100
+				popad = rand(koefatak - koefpop, koefatak + koefpop)
+				'<font color="red"><<$nameV>> deals with quick jab step forward.</font>'
+				gs 'Kikatak', 'enemy'
+				xgt 'kikbox', 'sta'
+			elseif tiprand = 1:
+				damkoef = strenV * 20/100
+				damage = rand(strenV - damkoef, strenV + damkoef)
 
-			if damage <= 0:damage = 1
+				if damage <= 0:damage = 1
 
-			koefatak = (speedV + reaktV + punchV)
-			koefpop = koefatak * 20 / 100
-			popad = rand(koefatak - koefpop, koefatak + koefpop)
-			'<font color="red"><<$nameV>> applies the power punch.</font>'
-			gs 'Kikatak', 'enemy'
-			xgt 'kikbox', 'sta'
-		elseif tiprand = 2:
-			damkoef = strenV * 20 / 100
-			damage = rand((strenV - damkoef) * 3, (strenV + damkoef) * 3)
+				koefatak = (speedV + reaktV + punchV)
+				koefpop = koefatak * 20 / 100
+				popad = rand(koefatak - koefpop, koefatak + koefpop)
+				'<font color="red"><<$nameV>> applies the power punch.</font>'
+				gs 'Kikatak', 'enemy'
+				xgt 'kikbox', 'sta'
+			elseif tiprand = 2:
+				damkoef = strenV * 20 / 100
+				damage = rand((strenV - damkoef) * 3, (strenV + damkoef) * 3)
 
-			if damage <= 0:damage = 1
+				if damage <= 0:damage = 1
 
-			koefatak = (speedV + reaktV + kikV) / 2
-			koefpop = koefatak * 20 / 100
-			popad = rand(koefatak - koefpop, koefatak + koefpop)
-			'<font color="red"><<$nameV>> tries for a kick.</font>'
-			gs 'Kikatak', 'enemy'
-			xgt 'kikbox', 'sta'
+				koefatak = (speedV + reaktV + kikV) / 2
+				koefpop = koefatak * 20 / 100
+				popad = rand(koefatak - koefpop, koefatak + koefpop)
+				'<font color="red"><<$nameV>> tries for a kick.</font>'
+				gs 'Kikatak', 'enemy'
+				xgt 'kikbox', 'sta'
+			end
 		end
 	end
 end
