@@ -4,14 +4,14 @@ if $ARGS[0] = 'start':
 		cls
 		gs 'stat'
 		'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
-		'Caucasian friendly smiled and handed you a tangerine.'
+		'The Caucasian smiled at you and handed you a tangerine.'
 
 		act 'Take a tangerine':
 			cls
 			minut += 2
 			gs 'stat'
 			'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
-			'You took a tangerine from the hands of Caucasian, He smiled and said you "You''re so beautiful devushka. Wai. sponges persik. Come to eat barbecue, I''ll take this chacha!"'
+			'You took a tangerine from the hands of the Caucasian. He smiled and said you "You''re so beautiful devushka. Wai. sponges persik. Come to eat barbecue, I''ll take this chacha!"'
 
 			act 'Refuse':
 				cls
@@ -22,7 +22,7 @@ if $ARGS[0] = 'start':
 
 				gs 'stat'
 				'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
-				'You started to refuse and backs away from loving Caucasian. He "Wai, zachem offend? Nothing bad will not Tiebei, mom swear! Hochish, I ''ll give tebe <<$arturgift>>"'
+				'You started to refuse and back away from the loving Caucasian. He "Wai, zachem offend? Nothing bad will not Tiebei, mom swear! Hochish, I ''ll give you <<$arturgift>>"'
 
 				act 'Leave':gt 'Grinok'
 
@@ -34,14 +34,13 @@ if $ARGS[0] = 'start':
 					'You are interested in this property unfamiliar Caucasian. He is immediately zamtil and leaving the tray on the other Caucasians immediately came up to you and took you by the arm "Ne fear devochka, Uncle Arturik ne bites."'
 
 					act 'Leave':gt 'Grinok'
-					act 'Go to Arthur':gt 'arturHome'
+					act 'Go with Arthur':gt 'arturHome'
 				end
 			end
 		end
 	else
 		if arturday ! day:
-			!! The file arturQW is missing so this call does not work
-			!gt 'arturQW', 'arturQW_1'
+			gt 'arturQW', 'arturQW_1'
 		elseif arturday = day:
 			cls
 			minut += 5
@@ -49,12 +48,12 @@ if $ARGS[0] = 'start':
 
 			if arturblowday ! day:
 				'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
-				'Arthur smiled kindly and handed you a tangerine. "Wai, work to do, I''m_sorry. Unless by rapid."'
+				'Arthur smiled kindly and handed you a tangerine. "Wai, work to do, I''m sorry. Unless it''s quick."'
 
-				act 'Go to Arthur':gt 'arturkiosk'
+				act 'Go with Arthur':gt 'arturkiosk'
 			elseif arturblowday = day:
 				'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
-				'Arthur smiled amiably you. "Wai, work to do, I''m_sorry."'
+				'Arthur smiled amiably you. "Wai, work to do, I''m sorry."'
 
 				act 'Leave':gt 'Grinok'
 			end
@@ -82,7 +81,7 @@ if $ARGS[0] = 'work_1':
 		if arturDaysWorked1 >= 10:
 			gt 'arturQW', 'arturQW_2'
 		else
-			act 'Go to Arthur':
+			act 'Go with Arthur':
 				cls
 				minut += 5
 				money += 5000
@@ -105,9 +104,9 @@ if $ARGS[0] = 'work_2':
 
 	'<center><img src="images/qwest/alter/artur/artur.jpg"></center>'
 
-	if arturDaysWorked2 = 0:'-That`s my new super sexy secretary came.'
+	if arturDaysWorked2 = 0:'-That''s my new super sexy secretary came.'
 
-	'Quickly to work, we`ve got the usual paperwork complete ass.'
+	'Quickly to work, we''ve got the usual paperwork complete ass.'
 
 	act 'Work':
 		cls
@@ -118,7 +117,7 @@ if $ARGS[0] = 'work_2':
 		'<center><img src="images/qwest/alter/arturQW/arturQW_6.jpg"></center>'
 		'You hour working at a computer, checked checked buying and selling, calculated daily expenses and income.'
 
-		act 'Go to Arthur':
+		act 'Go with Arthur':
 			cls
 			minut += 5
 			money += 10000
@@ -128,9 +127,9 @@ if $ARGS[0] = 'work_2':
 			'-<<$name>> worked perfectly, Now I for papers can be calm.'
 			'-Yes, you got a mess, I still have to deal with it all and razbyratsya.'
 			'-Oh well, Óspakr Ögmundsson baby, have time to figure it out all over the spakoyno.'
-			'Now let`s go eat barbecue, chacha drink, grab you by the ass and strongly squeezing rolls, Arthur suggested.'
+			'Now let''s go eat barbecue, chacha drink, grab you by the ass and strongly squeezing rolls, Arthur suggested.'
 
-			act 'Go to Arthur':gt 'arturHome'
+			act 'Go with Arthur':gt 'arturHome'
 			act 'Escape':gt 'Grinok'
 		end
 	end
