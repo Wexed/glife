@@ -5,23 +5,23 @@ clr
 gs 'stat'
 '<center><b>Dorm room</b></center>'
 '<center><img src="images/etogame/obskom.jpg"></center>'
-'Narrow room with a single window, wooden floor, three <a href="exec:gt ''Beds'', ''choice''">beds</a>, small <a href="exec:gt ''table''">table</a> and a few chairs. At the entrance stands the old <a href="exec:gt ''cupboard''">wardrobe</a> to which to attach the old <a href="exec:gt ''zerkaloO''">mirror</a>.'
+'Narrow room with a single window, wooden floor, three <a href="exec:gt ''Beds'', ''choice''">beds</a>, small <a href="exec:gt ''A narrow room with a single window, a wooden floor, three <a href="exec:gt ''Beds'', ''choice''">beds</a>, a small <a href="exec:gt ''table''">table</a> and a few chairs. At the entrance stands an old <a href="exec:gt ''cupboard''">wardrobe</a> attached to which is an old <a href="exec:gt ''zerkaloO''">mirror</a>.'
 
-if palto = 1:'At the entrance hangs a simple Chinese women''s down jacket'
-if palto = 2:'At the entrance hangs a woman''s coat'
-if palto = 3:'At the entrance hangs a dear lady''s coat'
+if palto = 1:'Near the entrance hangs a simple, long-sleeved velvet jacket'
+if palto = 2:'Near the entrance hangs a woman's winter coat'
+if palto = 3:'Near the entrance hangs an old-fashioned lady's coat'
 if daystart = 0:daystart = 1
-if house = 1 and student = 0:house = 0 & 'You are being evicted from their dormitory if right now you find yourself through the computer place to stay, you will remain without a roof over your head at the first exit from the hostel.'
+if house = 1 and student = 0:house = 0 & 'You are being evicted from the dormitory. You found yourself looking through the computer ads for a place to stay,knowing that you will remain without a roof over your head as soon as you pass the dormitory's exit.'
 
 act 'Roommate Vicky':
 	cla
 	clr
 	gs 'stat'
-	'Vick sits on her bed and as always paints her nails.'
+	'Vicky is sitting on her bed and is as always painting her nails.'
 
 	act 'Room':gt 'dorm'
 		if hour < 23:
-			act 'Chat with Vika (1:00)':
+			act 'Chat with Vicky (1:00)':
 			cla
 			hour += 1
 			Vika += 5
@@ -31,25 +31,25 @@ act 'Roommate Vicky':
 
 			talkrand = rand(0, 18)
 
-			if talkrand = 0:'You started talking with Vika, she tells you about the boys she met, about parties, about cosmetics.'
-			if talkrand = 1:'Wick says she was in a cafe and invited her to dance even then the guy who paid her bill.'
-			if talkrand = 2:'Wick says she worked as a waitress at a strip bar, quite lucrative job for students, although customers are very pristavuchi.'
-			if talkrand = 3:'Vic tells you that several sections of beautiful girls running at the college went on a European level sports competitions and earn big money, but of course that Vick priznaetsya her laziness so they plow.'
-			if talkrand = 4:'Vick says that one of her friends flew from a guy who did not have time to pull out of it. But Vick smarter, she buys in a pharmacy contraceptives, 100% satisfaction guarantee.'
-			if talkrand = 5:'Vick says that to stay, buy an apartment or a car can be only having a PC, via the Internet.'
-			if talkrand = 6:'Vic tells how one of her friend, bought a car, took place in the market and hired a saleswoman. He can only buy the goods in stock and bring it to market themselves and money flowing to it.'
-			if talkrand = 7:'Vic tells how she once winter went outside without a coat and a bad cold.'
-			if talkrand = 8:'Vic tells about a girlfriend who all did not know how to lose weight, then started going to the sauna and lose weight. True it is costly.'
-			if talkrand = 9:'Vick says that before she was fond of diets, but they deteriorated skin and went pryshi, and start to hurt, now Vick cracks for three and only become more beautiful.'
-			if talkrand = 10:'Vic says that she used to go to dances and the Internet has managed to get into a nightclub tantsorshey, but she quickly tired of it.'
-			if talkrand = 11:'Vick says in the park, she accidentally went to the panel and she was offered sex for money, but do not spoil the reputation of Vic wanted, besides a large number of partners from start to age faster.'
-			if talkrand = 12:'Vic tells how she acted naked in studio, not a dusty job, but reputation suffers.'
-			if talkrand = 13:'Vick told her friend as one that everyone perceived as a slut arranged several parties in the cafe at his own expense, then it refers to become better.'
-			if talkrand = 14:'Vic tells a horror story about how one pretty girl did not wash his feet and did not shave, then became so terrible to her for all obbegat kilometer.'
-			if talkrand = 15:'Vic says that she buys tampons always with a reserve, and then if they go without a monthly then quickly prevratishsya in slut.'
-			if talkrand = 16:'Vic tells how one of her guys wanted anal sex, but she was not in possession of Vaseline.'
-			if talkrand = 17:'Vick says the summer sunning herself on the beach, for this truth had her buy a swimsuit, but it came in handy in the winter and go to the pool. The pool is not a bad tool to maintain a healthy body.'
-			if talkrand = 18:'Vic tells an interesting psychological effect is in the stores do not notice things that are not short of money.'
+			if talkrand = 0:'You started talking with Vicky, and she tells you about the boys she's met, about parties she's been in, and about the latest in fashion and cosmetics.'
+			if talkrand = 1:'Vicky told you about the time she was in a cafe and a guy invited her to dance after paying for her bill.'
+			if talkrand = 2:'Vicky told you that she used to work as a waitress at a strip bar, which is quite a lucrative job for students, although customers are often perverts.'
+			if talkrand = 3:'Vicky told you that several groups of beautiful girls who were running at the college sports competitions, went on a European level sports competition and earned big money, but of course she has heard rumors of their laziness so they must have fucked to win.'
+			if talkrand = 4:'Vicky told you that one of her friends got knocked up from a guy who did not have time to pull out of her. But Vicky is smarter, she buys condoms from a pharmacy. 100% satisfaction guarantee.'
+			if talkrand = 5:'.Vicky told you that you can stay as long as you want,but before looking to buy an apartment or a car you should get a PC, and search through the Internet'
+			if talkrand = 6:'Vicky told you how one of her friends, bought a car, rented a spot in the market and hired a saleswoman. Now he only buys goods in stock and brings them to the market himself and money is flowing his way.'
+			if talkrand = 7:'Vicky told you about that one winter she went outside without a coat and got a bad cold.'
+			if talkrand = 8:'Vicky tells you about a girlfriend who did not know how to lose weight, then started going to the sauna and lost weight. True, it was costly but worth it!'
+			if talkrand = 9:'Vicky told you that she used to be very fond of diets, but they deteriorated skin and caused acme, and generally started to cause more harm than good. Now Vicky eats three full meals a day and has only become more beautiful for it.'
+			if talkrand = 10:'Vicky said that she used to go to dances and strip live on the Internet, even managed to get into a nightclub's live sex show, but she quickly got tired of it.'
+			if talkrand = 11:'Vicky said that one time in the park, she accidentally went to a gloryhole and was offered money for sex, but she did not want to ruin her reputation. Besides, a large number of partners from early will only age you faster!'
+			if talkrand = 12:'Vicky told you how she was filmed naked in studio once, not a dirty job exactly, but her reputation suffered anyway when the movie went public.'
+			if talkrand = 13:'Vicky told you of a friend, one that everyone perceived as a slut, who arranged several parties in the cafe at her own expense, in an attempt to improve her image.'
+			if talkrand = 14:'Vicky told you a horror story about how a pretty girl that did not wash her feet and did not shave, eventually became so terrible that everyone kilometers around her ran from her.'
+			if talkrand = 15:'Vicky told you that she always buys extra tampons, and  if she goes without a monthly then quickly she would degenerate into a slut.'
+			if talkrand = 16:'Vic told you how one of her boyfriends wanted anal sex, but she had no Vaseline.'
+			if talkrand = 17:'Vicky said that last summer she sunbathed herself on the beach. For this, in reality she had bought a swimsuit, but it came in handy in the winter as well since she could go to the pool. The pool is not a bad way to maintain a healthy body.'
+			if talkrand = 18:'Vicky said that an interesting psychological effect is that as long as you are not short on money shopping helps you forget things and get better.'
 
 			act 'Room':gt 'dorm'
 		end
@@ -59,10 +59,10 @@ act 'Roommate Vicky':
 
 			if vikavecher = 0:vikavecher = 1
 
-			'Vic tells you that the party is planned, as well, and always on Fridays. You can go there with Vika'
+			'Vicky told you that a party is planned regularly, and always on Fridays. You can go there with Vicky.'
 
 			act 'Go to a party':gt 'party', 'beginning'
-			act 'Don''t go to the party':gt 'dorm'
+			act 'Don''t go to a party':gt 'dorm'
 		end
 
 		if Vika > 10 and Vzaem = 0:
@@ -70,17 +70,17 @@ act 'Roommate Vicky':
 				cla
 				money += 1000
 				Vzaem = 1
-				'Vick fumbled in her purse and gave you 1,000 rubles in debt'
+				'Vicky fumbled in her purse and lent you 1,000 rubles in debt'
 
 				act 'Room':gt 'dorm'
 			end
 		elseif Vika > 10 and Vzaem = 1 and money >= 1000:
-			act 'Borrow Vicky some money (1,000 rubles)':
+			act 'Lent Vicky some money (1,000 rubles)':
 				cla
 				money -= 1000
 				Vzaem = 0
 				Vika += 5
-				'You gave Vick 1,000 rubles taken you in debt'
+				'You gave Vicky 1,000 rubles taking you in debt'
 
 				act 'Room':gt 'dorm'
 			end
@@ -106,7 +106,7 @@ act 'Roommate Galya':
 	act 'Room':gt 'dorm'
 
 	if hour < 23:
-		act 'Learn with Galya (1:00)':
+		act 'Study with Galya (1:00)':
 			cla
 			hour += 1
 			intel += 1
@@ -114,27 +114,27 @@ act 'Roommate Galya':
 
 			if repa > 1:repa -= 1
 
-			'You overlaid textbooks and began to prepare together with Galya.'
+			'You piled your textbooks one upon the other and began to prepare to study together with Galya.'
 
 			act 'Room':gt 'dorm'
 		end
 
 		if Gala > 10 and Gzaem = 0:
-			act 'Borrow money from Ghali (1,000 rubles)':
+			act 'Borrow money from Ghalya (1,000 rubles)':
 				cla
 				money += 1000
 				Gzaem = 1
-				'Galya rummaged in my purse and gave you 1,000 rubles in debt'
+				'Galya rummaged in her purse and lent you 1,000 rubles in debt'
 
 				act 'Room':gt 'dorm'
 			end
 		elseif Gala > 10 and Gzaem = 1 and money >= 1000:
-			act 'Borrow Ghalia some money (1,000 rubles)':
+			act 'Lent Ghaliya some money (1,000 rubles)':
 				cla
 				money -= 1000
 				Gzaem = 0
 				Gala += 5
-				'You gave Gale 1,000 rubles taken you in debt'
+				'You gave Galya 1,000 rubles taking you in debt'
 
 				act 'Room':gt 'dorm'
 			end
