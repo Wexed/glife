@@ -6,7 +6,8 @@ $din_albina_get_over_car = {
 		cls
 		albinaCar = 1
 		gs 'stat'
-		'<center><img src="images/qwest/alter/grab.jpg"></center>'
+		! Fix missing Image ".../qwest/alter/grab.jpg" use place holder
+		'<center><img src="images/qwest/alter/Ev/grab.jpg"></center>'
 	end
 }
 
@@ -50,14 +51,14 @@ if albinaCar = 0:
 							'<center><img src="images/qwest/alter/BMW.jpg"></center>'
 
 							if agil >= 100:
-								'You deftly jumped behind the wheel of a car. Fortress was at the hood, as long guy rushed to the driver`s door, What would you get.'
+								'You deftly jumped behind the wheel of a car. Fortress was at the hood, as long guy rushed to the driver''s door, What would you get.'
 
 								act 'Switch into reverse gear':
 									cls
 									minut += 1
 									gs 'stat'
 									'<center><img src="images/qwest/alter/BMW.jpg"></center>'
-									'You dramatically stopped and handed back almost concrete fence. Before your hood you see as the burly running to you. A driver`s door to the long runs.'
+									'You dramatically stopped and handed back almost concrete fence. Before your hood you see as the burly running to you. A driver''s door to the long runs.'
 								end
 
 								act 'Put the pedal to the metal':
@@ -68,7 +69,7 @@ if albinaCar = 0:
 									'You abruptly thrust gear and pull the clutch abruptly moved forward. Fortress with a bang flopped down on the hood and fell off the machine. Ahead you see the bushes, the gateway to which you moved Albina are to the right of you. From left to you is factory building brick wall.'
 								end
 							elseif agil < 100:
-								'You jumped behind the wheel of a car, but tangled legs between the seat and the gear lever. The driver`s door stuck his hands long man.'
+								'You jumped behind the wheel of a car, but tangled legs between the seat and the gear lever. The driver''s door stuck his hands long man.'
 
 								dynamic $din_albina_get_over_car
 							end

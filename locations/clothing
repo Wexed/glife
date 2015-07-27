@@ -131,7 +131,7 @@ if $ARGS[0] = 'view_clothing_item':
 	!! ARGS 4 - price for shop
 	
 	cla
-	'<center><img src="' + FUNC('$clothing_image', $ARGS[2], ARGS[3]) + '"></center>'
+	'<center><img src="<<FUNC('$clothing_image', $ARGS[2], ARGS[3])>>"></center>'
 	FUNC('$clothing_name', $ARGS[2], ARGS[3])
 	
 	if $ARGS[1] ! 'shop' and $ARGS[2] ! 'vatnik' and $ARGS[2] ! 'sforma' and $ARGS[2] ! 'ero':
@@ -313,3 +313,4 @@ if $ARGS[0] = 'wear_last_worn':
 end
 
 --- clothing -------------
+

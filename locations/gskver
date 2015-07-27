@@ -50,12 +50,12 @@ if sport > 0 and hour > 5 and hour < 22 and daybegskver ! daystart:
 		beg += rand(3, 6)
 		sweat += 2
 		daybegskver = daystart
-		gs'stat'
+		gs 'stat'
 
 		'<center><img src="images/pic/parkbeg.jpg"></center>'
 		'You are within an hour running through the square'
 
-		act 'Further':place = 1 & Frend_num = 0 & gt'placer'
+		act 'Further':place = 1 & Frend_num = 0 & gt 'placer'
 	end
 end
 act 'Get out of the park':minut += 5 & gt 'gorodok'

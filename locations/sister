@@ -16,7 +16,7 @@ if $clothingworntype = 'nude':
 	if sisterLesb = 0:
 		'Sister looks at you eyes wide "<<$name>>, Here is the number of, Are not you ashamed to go naked? I do not smoglab.'
 	else
-		'Sister looks at you eyes wide "<<$name>>, you`re so liberated... I do not smoglab.'
+		'Sister looks at you eyes wide "<<$name>>, you''re so liberated... I do not smoglab.'
 	end
 end
 	
@@ -24,13 +24,13 @@ if pirsA >= 1 and pirsAsister = 0 and sisterpirsadaytalk ! daystart:
 	sisterrpirsadaytalk = daystart
 	if rand(1,100) >= 75:
 		'Sister looks you in the mouth: "<<$name>>, and what have you got there in the language?"'
-		act'Nothing':
+		act 'Nothing':
 			cla
 			'You shake your head. "Nothing." And then turn away, so that your sister did not see your pierced tongue.'
 			act 'Move away':gt $loc, $metka
 		end
 		
-		act'Show pierced tongue':
+		act 'Show pierced tongue':
 			cls
 			pirsAsister = 1
 			gs 'stat'
@@ -46,7 +46,7 @@ end
 if pirsB = 1 and pirsBsister = 0 and sisterpirsbdaytalk ! daystart:
 	sisterpirsadbytalk = daystart
 	'Sister looks at your lips, which appeared piercing: "Listen, and good vyshlyadit, I like!"'
-	act'Thank you':
+	act 'Thank you':
 		cls
 		pirsBsister = 1
 		gs 'stat'
@@ -64,7 +64,7 @@ end
 
 if pirsD = 1 and pirsDsister = 0:
 	pirsDsister = 1
-	'Sister looks a bit shocked at your nose ring: "Phew, Sveta, it`s that in the muck?"'
+	'Sister looks a bit shocked at your nose ring: "Phew, Sveta, it''s that in the muck?"'
 end
 
 if pirsE = 1 and pirsEsister=0:
@@ -123,8 +123,8 @@ if $ARGS[0] = 'home':
 		minut += 5
 		gs 'stat'
 		'<center><img src="images/qwest/alter/sisterQW/sisboyQW_24.jpg"></center>'
-		'You`re both embarrassed after what happened the night, and do not look into each other`s eyes, all-Anja still speaks with you:'
-		'-Sveta, smile tells you, Well, you`re a fool, I thought guys like me, and it is much more pleasant to handle your men.'
+		'You''re both embarrassed after what happened the night, and do not look into each other''s eyes, all-Anja still speaks with you:'
+		'-Sveta, smile tells you, Well, you''re a fool, I thought guys like me, and it is much more pleasant to handle your men.'
 		'You look at the blushing Anja, - Forgive me, I strongly started up, and does not control themselves, I do not know what came over me...'
 		'-Well, I do not mind, so you sometimes so lost control of himself..., He smiled slyly, You smiled at her...'
 
@@ -141,7 +141,7 @@ if $ARGS[0] = 'home':
 		'<center><b><font color = maroon>Anya</font></b></center>'
 		'<center><img src="images/qwest/alter/sobir.jpg"></center>'
 		'As the room goes, I am going to work, your sister Anja.'
-		'Anja, without turning to you, speaks: "Sveta, I`m so late, do not distract!"'
+		'Anja, without turning to you, speaks: "Sveta, I''m so late, do not distract!"'
 		act 'Move away':gt $loc, $metka
 		exit
 	end
@@ -203,21 +203,21 @@ if $ARGS[0] = 'home':
 					'You started talking with Anja, It tells you about the boys she met, about parties, about cosmetics.'
 				end
 			end
-			if sistalkrand = 1:'You`re talking and gossiping with your sister, She tells you about the new dress, which was brought to the store today.'
-			if sistalkrand = 2:'You`re talking and gossiping with your sister, you discuss with movie stars, and share your fantasies with any of them want to have sex.'
+			if sistalkrand = 1:'You''re talking and gossiping with your sister, She tells you about the new dress, which was brought to the store today.'
+			if sistalkrand = 2:'You''re talking and gossiping with your sister, you discuss with movie stars, and share your fantasies with any of them want to have sex.'
 			if sistalkrand = 3:'Anja talks about sports clubs in the House of Culture, and recognizes that sport is good for the figure, but she was too lazy to go there.'
 			if sistalkrand = 4:'Anja says that one of her friends flew from a guy who does not have time to get out of it. And he says, that we should be smarter, and recognizes that you buy at the pharmacy birth control.'
-			if sistalkrand = 5:'You`re talking and gossiping with your sister, she says, that it is possible to rent an apartment in the city and live and work there, but her while in town are satisfied.'
+			if sistalkrand = 5:'You''re talking and gossiping with your sister, she says, that it is possible to rent an apartment in the city and live and work there, but her while in town are satisfied.'
 			if sistalkrand = 6:'Anja tells you not to get drunk at parties and at the disco, Once she made that mistake and still regrets.'
 			if sistalkrand = 7:'Anja tells how she once winter came out without a coat and a bad cold.'
-			if sistalkrand = 8:'You`re talking and gossiping with your sister, you and discuss the latest trends in fashion.'
+			if sistalkrand = 8:'You''re talking and gossiping with your sister, you and discuss the latest trends in fashion.'
 			if sistalkrand = 9:'Anja recognized, before that she was fond of diets, but they deteriorated skin and went pryshi, yes match start, now she cracks for three and only become more beautiful.'
-			if sistalkrand = 10:'You`re talking and gossiping with your sister, She says that she used to go to the dance, but she quickly tired.'
-			if sistalkrand = 11:'You`re talking and gossiping with your sister, she advises you where-some earn.'
+			if sistalkrand = 10:'You''re talking and gossiping with your sister, She says that she used to go to the dance, but she quickly tired.'
+			if sistalkrand = 11:'You''re talking and gossiping with your sister, she advises you where-some earn.'
 			if sistalkrand = 12:'Anja shares with you a secret and tells, that her friend filmed naked in a photo studio, Easy Money, but can be seen on the Internet.'
-			if sistalkrand = 13:'You`re talking and gossiping with your sister, it tells you, if wander through the market, there you can find a lot of interesting and cheap.'
+			if sistalkrand = 13:'You''re talking and gossiping with your sister, it tells you, if wander through the market, there you can find a lot of interesting and cheap.'
 			if sistalkrand = 14:'Anja tells a horror story about how a nice girl not washed or shaved legs, then began to so many terrible, its per kilometer all obbegat, and advises you to take care of body.'
-			if sistalkrand = 15:'You`re talking and gossiping with your sister, she says, that her ex-boyfriend was a weirdo. As-told me: "I love you as much, how to shit in the sea". The sea together we walked no more.'
+			if sistalkrand = 15:'You''re talking and gossiping with your sister, she says, that her ex-boyfriend was a weirdo. As-told me: "I love you as much, how to shit in the sea". The sea together we walked no more.'
 			if sistalkrand = 16:'Sister complains about you: "Always bothered you,looks like my chin during sex. And now rejoice, If you see a porn actress folds on the neck or chin."'
 			if sistalkrand = 17:'Anja asks you, do not you think, that her left eyebrow much sexual rights?'
 			if sistalkrand = 18:'Anja recognizes you, that they are with friends at work sometimes make intimate pictures on the camera, and put them back in the window.'
@@ -354,7 +354,7 @@ if $ARGS[0] = 'home':
 				'<center><b><font color = maroon>Anja</font></b></center>'
 				'<center><img src="images/qwest/alter/sisterQW/sisboyQW_09.jpg"></center>'
 				'-The last time you have with Roma so much was saved, thank you very much.'
-				'-You`re welcome, I am always very happy to help the beloved sister and see you happy.'
+				'-You''re welcome, I am always very happy to help the beloved sister and see you happy.'
 				'-We are here again today want to sit by me, you do not mind a walk for an hour?'
 
 				act 'Of course':
@@ -368,7 +368,7 @@ if $ARGS[0] = 'home':
 
 					'<center><img src="images/qwest/alter/sisterQW/sisboyQW_03.jpg"></center>'
 					'-Certainly sister, i understand, I will walk until late, just do not make noise loud, You do not want to destroy the psyche of our brother, hee-hee.'
-					'-You`re my best", your sister with a cry of joy hugs you.'
+					'-You''re my best", your sister with a cry of joy hugs you.'
 
 					act 'Finish':gt 'sister', 'home'
 				end
@@ -395,7 +395,7 @@ if $ARGS[0] = 'home':
 					'- Generally, mmm... We want, to you ' + iif(sisboyday = daystart, 'tomorrow', 'this') + ' evening we were joined by.'
 				else
 					'- Hello World! Well, you liked it last time? We have a very Roma.'
-					'You do not say anything and just smiles slyly watching his sister`s eyes.'
+					'You do not say anything and just smiles slyly watching his sister''s eyes.'
 					'- We want ' + iif(sisboyday = daystart, 'tomorrow', 'this') + ' evening repeat our games, if you do not mind?'
 				end
 				
@@ -443,7 +443,7 @@ if $ARGS[0] = 'home':
 				if temp = 5:'Anja embarrassed complains you, Roma that sometimes comes to her work and drags her into the back room.'
 				if temp = 6:'Anja in detail with enthusiasm tells you about the great virtue Roma, and if it is not, they would have long since parted.'
 				if temp = 7:'Anja shares with you a secret, that her favorite position "horsewoman", and Romke likes to have her cancer.'
-				if temp = 8:'You`re talking to my sister on a very frank things, and she says shyly, that she does not like to swallow cum, but it Roma strong winds, and she was ready for him to swallow.'
+				if temp = 8:'You''re talking to my sister on a very frank things, and she says shyly, that she does not like to swallow cum, but it Roma strong winds, and she was ready for him to swallow.'
 				if temp = 9:'Anja long talks about their company, about Romkinyh friends, and asks you if you wanted to whom any of them meet.'
 				if temp = 10:'Anja says, what you liked Roma, and asks if he likes you.'
 

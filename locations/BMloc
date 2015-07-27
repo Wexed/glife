@@ -12,7 +12,7 @@ act 'Dance':
 			if bmBJ[Tboynum] > 0:$text2 = 'You took me in her mouth'
 			if bmSEX[Tboynum] > 0:$text2 = 'we have to sleep with you'
 			if bmANAL[Tboynum] > 0:$text2 = 'I took you in the ass'
-			if bmGANG[Tboynum] > 0:$text2 = 'I`ll fuck with a friend'
+			if bmGANG[Tboynum] > 0:$text2 = 'I''ll fuck with a friend'
 
 			'<<$niknameboy>> tells you "Remember me, <<$text2>>. I''m <<$bmNane[Tboynum]>>"'
 		else
@@ -36,15 +36,15 @@ act 'Dance':
 		cls
 		boynumBlock = 1
 
-		if bmTip[Tboynum] = 0:gt'EvBoyBuh'
-		if bmTip[Tboynum] = 1:gt'EvgopBuh'
-		if bmTip[Tboynum] = 2:gt'EvOtelMan'
+		if bmTip[Tboynum] = 0:gt 'EvBoyBuh'
+		if bmTip[Tboynum] = 1:gt 'EvgopBuh'
+		if bmTip[Tboynum] = 2:gt 'EvOtelMan'
 	end
 
 	act 'Refuse':
 		cls
 		willpower += rand(0, 1)
-		gt'gdkin'
+		gt 'gdkin'
 	end
 end
 

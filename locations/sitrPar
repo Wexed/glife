@@ -12,7 +12,8 @@ fcolor = rgb(0, 0, 0)
 bcolor = rgb(255, 255, 255)
 lcolor = rgb(106, 90, 205)
 '<center><b><font color="maroon">Hall</font></b></center>'
-'<center><img src="images/qwest/alter/<<$loc>>.jpg"></center>'
+! Fix Missing Image ".../qwest/alter/<<$loc>>.jpg"
+'<center><img src="images/qwest/alter/sitrPar.jpg"></center>'
 'In the window is a <a href="exec:gt ''tvPar''">TV</a>. Front of the TV is a sofa on which sleeps at night your brother. The wall is a wall with utensils and books.'
 gs 'family'
 
@@ -36,8 +37,8 @@ elseif month = 12 and day = 31 and hour >= 20:
 		wipo += 1000
 		energy += 50
 		water += 50
-		gs'stat'
-		'You sat at the festive table laid in front of the TV and began to celebrate the New Year with family and blue light going on TV. At the table struck up a dialogue and common problems were forgotten, all having fun and talking to each other. at midnight, before the chimes you heard congratulations President, which as always promised, they all will be well, if you `ll be better off working. Then drank champagne clinking glasses and congratulating each other happy new year. Mom gave you an envelope with a greeting card and five thousand rubles. For a while you continue watching TV ate and drank champagne, but soon was evident ,that family members are exhausted and began to disperse to sleep.'
+		gs 'stat'
+		'You sat at the festive table laid in front of the TV and began to celebrate the New Year with family and blue light going on TV. At the table struck up a dialogue and common problems were forgotten, all having fun and talking to each other. at midnight, before the chimes you heard congratulations President, which as always promised, they all will be well, if you ''ll be better off working. Then drank champagne clinking glasses and congratulating each other happy new year. Mom gave you an envelope with a greeting card and five thousand rubles. For a while you continue watching TV ate and drank champagne, but soon was evident ,that family members are exhausted and began to disperse to sleep.'
 
 		act 'Leave':gt $curloc
 	end
@@ -53,7 +54,7 @@ elseif month = 1 and day = 1:
 		water += 20
 		salo += 1
 		fat += 3
-		gs'stat'
+		gs 'stat'
 		'<center><img src="images/pics/food.jpg"></center>'
 		'You had finished salads remaining on the table after the holiday.'
 

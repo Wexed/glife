@@ -268,13 +268,15 @@ if $ARGS[0] = 'billsvid':
 		cla
 		*clr
 		minut += 60
+
 		'<center><img src="images/img/boysvid/bil1<<picrand>>.jpg"></center>'
 		'During the game <<$boyA>> suitable for you from behind and his hands glide over your endeavors hips and lips are drawn to the neck.'
 
 		act 'Not here':
 			cla
 			*clr
-			'<center><img src="images/img/boysvid/bil0<<picrand>>.jpg"></center>'
+			! Fix Missing Image ".../img/boysvid/bil0<<picrand>>.jpg" use place holder
+			'<center><img src="images/img/boysvid/bil<<picrand>>.jpg"></center>'
 			'You removed his hand with the words "Well, not here."'
 			'When your time is up <<$boyA>> said that he has to run and left.'
 
@@ -297,7 +299,8 @@ if $ARGS[0] = 'billsvid':
 			act 'Stop, stop':
 				cla
 				*clr
-				'<center><img src="images/img/boysvid/bil0<<picrand>>.jpg"></center>'
+				! Fix Missing Image ".../img/boysvid/bil0<<picrand>>.jpg" use place holder
+				'<center><img src="images/img/boysvid/bil<<picrand>>.jpg"></center>'
 				'You removed his hand with the words "Well, not here"'
 				'When your time is up <<$boyA>> said that he has to run and left.'
 

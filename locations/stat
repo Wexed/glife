@@ -554,8 +554,8 @@ if minut >= 60:
 		xf += 1
 		turnirFighter[xf] = rand(2, NPCnum)
 
-		if xf < 2:jump'markturnirotbortt'
-		if turnirFighter[1] = turnirFighter[2]:jump'markturnirotbort'
+		if xf < 2:jump 'markturnirotbortt'
+		if turnirFighter[1] = turnirFighter[2]:jump 'markturnirotbort'
 
 		a = turnirFighter[1]
 		i = turnirFighter[2]
@@ -1136,7 +1136,7 @@ end
 !!!!!!!!!!!!!!!!!!!!!
 !!!Beginning Description!!!
 !!!!!!!!!!!!!!!!!!!!!
-!!pl'time <b><<hour>></b> hours <b><<$nilmin>><<minut>></b> minutes'
+!!pl 'time <b><<hour>></b> hours <b><<$nilmin>><<minut>></b> minutes'
 !!pl 'At_The_Moment <<day>> <<$month>> <<year>>year, <<$week>>.'
 
 if hour < 10:
@@ -1237,13 +1237,13 @@ end
 
 if smokeHour = hour and smokeday = day and smokeminut >= minut:pl '<font color="green">You are smoking a cigarette</font>'
 if pirs_pain_ton > 0:
-	if pirs_pain_ton = 1:pl'<font color="red">You have aches language and it is a little swollen.</font>'
-	if pirs_pain_ton = 2:pl'<font color="red">You often aches language and it is noticeably swollen.</font>'
-	if pirs_pain_ton > 2:pl'<font color="red"><b>Do you have a sore tongue, he was very swollen and almost tossed in the mouth.</b></font>'
+	if pirs_pain_ton = 1:pl '<font color="red">You have aches language and it is a little swollen.</font>'
+	if pirs_pain_ton = 2:pl '<font color="red">You often aches language and it is noticeably swollen.</font>'
+	if pirs_pain_ton > 2:pl '<font color="red"><b>Do you have a sore tongue, he was very swollen and almost tossed in the mouth.</b></font>'
 end
 
-if nippain > 0:pl'<font color="red"><b><<$nippain>></b></font>'
-if painpub > 0:pl'<font color="red"><b><<$painpub>></b></font>'
+if nippain > 0:pl '<font color="red"><b><<$nippain>></b></font>'
+if painpub > 0:pl '<font color="red"><b><<$painpub>></b></font>'
 if opPRE = 0:pl '<<$mop>> and your hair is <<$hapri>>.'
 if sweat = 1:pl '<font color="brown">You''re sweating.</font>'
 if sweat = 2:pl '<font color="red">You are a little smelly.</font>'
@@ -1317,6 +1317,7 @@ if cumass > 0 and swallow >= 10:pl '<a href="exec:view''images/body/cumass.jpg''
 if cumlip > 0:pl '<b><font color="red">Your mouth smells like sperm.</font></b>'
 if cumface > 0 and swallow < 10:pl '<b><font color="red">Your <a href="exec:view''images/body/cumface.jpg''">face</a> and hair are smeared with sperm.</font></b>'
 if cumface > 0 and swallow >= 10:pl '<a href="exec:view''images/body/cumface.jpg''"><b><font color="red">Your face</font></b></a> <a href="exec:dynamic $cumeater4"><b><font color="red">and hair are smeared with sperm.</font></b></a>'
+! Fix missing Image Move "cumfrot.jpg" from "images\picb" to "images\Body"
 if cumfrot > 0 and swallow < 10:pl '<b><font color="red">You have semen stains on your <a href="exec:view''images/body/cumfrot.jpg''">clothes</a>.</font></b>'
 if cumfrot > 0 and swallow >= 10:pl '<a href="exec:view''images/body/cumfrot.jpg''"><b><font color="red">You have <a href="exec:dynamic $cumeater5"><b><font color="red">semen stains</font></b></a> on your clothes</font></b></a>.'
 if cumanus > 0 and swallow < 10:pl '<b><font color="red">Sperm slowly flows from your <a href="exec:view''images/body/cumanal.jpg''">ass</a>.</font></b>'
