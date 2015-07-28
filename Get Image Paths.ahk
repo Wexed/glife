@@ -117,208 +117,219 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 		}
 		Continue
 	}
-
 	
-	; -- Find Image File Path --
-	FoundPos := RegExMatch(A_LoopField, SearchRegEx, Match)						;; Search for image path
-	if (ErrorLevel)
+	FoundPos := 1
+	Haystack := A_LoopField
+
+	Loop, 200
 	{
-		MsgBox, 48, Get Image Paths, RegExMatch runtime error: %ErrorLevel%`n`nFound searching string: %A_LoopField%`n`nusing search: %SearchRegEx%
-		break
-	}
 	
-	if (FoundPos)																;; Found File
-	{	
-		Match1 := StrReplace(Match1, "/", "\")									;; Use correct Win path seperator
-		OutAll .= Match1 . "`n"
-		; -- Image Path Contains Code --
-		if inStr(Match1, "<<")													;; String contains expression
+		; -- Find Image File Path --
+		FoundPos := RegExMatch(Haystack, SearchRegEx, Match, FoundPos)			;; Search for image path
+		if (ErrorLevel)
 		{
-			
-			if inStr(Match1, "FUNC('$face_image'")								;; Hairstyle images Function
-			{
-				if GetImageFiles("images\body\hairstyles", "hcol*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\body\hairstyles\*\hcol*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\body\hairstyles\*\hcol*.jpg'`n"
-				}
-				
-			}
-			else if inStr(Match1, "FUNC('$clothing_image'")						;; Clothing images Function
-			{
-				if GetImageFiles("images\clothes", "vatnik.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\vatnik.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\vatnik.jpg'`n"
-				}
-				; GetImageFiles("images\clothes\newclo", "131.jpg", OutUsed)	;; Dupe See below	
-				
-				if GetImageFiles("images\clothes", "jeans*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\jeans*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\jeans*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "yoga*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\yoga*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\yoga*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "sarafan*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\sarafan*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\sarafan*.jpg'`n"
-				}
-
-
-				if GetImageFiles("images\clothes", "short*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\short*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\short*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "skirt*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\skirt*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\skirt*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "dress*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\dress*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\dress*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "profi*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\profi*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\profi*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "pants*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\pants*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\pants*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "latex*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\latex*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\latex*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "hooker*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\hooker*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\hooker*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes", "k*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\k*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\k*.jpg'`n"
-				}
-
-				if GetImageFiles("images\clothes\newclo", "*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\newclo\*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\newclo\*.jpg'`n"
-				}
-
-				if GetImageFiles("images\img\dress", "ero*.jpg", OutUsed)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\img\dress\ero*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- no files found in 'images\img\dress\ero*.jpg'`n"
-				}
-			}
-
-			else if inStr(Match1, "images\qwest\card")								;; Playingcard Images
-			{
-				if GetImageFiles("images\qwest\card", "*.jpg", Output)
-				{
-					OutAuto	.= Spacer(Match1) . "- Found 'images\qwest\card\*\*.jpg'`n"
-				}
-				else
-				{
-					OutMan	.= Spacer(Match1) . "- No files found in 'images\qwest\card\*\*.jpg'`n"
-				}				
-			}
-			
-			else if inStr(Match1, "FUNC")											;; Unknown Function - Manual
-			{
-				OutMan	.= Spacer(Match1) . "- Unknown Function`n"
-			}
-			
-			else if inStr(Match1, "$")												;; Uses String variable - Manual
-			{
-				OutMan	.= Spacer(Match1) . "- Unknown Function`n"
-			}
-			
-			else if not GetImagefromPath(Match1, OutUsed)							;; Try to find images
-			{
-				OutMan	.= Spacer(Match1) . "- Files not found`n"
-			}
+			MsgBox, 48, Get Image Paths, RegExMatch runtime error: %ErrorLevel%`n`nFound searching string: %Haystack%`n`nusing search: %SearchRegEx%
+			break
 		}
 		
-		; -- Image path is just a file name --
-		else
+		if (FoundPos = 0)															;; Not Found exit loop
 		{
-			IfExist %Match1%
+			break
+		}
+		else
+		; if (FoundPos)																;; Found File
+		{	
+			FoundPos += 8 + StrLen(Match1)											;; Increment Search Position
+			Match1 := StrReplace(Match1, "/", "\")									;; Use correct Win path seperator
+			OutAll .= Match1 . "`n"
+			; -- Image Path Contains Code --
+			if inStr(Match1, "<<")													;; String contains expression
 			{
-				OutUsed	.= Match1 . "`n"											;; Normal file found
+				
+				if inStr(Match1, "FUNC(''$face_image''")								;; Hairstyle images Function
+				{
+					if GetImageFiles("images\body\hairstyles", "hcol*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\body\hairstyles\*\hcol*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\body\hairstyles\*\hcol*.jpg'`n"
+					}
+					
+				}
+				else if inStr(Match1, "FUNC(''$clothing_image''")						;; Clothing images Function
+				{
+					if GetImageFiles("images\clothes", "vatnik.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\vatnik.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\vatnik.jpg'`n"
+					}
+					; GetImageFiles("images\clothes\newclo", "131.jpg", OutUsed)	;; Dupe See below	
+					
+					if GetImageFiles("images\clothes", "jeans*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\jeans*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\jeans*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "yoga*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\yoga*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\yoga*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "sarafan*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\sarafan*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\sarafan*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "short*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\short*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\short*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "skirt*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\skirt*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\skirt*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "dress*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\dress*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\dress*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "profi*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\profi*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\profi*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "pants*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\pants*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\pants*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "latex*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\latex*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\latex*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "hooker*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\hooker*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\hooker*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes", "k*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\k*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\k*.jpg'`n"
+					}
+
+					if GetImageFiles("images\clothes\newclo", "*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\newclo\*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\newclo\*.jpg'`n"
+					}
+
+					if GetImageFiles("images\img\dress", "ero*.jpg", OutUsed)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\img\dress\ero*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\img\dress\ero*.jpg'`n"
+					}
+				}
+
+				else if inStr(Match1, "images\qwest\card")								;; Playingcard Images
+				{
+					if GetImageFiles("images\qwest\card", "*.jpg", Output)
+					{
+						OutAuto	.= Spacer(Match1) . "- Found 'images\qwest\card\*\*.jpg'`n"
+					}
+					else
+					{
+						OutMan	.= Spacer(Match1) . "- No files found in 'images\qwest\card\*\*.jpg'`n"
+					}				
+				}
+				
+				else if inStr(Match1, "FUNC")											;; Unknown Function - Manual
+				{
+					OutMan	.= Spacer(Match1) . "- Unknown Function`n"
+				}
+				
+				else if inStr(Match1, "$")												;; Uses String variable - Manual
+				{
+					OutMan	.= Spacer(Match1) . "- Unknown Function`n"
+				}
+				
+				else if not GetImagefromPath(Match1, OutUsed)							;; Try to find images
+				{
+					OutMan	.= Spacer(Match1) . "- Files not found`n"
+				}
 			}
+			
+			; -- Image path is just a file name --
 			else
 			{
-				OutMan	.= Spacer(Match1) . "- File not found`n"					;; Normal file Not found
+				IfExist %Match1%
+				{
+					OutUsed	.= Match1 . "`n"											;; Normal file found
+				}
+				else
+				{
+					OutMan	.= Spacer(Match1) . "- File not found`n"					;; Normal file Not found
+				}
 			}
 		}
-	}	
+	}
 }
 
 

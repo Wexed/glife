@@ -536,7 +536,7 @@ end
 
 if $ARGS[0] = 'mirror':
 	cls
-	'<center><img src="<<FUNC('$face_image')>>"></center>'
+	'<center><img src="<<FUNC(''$face_image'')>>"></center>'
 	'<center>You look at your new hairstyle in the mirror.</center>'
 	act 'Move away':gt 'hairsalon', 'start'
 end
