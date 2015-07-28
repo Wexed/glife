@@ -52,8 +52,12 @@ Images := StrReplace(Images, "/", "\")								;; Use correct Win path seperator
 ; -- Parse data one line at a time --
 Loop, Parse, Images, `n, `r  			; Specifying `n prior to `r allows both Windows and Unix files to be parsed.
 {
+	if trim(A_LoopField) = ""										;; Skip blank line
+		continue
+	
 	IfExist, %A_LoopField%
 	{
+		; -- Create Dir if id dosn't exist --
 		SplitPath, A_LoopField, FileName, FileDir
 		IfNotExist  %UsedImageFolder%\%FileDir%
 		{
@@ -64,24 +68,41 @@ Loop, Parse, Images, `n, `r  			; Specifying `n prior to `r allows both Windows 
 			}
 		}
 		
-		
+		; -- move file --
 		FileMove, %A_LoopField%, %UsedImageFolder%\%FileDir%
 		if (ErrorLevel)
 		{
 			MsgBox, 48, Move Image File, FileMove Error:`n`nFailed to move '%A_LoopField%' to '%UsedImageFolder%\%FileDir%'`n`nErrorLevel: '%ErrorLevel%'`nLastError: '%A_LastError%'	
 		}
 	}
-	else
+	else	; -- File dosn't exist --
 	{
 		MsgBox, 64, Move Image Files, Unable to locate file : '%A_LoopField%', 5
 	}
 }
 
+; -- Rename Images folder to unused Images folder --
 IfExist %SourceFolder%
 {
 	FileMoveDir, %SourceFolder%, %UnUsedImageFolder%\%SourceFolder%
+	if (ErrorLevel)
+	{
+		MsgBox, 48, Move Image File, FileMoveDir Error:`n`nFailed to move '%SourceFolder%' to '%UnUsedImageFolder%\%SourceFolder%'`n`nErrorLevel: '%ErrorLevel%'`nLastError: '%A_LastError%'	
+	}
+	
+	; -- Rename Used Images folder to Images folder --
+	else IfNotExist %SourceFolder%
+	{
+		FileMoveDir, %UsedImageFolder%\%SourceFolder%, %SourceFolder%
 		if (ErrorLevel)
 		{
-			MsgBox, 48, Move Image File, FileMoveDir Error:`n`nFailed to move '%SourceFolder%' to '%UnUsedImageFolder%\%SourceFolder%'`n`nErrorLevel: '%ErrorLevel%'`nLastError: '%A_LastError%'	
+			MsgBox, 48, Move Image File, FileMoveDir Error:`n`nFailed to move '%UsedImageFolder%\%SourceFolder%' to '%SourceFolder%'`n`nErrorLevel: '%ErrorLevel%'`nLastError: '%A_LastError%'	
 		}
+		else
+		{
+			FileRemoveDir, %UsedImageFolder%, 0					;; Delete Empty Folder
+		}
+	}
 }
+
+
