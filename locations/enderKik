@@ -6,11 +6,13 @@ if $ARGS[0] = 'win':
 	pointKikV = 0
 	round = 0
 	minround = 0
+end
 
-	if health < 10:health = 10
+if health < 10:health = 10
 
-	cla
-	*clr
+cla
+*clr
+
 
 if profi = 1:
 	profi = 0
@@ -19,6 +21,8 @@ if profi = 1:
 
 	act 'Exit to the middle to announce the winner':
 		if $ARGS[0] = 'win':
+			cla
+			*clr
 			'<center><img src="images/community/kickboxing_win.jpg"></center>'
 			'Congratulations! You win!'
 			KikWinPro += 1
@@ -26,6 +30,8 @@ if profi = 1:
 		end
 
 		if $ARGS[0] = 'winKO':
+			cla
+			*clr
 			'<center><img src="images/community/kickboxing_win_ko.jpg"></center>'
 			'Congratulations! You win!'
 			'And it is a knockout!'
@@ -36,12 +42,16 @@ if profi = 1:
 		end
 
 		if $ARGS[0] = 'loss':
+			cla
+			*clr
 			'<center><img src="images/community/kickboxing_loss.jpg"></center>'
 			'You lose.'
 			KikLossPro += 1
 		end
 
 		if $ARGS[0] = 'lossKO':
+			cla
+			*clr
 			'<center><img src="images/community/kickboxing_loss_ko.jpg"></center>'
 			'Suddendly the room starts getting darker and darker ...'
 			KikLossPro += 1
@@ -49,15 +59,18 @@ if profi = 1:
 		end
 
 		if $ARGS[0] = 'draw':
+			cla
+			*clr
 			'And it is a draw !'
 			KikDrawPro += 1
 		end
 
-		act 'Leave the ring':gt 'fit', 'razd'
+	act 'Leave the ring':gt 'fit', 'razd'
 	end
-end
 
-if amateur = 1:
+
+
+elseif amateur = 1:
 	amateur = 0
 
 	'<center><img src="images/community/kickboxing_speaker.jpg"></center>'
@@ -133,9 +146,9 @@ if amateur = 1:
 
 		act 'Leave the ring':gt 'fit', 'razd'
 	end
-end
 
-if sparing = 1:
+
+elseif sparing = 1:
 	sparing = 0
 
 	if $ARGS[0] = 'win':
@@ -175,9 +188,8 @@ if sparing = 1:
 	end
 
 	act 'Leave the ring':gt 'fit', 'razd'
-	exit
 
 end
-!!
+
 
 --- enderKik ---------------------------------

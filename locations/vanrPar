@@ -57,41 +57,41 @@ act 'Wash in the bathroom (1:00)':
 	'Turn on the water, you got into the bathroom and went into the warm water. Ponaslazhdatsya pleasant warmth you lathered his body sponge and hair shampoo. Then all you have washed off with water.'
 
 	act 'Out of the bath':gt $locM, $metkaM
-		if horny >= 90:
-			act 'Direct water on pussy':
-				cla
-				*clr
-				horny = 0
-				minut += 30
-				mastr += 1
-				orgasm += 1
-				manna += 15
-				willpower += 15
-				'<center><img src="images/pics/wash7.jpg"></center>'
-				'You sent a water faucet on pussy and tight jet of warm water began to caress you. Soon you will feel like a warm wave covers your entire body and you began to shudder in orgasm.'
+	if horny >= 90:
+		act 'Direct water on pussy':
+			cla
+			*clr
+			horny = 0
+			minut += 30
+			mastr += 1
+			orgasm += 1
+			manna += 15
+			willpower += 15
+			'<center><img src="images/pics/wash7.jpg"></center>'
+			'You sent a water faucet on pussy and tight jet of warm water began to caress you. Soon you will feel like a warm wave covers your entire body and you began to shudder in orgasm.'
 
-				act 'Get out and get dressed':gt $locM, $metkaM
-			end
-		elseif horny >= 40 and horny < 90:
-			act 'Direct water on pussy':
-				cla
-				*clr
-				horny += 5
-				minut += 30
-				manna += 10
-				willpower += 10
-				'<center><img src="images/pics/wash7.jpg"></center>'
-				'You sent a water faucet on pussy and tight jet of warm water began to caress you. At first it was not even bad, but then sleep and arousal, even as it was not nice. So you stopped masturbating.'
-
-				act 'Get out and get dressed':gt $locM, $metkaM
-			end
+			act 'Get out and get dressed':gt $locM, $metkaM
 		end
+	elseif horny >= 40 and horny < 90:
+		act 'Direct water on pussy':
+			cla
+			*clr
+			horny += 5
+			minut += 30
+			manna += 10
+			willpower += 10
+			'<center><img src="images/pics/wash7.jpg"></center>'
+			'You sent a water faucet on pussy and tight jet of warm water began to caress you. At first it was not even bad, but then sleep and arousal, even as it was not nice. So you stopped masturbating.'
 
-		if horny >= 50:
-			act 'Masturbate':gt 'selfplay'
+			act 'Get out and get dressed':gt $locM, $metkaM
 		end
 	end
+
+	if horny >= 50:
+		act 'Masturbate':gt 'selfplay'
+	end
 end
+
 
 
 if tampon > 0 and mesec > 0 and isprok = 0:
@@ -193,7 +193,7 @@ if analplug = 1 and analplugin = 1:
 		if anus < 30:anus += 1
 
 		'<center><img src="images/etogame/analplug.jpg"></center>'
-		'You bent over and took out the butt plug.' !!0.2.6: Removed unneccessary var check
+		'You bent over and took out the butt plug.' & !!0.2.6: Removed unneccessary var check
 
 		act 'Finish':gt $curloc
 	end

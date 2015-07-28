@@ -19,7 +19,7 @@ if $clothingworntype = 'nude':
 		'Sister looks at you eyes wide "<<$name>>, you''re so liberated... I do not smoglab.'
 	end
 end
-	
+
 if pirsA >= 1 and pirsAsister = 0 and sisterpirsadaytalk ! daystart:
 	sisterrpirsadaytalk = daystart
 	if rand(1,100) >= 75:
@@ -29,7 +29,7 @@ if pirsA >= 1 and pirsAsister = 0 and sisterpirsadaytalk ! daystart:
 			'You shake your head. "Nothing." And then turn away, so that your sister did not see your pierced tongue.'
 			act 'Move away':gt $loc, $metka
 		end
-		
+
 		act 'Show pierced tongue':
 			cls
 			pirsAsister = 1
@@ -109,7 +109,7 @@ if $ARGS[0] = 'drinking':
 
 			act 'Move away':gt $loc, $metka
 		end
-		
+
 		if sisboyparty = 2 and sisboyparty_day + 1 = daystart and hour = 17 and minut >= 30:act 'Go to the party':gt 'sisterQW', 'sisboyQW_party', 'start'
 	end
 
@@ -145,7 +145,7 @@ if $ARGS[0] = 'home':
 		act 'Move away':gt $loc, $metka
 		exit
 	end
-	
+
 	!! Going for a walk
 	if week >= 6 and hour >= 7 and hour <= 10:
 		cls
@@ -157,7 +157,7 @@ if $ARGS[0] = 'home':
 		'Anja, without turning to you, speaks: "Sveta, If you decide to take a walk, I am near the club with her friends."'
 		act 'Move away':gt $loc, $metka
 	end
-	
+
 	act 'Chat':
 		cls
 		minut += 15
@@ -222,7 +222,7 @@ if $ARGS[0] = 'home':
 			if sistalkrand = 17:'Anja asks you, do not you think, that her left eyebrow much sexual rights?'
 			if sistalkrand = 18:'Anja recognizes you, that they are with friends at work sometimes make intimate pictures on the camera, and put them back in the window.'
 		end
-		
+
 		act 'Finish':gt 'sister', 'home'
 	end
 
@@ -257,7 +257,7 @@ if $ARGS[0] = 'home':
 				'- <<$name>>, you have a close friend of our company, and tomorrow Rex birthday, and he asked me to call you.'
 				'- Oh I do not know Anja, we like-I am not familiar with it, I then basically out of your only talked with the girls.'
 				'- Come on, He strongly requested, I even think he likes you. So you decided?'
-				
+
 				act 'Agree to go to the party':
 					cls
 					minut += 5
@@ -268,10 +268,10 @@ if $ARGS[0] = 'home':
 					'You agreed to come to the birthday.'
 					'- Awesome, Sveta, it should be fun, and do not worry about a gift, Rex does not like it all. We will be at the House of Culture, Do not forget to come up 18:00, otherwise we will leave without you.'
 					'With these words, you hug and kiss with his sister.'
-					
+
 					act 'Finish':gt 'sister', 'home'
 				end
-				
+
 				act 'Sorry, I have to study':
 					cls
 					minut += 5
@@ -280,10 +280,10 @@ if $ARGS[0] = 'home':
 					'<center><img src="images/qwest/alter/sisterQW/Party/sisboyQWParty_3.jpg"></center>'
 					'You refused to come to the birthday.'
 					'- Forgive me Anja, I would gladly, but I have blockages in school. Control, writings, a bunch of literature, she know...'
-					
+
 					act 'Finish':gt 'sister', 'home'
 				end
-				
+
 				if bronzebeg > 0 or silverbeg > 0 or goldbeg > 0:
 					act 'Sorry, I have a race to compete in':
 						cls
@@ -293,11 +293,11 @@ if $ARGS[0] = 'home':
 						'<center><img src="images/qwest/alter/sisterQW/Party/sisboyQWParty_4.jpg"></center>'
 						'You refused to come to the birthday.'
 						'- I would love, but I have competition on the nose, I have to train. Unlike you, I-still dream of becoming a great athlete...'
-						
+
 						act 'Finish':gt 'sister', 'home'
 					end
 				end
-				
+
 				if volleyboll >= 100:
 					act 'Sorry, I have volleyball game':
 						cls
@@ -307,13 +307,13 @@ if $ARGS[0] = 'home':
 						'<center><img src="images/qwest/alter/sisterQW/Party/sisboyQWParty_5.jpg"></center>'
 						'You refused to come to the birthday.'
 						'- I mode,Coach does not allow a walk late at night, and the drink is also prohibited...'
-						
+
 						act 'Finish':gt 'sister', 'home'
 					end
 				end
 				exit
 			end
-			
+
 			if rand(1, 10) >= 8 and sisboyQW = 2 and sisboyday ! daystart:
 				'<center><b><font color = maroon>Anja</font></b></center>'
 				'<center><img src="images/qwest/alter/sisterQW/sisboyQW_01.jpg"></center>'
@@ -372,7 +372,7 @@ if $ARGS[0] = 'home':
 
 					act 'Finish':gt 'sister', 'home'
 				end
-				
+
 				act 'No':
 					cls
 					sister -= 10
@@ -398,7 +398,7 @@ if $ARGS[0] = 'home':
 					'You do not say anything and just smiles slyly watching his sister''s eyes.'
 					'- We want ' + iif(sisboyday = daystart, 'tomorrow', 'this') + ' evening repeat our games, if you do not mind?'
 				end
-				
+
 				act 'Agree':
 					cls
 					sisboytrioQW = 1
@@ -411,7 +411,7 @@ if $ARGS[0] = 'home':
 					'You hug and kiss with your beloved sister'
 					act 'Finish':gt 'sister', 'home'
 				end
-				
+
 				act 'Refuse':
 					cls
 					sisboytrioQW = -1
@@ -451,7 +451,7 @@ if $ARGS[0] = 'home':
 			end
 		end
 	end
-	
+
 	if sisThank = 1 and ((sisboyday + 1 = daystart and hour > 18) or sisboyday + 1 < daystart):
 		cls
 		if sisboyQW = 9 or sisboyQW = 7 or sisboyQW = 5 or sisboyQW = 3:sisboyQW -= 1
@@ -494,7 +494,7 @@ if $ARGS[0] = 'home':
 			minut += rand(10,15)
 			horny += rand(5,10)
 			sister += 1
-			
+
 			temp = rand (1,19)
 			 if temp = 1:
 				'<center><img src="images/qwest/alter/sister/sister1.jpg"></center>'
@@ -555,11 +555,11 @@ if $ARGS[0] = 'home':
 				'<center><img src="images/qwest/alter/sister/sister19.jpg"></center>'
 				'My sister recognized you, What she likes to write in the cups, and then drink their urine.'
 			 end
-			
+
 			act 'Move away':gt $loc, $metka
 		end
 	end
-	
+
 	if sisuniQW = 0:
 		act 'Ask about the university':
 			cls

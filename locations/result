@@ -40,6 +40,7 @@ if kh ! 0:
 			act 'You lost':gt 'amrul'
 		end
 	end
+
 elseif chnch ! 0:
 	if chnch = 1:
 		chnch = 0
@@ -52,9 +53,8 @@ elseif chnch ! 0:
 		else
 			act 'You lost':gt 'amrul'
 		end
-	end
 
-	if chnch = 2:
+	elseif chnch = 2:
 		chnch = 0
 
 		if x_rul mod 2 = 1:
@@ -66,6 +66,7 @@ elseif chnch ! 0:
 			act 'You lost':gt 'amrul'
 		end
 	end
+
 elseif mb ! 0:
 	if mb = 1:
 		mb = 0
@@ -77,9 +78,8 @@ elseif mb ! 0:
 		else
 			act 'You lost':gt 'amrul'
 		end
-	end
 
-	if mb = 2:
+	elseif mb = 2:
 		mb = 0
 		if x_rul > 18 and x_rul < 37:
 			act 'You have won <<2 * st_1>>':
@@ -90,6 +90,7 @@ elseif mb ! 0:
 			act 'You lost':gt 'amrul'
 		end
 	end
+
 elseif du ! 0:
 	if du = 1:
 		du = 0
@@ -102,9 +103,8 @@ elseif du ! 0:
 		else
 			act 'You lost':gt 'amrul'
 		end
-	end
 
-	if du = 2:
+	elseif du = 2:
 		du = 0
 
 		if x_rul > 12 and x_rul < 25:
@@ -115,9 +115,8 @@ elseif du ! 0:
 		else
 			act 'You lost':gt 'amrul'
 		end
-	end
 
-	if du = 3:
+	elseif du = 3:
 		du = 0
 		if x_rul > 24 and x_rul < 37:
 			act 'You have won <<3 * st_1>>':
@@ -128,6 +127,7 @@ elseif du ! 0:
 			act 'You lost':gt 'amrul'
 		end
 	end
+
 elseif series ! 0:
 	if series = 1:
 		series = 0
@@ -140,6 +140,7 @@ elseif series ! 0:
 		else
 			act 'You lost':gt 'amrul'
 		end
+
 	elseif series = 2:
 		series = 0
 
@@ -151,6 +152,7 @@ elseif series ! 0:
 		else
 			act 'You lost':gt 'amrul'
 		end
+
 	elseif series = 3:
 		series = 0
 
@@ -163,7 +165,7 @@ elseif series ! 0:
 			act 'You lost':gt 'amrul'
 		end
 	end
-end
+
 
 elseif chi ! 100:
 	if chi = x_rul:

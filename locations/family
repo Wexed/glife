@@ -40,7 +40,7 @@ if StoryLine = 1:
 		if week = 5:randsbPartyDay = daystart + 3 & sisboyparty_day = daystart + rand(0, 1)
 		if week = 6:randsbPartyDay = daystart + 2 & sisboyparty_day = daystart
 	end
-	
+
 	if sisboyparty_day + 1 = daystart and sisboyparty = 2 and hour > 18 and sisboypartyQW = 1:
 		cls
 		minut += 5
@@ -52,9 +52,9 @@ if StoryLine = 1:
 		act 'Move away':gt $loc, $metka
 		exit
 	end
-	
+
 	if sisboyparty_day + 1 = daystart and (sisboyparty = 2 or sisboyparty = 1) and hour > 18 and sisboypartyQW > 1:sisboyparty = -1
-	
+
 	if sister_indorf = 0:
 		if $loc = 'bedrPar':
 			sisterHere = 0

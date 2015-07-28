@@ -9,7 +9,7 @@ elseif cloth_vid = 1:
 else
 	view FUNC('$clothing_image', $clothingworntype, clothingwornnumber)
 	pl 'You are wearing ' + FUNC('$clothing_name', $clothingworntype, clothingwornnumber) + '.'
-	
+
 	if $clothingworntype ! 'vatnik' and $clothingworntype ! 'sforma' and $clothingworntype ! 'ero':
 		$RESULT = '(strength '
 		dynamic '$RESULT += <<$clothingworntype>>H[<<clothingwornnumber>>]'

@@ -7,7 +7,9 @@ $resultUderDin = {
 		'You have successfully commit rival'
 
 		act '...':stoper = 0 & gt 'fight2'
-	elseif Aktiv <= Passiv:
+
+	! if Aktiv <= Passiv:
+	else
 		pointE += 1
 		KzE += 1
 		'<center><img src="images/pic/fight/f3u2.jpg"></center>'
@@ -26,8 +28,9 @@ $resultBrosDin = {
 		'You have successfully throw the opponent'
 
 		act '...':stoper = 0 & gt 'fight1'
-	elseif Aktiv <= Passiv:
-		pointE + =1
+	! if Aktiv <= Passiv:
+	else
+		pointE +=1
 		KzE += 1
 		'<center><img src="images/pic/fight/f3u2.jpg"></center>'
 		'You can not do anything about my opponent breaks lock.'

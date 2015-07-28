@@ -59,7 +59,7 @@ if $ARGS[0] = 'cuthair':
 	'She smiles, "Sure thing, have you already decided on how much we shall cut off?"'
 
 	act 'Change your mind':gt 'hairsalon', 'start'
-	
+
 	if hairlength > 10:
 		act 'Very short':
 			cla
@@ -378,7 +378,7 @@ if $ARGS[0] = 'curlhair':
 			gs 'stat'
 			act 'Look in the mirror':gt 'hairsalon', 'mirror'
 		end
-		
+
 		act 'No':gt 'hairsalon', 'start'
 	else
 		minut += 20
@@ -398,7 +398,7 @@ if $ARGS[0] = 'dyehair':
 	'"Which colour would like to have your hair dyed in?"'
 
 	act 'Change your mind':gt 'hairsalon', 'start'
-	
+
 	if hcol ! 0:
 		act 'Black':
 			cla
@@ -511,7 +511,7 @@ if $ARGS[0] = 'braidhair':
 		'"Sorry, your hair is too long to make a braid that will not fall apart."'
 		act 'Move away':gt 'hairsalon', 'start'
 	end
-	
+
 	'She takes a look at you hair and nods, "Sure, you have beautiful, long hair, it shouldn''t be a problem at all."'
 	'The hairdresser tells you to sit down on one of the free seats and she''ll get on it immediately.'
 
