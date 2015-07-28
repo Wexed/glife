@@ -30,6 +30,7 @@ OutMissFile		= Image List - Missing.txt
 OutAutoFile		= Image Paths - Auto List.txt
 OutManFile		= Image Paths - Manual List.txt
 SearchRegEx		= i)<img\s+src\s*=\s*"(.*?)"
+Search2RegEx	= i)view\s*'+(.*?)'+
 CommentRegEx 	= ^\s*!
 MarkMissRegEx	= i)!\s*WD:\s+IMAGE NEEDED\s*~\s*.*?<img\s+src\s*=\s*"(.*?)"
 
@@ -118,6 +119,7 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 		Continue
 	}
 	
+	; -- HTML  images --
 	FoundPos := 1
 	Haystack := A_LoopField
 
@@ -125,7 +127,7 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 	{
 	
 		; -- Find Image File Path --
-		FoundPos := RegExMatch(Haystack, SearchRegEx, Match, FoundPos)			;; Search for image path
+		FoundPos := RegExMatch(Haystack, SearchRegEx, Match, FoundPos)			;; Search for image path in html
 		if (ErrorLevel)
 		{
 			MsgBox, 48, Get Image Paths, RegExMatch runtime error: %ErrorLevel%`n`nFound searching string: %Haystack%`n`nusing search: %SearchRegEx%
@@ -326,6 +328,66 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 				else
 				{
 					OutMan	.= Spacer(Match1) . "- File not found`n"					;; Normal file Not found
+				}
+			}
+		}
+	}
+	
+	
+	; -- VIEW  images --
+	FoundPos := 1
+	Haystack := A_LoopField
+
+	Loop, 200
+	{
+	
+		; -- Find Image File Path --
+		FoundPos := RegExMatch(Haystack, Search2RegEx, Match, FoundPos)				;; Search for 'view' cmd path
+		if (ErrorLevel)
+		{
+			MsgBox, 48, Get Image Paths, RegExMatch runtime error: %ErrorLevel%`n`nFound searching string: %Haystack%`n`nusing search: %SearchRegEx%
+			break
+		}
+		
+		if (FoundPos = 0)															;; Not Found exit loop
+		{
+			break
+		}
+		else
+		; if (FoundPos)																;; Found File
+		{	
+			FoundPos += 5 + StrLen(Match1)											;; Increment Search Position
+			Match1 := StrReplace(Match1, "/", "\")									;; Use correct Win path seperator
+			OutAll .= Match1 . "`n"
+			; -- Image Path Contains Code --
+			if inStr(Match1, "<<")													;; String contains expression
+			{
+				if inStr(Match1, "FUNC")											;; Unknown Function - Manual
+				{
+					OutMan	.= Spacer(Match1) . "- Unknown Function`n"
+				}
+				
+				else if inStr(Match1, "$")											;; Uses String variable - Manual
+				{
+					OutMan	.= Spacer(Match1) . "- Unknown Function`n"
+				}
+				
+				else if not GetImagefromPath(Match1, OutUsed)						;; Try to find images
+				{
+					OutMan	.= Spacer(Match1) . "- Files not found`n"
+				}
+			}
+			
+			; -- Image path is just a file name --
+			else
+			{
+				IfExist %Match1%
+				{
+					OutUsed	.= Match1 . "`n"										;; Normal file found
+				}
+				else
+				{
+					OutMan	.= Spacer(Match1) . "- File not found`n"				;; Normal file Not found
 				}
 			}
 		}
