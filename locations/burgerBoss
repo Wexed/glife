@@ -25,8 +25,10 @@ if BistroBoss = 10:
 
 				gt 'burger', 'start'
 			end
-		elseif week < 6 and hour < 10 and ofclo ! 1:'Anatoly Borisovich looked sternly at you, "<<$name>>, what are you dressed up? Go home and change your clothes, you hooky today!"'
-	end
+
+		elseif week < 6 and hour < 10 and ofclo ! 1:
+			'Anatoly Borisovich looked sternly at you, "<<$name>>, what are you dressed up? Go home and change your clothes, you hooky today!"'
+		end
 
 	elseif PersSecWork = 0 and week < 6:
 		if secrDiplom = 1:
@@ -69,6 +71,7 @@ if BistroBoss = 10:
 			end
 		end
 	end
+
 elseif BistroBoss = 1:
 	'You have entered the principal''s office. Anatoly Borisovich sitting at the table and studied the documents, you see, he put them aside and showed you invited to sit on a chair.'
 
@@ -91,6 +94,7 @@ elseif BistroBoss = 1:
 
 					act 'Leave':gt 'burger', 'start'
 				end
+
 			elseif secrDiplom = 0 and sekrObu > 0:
 				act 'I do not have a diploma, but I am a secretary.':
 					cls
@@ -100,6 +104,7 @@ elseif BistroBoss = 1:
 
 					act 'Leave':gt 'burger', 'start'
 				end
+
 			elseif secrDiplom = 0 and sekrObu = 0:
 				act 'No.':
 					cls
@@ -111,6 +116,7 @@ elseif BistroBoss = 1:
 					act 'Leave':gt 'burger', 'start'
 				end
 			end
+
 		elseif bistroQW >= 65:
 			'You sat on a chair and Chubais gave you a grim look. "I did not think you were such deshovke. What is your fee? Three weave for suction to swallow?" He pulled out his bill of 300 rubles and threw it on the floor. "Get up on your knees and work it off, as you are able, vaflersha."'
 
@@ -133,10 +139,12 @@ elseif BistroBoss = 1:
 			end
 		end
 	end
+
 elseif BistroBoss = 2 and BistroBossDay = day:
 	'Knocking you walked into the office to Anatoly Borisovich. He looked angrily at you, "I said, get out of here."'
 
 	act 'Leave':gt 'burger', 'start'
+
 elseif BistroBoss = 2 and BistroBossDay ! day:
 	BistroBossDay = day
 	'Knocking you walked into the office to Anatoly Borisovich. He looked darkly at you and got a bill of 300 rubles, "Get up on your knees and work it off, as you are able, vaflersha."'

@@ -524,7 +524,7 @@ if rating[num] = 2:$rat2 += $npc[num] + ''
 if rating[num] = 1:$rat1 += $npc[num] + ''
 if rating[num] = 0:$rat0 += $npc[num] + ''
 if rating[num] < 0:$ratMin += $npc[num] + ''
-if num < NPCnum:jump'markratingwrite'
+if num < NPCnum:jump 'markratingwrite'
 if $ratMax!'':'<<$ratMax>>'
 if $rat100!'':'<<$rat100>>'
 if $rat99!'':'<<$rat99>>'
@@ -657,8 +657,8 @@ act '<center><b>randomly fight</b></center>':
 	x += 1
 	turnirFighter[x] = rand(2, NPCnum)
 
-	if x < 2:jump'markturnirotbor'
-	if turnirFighter[1] = turnirFighter[2]:jump'markturnirotbor2'
+	if x < 2:jump 'markturnirotbor'
+	if turnirFighter[1] = turnirFighter[2]:jump 'markturnirotbor2'
 
 	a = turnirFighter[1]
 	i = turnirFighter[2]
@@ -679,8 +679,8 @@ act '<center><b>randomly 4 battlefield</b></center>':
 	x += 1
 	turnirFighter[x] = rand(2, NPCnum)
 
-	if x < 2:jump'markturnirotbor'
-	if turnirFighter[1] = turnirFighter[2]:jump'markturnirotbor2'
+	if x < 2:jump 'markturnirotbor'
+	if turnirFighter[1] = turnirFighter[2]:jump 'markturnirotbor2'
 
 	a = turnirFighter[1]
 	i = turnirFighter[2]
@@ -688,7 +688,7 @@ act '<center><b>randomly 4 battlefield</b></center>':
 	turnirFighter[1] = 0
 	turnirFighter[2] = 0
 
-	if y < 4:jump'markmonthfight1'
+	if y < 4:jump 'markmonthfight1'
 
 	act 'further':gt $curloc
 end
@@ -704,8 +704,8 @@ act '<center><b>randomly 10 fights</b></center>':
 	x += 1
 	turnirFighter[x] = rand(2, NPCnum)
 
-	if x < 2:jump'markturnirotborsss'
-	if turnirFighter[1] = turnirFighter[2]:jump'markturnirotborss'
+	if x < 2:jump 'markturnirotborsss'
+	if turnirFighter[1] = turnirFighter[2]:jump 'markturnirotborss'
 
 	a = turnirFighter[1]
 	i = turnirFighter[2]
@@ -713,13 +713,14 @@ act '<center><b>randomly 10 fights</b></center>':
 	turnirFighter[1] = 0
 	turnirFighter[2] = 0
 
-	if y < 10:jump'markmonthfights'
+	if y < 10:jump 'markmonthfights'
 
 	act 'further':gt $curloc
 end
 '!
 
-!'act '<center><b>The_item</b></center>':
+!'
+act '<center><b>The_item</b></center>':
 	kolvo[0] += 1
 	$item[0] = $curloc
 	gt $curloc
@@ -753,7 +754,8 @@ act '<center><b>The_item5</b></center>':
 	kolvo[5] += 1
 	$item[5] = $curloc
 	gt $curloc
-end'!
+end
+'!
 
 !!gs 'OnLoc'
 

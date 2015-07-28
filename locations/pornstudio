@@ -6,7 +6,8 @@ if $ARGS[0] = 'start':
 	*clr
 	minut += 5
 	gs 'stat'
-	'<center><img src="images/studia/studiа_0.jpg"></center>'
+	! WD: Correct Image path ~ "images/studia/studiа_0.jpg" Cyrillic characters
+	'<center><img src="images/studia/studia_0.jpg"></center>'
 
 	act 'Leave':gt 'down'
 
@@ -14,11 +15,11 @@ if $ARGS[0] = 'start':
 		'The Porn studio is closed.'
 		exit
 	end
-	
+
 	'Manager''s office opened.'
 
 	act 'Go to the manager':gt 'pornstudio', 'manager'
-	
+
 	act 'Visit the manager assistant':
 		cla
 		*clr
@@ -177,7 +178,8 @@ if $ARGS[0] = 'manager':
 	*clr
 	minut += 5
 	gs 'stat'
-	'<center><img src="images/studia/studiа_0.jpg"></center>'
+	! WD: Correct Image path ~ "images/studia/studiа_0.jpg" Cyrillic characters
+	'<center><img src="images/studia/studia_0.jpg"></center>'
 	'Boss porn studio met you welcome and gestured you sit on the couch.'
 
 	if pfilmNO = 1:
@@ -209,7 +211,7 @@ if $ARGS[0] = 'manager':
 		if hour = 10:'Come on honey inspection.'
 		if hour = 11:'Do not be late, my patience is not eternal, strictly tells you Peter. Vividly honey inspection.'
 		if hour = 12:'What the dick? There''s only one waiting for you. Hurry honey inspection.'
-		
+
 		pfilmday = day
 		act 'Go for medical check-up':
 			cla
@@ -312,7 +314,7 @@ if $ARGS[0] = 'manager':
 								*clr
 								minut += 30
 								gs 'stat'
-								
+
 								akrand = rand(1, 5)
 								if akrand = 1:$pakter = 'Alexei'
 								if akrand = 2:$pakter = 'Sergey'
@@ -401,7 +403,7 @@ if $ARGS[0] = 'manager':
 								*clr
 								minut += 30
 								gs 'stat'
-								
+
 								akrand = rand(1, 5)
 								if akrand = 1:$pakter = 'Alexei'
 								if akrand = 2:$pakter = 'Sergey'
@@ -499,7 +501,7 @@ if $ARGS[0] = 'manager':
 								*clr
 								minut += 30
 								gs 'stat'
-								
+
 								akrand = rand(1, 5)
 								if akrand = 1:$pakter = 'Alexei'
 								if akrand = 2:$pakter = 'Sergey'
@@ -714,7 +716,7 @@ if $ARGS[0] = 'manager':
 								minut += 30
 								gang += 1
 								gs 'stat'
-								
+
 								akrand = rand(1, 5)
 								if akrand = 1:$pakter = 'Alexei'
 								if akrand = 2:$pakter = 'Sergey'
@@ -832,7 +834,7 @@ if $ARGS[0] = 'manager':
 		end
 		exit
 	end
-	
+
 	if pfilm > 0 and hour > 12:
 		pfilmday = day
 		'I told you not to be late? Said. Get out of here, I''m out for you a lot of money lost. Actors paid assistants, operator, doctor, and because of you slut, shooting all failed.'
@@ -850,7 +852,7 @@ if $ARGS[0] = 'manager':
 		end
 		exit
 	end
-	
+
 	if firstkasting = 0:
 		'You sat down on the sofa and asked the boss. I see you for the first time with us. Want to rent a porno movie?'
 

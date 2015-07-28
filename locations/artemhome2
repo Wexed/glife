@@ -13,7 +13,9 @@ if artemhomemark = 0:
 			'The door you opened Artem and invited to enter.'
 
 			act 'Enter':artemhomemark = 1 & gt $curloc
-		elseif hour >= 20 or hour < 7:'Too late, that would go to visit.'
+		elseif hour >= 20 or hour < 7:
+			'Too late, that would go to visit.'
+		end
 	end
 
 	if week >= 6:

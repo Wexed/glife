@@ -107,7 +107,7 @@ if motherQW >= 2:
 
 					act 'Get away from the counter':gt 'gaptek', 'start'
 				end
-				
+
 				exit
 			end
 		else
@@ -117,7 +117,7 @@ if motherQW >= 2:
 					cls
 					'<center><b><font color="maroon">Drugstore</font></b></center>'
 					'<center><img src="images/etogame/aptek.jpg"></center>'
-					
+
 					if tetyafirst = 0:
 						'Aunt as always stood behind the counter and advised some grandmother. Periodically, she kept looking at you, and something in her eyes seemed strange to you. Letting go of the last buyer, aunt went to the front door, closed it with a key and hung a sign, "Accounting." It was obvious that she was nervous.'
 						'- <<$nickname>>, I wanted to talk to you about something ... - finally she said.'
@@ -146,7 +146,7 @@ if motherQW >= 2:
 						'You waited in line and approached the counter. Aunt leaned over to the window.'
 						'- <<$nickname>>, then how would it again ... need your help with Ola.'
 					end
-					
+
 					act 'Agree':
 						cla
 						oluuosegunday = day
@@ -292,7 +292,7 @@ if motherQW >= 2:
 											agapetime = totminut
 											horny += 10
 										end
-										
+
 										gs 'stat'
 										picrand = rand(1, 3)
 										'<center><b><font color="maroon">Aunts apartment</font></b></center>'
@@ -448,7 +448,7 @@ if motherQW >= 2:
 
 						act 'Leave':gt 'gorodok'
 					end
-					
+
 					exit
 				else
 					'You waited in line and approached the counter' + iif(galubri = 1,'.', ', nodding to the desired display case.')
@@ -457,7 +457,7 @@ if motherQW >= 2:
 				'You waited in line and approached the counter' + iif(galubri = 1,'.', ', nodding to the desired display case.') + '"All sold out, light, - said my aunt. And with malice added almost in a whisper, - Have your ebaryam wait until tomorrow."'
 			end
 		end
-		
+
 		act 'Step away':gt $curloc
 	end
 end
@@ -489,7 +489,7 @@ if StoryLine = 1:
 			act 'Move away from the counter':gt 'gaptek', 'start'
 		end
 	end
-	
+
 	if money >= 200 and motherQW >= 2 and gaptekfirst = 1:
 		act 'Buy  <b>pregnancy tests</b> (200 rubles) <<iif(pregtest > 0, ''[left:<b>'' + pregtest + ''</b>]'', '''')>>':
 			cla
@@ -511,7 +511,7 @@ if StoryLine = 1:
 			act 'Move away from the counter':gt 'gaptek', 'start'
 		end
 	end
-	
+
 	!! you can only buy lube here if your aunt arranged for it and you haven''t bought any today yet
 	if money >= 300 and galubri = 1 and motherQW >= 2 and gaptekfirst = 1 and galubriday ! day:
 		act 'Buy <b>lubricant</b> (300 rubles) <<iif(lubri > 0, ''[left:<b>'' + lubri + ''</b>]'', '''')>>':
@@ -520,7 +520,7 @@ if StoryLine = 1:
 			portion = input ("How many packages you want to buy? (One tube lasts for 5 uses)")
 
 			if portion <= 0:portion = 1
-			if portion > 10:portion = 10 & '"<<$nickname>>, I sell only 10 pieces, no longer brought, I`m_sorry."'
+			if portion > 10:portion = 10 & '"<<$nickname>>, I sell only 10 pieces, no longer brought, I''m_sorry."'
 
 			if portion * 300 <= money:
 				lubri += portion * 5
@@ -536,7 +536,7 @@ if StoryLine = 1:
 			act 'Move away from the counter':gt 'gaptek', 'start'
 		end
 	end
-	
+
 	if money >= 500:
 		if gatabletkiday ! day:
 			act 'Buy <b>birth control pills</b> (500 rubles) <<iif(tabletki > 0, ''[left:<b>'' + tabletki + ''</b>]'', '''')>>':
@@ -560,7 +560,7 @@ if StoryLine = 1:
 				act 'Move away from the counter':gt 'gaptek', 'start'
 			end
 		end
-		
+
 		if klisma = 0 and motherQW >= 2 and gaptekfirst = 1:
 			act 'Buy <b>enema</b> (500 rubles)':
 				cla
@@ -574,7 +574,7 @@ if StoryLine = 1:
 				act 'Move away from the counter':gt 'gaptek', 'start'
 			end
 		end
-		
+
 		act 'Buy <b>medicine</b> (500 rubles) <<iif(lekarstvo > 0, ''[left:<b>'' + lekarstvo + ''</b>]'', '''')>>':
 			cla
 			*clr
@@ -594,7 +594,7 @@ if StoryLine = 1:
 
 			act 'Move away from the counter':gt 'gaptek', 'start'
 		end
-		
+
 		act 'Buy <b>vitamins</b> (500 rubles) <<iif(vitamin > 0, ''[left:<b>'' + vitamin + ''</b>]'', '''')>>':
 			cla
 			*clr
@@ -615,7 +615,7 @@ if StoryLine = 1:
 			act 'Move away from the counter':gt 'gaptek', 'start'
 		end
 	end
-	
+
 	if money >= 600:
 		act 'Buy <b>ointment for corns</b> (600 rubles) <<iif(mosolmaz > 0, ''[left:<b>'' + mosolmaz + ''</b>]'', '''')>>':
 			cla
@@ -659,7 +659,7 @@ if StoryLine = 1:
 			act 'Move away from the counter':gt 'gaptek', 'start'
 		end
 	end
-	
+
 	if money >= 1500:
 		act '<b>Buy fat burners</b> (1,500 rubles) <<iif(fatdel > 0, ''[left:<b>'' + fatdel + ''</b>]'', '''')>>':
 			cla

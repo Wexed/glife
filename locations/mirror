@@ -17,8 +17,8 @@ end
 if $ARGS[0] = 'fin':
 	cla
 	gt $locM, $metkaM
-
-	!'if housr = 1 and housrA = 1 and housrMir = 0 and fitMir = 0 and saunaYouRoom = 0:
+!'
+	if housr = 1 and housrA = 1 and housrMir = 0 and fitMir = 0 and saunaYouRoom = 0:
 		housrA = 0
 			gt 'korr'
 		end
@@ -62,7 +62,8 @@ if $ARGS[0] = 'fin':
 		if housrA = 0 and tanhouse1 = 1:
 			tanhouse1 = 0
 			gt 'spalnya'
-		end'!
+		end
+'!
 end
 
 --- mirror ---------------------------------

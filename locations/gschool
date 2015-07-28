@@ -13,8 +13,8 @@ act 'Leave':gt 'gorodok'
 if zverRageQW = 1:
 	cls
 	zverRageQW = 2
-	gs'stat'
-	gs'time'
+	gs 'stat'
+	gs 'time'
 	'You came to the school yard after school, vnezpno someone you flunked powerful Pendel in the ass, you dumbfounded turned and saw Christina Zverev contorted with rage face. She yelled at you "you ohuel, whether that bitch, about me any garbage chat? I''ll now break mug!"'
 	$nameV = 'Christina'
 	!!stats
@@ -44,7 +44,7 @@ if zverRageQW = 1:
 
 	round = 0
 
-	act 'fight':gt'fight','start'
+	act 'fight':gt 'fight','start'
 
 	exit
 end
@@ -81,7 +81,7 @@ if week = 6 and schoolSorev = 2 and hour = 10:
 			gs 'stat'
 			'<center><img src="images/etogame/begsor.jpg"></center>'
 			'Girls, on the 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
-			
+
 			begresult = beg + speed + vital + rand(1, 20) - salo - rand(1, 20)
 
 			if begresult <= 0:'You barely managed to reach the finish line, what place is really there, of course you are the last.'
@@ -134,7 +134,7 @@ if week = 6 and schoolSorev = 1 and hour = 10:
 			gs 'stat'
 			'<center><img src="images/etogame/begsor.jpg"></center>'
 			'Girls, on the 400 meters race. You change clothes and go out on the treadmill. Get up at the start. Distributed starting shot.'
-			
+
 			begresult = beg + speed + vital + rand(1, 20) - salo - rand(1, 20)
 
 			if begresult <= 0:'You barely managed to reach the finish line, what place is really there, of course you are the last.'

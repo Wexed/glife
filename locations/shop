@@ -17,14 +17,14 @@ if $shoplocation = 'main':
 
 	'<center><b><font color="maroon">Supermarket</font></b></center>'
 	'<center><img src="images/etogame/shop.jpg"></center>'
-	
+
 	if hour < 8 or hour > 20:
 		'The supermarket is currently closed.'
-		
+
 		act 'Leave the store':gt $loc
 		exit
 	end
-	
+
 	'In the hall stands an <a href="exec:$shoplocation = ''ATM'' & gt ''shop'', ''move''">ATM</a>, from which you can withdraw money from your bank account.'
 	'<br>Most of the space in the supermarket is taken up by the <a href="exec:$shoplocation = ''grocery'' & gt ''shop'', ''move''">grocery department</a>, but the store has many smaller departments as well. <a href="exec:$shoplocation=''cosmetics'' & gt ''shop'', ''move''">Cosmetics</a>, <a href="exec:$shoplocation = ''hardware'' & gt ''shop'', ''move''">hardware</a>, <a href="exec:$shoplocation = ''clothing'' & gt ''shop'', ''move''">clothing</a> and the department of <a href="exec:$shoplocation = ''tech'' & gt ''shop'', ''move''">household appliances</a>. Not far from the entrance is a <a href="exec:$shoplocation = ''icecream'' & gt ''shop'', ''move''">counter selling ice cream</a>.'
 	clr
@@ -60,7 +60,7 @@ if $shoplocation = 'main':
 					act 'Come':
 						cla
 						*clr
-						
+
 						if rand(1, 2) = 1:
 							cla
 							sex += 1
@@ -104,7 +104,7 @@ if $shoplocation = 'main':
 				if $loc = 'street':StreetShopTPday = day
 				if $loc = 'Nord':nordShopTPday = day
 				if $loc = 'down':downShopTPday = day
-				
+
 				cls
 				mtprand = rand(40, 130)
 				minut += mtprand
@@ -119,7 +119,7 @@ if $shoplocation = 'main':
 
 		end
 	end
-	
+
 	act 'Leave the store':gt $loc
 	exit
 end
@@ -155,17 +155,17 @@ if $shoplocation = 'grocery':
 
 	'<center><b><font color="maroon">Grocery</font></b></center>'
 	'<center><img src="images/etogame/shop1.jpg"></center>'
-	
+
 	if hour < 8 or hour > 20:
 		'The grocery is currently closed.'
-		
+
 		act 'Leave the grocery':gt 'shop', 'start'
 		exit
 	end
-	
+
 	!! output from purchase
 	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
-	
+
 	*pl '<center><table align="center">' + _
 	FUNC ('$stock_item', 1, 'Regular food', 50, 'eda', $CURLOC) + _
 	FUNC ('$stock_item', 1, 'Diet food', 250, 'edaD', $CURLOC) + _
@@ -192,17 +192,17 @@ if $shoplocation= 'cosmetics':
 
 	'<center><b><font color="maroon">Cosmetics Department</font></b></center>'
 	'<center><img src="images/etogame/shop2.jpg"></center>'
-	
+
 	if hour < 8 or hour > 20:
 		'The cosmetics department is currently closed.'
-		
+
 		act 'Leave the cosmetics department':gt 'shop', 'start'
 		exit
 	end
-	
+
 	!! output from purchase
 	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
-	
+
 	*pl '<center><table align="center">' + _
 	FUNC ('$stock_item', 50, 'Cosmetics', 1000, 'kosmetica', $CURLOC) + _
 	FUNC ('$stock_item', 10, 'Razors', 500, 'stanok', $CURLOC) + _
@@ -210,14 +210,14 @@ if $shoplocation= 'cosmetics':
 	FUNC ('$stock_item', 20, 'Tampons', 200, 'tampon', $CURLOC) + _
 	FUNC ('$stock_item', 30, 'Shampoo', 500, 'shampoo', $CURLOC) + _
 	FUNC ('$stock_item', 10, 'Hair scrunchies', 80, 'hscrunch', $CURLOC)
-	
+
 	*pl FUNC ('$stock_item', 12, 'Hair pins', 100, 'hpingrip', $CURLOC) + _
 	iif(bag > 0, FUNC ('$stock_item', 10, 'Wipes', 100, 'salfetka', $CURLOC), '') + _
 	iif(bag > 0, FUNC ('$stock_item', 10, 'Portable makeup', 1000, 'kosmetitka', $CURLOC), '') + _
 	iif(bag > 0, FUNC ('$single_stock_item', 1, 'Comb', 150, 'greben', $CURLOC), '') + _
 	FUNC ('$single_stock_item', 1, 'Handbag', 5000, 'bag', $CURLOC) + _
 	'</table></center>'
-	
+
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
@@ -234,17 +234,17 @@ if $shoplocation = 'hardware':
 
 	'<center><b><font color="maroon">Division of household goods</font></b></center>'
 	'<center><img src="images/etogame/shop3.jpg"></center>'
-	
+
 	if hour < 8 or hour > 20:
 		'The hardware department is currently closed.'
-		
+
 		act 'Leave the hardware department':gt 'shop', 'start'
 		exit
 	end
-	
+
 	!! output from purchase
 	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
-	
+
 	*pl '<center><table align="center">' + _
 	FUNC ('$stock_item', 20, 'Dishwashing detergent', 100, 'fairy', $CURLOC) + _
 	FUNC ('$stock_item', 30, 'Clothing detergent', 250, 'poroshok', $CURLOC) + _
@@ -267,16 +267,16 @@ if $shoplocation = 'clothing':
 
 	'<center><b><font color="maroon">Department of Women''s Clothing</font></b></center>'
 	'<center><img src="images/etogame/shop4.jpg"></center>'
-	
+
 	if hour < 8 or hour > 20:
 		'The women''s clothing department is currently closed.'
-		
+
 		act 'Leave the women''s clothing department':gt 'shop', 'start'
 		exit
 	end
-	
+
 	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
-	
+
 	*pl '<center><table align="center">' + _
 	FUNC ('$stock_item', 1, 'Underwear', 300, 'clrbelo', $CURLOC) + _
 	FUNC ('$stock_item', 7, 'Sale pack of underwear', 2000, 'clrbelo', $CURLOC) + _
@@ -284,7 +284,7 @@ if $shoplocation = 'clothing':
 	'</table></center>'
 
 	'<br/>Women''s clothing cost 2,500 rubles each.'
-	
+
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)
@@ -716,16 +716,16 @@ if $shoplocation = 'tech':
 
 	'<center><b><font color="maroon">Department of household appliances</font></b></center>'
 	'<center><img src="images/etogame/shop5.jpg"></center>'
-	
+
 	if hour < 8 or hour > 20:
 		'The household appliance department is currently closed.'
-		
+
 		act 'Leave the appliance department':gt 'shop', 'start'
 		exit
 	end
-	
+
 	*p iif($ARGS[0] = 'start' or $ARGS[0] = '' or $ARGS[0] = 'move', '<br/>', '<center><<$ARGS[0]>></center>')
-	
+
 	*pl '<center><table align="center">' + _
 	FUNC ('$single_stock_item', 1, 'Small TV with a picture tube', 35000, 'TV', $CURLOC) + _
 	FUNC ('$single_stock_item', 2, 'Large Plasma TV', 35000, 'TV', $CURLOC) + _
@@ -736,7 +736,7 @@ if $shoplocation = 'tech':
 	FUNC ('$single_stock_item', 1, 'Camera', 10000, 'zenit', $CURLOC) + _
 	FUNC ('$single_stock_item', 1, 'Mini camera disguised as a cigarette pack', 40000, 'minifoto', $CURLOC) + _
 	'</table></center>'
-	
+
 	clr
 	gs 'stat'
 	fcolor = rgb(0, 0, 0)

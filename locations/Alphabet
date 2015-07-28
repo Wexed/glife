@@ -4,14 +4,20 @@ act 'Go to the corridor':gt 'floor'
 clr
 gs 'stat'
 '<center><b>Dorm room</b></center>'
-'<center><img src="images/etogame/obskom.jpg"></center>'
-'Narrow room with a single window, wooden floor, three <a href="exec:gt ''Beds'', ''choice''">beds</a>, small <a href="exec:gt ''A narrow room with a single window, a wooden floor, three <a href="exec:gt ''Beds'', ''choice''">beds</a>, a small <a href="exec:gt ''table''">table</a> and a few chairs. At the entrance stands an old <a href="exec:gt ''cupboard''">wardrobe</a> attached to which is an old <a href="exec:gt ''zerkaloO''">mirror</a>.'
+$ImageNeededPlacholder
+! WD: IMAGE NEEDED ~ '<center><img src="images/etogame/obskom.jpg"></center>'
+'Narrow room with a single window, wooden floor, three <a href="exec:gt ''Beds'', ''choice''">beds</a>, a small <a href="exec:gt ''table''">table</a> and a few chairs. At the entrance stands an old <a href="exec:gt ''cupboard''">wardrobe</a> attached to which is an old <a href="exec:gt ''zerkaloO''">mirror</a>.'
+
+
 
 if palto = 1:'Near the entrance hangs a simple, long-sleeved velvet jacket'
-if palto = 2:'Near the entrance hangs a woman's winter coat'
-if palto = 3:'Near the entrance hangs an old-fashioned lady's coat'
+if palto = 2:'Near the entrance hangs a woman''s winter coat'
+if palto = 3:'Near the entrance hangs an old-fashioned lady''s coat'
 if daystart = 0:daystart = 1
-if house = 1 and student = 0:house = 0 & 'You are being evicted from the dormitory. You found yourself looking through the computer ads for a place to stay,knowing that you will remain without a roof over your head as soon as you pass the dormitory's exit.'
+if house = 1 and student = 0:
+	house = 0
+	'You are being evicted from the dormitory. You found yourself looking through the computer ads for a place to stay,knowing that you will remain without a roof over your head as soon as you pass the dormitory''s exit.'
+end
 
 act 'Roommate Vicky':
 	cla
@@ -31,7 +37,7 @@ act 'Roommate Vicky':
 
 			talkrand = rand(0, 18)
 
-			if talkrand = 0:'You started talking with Vicky, and she tells you about the boys she's met, about parties she's been in, and about the latest in fashion and cosmetics.'
+			if talkrand = 0:'You started talking with Vicky, and she tells you about the boys she''s met, about parties she''s been in, and about the latest in fashion and cosmetics.'
 			if talkrand = 1:'Vicky told you about the time she was in a cafe and a guy invited her to dance after paying for her bill.'
 			if talkrand = 2:'Vicky told you that she used to work as a waitress at a strip bar, which is quite a lucrative job for students, although customers are often perverts.'
 			if talkrand = 3:'Vicky told you that several groups of beautiful girls who were running at the college sports competitions, went on a European level sports competition and earned big money, but of course she has heard rumors of their laziness so they must have fucked to win.'
@@ -41,7 +47,7 @@ act 'Roommate Vicky':
 			if talkrand = 7:'Vicky told you about that one winter she went outside without a coat and got a bad cold.'
 			if talkrand = 8:'Vicky tells you about a girlfriend who did not know how to lose weight, then started going to the sauna and lost weight. True, it was costly but worth it!'
 			if talkrand = 9:'Vicky told you that she used to be very fond of diets, but they deteriorated skin and caused acme, and generally started to cause more harm than good. Now Vicky eats three full meals a day and has only become more beautiful for it.'
-			if talkrand = 10:'Vicky said that she used to go to dances and strip live on the Internet, even managed to get into a nightclub's live sex show, but she quickly got tired of it.'
+			if talkrand = 10:'Vicky said that she used to go to dances and strip live on the Internet, even managed to get into a nightclub''s live sex show, but she quickly got tired of it.'
 			if talkrand = 11:'Vicky said that one time in the park, she accidentally went to a gloryhole and was offered money for sex, but she did not want to ruin her reputation. Besides, a large number of partners from early will only age you faster!'
 			if talkrand = 12:'Vicky told you how she was filmed naked in studio once, not a dirty job exactly, but her reputation suffered anyway when the movie went public.'
 			if talkrand = 13:'Vicky told you of a friend, one that everyone perceived as a slut, who arranged several parties in the cafe at her own expense, in an attempt to improve her image.'

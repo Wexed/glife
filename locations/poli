@@ -232,7 +232,8 @@ if $ARGS[0] = 'start':
 				if abortrand >= 5:preg = 2
 			end
 
-			'<center><img src="images/etogame/abort.jpg"></center>'
+			! WD: Correct Image path ~ "images/etogame/abort.jpg"
+			'<center><img src="images/add-on/abort.jpg"></center>'
 			'You spread out on a gynecological chair, the doctor entered your vagina tool and parts ripped out of you fruit.'
 
 			act 'Leave':gt 'poli', 'start'
@@ -255,7 +256,8 @@ if $ARGS[0] = 'start':
 			haprikid[numkid] = rand(0, 3)
 			glacol[numkid] = rand(0, 3)
 
-			!!'<center><img src="images/etogame/abort.jpg"></center>'
+			$ImageNeededPlacholder
+			! WD: IMAGE NEEDED ~ '<center><img src="images/etogame/abort.jpg"></center>'
 			'You put on the bed and lit up. Began a terrible pain in the abdomen, you yelled with all the dope and finally gave birth.'
 			polkid[numkid] = rand(0, 1)
 
@@ -434,7 +436,9 @@ if $ARGS[0] = 'drPP':
 	act 'Login to Account':
 		cla
 		*clr
-		'<center><img src="images/add-on/drPP.jpg"></center>'
+
+		$ImageNeededPlacholder
+		! WD: IMAGE NEEDED ~ '<center><img src="images/add-on/drPP.jpg"></center>'
 
 		if drPP = 0:'At the table sits an elderly bald man felicitous appearance. "Hello, sick. My name is Peter, I am your local therapist - he says, looking at you through his glasses."'
 		if drPP = 1:'Sit at the table Peter. He smiles at you and says, "Hello, sick."'
@@ -455,7 +459,8 @@ if $ARGS[0] = 'drPP':
 			act 'Follow the instructions of the doctor':
 				cla
 				minut += 20
-				'<center><img src="images/inBed/ninel03"></center>'
+				! WD: Correct Image path ~ "images/images/inBed/ninel03"
+				'<center><img src="images/inBed/ninel03.jpg"></center>'
 				'The doctor listened attentively your lungs, looked into his throat, gave a thermometer - to measure the temperature and finally concluded:'
 				'(Doctor) - Do not worry - common cold - SARS. Buy in a drugstore here these drugs, lie in bed a couple of days and everything will be alright. The main thing - do not supercool.'
 				'(You) - Thank you, Doctor. Goodbye.'
