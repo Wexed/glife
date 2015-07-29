@@ -30,9 +30,9 @@ OutMissFile		= Image List - Missing.txt
 OutAutoFile		= Image Paths - Auto List.txt
 OutManFile		= Image Paths - Manual List.txt
 SearchRegEx		= i)<img\s+src\s*=\s*"(.*?)"
-Search2RegEx	= i)view\s*'+(.*?)'+
+Search2RegEx	= i)\bview\s*'+(.*?)'+
 CommentRegEx 	= ^\s*!
-MarkMissRegEx	= i)!\s*WD:\s+IMAGE NEEDED\s*~\s*.*?<img\s+src\s*=\s*"(.*?)"
+MarkMissRegEx	= i)!.*?:\s+IMAGE NEEDED\s*~\s*.*?<img\s+src\s*=\s*"(.*?)"
 
 FileEncoding, UTF-16
 
@@ -88,6 +88,8 @@ VarSetCapacity(OutMan, 1048576)				;; 1mb
 ; -- Parse data one line at a time --
 Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows and Unix files to be parsed.
 {
+	if trim(A_LoopField) = ""													;; Skip blank line
+		continue
 	
 	; -- Check is Comment line --
 	FoundCmntPos := RegExMatch(A_LoopField, CommentRegEx)
@@ -96,6 +98,7 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 		MsgBox, 48, Get Image Paths, RegExMatch runtime error: %ErrorLevel%`n`nFound searching string: %A_LoopField%`n`nusing search: %CommentRegEx%
 		break
 	}
+	
 	if (FoundCmntPos)															;; comment found
 	{
 		FoundPos := RegExMatch(A_LoopField, MarkMissRegEx, Match)				;; Check for known missing file
@@ -119,6 +122,8 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 		Continue
 	}
 	
+	LineNo := A_index															;; Save line no
+	
 	; -- HTML  images --
 	FoundPos := 1
 	Haystack := A_LoopField
@@ -127,7 +132,7 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 	{
 	
 		; -- Find Image File Path --
-		FoundPos := RegExMatch(Haystack, SearchRegEx, Match, FoundPos)			;; Search for image path in html
+		FoundPos := RegExMatch(Haystack, SearchRegEx, Match, FoundPos)				;; Search for image path in html
 		if (ErrorLevel)
 		{
 			MsgBox, 48, Get Image Paths, RegExMatch runtime error: %ErrorLevel%`n`nFound searching string: %Haystack%`n`nusing search: %SearchRegEx%
@@ -141,26 +146,26 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 		else
 		; if (FoundPos)																;; Found File
 		{	
-			FoundPos += 8 + StrLen(Match1)											;; Increment Search Position
+			IdxTxt := " (L:" . LineNo . ", P:" . FoundPos . ")" 
 			Match1 := StrReplace(Match1, "/", "\")									;; Use correct Win path seperator
 			OutAll .= Match1 . "`n"
 			; -- Image Path Contains Code --
 			if inStr(Match1, "<<")													;; String contains expression
 			{
 				
-				if inStr(Match1, "FUNC(''$face_image''")								;; Hairstyle images Function
+				if inStr(Match1, "FUNC(''$face_image''")							;; Hairstyle images Function - only use JPG files
 				{
-					if GetImageFiles("images\body\hairstyles", "hcol*.jpg", OutUsed)
+					if GetImageFiles("images\body\hairstyles", "hcol*.jpg", OutUsed, "", "FR")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\body\hairstyles\*\hcol*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\body\hairstyles\*\hcol*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\body\hairstyles\*\hcol*.jpg' " . IdxTxt . "`n"
 					}
 					
 				}
-				else if inStr(Match1, "FUNC(''$clothing_image''")						;; Clothing images Function
+				else if inStr(Match1, "FUNC(''$clothing_image''")					;; Clothing images Function - only use JPG files
 				{
 					if GetImageFiles("images\clothes", "vatnik.jpg", OutUsed)
 					{
@@ -168,168 +173,172 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\vatnik.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\vatnik.jpg' " . IdxTxt . "`n"
 					}
 					; GetImageFiles("images\clothes\newclo", "131.jpg", OutUsed)	;; Dupe See below	
 					
-					if GetImageFiles("images\clothes", "jeans*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "jeans*.jpg", OutUsed,  "i)jeans\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\jeans*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\jeans*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\jeans*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "yoga*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "yoga*.jpg", OutUsed, "i)yoga\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\yoga*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\yoga*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\yoga*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "sarafan*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "sarafan*.jpg", OutUsed, "i)sarafan\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\sarafan*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\sarafan*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\sarafan*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "short*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "short*.jpg", OutUsed, "i)short\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\short*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\short*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\short*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "skirt*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "skirt*.jpg", OutUsed, "i)skirt\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\skirt*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\skirt*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\skirt*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "dress*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "dress*.jpg", OutUsed, "i)dress\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\dress*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\dress*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\dress*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "profi*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "profi*.jpg", OutUsed, "i)profi\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\profi*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\profi*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\profi*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "pants*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "pants*.jpg", OutUsed "i)pants\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\pants*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\pants*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\pants*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "latex*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "latex*.jpg", OutUsed, "i)latex\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\latex*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\latex*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\latex*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "hooker*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "hooker*.jpg", OutUsed, "i)hooker\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\hooker*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\hooker*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\hooker*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes", "k*.jpg", OutUsed)
+					if GetImageFiles("images\clothes", "k*.jpg", OutUsed, "i)k\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\k*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\k*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\k*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\clothes\newclo", "*.jpg", OutUsed)
+					if GetImageFiles("images\clothes\newclo", "*.jpg", OutUsed, "i)\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\clothes\newclo\*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\newclo\*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\clothes\newclo\*.jpg' " . IdxTxt . "`n"
 					}
 
-					if GetImageFiles("images\img\dress", "ero*.jpg", OutUsed)
+					if GetImageFiles("images\img\dress", "ero*.jpg", OutUsed, "i)ero\d+\.jpg")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\img\dress\ero*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- no files found in 'images\img\dress\ero*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- no files found in 'images\img\dress\ero*.jpg' " . IdxTxt . "`n"
 					}
 				}
 
-				else if inStr(Match1, "images\qwest\card")								;; Playingcard Images
+				else if inStr(Match1, "images\qwest\card")							;; Playingcard Images  - only use JPG files
 				{
-					if GetImageFiles("images\qwest\card", "*.jpg", Output)
+					if GetImageFiles("images\qwest\card", "*.jpg", OutUsed, "", "FR")
 					{
 						OutAuto	.= Spacer(Match1) . "- Found 'images\qwest\card\*\*.jpg'`n"
 					}
 					else
 					{
-						OutMan	.= Spacer(Match1) . "- No files found in 'images\qwest\card\*\*.jpg'`n"
+						OutMan	.= Spacer(Match1) . "- No files found in 'images\qwest\card\*\*.jpg' " . IdxTxt . "`n"
 					}				
 				}
 				
-				else if inStr(Match1, "FUNC")											;; Unknown Function - Manual
+				else if inStr(Match1, "FUNC")										;; Unknown Function - Manual
 				{
-					OutMan	.= Spacer(Match1) . "- Unknown Function`n"
+					OutMan	.= Spacer(Match1) . "- Unknown Function " . IdxTxt . "`n"
 				}
 				
-				else if inStr(Match1, "$")												;; Uses String variable - Manual
+				else if inStr(Match1, "$")											;; Uses String variable - Manual
 				{
-					OutMan	.= Spacer(Match1) . "- Unknown Function`n"
+					OutMan	.= Spacer(Match1) . "- Used String Variable " . IdxTxt . "`n"
 				}
 				
-				else if not GetImagefromPath(Match1, OutUsed)							;; Try to find images
+				else if GetImagefromPath(Match1, OutUsed)							;; Try to find images
 				{
-					OutMan	.= Spacer(Match1) . "- Files not found`n"
+					OutAuto	.= Spacer(Match1) . "- Found image files`n"
+				}
+				else
+				{
+					OutMan	.= Spacer(Match1) . "- Files not found " . IdxTxt . "`n"
 				}
 			}
-			
 			; -- Image path is just a file name --
 			else
 			{
 				IfExist %Match1%
 				{
-					OutUsed	.= Match1 . "`n"											;; Normal file found
+					OutUsed	.= Match1 . "`n"										;; Normal file found
 				}
 				else
 				{
-					OutMan	.= Spacer(Match1) . "- File not found`n"					;; Normal file Not found
+					OutMan	.= Spacer(Match1) . "- File not found " . IdxTxt . "`n"
 				}
-			}
+			}	
+			FoundPos += 8 + StrLen(Match1)											;; Increment Search Position
 		}
 	}
 	
@@ -356,7 +365,7 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 		else
 		; if (FoundPos)																;; Found File
 		{	
-			FoundPos += 5 + StrLen(Match1)											;; Increment Search Position
+			IdxTxt := " (L:" . LineNo . ", P:" . FoundPos . ")" 
 			Match1 := StrReplace(Match1, "/", "\")									;; Use correct Win path seperator
 			OutAll .= Match1 . "`n"
 			; -- Image Path Contains Code --
@@ -364,17 +373,21 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 			{
 				if inStr(Match1, "FUNC")											;; Unknown Function - Manual
 				{
-					OutMan	.= Spacer(Match1) . "- Unknown Function`n"
+					OutMan	.= Spacer(Match1) . "- Unknown Function " . IdxTxt . "`n"
 				}
 				
 				else if inStr(Match1, "$")											;; Uses String variable - Manual
 				{
-					OutMan	.= Spacer(Match1) . "- Unknown Function`n"
+					OutMan	.= Spacer(Match1) . "- Used String Variable " . IdxTxt . "`n"
 				}
 				
-				else if not GetImagefromPath(Match1, OutUsed)						;; Try to find images
+				else if GetImagefromPath(Match1, OutUsed)							;; Try to find images
 				{
-					OutMan	.= Spacer(Match1) . "- Files not found`n"
+					OutAuto	.= Spacer(Match1) . "- Found image files`n"
+				}
+				else
+				{
+					OutMan	.= Spacer(Match1) . "- Files not found " . IdxTxt . "`n"
 				}
 			}
 			
@@ -387,9 +400,10 @@ Loop, Parse, Source, `n, `r  			; Specifying `n prior to `r allows both Windows 
 				}
 				else
 				{
-					OutMan	.= Spacer(Match1) . "- File not found`n"				;; Normal file Not found
+					OutMan	.= Spacer(Match1) . "- File not found " . IdxTxt . "`n"
 				}
 			}
+			FoundPos += 5 + StrLen(Match1)											;; Increment Search Position
 		}
 	}
 }
@@ -432,8 +446,10 @@ Spacer(TxtStr = "")
 	
 }
 
-GetImageFiles(FilePath, FileName, ByRef Output)
+GetImageFiles(FilePath, FileName, ByRef Output, FileNameRegEx := "", FileLoopMode := "F")
 {	;; Get image paths in filepath using filepattern FileName
+	
+	;~ msgbox 	GetImageFiles()`nFilePath := %FilePath%`nFileName := %FileName%`nFileNameRegEx := %FileNameRegEx%`nFileLoopMode := %FileLoopMode%
 	
 	IfNotExist, %FilePath%
 	{
@@ -445,12 +461,28 @@ GetImageFiles(FilePath, FileName, ByRef Output)
 	Setworkingdir, %FilePath%
 	
 	found := false
-	Loop, Files, %FileName%, FR						;; Find files in FilePath  using Filepattern FileName
+	
+	; -- Loop with or Without recursion --
+	Loop, Files, %FileName%, %FileLoopMode%										;; Find files in FilePath using Filepattern FileName
 	{
-		fp := FilePath  . "\" . A_LoopFileFullPath
-		Output .= fp . "`n"
-		found := true
+		if(FileNameRegEx)														;; Can we test file name
+		{
+			FoundPos := RegExMatch(A_LoopFileName, FileNameRegEx)				;; File Found matches
+			if (ErrorLevel)
+			{
+				MsgBox, 48, Get Image Paths, RegExMatch Error in function GetImageFiles()`n`nruntime error: %ErrorLevel%`n`nFound searching string: %A_LoopFileName%`n`nusing search: %FileNameRegEx%
+				break
+			}
+			if (not FoundPos)													;; Filename not matches skip
+			{
+				continue
+			}
+		}
+	fp := FilePath  . "\" . A_LoopFileFullPath
+	Output .= fp . "`n"
+	found := true
 	}
+
 	
 	Setworkingdir, %SaveWorkDir%
 	return found
@@ -474,6 +506,9 @@ GetImagefromPath(FilePath, ByRef Output)
 		; MsgBox, 64, Get Image Path, GetImageFromPath() error: Path contains wildcard`n `nPath : '%fp%'`nDir :  '%Dir%'
 		return false
 	}
+
+	FileNameRegEx := StrReplace(FileName, "*", "\d+") 					; set up test for filename wildcard to be numbers only
+	FileNameRegEx := "i)" . StrReplace(FileNameRegEx, ".", "\.") 
 	
-	return GetImageFiles(Dir, FileName, Output)
+	return GetImageFiles(Dir, FileName, Output, FileNameRegEx)
 }
