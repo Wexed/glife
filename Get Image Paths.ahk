@@ -467,13 +467,13 @@ GetImageFiles(FilePath, FileName, ByRef Output, FileNameRegEx := "", FileLoopMod
 	{
 		if(FileNameRegEx)														;; Can we test file name
 		{
-			FoundPos := RegExMatch(A_LoopFileName, FileNameRegEx)				;; File Found matches
+			FndPos := RegExMatch(A_LoopFileName, FileNameRegEx)					;; File Found matches
 			if (ErrorLevel)
 			{
 				MsgBox, 48, Get Image Paths, RegExMatch Error in function GetImageFiles()`n`nruntime error: %ErrorLevel%`n`nFound searching string: %A_LoopFileName%`n`nusing search: %FileNameRegEx%
 				break
 			}
-			if (not FoundPos)													;; Filename not matches skip
+			if (not FndPos)														;; Filename not matches skip
 			{
 				continue
 			}
