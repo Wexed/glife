@@ -6,7 +6,8 @@ $din_predlog_dima_bj = {
 		sub += 1
 		gs 'stat'
 		'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-		'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 		'Embarrassed and blushing you squatted in front of Dimka, who got dick and put it in your face.'
 
 		act 'Take by mouth':
@@ -65,7 +66,8 @@ $din_dima_predlog = {
 		grupNPC[numnpc] = 0
 		gs 'stat'
 		'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-		'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 		'You cracked the face Dimka and he clutched his cheek. "Well, get out a fool. And do not come near me."'
 
 		act 'Leave':gt $loc, $metka
@@ -75,7 +77,8 @@ $din_dima_predlog = {
 		cls
 		gs 'stat'
 		'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-		'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 		'You have eyes widened and you flushed with such a proposal. Dimka unbuttoned his pants. "Come on, brave, I can not stand here all night."'
 
 		act 'Slap him':
@@ -84,7 +87,8 @@ $din_dima_predlog = {
 			grupNPC[numnpc] = 0
 			gs 'stat'
 			'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-			'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+			! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+			'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 			'You cracked the face Dimka and he clutched his cheek. "Well, get out a fool. And do not come near me."'
 
 			act 'Leave':gt $loc, $metka
@@ -144,7 +148,8 @@ $din_igor__disco = {
 	act 'Go to the street':
 		cls
 		gs 'stat'
-		'<center><img src="images/qwest/alter/npc4.jpg"></center>'
+		! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc4.jpg"></center>'
+		'<center><img src="images/qwest/alter/npc/4.jpg"></center>'
 		'You went out with Igor. Igor passionately took you by the hand and began to say "<<$name>>, you''re such a pretty girl when I see you, I have immediately podnimaetsya mood. I like you very nravishsya. I''d really like to start a relationship with you."'
 
 		act 'Refuse':gt $loc, $metka
@@ -153,7 +158,8 @@ $din_igor__disco = {
 			cls
 			IgorLoverQW = 1
 			gs 'stat'
-			'<center><img src="images/qwest/alter/npc4.jpg"></center>'
+			! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc4.jpg"></center>'
+			'<center><img src="images/qwest/alter/npc/4.jpg"></center>'
 			'You agreed to meet with Igor and he blossomed smile "<<$name>>, you can get a kiss?"'
 
 			if dom > 0:
@@ -162,7 +168,8 @@ $din_igor__disco = {
 					dom += 5
 					IgorDominaQW = 1
 					gs 'stat'
-					'<center><img src="images/qwest/alter/npc4.jpg"></center>'
+					! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc4.jpg"></center>'
+					'<center><img src="images/qwest/alter/npc/4.jpg"></center>'
 					'You grin skazale Igor that he would kill. Igor blushed and knelt "<<$name>>, I beg you as a slave, on his knees, just one kiss!"'
 
 					if dom >= 10:

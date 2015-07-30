@@ -97,7 +97,8 @@ if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 	numnpc = 5
 	gs 'stat'
 	'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-	'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+	! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+	'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 	'The club you unexpectedly met Fedor Kozlov in your class. He smiled affably you "Hello <<$name>>. Hmm ... Here is the deal ... I have an extra ticket to the movies. Let''s go together."'
 
 	act 'Refuse':
@@ -105,7 +106,8 @@ if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 		grupNPC[5] = 40
 		gs 'stat'
 		'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-		'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 		'You refused to Fedor referring to employment. Fedor frowned. "Okay. Whereas some other time."'
 
 		act 'Leave':gt 'gdksport'
@@ -118,7 +120,8 @@ if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 		minut += 15
 		gs 'stat'
 		'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-		'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+		'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 		'You agreed and delighted Fedor took you to a movie theater located in the park.'
 
 		act 'Watch a movie':
@@ -127,7 +130,8 @@ if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 			manna += 100
 			gs 'stat'
 			'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-			'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+			! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+			'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 			'Fedor gave tickets at the entrance and you went into the hall. Soon the lights went out and started the movie. Fedor sat motionless and only occasionally glancing at you. Movie was quite interesting and you watched it with pleasure. When the movie ended, the hall lights were turned on and Fedor became accompany you. "<<$name>>. I like you. Maybe we could meet?"'
 
 			act 'Refuse':
@@ -137,7 +141,8 @@ if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 				minut += 15
 				gs 'stat'
 				'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-				'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+				! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+				'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 				'You refused to meet with him to Fedor and was invited to stay friends. Fedor visibly upand silently carried you home.'
 
 				act 'Leave':gt 'gorodok'
@@ -148,7 +153,8 @@ if grupNPC[5] >= 80 and fedorKozlovQW = 0 and GorSlut = 0 and UNSTARTER = 1:
 				minut += 15
 				gs 'stat'
 				'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-				'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+				! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+				'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 				'You have agreed to meet with Fedor. Fedor was visibly delighted and escort you to the house on the way you viewed fun discussing movies.'
 
 				act 'Leave':gt 'gorodok'
@@ -480,7 +486,8 @@ if gsAboDance > 0 and sport = 1:
 					numnpc = 23
 					gs 'stat'
 					'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-					'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+					! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+					'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 					'You are greeted with Albina. She raised an eyebrow haughtily. "And it''s you.''s Your name there? Oh yeah <<$name>>. Did you? Zanimaeshsya Dancing?" You nodded confirming the obvious. Albina dismissive laugh. "Well, how''s it going?" You said coldly Albina "Not bad." Albina gave you look arrogant "Not bad? Well, maybe in comparison with other local bowlegged and not bad. But I doubt that you can dance on a more or less professional level."'
 
 					act 'I do not care':
@@ -490,7 +497,8 @@ if gsAboDance > 0 and sport = 1:
 						grupNPC[numnpc] -= 5
 						gs 'stat'
 						'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-						'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+						! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+						'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 						'You said scornfully as possible that you do not care and turned away from Albina. She said with a giggle. "Girls. Let''s train."'
 
 						act 'Leave':gt 'gdksport'
@@ -503,7 +511,8 @@ if gsAboDance > 0 and sport = 1:
 						!!grupNPC[numnpc] -= 5
 						gs 'stat'
 						'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-						'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+						! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+						'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 						'Albina you already began to annoy his arrogance. And you told her firmly that you know how to dance. Albina turned to the girls who came to her and said. "Girls. Let''s train." Then she turned to you and said with a slight grin. "You can sit and watch as the dance pros. Itself will understand everything"'
 
 						act 'Leave':gt 'gdksport'

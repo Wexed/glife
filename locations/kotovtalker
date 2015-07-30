@@ -50,7 +50,8 @@ if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 							grupNPC[numnpc] = 0
 							gs 'stat'
 							'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-							'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+							! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+							'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 							'You refused and Witek looks completely confused, but he was immediately covered anger. "Well, then Wali on dick fucking whore!"'
 
 							act 'Move away':gt $loc, $metka
@@ -61,7 +62,8 @@ if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 							kotovLoveQW = 1
 							gs 'stat'
 							'<center><b><font color="maroon"><<$npcName[numnpc]>> <<$npcSurName[numnpc]>></font></b></center>'
-							'<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+							! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc<<numnpc>>.jpg"></center>'
+							'<center><img src="images/qwest/alter/npc/<<numnpc>>.jpg"></center>'
 							'You and Witek delighted "ohuet. I myself do not believe that you agreed with me muddy."'
 
 							act 'Move away':gt $loc, $metka
@@ -77,7 +79,8 @@ if numnpc = 9 and grupNPC[numnpc] >= 80 and GorSlut = 0 and kotovLoveQW >= 0:
 						cls
 						minut += 15
 						gs 'stat'
-						'<center><img src="images/qwest/alter/npc9.jpg"></center>'
+						! WD: Remove Dupe Images ~ '<center><img src="images/qwest/alter/npc9.jpg"></center>'
+						'<center><img src="images/qwest/alter/npc/9.jpg"></center>'
 						'You came out of discos and went in the direction where he lives Witek with him while holding his arm. Soon you with Victor approached the dilapidated house he opened the door and led you to the poor and not well-kept apartment in a room where clothes lying crumpled heaps on the floor was littered with empty bottles.'
 
 						act 'Further.':gt 'kotovSex'

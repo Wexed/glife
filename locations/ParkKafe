@@ -219,14 +219,23 @@ if $ARGS[0] = 'man':
 				!!oral += 1
 				cumlip += 1
 				cumass += 1
-				horny = 0
+				! WD: breaks horny test below ~ 
+				!horny = 0
 				vnesh += 1
 				vagina += 1
 				'<center><img src="images/pics2/sauna.jpg"></center>'
 				'In the sauna you two completely naked, have fun and enjoying yourself, gradually turns into a very passionate sex'
 
-				if horny > 75:horny = 0 & orgasm += 1 & 'You covered orgasm'
-				if horny <= 75:horny += 10 & 'You were not satisfied'
+				! WD: fix horny test logic stop both trigger
+				if horny > 75:
+					horny = 0
+					orgasm += 1 
+					'You covered orgasm'
+				! if horny <= 75:
+				else
+					horny += 10
+					'You were not satisfied'
+				end
 
 				act 'Leave':gt 'street'
 			end

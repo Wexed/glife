@@ -353,7 +353,8 @@ if $ARGS[0] = 'start':
 			if analplugIN ! 0:analplugIN = 0
 
 			gs 'stat'
-			'<center><img src="images/body/<<anpic>>.jpg"></center>'
+			! WD: Remove Dupe Images ~ use 'images/picb/' not 'images/body/' as in '# body'
+			'<center><img src="images/picb/<<anpic>>.jpg"></center>'
 			'You''ve come to the office to the proctologist. He immediately asked you to undress from the waist down and tilt.'
 
 			if anus <= 15:
@@ -374,7 +375,8 @@ if $ARGS[0] = 'start':
 					proktologday = day
 					anus -= 5
 					gs 'stat'
-					'<center><img src="images/body/<<anpic>>.jpg"></center>'
+					! WD: Remove Dupe Images ~ use 'images/picb/' not 'images/body/' as in '# body'
+					'<center><img src="images/picb/<<anpic>>.jpg"></center>'
 					'You paid for the procedure and the doctor an hour tinkering in your ass causing her to order.'
 
 					act 'Get away from the clinic':gt 'street'
