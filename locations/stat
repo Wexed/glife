@@ -634,6 +634,9 @@ if hour >= 24:
 		vidage += 1
 	end
 
+	! WD: Piecing arousal is bit broken as only fires at midnight is more horny than previous night
+	! WD: Moved out of daily to enod of time
+	!'
 	if horny > hornyStat:
 		hornyStat = horny
 		if pirsA > 0:horny += 1
@@ -647,7 +650,7 @@ if hour >= 24:
 	end
 
 	if horny < hornyStat:hornyStat = horny
-
+	'!
 	!!!!!!!!!!!!!!!
 	!!!generation!!!
 	!!!!!!!!!!!!!!!
@@ -968,6 +971,26 @@ if nerdism > 0:
 else
 	SbrosNerdism = 0
 	$mudnerd = ''
+end
+
+
+!
+! WD: Triggers every 15 minutes
+!
+if totminut - Trig15Minute >= 15:
+
+	if Trig15Minute = 0:	& ! Init in case of a old save game
+		set Trig15Minute = totminut
+	end
+	
+	set Trig15Minute += 15
+	
+	! WD: Fix vibrator arousal to trigger every 15 minutes, moved from 'time' location
+	if vibratorin = 1:horny += rand(1, 5)
+
+	! WD: Fixed Piecing arousal to trigger every 15 minutes, instead of once per day
+	hornyStat = pirsA + pirsB + pirsC + pirsD + pirsE + pirsN + (pirsF + pirsG) * 5
+	set horny = hornyStat / 4 + rand(1,4) <= hornyStat mod 4 & ! Apply 1/4 of value on average
 end
 
 !!!!!!!!!!!!!!!!!!!
