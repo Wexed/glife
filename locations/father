@@ -41,7 +41,7 @@ act 'Chat':
 	cls
 	minut+=rand(10,15)
 	father+=1
-	gs'stat'
+	gs 'stat'
 	'<center><B><font color=maroon>Stepfather Vladimir Skryabin</font></B></center>'
 	'<center><img src="images/qwest/alter/father.jpg" ></center>'
 	'Stepfather sitting on the couch and watching TV. You sat next to him on the sofa'
@@ -93,7 +93,7 @@ act 'Ask for money':
 				act 'Oh please':
 					cla
 					minut+=5
-					gs'stat'
+					gs 'stat'
 					horny+=RAND(1,5)
 					'- Well shake-and-aluysta, - drawling ask you, I am looking at him puppy eyes and flapping his expressive eyes.'
 					if vnesh < 15:fatherLust = 2
@@ -107,7 +107,7 @@ act 'Ask for money':
 					if fatherLust=1:
 						money+=rand(200,300)
 						fatherPayDay=day
-						gs'stat'
+						gs 'stat'
 						'- Eh... Okay. Just do not tell my mother! - he said in a tired voice, shooting eyes in the kitchen. You portray genuine delight, take the money, She kisses him on the cheek and happily go.'
 					end
 					act '<B>Move away</B>':gt $loc, $metka
@@ -119,7 +119,7 @@ act 'Ask for money':
 						minut+=5
 						money+=rand(300,500)
 						fatherPayDay=day
-						gs'stat'
+						gs 'stat'
 						'- Are not you forgetting? - serious voice you say, an apparent reference to your recent him "relationship".'
 						'Stepfather clearly embarrassed and surprised your trick. His eloquent "Cough-cough" It leads you into the feeling and you feel uncomfortable from-for their behavior.'
 						'- Here`s, infection! You can not not take advantage Now! So be, on. Just keep your mouth shut!'
@@ -175,7 +175,7 @@ end
 act 'Ask, as he outfit':
 	cls
 	minut+=rand(10,15)
-	gs'stat'
+	gs 'stat'
 	'<center><B><font color=maroon>Stepfather Vladimir Skryabin</font></B></center>'
 	'<center><img src="images/qwest/alter/father.jpg" ></center>'
 	'Stepfather sitting on the couch watching TV. You sat next to him on the sofa'
@@ -196,7 +196,7 @@ act 'Ask, as he outfit':
 
 		if FatherMolest=1:
 			horny+=RAND(1,5)
-			gs'stat'
+			gs 'stat'
 			'It, It seems, quite seriously reacted to your request, and asked for a little whirl, to look over your outfit from all sides. By approving nods you understand, the clothes he had to taste better, than he would like to show you.'
 			if horny>=50 or TouchedByFather=1:
 				dynamic $din_vertetzopa
@@ -222,7 +222,7 @@ act 'Watch TV together':
 	minut+=60
 	willpower+=RAND(5,10)
 	manna+=RAND(10,50)
-	gs'stat'
+	gs 'stat'
 	'<center><B><font color=maroon>Stepfather Vladimir Skryabin</font></B></center>'
 	'<center><img src="images/pics/telek.jpg" ></center>'
 
@@ -296,7 +296,7 @@ if hadsexwithfather=1:fatherwantssex=rand(1,2)
 if nude=1: fatherwantssex=1
 if hadsexwithfather=1 and fatherwantssex=1 and mother_go = 1 and hour = 16 and father>60:
 	cls
-	gs'stat'
+	gs 'stat'
 	'<center><B><font color=maroon>Stepfather Vladimir Skryabin</font></B></center>'
 	'<center><img src="images/qwest/alter/father.jpg" ></center>'
 	if nude=1:'- Wow, I see you`ve prepared, I undressed for "Daddy"'
