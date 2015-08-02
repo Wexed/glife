@@ -35,7 +35,7 @@ act 'Go for a walk':
 		else
 			gt 'parksvid', '3'
 		end
-	elseif $telsob = 'Katia':
+	elseif $telsob = 'Katja':
 		kat += 1
 
 		if kat >= 20:
@@ -124,7 +124,7 @@ if $ARGS[0] = '2':
 	cla
 	horny = 0
 	minut += 90
-	gs 'stats'
+	gs 'stat'
 	'When you have finished, <<$telsob>> said that she needed to escape and went'
 
 	act 'Leave':gt 'park', 'start'

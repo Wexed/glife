@@ -31,11 +31,13 @@ lcolor = rgb(106, 90, 205)
 'Manager works from 10:00 to 18:00.'
 
 !!if young_shop_work = 0:
-	act '<font color="navy">Login to the manager</font>':
+! WD: Set managment hours
+if hour >= 8 and hour <= 18 and young_shop_work = 0 and week < 6:
+	act '<font color="navy">Go to the manager</font>':
 		minut += 1
 		gt 'andrey'
 	end
-!!end
+end
 
 act '<b>Get out of the shop</b>':
 	minut += 3
@@ -590,7 +592,9 @@ end
 
 if hour >= 8 and hour <= 18 and young_shop_work = 1 and young_shop_miss >= 3 and week < 6:gt 'andrey'
 
-if hour > 21 or hour < 8 or week >= 6:
+! WD: Change trading hours to consistant with the other shops
+! if hour > 21 or hour < 8 or week >= 6:
+if hour > 21 or hour < 8:
 	cla
 	'Sorry, but the store is closed, - guard comes up to me. - Proceed to the exit.'
 	'<b><center><font color="red">The store is closing.</font></center></b>'

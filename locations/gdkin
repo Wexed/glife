@@ -106,7 +106,8 @@ $din_dance_otkaz = {
 	if alko <= 2 and horny <= 75:
 		act 'Refuse':
 			cls
-			willpower += rand(0, 1)
+			! WD: Should be will not willpower
+			will += rand(0, 1)
 			gt 'gdkin'
 		end
 	end
@@ -322,7 +323,7 @@ if hour >= 20 and hour <= 23:
 		if dance < 50 and agil >= dance:dance += 1
 
 		manna += 10
-		willpower += 10
+		willpower += 10 & ! WD: Should be willpower as is mood
 		frost = 0
 		gs 'stat'
 

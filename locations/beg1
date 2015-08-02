@@ -43,7 +43,8 @@ if $ARGS[0] = 'start':
 			razradbeg = 6
 			'You have not been qualified for the European Championship.'
 
-			act 'Leave':gt 'fit', 'razd'
+			! WD: Argument is 'dressing room'
+			act 'Leave':gt 'fit', 'dressing room'
 		elseif razradbegK >= 8:
 			cla
 			razradbegK = 0
