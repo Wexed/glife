@@ -800,7 +800,7 @@ talkrand=rand(0,100)
 }
 
 $din_potr={
-if nude = 0:
+if $clothingworntype ! 'nude':
 	act 'Give him touch fabric':
 		cls
 		minut+=5
@@ -829,7 +829,7 @@ if nude = 0:
 end
  }
 $din_popravit={
-if nude = 0:
+if $clothingworntype ! 'nude':
 	act 'Correct clothing':
 		cls
 		minut+=5
