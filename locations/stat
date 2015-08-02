@@ -975,22 +975,27 @@ end
 
 
 !
-! WD: Triggers every 15 minutes
+! WD: Triggers every 15 minutes if not sleeping
 !
 if totminut - Trig15Minute >= 15:
 
-	if Trig15Minute = 0:	& ! Init in case of a old save game
+	if Trig15Minute = 0 or InSleep ! 0:	& ! Skip if old save game or sleepimg
 		set Trig15Minute = totminut
-	end
-	
-	set Trig15Minute += 15
-	
-	! WD: Fix vibrator arousal to trigger every 15 minutes, moved from 'time' location
-	if vibratorin = 1:horny += rand(1, 5)
 
-	! WD: Fixed Piecing arousal to trigger every 15 minutes, instead of once per day
-	hornyStat = pirsA + pirsB + pirsC + pirsD + pirsE + pirsN + (pirsF + pirsG) * 5
-	set horny = hornyStat / 4 + rand(1,4) <= hornyStat mod 4 & ! Apply 1/4 of value on average
+	else
+		set Trig15Minute += 15
+
+		! WD: Fix vibrator arousal to trigger every 15 minutes, moved from 'time' location
+		if vibratorin = 1:horny += rand(1, 5)
+
+		! WD: Fixed Piecing arousal to trigger every 15 minutes, instead of once per day
+		hornyStat = pirsA + pirsB + pirsC + pirsD + pirsE + pirsN + (pirsF + pirsG) * 5
+		set horny = hornyStat / 4 + rand(1,4) <= hornyStat mod 4 & ! Apply 1/4 of value on average
+
+		! WD: Clothing
+		if Sexual = 1 and horny < 70:set horny += rand(0, 2)
+		if glamur = 1 and horny < 50:set horny += rand(0, 1)
+	end
 end
 
 !!!!!!!!!!!!!!!!!!!
